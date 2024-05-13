@@ -1,0 +1,12 @@
+workflowVersion: 1.0.0
+speakeasyVersion: latest
+sources:
+    Vercel-API:
+        inputs:
+            - location: ./vercel-api-modified.yaml
+        registry:
+            location: registry.speakeasyapi.dev/vercel/vercel/vercel-api
+targets:
+    typescript:
+        target: typescript
+        source: Vercel-API
