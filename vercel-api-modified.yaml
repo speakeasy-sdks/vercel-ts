@@ -10696,27 +10696,8 @@ paths:
                   pattern: "^[\\\\w-]+$"
                   type: string
                 items:
+                  x-speakeasy-type-override: any
                   type: object
-                  propertyNames:
-                    maxLength: 256
-                    pattern: "^[\\\\w-]+$"
-                    type: string
-                  additionalProperties:
-                    oneOf:
-                      - oneOf:
-                          - type: string
-                          - type: number
-                          - type: boolean
-                          - type: "null"
-                          - type: object
-                      - type: array
-                        items:
-                          oneOf:
-                            - type: string
-                            - type: number
-                            - type: boolean
-                            - type: "null"
-                            - type: object
   "/v1/edge-config/{edgeConfigId}":
     get:
       description: Returns an Edge Config.
@@ -11068,31 +11049,17 @@ paths:
                             pattern: "^[\\\\w-]+$"
                             type: string
                           value:
-                            oneOf:
-                              - oneOf:
-                                  - type: string
-                                  - type: number
-                                  - type: boolean
-                                  - type: "null"
-                                  - type: object
-                              - type: array
-                                items:
-                                  oneOf:
-                                    - type: string
-                                    - type: number
-                                    - type: boolean
-                                    - type: "null"
-                                    - type: object
+                            x-speakeasy-type-override: any
                           description:
-                            oneOf:
-                              - type: string
-                                maxLength: 512
-                              - type: "null"
+                            type: string
+                            maxLength: 512
+                            nullable: true
                         anyOf:
                           - properties:
                               operation:
                                 type: string
-                                const: create
+                                enum: 
+                                  - create
                             required:
                               - operation
                               - key
@@ -11117,7 +11084,8 @@ paths:
                               - description
                           - properties:
                               operation:
-                                const: delete
+                                enum: 
+                                  - delete
                             required:
                               - operation
                               - key
@@ -13261,7 +13229,8 @@ paths:
         - name: namespaceId
           in: query
           schema:
-            type: [string, number]
+            x-speakeasy-type-override: any
+            type: string
             nullable: true
         - name: provider
           in: query
@@ -30245,6 +30214,12 @@ paths:
             Team invite code not found.
             No team found.
       parameters:
+        - name: teamId
+          description: the team id related to the invite code
+          in: path
+          required: true
+          schema:
+            type: string
         - name: inviteId
           description: The Team invite code ID.
           in: path
@@ -30708,6 +30683,36 @@ paths:
                         - integration-configuration-removed
                         - integration-configuration-scope-change-confirmed
                         - test-webhook
+                      x-speakeasy-enums:
+                        - BUDGET_REACHED
+                        - BUDGET_RESET
+                        - BUDGET_CREATED
+                        - DOMAIN_CREATED
+                        - DEPLOYMENT_CREATED
+                        - DEPLOYMENT_ERROR
+                        - DEPLOYMENT_CANCELED
+                        - DEPLOYMENT_SUCCEEDED
+                        - DEPLOYMENT_READY
+                        - DEPLOYMENT_CHECK_REREQUESTED
+                        - INTEGRATION_CONFIGURATION_PERMISSION_UPGRADED
+                        - INTEGRATION_CONFIGURATION_REMOVED
+                        - INTEGRATION_CONFIGURATION_SCOPE_CHANGE_CONFIRMED
+                        - PROJECT_CREATED
+                        - PROJECT_REMOVED
+                        - DEPLOYMENT_CHECKS_COMPLETED
+                        - DEPLOYMENT_DASH_READY
+                        - DEPLOYMENT_DASH_PREPARED
+                        - DEPLOYMENT_DASH_ERROR
+                        - DEPLOYMENT_DASH_CHECK_REREQUESTED
+                        - DEPLOYMENT_DASH_CANCELED
+                        - PROJECT_DASH_CREATED
+                        - PROJECT_DASH_REMOVED
+                        - DOMAIN_DASH_CREATED
+                        - DEPLOYMENT
+                        - INTEGRATION_CONFIGURATION_DASH_PERMISSION_UPDATED
+                        - INTEGRATION_CONFIGURATION_DASH_REMOVED
+                        - INTEGRATION_CONFIGURATION_DASH_SCOPE_CHANGE_CONFIRMED
+                        - TEST_WEBHOOK
                       description: The webhooks events
                       example: deployment.created
                     type: array
@@ -30820,6 +30825,35 @@ paths:
                       - integration-configuration-removed
                       - integration-configuration-scope-change-confirmed
                       - test-webhook
+                    x-speakeasy-enums:
+                      - BUDGET_REACHED
+                      - BUDGET_RESET
+                      - DOMAIN_CREATED
+                      - DEPLOYMENT_CREATED
+                      - DEPLOYMENT_ERROR
+                      - DEPLOYMENT_CANCELED
+                      - DEPLOYMENT_SUCCEEDED
+                      - DEPLOYMENT_READY
+                      - DEPLOYMENT_CHECK_REREQUESTED
+                      - INTEGRATION_CONFIGURATION_PERMISSION_UPGRADED
+                      - INTEGRATION_CONFIGURATION_REMOVED
+                      - INTEGRATION_CONFIGURATION_SCOPE_CHANGE_CONFIRMED
+                      - PROJECT_CREATED
+                      - PROJECT_REMOVED
+                      - DEPLOYMENT_CHECKS_COMPLETED
+                      - DEPLOYMENT_DASH_READY
+                      - DEPLOYMENT_DASH_PREPARED
+                      - DEPLOYMENT_DASH_ERROR
+                      - DEPLOYMENT_DASH_CHECK_REREQUESTED
+                      - DEPLOYMENT_DASH_CANCELED
+                      - PROJECT_DASH_CREATED
+                      - PROJECT_DASH_REMOVED
+                      - DOMAIN_DASH_CREATED
+                      - DEPLOYMENT
+                      - INTEGRATION_CONFIGURATION_DASH_PERMISSION_UPDATED
+                      - INTEGRATION_CONFIGURATION_DASH_REMOVED
+                      - INTEGRATION_CONFIGURATION_DASH_SCOPE_CHANGE_CONFIRMED
+                      - TEST_WEBHOOK
                 projectIds:
                   minItems: 1
                   maxItems: 50
@@ -30938,6 +30972,35 @@ paths:
                               - integration-configuration-removed
                               - integration-configuration-scope-change-confirmed
                               - test-webhook
+                            x-speakeasy-enums:
+                              - BUDGET_REACHED
+                              - BUDGET_RESET
+                              - DOMAIN_CREATED
+                              - DEPLOYMENT_CREATED
+                              - DEPLOYMENT_ERROR
+                              - DEPLOYMENT_CANCELED
+                              - DEPLOYMENT_SUCCEEDED
+                              - DEPLOYMENT_READY
+                              - DEPLOYMENT_CHECK_REREQUESTED
+                              - INTEGRATION_CONFIGURATION_PERMISSION_UPGRADED
+                              - INTEGRATION_CONFIGURATION_REMOVED
+                              - INTEGRATION_CONFIGURATION_SCOPE_CHANGE_CONFIRMED
+                              - PROJECT_CREATED
+                              - PROJECT_REMOVED
+                              - DEPLOYMENT_CHECKS_COMPLETED
+                              - DEPLOYMENT_DASH_READY
+                              - DEPLOYMENT_DASH_PREPARED
+                              - DEPLOYMENT_DASH_ERROR
+                              - DEPLOYMENT_DASH_CHECK_REREQUESTED
+                              - DEPLOYMENT_DASH_CANCELED
+                              - PROJECT_DASH_CREATED
+                              - PROJECT_DASH_REMOVED
+                              - DOMAIN_DASH_CREATED
+                              - DEPLOYMENT
+                              - INTEGRATION_CONFIGURATION_DASH_PERMISSION_UPDATED
+                              - INTEGRATION_CONFIGURATION_DASH_REMOVED
+                              - INTEGRATION_CONFIGURATION_DASH_SCOPE_CHANGE_CONFIRMED
+                              - TEST_WEBHOOK
                             description: The webhooks events
                             example: deployment.created
                           type: array
@@ -31022,6 +31085,35 @@ paths:
                               - integration-configuration-removed
                               - integration-configuration-scope-change-confirmed
                               - test-webhook
+                            x-speakeasy-enums:
+                              - BUDGET_REACHED
+                              - BUDGET_RESET
+                              - DOMAIN_CREATED
+                              - DEPLOYMENT_CREATED
+                              - DEPLOYMENT_ERROR
+                              - DEPLOYMENT_CANCELED
+                              - DEPLOYMENT_SUCCEEDED
+                              - DEPLOYMENT_READY
+                              - DEPLOYMENT_CHECK_REREQUESTED
+                              - INTEGRATION_CONFIGURATION_PERMISSION_UPGRADED
+                              - INTEGRATION_CONFIGURATION_REMOVED
+                              - INTEGRATION_CONFIGURATION_SCOPE_CHANGE_CONFIRMED
+                              - PROJECT_CREATED
+                              - PROJECT_REMOVED
+                              - DEPLOYMENT_CHECKS_COMPLETED
+                              - DEPLOYMENT_DASH_READY
+                              - DEPLOYMENT_DASH_PREPARED
+                              - DEPLOYMENT_DASH_ERROR
+                              - DEPLOYMENT_DASH_CHECK_REREQUESTED
+                              - DEPLOYMENT_DASH_CANCELED
+                              - PROJECT_DASH_CREATED
+                              - PROJECT_DASH_REMOVED
+                              - DOMAIN_DASH_CREATED
+                              - DEPLOYMENT
+                              - INTEGRATION_CONFIGURATION_DASH_PERMISSION_UPDATED
+                              - INTEGRATION_CONFIGURATION_DASH_REMOVED
+                              - INTEGRATION_CONFIGURATION_DASH_SCOPE_CHANGE_CONFIRMED
+                              - TEST_WEBHOOK
                             description: The webhooks events
                             example: deployment.created
                           type: array
@@ -31141,6 +31233,35 @@ paths:
                         - integration-configuration-removed
                         - integration-configuration-scope-change-confirmed
                         - test-webhook
+                      x-speakeasy-enums:
+                        - BUDGET_REACHED
+                        - BUDGET_RESET
+                        - DOMAIN_CREATED
+                        - DEPLOYMENT_CREATED
+                        - DEPLOYMENT_ERROR
+                        - DEPLOYMENT_CANCELED
+                        - DEPLOYMENT_SUCCEEDED
+                        - DEPLOYMENT_READY
+                        - DEPLOYMENT_CHECK_REREQUESTED
+                        - INTEGRATION_CONFIGURATION_PERMISSION_UPGRADED
+                        - INTEGRATION_CONFIGURATION_REMOVED
+                        - INTEGRATION_CONFIGURATION_SCOPE_CHANGE_CONFIRMED
+                        - PROJECT_CREATED
+                        - PROJECT_REMOVED
+                        - DEPLOYMENT_CHECKS_COMPLETED
+                        - DEPLOYMENT_DASH_READY
+                        - DEPLOYMENT_DASH_PREPARED
+                        - DEPLOYMENT_DASH_ERROR
+                        - DEPLOYMENT_DASH_CHECK_REREQUESTED
+                        - DEPLOYMENT_DASH_CANCELED
+                        - PROJECT_DASH_CREATED
+                        - PROJECT_DASH_REMOVED
+                        - DOMAIN_DASH_CREATED
+                        - DEPLOYMENT
+                        - INTEGRATION_CONFIGURATION_DASH_PERMISSION_UPDATED
+                        - INTEGRATION_CONFIGURATION_DASH_REMOVED
+                        - INTEGRATION_CONFIGURATION_DASH_SCOPE_CHANGE_CONFIRMED
+                        - TEST_WEBHOOK
                       description: The webhooks events
                       example: deployment.created
                     type: array
@@ -31471,6 +31592,9 @@ paths:
             maxItems: 20
             oneOf:
               - type: array
+                items:
+                  type: object
+                  additionalProperties: {}
               - type: string
         - name: from
           description: Get only aliases created after the provided timestamp
@@ -33172,7 +33296,7 @@ paths:
               required:
                 - email
               type: object
-  "/v13/deployments/{id}":
+  "/v13/deployments/{id}#id":
     delete:
       description:
         This API allows you to delete a deployment, either by supplying
@@ -33446,6 +33570,14 @@ paths:
         "410":
           description: ""
       parameters:
+        - name: name
+          description: The name of the secret.
+          in: path
+          required: true
+          schema:
+            description: The name of the secret.
+            type: string
+            example: my-api-key
         - description: The Team identifier to perform the request on behalf of.
           in: query
           name: teamId
@@ -33678,7 +33810,7 @@ paths:
           name: slug
           schema:
             type: string
-  "/v2/secrets/{idOrName}":
+  "/v2/secrets/{idOrName}#idOrName":
     delete:
       description: This deletes the user or team’s secret defined in the URL.
       operationId: deleteSecret
