@@ -76,18 +76,15 @@ export class Domains extends ClientSDK {
             .filter(Boolean)
             .join("&");
 
-        let security$;
-        if (typeof this.options$.bearerToken === "function") {
-            security$ = { bearerToken: await this.options$.bearerToken() };
-        } else if (this.options$.bearerToken) {
-            security$ = { bearerToken: this.options$.bearerToken };
-        } else {
-            security$ = {};
-        }
+        const security$ =
+            typeof this.options$.security === "function"
+                ? await this.options$.security()
+                : this.options$.security;
+
         const context = {
             operationID: "buyDomain",
             oAuth2Scopes: [],
-            securitySource: this.options$.bearerToken,
+            securitySource: this.options$.security,
         };
         const securitySettings$ = this.resolveGlobalSecurity(security$);
 
@@ -192,18 +189,15 @@ export class Domains extends ClientSDK {
             .filter(Boolean)
             .join("&");
 
-        let security$;
-        if (typeof this.options$.bearerToken === "function") {
-            security$ = { bearerToken: await this.options$.bearerToken() };
-        } else if (this.options$.bearerToken) {
-            security$ = { bearerToken: this.options$.bearerToken };
-        } else {
-            security$ = {};
-        }
+        const security$ =
+            typeof this.options$.security === "function"
+                ? await this.options$.security()
+                : this.options$.security;
+
         const context = {
             operationID: "checkDomainPrice",
             oAuth2Scopes: [],
-            securitySource: this.options$.bearerToken,
+            securitySource: this.options$.security,
         };
         const securitySettings$ = this.resolveGlobalSecurity(security$);
 
@@ -289,18 +283,15 @@ export class Domains extends ClientSDK {
             .filter(Boolean)
             .join("&");
 
-        let security$;
-        if (typeof this.options$.bearerToken === "function") {
-            security$ = { bearerToken: await this.options$.bearerToken() };
-        } else if (this.options$.bearerToken) {
-            security$ = { bearerToken: this.options$.bearerToken };
-        } else {
-            security$ = {};
-        }
+        const security$ =
+            typeof this.options$.security === "function"
+                ? await this.options$.security()
+                : this.options$.security;
+
         const context = {
             operationID: "checkDomainStatus",
             oAuth2Scopes: [],
-            securitySource: this.options$.bearerToken,
+            securitySource: this.options$.security,
         };
         const securitySettings$ = this.resolveGlobalSecurity(security$);
 
@@ -391,18 +382,15 @@ export class Domains extends ClientSDK {
             .filter(Boolean)
             .join("&");
 
-        let security$;
-        if (typeof this.options$.bearerToken === "function") {
-            security$ = { bearerToken: await this.options$.bearerToken() };
-        } else if (this.options$.bearerToken) {
-            security$ = { bearerToken: this.options$.bearerToken };
-        } else {
-            security$ = {};
-        }
+        const security$ =
+            typeof this.options$.security === "function"
+                ? await this.options$.security()
+                : this.options$.security;
+
         const context = {
             operationID: "getDomainTransfer",
             oAuth2Scopes: [],
-            securitySource: this.options$.bearerToken,
+            securitySource: this.options$.security,
         };
         const securitySettings$ = this.resolveGlobalSecurity(security$);
 
@@ -496,18 +484,15 @@ export class Domains extends ClientSDK {
             .filter(Boolean)
             .join("&");
 
-        let security$;
-        if (typeof this.options$.bearerToken === "function") {
-            security$ = { bearerToken: await this.options$.bearerToken() };
-        } else if (this.options$.bearerToken) {
-            security$ = { bearerToken: this.options$.bearerToken };
-        } else {
-            security$ = {};
-        }
+        const security$ =
+            typeof this.options$.security === "function"
+                ? await this.options$.security()
+                : this.options$.security;
+
         const context = {
             operationID: "getDomainConfig",
             oAuth2Scopes: [],
-            securitySource: this.options$.bearerToken,
+            securitySource: this.options$.security,
         };
         const securitySettings$ = this.resolveGlobalSecurity(security$);
 
@@ -598,18 +583,15 @@ export class Domains extends ClientSDK {
             .filter(Boolean)
             .join("&");
 
-        let security$;
-        if (typeof this.options$.bearerToken === "function") {
-            security$ = { bearerToken: await this.options$.bearerToken() };
-        } else if (this.options$.bearerToken) {
-            security$ = { bearerToken: this.options$.bearerToken };
-        } else {
-            security$ = {};
-        }
+        const security$ =
+            typeof this.options$.security === "function"
+                ? await this.options$.security()
+                : this.options$.security;
+
         const context = {
             operationID: "getDomain",
             oAuth2Scopes: [],
-            securitySource: this.options$.bearerToken,
+            securitySource: this.options$.security,
         };
         const securitySettings$ = this.resolveGlobalSecurity(security$);
 
@@ -691,18 +673,15 @@ export class Domains extends ClientSDK {
             .filter(Boolean)
             .join("&");
 
-        let security$;
-        if (typeof this.options$.bearerToken === "function") {
-            security$ = { bearerToken: await this.options$.bearerToken() };
-        } else if (this.options$.bearerToken) {
-            security$ = { bearerToken: this.options$.bearerToken };
-        } else {
-            security$ = {};
-        }
+        const security$ =
+            typeof this.options$.security === "function"
+                ? await this.options$.security()
+                : this.options$.security;
+
         const context = {
             operationID: "getDomains",
             oAuth2Scopes: [],
-            securitySource: this.options$.bearerToken,
+            securitySource: this.options$.security,
         };
         const securitySettings$ = this.resolveGlobalSecurity(security$);
 
@@ -788,18 +767,15 @@ export class Domains extends ClientSDK {
             .filter(Boolean)
             .join("&");
 
-        let security$;
-        if (typeof this.options$.bearerToken === "function") {
-            security$ = { bearerToken: await this.options$.bearerToken() };
-        } else if (this.options$.bearerToken) {
-            security$ = { bearerToken: this.options$.bearerToken };
-        } else {
-            security$ = {};
-        }
+        const security$ =
+            typeof this.options$.security === "function"
+                ? await this.options$.security()
+                : this.options$.security;
+
         const context = {
             operationID: "createOrTransferDomain",
             oAuth2Scopes: [],
-            securitySource: this.options$.bearerToken,
+            securitySource: this.options$.security,
         };
         const securitySettings$ = this.resolveGlobalSecurity(security$);
 
@@ -896,18 +872,15 @@ export class Domains extends ClientSDK {
             .filter(Boolean)
             .join("&");
 
-        let security$;
-        if (typeof this.options$.bearerToken === "function") {
-            security$ = { bearerToken: await this.options$.bearerToken() };
-        } else if (this.options$.bearerToken) {
-            security$ = { bearerToken: this.options$.bearerToken };
-        } else {
-            security$ = {};
-        }
+        const security$ =
+            typeof this.options$.security === "function"
+                ? await this.options$.security()
+                : this.options$.security;
+
         const context = {
             operationID: "patchDomain",
             oAuth2Scopes: [],
-            securitySource: this.options$.bearerToken,
+            securitySource: this.options$.security,
         };
         const securitySettings$ = this.resolveGlobalSecurity(security$);
 
@@ -1001,18 +974,15 @@ export class Domains extends ClientSDK {
             .filter(Boolean)
             .join("&");
 
-        let security$;
-        if (typeof this.options$.bearerToken === "function") {
-            security$ = { bearerToken: await this.options$.bearerToken() };
-        } else if (this.options$.bearerToken) {
-            security$ = { bearerToken: this.options$.bearerToken };
-        } else {
-            security$ = {};
-        }
+        const security$ =
+            typeof this.options$.security === "function"
+                ? await this.options$.security()
+                : this.options$.security;
+
         const context = {
             operationID: "deleteDomain",
             oAuth2Scopes: [],
-            securitySource: this.options$.bearerToken,
+            securitySource: this.options$.security,
         };
         const securitySettings$ = this.resolveGlobalSecurity(security$);
 

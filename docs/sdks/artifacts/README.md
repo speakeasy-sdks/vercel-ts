@@ -21,7 +21,9 @@ import { Vercel } from "vercel";
 import { Event, Source } from "vercel/models/operations";
 
 const vercel = new Vercel({
-  bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
+  security: {
+    bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
+  },
 });
 
 async function run() {
@@ -74,7 +76,9 @@ Check the status of Remote Caching for this principal. Returns a JSON-encoded st
 import { Vercel } from "vercel";
 
 const vercel = new Vercel({
-  bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
+  security: {
+    bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
+  },
 });
 
 async function run() {
@@ -116,7 +120,9 @@ Uploads a cache artifact identified by the `hash` specified on the path. The cac
 import { Vercel } from "vercel";
 
 const vercel = new Vercel({
-  bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
+  security: {
+    bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
+  },
 });
 
 async function run() {
@@ -164,7 +170,9 @@ Downloads a cache artifact indentified by its `hash` specified on the request pa
 import { Vercel } from "vercel";
 
 const vercel = new Vercel({
-  bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
+  security: {
+    bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
+  },
 });
 
 async function run() {
@@ -209,7 +217,9 @@ Check that a cache artifact with the given `hash` exists. This request returns r
 import { Vercel } from "vercel";
 
 const vercel = new Vercel({
-  bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
+  security: {
+    bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
+  },
 });
 
 async function run() {
@@ -252,7 +262,9 @@ Query information about an array of artifacts.
 import { Vercel } from "vercel";
 
 const vercel = new Vercel({
-  bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
+  security: {
+    bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
+  },
 });
 
 async function run() {

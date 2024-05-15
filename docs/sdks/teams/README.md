@@ -28,7 +28,9 @@ import { Vercel } from "vercel";
 import { QueryParamRole } from "vercel/models/operations";
 
 const vercel = new Vercel({
-  bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
+  security: {
+    bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
+  },
 });
 
 async function run() {
@@ -76,7 +78,9 @@ import { Vercel } from "vercel";
 import { InviteUserToTeamRole, Role } from "vercel/models/operations";
 
 const vercel = new Vercel({
-  bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
+  security: {
+    bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
+  },
 });
 
 async function run() {
@@ -129,7 +133,9 @@ import { Vercel } from "vercel";
 import { Origin } from "vercel/models/operations";
 
 const vercel = new Vercel({
-  bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
+  security: {
+    bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
+  },
 });
 
 async function run() {
@@ -180,7 +186,9 @@ Check the status of a join request. It'll respond with a 404 if the request has 
 import { Vercel } from "vercel";
 
 const vercel = new Vercel({
-  bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
+  security: {
+    bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
+  },
 });
 
 async function run() {
@@ -222,7 +230,9 @@ Join a team with a provided invite code or team ID.
 import { Vercel } from "vercel";
 
 const vercel = new Vercel({
-  bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
+  security: {
+    bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
+  },
 });
 
 async function run() {
@@ -267,7 +277,9 @@ import { Vercel } from "vercel";
 import { UpdateTeamMemberRole } from "vercel/models/operations";
 
 const vercel = new Vercel({
-  bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
+  security: {
+    bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
+  },
 });
 
 async function run() {
@@ -319,7 +331,9 @@ Remove a Team Member from the Team, or dismiss a user that requested access, or 
 import { Vercel } from "vercel";
 
 const vercel = new Vercel({
-  bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
+  security: {
+    bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
+  },
 });
 
 async function run() {
@@ -362,7 +376,9 @@ Get information for the Team specified by the `teamId` parameter.
 import { Vercel } from "vercel";
 
 const vercel = new Vercel({
-  bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
+  security: {
+    bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
+  },
 });
 
 async function run() {
@@ -404,7 +420,9 @@ Update the information of a Team specified by the `teamId` parameter. The reques
 import { Vercel } from "vercel";
 
 const vercel = new Vercel({
-  bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
+  security: {
+    bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
+  },
 });
 
 async function run() {
@@ -463,7 +481,9 @@ Get a paginated list of all the Teams the authenticated User is a member of.
 import { Vercel } from "vercel";
 
 const vercel = new Vercel({
-  bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
+  security: {
+    bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
+  },
 });
 
 async function run() {
@@ -506,7 +526,9 @@ Create a new Team under your account. You need to send a POST request with the d
 import { Vercel } from "vercel";
 
 const vercel = new Vercel({
-  bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
+  security: {
+    bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
+  },
 });
 
 async function run() {
@@ -550,7 +572,9 @@ Delete a team under your account. You need to send a `DELETE` request with the d
 import { Vercel } from "vercel";
 
 const vercel = new Vercel({
-  bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
+  security: {
+    bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
+  },
 });
 
 async function run() {
@@ -594,7 +618,9 @@ Delete an active Team invite code.
 import { Vercel } from "vercel";
 
 const vercel = new Vercel({
-  bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
+  security: {
+    bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
+  },
 });
 
 async function run() {

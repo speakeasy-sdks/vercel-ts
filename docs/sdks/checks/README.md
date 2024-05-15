@@ -19,7 +19,9 @@ Creates a new check. This endpoint must be called with an OAuth2 or it will prod
 import { Vercel } from "vercel";
 
 const vercel = new Vercel({
-  bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
+  security: {
+    bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
+  },
 });
 
 async function run() {
@@ -70,7 +72,9 @@ List all of the checks created for a deployment.
 import { Vercel } from "vercel";
 
 const vercel = new Vercel({
-  bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
+  security: {
+    bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
+  },
 });
 
 async function run() {
@@ -113,7 +117,9 @@ Return a detailed response for a single check.
 import { Vercel } from "vercel";
 
 const vercel = new Vercel({
-  bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
+  security: {
+    bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
+  },
 });
 
 async function run() {
@@ -164,7 +170,9 @@ import {
 } from "vercel/models/operations";
 
 const vercel = new Vercel({
-  bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
+  security: {
+    bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
+  },
 });
 
 async function run() {
@@ -243,7 +251,9 @@ Rerequest a selected check that has failed.
 import { Vercel } from "vercel";
 
 const vercel = new Vercel({
-  bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
+  security: {
+    bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
+  },
 });
 
 async function run() {

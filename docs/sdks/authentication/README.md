@@ -20,7 +20,9 @@ Retrieve a list of the current User's authentication tokens.
 import { Vercel } from "vercel";
 
 const vercel = new Vercel({
-  bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
+  security: {
+    bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
+  },
 });
 
 async function run() {
@@ -61,7 +63,9 @@ import { Vercel } from "vercel";
 import { CreateAuthTokenRequestBodyType } from "vercel/models/operations";
 
 const vercel = new Vercel({
-  bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
+  security: {
+    bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
+  },
 });
 
 async function run() {
@@ -107,7 +111,9 @@ Retrieve metadata about an authentication token belonging to the currently authe
 import { Vercel } from "vercel";
 
 const vercel = new Vercel({
-  bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
+  security: {
+    bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
+  },
 });
 
 async function run() {
@@ -148,7 +154,9 @@ Invalidate an authentication token, such that it will no longer be valid for fut
 import { Vercel } from "vercel";
 
 const vercel = new Vercel({
-  bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
+  security: {
+    bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
+  },
 });
 
 async function run() {

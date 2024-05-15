@@ -19,7 +19,9 @@ import { Vercel } from "vercel";
 import { Events } from "vercel/models/operations";
 
 const vercel = new Vercel({
-  bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
+  security: {
+    bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
+  },
 });
 
 async function run() {
@@ -67,7 +69,9 @@ Get a list of webhooks
 import { Vercel } from "vercel";
 
 const vercel = new Vercel({
-  bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
+  security: {
+    bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
+  },
 });
 
 async function run() {
@@ -110,7 +114,9 @@ Get a webhook
 import { Vercel } from "vercel";
 
 const vercel = new Vercel({
-  bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
+  security: {
+    bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
+  },
 });
 
 async function run() {
@@ -153,7 +159,9 @@ Deletes a webhook
 import { Vercel } from "vercel";
 
 const vercel = new Vercel({
-  bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
+  security: {
+    bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
+  },
 });
 
 async function run() {

@@ -1,4 +1,4 @@
-# vercel
+# Vercel TypeScript SDK
 
 <div align="left">
     <a href="https://speakeasyapi.dev/"><img src="https://custom-icon-badges.demolab.com/badge/-Built%20By%20Speakeasy-212015?style=for-the-badge&logoColor=FBE331&logo=speakeasy&labelColor=545454" /></a>
@@ -6,15 +6,6 @@
         <img src="https://img.shields.io/badge/License-MIT-blue.svg" style="width: 100px; height: 28px;" />
     </a>
 </div>
-
-
-## 🏗 **Welcome to your new SDK!** 🏗
-
-It has been generated successfully based on your OpenAPI spec. However, it is not yet ready for production use. Here are some next steps:
-- [ ] 🛠 Make your SDK feel handcrafted by [customizing it](https://www.speakeasyapi.dev/docs/customize-sdks)
-- [ ] ♻️ Refine your SDK quickly by iterating locally with the [Speakeasy CLI](https://github.com/speakeasy-api/speakeasy)
-- [ ] 🎁 Publish your SDK to package managers by [configuring automatic publishing](https://www.speakeasyapi.dev/docs/advanced-setup/publish-sdks)
-- [ ] ✨ When ready to productionize, delete this section from the README
 
 <!-- Start SDK Installation [installation] -->
 ## SDK Installation
@@ -261,7 +252,9 @@ Certain SDK methods accept files as part of a multi-part request. It is possible
 import { Vercel } from "vercel";
 
 const vercel = new Vercel({
-    bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
+    security: {
+        bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
+    },
 });
 
 async function run() {
@@ -436,18 +429,21 @@ const sdk = new Vercel({ httpClient });
 
 ### Per-Client Security Schemes
 
-This SDK supports the following security scheme globally:
+This SDK supports the following security schemes globally:
 
 | Name          | Type          | Scheme        |
 | ------------- | ------------- | ------------- |
 | `bearerToken` | http          | HTTP Bearer   |
+| `oauth2`      | oauth2        | OAuth2 token  |
 
-To authenticate with the API the `bearerToken` parameter must be set when initializing the SDK client instance. For example:
+You can set the security parameters through the `security` optional parameter when initializing the SDK client instance. The selected scheme will be used by default to authenticate with the API for all operations that support it. For example:
 ```typescript
 import { Vercel } from "vercel";
 
 const vercel = new Vercel({
-    bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
+    security: {
+        bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
+    },
 });
 
 async function run() {

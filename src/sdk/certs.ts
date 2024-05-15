@@ -78,18 +78,15 @@ export class Certs extends ClientSDK {
             .filter(Boolean)
             .join("&");
 
-        let security$;
-        if (typeof this.options$.bearerToken === "function") {
-            security$ = { bearerToken: await this.options$.bearerToken() };
-        } else if (this.options$.bearerToken) {
-            security$ = { bearerToken: this.options$.bearerToken };
-        } else {
-            security$ = {};
-        }
+        const security$ =
+            typeof this.options$.security === "function"
+                ? await this.options$.security()
+                : this.options$.security;
+
         const context = {
             operationID: "getCertById",
             oAuth2Scopes: [],
-            securitySource: this.options$.bearerToken,
+            securitySource: this.options$.security,
         };
         const securitySettings$ = this.resolveGlobalSecurity(security$);
 
@@ -177,18 +174,15 @@ export class Certs extends ClientSDK {
             .filter(Boolean)
             .join("&");
 
-        let security$;
-        if (typeof this.options$.bearerToken === "function") {
-            security$ = { bearerToken: await this.options$.bearerToken() };
-        } else if (this.options$.bearerToken) {
-            security$ = { bearerToken: this.options$.bearerToken };
-        } else {
-            security$ = {};
-        }
+        const security$ =
+            typeof this.options$.security === "function"
+                ? await this.options$.security()
+                : this.options$.security;
+
         const context = {
             operationID: "removeCert",
             oAuth2Scopes: [],
-            securitySource: this.options$.bearerToken,
+            securitySource: this.options$.security,
         };
         const securitySettings$ = this.resolveGlobalSecurity(security$);
 
@@ -274,18 +268,15 @@ export class Certs extends ClientSDK {
             .filter(Boolean)
             .join("&");
 
-        let security$;
-        if (typeof this.options$.bearerToken === "function") {
-            security$ = { bearerToken: await this.options$.bearerToken() };
-        } else if (this.options$.bearerToken) {
-            security$ = { bearerToken: this.options$.bearerToken };
-        } else {
-            security$ = {};
-        }
+        const security$ =
+            typeof this.options$.security === "function"
+                ? await this.options$.security()
+                : this.options$.security;
+
         const context = {
             operationID: "issueCert",
             oAuth2Scopes: [],
-            securitySource: this.options$.bearerToken,
+            securitySource: this.options$.security,
         };
         const securitySettings$ = this.resolveGlobalSecurity(security$);
 
@@ -374,18 +365,15 @@ export class Certs extends ClientSDK {
             .filter(Boolean)
             .join("&");
 
-        let security$;
-        if (typeof this.options$.bearerToken === "function") {
-            security$ = { bearerToken: await this.options$.bearerToken() };
-        } else if (this.options$.bearerToken) {
-            security$ = { bearerToken: this.options$.bearerToken };
-        } else {
-            security$ = {};
-        }
+        const security$ =
+            typeof this.options$.security === "function"
+                ? await this.options$.security()
+                : this.options$.security;
+
         const context = {
             operationID: "uploadCert",
             oAuth2Scopes: [],
-            securitySource: this.options$.bearerToken,
+            securitySource: this.options$.security,
         };
         const securitySettings$ = this.resolveGlobalSecurity(security$);
 

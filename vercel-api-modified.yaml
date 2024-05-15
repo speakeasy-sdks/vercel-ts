@@ -13,6 +13,9 @@ info:
 servers:
   - url: https://api.vercel.com
     description: Production API
+security:
+  - bearerToken: []
+  - oauth2: []
 paths:
   "/v8/artifacts/events":
     post:

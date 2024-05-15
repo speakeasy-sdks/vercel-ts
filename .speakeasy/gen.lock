@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 08d4af4d-7f06-4aa7-83b0-4bcfdb3dadd5
 management:
-  docChecksum: 1f7f687b773405f9a18d858c423cd347
+  docChecksum: 1aa12e92b7948d31042637be1c489c59
   docVersion: 0.0.1
   speakeasyVersion: 1.291.0
   generationVersion: 2.332.4
-  releaseVersion: 0.0.2
-  configChecksum: adc95a2d4b1541ff00300ef983aad3c9
+  releaseVersion: 0.1.0
+  configChecksum: 24d5d31034f9cad655291ea1246b6c51
 features:
   typescript:
     acceptHeaders: 2.81.2
@@ -19,7 +19,6 @@ features:
     flattening: 2.81.1
     globalSecurity: 2.82.9
     globalSecurityCallbacks: 0.1.0
-    globalSecurityFlattening: 0.1.0
     globalServerURLs: 2.82.4
     nullables: 0.1.0
     responseFormat: 0.2.3

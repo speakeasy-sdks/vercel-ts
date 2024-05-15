@@ -1,6 +1,6 @@
 {
   "name": "vercel",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "author": "Speakeasy",  
   "main": "./index.js",
   "sideEffects": false,
