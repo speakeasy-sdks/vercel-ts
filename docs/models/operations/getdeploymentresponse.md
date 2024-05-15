@@ -1,0 +1,9 @@
+# GetDeploymentResponse
+
+
+## Fields
+
+| Field                                                                                                         | Type                                                                                                          | Required                                                                                                      | Description                                                                                                   |
+| ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
+| `httpMeta`                                                                                                    | [components.HTTPMetadata](../../models/components/httpmetadata.md)                                            | :heavy_check_mark:                                                                                            | N/A                                                                                                           |
+| `oneOf`                                                                                                       | *operations.GetDeploymentResponseBody*                                                                        | :heavy_minus_sign:                                                                                            | The deployment including only public information<br/>The deployment including both public and private information |

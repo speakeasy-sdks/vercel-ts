@@ -1,0 +1,9 @@
+# ListDeploymentAliasesResponse
+
+
+## Fields
+
+| Field                                                                                                        | Type                                                                                                         | Required                                                                                                     | Description                                                                                                  |
+| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
+| `httpMeta`                                                                                                   | [components.HTTPMetadata](../../models/components/httpmetadata.md)                                           | :heavy_check_mark:                                                                                           | N/A                                                                                                          |
+| `object`                                                                                                     | [operations.ListDeploymentAliasesResponseBody](../../models/operations/listdeploymentaliasesresponsebody.md) | :heavy_minus_sign:                                                                                           | The list of aliases assigned to the deployment                                                               |

@@ -1,0 +1,18 @@
+# ReadyState
+
+The state of the deployment depending on the process of deploying, or if it is ready or in an error state
+
+
+## Values
+
+| Name           | Value          |
+| -------------- | -------------- |
+| `Initializing` | INITIALIZING   |
+| `Building`     | BUILDING       |
+| `Uploading`    | UPLOADING      |
+| `Deploying`    | DEPLOYING      |
+| `Ready`        | READY          |
+| `Archived`     | ARCHIVED       |
+| `Error`        | ERROR          |
+| `Queued`       | QUEUED         |
+| `Canceled`     | CANCELED       |

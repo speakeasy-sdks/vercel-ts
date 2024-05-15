@@ -1,0 +1,14 @@
+# CreateProjectNodeVersion
+
+
+## Values
+
+| Name        | Value       |
+| ----------- | ----------- |
+| `TwentyX`   | 20.x        |
+| `EighteenX` | 18.x        |
+| `SixteenX`  | 16.x        |
+| `FourteenX` | 14.x        |
+| `TwelveX`   | 12.x        |
+| `TenX`      | 10.x        |
+| `Eight10X`  | 8.10.x      |

@@ -1,0 +1,10 @@
+# BuyDomainResponse
+
+
+## Fields
+
+| Field                                                                                              | Type                                                                                               | Required                                                                                           | Description                                                                                        |
+| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| `httpMeta`                                                                                         | [components.HTTPMetadata](../../models/components/httpmetadata.md)                                 | :heavy_check_mark:                                                                                 | N/A                                                                                                |
+| `twoHundredAndOneApplicationJsonObject`                                                            | [operations.BuyDomainResponseBody](../../models/operations/buydomainresponsebody.md)               | :heavy_minus_sign:                                                                                 | Successful response for purchasing a Domain.                                                       |
+| `twoHundredAndTwoApplicationJsonObject`                                                            | [operations.BuyDomainDomainsResponseBody](../../models/operations/buydomaindomainsresponsebody.md) | :heavy_minus_sign:                                                                                 | Domain purchase is being processed asynchronously.                                                 |

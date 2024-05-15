@@ -1,0 +1,11 @@
+# AddProjectMemberRequestBody2
+
+
+## Fields
+
+| Field                                                                    | Type                                                                     | Required                                                                 | Description                                                              | Example                                                                  |
+| ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ |
+| `uid`                                                                    | *string*                                                                 | :heavy_minus_sign:                                                       | The ID of the team member that should be added to this project.          | ndlgr43fadlPyCtREAqxxdyFK                                                |
+| `username`                                                               | *string*                                                                 | :heavy_check_mark:                                                       | The username of the team member that should be added to this project.    | example                                                                  |
+| `email`                                                                  | *string*                                                                 | :heavy_minus_sign:                                                       | The email of the team member that should be added to this project.       | entity@example.com                                                       |
+| `role`                                                                   | [operations.RequestBodyRole](../../models/operations/requestbodyrole.md) | :heavy_check_mark:                                                       | The project role of the member that will be added.                       | ADMIN                                                                    |

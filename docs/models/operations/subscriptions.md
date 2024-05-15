@@ -1,0 +1,13 @@
+# Subscriptions
+
+
+## Fields
+
+| Field                                                                      | Type                                                                       | Required                                                                   | Description                                                                |
+| -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
+| `id`                                                                       | *string*                                                                   | :heavy_check_mark:                                                         | N/A                                                                        |
+| `trial`                                                                    | [operations.CreateTeamTrial](../../models/operations/createteamtrial.md)   | :heavy_check_mark:                                                         | N/A                                                                        |
+| `period`                                                                   | [operations.CreateTeamPeriod](../../models/operations/createteamperiod.md) | :heavy_check_mark:                                                         | N/A                                                                        |
+| `frequency`                                                                | [operations.Frequency](../../models/operations/frequency.md)               | :heavy_check_mark:                                                         | N/A                                                                        |
+| `discount`                                                                 | [operations.Discount](../../models/operations/discount.md)                 | :heavy_check_mark:                                                         | N/A                                                                        |
+| `items`                                                                    | [operations.Items](../../models/operations/items.md)[]                     | :heavy_check_mark:                                                         | N/A                                                                        |

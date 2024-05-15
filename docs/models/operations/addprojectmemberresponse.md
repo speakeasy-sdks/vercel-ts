@@ -1,0 +1,9 @@
+# AddProjectMemberResponse
+
+
+## Fields
+
+| Field                                                                                              | Type                                                                                               | Required                                                                                           | Description                                                                                        |
+| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| `httpMeta`                                                                                         | [components.HTTPMetadata](../../models/components/httpmetadata.md)                                 | :heavy_check_mark:                                                                                 | N/A                                                                                                |
+| `object`                                                                                           | [operations.AddProjectMemberResponseBody](../../models/operations/addprojectmemberresponsebody.md) | :heavy_minus_sign:                                                                                 | Responds with the project ID on success.                                                           |
