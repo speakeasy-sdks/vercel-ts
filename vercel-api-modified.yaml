@@ -27029,9 +27029,7 @@ paths:
                     - CONTRIBUTOR
                   default: MEMBER
                   description: The role of the user to invite
-                  examples:
-                    - MEMBER
-                    - VIEWER
+                  example: MEMBER
                 projects:
                   type: array
                   items:
