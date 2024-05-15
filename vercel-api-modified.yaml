@@ -27029,7 +27029,7 @@ paths:
                     - CONTRIBUTOR
                   default: MEMBER
                   description: The role of the user to invite
-                  example:
+                  examples:
                     - MEMBER
                     - VIEWER
                 projects:
