@@ -1,0 +1,949 @@
+overlay: 1.0.0
+info:
+  title: Overlay ./vercel-api.yaml => ./vercel-api-modified.yaml
+  version: 0.0.0
+actions:
+  - target: $
+    update:
+      security:
+        - bearerToken: []
+        - oauth2: []
+  - target: $["paths"]["/deployments/{deploymentId}/builds"]["get"]
+    update:
+      operationId: getDeploymentBuilds
+  - target: $["paths"]["/data-cache/purge-all"]["delete"]
+    update:
+      operationId: purgeDataCache
+  - target: $["paths"]["/data-cache/billing-settings"]["patch"]
+    update:
+      operationId: updateBillingSettings
+  - target: $["paths"]["/v1/data-cache/projects/{projectId}"]["patch"]["responses"]["200"]["content"]["application/json"]["schema"]["properties"]["env"]["items"]["properties"]["target"]["oneOf"][0]["items"]["enum"][*]
+    remove: true
+  - target: $["paths"]["/v1/data-cache/projects/{projectId}"]["patch"]["responses"]["200"]["content"]["application/json"]["schema"]["properties"]["env"]["items"]["properties"]["target"]["oneOf"][0]["items"]["enum"]
+    update:
+      - production
+      - preview
+      - development
+  - target: $["paths"]["/v1/data-cache/projects/{projectId}"]["patch"]["responses"]["200"]["content"]["application/json"]["schema"]["properties"]["env"]["items"]["properties"]["target"]["oneOf"][1]["enum"][*]
+    remove: true
+  - target: $["paths"]["/v1/data-cache/projects/{projectId}"]["patch"]["responses"]["200"]["content"]["application/json"]["schema"]["properties"]["env"]["items"]["properties"]["target"]["oneOf"][1]["enum"]
+    update:
+      - production
+      - preview
+      - development
+  - target: $["paths"]["/v13/deployments"]["post"]["parameters"][*]
+    remove: true
+  - target: $["paths"]["/v13/deployments"]["post"]["parameters"]
+    update:
+      - name: forceNew
+        description: Forces a new deployment even if there is a previous similar deployment
+        in: query
+        schema:
+          type: string
+          enum:
+            - "0"
+            - "1"
+      - name: skipAutoDetectionConfirmation
+        description: Allows to skip framework detection so the API would not fail to ask for confirmation
+        in: query
+        schema:
+          type: string
+          enum:
+            - "0"
+            - "1"
+      - description: The Team identifier to perform the request on behalf of.
+        in: query
+        name: teamId
+        schema:
+          type: string
+      - description: The Team slug to perform the request on behalf of.
+        in: query
+        name: slug
+        schema:
+          type: string
+  - target: $["paths"]["/v2/domains/{domain}/records"]["post"]["requestBody"]["content"]["application/json"]["schema"]["anyOf"][6]["properties"]["name"]["name"]
+    remove: true
+  - target: $["paths"]["/v2/domains/{domain}/records"]["post"]["requestBody"]["content"]["application/json"]["schema"]["anyOf"][6]["properties"]["srv"]["properties"]["priority"]
+    update:
+      type: number
+  - target: $["paths"]["/v2/domains/{domain}/records"]["post"]["requestBody"]["content"]["application/json"]["schema"]["anyOf"][6]["properties"]["srv"]["properties"]["priority"]
+    update:
+      nullable: true
+  - target: $["paths"]["/v2/domains/{domain}/records"]["post"]["requestBody"]["content"]["application/json"]["schema"]["anyOf"][6]["properties"]["srv"]["properties"]["priority"]
+    update:
+      minimum: 0
+  - target: $["paths"]["/v2/domains/{domain}/records"]["post"]["requestBody"]["content"]["application/json"]["schema"]["anyOf"][6]["properties"]["srv"]["properties"]["priority"]
+    update:
+      maximum: 65535
+  - target: $["paths"]["/v2/domains/{domain}/records"]["post"]["requestBody"]["content"]["application/json"]["schema"]["anyOf"][6]["properties"]["srv"]["properties"]["priority"]
+    update:
+      example: 10
+  - target: $["paths"]["/v2/domains/{domain}/records"]["post"]["requestBody"]["content"]["application/json"]["schema"]["anyOf"][6]["properties"]["srv"]["properties"]["priority"]["anyOf"]
+    remove: true
+  - target: $["paths"]["/v2/domains/{domain}/records"]["post"]["requestBody"]["content"]["application/json"]["schema"]["anyOf"][6]["properties"]["srv"]["properties"]["weight"]
+    update:
+      type: number
+  - target: $["paths"]["/v2/domains/{domain}/records"]["post"]["requestBody"]["content"]["application/json"]["schema"]["anyOf"][6]["properties"]["srv"]["properties"]["weight"]
+    update:
+      nullable: true
+  - target: $["paths"]["/v2/domains/{domain}/records"]["post"]["requestBody"]["content"]["application/json"]["schema"]["anyOf"][6]["properties"]["srv"]["properties"]["weight"]
+    update:
+      minimum: 0
+  - target: $["paths"]["/v2/domains/{domain}/records"]["post"]["requestBody"]["content"]["application/json"]["schema"]["anyOf"][6]["properties"]["srv"]["properties"]["weight"]
+    update:
+      maximum: 65535
+  - target: $["paths"]["/v2/domains/{domain}/records"]["post"]["requestBody"]["content"]["application/json"]["schema"]["anyOf"][6]["properties"]["srv"]["properties"]["weight"]
+    update:
+      example: 10
+  - target: $["paths"]["/v2/domains/{domain}/records"]["post"]["requestBody"]["content"]["application/json"]["schema"]["anyOf"][6]["properties"]["srv"]["properties"]["weight"]["anyOf"]
+    remove: true
+  - target: $["paths"]["/v2/domains/{domain}/records"]["post"]["requestBody"]["content"]["application/json"]["schema"]["anyOf"][6]["properties"]["srv"]["properties"]["port"]
+    update:
+      type: number
+  - target: $["paths"]["/v2/domains/{domain}/records"]["post"]["requestBody"]["content"]["application/json"]["schema"]["anyOf"][6]["properties"]["srv"]["properties"]["port"]
+    update:
+      nullable: true
+  - target: $["paths"]["/v2/domains/{domain}/records"]["post"]["requestBody"]["content"]["application/json"]["schema"]["anyOf"][6]["properties"]["srv"]["properties"]["port"]
+    update:
+      minimum: 0
+  - target: $["paths"]["/v2/domains/{domain}/records"]["post"]["requestBody"]["content"]["application/json"]["schema"]["anyOf"][6]["properties"]["srv"]["properties"]["port"]
+    update:
+      maximum: 65535
+  - target: $["paths"]["/v2/domains/{domain}/records"]["post"]["requestBody"]["content"]["application/json"]["schema"]["anyOf"][6]["properties"]["srv"]["properties"]["port"]
+    update:
+      example: 5000
+  - target: $["paths"]["/v2/domains/{domain}/records"]["post"]["requestBody"]["content"]["application/json"]["schema"]["anyOf"][6]["properties"]["srv"]["properties"]["port"]["anyOf"]
+    remove: true
+  - target: $["paths"]["/v2/domains/{domain}/records"]["post"]["requestBody"]["content"]["application/json"]["schema"]["anyOf"][6]["additionalProperties"]
+    remove: true
+  - target: $["paths"]["/v2/domains/{domain}/records"]["post"]["requestBody"]["content"]["application/json"]["schema"]["anyOf"][7]["properties"]["name"]["name"]
+    remove: true
+  - target: $["paths"]["/v2/domains/{domain}/records"]["post"]["requestBody"]["content"]["application/json"]["schema"]["anyOf"][9]["properties"]["name"]["name"]
+    remove: true
+  - target: $["paths"]["/v2/domains/{domain}/records"]["post"]["requestBody"]["content"]["application/json"]["schema"]["anyOf"][9]["properties"]["https"]["properties"]["priority"]
+    update:
+      type: number
+  - target: $["paths"]["/v2/domains/{domain}/records"]["post"]["requestBody"]["content"]["application/json"]["schema"]["anyOf"][9]["properties"]["https"]["properties"]["priority"]
+    update:
+      nullable: true
+  - target: $["paths"]["/v2/domains/{domain}/records"]["post"]["requestBody"]["content"]["application/json"]["schema"]["anyOf"][9]["properties"]["https"]["properties"]["priority"]
+    update:
+      minimum: 0
+  - target: $["paths"]["/v2/domains/{domain}/records"]["post"]["requestBody"]["content"]["application/json"]["schema"]["anyOf"][9]["properties"]["https"]["properties"]["priority"]
+    update:
+      maximum: 65535
+  - target: $["paths"]["/v2/domains/{domain}/records"]["post"]["requestBody"]["content"]["application/json"]["schema"]["anyOf"][9]["properties"]["https"]["properties"]["priority"]
+    update:
+      example: 10
+  - target: $["paths"]["/v2/domains/{domain}/records"]["post"]["requestBody"]["content"]["application/json"]["schema"]["anyOf"][9]["properties"]["https"]["properties"]["priority"]["anyOf"]
+    remove: true
+  - target: $["paths"]["/v1/domains/records/{recordId}"]["patch"]["requestBody"]["content"]["application/json"]["schema"]["properties"]["additionalProperties"]
+    remove: true
+  - target: $["paths"]["/v1/domains/{domain}/registry"]["get"]["parameters"][*]
+    remove: true
+  - target: $["paths"]["/v1/domains/{domain}/registry"]["get"]["parameters"]
+    update:
+      - description: The domain to check the transfer status for.
+        in: path
+        name: domain
+        required: true
+        schema:
+          type: string
+          example: example.com
+      - description: The Team identifier to perform the request on behalf of.
+        in: query
+        name: teamId
+        schema:
+          type: string
+      - description: The Team slug to perform the request on behalf of.
+        in: query
+        name: slug
+        schema:
+          type: string
+  - target: $["paths"]["/v3/domains/{domain}"]["patch"]["parameters"][0]
+    update:
+      required: true
+  - target: $["paths"]["/v1/edge-config"]["post"]["requestBody"]["content"]["application/json"]["schema"]["properties"]["items"]
+    update:
+      x-speakeasy-type-override: any
+  - target: $["paths"]["/v1/edge-config"]["post"]["requestBody"]["content"]["application/json"]["schema"]["properties"]["items"]["propertyNames"]
+    remove: true
+  - target: $["paths"]["/v1/edge-config"]["post"]["requestBody"]["content"]["application/json"]["schema"]["properties"]["items"]["additionalProperties"]
+    remove: true
+  - target: $["paths"]["/v1/edge-config/{edgeConfigId}/items"]["get"]["responses"]["200"]["content"]
+    remove: true
+  - target: $["paths"]["/v1/edge-config/{edgeConfigId}/items"]["patch"]["requestBody"]["content"]["application/json"]["schema"]["properties"]["items"]["items"]["oneOf"][0]["properties"]["value"]
+    update:
+      x-speakeasy-type-override: any
+  - target: $["paths"]["/v1/edge-config/{edgeConfigId}/items"]["patch"]["requestBody"]["content"]["application/json"]["schema"]["properties"]["items"]["items"]["oneOf"][0]["properties"]["value"]["oneOf"]
+    remove: true
+  - target: $["paths"]["/v1/edge-config/{edgeConfigId}/items"]["patch"]["requestBody"]["content"]["application/json"]["schema"]["properties"]["items"]["items"]["oneOf"][0]["properties"]["description"]
+    update:
+      type: string
+  - target: $["paths"]["/v1/edge-config/{edgeConfigId}/items"]["patch"]["requestBody"]["content"]["application/json"]["schema"]["properties"]["items"]["items"]["oneOf"][0]["properties"]["description"]
+    update:
+      maxLength: 512
+  - target: $["paths"]["/v1/edge-config/{edgeConfigId}/items"]["patch"]["requestBody"]["content"]["application/json"]["schema"]["properties"]["items"]["items"]["oneOf"][0]["properties"]["description"]
+    update:
+      nullable: true
+  - target: $["paths"]["/v1/edge-config/{edgeConfigId}/items"]["patch"]["requestBody"]["content"]["application/json"]["schema"]["properties"]["items"]["items"]["oneOf"][0]["properties"]["description"]["oneOf"]
+    remove: true
+  - target: $["paths"]["/v1/edge-config/{edgeConfigId}/items"]["patch"]["requestBody"]["content"]["application/json"]["schema"]["properties"]["items"]["items"]["oneOf"][0]["anyOf"][0]["properties"]["operation"]
+    update:
+      type: string
+  - target: $["paths"]["/v1/edge-config/{edgeConfigId}/items"]["patch"]["requestBody"]["content"]["application/json"]["schema"]["properties"]["items"]["items"]["oneOf"][0]["anyOf"][0]["properties"]["operation"]
+    update:
+      enum:
+        - create
+  - target: $["paths"]["/v1/edge-config/{edgeConfigId}/items"]["patch"]["requestBody"]["content"]["application/json"]["schema"]["properties"]["items"]["items"]["oneOf"][0]["anyOf"][0]["properties"]["operation"]["const"]
+    remove: true
+  - target: $["paths"]["/v1/edge-config/{edgeConfigId}/items"]["patch"]["requestBody"]["content"]["application/json"]["schema"]["properties"]["items"]["items"]["oneOf"][0]["anyOf"][3]["properties"]["operation"]
+    update:
+      enum:
+        - delete
+  - target: $["paths"]["/v1/edge-config/{edgeConfigId}/items"]["patch"]["requestBody"]["content"]["application/json"]["schema"]["properties"]["items"]["items"]["oneOf"][0]["anyOf"][3]["properties"]["operation"]["const"]
+    remove: true
+  - target: $["paths"]["/v1/edge-config/{edgeConfigId}/item/{edgeConfigItemKey}"]["get"]["responses"]["200"]["content"]
+    remove: true
+  - target: $["paths"]["/v1/integrations/git-namespaces"]["get"]["parameters"]
+    remove: true
+  - target: $["paths"]["/v1/integrations/git-namespaces"]
+    update:
+      parameters:
+        - name: host
+          description: The custom Git host if using a custom Git provider, like GitHub Enterprise Server
+          in: query
+          schema:
+            description: The custom Git host if using a custom Git provider, like GitHub Enterprise Server
+            type: string
+            example: ghes-test.now.systems
+        - name: provider
+          in: query
+          schema:
+            enum:
+              - github
+              - github-custom-host
+              - gitlab
+              - bitbucket
+        - description: The Team identifier to perform the request on behalf of.
+          in: query
+          name: teamId
+          schema:
+            type: string
+        - description: The Team slug to perform the request on behalf of.
+          in: query
+          name: slug
+          schema:
+            type: string
+  - target: $["paths"]["/v1/integrations/search-repo"]["get"]["operationId"]
+    update: listGitRepos
+  - target: $["paths"]["/v1/integrations/search-repo"]["get"]["parameters"][1]["schema"]
+    update:
+      x-speakeasy-type-override: any
+  - target: $["paths"]["/v1/integrations/search-repo"]["get"]["parameters"][1]["schema"]["type"]
+    update: string
+  - target: $["paths"]["/v1/log-drains"]["post"]["requestBody"]["content"]["application/json"]["schema"]["properties"]["samplingRate"]
+    update:
+      multipleOf: 0.01
+  - target: $["paths"]["/v1/log-drains"]["post"]["requestBody"]["content"]["application/json"]["schema"]["properties"]["samplingRate"]["multiplesOf"]
+    remove: true
+  - target: $["paths"]["/v9/projects"]["get"]["responses"]["200"]["content"]["application/json"]["schema"]["properties"]["projects"]["items"]["properties"]["env"]["items"]["properties"]["target"]["oneOf"][0]["items"]["enum"][*]
+    remove: true
+  - target: $["paths"]["/v9/projects"]["get"]["responses"]["200"]["content"]["application/json"]["schema"]["properties"]["projects"]["items"]["properties"]["env"]["items"]["properties"]["target"]["oneOf"][0]["items"]["enum"]
+    update:
+      - production
+      - preview
+      - development
+  - target: $["paths"]["/v9/projects"]["get"]["responses"]["200"]["content"]["application/json"]["schema"]["properties"]["projects"]["items"]["properties"]["env"]["items"]["properties"]["target"]["oneOf"][1]["enum"][*]
+    remove: true
+  - target: $["paths"]["/v9/projects"]["get"]["responses"]["200"]["content"]["application/json"]["schema"]["properties"]["projects"]["items"]["properties"]["env"]["items"]["properties"]["target"]["oneOf"][1]["enum"]
+    update:
+      - production
+      - preview
+      - development
+  - target: $["paths"]["/v10/projects"]["post"]["responses"]["200"]["content"]["application/json"]["schema"]["properties"]["env"]["items"]["properties"]["target"]["oneOf"][0]["items"]["enum"][*]
+    remove: true
+  - target: $["paths"]["/v10/projects"]["post"]["responses"]["200"]["content"]["application/json"]["schema"]["properties"]["env"]["items"]["properties"]["target"]["oneOf"][0]["items"]["enum"]
+    update:
+      - production
+      - preview
+      - development
+  - target: $["paths"]["/v10/projects"]["post"]["responses"]["200"]["content"]["application/json"]["schema"]["properties"]["env"]["items"]["properties"]["target"]["oneOf"][1]["enum"][*]
+    remove: true
+  - target: $["paths"]["/v10/projects"]["post"]["responses"]["200"]["content"]["application/json"]["schema"]["properties"]["env"]["items"]["properties"]["target"]["oneOf"][1]["enum"]
+    update:
+      - production
+      - preview
+      - development
+  - target: $["paths"]["/v9/projects/{idOrName}"]["get"]["responses"]["200"]["content"]["application/json"]["schema"]["properties"]["env"]["items"]["properties"]["target"]["oneOf"][0]["items"]["enum"][*]
+    remove: true
+  - target: $["paths"]["/v9/projects/{idOrName}"]["get"]["responses"]["200"]["content"]["application/json"]["schema"]["properties"]["env"]["items"]["properties"]["target"]["oneOf"][0]["items"]["enum"]
+    update:
+      - production
+      - preview
+      - development
+  - target: $["paths"]["/v9/projects/{idOrName}"]["get"]["responses"]["200"]["content"]["application/json"]["schema"]["properties"]["env"]["items"]["properties"]["target"]["oneOf"][1]["enum"][*]
+    remove: true
+  - target: $["paths"]["/v9/projects/{idOrName}"]["get"]["responses"]["200"]["content"]["application/json"]["schema"]["properties"]["env"]["items"]["properties"]["target"]["oneOf"][1]["enum"]
+    update:
+      - production
+      - preview
+      - development
+  - target: $["paths"]["/v9/projects/{idOrName}"]["patch"]["responses"]["200"]["content"]["application/json"]["schema"]["properties"]["env"]["items"]["properties"]["target"]["oneOf"][0]["items"]["enum"][*]
+    remove: true
+  - target: $["paths"]["/v9/projects/{idOrName}"]["patch"]["responses"]["200"]["content"]["application/json"]["schema"]["properties"]["env"]["items"]["properties"]["target"]["oneOf"][0]["items"]["enum"]
+    update:
+      - production
+      - preview
+      - development
+  - target: $["paths"]["/v9/projects/{idOrName}"]["patch"]["responses"]["200"]["content"]["application/json"]["schema"]["properties"]["env"]["items"]["properties"]["target"]["oneOf"][1]["enum"][*]
+    remove: true
+  - target: $["paths"]["/v9/projects/{idOrName}"]["patch"]["responses"]["200"]["content"]["application/json"]["schema"]["properties"]["env"]["items"]["properties"]["target"]["oneOf"][1]["enum"]
+    update:
+      - production
+      - preview
+      - development
+  - target: $["paths"]["/v9/projects/{idOrName}/domains/{domain}"]["patch"]["requestBody"]["content"]["application/json"]["schema"]["properties"]["redirectStatusCode"]["enum"][0]
+    update: null
+  - target: $["paths"]["/v10/projects/{idOrName}/domains"]["post"]["requestBody"]["content"]["application/json"]["schema"]["properties"]["redirectStatusCode"]["enum"][0]
+    update: null
+  - target: $["paths"]["/v9/projects/{idOrName}/env"]["get"]["responses"]["200"]["content"]["application/json"]["schema"]["oneOf"][0]["properties"]["target"]["oneOf"][0]["items"]["enum"][*]
+    remove: true
+  - target: $["paths"]["/v9/projects/{idOrName}/env"]["get"]["responses"]["200"]["content"]["application/json"]["schema"]["oneOf"][0]["properties"]["target"]["oneOf"][0]["items"]["enum"]
+    update:
+      - production
+      - preview
+      - development
+  - target: $["paths"]["/v9/projects/{idOrName}/env"]["get"]["responses"]["200"]["content"]["application/json"]["schema"]["oneOf"][0]["properties"]["target"]["oneOf"][1]["enum"][*]
+    remove: true
+  - target: $["paths"]["/v9/projects/{idOrName}/env"]["get"]["responses"]["200"]["content"]["application/json"]["schema"]["oneOf"][0]["properties"]["target"]["oneOf"][1]["enum"]
+    update:
+      - production
+      - preview
+      - development
+  - target: $["paths"]["/v9/projects/{idOrName}/env"]["get"]["responses"]["200"]["content"]["application/json"]["schema"]["oneOf"][1]["properties"]["envs"]["items"]["properties"]["target"]["oneOf"][0]["items"]["enum"][*]
+    remove: true
+  - target: $["paths"]["/v9/projects/{idOrName}/env"]["get"]["responses"]["200"]["content"]["application/json"]["schema"]["oneOf"][1]["properties"]["envs"]["items"]["properties"]["target"]["oneOf"][0]["items"]["enum"]
+    update:
+      - production
+      - preview
+      - development
+  - target: $["paths"]["/v9/projects/{idOrName}/env"]["get"]["responses"]["200"]["content"]["application/json"]["schema"]["oneOf"][1]["properties"]["envs"]["items"]["properties"]["target"]["oneOf"][1]["enum"][*]
+    remove: true
+  - target: $["paths"]["/v9/projects/{idOrName}/env"]["get"]["responses"]["200"]["content"]["application/json"]["schema"]["oneOf"][1]["properties"]["envs"]["items"]["properties"]["target"]["oneOf"][1]["enum"]
+    update:
+      - production
+      - preview
+      - development
+  - target: $["paths"]["/v9/projects/{idOrName}/env"]["get"]["responses"]["200"]["content"]["application/json"]["schema"]["oneOf"][2]["properties"]["envs"]["items"]["properties"]["target"]["oneOf"][0]["items"]["enum"][*]
+    remove: true
+  - target: $["paths"]["/v9/projects/{idOrName}/env"]["get"]["responses"]["200"]["content"]["application/json"]["schema"]["oneOf"][2]["properties"]["envs"]["items"]["properties"]["target"]["oneOf"][0]["items"]["enum"]
+    update:
+      - production
+      - preview
+      - development
+  - target: $["paths"]["/v9/projects/{idOrName}/env"]["get"]["responses"]["200"]["content"]["application/json"]["schema"]["oneOf"][2]["properties"]["envs"]["items"]["properties"]["target"]["oneOf"][1]["enum"][*]
+    remove: true
+  - target: $["paths"]["/v9/projects/{idOrName}/env"]["get"]["responses"]["200"]["content"]["application/json"]["schema"]["oneOf"][2]["properties"]["envs"]["items"]["properties"]["target"]["oneOf"][1]["enum"]
+    update:
+      - production
+      - preview
+      - development
+  - target: $["paths"]["/v1/projects/{idOrName}/env/{id}"]["get"]["responses"]["200"]["content"]["application/json"]["schema"]["oneOf"][0]["properties"]["target"]["oneOf"][0]["items"]["enum"][*]
+    remove: true
+  - target: $["paths"]["/v1/projects/{idOrName}/env/{id}"]["get"]["responses"]["200"]["content"]["application/json"]["schema"]["oneOf"][0]["properties"]["target"]["oneOf"][0]["items"]["enum"]
+    update:
+      - production
+      - preview
+      - development
+  - target: $["paths"]["/v1/projects/{idOrName}/env/{id}"]["get"]["responses"]["200"]["content"]["application/json"]["schema"]["oneOf"][0]["properties"]["target"]["oneOf"][1]["enum"][*]
+    remove: true
+  - target: $["paths"]["/v1/projects/{idOrName}/env/{id}"]["get"]["responses"]["200"]["content"]["application/json"]["schema"]["oneOf"][0]["properties"]["target"]["oneOf"][1]["enum"]
+    update:
+      - production
+      - preview
+      - development
+  - target: $["paths"]["/v1/projects/{idOrName}/env/{id}"]["get"]["responses"]["200"]["content"]["application/json"]["schema"]["oneOf"][1]["properties"]["target"]["oneOf"][0]["items"]["enum"][*]
+    remove: true
+  - target: $["paths"]["/v1/projects/{idOrName}/env/{id}"]["get"]["responses"]["200"]["content"]["application/json"]["schema"]["oneOf"][1]["properties"]["target"]["oneOf"][0]["items"]["enum"]
+    update:
+      - production
+      - preview
+      - development
+  - target: $["paths"]["/v1/projects/{idOrName}/env/{id}"]["get"]["responses"]["200"]["content"]["application/json"]["schema"]["oneOf"][1]["properties"]["target"]["oneOf"][1]["enum"][*]
+    remove: true
+  - target: $["paths"]["/v1/projects/{idOrName}/env/{id}"]["get"]["responses"]["200"]["content"]["application/json"]["schema"]["oneOf"][1]["properties"]["target"]["oneOf"][1]["enum"]
+    update:
+      - production
+      - preview
+      - development
+  - target: $["paths"]["/v10/projects/{idOrName}/env"]["post"]["responses"]["201"]["content"]["application/json"]["schema"]["properties"]["created"]["oneOf"][0]["properties"]["target"]["oneOf"][0]["items"]["enum"][*]
+    remove: true
+  - target: $["paths"]["/v10/projects/{idOrName}/env"]["post"]["responses"]["201"]["content"]["application/json"]["schema"]["properties"]["created"]["oneOf"][0]["properties"]["target"]["oneOf"][0]["items"]["enum"]
+    update:
+      - production
+      - preview
+      - development
+  - target: $["paths"]["/v10/projects/{idOrName}/env"]["post"]["responses"]["201"]["content"]["application/json"]["schema"]["properties"]["created"]["oneOf"][0]["properties"]["target"]["oneOf"][1]["enum"][*]
+    remove: true
+  - target: $["paths"]["/v10/projects/{idOrName}/env"]["post"]["responses"]["201"]["content"]["application/json"]["schema"]["properties"]["created"]["oneOf"][0]["properties"]["target"]["oneOf"][1]["enum"]
+    update:
+      - production
+      - preview
+      - development
+  - target: $["paths"]["/v10/projects/{idOrName}/env"]["post"]["responses"]["201"]["content"]["application/json"]["schema"]["properties"]["created"]["oneOf"][1]["items"]["properties"]["target"]["oneOf"][0]["items"]["enum"][*]
+    remove: true
+  - target: $["paths"]["/v10/projects/{idOrName}/env"]["post"]["responses"]["201"]["content"]["application/json"]["schema"]["properties"]["created"]["oneOf"][1]["items"]["properties"]["target"]["oneOf"][0]["items"]["enum"]
+    update:
+      - production
+      - preview
+      - development
+  - target: $["paths"]["/v10/projects/{idOrName}/env"]["post"]["responses"]["201"]["content"]["application/json"]["schema"]["properties"]["created"]["oneOf"][1]["items"]["properties"]["target"]["oneOf"][1]["enum"][*]
+    remove: true
+  - target: $["paths"]["/v10/projects/{idOrName}/env"]["post"]["responses"]["201"]["content"]["application/json"]["schema"]["properties"]["created"]["oneOf"][1]["items"]["properties"]["target"]["oneOf"][1]["enum"]
+    update:
+      - production
+      - preview
+      - development
+  - target: $["paths"]["/v10/projects/{idOrName}/env"]["post"]["responses"]["201"]["content"]["application/json"]["schema"]["properties"]["failed"]["items"]["properties"]["error"]["properties"]["value"]["oneOf"][1]["items"]["enum"][*]
+    remove: true
+  - target: $["paths"]["/v10/projects/{idOrName}/env"]["post"]["responses"]["201"]["content"]["application/json"]["schema"]["properties"]["failed"]["items"]["properties"]["error"]["properties"]["value"]["oneOf"][1]["items"]["enum"]
+    update:
+      - production
+      - preview
+      - development
+  - target: $["paths"]["/v10/projects/{idOrName}/env"]["post"]["responses"]["201"]["content"]["application/json"]["schema"]["properties"]["failed"]["items"]["properties"]["error"]["properties"]["target"]["oneOf"][0]["items"]["enum"][*]
+    remove: true
+  - target: $["paths"]["/v10/projects/{idOrName}/env"]["post"]["responses"]["201"]["content"]["application/json"]["schema"]["properties"]["failed"]["items"]["properties"]["error"]["properties"]["target"]["oneOf"][0]["items"]["enum"]
+    update:
+      - production
+      - preview
+      - development
+  - target: $["paths"]["/v10/projects/{idOrName}/env"]["post"]["responses"]["201"]["content"]["application/json"]["schema"]["properties"]["failed"]["items"]["properties"]["error"]["properties"]["target"]["oneOf"][1]["enum"][*]
+    remove: true
+  - target: $["paths"]["/v10/projects/{idOrName}/env"]["post"]["responses"]["201"]["content"]["application/json"]["schema"]["properties"]["failed"]["items"]["properties"]["error"]["properties"]["target"]["oneOf"][1]["enum"]
+    update:
+      - production
+      - preview
+      - development
+  - target: $["paths"]["/v9/projects/{idOrName}/env/{id}"]["delete"]["responses"]["200"]["content"]["application/json"]["schema"]["oneOf"][0]["items"]["properties"]["target"]["oneOf"][0]["items"]["enum"][*]
+    remove: true
+  - target: $["paths"]["/v9/projects/{idOrName}/env/{id}"]["delete"]["responses"]["200"]["content"]["application/json"]["schema"]["oneOf"][0]["items"]["properties"]["target"]["oneOf"][0]["items"]["enum"]
+    update:
+      - production
+      - preview
+      - development
+  - target: $["paths"]["/v9/projects/{idOrName}/env/{id}"]["delete"]["responses"]["200"]["content"]["application/json"]["schema"]["oneOf"][0]["items"]["properties"]["target"]["oneOf"][1]["enum"][*]
+    remove: true
+  - target: $["paths"]["/v9/projects/{idOrName}/env/{id}"]["delete"]["responses"]["200"]["content"]["application/json"]["schema"]["oneOf"][0]["items"]["properties"]["target"]["oneOf"][1]["enum"]
+    update:
+      - production
+      - preview
+      - development
+  - target: $["paths"]["/v9/projects/{idOrName}/env/{id}"]["delete"]["responses"]["200"]["content"]["application/json"]["schema"]["oneOf"][1]["properties"]["target"]["oneOf"][0]["items"]["enum"][*]
+    remove: true
+  - target: $["paths"]["/v9/projects/{idOrName}/env/{id}"]["delete"]["responses"]["200"]["content"]["application/json"]["schema"]["oneOf"][1]["properties"]["target"]["oneOf"][0]["items"]["enum"]
+    update:
+      - production
+      - preview
+      - development
+  - target: $["paths"]["/v9/projects/{idOrName}/env/{id}"]["delete"]["responses"]["200"]["content"]["application/json"]["schema"]["oneOf"][1]["properties"]["target"]["oneOf"][1]["enum"][*]
+    remove: true
+  - target: $["paths"]["/v9/projects/{idOrName}/env/{id}"]["delete"]["responses"]["200"]["content"]["application/json"]["schema"]["oneOf"][1]["properties"]["target"]["oneOf"][1]["enum"]
+    update:
+      - production
+      - preview
+      - development
+  - target: $["paths"]["/v9/projects/{idOrName}/env/{id}"]["delete"]["responses"]["200"]["content"]["application/json"]["schema"]["oneOf"][2]["properties"]["target"]["oneOf"][0]["items"]["enum"][*]
+    remove: true
+  - target: $["paths"]["/v9/projects/{idOrName}/env/{id}"]["delete"]["responses"]["200"]["content"]["application/json"]["schema"]["oneOf"][2]["properties"]["target"]["oneOf"][0]["items"]["enum"]
+    update:
+      - production
+      - preview
+      - development
+  - target: $["paths"]["/v9/projects/{idOrName}/env/{id}"]["delete"]["responses"]["200"]["content"]["application/json"]["schema"]["oneOf"][2]["properties"]["target"]["oneOf"][1]["enum"][*]
+    remove: true
+  - target: $["paths"]["/v9/projects/{idOrName}/env/{id}"]["delete"]["responses"]["200"]["content"]["application/json"]["schema"]["oneOf"][2]["properties"]["target"]["oneOf"][1]["enum"]
+    update:
+      - production
+      - preview
+      - development
+  - target: $["paths"]["/v9/projects/{idOrName}/env/{id}"]["patch"]["responses"]["200"]["content"]["application/json"]["schema"]["properties"]["target"]["oneOf"][0]["items"]["enum"][*]
+    remove: true
+  - target: $["paths"]["/v9/projects/{idOrName}/env/{id}"]["patch"]["responses"]["200"]["content"]["application/json"]["schema"]["properties"]["target"]["oneOf"][0]["items"]["enum"]
+    update:
+      - production
+      - preview
+      - development
+  - target: $["paths"]["/v9/projects/{idOrName}/env/{id}"]["patch"]["responses"]["200"]["content"]["application/json"]["schema"]["properties"]["target"]["oneOf"][1]["enum"][*]
+    remove: true
+  - target: $["paths"]["/v9/projects/{idOrName}/env/{id}"]["patch"]["responses"]["200"]["content"]["application/json"]["schema"]["properties"]["target"]["oneOf"][1]["enum"]
+    update:
+      - production
+      - preview
+      - development
+  - target: $["paths"]["/v1/projects/{projectId}/promote/aliases"]["get"]["operationId"]
+    update: getEequestPromoteAliases
+  - target: $["paths"]["/v2/teams/{teamId}/members"]["get"]["parameters"]
+    update:
+      - name: teamId
+        in: path
+        required: true
+        schema:
+          type: string
+  - target: $["paths"]["/v1/teams/{teamId}/members"]["post"]["parameters"]
+    update:
+      - name: teamId
+        in: path
+        required: true
+        schema:
+          type: string
+  - target: $["paths"]["/v1/teams/{teamId}/members"]["post"]["requestBody"]["content"]["application/json"]["schema"]["properties"]["role"]["default"]
+    update: MEMBER
+  - target: $["paths"]["/v1/teams/{teamId}/members"]["post"]["requestBody"]["content"]["application/json"]["schema"]["properties"]["role"]["example"]
+    update: MEMBER
+  - target: $["paths"]["/v1/teams/{teamId}/request"]["post"]["parameters"]
+    update:
+      - name: teamId
+        in: path
+        required: true
+        schema:
+          type: string
+  - target: $["paths"]["/v1/teams/{teamId}/request/{userId}"]["get"]["parameters"][*]
+    remove: true
+  - target: $["paths"]["/v1/teams/{teamId}/request/{userId}"]["get"]["parameters"]
+    update:
+      - name: teamId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: userId
+        in: path
+        required: true
+        schema:
+          type: string
+  - target: $["paths"]["/v1/teams/{teamId}/members/teams/join"]["post"]["parameters"]
+    update:
+      - name: teamId
+        in: path
+        required: true
+        schema:
+          type: string
+  - target: $["paths"]["/v1/teams/{teamId}/members/{uid}"]["patch"]["parameters"][*]
+    remove: true
+  - target: $["paths"]["/v1/teams/{teamId}/members/{uid}"]["patch"]["parameters"]
+    update:
+      - name: teamId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: uid
+        description: The ID of the member.
+        in: path
+        required: true
+        schema:
+          type: string
+          description: The ID of the member.
+          example: ndfasllgPyCtREAqxxdyFKb
+  - target: $["paths"]["/v1/teams/{teamId}/members/{uid}"]["patch"]["requestBody"]["content"]["application/json"]["schema"]["properties"]["projects"]["items"]["properties"]["role"]["enum"][3]
+    update: null
+  - target: $["paths"]["/v1/teams/{teamId}/members/{uid}"]["patch"]["requestBody"]["content"]["application/json"]["schema"]["properties"]["joinedFrom"]["properties"]["ssoUserId"]
+    update:
+      nullable: true
+  - target: $["paths"]["/v1/teams/{teamId}/members/{uid}"]["patch"]["requestBody"]["content"]["application/json"]["schema"]["properties"]["joinedFrom"]["properties"]["ssoUserId"]["type"]
+    remove: true
+  - target: $["paths"]["/v1/teams/{teamId}/members/{uid}"]["patch"]["requestBody"]["content"]["application/json"]["schema"]["properties"]["joinedFrom"]["additionalProperties"]
+    remove: true
+  - target: $["paths"]["/v1/teams/{teamId}/members/{uid}"]["delete"]["parameters"][*]
+    remove: true
+  - target: $["paths"]["/v1/teams/{teamId}/members/{uid}"]["delete"]["parameters"]
+    update:
+      - name: teamId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: uid
+        description: The user ID of the member.
+        in: path
+        required: true
+        schema:
+          type: string
+          description: The user ID of the member.
+          example: ndlgr43fadlPyCtREAqxxdyFK
+      - name: newDefaultTeamId
+        description: The ID of the team to set as the new default team for the Northstar user.
+        in: query
+        required: false
+        schema:
+          type: string
+          description: The ID of the team to set as the new default team for the Northstar user.
+          example: team_nllPyCtREAqxxdyFKbbMDlxd
+  - target: $["paths"]["/v2/teams/{teamId}"]["get"]["parameters"][*]
+    remove: true
+  - target: $["paths"]["/v2/teams/{teamId}"]["get"]["parameters"]
+    update:
+      - description: The Team identifier to perform the request on behalf of.
+        in: path
+        name: teamId
+        schema:
+          type: string
+        required: true
+      - description: The Team slug to perform the request on behalf of.
+        in: query
+        name: slug
+        schema:
+          type: string
+  - target: $["paths"]["/v2/teams/{teamId}"]["patch"]["requestBody"]["content"]["application/json"]["schema"]["properties"]["avatar"]
+    update:
+      pattern: "^[0-9a-f]{40}$"
+  - target: $["paths"]["/v2/teams/{teamId}"]["patch"]["requestBody"]["content"]["application/json"]["schema"]["properties"]["avatar"]["format"]
+    remove: true
+  - target: $["paths"]["/v2/teams/{teamId}"]["patch"]["requestBody"]["content"]["application/json"]["schema"]["properties"]["avatar"]["regex"]
+    remove: true
+  - target: $["paths"]["/v2/teams/{teamId}"]["patch"]["requestBody"]["content"]["application/json"]["schema"]["properties"]["emailDomain"]
+    update:
+      pattern: "\\\\b((?=[a-z0-9-]{1,63}\\\\.)(xn--)?[a-z0-9]+(-[a-z0-9]+)*\\\\.)+[a-z]{2,63}\\\\b"
+  - target: $["paths"]["/v2/teams/{teamId}"]["patch"]["requestBody"]["content"]["application/json"]["schema"]["properties"]["emailDomain"]["format"]
+    remove: true
+  - target: $["paths"]["/v2/teams/{teamId}"]["patch"]["requestBody"]["content"]["application/json"]["schema"]["properties"]["emailDomain"]["regex"]
+    remove: true
+  - target: $["paths"]["/v1/teams/{teamId}/invites/{inviteId}"]["delete"]["parameters"][*]
+    remove: true
+  - target: $["paths"]["/v1/teams/{teamId}/invites/{inviteId}"]["delete"]["parameters"]
+    update:
+      - name: teamId
+        description: the team id related to the invite code
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: inviteId
+        description: The Team invite code ID.
+        in: path
+        required: true
+        schema:
+          type: string
+          description: The Team invite code ID.
+          example: 2wn2hudbr4chb1ecywo9dvzo7g9sscs6mzcz8htdde0txyom4l
+  - target: $["paths"]["/v1/webhooks"]["post"]["responses"]["200"]["content"]["application/json"]["schema"]["properties"]["events"]["items"]
+    update:
+      x-speakeasy-enums:
+        - BUDGET_REACHED
+        - BUDGET_RESET
+        - BUDGET_CREATED
+        - DOMAIN_CREATED
+        - DEPLOYMENT_CREATED
+        - DEPLOYMENT_ERROR
+        - DEPLOYMENT_CANCELED
+        - DEPLOYMENT_SUCCEEDED
+        - DEPLOYMENT_READY
+        - DEPLOYMENT_CHECK_REREQUESTED
+        - INTEGRATION_CONFIGURATION_PERMISSION_UPGRADED
+        - INTEGRATION_CONFIGURATION_REMOVED
+        - INTEGRATION_CONFIGURATION_SCOPE_CHANGE_CONFIRMED
+        - PROJECT_CREATED
+        - PROJECT_REMOVED
+        - DEPLOYMENT_CHECKS_COMPLETED
+        - DEPLOYMENT_DASH_READY
+        - DEPLOYMENT_DASH_PREPARED
+        - DEPLOYMENT_DASH_ERROR
+        - DEPLOYMENT_DASH_CHECK_REREQUESTED
+        - DEPLOYMENT_DASH_CANCELED
+        - PROJECT_DASH_CREATED
+        - PROJECT_DASH_REMOVED
+        - DOMAIN_DASH_CREATED
+        - DEPLOYMENT
+        - INTEGRATION_CONFIGURATION_DASH_PERMISSION_UPDATED
+        - INTEGRATION_CONFIGURATION_DASH_REMOVED
+        - INTEGRATION_CONFIGURATION_DASH_SCOPE_CHANGE_CONFIRMED
+        - TEST_WEBHOOK
+  - target: $["paths"]["/v1/webhooks"]["post"]["requestBody"]["content"]["application/json"]["schema"]["properties"]["events"]["items"]
+    update:
+      x-speakeasy-enums:
+        - BUDGET_REACHED
+        - BUDGET_RESET
+        - DOMAIN_CREATED
+        - DEPLOYMENT_CREATED
+        - DEPLOYMENT_ERROR
+        - DEPLOYMENT_CANCELED
+        - DEPLOYMENT_SUCCEEDED
+        - DEPLOYMENT_READY
+        - DEPLOYMENT_CHECK_REREQUESTED
+        - INTEGRATION_CONFIGURATION_PERMISSION_UPGRADED
+        - INTEGRATION_CONFIGURATION_REMOVED
+        - INTEGRATION_CONFIGURATION_SCOPE_CHANGE_CONFIRMED
+        - PROJECT_CREATED
+        - PROJECT_REMOVED
+        - DEPLOYMENT_CHECKS_COMPLETED
+        - DEPLOYMENT_DASH_READY
+        - DEPLOYMENT_DASH_PREPARED
+        - DEPLOYMENT_DASH_ERROR
+        - DEPLOYMENT_DASH_CHECK_REREQUESTED
+        - DEPLOYMENT_DASH_CANCELED
+        - PROJECT_DASH_CREATED
+        - PROJECT_DASH_REMOVED
+        - DOMAIN_DASH_CREATED
+        - DEPLOYMENT
+        - INTEGRATION_CONFIGURATION_DASH_PERMISSION_UPDATED
+        - INTEGRATION_CONFIGURATION_DASH_REMOVED
+        - INTEGRATION_CONFIGURATION_DASH_SCOPE_CHANGE_CONFIRMED
+        - TEST_WEBHOOK
+  - target: $["paths"]["/v1/webhooks"]["get"]["responses"]["200"]["content"]["application/json"]["schema"]["oneOf"][0]["items"]["properties"]["events"]["items"]
+    update:
+      x-speakeasy-enums:
+        - BUDGET_REACHED
+        - BUDGET_RESET
+        - DOMAIN_CREATED
+        - DEPLOYMENT_CREATED
+        - DEPLOYMENT_ERROR
+        - DEPLOYMENT_CANCELED
+        - DEPLOYMENT_SUCCEEDED
+        - DEPLOYMENT_READY
+        - DEPLOYMENT_CHECK_REREQUESTED
+        - INTEGRATION_CONFIGURATION_PERMISSION_UPGRADED
+        - INTEGRATION_CONFIGURATION_REMOVED
+        - INTEGRATION_CONFIGURATION_SCOPE_CHANGE_CONFIRMED
+        - PROJECT_CREATED
+        - PROJECT_REMOVED
+        - DEPLOYMENT_CHECKS_COMPLETED
+        - DEPLOYMENT_DASH_READY
+        - DEPLOYMENT_DASH_PREPARED
+        - DEPLOYMENT_DASH_ERROR
+        - DEPLOYMENT_DASH_CHECK_REREQUESTED
+        - DEPLOYMENT_DASH_CANCELED
+        - PROJECT_DASH_CREATED
+        - PROJECT_DASH_REMOVED
+        - DOMAIN_DASH_CREATED
+        - DEPLOYMENT
+        - INTEGRATION_CONFIGURATION_DASH_PERMISSION_UPDATED
+        - INTEGRATION_CONFIGURATION_DASH_REMOVED
+        - INTEGRATION_CONFIGURATION_DASH_SCOPE_CHANGE_CONFIRMED
+        - TEST_WEBHOOK
+  - target: $["paths"]["/v1/webhooks"]["get"]["responses"]["200"]["content"]["application/json"]["schema"]["oneOf"][1]["items"]["properties"]["events"]["items"]
+    update:
+      x-speakeasy-enums:
+        - BUDGET_REACHED
+        - BUDGET_RESET
+        - DOMAIN_CREATED
+        - DEPLOYMENT_CREATED
+        - DEPLOYMENT_ERROR
+        - DEPLOYMENT_CANCELED
+        - DEPLOYMENT_SUCCEEDED
+        - DEPLOYMENT_READY
+        - DEPLOYMENT_CHECK_REREQUESTED
+        - INTEGRATION_CONFIGURATION_PERMISSION_UPGRADED
+        - INTEGRATION_CONFIGURATION_REMOVED
+        - INTEGRATION_CONFIGURATION_SCOPE_CHANGE_CONFIRMED
+        - PROJECT_CREATED
+        - PROJECT_REMOVED
+        - DEPLOYMENT_CHECKS_COMPLETED
+        - DEPLOYMENT_DASH_READY
+        - DEPLOYMENT_DASH_PREPARED
+        - DEPLOYMENT_DASH_ERROR
+        - DEPLOYMENT_DASH_CHECK_REREQUESTED
+        - DEPLOYMENT_DASH_CANCELED
+        - PROJECT_DASH_CREATED
+        - PROJECT_DASH_REMOVED
+        - DOMAIN_DASH_CREATED
+        - DEPLOYMENT
+        - INTEGRATION_CONFIGURATION_DASH_PERMISSION_UPDATED
+        - INTEGRATION_CONFIGURATION_DASH_REMOVED
+        - INTEGRATION_CONFIGURATION_DASH_SCOPE_CHANGE_CONFIRMED
+        - TEST_WEBHOOK
+  - target: $["paths"]["/v1/webhooks/{id}"]["get"]["responses"]["200"]["content"]["application/json"]["schema"]["properties"]["events"]["items"]
+    update:
+      x-speakeasy-enums:
+        - BUDGET_REACHED
+        - BUDGET_RESET
+        - DOMAIN_CREATED
+        - DEPLOYMENT_CREATED
+        - DEPLOYMENT_ERROR
+        - DEPLOYMENT_CANCELED
+        - DEPLOYMENT_SUCCEEDED
+        - DEPLOYMENT_READY
+        - DEPLOYMENT_CHECK_REREQUESTED
+        - INTEGRATION_CONFIGURATION_PERMISSION_UPGRADED
+        - INTEGRATION_CONFIGURATION_REMOVED
+        - INTEGRATION_CONFIGURATION_SCOPE_CHANGE_CONFIRMED
+        - PROJECT_CREATED
+        - PROJECT_REMOVED
+        - DEPLOYMENT_CHECKS_COMPLETED
+        - DEPLOYMENT_DASH_READY
+        - DEPLOYMENT_DASH_PREPARED
+        - DEPLOYMENT_DASH_ERROR
+        - DEPLOYMENT_DASH_CHECK_REREQUESTED
+        - DEPLOYMENT_DASH_CANCELED
+        - PROJECT_DASH_CREATED
+        - PROJECT_DASH_REMOVED
+        - DOMAIN_DASH_CREATED
+        - DEPLOYMENT
+        - INTEGRATION_CONFIGURATION_DASH_PERMISSION_UPDATED
+        - INTEGRATION_CONFIGURATION_DASH_REMOVED
+        - INTEGRATION_CONFIGURATION_DASH_SCOPE_CHANGE_CONFIRMED
+        - TEST_WEBHOOK
+  - target: $["paths"]["/v4/aliases"]["get"]["parameters"][0]["schema"]["oneOf"][0]
+    update:
+      items:
+        type: object
+        additionalProperties: {}
+  - target: $["paths"]
+    update:
+      "/v13/deployments/{id}#id":
+        delete:
+          description: This API allows you to delete a deployment, either by supplying its `id` in the URL or the `url` of the deployment as a query parameter. You can obtain the ID, for example, by listing all deployments.
+          operationId: deleteDeployment
+          security:
+            - bearerToken: []
+          summary: Delete a Deployment
+          tags:
+            - deployments
+          responses:
+            "200":
+              description: The deployment was successfully deleted
+              content:
+                application/json:
+                  schema:
+                    properties:
+                      uid:
+                        type: string
+                        description: The removed deployment ID.
+                        example: dpl_5WJWYSyB7BpgTj3EuwF37WMRBXBtPQ2iTMJHJBJyRfd
+                      state:
+                        type: string
+                        enum:
+                          - DELETED
+                        description: A constant with the final state of the deployment.
+                    required:
+                      - uid
+                      - state
+                    type: object
+            "400":
+              description: One of the provided values in the request query is invalid.
+            "401":
+              description: ""
+            "403":
+              description: You do not have permission to access this resource.
+            "404":
+              description: The deployment was not found
+          parameters:
+            - name: id
+              description: The ID of the deployment to be deleted
+              in: path
+              required: true
+              schema:
+                description: The ID of the deployment to be deleted
+                example: dpl_5WJWYSyB7BpgTj3EuwF37WMRBXBtPQ2iTMJHJBJyRfd
+                type: string
+            - name: url
+              description: A Deployment or Alias URL. In case it is passed, the ID will be ignored
+              in: query
+              required: false
+              schema:
+                description: A Deployment or Alias URL. In case it is passed, the ID will be ignored
+                example: https://files-orcin-xi.vercel.app/
+                type: string
+            - description: The Team identifier to perform the request on behalf of.
+              in: query
+              name: teamId
+              schema:
+                type: string
+            - description: The Team slug to perform the request on behalf of.
+              in: query
+              name: slug
+              schema:
+                type: string
+  - target: $["paths"]["/v2/secrets/{name}"]["post"]["parameters"][*]
+    remove: true
+  - target: $["paths"]["/v2/secrets/{name}"]["post"]["parameters"]
+    update:
+      - name: name
+        description: The name of the secret.
+        in: path
+        required: true
+        schema:
+          description: The name of the secret.
+          type: string
+          example: my-api-key
+      - description: The Team identifier to perform the request on behalf of.
+        in: query
+        name: teamId
+        schema:
+          type: string
+      - description: The Team slug to perform the request on behalf of.
+        in: query
+        name: slug
+        schema:
+          type: string
+  - target: $["paths"]
+    update:
+      "/v2/secrets/{idOrName}#idOrName":
+        delete:
+          description: This deletes the user or team’s secret defined in the URL.
+          operationId: deleteSecret
+          security:
+            - bearerToken: []
+          summary: Delete a secret
+          tags:
+            - secrets
+          responses:
+            "200":
+              description: ""
+              content:
+                application/json:
+                  schema:
+                    properties:
+                      uid:
+                        type: string
+                        description: The unique identifier of the deleted secret.
+                        example: sec_XCG7t7AIHuO2SBA8667zNUiM
+                      name:
+                        type: string
+                        description: The name of the deleted secret.
+                        example: my-api-key
+                      created:
+                        type: number
+                        description: The date when the secret was created.
+                        example: "2021-02-10T13:11:49.180Z"
+                    required:
+                      - uid
+                      - name
+                      - created
+                    type: object
+            "400":
+              description: One of the provided values in the request query is invalid.
+            "401":
+              description: ""
+            "403":
+              description: You do not have permission to access this resource.
+            "410":
+              description: ""
+          parameters:
+            - name: idOrName
+              description: The name or the unique identifier to which the secret belongs to.
+              in: path
+              required: true
+              schema:
+                description: The name or the unique identifier to which the secret belongs to.
+                type: string
+                example: sec_RKc5iV0rV3ZSrFrHiruRno7k
+            - description: The Team identifier to perform the request on behalf of.
+              in: query
+              name: teamId
+              schema:
+                type: string
+            - description: The Team slug to perform the request on behalf of.
+              in: query
+              name: slug
+              schema:
+                type: string
+  - target: $["paths"]["/v13/deployments/{id}"]
+    remove: true
+  - target: $["paths"]["/v2/secrets/{idOrName}"]
+    remove: true
+  - target: $["components"]["schemas"]["EdgeConfigItemValue"]
+    remove: true
+  - target: $["components"]["schemas"]["EdgeConfigItem"]
+    remove: true
