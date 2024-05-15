@@ -27027,9 +27027,7 @@ paths:
                     - BILLING
                     - VIEWER
                     - CONTRIBUTOR
-                  default:
-                    - MEMBER
-                    - VIEWER
+                  default: MEMBER
                   description: The role of the user to invite
                   example:
                     - MEMBER
