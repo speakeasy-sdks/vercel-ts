@@ -10930,10 +10930,10 @@ paths:
       responses:
         "200":
           description: The EdgeConfig.
-          content:
-            application/json:
-              schema:
-                "$ref": "#/components/schemas/EdgeConfigItem"
+          # content:
+          #   application/json:
+          #     schema:
+          #       "$ref": "#/components/schemas/EdgeConfigItem"
         "400":
           description: One of the provided values in the request query is invalid.
         "401":
@@ -11249,10 +11249,10 @@ paths:
       responses:
         "200":
           description: The EdgeConfig.
-          content:
-            application/json:
-              schema:
-                "$ref": "#/components/schemas/EdgeConfigItem"
+          # content:
+          #   application/json:
+          #     schema:
+          #       "$ref": "#/components/schemas/EdgeConfigItem"
         "400":
           description: One of the provided values in the request query is invalid.
         "401":
@@ -33908,40 +33908,40 @@ components:
         This object contains information related to the pagination of the
         current request, including the necessary parameters to get the next or previous
         page of data.
-    EdgeConfigItemValue:
-      nullable: true
-      oneOf:
-        - type: string
-        - type: number
-        - type: boolean
-        - additionalProperties:
-            "$ref": "#/components/schemas/EdgeConfigItemValue"
-          type: object
-        - items:
-            "$ref": "#/components/schemas/EdgeConfigItemValue"
-          type: array
-    EdgeConfigItem:
-      properties:
-        key:
-          type: string
-        value:
-          "$ref": "#/components/schemas/EdgeConfigItemValue"
-        description:
-          type: string
-        edgeConfigId:
-          type: string
-        createdAt:
-          type: number
-        updatedAt:
-          type: number
-      required:
-        - key
-        - value
-        - edgeConfigId
-        - createdAt
-        - updatedAt
-      type: object
-      description: The EdgeConfig.
+    # EdgeConfigItemValue:
+    #   nullable: true
+    #   oneOf:
+    #     - type: string
+    #     - type: number
+    #     - type: boolean
+    #     - additionalProperties:
+    #         "$ref": "#/components/schemas/EdgeConfigItemValue"
+    #       type: object
+    #     - items:
+    #         "$ref": "#/components/schemas/EdgeConfigItemValue"
+    #       type: array
+    # EdgeConfigItem:
+    #   properties:
+    #     key:
+    #       type: string
+    #     value:
+    #       "$ref": "#/components/schemas/EdgeConfigItemValue"
+    #     description:
+    #       type: string
+    #     edgeConfigId:
+    #       type: string
+    #     createdAt:
+    #       type: number
+    #     updatedAt:
+    #       type: number
+    #   required:
+    #     - key
+    #     - value
+    #     - edgeConfigId
+    #     - createdAt
+    #     - updatedAt
+    #   type: object
+    #   description: The EdgeConfig.
     EdgeConfigToken:
       properties:
         token:
