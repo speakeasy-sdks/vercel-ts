@@ -1,9 +1,0 @@
-# DeleteTeamInviteCodeResponse
-
-
-## Fields
-
-| Field                                                                                                      | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
-| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| `httpMeta`                                                                                                 | [components.HTTPMetadata](../../models/components/httpmetadata.md)                                         | :heavy_check_mark:                                                                                         | N/A                                                                                                        |
-| `object`                                                                                                   | [operations.DeleteTeamInviteCodeResponseBody](../../models/operations/deleteteaminvitecoderesponsebody.md) | :heavy_minus_sign:                                                                                         | Successfully deleted Team invite code.                                                                     |

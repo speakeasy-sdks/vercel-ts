@@ -8,8 +8,7 @@ import * as enc$ from "../lib/encodings";
 import { HTTPClient } from "../lib/http";
 import * as schemas$ from "../lib/schemas";
 import { ClientSDK, RequestOptions } from "../lib/sdks";
-import * as errors from "../models/errors";
-import * as operations from "../models/operations";
+import * as models from "../models";
 
 export class Authentication extends ClientSDK {
     private readonly options$: SDKOptions & { hooks?: SDKHooks };
@@ -44,7 +43,7 @@ export class Authentication extends ClientSDK {
      * @remarks
      * Retrieve a list of the current User's authentication tokens.
      */
-    async listAuthTokens(options?: RequestOptions): Promise<operations.ListAuthTokensResponse> {
+    async listAuthTokens(options?: RequestOptions): Promise<models.ListAuthTokensResponse> {
         const headers$ = new Headers();
         headers$.set("user-agent", SDK_METADATA.userAgent);
         headers$.set("Accept", "application/json");
@@ -92,7 +91,7 @@ export class Authentication extends ClientSDK {
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return operations.ListAuthTokensResponse$.inboundSchema.parse({
+                    return models.ListAuthTokensResponse$.inboundSchema.parse({
                         ...responseFields$,
                         object: val$,
                     });
@@ -101,7 +100,7 @@ export class Authentication extends ClientSDK {
             );
             return result;
         } else {
-            throw new errors.SDKError("Unexpected API response status or content-type", {
+            throw new models.SDKError("Unexpected API response status or content-type", {
                 response,
                 request: request$,
             });
@@ -117,10 +116,10 @@ export class Authentication extends ClientSDK {
     async createAuthToken(
         teamId?: string | undefined,
         slug?: string | undefined,
-        requestBody?: operations.CreateAuthTokenRequestBody | undefined,
+        requestBody?: models.CreateAuthTokenRequestBody | undefined,
         options?: RequestOptions
-    ): Promise<operations.CreateAuthTokenResponse> {
-        const input$: operations.CreateAuthTokenRequest = {
+    ): Promise<models.CreateAuthTokenResponse> {
+        const input$: models.CreateAuthTokenRequest = {
             teamId: teamId,
             slug: slug,
             requestBody: requestBody,
@@ -132,7 +131,7 @@ export class Authentication extends ClientSDK {
 
         const payload$ = schemas$.parse(
             input$,
-            (value$) => operations.CreateAuthTokenRequest$.outboundSchema.parse(value$),
+            (value$) => models.CreateAuthTokenRequest$.outboundSchema.parse(value$),
             "Input validation failed"
         );
         const body$ = enc$.encodeJSON("body", payload$.RequestBody, { explode: true });
@@ -186,7 +185,7 @@ export class Authentication extends ClientSDK {
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return operations.CreateAuthTokenResponse$.inboundSchema.parse({
+                    return models.CreateAuthTokenResponse$.inboundSchema.parse({
                         ...responseFields$,
                         object: val$,
                     });
@@ -195,7 +194,7 @@ export class Authentication extends ClientSDK {
             );
             return result;
         } else {
-            throw new errors.SDKError("Unexpected API response status or content-type", {
+            throw new models.SDKError("Unexpected API response status or content-type", {
                 response,
                 request: request$,
             });
@@ -211,8 +210,8 @@ export class Authentication extends ClientSDK {
     async getAuthToken(
         tokenId: string,
         options?: RequestOptions
-    ): Promise<operations.GetAuthTokenResponse> {
-        const input$: operations.GetAuthTokenRequest = {
+    ): Promise<models.GetAuthTokenResponse> {
+        const input$: models.GetAuthTokenRequest = {
             tokenId: tokenId,
         };
         const headers$ = new Headers();
@@ -221,7 +220,7 @@ export class Authentication extends ClientSDK {
 
         const payload$ = schemas$.parse(
             input$,
-            (value$) => operations.GetAuthTokenRequest$.outboundSchema.parse(value$),
+            (value$) => models.GetAuthTokenRequest$.outboundSchema.parse(value$),
             "Input validation failed"
         );
         const body$ = null;
@@ -276,7 +275,7 @@ export class Authentication extends ClientSDK {
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return operations.GetAuthTokenResponse$.inboundSchema.parse({
+                    return models.GetAuthTokenResponse$.inboundSchema.parse({
                         ...responseFields$,
                         object: val$,
                     });
@@ -285,7 +284,7 @@ export class Authentication extends ClientSDK {
             );
             return result;
         } else {
-            throw new errors.SDKError("Unexpected API response status or content-type", {
+            throw new models.SDKError("Unexpected API response status or content-type", {
                 response,
                 request: request$,
             });
@@ -301,8 +300,8 @@ export class Authentication extends ClientSDK {
     async deleteAuthToken(
         tokenId: string,
         options?: RequestOptions
-    ): Promise<operations.DeleteAuthTokenResponse> {
-        const input$: operations.DeleteAuthTokenRequest = {
+    ): Promise<models.DeleteAuthTokenResponse> {
+        const input$: models.DeleteAuthTokenRequest = {
             tokenId: tokenId,
         };
         const headers$ = new Headers();
@@ -311,7 +310,7 @@ export class Authentication extends ClientSDK {
 
         const payload$ = schemas$.parse(
             input$,
-            (value$) => operations.DeleteAuthTokenRequest$.outboundSchema.parse(value$),
+            (value$) => models.DeleteAuthTokenRequest$.outboundSchema.parse(value$),
             "Input validation failed"
         );
         const body$ = null;
@@ -366,7 +365,7 @@ export class Authentication extends ClientSDK {
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return operations.DeleteAuthTokenResponse$.inboundSchema.parse({
+                    return models.DeleteAuthTokenResponse$.inboundSchema.parse({
                         ...responseFields$,
                         object: val$,
                     });
@@ -375,7 +374,7 @@ export class Authentication extends ClientSDK {
             );
             return result;
         } else {
-            throw new errors.SDKError("Unexpected API response status or content-type", {
+            throw new models.SDKError("Unexpected API response status or content-type", {
                 response,
                 request: request$,
             });
@@ -389,9 +388,9 @@ export class Authentication extends ClientSDK {
      * Verify the user accepted the login request and get a authentication token. The user email address and the token received after requesting the login must be added to the URL as a query string with the names `email` and `token`.
      */
     async verifyToken(
-        request: operations.VerifyTokenRequest,
+        request: models.VerifyTokenRequest,
         options?: RequestOptions
-    ): Promise<operations.VerifyTokenResponse> {
+    ): Promise<models.VerifyTokenResponse> {
         const input$ = request;
         const headers$ = new Headers();
         headers$.set("user-agent", SDK_METADATA.userAgent);
@@ -399,7 +398,7 @@ export class Authentication extends ClientSDK {
 
         const payload$ = schemas$.parse(
             input$,
-            (value$) => operations.VerifyTokenRequest$.outboundSchema.parse(value$),
+            (value$) => models.VerifyTokenRequest$.outboundSchema.parse(value$),
             "Input validation failed"
         );
         const body$ = null;
@@ -485,7 +484,7 @@ export class Authentication extends ClientSDK {
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return operations.VerifyTokenResponse$.inboundSchema.parse({
+                    return models.VerifyTokenResponse$.inboundSchema.parse({
                         ...responseFields$,
                         object: val$,
                     });
@@ -494,7 +493,7 @@ export class Authentication extends ClientSDK {
             );
             return result;
         } else {
-            throw new errors.SDKError("Unexpected API response status or content-type", {
+            throw new models.SDKError("Unexpected API response status or content-type", {
                 response,
                 request: request$,
             });
@@ -508,9 +507,9 @@ export class Authentication extends ClientSDK {
      * Request a new login for a user to get a token. This will respond with a verification token and send an email to confirm the request. Once confirmed you can use the verification token to get an authentication token.
      */
     async emailLogin(
-        request?: operations.EmailLoginRequestBody | undefined,
+        request?: models.EmailLoginRequestBody | undefined,
         options?: RequestOptions
-    ): Promise<operations.EmailLoginResponse> {
+    ): Promise<models.EmailLoginResponse> {
         const input$ = request;
         const headers$ = new Headers();
         headers$.set("user-agent", SDK_METADATA.userAgent);
@@ -519,7 +518,7 @@ export class Authentication extends ClientSDK {
 
         const payload$ = schemas$.parse(
             input$,
-            (value$) => operations.EmailLoginRequestBody$.outboundSchema.optional().parse(value$),
+            (value$) => models.EmailLoginRequestBody$.outboundSchema.optional().parse(value$),
             "Input validation failed"
         );
         const body$ =
@@ -552,7 +551,7 @@ export class Authentication extends ClientSDK {
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return operations.EmailLoginResponse$.inboundSchema.parse({
+                    return models.EmailLoginResponse$.inboundSchema.parse({
                         ...responseFields$,
                         oneOf: val$,
                     });
@@ -561,7 +560,7 @@ export class Authentication extends ClientSDK {
             );
             return result;
         } else {
-            throw new errors.SDKError("Unexpected API response status or content-type", {
+            throw new models.SDKError("Unexpected API response status or content-type", {
                 response,
                 request: request$,
             });

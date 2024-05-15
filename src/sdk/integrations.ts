@@ -8,8 +8,7 @@ import * as enc$ from "../lib/encodings";
 import { HTTPClient } from "../lib/http";
 import * as schemas$ from "../lib/schemas";
 import { ClientSDK, RequestOptions } from "../lib/sdks";
-import * as errors from "../models/errors";
-import * as operations from "../models/operations";
+import * as models from "../models";
 
 export class Integrations extends ClientSDK {
     private readonly options$: SDKOptions & { hooks?: SDKHooks };
@@ -45,12 +44,12 @@ export class Integrations extends ClientSDK {
      * Allows to retrieve all configurations for an authenticated integration. When the `project` view is used, configurations generated for the authorization flow will be filtered out of the results.
      */
     async getConfigurations(
-        view: operations.View,
+        view: models.View,
         teamId?: string | undefined,
         slug?: string | undefined,
         options?: RequestOptions
-    ): Promise<operations.GetConfigurationsResponse> {
-        const input$: operations.GetConfigurationsRequest = {
+    ): Promise<models.GetConfigurationsResponse> {
+        const input$: models.GetConfigurationsRequest = {
             view: view,
             teamId: teamId,
             slug: slug,
@@ -61,7 +60,7 @@ export class Integrations extends ClientSDK {
 
         const payload$ = schemas$.parse(
             input$,
-            (value$) => operations.GetConfigurationsRequest$.outboundSchema.parse(value$),
+            (value$) => models.GetConfigurationsRequest$.outboundSchema.parse(value$),
             "Input validation failed"
         );
         const body$ = null;
@@ -116,7 +115,7 @@ export class Integrations extends ClientSDK {
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return operations.GetConfigurationsResponse$.inboundSchema.parse({
+                    return models.GetConfigurationsResponse$.inboundSchema.parse({
                         ...responseFields$,
                         oneOf: val$,
                     });
@@ -125,7 +124,7 @@ export class Integrations extends ClientSDK {
             );
             return result;
         } else {
-            throw new errors.SDKError("Unexpected API response status or content-type", {
+            throw new models.SDKError("Unexpected API response status or content-type", {
                 response,
                 request: request$,
             });
@@ -143,8 +142,8 @@ export class Integrations extends ClientSDK {
         teamId?: string | undefined,
         slug?: string | undefined,
         options?: RequestOptions
-    ): Promise<operations.GetConfigurationResponse> {
-        const input$: operations.GetConfigurationRequest = {
+    ): Promise<models.GetConfigurationResponse> {
+        const input$: models.GetConfigurationRequest = {
             id: id,
             teamId: teamId,
             slug: slug,
@@ -155,7 +154,7 @@ export class Integrations extends ClientSDK {
 
         const payload$ = schemas$.parse(
             input$,
-            (value$) => operations.GetConfigurationRequest$.outboundSchema.parse(value$),
+            (value$) => models.GetConfigurationRequest$.outboundSchema.parse(value$),
             "Input validation failed"
         );
         const body$ = null;
@@ -212,7 +211,7 @@ export class Integrations extends ClientSDK {
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return operations.GetConfigurationResponse$.inboundSchema.parse({
+                    return models.GetConfigurationResponse$.inboundSchema.parse({
                         ...responseFields$,
                         oneOf: val$,
                     });
@@ -221,7 +220,7 @@ export class Integrations extends ClientSDK {
             );
             return result;
         } else {
-            throw new errors.SDKError("Unexpected API response status or content-type", {
+            throw new models.SDKError("Unexpected API response status or content-type", {
                 response,
                 request: request$,
             });
@@ -239,8 +238,8 @@ export class Integrations extends ClientSDK {
         teamId?: string | undefined,
         slug?: string | undefined,
         options?: RequestOptions
-    ): Promise<operations.DeleteConfigurationResponse> {
-        const input$: operations.DeleteConfigurationRequest = {
+    ): Promise<models.DeleteConfigurationResponse> {
+        const input$: models.DeleteConfigurationRequest = {
             id: id,
             teamId: teamId,
             slug: slug,
@@ -251,7 +250,7 @@ export class Integrations extends ClientSDK {
 
         const payload$ = schemas$.parse(
             input$,
-            (value$) => operations.DeleteConfigurationRequest$.outboundSchema.parse(value$),
+            (value$) => models.DeleteConfigurationRequest$.outboundSchema.parse(value$),
             "Input validation failed"
         );
         const body$ = null;
@@ -306,7 +305,7 @@ export class Integrations extends ClientSDK {
         if (this.matchStatusCode(response, 204)) {
             // fallthrough
         } else {
-            throw new errors.SDKError("Unexpected API response status or content-type", {
+            throw new models.SDKError("Unexpected API response status or content-type", {
                 response,
                 request: request$,
             });
@@ -314,7 +313,7 @@ export class Integrations extends ClientSDK {
 
         return schemas$.parse(
             undefined,
-            () => operations.DeleteConfigurationResponse$.inboundSchema.parse(responseFields$),
+            () => models.DeleteConfigurationResponse$.inboundSchema.parse(responseFields$),
             "Response validation failed"
         );
     }
@@ -327,12 +326,12 @@ export class Integrations extends ClientSDK {
      */
     async gitNamespaces(
         host?: string | undefined,
-        provider?: operations.Provider | undefined,
+        provider?: models.Provider | undefined,
         teamId?: string | undefined,
         slug?: string | undefined,
         options?: RequestOptions
-    ): Promise<operations.GitNamespacesResponse> {
-        const input$: operations.GitNamespacesRequest = {
+    ): Promise<models.GitNamespacesResponse> {
+        const input$: models.GitNamespacesRequest = {
             host: host,
             provider: provider,
             teamId: teamId,
@@ -344,7 +343,7 @@ export class Integrations extends ClientSDK {
 
         const payload$ = schemas$.parse(
             input$,
-            (value$) => operations.GitNamespacesRequest$.outboundSchema.parse(value$),
+            (value$) => models.GitNamespacesRequest$.outboundSchema.parse(value$),
             "Input validation failed"
         );
         const body$ = null;
@@ -403,7 +402,7 @@ export class Integrations extends ClientSDK {
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return operations.GitNamespacesResponse$.inboundSchema.parse({
+                    return models.GitNamespacesResponse$.inboundSchema.parse({
                         ...responseFields$,
                         responseBodies: val$,
                     });
@@ -412,7 +411,7 @@ export class Integrations extends ClientSDK {
             );
             return result;
         } else {
-            throw new errors.SDKError("Unexpected API response status or content-type", {
+            throw new models.SDKError("Unexpected API response status or content-type", {
                 response,
                 request: request$,
             });
@@ -426,9 +425,9 @@ export class Integrations extends ClientSDK {
      * Lists git repositories linked to a namespace `id` for a supported provider. A specific namespace `id` can be obtained via the `git-namespaces`  endpoint. Supported providers are `github`, `gitlab` and `bitbucket`. If the provider or namespace is not provided, it will try to obtain it from the user that authenticated the request.
      */
     async listGitRepos(
-        request: operations.ListGitReposRequest,
+        request: models.ListGitReposRequest,
         options?: RequestOptions
-    ): Promise<operations.ListGitReposResponse> {
+    ): Promise<models.ListGitReposResponse> {
         const input$ = typeof request === "undefined" ? {} : request;
         const headers$ = new Headers();
         headers$.set("user-agent", SDK_METADATA.userAgent);
@@ -436,7 +435,7 @@ export class Integrations extends ClientSDK {
 
         const payload$ = schemas$.parse(
             input$,
-            (value$) => operations.ListGitReposRequest$.outboundSchema.parse(value$),
+            (value$) => models.ListGitReposRequest$.outboundSchema.parse(value$),
             "Input validation failed"
         );
         const body$ = null;
@@ -504,7 +503,7 @@ export class Integrations extends ClientSDK {
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return operations.ListGitReposResponse$.inboundSchema.parse({
+                    return models.ListGitReposResponse$.inboundSchema.parse({
                         ...responseFields$,
                         object: val$,
                     });
@@ -513,7 +512,7 @@ export class Integrations extends ClientSDK {
             );
             return result;
         } else {
-            throw new errors.SDKError("Unexpected API response status or content-type", {
+            throw new models.SDKError("Unexpected API response status or content-type", {
                 response,
                 request: request$,
             });

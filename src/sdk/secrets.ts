@@ -8,8 +8,7 @@ import * as enc$ from "../lib/encodings";
 import { HTTPClient } from "../lib/http";
 import * as schemas$ from "../lib/schemas";
 import { ClientSDK, RequestOptions } from "../lib/sdks";
-import * as errors from "../models/errors";
-import * as operations from "../models/operations";
+import * as models from "../models";
 
 export class Secrets extends ClientSDK {
     private readonly options$: SDKOptions & { hooks?: SDKHooks };
@@ -50,8 +49,8 @@ export class Secrets extends ClientSDK {
         teamId?: string | undefined,
         slug?: string | undefined,
         options?: RequestOptions
-    ): Promise<operations.GetSecretsResponse> {
-        const input$: operations.GetSecretsRequest = {
+    ): Promise<models.GetSecretsResponse> {
+        const input$: models.GetSecretsRequest = {
             id: id,
             projectId: projectId,
             teamId: teamId,
@@ -63,7 +62,7 @@ export class Secrets extends ClientSDK {
 
         const payload$ = schemas$.parse(
             input$,
-            (value$) => operations.GetSecretsRequest$.outboundSchema.parse(value$),
+            (value$) => models.GetSecretsRequest$.outboundSchema.parse(value$),
             "Input validation failed"
         );
         const body$ = null;
@@ -122,7 +121,7 @@ export class Secrets extends ClientSDK {
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return operations.GetSecretsResponse$.inboundSchema.parse({
+                    return models.GetSecretsResponse$.inboundSchema.parse({
                         ...responseFields$,
                         object: val$,
                     });
@@ -131,7 +130,7 @@ export class Secrets extends ClientSDK {
             );
             return result;
         } else {
-            throw new errors.SDKError("Unexpected API response status or content-type", {
+            throw new models.SDKError("Unexpected API response status or content-type", {
                 response,
                 request: request$,
             });
@@ -148,10 +147,10 @@ export class Secrets extends ClientSDK {
         name: string,
         teamId?: string | undefined,
         slug?: string | undefined,
-        requestBody?: operations.CreateSecretRequestBody | undefined,
+        requestBody?: models.CreateSecretRequestBody | undefined,
         options?: RequestOptions
-    ): Promise<operations.CreateSecretResponse> {
-        const input$: operations.CreateSecretRequest = {
+    ): Promise<models.CreateSecretResponse> {
+        const input$: models.CreateSecretRequest = {
             name: name,
             teamId: teamId,
             slug: slug,
@@ -164,7 +163,7 @@ export class Secrets extends ClientSDK {
 
         const payload$ = schemas$.parse(
             input$,
-            (value$) => operations.CreateSecretRequest$.outboundSchema.parse(value$),
+            (value$) => models.CreateSecretRequest$.outboundSchema.parse(value$),
             "Input validation failed"
         );
         const body$ = enc$.encodeJSON("body", payload$.RequestBody, { explode: true });
@@ -227,7 +226,7 @@ export class Secrets extends ClientSDK {
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return operations.CreateSecretResponse$.inboundSchema.parse({
+                    return models.CreateSecretResponse$.inboundSchema.parse({
                         ...responseFields$,
                         object: val$,
                     });
@@ -236,7 +235,7 @@ export class Secrets extends ClientSDK {
             );
             return result;
         } else {
-            throw new errors.SDKError("Unexpected API response status or content-type", {
+            throw new models.SDKError("Unexpected API response status or content-type", {
                 response,
                 request: request$,
             });
@@ -253,10 +252,10 @@ export class Secrets extends ClientSDK {
         name: string,
         teamId?: string | undefined,
         slug?: string | undefined,
-        requestBody?: operations.RenameSecretRequestBody | undefined,
+        requestBody?: models.RenameSecretRequestBody | undefined,
         options?: RequestOptions
-    ): Promise<operations.RenameSecretResponse> {
-        const input$: operations.RenameSecretRequest = {
+    ): Promise<models.RenameSecretResponse> {
+        const input$: models.RenameSecretRequest = {
             name: name,
             teamId: teamId,
             slug: slug,
@@ -269,7 +268,7 @@ export class Secrets extends ClientSDK {
 
         const payload$ = schemas$.parse(
             input$,
-            (value$) => operations.RenameSecretRequest$.outboundSchema.parse(value$),
+            (value$) => models.RenameSecretRequest$.outboundSchema.parse(value$),
             "Input validation failed"
         );
         const body$ = enc$.encodeJSON("body", payload$.RequestBody, { explode: true });
@@ -329,7 +328,7 @@ export class Secrets extends ClientSDK {
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return operations.RenameSecretResponse$.inboundSchema.parse({
+                    return models.RenameSecretResponse$.inboundSchema.parse({
                         ...responseFields$,
                         object: val$,
                     });
@@ -338,7 +337,7 @@ export class Secrets extends ClientSDK {
             );
             return result;
         } else {
-            throw new errors.SDKError("Unexpected API response status or content-type", {
+            throw new models.SDKError("Unexpected API response status or content-type", {
                 response,
                 request: request$,
             });
@@ -353,12 +352,12 @@ export class Secrets extends ClientSDK {
      */
     async getSecret(
         idOrName: string,
-        decrypt?: operations.QueryParamDecrypt | undefined,
+        decrypt?: models.QueryParamDecrypt | undefined,
         teamId?: string | undefined,
         slug?: string | undefined,
         options?: RequestOptions
-    ): Promise<operations.GetSecretResponse> {
-        const input$: operations.GetSecretRequest = {
+    ): Promise<models.GetSecretResponse> {
+        const input$: models.GetSecretRequest = {
             idOrName: idOrName,
             decrypt: decrypt,
             teamId: teamId,
@@ -370,7 +369,7 @@ export class Secrets extends ClientSDK {
 
         const payload$ = schemas$.parse(
             input$,
-            (value$) => operations.GetSecretRequest$.outboundSchema.parse(value$),
+            (value$) => models.GetSecretRequest$.outboundSchema.parse(value$),
             "Input validation failed"
         );
         const body$ = null;
@@ -437,7 +436,7 @@ export class Secrets extends ClientSDK {
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return operations.GetSecretResponse$.inboundSchema.parse({
+                    return models.GetSecretResponse$.inboundSchema.parse({
                         ...responseFields$,
                         object: val$,
                     });
@@ -446,7 +445,7 @@ export class Secrets extends ClientSDK {
             );
             return result;
         } else {
-            throw new errors.SDKError("Unexpected API response status or content-type", {
+            throw new models.SDKError("Unexpected API response status or content-type", {
                 response,
                 request: request$,
             });
@@ -464,8 +463,8 @@ export class Secrets extends ClientSDK {
         teamId?: string | undefined,
         slug?: string | undefined,
         options?: RequestOptions
-    ): Promise<operations.DeleteSecretResponse> {
-        const input$: operations.DeleteSecretRequest = {
+    ): Promise<models.DeleteSecretResponse> {
+        const input$: models.DeleteSecretRequest = {
             idOrName: idOrName,
             teamId: teamId,
             slug: slug,
@@ -476,7 +475,7 @@ export class Secrets extends ClientSDK {
 
         const payload$ = schemas$.parse(
             input$,
-            (value$) => operations.DeleteSecretRequest$.outboundSchema.parse(value$),
+            (value$) => models.DeleteSecretRequest$.outboundSchema.parse(value$),
             "Input validation failed"
         );
         const body$ = null;
@@ -536,7 +535,7 @@ export class Secrets extends ClientSDK {
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return operations.DeleteSecretResponse$.inboundSchema.parse({
+                    return models.DeleteSecretResponse$.inboundSchema.parse({
                         ...responseFields$,
                         object: val$,
                     });
@@ -545,7 +544,7 @@ export class Secrets extends ClientSDK {
             );
             return result;
         } else {
-            throw new errors.SDKError("Unexpected API response status or content-type", {
+            throw new models.SDKError("Unexpected API response status or content-type", {
                 response,
                 request: request$,
             });

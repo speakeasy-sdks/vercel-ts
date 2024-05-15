@@ -8,8 +8,7 @@ import * as enc$ from "../lib/encodings";
 import { HTTPClient } from "../lib/http";
 import * as schemas$ from "../lib/schemas";
 import { ClientSDK, RequestOptions } from "../lib/sdks";
-import * as errors from "../models/errors";
-import * as operations from "../models/operations";
+import * as models from "../models";
 
 export class EdgeConfig extends ClientSDK {
     private readonly options$: SDKOptions & { hooks?: SDKHooks };
@@ -48,8 +47,8 @@ export class EdgeConfig extends ClientSDK {
         teamId?: string | undefined,
         slug?: string | undefined,
         options?: RequestOptions
-    ): Promise<operations.GetEdgeConfigsResponse> {
-        const input$: operations.GetEdgeConfigsRequest = {
+    ): Promise<models.GetEdgeConfigsResponse> {
+        const input$: models.GetEdgeConfigsRequest = {
             teamId: teamId,
             slug: slug,
         };
@@ -59,7 +58,7 @@ export class EdgeConfig extends ClientSDK {
 
         const payload$ = schemas$.parse(
             input$,
-            (value$) => operations.GetEdgeConfigsRequest$.outboundSchema.parse(value$),
+            (value$) => models.GetEdgeConfigsRequest$.outboundSchema.parse(value$),
             "Input validation failed"
         );
         const body$ = null;
@@ -113,7 +112,7 @@ export class EdgeConfig extends ClientSDK {
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return operations.GetEdgeConfigsResponse$.inboundSchema.parse({
+                    return models.GetEdgeConfigsResponse$.inboundSchema.parse({
                         ...responseFields$,
                         object: val$,
                     });
@@ -122,7 +121,7 @@ export class EdgeConfig extends ClientSDK {
             );
             return result;
         } else {
-            throw new errors.SDKError("Unexpected API response status or content-type", {
+            throw new models.SDKError("Unexpected API response status or content-type", {
                 response,
                 request: request$,
             });
@@ -138,10 +137,10 @@ export class EdgeConfig extends ClientSDK {
     async createEdgeConfig(
         teamId?: string | undefined,
         slug?: string | undefined,
-        requestBody?: operations.CreateEdgeConfigRequestBody | undefined,
+        requestBody?: models.CreateEdgeConfigRequestBody | undefined,
         options?: RequestOptions
-    ): Promise<operations.CreateEdgeConfigResponse> {
-        const input$: operations.CreateEdgeConfigRequest = {
+    ): Promise<models.CreateEdgeConfigResponse> {
+        const input$: models.CreateEdgeConfigRequest = {
             teamId: teamId,
             slug: slug,
             requestBody: requestBody,
@@ -153,7 +152,7 @@ export class EdgeConfig extends ClientSDK {
 
         const payload$ = schemas$.parse(
             input$,
-            (value$) => operations.CreateEdgeConfigRequest$.outboundSchema.parse(value$),
+            (value$) => models.CreateEdgeConfigRequest$.outboundSchema.parse(value$),
             "Input validation failed"
         );
         const body$ = enc$.encodeJSON("body", payload$.RequestBody, { explode: true });
@@ -207,7 +206,7 @@ export class EdgeConfig extends ClientSDK {
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return operations.CreateEdgeConfigResponse$.inboundSchema.parse({
+                    return models.CreateEdgeConfigResponse$.inboundSchema.parse({
                         ...responseFields$,
                         object: val$,
                     });
@@ -216,7 +215,7 @@ export class EdgeConfig extends ClientSDK {
             );
             return result;
         } else {
-            throw new errors.SDKError("Unexpected API response status or content-type", {
+            throw new models.SDKError("Unexpected API response status or content-type", {
                 response,
                 request: request$,
             });
@@ -234,8 +233,8 @@ export class EdgeConfig extends ClientSDK {
         teamId?: string | undefined,
         slug?: string | undefined,
         options?: RequestOptions
-    ): Promise<operations.GetEdgeConfigResponse> {
-        const input$: operations.GetEdgeConfigRequest = {
+    ): Promise<models.GetEdgeConfigResponse> {
+        const input$: models.GetEdgeConfigRequest = {
             edgeConfigId: edgeConfigId,
             teamId: teamId,
             slug: slug,
@@ -246,7 +245,7 @@ export class EdgeConfig extends ClientSDK {
 
         const payload$ = schemas$.parse(
             input$,
-            (value$) => operations.GetEdgeConfigRequest$.outboundSchema.parse(value$),
+            (value$) => models.GetEdgeConfigRequest$.outboundSchema.parse(value$),
             "Input validation failed"
         );
         const body$ = null;
@@ -306,7 +305,7 @@ export class EdgeConfig extends ClientSDK {
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return operations.GetEdgeConfigResponse$.inboundSchema.parse({
+                    return models.GetEdgeConfigResponse$.inboundSchema.parse({
                         ...responseFields$,
                         object: val$,
                     });
@@ -315,7 +314,7 @@ export class EdgeConfig extends ClientSDK {
             );
             return result;
         } else {
-            throw new errors.SDKError("Unexpected API response status or content-type", {
+            throw new models.SDKError("Unexpected API response status or content-type", {
                 response,
                 request: request$,
             });
@@ -332,10 +331,10 @@ export class EdgeConfig extends ClientSDK {
         edgeConfigId: string,
         teamId?: string | undefined,
         slug?: string | undefined,
-        requestBody?: operations.UpdateEdgeConfigRequestBody | undefined,
+        requestBody?: models.UpdateEdgeConfigRequestBody | undefined,
         options?: RequestOptions
-    ): Promise<operations.UpdateEdgeConfigResponse> {
-        const input$: operations.UpdateEdgeConfigRequest = {
+    ): Promise<models.UpdateEdgeConfigResponse> {
+        const input$: models.UpdateEdgeConfigRequest = {
             edgeConfigId: edgeConfigId,
             teamId: teamId,
             slug: slug,
@@ -348,7 +347,7 @@ export class EdgeConfig extends ClientSDK {
 
         const payload$ = schemas$.parse(
             input$,
-            (value$) => operations.UpdateEdgeConfigRequest$.outboundSchema.parse(value$),
+            (value$) => models.UpdateEdgeConfigRequest$.outboundSchema.parse(value$),
             "Input validation failed"
         );
         const body$ = enc$.encodeJSON("body", payload$.RequestBody, { explode: true });
@@ -411,7 +410,7 @@ export class EdgeConfig extends ClientSDK {
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return operations.UpdateEdgeConfigResponse$.inboundSchema.parse({
+                    return models.UpdateEdgeConfigResponse$.inboundSchema.parse({
                         ...responseFields$,
                         object: val$,
                     });
@@ -420,7 +419,7 @@ export class EdgeConfig extends ClientSDK {
             );
             return result;
         } else {
-            throw new errors.SDKError("Unexpected API response status or content-type", {
+            throw new models.SDKError("Unexpected API response status or content-type", {
                 response,
                 request: request$,
             });
@@ -438,8 +437,8 @@ export class EdgeConfig extends ClientSDK {
         teamId?: string | undefined,
         slug?: string | undefined,
         options?: RequestOptions
-    ): Promise<operations.DeleteEdgeConfigResponse> {
-        const input$: operations.DeleteEdgeConfigRequest = {
+    ): Promise<models.DeleteEdgeConfigResponse> {
+        const input$: models.DeleteEdgeConfigRequest = {
             edgeConfigId: edgeConfigId,
             teamId: teamId,
             slug: slug,
@@ -450,7 +449,7 @@ export class EdgeConfig extends ClientSDK {
 
         const payload$ = schemas$.parse(
             input$,
-            (value$) => operations.DeleteEdgeConfigRequest$.outboundSchema.parse(value$),
+            (value$) => models.DeleteEdgeConfigRequest$.outboundSchema.parse(value$),
             "Input validation failed"
         );
         const body$ = null;
@@ -508,7 +507,7 @@ export class EdgeConfig extends ClientSDK {
         if (this.matchStatusCode(response, 204)) {
             // fallthrough
         } else {
-            throw new errors.SDKError("Unexpected API response status or content-type", {
+            throw new models.SDKError("Unexpected API response status or content-type", {
                 response,
                 request: request$,
             });
@@ -516,7 +515,7 @@ export class EdgeConfig extends ClientSDK {
 
         return schemas$.parse(
             undefined,
-            () => operations.DeleteEdgeConfigResponse$.inboundSchema.parse(responseFields$),
+            () => models.DeleteEdgeConfigResponse$.inboundSchema.parse(responseFields$),
             "Response validation failed"
         );
     }
@@ -532,8 +531,8 @@ export class EdgeConfig extends ClientSDK {
         teamId?: string | undefined,
         slug?: string | undefined,
         options?: RequestOptions
-    ): Promise<operations.GetEdgeConfigItemsResponse> {
-        const input$: operations.GetEdgeConfigItemsRequest = {
+    ): Promise<models.GetEdgeConfigItemsResponse> {
+        const input$: models.GetEdgeConfigItemsRequest = {
             edgeConfigId: edgeConfigId,
             teamId: teamId,
             slug: slug,
@@ -544,7 +543,7 @@ export class EdgeConfig extends ClientSDK {
 
         const payload$ = schemas$.parse(
             input$,
-            (value$) => operations.GetEdgeConfigItemsRequest$.outboundSchema.parse(value$),
+            (value$) => models.GetEdgeConfigItemsRequest$.outboundSchema.parse(value$),
             "Input validation failed"
         );
         const body$ = null;
@@ -604,7 +603,7 @@ export class EdgeConfig extends ClientSDK {
         if (this.matchStatusCode(response, 200)) {
             // fallthrough
         } else {
-            throw new errors.SDKError("Unexpected API response status or content-type", {
+            throw new models.SDKError("Unexpected API response status or content-type", {
                 response,
                 request: request$,
             });
@@ -612,7 +611,7 @@ export class EdgeConfig extends ClientSDK {
 
         return schemas$.parse(
             undefined,
-            () => operations.GetEdgeConfigItemsResponse$.inboundSchema.parse(responseFields$),
+            () => models.GetEdgeConfigItemsResponse$.inboundSchema.parse(responseFields$),
             "Response validation failed"
         );
     }
@@ -628,8 +627,8 @@ export class EdgeConfig extends ClientSDK {
         teamId?: string | undefined,
         slug?: string | undefined,
         options?: RequestOptions
-    ): Promise<operations.GetEdgeConfigSchemaResponse> {
-        const input$: operations.GetEdgeConfigSchemaRequest = {
+    ): Promise<models.GetEdgeConfigSchemaResponse> {
+        const input$: models.GetEdgeConfigSchemaRequest = {
             edgeConfigId: edgeConfigId,
             teamId: teamId,
             slug: slug,
@@ -640,7 +639,7 @@ export class EdgeConfig extends ClientSDK {
 
         const payload$ = schemas$.parse(
             input$,
-            (value$) => operations.GetEdgeConfigSchemaRequest$.outboundSchema.parse(value$),
+            (value$) => models.GetEdgeConfigSchemaRequest$.outboundSchema.parse(value$),
             "Input validation failed"
         );
         const body$ = null;
@@ -702,7 +701,7 @@ export class EdgeConfig extends ClientSDK {
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return operations.GetEdgeConfigSchemaResponse$.inboundSchema.parse({
+                    return models.GetEdgeConfigSchemaResponse$.inboundSchema.parse({
                         ...responseFields$,
                         object: val$,
                     });
@@ -711,7 +710,7 @@ export class EdgeConfig extends ClientSDK {
             );
             return result;
         } else {
-            throw new errors.SDKError("Unexpected API response status or content-type", {
+            throw new models.SDKError("Unexpected API response status or content-type", {
                 response,
                 request: request$,
             });
@@ -725,9 +724,9 @@ export class EdgeConfig extends ClientSDK {
      * Update an Edge Config's schema.
      */
     async patchEdgeConfigSchema(
-        request: operations.PatchEdgeConfigSchemaRequest,
+        request: models.PatchEdgeConfigSchemaRequest,
         options?: RequestOptions
-    ): Promise<operations.PatchEdgeConfigSchemaResponse> {
+    ): Promise<models.PatchEdgeConfigSchemaResponse> {
         const input$ = request;
         const headers$ = new Headers();
         headers$.set("user-agent", SDK_METADATA.userAgent);
@@ -736,7 +735,7 @@ export class EdgeConfig extends ClientSDK {
 
         const payload$ = schemas$.parse(
             input$,
-            (value$) => operations.PatchEdgeConfigSchemaRequest$.outboundSchema.parse(value$),
+            (value$) => models.PatchEdgeConfigSchemaRequest$.outboundSchema.parse(value$),
             "Input validation failed"
         );
         const body$ = enc$.encodeJSON("body", payload$.RequestBody, { explode: true });
@@ -802,7 +801,7 @@ export class EdgeConfig extends ClientSDK {
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return operations.PatchEdgeConfigSchemaResponse$.inboundSchema.parse({
+                    return models.PatchEdgeConfigSchemaResponse$.inboundSchema.parse({
                         ...responseFields$,
                         object: val$,
                     });
@@ -811,7 +810,7 @@ export class EdgeConfig extends ClientSDK {
             );
             return result;
         } else {
-            throw new errors.SDKError("Unexpected API response status or content-type", {
+            throw new models.SDKError("Unexpected API response status or content-type", {
                 response,
                 request: request$,
             });
@@ -829,8 +828,8 @@ export class EdgeConfig extends ClientSDK {
         teamId?: string | undefined,
         slug?: string | undefined,
         options?: RequestOptions
-    ): Promise<operations.DeleteEdgeConfigSchemaResponse> {
-        const input$: operations.DeleteEdgeConfigSchemaRequest = {
+    ): Promise<models.DeleteEdgeConfigSchemaResponse> {
+        const input$: models.DeleteEdgeConfigSchemaRequest = {
             edgeConfigId: edgeConfigId,
             teamId: teamId,
             slug: slug,
@@ -841,7 +840,7 @@ export class EdgeConfig extends ClientSDK {
 
         const payload$ = schemas$.parse(
             input$,
-            (value$) => operations.DeleteEdgeConfigSchemaRequest$.outboundSchema.parse(value$),
+            (value$) => models.DeleteEdgeConfigSchemaRequest$.outboundSchema.parse(value$),
             "Input validation failed"
         );
         const body$ = null;
@@ -904,7 +903,7 @@ export class EdgeConfig extends ClientSDK {
         if (this.matchStatusCode(response, 204)) {
             // fallthrough
         } else {
-            throw new errors.SDKError("Unexpected API response status or content-type", {
+            throw new models.SDKError("Unexpected API response status or content-type", {
                 response,
                 request: request$,
             });
@@ -912,7 +911,7 @@ export class EdgeConfig extends ClientSDK {
 
         return schemas$.parse(
             undefined,
-            () => operations.DeleteEdgeConfigSchemaResponse$.inboundSchema.parse(responseFields$),
+            () => models.DeleteEdgeConfigSchemaResponse$.inboundSchema.parse(responseFields$),
             "Response validation failed"
         );
     }
@@ -929,8 +928,8 @@ export class EdgeConfig extends ClientSDK {
         teamId?: string | undefined,
         slug?: string | undefined,
         options?: RequestOptions
-    ): Promise<operations.GetEdgeConfigItemResponse> {
-        const input$: operations.GetEdgeConfigItemRequest = {
+    ): Promise<models.GetEdgeConfigItemResponse> {
+        const input$: models.GetEdgeConfigItemRequest = {
             edgeConfigId: edgeConfigId,
             edgeConfigItemKey: edgeConfigItemKey,
             teamId: teamId,
@@ -942,7 +941,7 @@ export class EdgeConfig extends ClientSDK {
 
         const payload$ = schemas$.parse(
             input$,
-            (value$) => operations.GetEdgeConfigItemRequest$.outboundSchema.parse(value$),
+            (value$) => models.GetEdgeConfigItemRequest$.outboundSchema.parse(value$),
             "Input validation failed"
         );
         const body$ = null;
@@ -1006,7 +1005,7 @@ export class EdgeConfig extends ClientSDK {
         if (this.matchStatusCode(response, 200)) {
             // fallthrough
         } else {
-            throw new errors.SDKError("Unexpected API response status or content-type", {
+            throw new models.SDKError("Unexpected API response status or content-type", {
                 response,
                 request: request$,
             });
@@ -1014,7 +1013,7 @@ export class EdgeConfig extends ClientSDK {
 
         return schemas$.parse(
             undefined,
-            () => operations.GetEdgeConfigItemResponse$.inboundSchema.parse(responseFields$),
+            () => models.GetEdgeConfigItemResponse$.inboundSchema.parse(responseFields$),
             "Response validation failed"
         );
     }
@@ -1030,8 +1029,8 @@ export class EdgeConfig extends ClientSDK {
         teamId?: string | undefined,
         slug?: string | undefined,
         options?: RequestOptions
-    ): Promise<operations.GetEdgeConfigTokensResponse> {
-        const input$: operations.GetEdgeConfigTokensRequest = {
+    ): Promise<models.GetEdgeConfigTokensResponse> {
+        const input$: models.GetEdgeConfigTokensRequest = {
             edgeConfigId: edgeConfigId,
             teamId: teamId,
             slug: slug,
@@ -1042,7 +1041,7 @@ export class EdgeConfig extends ClientSDK {
 
         const payload$ = schemas$.parse(
             input$,
-            (value$) => operations.GetEdgeConfigTokensRequest$.outboundSchema.parse(value$),
+            (value$) => models.GetEdgeConfigTokensRequest$.outboundSchema.parse(value$),
             "Input validation failed"
         );
         const body$ = null;
@@ -1104,7 +1103,7 @@ export class EdgeConfig extends ClientSDK {
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return operations.GetEdgeConfigTokensResponse$.inboundSchema.parse({
+                    return models.GetEdgeConfigTokensResponse$.inboundSchema.parse({
                         ...responseFields$,
                         EdgeConfigToken: val$,
                     });
@@ -1113,7 +1112,7 @@ export class EdgeConfig extends ClientSDK {
             );
             return result;
         } else {
-            throw new errors.SDKError("Unexpected API response status or content-type", {
+            throw new models.SDKError("Unexpected API response status or content-type", {
                 response,
                 request: request$,
             });
@@ -1130,10 +1129,10 @@ export class EdgeConfig extends ClientSDK {
         edgeConfigId: string,
         teamId?: string | undefined,
         slug?: string | undefined,
-        requestBody?: operations.DeleteEdgeConfigTokensRequestBody | undefined,
+        requestBody?: models.DeleteEdgeConfigTokensRequestBody | undefined,
         options?: RequestOptions
-    ): Promise<operations.DeleteEdgeConfigTokensResponse> {
-        const input$: operations.DeleteEdgeConfigTokensRequest = {
+    ): Promise<models.DeleteEdgeConfigTokensResponse> {
+        const input$: models.DeleteEdgeConfigTokensRequest = {
             edgeConfigId: edgeConfigId,
             teamId: teamId,
             slug: slug,
@@ -1146,7 +1145,7 @@ export class EdgeConfig extends ClientSDK {
 
         const payload$ = schemas$.parse(
             input$,
-            (value$) => operations.DeleteEdgeConfigTokensRequest$.outboundSchema.parse(value$),
+            (value$) => models.DeleteEdgeConfigTokensRequest$.outboundSchema.parse(value$),
             "Input validation failed"
         );
         const body$ = enc$.encodeJSON("body", payload$.RequestBody, { explode: true });
@@ -1209,7 +1208,7 @@ export class EdgeConfig extends ClientSDK {
         if (this.matchStatusCode(response, 204)) {
             // fallthrough
         } else {
-            throw new errors.SDKError("Unexpected API response status or content-type", {
+            throw new models.SDKError("Unexpected API response status or content-type", {
                 response,
                 request: request$,
             });
@@ -1217,7 +1216,7 @@ export class EdgeConfig extends ClientSDK {
 
         return schemas$.parse(
             undefined,
-            () => operations.DeleteEdgeConfigTokensResponse$.inboundSchema.parse(responseFields$),
+            () => models.DeleteEdgeConfigTokensResponse$.inboundSchema.parse(responseFields$),
             "Response validation failed"
         );
     }
@@ -1234,8 +1233,8 @@ export class EdgeConfig extends ClientSDK {
         teamId?: string | undefined,
         slug?: string | undefined,
         options?: RequestOptions
-    ): Promise<operations.GetEdgeConfigTokenResponse> {
-        const input$: operations.GetEdgeConfigTokenRequest = {
+    ): Promise<models.GetEdgeConfigTokenResponse> {
+        const input$: models.GetEdgeConfigTokenRequest = {
             edgeConfigId: edgeConfigId,
             token: token,
             teamId: teamId,
@@ -1247,7 +1246,7 @@ export class EdgeConfig extends ClientSDK {
 
         const payload$ = schemas$.parse(
             input$,
-            (value$) => operations.GetEdgeConfigTokenRequest$.outboundSchema.parse(value$),
+            (value$) => models.GetEdgeConfigTokenRequest$.outboundSchema.parse(value$),
             "Input validation failed"
         );
         const body$ = null;
@@ -1313,7 +1312,7 @@ export class EdgeConfig extends ClientSDK {
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return operations.GetEdgeConfigTokenResponse$.inboundSchema.parse({
+                    return models.GetEdgeConfigTokenResponse$.inboundSchema.parse({
                         ...responseFields$,
                         EdgeConfigToken: val$,
                     });
@@ -1322,7 +1321,7 @@ export class EdgeConfig extends ClientSDK {
             );
             return result;
         } else {
-            throw new errors.SDKError("Unexpected API response status or content-type", {
+            throw new models.SDKError("Unexpected API response status or content-type", {
                 response,
                 request: request$,
             });
@@ -1339,10 +1338,10 @@ export class EdgeConfig extends ClientSDK {
         edgeConfigId: string,
         teamId?: string | undefined,
         slug?: string | undefined,
-        requestBody?: operations.CreateEdgeConfigTokenRequestBody | undefined,
+        requestBody?: models.CreateEdgeConfigTokenRequestBody | undefined,
         options?: RequestOptions
-    ): Promise<operations.CreateEdgeConfigTokenResponse> {
-        const input$: operations.CreateEdgeConfigTokenRequest = {
+    ): Promise<models.CreateEdgeConfigTokenResponse> {
+        const input$: models.CreateEdgeConfigTokenRequest = {
             edgeConfigId: edgeConfigId,
             teamId: teamId,
             slug: slug,
@@ -1355,7 +1354,7 @@ export class EdgeConfig extends ClientSDK {
 
         const payload$ = schemas$.parse(
             input$,
-            (value$) => operations.CreateEdgeConfigTokenRequest$.outboundSchema.parse(value$),
+            (value$) => models.CreateEdgeConfigTokenRequest$.outboundSchema.parse(value$),
             "Input validation failed"
         );
         const body$ = enc$.encodeJSON("body", payload$.RequestBody, { explode: true });
@@ -1420,7 +1419,7 @@ export class EdgeConfig extends ClientSDK {
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return operations.CreateEdgeConfigTokenResponse$.inboundSchema.parse({
+                    return models.CreateEdgeConfigTokenResponse$.inboundSchema.parse({
                         ...responseFields$,
                         object: val$,
                     });
@@ -1429,7 +1428,7 @@ export class EdgeConfig extends ClientSDK {
             );
             return result;
         } else {
-            throw new errors.SDKError("Unexpected API response status or content-type", {
+            throw new models.SDKError("Unexpected API response status or content-type", {
                 response,
                 request: request$,
             });

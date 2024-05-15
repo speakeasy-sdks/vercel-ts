@@ -1,0 +1,9 @@
+# GetConfigurationResponseBodyScopes
+
+
+## Fields
+
+| Field                                                                                              | Type                                                                                               | Required                                                                                           | Description                                                                                        |
+| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| `added`                                                                                            | [models.GetConfigurationResponseBodyAdded](../models/getconfigurationresponsebodyadded.md)[]       | :heavy_check_mark:                                                                                 | N/A                                                                                                |
+| `upgraded`                                                                                         | [models.GetConfigurationResponseBodyUpgraded](../models/getconfigurationresponsebodyupgraded.md)[] | :heavy_check_mark:                                                                                 | N/A                                                                                                |

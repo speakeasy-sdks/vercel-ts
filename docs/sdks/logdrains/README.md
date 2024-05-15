@@ -48,12 +48,12 @@ run();
 
 ### Response
 
-**Promise<[operations.GetIntegrationLogDrainsResponse](../../models/operations/getintegrationlogdrainsresponse.md)>**
+**Promise<[models.GetIntegrationLogDrainsResponse](../../models/getintegrationlogdrainsresponse.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4xx-5xx         | */*             |
+| models.SDKError | 4xx-5xx         | */*             |
 
 ## createLogDrain
 
@@ -63,7 +63,7 @@ Creates an Integration log drain. This endpoint must be called with an OAuth2 cl
 
 ```typescript
 import { Vercel } from "vercel";
-import { DeliveryFormat } from "vercel/models/operations";
+import { DeliveryFormat } from "vercel/models";
 
 const vercel = new Vercel({
   security: {
@@ -92,19 +92,19 @@ run();
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `teamId`                                                                                                                                                                       | *string*                                                                                                                                                                       | :heavy_minus_sign:                                                                                                                                                             | The Team identifier to perform the request on behalf of.                                                                                                                       |
 | `slug`                                                                                                                                                                         | *string*                                                                                                                                                                       | :heavy_minus_sign:                                                                                                                                                             | The Team slug to perform the request on behalf of.                                                                                                                             |
-| `requestBody`                                                                                                                                                                  | [operations.CreateLogDrainRequestBody](../../models/operations/createlogdrainrequestbody.md)                                                                                   | :heavy_minus_sign:                                                                                                                                                             | N/A                                                                                                                                                                            |
+| `requestBody`                                                                                                                                                                  | [models.CreateLogDrainRequestBody](../../models/createlogdrainrequestbody.md)                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | N/A                                                                                                                                                                            |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 
 
 ### Response
 
-**Promise<[operations.CreateLogDrainResponse](../../models/operations/createlogdrainresponse.md)>**
+**Promise<[models.CreateLogDrainResponse](../../models/createlogdrainresponse.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4xx-5xx         | */*             |
+| models.SDKError | 4xx-5xx         | */*             |
 
 ## deleteIntegrationLogDrain
 
@@ -144,12 +144,12 @@ run();
 
 ### Response
 
-**Promise<[operations.DeleteIntegrationLogDrainResponse](../../models/operations/deleteintegrationlogdrainresponse.md)>**
+**Promise<[models.DeleteIntegrationLogDrainResponse](../../models/deleteintegrationlogdrainresponse.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4xx-5xx         | */*             |
+| models.SDKError | 4xx-5xx         | */*             |
 
 ## getConfigurableLogDrain
 
@@ -189,12 +189,12 @@ run();
 
 ### Response
 
-**Promise<[operations.GetConfigurableLogDrainResponse](../../models/operations/getconfigurablelogdrainresponse.md)>**
+**Promise<[models.GetConfigurableLogDrainResponse](../../models/getconfigurablelogdrainresponse.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4xx-5xx         | */*             |
+| models.SDKError | 4xx-5xx         | */*             |
 
 ## deleteConfigurableLogDrain
 
@@ -234,12 +234,12 @@ run();
 
 ### Response
 
-**Promise<[operations.DeleteConfigurableLogDrainResponse](../../models/operations/deleteconfigurablelogdrainresponse.md)>**
+**Promise<[models.DeleteConfigurableLogDrainResponse](../../models/deleteconfigurablelogdrainresponse.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4xx-5xx         | */*             |
+| models.SDKError | 4xx-5xx         | */*             |
 
 ## getAllLogDrains
 
@@ -279,12 +279,12 @@ run();
 
 ### Response
 
-**Promise<[operations.GetAllLogDrainsResponse](../../models/operations/getalllogdrainsresponse.md)>**
+**Promise<[models.GetAllLogDrainsResponse](../../models/getalllogdrainsresponse.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4xx-5xx         | */*             |
+| models.SDKError | 4xx-5xx         | */*             |
 
 ## createConfigurableLogDrain
 
@@ -294,7 +294,7 @@ Creates a configurable log drain. This endpoint must be called with a team Acces
 
 ```typescript
 import { Vercel } from "vercel";
-import { CreateConfigurableLogDrainDeliveryFormat, CreateConfigurableLogDrainSources } from "vercel/models/operations";
+import { CreateConfigurableLogDrainDeliveryFormat, CreateConfigurableLogDrainSources } from "vercel/models";
 
 const vercel = new Vercel({
   security: {
@@ -324,16 +324,16 @@ run();
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `teamId`                                                                                                                                                                       | *string*                                                                                                                                                                       | :heavy_minus_sign:                                                                                                                                                             | The Team identifier to perform the request on behalf of.                                                                                                                       |
 | `slug`                                                                                                                                                                         | *string*                                                                                                                                                                       | :heavy_minus_sign:                                                                                                                                                             | The Team slug to perform the request on behalf of.                                                                                                                             |
-| `requestBody`                                                                                                                                                                  | [operations.CreateConfigurableLogDrainRequestBody](../../models/operations/createconfigurablelogdrainrequestbody.md)                                                           | :heavy_minus_sign:                                                                                                                                                             | N/A                                                                                                                                                                            |
+| `requestBody`                                                                                                                                                                  | [models.CreateConfigurableLogDrainRequestBody](../../models/createconfigurablelogdrainrequestbody.md)                                                                          | :heavy_minus_sign:                                                                                                                                                             | N/A                                                                                                                                                                            |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 
 
 ### Response
 
-**Promise<[operations.CreateConfigurableLogDrainResponse](../../models/operations/createconfigurablelogdrainresponse.md)>**
+**Promise<[models.CreateConfigurableLogDrainResponse](../../models/createconfigurablelogdrainresponse.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4xx-5xx         | */*             |
+| models.SDKError | 4xx-5xx         | */*             |

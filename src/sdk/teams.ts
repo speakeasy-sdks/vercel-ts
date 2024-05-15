@@ -8,8 +8,7 @@ import * as enc$ from "../lib/encodings";
 import { HTTPClient } from "../lib/http";
 import * as schemas$ from "../lib/schemas";
 import { ClientSDK, RequestOptions } from "../lib/sdks";
-import * as errors from "../models/errors";
-import * as operations from "../models/operations";
+import * as models from "../models";
 
 export class Teams extends ClientSDK {
     private readonly options$: SDKOptions & { hooks?: SDKHooks };
@@ -45,9 +44,9 @@ export class Teams extends ClientSDK {
      * Get a paginated list of team members for the provided team.
      */
     async getTeamMembers(
-        request: operations.GetTeamMembersRequest,
+        request: models.GetTeamMembersRequest,
         options?: RequestOptions
-    ): Promise<operations.GetTeamMembersResponse> {
+    ): Promise<models.GetTeamMembersResponse> {
         const input$ = request;
         const headers$ = new Headers();
         headers$.set("user-agent", SDK_METADATA.userAgent);
@@ -55,7 +54,7 @@ export class Teams extends ClientSDK {
 
         const payload$ = schemas$.parse(
             input$,
-            (value$) => operations.GetTeamMembersRequest$.outboundSchema.parse(value$),
+            (value$) => models.GetTeamMembersRequest$.outboundSchema.parse(value$),
             "Input validation failed"
         );
         const body$ = null;
@@ -126,7 +125,7 @@ export class Teams extends ClientSDK {
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return operations.GetTeamMembersResponse$.inboundSchema.parse({
+                    return models.GetTeamMembersResponse$.inboundSchema.parse({
                         ...responseFields$,
                         object: val$,
                     });
@@ -135,7 +134,7 @@ export class Teams extends ClientSDK {
             );
             return result;
         } else {
-            throw new errors.SDKError("Unexpected API response status or content-type", {
+            throw new models.SDKError("Unexpected API response status or content-type", {
                 response,
                 request: request$,
             });
@@ -150,10 +149,10 @@ export class Teams extends ClientSDK {
      */
     async inviteUserToTeam(
         teamId: string,
-        requestBody?: operations.InviteUserToTeamRequestBody | undefined,
+        requestBody?: models.InviteUserToTeamRequestBody | undefined,
         options?: RequestOptions
-    ): Promise<operations.InviteUserToTeamResponse> {
-        const input$: operations.InviteUserToTeamRequest = {
+    ): Promise<models.InviteUserToTeamResponse> {
+        const input$: models.InviteUserToTeamRequest = {
             teamId: teamId,
             requestBody: requestBody,
         };
@@ -164,7 +163,7 @@ export class Teams extends ClientSDK {
 
         const payload$ = schemas$.parse(
             input$,
-            (value$) => operations.InviteUserToTeamRequest$.outboundSchema.parse(value$),
+            (value$) => models.InviteUserToTeamRequest$.outboundSchema.parse(value$),
             "Input validation failed"
         );
         const body$ = enc$.encodeJSON("body", payload$.RequestBody, { explode: true });
@@ -219,7 +218,7 @@ export class Teams extends ClientSDK {
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return operations.InviteUserToTeamResponse$.inboundSchema.parse({
+                    return models.InviteUserToTeamResponse$.inboundSchema.parse({
                         ...responseFields$,
                         oneOf: val$,
                     });
@@ -228,7 +227,7 @@ export class Teams extends ClientSDK {
             );
             return result;
         } else {
-            throw new errors.SDKError("Unexpected API response status or content-type", {
+            throw new models.SDKError("Unexpected API response status or content-type", {
                 response,
                 request: request$,
             });
@@ -243,10 +242,10 @@ export class Teams extends ClientSDK {
      */
     async requestAccessToTeam(
         teamId: string,
-        requestBody?: operations.RequestAccessToTeamRequestBody | undefined,
+        requestBody?: models.RequestAccessToTeamRequestBody | undefined,
         options?: RequestOptions
-    ): Promise<operations.RequestAccessToTeamResponse> {
-        const input$: operations.RequestAccessToTeamRequest = {
+    ): Promise<models.RequestAccessToTeamResponse> {
+        const input$: models.RequestAccessToTeamRequest = {
             teamId: teamId,
             requestBody: requestBody,
         };
@@ -257,7 +256,7 @@ export class Teams extends ClientSDK {
 
         const payload$ = schemas$.parse(
             input$,
-            (value$) => operations.RequestAccessToTeamRequest$.outboundSchema.parse(value$),
+            (value$) => models.RequestAccessToTeamRequest$.outboundSchema.parse(value$),
             "Input validation failed"
         );
         const body$ = enc$.encodeJSON("body", payload$.RequestBody, { explode: true });
@@ -312,7 +311,7 @@ export class Teams extends ClientSDK {
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return operations.RequestAccessToTeamResponse$.inboundSchema.parse({
+                    return models.RequestAccessToTeamResponse$.inboundSchema.parse({
                         ...responseFields$,
                         object: val$,
                     });
@@ -321,7 +320,7 @@ export class Teams extends ClientSDK {
             );
             return result;
         } else {
-            throw new errors.SDKError("Unexpected API response status or content-type", {
+            throw new models.SDKError("Unexpected API response status or content-type", {
                 response,
                 request: request$,
             });
@@ -338,8 +337,8 @@ export class Teams extends ClientSDK {
         teamId: string,
         userId: string,
         options?: RequestOptions
-    ): Promise<operations.GetTeamAccessRequestResponse> {
-        const input$: operations.GetTeamAccessRequestRequest = {
+    ): Promise<models.GetTeamAccessRequestResponse> {
+        const input$: models.GetTeamAccessRequestRequest = {
             teamId: teamId,
             userId: userId,
         };
@@ -349,7 +348,7 @@ export class Teams extends ClientSDK {
 
         const payload$ = schemas$.parse(
             input$,
-            (value$) => operations.GetTeamAccessRequestRequest$.outboundSchema.parse(value$),
+            (value$) => models.GetTeamAccessRequestRequest$.outboundSchema.parse(value$),
             "Input validation failed"
         );
         const body$ = null;
@@ -408,7 +407,7 @@ export class Teams extends ClientSDK {
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return operations.GetTeamAccessRequestResponse$.inboundSchema.parse({
+                    return models.GetTeamAccessRequestResponse$.inboundSchema.parse({
                         ...responseFields$,
                         object: val$,
                     });
@@ -417,7 +416,7 @@ export class Teams extends ClientSDK {
             );
             return result;
         } else {
-            throw new errors.SDKError("Unexpected API response status or content-type", {
+            throw new models.SDKError("Unexpected API response status or content-type", {
                 response,
                 request: request$,
             });
@@ -432,10 +431,10 @@ export class Teams extends ClientSDK {
      */
     async joinTeam(
         teamId: string,
-        requestBody?: operations.JoinTeamRequestBody | undefined,
+        requestBody?: models.JoinTeamRequestBody | undefined,
         options?: RequestOptions
-    ): Promise<operations.JoinTeamResponse> {
-        const input$: operations.JoinTeamRequest = {
+    ): Promise<models.JoinTeamResponse> {
+        const input$: models.JoinTeamRequest = {
             teamId: teamId,
             requestBody: requestBody,
         };
@@ -446,7 +445,7 @@ export class Teams extends ClientSDK {
 
         const payload$ = schemas$.parse(
             input$,
-            (value$) => operations.JoinTeamRequest$.outboundSchema.parse(value$),
+            (value$) => models.JoinTeamRequest$.outboundSchema.parse(value$),
             "Input validation failed"
         );
         const body$ = enc$.encodeJSON("body", payload$.RequestBody, { explode: true });
@@ -503,7 +502,7 @@ export class Teams extends ClientSDK {
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return operations.JoinTeamResponse$.inboundSchema.parse({
+                    return models.JoinTeamResponse$.inboundSchema.parse({
                         ...responseFields$,
                         object: val$,
                     });
@@ -512,7 +511,7 @@ export class Teams extends ClientSDK {
             );
             return result;
         } else {
-            throw new errors.SDKError("Unexpected API response status or content-type", {
+            throw new models.SDKError("Unexpected API response status or content-type", {
                 response,
                 request: request$,
             });
@@ -528,10 +527,10 @@ export class Teams extends ClientSDK {
     async updateTeamMember(
         teamId: string,
         uid: string,
-        requestBody?: operations.UpdateTeamMemberRequestBody | undefined,
+        requestBody?: models.UpdateTeamMemberRequestBody | undefined,
         options?: RequestOptions
-    ): Promise<operations.UpdateTeamMemberResponse> {
-        const input$: operations.UpdateTeamMemberRequest = {
+    ): Promise<models.UpdateTeamMemberResponse> {
+        const input$: models.UpdateTeamMemberRequest = {
             teamId: teamId,
             uid: uid,
             requestBody: requestBody,
@@ -543,7 +542,7 @@ export class Teams extends ClientSDK {
 
         const payload$ = schemas$.parse(
             input$,
-            (value$) => operations.UpdateTeamMemberRequest$.outboundSchema.parse(value$),
+            (value$) => models.UpdateTeamMemberRequest$.outboundSchema.parse(value$),
             "Input validation failed"
         );
         const body$ = enc$.encodeJSON("body", payload$.RequestBody, { explode: true });
@@ -605,7 +604,7 @@ export class Teams extends ClientSDK {
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return operations.UpdateTeamMemberResponse$.inboundSchema.parse({
+                    return models.UpdateTeamMemberResponse$.inboundSchema.parse({
                         ...responseFields$,
                         object: val$,
                     });
@@ -614,7 +613,7 @@ export class Teams extends ClientSDK {
             );
             return result;
         } else {
-            throw new errors.SDKError("Unexpected API response status or content-type", {
+            throw new models.SDKError("Unexpected API response status or content-type", {
                 response,
                 request: request$,
             });
@@ -632,8 +631,8 @@ export class Teams extends ClientSDK {
         uid: string,
         newDefaultTeamId?: string | undefined,
         options?: RequestOptions
-    ): Promise<operations.RemoveTeamMemberResponse> {
-        const input$: operations.RemoveTeamMemberRequest = {
+    ): Promise<models.RemoveTeamMemberResponse> {
+        const input$: models.RemoveTeamMemberRequest = {
             teamId: teamId,
             uid: uid,
             newDefaultTeamId: newDefaultTeamId,
@@ -644,7 +643,7 @@ export class Teams extends ClientSDK {
 
         const payload$ = schemas$.parse(
             input$,
-            (value$) => operations.RemoveTeamMemberRequest$.outboundSchema.parse(value$),
+            (value$) => models.RemoveTeamMemberRequest$.outboundSchema.parse(value$),
             "Input validation failed"
         );
         const body$ = null;
@@ -710,7 +709,7 @@ export class Teams extends ClientSDK {
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return operations.RemoveTeamMemberResponse$.inboundSchema.parse({
+                    return models.RemoveTeamMemberResponse$.inboundSchema.parse({
                         ...responseFields$,
                         object: val$,
                     });
@@ -719,7 +718,7 @@ export class Teams extends ClientSDK {
             );
             return result;
         } else {
-            throw new errors.SDKError("Unexpected API response status or content-type", {
+            throw new models.SDKError("Unexpected API response status or content-type", {
                 response,
                 request: request$,
             });
@@ -736,8 +735,8 @@ export class Teams extends ClientSDK {
         teamId: string,
         slug?: string | undefined,
         options?: RequestOptions
-    ): Promise<operations.GetTeamResponse> {
-        const input$: operations.GetTeamRequest = {
+    ): Promise<models.GetTeamResponse> {
+        const input$: models.GetTeamRequest = {
             teamId: teamId,
             slug: slug,
         };
@@ -747,7 +746,7 @@ export class Teams extends ClientSDK {
 
         const payload$ = schemas$.parse(
             input$,
-            (value$) => operations.GetTeamRequest$.outboundSchema.parse(value$),
+            (value$) => models.GetTeamRequest$.outboundSchema.parse(value$),
             "Input validation failed"
         );
         const body$ = null;
@@ -806,7 +805,7 @@ export class Teams extends ClientSDK {
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return operations.GetTeamResponse$.inboundSchema.parse({
+                    return models.GetTeamResponse$.inboundSchema.parse({
                         ...responseFields$,
                         Team: val$,
                     });
@@ -815,7 +814,7 @@ export class Teams extends ClientSDK {
             );
             return result;
         } else {
-            throw new errors.SDKError("Unexpected API response status or content-type", {
+            throw new models.SDKError("Unexpected API response status or content-type", {
                 response,
                 request: request$,
             });
@@ -831,10 +830,10 @@ export class Teams extends ClientSDK {
     async patchTeam(
         teamId: string,
         slug?: string | undefined,
-        requestBody?: operations.PatchTeamRequestBody | undefined,
+        requestBody?: models.PatchTeamRequestBody | undefined,
         options?: RequestOptions
-    ): Promise<operations.PatchTeamResponse> {
-        const input$: operations.PatchTeamRequest = {
+    ): Promise<models.PatchTeamResponse> {
+        const input$: models.PatchTeamRequest = {
             teamId: teamId,
             slug: slug,
             requestBody: requestBody,
@@ -846,7 +845,7 @@ export class Teams extends ClientSDK {
 
         const payload$ = schemas$.parse(
             input$,
-            (value$) => operations.PatchTeamRequest$.outboundSchema.parse(value$),
+            (value$) => models.PatchTeamRequest$.outboundSchema.parse(value$),
             "Input validation failed"
         );
         const body$ = enc$.encodeJSON("body", payload$.RequestBody, { explode: true });
@@ -908,7 +907,7 @@ export class Teams extends ClientSDK {
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return operations.PatchTeamResponse$.inboundSchema.parse({
+                    return models.PatchTeamResponse$.inboundSchema.parse({
                         ...responseFields$,
                         Team: val$,
                     });
@@ -917,7 +916,7 @@ export class Teams extends ClientSDK {
             );
             return result;
         } else {
-            throw new errors.SDKError("Unexpected API response status or content-type", {
+            throw new models.SDKError("Unexpected API response status or content-type", {
                 response,
                 request: request$,
             });
@@ -935,8 +934,8 @@ export class Teams extends ClientSDK {
         since?: number | undefined,
         until?: number | undefined,
         options?: RequestOptions
-    ): Promise<operations.GetTeamsResponse> {
-        const input$: operations.GetTeamsRequest = {
+    ): Promise<models.GetTeamsResponse> {
+        const input$: models.GetTeamsRequest = {
             limit: limit,
             since: since,
             until: until,
@@ -947,7 +946,7 @@ export class Teams extends ClientSDK {
 
         const payload$ = schemas$.parse(
             input$,
-            (value$) => operations.GetTeamsRequest$.outboundSchema.parse(value$),
+            (value$) => models.GetTeamsRequest$.outboundSchema.parse(value$),
             "Input validation failed"
         );
         const body$ = null;
@@ -1002,7 +1001,7 @@ export class Teams extends ClientSDK {
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return operations.GetTeamsResponse$.inboundSchema.parse({
+                    return models.GetTeamsResponse$.inboundSchema.parse({
                         ...responseFields$,
                         object: val$,
                     });
@@ -1011,7 +1010,7 @@ export class Teams extends ClientSDK {
             );
             return result;
         } else {
-            throw new errors.SDKError("Unexpected API response status or content-type", {
+            throw new models.SDKError("Unexpected API response status or content-type", {
                 response,
                 request: request$,
             });
@@ -1025,9 +1024,9 @@ export class Teams extends ClientSDK {
      * Create a new Team under your account. You need to send a POST request with the desired Team slug, and optionally the Team name.
      */
     async createTeam(
-        request?: operations.CreateTeamRequestBody | undefined,
+        request?: models.CreateTeamRequestBody | undefined,
         options?: RequestOptions
-    ): Promise<operations.CreateTeamResponse> {
+    ): Promise<models.CreateTeamResponse> {
         const input$ = request;
         const headers$ = new Headers();
         headers$.set("user-agent", SDK_METADATA.userAgent);
@@ -1036,7 +1035,7 @@ export class Teams extends ClientSDK {
 
         const payload$ = schemas$.parse(
             input$,
-            (value$) => operations.CreateTeamRequestBody$.outboundSchema.optional().parse(value$),
+            (value$) => models.CreateTeamRequestBody$.outboundSchema.optional().parse(value$),
             "Input validation failed"
         );
         const body$ =
@@ -1086,7 +1085,7 @@ export class Teams extends ClientSDK {
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return operations.CreateTeamResponse$.inboundSchema.parse({
+                    return models.CreateTeamResponse$.inboundSchema.parse({
                         ...responseFields$,
                         object: val$,
                     });
@@ -1095,7 +1094,7 @@ export class Teams extends ClientSDK {
             );
             return result;
         } else {
-            throw new errors.SDKError("Unexpected API response status or content-type", {
+            throw new models.SDKError("Unexpected API response status or content-type", {
                 response,
                 request: request$,
             });
@@ -1112,10 +1111,10 @@ export class Teams extends ClientSDK {
         teamId: string,
         newDefaultTeamId?: string | undefined,
         slug?: string | undefined,
-        requestBody?: operations.DeleteTeamRequestBody | undefined,
+        requestBody?: models.DeleteTeamRequestBody | undefined,
         options?: RequestOptions
-    ): Promise<operations.DeleteTeamResponse> {
-        const input$: operations.DeleteTeamRequest = {
+    ): Promise<models.DeleteTeamResponse> {
+        const input$: models.DeleteTeamRequest = {
             teamId: teamId,
             newDefaultTeamId: newDefaultTeamId,
             slug: slug,
@@ -1128,7 +1127,7 @@ export class Teams extends ClientSDK {
 
         const payload$ = schemas$.parse(
             input$,
-            (value$) => operations.DeleteTeamRequest$.outboundSchema.parse(value$),
+            (value$) => models.DeleteTeamRequest$.outboundSchema.parse(value$),
             "Input validation failed"
         );
         const body$ = enc$.encodeJSON("body", payload$.RequestBody, { explode: true });
@@ -1194,7 +1193,7 @@ export class Teams extends ClientSDK {
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return operations.DeleteTeamResponse$.inboundSchema.parse({
+                    return models.DeleteTeamResponse$.inboundSchema.parse({
                         ...responseFields$,
                         object: val$,
                     });
@@ -1203,7 +1202,7 @@ export class Teams extends ClientSDK {
             );
             return result;
         } else {
-            throw new errors.SDKError("Unexpected API response status or content-type", {
+            throw new models.SDKError("Unexpected API response status or content-type", {
                 response,
                 request: request$,
             });
@@ -1220,8 +1219,8 @@ export class Teams extends ClientSDK {
         teamId: string,
         inviteId: string,
         options?: RequestOptions
-    ): Promise<operations.DeleteTeamInviteCodeResponse> {
-        const input$: operations.DeleteTeamInviteCodeRequest = {
+    ): Promise<models.DeleteTeamInviteCodeResponse> {
+        const input$: models.DeleteTeamInviteCodeRequest = {
             teamId: teamId,
             inviteId: inviteId,
         };
@@ -1231,7 +1230,7 @@ export class Teams extends ClientSDK {
 
         const payload$ = schemas$.parse(
             input$,
-            (value$) => operations.DeleteTeamInviteCodeRequest$.outboundSchema.parse(value$),
+            (value$) => models.DeleteTeamInviteCodeRequest$.outboundSchema.parse(value$),
             "Input validation failed"
         );
         const body$ = null;
@@ -1292,7 +1291,7 @@ export class Teams extends ClientSDK {
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return operations.DeleteTeamInviteCodeResponse$.inboundSchema.parse({
+                    return models.DeleteTeamInviteCodeResponse$.inboundSchema.parse({
                         ...responseFields$,
                         object: val$,
                     });
@@ -1301,7 +1300,7 @@ export class Teams extends ClientSDK {
             );
             return result;
         } else {
-            throw new errors.SDKError("Unexpected API response status or content-type", {
+            throw new models.SDKError("Unexpected API response status or content-type", {
                 response,
                 request: request$,
             });

@@ -8,8 +8,7 @@ import * as enc$ from "../lib/encodings";
 import { HTTPClient } from "../lib/http";
 import * as schemas$ from "../lib/schemas";
 import { ClientSDK, RequestOptions } from "../lib/sdks";
-import * as errors from "../models/errors";
-import * as operations from "../models/operations";
+import * as models from "../models";
 
 export class Artifacts extends ClientSDK {
     private readonly options$: SDKOptions & { hooks?: SDKHooks };
@@ -45,9 +44,9 @@ export class Artifacts extends ClientSDK {
      * Records an artifacts cache usage event. The body of this request is an array of cache usage events. The supported event types are `HIT` and `MISS`. The source is either `LOCAL` the cache event was on the users filesystem cache or `REMOTE` if the cache event is for a remote cache. When the event is a `HIT` the request also accepts a number `duration` which is the time taken to generate the artifact in the cache.
      */
     async recordEvents(
-        request: operations.RecordEventsRequest,
+        request: models.RecordEventsRequest,
         options?: RequestOptions
-    ): Promise<operations.RecordEventsResponse> {
+    ): Promise<models.RecordEventsResponse> {
         const input$ = typeof request === "undefined" ? {} : request;
         const headers$ = new Headers();
         headers$.set("user-agent", SDK_METADATA.userAgent);
@@ -56,7 +55,7 @@ export class Artifacts extends ClientSDK {
 
         const payload$ = schemas$.parse(
             input$,
-            (value$) => operations.RecordEventsRequest$.outboundSchema.parse(value$),
+            (value$) => models.RecordEventsRequest$.outboundSchema.parse(value$),
             "Input validation failed"
         );
         const body$ = enc$.encodeJSON("body", payload$.RequestBody, { explode: true });
@@ -124,7 +123,7 @@ export class Artifacts extends ClientSDK {
         if (this.matchStatusCode(response, 200)) {
             // fallthrough
         } else {
-            throw new errors.SDKError("Unexpected API response status or content-type", {
+            throw new models.SDKError("Unexpected API response status or content-type", {
                 response,
                 request: request$,
             });
@@ -132,7 +131,7 @@ export class Artifacts extends ClientSDK {
 
         return schemas$.parse(
             undefined,
-            () => operations.RecordEventsResponse$.inboundSchema.parse(responseFields$),
+            () => models.RecordEventsResponse$.inboundSchema.parse(responseFields$),
             "Response validation failed"
         );
     }
@@ -147,8 +146,8 @@ export class Artifacts extends ClientSDK {
         teamId?: string | undefined,
         slug?: string | undefined,
         options?: RequestOptions
-    ): Promise<operations.StatusResponse> {
-        const input$: operations.StatusRequest = {
+    ): Promise<models.StatusResponse> {
+        const input$: models.StatusRequest = {
             teamId: teamId,
             slug: slug,
         };
@@ -158,7 +157,7 @@ export class Artifacts extends ClientSDK {
 
         const payload$ = schemas$.parse(
             input$,
-            (value$) => operations.StatusRequest$.outboundSchema.parse(value$),
+            (value$) => models.StatusRequest$.outboundSchema.parse(value$),
             "Input validation failed"
         );
         const body$ = null;
@@ -212,7 +211,7 @@ export class Artifacts extends ClientSDK {
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return operations.StatusResponse$.inboundSchema.parse({
+                    return models.StatusResponse$.inboundSchema.parse({
                         ...responseFields$,
                         object: val$,
                     });
@@ -221,7 +220,7 @@ export class Artifacts extends ClientSDK {
             );
             return result;
         } else {
-            throw new errors.SDKError("Unexpected API response status or content-type", {
+            throw new models.SDKError("Unexpected API response status or content-type", {
                 response,
                 request: request$,
             });
@@ -235,9 +234,9 @@ export class Artifacts extends ClientSDK {
      * Uploads a cache artifact identified by the `hash` specified on the path. The cache artifact can then be downloaded with the provided `hash`.
      */
     async uploadArtifact(
-        request: operations.UploadArtifactRequest,
+        request: models.UploadArtifactRequest,
         options?: RequestOptions
-    ): Promise<operations.UploadArtifactResponse> {
+    ): Promise<models.UploadArtifactResponse> {
         const input$ = request;
         const headers$ = new Headers();
         headers$.set("user-agent", SDK_METADATA.userAgent);
@@ -246,7 +245,7 @@ export class Artifacts extends ClientSDK {
 
         const payload$ = schemas$.parse(
             input$,
-            (value$) => operations.UploadArtifactRequest$.outboundSchema.parse(value$),
+            (value$) => models.UploadArtifactRequest$.outboundSchema.parse(value$),
             "Input validation failed"
         );
         const body$ = payload$.RequestBody;
@@ -343,7 +342,7 @@ export class Artifacts extends ClientSDK {
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return operations.UploadArtifactResponse$.inboundSchema.parse({
+                    return models.UploadArtifactResponse$.inboundSchema.parse({
                         ...responseFields$,
                         object: val$,
                     });
@@ -352,7 +351,7 @@ export class Artifacts extends ClientSDK {
             );
             return result;
         } else {
-            throw new errors.SDKError("Unexpected API response status or content-type", {
+            throw new models.SDKError("Unexpected API response status or content-type", {
                 response,
                 request: request$,
             });
@@ -366,9 +365,9 @@ export class Artifacts extends ClientSDK {
      * Downloads a cache artifact indentified by its `hash` specified on the request path. The artifact is downloaded as an octet-stream. The client should verify the content-length header and response body.
      */
     async downloadArtifact(
-        request: operations.DownloadArtifactRequest,
+        request: models.DownloadArtifactRequest,
         options?: RequestOptions
-    ): Promise<operations.DownloadArtifactResponse> {
+    ): Promise<models.DownloadArtifactResponse> {
         const input$ = request;
         const headers$ = new Headers();
         headers$.set("user-agent", SDK_METADATA.userAgent);
@@ -376,7 +375,7 @@ export class Artifacts extends ClientSDK {
 
         const payload$ = schemas$.parse(
             input$,
-            (value$) => operations.DownloadArtifactRequest$.outboundSchema.parse(value$),
+            (value$) => models.DownloadArtifactRequest$.outboundSchema.parse(value$),
             "Input validation failed"
         );
         const body$ = null;
@@ -455,7 +454,7 @@ export class Artifacts extends ClientSDK {
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return operations.DownloadArtifactResponse$.inboundSchema.parse({
+                    return models.DownloadArtifactResponse$.inboundSchema.parse({
                         ...responseFields$,
                         stream: val$,
                     });
@@ -464,7 +463,7 @@ export class Artifacts extends ClientSDK {
             );
             return result;
         } else {
-            throw new errors.SDKError("Unexpected API response status or content-type", {
+            throw new models.SDKError("Unexpected API response status or content-type", {
                 response,
                 request: request$,
             });
@@ -482,8 +481,8 @@ export class Artifacts extends ClientSDK {
         teamId?: string | undefined,
         slug?: string | undefined,
         options?: RequestOptions
-    ): Promise<operations.ArtifactExistsResponse> {
-        const input$: operations.ArtifactExistsRequest = {
+    ): Promise<models.ArtifactExistsResponse> {
+        const input$: models.ArtifactExistsRequest = {
             hash: hash,
             teamId: teamId,
             slug: slug,
@@ -494,7 +493,7 @@ export class Artifacts extends ClientSDK {
 
         const payload$ = schemas$.parse(
             input$,
-            (value$) => operations.ArtifactExistsRequest$.outboundSchema.parse(value$),
+            (value$) => models.ArtifactExistsRequest$.outboundSchema.parse(value$),
             "Input validation failed"
         );
         const body$ = null;
@@ -555,7 +554,7 @@ export class Artifacts extends ClientSDK {
         if (this.matchStatusCode(response, 200)) {
             // fallthrough
         } else {
-            throw new errors.SDKError("Unexpected API response status or content-type", {
+            throw new models.SDKError("Unexpected API response status or content-type", {
                 response,
                 request: request$,
             });
@@ -563,7 +562,7 @@ export class Artifacts extends ClientSDK {
 
         return schemas$.parse(
             undefined,
-            () => operations.ArtifactExistsResponse$.inboundSchema.parse(responseFields$),
+            () => models.ArtifactExistsResponse$.inboundSchema.parse(responseFields$),
             "Response validation failed"
         );
     }
@@ -577,10 +576,10 @@ export class Artifacts extends ClientSDK {
     async artifactQuery(
         teamId?: string | undefined,
         slug?: string | undefined,
-        requestBody?: operations.ArtifactQueryRequestBody | undefined,
+        requestBody?: models.ArtifactQueryRequestBody | undefined,
         options?: RequestOptions
-    ): Promise<operations.ArtifactQueryResponse> {
-        const input$: operations.ArtifactQueryRequest = {
+    ): Promise<models.ArtifactQueryResponse> {
+        const input$: models.ArtifactQueryRequest = {
             teamId: teamId,
             slug: slug,
             requestBody: requestBody,
@@ -592,7 +591,7 @@ export class Artifacts extends ClientSDK {
 
         const payload$ = schemas$.parse(
             input$,
-            (value$) => operations.ArtifactQueryRequest$.outboundSchema.parse(value$),
+            (value$) => models.ArtifactQueryRequest$.outboundSchema.parse(value$),
             "Input validation failed"
         );
         const body$ = enc$.encodeJSON("body", payload$.RequestBody, { explode: true });
@@ -646,7 +645,7 @@ export class Artifacts extends ClientSDK {
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return operations.ArtifactQueryResponse$.inboundSchema.parse({
+                    return models.ArtifactQueryResponse$.inboundSchema.parse({
                         ...responseFields$,
                         object: val$,
                     });
@@ -655,7 +654,7 @@ export class Artifacts extends ClientSDK {
             );
             return result;
         } else {
-            throw new errors.SDKError("Unexpected API response status or content-type", {
+            throw new models.SDKError("Unexpected API response status or content-type", {
                 response,
                 request: request$,
             });

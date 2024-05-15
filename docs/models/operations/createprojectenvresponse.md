@@ -1,9 +1,0 @@
-# CreateProjectEnvResponse
-
-
-## Fields
-
-| Field                                                                                              | Type                                                                                               | Required                                                                                           | Description                                                                                        |
-| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
-| `httpMeta`                                                                                         | [components.HTTPMetadata](../../models/components/httpmetadata.md)                                 | :heavy_check_mark:                                                                                 | N/A                                                                                                |
-| `object`                                                                                           | [operations.CreateProjectEnvResponseBody](../../models/operations/createprojectenvresponsebody.md) | :heavy_minus_sign:                                                                                 | The environment variable was created successfully                                                  |

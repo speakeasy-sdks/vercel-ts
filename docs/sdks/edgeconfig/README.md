@@ -55,12 +55,12 @@ run();
 
 ### Response
 
-**Promise<[operations.GetEdgeConfigsResponse](../../models/operations/getedgeconfigsresponse.md)>**
+**Promise<[models.GetEdgeConfigsResponse](../../models/getedgeconfigsresponse.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4xx-5xx         | */*             |
+| models.SDKError | 4xx-5xx         | */*             |
 
 ## createEdgeConfig
 
@@ -95,19 +95,19 @@ run();
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `teamId`                                                                                                                                                                       | *string*                                                                                                                                                                       | :heavy_minus_sign:                                                                                                                                                             | The Team identifier to perform the request on behalf of.                                                                                                                       |
 | `slug`                                                                                                                                                                         | *string*                                                                                                                                                                       | :heavy_minus_sign:                                                                                                                                                             | The Team slug to perform the request on behalf of.                                                                                                                             |
-| `requestBody`                                                                                                                                                                  | [operations.CreateEdgeConfigRequestBody](../../models/operations/createedgeconfigrequestbody.md)                                                                               | :heavy_minus_sign:                                                                                                                                                             | N/A                                                                                                                                                                            |
+| `requestBody`                                                                                                                                                                  | [models.CreateEdgeConfigRequestBody](../../models/createedgeconfigrequestbody.md)                                                                                              | :heavy_minus_sign:                                                                                                                                                             | N/A                                                                                                                                                                            |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 
 
 ### Response
 
-**Promise<[operations.CreateEdgeConfigResponse](../../models/operations/createedgeconfigresponse.md)>**
+**Promise<[models.CreateEdgeConfigResponse](../../models/createedgeconfigresponse.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4xx-5xx         | */*             |
+| models.SDKError | 4xx-5xx         | */*             |
 
 ## getEdgeConfig
 
@@ -147,12 +147,12 @@ run();
 
 ### Response
 
-**Promise<[operations.GetEdgeConfigResponse](../../models/operations/getedgeconfigresponse.md)>**
+**Promise<[models.GetEdgeConfigResponse](../../models/getedgeconfigresponse.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4xx-5xx         | */*             |
+| models.SDKError | 4xx-5xx         | */*             |
 
 ## updateEdgeConfig
 
@@ -188,19 +188,19 @@ run();
 | `edgeConfigId`                                                                                                                                                                 | *string*                                                                                                                                                                       | :heavy_check_mark:                                                                                                                                                             | N/A                                                                                                                                                                            |
 | `teamId`                                                                                                                                                                       | *string*                                                                                                                                                                       | :heavy_minus_sign:                                                                                                                                                             | The Team identifier to perform the request on behalf of.                                                                                                                       |
 | `slug`                                                                                                                                                                         | *string*                                                                                                                                                                       | :heavy_minus_sign:                                                                                                                                                             | The Team slug to perform the request on behalf of.                                                                                                                             |
-| `requestBody`                                                                                                                                                                  | [operations.UpdateEdgeConfigRequestBody](../../models/operations/updateedgeconfigrequestbody.md)                                                                               | :heavy_minus_sign:                                                                                                                                                             | N/A                                                                                                                                                                            |
+| `requestBody`                                                                                                                                                                  | [models.UpdateEdgeConfigRequestBody](../../models/updateedgeconfigrequestbody.md)                                                                                              | :heavy_minus_sign:                                                                                                                                                             | N/A                                                                                                                                                                            |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 
 
 ### Response
 
-**Promise<[operations.UpdateEdgeConfigResponse](../../models/operations/updateedgeconfigresponse.md)>**
+**Promise<[models.UpdateEdgeConfigResponse](../../models/updateedgeconfigresponse.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4xx-5xx         | */*             |
+| models.SDKError | 4xx-5xx         | */*             |
 
 ## deleteEdgeConfig
 
@@ -240,12 +240,12 @@ run();
 
 ### Response
 
-**Promise<[operations.DeleteEdgeConfigResponse](../../models/operations/deleteedgeconfigresponse.md)>**
+**Promise<[models.DeleteEdgeConfigResponse](../../models/deleteedgeconfigresponse.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4xx-5xx         | */*             |
+| models.SDKError | 4xx-5xx         | */*             |
 
 ## getEdgeConfigItems
 
@@ -285,12 +285,12 @@ run();
 
 ### Response
 
-**Promise<[operations.GetEdgeConfigItemsResponse](../../models/operations/getedgeconfigitemsresponse.md)>**
+**Promise<[models.GetEdgeConfigItemsResponse](../../models/getedgeconfigitemsresponse.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4xx-5xx         | */*             |
+| models.SDKError | 4xx-5xx         | */*             |
 
 ## getEdgeConfigSchema
 
@@ -330,12 +330,12 @@ run();
 
 ### Response
 
-**Promise<[operations.GetEdgeConfigSchemaResponse](../../models/operations/getedgeconfigschemaresponse.md)>**
+**Promise<[models.GetEdgeConfigSchemaResponse](../../models/getedgeconfigschemaresponse.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4xx-5xx         | */*             |
+| models.SDKError | 4xx-5xx         | */*             |
 
 ## patchEdgeConfigSchema
 
@@ -368,19 +368,19 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.PatchEdgeConfigSchemaRequest](../../models/operations/patchedgeconfigschemarequest.md)                                                                             | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [models.PatchEdgeConfigSchemaRequest](../../models/patchedgeconfigschemarequest.md)                                                                                            | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 
 
 ### Response
 
-**Promise<[operations.PatchEdgeConfigSchemaResponse](../../models/operations/patchedgeconfigschemaresponse.md)>**
+**Promise<[models.PatchEdgeConfigSchemaResponse](../../models/patchedgeconfigschemaresponse.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4xx-5xx         | */*             |
+| models.SDKError | 4xx-5xx         | */*             |
 
 ## deleteEdgeConfigSchema
 
@@ -420,12 +420,12 @@ run();
 
 ### Response
 
-**Promise<[operations.DeleteEdgeConfigSchemaResponse](../../models/operations/deleteedgeconfigschemaresponse.md)>**
+**Promise<[models.DeleteEdgeConfigSchemaResponse](../../models/deleteedgeconfigschemaresponse.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4xx-5xx         | */*             |
+| models.SDKError | 4xx-5xx         | */*             |
 
 ## getEdgeConfigItem
 
@@ -466,12 +466,12 @@ run();
 
 ### Response
 
-**Promise<[operations.GetEdgeConfigItemResponse](../../models/operations/getedgeconfigitemresponse.md)>**
+**Promise<[models.GetEdgeConfigItemResponse](../../models/getedgeconfigitemresponse.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4xx-5xx         | */*             |
+| models.SDKError | 4xx-5xx         | */*             |
 
 ## getEdgeConfigTokens
 
@@ -511,12 +511,12 @@ run();
 
 ### Response
 
-**Promise<[operations.GetEdgeConfigTokensResponse](../../models/operations/getedgeconfigtokensresponse.md)>**
+**Promise<[models.GetEdgeConfigTokensResponse](../../models/getedgeconfigtokensresponse.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4xx-5xx         | */*             |
+| models.SDKError | 4xx-5xx         | */*             |
 
 ## deleteEdgeConfigTokens
 
@@ -554,19 +554,19 @@ run();
 | `edgeConfigId`                                                                                                                                                                 | *string*                                                                                                                                                                       | :heavy_check_mark:                                                                                                                                                             | N/A                                                                                                                                                                            |
 | `teamId`                                                                                                                                                                       | *string*                                                                                                                                                                       | :heavy_minus_sign:                                                                                                                                                             | The Team identifier to perform the request on behalf of.                                                                                                                       |
 | `slug`                                                                                                                                                                         | *string*                                                                                                                                                                       | :heavy_minus_sign:                                                                                                                                                             | The Team slug to perform the request on behalf of.                                                                                                                             |
-| `requestBody`                                                                                                                                                                  | [operations.DeleteEdgeConfigTokensRequestBody](../../models/operations/deleteedgeconfigtokensrequestbody.md)                                                                   | :heavy_minus_sign:                                                                                                                                                             | N/A                                                                                                                                                                            |
+| `requestBody`                                                                                                                                                                  | [models.DeleteEdgeConfigTokensRequestBody](../../models/deleteedgeconfigtokensrequestbody.md)                                                                                  | :heavy_minus_sign:                                                                                                                                                             | N/A                                                                                                                                                                            |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 
 
 ### Response
 
-**Promise<[operations.DeleteEdgeConfigTokensResponse](../../models/operations/deleteedgeconfigtokensresponse.md)>**
+**Promise<[models.DeleteEdgeConfigTokensResponse](../../models/deleteedgeconfigtokensresponse.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4xx-5xx         | */*             |
+| models.SDKError | 4xx-5xx         | */*             |
 
 ## getEdgeConfigToken
 
@@ -607,12 +607,12 @@ run();
 
 ### Response
 
-**Promise<[operations.GetEdgeConfigTokenResponse](../../models/operations/getedgeconfigtokenresponse.md)>**
+**Promise<[models.GetEdgeConfigTokenResponse](../../models/getedgeconfigtokenresponse.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4xx-5xx         | */*             |
+| models.SDKError | 4xx-5xx         | */*             |
 
 ## createEdgeConfigToken
 
@@ -648,16 +648,16 @@ run();
 | `edgeConfigId`                                                                                                                                                                 | *string*                                                                                                                                                                       | :heavy_check_mark:                                                                                                                                                             | N/A                                                                                                                                                                            |
 | `teamId`                                                                                                                                                                       | *string*                                                                                                                                                                       | :heavy_minus_sign:                                                                                                                                                             | The Team identifier to perform the request on behalf of.                                                                                                                       |
 | `slug`                                                                                                                                                                         | *string*                                                                                                                                                                       | :heavy_minus_sign:                                                                                                                                                             | The Team slug to perform the request on behalf of.                                                                                                                             |
-| `requestBody`                                                                                                                                                                  | [operations.CreateEdgeConfigTokenRequestBody](../../models/operations/createedgeconfigtokenrequestbody.md)                                                                     | :heavy_minus_sign:                                                                                                                                                             | N/A                                                                                                                                                                            |
+| `requestBody`                                                                                                                                                                  | [models.CreateEdgeConfigTokenRequestBody](../../models/createedgeconfigtokenrequestbody.md)                                                                                    | :heavy_minus_sign:                                                                                                                                                             | N/A                                                                                                                                                                            |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 
 
 ### Response
 
-**Promise<[operations.CreateEdgeConfigTokenResponse](../../models/operations/createedgeconfigtokenresponse.md)>**
+**Promise<[models.CreateEdgeConfigTokenResponse](../../models/createedgeconfigtokenresponse.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4xx-5xx         | */*             |
+| models.SDKError | 4xx-5xx         | */*             |

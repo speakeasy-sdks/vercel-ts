@@ -1,0 +1,9 @@
+# UpdateProjectDataCacheContentHint2
+
+
+## Fields
+
+| Field                                                                                              | Type                                                                                               | Required                                                                                           | Description                                                                                        |
+| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| `type`                                                                                             | [models.UpdateProjectDataCacheContentHintType](../models/updateprojectdatacachecontenthinttype.md) | :heavy_check_mark:                                                                                 | N/A                                                                                                |
+| `storeId`                                                                                          | *string*                                                                                           | :heavy_check_mark:                                                                                 | N/A                                                                                                |

@@ -8,8 +8,7 @@ import * as enc$ from "../lib/encodings";
 import { HTTPClient } from "../lib/http";
 import * as schemas$ from "../lib/schemas";
 import { ClientSDK, RequestOptions } from "../lib/sdks";
-import * as errors from "../models/errors";
-import * as operations from "../models/operations";
+import * as models from "../models";
 
 export class Aliases extends ClientSDK {
     private readonly options$: SDKOptions & { hooks?: SDKHooks };
@@ -45,9 +44,9 @@ export class Aliases extends ClientSDK {
      * Retrieves a list of aliases for the authenticated User or Team. When `domain` is provided, only aliases for that domain will be returned. When `projectId` is provided, it will only return the given project aliases.
      */
     async listAliases(
-        request: operations.ListAliasesRequest,
+        request: models.ListAliasesRequest,
         options?: RequestOptions
-    ): Promise<operations.ListAliasesResponse> {
+    ): Promise<models.ListAliasesResponse> {
         const input$ = typeof request === "undefined" ? {} : request;
         const headers$ = new Headers();
         headers$.set("user-agent", SDK_METADATA.userAgent);
@@ -55,7 +54,7 @@ export class Aliases extends ClientSDK {
 
         const payload$ = schemas$.parse(
             input$,
-            (value$) => operations.ListAliasesRequest$.outboundSchema.parse(value$),
+            (value$) => models.ListAliasesRequest$.outboundSchema.parse(value$),
             "Input validation failed"
         );
         const body$ = null;
@@ -122,7 +121,7 @@ export class Aliases extends ClientSDK {
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return operations.ListAliasesResponse$.inboundSchema.parse({
+                    return models.ListAliasesResponse$.inboundSchema.parse({
                         ...responseFields$,
                         object: val$,
                     });
@@ -131,7 +130,7 @@ export class Aliases extends ClientSDK {
             );
             return result;
         } else {
-            throw new errors.SDKError("Unexpected API response status or content-type", {
+            throw new models.SDKError("Unexpected API response status or content-type", {
                 response,
                 request: request$,
             });
@@ -145,9 +144,9 @@ export class Aliases extends ClientSDK {
      * Retrieves an Alias for the given host name or alias ID.
      */
     async getAlias(
-        request: operations.GetAliasRequest,
+        request: models.GetAliasRequest,
         options?: RequestOptions
-    ): Promise<operations.GetAliasResponse> {
+    ): Promise<models.GetAliasResponse> {
         const input$ = request;
         const headers$ = new Headers();
         headers$.set("user-agent", SDK_METADATA.userAgent);
@@ -155,7 +154,7 @@ export class Aliases extends ClientSDK {
 
         const payload$ = schemas$.parse(
             input$,
-            (value$) => operations.GetAliasRequest$.outboundSchema.parse(value$),
+            (value$) => models.GetAliasRequest$.outboundSchema.parse(value$),
             "Input validation failed"
         );
         const body$ = null;
@@ -222,7 +221,7 @@ export class Aliases extends ClientSDK {
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return operations.GetAliasResponse$.inboundSchema.parse({
+                    return models.GetAliasResponse$.inboundSchema.parse({
                         ...responseFields$,
                         object: val$,
                     });
@@ -231,7 +230,7 @@ export class Aliases extends ClientSDK {
             );
             return result;
         } else {
-            throw new errors.SDKError("Unexpected API response status or content-type", {
+            throw new models.SDKError("Unexpected API response status or content-type", {
                 response,
                 request: request$,
             });
@@ -249,8 +248,8 @@ export class Aliases extends ClientSDK {
         teamId?: string | undefined,
         slug?: string | undefined,
         options?: RequestOptions
-    ): Promise<operations.DeleteAliasResponse> {
-        const input$: operations.DeleteAliasRequest = {
+    ): Promise<models.DeleteAliasResponse> {
+        const input$: models.DeleteAliasRequest = {
             aliasId: aliasId,
             teamId: teamId,
             slug: slug,
@@ -261,7 +260,7 @@ export class Aliases extends ClientSDK {
 
         const payload$ = schemas$.parse(
             input$,
-            (value$) => operations.DeleteAliasRequest$.outboundSchema.parse(value$),
+            (value$) => models.DeleteAliasRequest$.outboundSchema.parse(value$),
             "Input validation failed"
         );
         const body$ = null;
@@ -321,7 +320,7 @@ export class Aliases extends ClientSDK {
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return operations.DeleteAliasResponse$.inboundSchema.parse({
+                    return models.DeleteAliasResponse$.inboundSchema.parse({
                         ...responseFields$,
                         object: val$,
                     });
@@ -330,7 +329,7 @@ export class Aliases extends ClientSDK {
             );
             return result;
         } else {
-            throw new errors.SDKError("Unexpected API response status or content-type", {
+            throw new models.SDKError("Unexpected API response status or content-type", {
                 response,
                 request: request$,
             });
@@ -348,8 +347,8 @@ export class Aliases extends ClientSDK {
         teamId?: string | undefined,
         slug?: string | undefined,
         options?: RequestOptions
-    ): Promise<operations.ListDeploymentAliasesResponse> {
-        const input$: operations.ListDeploymentAliasesRequest = {
+    ): Promise<models.ListDeploymentAliasesResponse> {
+        const input$: models.ListDeploymentAliasesRequest = {
             id: id,
             teamId: teamId,
             slug: slug,
@@ -360,7 +359,7 @@ export class Aliases extends ClientSDK {
 
         const payload$ = schemas$.parse(
             input$,
-            (value$) => operations.ListDeploymentAliasesRequest$.outboundSchema.parse(value$),
+            (value$) => models.ListDeploymentAliasesRequest$.outboundSchema.parse(value$),
             "Input validation failed"
         );
         const body$ = null;
@@ -417,7 +416,7 @@ export class Aliases extends ClientSDK {
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return operations.ListDeploymentAliasesResponse$.inboundSchema.parse({
+                    return models.ListDeploymentAliasesResponse$.inboundSchema.parse({
                         ...responseFields$,
                         object: val$,
                     });
@@ -426,7 +425,7 @@ export class Aliases extends ClientSDK {
             );
             return result;
         } else {
-            throw new errors.SDKError("Unexpected API response status or content-type", {
+            throw new models.SDKError("Unexpected API response status or content-type", {
                 response,
                 request: request$,
             });
@@ -443,10 +442,10 @@ export class Aliases extends ClientSDK {
         id: string,
         teamId?: string | undefined,
         slug?: string | undefined,
-        requestBody?: operations.AssignAliasRequestBody | undefined,
+        requestBody?: models.AssignAliasRequestBody | undefined,
         options?: RequestOptions
-    ): Promise<operations.AssignAliasResponse> {
-        const input$: operations.AssignAliasRequest = {
+    ): Promise<models.AssignAliasResponse> {
+        const input$: models.AssignAliasRequest = {
             id: id,
             teamId: teamId,
             slug: slug,
@@ -459,7 +458,7 @@ export class Aliases extends ClientSDK {
 
         const payload$ = schemas$.parse(
             input$,
-            (value$) => operations.AssignAliasRequest$.outboundSchema.parse(value$),
+            (value$) => models.AssignAliasRequest$.outboundSchema.parse(value$),
             "Input validation failed"
         );
         const body$ = enc$.encodeJSON("body", payload$.RequestBody, { explode: true });
@@ -519,7 +518,7 @@ export class Aliases extends ClientSDK {
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return operations.AssignAliasResponse$.inboundSchema.parse({
+                    return models.AssignAliasResponse$.inboundSchema.parse({
                         ...responseFields$,
                         object: val$,
                     });
@@ -528,7 +527,7 @@ export class Aliases extends ClientSDK {
             );
             return result;
         } else {
-            throw new errors.SDKError("Unexpected API response status or content-type", {
+            throw new models.SDKError("Unexpected API response status or content-type", {
                 response,
                 request: request$,
             });

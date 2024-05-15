@@ -8,8 +8,7 @@ import * as enc$ from "../lib/encodings";
 import { HTTPClient } from "../lib/http";
 import * as schemas$ from "../lib/schemas";
 import { ClientSDK, RequestOptions } from "../lib/sdks";
-import * as errors from "../models/errors";
-import * as operations from "../models/operations";
+import * as models from "../models";
 
 export enum GetDeploymentEventsAcceptEnum {
     applicationJson = "application/json",
@@ -50,9 +49,9 @@ export class Deployments extends ClientSDK {
      * Get the build logs of a deployment by deployment ID and build ID. It can work as an infinite stream of logs or as a JSON endpoint depending on the input parameters.
      */
     async getDeploymentEvents(
-        request: operations.GetDeploymentEventsRequest,
+        request: models.GetDeploymentEventsRequest,
         options?: RequestOptions & { acceptHeaderOverride?: GetDeploymentEventsAcceptEnum }
-    ): Promise<operations.GetDeploymentEventsResponse> {
+    ): Promise<models.GetDeploymentEventsResponse> {
         const input$ = request;
         const headers$ = new Headers();
         headers$.set("user-agent", SDK_METADATA.userAgent);
@@ -63,7 +62,7 @@ export class Deployments extends ClientSDK {
 
         const payload$ = schemas$.parse(
             input$,
-            (value$) => operations.GetDeploymentEventsRequest$.outboundSchema.parse(value$),
+            (value$) => models.GetDeploymentEventsRequest$.outboundSchema.parse(value$),
             "Input validation failed"
         );
         const body$ = null;
@@ -141,7 +140,7 @@ export class Deployments extends ClientSDK {
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return operations.GetDeploymentEventsResponse$.inboundSchema.parse({
+                    return models.GetDeploymentEventsResponse$.inboundSchema.parse({
                         ...responseFields$,
                         responseBodies: val$,
                     });
@@ -154,7 +153,7 @@ export class Deployments extends ClientSDK {
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return operations.GetDeploymentEventsResponse$.inboundSchema.parse({
+                    return models.GetDeploymentEventsResponse$.inboundSchema.parse({
                         ...responseFields$,
                         oneOf: val$,
                     });
@@ -163,7 +162,7 @@ export class Deployments extends ClientSDK {
             );
             return result;
         } else {
-            throw new errors.SDKError("Unexpected API response status or content-type", {
+            throw new models.SDKError("Unexpected API response status or content-type", {
                 response,
                 request: request$,
             });
@@ -182,8 +181,8 @@ export class Deployments extends ClientSDK {
         teamId?: string | undefined,
         slug?: string | undefined,
         options?: RequestOptions
-    ): Promise<operations.GetDeploymentResponse> {
-        const input$: operations.GetDeploymentRequest = {
+    ): Promise<models.GetDeploymentResponse> {
+        const input$: models.GetDeploymentRequest = {
             idOrUrl: idOrUrl,
             withGitRepoInfo: withGitRepoInfo,
             teamId: teamId,
@@ -195,7 +194,7 @@ export class Deployments extends ClientSDK {
 
         const payload$ = schemas$.parse(
             input$,
-            (value$) => operations.GetDeploymentRequest$.outboundSchema.parse(value$),
+            (value$) => models.GetDeploymentRequest$.outboundSchema.parse(value$),
             "Input validation failed"
         );
         const body$ = null;
@@ -259,7 +258,7 @@ export class Deployments extends ClientSDK {
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return operations.GetDeploymentResponse$.inboundSchema.parse({
+                    return models.GetDeploymentResponse$.inboundSchema.parse({
                         ...responseFields$,
                         oneOf: val$,
                     });
@@ -268,7 +267,7 @@ export class Deployments extends ClientSDK {
             );
             return result;
         } else {
-            throw new errors.SDKError("Unexpected API response status or content-type", {
+            throw new models.SDKError("Unexpected API response status or content-type", {
                 response,
                 request: request$,
             });
@@ -282,9 +281,9 @@ export class Deployments extends ClientSDK {
      * Create a new deployment with all the required and intended data. If the deployment is not a git deployment, all files must be provided with the request, either referenced or inlined. Additionally, a deployment id can be specified to redeploy a previous deployment.
      */
     async createDeployment(
-        request: operations.CreateDeploymentRequest,
+        request: models.CreateDeploymentRequest,
         options?: RequestOptions
-    ): Promise<operations.CreateDeploymentResponse> {
+    ): Promise<models.CreateDeploymentResponse> {
         const input$ = typeof request === "undefined" ? {} : request;
         const headers$ = new Headers();
         headers$.set("user-agent", SDK_METADATA.userAgent);
@@ -293,7 +292,7 @@ export class Deployments extends ClientSDK {
 
         const payload$ = schemas$.parse(
             input$,
-            (value$) => operations.CreateDeploymentRequest$.outboundSchema.parse(value$),
+            (value$) => models.CreateDeploymentRequest$.outboundSchema.parse(value$),
             "Input validation failed"
         );
         const body$ = enc$.encodeJSON("body", payload$.RequestBody, { explode: true });
@@ -359,7 +358,7 @@ export class Deployments extends ClientSDK {
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return operations.CreateDeploymentResponse$.inboundSchema.parse({
+                    return models.CreateDeploymentResponse$.inboundSchema.parse({
                         ...responseFields$,
                         object: val$,
                     });
@@ -368,7 +367,7 @@ export class Deployments extends ClientSDK {
             );
             return result;
         } else {
-            throw new errors.SDKError("Unexpected API response status or content-type", {
+            throw new models.SDKError("Unexpected API response status or content-type", {
                 response,
                 request: request$,
             });
@@ -386,8 +385,8 @@ export class Deployments extends ClientSDK {
         teamId?: string | undefined,
         slug?: string | undefined,
         options?: RequestOptions
-    ): Promise<operations.CancelDeploymentResponse> {
-        const input$: operations.CancelDeploymentRequest = {
+    ): Promise<models.CancelDeploymentResponse> {
+        const input$: models.CancelDeploymentRequest = {
             id: id,
             teamId: teamId,
             slug: slug,
@@ -398,7 +397,7 @@ export class Deployments extends ClientSDK {
 
         const payload$ = schemas$.parse(
             input$,
-            (value$) => operations.CancelDeploymentRequest$.outboundSchema.parse(value$),
+            (value$) => models.CancelDeploymentRequest$.outboundSchema.parse(value$),
             "Input validation failed"
         );
         const body$ = null;
@@ -455,7 +454,7 @@ export class Deployments extends ClientSDK {
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return operations.CancelDeploymentResponse$.inboundSchema.parse({
+                    return models.CancelDeploymentResponse$.inboundSchema.parse({
                         ...responseFields$,
                         object: val$,
                     });
@@ -464,7 +463,7 @@ export class Deployments extends ClientSDK {
             );
             return result;
         } else {
-            throw new errors.SDKError("Unexpected API response status or content-type", {
+            throw new models.SDKError("Unexpected API response status or content-type", {
                 response,
                 request: request$,
             });
@@ -478,9 +477,9 @@ export class Deployments extends ClientSDK {
      * Before you create a deployment you need to upload the required files for that deployment. To do it, you need to first upload each file to this endpoint. Once that's completed, you can create a new deployment with the uploaded files. The file content must be placed inside the body of the request. In the case of a successful response you'll receive a status code 200 with an empty body.
      */
     async uploadFile(
-        request: operations.UploadFileRequest,
+        request: models.UploadFileRequest,
         options?: RequestOptions
-    ): Promise<operations.UploadFileResponse> {
+    ): Promise<models.UploadFileResponse> {
         const input$ = typeof request === "undefined" ? {} : request;
         const headers$ = new Headers();
         headers$.set("user-agent", SDK_METADATA.userAgent);
@@ -488,7 +487,7 @@ export class Deployments extends ClientSDK {
 
         const payload$ = schemas$.parse(
             input$,
-            (value$) => operations.UploadFileRequest$.outboundSchema.parse(value$),
+            (value$) => models.UploadFileRequest$.outboundSchema.parse(value$),
             "Input validation failed"
         );
         const body$ = null;
@@ -571,7 +570,7 @@ export class Deployments extends ClientSDK {
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return operations.UploadFileResponse$.inboundSchema.parse({
+                    return models.UploadFileResponse$.inboundSchema.parse({
                         ...responseFields$,
                         oneOf: val$,
                     });
@@ -580,7 +579,7 @@ export class Deployments extends ClientSDK {
             );
             return result;
         } else {
-            throw new errors.SDKError("Unexpected API response status or content-type", {
+            throw new models.SDKError("Unexpected API response status or content-type", {
                 response,
                 request: request$,
             });
@@ -598,8 +597,8 @@ export class Deployments extends ClientSDK {
         teamId?: string | undefined,
         slug?: string | undefined,
         options?: RequestOptions
-    ): Promise<operations.ListDeploymentFilesResponse> {
-        const input$: operations.ListDeploymentFilesRequest = {
+    ): Promise<models.ListDeploymentFilesResponse> {
+        const input$: models.ListDeploymentFilesRequest = {
             id: id,
             teamId: teamId,
             slug: slug,
@@ -610,7 +609,7 @@ export class Deployments extends ClientSDK {
 
         const payload$ = schemas$.parse(
             input$,
-            (value$) => operations.ListDeploymentFilesRequest$.outboundSchema.parse(value$),
+            (value$) => models.ListDeploymentFilesRequest$.outboundSchema.parse(value$),
             "Input validation failed"
         );
         const body$ = null;
@@ -667,7 +666,7 @@ export class Deployments extends ClientSDK {
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return operations.ListDeploymentFilesResponse$.inboundSchema.parse({
+                    return models.ListDeploymentFilesResponse$.inboundSchema.parse({
                         ...responseFields$,
                         FileTrees: val$,
                     });
@@ -676,7 +675,7 @@ export class Deployments extends ClientSDK {
             );
             return result;
         } else {
-            throw new errors.SDKError("Unexpected API response status or content-type", {
+            throw new models.SDKError("Unexpected API response status or content-type", {
                 response,
                 request: request$,
             });
@@ -690,9 +689,9 @@ export class Deployments extends ClientSDK {
      * Allows to retrieve the content of a file by supplying the file identifier and the deployment unique identifier. The response body will contain a JSON response containing the contents of the file encoded as base64.
      */
     async getDeploymentFileContents(
-        request: operations.GetDeploymentFileContentsRequest,
+        request: models.GetDeploymentFileContentsRequest,
         options?: RequestOptions
-    ): Promise<operations.GetDeploymentFileContentsResponse> {
+    ): Promise<models.GetDeploymentFileContentsResponse> {
         const input$ = request;
         const headers$ = new Headers();
         headers$.set("user-agent", SDK_METADATA.userAgent);
@@ -700,7 +699,7 @@ export class Deployments extends ClientSDK {
 
         const payload$ = schemas$.parse(
             input$,
-            (value$) => operations.GetDeploymentFileContentsRequest$.outboundSchema.parse(value$),
+            (value$) => models.GetDeploymentFileContentsRequest$.outboundSchema.parse(value$),
             "Input validation failed"
         );
         const body$ = null;
@@ -763,7 +762,7 @@ export class Deployments extends ClientSDK {
         if (this.matchStatusCode(response, "2XX")) {
             // fallthrough
         } else {
-            throw new errors.SDKError("Unexpected API response status or content-type", {
+            throw new models.SDKError("Unexpected API response status or content-type", {
                 response,
                 request: request$,
             });
@@ -771,8 +770,7 @@ export class Deployments extends ClientSDK {
 
         return schemas$.parse(
             undefined,
-            () =>
-                operations.GetDeploymentFileContentsResponse$.inboundSchema.parse(responseFields$),
+            () => models.GetDeploymentFileContentsResponse$.inboundSchema.parse(responseFields$),
             "Response validation failed"
         );
     }
@@ -784,9 +782,9 @@ export class Deployments extends ClientSDK {
      * List deployments under the authenticated user or team. If a deployment hasn't finished uploading (is incomplete), the `url` property will have a value of `null`.
      */
     async getDeployments(
-        request: operations.GetDeploymentsRequest,
+        request: models.GetDeploymentsRequest,
         options?: RequestOptions
-    ): Promise<operations.GetDeploymentsResponse> {
+    ): Promise<models.GetDeploymentsResponse> {
         const input$ = typeof request === "undefined" ? {} : request;
         const headers$ = new Headers();
         headers$.set("user-agent", SDK_METADATA.userAgent);
@@ -794,7 +792,7 @@ export class Deployments extends ClientSDK {
 
         const payload$ = schemas$.parse(
             input$,
-            (value$) => operations.GetDeploymentsRequest$.outboundSchema.parse(value$),
+            (value$) => models.GetDeploymentsRequest$.outboundSchema.parse(value$),
             "Input validation failed"
         );
         const body$ = null;
@@ -868,7 +866,7 @@ export class Deployments extends ClientSDK {
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return operations.GetDeploymentsResponse$.inboundSchema.parse({
+                    return models.GetDeploymentsResponse$.inboundSchema.parse({
                         ...responseFields$,
                         object: val$,
                     });
@@ -877,7 +875,7 @@ export class Deployments extends ClientSDK {
             );
             return result;
         } else {
-            throw new errors.SDKError("Unexpected API response status or content-type", {
+            throw new models.SDKError("Unexpected API response status or content-type", {
                 response,
                 request: request$,
             });
@@ -896,8 +894,8 @@ export class Deployments extends ClientSDK {
         teamId?: string | undefined,
         slug?: string | undefined,
         options?: RequestOptions
-    ): Promise<operations.DeleteDeploymentResponse> {
-        const input$: operations.DeleteDeploymentRequest = {
+    ): Promise<models.DeleteDeploymentResponse> {
+        const input$: models.DeleteDeploymentRequest = {
             id: id,
             url: url,
             teamId: teamId,
@@ -909,7 +907,7 @@ export class Deployments extends ClientSDK {
 
         const payload$ = schemas$.parse(
             input$,
-            (value$) => operations.DeleteDeploymentRequest$.outboundSchema.parse(value$),
+            (value$) => models.DeleteDeploymentRequest$.outboundSchema.parse(value$),
             "Input validation failed"
         );
         const body$ = null;
@@ -967,7 +965,7 @@ export class Deployments extends ClientSDK {
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return operations.DeleteDeploymentResponse$.inboundSchema.parse({
+                    return models.DeleteDeploymentResponse$.inboundSchema.parse({
                         ...responseFields$,
                         object: val$,
                     });
@@ -976,7 +974,7 @@ export class Deployments extends ClientSDK {
             );
             return result;
         } else {
-            throw new errors.SDKError("Unexpected API response status or content-type", {
+            throw new models.SDKError("Unexpected API response status or content-type", {
                 response,
                 request: request$,
             });

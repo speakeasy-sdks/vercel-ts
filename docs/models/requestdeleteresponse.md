@@ -1,0 +1,9 @@
+# RequestDeleteResponse
+
+
+## Fields
+
+| Field                                                                                                          | Type                                                                                                           | Required                                                                                                       | Description                                                                                                    |
+| -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| `httpMeta`                                                                                                     | [models.HTTPMetadata](../models/httpmetadata.md)                                                               | :heavy_check_mark:                                                                                             | N/A                                                                                                            |
+| `object`                                                                                                       | [models.RequestDeleteResponseBody](../models/requestdeleteresponsebody.md)                                     | :heavy_minus_sign:                                                                                             | Response indicating that the User deletion process has been initiated, and a confirmation email has been sent. |

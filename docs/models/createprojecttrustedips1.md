@@ -1,0 +1,10 @@
+# CreateProjectTrustedIps1
+
+
+## Fields
+
+| Field                                                                                              | Type                                                                                               | Required                                                                                           | Description                                                                                        |
+| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| `deploymentType`                                                                                   | [models.CreateProjectTrustedIpsDeploymentType](../models/createprojecttrustedipsdeploymenttype.md) | :heavy_check_mark:                                                                                 | N/A                                                                                                |
+| `addresses`                                                                                        | [models.TrustedIpsAddresses](../models/trustedipsaddresses.md)[]                                   | :heavy_check_mark:                                                                                 | N/A                                                                                                |
+| `protectionMode`                                                                                   | [models.TrustedIpsProtectionMode](../models/trustedipsprotectionmode.md)                           | :heavy_check_mark:                                                                                 | N/A                                                                                                |

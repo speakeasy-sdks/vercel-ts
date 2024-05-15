@@ -8,8 +8,7 @@ import * as enc$ from "../lib/encodings";
 import { HTTPClient } from "../lib/http";
 import * as schemas$ from "../lib/schemas";
 import { ClientSDK, RequestOptions } from "../lib/sdks";
-import * as errors from "../models/errors";
-import * as operations from "../models/operations";
+import * as models from "../models";
 
 export class LogDrains extends ClientSDK {
     private readonly options$: SDKOptions & { hooks?: SDKHooks };
@@ -48,8 +47,8 @@ export class LogDrains extends ClientSDK {
         teamId?: string | undefined,
         slug?: string | undefined,
         options?: RequestOptions
-    ): Promise<operations.GetIntegrationLogDrainsResponse> {
-        const input$: operations.GetIntegrationLogDrainsRequest = {
+    ): Promise<models.GetIntegrationLogDrainsResponse> {
+        const input$: models.GetIntegrationLogDrainsRequest = {
             teamId: teamId,
             slug: slug,
         };
@@ -59,7 +58,7 @@ export class LogDrains extends ClientSDK {
 
         const payload$ = schemas$.parse(
             input$,
-            (value$) => operations.GetIntegrationLogDrainsRequest$.outboundSchema.parse(value$),
+            (value$) => models.GetIntegrationLogDrainsRequest$.outboundSchema.parse(value$),
             "Input validation failed"
         );
         const body$ = null;
@@ -113,7 +112,7 @@ export class LogDrains extends ClientSDK {
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return operations.GetIntegrationLogDrainsResponse$.inboundSchema.parse({
+                    return models.GetIntegrationLogDrainsResponse$.inboundSchema.parse({
                         ...responseFields$,
                         responseBodies: val$,
                     });
@@ -122,7 +121,7 @@ export class LogDrains extends ClientSDK {
             );
             return result;
         } else {
-            throw new errors.SDKError("Unexpected API response status or content-type", {
+            throw new models.SDKError("Unexpected API response status or content-type", {
                 response,
                 request: request$,
             });
@@ -138,10 +137,10 @@ export class LogDrains extends ClientSDK {
     async createLogDrain(
         teamId?: string | undefined,
         slug?: string | undefined,
-        requestBody?: operations.CreateLogDrainRequestBody | undefined,
+        requestBody?: models.CreateLogDrainRequestBody | undefined,
         options?: RequestOptions
-    ): Promise<operations.CreateLogDrainResponse> {
-        const input$: operations.CreateLogDrainRequest = {
+    ): Promise<models.CreateLogDrainResponse> {
+        const input$: models.CreateLogDrainRequest = {
             teamId: teamId,
             slug: slug,
             requestBody: requestBody,
@@ -153,7 +152,7 @@ export class LogDrains extends ClientSDK {
 
         const payload$ = schemas$.parse(
             input$,
-            (value$) => operations.CreateLogDrainRequest$.outboundSchema.parse(value$),
+            (value$) => models.CreateLogDrainRequest$.outboundSchema.parse(value$),
             "Input validation failed"
         );
         const body$ = enc$.encodeJSON("body", payload$.RequestBody, { explode: true });
@@ -207,7 +206,7 @@ export class LogDrains extends ClientSDK {
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return operations.CreateLogDrainResponse$.inboundSchema.parse({
+                    return models.CreateLogDrainResponse$.inboundSchema.parse({
                         ...responseFields$,
                         object: val$,
                     });
@@ -216,7 +215,7 @@ export class LogDrains extends ClientSDK {
             );
             return result;
         } else {
-            throw new errors.SDKError("Unexpected API response status or content-type", {
+            throw new models.SDKError("Unexpected API response status or content-type", {
                 response,
                 request: request$,
             });
@@ -234,8 +233,8 @@ export class LogDrains extends ClientSDK {
         teamId?: string | undefined,
         slug?: string | undefined,
         options?: RequestOptions
-    ): Promise<operations.DeleteIntegrationLogDrainResponse> {
-        const input$: operations.DeleteIntegrationLogDrainRequest = {
+    ): Promise<models.DeleteIntegrationLogDrainResponse> {
+        const input$: models.DeleteIntegrationLogDrainRequest = {
             id: id,
             teamId: teamId,
             slug: slug,
@@ -246,7 +245,7 @@ export class LogDrains extends ClientSDK {
 
         const payload$ = schemas$.parse(
             input$,
-            (value$) => operations.DeleteIntegrationLogDrainRequest$.outboundSchema.parse(value$),
+            (value$) => models.DeleteIntegrationLogDrainRequest$.outboundSchema.parse(value$),
             "Input validation failed"
         );
         const body$ = null;
@@ -301,7 +300,7 @@ export class LogDrains extends ClientSDK {
         if (this.matchStatusCode(response, 204)) {
             // fallthrough
         } else {
-            throw new errors.SDKError("Unexpected API response status or content-type", {
+            throw new models.SDKError("Unexpected API response status or content-type", {
                 response,
                 request: request$,
             });
@@ -309,8 +308,7 @@ export class LogDrains extends ClientSDK {
 
         return schemas$.parse(
             undefined,
-            () =>
-                operations.DeleteIntegrationLogDrainResponse$.inboundSchema.parse(responseFields$),
+            () => models.DeleteIntegrationLogDrainResponse$.inboundSchema.parse(responseFields$),
             "Response validation failed"
         );
     }
@@ -326,8 +324,8 @@ export class LogDrains extends ClientSDK {
         teamId?: string | undefined,
         slug?: string | undefined,
         options?: RequestOptions
-    ): Promise<operations.GetConfigurableLogDrainResponse> {
-        const input$: operations.GetConfigurableLogDrainRequest = {
+    ): Promise<models.GetConfigurableLogDrainResponse> {
+        const input$: models.GetConfigurableLogDrainRequest = {
             id: id,
             teamId: teamId,
             slug: slug,
@@ -338,7 +336,7 @@ export class LogDrains extends ClientSDK {
 
         const payload$ = schemas$.parse(
             input$,
-            (value$) => operations.GetConfigurableLogDrainRequest$.outboundSchema.parse(value$),
+            (value$) => models.GetConfigurableLogDrainRequest$.outboundSchema.parse(value$),
             "Input validation failed"
         );
         const body$ = null;
@@ -395,7 +393,7 @@ export class LogDrains extends ClientSDK {
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return operations.GetConfigurableLogDrainResponse$.inboundSchema.parse({
+                    return models.GetConfigurableLogDrainResponse$.inboundSchema.parse({
                         ...responseFields$,
                         object: val$,
                     });
@@ -404,7 +402,7 @@ export class LogDrains extends ClientSDK {
             );
             return result;
         } else {
-            throw new errors.SDKError("Unexpected API response status or content-type", {
+            throw new models.SDKError("Unexpected API response status or content-type", {
                 response,
                 request: request$,
             });
@@ -422,8 +420,8 @@ export class LogDrains extends ClientSDK {
         teamId?: string | undefined,
         slug?: string | undefined,
         options?: RequestOptions
-    ): Promise<operations.DeleteConfigurableLogDrainResponse> {
-        const input$: operations.DeleteConfigurableLogDrainRequest = {
+    ): Promise<models.DeleteConfigurableLogDrainResponse> {
+        const input$: models.DeleteConfigurableLogDrainRequest = {
             id: id,
             teamId: teamId,
             slug: slug,
@@ -434,7 +432,7 @@ export class LogDrains extends ClientSDK {
 
         const payload$ = schemas$.parse(
             input$,
-            (value$) => operations.DeleteConfigurableLogDrainRequest$.outboundSchema.parse(value$),
+            (value$) => models.DeleteConfigurableLogDrainRequest$.outboundSchema.parse(value$),
             "Input validation failed"
         );
         const body$ = null;
@@ -489,7 +487,7 @@ export class LogDrains extends ClientSDK {
         if (this.matchStatusCode(response, 204)) {
             // fallthrough
         } else {
-            throw new errors.SDKError("Unexpected API response status or content-type", {
+            throw new models.SDKError("Unexpected API response status or content-type", {
                 response,
                 request: request$,
             });
@@ -497,8 +495,7 @@ export class LogDrains extends ClientSDK {
 
         return schemas$.parse(
             undefined,
-            () =>
-                operations.DeleteConfigurableLogDrainResponse$.inboundSchema.parse(responseFields$),
+            () => models.DeleteConfigurableLogDrainResponse$.inboundSchema.parse(responseFields$),
             "Response validation failed"
         );
     }
@@ -514,8 +511,8 @@ export class LogDrains extends ClientSDK {
         teamId?: string | undefined,
         slug?: string | undefined,
         options?: RequestOptions
-    ): Promise<operations.GetAllLogDrainsResponse> {
-        const input$: operations.GetAllLogDrainsRequest = {
+    ): Promise<models.GetAllLogDrainsResponse> {
+        const input$: models.GetAllLogDrainsRequest = {
             projectId: projectId,
             teamId: teamId,
             slug: slug,
@@ -526,7 +523,7 @@ export class LogDrains extends ClientSDK {
 
         const payload$ = schemas$.parse(
             input$,
-            (value$) => operations.GetAllLogDrainsRequest$.outboundSchema.parse(value$),
+            (value$) => models.GetAllLogDrainsRequest$.outboundSchema.parse(value$),
             "Input validation failed"
         );
         const body$ = null;
@@ -584,7 +581,7 @@ export class LogDrains extends ClientSDK {
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return operations.GetAllLogDrainsResponse$.inboundSchema.parse({
+                    return models.GetAllLogDrainsResponse$.inboundSchema.parse({
                         ...responseFields$,
                         responseBodies: val$,
                     });
@@ -593,7 +590,7 @@ export class LogDrains extends ClientSDK {
             );
             return result;
         } else {
-            throw new errors.SDKError("Unexpected API response status or content-type", {
+            throw new models.SDKError("Unexpected API response status or content-type", {
                 response,
                 request: request$,
             });
@@ -609,10 +606,10 @@ export class LogDrains extends ClientSDK {
     async createConfigurableLogDrain(
         teamId?: string | undefined,
         slug?: string | undefined,
-        requestBody?: operations.CreateConfigurableLogDrainRequestBody | undefined,
+        requestBody?: models.CreateConfigurableLogDrainRequestBody | undefined,
         options?: RequestOptions
-    ): Promise<operations.CreateConfigurableLogDrainResponse> {
-        const input$: operations.CreateConfigurableLogDrainRequest = {
+    ): Promise<models.CreateConfigurableLogDrainResponse> {
+        const input$: models.CreateConfigurableLogDrainRequest = {
             teamId: teamId,
             slug: slug,
             requestBody: requestBody,
@@ -624,7 +621,7 @@ export class LogDrains extends ClientSDK {
 
         const payload$ = schemas$.parse(
             input$,
-            (value$) => operations.CreateConfigurableLogDrainRequest$.outboundSchema.parse(value$),
+            (value$) => models.CreateConfigurableLogDrainRequest$.outboundSchema.parse(value$),
             "Input validation failed"
         );
         const body$ = enc$.encodeJSON("body", payload$.RequestBody, { explode: true });
@@ -678,7 +675,7 @@ export class LogDrains extends ClientSDK {
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return operations.CreateConfigurableLogDrainResponse$.inboundSchema.parse({
+                    return models.CreateConfigurableLogDrainResponse$.inboundSchema.parse({
                         ...responseFields$,
                         object: val$,
                     });
@@ -687,7 +684,7 @@ export class LogDrains extends ClientSDK {
             );
             return result;
         } else {
-            throw new errors.SDKError("Unexpected API response status or content-type", {
+            throw new models.SDKError("Unexpected API response status or content-type", {
                 response,
                 request: request$,
             });

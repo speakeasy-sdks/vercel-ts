@@ -8,8 +8,7 @@ import * as enc$ from "../lib/encodings";
 import { HTTPClient } from "../lib/http";
 import * as schemas$ from "../lib/schemas";
 import { ClientSDK, RequestOptions } from "../lib/sdks";
-import * as errors from "../models/errors";
-import * as operations from "../models/operations";
+import * as models from "../models";
 import { Aliases } from "./aliases";
 import { Artifacts } from "./artifacts";
 import { Authentication } from "./authentication";
@@ -146,8 +145,8 @@ export class Vercel extends ClientSDK {
     async getDeploymentBuilds(
         deploymentId: string,
         options?: RequestOptions
-    ): Promise<operations.GetDeploymentBuildsResponse> {
-        const input$: operations.GetDeploymentBuildsRequest = {
+    ): Promise<models.GetDeploymentBuildsResponse> {
+        const input$: models.GetDeploymentBuildsRequest = {
             deploymentId: deploymentId,
         };
         const headers$ = new Headers();
@@ -156,7 +155,7 @@ export class Vercel extends ClientSDK {
 
         const payload$ = schemas$.parse(
             input$,
-            (value$) => operations.GetDeploymentBuildsRequest$.outboundSchema.parse(value$),
+            (value$) => models.GetDeploymentBuildsRequest$.outboundSchema.parse(value$),
             "Input validation failed"
         );
         const body$ = null;
@@ -198,7 +197,7 @@ export class Vercel extends ClientSDK {
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return operations.GetDeploymentBuildsResponse$.inboundSchema.parse({
+                    return models.GetDeploymentBuildsResponse$.inboundSchema.parse({
                         ...responseFields$,
                         object: val$,
                     });
@@ -207,7 +206,7 @@ export class Vercel extends ClientSDK {
             );
             return result;
         } else {
-            throw new errors.SDKError("Unexpected API response status or content-type", {
+            throw new models.SDKError("Unexpected API response status or content-type", {
                 response,
                 request: request$,
             });
@@ -217,8 +216,8 @@ export class Vercel extends ClientSDK {
     async purgeDataCache(
         projectIdOrName: string,
         options?: RequestOptions
-    ): Promise<operations.PurgeDataCacheResponse> {
-        const input$: operations.PurgeDataCacheRequest = {
+    ): Promise<models.PurgeDataCacheResponse> {
+        const input$: models.PurgeDataCacheRequest = {
             projectIdOrName: projectIdOrName,
         };
         const headers$ = new Headers();
@@ -227,7 +226,7 @@ export class Vercel extends ClientSDK {
 
         const payload$ = schemas$.parse(
             input$,
-            (value$) => operations.PurgeDataCacheRequest$.outboundSchema.parse(value$),
+            (value$) => models.PurgeDataCacheRequest$.outboundSchema.parse(value$),
             "Input validation failed"
         );
         const body$ = null;
@@ -264,7 +263,7 @@ export class Vercel extends ClientSDK {
         if (this.matchStatusCode(response, 200)) {
             // fallthrough
         } else {
-            throw new errors.SDKError("Unexpected API response status or content-type", {
+            throw new models.SDKError("Unexpected API response status or content-type", {
                 response,
                 request: request$,
             });
@@ -272,15 +271,15 @@ export class Vercel extends ClientSDK {
 
         return schemas$.parse(
             undefined,
-            () => operations.PurgeDataCacheResponse$.inboundSchema.parse(responseFields$),
+            () => models.PurgeDataCacheResponse$.inboundSchema.parse(responseFields$),
             "Response validation failed"
         );
     }
 
     async updateBillingSettings(
-        request?: operations.UpdateBillingSettingsRequestBody | undefined,
+        request?: models.UpdateBillingSettingsRequestBody | undefined,
         options?: RequestOptions
-    ): Promise<operations.UpdateBillingSettingsResponse> {
+    ): Promise<models.UpdateBillingSettingsResponse> {
         const input$ = request;
         const headers$ = new Headers();
         headers$.set("user-agent", SDK_METADATA.userAgent);
@@ -290,9 +289,7 @@ export class Vercel extends ClientSDK {
         const payload$ = schemas$.parse(
             input$,
             (value$) =>
-                operations.UpdateBillingSettingsRequestBody$.outboundSchema
-                    .optional()
-                    .parse(value$),
+                models.UpdateBillingSettingsRequestBody$.outboundSchema.optional().parse(value$),
             "Input validation failed"
         );
         const body$ =
@@ -329,7 +326,7 @@ export class Vercel extends ClientSDK {
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return operations.UpdateBillingSettingsResponse$.inboundSchema.parse({
+                    return models.UpdateBillingSettingsResponse$.inboundSchema.parse({
                         ...responseFields$,
                         object: val$,
                     });
@@ -338,7 +335,7 @@ export class Vercel extends ClientSDK {
             );
             return result;
         } else {
-            throw new errors.SDKError("Unexpected API response status or content-type", {
+            throw new models.SDKError("Unexpected API response status or content-type", {
                 response,
                 request: request$,
             });

@@ -49,19 +49,19 @@ run();
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `teamId`                                                                                                                                                                       | *string*                                                                                                                                                                       | :heavy_minus_sign:                                                                                                                                                             | The Team identifier to perform the request on behalf of.                                                                                                                       |
 | `slug`                                                                                                                                                                         | *string*                                                                                                                                                                       | :heavy_minus_sign:                                                                                                                                                             | The Team slug to perform the request on behalf of.                                                                                                                             |
-| `requestBody`                                                                                                                                                                  | [operations.BuyDomainRequestBody](../../models/operations/buydomainrequestbody.md)                                                                                             | :heavy_minus_sign:                                                                                                                                                             | N/A                                                                                                                                                                            |
+| `requestBody`                                                                                                                                                                  | [models.BuyDomainRequestBody](../../models/buydomainrequestbody.md)                                                                                                            | :heavy_minus_sign:                                                                                                                                                             | N/A                                                                                                                                                                            |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 
 
 ### Response
 
-**Promise<[operations.BuyDomainResponse](../../models/operations/buydomainresponse.md)>**
+**Promise<[models.BuyDomainResponse](../../models/buydomainresponse.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4xx-5xx         | */*             |
+| models.SDKError | 4xx-5xx         | */*             |
 
 ## checkDomainPrice
 
@@ -71,7 +71,7 @@ Check the price to purchase a domain and how long a single purchase period is.
 
 ```typescript
 import { Vercel } from "vercel";
-import { QueryParamType } from "vercel/models/operations";
+import { QueryParamType } from "vercel/models";
 
 const vercel = new Vercel({
   security: {
@@ -94,7 +94,7 @@ run();
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    | Example                                                                                                                                                                        |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `name`                                                                                                                                                                         | *string*                                                                                                                                                                       | :heavy_check_mark:                                                                                                                                                             | The name of the domain for which the price needs to be checked.                                                                                                                | [object Object]                                                                                                                                                                |
-| `type`                                                                                                                                                                         | [operations.QueryParamType](../../models/operations/queryparamtype.md)                                                                                                         | :heavy_minus_sign:                                                                                                                                                             | In which status of the domain the price needs to be checked.                                                                                                                   | [object Object]                                                                                                                                                                |
+| `type`                                                                                                                                                                         | [models.QueryParamType](../../models/queryparamtype.md)                                                                                                                        | :heavy_minus_sign:                                                                                                                                                             | In which status of the domain the price needs to be checked.                                                                                                                   | [object Object]                                                                                                                                                                |
 | `teamId`                                                                                                                                                                       | *string*                                                                                                                                                                       | :heavy_minus_sign:                                                                                                                                                             | The Team identifier to perform the request on behalf of.                                                                                                                       |                                                                                                                                                                                |
 | `slug`                                                                                                                                                                         | *string*                                                                                                                                                                       | :heavy_minus_sign:                                                                                                                                                             | The Team slug to perform the request on behalf of.                                                                                                                             |                                                                                                                                                                                |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |                                                                                                                                                                                |
@@ -103,12 +103,12 @@ run();
 
 ### Response
 
-**Promise<[operations.CheckDomainPriceResponse](../../models/operations/checkdomainpriceresponse.md)>**
+**Promise<[models.CheckDomainPriceResponse](../../models/checkdomainpriceresponse.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4xx-5xx         | */*             |
+| models.SDKError | 4xx-5xx         | */*             |
 
 ## checkDomainStatus
 
@@ -148,12 +148,12 @@ run();
 
 ### Response
 
-**Promise<[operations.CheckDomainStatusResponse](../../models/operations/checkdomainstatusresponse.md)>**
+**Promise<[models.CheckDomainStatusResponse](../../models/checkdomainstatusresponse.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4xx-5xx         | */*             |
+| models.SDKError | 4xx-5xx         | */*             |
 
 ## getDomainTransfer
 
@@ -193,12 +193,12 @@ run();
 
 ### Response
 
-**Promise<[operations.GetDomainTransferResponse](../../models/operations/getdomaintransferresponse.md)>**
+**Promise<[models.GetDomainTransferResponse](../../models/getdomaintransferresponse.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4xx-5xx         | */*             |
+| models.SDKError | 4xx-5xx         | */*             |
 
 ## getDomainConfig
 
@@ -208,7 +208,7 @@ Get a Domain's configuration.
 
 ```typescript
 import { Vercel } from "vercel";
-import { Strict } from "vercel/models/operations";
+import { Strict } from "vercel/models";
 
 const vercel = new Vercel({
   security: {
@@ -231,7 +231,7 @@ run();
 | Parameter                                                                                                                                                                                                                                                      | Type                                                                                                                                                                                                                                                           | Required                                                                                                                                                                                                                                                       | Description                                                                                                                                                                                                                                                    | Example                                                                                                                                                                                                                                                        |
 | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `domain`                                                                                                                                                                                                                                                       | *string*                                                                                                                                                                                                                                                       | :heavy_check_mark:                                                                                                                                                                                                                                             | The name of the domain.                                                                                                                                                                                                                                        | [object Object]                                                                                                                                                                                                                                                |
-| `strict`                                                                                                                                                                                                                                                       | [operations.Strict](../../models/operations/strict.md)                                                                                                                                                                                                         | :heavy_minus_sign:                                                                                                                                                                                                                                             | When true, the response will only include the nameservers assigned directly to the specified domain. When false and there are no nameservers assigned directly to the specified domain, the response will include the nameservers of the domain's parent zone. |                                                                                                                                                                                                                                                                |
+| `strict`                                                                                                                                                                                                                                                       | [models.Strict](../../models/strict.md)                                                                                                                                                                                                                        | :heavy_minus_sign:                                                                                                                                                                                                                                             | When true, the response will only include the nameservers assigned directly to the specified domain. When false and there are no nameservers assigned directly to the specified domain, the response will include the nameservers of the domain's parent zone. |                                                                                                                                                                                                                                                                |
 | `teamId`                                                                                                                                                                                                                                                       | *string*                                                                                                                                                                                                                                                       | :heavy_minus_sign:                                                                                                                                                                                                                                             | The Team identifier to perform the request on behalf of.                                                                                                                                                                                                       |                                                                                                                                                                                                                                                                |
 | `slug`                                                                                                                                                                                                                                                         | *string*                                                                                                                                                                                                                                                       | :heavy_minus_sign:                                                                                                                                                                                                                                             | The Team slug to perform the request on behalf of.                                                                                                                                                                                                             |                                                                                                                                                                                                                                                                |
 | `options`                                                                                                                                                                                                                                                      | RequestOptions                                                                                                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                                                                                                          |                                                                                                                                                                                                                                                                |
@@ -240,12 +240,12 @@ run();
 
 ### Response
 
-**Promise<[operations.GetDomainConfigResponse](../../models/operations/getdomainconfigresponse.md)>**
+**Promise<[models.GetDomainConfigResponse](../../models/getdomainconfigresponse.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4xx-5xx         | */*             |
+| models.SDKError | 4xx-5xx         | */*             |
 
 ## getDomain
 
@@ -285,12 +285,12 @@ run();
 
 ### Response
 
-**Promise<[operations.GetDomainResponse](../../models/operations/getdomainresponse.md)>**
+**Promise<[models.GetDomainResponse](../../models/getdomainresponse.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4xx-5xx         | */*             |
+| models.SDKError | 4xx-5xx         | */*             |
 
 ## getDomains
 
@@ -325,19 +325,19 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.GetDomainsRequest](../../models/operations/getdomainsrequest.md)                                                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [models.GetDomainsRequest](../../models/getdomainsrequest.md)                                                                                                                  | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 
 
 ### Response
 
-**Promise<[operations.GetDomainsResponse](../../models/operations/getdomainsresponse.md)>**
+**Promise<[models.GetDomainsResponse](../../models/getdomainsresponse.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4xx-5xx         | */*             |
+| models.SDKError | 4xx-5xx         | */*             |
 
 ## createOrTransferDomain
 
@@ -375,19 +375,19 @@ run();
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `teamId`                                                                                                                                                                       | *string*                                                                                                                                                                       | :heavy_minus_sign:                                                                                                                                                             | The Team identifier to perform the request on behalf of.                                                                                                                       |
 | `slug`                                                                                                                                                                         | *string*                                                                                                                                                                       | :heavy_minus_sign:                                                                                                                                                             | The Team slug to perform the request on behalf of.                                                                                                                             |
-| `requestBody`                                                                                                                                                                  | *operations.CreateOrTransferDomainRequestBody*                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | N/A                                                                                                                                                                            |
+| `requestBody`                                                                                                                                                                  | *models.CreateOrTransferDomainRequestBody*                                                                                                                                     | :heavy_minus_sign:                                                                                                                                                             | N/A                                                                                                                                                                            |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 
 
 ### Response
 
-**Promise<[operations.CreateOrTransferDomainResponse](../../models/operations/createortransferdomainresponse.md)>**
+**Promise<[models.CreateOrTransferDomainResponse](../../models/createortransferdomainresponse.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4xx-5xx         | */*             |
+| models.SDKError | 4xx-5xx         | */*             |
 
 ## patchDomain
 
@@ -423,19 +423,19 @@ run();
 | `domain`                                                                                                                                                                       | *string*                                                                                                                                                                       | :heavy_check_mark:                                                                                                                                                             | N/A                                                                                                                                                                            |
 | `teamId`                                                                                                                                                                       | *string*                                                                                                                                                                       | :heavy_minus_sign:                                                                                                                                                             | The Team identifier to perform the request on behalf of.                                                                                                                       |
 | `slug`                                                                                                                                                                         | *string*                                                                                                                                                                       | :heavy_minus_sign:                                                                                                                                                             | The Team slug to perform the request on behalf of.                                                                                                                             |
-| `requestBody`                                                                                                                                                                  | *operations.PatchDomainRequestBody*                                                                                                                                            | :heavy_minus_sign:                                                                                                                                                             | N/A                                                                                                                                                                            |
+| `requestBody`                                                                                                                                                                  | *models.PatchDomainRequestBody*                                                                                                                                                | :heavy_minus_sign:                                                                                                                                                             | N/A                                                                                                                                                                            |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 
 
 ### Response
 
-**Promise<[operations.PatchDomainResponse](../../models/operations/patchdomainresponse.md)>**
+**Promise<[models.PatchDomainResponse](../../models/patchdomainresponse.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4xx-5xx         | */*             |
+| models.SDKError | 4xx-5xx         | */*             |
 
 ## deleteDomain
 
@@ -475,9 +475,9 @@ run();
 
 ### Response
 
-**Promise<[operations.DeleteDomainResponse](../../models/operations/deletedomainresponse.md)>**
+**Promise<[models.DeleteDomainResponse](../../models/deletedomainresponse.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4xx-5xx         | */*             |
+| models.SDKError | 4xx-5xx         | */*             |

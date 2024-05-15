@@ -2,7 +2,7 @@ speakeasyVersion: 1.291.0
 sources:
     Vercel-API:
         sourceNamespace: vercel-api
-        sourceRevisionDigest: sha256:5ce122a9b52ab95ddeb20c4f2bd2f898c18ef7b383308cdc1307180f23bf0eee
+        sourceRevisionDigest: sha256:06125576bc51702e202785574ffe9c35d5ec685c1e413ac5767830a88d8b6a4d
         sourceBlobDigest: sha256:a2ef261adb3f3119cb7243eab7f64df054974d452dbbd34093dc2d0f70f14427
         tags:
             - latest
@@ -10,7 +10,7 @@ targets:
     typescript:
         source: Vercel-API
         sourceNamespace: vercel-api
-        sourceRevisionDigest: sha256:5ce122a9b52ab95ddeb20c4f2bd2f898c18ef7b383308cdc1307180f23bf0eee
+        sourceRevisionDigest: sha256:06125576bc51702e202785574ffe9c35d5ec685c1e413ac5767830a88d8b6a4d
         sourceBlobDigest: sha256:a2ef261adb3f3119cb7243eab7f64df054974d452dbbd34093dc2d0f70f14427
         outLocation: /mnt/c/Users/Luke/Documents/GitHub/Vercel-typescript-sdk
 workflow:

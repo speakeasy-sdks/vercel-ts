@@ -8,8 +8,7 @@ import * as enc$ from "../lib/encodings";
 import { HTTPClient } from "../lib/http";
 import * as schemas$ from "../lib/schemas";
 import { ClientSDK, RequestOptions } from "../lib/sdks";
-import * as errors from "../models/errors";
-import * as operations from "../models/operations";
+import * as models from "../models";
 
 export class Certs extends ClientSDK {
     private readonly options$: SDKOptions & { hooks?: SDKHooks };
@@ -49,8 +48,8 @@ export class Certs extends ClientSDK {
         teamId?: string | undefined,
         slug?: string | undefined,
         options?: RequestOptions
-    ): Promise<operations.GetCertByIdResponse> {
-        const input$: operations.GetCertByIdRequest = {
+    ): Promise<models.GetCertByIdResponse> {
+        const input$: models.GetCertByIdRequest = {
             id: id,
             teamId: teamId,
             slug: slug,
@@ -61,7 +60,7 @@ export class Certs extends ClientSDK {
 
         const payload$ = schemas$.parse(
             input$,
-            (value$) => operations.GetCertByIdRequest$.outboundSchema.parse(value$),
+            (value$) => models.GetCertByIdRequest$.outboundSchema.parse(value$),
             "Input validation failed"
         );
         const body$ = null;
@@ -118,7 +117,7 @@ export class Certs extends ClientSDK {
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return operations.GetCertByIdResponse$.inboundSchema.parse({
+                    return models.GetCertByIdResponse$.inboundSchema.parse({
                         ...responseFields$,
                         object: val$,
                     });
@@ -127,7 +126,7 @@ export class Certs extends ClientSDK {
             );
             return result;
         } else {
-            throw new errors.SDKError("Unexpected API response status or content-type", {
+            throw new models.SDKError("Unexpected API response status or content-type", {
                 response,
                 request: request$,
             });
@@ -145,8 +144,8 @@ export class Certs extends ClientSDK {
         teamId?: string | undefined,
         slug?: string | undefined,
         options?: RequestOptions
-    ): Promise<operations.RemoveCertResponse> {
-        const input$: operations.RemoveCertRequest = {
+    ): Promise<models.RemoveCertResponse> {
+        const input$: models.RemoveCertRequest = {
             id: id,
             teamId: teamId,
             slug: slug,
@@ -157,7 +156,7 @@ export class Certs extends ClientSDK {
 
         const payload$ = schemas$.parse(
             input$,
-            (value$) => operations.RemoveCertRequest$.outboundSchema.parse(value$),
+            (value$) => models.RemoveCertRequest$.outboundSchema.parse(value$),
             "Input validation failed"
         );
         const body$ = null;
@@ -214,7 +213,7 @@ export class Certs extends ClientSDK {
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return operations.RemoveCertResponse$.inboundSchema.parse({
+                    return models.RemoveCertResponse$.inboundSchema.parse({
                         ...responseFields$,
                         object: val$,
                     });
@@ -223,7 +222,7 @@ export class Certs extends ClientSDK {
             );
             return result;
         } else {
-            throw new errors.SDKError("Unexpected API response status or content-type", {
+            throw new models.SDKError("Unexpected API response status or content-type", {
                 response,
                 request: request$,
             });
@@ -239,10 +238,10 @@ export class Certs extends ClientSDK {
     async issueCert(
         teamId?: string | undefined,
         slug?: string | undefined,
-        requestBody?: operations.IssueCertRequestBody | undefined,
+        requestBody?: models.IssueCertRequestBody | undefined,
         options?: RequestOptions
-    ): Promise<operations.IssueCertResponse> {
-        const input$: operations.IssueCertRequest = {
+    ): Promise<models.IssueCertResponse> {
+        const input$: models.IssueCertRequest = {
             teamId: teamId,
             slug: slug,
             requestBody: requestBody,
@@ -254,7 +253,7 @@ export class Certs extends ClientSDK {
 
         const payload$ = schemas$.parse(
             input$,
-            (value$) => operations.IssueCertRequest$.outboundSchema.parse(value$),
+            (value$) => models.IssueCertRequest$.outboundSchema.parse(value$),
             "Input validation failed"
         );
         const body$ = enc$.encodeJSON("body", payload$.RequestBody, { explode: true });
@@ -311,7 +310,7 @@ export class Certs extends ClientSDK {
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return operations.IssueCertResponse$.inboundSchema.parse({
+                    return models.IssueCertResponse$.inboundSchema.parse({
                         ...responseFields$,
                         object: val$,
                     });
@@ -320,7 +319,7 @@ export class Certs extends ClientSDK {
             );
             return result;
         } else {
-            throw new errors.SDKError("Unexpected API response status or content-type", {
+            throw new models.SDKError("Unexpected API response status or content-type", {
                 response,
                 request: request$,
             });
@@ -336,10 +335,10 @@ export class Certs extends ClientSDK {
     async uploadCert(
         teamId?: string | undefined,
         slug?: string | undefined,
-        requestBody?: operations.UploadCertRequestBody | undefined,
+        requestBody?: models.UploadCertRequestBody | undefined,
         options?: RequestOptions
-    ): Promise<operations.UploadCertResponse> {
-        const input$: operations.UploadCertRequest = {
+    ): Promise<models.UploadCertResponse> {
+        const input$: models.UploadCertRequest = {
             teamId: teamId,
             slug: slug,
             requestBody: requestBody,
@@ -351,7 +350,7 @@ export class Certs extends ClientSDK {
 
         const payload$ = schemas$.parse(
             input$,
-            (value$) => operations.UploadCertRequest$.outboundSchema.parse(value$),
+            (value$) => models.UploadCertRequest$.outboundSchema.parse(value$),
             "Input validation failed"
         );
         const body$ = enc$.encodeJSON("body", payload$.RequestBody, { explode: true });
@@ -405,7 +404,7 @@ export class Certs extends ClientSDK {
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return operations.UploadCertResponse$.inboundSchema.parse({
+                    return models.UploadCertResponse$.inboundSchema.parse({
                         ...responseFields$,
                         object: val$,
                     });
@@ -414,7 +413,7 @@ export class Certs extends ClientSDK {
             );
             return result;
         } else {
-            throw new errors.SDKError("Unexpected API response status or content-type", {
+            throw new models.SDKError("Unexpected API response status or content-type", {
                 response,
                 request: request$,
             });

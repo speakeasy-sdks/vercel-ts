@@ -1,9 +1,0 @@
-# CreateOrTransferDomainResponse
-
-
-## Fields
-
-| Field                                                                                                          | Type                                                                                                           | Required                                                                                                       | Description                                                                                                    |
-| -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
-| `httpMeta`                                                                                                     | [components.HTTPMetadata](../../models/components/httpmetadata.md)                                             | :heavy_check_mark:                                                                                             | N/A                                                                                                            |
-| `object`                                                                                                       | [operations.CreateOrTransferDomainResponseBody](../../models/operations/createortransferdomainresponsebody.md) | :heavy_minus_sign:                                                                                             | N/A                                                                                                            |

@@ -1,9 +1,0 @@
-# RequestAccessToTeamResponse
-
-
-## Fields
-
-| Field                                                                                                    | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
-| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| `httpMeta`                                                                                               | [components.HTTPMetadata](../../models/components/httpmetadata.md)                                       | :heavy_check_mark:                                                                                       | N/A                                                                                                      |
-| `object`                                                                                                 | [operations.RequestAccessToTeamResponseBody](../../models/operations/requestaccesstoteamresponsebody.md) | :heavy_minus_sign:                                                                                       | Successfuly requested access to the team.                                                                |

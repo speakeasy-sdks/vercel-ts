@@ -8,8 +8,7 @@ import * as enc$ from "../lib/encodings";
 import { HTTPClient } from "../lib/http";
 import * as schemas$ from "../lib/schemas";
 import { ClientSDK, RequestOptions } from "../lib/sdks";
-import * as errors from "../models/errors";
-import * as operations from "../models/operations";
+import * as models from "../models";
 
 export class Webhooks extends ClientSDK {
     private readonly options$: SDKOptions & { hooks?: SDKHooks };
@@ -47,10 +46,10 @@ export class Webhooks extends ClientSDK {
     async createWebhook(
         teamId?: string | undefined,
         slug?: string | undefined,
-        requestBody?: operations.CreateWebhookRequestBody | undefined,
+        requestBody?: models.CreateWebhookRequestBody | undefined,
         options?: RequestOptions
-    ): Promise<operations.CreateWebhookResponse> {
-        const input$: operations.CreateWebhookRequest = {
+    ): Promise<models.CreateWebhookResponse> {
+        const input$: models.CreateWebhookRequest = {
             teamId: teamId,
             slug: slug,
             requestBody: requestBody,
@@ -62,7 +61,7 @@ export class Webhooks extends ClientSDK {
 
         const payload$ = schemas$.parse(
             input$,
-            (value$) => operations.CreateWebhookRequest$.outboundSchema.parse(value$),
+            (value$) => models.CreateWebhookRequest$.outboundSchema.parse(value$),
             "Input validation failed"
         );
         const body$ = enc$.encodeJSON("body", payload$.RequestBody, { explode: true });
@@ -116,7 +115,7 @@ export class Webhooks extends ClientSDK {
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return operations.CreateWebhookResponse$.inboundSchema.parse({
+                    return models.CreateWebhookResponse$.inboundSchema.parse({
                         ...responseFields$,
                         object: val$,
                     });
@@ -125,7 +124,7 @@ export class Webhooks extends ClientSDK {
             );
             return result;
         } else {
-            throw new errors.SDKError("Unexpected API response status or content-type", {
+            throw new models.SDKError("Unexpected API response status or content-type", {
                 response,
                 request: request$,
             });
@@ -143,8 +142,8 @@ export class Webhooks extends ClientSDK {
         teamId?: string | undefined,
         slug?: string | undefined,
         options?: RequestOptions
-    ): Promise<operations.GetWebhooksResponse> {
-        const input$: operations.GetWebhooksRequest = {
+    ): Promise<models.GetWebhooksResponse> {
+        const input$: models.GetWebhooksRequest = {
             projectId: projectId,
             teamId: teamId,
             slug: slug,
@@ -155,7 +154,7 @@ export class Webhooks extends ClientSDK {
 
         const payload$ = schemas$.parse(
             input$,
-            (value$) => operations.GetWebhooksRequest$.outboundSchema.parse(value$),
+            (value$) => models.GetWebhooksRequest$.outboundSchema.parse(value$),
             "Input validation failed"
         );
         const body$ = null;
@@ -213,7 +212,7 @@ export class Webhooks extends ClientSDK {
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return operations.GetWebhooksResponse$.inboundSchema.parse({
+                    return models.GetWebhooksResponse$.inboundSchema.parse({
                         ...responseFields$,
                         responseBodies: val$,
                     });
@@ -222,7 +221,7 @@ export class Webhooks extends ClientSDK {
             );
             return result;
         } else {
-            throw new errors.SDKError("Unexpected API response status or content-type", {
+            throw new models.SDKError("Unexpected API response status or content-type", {
                 response,
                 request: request$,
             });
@@ -240,8 +239,8 @@ export class Webhooks extends ClientSDK {
         teamId?: string | undefined,
         slug?: string | undefined,
         options?: RequestOptions
-    ): Promise<operations.GetWebhookResponse> {
-        const input$: operations.GetWebhookRequest = {
+    ): Promise<models.GetWebhookResponse> {
+        const input$: models.GetWebhookRequest = {
             id: id,
             teamId: teamId,
             slug: slug,
@@ -252,7 +251,7 @@ export class Webhooks extends ClientSDK {
 
         const payload$ = schemas$.parse(
             input$,
-            (value$) => operations.GetWebhookRequest$.outboundSchema.parse(value$),
+            (value$) => models.GetWebhookRequest$.outboundSchema.parse(value$),
             "Input validation failed"
         );
         const body$ = null;
@@ -309,7 +308,7 @@ export class Webhooks extends ClientSDK {
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return operations.GetWebhookResponse$.inboundSchema.parse({
+                    return models.GetWebhookResponse$.inboundSchema.parse({
                         ...responseFields$,
                         object: val$,
                     });
@@ -318,7 +317,7 @@ export class Webhooks extends ClientSDK {
             );
             return result;
         } else {
-            throw new errors.SDKError("Unexpected API response status or content-type", {
+            throw new models.SDKError("Unexpected API response status or content-type", {
                 response,
                 request: request$,
             });
@@ -336,8 +335,8 @@ export class Webhooks extends ClientSDK {
         teamId?: string | undefined,
         slug?: string | undefined,
         options?: RequestOptions
-    ): Promise<operations.DeleteWebhookResponse> {
-        const input$: operations.DeleteWebhookRequest = {
+    ): Promise<models.DeleteWebhookResponse> {
+        const input$: models.DeleteWebhookRequest = {
             id: id,
             teamId: teamId,
             slug: slug,
@@ -348,7 +347,7 @@ export class Webhooks extends ClientSDK {
 
         const payload$ = schemas$.parse(
             input$,
-            (value$) => operations.DeleteWebhookRequest$.outboundSchema.parse(value$),
+            (value$) => models.DeleteWebhookRequest$.outboundSchema.parse(value$),
             "Input validation failed"
         );
         const body$ = null;
@@ -403,7 +402,7 @@ export class Webhooks extends ClientSDK {
         if (this.matchStatusCode(response, 204)) {
             // fallthrough
         } else {
-            throw new errors.SDKError("Unexpected API response status or content-type", {
+            throw new models.SDKError("Unexpected API response status or content-type", {
                 response,
                 request: request$,
             });
@@ -411,7 +410,7 @@ export class Webhooks extends ClientSDK {
 
         return schemas$.parse(
             undefined,
-            () => operations.DeleteWebhookResponse$.inboundSchema.parse(responseFields$),
+            () => models.DeleteWebhookResponse$.inboundSchema.parse(responseFields$),
             "Response validation failed"
         );
     }

@@ -8,8 +8,7 @@ import * as enc$ from "../lib/encodings";
 import { HTTPClient } from "../lib/http";
 import * as schemas$ from "../lib/schemas";
 import { ClientSDK, RequestOptions } from "../lib/sdks";
-import * as errors from "../models/errors";
-import * as operations from "../models/operations";
+import * as models from "../models";
 
 export class Dns extends ClientSDK {
     private readonly options$: SDKOptions & { hooks?: SDKHooks };
@@ -45,9 +44,9 @@ export class Dns extends ClientSDK {
      * Retrieves a list of DNS records created for a domain name. By default it returns 20 records if no limit is provided. The rest can be retrieved using the pagination options.
      */
     async getRecords(
-        request: operations.GetRecordsRequest,
+        request: models.GetRecordsRequest,
         options?: RequestOptions
-    ): Promise<operations.GetRecordsResponse> {
+    ): Promise<models.GetRecordsResponse> {
         const input$ = request;
         const headers$ = new Headers();
         headers$.set("user-agent", SDK_METADATA.userAgent);
@@ -55,7 +54,7 @@ export class Dns extends ClientSDK {
 
         const payload$ = schemas$.parse(
             input$,
-            (value$) => operations.GetRecordsRequest$.outboundSchema.parse(value$),
+            (value$) => models.GetRecordsRequest$.outboundSchema.parse(value$),
             "Input validation failed"
         );
         const body$ = null;
@@ -118,7 +117,7 @@ export class Dns extends ClientSDK {
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return operations.GetRecordsResponse$.inboundSchema.parse({
+                    return models.GetRecordsResponse$.inboundSchema.parse({
                         ...responseFields$,
                         oneOf: val$,
                     });
@@ -127,7 +126,7 @@ export class Dns extends ClientSDK {
             );
             return result;
         } else {
-            throw new errors.SDKError("Unexpected API response status or content-type", {
+            throw new models.SDKError("Unexpected API response status or content-type", {
                 response,
                 request: request$,
             });
@@ -144,10 +143,10 @@ export class Dns extends ClientSDK {
         domain: string,
         teamId?: string | undefined,
         slug?: string | undefined,
-        requestBody?: operations.CreateRecordRequestBody | undefined,
+        requestBody?: models.CreateRecordRequestBody | undefined,
         options?: RequestOptions
-    ): Promise<operations.CreateRecordResponse> {
-        const input$: operations.CreateRecordRequest = {
+    ): Promise<models.CreateRecordResponse> {
+        const input$: models.CreateRecordRequest = {
             domain: domain,
             teamId: teamId,
             slug: slug,
@@ -160,7 +159,7 @@ export class Dns extends ClientSDK {
 
         const payload$ = schemas$.parse(
             input$,
-            (value$) => operations.CreateRecordRequest$.outboundSchema.parse(value$),
+            (value$) => models.CreateRecordRequest$.outboundSchema.parse(value$),
             "Input validation failed"
         );
         const body$ = enc$.encodeJSON("body", payload$.RequestBody, { explode: true });
@@ -223,7 +222,7 @@ export class Dns extends ClientSDK {
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return operations.CreateRecordResponse$.inboundSchema.parse({
+                    return models.CreateRecordResponse$.inboundSchema.parse({
                         ...responseFields$,
                         oneOf: val$,
                     });
@@ -232,7 +231,7 @@ export class Dns extends ClientSDK {
             );
             return result;
         } else {
-            throw new errors.SDKError("Unexpected API response status or content-type", {
+            throw new models.SDKError("Unexpected API response status or content-type", {
                 response,
                 request: request$,
             });
@@ -249,10 +248,10 @@ export class Dns extends ClientSDK {
         recordId: string,
         teamId?: string | undefined,
         slug?: string | undefined,
-        requestBody?: operations.UpdateRecordRequestBody | undefined,
+        requestBody?: models.UpdateRecordRequestBody | undefined,
         options?: RequestOptions
-    ): Promise<operations.UpdateRecordResponse> {
-        const input$: operations.UpdateRecordRequest = {
+    ): Promise<models.UpdateRecordResponse> {
+        const input$: models.UpdateRecordRequest = {
             recordId: recordId,
             teamId: teamId,
             slug: slug,
@@ -265,7 +264,7 @@ export class Dns extends ClientSDK {
 
         const payload$ = schemas$.parse(
             input$,
-            (value$) => operations.UpdateRecordRequest$.outboundSchema.parse(value$),
+            (value$) => models.UpdateRecordRequest$.outboundSchema.parse(value$),
             "Input validation failed"
         );
         const body$ = enc$.encodeJSON("body", payload$.RequestBody, { explode: true });
@@ -328,7 +327,7 @@ export class Dns extends ClientSDK {
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return operations.UpdateRecordResponse$.inboundSchema.parse({
+                    return models.UpdateRecordResponse$.inboundSchema.parse({
                         ...responseFields$,
                         object: val$,
                     });
@@ -337,7 +336,7 @@ export class Dns extends ClientSDK {
             );
             return result;
         } else {
-            throw new errors.SDKError("Unexpected API response status or content-type", {
+            throw new models.SDKError("Unexpected API response status or content-type", {
                 response,
                 request: request$,
             });
@@ -356,8 +355,8 @@ export class Dns extends ClientSDK {
         teamId?: string | undefined,
         slug?: string | undefined,
         options?: RequestOptions
-    ): Promise<operations.RemoveRecordResponse> {
-        const input$: operations.RemoveRecordRequest = {
+    ): Promise<models.RemoveRecordResponse> {
+        const input$: models.RemoveRecordRequest = {
             domain: domain,
             recordId: recordId,
             teamId: teamId,
@@ -369,7 +368,7 @@ export class Dns extends ClientSDK {
 
         const payload$ = schemas$.parse(
             input$,
-            (value$) => operations.RemoveRecordRequest$.outboundSchema.parse(value$),
+            (value$) => models.RemoveRecordRequest$.outboundSchema.parse(value$),
             "Input validation failed"
         );
         const body$ = null;
@@ -435,7 +434,7 @@ export class Dns extends ClientSDK {
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return operations.RemoveRecordResponse$.inboundSchema.parse({
+                    return models.RemoveRecordResponse$.inboundSchema.parse({
                         ...responseFields$,
                         object: val$,
                     });
@@ -444,7 +443,7 @@ export class Dns extends ClientSDK {
             );
             return result;
         } else {
-            throw new errors.SDKError("Unexpected API response status or content-type", {
+            throw new models.SDKError("Unexpected API response status or content-type", {
                 response,
                 request: request$,
             });

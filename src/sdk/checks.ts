@@ -8,8 +8,7 @@ import * as enc$ from "../lib/encodings";
 import { HTTPClient } from "../lib/http";
 import * as schemas$ from "../lib/schemas";
 import { ClientSDK, RequestOptions } from "../lib/sdks";
-import * as errors from "../models/errors";
-import * as operations from "../models/operations";
+import * as models from "../models";
 
 export class Checks extends ClientSDK {
     private readonly options$: SDKOptions & { hooks?: SDKHooks };
@@ -48,10 +47,10 @@ export class Checks extends ClientSDK {
         deploymentId: string,
         teamId?: string | undefined,
         slug?: string | undefined,
-        requestBody?: operations.CreateCheckRequestBody | undefined,
+        requestBody?: models.CreateCheckRequestBody | undefined,
         options?: RequestOptions
-    ): Promise<operations.CreateCheckResponse> {
-        const input$: operations.CreateCheckRequest = {
+    ): Promise<models.CreateCheckResponse> {
+        const input$: models.CreateCheckRequest = {
             deploymentId: deploymentId,
             teamId: teamId,
             slug: slug,
@@ -64,7 +63,7 @@ export class Checks extends ClientSDK {
 
         const payload$ = schemas$.parse(
             input$,
-            (value$) => operations.CreateCheckRequest$.outboundSchema.parse(value$),
+            (value$) => models.CreateCheckRequest$.outboundSchema.parse(value$),
             "Input validation failed"
         );
         const body$ = enc$.encodeJSON("body", payload$.RequestBody, { explode: true });
@@ -126,7 +125,7 @@ export class Checks extends ClientSDK {
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return operations.CreateCheckResponse$.inboundSchema.parse({
+                    return models.CreateCheckResponse$.inboundSchema.parse({
                         ...responseFields$,
                         object: val$,
                     });
@@ -135,7 +134,7 @@ export class Checks extends ClientSDK {
             );
             return result;
         } else {
-            throw new errors.SDKError("Unexpected API response status or content-type", {
+            throw new models.SDKError("Unexpected API response status or content-type", {
                 response,
                 request: request$,
             });
@@ -153,8 +152,8 @@ export class Checks extends ClientSDK {
         teamId?: string | undefined,
         slug?: string | undefined,
         options?: RequestOptions
-    ): Promise<operations.GetAllChecksResponse> {
-        const input$: operations.GetAllChecksRequest = {
+    ): Promise<models.GetAllChecksResponse> {
+        const input$: models.GetAllChecksRequest = {
             deploymentId: deploymentId,
             teamId: teamId,
             slug: slug,
@@ -165,7 +164,7 @@ export class Checks extends ClientSDK {
 
         const payload$ = schemas$.parse(
             input$,
-            (value$) => operations.GetAllChecksRequest$.outboundSchema.parse(value$),
+            (value$) => models.GetAllChecksRequest$.outboundSchema.parse(value$),
             "Input validation failed"
         );
         const body$ = null;
@@ -227,7 +226,7 @@ export class Checks extends ClientSDK {
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return operations.GetAllChecksResponse$.inboundSchema.parse({
+                    return models.GetAllChecksResponse$.inboundSchema.parse({
                         ...responseFields$,
                         object: val$,
                     });
@@ -236,7 +235,7 @@ export class Checks extends ClientSDK {
             );
             return result;
         } else {
-            throw new errors.SDKError("Unexpected API response status or content-type", {
+            throw new models.SDKError("Unexpected API response status or content-type", {
                 response,
                 request: request$,
             });
@@ -255,8 +254,8 @@ export class Checks extends ClientSDK {
         teamId?: string | undefined,
         slug?: string | undefined,
         options?: RequestOptions
-    ): Promise<operations.GetCheckResponse> {
-        const input$: operations.GetCheckRequest = {
+    ): Promise<models.GetCheckResponse> {
+        const input$: models.GetCheckRequest = {
             deploymentId: deploymentId,
             checkId: checkId,
             teamId: teamId,
@@ -268,7 +267,7 @@ export class Checks extends ClientSDK {
 
         const payload$ = schemas$.parse(
             input$,
-            (value$) => operations.GetCheckRequest$.outboundSchema.parse(value$),
+            (value$) => models.GetCheckRequest$.outboundSchema.parse(value$),
             "Input validation failed"
         );
         const body$ = null;
@@ -334,7 +333,7 @@ export class Checks extends ClientSDK {
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return operations.GetCheckResponse$.inboundSchema.parse({
+                    return models.GetCheckResponse$.inboundSchema.parse({
                         ...responseFields$,
                         object: val$,
                     });
@@ -343,7 +342,7 @@ export class Checks extends ClientSDK {
             );
             return result;
         } else {
-            throw new errors.SDKError("Unexpected API response status or content-type", {
+            throw new models.SDKError("Unexpected API response status or content-type", {
                 response,
                 request: request$,
             });
@@ -357,9 +356,9 @@ export class Checks extends ClientSDK {
      * Update an existing check. This endpoint must be called with an OAuth2 or it will produce a 400 error.
      */
     async updateCheck(
-        request: operations.UpdateCheckRequest,
+        request: models.UpdateCheckRequest,
         options?: RequestOptions
-    ): Promise<operations.UpdateCheckResponse> {
+    ): Promise<models.UpdateCheckResponse> {
         const input$ = request;
         const headers$ = new Headers();
         headers$.set("user-agent", SDK_METADATA.userAgent);
@@ -368,7 +367,7 @@ export class Checks extends ClientSDK {
 
         const payload$ = schemas$.parse(
             input$,
-            (value$) => operations.UpdateCheckRequest$.outboundSchema.parse(value$),
+            (value$) => models.UpdateCheckRequest$.outboundSchema.parse(value$),
             "Input validation failed"
         );
         const body$ = enc$.encodeJSON("body", payload$.RequestBody, { explode: true });
@@ -437,7 +436,7 @@ export class Checks extends ClientSDK {
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return operations.UpdateCheckResponse$.inboundSchema.parse({
+                    return models.UpdateCheckResponse$.inboundSchema.parse({
                         ...responseFields$,
                         object: val$,
                     });
@@ -446,7 +445,7 @@ export class Checks extends ClientSDK {
             );
             return result;
         } else {
-            throw new errors.SDKError("Unexpected API response status or content-type", {
+            throw new models.SDKError("Unexpected API response status or content-type", {
                 response,
                 request: request$,
             });
@@ -465,8 +464,8 @@ export class Checks extends ClientSDK {
         teamId?: string | undefined,
         slug?: string | undefined,
         options?: RequestOptions
-    ): Promise<operations.RerequestCheckResponse> {
-        const input$: operations.RerequestCheckRequest = {
+    ): Promise<models.RerequestCheckResponse> {
+        const input$: models.RerequestCheckRequest = {
             deploymentId: deploymentId,
             checkId: checkId,
             teamId: teamId,
@@ -478,7 +477,7 @@ export class Checks extends ClientSDK {
 
         const payload$ = schemas$.parse(
             input$,
-            (value$) => operations.RerequestCheckRequest$.outboundSchema.parse(value$),
+            (value$) => models.RerequestCheckRequest$.outboundSchema.parse(value$),
             "Input validation failed"
         );
         const body$ = null;
@@ -544,7 +543,7 @@ export class Checks extends ClientSDK {
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return operations.RerequestCheckResponse$.inboundSchema.parse({
+                    return models.RerequestCheckResponse$.inboundSchema.parse({
                         ...responseFields$,
                         object: val$,
                     });
@@ -553,7 +552,7 @@ export class Checks extends ClientSDK {
             );
             return result;
         } else {
-            throw new errors.SDKError("Unexpected API response status or content-type", {
+            throw new models.SDKError("Unexpected API response status or content-type", {
                 response,
                 request: request$,
             });

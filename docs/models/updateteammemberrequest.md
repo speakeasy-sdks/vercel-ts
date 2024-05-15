@@ -1,0 +1,10 @@
+# UpdateTeamMemberRequest
+
+
+## Fields
+
+| Field                                                                          | Type                                                                           | Required                                                                       | Description                                                                    | Example                                                                        |
+| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
+| `teamId`                                                                       | *string*                                                                       | :heavy_check_mark:                                                             | N/A                                                                            |                                                                                |
+| `uid`                                                                          | *string*                                                                       | :heavy_check_mark:                                                             | The ID of the member.                                                          | ndfasllgPyCtREAqxxdyFKb                                                        |
+| `requestBody`                                                                  | [models.UpdateTeamMemberRequestBody](../models/updateteammemberrequestbody.md) | :heavy_minus_sign:                                                             | N/A                                                                            |                                                                                |

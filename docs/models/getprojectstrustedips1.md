@@ -1,0 +1,10 @@
+# GetProjectsTrustedIps1
+
+
+## Fields
+
+| Field                                                                                          | Type                                                                                           | Required                                                                                       | Description                                                                                    |
+| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| `deploymentType`                                                                               | [models.GetProjectsTrustedIpsDeploymentType](../models/getprojectstrustedipsdeploymenttype.md) | :heavy_check_mark:                                                                             | N/A                                                                                            |
+| `addresses`                                                                                    | [models.GetProjectsTrustedIpsAddresses](../models/getprojectstrustedipsaddresses.md)[]         | :heavy_check_mark:                                                                             | N/A                                                                                            |
+| `protectionMode`                                                                               | [models.GetProjectsTrustedIpsProtectionMode](../models/getprojectstrustedipsprotectionmode.md) | :heavy_check_mark:                                                                             | N/A                                                                                            |

@@ -1,9 +1,0 @@
-# RemoveTeamMemberResponse
-
-
-## Fields
-
-| Field                                                                                              | Type                                                                                               | Required                                                                                           | Description                                                                                        |
-| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
-| `httpMeta`                                                                                         | [components.HTTPMetadata](../../models/components/httpmetadata.md)                                 | :heavy_check_mark:                                                                                 | N/A                                                                                                |
-| `object`                                                                                           | [operations.RemoveTeamMemberResponseBody](../../models/operations/removeteammemberresponsebody.md) | :heavy_minus_sign:                                                                                 | Successfully removed a member of the team.                                                         |
