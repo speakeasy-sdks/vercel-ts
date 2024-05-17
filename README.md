@@ -1,25 +1,26 @@
-# Vercel TypeScript SDK
-
-<div align="left">
-    <a href="https://speakeasyapi.dev/"><img src="https://custom-icon-badges.demolab.com/badge/-Built%20By%20Speakeasy-212015?style=for-the-badge&logoColor=FBE331&logo=speakeasy&labelColor=545454" /></a>
-    <a href="https://opensource.org/licenses/MIT">
-        <img src="https://img.shields.io/badge/License-MIT-blue.svg" style="width: 100px; height: 28px;" />
-    </a>
+<div align="center">
+        <img src="https://github.com/speakeasy-sdks/vercel-ts/assets/68016351/d64a32d7-acc1-497b-943f-caa3c994901e" width="500">
+   <p>Vercel is the Frontend Cloud</p>
+   <a href="https://vercel.com/docs/rest-api"><img src="https://img.shields.io/static/v1?label=Docs&message=API Ref&color=000000&style=for-the-badge" /></a>
+  <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge" /></a>
 </div>
 
 <!-- Start SDK Installation [installation] -->
 ## SDK Installation
 
+> [!WARNING] 
+> This SDK is not yet published to a package manager
+
 ### NPM
 
 ```bash
-npm add vercel
+npm add https://github.com/speakeasy-sdks/vercel-ts
 ```
 
 ### Yarn
 
 ```bash
-yarn add vercel
+yarn add https://github.com/speakeasy-sdks/vercel-ts
 ```
 <!-- End SDK Installation [installation] -->
 
