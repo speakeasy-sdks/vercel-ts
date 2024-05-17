@@ -3,21 +3,21 @@
 
 ### Available Operations
 
-* [getTeamMembers](#getteammembers) - List team members
-* [inviteUserToTeam](#inviteusertoteam) - Invite a user
-* [requestAccessToTeam](#requestaccesstoteam) - Request access to a team
-* [getTeamAccessRequest](#getteamaccessrequest) - Get access request status
+* [listMembers](#listmembers) - List team members
+* [inviteUser](#inviteuser) - Invite a user
+* [requestAccess](#requestaccess) - Request access to a team
+* [getAccess](#getaccess) - Get access request status
 * [joinTeam](#jointeam) - Join a team
-* [updateTeamMember](#updateteammember) - Update a Team Member
-* [removeTeamMember](#removeteammember) - Remove a Team Member
-* [getTeam](#getteam) - Get a Team
-* [patchTeam](#patchteam) - Update a Team
-* [getTeams](#getteams) - List all teams
-* [createTeam](#createteam) - Create a Team
-* [deleteTeam](#deleteteam) - Delete a Team
-* [deleteTeamInviteCode](#deleteteaminvitecode) - Delete a Team invite code
+* [updateMember](#updatemember) - Update a Team Member
+* [removeMember](#removemember) - Remove a Team Member
+* [get](#get) - Get a Team
+* [update](#update) - Update a Team
+* [list](#list) - List all teams
+* [create](#create) - Create a Team
+* [delete](#delete) - Delete a Team
+* [deleteInviteCode](#deleteinvitecode) - Delete a Team invite code
 
-## getTeamMembers
+## listMembers
 
 Get a paginated list of team members for the provided team.
 
@@ -34,7 +34,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.teams.getTeamMembers({
+  const result = await vercel.teams.listMembers({
     limit: 20,
     since: 1540095775951,
     until: 1540095775951,
@@ -60,14 +60,14 @@ run();
 
 ### Response
 
-**Promise<[models.GetTeamMembersResponse](../../models/getteammembersresponse.md)>**
+**Promise<[models.GetTeamMembersResponseBody](../../models/getteammembersresponsebody.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
 
-## inviteUserToTeam
+## inviteUser
 
 Invite a user to join the team specified in the URL. The authenticated user needs to be an `OWNER` in order to successfully invoke this endpoint. The user can be specified with an email or an ID. If both email and ID are provided, ID will take priority.
 
@@ -84,7 +84,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.teams.inviteUserToTeam("<value>", {
+  const result = await vercel.teams.inviteUser("<value>", {
     uid: "kr1PsOIzqEL5Xg6M4VZcZosf",
     email: "john@example.com",
     role: InviteUserToTeamTeamsRole.Member,
@@ -115,14 +115,14 @@ run();
 
 ### Response
 
-**Promise<[models.InviteUserToTeamResponse](../../models/inviteusertoteamresponse.md)>**
+**Promise<[models.InviteUserToTeamResponseBody](../../models/inviteusertoteamresponsebody.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
 
-## requestAccessToTeam
+## requestAccess
 
 Request access to a team as a member. An owner has to approve the request. Only 10 users can request access to a team at the same time.
 
@@ -139,7 +139,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.teams.requestAccessToTeam("<value>", {
+  const result = await vercel.teams.requestAccess("<value>", {
     joinedFrom: {
       origin: RequestAccessToTeamOrigin.Github,
       commitId: "f498d25d8bd654b578716203be73084b31130cd7",
@@ -169,14 +169,14 @@ run();
 
 ### Response
 
-**Promise<[models.RequestAccessToTeamResponse](../../models/requestaccesstoteamresponse.md)>**
+**Promise<[models.RequestAccessToTeamResponseBody](../../models/requestaccesstoteamresponsebody.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
 
-## getTeamAccessRequest
+## getAccess
 
 Check the status of a join request. It'll respond with a 404 if the request has been declined. If no `userId` path segment was provided, this endpoint will instead return the status of the authenticated user.
 
@@ -192,7 +192,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.teams.getTeamAccessRequest("<value>", "<value>");
+  const result = await vercel.teams.getAccess("<value>", "<value>");
 
   // Handle the result
   console.log(result)
@@ -213,7 +213,7 @@ run();
 
 ### Response
 
-**Promise<[models.GetTeamAccessRequestResponse](../../models/getteamaccessrequestresponse.md)>**
+**Promise<[models.GetTeamAccessRequestResponseBody](../../models/getteamaccessrequestresponsebody.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -259,14 +259,14 @@ run();
 
 ### Response
 
-**Promise<[models.JoinTeamResponse](../../models/jointeamresponse.md)>**
+**Promise<[models.JoinTeamResponseBody](../../models/jointeamresponsebody.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
 
-## updateTeamMember
+## updateMember
 
 Update the membership of a Team Member on the Team specified by `teamId`, such as changing the _role_ of the member, or confirming a request to join the Team for an unconfirmed member. The authenticated user must be an `OWNER` of the Team.
 
@@ -283,7 +283,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.teams.updateTeamMember("<value>", "ndfasllgPyCtREAqxxdyFKb", {
+  const result = await vercel.teams.updateMember("<value>", "ndfasllgPyCtREAqxxdyFKb", {
     confirmed: true,
     role: "[\"MEMBER\",\"VIEWER\"]",
     projects: [
@@ -314,14 +314,14 @@ run();
 
 ### Response
 
-**Promise<[models.UpdateTeamMemberResponse](../../models/updateteammemberresponse.md)>**
+**Promise<[models.UpdateTeamMemberResponseBody](../../models/updateteammemberresponsebody.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
 
-## removeTeamMember
+## removeMember
 
 Remove a Team Member from the Team, or dismiss a user that requested access, or leave a team.
 
@@ -337,7 +337,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.teams.removeTeamMember("<value>", "ndlgr43fadlPyCtREAqxxdyFK", "team_nllPyCtREAqxxdyFKbbMDlxd");
+  const result = await vercel.teams.removeMember("<value>", "ndlgr43fadlPyCtREAqxxdyFK", "team_nllPyCtREAqxxdyFKbbMDlxd");
 
   // Handle the result
   console.log(result)
@@ -359,14 +359,14 @@ run();
 
 ### Response
 
-**Promise<[models.RemoveTeamMemberResponse](../../models/removeteammemberresponse.md)>**
+**Promise<[models.RemoveTeamMemberResponseBody](../../models/removeteammemberresponsebody.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
 
-## getTeam
+## get
 
 Get information for the Team specified by the `teamId` parameter.
 
@@ -382,7 +382,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.teams.getTeam("<value>", "<value>");
+  const result = await vercel.teams.get("<value>", "<value>");
 
   // Handle the result
   console.log(result)
@@ -403,14 +403,14 @@ run();
 
 ### Response
 
-**Promise<[models.GetTeamResponse](../../models/getteamresponse.md)>**
+**Promise<[models.Team](../../models/team.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
 
-## patchTeam
+## update
 
 Update the information of a Team specified by the `teamId` parameter. The request body should contain the information that will be updated on the Team.
 
@@ -426,7 +426,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.teams.patchTeam("<value>", "<value>", {
+  const result = await vercel.teams.update("<value>", "<value>", {
     description: "Our mission is to make cloud computing accessible to everyone",
     emailDomain: "example.com",
     name: "My Team",
@@ -464,14 +464,14 @@ run();
 
 ### Response
 
-**Promise<[models.PatchTeamResponse](../../models/patchteamresponse.md)>**
+**Promise<[models.Team](../../models/team.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
 
-## getTeams
+## list
 
 Get a paginated list of all the Teams the authenticated User is a member of.
 
@@ -487,7 +487,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.teams.getTeams(20, 1540095775951, 1540095775951);
+  const result = await vercel.teams.list(20, 1540095775951, 1540095775951);
 
   // Handle the result
   console.log(result)
@@ -509,14 +509,14 @@ run();
 
 ### Response
 
-**Promise<[models.GetTeamsResponse](../../models/getteamsresponse.md)>**
+**Promise<[models.GetTeamsResponseBody](../../models/getteamsresponsebody.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
 
-## createTeam
+## create
 
 Create a new Team under your account. You need to send a POST request with the desired Team slug, and optionally the Team name.
 
@@ -532,7 +532,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.teams.createTeam({
+  const result = await vercel.teams.create({
     slug: "a-random-team",
     name: "A Random Team",
   });
@@ -555,14 +555,14 @@ run();
 
 ### Response
 
-**Promise<[models.CreateTeamResponse](../../models/createteamresponse.md)>**
+**Promise<[models.CreateTeamResponseBody](../../models/createteamresponsebody.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
 
-## deleteTeam
+## delete
 
 Delete a team under your account. You need to send a `DELETE` request with the desired team `id`. An optional array of reasons for deletion may also be sent.
 
@@ -578,7 +578,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.teams.deleteTeam("<value>", "team_LLHUOMOoDlqOp8wPE4kFo9pE", "<value>", {});
+  const result = await vercel.teams.delete("<value>", "team_LLHUOMOoDlqOp8wPE4kFo9pE", "<value>", {});
 
   // Handle the result
   console.log(result)
@@ -601,14 +601,14 @@ run();
 
 ### Response
 
-**Promise<[models.DeleteTeamResponse](../../models/deleteteamresponse.md)>**
+**Promise<[models.DeleteTeamResponseBody](../../models/deleteteamresponsebody.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
 
-## deleteTeamInviteCode
+## deleteInviteCode
 
 Delete an active Team invite code.
 
@@ -624,7 +624,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.teams.deleteTeamInviteCode("<value>", "2wn2hudbr4chb1ecywo9dvzo7g9sscs6mzcz8htdde0txyom4l");
+  const result = await vercel.teams.deleteInviteCode("<value>", "2wn2hudbr4chb1ecywo9dvzo7g9sscs6mzcz8htdde0txyom4l");
 
   // Handle the result
   console.log(result)
@@ -645,7 +645,7 @@ run();
 
 ### Response
 
-**Promise<[models.DeleteTeamInviteCodeResponse](../../models/deleteteaminvitecoderesponse.md)>**
+**Promise<[models.DeleteTeamInviteCodeResponseBody](../../models/deleteteaminvitecoderesponsebody.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

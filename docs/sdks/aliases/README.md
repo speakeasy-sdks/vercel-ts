@@ -3,13 +3,13 @@
 
 ### Available Operations
 
-* [listAliases](#listaliases) - List aliases
+* [list](#list) - List aliases
 * [getAlias](#getalias) - Get an Alias
-* [deleteAlias](#deletealias) - Delete an Alias
+* [delete](#delete) - Delete an Alias
 * [listDeploymentAliases](#listdeploymentaliases) - List Deployment Aliases
-* [assignAlias](#assignalias) - Assign an Alias
+* [assign](#assign) - Assign an Alias
 
-## listAliases
+## list
 
 Retrieves a list of aliases for the authenticated User or Team. When `domain` is provided, only aliases for that domain will be returned. When `projectId` is provided, it will only return the given project aliases.
 
@@ -25,7 +25,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.aliases.listAliases({
+  const result = await vercel.aliases.list({
   domain: "my-test-domain.com",
     from: 1540095775951,
     limit: 10,
@@ -53,7 +53,7 @@ run();
 
 ### Response
 
-**Promise<[models.ListAliasesResponse](../../models/listaliasesresponse.md)>**
+**Promise<[models.ListAliasesResponseBody](../../models/listaliasesresponsebody.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -102,14 +102,14 @@ run();
 
 ### Response
 
-**Promise<[models.GetAliasResponse](../../models/getaliasresponse.md)>**
+**Promise<[models.GetAliasResponseBody](../../models/getaliasresponsebody.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
 
-## deleteAlias
+## delete
 
 Delete an Alias with the specified ID.
 
@@ -125,7 +125,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.aliases.deleteAlias("<value>", "<value>", "<value>");
+  const result = await vercel.aliases.delete("<value>", "<value>", "<value>");
 
   // Handle the result
   console.log(result)
@@ -147,7 +147,7 @@ run();
 
 ### Response
 
-**Promise<[models.DeleteAliasResponse](../../models/deletealiasresponse.md)>**
+**Promise<[models.DeleteAliasResponseBody](../../models/deletealiasresponsebody.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -192,14 +192,14 @@ run();
 
 ### Response
 
-**Promise<[models.ListDeploymentAliasesResponse](../../models/listdeploymentaliasesresponse.md)>**
+**Promise<[models.ListDeploymentAliasesResponseBody](../../models/listdeploymentaliasesresponsebody.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
 
-## assignAlias
+## assign
 
 Creates a new alias for the deployment with the given deployment ID. The authenticated user or team must own this deployment. If the desired alias is already assigned to another deployment, then it will be removed from the old deployment and assigned to the new one.
 
@@ -215,7 +215,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.aliases.assignAlias("<value>", "<value>", "<value>", {
+  const result = await vercel.aliases.assign("<value>", "<value>", "<value>", {
     alias: "my-alias.vercel.app",
     redirect: null,
   });
@@ -241,7 +241,7 @@ run();
 
 ### Response
 
-**Promise<[models.AssignAliasResponse](../../models/assignaliasresponse.md)>**
+**Promise<[models.AssignAliasResponseBody](../../models/assignaliasresponsebody.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

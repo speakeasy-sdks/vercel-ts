@@ -3,12 +3,12 @@
 
 ### Available Operations
 
-* [getCertById](#getcertbyid) - Get cert by id
-* [removeCert](#removecert) - Remove cert
-* [issueCert](#issuecert) - Issue a new cert
-* [uploadCert](#uploadcert) - Upload a cert
+* [get](#get) - Get cert by id
+* [remove](#remove) - Remove cert
+* [issue](#issue) - Issue a new cert
+* [upload](#upload) - Upload a cert
 
-## getCertById
+## get
 
 Get cert by id
 
@@ -24,7 +24,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.certs.getCertById("<value>", "<value>", "<value>");
+  const result = await vercel.certs.get("<value>", "<value>", "<value>");
 
   // Handle the result
   console.log(result)
@@ -46,14 +46,14 @@ run();
 
 ### Response
 
-**Promise<[models.GetCertByIdResponse](../../models/getcertbyidresponse.md)>**
+**Promise<[models.GetCertByIdResponseBody](../../models/getcertbyidresponsebody.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
 
-## removeCert
+## remove
 
 Remove cert
 
@@ -69,7 +69,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.certs.removeCert("<value>", "<value>", "<value>");
+  const result = await vercel.certs.remove("<value>", "<value>", "<value>");
 
   // Handle the result
   console.log(result)
@@ -91,14 +91,14 @@ run();
 
 ### Response
 
-**Promise<[models.RemoveCertResponse](../../models/removecertresponse.md)>**
+**Promise<[models.RemoveCertResponseBody](../../models/removecertresponsebody.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
 
-## issueCert
+## issue
 
 Issue a new cert
 
@@ -114,7 +114,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.certs.issueCert("<value>", "<value>", {});
+  const result = await vercel.certs.issue("<value>", "<value>", {});
 
   // Handle the result
   console.log(result)
@@ -136,14 +136,14 @@ run();
 
 ### Response
 
-**Promise<[models.IssueCertResponse](../../models/issuecertresponse.md)>**
+**Promise<[models.IssueCertResponseBody](../../models/issuecertresponsebody.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
 
-## uploadCert
+## upload
 
 Upload a cert
 
@@ -159,7 +159,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.certs.uploadCert("<value>", "<value>", {
+  const result = await vercel.certs.upload("<value>", "<value>", {
     ca: "<value>",
     key: "<key>",
     cert: "<value>",
@@ -185,7 +185,7 @@ run();
 
 ### Response
 
-**Promise<[models.UploadCertResponse](../../models/uploadcertresponse.md)>**
+**Promise<[models.UploadCertResponseBody](../../models/uploadcertresponsebody.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

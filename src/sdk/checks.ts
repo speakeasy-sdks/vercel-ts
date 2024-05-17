@@ -43,13 +43,13 @@ export class Checks extends ClientSDK {
      * @remarks
      * Creates a new check. This endpoint must be called with an OAuth2 or it will produce a 400 error.
      */
-    async createCheck(
+    async create(
         deploymentId: string,
         teamId?: string | undefined,
         slug?: string | undefined,
         requestBody?: models.CreateCheckRequestBody | undefined,
         options?: RequestOptions
-    ): Promise<models.CreateCheckResponse> {
+    ): Promise<models.CreateCheckResponseBody> {
         const input$: models.CreateCheckRequest = {
             deploymentId: deploymentId,
             teamId: teamId,
@@ -113,31 +113,23 @@ export class Checks extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        const responseFields$ = {
-            HttpMeta: {
-                Response: response,
-                Request: request$,
-            },
-        };
-
         if (this.matchResponse(response, 200, "application/json")) {
             const responseBody = await response.json();
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return models.CreateCheckResponse$.inboundSchema.parse({
-                        ...responseFields$,
-                        object: val$,
-                    });
+                    return models.CreateCheckResponseBody$.inboundSchema.parse(val$);
                 },
                 "Response validation failed"
             );
             return result;
         } else {
-            throw new models.SDKError("Unexpected API response status or content-type", {
+            const responseBody = await response.text();
+            throw new models.SDKError(
+                "Unexpected API response status or content-type",
                 response,
-                request: request$,
-            });
+                responseBody
+            );
         }
     }
 
@@ -147,12 +139,12 @@ export class Checks extends ClientSDK {
      * @remarks
      * List all of the checks created for a deployment.
      */
-    async getAllChecks(
+    async getAll(
         deploymentId: string,
         teamId?: string | undefined,
         slug?: string | undefined,
         options?: RequestOptions
-    ): Promise<models.GetAllChecksResponse> {
+    ): Promise<models.GetAllChecksResponseBody> {
         const input$: models.GetAllChecksRequest = {
             deploymentId: deploymentId,
             teamId: teamId,
@@ -214,31 +206,23 @@ export class Checks extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        const responseFields$ = {
-            HttpMeta: {
-                Response: response,
-                Request: request$,
-            },
-        };
-
         if (this.matchResponse(response, 200, "application/json")) {
             const responseBody = await response.json();
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return models.GetAllChecksResponse$.inboundSchema.parse({
-                        ...responseFields$,
-                        object: val$,
-                    });
+                    return models.GetAllChecksResponseBody$.inboundSchema.parse(val$);
                 },
                 "Response validation failed"
             );
             return result;
         } else {
-            throw new models.SDKError("Unexpected API response status or content-type", {
+            const responseBody = await response.text();
+            throw new models.SDKError(
+                "Unexpected API response status or content-type",
                 response,
-                request: request$,
-            });
+                responseBody
+            );
         }
     }
 
@@ -248,13 +232,13 @@ export class Checks extends ClientSDK {
      * @remarks
      * Return a detailed response for a single check.
      */
-    async getCheck(
+    async get(
         deploymentId: string,
         checkId: string,
         teamId?: string | undefined,
         slug?: string | undefined,
         options?: RequestOptions
-    ): Promise<models.GetCheckResponse> {
+    ): Promise<models.GetCheckResponseBody> {
         const input$: models.GetCheckRequest = {
             deploymentId: deploymentId,
             checkId: checkId,
@@ -321,31 +305,23 @@ export class Checks extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        const responseFields$ = {
-            HttpMeta: {
-                Response: response,
-                Request: request$,
-            },
-        };
-
         if (this.matchResponse(response, 200, "application/json")) {
             const responseBody = await response.json();
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return models.GetCheckResponse$.inboundSchema.parse({
-                        ...responseFields$,
-                        object: val$,
-                    });
+                    return models.GetCheckResponseBody$.inboundSchema.parse(val$);
                 },
                 "Response validation failed"
             );
             return result;
         } else {
-            throw new models.SDKError("Unexpected API response status or content-type", {
+            const responseBody = await response.text();
+            throw new models.SDKError(
+                "Unexpected API response status or content-type",
                 response,
-                request: request$,
-            });
+                responseBody
+            );
         }
     }
 
@@ -355,10 +331,10 @@ export class Checks extends ClientSDK {
      * @remarks
      * Update an existing check. This endpoint must be called with an OAuth2 or it will produce a 400 error.
      */
-    async updateCheck(
+    async update(
         request: models.UpdateCheckRequest,
         options?: RequestOptions
-    ): Promise<models.UpdateCheckResponse> {
+    ): Promise<models.UpdateCheckResponseBody> {
         const input$ = request;
         const headers$ = new Headers();
         headers$.set("user-agent", SDK_METADATA.userAgent);
@@ -424,31 +400,23 @@ export class Checks extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        const responseFields$ = {
-            HttpMeta: {
-                Response: response,
-                Request: request$,
-            },
-        };
-
         if (this.matchResponse(response, 200, "application/json")) {
             const responseBody = await response.json();
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return models.UpdateCheckResponse$.inboundSchema.parse({
-                        ...responseFields$,
-                        object: val$,
-                    });
+                    return models.UpdateCheckResponseBody$.inboundSchema.parse(val$);
                 },
                 "Response validation failed"
             );
             return result;
         } else {
-            throw new models.SDKError("Unexpected API response status or content-type", {
+            const responseBody = await response.text();
+            throw new models.SDKError(
+                "Unexpected API response status or content-type",
                 response,
-                request: request$,
-            });
+                responseBody
+            );
         }
     }
 
@@ -458,13 +426,13 @@ export class Checks extends ClientSDK {
      * @remarks
      * Rerequest a selected check that has failed.
      */
-    async rerequestCheck(
+    async rerequest(
         deploymentId: string,
         checkId: string,
         teamId?: string | undefined,
         slug?: string | undefined,
         options?: RequestOptions
-    ): Promise<models.RerequestCheckResponse> {
+    ): Promise<models.RerequestCheckResponseBody> {
         const input$: models.RerequestCheckRequest = {
             deploymentId: deploymentId,
             checkId: checkId,
@@ -531,31 +499,23 @@ export class Checks extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        const responseFields$ = {
-            HttpMeta: {
-                Response: response,
-                Request: request$,
-            },
-        };
-
         if (this.matchResponse(response, 200, "application/json")) {
             const responseBody = await response.json();
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return models.RerequestCheckResponse$.inboundSchema.parse({
-                        ...responseFields$,
-                        object: val$,
-                    });
+                    return models.RerequestCheckResponseBody$.inboundSchema.parse(val$);
                 },
                 "Response validation failed"
             );
             return result;
         } else {
-            throw new models.SDKError("Unexpected API response status or content-type", {
+            const responseBody = await response.text();
+            throw new models.SDKError(
+                "Unexpected API response status or content-type",
                 response,
-                request: request$,
-            });
+                responseBody
+            );
         }
     }
 }

@@ -4,7 +4,6 @@
 
 import { AuthUser, AuthUser$ } from "./authuser";
 import { AuthUserLimited, AuthUserLimited$ } from "./authuserlimited";
-import { HTTPMetadata, HTTPMetadata$ } from "./httpmetadata";
 import * as z from "zod";
 
 export type GetAuthUserUser = AuthUserLimited | AuthUser;
@@ -14,14 +13,6 @@ export type GetAuthUserUser = AuthUserLimited | AuthUser;
  */
 export type GetAuthUserResponseBody = {
     user: AuthUserLimited | AuthUser;
-};
-
-export type GetAuthUserResponse = {
-    httpMeta: HTTPMetadata;
-    /**
-     * Successful response.
-     */
-    object?: GetAuthUserResponseBody | undefined;
 };
 
 /** @internal */
@@ -61,38 +52,6 @@ export namespace GetAuthUserResponseBody$ {
         .transform((v) => {
             return {
                 user: v.user,
-            };
-        });
-}
-
-/** @internal */
-export namespace GetAuthUserResponse$ {
-    export const inboundSchema: z.ZodType<GetAuthUserResponse, z.ZodTypeDef, unknown> = z
-        .object({
-            HttpMeta: HTTPMetadata$.inboundSchema,
-            object: z.lazy(() => GetAuthUserResponseBody$.inboundSchema).optional(),
-        })
-        .transform((v) => {
-            return {
-                httpMeta: v.HttpMeta,
-                ...(v.object === undefined ? null : { object: v.object }),
-            };
-        });
-
-    export type Outbound = {
-        HttpMeta: HTTPMetadata$.Outbound;
-        object?: GetAuthUserResponseBody$.Outbound | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetAuthUserResponse> = z
-        .object({
-            httpMeta: HTTPMetadata$.outboundSchema,
-            object: z.lazy(() => GetAuthUserResponseBody$.outboundSchema).optional(),
-        })
-        .transform((v) => {
-            return {
-                HttpMeta: v.httpMeta,
-                ...(v.object === undefined ? null : { object: v.object }),
             };
         });
 }

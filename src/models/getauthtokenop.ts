@@ -3,7 +3,6 @@
  */
 
 import { AuthToken, AuthToken$ } from "./authtoken";
-import { HTTPMetadata, HTTPMetadata$ } from "./httpmetadata";
 import * as z from "zod";
 
 export type GetAuthTokenRequest = {
@@ -21,14 +20,6 @@ export type GetAuthTokenResponseBody = {
      * Authentication token metadata.
      */
     token: AuthToken;
-};
-
-export type GetAuthTokenResponse = {
-    httpMeta: HTTPMetadata;
-    /**
-     * Successful response.
-     */
-    object?: GetAuthTokenResponseBody | undefined;
 };
 
 /** @internal */
@@ -81,38 +72,6 @@ export namespace GetAuthTokenResponseBody$ {
         .transform((v) => {
             return {
                 token: v.token,
-            };
-        });
-}
-
-/** @internal */
-export namespace GetAuthTokenResponse$ {
-    export const inboundSchema: z.ZodType<GetAuthTokenResponse, z.ZodTypeDef, unknown> = z
-        .object({
-            HttpMeta: HTTPMetadata$.inboundSchema,
-            object: z.lazy(() => GetAuthTokenResponseBody$.inboundSchema).optional(),
-        })
-        .transform((v) => {
-            return {
-                httpMeta: v.HttpMeta,
-                ...(v.object === undefined ? null : { object: v.object }),
-            };
-        });
-
-    export type Outbound = {
-        HttpMeta: HTTPMetadata$.Outbound;
-        object?: GetAuthTokenResponseBody$.Outbound | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetAuthTokenResponse> = z
-        .object({
-            httpMeta: HTTPMetadata$.outboundSchema,
-            object: z.lazy(() => GetAuthTokenResponseBody$.outboundSchema).optional(),
-        })
-        .transform((v) => {
-            return {
-                HttpMeta: v.httpMeta,
-                ...(v.object === undefined ? null : { object: v.object }),
             };
         });
 }

@@ -9,6 +9,7 @@ import { HTTPClient } from "../lib/http";
 import * as schemas$ from "../lib/schemas";
 import { ClientSDK, RequestOptions } from "../lib/sdks";
 import * as models from "../models";
+import * as z from "zod";
 
 export class Artifacts extends ClientSDK {
     private readonly options$: SDKOptions & { hooks?: SDKHooks };
@@ -46,7 +47,7 @@ export class Artifacts extends ClientSDK {
     async recordEvents(
         request: models.RecordEventsRequest,
         options?: RequestOptions
-    ): Promise<models.RecordEventsResponse> {
+    ): Promise<models.RecordEventsResponse | void> {
         const input$ = typeof request === "undefined" ? {} : request;
         const headers$ = new Headers();
         headers$.set("user-agent", SDK_METADATA.userAgent);
@@ -113,27 +114,16 @@ export class Artifacts extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        const responseFields$ = {
-            HttpMeta: {
-                Response: response,
-                Request: request$,
-            },
-        };
-
         if (this.matchStatusCode(response, 200)) {
-            // fallthrough
+            return;
         } else {
-            throw new models.SDKError("Unexpected API response status or content-type", {
+            const responseBody = await response.text();
+            throw new models.SDKError(
+                "Unexpected API response status or content-type",
                 response,
-                request: request$,
-            });
+                responseBody
+            );
         }
-
-        return schemas$.parse(
-            undefined,
-            () => models.RecordEventsResponse$.inboundSchema.parse(responseFields$),
-            "Response validation failed"
-        );
     }
 
     /**
@@ -146,7 +136,7 @@ export class Artifacts extends ClientSDK {
         teamId?: string | undefined,
         slug?: string | undefined,
         options?: RequestOptions
-    ): Promise<models.StatusResponse> {
+    ): Promise<models.StatusResponseBody> {
         const input$: models.StatusRequest = {
             teamId: teamId,
             slug: slug,
@@ -199,31 +189,23 @@ export class Artifacts extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        const responseFields$ = {
-            HttpMeta: {
-                Response: response,
-                Request: request$,
-            },
-        };
-
         if (this.matchResponse(response, 200, "application/json")) {
             const responseBody = await response.json();
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return models.StatusResponse$.inboundSchema.parse({
-                        ...responseFields$,
-                        object: val$,
-                    });
+                    return models.StatusResponseBody$.inboundSchema.parse(val$);
                 },
                 "Response validation failed"
             );
             return result;
         } else {
-            throw new models.SDKError("Unexpected API response status or content-type", {
+            const responseBody = await response.text();
+            throw new models.SDKError(
+                "Unexpected API response status or content-type",
                 response,
-                request: request$,
-            });
+                responseBody
+            );
         }
     }
 
@@ -233,10 +215,10 @@ export class Artifacts extends ClientSDK {
      * @remarks
      * Uploads a cache artifact identified by the `hash` specified on the path. The cache artifact can then be downloaded with the provided `hash`.
      */
-    async uploadArtifact(
+    async upload(
         request: models.UploadArtifactRequest,
         options?: RequestOptions
-    ): Promise<models.UploadArtifactResponse> {
+    ): Promise<models.UploadArtifactResponseBody> {
         const input$ = request;
         const headers$ = new Headers();
         headers$.set("user-agent", SDK_METADATA.userAgent);
@@ -330,31 +312,23 @@ export class Artifacts extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        const responseFields$ = {
-            HttpMeta: {
-                Response: response,
-                Request: request$,
-            },
-        };
-
         if (this.matchResponse(response, 202, "application/json")) {
             const responseBody = await response.json();
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return models.UploadArtifactResponse$.inboundSchema.parse({
-                        ...responseFields$,
-                        object: val$,
-                    });
+                    return models.UploadArtifactResponseBody$.inboundSchema.parse(val$);
                 },
                 "Response validation failed"
             );
             return result;
         } else {
-            throw new models.SDKError("Unexpected API response status or content-type", {
+            const responseBody = await response.text();
+            throw new models.SDKError(
+                "Unexpected API response status or content-type",
                 response,
-                request: request$,
-            });
+                responseBody
+            );
         }
     }
 
@@ -364,10 +338,10 @@ export class Artifacts extends ClientSDK {
      * @remarks
      * Downloads a cache artifact indentified by its `hash` specified on the request path. The artifact is downloaded as an octet-stream. The client should verify the content-length header and response body.
      */
-    async downloadArtifact(
+    async download(
         request: models.DownloadArtifactRequest,
         options?: RequestOptions
-    ): Promise<models.DownloadArtifactResponse> {
+    ): Promise<ReadableStream<Uint8Array>> {
         const input$ = request;
         const headers$ = new Headers();
         headers$.set("user-agent", SDK_METADATA.userAgent);
@@ -442,31 +416,23 @@ export class Artifacts extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        const responseFields$ = {
-            HttpMeta: {
-                Response: response,
-                Request: request$,
-            },
-        };
-
         if (this.matchResponse(response, 200, "application/json")) {
             const responseBody = response.body ?? undefined;
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return models.DownloadArtifactResponse$.inboundSchema.parse({
-                        ...responseFields$,
-                        stream: val$,
-                    });
+                    return z.instanceof(ReadableStream<Uint8Array>).parse(val$);
                 },
                 "Response validation failed"
             );
             return result;
         } else {
-            throw new models.SDKError("Unexpected API response status or content-type", {
+            const responseBody = await response.text();
+            throw new models.SDKError(
+                "Unexpected API response status or content-type",
                 response,
-                request: request$,
-            });
+                responseBody
+            );
         }
     }
 
@@ -476,12 +442,12 @@ export class Artifacts extends ClientSDK {
      * @remarks
      * Check that a cache artifact with the given `hash` exists. This request returns response headers only and is equivalent to a `GET` request to this endpoint where the response contains no body.
      */
-    async artifactExists(
+    async exists(
         hash: string,
         teamId?: string | undefined,
         slug?: string | undefined,
         options?: RequestOptions
-    ): Promise<models.ArtifactExistsResponse> {
+    ): Promise<models.ArtifactExistsResponse | void> {
         const input$: models.ArtifactExistsRequest = {
             hash: hash,
             teamId: teamId,
@@ -544,27 +510,16 @@ export class Artifacts extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        const responseFields$ = {
-            HttpMeta: {
-                Response: response,
-                Request: request$,
-            },
-        };
-
         if (this.matchStatusCode(response, 200)) {
-            // fallthrough
+            return;
         } else {
-            throw new models.SDKError("Unexpected API response status or content-type", {
+            const responseBody = await response.text();
+            throw new models.SDKError(
+                "Unexpected API response status or content-type",
                 response,
-                request: request$,
-            });
+                responseBody
+            );
         }
-
-        return schemas$.parse(
-            undefined,
-            () => models.ArtifactExistsResponse$.inboundSchema.parse(responseFields$),
-            "Response validation failed"
-        );
     }
 
     /**
@@ -573,12 +528,12 @@ export class Artifacts extends ClientSDK {
      * @remarks
      * Query information about an array of artifacts.
      */
-    async artifactQuery(
+    async query(
         teamId?: string | undefined,
         slug?: string | undefined,
         requestBody?: models.ArtifactQueryRequestBody | undefined,
         options?: RequestOptions
-    ): Promise<models.ArtifactQueryResponse> {
+    ): Promise<Record<string, models.ResponseBody>> {
         const input$: models.ArtifactQueryRequest = {
             teamId: teamId,
             slug: slug,
@@ -633,31 +588,23 @@ export class Artifacts extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        const responseFields$ = {
-            HttpMeta: {
-                Response: response,
-                Request: request$,
-            },
-        };
-
         if (this.matchResponse(response, 200, "application/json")) {
             const responseBody = await response.json();
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return models.ArtifactQueryResponse$.inboundSchema.parse({
-                        ...responseFields$,
-                        object: val$,
-                    });
+                    return z.record(models.ResponseBody$.inboundSchema).parse(val$);
                 },
                 "Response validation failed"
             );
             return result;
         } else {
-            throw new models.SDKError("Unexpected API response status or content-type", {
+            const responseBody = await response.text();
+            throw new models.SDKError(
+                "Unexpected API response status or content-type",
                 response,
-                request: request$,
-            });
+                responseBody
+            );
         }
     }
 }

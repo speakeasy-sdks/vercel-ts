@@ -43,10 +43,10 @@ export class Dns extends ClientSDK {
      * @remarks
      * Retrieves a list of DNS records created for a domain name. By default it returns 20 records if no limit is provided. The rest can be retrieved using the pagination options.
      */
-    async getRecords(
+    async get(
         request: models.GetRecordsRequest,
         options?: RequestOptions
-    ): Promise<models.GetRecordsResponse> {
+    ): Promise<models.GetRecordsResponseBody> {
         const input$ = request;
         const headers$ = new Headers();
         headers$.set("user-agent", SDK_METADATA.userAgent);
@@ -105,31 +105,23 @@ export class Dns extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        const responseFields$ = {
-            HttpMeta: {
-                Response: response,
-                Request: request$,
-            },
-        };
-
         if (this.matchResponse(response, 200, "application/json")) {
             const responseBody = await response.json();
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return models.GetRecordsResponse$.inboundSchema.parse({
-                        ...responseFields$,
-                        oneOf: val$,
-                    });
+                    return models.GetRecordsResponseBody$.inboundSchema.parse(val$);
                 },
                 "Response validation failed"
             );
             return result;
         } else {
-            throw new models.SDKError("Unexpected API response status or content-type", {
+            const responseBody = await response.text();
+            throw new models.SDKError(
+                "Unexpected API response status or content-type",
                 response,
-                request: request$,
-            });
+                responseBody
+            );
         }
     }
 
@@ -139,13 +131,13 @@ export class Dns extends ClientSDK {
      * @remarks
      * Creates a DNS record for a domain.
      */
-    async createRecord(
+    async create(
         domain: string,
         teamId?: string | undefined,
         slug?: string | undefined,
         requestBody?: models.CreateRecordRequestBody | undefined,
         options?: RequestOptions
-    ): Promise<models.CreateRecordResponse> {
+    ): Promise<models.CreateRecordResponseBody> {
         const input$: models.CreateRecordRequest = {
             domain: domain,
             teamId: teamId,
@@ -210,31 +202,23 @@ export class Dns extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        const responseFields$ = {
-            HttpMeta: {
-                Response: response,
-                Request: request$,
-            },
-        };
-
         if (this.matchResponse(response, 200, "application/json")) {
             const responseBody = await response.json();
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return models.CreateRecordResponse$.inboundSchema.parse({
-                        ...responseFields$,
-                        oneOf: val$,
-                    });
+                    return models.CreateRecordResponseBody$.inboundSchema.parse(val$);
                 },
                 "Response validation failed"
             );
             return result;
         } else {
-            throw new models.SDKError("Unexpected API response status or content-type", {
+            const responseBody = await response.text();
+            throw new models.SDKError(
+                "Unexpected API response status or content-type",
                 response,
-                request: request$,
-            });
+                responseBody
+            );
         }
     }
 
@@ -244,13 +228,13 @@ export class Dns extends ClientSDK {
      * @remarks
      * Updates an existing DNS record for a domain name.
      */
-    async updateRecord(
+    async update(
         recordId: string,
         teamId?: string | undefined,
         slug?: string | undefined,
         requestBody?: models.UpdateRecordRequestBody | undefined,
         options?: RequestOptions
-    ): Promise<models.UpdateRecordResponse> {
+    ): Promise<models.UpdateRecordResponseBody> {
         const input$: models.UpdateRecordRequest = {
             recordId: recordId,
             teamId: teamId,
@@ -315,31 +299,23 @@ export class Dns extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        const responseFields$ = {
-            HttpMeta: {
-                Response: response,
-                Request: request$,
-            },
-        };
-
         if (this.matchResponse(response, 200, "application/json")) {
             const responseBody = await response.json();
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return models.UpdateRecordResponse$.inboundSchema.parse({
-                        ...responseFields$,
-                        object: val$,
-                    });
+                    return models.UpdateRecordResponseBody$.inboundSchema.parse(val$);
                 },
                 "Response validation failed"
             );
             return result;
         } else {
-            throw new models.SDKError("Unexpected API response status or content-type", {
+            const responseBody = await response.text();
+            throw new models.SDKError(
+                "Unexpected API response status or content-type",
                 response,
-                request: request$,
-            });
+                responseBody
+            );
         }
     }
 
@@ -349,13 +325,13 @@ export class Dns extends ClientSDK {
      * @remarks
      * Removes an existing DNS record from a domain name.
      */
-    async removeRecord(
+    async remove(
         domain: string,
         recordId: string,
         teamId?: string | undefined,
         slug?: string | undefined,
         options?: RequestOptions
-    ): Promise<models.RemoveRecordResponse> {
+    ): Promise<models.RemoveRecordResponseBody> {
         const input$: models.RemoveRecordRequest = {
             domain: domain,
             recordId: recordId,
@@ -422,31 +398,23 @@ export class Dns extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        const responseFields$ = {
-            HttpMeta: {
-                Response: response,
-                Request: request$,
-            },
-        };
-
         if (this.matchResponse(response, 200, "application/json")) {
             const responseBody = await response.json();
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return models.RemoveRecordResponse$.inboundSchema.parse({
-                        ...responseFields$,
-                        object: val$,
-                    });
+                    return models.RemoveRecordResponseBody$.inboundSchema.parse(val$);
                 },
                 "Response validation failed"
             );
             return result;
         } else {
-            throw new models.SDKError("Unexpected API response status or content-type", {
+            const responseBody = await response.text();
+            throw new models.SDKError(
+                "Unexpected API response status or content-type",
                 response,
-                request: request$,
-            });
+                responseBody
+            );
         }
     }
 }

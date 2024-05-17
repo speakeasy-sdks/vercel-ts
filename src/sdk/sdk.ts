@@ -145,7 +145,7 @@ export class Vercel extends ClientSDK {
     async getDeploymentBuilds(
         deploymentId: string,
         options?: RequestOptions
-    ): Promise<models.GetDeploymentBuildsResponse> {
+    ): Promise<models.GetDeploymentBuildsResponseBody> {
         const input$: models.GetDeploymentBuildsRequest = {
             deploymentId: deploymentId,
         };
@@ -185,38 +185,30 @@ export class Vercel extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        const responseFields$ = {
-            HttpMeta: {
-                Response: response,
-                Request: request$,
-            },
-        };
-
         if (this.matchResponse(response, 200, "application/json")) {
             const responseBody = await response.json();
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return models.GetDeploymentBuildsResponse$.inboundSchema.parse({
-                        ...responseFields$,
-                        object: val$,
-                    });
+                    return models.GetDeploymentBuildsResponseBody$.inboundSchema.parse(val$);
                 },
                 "Response validation failed"
             );
             return result;
         } else {
-            throw new models.SDKError("Unexpected API response status or content-type", {
+            const responseBody = await response.text();
+            throw new models.SDKError(
+                "Unexpected API response status or content-type",
                 response,
-                request: request$,
-            });
+                responseBody
+            );
         }
     }
 
     async purgeDataCache(
         projectIdOrName: string,
         options?: RequestOptions
-    ): Promise<models.PurgeDataCacheResponse> {
+    ): Promise<models.PurgeDataCacheResponse | void> {
         const input$: models.PurgeDataCacheRequest = {
             projectIdOrName: projectIdOrName,
         };
@@ -253,33 +245,22 @@ export class Vercel extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        const responseFields$ = {
-            HttpMeta: {
-                Response: response,
-                Request: request$,
-            },
-        };
-
         if (this.matchStatusCode(response, 200)) {
-            // fallthrough
+            return;
         } else {
-            throw new models.SDKError("Unexpected API response status or content-type", {
+            const responseBody = await response.text();
+            throw new models.SDKError(
+                "Unexpected API response status or content-type",
                 response,
-                request: request$,
-            });
+                responseBody
+            );
         }
-
-        return schemas$.parse(
-            undefined,
-            () => models.PurgeDataCacheResponse$.inboundSchema.parse(responseFields$),
-            "Response validation failed"
-        );
     }
 
     async updateBillingSettings(
         request?: models.UpdateBillingSettingsRequestBody | undefined,
         options?: RequestOptions
-    ): Promise<models.UpdateBillingSettingsResponse> {
+    ): Promise<models.UpdateBillingSettingsResponseBody> {
         const input$ = request;
         const headers$ = new Headers();
         headers$.set("user-agent", SDK_METADATA.userAgent);
@@ -314,31 +295,23 @@ export class Vercel extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        const responseFields$ = {
-            HttpMeta: {
-                Response: response,
-                Request: request$,
-            },
-        };
-
         if (this.matchResponse(response, 200, "application/json")) {
             const responseBody = await response.json();
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return models.UpdateBillingSettingsResponse$.inboundSchema.parse({
-                        ...responseFields$,
-                        object: val$,
-                    });
+                    return models.UpdateBillingSettingsResponseBody$.inboundSchema.parse(val$);
                 },
                 "Response validation failed"
             );
             return result;
         } else {
-            throw new models.SDKError("Unexpected API response status or content-type", {
+            const responseBody = await response.text();
+            throw new models.SDKError(
+                "Unexpected API response status or content-type",
                 response,
-                request: request$,
-            });
+                responseBody
+            );
         }
     }
 }

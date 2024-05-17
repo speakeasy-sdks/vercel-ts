@@ -3,7 +3,6 @@
  */
 
 import * as b64$ from "../lib/base64";
-import { HTTPMetadata, HTTPMetadata$ } from "./httpmetadata";
 import * as z from "zod";
 
 export type UploadArtifactRequest = {
@@ -50,14 +49,6 @@ export type UploadArtifactResponseBody = {
      * Array of URLs where the artifact was updated
      */
     urls: Array<string>;
-};
-
-export type UploadArtifactResponse = {
-    httpMeta: HTTPMetadata;
-    /**
-     * File successfully uploaded
-     */
-    object?: UploadArtifactResponseBody | undefined;
 };
 
 /** @internal */
@@ -164,38 +155,6 @@ export namespace UploadArtifactResponseBody$ {
         .transform((v) => {
             return {
                 urls: v.urls,
-            };
-        });
-}
-
-/** @internal */
-export namespace UploadArtifactResponse$ {
-    export const inboundSchema: z.ZodType<UploadArtifactResponse, z.ZodTypeDef, unknown> = z
-        .object({
-            HttpMeta: HTTPMetadata$.inboundSchema,
-            object: z.lazy(() => UploadArtifactResponseBody$.inboundSchema).optional(),
-        })
-        .transform((v) => {
-            return {
-                httpMeta: v.HttpMeta,
-                ...(v.object === undefined ? null : { object: v.object }),
-            };
-        });
-
-    export type Outbound = {
-        HttpMeta: HTTPMetadata$.Outbound;
-        object?: UploadArtifactResponseBody$.Outbound | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, UploadArtifactResponse> = z
-        .object({
-            httpMeta: HTTPMetadata$.outboundSchema,
-            object: z.lazy(() => UploadArtifactResponseBody$.outboundSchema).optional(),
-        })
-        .transform((v) => {
-            return {
-                HttpMeta: v.httpMeta,
-                ...(v.object === undefined ? null : { object: v.object }),
             };
         });
 }

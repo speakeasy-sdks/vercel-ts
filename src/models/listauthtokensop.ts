@@ -3,7 +3,6 @@
  */
 
 import { AuthToken, AuthToken$ } from "./authtoken";
-import { HTTPMetadata, HTTPMetadata$ } from "./httpmetadata";
 import { Pagination, Pagination$ } from "./pagination";
 import * as z from "zod";
 
@@ -17,11 +16,6 @@ export type ListAuthTokensResponseBody = {
      * This object contains information related to the pagination of the current request, including the necessary parameters to get the next or previous page of data.
      */
     pagination: Pagination;
-};
-
-export type ListAuthTokensResponse = {
-    httpMeta: HTTPMetadata;
-    object?: ListAuthTokensResponseBody | undefined;
 };
 
 /** @internal */
@@ -57,38 +51,6 @@ export namespace ListAuthTokensResponseBody$ {
                 tokens: v.tokens,
                 ...(v.testingToken === undefined ? null : { testingToken: v.testingToken }),
                 pagination: v.pagination,
-            };
-        });
-}
-
-/** @internal */
-export namespace ListAuthTokensResponse$ {
-    export const inboundSchema: z.ZodType<ListAuthTokensResponse, z.ZodTypeDef, unknown> = z
-        .object({
-            HttpMeta: HTTPMetadata$.inboundSchema,
-            object: z.lazy(() => ListAuthTokensResponseBody$.inboundSchema).optional(),
-        })
-        .transform((v) => {
-            return {
-                httpMeta: v.HttpMeta,
-                ...(v.object === undefined ? null : { object: v.object }),
-            };
-        });
-
-    export type Outbound = {
-        HttpMeta: HTTPMetadata$.Outbound;
-        object?: ListAuthTokensResponseBody$.Outbound | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, ListAuthTokensResponse> = z
-        .object({
-            httpMeta: HTTPMetadata$.outboundSchema,
-            object: z.lazy(() => ListAuthTokensResponseBody$.outboundSchema).optional(),
-        })
-        .transform((v) => {
-            return {
-                HttpMeta: v.httpMeta,
-                ...(v.object === undefined ? null : { object: v.object }),
             };
         });
 }

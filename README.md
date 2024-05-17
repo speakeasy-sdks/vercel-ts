@@ -13,13 +13,13 @@
 ### NPM
 
 ```bash
-npm add <UNSET>
+npm add vercel
 ```
 
 ### Yarn
 
 ```bash
-yarn add <UNSET>
+yarn add vercel
 ```
 <!-- End SDK Installation [installation] -->
 
@@ -64,174 +64,174 @@ run();
 
 * [recordEvents](docs/sdks/artifacts/README.md#recordevents) - Record an artifacts cache usage event
 * [status](docs/sdks/artifacts/README.md#status) - Get status of Remote Caching for this principal
-* [uploadArtifact](docs/sdks/artifacts/README.md#uploadartifact) - Upload a cache artifact
-* [downloadArtifact](docs/sdks/artifacts/README.md#downloadartifact) - Download a cache artifact
-* [artifactExists](docs/sdks/artifacts/README.md#artifactexists) - Check if a cache artifact exists
-* [artifactQuery](docs/sdks/artifacts/README.md#artifactquery) - Query information about an artifact
+* [upload](docs/sdks/artifacts/README.md#upload) - Upload a cache artifact
+* [download](docs/sdks/artifacts/README.md#download) - Download a cache artifact
+* [exists](docs/sdks/artifacts/README.md#exists) - Check if a cache artifact exists
+* [query](docs/sdks/artifacts/README.md#query) - Query information about an artifact
 
 ### [checks](docs/sdks/checks/README.md)
 
-* [createCheck](docs/sdks/checks/README.md#createcheck) - Creates a new Check
-* [getAllChecks](docs/sdks/checks/README.md#getallchecks) - Retrieve a list of all checks
-* [getCheck](docs/sdks/checks/README.md#getcheck) - Get a single check
-* [updateCheck](docs/sdks/checks/README.md#updatecheck) - Update a check
-* [rerequestCheck](docs/sdks/checks/README.md#rerequestcheck) - Rerequest a check
+* [create](docs/sdks/checks/README.md#create) - Creates a new Check
+* [getAll](docs/sdks/checks/README.md#getall) - Retrieve a list of all checks
+* [get](docs/sdks/checks/README.md#get) - Get a single check
+* [update](docs/sdks/checks/README.md#update) - Update a check
+* [rerequest](docs/sdks/checks/README.md#rerequest) - Rerequest a check
 
 ### [projects](docs/sdks/projects/README.md)
 
 * [updateProjectDataCache](docs/sdks/projects/README.md#updateprojectdatacache) - Update the data cache feature
-* [getProjects](docs/sdks/projects/README.md#getprojects) - Retrieve a list of projects
-* [createProject](docs/sdks/projects/README.md#createproject) - Create a new project
-* [updateProject](docs/sdks/projects/README.md#updateproject) - Update an existing project
-* [deleteProject](docs/sdks/projects/README.md#deleteproject) - Delete a Project
-* [getProjectDomain](docs/sdks/projects/README.md#getprojectdomain) - Get a project domain
-* [updateProjectDomain](docs/sdks/projects/README.md#updateprojectdomain) - Update a project domain
-* [removeProjectDomain](docs/sdks/projects/README.md#removeprojectdomain) - Remove a domain from a project
-* [addProjectDomain](docs/sdks/projects/README.md#addprojectdomain) - Add a domain to a project
-* [verifyProjectDomain](docs/sdks/projects/README.md#verifyprojectdomain) - Verify project domain
-* [filterProjectEnvs](docs/sdks/projects/README.md#filterprojectenvs) - Retrieve the environment variables of a project by id or name
-* [getProjectEnv](docs/sdks/projects/README.md#getprojectenv) - Retrieve the decrypted value of an environment variable of a project by id
-* [createProjectEnv](docs/sdks/projects/README.md#createprojectenv) - Create one or more environment variables
-* [removeProjectEnv](docs/sdks/projects/README.md#removeprojectenv) - Remove an environment variable
-* [editProjectEnv](docs/sdks/projects/README.md#editprojectenv) - Edit an environment variable
+* [get](docs/sdks/projects/README.md#get) - Retrieve a list of projects
+* [create](docs/sdks/projects/README.md#create) - Create a new project
+* [update](docs/sdks/projects/README.md#update) - Update an existing project
+* [delete](docs/sdks/projects/README.md#delete) - Delete a Project
+* [getDomain](docs/sdks/projects/README.md#getdomain) - Get a project domain
+* [updateDomain](docs/sdks/projects/README.md#updatedomain) - Update a project domain
+* [removeDomain](docs/sdks/projects/README.md#removedomain) - Remove a domain from a project
+* [addDomain](docs/sdks/projects/README.md#adddomain) - Add a domain to a project
+* [verifyDomain](docs/sdks/projects/README.md#verifydomain) - Verify project domain
+* [filterEnvs](docs/sdks/projects/README.md#filterenvs) - Retrieve the environment variables of a project by id or name
+* [getEnv](docs/sdks/projects/README.md#getenv) - Retrieve the decrypted value of an environment variable of a project by id
+* [createEnv](docs/sdks/projects/README.md#createenv) - Create one or more environment variables
+* [removeEnv](docs/sdks/projects/README.md#removeenv) - Remove an environment variable
+* [editEnv](docs/sdks/projects/README.md#editenv) - Edit an environment variable
 * [requestPromote](docs/sdks/projects/README.md#requestpromote) - Points all production domains for a project to the given deploy
-* [getEequestPromoteAliases](docs/sdks/projects/README.md#geteequestpromotealiases) - Gets a list of aliases with status for the current promote
-* [pauseProject](docs/sdks/projects/README.md#pauseproject) - Pause a project
-* [unpauseProject](docs/sdks/projects/README.md#unpauseproject) - Unpause a project
+* [getRequestPromoteAliases](docs/sdks/projects/README.md#getrequestpromotealiases) - Gets a list of aliases with status for the current promote
+* [pause](docs/sdks/projects/README.md#pause) - Pause a project
+* [unpause](docs/sdks/projects/README.md#unpause) - Unpause a project
 
 ### [deployments](docs/sdks/deployments/README.md)
 
 * [getDeploymentEvents](docs/sdks/deployments/README.md#getdeploymentevents) - Get deployment events
 * [getDeployment](docs/sdks/deployments/README.md#getdeployment) - Get a deployment by ID or URL
-* [createDeployment](docs/sdks/deployments/README.md#createdeployment) - Create a new deployment
-* [cancelDeployment](docs/sdks/deployments/README.md#canceldeployment) - Cancel a deployment
+* [create](docs/sdks/deployments/README.md#create) - Create a new deployment
+* [cancel](docs/sdks/deployments/README.md#cancel) - Cancel a deployment
 * [uploadFile](docs/sdks/deployments/README.md#uploadfile) - Upload Deployment Files
 * [listDeploymentFiles](docs/sdks/deployments/README.md#listdeploymentfiles) - List Deployment Files
 * [getDeploymentFileContents](docs/sdks/deployments/README.md#getdeploymentfilecontents) - Get Deployment File Contents
-* [getDeployments](docs/sdks/deployments/README.md#getdeployments) - List deployments
-* [deleteDeployment](docs/sdks/deployments/README.md#deletedeployment) - Delete a Deployment
+* [list](docs/sdks/deployments/README.md#list) - List deployments
+* [delete](docs/sdks/deployments/README.md#delete) - Delete a Deployment
 
 ### [domains](docs/sdks/domains/README.md)
 
-* [buyDomain](docs/sdks/domains/README.md#buydomain) - Purchase a domain
-* [checkDomainPrice](docs/sdks/domains/README.md#checkdomainprice) - Check the price for a domain
-* [checkDomainStatus](docs/sdks/domains/README.md#checkdomainstatus) - Check a Domain Availability
-* [getDomainTransfer](docs/sdks/domains/README.md#getdomaintransfer) - Get domain transfer info.
-* [getDomainConfig](docs/sdks/domains/README.md#getdomainconfig) - Get a Domain's configuration
+* [buy](docs/sdks/domains/README.md#buy) - Purchase a domain
+* [checkPrice](docs/sdks/domains/README.md#checkprice) - Check the price for a domain
+* [checkStatus](docs/sdks/domains/README.md#checkstatus) - Check a Domain Availability
+* [getTransfer](docs/sdks/domains/README.md#gettransfer) - Get domain transfer info.
+* [getConfig](docs/sdks/domains/README.md#getconfig) - Get a Domain's configuration
 * [getDomain](docs/sdks/domains/README.md#getdomain) - Get Information for a Single Domain
-* [getDomains](docs/sdks/domains/README.md#getdomains) - List all the domains
+* [list](docs/sdks/domains/README.md#list) - List all the domains
 * [createOrTransferDomain](docs/sdks/domains/README.md#createortransferdomain) - Register or transfer-in a new Domain
-* [patchDomain](docs/sdks/domains/README.md#patchdomain) - Update or move apex domain
-* [deleteDomain](docs/sdks/domains/README.md#deletedomain) - Remove a domain by name
+* [update](docs/sdks/domains/README.md#update) - Update or move apex domain
+* [delete](docs/sdks/domains/README.md#delete) - Remove a domain by name
 
 ### [dns](docs/sdks/dns/README.md)
 
-* [getRecords](docs/sdks/dns/README.md#getrecords) - List existing DNS records
-* [createRecord](docs/sdks/dns/README.md#createrecord) - Create a DNS record
-* [updateRecord](docs/sdks/dns/README.md#updaterecord) - Update an existing DNS record
-* [removeRecord](docs/sdks/dns/README.md#removerecord) - Delete a DNS record
+* [get](docs/sdks/dns/README.md#get) - List existing DNS records
+* [create](docs/sdks/dns/README.md#create) - Create a DNS record
+* [update](docs/sdks/dns/README.md#update) - Update an existing DNS record
+* [remove](docs/sdks/dns/README.md#remove) - Delete a DNS record
 
 ### [edgeConfig](docs/sdks/edgeconfig/README.md)
 
-* [getEdgeConfigs](docs/sdks/edgeconfig/README.md#getedgeconfigs) - Get Edge Configs
-* [createEdgeConfig](docs/sdks/edgeconfig/README.md#createedgeconfig) - Create an Edge Config
-* [getEdgeConfig](docs/sdks/edgeconfig/README.md#getedgeconfig) - Get an Edge Config
-* [updateEdgeConfig](docs/sdks/edgeconfig/README.md#updateedgeconfig) - Update an Edge Config
-* [deleteEdgeConfig](docs/sdks/edgeconfig/README.md#deleteedgeconfig) - Delete an Edge Config
-* [getEdgeConfigItems](docs/sdks/edgeconfig/README.md#getedgeconfigitems) - Get Edge Config items
-* [getEdgeConfigSchema](docs/sdks/edgeconfig/README.md#getedgeconfigschema) - Get Edge Config schema
-* [patchEdgeConfigSchema](docs/sdks/edgeconfig/README.md#patchedgeconfigschema) - Update Edge Config schema
-* [deleteEdgeConfigSchema](docs/sdks/edgeconfig/README.md#deleteedgeconfigschema) - Delete an Edge Config's schema
-* [getEdgeConfigItem](docs/sdks/edgeconfig/README.md#getedgeconfigitem) - Get an Edge Config item
-* [getEdgeConfigTokens](docs/sdks/edgeconfig/README.md#getedgeconfigtokens) - Get all tokens of an Edge Config
-* [deleteEdgeConfigTokens](docs/sdks/edgeconfig/README.md#deleteedgeconfigtokens) - Delete one or more Edge Config tokens
-* [getEdgeConfigToken](docs/sdks/edgeconfig/README.md#getedgeconfigtoken) - Get Edge Config token meta data
-* [createEdgeConfigToken](docs/sdks/edgeconfig/README.md#createedgeconfigtoken) - Create an Edge Config token
+* [list](docs/sdks/edgeconfig/README.md#list) - Get Edge Configs
+* [create](docs/sdks/edgeconfig/README.md#create) - Create an Edge Config
+* [get](docs/sdks/edgeconfig/README.md#get) - Get an Edge Config
+* [update](docs/sdks/edgeconfig/README.md#update) - Update an Edge Config
+* [delete](docs/sdks/edgeconfig/README.md#delete) - Delete an Edge Config
+* [listItems](docs/sdks/edgeconfig/README.md#listitems) - Get Edge Config items
+* [getSchema](docs/sdks/edgeconfig/README.md#getschema) - Get Edge Config schema
+* [updateSchema](docs/sdks/edgeconfig/README.md#updateschema) - Update Edge Config schema
+* [deleteSchema](docs/sdks/edgeconfig/README.md#deleteschema) - Delete an Edge Config's schema
+* [getItem](docs/sdks/edgeconfig/README.md#getitem) - Get an Edge Config item
+* [listTokens](docs/sdks/edgeconfig/README.md#listtokens) - Get all tokens of an Edge Config
+* [deleteTokens](docs/sdks/edgeconfig/README.md#deletetokens) - Delete one or more Edge Config tokens
+* [getTokenMetaData](docs/sdks/edgeconfig/README.md#gettokenmetadata) - Get Edge Config token meta data
+* [createTokenMetaData](docs/sdks/edgeconfig/README.md#createtokenmetadata) - Create an Edge Config token
 
 ### [user](docs/sdks/user/README.md)
 
-* [listUserEvents](docs/sdks/user/README.md#listuserevents) - List User Events
+* [listEvent](docs/sdks/user/README.md#listevent) - List User Events
 * [getAuthUser](docs/sdks/user/README.md#getauthuser) - Get the User
 * [requestDelete](docs/sdks/user/README.md#requestdelete) - Delete User Account
 
 ### [integrations](docs/sdks/integrations/README.md)
 
-* [getConfigurations](docs/sdks/integrations/README.md#getconfigurations) - Get configurations for the authenticated user or team
-* [getConfiguration](docs/sdks/integrations/README.md#getconfiguration) - Retrieve an integration configuration
+* [list](docs/sdks/integrations/README.md#list) - Get configurations for the authenticated user or team
+* [get](docs/sdks/integrations/README.md#get) - Retrieve an integration configuration
 * [deleteConfiguration](docs/sdks/integrations/README.md#deleteconfiguration) - Delete an integration configuration
-* [gitNamespaces](docs/sdks/integrations/README.md#gitnamespaces) - List git namespaces by provider
+* [listGitNamespaces](docs/sdks/integrations/README.md#listgitnamespaces) - List git namespaces by provider
 * [listGitRepos](docs/sdks/integrations/README.md#listgitrepos) - List git repositories linked to namespace by provider
 
 ### [logDrains](docs/sdks/logdrains/README.md)
 
 * [getIntegrationLogDrains](docs/sdks/logdrains/README.md#getintegrationlogdrains) - Retrieves a list of Integration log drains
-* [createLogDrain](docs/sdks/logdrains/README.md#createlogdrain) - Creates a new Integration Log Drain
-* [deleteIntegrationLogDrain](docs/sdks/logdrains/README.md#deleteintegrationlogdrain) - Deletes the Integration log drain with the provided `id`
-* [getConfigurableLogDrain](docs/sdks/logdrains/README.md#getconfigurablelogdrain) - Retrieves a Configurable Log Drain
+* [create](docs/sdks/logdrains/README.md#create) - Creates a new Integration Log Drain
+* [delete](docs/sdks/logdrains/README.md#delete) - Deletes the Integration log drain with the provided `id`
+* [get](docs/sdks/logdrains/README.md#get) - Retrieves a Configurable Log Drain
 * [deleteConfigurableLogDrain](docs/sdks/logdrains/README.md#deleteconfigurablelogdrain) - Deletes a Configurable Log Drain
-* [getAllLogDrains](docs/sdks/logdrains/README.md#getalllogdrains) - Retrieves a list of all the Log Drains
-* [createConfigurableLogDrain](docs/sdks/logdrains/README.md#createconfigurablelogdrain) - Creates a Configurable Log Drain
+* [list](docs/sdks/logdrains/README.md#list) - Retrieves a list of all the Log Drains
+* [createConfigurable](docs/sdks/logdrains/README.md#createconfigurable) - Creates a Configurable Log Drain
 
 ### [projectMembers](docs/sdks/projectmembers/README.md)
 
-* [getProjectMembers](docs/sdks/projectmembers/README.md#getprojectmembers) - List project members
-* [addProjectMember](docs/sdks/projectmembers/README.md#addprojectmember) - Adds a new member to a project.
-* [removeProjectMember](docs/sdks/projectmembers/README.md#removeprojectmember) - Remove a Project Member
+* [list](docs/sdks/projectmembers/README.md#list) - List project members
+* [create](docs/sdks/projectmembers/README.md#create) - Adds a new member to a project.
+* [delete](docs/sdks/projectmembers/README.md#delete) - Remove a Project Member
 
 ### [teams](docs/sdks/teams/README.md)
 
-* [getTeamMembers](docs/sdks/teams/README.md#getteammembers) - List team members
-* [inviteUserToTeam](docs/sdks/teams/README.md#inviteusertoteam) - Invite a user
-* [requestAccessToTeam](docs/sdks/teams/README.md#requestaccesstoteam) - Request access to a team
-* [getTeamAccessRequest](docs/sdks/teams/README.md#getteamaccessrequest) - Get access request status
+* [listMembers](docs/sdks/teams/README.md#listmembers) - List team members
+* [inviteUser](docs/sdks/teams/README.md#inviteuser) - Invite a user
+* [requestAccess](docs/sdks/teams/README.md#requestaccess) - Request access to a team
+* [getAccess](docs/sdks/teams/README.md#getaccess) - Get access request status
 * [joinTeam](docs/sdks/teams/README.md#jointeam) - Join a team
-* [updateTeamMember](docs/sdks/teams/README.md#updateteammember) - Update a Team Member
-* [removeTeamMember](docs/sdks/teams/README.md#removeteammember) - Remove a Team Member
-* [getTeam](docs/sdks/teams/README.md#getteam) - Get a Team
-* [patchTeam](docs/sdks/teams/README.md#patchteam) - Update a Team
-* [getTeams](docs/sdks/teams/README.md#getteams) - List all teams
-* [createTeam](docs/sdks/teams/README.md#createteam) - Create a Team
-* [deleteTeam](docs/sdks/teams/README.md#deleteteam) - Delete a Team
-* [deleteTeamInviteCode](docs/sdks/teams/README.md#deleteteaminvitecode) - Delete a Team invite code
+* [updateMember](docs/sdks/teams/README.md#updatemember) - Update a Team Member
+* [removeMember](docs/sdks/teams/README.md#removemember) - Remove a Team Member
+* [get](docs/sdks/teams/README.md#get) - Get a Team
+* [update](docs/sdks/teams/README.md#update) - Update a Team
+* [list](docs/sdks/teams/README.md#list) - List all teams
+* [create](docs/sdks/teams/README.md#create) - Create a Team
+* [delete](docs/sdks/teams/README.md#delete) - Delete a Team
+* [deleteInviteCode](docs/sdks/teams/README.md#deleteinvitecode) - Delete a Team invite code
 
 ### [authentication](docs/sdks/authentication/README.md)
 
-* [listAuthTokens](docs/sdks/authentication/README.md#listauthtokens) - List Auth Tokens
-* [createAuthToken](docs/sdks/authentication/README.md#createauthtoken) - Create an Auth Token
+* [listTokens](docs/sdks/authentication/README.md#listtokens) - List Auth Tokens
+* [createToken](docs/sdks/authentication/README.md#createtoken) - Create an Auth Token
 * [getAuthToken](docs/sdks/authentication/README.md#getauthtoken) - Get Auth Token Metadata
-* [deleteAuthToken](docs/sdks/authentication/README.md#deleteauthtoken) - Delete an authentication token
+* [deleteToken](docs/sdks/authentication/README.md#deletetoken) - Delete an authentication token
 * [verifyToken](docs/sdks/authentication/README.md#verifytoken) - Verify a login request to get an authentication token
 * [emailLogin](docs/sdks/authentication/README.md#emaillogin) - Login with email
 
 ### [webhooks](docs/sdks/webhooks/README.md)
 
-* [createWebhook](docs/sdks/webhooks/README.md#createwebhook) - Creates a webhook
-* [getWebhooks](docs/sdks/webhooks/README.md#getwebhooks) - Get a list of webhooks
-* [getWebhook](docs/sdks/webhooks/README.md#getwebhook) - Get a webhook
-* [deleteWebhook](docs/sdks/webhooks/README.md#deletewebhook) - Deletes a webhook
+* [create](docs/sdks/webhooks/README.md#create) - Creates a webhook
+* [list](docs/sdks/webhooks/README.md#list) - Get a list of webhooks
+* [get](docs/sdks/webhooks/README.md#get) - Get a webhook
+* [delete](docs/sdks/webhooks/README.md#delete) - Deletes a webhook
 
 ### [aliases](docs/sdks/aliases/README.md)
 
-* [listAliases](docs/sdks/aliases/README.md#listaliases) - List aliases
+* [list](docs/sdks/aliases/README.md#list) - List aliases
 * [getAlias](docs/sdks/aliases/README.md#getalias) - Get an Alias
-* [deleteAlias](docs/sdks/aliases/README.md#deletealias) - Delete an Alias
+* [delete](docs/sdks/aliases/README.md#delete) - Delete an Alias
 * [listDeploymentAliases](docs/sdks/aliases/README.md#listdeploymentaliases) - List Deployment Aliases
-* [assignAlias](docs/sdks/aliases/README.md#assignalias) - Assign an Alias
+* [assign](docs/sdks/aliases/README.md#assign) - Assign an Alias
 
 ### [certs](docs/sdks/certs/README.md)
 
-* [getCertById](docs/sdks/certs/README.md#getcertbyid) - Get cert by id
-* [removeCert](docs/sdks/certs/README.md#removecert) - Remove cert
-* [issueCert](docs/sdks/certs/README.md#issuecert) - Issue a new cert
-* [uploadCert](docs/sdks/certs/README.md#uploadcert) - Upload a cert
+* [get](docs/sdks/certs/README.md#get) - Get cert by id
+* [remove](docs/sdks/certs/README.md#remove) - Remove cert
+* [issue](docs/sdks/certs/README.md#issue) - Issue a new cert
+* [upload](docs/sdks/certs/README.md#upload) - Upload a cert
 
 ### [secrets](docs/sdks/secrets/README.md)
 
-* [getSecrets](docs/sdks/secrets/README.md#getsecrets) - List secrets
-* [createSecret](docs/sdks/secrets/README.md#createsecret) - Create a new secret
-* [renameSecret](docs/sdks/secrets/README.md#renamesecret) - Change secret name
-* [getSecret](docs/sdks/secrets/README.md#getsecret) - Get a single secret
-* [deleteSecret](docs/sdks/secrets/README.md#deletesecret) - Delete a secret
+* [list](docs/sdks/secrets/README.md#list) - List secrets
+* [create](docs/sdks/secrets/README.md#create) - Create a new secret
+* [rename](docs/sdks/secrets/README.md#rename) - Change secret name
+* [get](docs/sdks/secrets/README.md#get) - Get a single secret
+* [delete](docs/sdks/secrets/README.md#delete) - Delete a secret
 <!-- End Available Resources and Operations [operations] -->
 
 <!-- Start File uploads [file-upload] -->
@@ -258,8 +258,8 @@ const vercel = new Vercel({
 });
 
 async function run() {
-    const result = await vercel.artifacts.uploadArtifact({
-        contentLength: 4504.13,
+    const result = await vercel.artifacts.upload({
+        contentLength: 4036.54,
         xArtifactDuration: 400,
         xArtifactClientCi: "VERCEL",
         xArtifactClientInteractive: 0,
@@ -325,19 +325,19 @@ run();
 <!-- Start Server Selection [server] -->
 ## Server Selection
 
-### Select Server by Index
+### Select Server by Name
 
-You can override the default server globally by passing a server index to the `serverIdx` optional parameter when initializing the SDK client instance. The selected server will then be used as the default on the operations that use it. This table lists the indexes associated with the available servers:
+You can override the default server globally by passing a server name to the `server` optional parameter when initializing the SDK client instance. The selected server will then be used as the default on the operations that use it. This table lists the names associated with the available servers:
 
-| # | Server | Variables |
-| - | ------ | --------- |
-| 0 | `https://api.vercel.com` | None |
+| Name | Server | Variables |
+| ----- | ------ | --------- |
+| `prod` | `https://api.vercel.com` | None |
 
 ```typescript
 import { Vercel } from "vercel";
 
 const vercel = new Vercel({
-    serverIdx: 0,
+    server: "prod",
 });
 
 async function run() {

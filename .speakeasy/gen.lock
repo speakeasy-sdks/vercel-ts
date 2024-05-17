@@ -1,12 +1,13 @@
 lockVersion: 2.0.0
 id: 08d4af4d-7f06-4aa7-83b0-4bcfdb3dadd5
 management:
-  docChecksum: 1aa12e92b7948d31042637be1c489c59
+  docChecksum: b77c0d972dc7b8018f9afd7d2a29e8df
   docVersion: 0.0.1
-  speakeasyVersion: 1.291.0
+  speakeasyVersion: 1.293.0
   generationVersion: 2.332.4
-  releaseVersion: 0.1.1
-  configChecksum: 51a90d5aa8a02e3fe93c65e3f76bf4ac
+  releaseVersion: 0.2.0
+  configChecksum: d9df156370bbd968295470c67faee640
+  published: true
 features:
   typescript:
     acceptHeaders: 2.81.2
@@ -20,9 +21,11 @@ features:
     globalSecurity: 2.82.9
     globalSecurityCallbacks: 0.1.0
     globalServerURLs: 2.82.4
+    nameOverrides: 2.81.2
     nullables: 0.1.0
     responseFormat: 0.2.3
     sdkHooks: 0.1.0
+    serverIDs: 2.81.2
     typeOverrides: 2.81.1
     unions: 2.85.4
 generatedFiles:
@@ -69,7 +72,6 @@ generatedFiles:
   - src/types/rfcdate.ts
   - tsconfig.json
   - src/models/getdeploymentbuildsop.ts
-  - src/models/httpmetadata.ts
   - src/models/purgedatacacheop.ts
   - src/models/updatebillingsettingsop.ts
   - src/models/recordeventsop.ts
@@ -109,8 +111,8 @@ generatedFiles:
   - src/models/createdeploymentop.ts
   - src/models/canceldeploymentop.ts
   - src/models/uploadfileop.ts
-  - src/models/listdeploymentfilesop.ts
   - src/models/filetree.ts
+  - src/models/listdeploymentfilesop.ts
   - src/models/getdeploymentfilecontentsop.ts
   - src/models/getdeploymentsop.ts
   - src/models/deletedeploymentop.ts
@@ -138,12 +140,12 @@ generatedFiles:
   - src/models/patchedgeconfigschemaop.ts
   - src/models/deleteedgeconfigschemaop.ts
   - src/models/getedgeconfigitemop.ts
-  - src/models/getedgeconfigtokensop.ts
   - src/models/edgeconfigtoken.ts
-  - src/models/deleteedgeconfigtokensop.ts
+  - src/models/getedgeconfigtokensop.ts
+  - src/models/deletetokensop.ts
   - src/models/getedgeconfigtokenop.ts
   - src/models/createedgeconfigtokenop.ts
-  - src/models/listusereventsop.ts
+  - src/models/listusereventop.ts
   - src/models/userevent.ts
   - src/models/getauthuserop.ts
   - src/models/authuser.ts
@@ -171,8 +173,8 @@ generatedFiles:
   - src/models/jointeamop.ts
   - src/models/updateteammemberop.ts
   - src/models/removeteammemberop.ts
-  - src/models/getteamop.ts
   - src/models/team.ts
+  - src/models/getteamop.ts
   - src/models/patchteamop.ts
   - src/models/getteamsop.ts
   - src/models/teamlimited.ts
@@ -215,13 +217,10 @@ generatedFiles:
   - docs/models/getdeploymentbuildsoutput.md
   - docs/models/builds.md
   - docs/models/getdeploymentbuildsresponsebody.md
-  - docs/models/getdeploymentbuildsresponse.md
-  - docs/models/httpmetadata.md
   - docs/models/purgedatacacherequest.md
   - docs/models/purgedatacacheresponse.md
   - docs/models/updatebillingsettingsrequestbody.md
   - docs/models/updatebillingsettingsresponsebody.md
-  - docs/models/updatebillingsettingsresponse.md
   - docs/models/source.md
   - docs/models/event.md
   - docs/models/requestbody.md
@@ -230,12 +229,9 @@ generatedFiles:
   - docs/models/statusrequest.md
   - docs/models/statusstatus.md
   - docs/models/statusresponsebody.md
-  - docs/models/statusresponse.md
   - docs/models/uploadartifactrequest.md
   - docs/models/uploadartifactresponsebody.md
-  - docs/models/uploadartifactresponse.md
   - docs/models/downloadartifactrequest.md
-  - docs/models/downloadartifactresponse.md
   - docs/models/artifactexistsrequest.md
   - docs/models/artifactexistsresponse.md
   - docs/models/artifactqueryrequestbody.md
@@ -244,7 +240,6 @@ generatedFiles:
   - docs/models/artifactqueryresponsebody2.md
   - docs/models/artifactqueryresponsebody1.md
   - docs/models/responsebody.md
-  - docs/models/artifactqueryresponse.md
   - docs/models/createcheckrequestbody.md
   - docs/models/createcheckrequest.md
   - docs/models/createcheckstatus.md
@@ -262,7 +257,6 @@ generatedFiles:
   - docs/models/createcheckmetrics.md
   - docs/models/createcheckoutput.md
   - docs/models/createcheckresponsebody.md
-  - docs/models/createcheckresponse.md
   - docs/models/getallchecksrequest.md
   - docs/models/getallchecksconclusion.md
   - docs/models/getallcheckssource.md
@@ -280,7 +274,6 @@ generatedFiles:
   - docs/models/getallchecksstatus.md
   - docs/models/getallcheckschecks.md
   - docs/models/getallchecksresponsebody.md
-  - docs/models/getallchecksresponse.md
   - docs/models/getcheckrequest.md
   - docs/models/getcheckstatus.md
   - docs/models/getcheckconclusion.md
@@ -297,7 +290,6 @@ generatedFiles:
   - docs/models/getcheckmetrics.md
   - docs/models/getcheckoutput.md
   - docs/models/getcheckresponsebody.md
-  - docs/models/getcheckresponse.md
   - docs/models/updatecheckstatus.md
   - docs/models/conclusion.md
   - docs/models/updatechecksource.md
@@ -329,10 +321,8 @@ generatedFiles:
   - docs/models/updatecheckmetrics.md
   - docs/models/updatecheckoutput.md
   - docs/models/updatecheckresponsebody.md
-  - docs/models/updatecheckresponse.md
   - docs/models/rerequestcheckrequest.md
   - docs/models/rerequestcheckresponsebody.md
-  - docs/models/rerequestcheckresponse.md
   - docs/models/updateprojectdatacacherequestbody.md
   - docs/models/updateprojectdatacacherequest.md
   - docs/models/updateprojectdatacacheanalytics.md
@@ -441,7 +431,6 @@ generatedFiles:
   - docs/models/updateprojectdatacachesecurity.md
   - docs/models/oidctokenconfig.md
   - docs/models/updateprojectdatacacheresponsebody.md
-  - docs/models/updateprojectdatacacheresponse.md
   - docs/models/aclaction.md
   - docs/models/gitforkprotection.md
   - docs/models/getprojectsrequest.md
@@ -552,7 +541,6 @@ generatedFiles:
   - docs/models/getprojectsoidctokenconfig.md
   - docs/models/getprojectsprojects.md
   - docs/models/getprojectsresponsebody.md
-  - docs/models/getprojectsresponse.md
   - docs/models/pagination.md
   - docs/models/target2.md
   - docs/models/target1.md
@@ -670,7 +658,6 @@ generatedFiles:
   - docs/models/createprojectsecurity.md
   - docs/models/createprojectoidctokenconfig.md
   - docs/models/createprojectresponsebody.md
-  - docs/models/createprojectresponse.md
   - docs/models/updateprojectframework.md
   - docs/models/updateprojectnodeversion.md
   - docs/models/deploymenttype.md
@@ -791,32 +778,26 @@ generatedFiles:
   - docs/models/updateprojectsecurity.md
   - docs/models/updateprojectoidctokenconfig.md
   - docs/models/updateprojectresponsebody.md
-  - docs/models/updateprojectresponse.md
   - docs/models/deleteprojectrequest.md
   - docs/models/deleteprojectresponse.md
   - docs/models/getprojectdomainrequest.md
   - docs/models/verification.md
   - docs/models/getprojectdomainresponsebody.md
-  - docs/models/getprojectdomainresponse.md
   - docs/models/redirectstatuscode.md
   - docs/models/updateprojectdomainrequestbody.md
   - docs/models/updateprojectdomainrequest.md
   - docs/models/updateprojectdomainverification.md
   - docs/models/updateprojectdomainresponsebody.md
-  - docs/models/updateprojectdomainresponse.md
   - docs/models/removeprojectdomainrequest.md
   - docs/models/removeprojectdomainresponsebody.md
-  - docs/models/removeprojectdomainresponse.md
   - docs/models/addprojectdomainredirectstatuscode.md
   - docs/models/addprojectdomainrequestbody.md
   - docs/models/addprojectdomainrequest.md
   - docs/models/addprojectdomainverification.md
   - docs/models/addprojectdomainresponsebody.md
-  - docs/models/addprojectdomainresponse.md
   - docs/models/verifyprojectdomainrequest.md
   - docs/models/verifyprojectdomainverification.md
   - docs/models/verifyprojectdomainresponsebody.md
-  - docs/models/verifyprojectdomainresponse.md
   - docs/models/decrypt.md
   - docs/models/filterprojectenvsrequest.md
   - docs/models/filterprojectenvstargetprojectsresponse2.md
@@ -930,7 +911,6 @@ generatedFiles:
   - docs/models/responsebodyinternalcontenthint.md
   - docs/models/filterprojectenvsresponsebody1.md
   - docs/models/filterprojectenvsresponsebody.md
-  - docs/models/filterprojectenvsresponse.md
   - docs/models/getprojectenvrequest.md
   - docs/models/getprojectenvtargetprojects2.md
   - docs/models/getprojectenvtargetprojects1.md
@@ -1005,7 +985,6 @@ generatedFiles:
   - docs/models/getprojectenvresponsebodyinternalcontenthint.md
   - docs/models/getprojectenvresponsebody1.md
   - docs/models/getprojectenvresponsebody.md
-  - docs/models/getprojectenvresponse.md
   - docs/models/createprojectenvrequestbodyprojectstype.md
   - docs/models/createprojectenvrequestbodytarget.md
   - docs/models/createprojectenvrequestbody2.md
@@ -1095,7 +1074,6 @@ generatedFiles:
   - docs/models/createprojectenverror.md
   - docs/models/failed.md
   - docs/models/createprojectenvresponsebody.md
-  - docs/models/createprojectenvresponse.md
   - docs/models/removeprojectenvrequest.md
   - docs/models/removeprojectenvtargetprojectsresponse2.md
   - docs/models/removeprojectenvtargetprojectsresponse1.md
@@ -1206,7 +1184,6 @@ generatedFiles:
   - docs/models/removeprojectenvresponsebodyinternalcontenthint.md
   - docs/models/removeprojectenvresponsebody1.md
   - docs/models/removeprojectenvresponsebody.md
-  - docs/models/removeprojectenvresponse.md
   - docs/models/editprojectenvtarget.md
   - docs/models/editprojectenvtype.md
   - docs/models/editprojectenvrequestbody.md
@@ -1247,7 +1224,6 @@ generatedFiles:
   - docs/models/editprojectenvprojectsresponsetype.md
   - docs/models/internalcontenthint.md
   - docs/models/editprojectenvresponsebody.md
-  - docs/models/editprojectenvresponse.md
   - docs/models/requestpromoterequest.md
   - docs/models/requestpromoteresponse.md
   - docs/models/geteequestpromotealiasesrequest.md
@@ -1255,7 +1231,6 @@ generatedFiles:
   - docs/models/geteequestpromotealiasesresponsebody2.md
   - docs/models/geteequestpromotealiasesresponsebody1.md
   - docs/models/geteequestpromotealiasesresponsebody.md
-  - docs/models/geteequestpromotealiasesresponse.md
   - docs/models/pauseprojectrequest.md
   - docs/models/pauseprojectresponse.md
   - docs/models/unpauseprojectrequest.md
@@ -1408,7 +1383,6 @@ generatedFiles:
   - docs/models/getdeploymentresponsebodygitsource.md
   - docs/models/getdeploymentresponsebody1.md
   - docs/models/getdeploymentresponsebody.md
-  - docs/models/getdeploymentresponse.md
   - docs/models/forcenew.md
   - docs/models/skipautodetectionconfirmation.md
   - docs/models/uploadedfile.md
@@ -1504,7 +1478,6 @@ generatedFiles:
   - docs/models/createdeploymentgitsource1.md
   - docs/models/createdeploymentgitsource.md
   - docs/models/createdeploymentresponsebody.md
-  - docs/models/createdeploymentresponse.md
   - docs/models/canceldeploymentrequest.md
   - docs/models/canceldeploymentbuild.md
   - docs/models/canceldeploymentbuilds.md
@@ -1575,16 +1548,13 @@ generatedFiles:
   - docs/models/canceldeploymentgitsource1.md
   - docs/models/canceldeploymentgitsource.md
   - docs/models/canceldeploymentresponsebody.md
-  - docs/models/canceldeploymentresponse.md
   - docs/models/uploadfilerequest.md
   - docs/models/uploadfileresponsebody2.md
   - docs/models/uploadfileresponsebody1.md
   - docs/models/uploadfileresponsebody.md
-  - docs/models/uploadfileresponse.md
-  - docs/models/listdeploymentfilesrequest.md
-  - docs/models/listdeploymentfilesresponse.md
   - docs/models/type.md
   - docs/models/filetree.md
+  - docs/models/listdeploymentfilesrequest.md
   - docs/models/getdeploymentfilecontentsrequest.md
   - docs/models/getdeploymentfilecontentsresponse.md
   - docs/models/queryparamtarget.md
@@ -1608,11 +1578,9 @@ generatedFiles:
   - docs/models/getdeploymentsprojectsettings.md
   - docs/models/getdeploymentsdeployments.md
   - docs/models/getdeploymentsresponsebody.md
-  - docs/models/getdeploymentsresponse.md
   - docs/models/deletedeploymentrequest.md
   - docs/models/state.md
   - docs/models/deletedeploymentresponsebody.md
-  - docs/models/deletedeploymentresponse.md
   - docs/models/buydomainrequestbody.md
   - docs/models/buydomainrequest.md
   - docs/models/buydomaindomain.md
@@ -1623,33 +1591,27 @@ generatedFiles:
   - docs/models/queryparamtype.md
   - docs/models/checkdomainpricerequest.md
   - docs/models/checkdomainpriceresponsebody.md
-  - docs/models/checkdomainpriceresponse.md
   - docs/models/checkdomainstatusrequest.md
   - docs/models/checkdomainstatusresponsebody.md
-  - docs/models/checkdomainstatusresponse.md
   - docs/models/getdomaintransferrequest.md
   - docs/models/transferpolicy.md
   - docs/models/getdomaintransferstatus.md
   - docs/models/getdomaintransferresponsebody.md
-  - docs/models/getdomaintransferresponse.md
   - docs/models/strict.md
   - docs/models/getdomainconfigrequest.md
   - docs/models/configuredby.md
   - docs/models/acceptedchallenges.md
   - docs/models/getdomainconfigresponsebody.md
-  - docs/models/getdomainconfigresponse.md
   - docs/models/getdomainrequest.md
   - docs/models/getdomaincreator.md
   - docs/models/servicetype.md
   - docs/models/getdomaindomain.md
   - docs/models/getdomainresponsebody.md
-  - docs/models/getdomainresponse.md
   - docs/models/getdomainsrequest.md
   - docs/models/getdomainscreator.md
   - docs/models/getdomainsservicetype.md
   - docs/models/getdomainsdomains.md
   - docs/models/getdomainsresponsebody.md
-  - docs/models/getdomainsresponse.md
   - docs/models/createortransferdomainrequestbody3.md
   - docs/models/createortransferdomainrequestbody2.md
   - docs/models/createortransferdomainrequestbody1.md
@@ -1659,7 +1621,6 @@ generatedFiles:
   - docs/models/createortransferdomainservicetype.md
   - docs/models/createortransferdomaindomain.md
   - docs/models/createortransferdomainresponsebody.md
-  - docs/models/createortransferdomainresponse.md
   - docs/models/patchdomainrequestbody2.md
   - docs/models/patchdomainrequestbody1.md
   - docs/models/patchdomainrequestbody.md
@@ -1668,10 +1629,8 @@ generatedFiles:
   - docs/models/patchdomainresponsebody2.md
   - docs/models/patchdomainresponsebody1.md
   - docs/models/patchdomainresponsebody.md
-  - docs/models/patchdomainresponse.md
   - docs/models/deletedomainrequest.md
   - docs/models/deletedomainresponsebody.md
-  - docs/models/deletedomainresponse.md
   - docs/models/getrecordsrequest.md
   - docs/models/getrecordsresponsebodydnstype.md
   - docs/models/responsebodyrecords.md
@@ -1680,7 +1639,6 @@ generatedFiles:
   - docs/models/records.md
   - docs/models/getrecordsresponsebody2.md
   - docs/models/getrecordsresponsebody.md
-  - docs/models/getrecordsresponse.md
   - docs/models/createrecordrequestbodydnsrequest10type.md
   - docs/models/requestbodyhttps.md
   - docs/models/ten.md
@@ -1708,7 +1666,6 @@ generatedFiles:
   - docs/models/createrecordresponsebody2.md
   - docs/models/createrecordresponsebody1.md
   - docs/models/createrecordresponsebody.md
-  - docs/models/createrecordresponse.md
   - docs/models/updaterecordtype.md
   - docs/models/srv.md
   - docs/models/https.md
@@ -1717,69 +1674,56 @@ generatedFiles:
   - docs/models/recordtype.md
   - docs/models/updaterecorddnstype.md
   - docs/models/updaterecordresponsebody.md
-  - docs/models/updaterecordresponse.md
   - docs/models/removerecordrequest.md
   - docs/models/removerecordresponsebody.md
-  - docs/models/removerecordresponse.md
   - docs/models/getedgeconfigsrequest.md
   - docs/models/transfer.md
   - docs/models/schema.md
   - docs/models/getedgeconfigsresponsebody.md
-  - docs/models/getedgeconfigsresponse.md
   - docs/models/createedgeconfigrequestbody.md
   - docs/models/createedgeconfigrequest.md
   - docs/models/createedgeconfigtransfer.md
   - docs/models/createedgeconfigschema.md
   - docs/models/createedgeconfigresponsebody.md
-  - docs/models/createedgeconfigresponse.md
   - docs/models/getedgeconfigrequest.md
   - docs/models/getedgeconfigtransfer.md
   - docs/models/getedgeconfigschema.md
   - docs/models/getedgeconfigresponsebody.md
-  - docs/models/getedgeconfigresponse.md
   - docs/models/updateedgeconfigrequestbody.md
   - docs/models/updateedgeconfigrequest.md
   - docs/models/updateedgeconfigtransfer.md
   - docs/models/updateedgeconfigschema.md
   - docs/models/updateedgeconfigresponsebody.md
-  - docs/models/updateedgeconfigresponse.md
   - docs/models/deleteedgeconfigrequest.md
   - docs/models/deleteedgeconfigresponse.md
   - docs/models/getedgeconfigitemsrequest.md
   - docs/models/getedgeconfigitemsresponse.md
   - docs/models/getedgeconfigschemarequest.md
   - docs/models/getedgeconfigschemaresponsebody.md
-  - docs/models/getedgeconfigschemaresponse.md
   - docs/models/patchedgeconfigschemarequestbody.md
   - docs/models/patchedgeconfigschemarequest.md
   - docs/models/patchedgeconfigschemaresponsebody.md
-  - docs/models/patchedgeconfigschemaresponse.md
   - docs/models/deleteedgeconfigschemarequest.md
   - docs/models/deleteedgeconfigschemaresponse.md
   - docs/models/getedgeconfigitemrequest.md
   - docs/models/getedgeconfigitemresponse.md
-  - docs/models/getedgeconfigtokensrequest.md
-  - docs/models/getedgeconfigtokensresponse.md
   - docs/models/edgeconfigtoken.md
-  - docs/models/deleteedgeconfigtokensrequestbody.md
-  - docs/models/deleteedgeconfigtokensrequest.md
-  - docs/models/deleteedgeconfigtokensresponse.md
+  - docs/models/getedgeconfigtokensrequest.md
+  - docs/models/deletetokensrequestbody.md
+  - docs/models/deletetokensrequest.md
+  - docs/models/deletetokensresponse.md
   - docs/models/getedgeconfigtokenrequest.md
-  - docs/models/getedgeconfigtokenresponse.md
   - docs/models/createedgeconfigtokenrequestbody.md
   - docs/models/createedgeconfigtokenrequest.md
   - docs/models/createedgeconfigtokenresponsebody.md
-  - docs/models/createedgeconfigtokenresponse.md
-  - docs/models/listusereventsrequest.md
-  - docs/models/listusereventsresponsebody.md
-  - docs/models/listusereventsresponse.md
+  - docs/models/listusereventrequest.md
+  - docs/models/listusereventresponsebody.md
   - docs/models/usereventtype.md
   - docs/models/entities.md
   - docs/models/usermodel.md
   - docs/models/userevent.md
   - docs/models/getauthuseruser.md
   - docs/models/getauthuserresponsebody.md
-  - docs/models/getauthuserresponse.md
   - docs/models/reason.md
   - docs/models/blockedduetooveragetype.md
   - docs/models/softblock.md
@@ -1943,7 +1887,6 @@ generatedFiles:
   - docs/models/requestdeletereasons.md
   - docs/models/requestdeleterequestbody.md
   - docs/models/requestdeleteresponsebody.md
-  - docs/models/requestdeleteresponse.md
   - docs/models/view.md
   - docs/models/getconfigurationsrequest.md
   - docs/models/integration.md
@@ -1966,7 +1909,6 @@ generatedFiles:
   - docs/models/installationtype.md
   - docs/models/getconfigurationsresponsebody1.md
   - docs/models/getconfigurationsresponsebody.md
-  - docs/models/getconfigurationsresponse.md
   - docs/models/getconfigurationrequest.md
   - docs/models/projectselection.md
   - docs/models/getconfigurationresponsebodyintegrationssource.md
@@ -1988,14 +1930,12 @@ generatedFiles:
   - docs/models/getconfigurationresponsebodyinstallationtype.md
   - docs/models/getconfigurationresponsebody1.md
   - docs/models/getconfigurationresponsebody.md
-  - docs/models/getconfigurationresponse.md
   - docs/models/deleteconfigurationrequest.md
   - docs/models/deleteconfigurationresponse.md
   - docs/models/provider.md
   - docs/models/gitnamespacesrequest.md
   - docs/models/id.md
   - docs/models/gitnamespacesresponsebody.md
-  - docs/models/gitnamespacesresponse.md
   - docs/models/queryparamprovider.md
   - docs/models/listgitreposrequest.md
   - docs/models/listgitreposprovider.md
@@ -2008,14 +1948,12 @@ generatedFiles:
   - docs/models/ownertype.md
   - docs/models/repos.md
   - docs/models/listgitreposresponsebody.md
-  - docs/models/listgitreposresponse.md
   - docs/models/getintegrationlogdrainsrequest.md
   - docs/models/getintegrationlogdrainsdeliveryformat.md
   - docs/models/getintegrationlogdrainssources.md
   - docs/models/createdfrom.md
   - docs/models/getintegrationlogdrainsenvironments.md
   - docs/models/getintegrationlogdrainsresponsebody.md
-  - docs/models/getintegrationlogdrainsresponse.md
   - docs/models/deliveryformat.md
   - docs/models/sources.md
   - docs/models/environments.md
@@ -2026,7 +1964,6 @@ generatedFiles:
   - docs/models/createlogdraincreatedfrom.md
   - docs/models/createlogdrainenvironments.md
   - docs/models/createlogdrainresponsebody.md
-  - docs/models/createlogdrainresponse.md
   - docs/models/deleteintegrationlogdrainrequest.md
   - docs/models/deleteintegrationlogdrainresponse.md
   - docs/models/getconfigurablelogdrainrequest.md
@@ -2038,7 +1975,6 @@ generatedFiles:
   - docs/models/compression.md
   - docs/models/getconfigurablelogdraincreatedfrom.md
   - docs/models/getconfigurablelogdrainresponsebody.md
-  - docs/models/getconfigurablelogdrainresponse.md
   - docs/models/deleteconfigurablelogdrainrequest.md
   - docs/models/deleteconfigurablelogdrainresponse.md
   - docs/models/getalllogdrainsrequest.md
@@ -2050,7 +1986,6 @@ generatedFiles:
   - docs/models/getalllogdrainscompression.md
   - docs/models/getalllogdrainscreatedfrom.md
   - docs/models/getalllogdrainsresponsebody.md
-  - docs/models/getalllogdrainsresponse.md
   - docs/models/createconfigurablelogdraindeliveryformat.md
   - docs/models/createconfigurablelogdrainsources.md
   - docs/models/createconfigurablelogdrainenvironments.md
@@ -2064,7 +1999,6 @@ generatedFiles:
   - docs/models/createconfigurablelogdraincompression.md
   - docs/models/createconfigurablelogdraincreatedfrom.md
   - docs/models/createconfigurablelogdrainresponsebody.md
-  - docs/models/createconfigurablelogdrainresponse.md
   - docs/models/getprojectmembersrequest.md
   - docs/models/getprojectmembersresponsebodyrole.md
   - docs/models/computedprojectrole.md
@@ -2074,7 +2008,6 @@ generatedFiles:
   - docs/models/getprojectmembersresponsebody2.md
   - docs/models/getprojectmembersresponsebody1.md
   - docs/models/getprojectmembersresponsebody.md
-  - docs/models/getprojectmembersresponse.md
   - docs/models/addprojectmemberrequestbodyrole.md
   - docs/models/addprojectmemberrequestbody3.md
   - docs/models/requestbodyrole.md
@@ -2084,10 +2017,8 @@ generatedFiles:
   - docs/models/addprojectmemberrequestbody.md
   - docs/models/addprojectmemberrequest.md
   - docs/models/addprojectmemberresponsebody.md
-  - docs/models/addprojectmemberresponse.md
   - docs/models/removeprojectmemberrequest.md
   - docs/models/removeprojectmemberresponsebody.md
-  - docs/models/removeprojectmemberresponse.md
   - docs/models/queryparamrole.md
   - docs/models/getteammembersrequest.md
   - docs/models/getteammembersgithub.md
@@ -2109,7 +2040,6 @@ generatedFiles:
   - docs/models/emailinvitecodes.md
   - docs/models/getteammemberspagination.md
   - docs/models/getteammembersresponsebody.md
-  - docs/models/getteammembersresponse.md
   - docs/models/inviteusertoteamteamsrole.md
   - docs/models/inviteusertoteamrole.md
   - docs/models/inviteusertoteamprojects.md
@@ -2120,7 +2050,6 @@ generatedFiles:
   - docs/models/responsebodyrole.md
   - docs/models/inviteusertoteamresponsebody1.md
   - docs/models/inviteusertoteamresponsebody.md
-  - docs/models/inviteusertoteamresponse.md
   - docs/models/requestaccesstoteamorigin.md
   - docs/models/requestaccesstoteamgituserid.md
   - docs/models/requestaccesstoteamjoinedfrom.md
@@ -2133,7 +2062,6 @@ generatedFiles:
   - docs/models/gitlab.md
   - docs/models/bitbucket.md
   - docs/models/requestaccesstoteamresponsebody.md
-  - docs/models/requestaccesstoteamresponse.md
   - docs/models/getteamaccessrequestrequest.md
   - docs/models/getteamaccessrequestorigin.md
   - docs/models/getteamaccessrequestgituserid.md
@@ -2142,34 +2070,27 @@ generatedFiles:
   - docs/models/getteamaccessrequestgitlab.md
   - docs/models/getteamaccessrequestbitbucket.md
   - docs/models/getteamaccessrequestresponsebody.md
-  - docs/models/getteamaccessrequestresponse.md
   - docs/models/jointeamrequestbody.md
   - docs/models/jointeamrequest.md
   - docs/models/jointeamresponsebody.md
-  - docs/models/jointeamresponse.md
   - docs/models/updateteammemberrole.md
   - docs/models/updateteammemberprojects.md
   - docs/models/updateteammemberjoinedfrom.md
   - docs/models/updateteammemberrequestbody.md
   - docs/models/updateteammemberrequest.md
   - docs/models/updateteammemberresponsebody.md
-  - docs/models/updateteammemberresponse.md
   - docs/models/removeteammemberrequest.md
   - docs/models/removeteammemberresponsebody.md
-  - docs/models/removeteammemberresponse.md
-  - docs/models/getteamrequest.md
-  - docs/models/getteamresponse.md
   - docs/models/team.md
+  - docs/models/getteamrequest.md
   - docs/models/roles.md
   - docs/models/patchteamsaml.md
   - docs/models/patchteamremotecaching.md
   - docs/models/patchteamrequestbody.md
   - docs/models/patchteamrequest.md
-  - docs/models/patchteamresponse.md
   - docs/models/getteamsrequest.md
   - docs/models/getteamsteams.md
   - docs/models/getteamsresponsebody.md
-  - docs/models/getteamsresponse.md
   - docs/models/connection.md
   - docs/models/directory.md
   - docs/models/saml.md
@@ -2319,17 +2240,13 @@ generatedFiles:
   - docs/models/createteampricingexperiment.md
   - docs/models/createteambilling.md
   - docs/models/createteamresponsebody.md
-  - docs/models/createteamresponse.md
   - docs/models/reasons.md
   - docs/models/deleteteamrequestbody.md
   - docs/models/deleteteamrequest.md
   - docs/models/deleteteamresponsebody.md
-  - docs/models/deleteteamresponse.md
   - docs/models/deleteteaminvitecoderequest.md
   - docs/models/deleteteaminvitecoderesponsebody.md
-  - docs/models/deleteteaminvitecoderesponse.md
   - docs/models/listauthtokensresponsebody.md
-  - docs/models/listauthtokensresponse.md
   - docs/models/authtokenscopestype.md
   - docs/models/scopesorigin.md
   - docs/models/scopes2.md
@@ -2344,38 +2261,30 @@ generatedFiles:
   - docs/models/createauthtokenrequestbody.md
   - docs/models/createauthtokenrequest.md
   - docs/models/createauthtokenresponsebody.md
-  - docs/models/createauthtokenresponse.md
   - docs/models/getauthtokenrequest.md
   - docs/models/getauthtokenresponsebody.md
-  - docs/models/getauthtokenresponse.md
   - docs/models/deleteauthtokenrequest.md
   - docs/models/deleteauthtokenresponsebody.md
-  - docs/models/deleteauthtokenresponse.md
   - docs/models/teamplan.md
   - docs/models/verifytokenrequest.md
   - docs/models/verifytokenresponsebody.md
-  - docs/models/verifytokenresponse.md
   - docs/models/emailloginrequestbody.md
   - docs/models/emailloginresponsebody2.md
   - docs/models/emailloginresponsebody1.md
   - docs/models/emailloginresponsebody.md
-  - docs/models/emailloginresponse.md
   - docs/models/events.md
   - docs/models/createwebhookrequestbody.md
   - docs/models/createwebhookrequest.md
   - docs/models/createwebhookevents.md
   - docs/models/createwebhookresponsebody.md
-  - docs/models/createwebhookresponse.md
   - docs/models/getwebhooksrequest.md
   - docs/models/responsebodyframework.md
   - docs/models/projectsmetadata.md
   - docs/models/responsebodyevents.md
   - docs/models/getwebhooksresponsebody.md
-  - docs/models/getwebhooksresponse.md
   - docs/models/getwebhookrequest.md
   - docs/models/getwebhookevents.md
   - docs/models/getwebhookresponsebody.md
-  - docs/models/getwebhookresponse.md
   - docs/models/deletewebhookrequest.md
   - docs/models/deletewebhookresponse.md
   - docs/models/domain.md
@@ -2394,7 +2303,6 @@ generatedFiles:
   - docs/models/listaliasesprotectionbypass.md
   - docs/models/listaliasesaliases.md
   - docs/models/listaliasesresponsebody.md
-  - docs/models/listaliasesresponse.md
   - docs/models/getaliasrequest.md
   - docs/models/getaliascreator.md
   - docs/models/deployment.md
@@ -2409,11 +2317,9 @@ generatedFiles:
   - docs/models/protectionbypass1.md
   - docs/models/getaliasprotectionbypass.md
   - docs/models/getaliasresponsebody.md
-  - docs/models/getaliasresponse.md
   - docs/models/deletealiasrequest.md
   - docs/models/deletealiasstatus.md
   - docs/models/deletealiasresponsebody.md
-  - docs/models/deletealiasresponse.md
   - docs/models/listdeploymentaliasesrequest.md
   - docs/models/listdeploymentaliasesprotectionbypassaliasesresponse200scope.md
   - docs/models/listdeploymentaliasesprotectionbypass4.md
@@ -2427,46 +2333,35 @@ generatedFiles:
   - docs/models/listdeploymentaliasesprotectionbypass.md
   - docs/models/listdeploymentaliasesaliases.md
   - docs/models/listdeploymentaliasesresponsebody.md
-  - docs/models/listdeploymentaliasesresponse.md
   - docs/models/assignaliasrequestbody.md
   - docs/models/assignaliasrequest.md
   - docs/models/assignaliasresponsebody.md
-  - docs/models/assignaliasresponse.md
   - docs/models/getcertbyidrequest.md
   - docs/models/getcertbyidresponsebody.md
-  - docs/models/getcertbyidresponse.md
   - docs/models/removecertrequest.md
   - docs/models/removecertresponsebody.md
-  - docs/models/removecertresponse.md
   - docs/models/issuecertrequestbody.md
   - docs/models/issuecertrequest.md
   - docs/models/issuecertresponsebody.md
-  - docs/models/issuecertresponse.md
   - docs/models/uploadcertrequestbody.md
   - docs/models/uploadcertrequest.md
   - docs/models/uploadcertresponsebody.md
-  - docs/models/uploadcertresponse.md
   - docs/models/getsecretsrequest.md
   - docs/models/getsecretssecrets.md
   - docs/models/getsecretsresponsebody.md
-  - docs/models/getsecretsresponse.md
   - docs/models/createsecretrequestbody.md
   - docs/models/createsecretrequest.md
   - docs/models/createsecrettype.md
   - docs/models/value.md
   - docs/models/createsecretresponsebody.md
-  - docs/models/createsecretresponse.md
   - docs/models/renamesecretrequestbody.md
   - docs/models/renamesecretrequest.md
   - docs/models/renamesecretresponsebody.md
-  - docs/models/renamesecretresponse.md
   - docs/models/queryparamdecrypt.md
   - docs/models/getsecretrequest.md
   - docs/models/getsecretresponsebody.md
-  - docs/models/getsecretresponse.md
   - docs/models/deletesecretrequest.md
   - docs/models/deletesecretresponsebody.md
-  - docs/models/deletesecretresponse.md
   - docs/models/security.md
   - docs/sdks/vercel/README.md
   - docs/sdks/artifacts/README.md

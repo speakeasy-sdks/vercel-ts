@@ -3,14 +3,14 @@
 
 ### Available Operations
 
-* [listAuthTokens](#listauthtokens) - List Auth Tokens
-* [createAuthToken](#createauthtoken) - Create an Auth Token
+* [listTokens](#listtokens) - List Auth Tokens
+* [createToken](#createtoken) - Create an Auth Token
 * [getAuthToken](#getauthtoken) - Get Auth Token Metadata
-* [deleteAuthToken](#deleteauthtoken) - Delete an authentication token
+* [deleteToken](#deletetoken) - Delete an authentication token
 * [verifyToken](#verifytoken) - Verify a login request to get an authentication token
 * [emailLogin](#emaillogin) - Login with email
 
-## listAuthTokens
+## listTokens
 
 Retrieve a list of the current User's authentication tokens.
 
@@ -26,7 +26,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.authentication.listAuthTokens();
+  const result = await vercel.authentication.listTokens();
 
   // Handle the result
   console.log(result)
@@ -45,14 +45,14 @@ run();
 
 ### Response
 
-**Promise<[models.ListAuthTokensResponse](../../models/listauthtokensresponse.md)>**
+**Promise<[models.ListAuthTokensResponseBody](../../models/listauthtokensresponsebody.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
 
-## createAuthToken
+## createToken
 
 Creates and returns a new authentication token for the currently authenticated User. The `bearerToken` property is only provided once, in the response body, so be sure to save it on the client for use with API requests.
 
@@ -60,7 +60,6 @@ Creates and returns a new authentication token for the currently authenticated U
 
 ```typescript
 import { Vercel } from "vercel";
-import { CreateAuthTokenRequestBodyType } from "vercel/models";
 
 const vercel = new Vercel({
   security: {
@@ -69,8 +68,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.authentication.createAuthToken("<value>", "<value>", {
-      type: CreateAuthTokenRequestBodyType.Oauth2Token,
+  const result = await vercel.authentication.createToken("<value>", "<value>", {
       name: "<value>",
     });
 
@@ -94,7 +92,7 @@ run();
 
 ### Response
 
-**Promise<[models.CreateAuthTokenResponse](../../models/createauthtokenresponse.md)>**
+**Promise<[models.CreateAuthTokenResponseBody](../../models/createauthtokenresponsebody.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -137,14 +135,14 @@ run();
 
 ### Response
 
-**Promise<[models.GetAuthTokenResponse](../../models/getauthtokenresponse.md)>**
+**Promise<[models.GetAuthTokenResponseBody](../../models/getauthtokenresponsebody.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
 
-## deleteAuthToken
+## deleteToken
 
 Invalidate an authentication token, such that it will no longer be valid for future HTTP requests.
 
@@ -160,7 +158,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.authentication.deleteAuthToken("5d9f2ebd38ddca62e5d51e9c1704c72530bdc8bfdd41e782a6687c48399e8391");
+  const result = await vercel.authentication.deleteToken("5d9f2ebd38ddca62e5d51e9c1704c72530bdc8bfdd41e782a6687c48399e8391");
 
   // Handle the result
   console.log(result)
@@ -180,7 +178,7 @@ run();
 
 ### Response
 
-**Promise<[models.DeleteAuthTokenResponse](../../models/deleteauthtokenresponse.md)>**
+**Promise<[models.DeleteAuthTokenResponseBody](../../models/deleteauthtokenresponsebody.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -222,7 +220,7 @@ run();
 
 ### Response
 
-**Promise<[models.VerifyTokenResponse](../../models/verifytokenresponse.md)>**
+**Promise<[models.VerifyTokenResponseBody](../../models/verifytokenresponsebody.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -264,7 +262,7 @@ run();
 
 ### Response
 
-**Promise<[models.EmailLoginResponse](../../models/emailloginresponse.md)>**
+**Promise<[models.EmailLoginResponseBody](../../models/emailloginresponsebody.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

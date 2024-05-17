@@ -3,7 +3,6 @@
  */
 
 import { AuthToken, AuthToken$ } from "./authtoken";
-import { HTTPMetadata, HTTPMetadata$ } from "./httpmetadata";
 import * as z from "zod";
 
 export enum CreateAuthTokenRequestBodyType {
@@ -49,14 +48,6 @@ export type CreateAuthTokenResponseBody = {
      * The authentication token's actual value. This token is only provided in this response, and can never be retrieved again in the future. Be sure to save it somewhere safe!
      */
     bearerToken: string;
-};
-
-export type CreateAuthTokenResponse = {
-    httpMeta: HTTPMetadata;
-    /**
-     * Successful response.
-     */
-    object?: CreateAuthTokenResponseBody | undefined;
 };
 
 /** @internal */
@@ -240,38 +231,6 @@ export namespace CreateAuthTokenResponseBody$ {
             return {
                 token: v.token,
                 bearerToken: v.bearerToken,
-            };
-        });
-}
-
-/** @internal */
-export namespace CreateAuthTokenResponse$ {
-    export const inboundSchema: z.ZodType<CreateAuthTokenResponse, z.ZodTypeDef, unknown> = z
-        .object({
-            HttpMeta: HTTPMetadata$.inboundSchema,
-            object: z.lazy(() => CreateAuthTokenResponseBody$.inboundSchema).optional(),
-        })
-        .transform((v) => {
-            return {
-                httpMeta: v.HttpMeta,
-                ...(v.object === undefined ? null : { object: v.object }),
-            };
-        });
-
-    export type Outbound = {
-        HttpMeta: HTTPMetadata$.Outbound;
-        object?: CreateAuthTokenResponseBody$.Outbound | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateAuthTokenResponse> = z
-        .object({
-            httpMeta: HTTPMetadata$.outboundSchema,
-            object: z.lazy(() => CreateAuthTokenResponseBody$.outboundSchema).optional(),
-        })
-        .transform((v) => {
-            return {
-                HttpMeta: v.httpMeta,
-                ...(v.object === undefined ? null : { object: v.object }),
             };
         });
 }

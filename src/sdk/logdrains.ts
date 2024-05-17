@@ -9,6 +9,7 @@ import { HTTPClient } from "../lib/http";
 import * as schemas$ from "../lib/schemas";
 import { ClientSDK, RequestOptions } from "../lib/sdks";
 import * as models from "../models";
+import * as z from "zod";
 
 export class LogDrains extends ClientSDK {
     private readonly options$: SDKOptions & { hooks?: SDKHooks };
@@ -47,7 +48,7 @@ export class LogDrains extends ClientSDK {
         teamId?: string | undefined,
         slug?: string | undefined,
         options?: RequestOptions
-    ): Promise<models.GetIntegrationLogDrainsResponse> {
+    ): Promise<Array<models.GetIntegrationLogDrainsResponseBody>> {
         const input$: models.GetIntegrationLogDrainsRequest = {
             teamId: teamId,
             slug: slug,
@@ -100,31 +101,25 @@ export class LogDrains extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        const responseFields$ = {
-            HttpMeta: {
-                Response: response,
-                Request: request$,
-            },
-        };
-
         if (this.matchResponse(response, 200, "application/json")) {
             const responseBody = await response.json();
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return models.GetIntegrationLogDrainsResponse$.inboundSchema.parse({
-                        ...responseFields$,
-                        responseBodies: val$,
-                    });
+                    return z
+                        .array(models.GetIntegrationLogDrainsResponseBody$.inboundSchema)
+                        .parse(val$);
                 },
                 "Response validation failed"
             );
             return result;
         } else {
-            throw new models.SDKError("Unexpected API response status or content-type", {
+            const responseBody = await response.text();
+            throw new models.SDKError(
+                "Unexpected API response status or content-type",
                 response,
-                request: request$,
-            });
+                responseBody
+            );
         }
     }
 
@@ -134,12 +129,12 @@ export class LogDrains extends ClientSDK {
      * @remarks
      * Creates an Integration log drain. This endpoint must be called with an OAuth2 client (integration), since log drains are tied to integrations. If it is called with a different token type it will produce a 400 error.
      */
-    async createLogDrain(
+    async create(
         teamId?: string | undefined,
         slug?: string | undefined,
         requestBody?: models.CreateLogDrainRequestBody | undefined,
         options?: RequestOptions
-    ): Promise<models.CreateLogDrainResponse> {
+    ): Promise<models.CreateLogDrainResponseBody> {
         const input$: models.CreateLogDrainRequest = {
             teamId: teamId,
             slug: slug,
@@ -194,31 +189,23 @@ export class LogDrains extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        const responseFields$ = {
-            HttpMeta: {
-                Response: response,
-                Request: request$,
-            },
-        };
-
         if (this.matchResponse(response, 200, "application/json")) {
             const responseBody = await response.json();
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return models.CreateLogDrainResponse$.inboundSchema.parse({
-                        ...responseFields$,
-                        object: val$,
-                    });
+                    return models.CreateLogDrainResponseBody$.inboundSchema.parse(val$);
                 },
                 "Response validation failed"
             );
             return result;
         } else {
-            throw new models.SDKError("Unexpected API response status or content-type", {
+            const responseBody = await response.text();
+            throw new models.SDKError(
+                "Unexpected API response status or content-type",
                 response,
-                request: request$,
-            });
+                responseBody
+            );
         }
     }
 
@@ -228,12 +215,12 @@ export class LogDrains extends ClientSDK {
      * @remarks
      * Deletes the Integration log drain with the provided `id`. When using an OAuth2 Token, the log drain can be deleted only if the integration owns it.
      */
-    async deleteIntegrationLogDrain(
+    async delete(
         id: string,
         teamId?: string | undefined,
         slug?: string | undefined,
         options?: RequestOptions
-    ): Promise<models.DeleteIntegrationLogDrainResponse> {
+    ): Promise<models.DeleteIntegrationLogDrainResponse | void> {
         const input$: models.DeleteIntegrationLogDrainRequest = {
             id: id,
             teamId: teamId,
@@ -290,27 +277,16 @@ export class LogDrains extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        const responseFields$ = {
-            HttpMeta: {
-                Response: response,
-                Request: request$,
-            },
-        };
-
         if (this.matchStatusCode(response, 204)) {
-            // fallthrough
+            return;
         } else {
-            throw new models.SDKError("Unexpected API response status or content-type", {
+            const responseBody = await response.text();
+            throw new models.SDKError(
+                "Unexpected API response status or content-type",
                 response,
-                request: request$,
-            });
+                responseBody
+            );
         }
-
-        return schemas$.parse(
-            undefined,
-            () => models.DeleteIntegrationLogDrainResponse$.inboundSchema.parse(responseFields$),
-            "Response validation failed"
-        );
     }
 
     /**
@@ -319,12 +295,12 @@ export class LogDrains extends ClientSDK {
      * @remarks
      * Retrieves a Configurable Log Drain. This endpoint must be called with a team AccessToken (integration OAuth2 clients are not allowed). Only log drains owned by the authenticated team can be accessed.
      */
-    async getConfigurableLogDrain(
+    async get(
         id: string,
         teamId?: string | undefined,
         slug?: string | undefined,
         options?: RequestOptions
-    ): Promise<models.GetConfigurableLogDrainResponse> {
+    ): Promise<models.GetConfigurableLogDrainResponseBody> {
         const input$: models.GetConfigurableLogDrainRequest = {
             id: id,
             teamId: teamId,
@@ -381,31 +357,23 @@ export class LogDrains extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        const responseFields$ = {
-            HttpMeta: {
-                Response: response,
-                Request: request$,
-            },
-        };
-
         if (this.matchResponse(response, 200, "application/json")) {
             const responseBody = await response.json();
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return models.GetConfigurableLogDrainResponse$.inboundSchema.parse({
-                        ...responseFields$,
-                        object: val$,
-                    });
+                    return models.GetConfigurableLogDrainResponseBody$.inboundSchema.parse(val$);
                 },
                 "Response validation failed"
             );
             return result;
         } else {
-            throw new models.SDKError("Unexpected API response status or content-type", {
+            const responseBody = await response.text();
+            throw new models.SDKError(
+                "Unexpected API response status or content-type",
                 response,
-                request: request$,
-            });
+                responseBody
+            );
         }
     }
 
@@ -420,7 +388,7 @@ export class LogDrains extends ClientSDK {
         teamId?: string | undefined,
         slug?: string | undefined,
         options?: RequestOptions
-    ): Promise<models.DeleteConfigurableLogDrainResponse> {
+    ): Promise<models.DeleteConfigurableLogDrainResponse | void> {
         const input$: models.DeleteConfigurableLogDrainRequest = {
             id: id,
             teamId: teamId,
@@ -477,27 +445,16 @@ export class LogDrains extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        const responseFields$ = {
-            HttpMeta: {
-                Response: response,
-                Request: request$,
-            },
-        };
-
         if (this.matchStatusCode(response, 204)) {
-            // fallthrough
+            return;
         } else {
-            throw new models.SDKError("Unexpected API response status or content-type", {
+            const responseBody = await response.text();
+            throw new models.SDKError(
+                "Unexpected API response status or content-type",
                 response,
-                request: request$,
-            });
+                responseBody
+            );
         }
-
-        return schemas$.parse(
-            undefined,
-            () => models.DeleteConfigurableLogDrainResponse$.inboundSchema.parse(responseFields$),
-            "Response validation failed"
-        );
     }
 
     /**
@@ -506,12 +463,12 @@ export class LogDrains extends ClientSDK {
      * @remarks
      * Retrieves a list of all the Log Drains owned by the account. This endpoint must be called with an account AccessToken (integration OAuth2 clients are not allowed). Only log drains owned by the authenticated account can be accessed.
      */
-    async getAllLogDrains(
+    async list(
         projectId?: string | undefined,
         teamId?: string | undefined,
         slug?: string | undefined,
         options?: RequestOptions
-    ): Promise<models.GetAllLogDrainsResponse> {
+    ): Promise<Array<models.GetAllLogDrainsResponseBody>> {
         const input$: models.GetAllLogDrainsRequest = {
             projectId: projectId,
             teamId: teamId,
@@ -569,31 +526,23 @@ export class LogDrains extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        const responseFields$ = {
-            HttpMeta: {
-                Response: response,
-                Request: request$,
-            },
-        };
-
         if (this.matchResponse(response, 200, "application/json")) {
             const responseBody = await response.json();
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return models.GetAllLogDrainsResponse$.inboundSchema.parse({
-                        ...responseFields$,
-                        responseBodies: val$,
-                    });
+                    return z.array(models.GetAllLogDrainsResponseBody$.inboundSchema).parse(val$);
                 },
                 "Response validation failed"
             );
             return result;
         } else {
-            throw new models.SDKError("Unexpected API response status or content-type", {
+            const responseBody = await response.text();
+            throw new models.SDKError(
+                "Unexpected API response status or content-type",
                 response,
-                request: request$,
-            });
+                responseBody
+            );
         }
     }
 
@@ -603,12 +552,12 @@ export class LogDrains extends ClientSDK {
      * @remarks
      * Creates a configurable log drain. This endpoint must be called with a team AccessToken (integration OAuth2 clients are not allowed)
      */
-    async createConfigurableLogDrain(
+    async createConfigurable(
         teamId?: string | undefined,
         slug?: string | undefined,
         requestBody?: models.CreateConfigurableLogDrainRequestBody | undefined,
         options?: RequestOptions
-    ): Promise<models.CreateConfigurableLogDrainResponse> {
+    ): Promise<models.CreateConfigurableLogDrainResponseBody> {
         const input$: models.CreateConfigurableLogDrainRequest = {
             teamId: teamId,
             slug: slug,
@@ -663,31 +612,23 @@ export class LogDrains extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        const responseFields$ = {
-            HttpMeta: {
-                Response: response,
-                Request: request$,
-            },
-        };
-
         if (this.matchResponse(response, 200, "application/json")) {
             const responseBody = await response.json();
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return models.CreateConfigurableLogDrainResponse$.inboundSchema.parse({
-                        ...responseFields$,
-                        object: val$,
-                    });
+                    return models.CreateConfigurableLogDrainResponseBody$.inboundSchema.parse(val$);
                 },
                 "Response validation failed"
             );
             return result;
         } else {
-            throw new models.SDKError("Unexpected API response status or content-type", {
+            const responseBody = await response.text();
+            throw new models.SDKError(
+                "Unexpected API response status or content-type",
                 response,
-                request: request$,
-            });
+                responseBody
+            );
         }
     }
 }

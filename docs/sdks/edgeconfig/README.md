@@ -3,22 +3,22 @@
 
 ### Available Operations
 
-* [getEdgeConfigs](#getedgeconfigs) - Get Edge Configs
-* [createEdgeConfig](#createedgeconfig) - Create an Edge Config
-* [getEdgeConfig](#getedgeconfig) - Get an Edge Config
-* [updateEdgeConfig](#updateedgeconfig) - Update an Edge Config
-* [deleteEdgeConfig](#deleteedgeconfig) - Delete an Edge Config
-* [getEdgeConfigItems](#getedgeconfigitems) - Get Edge Config items
-* [getEdgeConfigSchema](#getedgeconfigschema) - Get Edge Config schema
-* [patchEdgeConfigSchema](#patchedgeconfigschema) - Update Edge Config schema
-* [deleteEdgeConfigSchema](#deleteedgeconfigschema) - Delete an Edge Config's schema
-* [getEdgeConfigItem](#getedgeconfigitem) - Get an Edge Config item
-* [getEdgeConfigTokens](#getedgeconfigtokens) - Get all tokens of an Edge Config
-* [deleteEdgeConfigTokens](#deleteedgeconfigtokens) - Delete one or more Edge Config tokens
-* [getEdgeConfigToken](#getedgeconfigtoken) - Get Edge Config token meta data
-* [createEdgeConfigToken](#createedgeconfigtoken) - Create an Edge Config token
+* [list](#list) - Get Edge Configs
+* [create](#create) - Create an Edge Config
+* [get](#get) - Get an Edge Config
+* [update](#update) - Update an Edge Config
+* [delete](#delete) - Delete an Edge Config
+* [listItems](#listitems) - Get Edge Config items
+* [getSchema](#getschema) - Get Edge Config schema
+* [updateSchema](#updateschema) - Update Edge Config schema
+* [deleteSchema](#deleteschema) - Delete an Edge Config's schema
+* [getItem](#getitem) - Get an Edge Config item
+* [listTokens](#listtokens) - Get all tokens of an Edge Config
+* [deleteTokens](#deletetokens) - Delete one or more Edge Config tokens
+* [getTokenMetaData](#gettokenmetadata) - Get Edge Config token meta data
+* [createTokenMetaData](#createtokenmetadata) - Create an Edge Config token
 
-## getEdgeConfigs
+## list
 
 Returns all Edge Configs.
 
@@ -34,7 +34,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.edgeConfig.getEdgeConfigs("<value>", "<value>");
+  const result = await vercel.edgeConfig.list("<value>", "<value>");
 
   // Handle the result
   console.log(result)
@@ -55,14 +55,14 @@ run();
 
 ### Response
 
-**Promise<[models.GetEdgeConfigsResponse](../../models/getedgeconfigsresponse.md)>**
+**Promise<[models.GetEdgeConfigsResponseBody](../../models/getedgeconfigsresponsebody.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
 
-## createEdgeConfig
+## create
 
 Creates an Edge Config.
 
@@ -78,7 +78,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.edgeConfig.createEdgeConfig("<value>", "<value>", {
+  const result = await vercel.edgeConfig.create("<value>", "<value>", {
     slug: "<value>",
   });
 
@@ -102,14 +102,14 @@ run();
 
 ### Response
 
-**Promise<[models.CreateEdgeConfigResponse](../../models/createedgeconfigresponse.md)>**
+**Promise<[models.CreateEdgeConfigResponseBody](../../models/createedgeconfigresponsebody.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
 
-## getEdgeConfig
+## get
 
 Returns an Edge Config.
 
@@ -125,7 +125,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.edgeConfig.getEdgeConfig("<value>", "<value>", "<value>");
+  const result = await vercel.edgeConfig.get("<value>", "<value>", "<value>");
 
   // Handle the result
   console.log(result)
@@ -147,14 +147,14 @@ run();
 
 ### Response
 
-**Promise<[models.GetEdgeConfigResponse](../../models/getedgeconfigresponse.md)>**
+**Promise<[models.GetEdgeConfigResponseBody](../../models/getedgeconfigresponsebody.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
 
-## updateEdgeConfig
+## update
 
 Updates an Edge Config.
 
@@ -170,7 +170,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.edgeConfig.updateEdgeConfig("<value>", "<value>", "<value>", {
+  const result = await vercel.edgeConfig.update("<value>", "<value>", "<value>", {
     slug: "<value>",
   });
 
@@ -195,14 +195,14 @@ run();
 
 ### Response
 
-**Promise<[models.UpdateEdgeConfigResponse](../../models/updateedgeconfigresponse.md)>**
+**Promise<[models.UpdateEdgeConfigResponseBody](../../models/updateedgeconfigresponsebody.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
 
-## deleteEdgeConfig
+## delete
 
 Delete an Edge Config by id.
 
@@ -218,7 +218,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.edgeConfig.deleteEdgeConfig("<value>", "<value>", "<value>");
+  const result = await vercel.edgeConfig.delete("<value>", "<value>", "<value>");
 
   // Handle the result
   console.log(result)
@@ -247,7 +247,7 @@ run();
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
 
-## getEdgeConfigItems
+## listItems
 
 Returns all items of an Edge Config.
 
@@ -263,7 +263,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.edgeConfig.getEdgeConfigItems("<value>", "<value>", "<value>");
+  const result = await vercel.edgeConfig.listItems("<value>", "<value>", "<value>");
 
   // Handle the result
   console.log(result)
@@ -292,7 +292,7 @@ run();
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
 
-## getEdgeConfigSchema
+## getSchema
 
 Returns the schema of an Edge Config.
 
@@ -308,7 +308,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.edgeConfig.getEdgeConfigSchema("<value>", "<value>", "<value>");
+  const result = await vercel.edgeConfig.getSchema("<value>", "<value>", "<value>");
 
   // Handle the result
   console.log(result)
@@ -330,14 +330,14 @@ run();
 
 ### Response
 
-**Promise<[models.GetEdgeConfigSchemaResponse](../../models/getedgeconfigschemaresponse.md)>**
+**Promise<[models.GetEdgeConfigSchemaResponseBody](../../models/getedgeconfigschemaresponsebody.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
 
-## patchEdgeConfigSchema
+## updateSchema
 
 Update an Edge Config's schema.
 
@@ -353,7 +353,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.edgeConfig.patchEdgeConfigSchema({
+  const result = await vercel.edgeConfig.updateSchema({
     edgeConfigId: "<value>",
   });
 
@@ -375,14 +375,14 @@ run();
 
 ### Response
 
-**Promise<[models.PatchEdgeConfigSchemaResponse](../../models/patchedgeconfigschemaresponse.md)>**
+**Promise<[models.PatchEdgeConfigSchemaResponseBody](../../models/patchedgeconfigschemaresponsebody.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
 
-## deleteEdgeConfigSchema
+## deleteSchema
 
 Deletes the schema of existing Edge Config.
 
@@ -398,7 +398,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.edgeConfig.deleteEdgeConfigSchema("<value>", "<value>", "<value>");
+  const result = await vercel.edgeConfig.deleteSchema("<value>", "<value>", "<value>");
 
   // Handle the result
   console.log(result)
@@ -427,7 +427,7 @@ run();
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
 
-## getEdgeConfigItem
+## getItem
 
 Returns a specific Edge Config Item.
 
@@ -443,7 +443,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.edgeConfig.getEdgeConfigItem("<value>", "<value>", "<value>", "<value>");
+  const result = await vercel.edgeConfig.getItem("<value>", "<value>", "<value>", "<value>");
 
   // Handle the result
   console.log(result)
@@ -473,7 +473,7 @@ run();
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
 
-## getEdgeConfigTokens
+## listTokens
 
 Returns all tokens of an Edge Config.
 
@@ -489,7 +489,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.edgeConfig.getEdgeConfigTokens("<value>", "<value>", "<value>");
+  const result = await vercel.edgeConfig.listTokens("<value>", "<value>", "<value>");
 
   // Handle the result
   console.log(result)
@@ -511,14 +511,14 @@ run();
 
 ### Response
 
-**Promise<[models.GetEdgeConfigTokensResponse](../../models/getedgeconfigtokensresponse.md)>**
+**Promise<[models.EdgeConfigToken](../../models/edgeconfigtoken.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
 
-## deleteEdgeConfigTokens
+## deleteTokens
 
 Deletes one or more tokens of an existing Edge Config.
 
@@ -534,7 +534,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.edgeConfig.deleteEdgeConfigTokens("<value>", "<value>", "<value>", {
+  const result = await vercel.edgeConfig.deleteTokens("<value>", "<value>", "<value>", {
     tokens: [
       "<value>",
     ],
@@ -554,21 +554,21 @@ run();
 | `edgeConfigId`                                                                                                                                                                 | *string*                                                                                                                                                                       | :heavy_check_mark:                                                                                                                                                             | N/A                                                                                                                                                                            |
 | `teamId`                                                                                                                                                                       | *string*                                                                                                                                                                       | :heavy_minus_sign:                                                                                                                                                             | The Team identifier to perform the request on behalf of.                                                                                                                       |
 | `slug`                                                                                                                                                                         | *string*                                                                                                                                                                       | :heavy_minus_sign:                                                                                                                                                             | The Team slug to perform the request on behalf of.                                                                                                                             |
-| `requestBody`                                                                                                                                                                  | [models.DeleteEdgeConfigTokensRequestBody](../../models/deleteedgeconfigtokensrequestbody.md)                                                                                  | :heavy_minus_sign:                                                                                                                                                             | N/A                                                                                                                                                                            |
+| `requestBody`                                                                                                                                                                  | [models.DeleteTokensRequestBody](../../models/deletetokensrequestbody.md)                                                                                                      | :heavy_minus_sign:                                                                                                                                                             | N/A                                                                                                                                                                            |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 
 
 ### Response
 
-**Promise<[models.DeleteEdgeConfigTokensResponse](../../models/deleteedgeconfigtokensresponse.md)>**
+**Promise<[models.DeleteTokensResponse](../../models/deletetokensresponse.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
 
-## getEdgeConfigToken
+## getTokenMetaData
 
 Return meta data about an Edge Config token.
 
@@ -584,7 +584,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.edgeConfig.getEdgeConfigToken("<value>", "<value>", "<value>", "<value>");
+  const result = await vercel.edgeConfig.getTokenMetaData("<value>", "<value>", "<value>", "<value>");
 
   // Handle the result
   console.log(result)
@@ -607,14 +607,14 @@ run();
 
 ### Response
 
-**Promise<[models.GetEdgeConfigTokenResponse](../../models/getedgeconfigtokenresponse.md)>**
+**Promise<[models.EdgeConfigToken](../../models/edgeconfigtoken.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
 
-## createEdgeConfigToken
+## createTokenMetaData
 
 Adds a token to an existing Edge Config.
 
@@ -630,7 +630,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.edgeConfig.createEdgeConfigToken("<value>", "<value>", "<value>", {
+  const result = await vercel.edgeConfig.createTokenMetaData("<value>", "<value>", "<value>", {
     label: "<value>",
   });
 
@@ -655,7 +655,7 @@ run();
 
 ### Response
 
-**Promise<[models.CreateEdgeConfigTokenResponse](../../models/createedgeconfigtokenresponse.md)>**
+**Promise<[models.CreateEdgeConfigTokenResponseBody](../../models/createedgeconfigtokenresponsebody.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

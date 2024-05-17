@@ -1,18 +1,18 @@
-speakeasyVersion: 1.291.0
+speakeasyVersion: 1.293.0
 sources:
     Vercel-API:
         sourceNamespace: vercel-api
-        sourceRevisionDigest: sha256:06125576bc51702e202785574ffe9c35d5ec685c1e413ac5767830a88d8b6a4d
-        sourceBlobDigest: sha256:a2ef261adb3f3119cb7243eab7f64df054974d452dbbd34093dc2d0f70f14427
+        sourceRevisionDigest: sha256:e735a9897356f13603012e5c89587acbdc7ce2c408fda771a6e998bd298f6c1f
+        sourceBlobDigest: sha256:d3e60242117d421079c83d18c8cb648b142a7c36505370f777ec66ea688e0574
         tags:
             - latest
 targets:
     typescript:
         source: Vercel-API
         sourceNamespace: vercel-api
-        sourceRevisionDigest: sha256:06125576bc51702e202785574ffe9c35d5ec685c1e413ac5767830a88d8b6a4d
-        sourceBlobDigest: sha256:a2ef261adb3f3119cb7243eab7f64df054974d452dbbd34093dc2d0f70f14427
-        outLocation: /mnt/c/Users/Luke/Documents/GitHub/Vercel-typescript-sdk
+        sourceRevisionDigest: sha256:e735a9897356f13603012e5c89587acbdc7ce2c408fda771a6e998bd298f6c1f
+        sourceBlobDigest: sha256:d3e60242117d421079c83d18c8cb648b142a7c36505370f777ec66ea688e0574
+        outLocation: /Users/sagar/vercel-ts
 workflow:
     workflowVersion: 1.0.0
     speakeasyVersion: latest
@@ -26,3 +26,6 @@ workflow:
         typescript:
             target: typescript
             source: Vercel-API
+            publish:
+                npm:
+                    token: $npm_token

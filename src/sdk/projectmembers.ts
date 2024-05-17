@@ -43,10 +43,10 @@ export class ProjectMembers extends ClientSDK {
      * @remarks
      * Lists all members of a project.
      */
-    async getProjectMembers(
+    async list(
         request: models.GetProjectMembersRequest,
         options?: RequestOptions
-    ): Promise<models.GetProjectMembersResponse> {
+    ): Promise<models.GetProjectMembersResponseBody> {
         const input$ = request;
         const headers$ = new Headers();
         headers$.set("user-agent", SDK_METADATA.userAgent);
@@ -106,31 +106,23 @@ export class ProjectMembers extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        const responseFields$ = {
-            HttpMeta: {
-                Response: response,
-                Request: request$,
-            },
-        };
-
         if (this.matchResponse(response, 200, "application/json")) {
             const responseBody = await response.json();
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return models.GetProjectMembersResponse$.inboundSchema.parse({
-                        ...responseFields$,
-                        oneOf: val$,
-                    });
+                    return models.GetProjectMembersResponseBody$.inboundSchema.parse(val$);
                 },
                 "Response validation failed"
             );
             return result;
         } else {
-            throw new models.SDKError("Unexpected API response status or content-type", {
+            const responseBody = await response.text();
+            throw new models.SDKError(
+                "Unexpected API response status or content-type",
                 response,
-                request: request$,
-            });
+                responseBody
+            );
         }
     }
 
@@ -140,13 +132,13 @@ export class ProjectMembers extends ClientSDK {
      * @remarks
      * Adds a new member to the project.
      */
-    async addProjectMember(
+    async create(
         idOrName: string,
         teamId?: string | undefined,
         slug?: string | undefined,
         requestBody?: models.AddProjectMemberRequestBody | undefined,
         options?: RequestOptions
-    ): Promise<models.AddProjectMemberResponse> {
+    ): Promise<models.AddProjectMemberResponseBody> {
         const input$: models.AddProjectMemberRequest = {
             idOrName: idOrName,
             teamId: teamId,
@@ -208,31 +200,23 @@ export class ProjectMembers extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        const responseFields$ = {
-            HttpMeta: {
-                Response: response,
-                Request: request$,
-            },
-        };
-
         if (this.matchResponse(response, 200, "application/json")) {
             const responseBody = await response.json();
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return models.AddProjectMemberResponse$.inboundSchema.parse({
-                        ...responseFields$,
-                        object: val$,
-                    });
+                    return models.AddProjectMemberResponseBody$.inboundSchema.parse(val$);
                 },
                 "Response validation failed"
             );
             return result;
         } else {
-            throw new models.SDKError("Unexpected API response status or content-type", {
+            const responseBody = await response.text();
+            throw new models.SDKError(
+                "Unexpected API response status or content-type",
                 response,
-                request: request$,
-            });
+                responseBody
+            );
         }
     }
 
@@ -242,13 +226,13 @@ export class ProjectMembers extends ClientSDK {
      * @remarks
      * Remove a member from a specific project
      */
-    async removeProjectMember(
+    async delete(
         idOrName: string,
         uid: string,
         teamId?: string | undefined,
         slug?: string | undefined,
         options?: RequestOptions
-    ): Promise<models.RemoveProjectMemberResponse> {
+    ): Promise<models.RemoveProjectMemberResponseBody> {
         const input$: models.RemoveProjectMemberRequest = {
             idOrName: idOrName,
             uid: uid,
@@ -315,31 +299,23 @@ export class ProjectMembers extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        const responseFields$ = {
-            HttpMeta: {
-                Response: response,
-                Request: request$,
-            },
-        };
-
         if (this.matchResponse(response, 200, "application/json")) {
             const responseBody = await response.json();
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return models.RemoveProjectMemberResponse$.inboundSchema.parse({
-                        ...responseFields$,
-                        object: val$,
-                    });
+                    return models.RemoveProjectMemberResponseBody$.inboundSchema.parse(val$);
                 },
                 "Response validation failed"
             );
             return result;
         } else {
-            throw new models.SDKError("Unexpected API response status or content-type", {
+            const responseBody = await response.text();
+            throw new models.SDKError(
+                "Unexpected API response status or content-type",
                 response,
-                request: request$,
-            });
+                responseBody
+            );
         }
     }
 }

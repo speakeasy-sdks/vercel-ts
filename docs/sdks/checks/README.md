@@ -3,13 +3,13 @@
 
 ### Available Operations
 
-* [createCheck](#createcheck) - Creates a new Check
-* [getAllChecks](#getallchecks) - Retrieve a list of all checks
-* [getCheck](#getcheck) - Get a single check
-* [updateCheck](#updatecheck) - Update a check
-* [rerequestCheck](#rerequestcheck) - Rerequest a check
+* [create](#create) - Creates a new Check
+* [getAll](#getall) - Retrieve a list of all checks
+* [get](#get) - Get a single check
+* [update](#update) - Update a check
+* [rerequest](#rerequest) - Rerequest a check
 
-## createCheck
+## create
 
 Creates a new check. This endpoint must be called with an OAuth2 or it will produce a 400 error.
 
@@ -25,7 +25,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.checks.createCheck("dpl_2qn7PZrx89yxY34vEZPD31Y9XVj6", "<value>", "<value>", {
+  const result = await vercel.checks.create("dpl_2qn7PZrx89yxY34vEZPD31Y9XVj6", "<value>", "<value>", {
     name: "Performance Check",
     path: "/",
     blocking: true,
@@ -55,14 +55,14 @@ run();
 
 ### Response
 
-**Promise<[models.CreateCheckResponse](../../models/createcheckresponse.md)>**
+**Promise<[models.CreateCheckResponseBody](../../models/createcheckresponsebody.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
 
-## getAllChecks
+## getAll
 
 List all of the checks created for a deployment.
 
@@ -78,7 +78,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.checks.getAllChecks("dpl_2qn7PZrx89yxY34vEZPD31Y9XVj6", "<value>", "<value>");
+  const result = await vercel.checks.getAll("dpl_2qn7PZrx89yxY34vEZPD31Y9XVj6", "<value>", "<value>");
 
   // Handle the result
   console.log(result)
@@ -100,14 +100,14 @@ run();
 
 ### Response
 
-**Promise<[models.GetAllChecksResponse](../../models/getallchecksresponse.md)>**
+**Promise<[models.GetAllChecksResponseBody](../../models/getallchecksresponsebody.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
 
-## getCheck
+## get
 
 Return a detailed response for a single check.
 
@@ -123,7 +123,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.checks.getCheck("dpl_2qn7PZrx89yxY34vEZPD31Y9XVj6", "check_2qn7PZrx89yxY34vEZPD31Y9XVj6", "<value>", "<value>");
+  const result = await vercel.checks.get("dpl_2qn7PZrx89yxY34vEZPD31Y9XVj6", "check_2qn7PZrx89yxY34vEZPD31Y9XVj6", "<value>", "<value>");
 
   // Handle the result
   console.log(result)
@@ -146,14 +146,14 @@ run();
 
 ### Response
 
-**Promise<[models.GetCheckResponse](../../models/getcheckresponse.md)>**
+**Promise<[models.GetCheckResponseBody](../../models/getcheckresponsebody.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
 
-## updateCheck
+## update
 
 Update an existing check. This endpoint must be called with an OAuth2 or it will produce a 400 error.
 
@@ -176,7 +176,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.checks.updateCheck({
+  const result = await vercel.checks.update({
     deploymentId: "dpl_2qn7PZrx89yxY34vEZPD31Y9XVj6",
     checkId: "check_2qn7PZrx89yxY34vEZPD31Y9XVj6",
     requestBody: {
@@ -234,14 +234,14 @@ run();
 
 ### Response
 
-**Promise<[models.UpdateCheckResponse](../../models/updatecheckresponse.md)>**
+**Promise<[models.UpdateCheckResponseBody](../../models/updatecheckresponsebody.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
 
-## rerequestCheck
+## rerequest
 
 Rerequest a selected check that has failed.
 
@@ -257,7 +257,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.checks.rerequestCheck("dpl_2qn7PZrx89yxY34vEZPD31Y9XVj6", "check_2qn7PZrx89yxY34vEZPD31Y9XVj6", "<value>", "<value>");
+  const result = await vercel.checks.rerequest("dpl_2qn7PZrx89yxY34vEZPD31Y9XVj6", "check_2qn7PZrx89yxY34vEZPD31Y9XVj6", "<value>", "<value>");
 
   // Handle the result
   console.log(result)
@@ -280,7 +280,7 @@ run();
 
 ### Response
 
-**Promise<[models.RerequestCheckResponse](../../models/rerequestcheckresponse.md)>**
+**Promise<[models.RerequestCheckResponseBody](../../models/rerequestcheckresponsebody.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

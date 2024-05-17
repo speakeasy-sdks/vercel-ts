@@ -3,7 +3,6 @@
  */
 
 import { ACLAction, ACLAction$ } from "./aclaction";
-import { HTTPMetadata, HTTPMetadata$ } from "./httpmetadata";
 import * as z from "zod";
 
 /**
@@ -1282,14 +1281,6 @@ export type UpdateProjectResponseBody = {
     webAnalytics?: UpdateProjectWebAnalytics | undefined;
     security?: UpdateProjectSecurity | undefined;
     oidcTokenConfig?: UpdateProjectOidcTokenConfig | undefined;
-};
-
-export type UpdateProjectResponse = {
-    httpMeta: HTTPMetadata;
-    /**
-     * The project was successfully updated
-     */
-    object?: UpdateProjectResponseBody | undefined;
 };
 
 /** @internal */
@@ -6651,38 +6642,6 @@ export namespace UpdateProjectResponseBody$ {
                 ...(v.oidcTokenConfig === undefined
                     ? null
                     : { oidcTokenConfig: v.oidcTokenConfig }),
-            };
-        });
-}
-
-/** @internal */
-export namespace UpdateProjectResponse$ {
-    export const inboundSchema: z.ZodType<UpdateProjectResponse, z.ZodTypeDef, unknown> = z
-        .object({
-            HttpMeta: HTTPMetadata$.inboundSchema,
-            object: z.lazy(() => UpdateProjectResponseBody$.inboundSchema).optional(),
-        })
-        .transform((v) => {
-            return {
-                httpMeta: v.HttpMeta,
-                ...(v.object === undefined ? null : { object: v.object }),
-            };
-        });
-
-    export type Outbound = {
-        HttpMeta: HTTPMetadata$.Outbound;
-        object?: UpdateProjectResponseBody$.Outbound | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, UpdateProjectResponse> = z
-        .object({
-            httpMeta: HTTPMetadata$.outboundSchema,
-            object: z.lazy(() => UpdateProjectResponseBody$.outboundSchema).optional(),
-        })
-        .transform((v) => {
-            return {
-                HttpMeta: v.httpMeta,
-                ...(v.object === undefined ? null : { object: v.object }),
             };
         });
 }

@@ -3,18 +3,18 @@
 
 ### Available Operations
 
-* [buyDomain](#buydomain) - Purchase a domain
-* [checkDomainPrice](#checkdomainprice) - Check the price for a domain
-* [checkDomainStatus](#checkdomainstatus) - Check a Domain Availability
-* [getDomainTransfer](#getdomaintransfer) - Get domain transfer info.
-* [getDomainConfig](#getdomainconfig) - Get a Domain's configuration
+* [buy](#buy) - Purchase a domain
+* [checkPrice](#checkprice) - Check the price for a domain
+* [checkStatus](#checkstatus) - Check a Domain Availability
+* [getTransfer](#gettransfer) - Get domain transfer info.
+* [getConfig](#getconfig) - Get a Domain's configuration
 * [getDomain](#getdomain) - Get Information for a Single Domain
-* [getDomains](#getdomains) - List all the domains
+* [list](#list) - List all the domains
 * [createOrTransferDomain](#createortransferdomain) - Register or transfer-in a new Domain
-* [patchDomain](#patchdomain) - Update or move apex domain
-* [deleteDomain](#deletedomain) - Remove a domain by name
+* [update](#update) - Update or move apex domain
+* [delete](#delete) - Remove a domain by name
 
-## buyDomain
+## buy
 
 Allows to purchase the specified domain.
 
@@ -30,7 +30,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.domains.buyDomain("<value>", "<value>", {
+  const result = await vercel.domains.buy("<value>", "<value>", {
     name: "example.com",
     expectedPrice: 10,
     renew: true,
@@ -63,7 +63,7 @@ run();
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
 
-## checkDomainPrice
+## checkPrice
 
 Check the price to purchase a domain and how long a single purchase period is.
 
@@ -80,7 +80,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.domains.checkDomainPrice("example.com", QueryParamType.New, "<value>", "<value>");
+  const result = await vercel.domains.checkPrice("example.com", QueryParamType.New, "<value>", "<value>");
 
   // Handle the result
   console.log(result)
@@ -103,14 +103,14 @@ run();
 
 ### Response
 
-**Promise<[models.CheckDomainPriceResponse](../../models/checkdomainpriceresponse.md)>**
+**Promise<[models.CheckDomainPriceResponseBody](../../models/checkdomainpriceresponsebody.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
 
-## checkDomainStatus
+## checkStatus
 
 Check if a domain name is available for purchase.
 
@@ -126,7 +126,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.domains.checkDomainStatus("example.com", "<value>", "<value>");
+  const result = await vercel.domains.checkStatus("example.com", "<value>", "<value>");
 
   // Handle the result
   console.log(result)
@@ -148,14 +148,14 @@ run();
 
 ### Response
 
-**Promise<[models.CheckDomainStatusResponse](../../models/checkdomainstatusresponse.md)>**
+**Promise<[models.CheckDomainStatusResponseBody](../../models/checkdomainstatusresponsebody.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
 
-## getDomainTransfer
+## getTransfer
 
 Fetch domain transfer availability or transfer status if a transfer is in progress.
 
@@ -171,7 +171,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.domains.getDomainTransfer("example.com", "<value>", "<value>");
+  const result = await vercel.domains.getTransfer("example.com", "<value>", "<value>");
 
   // Handle the result
   console.log(result)
@@ -193,14 +193,14 @@ run();
 
 ### Response
 
-**Promise<[models.GetDomainTransferResponse](../../models/getdomaintransferresponse.md)>**
+**Promise<[models.GetDomainTransferResponseBody](../../models/getdomaintransferresponsebody.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
 
-## getDomainConfig
+## getConfig
 
 Get a Domain's configuration.
 
@@ -217,7 +217,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.domains.getDomainConfig("example.com", Strict.True, "<value>", "<value>");
+  const result = await vercel.domains.getConfig("example.com", Strict.True, "<value>", "<value>");
 
   // Handle the result
   console.log(result)
@@ -240,7 +240,7 @@ run();
 
 ### Response
 
-**Promise<[models.GetDomainConfigResponse](../../models/getdomainconfigresponse.md)>**
+**Promise<[models.GetDomainConfigResponseBody](../../models/getdomainconfigresponsebody.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -285,14 +285,14 @@ run();
 
 ### Response
 
-**Promise<[models.GetDomainResponse](../../models/getdomainresponse.md)>**
+**Promise<[models.GetDomainResponseBody](../../models/getdomainresponsebody.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
 
-## getDomains
+## list
 
 Retrieves a list of domains registered for the authenticated user or team. By default it returns the last 20 domains if no limit is provided.
 
@@ -308,7 +308,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.domains.getDomains({
+  const result = await vercel.domains.list({
     limit: 20,
     since: 1609499532000,
     until: 1612264332000,
@@ -332,7 +332,7 @@ run();
 
 ### Response
 
-**Promise<[models.GetDomainsResponse](../../models/getdomainsresponse.md)>**
+**Promise<[models.GetDomainsResponseBody](../../models/getdomainsresponsebody.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -382,14 +382,14 @@ run();
 
 ### Response
 
-**Promise<[models.CreateOrTransferDomainResponse](../../models/createortransferdomainresponse.md)>**
+**Promise<[models.CreateOrTransferDomainResponseBody](../../models/createortransferdomainresponsebody.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
 
-## patchDomain
+## update
 
 Update or move apex domain.
 
@@ -405,8 +405,8 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.domains.patchDomain("<value>", "<value>", "<value>", {
-      op: "update",
+  const result = await vercel.domains.update("<value>", "<value>", "<value>", {
+      op: "move-out",
     });
 
   // Handle the result
@@ -430,14 +430,14 @@ run();
 
 ### Response
 
-**Promise<[models.PatchDomainResponse](../../models/patchdomainresponse.md)>**
+**Promise<[models.PatchDomainResponseBody](../../models/patchdomainresponsebody.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
 
-## deleteDomain
+## delete
 
 Delete a previously registered domain name from Vercel. Deleting a domain will automatically remove any associated aliases.
 
@@ -453,7 +453,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.domains.deleteDomain("example.com", "<value>", "<value>");
+  const result = await vercel.domains.delete("example.com", "<value>", "<value>");
 
   // Handle the result
   console.log(result)
@@ -475,7 +475,7 @@ run();
 
 ### Response
 
-**Promise<[models.DeleteDomainResponse](../../models/deletedomainresponse.md)>**
+**Promise<[models.DeleteDomainResponseBody](../../models/deletedomainresponsebody.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

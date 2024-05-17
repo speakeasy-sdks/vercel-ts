@@ -3,12 +3,12 @@
 
 ### Available Operations
 
-* [createWebhook](#createwebhook) - Creates a webhook
-* [getWebhooks](#getwebhooks) - Get a list of webhooks
-* [getWebhook](#getwebhook) - Get a webhook
-* [deleteWebhook](#deletewebhook) - Deletes a webhook
+* [create](#create) - Creates a webhook
+* [list](#list) - Get a list of webhooks
+* [get](#get) - Get a webhook
+* [delete](#delete) - Deletes a webhook
 
-## createWebhook
+## create
 
 Creates a webhook
 
@@ -25,10 +25,10 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.webhooks.createWebhook("<value>", "<value>", {
-    url: "https://unrealistic-well-being.name",
+  const result = await vercel.webhooks.create("<value>", "<value>", {
+    url: "http://limp-pastry.org",
     events: [
-      Events.TestWebhook,
+      Events.IntegrationConfigurationScopeChangeConfirmed,
     ],
   });
 
@@ -52,14 +52,14 @@ run();
 
 ### Response
 
-**Promise<[models.CreateWebhookResponse](../../models/createwebhookresponse.md)>**
+**Promise<[models.CreateWebhookResponseBody](../../models/createwebhookresponsebody.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
 
-## getWebhooks
+## list
 
 Get a list of webhooks
 
@@ -75,7 +75,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.webhooks.getWebhooks("<value>", "<value>", "<value>");
+  const result = await vercel.webhooks.list("<value>", "<value>", "<value>");
 
   // Handle the result
   console.log(result)
@@ -97,14 +97,14 @@ run();
 
 ### Response
 
-**Promise<[models.GetWebhooksResponse](../../models/getwebhooksresponse.md)>**
+**Promise<[models.GetWebhooksResponseBody[]](../../models/.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
 
-## getWebhook
+## get
 
 Get a webhook
 
@@ -120,7 +120,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.webhooks.getWebhook("<value>", "<value>", "<value>");
+  const result = await vercel.webhooks.get("<value>", "<value>", "<value>");
 
   // Handle the result
   console.log(result)
@@ -142,14 +142,14 @@ run();
 
 ### Response
 
-**Promise<[models.GetWebhookResponse](../../models/getwebhookresponse.md)>**
+**Promise<[models.GetWebhookResponseBody](../../models/getwebhookresponsebody.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
 
-## deleteWebhook
+## delete
 
 Deletes a webhook
 
@@ -165,7 +165,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.webhooks.deleteWebhook("<value>", "<value>", "<value>");
+  const result = await vercel.webhooks.delete("<value>", "<value>", "<value>");
 
   // Handle the result
   console.log(result)

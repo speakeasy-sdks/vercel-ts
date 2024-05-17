@@ -3,7 +3,6 @@
  */
 
 import { ACLAction, ACLAction$ } from "./aclaction";
-import { HTTPMetadata, HTTPMetadata$ } from "./httpmetadata";
 import { Pagination, Pagination$ } from "./pagination";
 import * as z from "zod";
 
@@ -1078,14 +1077,6 @@ export type GetProjectsResponseBody = {
      * This object contains information related to the pagination of the current request, including the necessary parameters to get the next or previous page of data.
      */
     pagination: Pagination;
-};
-
-export type GetProjectsResponse = {
-    httpMeta: HTTPMetadata;
-    /**
-     * The paginated list of projects
-     */
-    object?: GetProjectsResponseBody | undefined;
 };
 
 /** @internal */
@@ -6042,38 +6033,6 @@ export namespace GetProjectsResponseBody$ {
             return {
                 projects: v.projects,
                 pagination: v.pagination,
-            };
-        });
-}
-
-/** @internal */
-export namespace GetProjectsResponse$ {
-    export const inboundSchema: z.ZodType<GetProjectsResponse, z.ZodTypeDef, unknown> = z
-        .object({
-            HttpMeta: HTTPMetadata$.inboundSchema,
-            object: z.lazy(() => GetProjectsResponseBody$.inboundSchema).optional(),
-        })
-        .transform((v) => {
-            return {
-                httpMeta: v.HttpMeta,
-                ...(v.object === undefined ? null : { object: v.object }),
-            };
-        });
-
-    export type Outbound = {
-        HttpMeta: HTTPMetadata$.Outbound;
-        object?: GetProjectsResponseBody$.Outbound | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetProjectsResponse> = z
-        .object({
-            httpMeta: HTTPMetadata$.outboundSchema,
-            object: z.lazy(() => GetProjectsResponseBody$.outboundSchema).optional(),
-        })
-        .transform((v) => {
-            return {
-                HttpMeta: v.httpMeta,
-                ...(v.object === undefined ? null : { object: v.object }),
             };
         });
 }

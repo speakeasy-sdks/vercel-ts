@@ -3,11 +3,11 @@
 
 ### Available Operations
 
-* [getProjectMembers](#getprojectmembers) - List project members
-* [addProjectMember](#addprojectmember) - Adds a new member to a project.
-* [removeProjectMember](#removeprojectmember) - Remove a Project Member
+* [list](#list) - List project members
+* [create](#create) - Adds a new member to a project.
+* [delete](#delete) - Remove a Project Member
 
-## getProjectMembers
+## list
 
 Lists all members of a project.
 
@@ -23,7 +23,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.projectMembers.getProjectMembers({
+  const result = await vercel.projectMembers.list({
     idOrName: "prj_pavWOn1iLObbXLRiwVvzmPrTWyTf",
     limit: 20,
     since: 1540095775951,
@@ -48,14 +48,14 @@ run();
 
 ### Response
 
-**Promise<[models.GetProjectMembersResponse](../../models/getprojectmembersresponse.md)>**
+**Promise<[models.GetProjectMembersResponseBody](../../models/getprojectmembersresponsebody.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
 
-## addProjectMember
+## create
 
 Adds a new member to the project.
 
@@ -72,7 +72,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.projectMembers.addProjectMember("prj_pavWOn1iLObbXLRiwVvzmPrTWyTf", "<value>", "<value>", {
+  const result = await vercel.projectMembers.create("prj_pavWOn1iLObbXLRiwVvzmPrTWyTf", "<value>", "<value>", {
       uid: "ndlgr43fadlPyCtREAqxxdyFK",
       username: "example",
       email: "entity@example.com",
@@ -100,14 +100,14 @@ run();
 
 ### Response
 
-**Promise<[models.AddProjectMemberResponse](../../models/addprojectmemberresponse.md)>**
+**Promise<[models.AddProjectMemberResponseBody](../../models/addprojectmemberresponsebody.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
 
-## removeProjectMember
+## delete
 
 Remove a member from a specific project
 
@@ -123,7 +123,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.projectMembers.removeProjectMember("prj_pavWOn1iLObbXLRiwVvzmPrTWyTf", "ndlgr43fadlPyCtREAqxxdyFK", "<value>", "<value>");
+  const result = await vercel.projectMembers.delete("prj_pavWOn1iLObbXLRiwVvzmPrTWyTf", "ndlgr43fadlPyCtREAqxxdyFK", "<value>", "<value>");
 
   // Handle the result
   console.log(result)
@@ -146,7 +146,7 @@ run();
 
 ### Response
 
-**Promise<[models.RemoveProjectMemberResponse](../../models/removeprojectmemberresponse.md)>**
+**Promise<[models.RemoveProjectMemberResponseBody](../../models/removeprojectmemberresponsebody.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

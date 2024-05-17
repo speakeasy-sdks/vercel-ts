@@ -43,7 +43,7 @@ run();
 
 ### Response
 
-**Promise<[models.GetDeploymentBuildsResponse](../../models/getdeploymentbuildsresponse.md)>**
+**Promise<[models.GetDeploymentBuildsResponseBody](../../models/getdeploymentbuildsresponsebody.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -117,7 +117,7 @@ run();
 
 ### Response
 
-**Promise<[models.UpdateBillingSettingsResponse](../../models/updatebillingsettingsresponse.md)>**
+**Promise<[models.UpdateBillingSettingsResponseBody](../../models/updatebillingsettingsresponsebody.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

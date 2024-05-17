@@ -3,12 +3,12 @@
 
 ### Available Operations
 
-* [getRecords](#getrecords) - List existing DNS records
-* [createRecord](#createrecord) - Create a DNS record
-* [updateRecord](#updaterecord) - Update an existing DNS record
-* [removeRecord](#removerecord) - Delete a DNS record
+* [get](#get) - List existing DNS records
+* [create](#create) - Create a DNS record
+* [update](#update) - Update an existing DNS record
+* [remove](#remove) - Delete a DNS record
 
-## getRecords
+## get
 
 Retrieves a list of DNS records created for a domain name. By default it returns 20 records if no limit is provided. The rest can be retrieved using the pagination options.
 
@@ -24,7 +24,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.dns.getRecords({
+  const result = await vercel.dns.get({
     domain: "example.com",
     limit: "20",
     since: "1609499532000",
@@ -49,14 +49,14 @@ run();
 
 ### Response
 
-**Promise<[models.GetRecordsResponse](../../models/getrecordsresponse.md)>**
+**Promise<[models.GetRecordsResponseBody](../../models/getrecordsresponsebody.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
 
-## createRecord
+## create
 
 Creates a DNS record for a domain.
 
@@ -64,7 +64,7 @@ Creates a DNS record for a domain.
 
 ```typescript
 import { Vercel } from "vercel";
-import { CreateRecordRequestBodyDnsRequest10Type } from "vercel/models";
+import { CreateRecordRequestBodyDnsRequest5Type } from "vercel/models";
 
 const vercel = new Vercel({
   security: {
@@ -73,15 +73,11 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.dns.createRecord("example.com", "<value>", "<value>", {
-      name: "<value>",
-      type: CreateRecordRequestBodyDnsRequest10Type.Cname,
+  const result = await vercel.dns.create("example.com", "<value>", "<value>", {
+      name: "subdomain",
+      type: CreateRecordRequestBodyDnsRequest5Type.Cname,
       ttl: 60,
-      https: {
-        priority: 10,
-        target: "host.example.com",
-        params: "alpn=h2,h3",
-      },
+      value: "cname.vercel-dns.com",
       comment: "used to verify ownership of domain",
     });
 
@@ -106,14 +102,14 @@ run();
 
 ### Response
 
-**Promise<[models.CreateRecordResponse](../../models/createrecordresponse.md)>**
+**Promise<[models.CreateRecordResponseBody](../../models/createrecordresponsebody.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
 
-## updateRecord
+## update
 
 Updates an existing DNS record for a domain name.
 
@@ -130,19 +126,19 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.dns.updateRecord("rec_2qn7pzrx89yxy34vezpd31y9", "<value>", "<value>", {
+  const result = await vercel.dns.update("rec_2qn7pzrx89yxy34vezpd31y9", "<value>", "<value>", {
     name: "example-1",
     value: "google.com",
     type: UpdateRecordType.A,
     ttl: 60,
     srv: {
       target: "example2.com.",
-      weight: 97604,
-      port: 845230,
-      priority: 570172,
+      weight: 857478,
+      port: 24555,
+      priority: 597129,
     },
     https: {
-      priority: 994903,
+      priority: 15652,
       target: "example2.com.",
     },
     comment: "used to verify ownership of domain",
@@ -169,14 +165,14 @@ run();
 
 ### Response
 
-**Promise<[models.UpdateRecordResponse](../../models/updaterecordresponse.md)>**
+**Promise<[models.UpdateRecordResponseBody](../../models/updaterecordresponsebody.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
 
-## removeRecord
+## remove
 
 Removes an existing DNS record from a domain name.
 
@@ -192,7 +188,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.dns.removeRecord("example.com", "rec_V0fra8eEgQwEpFhYG2vTzC3K", "<value>", "<value>");
+  const result = await vercel.dns.remove("example.com", "rec_V0fra8eEgQwEpFhYG2vTzC3K", "<value>", "<value>");
 
   // Handle the result
   console.log(result)
@@ -215,7 +211,7 @@ run();
 
 ### Response
 
-**Promise<[models.RemoveRecordResponse](../../models/removerecordresponse.md)>**
+**Promise<[models.RemoveRecordResponseBody](../../models/removerecordresponsebody.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

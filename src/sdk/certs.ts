@@ -43,12 +43,12 @@ export class Certs extends ClientSDK {
      * @remarks
      * Get cert by id
      */
-    async getCertById(
+    async get(
         id: string,
         teamId?: string | undefined,
         slug?: string | undefined,
         options?: RequestOptions
-    ): Promise<models.GetCertByIdResponse> {
+    ): Promise<models.GetCertByIdResponseBody> {
         const input$: models.GetCertByIdRequest = {
             id: id,
             teamId: teamId,
@@ -105,31 +105,23 @@ export class Certs extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        const responseFields$ = {
-            HttpMeta: {
-                Response: response,
-                Request: request$,
-            },
-        };
-
         if (this.matchResponse(response, 200, "application/json")) {
             const responseBody = await response.json();
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return models.GetCertByIdResponse$.inboundSchema.parse({
-                        ...responseFields$,
-                        object: val$,
-                    });
+                    return models.GetCertByIdResponseBody$.inboundSchema.parse(val$);
                 },
                 "Response validation failed"
             );
             return result;
         } else {
-            throw new models.SDKError("Unexpected API response status or content-type", {
+            const responseBody = await response.text();
+            throw new models.SDKError(
+                "Unexpected API response status or content-type",
                 response,
-                request: request$,
-            });
+                responseBody
+            );
         }
     }
 
@@ -139,12 +131,12 @@ export class Certs extends ClientSDK {
      * @remarks
      * Remove cert
      */
-    async removeCert(
+    async remove(
         id: string,
         teamId?: string | undefined,
         slug?: string | undefined,
         options?: RequestOptions
-    ): Promise<models.RemoveCertResponse> {
+    ): Promise<models.RemoveCertResponseBody> {
         const input$: models.RemoveCertRequest = {
             id: id,
             teamId: teamId,
@@ -201,31 +193,23 @@ export class Certs extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        const responseFields$ = {
-            HttpMeta: {
-                Response: response,
-                Request: request$,
-            },
-        };
-
         if (this.matchResponse(response, 200, "application/json")) {
             const responseBody = await response.json();
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return models.RemoveCertResponse$.inboundSchema.parse({
-                        ...responseFields$,
-                        object: val$,
-                    });
+                    return models.RemoveCertResponseBody$.inboundSchema.parse(val$);
                 },
                 "Response validation failed"
             );
             return result;
         } else {
-            throw new models.SDKError("Unexpected API response status or content-type", {
+            const responseBody = await response.text();
+            throw new models.SDKError(
+                "Unexpected API response status or content-type",
                 response,
-                request: request$,
-            });
+                responseBody
+            );
         }
     }
 
@@ -235,12 +219,12 @@ export class Certs extends ClientSDK {
      * @remarks
      * Issue a new cert
      */
-    async issueCert(
+    async issue(
         teamId?: string | undefined,
         slug?: string | undefined,
         requestBody?: models.IssueCertRequestBody | undefined,
         options?: RequestOptions
-    ): Promise<models.IssueCertResponse> {
+    ): Promise<models.IssueCertResponseBody> {
         const input$: models.IssueCertRequest = {
             teamId: teamId,
             slug: slug,
@@ -298,31 +282,23 @@ export class Certs extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        const responseFields$ = {
-            HttpMeta: {
-                Response: response,
-                Request: request$,
-            },
-        };
-
         if (this.matchResponse(response, 200, "application/json")) {
             const responseBody = await response.json();
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return models.IssueCertResponse$.inboundSchema.parse({
-                        ...responseFields$,
-                        object: val$,
-                    });
+                    return models.IssueCertResponseBody$.inboundSchema.parse(val$);
                 },
                 "Response validation failed"
             );
             return result;
         } else {
-            throw new models.SDKError("Unexpected API response status or content-type", {
+            const responseBody = await response.text();
+            throw new models.SDKError(
+                "Unexpected API response status or content-type",
                 response,
-                request: request$,
-            });
+                responseBody
+            );
         }
     }
 
@@ -332,12 +308,12 @@ export class Certs extends ClientSDK {
      * @remarks
      * Upload a cert
      */
-    async uploadCert(
+    async upload(
         teamId?: string | undefined,
         slug?: string | undefined,
         requestBody?: models.UploadCertRequestBody | undefined,
         options?: RequestOptions
-    ): Promise<models.UploadCertResponse> {
+    ): Promise<models.UploadCertResponseBody> {
         const input$: models.UploadCertRequest = {
             teamId: teamId,
             slug: slug,
@@ -392,31 +368,23 @@ export class Certs extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        const responseFields$ = {
-            HttpMeta: {
-                Response: response,
-                Request: request$,
-            },
-        };
-
         if (this.matchResponse(response, 200, "application/json")) {
             const responseBody = await response.json();
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return models.UploadCertResponse$.inboundSchema.parse({
-                        ...responseFields$,
-                        object: val$,
-                    });
+                    return models.UploadCertResponseBody$.inboundSchema.parse(val$);
                 },
                 "Response validation failed"
             );
             return result;
         } else {
-            throw new models.SDKError("Unexpected API response status or content-type", {
+            const responseBody = await response.text();
+            throw new models.SDKError(
+                "Unexpected API response status or content-type",
                 response,
-                request: request$,
-            });
+                responseBody
+            );
         }
     }
 }

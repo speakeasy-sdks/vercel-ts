@@ -43,7 +43,7 @@ export class Domains extends ClientSDK {
      * @remarks
      * Allows to purchase the specified domain.
      */
-    async buyDomain(
+    async buy(
         teamId?: string | undefined,
         slug?: string | undefined,
         requestBody?: models.BuyDomainRequestBody | undefined,
@@ -106,22 +106,12 @@ export class Domains extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        const responseFields$ = {
-            HttpMeta: {
-                Response: response,
-                Request: request$,
-            },
-        };
-
         if (this.matchResponse(response, 201, "application/json")) {
             const responseBody = await response.json();
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return models.BuyDomainResponse$.inboundSchema.parse({
-                        ...responseFields$,
-                        "201_application/json_object": val$,
-                    });
+                    return models.BuyDomainResponse$.inboundSchema.parse(val$);
                 },
                 "Response validation failed"
             );
@@ -131,19 +121,18 @@ export class Domains extends ClientSDK {
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return models.BuyDomainResponse$.inboundSchema.parse({
-                        ...responseFields$,
-                        "202_application/json_object": val$,
-                    });
+                    return models.BuyDomainResponse$.inboundSchema.parse(val$);
                 },
                 "Response validation failed"
             );
             return result;
         } else {
-            throw new models.SDKError("Unexpected API response status or content-type", {
+            const responseBody = await response.text();
+            throw new models.SDKError(
+                "Unexpected API response status or content-type",
                 response,
-                request: request$,
-            });
+                responseBody
+            );
         }
     }
 
@@ -153,13 +142,13 @@ export class Domains extends ClientSDK {
      * @remarks
      * Check the price to purchase a domain and how long a single purchase period is.
      */
-    async checkDomainPrice(
+    async checkPrice(
         name: string,
         type?: models.QueryParamType | undefined,
         teamId?: string | undefined,
         slug?: string | undefined,
         options?: RequestOptions
-    ): Promise<models.CheckDomainPriceResponse> {
+    ): Promise<models.CheckDomainPriceResponseBody> {
         const input$: models.CheckDomainPriceRequest = {
             name: name,
             type: type,
@@ -216,31 +205,23 @@ export class Domains extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        const responseFields$ = {
-            HttpMeta: {
-                Response: response,
-                Request: request$,
-            },
-        };
-
         if (this.matchResponse(response, 200, "application/json")) {
             const responseBody = await response.json();
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return models.CheckDomainPriceResponse$.inboundSchema.parse({
-                        ...responseFields$,
-                        object: val$,
-                    });
+                    return models.CheckDomainPriceResponseBody$.inboundSchema.parse(val$);
                 },
                 "Response validation failed"
             );
             return result;
         } else {
-            throw new models.SDKError("Unexpected API response status or content-type", {
+            const responseBody = await response.text();
+            throw new models.SDKError(
+                "Unexpected API response status or content-type",
                 response,
-                request: request$,
-            });
+                responseBody
+            );
         }
     }
 
@@ -250,12 +231,12 @@ export class Domains extends ClientSDK {
      * @remarks
      * Check if a domain name is available for purchase.
      */
-    async checkDomainStatus(
+    async checkStatus(
         name: string,
         teamId?: string | undefined,
         slug?: string | undefined,
         options?: RequestOptions
-    ): Promise<models.CheckDomainStatusResponse> {
+    ): Promise<models.CheckDomainStatusResponseBody> {
         const input$: models.CheckDomainStatusRequest = {
             name: name,
             teamId: teamId,
@@ -310,31 +291,23 @@ export class Domains extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        const responseFields$ = {
-            HttpMeta: {
-                Response: response,
-                Request: request$,
-            },
-        };
-
         if (this.matchResponse(response, 200, "application/json")) {
             const responseBody = await response.json();
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return models.CheckDomainStatusResponse$.inboundSchema.parse({
-                        ...responseFields$,
-                        object: val$,
-                    });
+                    return models.CheckDomainStatusResponseBody$.inboundSchema.parse(val$);
                 },
                 "Response validation failed"
             );
             return result;
         } else {
-            throw new models.SDKError("Unexpected API response status or content-type", {
+            const responseBody = await response.text();
+            throw new models.SDKError(
+                "Unexpected API response status or content-type",
                 response,
-                request: request$,
-            });
+                responseBody
+            );
         }
     }
 
@@ -344,12 +317,12 @@ export class Domains extends ClientSDK {
      * @remarks
      * Fetch domain transfer availability or transfer status if a transfer is in progress.
      */
-    async getDomainTransfer(
+    async getTransfer(
         domain: string,
         teamId?: string | undefined,
         slug?: string | undefined,
         options?: RequestOptions
-    ): Promise<models.GetDomainTransferResponse> {
+    ): Promise<models.GetDomainTransferResponseBody> {
         const input$: models.GetDomainTransferRequest = {
             domain: domain,
             teamId: teamId,
@@ -409,31 +382,23 @@ export class Domains extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        const responseFields$ = {
-            HttpMeta: {
-                Response: response,
-                Request: request$,
-            },
-        };
-
         if (this.matchResponse(response, 200, "application/json")) {
             const responseBody = await response.json();
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return models.GetDomainTransferResponse$.inboundSchema.parse({
-                        ...responseFields$,
-                        object: val$,
-                    });
+                    return models.GetDomainTransferResponseBody$.inboundSchema.parse(val$);
                 },
                 "Response validation failed"
             );
             return result;
         } else {
-            throw new models.SDKError("Unexpected API response status or content-type", {
+            const responseBody = await response.text();
+            throw new models.SDKError(
+                "Unexpected API response status or content-type",
                 response,
-                request: request$,
-            });
+                responseBody
+            );
         }
     }
 
@@ -443,13 +408,13 @@ export class Domains extends ClientSDK {
      * @remarks
      * Get a Domain's configuration.
      */
-    async getDomainConfig(
+    async getConfig(
         domain: string,
         strict?: models.Strict | undefined,
         teamId?: string | undefined,
         slug?: string | undefined,
         options?: RequestOptions
-    ): Promise<models.GetDomainConfigResponse> {
+    ): Promise<models.GetDomainConfigResponseBody> {
         const input$: models.GetDomainConfigRequest = {
             domain: domain,
             strict: strict,
@@ -511,31 +476,23 @@ export class Domains extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        const responseFields$ = {
-            HttpMeta: {
-                Response: response,
-                Request: request$,
-            },
-        };
-
         if (this.matchResponse(response, 200, "application/json")) {
             const responseBody = await response.json();
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return models.GetDomainConfigResponse$.inboundSchema.parse({
-                        ...responseFields$,
-                        object: val$,
-                    });
+                    return models.GetDomainConfigResponseBody$.inboundSchema.parse(val$);
                 },
                 "Response validation failed"
             );
             return result;
         } else {
-            throw new models.SDKError("Unexpected API response status or content-type", {
+            const responseBody = await response.text();
+            throw new models.SDKError(
+                "Unexpected API response status or content-type",
                 response,
-                request: request$,
-            });
+                responseBody
+            );
         }
     }
 
@@ -550,7 +507,7 @@ export class Domains extends ClientSDK {
         teamId?: string | undefined,
         slug?: string | undefined,
         options?: RequestOptions
-    ): Promise<models.GetDomainResponse> {
+    ): Promise<models.GetDomainResponseBody> {
         const input$: models.GetDomainRequest = {
             domain: domain,
             teamId: teamId,
@@ -610,31 +567,23 @@ export class Domains extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        const responseFields$ = {
-            HttpMeta: {
-                Response: response,
-                Request: request$,
-            },
-        };
-
         if (this.matchResponse(response, 200, "application/json")) {
             const responseBody = await response.json();
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return models.GetDomainResponse$.inboundSchema.parse({
-                        ...responseFields$,
-                        object: val$,
-                    });
+                    return models.GetDomainResponseBody$.inboundSchema.parse(val$);
                 },
                 "Response validation failed"
             );
             return result;
         } else {
-            throw new models.SDKError("Unexpected API response status or content-type", {
+            const responseBody = await response.text();
+            throw new models.SDKError(
+                "Unexpected API response status or content-type",
                 response,
-                request: request$,
-            });
+                responseBody
+            );
         }
     }
 
@@ -644,10 +593,10 @@ export class Domains extends ClientSDK {
      * @remarks
      * Retrieves a list of domains registered for the authenticated user or team. By default it returns the last 20 domains if no limit is provided.
      */
-    async getDomains(
+    async list(
         request: models.GetDomainsRequest,
         options?: RequestOptions
-    ): Promise<models.GetDomainsResponse> {
+    ): Promise<models.GetDomainsResponseBody> {
         const input$ = typeof request === "undefined" ? {} : request;
         const headers$ = new Headers();
         headers$.set("user-agent", SDK_METADATA.userAgent);
@@ -700,31 +649,23 @@ export class Domains extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        const responseFields$ = {
-            HttpMeta: {
-                Response: response,
-                Request: request$,
-            },
-        };
-
         if (this.matchResponse(response, 200, "application/json")) {
             const responseBody = await response.json();
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return models.GetDomainsResponse$.inboundSchema.parse({
-                        ...responseFields$,
-                        object: val$,
-                    });
+                    return models.GetDomainsResponseBody$.inboundSchema.parse(val$);
                 },
                 "Response validation failed"
             );
             return result;
         } else {
-            throw new models.SDKError("Unexpected API response status or content-type", {
+            const responseBody = await response.text();
+            throw new models.SDKError(
+                "Unexpected API response status or content-type",
                 response,
-                request: request$,
-            });
+                responseBody
+            );
         }
     }
 
@@ -739,7 +680,7 @@ export class Domains extends ClientSDK {
         slug?: string | undefined,
         requestBody?: models.CreateOrTransferDomainRequestBody | undefined,
         options?: RequestOptions
-    ): Promise<models.CreateOrTransferDomainResponse> {
+    ): Promise<models.CreateOrTransferDomainResponseBody> {
         const input$: models.CreateOrTransferDomainRequest = {
             teamId: teamId,
             slug: slug,
@@ -797,31 +738,23 @@ export class Domains extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        const responseFields$ = {
-            HttpMeta: {
-                Response: response,
-                Request: request$,
-            },
-        };
-
         if (this.matchResponse(response, 200, "application/json")) {
             const responseBody = await response.json();
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return models.CreateOrTransferDomainResponse$.inboundSchema.parse({
-                        ...responseFields$,
-                        object: val$,
-                    });
+                    return models.CreateOrTransferDomainResponseBody$.inboundSchema.parse(val$);
                 },
                 "Response validation failed"
             );
             return result;
         } else {
-            throw new models.SDKError("Unexpected API response status or content-type", {
+            const responseBody = await response.text();
+            throw new models.SDKError(
+                "Unexpected API response status or content-type",
                 response,
-                request: request$,
-            });
+                responseBody
+            );
         }
     }
 
@@ -831,13 +764,13 @@ export class Domains extends ClientSDK {
      * @remarks
      * Update or move apex domain.
      */
-    async patchDomain(
+    async update(
         domain: string,
         teamId?: string | undefined,
         slug?: string | undefined,
         requestBody?: models.PatchDomainRequestBody | undefined,
         options?: RequestOptions
-    ): Promise<models.PatchDomainResponse> {
+    ): Promise<models.PatchDomainResponseBody> {
         const input$: models.PatchDomainRequest = {
             domain: domain,
             teamId: teamId,
@@ -902,31 +835,23 @@ export class Domains extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        const responseFields$ = {
-            HttpMeta: {
-                Response: response,
-                Request: request$,
-            },
-        };
-
         if (this.matchResponse(response, 200, "application/json")) {
             const responseBody = await response.json();
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return models.PatchDomainResponse$.inboundSchema.parse({
-                        ...responseFields$,
-                        oneOf: val$,
-                    });
+                    return models.PatchDomainResponseBody$.inboundSchema.parse(val$);
                 },
                 "Response validation failed"
             );
             return result;
         } else {
-            throw new models.SDKError("Unexpected API response status or content-type", {
+            const responseBody = await response.text();
+            throw new models.SDKError(
+                "Unexpected API response status or content-type",
                 response,
-                request: request$,
-            });
+                responseBody
+            );
         }
     }
 
@@ -936,12 +861,12 @@ export class Domains extends ClientSDK {
      * @remarks
      * Delete a previously registered domain name from Vercel. Deleting a domain will automatically remove any associated aliases.
      */
-    async deleteDomain(
+    async delete(
         domain: string,
         teamId?: string | undefined,
         slug?: string | undefined,
         options?: RequestOptions
-    ): Promise<models.DeleteDomainResponse> {
+    ): Promise<models.DeleteDomainResponseBody> {
         const input$: models.DeleteDomainRequest = {
             domain: domain,
             teamId: teamId,
@@ -1004,31 +929,23 @@ export class Domains extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        const responseFields$ = {
-            HttpMeta: {
-                Response: response,
-                Request: request$,
-            },
-        };
-
         if (this.matchResponse(response, 200, "application/json")) {
             const responseBody = await response.json();
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return models.DeleteDomainResponse$.inboundSchema.parse({
-                        ...responseFields$,
-                        object: val$,
-                    });
+                    return models.DeleteDomainResponseBody$.inboundSchema.parse(val$);
                 },
                 "Response validation failed"
             );
             return result;
         } else {
-            throw new models.SDKError("Unexpected API response status or content-type", {
+            const responseBody = await response.text();
+            throw new models.SDKError(
+                "Unexpected API response status or content-type",
                 response,
-                request: request$,
-            });
+                responseBody
+            );
         }
     }
 }

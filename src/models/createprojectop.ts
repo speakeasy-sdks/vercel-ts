@@ -3,7 +3,6 @@
  */
 
 import { ACLAction, ACLAction$ } from "./aclaction";
-import { HTTPMetadata, HTTPMetadata$ } from "./httpmetadata";
 import * as z from "zod";
 
 export enum Target2 {
@@ -1202,14 +1201,6 @@ export type CreateProjectResponseBody = {
     webAnalytics?: CreateProjectWebAnalytics | undefined;
     security?: CreateProjectSecurity | undefined;
     oidcTokenConfig?: CreateProjectOidcTokenConfig | undefined;
-};
-
-export type CreateProjectResponse = {
-    httpMeta: HTTPMetadata;
-    /**
-     * The project was successfuly created
-     */
-    object?: CreateProjectResponseBody | undefined;
 };
 
 /** @internal */
@@ -6346,38 +6337,6 @@ export namespace CreateProjectResponseBody$ {
                 ...(v.oidcTokenConfig === undefined
                     ? null
                     : { oidcTokenConfig: v.oidcTokenConfig }),
-            };
-        });
-}
-
-/** @internal */
-export namespace CreateProjectResponse$ {
-    export const inboundSchema: z.ZodType<CreateProjectResponse, z.ZodTypeDef, unknown> = z
-        .object({
-            HttpMeta: HTTPMetadata$.inboundSchema,
-            object: z.lazy(() => CreateProjectResponseBody$.inboundSchema).optional(),
-        })
-        .transform((v) => {
-            return {
-                httpMeta: v.HttpMeta,
-                ...(v.object === undefined ? null : { object: v.object }),
-            };
-        });
-
-    export type Outbound = {
-        HttpMeta: HTTPMetadata$.Outbound;
-        object?: CreateProjectResponseBody$.Outbound | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateProjectResponse> = z
-        .object({
-            httpMeta: HTTPMetadata$.outboundSchema,
-            object: z.lazy(() => CreateProjectResponseBody$.outboundSchema).optional(),
-        })
-        .transform((v) => {
-            return {
-                HttpMeta: v.httpMeta,
-                ...(v.object === undefined ? null : { object: v.object }),
             };
         });
 }

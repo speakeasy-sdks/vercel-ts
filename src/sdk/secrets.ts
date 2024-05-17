@@ -43,13 +43,13 @@ export class Secrets extends ClientSDK {
      * @remarks
      * Retrieves the active Vercel secrets for the authenticated user or team. By default it returns 20 secrets. The rest can be retrieved using the pagination options. The body will contain an entry for each secret.
      */
-    async getSecrets(
+    async list(
         id?: string | undefined,
         projectId?: string | undefined,
         teamId?: string | undefined,
         slug?: string | undefined,
         options?: RequestOptions
-    ): Promise<models.GetSecretsResponse> {
+    ): Promise<models.GetSecretsResponseBody> {
         const input$: models.GetSecretsRequest = {
             id: id,
             projectId: projectId,
@@ -109,31 +109,23 @@ export class Secrets extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        const responseFields$ = {
-            HttpMeta: {
-                Response: response,
-                Request: request$,
-            },
-        };
-
         if (this.matchResponse(response, 200, "application/json")) {
             const responseBody = await response.json();
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return models.GetSecretsResponse$.inboundSchema.parse({
-                        ...responseFields$,
-                        object: val$,
-                    });
+                    return models.GetSecretsResponseBody$.inboundSchema.parse(val$);
                 },
                 "Response validation failed"
             );
             return result;
         } else {
-            throw new models.SDKError("Unexpected API response status or content-type", {
+            const responseBody = await response.text();
+            throw new models.SDKError(
+                "Unexpected API response status or content-type",
                 response,
-                request: request$,
-            });
+                responseBody
+            );
         }
     }
 
@@ -143,13 +135,13 @@ export class Secrets extends ClientSDK {
      * @remarks
      * Allows to create a new secret.
      */
-    async createSecret(
+    async create(
         name: string,
         teamId?: string | undefined,
         slug?: string | undefined,
         requestBody?: models.CreateSecretRequestBody | undefined,
         options?: RequestOptions
-    ): Promise<models.CreateSecretResponse> {
+    ): Promise<models.CreateSecretResponseBody> {
         const input$: models.CreateSecretRequest = {
             name: name,
             teamId: teamId,
@@ -214,31 +206,23 @@ export class Secrets extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        const responseFields$ = {
-            HttpMeta: {
-                Response: response,
-                Request: request$,
-            },
-        };
-
         if (this.matchResponse(response, 200, "application/json")) {
             const responseBody = await response.json();
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return models.CreateSecretResponse$.inboundSchema.parse({
-                        ...responseFields$,
-                        object: val$,
-                    });
+                    return models.CreateSecretResponseBody$.inboundSchema.parse(val$);
                 },
                 "Response validation failed"
             );
             return result;
         } else {
-            throw new models.SDKError("Unexpected API response status or content-type", {
+            const responseBody = await response.text();
+            throw new models.SDKError(
+                "Unexpected API response status or content-type",
                 response,
-                request: request$,
-            });
+                responseBody
+            );
         }
     }
 
@@ -248,13 +232,13 @@ export class Secrets extends ClientSDK {
      * @remarks
      * Enables to edit the name of a secret. The name has to be unique to the user or team’s secrets.
      */
-    async renameSecret(
+    async rename(
         name: string,
         teamId?: string | undefined,
         slug?: string | undefined,
         requestBody?: models.RenameSecretRequestBody | undefined,
         options?: RequestOptions
-    ): Promise<models.RenameSecretResponse> {
+    ): Promise<models.RenameSecretResponseBody> {
         const input$: models.RenameSecretRequest = {
             name: name,
             teamId: teamId,
@@ -316,31 +300,23 @@ export class Secrets extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        const responseFields$ = {
-            HttpMeta: {
-                Response: response,
-                Request: request$,
-            },
-        };
-
         if (this.matchResponse(response, 200, "application/json")) {
             const responseBody = await response.json();
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return models.RenameSecretResponse$.inboundSchema.parse({
-                        ...responseFields$,
-                        object: val$,
-                    });
+                    return models.RenameSecretResponseBody$.inboundSchema.parse(val$);
                 },
                 "Response validation failed"
             );
             return result;
         } else {
-            throw new models.SDKError("Unexpected API response status or content-type", {
+            const responseBody = await response.text();
+            throw new models.SDKError(
+                "Unexpected API response status or content-type",
                 response,
-                request: request$,
-            });
+                responseBody
+            );
         }
     }
 
@@ -350,13 +326,13 @@ export class Secrets extends ClientSDK {
      * @remarks
      * Retrieves the information for a specific secret by passing either the secret id or name in the URL.
      */
-    async getSecret(
+    async get(
         idOrName: string,
         decrypt?: models.QueryParamDecrypt | undefined,
         teamId?: string | undefined,
         slug?: string | undefined,
         options?: RequestOptions
-    ): Promise<models.GetSecretResponse> {
+    ): Promise<models.GetSecretResponseBody> {
         const input$: models.GetSecretRequest = {
             idOrName: idOrName,
             decrypt: decrypt,
@@ -424,31 +400,23 @@ export class Secrets extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        const responseFields$ = {
-            HttpMeta: {
-                Response: response,
-                Request: request$,
-            },
-        };
-
         if (this.matchResponse(response, 200, "application/json")) {
             const responseBody = await response.json();
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return models.GetSecretResponse$.inboundSchema.parse({
-                        ...responseFields$,
-                        object: val$,
-                    });
+                    return models.GetSecretResponseBody$.inboundSchema.parse(val$);
                 },
                 "Response validation failed"
             );
             return result;
         } else {
-            throw new models.SDKError("Unexpected API response status or content-type", {
+            const responseBody = await response.text();
+            throw new models.SDKError(
+                "Unexpected API response status or content-type",
                 response,
-                request: request$,
-            });
+                responseBody
+            );
         }
     }
 
@@ -458,12 +426,12 @@ export class Secrets extends ClientSDK {
      * @remarks
      * This deletes the user or team’s secret defined in the URL.
      */
-    async deleteSecret(
+    async delete(
         idOrName: string,
         teamId?: string | undefined,
         slug?: string | undefined,
         options?: RequestOptions
-    ): Promise<models.DeleteSecretResponse> {
+    ): Promise<models.DeleteSecretResponseBody> {
         const input$: models.DeleteSecretRequest = {
             idOrName: idOrName,
             teamId: teamId,
@@ -523,31 +491,23 @@ export class Secrets extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        const responseFields$ = {
-            HttpMeta: {
-                Response: response,
-                Request: request$,
-            },
-        };
-
         if (this.matchResponse(response, 200, "application/json")) {
             const responseBody = await response.json();
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return models.DeleteSecretResponse$.inboundSchema.parse({
-                        ...responseFields$,
-                        object: val$,
-                    });
+                    return models.DeleteSecretResponseBody$.inboundSchema.parse(val$);
                 },
                 "Response validation failed"
             );
             return result;
         } else {
-            throw new models.SDKError("Unexpected API response status or content-type", {
+            const responseBody = await response.text();
+            throw new models.SDKError(
+                "Unexpected API response status or content-type",
                 response,
-                request: request$,
-            });
+                responseBody
+            );
         }
     }
 }

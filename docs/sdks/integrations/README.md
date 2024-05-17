@@ -3,13 +3,13 @@
 
 ### Available Operations
 
-* [getConfigurations](#getconfigurations) - Get configurations for the authenticated user or team
-* [getConfiguration](#getconfiguration) - Retrieve an integration configuration
+* [list](#list) - Get configurations for the authenticated user or team
+* [get](#get) - Retrieve an integration configuration
 * [deleteConfiguration](#deleteconfiguration) - Delete an integration configuration
-* [gitNamespaces](#gitnamespaces) - List git namespaces by provider
+* [listGitNamespaces](#listgitnamespaces) - List git namespaces by provider
 * [listGitRepos](#listgitrepos) - List git repositories linked to namespace by provider
 
-## getConfigurations
+## list
 
 Allows to retrieve all configurations for an authenticated integration. When the `project` view is used, configurations generated for the authorization flow will be filtered out of the results.
 
@@ -26,7 +26,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.integrations.getConfigurations(View.Account, "<value>", "<value>");
+  const result = await vercel.integrations.list(View.Project, "<value>", "<value>");
 
   // Handle the result
   console.log(result)
@@ -48,14 +48,14 @@ run();
 
 ### Response
 
-**Promise<[models.GetConfigurationsResponse](../../models/getconfigurationsresponse.md)>**
+**Promise<[models.GetConfigurationsResponseBody](../../models/getconfigurationsresponsebody.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
 
-## getConfiguration
+## get
 
 Allows to retrieve a the configuration with the provided id in case it exists. The authenticated user or team must be the owner of the config in order to access it.
 
@@ -71,7 +71,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.integrations.getConfiguration("icfg_cuwj0AdCdH3BwWT4LPijCC7t", "<value>", "<value>");
+  const result = await vercel.integrations.get("icfg_cuwj0AdCdH3BwWT4LPijCC7t", "<value>", "<value>");
 
   // Handle the result
   console.log(result)
@@ -93,7 +93,7 @@ run();
 
 ### Response
 
-**Promise<[models.GetConfigurationResponse](../../models/getconfigurationresponse.md)>**
+**Promise<[models.GetConfigurationResponseBody](../../models/getconfigurationresponsebody.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -145,7 +145,7 @@ run();
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
 
-## gitNamespaces
+## listGitNamespaces
 
 Lists git namespaces for a supported provider. Supported providers are `github`, `gitlab` and `bitbucket`. If the provider is not provided, it will try to obtain it from the user that authenticated the request.
 
@@ -162,7 +162,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.integrations.gitNamespaces("ghes-test.now.systems", Provider.Gitlab, "<value>", "<value>");
+  const result = await vercel.integrations.listGitNamespaces("ghes-test.now.systems", Provider.Gitlab, "<value>", "<value>");
 
   // Handle the result
   console.log(result)
@@ -185,7 +185,7 @@ run();
 
 ### Response
 
-**Promise<[models.GitNamespacesResponse](../../models/gitnamespacesresponse.md)>**
+**Promise<[models.GitNamespacesResponseBody[]](../../models/.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -230,7 +230,7 @@ run();
 
 ### Response
 
-**Promise<[models.ListGitReposResponse](../../models/listgitreposresponse.md)>**
+**Promise<[models.ListGitReposResponseBody](../../models/listgitreposresponsebody.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

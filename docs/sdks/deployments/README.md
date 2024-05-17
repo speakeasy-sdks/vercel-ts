@@ -5,13 +5,13 @@
 
 * [getDeploymentEvents](#getdeploymentevents) - Get deployment events
 * [getDeployment](#getdeployment) - Get a deployment by ID or URL
-* [createDeployment](#createdeployment) - Create a new deployment
-* [cancelDeployment](#canceldeployment) - Cancel a deployment
+* [create](#create) - Create a new deployment
+* [cancel](#cancel) - Cancel a deployment
 * [uploadFile](#uploadfile) - Upload Deployment Files
 * [listDeploymentFiles](#listdeploymentfiles) - List Deployment Files
 * [getDeploymentFileContents](#getdeploymentfilecontents) - Get Deployment File Contents
-* [getDeployments](#getdeployments) - List deployments
-* [deleteDeployment](#deletedeployment) - Delete a Deployment
+* [list](#list) - List deployments
+* [delete](#delete) - Delete a Deployment
 
 ## getDeploymentEvents
 
@@ -107,14 +107,14 @@ run();
 
 ### Response
 
-**Promise<[models.GetDeploymentResponse](../../models/getdeploymentresponse.md)>**
+**Promise<[models.GetDeploymentResponseBody](../../models/getdeploymentresponsebody.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
 
-## createDeployment
+## create
 
 Create a new deployment with all the required and intended data. If the deployment is not a git deployment, all files must be provided with the request, either referenced or inlined. Additionally, a deployment id can be specified to redeploy a previous deployment.
 
@@ -130,10 +130,11 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.deployments.createDeployment({
+  const result = await vercel.deployments.create({
     requestBody: {
       files: [
           {
+            data: "<value>",
             file: "folder/file.js",
           },
       ],
@@ -171,14 +172,14 @@ run();
 
 ### Response
 
-**Promise<[models.CreateDeploymentResponse](../../models/createdeploymentresponse.md)>**
+**Promise<[models.CreateDeploymentResponseBody](../../models/createdeploymentresponsebody.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
 
-## cancelDeployment
+## cancel
 
 This endpoint allows you to cancel a deployment which is currently building, by supplying its `id` in the URL.
 
@@ -194,7 +195,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.deployments.cancelDeployment("dpl_5WJWYSyB7BpgTj3EuwF37WMRBXBtPQ2iTMJHJBJyRfd", "<value>", "<value>");
+  const result = await vercel.deployments.cancel("dpl_5WJWYSyB7BpgTj3EuwF37WMRBXBtPQ2iTMJHJBJyRfd", "<value>", "<value>");
 
   // Handle the result
   console.log(result)
@@ -216,7 +217,7 @@ run();
 
 ### Response
 
-**Promise<[models.CancelDeploymentResponse](../../models/canceldeploymentresponse.md)>**
+**Promise<[models.CancelDeploymentResponseBody](../../models/canceldeploymentresponsebody.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -259,7 +260,7 @@ run();
 
 ### Response
 
-**Promise<[models.UploadFileResponse](../../models/uploadfileresponse.md)>**
+**Promise<[models.UploadFileResponseBody](../../models/uploadfileresponsebody.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -304,7 +305,7 @@ run();
 
 ### Response
 
-**Promise<[models.ListDeploymentFilesResponse](../../models/listdeploymentfilesresponse.md)>**
+**Promise<[models.FileTree[]](../../models/.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -357,7 +358,7 @@ run();
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
 
-## getDeployments
+## list
 
 List deployments under the authenticated user or team. If a deployment hasn't finished uploading (is incomplete), the `url` property will have a value of `null`.
 
@@ -374,7 +375,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.deployments.getDeployments({
+  const result = await vercel.deployments.list({
     app: "docs",
     from: 1612948664566,
     limit: 10,
@@ -405,14 +406,14 @@ run();
 
 ### Response
 
-**Promise<[models.GetDeploymentsResponse](../../models/getdeploymentsresponse.md)>**
+**Promise<[models.GetDeploymentsResponseBody](../../models/getdeploymentsresponsebody.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
 
-## deleteDeployment
+## delete
 
 This API allows you to delete a deployment, either by supplying its `id` in the URL or the `url` of the deployment as a query parameter. You can obtain the ID, for example, by listing all deployments.
 
@@ -428,7 +429,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.deployments.deleteDeployment("dpl_5WJWYSyB7BpgTj3EuwF37WMRBXBtPQ2iTMJHJBJyRfd", "https://files-orcin-xi.vercel.app/", "<value>", "<value>");
+  const result = await vercel.deployments.delete("dpl_5WJWYSyB7BpgTj3EuwF37WMRBXBtPQ2iTMJHJBJyRfd", "https://files-orcin-xi.vercel.app/", "<value>", "<value>");
 
   // Handle the result
   console.log(result)
@@ -451,7 +452,7 @@ run();
 
 ### Response
 
-**Promise<[models.DeleteDeploymentResponse](../../models/deletedeploymentresponse.md)>**
+**Promise<[models.DeleteDeploymentResponseBody](../../models/deletedeploymentresponsebody.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

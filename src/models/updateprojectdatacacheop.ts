@@ -3,7 +3,6 @@
  */
 
 import { ACLAction, ACLAction$ } from "./aclaction";
-import { HTTPMetadata, HTTPMetadata$ } from "./httpmetadata";
 import * as z from "zod";
 
 export type UpdateProjectDataCacheRequestBody = {
@@ -1031,11 +1030,6 @@ export type UpdateProjectDataCacheResponseBody = {
     webAnalytics?: UpdateProjectDataCacheWebAnalytics | undefined;
     security?: UpdateProjectDataCacheSecurity | undefined;
     oidcTokenConfig?: OidcTokenConfig | undefined;
-};
-
-export type UpdateProjectDataCacheResponse = {
-    httpMeta: HTTPMetadata;
-    object?: UpdateProjectDataCacheResponseBody | undefined;
 };
 
 /** @internal */
@@ -6148,37 +6142,4 @@ export namespace UpdateProjectDataCacheResponseBody$ {
                     : { oidcTokenConfig: v.oidcTokenConfig }),
             };
         });
-}
-
-/** @internal */
-export namespace UpdateProjectDataCacheResponse$ {
-    export const inboundSchema: z.ZodType<UpdateProjectDataCacheResponse, z.ZodTypeDef, unknown> = z
-        .object({
-            HttpMeta: HTTPMetadata$.inboundSchema,
-            object: z.lazy(() => UpdateProjectDataCacheResponseBody$.inboundSchema).optional(),
-        })
-        .transform((v) => {
-            return {
-                httpMeta: v.HttpMeta,
-                ...(v.object === undefined ? null : { object: v.object }),
-            };
-        });
-
-    export type Outbound = {
-        HttpMeta: HTTPMetadata$.Outbound;
-        object?: UpdateProjectDataCacheResponseBody$.Outbound | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, UpdateProjectDataCacheResponse> =
-        z
-            .object({
-                httpMeta: HTTPMetadata$.outboundSchema,
-                object: z.lazy(() => UpdateProjectDataCacheResponseBody$.outboundSchema).optional(),
-            })
-            .transform((v) => {
-                return {
-                    HttpMeta: v.httpMeta,
-                    ...(v.object === undefined ? null : { object: v.object }),
-                };
-            });
 }

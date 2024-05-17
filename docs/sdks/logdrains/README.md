@@ -4,12 +4,12 @@
 ### Available Operations
 
 * [getIntegrationLogDrains](#getintegrationlogdrains) - Retrieves a list of Integration log drains
-* [createLogDrain](#createlogdrain) - Creates a new Integration Log Drain
-* [deleteIntegrationLogDrain](#deleteintegrationlogdrain) - Deletes the Integration log drain with the provided `id`
-* [getConfigurableLogDrain](#getconfigurablelogdrain) - Retrieves a Configurable Log Drain
+* [create](#create) - Creates a new Integration Log Drain
+* [delete](#delete) - Deletes the Integration log drain with the provided `id`
+* [get](#get) - Retrieves a Configurable Log Drain
 * [deleteConfigurableLogDrain](#deleteconfigurablelogdrain) - Deletes a Configurable Log Drain
-* [getAllLogDrains](#getalllogdrains) - Retrieves a list of all the Log Drains
-* [createConfigurableLogDrain](#createconfigurablelogdrain) - Creates a Configurable Log Drain
+* [list](#list) - Retrieves a list of all the Log Drains
+* [createConfigurable](#createconfigurable) - Creates a Configurable Log Drain
 
 ## getIntegrationLogDrains
 
@@ -48,14 +48,14 @@ run();
 
 ### Response
 
-**Promise<[models.GetIntegrationLogDrainsResponse](../../models/getintegrationlogdrainsresponse.md)>**
+**Promise<[models.GetIntegrationLogDrainsResponseBody[]](../../models/.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
 
-## createLogDrain
+## create
 
 Creates an Integration log drain. This endpoint must be called with an OAuth2 client (integration), since log drains are tied to integrations. If it is called with a different token type it will produce a 400 error.
 
@@ -72,7 +72,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.logDrains.createLogDrain("<value>", "<value>", {
+  const result = await vercel.logDrains.create("<value>", "<value>", {
     name: "My first log drain",
     secret: "a1Xsfd325fXcs",
     deliveryFormat: DeliveryFormat.Json,
@@ -99,14 +99,14 @@ run();
 
 ### Response
 
-**Promise<[models.CreateLogDrainResponse](../../models/createlogdrainresponse.md)>**
+**Promise<[models.CreateLogDrainResponseBody](../../models/createlogdrainresponsebody.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
 
-## deleteIntegrationLogDrain
+## delete
 
 Deletes the Integration log drain with the provided `id`. When using an OAuth2 Token, the log drain can be deleted only if the integration owns it.
 
@@ -122,7 +122,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.logDrains.deleteIntegrationLogDrain("<value>", "<value>", "<value>");
+  const result = await vercel.logDrains.delete("<value>", "<value>", "<value>");
 
   // Handle the result
   console.log(result)
@@ -151,7 +151,7 @@ run();
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
 
-## getConfigurableLogDrain
+## get
 
 Retrieves a Configurable Log Drain. This endpoint must be called with a team AccessToken (integration OAuth2 clients are not allowed). Only log drains owned by the authenticated team can be accessed.
 
@@ -167,7 +167,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.logDrains.getConfigurableLogDrain("<value>", "<value>", "<value>");
+  const result = await vercel.logDrains.get("<value>", "<value>", "<value>");
 
   // Handle the result
   console.log(result)
@@ -189,7 +189,7 @@ run();
 
 ### Response
 
-**Promise<[models.GetConfigurableLogDrainResponse](../../models/getconfigurablelogdrainresponse.md)>**
+**Promise<[models.GetConfigurableLogDrainResponseBody](../../models/getconfigurablelogdrainresponsebody.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -241,7 +241,7 @@ run();
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
 
-## getAllLogDrains
+## list
 
 Retrieves a list of all the Log Drains owned by the account. This endpoint must be called with an account AccessToken (integration OAuth2 clients are not allowed). Only log drains owned by the authenticated account can be accessed.
 
@@ -257,7 +257,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.logDrains.getAllLogDrains("<value>", "<value>", "<value>");
+  const result = await vercel.logDrains.list("<value>", "<value>", "<value>");
 
   // Handle the result
   console.log(result)
@@ -279,14 +279,14 @@ run();
 
 ### Response
 
-**Promise<[models.GetAllLogDrainsResponse](../../models/getalllogdrainsresponse.md)>**
+**Promise<[models.GetAllLogDrainsResponseBody[]](../../models/.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
 
-## createConfigurableLogDrain
+## createConfigurable
 
 Creates a configurable log drain. This endpoint must be called with a team AccessToken (integration OAuth2 clients are not allowed)
 
@@ -303,11 +303,11 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.logDrains.createConfigurableLogDrain("<value>", "<value>", {
+  const result = await vercel.logDrains.createConfigurable("<value>", "<value>", {
     deliveryFormat: CreateConfigurableLogDrainDeliveryFormat.Json,
-    url: "https://dry-snowsuit.com",
+    url: "https://equal-hedgehog.com",
     sources: [
-      CreateConfigurableLogDrainSources.External,
+      CreateConfigurableLogDrainSources.Lambda,
     ],
   });
 
@@ -331,7 +331,7 @@ run();
 
 ### Response
 
-**Promise<[models.CreateConfigurableLogDrainResponse](../../models/createconfigurablelogdrainresponse.md)>**
+**Promise<[models.CreateConfigurableLogDrainResponseBody](../../models/createconfigurablelogdrainresponsebody.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

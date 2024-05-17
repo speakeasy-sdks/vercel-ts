@@ -5,10 +5,10 @@
 
 * [recordEvents](#recordevents) - Record an artifacts cache usage event
 * [status](#status) - Get status of Remote Caching for this principal
-* [uploadArtifact](#uploadartifact) - Upload a cache artifact
-* [downloadArtifact](#downloadartifact) - Download a cache artifact
-* [artifactExists](#artifactexists) - Check if a cache artifact exists
-* [artifactQuery](#artifactquery) - Query information about an artifact
+* [upload](#upload) - Upload a cache artifact
+* [download](#download) - Download a cache artifact
+* [exists](#exists) - Check if a cache artifact exists
+* [query](#query) - Query information about an artifact
 
 ## recordEvents
 
@@ -103,14 +103,14 @@ run();
 
 ### Response
 
-**Promise<[models.StatusResponse](../../models/statusresponse.md)>**
+**Promise<[models.StatusResponseBody](../../models/statusresponsebody.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
 
-## uploadArtifact
+## upload
 
 Uploads a cache artifact identified by the `hash` specified on the path. The cache artifact can then be downloaded with the provided `hash`.
 
@@ -126,8 +126,8 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.artifacts.uploadArtifact({
-    contentLength: 4504.13,
+  const result = await vercel.artifacts.upload({
+    contentLength: 4036.54,
     xArtifactDuration: 400,
     xArtifactClientCi: "VERCEL",
     xArtifactClientInteractive: 0,
@@ -153,14 +153,14 @@ run();
 
 ### Response
 
-**Promise<[models.UploadArtifactResponse](../../models/uploadartifactresponse.md)>**
+**Promise<[models.UploadArtifactResponseBody](../../models/uploadartifactresponsebody.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
 
-## downloadArtifact
+## download
 
 Downloads a cache artifact indentified by its `hash` specified on the request path. The artifact is downloaded as an octet-stream. The client should verify the content-length header and response body.
 
@@ -176,7 +176,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.artifacts.downloadArtifact({
+  const result = await vercel.artifacts.download({
     xArtifactClientCi: "VERCEL",
     xArtifactClientInteractive: 0,
     hash: "12HKQaOmR5t5Uy6vdcQsNIiZgHGB",
@@ -200,14 +200,14 @@ run();
 
 ### Response
 
-**Promise<[models.DownloadArtifactResponse](../../models/downloadartifactresponse.md)>**
+**Promise<[ReadableStream<Uint8Array>](../../models/.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
 
-## artifactExists
+## exists
 
 Check that a cache artifact with the given `hash` exists. This request returns response headers only and is equivalent to a `GET` request to this endpoint where the response contains no body.
 
@@ -223,7 +223,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.artifacts.artifactExists("12HKQaOmR5t5Uy6vdcQsNIiZgHGB", "<value>", "<value>");
+  const result = await vercel.artifacts.exists("12HKQaOmR5t5Uy6vdcQsNIiZgHGB", "<value>", "<value>");
 
   // Handle the result
   console.log(result)
@@ -252,7 +252,7 @@ run();
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
 
-## artifactQuery
+## query
 
 Query information about an array of artifacts.
 
@@ -268,7 +268,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.artifacts.artifactQuery("<value>", "<value>", {
+  const result = await vercel.artifacts.query("<value>", "<value>", {
     hashes: [
       "<value>",
     ],
@@ -294,7 +294,7 @@ run();
 
 ### Response
 
-**Promise<[models.ArtifactQueryResponse](../../models/artifactqueryresponse.md)>**
+**Promise<[Record<string, models.ResponseBody>](../../models/.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

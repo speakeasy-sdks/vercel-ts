@@ -4,24 +4,24 @@
 ### Available Operations
 
 * [updateProjectDataCache](#updateprojectdatacache) - Update the data cache feature
-* [getProjects](#getprojects) - Retrieve a list of projects
-* [createProject](#createproject) - Create a new project
-* [updateProject](#updateproject) - Update an existing project
-* [deleteProject](#deleteproject) - Delete a Project
-* [getProjectDomain](#getprojectdomain) - Get a project domain
-* [updateProjectDomain](#updateprojectdomain) - Update a project domain
-* [removeProjectDomain](#removeprojectdomain) - Remove a domain from a project
-* [addProjectDomain](#addprojectdomain) - Add a domain to a project
-* [verifyProjectDomain](#verifyprojectdomain) - Verify project domain
-* [filterProjectEnvs](#filterprojectenvs) - Retrieve the environment variables of a project by id or name
-* [getProjectEnv](#getprojectenv) - Retrieve the decrypted value of an environment variable of a project by id
-* [createProjectEnv](#createprojectenv) - Create one or more environment variables
-* [removeProjectEnv](#removeprojectenv) - Remove an environment variable
-* [editProjectEnv](#editprojectenv) - Edit an environment variable
+* [get](#get) - Retrieve a list of projects
+* [create](#create) - Create a new project
+* [update](#update) - Update an existing project
+* [delete](#delete) - Delete a Project
+* [getDomain](#getdomain) - Get a project domain
+* [updateDomain](#updatedomain) - Update a project domain
+* [removeDomain](#removedomain) - Remove a domain from a project
+* [addDomain](#adddomain) - Add a domain to a project
+* [verifyDomain](#verifydomain) - Verify project domain
+* [filterEnvs](#filterenvs) - Retrieve the environment variables of a project by id or name
+* [getEnv](#getenv) - Retrieve the decrypted value of an environment variable of a project by id
+* [createEnv](#createenv) - Create one or more environment variables
+* [removeEnv](#removeenv) - Remove an environment variable
+* [editEnv](#editenv) - Edit an environment variable
 * [requestPromote](#requestpromote) - Points all production domains for a project to the given deploy
-* [getEequestPromoteAliases](#geteequestpromotealiases) - Gets a list of aliases with status for the current promote
-* [pauseProject](#pauseproject) - Pause a project
-* [unpauseProject](#unpauseproject) - Unpause a project
+* [getRequestPromoteAliases](#getrequestpromotealiases) - Gets a list of aliases with status for the current promote
+* [pause](#pause) - Pause a project
+* [unpause](#unpause) - Unpause a project
 
 ## updateProjectDataCache
 
@@ -64,14 +64,14 @@ run();
 
 ### Response
 
-**Promise<[models.UpdateProjectDataCacheResponse](../../models/updateprojectdatacacheresponse.md)>**
+**Promise<[models.UpdateProjectDataCacheResponseBody](../../models/updateprojectdatacacheresponsebody.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
 
-## getProjects
+## get
 
 Allows to retrieve the list of projects of the authenticated user or team. The list will be paginated and the provided query parameters allow filtering the returned projects.
 
@@ -88,7 +88,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.projects.getProjects({
+  const result = await vercel.projects.get({
     gitForkProtection: GitForkProtection.One,
     repoUrl: "https://github.com/vercel/next.js",
   });
@@ -111,14 +111,14 @@ run();
 
 ### Response
 
-**Promise<[models.GetProjectsResponse](../../models/getprojectsresponse.md)>**
+**Promise<[models.GetProjectsResponseBody](../../models/getprojectsresponsebody.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
 
-## createProject
+## create
 
 Allows to create a new project with the provided configuration. It only requires the project `name` but more configuration can be provided to override the defaults.
 
@@ -134,7 +134,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.projects.createProject("<value>", "<value>", {
+  const result = await vercel.projects.create("<value>", "<value>", {
     name: "a-project-name",
   });
 
@@ -158,14 +158,14 @@ run();
 
 ### Response
 
-**Promise<[models.CreateProjectResponse](../../models/createprojectresponse.md)>**
+**Promise<[models.CreateProjectResponseBody](../../models/createprojectresponsebody.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
 
-## updateProject
+## update
 
 Update the fields of a project using either its `name` or `id`.
 
@@ -181,7 +181,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.projects.updateProject("prj_12HKQaOmR5t5Uy6vdcQsNIiZgHGB", "<value>", "<value>", {
+  const result = await vercel.projects.update("prj_12HKQaOmR5t5Uy6vdcQsNIiZgHGB", "<value>", "<value>", {
     name: "a-project-name",
   });
 
@@ -206,14 +206,14 @@ run();
 
 ### Response
 
-**Promise<[models.UpdateProjectResponse](../../models/updateprojectresponse.md)>**
+**Promise<[models.UpdateProjectResponseBody](../../models/updateprojectresponsebody.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
 
-## deleteProject
+## delete
 
 Delete a specific project by passing either the project `id` or `name` in the URL.
 
@@ -229,7 +229,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.projects.deleteProject("prj_12HKQaOmR5t5Uy6vdcQsNIiZgHGB", "<value>", "<value>");
+  const result = await vercel.projects.delete("prj_12HKQaOmR5t5Uy6vdcQsNIiZgHGB", "<value>", "<value>");
 
   // Handle the result
   console.log(result)
@@ -258,7 +258,7 @@ run();
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
 
-## getProjectDomain
+## getDomain
 
 Get project domain by project id/name and domain name.
 
@@ -274,7 +274,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.projects.getProjectDomain("<value>", "www.example.com", "<value>", "<value>");
+  const result = await vercel.projects.getDomain("<value>", "www.example.com", "<value>", "<value>");
 
   // Handle the result
   console.log(result)
@@ -297,14 +297,14 @@ run();
 
 ### Response
 
-**Promise<[models.GetProjectDomainResponse](../../models/getprojectdomainresponse.md)>**
+**Promise<[models.GetProjectDomainResponseBody](../../models/getprojectdomainresponsebody.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
 
-## updateProjectDomain
+## updateDomain
 
 Update a project domain's configuration, including the name, git branch and redirect of the domain.
 
@@ -321,7 +321,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.projects.updateProjectDomain({
+  const result = await vercel.projects.updateDomain({
     idOrName: "<value>",
     domain: "www.example.com",
     requestBody: {
@@ -349,14 +349,14 @@ run();
 
 ### Response
 
-**Promise<[models.UpdateProjectDomainResponse](../../models/updateprojectdomainresponse.md)>**
+**Promise<[models.UpdateProjectDomainResponseBody](../../models/updateprojectdomainresponsebody.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
 
-## removeProjectDomain
+## removeDomain
 
 Remove a domain from a project by passing the domain name and by specifying the project by either passing the project `id` or `name` in the URL.
 
@@ -372,7 +372,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.projects.removeProjectDomain("<value>", "www.example.com", "<value>", "<value>");
+  const result = await vercel.projects.removeDomain("<value>", "www.example.com", "<value>", "<value>");
 
   // Handle the result
   console.log(result)
@@ -395,14 +395,14 @@ run();
 
 ### Response
 
-**Promise<[models.RemoveProjectDomainResponse](../../models/removeprojectdomainresponse.md)>**
+**Promise<[models.RemoveProjectDomainResponseBody](../../models/removeprojectdomainresponsebody.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
 
-## addProjectDomain
+## addDomain
 
 Add a domain to the project by passing its domain name and by specifying the project by either passing the project `id` or `name` in the URL. If the domain is not yet verified to be used on this project, the request will return `verified = false`, and the domain will need to be verified according to the `verification` challenge via `POST /projects/:idOrName/domains/:domain/verify`. If the domain already exists on the project, the request will fail with a `400` status code.
 
@@ -419,7 +419,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.projects.addProjectDomain("<value>", "<value>", "<value>", {
+  const result = await vercel.projects.addDomain("<value>", "<value>", "<value>", {
     name: "www.example.com",
     gitBranch: null,
     redirect: "foobar.com",
@@ -447,14 +447,14 @@ run();
 
 ### Response
 
-**Promise<[models.AddProjectDomainResponse](../../models/addprojectdomainresponse.md)>**
+**Promise<[models.AddProjectDomainResponseBody](../../models/addprojectdomainresponsebody.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
 
-## verifyProjectDomain
+## verifyDomain
 
 Attempts to verify a project domain with `verified = false` by checking the correctness of the project domain's `verification` challenge.
 
@@ -470,7 +470,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.projects.verifyProjectDomain("prj_12HKQaOmR5t5Uy6vdcQsNIiZgHGB", "example.com", "<value>", "<value>");
+  const result = await vercel.projects.verifyDomain("prj_12HKQaOmR5t5Uy6vdcQsNIiZgHGB", "example.com", "<value>", "<value>");
 
   // Handle the result
   console.log(result)
@@ -493,14 +493,14 @@ run();
 
 ### Response
 
-**Promise<[models.VerifyProjectDomainResponse](../../models/verifyprojectdomainresponse.md)>**
+**Promise<[models.VerifyProjectDomainResponseBody](../../models/verifyprojectdomainresponsebody.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
 
-## filterProjectEnvs
+## filterEnvs
 
 Retrieve the environment variables for a given project by passing either the project `id` or `name` in the URL.
 
@@ -516,7 +516,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.projects.filterProjectEnvs({
+  const result = await vercel.projects.filterEnvs({
     idOrName: "prj_XLKmu1DyR1eY7zq8UgeRKbA7yVLA",
     gitBranch: "feature-1",
     source: "vercel-cli:pull",
@@ -541,14 +541,14 @@ run();
 
 ### Response
 
-**Promise<[models.FilterProjectEnvsResponse](../../models/filterprojectenvsresponse.md)>**
+**Promise<[models.FilterProjectEnvsResponseBody](../../models/filterprojectenvsresponsebody.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
 
-## getProjectEnv
+## getEnv
 
 Retrieve the environment variable for a given project.
 
@@ -564,7 +564,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.projects.getProjectEnv("prj_XLKmu1DyR1eY7zq8UgeRKbA7yVLA", "<value>", "<value>", "<value>");
+  const result = await vercel.projects.getEnv("prj_XLKmu1DyR1eY7zq8UgeRKbA7yVLA", "<value>", "<value>", "<value>");
 
   // Handle the result
   console.log(result)
@@ -587,14 +587,14 @@ run();
 
 ### Response
 
-**Promise<[models.GetProjectEnvResponse](../../models/getprojectenvresponse.md)>**
+**Promise<[models.GetProjectEnvResponseBody](../../models/getprojectenvresponsebody.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
 
-## createProjectEnv
+## createEnv
 
 Create one ore more environment variables for a project by passing its `key`, `value`, `type` and `target` and by specifying the project by either passing the project `id` or `name` in the URL.
 
@@ -602,7 +602,7 @@ Create one ore more environment variables for a project by passing its `key`, `v
 
 ```typescript
 import { Vercel } from "vercel";
-import { CreateProjectEnvRequestBodyType, RequestBodyTarget } from "vercel/models";
+import { CreateProjectEnvRequestBodyProjectsType, CreateProjectEnvRequestBodyTarget } from "vercel/models";
 
 const vercel = new Vercel({
   security: {
@@ -611,20 +611,22 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.projects.createProjectEnv({
+  const result = await vercel.projects.createEnv({
     idOrName: "prj_XLKmu1DyR1eY7zq8UgeRKbA7yVLA",
     upsert: "true",
-  requestBody:     {
-        key: "API_URL",
-        value: "https://api.vercel.com",
-        type: CreateProjectEnvRequestBodyType.Plain,
-        target: [
-          RequestBodyTarget.Preview,
-        ],
-        gitBranch: "feature-1",
-        comment: "database connection string for production",
-        customEnvironmentId: "env_1234567890",
-      },
+  requestBody:     [
+        {
+          key: "API_URL",
+          value: "https://api.vercel.com",
+          type: CreateProjectEnvRequestBodyProjectsType.Plain,
+          target: [
+            CreateProjectEnvRequestBodyTarget.Preview,
+          ],
+          gitBranch: "feature-1",
+          comment: "database connection string for production",
+          customEnvironmentId: "env_1234567890",
+        },
+      ],
   });
 
   // Handle the result
@@ -645,14 +647,14 @@ run();
 
 ### Response
 
-**Promise<[models.CreateProjectEnvResponse](../../models/createprojectenvresponse.md)>**
+**Promise<[models.CreateProjectEnvResponseBody](../../models/createprojectenvresponsebody.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
 
-## removeProjectEnv
+## removeEnv
 
 Delete a specific environment variable for a given project by passing the environment variable identifier and either passing the project `id` or `name` in the URL.
 
@@ -668,7 +670,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.projects.removeProjectEnv({
+  const result = await vercel.projects.removeEnv({
     idOrName: "prj_XLKmu1DyR1eY7zq8UgeRKbA7yVLA",
     id: "XMbOEya1gUUO1ir4",
     customEnvironmentId: "env_1234567890",
@@ -692,14 +694,14 @@ run();
 
 ### Response
 
-**Promise<[models.RemoveProjectEnvResponse](../../models/removeprojectenvresponse.md)>**
+**Promise<[models.RemoveProjectEnvResponseBody](../../models/removeprojectenvresponsebody.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
 
-## editProjectEnv
+## editEnv
 
 Edit a specific environment variable for a given project by passing the environment variable identifier and either passing the project `id` or `name` in the URL.
 
@@ -716,7 +718,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.projects.editProjectEnv({
+  const result = await vercel.projects.editEnv({
     idOrName: "prj_XLKmu1DyR1eY7zq8UgeRKbA7yVLA",
     id: "XMbOEya1gUUO1ir4",
     requestBody: {
@@ -750,7 +752,7 @@ run();
 
 ### Response
 
-**Promise<[models.EditProjectEnvResponse](../../models/editprojectenvresponse.md)>**
+**Promise<[models.EditProjectEnvResponseBody](../../models/editprojectenvresponsebody.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -803,7 +805,7 @@ run();
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
 
-## getEequestPromoteAliases
+## getRequestPromoteAliases
 
 Get a list of aliases related to the last promote request with their mapping status
 
@@ -819,7 +821,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.projects.getEequestPromoteAliases({
+  const result = await vercel.projects.getRequestPromoteAliases({
     projectId: "<value>",
     limit: 20,
     since: 1609499532000,
@@ -844,14 +846,14 @@ run();
 
 ### Response
 
-**Promise<[models.GetEequestPromoteAliasesResponse](../../models/geteequestpromotealiasesresponse.md)>**
+**Promise<[models.GetEequestPromoteAliasesResponseBody](../../models/geteequestpromotealiasesresponsebody.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
 
-## pauseProject
+## pause
 
 Pause a project by passing its project `id` in the URL. If the project does not exist given the id then the request will fail with 400 status code. If the project disables auto assigning custom production domains and blocks the active Production Deployment then the request will return with 200 status code.
 
@@ -867,7 +869,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.projects.pauseProject("<value>", "<value>", "<value>");
+  const result = await vercel.projects.pause("<value>", "<value>", "<value>");
 
   // Handle the result
   console.log(result)
@@ -896,7 +898,7 @@ run();
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
 
-## unpauseProject
+## unpause
 
 Unpause a project by passing its project `id` in the URL. If the project does not exist given the id then the request will fail with 400 status code. If the project enables auto assigning custom production domains and unblocks the active Production Deployment then the request will return with 200 status code.
 
@@ -912,7 +914,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.projects.unpauseProject("<value>", "<value>", "<value>");
+  const result = await vercel.projects.unpause("<value>", "<value>", "<value>");
 
   // Handle the result
   console.log(result)

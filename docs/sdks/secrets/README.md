@@ -3,13 +3,13 @@
 
 ### Available Operations
 
-* [getSecrets](#getsecrets) - List secrets
-* [createSecret](#createsecret) - Create a new secret
-* [renameSecret](#renamesecret) - Change secret name
-* [getSecret](#getsecret) - Get a single secret
-* [deleteSecret](#deletesecret) - Delete a secret
+* [list](#list) - List secrets
+* [create](#create) - Create a new secret
+* [rename](#rename) - Change secret name
+* [get](#get) - Get a single secret
+* [delete](#delete) - Delete a secret
 
-## getSecrets
+## list
 
 Retrieves the active Vercel secrets for the authenticated user or team. By default it returns 20 secrets. The rest can be retrieved using the pagination options. The body will contain an entry for each secret.
 
@@ -25,7 +25,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.secrets.getSecrets("sec_RKc5iV0rV3ZSrFrHiruRno7k,sec_fGc5iV0rV3ZSrFrHiruRnouQ", "prj_2WjyKQmM8ZnGcJsPWMrHRHrE", "<value>", "<value>");
+  const result = await vercel.secrets.list("sec_RKc5iV0rV3ZSrFrHiruRno7k,sec_fGc5iV0rV3ZSrFrHiruRnouQ", "prj_2WjyKQmM8ZnGcJsPWMrHRHrE", "<value>", "<value>");
 
   // Handle the result
   console.log(result)
@@ -48,14 +48,14 @@ run();
 
 ### Response
 
-**Promise<[models.GetSecretsResponse](../../models/getsecretsresponse.md)>**
+**Promise<[models.GetSecretsResponseBody](../../models/getsecretsresponsebody.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
 
-## createSecret
+## create
 
 Allows to create a new secret.
 
@@ -71,7 +71,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.secrets.createSecret("my-api-key", "<value>", "<value>", {
+  const result = await vercel.secrets.create("my-api-key", "<value>", "<value>", {
     name: "my-api-key",
     value: "some secret value",
     decryptable: true,
@@ -98,14 +98,14 @@ run();
 
 ### Response
 
-**Promise<[models.CreateSecretResponse](../../models/createsecretresponse.md)>**
+**Promise<[models.CreateSecretResponseBody](../../models/createsecretresponsebody.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
 
-## renameSecret
+## rename
 
 Enables to edit the name of a secret. The name has to be unique to the user or team’s secrets.
 
@@ -121,7 +121,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.secrets.renameSecret("my-api-key", "<value>", "<value>", {
+  const result = await vercel.secrets.rename("my-api-key", "<value>", "<value>", {
     name: "my-api-key",
   });
 
@@ -146,14 +146,14 @@ run();
 
 ### Response
 
-**Promise<[models.RenameSecretResponse](../../models/renamesecretresponse.md)>**
+**Promise<[models.RenameSecretResponseBody](../../models/renamesecretresponsebody.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
 
-## getSecret
+## get
 
 Retrieves the information for a specific secret by passing either the secret id or name in the URL.
 
@@ -170,7 +170,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.secrets.getSecret("sec_RKc5iV0rV3ZSrFrHiruRno7k", QueryParamDecrypt.True, "<value>", "<value>");
+  const result = await vercel.secrets.get("sec_RKc5iV0rV3ZSrFrHiruRno7k", QueryParamDecrypt.True, "<value>", "<value>");
 
   // Handle the result
   console.log(result)
@@ -193,14 +193,14 @@ run();
 
 ### Response
 
-**Promise<[models.GetSecretResponse](../../models/getsecretresponse.md)>**
+**Promise<[models.GetSecretResponseBody](../../models/getsecretresponsebody.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
 
-## deleteSecret
+## delete
 
 This deletes the user or team’s secret defined in the URL.
 
@@ -216,7 +216,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.secrets.deleteSecret("sec_RKc5iV0rV3ZSrFrHiruRno7k", "<value>", "<value>");
+  const result = await vercel.secrets.delete("sec_RKc5iV0rV3ZSrFrHiruRno7k", "<value>", "<value>");
 
   // Handle the result
   console.log(result)
@@ -238,7 +238,7 @@ run();
 
 ### Response
 
-**Promise<[models.DeleteSecretResponse](../../models/deletesecretresponse.md)>**
+**Promise<[models.DeleteSecretResponseBody](../../models/deletesecretresponsebody.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

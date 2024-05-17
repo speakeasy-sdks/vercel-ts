@@ -49,7 +49,7 @@ export class Projects extends ClientSDK {
         slug?: string | undefined,
         requestBody?: models.UpdateProjectDataCacheRequestBody | undefined,
         options?: RequestOptions
-    ): Promise<models.UpdateProjectDataCacheResponse> {
+    ): Promise<models.UpdateProjectDataCacheResponseBody> {
         const input$: models.UpdateProjectDataCacheRequest = {
             projectId: projectId,
             teamId: teamId,
@@ -111,31 +111,23 @@ export class Projects extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        const responseFields$ = {
-            HttpMeta: {
-                Response: response,
-                Request: request$,
-            },
-        };
-
         if (this.matchResponse(response, 200, "application/json")) {
             const responseBody = await response.json();
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return models.UpdateProjectDataCacheResponse$.inboundSchema.parse({
-                        ...responseFields$,
-                        object: val$,
-                    });
+                    return models.UpdateProjectDataCacheResponseBody$.inboundSchema.parse(val$);
                 },
                 "Response validation failed"
             );
             return result;
         } else {
-            throw new models.SDKError("Unexpected API response status or content-type", {
+            const responseBody = await response.text();
+            throw new models.SDKError(
+                "Unexpected API response status or content-type",
                 response,
-                request: request$,
-            });
+                responseBody
+            );
         }
     }
 
@@ -145,10 +137,10 @@ export class Projects extends ClientSDK {
      * @remarks
      * Allows to retrieve the list of projects of the authenticated user or team. The list will be paginated and the provided query parameters allow filtering the returned projects.
      */
-    async getProjects(
+    async get(
         request: models.GetProjectsRequest,
         options?: RequestOptions
-    ): Promise<models.GetProjectsResponse> {
+    ): Promise<models.GetProjectsResponseBody> {
         const input$ = typeof request === "undefined" ? {} : request;
         const headers$ = new Headers();
         headers$.set("user-agent", SDK_METADATA.userAgent);
@@ -227,31 +219,23 @@ export class Projects extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        const responseFields$ = {
-            HttpMeta: {
-                Response: response,
-                Request: request$,
-            },
-        };
-
         if (this.matchResponse(response, 200, "application/json")) {
             const responseBody = await response.json();
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return models.GetProjectsResponse$.inboundSchema.parse({
-                        ...responseFields$,
-                        object: val$,
-                    });
+                    return models.GetProjectsResponseBody$.inboundSchema.parse(val$);
                 },
                 "Response validation failed"
             );
             return result;
         } else {
-            throw new models.SDKError("Unexpected API response status or content-type", {
+            const responseBody = await response.text();
+            throw new models.SDKError(
+                "Unexpected API response status or content-type",
                 response,
-                request: request$,
-            });
+                responseBody
+            );
         }
     }
 
@@ -261,12 +245,12 @@ export class Projects extends ClientSDK {
      * @remarks
      * Allows to create a new project with the provided configuration. It only requires the project `name` but more configuration can be provided to override the defaults.
      */
-    async createProject(
+    async create(
         teamId?: string | undefined,
         slug?: string | undefined,
         requestBody?: models.CreateProjectRequestBody | undefined,
         options?: RequestOptions
-    ): Promise<models.CreateProjectResponse> {
+    ): Promise<models.CreateProjectResponseBody> {
         const input$: models.CreateProjectRequest = {
             teamId: teamId,
             slug: slug,
@@ -324,31 +308,23 @@ export class Projects extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        const responseFields$ = {
-            HttpMeta: {
-                Response: response,
-                Request: request$,
-            },
-        };
-
         if (this.matchResponse(response, 200, "application/json")) {
             const responseBody = await response.json();
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return models.CreateProjectResponse$.inboundSchema.parse({
-                        ...responseFields$,
-                        object: val$,
-                    });
+                    return models.CreateProjectResponseBody$.inboundSchema.parse(val$);
                 },
                 "Response validation failed"
             );
             return result;
         } else {
-            throw new models.SDKError("Unexpected API response status or content-type", {
+            const responseBody = await response.text();
+            throw new models.SDKError(
+                "Unexpected API response status or content-type",
                 response,
-                request: request$,
-            });
+                responseBody
+            );
         }
     }
 
@@ -358,13 +334,13 @@ export class Projects extends ClientSDK {
      * @remarks
      * Update the fields of a project using either its `name` or `id`.
      */
-    async updateProject(
+    async update(
         idOrName: string,
         teamId?: string | undefined,
         slug?: string | undefined,
         requestBody?: models.UpdateProjectRequestBody | undefined,
         options?: RequestOptions
-    ): Promise<models.UpdateProjectResponse> {
+    ): Promise<models.UpdateProjectResponseBody> {
         const input$: models.UpdateProjectRequest = {
             idOrName: idOrName,
             teamId: teamId,
@@ -429,31 +405,23 @@ export class Projects extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        const responseFields$ = {
-            HttpMeta: {
-                Response: response,
-                Request: request$,
-            },
-        };
-
         if (this.matchResponse(response, 200, "application/json")) {
             const responseBody = await response.json();
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return models.UpdateProjectResponse$.inboundSchema.parse({
-                        ...responseFields$,
-                        object: val$,
-                    });
+                    return models.UpdateProjectResponseBody$.inboundSchema.parse(val$);
                 },
                 "Response validation failed"
             );
             return result;
         } else {
-            throw new models.SDKError("Unexpected API response status or content-type", {
+            const responseBody = await response.text();
+            throw new models.SDKError(
+                "Unexpected API response status or content-type",
                 response,
-                request: request$,
-            });
+                responseBody
+            );
         }
     }
 
@@ -463,12 +431,12 @@ export class Projects extends ClientSDK {
      * @remarks
      * Delete a specific project by passing either the project `id` or `name` in the URL.
      */
-    async deleteProject(
+    async delete(
         idOrName: string,
         teamId?: string | undefined,
         slug?: string | undefined,
         options?: RequestOptions
-    ): Promise<models.DeleteProjectResponse> {
+    ): Promise<models.DeleteProjectResponse | void> {
         const input$: models.DeleteProjectRequest = {
             idOrName: idOrName,
             teamId: teamId,
@@ -528,27 +496,16 @@ export class Projects extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        const responseFields$ = {
-            HttpMeta: {
-                Response: response,
-                Request: request$,
-            },
-        };
-
         if (this.matchStatusCode(response, 204)) {
-            // fallthrough
+            return;
         } else {
-            throw new models.SDKError("Unexpected API response status or content-type", {
+            const responseBody = await response.text();
+            throw new models.SDKError(
+                "Unexpected API response status or content-type",
                 response,
-                request: request$,
-            });
+                responseBody
+            );
         }
-
-        return schemas$.parse(
-            undefined,
-            () => models.DeleteProjectResponse$.inboundSchema.parse(responseFields$),
-            "Response validation failed"
-        );
     }
 
     /**
@@ -557,13 +514,13 @@ export class Projects extends ClientSDK {
      * @remarks
      * Get project domain by project id/name and domain name.
      */
-    async getProjectDomain(
+    async getDomain(
         idOrName: string,
         domain: string,
         teamId?: string | undefined,
         slug?: string | undefined,
         options?: RequestOptions
-    ): Promise<models.GetProjectDomainResponse> {
+    ): Promise<models.GetProjectDomainResponseBody> {
         const input$: models.GetProjectDomainRequest = {
             idOrName: idOrName,
             domain: domain,
@@ -630,31 +587,23 @@ export class Projects extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        const responseFields$ = {
-            HttpMeta: {
-                Response: response,
-                Request: request$,
-            },
-        };
-
         if (this.matchResponse(response, 200, "application/json")) {
             const responseBody = await response.json();
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return models.GetProjectDomainResponse$.inboundSchema.parse({
-                        ...responseFields$,
-                        object: val$,
-                    });
+                    return models.GetProjectDomainResponseBody$.inboundSchema.parse(val$);
                 },
                 "Response validation failed"
             );
             return result;
         } else {
-            throw new models.SDKError("Unexpected API response status or content-type", {
+            const responseBody = await response.text();
+            throw new models.SDKError(
+                "Unexpected API response status or content-type",
                 response,
-                request: request$,
-            });
+                responseBody
+            );
         }
     }
 
@@ -664,10 +613,10 @@ export class Projects extends ClientSDK {
      * @remarks
      * Update a project domain's configuration, including the name, git branch and redirect of the domain.
      */
-    async updateProjectDomain(
+    async updateDomain(
         request: models.UpdateProjectDomainRequest,
         options?: RequestOptions
-    ): Promise<models.UpdateProjectDomainResponse> {
+    ): Promise<models.UpdateProjectDomainResponseBody> {
         const input$ = request;
         const headers$ = new Headers();
         headers$.set("user-agent", SDK_METADATA.userAgent);
@@ -730,31 +679,23 @@ export class Projects extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        const responseFields$ = {
-            HttpMeta: {
-                Response: response,
-                Request: request$,
-            },
-        };
-
         if (this.matchResponse(response, 200, "application/json")) {
             const responseBody = await response.json();
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return models.UpdateProjectDomainResponse$.inboundSchema.parse({
-                        ...responseFields$,
-                        object: val$,
-                    });
+                    return models.UpdateProjectDomainResponseBody$.inboundSchema.parse(val$);
                 },
                 "Response validation failed"
             );
             return result;
         } else {
-            throw new models.SDKError("Unexpected API response status or content-type", {
+            const responseBody = await response.text();
+            throw new models.SDKError(
+                "Unexpected API response status or content-type",
                 response,
-                request: request$,
-            });
+                responseBody
+            );
         }
     }
 
@@ -764,13 +705,13 @@ export class Projects extends ClientSDK {
      * @remarks
      * Remove a domain from a project by passing the domain name and by specifying the project by either passing the project `id` or `name` in the URL.
      */
-    async removeProjectDomain(
+    async removeDomain(
         idOrName: string,
         domain: string,
         teamId?: string | undefined,
         slug?: string | undefined,
         options?: RequestOptions
-    ): Promise<models.RemoveProjectDomainResponse> {
+    ): Promise<models.RemoveProjectDomainResponseBody> {
         const input$: models.RemoveProjectDomainRequest = {
             idOrName: idOrName,
             domain: domain,
@@ -840,31 +781,23 @@ export class Projects extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        const responseFields$ = {
-            HttpMeta: {
-                Response: response,
-                Request: request$,
-            },
-        };
-
         if (this.matchResponse(response, 200, "application/json")) {
             const responseBody = await response.json();
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return models.RemoveProjectDomainResponse$.inboundSchema.parse({
-                        ...responseFields$,
-                        object: val$,
-                    });
+                    return models.RemoveProjectDomainResponseBody$.inboundSchema.parse(val$);
                 },
                 "Response validation failed"
             );
             return result;
         } else {
-            throw new models.SDKError("Unexpected API response status or content-type", {
+            const responseBody = await response.text();
+            throw new models.SDKError(
+                "Unexpected API response status or content-type",
                 response,
-                request: request$,
-            });
+                responseBody
+            );
         }
     }
 
@@ -874,13 +807,13 @@ export class Projects extends ClientSDK {
      * @remarks
      * Add a domain to the project by passing its domain name and by specifying the project by either passing the project `id` or `name` in the URL. If the domain is not yet verified to be used on this project, the request will return `verified = false`, and the domain will need to be verified according to the `verification` challenge via `POST /projects/:idOrName/domains/:domain/verify`. If the domain already exists on the project, the request will fail with a `400` status code.
      */
-    async addProjectDomain(
+    async addDomain(
         idOrName: string,
         teamId?: string | undefined,
         slug?: string | undefined,
         requestBody?: models.AddProjectDomainRequestBody | undefined,
         options?: RequestOptions
-    ): Promise<models.AddProjectDomainResponse> {
+    ): Promise<models.AddProjectDomainResponseBody> {
         const input$: models.AddProjectDomainRequest = {
             idOrName: idOrName,
             teamId: teamId,
@@ -945,31 +878,23 @@ export class Projects extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        const responseFields$ = {
-            HttpMeta: {
-                Response: response,
-                Request: request$,
-            },
-        };
-
         if (this.matchResponse(response, 200, "application/json")) {
             const responseBody = await response.json();
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return models.AddProjectDomainResponse$.inboundSchema.parse({
-                        ...responseFields$,
-                        object: val$,
-                    });
+                    return models.AddProjectDomainResponseBody$.inboundSchema.parse(val$);
                 },
                 "Response validation failed"
             );
             return result;
         } else {
-            throw new models.SDKError("Unexpected API response status or content-type", {
+            const responseBody = await response.text();
+            throw new models.SDKError(
+                "Unexpected API response status or content-type",
                 response,
-                request: request$,
-            });
+                responseBody
+            );
         }
     }
 
@@ -979,13 +904,13 @@ export class Projects extends ClientSDK {
      * @remarks
      * Attempts to verify a project domain with `verified = false` by checking the correctness of the project domain's `verification` challenge.
      */
-    async verifyProjectDomain(
+    async verifyDomain(
         idOrName: string,
         domain: string,
         teamId?: string | undefined,
         slug?: string | undefined,
         options?: RequestOptions
-    ): Promise<models.VerifyProjectDomainResponse> {
+    ): Promise<models.VerifyProjectDomainResponseBody> {
         const input$: models.VerifyProjectDomainRequest = {
             idOrName: idOrName,
             domain: domain,
@@ -1052,31 +977,23 @@ export class Projects extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        const responseFields$ = {
-            HttpMeta: {
-                Response: response,
-                Request: request$,
-            },
-        };
-
         if (this.matchResponse(response, 200, "application/json")) {
             const responseBody = await response.json();
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return models.VerifyProjectDomainResponse$.inboundSchema.parse({
-                        ...responseFields$,
-                        object: val$,
-                    });
+                    return models.VerifyProjectDomainResponseBody$.inboundSchema.parse(val$);
                 },
                 "Response validation failed"
             );
             return result;
         } else {
-            throw new models.SDKError("Unexpected API response status or content-type", {
+            const responseBody = await response.text();
+            throw new models.SDKError(
+                "Unexpected API response status or content-type",
                 response,
-                request: request$,
-            });
+                responseBody
+            );
         }
     }
 
@@ -1086,10 +1003,10 @@ export class Projects extends ClientSDK {
      * @remarks
      * Retrieve the environment variables for a given project by passing either the project `id` or `name` in the URL.
      */
-    async filterProjectEnvs(
+    async filterEnvs(
         request: models.FilterProjectEnvsRequest,
         options?: RequestOptions
-    ): Promise<models.FilterProjectEnvsResponse> {
+    ): Promise<models.FilterProjectEnvsResponseBody> {
         const input$ = request;
         const headers$ = new Headers();
         headers$.set("user-agent", SDK_METADATA.userAgent);
@@ -1158,31 +1075,23 @@ export class Projects extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        const responseFields$ = {
-            HttpMeta: {
-                Response: response,
-                Request: request$,
-            },
-        };
-
         if (this.matchResponse(response, 200, "application/json")) {
             const responseBody = await response.json();
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return models.FilterProjectEnvsResponse$.inboundSchema.parse({
-                        ...responseFields$,
-                        oneOf: val$,
-                    });
+                    return models.FilterProjectEnvsResponseBody$.inboundSchema.parse(val$);
                 },
                 "Response validation failed"
             );
             return result;
         } else {
-            throw new models.SDKError("Unexpected API response status or content-type", {
+            const responseBody = await response.text();
+            throw new models.SDKError(
+                "Unexpected API response status or content-type",
                 response,
-                request: request$,
-            });
+                responseBody
+            );
         }
     }
 
@@ -1192,13 +1101,13 @@ export class Projects extends ClientSDK {
      * @remarks
      * Retrieve the environment variable for a given project.
      */
-    async getProjectEnv(
+    async getEnv(
         idOrName: string,
         id: string,
         teamId?: string | undefined,
         slug?: string | undefined,
         options?: RequestOptions
-    ): Promise<models.GetProjectEnvResponse> {
+    ): Promise<models.GetProjectEnvResponseBody> {
         const input$: models.GetProjectEnvRequest = {
             idOrName: idOrName,
             id: id,
@@ -1260,31 +1169,23 @@ export class Projects extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        const responseFields$ = {
-            HttpMeta: {
-                Response: response,
-                Request: request$,
-            },
-        };
-
         if (this.matchResponse(response, 200, "application/json")) {
             const responseBody = await response.json();
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return models.GetProjectEnvResponse$.inboundSchema.parse({
-                        ...responseFields$,
-                        oneOf: val$,
-                    });
+                    return models.GetProjectEnvResponseBody$.inboundSchema.parse(val$);
                 },
                 "Response validation failed"
             );
             return result;
         } else {
-            throw new models.SDKError("Unexpected API response status or content-type", {
+            const responseBody = await response.text();
+            throw new models.SDKError(
+                "Unexpected API response status or content-type",
                 response,
-                request: request$,
-            });
+                responseBody
+            );
         }
     }
 
@@ -1294,10 +1195,10 @@ export class Projects extends ClientSDK {
      * @remarks
      * Create one ore more environment variables for a project by passing its `key`, `value`, `type` and `target` and by specifying the project by either passing the project `id` or `name` in the URL.
      */
-    async createProjectEnv(
+    async createEnv(
         request: models.CreateProjectEnvRequest,
         options?: RequestOptions
-    ): Promise<models.CreateProjectEnvResponse> {
+    ): Promise<models.CreateProjectEnvResponseBody> {
         const input$ = request;
         const headers$ = new Headers();
         headers$.set("user-agent", SDK_METADATA.userAgent);
@@ -1358,31 +1259,23 @@ export class Projects extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        const responseFields$ = {
-            HttpMeta: {
-                Response: response,
-                Request: request$,
-            },
-        };
-
         if (this.matchResponse(response, 201, "application/json")) {
             const responseBody = await response.json();
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return models.CreateProjectEnvResponse$.inboundSchema.parse({
-                        ...responseFields$,
-                        object: val$,
-                    });
+                    return models.CreateProjectEnvResponseBody$.inboundSchema.parse(val$);
                 },
                 "Response validation failed"
             );
             return result;
         } else {
-            throw new models.SDKError("Unexpected API response status or content-type", {
+            const responseBody = await response.text();
+            throw new models.SDKError(
+                "Unexpected API response status or content-type",
                 response,
-                request: request$,
-            });
+                responseBody
+            );
         }
     }
 
@@ -1392,10 +1285,10 @@ export class Projects extends ClientSDK {
      * @remarks
      * Delete a specific environment variable for a given project by passing the environment variable identifier and either passing the project `id` or `name` in the URL.
      */
-    async removeProjectEnv(
+    async removeEnv(
         request: models.RemoveProjectEnvRequest,
         options?: RequestOptions
-    ): Promise<models.RemoveProjectEnvResponse> {
+    ): Promise<models.RemoveProjectEnvResponseBody> {
         const input$ = request;
         const headers$ = new Headers();
         headers$.set("user-agent", SDK_METADATA.userAgent);
@@ -1459,31 +1352,23 @@ export class Projects extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        const responseFields$ = {
-            HttpMeta: {
-                Response: response,
-                Request: request$,
-            },
-        };
-
         if (this.matchResponse(response, 200, "application/json")) {
             const responseBody = await response.json();
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return models.RemoveProjectEnvResponse$.inboundSchema.parse({
-                        ...responseFields$,
-                        oneOf: val$,
-                    });
+                    return models.RemoveProjectEnvResponseBody$.inboundSchema.parse(val$);
                 },
                 "Response validation failed"
             );
             return result;
         } else {
-            throw new models.SDKError("Unexpected API response status or content-type", {
+            const responseBody = await response.text();
+            throw new models.SDKError(
+                "Unexpected API response status or content-type",
                 response,
-                request: request$,
-            });
+                responseBody
+            );
         }
     }
 
@@ -1493,10 +1378,10 @@ export class Projects extends ClientSDK {
      * @remarks
      * Edit a specific environment variable for a given project by passing the environment variable identifier and either passing the project `id` or `name` in the URL.
      */
-    async editProjectEnv(
+    async editEnv(
         request: models.EditProjectEnvRequest,
         options?: RequestOptions
-    ): Promise<models.EditProjectEnvResponse> {
+    ): Promise<models.EditProjectEnvResponseBody> {
         const input$ = request;
         const headers$ = new Headers();
         headers$.set("user-agent", SDK_METADATA.userAgent);
@@ -1554,31 +1439,23 @@ export class Projects extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        const responseFields$ = {
-            HttpMeta: {
-                Response: response,
-                Request: request$,
-            },
-        };
-
         if (this.matchResponse(response, 200, "application/json")) {
             const responseBody = await response.json();
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return models.EditProjectEnvResponse$.inboundSchema.parse({
-                        ...responseFields$,
-                        object: val$,
-                    });
+                    return models.EditProjectEnvResponseBody$.inboundSchema.parse(val$);
                 },
                 "Response validation failed"
             );
             return result;
         } else {
-            throw new models.SDKError("Unexpected API response status or content-type", {
+            const responseBody = await response.text();
+            throw new models.SDKError(
+                "Unexpected API response status or content-type",
                 response,
-                request: request$,
-            });
+                responseBody
+            );
         }
     }
 
@@ -1594,7 +1471,7 @@ export class Projects extends ClientSDK {
         teamId?: string | undefined,
         slug?: string | undefined,
         options?: RequestOptions
-    ): Promise<models.RequestPromoteResponse> {
+    ): Promise<models.RequestPromoteResponse | void> {
         const input$: models.RequestPromoteRequest = {
             projectId: projectId,
             deploymentId: deploymentId,
@@ -1661,27 +1538,16 @@ export class Projects extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        const responseFields$ = {
-            HttpMeta: {
-                Response: response,
-                Request: request$,
-            },
-        };
-
         if (this.matchStatusCode(response, 201)) {
-            // fallthrough
+            return;
         } else {
-            throw new models.SDKError("Unexpected API response status or content-type", {
+            const responseBody = await response.text();
+            throw new models.SDKError(
+                "Unexpected API response status or content-type",
                 response,
-                request: request$,
-            });
+                responseBody
+            );
         }
-
-        return schemas$.parse(
-            undefined,
-            () => models.RequestPromoteResponse$.inboundSchema.parse(responseFields$),
-            "Response validation failed"
-        );
     }
 
     /**
@@ -1690,10 +1556,10 @@ export class Projects extends ClientSDK {
      * @remarks
      * Get a list of aliases related to the last promote request with their mapping status
      */
-    async getEequestPromoteAliases(
+    async getRequestPromoteAliases(
         request: models.GetEequestPromoteAliasesRequest,
         options?: RequestOptions
-    ): Promise<models.GetEequestPromoteAliasesResponse> {
+    ): Promise<models.GetEequestPromoteAliasesResponseBody> {
         const input$ = request;
         const headers$ = new Headers();
         headers$.set("user-agent", SDK_METADATA.userAgent);
@@ -1758,31 +1624,23 @@ export class Projects extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        const responseFields$ = {
-            HttpMeta: {
-                Response: response,
-                Request: request$,
-            },
-        };
-
         if (this.matchResponse(response, 200, "application/json")) {
             const responseBody = await response.json();
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return models.GetEequestPromoteAliasesResponse$.inboundSchema.parse({
-                        ...responseFields$,
-                        oneOf: val$,
-                    });
+                    return models.GetEequestPromoteAliasesResponseBody$.inboundSchema.parse(val$);
                 },
                 "Response validation failed"
             );
             return result;
         } else {
-            throw new models.SDKError("Unexpected API response status or content-type", {
+            const responseBody = await response.text();
+            throw new models.SDKError(
+                "Unexpected API response status or content-type",
                 response,
-                request: request$,
-            });
+                responseBody
+            );
         }
     }
 
@@ -1792,12 +1650,12 @@ export class Projects extends ClientSDK {
      * @remarks
      * Pause a project by passing its project `id` in the URL. If the project does not exist given the id then the request will fail with 400 status code. If the project disables auto assigning custom production domains and blocks the active Production Deployment then the request will return with 200 status code.
      */
-    async pauseProject(
+    async pause(
         projectId: string,
         teamId?: string | undefined,
         slug?: string | undefined,
         options?: RequestOptions
-    ): Promise<models.PauseProjectResponse> {
+    ): Promise<models.PauseProjectResponse | void> {
         const input$: models.PauseProjectRequest = {
             projectId: projectId,
             teamId: teamId,
@@ -1860,27 +1718,16 @@ export class Projects extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        const responseFields$ = {
-            HttpMeta: {
-                Response: response,
-                Request: request$,
-            },
-        };
-
         if (this.matchStatusCode(response, 200)) {
-            // fallthrough
+            return;
         } else {
-            throw new models.SDKError("Unexpected API response status or content-type", {
+            const responseBody = await response.text();
+            throw new models.SDKError(
+                "Unexpected API response status or content-type",
                 response,
-                request: request$,
-            });
+                responseBody
+            );
         }
-
-        return schemas$.parse(
-            undefined,
-            () => models.PauseProjectResponse$.inboundSchema.parse(responseFields$),
-            "Response validation failed"
-        );
     }
 
     /**
@@ -1889,12 +1736,12 @@ export class Projects extends ClientSDK {
      * @remarks
      * Unpause a project by passing its project `id` in the URL. If the project does not exist given the id then the request will fail with 400 status code. If the project enables auto assigning custom production domains and unblocks the active Production Deployment then the request will return with 200 status code.
      */
-    async unpauseProject(
+    async unpause(
         projectId: string,
         teamId?: string | undefined,
         slug?: string | undefined,
         options?: RequestOptions
-    ): Promise<models.UnpauseProjectResponse> {
+    ): Promise<models.UnpauseProjectResponse | void> {
         const input$: models.UnpauseProjectRequest = {
             projectId: projectId,
             teamId: teamId,
@@ -1954,26 +1801,15 @@ export class Projects extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        const responseFields$ = {
-            HttpMeta: {
-                Response: response,
-                Request: request$,
-            },
-        };
-
         if (this.matchStatusCode(response, 200)) {
-            // fallthrough
+            return;
         } else {
-            throw new models.SDKError("Unexpected API response status or content-type", {
+            const responseBody = await response.text();
+            throw new models.SDKError(
+                "Unexpected API response status or content-type",
                 response,
-                request: request$,
-            });
+                responseBody
+            );
         }
-
-        return schemas$.parse(
-            undefined,
-            () => models.UnpauseProjectResponse$.inboundSchema.parse(responseFields$),
-            "Response validation failed"
-        );
     }
 }
