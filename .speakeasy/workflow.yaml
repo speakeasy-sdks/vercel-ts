@@ -1,15 +1,136 @@
 workflowVersion: 1.0.0
 speakeasyVersion: latest
 sources:
-    Vercel-API:
-        inputs:
-            - location: ./vercel-api-modified.yaml
-        registry:
-            location: registry.speakeasyapi.dev/vercel/vercel/vercel-api
+  # Vercel-API:
+  #     inputs:
+  #         - location: ./vercel-api-modified.yaml
+  #     registry:
+  #         location: registry.speakeasyapi.dev/vercel/vercel/vercel-api
+  artifacts:
+    inputs:
+      - location: ./artifacts/artifacts.yaml
+    registry:
+      location: registry.speakeasyapi.dev/lukehagar/lukehagar/vercel-artifacts-api
+  checks:
+    inputs:
+      - location: ./checks/checks.yaml
+    registry:
+      location: registry.speakeasyapi.dev/lukehagar/lukehagar/vercel-checks-api
+  projects:
+    inputs:
+      - location: ./projects/projects.yaml
+    registry:
+      location: registry.speakeasyapi.dev/lukehagar/lukehagar/vercel-projects-api
+  deployments:
+    inputs:
+      - location: ./deployments/deployments.yaml
+    registry:
+      location: registry.speakeasyapi.dev/lukehagar/lukehagar/vercel-deployments-api
+  domains:
+    inputs:
+      - location: ./domains/domains.yaml
+    registry:
+      location: registry.speakeasyapi.dev/lukehagar/lukehagar/vercel-domains-api
+  dns:
+    inputs:
+      - location: ./dns/dns.yaml
+    registry:
+      location: registry.speakeasyapi.dev/lukehagar/lukehagar/vercel-dns-api
+  edge-config:
+    inputs:
+      - location: ./edge-config/edge-config.yaml
+    registry:
+      location: registry.speakeasyapi.dev/lukehagar/lukehagar/vercel-edge-config-api
+  user:
+    inputs:
+      - location: ./user/user.yaml
+    registry:
+      location: registry.speakeasyapi.dev/lukehagar/lukehagar/vercel-user-api
+  integrations:
+    inputs:
+      - location: ./integrations/integrations.yaml
+    registry:
+      location: registry.speakeasyapi.dev/lukehagar/lukehagar/vercel-integrations-api
+  logDrains:
+    inputs:
+      - location: ./logDrains/logDrains.yaml
+    registry:
+      location: registry.speakeasyapi.dev/lukehagar/lukehagar/vercel-logDrains-api
+  projectMembers:
+    inputs:
+      - location: ./projectMembers/projectMembers.yaml
+    registry:
+      location: registry.speakeasyapi.dev/lukehagar/lukehagar/vercel-projectMembers-api
+  secrets:
+    inputs:
+      - location: ./secrets/secrets.yaml
+    registry:
+      location: registry.speakeasyapi.dev/lukehagar/lukehagar/vercel-secrets-api
+  certs:
+    inputs:
+      - location: ./certs/certs.yaml
+    registry:
+      location: registry.speakeasyapi.dev/lukehagar/lukehagar/vercel-certs-api
+  authentication:
+    inputs:
+      - location: ./authentication/authentication.yaml
+    registry:
+      location: registry.speakeasyapi.dev/lukehagar/lukehagar/vercel-authentication-api
+
 targets:
-    typescript:
-        target: typescript
-        source: Vercel-API
-        publish:
-            npm:
-                token: $npm_token
+  artifacts-ts:
+    target: typescript
+    source: artifacts
+    output: ./artifacts
+  checks-ts:
+    target: typescript
+    source: checks
+    output: ./checks
+  projects-ts:
+    target: typescript
+    source: projects
+    output: ./projects
+  deployments-ts:
+    target: typescript
+    source: deployments
+    output: ./deployments
+  domains-ts:
+    target: typescript
+    source: domains
+    output: ./domains
+  dns-ts:
+    target: typescript
+    source: dns
+    output: ./dns
+  edge-config-ts:
+    target: typescript
+    source: edge-config
+    output: ./edge-config
+  user-ts:
+    target: typescript
+    source: user
+    output: ./user
+  integrations-ts:
+    target: typescript
+    source: integrations
+    output: ./integrations
+  logDrains-ts:
+    target: typescript
+    source: logDrains
+    output: ./logDrains
+  projectMembers-ts:
+    target: typescript
+    source: projectMembers
+    output: ./projectMembers
+  secrets-ts:
+    target: typescript
+    source: secrets
+    output: ./secrets
+  certs-ts:
+    target: typescript
+    source: certs
+    output: ./certs
+  authentication-ts:
+    target: typescript
+    source: authentication
+    output: ./authentication

@@ -1,0 +1,9 @@
+# RemoveProjectDomainResponse
+
+
+## Fields
+
+| Field                                                                                                    | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
+| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| `httpMeta`                                                                                               | [components.HTTPMetadata](../../models/components/httpmetadata.md)                                       | :heavy_check_mark:                                                                                       | N/A                                                                                                      |
+| `object`                                                                                                 | [operations.RemoveProjectDomainResponseBody](../../models/operations/removeprojectdomainresponsebody.md) | :heavy_minus_sign:                                                                                       | The domain was succesfully removed from the project                                                      |

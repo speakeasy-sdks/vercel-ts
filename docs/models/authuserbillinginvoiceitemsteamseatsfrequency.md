@@ -1,9 +1,0 @@
-# AuthUserBillingInvoiceItemsTeamSeatsFrequency
-
-
-## Fields
-
-| Field                                                                                                            | Type                                                                                                             | Required                                                                                                         | Description                                                                                                      |
-| ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| `interval`                                                                                                       | [models.AuthUserBillingInvoiceItemsTeamSeatsInterval](../models/authuserbillinginvoiceitemsteamseatsinterval.md) | :heavy_check_mark:                                                                                               | N/A                                                                                                              |
-| `intervalCount`                                                                                                  | *number*                                                                                                         | :heavy_check_mark:                                                                                               | N/A                                                                                                              |

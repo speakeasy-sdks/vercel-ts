@@ -1,0 +1,9 @@
+# AddProjectDomainResponse
+
+
+## Fields
+
+| Field                                                                                              | Type                                                                                               | Required                                                                                           | Description                                                                                        |
+| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| `httpMeta`                                                                                         | [components.HTTPMetadata](../../models/components/httpmetadata.md)                                 | :heavy_check_mark:                                                                                 | N/A                                                                                                |
+| `object`                                                                                           | [operations.AddProjectDomainResponseBody](../../models/operations/addprojectdomainresponsebody.md) | :heavy_minus_sign:                                                                                 | The domain was successfully added to the project                                                   |

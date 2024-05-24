@@ -1,0 +1,10 @@
+# Lcp
+
+
+## Fields
+
+| Field                                                                        | Type                                                                         | Required                                                                     | Description                                                                  | Example                                                                      |
+| ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| `value`                                                                      | *number*                                                                     | :heavy_check_mark:                                                           | Largest Contentful Paint value                                               | 1200                                                                         |
+| `previousValue`                                                              | *number*                                                                     | :heavy_minus_sign:                                                           | Previous Largest Contentful Paint value to display a delta                   | 1000                                                                         |
+| `source`                                                                     | [operations.UpdateCheckSource](../../models/operations/updatechecksource.md) | :heavy_check_mark:                                                           | N/A                                                                          |                                                                              |

@@ -1,0 +1,10 @@
+# Three2
+
+
+## Fields
+
+| Field                                                                                      | Type                                                                                       | Required                                                                                   | Description                                                                                |
+| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
+| `type`                                                                                     | [operations.GetDeploymentEvents3Type](../../models/operations/getdeploymentevents3type.md) | :heavy_check_mark:                                                                         | N/A                                                                                        |
+| `created`                                                                                  | *number*                                                                                   | :heavy_check_mark:                                                                         | N/A                                                                                        |
+| `payload`                                                                                  | [operations.ThreePayload](../../models/operations/threepayload.md)                         | :heavy_check_mark:                                                                         | N/A                                                                                        |

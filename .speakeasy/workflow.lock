@@ -1,4 +1,4 @@
-speakeasyVersion: 1.293.0
+speakeasyVersion: 1.295.0
 sources:
     Vercel-API:
         sourceNamespace: vercel-api
@@ -6,26 +6,204 @@ sources:
         sourceBlobDigest: sha256:d3e60242117d421079c83d18c8cb648b142a7c36505370f777ec66ea688e0574
         tags:
             - latest
+    artifacts:
+        sourceNamespace: vercel-artifacts-api
+        sourceRevisionDigest: sha256:9892c414665ee75d5a1a8af5f0e383f35878eadd1492eff383785fe2e41c83b5
+        sourceBlobDigest: sha256:fbcdcc6d37639411476a2e95cf5cd05ef6387a71b29d6974f0aee92f4828e829
+        tags:
+            - latest
+    checks:
+        sourceNamespace: vercel-checks-api
+        sourceRevisionDigest: sha256:7079db0369e400f89d8038f062a07ed9b267172e775965e3da5f57812bf169b7
+        sourceBlobDigest: sha256:0572a64762cdc7ad44ac5df3ee29e56764a83b4633b470a39906f397445668bd
+        tags:
+            - latest
+    deployments:
+        sourceNamespace: vercel-deployments-api
+        sourceRevisionDigest: sha256:fd9cbe3ac2af6ccbe49955c907b30089535a857c479a34580ecc2970186f05e9
+        sourceBlobDigest: sha256:f9fd4b01941ac547c3ada976dea2b5aff546f05d417c4b8f2f3f9c4bb0321a82
+        tags:
+            - latest
+    dns:
+        sourceNamespace: vercel-dns-api
+        sourceRevisionDigest: sha256:ca39120e4bfb1db9e79f9640770ae15c49e11e818c32d5d7b5db9ba6f048a001
+        sourceBlobDigest: sha256:a6f11353e6ae2b3b7276c01b073d403c09f70b091cd939c98bfb8ddd94afd20e
+        tags:
+            - latest
+    domains:
+        sourceNamespace: vercel-domains-api
+        sourceRevisionDigest: sha256:73a0270aad995c8d12aadecefc7ec6dfa090dbb2f08d023e78c16e3fc3d007e7
+        sourceBlobDigest: sha256:713fb58c13d9cc7313b76e3179e88491a43de1bc19df222e50bde7b8a17da33a
+        tags:
+            - latest
+    edge-config:
+        sourceNamespace: vercel-edge-config-api
+        sourceRevisionDigest: sha256:e208450db65ccd16c42a6ac39e474fc4176a66809320465a0db88d2efcc18f48
+        sourceBlobDigest: sha256:73633dac3d608fe74cc872ceec3c3f9f40c2f1928cb7b7457aba17d5b5fe9407
+        tags:
+            - latest
+    integrations:
+        sourceNamespace: vercel-integrations-api
+        sourceRevisionDigest: sha256:61b2dcbfe115d8b662e113d9e54b04ed267d88845f0e5a154cdf638a5cd2932c
+        sourceBlobDigest: sha256:19ebbcfef86f85fb984f6b1e9de95c170aa8883a3bb52d0f6123fce5fadf3db0
+        tags:
+            - latest
+    projects:
+        sourceNamespace: vercel-projects-api
+        sourceRevisionDigest: sha256:e1d804c20116b7cde890397c1f2a356278aab6bae079031c18731aeadd9a2255
+        sourceBlobDigest: sha256:d1090628ef433ed48d5fa81a45b1ffb1bd03de53f3e4a4ec0617ab1b1a9484fe
+        tags:
+            - latest
+    user:
+        sourceNamespace: vercel-user-api
+        sourceRevisionDigest: sha256:81fe55d919d6a14c5e2a2c632dda88131fbbcecc7153d0582dc6971f5f3952e7
+        sourceBlobDigest: sha256:05042f95570b33cded660381c7602077e406e3c594c42be6539ee9dd0ead0869
+        tags:
+            - latest
 targets:
+    artifacts-ts:
+        source: artifacts
+        sourceNamespace: vercel-artifacts-api
+        sourceRevisionDigest: sha256:9892c414665ee75d5a1a8af5f0e383f35878eadd1492eff383785fe2e41c83b5
+        sourceBlobDigest: sha256:fbcdcc6d37639411476a2e95cf5cd05ef6387a71b29d6974f0aee92f4828e829
+        outLocation: ./artifacts
+    checks-ts:
+        source: checks
+        sourceNamespace: vercel-checks-api
+        sourceRevisionDigest: sha256:7079db0369e400f89d8038f062a07ed9b267172e775965e3da5f57812bf169b7
+        sourceBlobDigest: sha256:0572a64762cdc7ad44ac5df3ee29e56764a83b4633b470a39906f397445668bd
+        outLocation: ./checks
+    deployments-ts:
+        source: deployments
+        sourceNamespace: vercel-deployments-api
+        sourceRevisionDigest: sha256:fd9cbe3ac2af6ccbe49955c907b30089535a857c479a34580ecc2970186f05e9
+        sourceBlobDigest: sha256:f9fd4b01941ac547c3ada976dea2b5aff546f05d417c4b8f2f3f9c4bb0321a82
+        outLocation: ./deployments
+    dns-ts:
+        source: dns
+        sourceNamespace: vercel-dns-api
+        sourceRevisionDigest: sha256:ca39120e4bfb1db9e79f9640770ae15c49e11e818c32d5d7b5db9ba6f048a001
+        sourceBlobDigest: sha256:a6f11353e6ae2b3b7276c01b073d403c09f70b091cd939c98bfb8ddd94afd20e
+        outLocation: ./dns
+    domains-ts:
+        source: domains
+        sourceNamespace: vercel-domains-api
+        sourceRevisionDigest: sha256:73a0270aad995c8d12aadecefc7ec6dfa090dbb2f08d023e78c16e3fc3d007e7
+        sourceBlobDigest: sha256:713fb58c13d9cc7313b76e3179e88491a43de1bc19df222e50bde7b8a17da33a
+        outLocation: ./domains
+    edge-config-ts:
+        source: edge-config
+        sourceNamespace: vercel-edge-config-api
+        sourceRevisionDigest: sha256:e208450db65ccd16c42a6ac39e474fc4176a66809320465a0db88d2efcc18f48
+        sourceBlobDigest: sha256:73633dac3d608fe74cc872ceec3c3f9f40c2f1928cb7b7457aba17d5b5fe9407
+        outLocation: ./edge-config
+    integrations-ts:
+        source: integrations
+        sourceNamespace: vercel-integrations-api
+        sourceRevisionDigest: sha256:61b2dcbfe115d8b662e113d9e54b04ed267d88845f0e5a154cdf638a5cd2932c
+        sourceBlobDigest: sha256:19ebbcfef86f85fb984f6b1e9de95c170aa8883a3bb52d0f6123fce5fadf3db0
+        outLocation: ./integrations
+    projects-ts:
+        source: projects
+        sourceNamespace: vercel-projects-api
+        sourceRevisionDigest: sha256:e1d804c20116b7cde890397c1f2a356278aab6bae079031c18731aeadd9a2255
+        sourceBlobDigest: sha256:d1090628ef433ed48d5fa81a45b1ffb1bd03de53f3e4a4ec0617ab1b1a9484fe
+        outLocation: ./projects
     typescript:
         source: Vercel-API
         sourceNamespace: vercel-api
         sourceRevisionDigest: sha256:e735a9897356f13603012e5c89587acbdc7ce2c408fda771a6e998bd298f6c1f
         sourceBlobDigest: sha256:d3e60242117d421079c83d18c8cb648b142a7c36505370f777ec66ea688e0574
         outLocation: /Users/sagar/vercel-ts
+    user-ts:
+        source: user
+        sourceNamespace: vercel-user-api
+        sourceRevisionDigest: sha256:81fe55d919d6a14c5e2a2c632dda88131fbbcecc7153d0582dc6971f5f3952e7
+        sourceBlobDigest: sha256:05042f95570b33cded660381c7602077e406e3c594c42be6539ee9dd0ead0869
+        outLocation: ./user
 workflow:
     workflowVersion: 1.0.0
     speakeasyVersion: latest
     sources:
-        Vercel-API:
+        artifacts:
             inputs:
-                - location: ./vercel-api-modified.yaml
+                - location: ./artifacts/artifacts.yaml
             registry:
-                location: registry.speakeasyapi.dev/vercel/vercel/vercel-api
+                location: registry.speakeasyapi.dev/vercel/vercel/vercel-artifacts-api
+        checks:
+            inputs:
+                - location: ./checks/checks.yaml
+            registry:
+                location: registry.speakeasyapi.dev/vercel/vercel/vercel-checks-api
+        deployments:
+            inputs:
+                - location: ./deployments/deployments.yaml
+            registry:
+                location: registry.speakeasyapi.dev/vercel/vercel/vercel-deployments-api
+        dns:
+            inputs:
+                - location: ./dns/dns.yaml
+            registry:
+                location: registry.speakeasyapi.dev/vercel/vercel/vercel-dns-api
+        domains:
+            inputs:
+                - location: ./domains/domains.yaml
+            registry:
+                location: registry.speakeasyapi.dev/vercel/vercel/vercel-domains-api
+        edge-config:
+            inputs:
+                - location: ./edge-config/edge-config.yaml
+            registry:
+                location: registry.speakeasyapi.dev/vercel/vercel/vercel-edge-config-api
+        integrations:
+            inputs:
+                - location: ./integrations/integrations.yaml
+            registry:
+                location: registry.speakeasyapi.dev/vercel/vercel/vercel-integrations-api
+        projects:
+            inputs:
+                - location: ./projects/projects.yaml
+            registry:
+                location: registry.speakeasyapi.dev/vercel/vercel/vercel-projects-api
+        user:
+            inputs:
+                - location: ./user/user.yaml
+            registry:
+                location: registry.speakeasyapi.dev/vercel/vercel/vercel-user-api
     targets:
-        typescript:
+        artifacts-ts:
             target: typescript
-            source: Vercel-API
-            publish:
-                npm:
-                    token: $npm_token
+            source: artifacts
+            output: ./artifacts
+        checks-ts:
+            target: typescript
+            source: checks
+            output: ./checks
+        deployments-ts:
+            target: typescript
+            source: deployments
+            output: ./deployments
+        dns-ts:
+            target: typescript
+            source: dns
+            output: ./dns
+        domains-ts:
+            target: typescript
+            source: domains
+            output: ./domains
+        edge-config-ts:
+            target: typescript
+            source: edge-config
+            output: ./edge-config
+        integrations-ts:
+            target: typescript
+            source: integrations
+            output: ./integrations
+        projects-ts:
+            target: typescript
+            source: projects
+            output: ./projects
+        user-ts:
+            target: typescript
+            source: user
+            output: ./user

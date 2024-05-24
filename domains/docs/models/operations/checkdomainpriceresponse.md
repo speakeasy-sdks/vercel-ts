@@ -1,0 +1,9 @@
+# CheckDomainPriceResponse
+
+
+## Fields
+
+| Field                                                                                              | Type                                                                                               | Required                                                                                           | Description                                                                                        |
+| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| `httpMeta`                                                                                         | [components.HTTPMetadata](../../models/components/httpmetadata.md)                                 | :heavy_check_mark:                                                                                 | N/A                                                                                                |
+| `object`                                                                                           | [operations.CheckDomainPriceResponseBody](../../models/operations/checkdomainpriceresponsebody.md) | :heavy_minus_sign:                                                                                 | Successful response which returns the price of the domain and the period.                          |

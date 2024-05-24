@@ -1,0 +1,4551 @@
+openapi: 3.0.3
+info:
+  title: Vercel API
+  description:
+    Vercel combines the best developer experience with an obsessive focus
+    on end-user performance. Our platform enables frontend teams to do their best
+    work.
+  contact:
+    email: support@vercel.com
+    name: Vercel Support
+    url: https://vercel.com/support
+  version: 0.0.1
+servers:
+  - url: https://api.vercel.com
+    description: Production API
+    x-speakeasy-server-id: prod
+security:
+  - bearerToken: []
+  - oauth2: []
+paths:
+  "/v4/domains/buy":
+    post:
+      description: Allows to purchase the specified domain.
+      operationId: buyDomain
+      x-speakeasy-name-override: buy
+      security:
+        - bearerToken: []
+      summary: Purchase a domain
+      tags:
+        - domains
+      responses:
+        "201":
+          description: Successful response for purchasing a Domain.
+          content:
+            application/json:
+              schema:
+                properties:
+                  domain:
+                    properties:
+                      uid:
+                        type: string
+                      ns:
+                        items:
+                          type: string
+                        type: array
+                      verified:
+                        type: boolean
+                      created:
+                        type: number
+                      pending:
+                        type: boolean
+                    required:
+                      - uid
+                      - ns
+                      - verified
+                      - created
+                      - pending
+                    type: object
+                required:
+                  - domain
+                type: object
+        "202":
+          description: Domain purchase is being processed asynchronously.
+          content:
+            application/json:
+              schema:
+                properties:
+                  domain:
+                    properties:
+                      uid:
+                        type: string
+                      ns:
+                        items:
+                          type: string
+                        type: array
+                      verified:
+                        type: boolean
+                      created:
+                        type: number
+                      pending:
+                        type: boolean
+                    required:
+                      - uid
+                      - ns
+                      - verified
+                      - created
+                      - pending
+                    type: object
+                required:
+                  - domain
+                type: object
+        "400":
+          description: One of the provided values in the request body is invalid.
+        "401":
+          description: ""
+        "403":
+          description: You do not have permission to access this resource.
+        "409":
+          description: ""
+        "429":
+          description: ""
+      parameters:
+        - description: The Team identifier to perform the request on behalf of.
+          in: query
+          name: teamId
+          schema:
+            type: string
+        - description: The Team slug to perform the request on behalf of.
+          in: query
+          name: slug
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              additionalProperties: false
+              type: object
+              required:
+                - name
+              properties:
+                name:
+                  description: The domain name to purchase.
+                  type: string
+                  example: example.com
+                expectedPrice:
+                  description: The price you expect to be charged for the purchase.
+                  type: number
+                  example: 10
+                renew:
+                  description:
+                    Indicates whether the domain should be automatically
+                    renewed.
+                  type: boolean
+                  example: true
+  "/v4/domains/price":
+    get:
+      description:
+        Check the price to purchase a domain and how long a single purchase
+        period is.
+      operationId: checkDomainPrice
+      x-speakeasy-name-override: checkPrice
+      security:
+        - bearerToken: []
+      summary: Check the price for a domain
+      tags:
+        - domains
+      responses:
+        "200":
+          description:
+            Successful response which returns the price of the domain and
+            the period.
+          content:
+            application/json:
+              schema:
+                properties:
+                  price:
+                    type: number
+                    description: The domain price in USD.
+                    example: 20
+                  period:
+                    type: number
+                    description:
+                      The number of years the domain could be held before
+                      paying again.
+                    example: 1
+                required:
+                  - price
+                  - period
+                type: object
+                description:
+                  Successful response which returns the price of the domain
+                  and the period.
+        "400":
+          description: One of the provided values in the request query is invalid.
+        "401":
+          description: ""
+        "403":
+          description: You do not have permission to access this resource.
+      parameters:
+        - name: name
+          description: The name of the domain for which the price needs to be checked.
+          in: query
+          required: true
+          schema:
+            description: The name of the domain for which the price needs to be checked.
+            type: string
+            example: example.com
+        - name: type
+          description: In which status of the domain the price needs to be checked.
+          in: query
+          required: false
+          schema:
+            description: In which status of the domain the price needs to be checked.
+            type: string
+            enum:
+              - new
+              - renewal
+            example: new
+        - description: The Team identifier to perform the request on behalf of.
+          in: query
+          name: teamId
+          schema:
+            type: string
+        - description: The Team slug to perform the request on behalf of.
+          in: query
+          name: slug
+          schema:
+            type: string
+  "/v4/domains/status":
+    get:
+      description: Check if a domain name is available for purchase.
+      operationId: checkDomainStatus
+      x-speakeasy-name-override: checkStatus
+      security:
+        - bearerToken: []
+      summary: Check a Domain Availability
+      tags:
+        - domains
+      responses:
+        "200":
+          description: Successful response checking if a Domain's name is available.
+          content:
+            application/json:
+              schema:
+                properties:
+                  available:
+                    type: boolean
+                required:
+                  - available
+                type: object
+        "400":
+          description: One of the provided values in the request query is invalid.
+        "401":
+          description: ""
+        "403":
+          description: You do not have permission to access this resource.
+      parameters:
+        - name: name
+          description: The name of the domain for which we would like to check the status.
+          in: query
+          required: true
+          schema:
+            description:
+              The name of the domain for which we would like to check the
+              status.
+            type: string
+            example: example.com
+        - description: The Team identifier to perform the request on behalf of.
+          in: query
+          name: teamId
+          schema:
+            type: string
+        - description: The Team slug to perform the request on behalf of.
+          in: query
+          name: slug
+          schema:
+            type: string
+  "/v1/domains/{domain}/registry":
+    get:
+      description:
+        Fetch domain transfer availability or transfer status if a transfer
+        is in progress.
+      operationId: getDomainTransfer
+      x-speakeasy-name-override: getTransfer
+      security:
+        - bearerToken: []
+      summary: Get domain transfer info.
+      tags:
+        - domains
+      responses:
+        "200":
+          description: ""
+          content:
+            application/json:
+              schema:
+                properties:
+                  transferable:
+                    type: boolean
+                    description: Whether or not the domain is transferable
+                  transferPolicy:
+                    nullable: true
+                    type: string
+                    enum:
+                      - charge-and-renew
+                      - no-charge-no-change
+                      - no-change
+                      - new-term
+                      - not-supported
+                    description:
+                      "The domain's transfer policy (depends on TLD requirements).
+                      `charge-and-renew`: transfer will charge for renewal and will
+                      renew the existing domain's registration. `no-charge-no-change`:
+                      transfer will have no change to registration period and does
+                      not require charge. `no-change`: transfer charge is required,
+                      but no change in registration period. `new-term`: transfer charge
+                      is required and a new registry term is set based on the transfer
+                      date. `not-supported`: transfers are not supported for this
+                      domain or TLD. `null`: This TLD is not supported by Vercel's
+                      Registrar."
+                  reason:
+                    type: string
+                    description: Description associated with transferable state.
+                  status:
+                    type: string
+                    enum:
+                      - pending_owner
+                      - pending_admin
+                      - pending_registry
+                      - completed
+                      - cancelled
+                      - undef
+                      - unknown
+                    description:
+                      "The current state of an ongoing transfer. `pending_owner`:
+                      Awaiting approval by domain's admin contact (every transfer
+                      begins with this status). If approval is not given within five
+                      days, the transfer is cancelled. `pending_admin`: Waiting for
+                      approval by Vercel Registrar admin. `pending_registry`: Awaiting
+                      registry approval (the transfer completes after 7 days unless
+                      it is declined by the current registrar). `completed`: The transfer
+                      completed successfully. `cancelled`: The transfer was cancelled.
+                      `undef`: No transfer exists for this domain. `unknown`: This
+                      TLD is not supported by Vercel's Registrar."
+                required:
+                  - transferable
+                  - transferPolicy
+                  - reason
+                  - status
+                type: object
+        "400":
+          description: ""
+        "401":
+          description: ""
+        "403":
+          description: You do not have permission to access this resource.
+      parameters:
+        - description: The domain to check the transfer status for.
+          in: path
+          name: domain
+          required: true
+          schema:
+            type: string
+            example: example.com
+        - description: The Team identifier to perform the request on behalf of.
+          in: query
+          name: teamId
+          schema:
+            type: string
+        - description: The Team slug to perform the request on behalf of.
+          in: query
+          name: slug
+          schema:
+            type: string
+  "/v6/domains/{domain}/config":
+    get:
+      description: Get a Domain's configuration.
+      operationId: getDomainConfig
+      x-speakeasy-name-override: getConfig
+      security:
+        - bearerToken: []
+      summary: Get a Domain's configuration
+      tags:
+        - domains
+      responses:
+        "200":
+          description: ""
+          content:
+            application/json:
+              schema:
+                properties:
+                  configuredBy:
+                    nullable: true
+                    type: string
+                    enum:
+                      - CNAME
+                      - A
+                      - http
+                      - dns-01
+                    description:
+                      "How we see the domain's configuration. - `CNAME`:
+                      Domain has a CNAME pointing to Vercel. - `A`: Domain's A record
+                      is resolving to Vercel. - `http`: Domain is resolving to Vercel
+                      but may be behind a Proxy. - `dns-01`: Domain is not resolving
+                      to Vercel but dns-01 challenge is enabled. - `null`: Domain
+                      is not resolving to Vercel."
+                  acceptedChallenges:
+                    items:
+                      type: string
+                      enum:
+                        - dns-01
+                        - http-01
+                      description:
+                        Which challenge types the domain can use for issuing
+                        certs.
+                    type: array
+                    description:
+                      Which challenge types the domain can use for issuing
+                      certs.
+                  misconfigured:
+                    type: boolean
+                    description:
+                      Whether or not the domain is configured AND we can
+                      automatically generate a TLS certificate.
+                required:
+                  - misconfigured
+                type: object
+        "400":
+          description: One of the provided values in the request query is invalid.
+        "401":
+          description: ""
+        "403":
+          description: You do not have permission to access this resource.
+      parameters:
+        - name: domain
+          description: The name of the domain.
+          in: path
+          required: true
+          schema:
+            description: The name of the domain.
+            type: string
+            example: example.com
+        - name: strict
+          description:
+            When true, the response will only include the nameservers assigned
+            directly to the specified domain. When false and there are no nameservers
+            assigned directly to the specified domain, the response will include the
+            nameservers of the domain's parent zone.
+          in: query
+          required: false
+          schema:
+            enum:
+              - "true"
+              - "false"
+            description:
+              When true, the response will only include the nameservers assigned
+              directly to the specified domain. When false and there are no nameservers
+              assigned directly to the specified domain, the response will include the
+              nameservers of the domain's parent zone.
+        - description: The Team identifier to perform the request on behalf of.
+          in: query
+          name: teamId
+          schema:
+            type: string
+        - description: The Team slug to perform the request on behalf of.
+          in: query
+          name: slug
+          schema:
+            type: string
+  "/v5/domains/{domain}":
+    get:
+      description: Get information for a single domain in an account or team.
+      operationId: getDomain
+      security:
+        - bearerToken: []
+      summary: Get Information for a Single Domain
+      tags:
+        - domains
+      responses:
+        "200":
+          description:
+            Successful response retrieving an information for a specific
+            domains.
+          content:
+            application/json:
+              schema:
+                properties:
+                  domain:
+                    properties:
+                      suffix:
+                        type: boolean
+                      verified:
+                        type: boolean
+                        description: If the domain has the ownership verified.
+                        example: true
+                      nameservers:
+                        items:
+                          type: string
+                        type: array
+                        description: A list of the current nameservers of the domain.
+                        example:
+                          - ns1.nameserver.net
+                          - ns2.nameserver.net
+                      intendedNameservers:
+                        items:
+                          type: string
+                        type: array
+                        description:
+                          A list of the intended nameservers for the domain
+                          to point to Vercel DNS.
+                        example:
+                          - ns1.vercel-dns.com
+                          - ns2.vercel-dns.com
+                      customNameservers:
+                        items:
+                          type: string
+                        type: array
+                        description:
+                          A list of custom nameservers for the domain to
+                          point to. Only applies to domains purchased with Vercel.
+                        example:
+                          - ns1.nameserver.net
+                          - ns2.nameserver.net
+                      creator:
+                        properties:
+                          username:
+                            type: string
+                          email:
+                            type: string
+                          customerId:
+                            nullable: true
+                            type: string
+                          isDomainReseller:
+                            type: boolean
+                          id:
+                            type: string
+                        required:
+                          - username
+                          - email
+                          - id
+                        type: object
+                        description:
+                          An object containing information of the domain
+                          creator, including the user's id, username, and email.
+                        example:
+                          id: ZspSRT4ljIEEmMHgoDwKWDei
+                          username: vercel_user
+                          email: demo@example.com
+                      boughtAt:
+                        nullable: true
+                        type: number
+                        description:
+                          If it was purchased through Vercel, the timestamp
+                          in milliseconds when it was purchased.
+                        example: 1613602938882
+                      createdAt:
+                        type: number
+                        description:
+                          Timestamp in milliseconds when the domain was
+                          created in the registry.
+                        example: 1613602938882
+                      expiresAt:
+                        nullable: true
+                        type: number
+                        description:
+                          Timestamp in milliseconds at which the domain
+                          is set to expire. `null` if not bought with Vercel.
+                        example: 1613602938882
+                      id:
+                        type: string
+                        description: The unique identifier of the domain.
+                        example: EmTbe5CEJyTk2yVAHBUWy4A3sRusca3GCwRjTC1bpeVnt1
+                      name:
+                        type: string
+                        description: The domain name.
+                        example: example.com
+                      orderedAt:
+                        type: number
+                        description:
+                          Timestamp in milliseconds at which the domain
+                          was ordered.
+                        example: 1613602938882
+                      renew:
+                        type: boolean
+                        description:
+                          Indicates whether the domain is set to automatically
+                          renew.
+                        example: true
+                      serviceType:
+                        type: string
+                        enum:
+                          - zeit.world
+                          - external
+                          - na
+                        description:
+                          The type of service the domain is handled by.
+                          `external` if the DNS is externally handled, `zeit.world`
+                          if handled with Vercel, or `na` if the service is not available.
+                        example: zeit.world
+                      transferredAt:
+                        nullable: true
+                        type: number
+                        description:
+                          Timestamp in milliseconds at which the domain
+                          was successfully transferred into Vercel. `null` if the
+                          transfer is still processing or was never transferred in.
+                        example: 1613602938882
+                      transferStartedAt:
+                        type: number
+                        description:
+                          If transferred into Vercel, timestamp in milliseconds
+                          when the domain transfer was initiated.
+                        example: 1613602938882
+                    required:
+                      - suffix
+                      - verified
+                      - nameservers
+                      - intendedNameservers
+                      - creator
+                      - boughtAt
+                      - createdAt
+                      - expiresAt
+                      - id
+                      - name
+                      - serviceType
+                    type: object
+                required:
+                  - domain
+                type: object
+        "400":
+          description: One of the provided values in the request query is invalid.
+        "401":
+          description: ""
+        "403":
+          description: You do not have permission to access this resource.
+        "404":
+          description: ""
+      parameters:
+        - name: domain
+          description: The name of the domain.
+          in: path
+          required: true
+          schema:
+            description: The name of the domain.
+            type: string
+            example: example.com
+        - description: The Team identifier to perform the request on behalf of.
+          in: query
+          name: teamId
+          schema:
+            type: string
+        - description: The Team slug to perform the request on behalf of.
+          in: query
+          name: slug
+          schema:
+            type: string
+  "/v5/domains":
+    get:
+      description:
+        Retrieves a list of domains registered for the authenticated user
+        or team. By default it returns the last 20 domains if no limit is provided.
+      operationId: getDomains
+      x-speakeasy-name-override: list
+      security:
+        - bearerToken: []
+      summary: List all the domains
+      tags:
+        - domains
+      responses:
+        "200":
+          description: Successful response retrieving a list of domains.
+          content:
+            application/json:
+              schema:
+                properties:
+                  domains:
+                    items:
+                      properties:
+                        verified:
+                          type: boolean
+                          description: If the domain has the ownership verified.
+                          example: true
+                        nameservers:
+                          items:
+                            type: string
+                          type: array
+                          description: A list of the current nameservers of the domain.
+                          example:
+                            - ns1.nameserver.net
+                            - ns2.nameserver.net
+                        intendedNameservers:
+                          items:
+                            type: string
+                          type: array
+                          description:
+                            A list of the intended nameservers for the
+                            domain to point to Vercel DNS.
+                          example:
+                            - ns1.vercel-dns.com
+                            - ns2.vercel-dns.com
+                        customNameservers:
+                          items:
+                            type: string
+                          type: array
+                          description:
+                            A list of custom nameservers for the domain
+                            to point to. Only applies to domains purchased with Vercel.
+                          example:
+                            - ns1.nameserver.net
+                            - ns2.nameserver.net
+                        creator:
+                          properties:
+                            username:
+                              type: string
+                            email:
+                              type: string
+                            customerId:
+                              nullable: true
+                              type: string
+                            isDomainReseller:
+                              type: boolean
+                            id:
+                              type: string
+                          required:
+                            - username
+                            - email
+                            - id
+                          type: object
+                          description:
+                            An object containing information of the domain
+                            creator, including the user's id, username, and email.
+                          example:
+                            id: ZspSRT4ljIEEmMHgoDwKWDei
+                            username: vercel_user
+                            email: demo@example.com
+                        boughtAt:
+                          nullable: true
+                          type: number
+                          description:
+                            If it was purchased through Vercel, the timestamp
+                            in milliseconds when it was purchased.
+                          example: 1613602938882
+                        createdAt:
+                          type: number
+                          description:
+                            Timestamp in milliseconds when the domain was
+                            created in the registry.
+                          example: 1613602938882
+                        expiresAt:
+                          nullable: true
+                          type: number
+                          description:
+                            Timestamp in milliseconds at which the domain
+                            is set to expire. `null` if not bought with Vercel.
+                          example: 1613602938882
+                        id:
+                          type: string
+                          description: The unique identifier of the domain.
+                          example: EmTbe5CEJyTk2yVAHBUWy4A3sRusca3GCwRjTC1bpeVnt1
+                        name:
+                          type: string
+                          description: The domain name.
+                          example: example.com
+                        orderedAt:
+                          type: number
+                          description:
+                            Timestamp in milliseconds at which the domain
+                            was ordered.
+                          example: 1613602938882
+                        renew:
+                          type: boolean
+                          description:
+                            Indicates whether the domain is set to automatically
+                            renew.
+                          example: true
+                        serviceType:
+                          type: string
+                          enum:
+                            - zeit.world
+                            - external
+                            - na
+                          description:
+                            The type of service the domain is handled by.
+                            `external` if the DNS is externally handled, `zeit.world`
+                            if handled with Vercel, or `na` if the service is not
+                            available.
+                          example: zeit.world
+                        transferredAt:
+                          nullable: true
+                          type: number
+                          description:
+                            Timestamp in milliseconds at which the domain
+                            was successfully transferred into Vercel. `null` if the
+                            transfer is still processing or was never transferred
+                            in.
+                          example: 1613602938882
+                        transferStartedAt:
+                          type: number
+                          description:
+                            If transferred into Vercel, timestamp in milliseconds
+                            when the domain transfer was initiated.
+                          example: 1613602938882
+                      required:
+                        - verified
+                        - nameservers
+                        - intendedNameservers
+                        - creator
+                        - boughtAt
+                        - createdAt
+                        - expiresAt
+                        - id
+                        - name
+                        - serviceType
+                      type: object
+                    type: array
+                  pagination:
+                    "$ref": "#/components/schemas/Pagination"
+                required:
+                  - domains
+                  - pagination
+                type: object
+        "400":
+          description: One of the provided values in the request query is invalid.
+        "401":
+          description: ""
+        "403":
+          description: You do not have permission to access this resource.
+        "409":
+          description: ""
+      parameters:
+        - name: limit
+          description: Maximum number of domains to list from a request.
+          in: query
+          schema:
+            description: Maximum number of domains to list from a request.
+            type: number
+            example: 20
+        - name: since
+          description: Get domains created after this JavaScript timestamp.
+          in: query
+          schema:
+            description: Get domains created after this JavaScript timestamp.
+            type: number
+            example: 1609499532000
+        - name: until
+          description: Get domains created before this JavaScript timestamp.
+          in: query
+          schema:
+            description: Get domains created before this JavaScript timestamp.
+            type: number
+            example: 1612264332000
+        - description: The Team identifier to perform the request on behalf of.
+          in: query
+          name: teamId
+          schema:
+            type: string
+        - description: The Team slug to perform the request on behalf of.
+          in: query
+          name: slug
+          schema:
+            type: string
+    post:
+      description:
+        This endpoint is used for adding a new apex domain name with Vercel
+        for the authenticating user. Can also be used for initiating a domain transfer
+        request from an external Registrar to Vercel.
+      operationId: createOrTransferDomain
+      security:
+        - bearerToken: []
+      summary: Register or transfer-in a new Domain
+      tags:
+        - domains
+      responses:
+        "200":
+          description: ""
+          content:
+            application/json:
+              schema:
+                properties:
+                  domain:
+                    properties:
+                      verified:
+                        type: boolean
+                        description: If the domain has the ownership verified.
+                        example: true
+                      nameservers:
+                        items:
+                          type: string
+                        type: array
+                        description: A list of the current nameservers of the domain.
+                        example:
+                          - ns1.nameserver.net
+                          - ns2.nameserver.net
+                      intendedNameservers:
+                        items:
+                          type: string
+                        type: array
+                        description:
+                          A list of the intended nameservers for the domain
+                          to point to Vercel DNS.
+                        example:
+                          - ns1.vercel-dns.com
+                          - ns2.vercel-dns.com
+                      customNameservers:
+                        items:
+                          type: string
+                        type: array
+                        description:
+                          A list of custom nameservers for the domain to
+                          point to. Only applies to domains purchased with Vercel.
+                        example:
+                          - ns1.nameserver.net
+                          - ns2.nameserver.net
+                      creator:
+                        properties:
+                          username:
+                            type: string
+                          email:
+                            type: string
+                          customerId:
+                            nullable: true
+                            type: string
+                          isDomainReseller:
+                            type: boolean
+                          id:
+                            type: string
+                        required:
+                          - username
+                          - email
+                          - id
+                        type: object
+                        description:
+                          An object containing information of the domain
+                          creator, including the user's id, username, and email.
+                        example:
+                          id: ZspSRT4ljIEEmMHgoDwKWDei
+                          username: vercel_user
+                          email: demo@example.com
+                      boughtAt:
+                        nullable: true
+                        type: number
+                        description:
+                          If it was purchased through Vercel, the timestamp
+                          in milliseconds when it was purchased.
+                        example: 1613602938882
+                      createdAt:
+                        type: number
+                        description:
+                          Timestamp in milliseconds when the domain was
+                          created in the registry.
+                        example: 1613602938882
+                      expiresAt:
+                        nullable: true
+                        type: number
+                        description:
+                          Timestamp in milliseconds at which the domain
+                          is set to expire. `null` if not bought with Vercel.
+                        example: 1613602938882
+                      id:
+                        type: string
+                        description: The unique identifier of the domain.
+                        example: EmTbe5CEJyTk2yVAHBUWy4A3sRusca3GCwRjTC1bpeVnt1
+                      name:
+                        type: string
+                        description: The domain name.
+                        example: example.com
+                      orderedAt:
+                        type: number
+                        description:
+                          Timestamp in milliseconds at which the domain
+                          was ordered.
+                        example: 1613602938882
+                      renew:
+                        type: boolean
+                        description:
+                          Indicates whether the domain is set to automatically
+                          renew.
+                        example: true
+                      serviceType:
+                        type: string
+                        enum:
+                          - zeit.world
+                          - external
+                          - na
+                        description:
+                          The type of service the domain is handled by.
+                          `external` if the DNS is externally handled, `zeit.world`
+                          if handled with Vercel, or `na` if the service is not available.
+                        example: zeit.world
+                      transferredAt:
+                        nullable: true
+                        type: number
+                        description:
+                          Timestamp in milliseconds at which the domain
+                          was successfully transferred into Vercel. `null` if the
+                          transfer is still processing or was never transferred in.
+                        example: 1613602938882
+                      transferStartedAt:
+                        type: number
+                        description:
+                          If transferred into Vercel, timestamp in milliseconds
+                          when the domain transfer was initiated.
+                        example: 1613602938882
+                    required:
+                      - verified
+                      - nameservers
+                      - intendedNameservers
+                      - creator
+                      - boughtAt
+                      - createdAt
+                      - expiresAt
+                      - id
+                      - name
+                      - serviceType
+                    type: object
+                required:
+                  - domain
+                type: object
+        "400":
+          description: One of the provided values in the request body is invalid.
+        "401":
+          description: ""
+        "402":
+          description: |-
+            The account was soft-blocked for an unhandled reason.
+            The account is missing a payment so payment method must be updated
+        "403":
+          description: You do not have permission to access this resource.
+        "404":
+          description: ""
+        "409":
+          description: ""
+      parameters:
+        - description: The Team identifier to perform the request on behalf of.
+          in: query
+          name: teamId
+          schema:
+            type: string
+        - description: The Team slug to perform the request on behalf of.
+          in: query
+          name: slug
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                method:
+                  description:
+                    The domain operation to perform. It can be either `add`
+                    or `transfer-in`.
+                  type: string
+                  example: transfer-in
+              oneOf:
+                - additionalProperties: false
+                  type: object
+                  description: add
+                  required:
+                    - name
+                  properties:
+                    name:
+                      description: The domain name you want to add.
+                      type: string
+                      example: example.com
+                    cdnEnabled:
+                      description:
+                        Whether the domain has the Vercel Edge Network enabled
+                        or not.
+                      type: boolean
+                      example: true
+                    zone:
+                      type: boolean
+                    method:
+                      description: The domain operation to perform.
+                      type: string
+                      example: add
+                - additionalProperties: false
+                  type: object
+                  description: move-in
+                  required:
+                    - method
+                    - name
+                  properties:
+                    name:
+                      description: The domain name you want to add.
+                      type: string
+                      example: example.com
+                    method:
+                      description: The domain operation to perform.
+                      type: string
+                      example: move-in
+                    token:
+                      description: The move-in token from Move Requested email.
+                      type: string
+                      example: fdhfr820ad#@FAdlj$$
+                - additionalProperties: false
+                  type: object
+                  description: transfer-in
+                  required:
+                    - method
+                    - name
+                  properties:
+                    name:
+                      description: The domain name you want to add.
+                      type: string
+                      example: example.com
+                    method:
+                      description: The domain operation to perform.
+                      type: string
+                      example: transfer-in
+                    authCode:
+                      description: The authorization code assigned to the domain.
+                      type: string
+                      example: fdhfr820ad#@FAdlj$$
+                    expectedPrice:
+                      description:
+                        The price you expect to be charged for the required
+                        1 year renewal.
+                      type: number
+                      example: 8
+  "/v3/domains/{domain}":
+    patch:
+      description: Update or move apex domain.
+      operationId: patchDomain
+      x-speakeasy-name-override: update
+      security:
+        - bearerToken: []
+      summary: Update or move apex domain
+      tags:
+        - domains
+      responses:
+        "200":
+          description: ""
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - properties:
+                      moved:
+                        type: boolean
+                    required:
+                      - moved
+                    type: object
+                  - properties:
+                      moved:
+                        type: boolean
+                      token:
+                        type: string
+                    required:
+                      - moved
+                      - token
+                    type: object
+                  - properties:
+                      renew:
+                        type: boolean
+                      customNameservers:
+                        items:
+                          type: string
+                        type: array
+                      zone:
+                        type: boolean
+                    type: object
+        "400":
+          description: |-
+            One of the provided values in the request body is invalid.
+            One of the provided values in the request query is invalid.
+        "401":
+          description: ""
+        "403":
+          description: You do not have permission to access this resource.
+        "404":
+          description: ""
+        "409":
+          description: ""
+      parameters:
+        - name: domain
+          required: true
+          in: path
+          schema:
+            type: string
+        - description: The Team identifier to perform the request on behalf of.
+          in: query
+          name: teamId
+          schema:
+            type: string
+        - description: The Team slug to perform the request on behalf of.
+          in: query
+          name: slug
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              oneOf:
+                - type: object
+                  description: update
+                  additionalProperties: false
+                  properties:
+                    op:
+                      example: update
+                      type: string
+                    renew:
+                      description: Specifies whether domain should be renewed.
+                      type: boolean
+                    customNameservers:
+                      description: The custom nameservers for this project.
+                      items:
+                        type: string
+                      maxItems: 4
+                      minItems: 0
+                      type: array
+                      uniqueItems: true
+                    zone:
+                      description:
+                        Specifies whether this is a DNS zone that intends
+                        to use Vercel's nameservers.
+                      type: boolean
+                - type: object
+                  description: move-out
+                  additionalProperties: false
+                  properties:
+                    op:
+                      example: move-out
+                      type: string
+                    destination:
+                      description: User or team to move domain to
+                      type: string
+  "/v6/domains/{domain}":
+    delete:
+      description:
+        Delete a previously registered domain name from Vercel. Deleting
+        a domain will automatically remove any associated aliases.
+      operationId: deleteDomain
+      x-speakeasy-name-override: delete
+      security:
+        - bearerToken: []
+      summary: Remove a domain by name
+      tags:
+        - domains
+      responses:
+        "200":
+          description: Successful response removing a domain.
+          content:
+            application/json:
+              schema:
+                properties:
+                  uid:
+                    type: string
+                required:
+                  - uid
+                type: object
+        "400":
+          description: One of the provided values in the request query is invalid.
+        "401":
+          description: ""
+        "403":
+          description: You do not have permission to access this resource.
+        "404":
+          description: ""
+        "409":
+          description: ""
+      parameters:
+        - name: domain
+          description: The name of the domain.
+          in: path
+          required: true
+          schema:
+            description: The name of the domain.
+            type: string
+            example: example.com
+        - description: The Team identifier to perform the request on behalf of.
+          in: query
+          name: teamId
+          schema:
+            type: string
+        - description: The Team slug to perform the request on behalf of.
+          in: query
+          name: slug
+          schema:
+            type: string
+components:
+  schemas:
+    ACLAction:
+      type: string
+      enum:
+        - create
+        - delete
+        - read
+        - update
+        - list
+      description:
+        Enum containing the actions that can be performed against a resource.
+        Group operations are included.
+    Pagination:
+      properties:
+        count:
+          type: number
+          description: Amount of items in the current page.
+          example: 20
+        next:
+          nullable: true
+          type: number
+          description: Timestamp that must be used to request the next page.
+          example: 1540095775951
+        prev:
+          nullable: true
+          type: number
+          description: Timestamp that must be used to request the previous page.
+          example: 1540095775951
+      required:
+        - count
+        - next
+        - prev
+      type: object
+      description:
+        This object contains information related to the pagination of the
+        current request, including the necessary parameters to get the next or previous
+        page of data.
+    # EdgeConfigItemValue:
+    #   nullable: true
+    #   oneOf:
+    #     - type: string
+    #     - type: number
+    #     - type: boolean
+    #     - additionalProperties:
+    #         "$ref": "#/components/schemas/EdgeConfigItemValue"
+    #       type: object
+    #     - items:
+    #         "$ref": "#/components/schemas/EdgeConfigItemValue"
+    #       type: array
+    # EdgeConfigItem:
+    #   properties:
+    #     key:
+    #       type: string
+    #     value:
+    #       "$ref": "#/components/schemas/EdgeConfigItemValue"
+    #     description:
+    #       type: string
+    #     edgeConfigId:
+    #       type: string
+    #     createdAt:
+    #       type: number
+    #     updatedAt:
+    #       type: number
+    #   required:
+    #     - key
+    #     - value
+    #     - edgeConfigId
+    #     - createdAt
+    #     - updatedAt
+    #   type: object
+    #   description: The EdgeConfig.
+    EdgeConfigToken:
+      properties:
+        token:
+          type: string
+        label:
+          type: string
+        id:
+          type: string
+          description:
+            This is not the token itself, but rather an id to identify
+            the token by
+        edgeConfigId:
+          type: string
+        createdAt:
+          type: number
+      required:
+        - token
+        - label
+        - id
+        - edgeConfigId
+        - createdAt
+      type: object
+      description: The EdgeConfig.
+    UserEvent:
+      properties:
+        id:
+          type: string
+          description: The unique identifier of the Event.
+          example: uev_bfmMjiMnXfnPbT97dGdpJbCN
+        text:
+          type: string
+          description: The human-readable text of the Event.
+          example: You logged in via GitHub
+        entities:
+          items:
+            properties:
+              type:
+                type: string
+                enum:
+                  - author
+                  - bitbucket_login
+                  - bold
+                  - deployment_host
+                  - dns_record
+                  - git_link
+                  - github_login
+                  - gitlab_login
+                  - hook_name
+                  - integration
+                  - edge-config
+                  - link
+                  - project_name
+                  - scaling_rules
+                  - env_var_name
+                  - target
+                  - store
+                  - system
+                description: The type of entity.
+                example: author
+              start:
+                type: number
+                description:
+                  The index of where the entity begins within the `text`
+                  (inclusive).
+                example: 0
+              end:
+                type: number
+                description:
+                  The index of where the entity ends within the `text`
+                  (non-inclusive).
+                example: 3
+            required:
+              - type
+              - start
+              - end
+            type: object
+            description:
+              A list of "entities" within the event `text`. Useful for
+              enhancing the displayed text with additional styling and links.
+          type: array
+          description:
+            A list of "entities" within the event `text`. Useful for enhancing
+            the displayed text with additional styling and links.
+        createdAt:
+          type: number
+          description: Timestamp (in milliseconds) of when the event was generated.
+          example: 1632859321020
+        user:
+          properties:
+            avatar:
+              type: string
+            email:
+              type: string
+            slug:
+              type: string
+            uid:
+              type: string
+            username:
+              type: string
+          required:
+            - avatar
+            - email
+            - uid
+            - username
+          type: object
+          description: Metadata for the User who generated the event.
+        userId:
+          type: string
+          description: The unique identifier of the User who generated the event.
+          example: zTuNVUXEAvvnNN3IaqinkyMw
+      required:
+        - id
+        - text
+        - entities
+        - createdAt
+        - userId
+      type: object
+      description: Array of events generated by the User.
+    Team:
+      type: object
+      description: Data representing a Team.
+    TeamLimited:
+      properties:
+        limited:
+          type: boolean
+          description:
+            Property indicating that this Team data contains only limited
+            information, due to the authentication token missing privileges to read
+            the full Team data. Re-login with the Team's configured SAML Single Sign-On
+            provider in order to upgrade the authentication token with the necessary
+            privileges.
+        saml:
+          properties:
+            connection:
+              properties:
+                type:
+                  type: string
+                  description: The Identity Provider "type", for example Okta.
+                  example: OktaSAML
+                status:
+                  type: string
+                  description: Current status of the connection.
+                  example: linked
+                state:
+                  type: string
+                  description: Current state of the connection.
+                  example: active
+                connectedAt:
+                  type: number
+                  description:
+                    Timestamp (in milliseconds) of when the configuration
+                    was connected.
+                  example: 1611796915677
+                lastReceivedWebhookEvent:
+                  type: number
+                  description:
+                    Timestamp (in milliseconds) of when the last webhook
+                    event was received from WorkOS.
+                  example: 1611796915677
+              required:
+                - type
+                - status
+                - state
+                - connectedAt
+              type: object
+              description: Information for the SAML Single Sign-On configuration.
+            directory:
+              properties:
+                type:
+                  type: string
+                  description: The Identity Provider "type", for example Okta.
+                  example: OktaSAML
+                status:
+                  type: string
+                  description: Current status of the connection.
+                  example: linked
+                state:
+                  type: string
+                  description: Current state of the connection.
+                  example: active
+                connectedAt:
+                  type: number
+                  description:
+                    Timestamp (in milliseconds) of when the configuration
+                    was connected.
+                  example: 1611796915677
+                lastReceivedWebhookEvent:
+                  type: number
+                  description:
+                    Timestamp (in milliseconds) of when the last webhook
+                    event was received from WorkOS.
+                  example: 1611796915677
+              required:
+                - type
+                - status
+                - state
+                - connectedAt
+              type: object
+              description: Information for the SAML Single Sign-On configuration.
+            enforced:
+              type: boolean
+              description:
+                When `true`, interactions with the Team **must** be done
+                with an authentication token that has been authenticated with the
+                Team's SAML Single Sign-On provider.
+          required:
+            - enforced
+          type: object
+          description:
+            When "Single Sign-On (SAML)" is configured, this object contains
+            information that allows the client-side to identify whether or not this
+            Team has SAML enforced.
+        id:
+          type: string
+          description: The Team's unique identifier.
+          example: team_nllPyCtREAqxxdyFKbbMDlxd
+        slug:
+          type: string
+          description: The Team's slug, which is unique across the Vercel platform.
+          example: my-team
+        name:
+          nullable: true
+          type: string
+          description:
+            Name associated with the Team account, or `null` if none has
+            been provided.
+          example: My Team
+        avatar:
+          nullable: true
+          type: string
+          description: The ID of the file used as avatar for this Team.
+          example: 6eb07268bcfadd309905ffb1579354084c24655c
+        membership:
+          oneOf:
+            - properties:
+                confirmed:
+                  type: boolean
+                confirmedAt:
+                  type: number
+                accessRequestedAt:
+                  type: number
+                role:
+                  type: string
+                  enum:
+                    - OWNER
+                    - MEMBER
+                    - DEVELOPER
+                    - BILLING
+                    - VIEWER
+                    - CONTRIBUTOR
+                teamId:
+                  type: string
+                uid:
+                  type: string
+                createdAt:
+                  type: number
+                created:
+                  type: number
+                joinedFrom:
+                  properties:
+                    origin:
+                      type: string
+                      enum:
+                        - link
+                        - saml
+                        - mail
+                        - import
+                        - teams
+                        - github
+                        - gitlab
+                        - bitbucket
+                        - dsync
+                        - feedback
+                        - organization-teams
+                    commitId:
+                      type: string
+                    repoId:
+                      type: string
+                    repoPath:
+                      type: string
+                    gitUserId:
+                      oneOf:
+                        - type: string
+                        - type: number
+                    gitUserLogin:
+                      type: string
+                    ssoUserId:
+                      type: string
+                    ssoConnectedAt:
+                      type: number
+                    idpUserId:
+                      type: string
+                    dsyncUserId:
+                      type: string
+                    dsyncConnectedAt:
+                      type: number
+                  required:
+                    - origin
+                  type: object
+              required:
+                - confirmed
+                - confirmedAt
+                - role
+                - uid
+                - createdAt
+                - created
+              type: object
+              description:
+                The membership of the authenticated User in relation to the
+                Team.
+            - properties:
+                confirmed:
+                  type: boolean
+                confirmedAt:
+                  type: number
+                accessRequestedAt:
+                  type: number
+                role:
+                  type: string
+                  enum:
+                    - OWNER
+                    - MEMBER
+                    - DEVELOPER
+                    - BILLING
+                    - VIEWER
+                    - CONTRIBUTOR
+                teamId:
+                  type: string
+                uid:
+                  type: string
+                createdAt:
+                  type: number
+                created:
+                  type: number
+                joinedFrom:
+                  properties:
+                    origin:
+                      type: string
+                      enum:
+                        - link
+                        - saml
+                        - mail
+                        - import
+                        - teams
+                        - github
+                        - gitlab
+                        - bitbucket
+                        - dsync
+                        - feedback
+                        - organization-teams
+                    commitId:
+                      type: string
+                    repoId:
+                      type: string
+                    repoPath:
+                      type: string
+                    gitUserId:
+                      oneOf:
+                        - type: string
+                        - type: number
+                    gitUserLogin:
+                      type: string
+                    ssoUserId:
+                      type: string
+                    ssoConnectedAt:
+                      type: number
+                    idpUserId:
+                      type: string
+                    dsyncUserId:
+                      type: string
+                    dsyncConnectedAt:
+                      type: number
+                  required:
+                    - origin
+                  type: object
+              required:
+                - confirmed
+                - accessRequestedAt
+                - role
+                - uid
+                - createdAt
+                - created
+              type: object
+              description:
+                The membership of the authenticated User in relation to the
+                Team.
+        created:
+          type: string
+          description: Will remain undocumented. Remove in v3 API.
+        createdAt:
+          type: number
+          description: UNIX timestamp (in milliseconds) when the Team was created.
+          example: 1630748523395
+      required:
+        - limited
+        - id
+        - slug
+        - name
+        - avatar
+        - membership
+        - created
+        - createdAt
+      type: object
+      description:
+        A limited form of data representing a Team, due to the authentication
+        token missing privileges to read the full Team data.
+    AuthUser:
+      properties:
+        createdAt:
+          type: number
+          description:
+            UNIX timestamp (in milliseconds) when the User account was
+            created.
+          example: 1630748523395
+        softBlock:
+          nullable: true
+          properties:
+            blockedAt:
+              type: number
+            reason:
+              type: string
+              enum:
+                - SUBSCRIPTION_CANCELED
+                - SUBSCRIPTION_EXPIRED
+                - UNPAID_INVOICE
+                - ENTERPRISE_TRIAL_ENDED
+                - FAIR_USE_LIMITS_EXCEEDED
+                - BLOCKED_FOR_PLATFORM_ABUSE
+            blockedDueToOverageType:
+              type: string
+              enum:
+                - analyticsUsage
+                - artifacts
+                - bandwidth
+                - blobStores
+                - blobTotalAdvancedRequests
+                - blobTotalAvgSizeInBytes
+                - blobTotalGetResponseObjectSizeInBytes
+                - blobTotalSimpleRequests
+                - buildMinute
+                - dataCacheRead
+                - dataCacheRevalidation
+                - dataCacheWrite
+                - edgeConfigRead
+                - edgeConfigWrite
+                - edgeFunctionExecutionUnits
+                - edgeMiddlewareInvocations
+                - edgeRequest
+                - edgeRequestAdditionalCpuDuration
+                - fastDataTransfer
+                - fastOriginTransfer
+                - functionDuration
+                - functionInvocation
+                - logDrainsVolume
+                - monitoringMetric
+                - postgresComputeTime
+                - postgresDataStorage
+                - postgresDataTransfer
+                - postgresDatabase
+                - postgresWrittenData
+                - serverlessFunctionExecution
+                - sourceImages
+                - storageRedisTotalBandwidthInBytes
+                - storageRedisTotalCommands
+                - storageRedisTotalDailyAvgStorageInBytes
+                - storageRedisTotalDatabases
+                - wafOwaspExcessBytes
+                - wafOwaspRequests
+                - webAnalyticsEvent
+          required:
+            - blockedAt
+            - reason
+          type: object
+          description:
+            When the User account has been "soft blocked", this property
+            will contain the date when the restriction was enacted, and the identifier
+            for why.
+        billing:
+          nullable: true
+          properties:
+            currency:
+              type: string
+              enum:
+                - usd
+                - eur
+            cancelation:
+              nullable: true
+              type: number
+            period:
+              nullable: true
+              properties:
+                start:
+                  type: number
+                end:
+                  type: number
+              required:
+                - start
+                - end
+              type: object
+            contract:
+              nullable: true
+              properties:
+                start:
+                  type: number
+                end:
+                  type: number
+              required:
+                - start
+                - end
+              type: object
+            plan:
+              type: string
+              enum:
+                - pro
+                - enterprise
+                - hobby
+            planIteration:
+              type: string
+            platform:
+              type: string
+              enum:
+                - stripe
+                - stripeTestMode
+            orbCustomerId:
+              type: string
+            syncedAt:
+              type: number
+            programType:
+              type: string
+              enum:
+                - startup
+                - agency
+            trial:
+              nullable: true
+              properties:
+                start:
+                  type: number
+                end:
+                  type: number
+              required:
+                - start
+                - end
+              type: object
+            email:
+              nullable: true
+              type: string
+            tax:
+              nullable: true
+              properties:
+                type:
+                  type: string
+                id:
+                  type: string
+              required:
+                - type
+                - id
+              type: object
+            language:
+              nullable: true
+              type: string
+            address:
+              nullable: true
+              properties:
+                line1:
+                  type: string
+                line2:
+                  type: string
+                postalCode:
+                  type: string
+                city:
+                  type: string
+                country:
+                  type: string
+                state:
+                  type: string
+              type: object
+            name:
+              nullable: true
+              type: string
+            invoiceItems:
+              nullable: true
+              properties:
+                concurrentBuilds:
+                  properties:
+                    tier:
+                      type: number
+                    price:
+                      type: number
+                    quantity:
+                      type: number
+                    highestQuantity:
+                      type: number
+                    name:
+                      type: string
+                    hidden:
+                      type: boolean
+                    createdAt:
+                      type: number
+                    disabledAt:
+                      nullable: true
+                      type: number
+                    frequency:
+                      properties:
+                        interval:
+                          type: string
+                          enum:
+                            - month
+                        intervalCount:
+                          type: number
+                          enum:
+                            - 1
+                            - 2
+                            - 3
+                            - 6
+                            - 12
+                      required:
+                        - interval
+                        - intervalCount
+                      type: object
+                    maxQuantity:
+                      type: number
+                  required:
+                    - price
+                    - quantity
+                    - hidden
+                  type: object
+                  description:
+                    "Will be used to create an invoice item. The price
+                    must be in cents: 2000 for $20."
+                webAnalytics:
+                  properties:
+                    tier:
+                      type: number
+                    price:
+                      type: number
+                    quantity:
+                      type: number
+                    highestQuantity:
+                      type: number
+                    name:
+                      type: string
+                    hidden:
+                      type: boolean
+                    createdAt:
+                      type: number
+                    disabledAt:
+                      nullable: true
+                      type: number
+                    frequency:
+                      properties:
+                        interval:
+                          type: string
+                          enum:
+                            - month
+                        intervalCount:
+                          type: number
+                          enum:
+                            - 1
+                            - 2
+                            - 3
+                            - 6
+                            - 12
+                      required:
+                        - interval
+                        - intervalCount
+                      type: object
+                    maxQuantity:
+                      type: number
+                  required:
+                    - price
+                    - quantity
+                    - hidden
+                  type: object
+                  description:
+                    "Will be used to create an invoice item. The price
+                    must be in cents: 2000 for $20."
+                pro:
+                  properties:
+                    tier:
+                      type: number
+                    price:
+                      type: number
+                    quantity:
+                      type: number
+                    highestQuantity:
+                      type: number
+                    name:
+                      type: string
+                    hidden:
+                      type: boolean
+                    createdAt:
+                      type: number
+                    disabledAt:
+                      nullable: true
+                      type: number
+                    frequency:
+                      properties:
+                        interval:
+                          type: string
+                          enum:
+                            - month
+                        intervalCount:
+                          type: number
+                          enum:
+                            - 1
+                            - 2
+                            - 3
+                            - 6
+                            - 12
+                      required:
+                        - interval
+                        - intervalCount
+                      type: object
+                    maxQuantity:
+                      type: number
+                  required:
+                    - price
+                    - quantity
+                    - hidden
+                  type: object
+                  description:
+                    "Will be used to create an invoice item. The price
+                    must be in cents: 2000 for $20."
+                enterprise:
+                  properties:
+                    tier:
+                      type: number
+                    price:
+                      type: number
+                    quantity:
+                      type: number
+                    highestQuantity:
+                      type: number
+                    name:
+                      type: string
+                    hidden:
+                      type: boolean
+                    createdAt:
+                      type: number
+                    disabledAt:
+                      nullable: true
+                      type: number
+                    frequency:
+                      properties:
+                        interval:
+                          type: string
+                          enum:
+                            - month
+                        intervalCount:
+                          type: number
+                          enum:
+                            - 1
+                            - 2
+                            - 3
+                            - 6
+                            - 12
+                      required:
+                        - interval
+                        - intervalCount
+                      type: object
+                    maxQuantity:
+                      type: number
+                  required:
+                    - price
+                    - quantity
+                    - hidden
+                  type: object
+                  description:
+                    "Will be used to create an invoice item. The price
+                    must be in cents: 2000 for $20."
+                analytics:
+                  properties:
+                    tier:
+                      type: number
+                    price:
+                      type: number
+                    quantity:
+                      type: number
+                    highestQuantity:
+                      type: number
+                    name:
+                      type: string
+                    hidden:
+                      type: boolean
+                    createdAt:
+                      type: number
+                    disabledAt:
+                      nullable: true
+                      type: number
+                    frequency:
+                      properties:
+                        interval:
+                          type: string
+                          enum:
+                            - month
+                        intervalCount:
+                          type: number
+                          enum:
+                            - 1
+                            - 2
+                            - 3
+                            - 6
+                            - 12
+                      required:
+                        - interval
+                        - intervalCount
+                      type: object
+                    maxQuantity:
+                      type: number
+                  required:
+                    - price
+                    - quantity
+                    - hidden
+                  type: object
+                  description:
+                    "Will be used to create an invoice item. The price
+                    must be in cents: 2000 for $20."
+                monitoring:
+                  properties:
+                    tier:
+                      type: number
+                    price:
+                      type: number
+                    quantity:
+                      type: number
+                    highestQuantity:
+                      type: number
+                    name:
+                      type: string
+                    hidden:
+                      type: boolean
+                    createdAt:
+                      type: number
+                    disabledAt:
+                      nullable: true
+                      type: number
+                    frequency:
+                      properties:
+                        interval:
+                          type: string
+                          enum:
+                            - month
+                        intervalCount:
+                          type: number
+                          enum:
+                            - 1
+                            - 2
+                            - 3
+                            - 6
+                            - 12
+                      required:
+                        - interval
+                        - intervalCount
+                      type: object
+                    maxQuantity:
+                      type: number
+                  required:
+                    - price
+                    - quantity
+                    - hidden
+                  type: object
+                  description:
+                    "Will be used to create an invoice item. The price
+                    must be in cents: 2000 for $20."
+                passwordProtection:
+                  properties:
+                    tier:
+                      type: number
+                    price:
+                      type: number
+                    quantity:
+                      type: number
+                    highestQuantity:
+                      type: number
+                    name:
+                      type: string
+                    hidden:
+                      type: boolean
+                    createdAt:
+                      type: number
+                    disabledAt:
+                      nullable: true
+                      type: number
+                    frequency:
+                      properties:
+                        interval:
+                          type: string
+                          enum:
+                            - month
+                        intervalCount:
+                          type: number
+                          enum:
+                            - 1
+                            - 2
+                            - 3
+                            - 6
+                            - 12
+                      required:
+                        - interval
+                        - intervalCount
+                      type: object
+                    maxQuantity:
+                      type: number
+                  required:
+                    - price
+                    - quantity
+                    - hidden
+                  type: object
+                  description:
+                    "Will be used to create an invoice item. The price
+                    must be in cents: 2000 for $20."
+                previewDeploymentSuffix:
+                  properties:
+                    tier:
+                      type: number
+                    price:
+                      type: number
+                    quantity:
+                      type: number
+                    highestQuantity:
+                      type: number
+                    name:
+                      type: string
+                    hidden:
+                      type: boolean
+                    createdAt:
+                      type: number
+                    disabledAt:
+                      nullable: true
+                      type: number
+                    frequency:
+                      properties:
+                        interval:
+                          type: string
+                          enum:
+                            - month
+                        intervalCount:
+                          type: number
+                          enum:
+                            - 1
+                            - 2
+                            - 3
+                            - 6
+                            - 12
+                      required:
+                        - interval
+                        - intervalCount
+                      type: object
+                    maxQuantity:
+                      type: number
+                  required:
+                    - price
+                    - quantity
+                    - hidden
+                  type: object
+                  description:
+                    "Will be used to create an invoice item. The price
+                    must be in cents: 2000 for $20."
+                saml:
+                  properties:
+                    tier:
+                      type: number
+                    price:
+                      type: number
+                    quantity:
+                      type: number
+                    highestQuantity:
+                      type: number
+                    name:
+                      type: string
+                    hidden:
+                      type: boolean
+                    createdAt:
+                      type: number
+                    disabledAt:
+                      nullable: true
+                      type: number
+                    frequency:
+                      properties:
+                        interval:
+                          type: string
+                          enum:
+                            - month
+                        intervalCount:
+                          type: number
+                          enum:
+                            - 1
+                            - 2
+                            - 3
+                            - 6
+                            - 12
+                      required:
+                        - interval
+                        - intervalCount
+                      type: object
+                    maxQuantity:
+                      type: number
+                  required:
+                    - price
+                    - quantity
+                    - hidden
+                  type: object
+                  description:
+                    "Will be used to create an invoice item. The price
+                    must be in cents: 2000 for $20."
+                teamSeats:
+                  properties:
+                    tier:
+                      type: number
+                    price:
+                      type: number
+                    quantity:
+                      type: number
+                    highestQuantity:
+                      type: number
+                    name:
+                      type: string
+                    hidden:
+                      type: boolean
+                    createdAt:
+                      type: number
+                    disabledAt:
+                      nullable: true
+                      type: number
+                    frequency:
+                      properties:
+                        interval:
+                          type: string
+                          enum:
+                            - month
+                        intervalCount:
+                          type: number
+                          enum:
+                            - 1
+                            - 2
+                            - 3
+                            - 6
+                            - 12
+                      required:
+                        - interval
+                        - intervalCount
+                      type: object
+                    maxQuantity:
+                      type: number
+                  required:
+                    - price
+                    - quantity
+                    - hidden
+                  type: object
+                  description:
+                    "Will be used to create an invoice item. The price
+                    must be in cents: 2000 for $20."
+                analyticsUsage:
+                  properties:
+                    matrix:
+                      properties:
+                        defaultUnitPrice:
+                          type: string
+                        dimensionPrices:
+                          additionalProperties:
+                            type: string
+                          type: object
+                      required:
+                        - defaultUnitPrice
+                        - dimensionPrices
+                      type: object
+                    tier:
+                      type: number
+                    price:
+                      type: number
+                    batch:
+                      type: number
+                    threshold:
+                      type: number
+                    name:
+                      type: string
+                    hidden:
+                      type: boolean
+                    disabledAt:
+                      nullable: true
+                      type: number
+                    enabledAt:
+                      nullable: true
+                      type: number
+                  required:
+                    - price
+                    - batch
+                    - threshold
+                    - hidden
+                  type: object
+                artifacts:
+                  properties:
+                    matrix:
+                      properties:
+                        defaultUnitPrice:
+                          type: string
+                        dimensionPrices:
+                          additionalProperties:
+                            type: string
+                          type: object
+                      required:
+                        - defaultUnitPrice
+                        - dimensionPrices
+                      type: object
+                    tier:
+                      type: number
+                    price:
+                      type: number
+                    batch:
+                      type: number
+                    threshold:
+                      type: number
+                    name:
+                      type: string
+                    hidden:
+                      type: boolean
+                    disabledAt:
+                      nullable: true
+                      type: number
+                    enabledAt:
+                      nullable: true
+                      type: number
+                  required:
+                    - price
+                    - batch
+                    - threshold
+                    - hidden
+                  type: object
+                bandwidth:
+                  properties:
+                    matrix:
+                      properties:
+                        defaultUnitPrice:
+                          type: string
+                        dimensionPrices:
+                          additionalProperties:
+                            type: string
+                          type: object
+                      required:
+                        - defaultUnitPrice
+                        - dimensionPrices
+                      type: object
+                    tier:
+                      type: number
+                    price:
+                      type: number
+                    batch:
+                      type: number
+                    threshold:
+                      type: number
+                    name:
+                      type: string
+                    hidden:
+                      type: boolean
+                    disabledAt:
+                      nullable: true
+                      type: number
+                    enabledAt:
+                      nullable: true
+                      type: number
+                  required:
+                    - price
+                    - batch
+                    - threshold
+                    - hidden
+                  type: object
+                blobStores:
+                  properties:
+                    matrix:
+                      properties:
+                        defaultUnitPrice:
+                          type: string
+                        dimensionPrices:
+                          additionalProperties:
+                            type: string
+                          type: object
+                      required:
+                        - defaultUnitPrice
+                        - dimensionPrices
+                      type: object
+                    tier:
+                      type: number
+                    price:
+                      type: number
+                    batch:
+                      type: number
+                    threshold:
+                      type: number
+                    name:
+                      type: string
+                    hidden:
+                      type: boolean
+                    disabledAt:
+                      nullable: true
+                      type: number
+                    enabledAt:
+                      nullable: true
+                      type: number
+                  required:
+                    - price
+                    - batch
+                    - threshold
+                    - hidden
+                  type: object
+                blobTotalAdvancedRequests:
+                  properties:
+                    matrix:
+                      properties:
+                        defaultUnitPrice:
+                          type: string
+                        dimensionPrices:
+                          additionalProperties:
+                            type: string
+                          type: object
+                      required:
+                        - defaultUnitPrice
+                        - dimensionPrices
+                      type: object
+                    tier:
+                      type: number
+                    price:
+                      type: number
+                    batch:
+                      type: number
+                    threshold:
+                      type: number
+                    name:
+                      type: string
+                    hidden:
+                      type: boolean
+                    disabledAt:
+                      nullable: true
+                      type: number
+                    enabledAt:
+                      nullable: true
+                      type: number
+                  required:
+                    - price
+                    - batch
+                    - threshold
+                    - hidden
+                  type: object
+                blobTotalAvgSizeInBytes:
+                  properties:
+                    matrix:
+                      properties:
+                        defaultUnitPrice:
+                          type: string
+                        dimensionPrices:
+                          additionalProperties:
+                            type: string
+                          type: object
+                      required:
+                        - defaultUnitPrice
+                        - dimensionPrices
+                      type: object
+                    tier:
+                      type: number
+                    price:
+                      type: number
+                    batch:
+                      type: number
+                    threshold:
+                      type: number
+                    name:
+                      type: string
+                    hidden:
+                      type: boolean
+                    disabledAt:
+                      nullable: true
+                      type: number
+                    enabledAt:
+                      nullable: true
+                      type: number
+                  required:
+                    - price
+                    - batch
+                    - threshold
+                    - hidden
+                  type: object
+                blobTotalGetResponseObjectSizeInBytes:
+                  properties:
+                    matrix:
+                      properties:
+                        defaultUnitPrice:
+                          type: string
+                        dimensionPrices:
+                          additionalProperties:
+                            type: string
+                          type: object
+                      required:
+                        - defaultUnitPrice
+                        - dimensionPrices
+                      type: object
+                    tier:
+                      type: number
+                    price:
+                      type: number
+                    batch:
+                      type: number
+                    threshold:
+                      type: number
+                    name:
+                      type: string
+                    hidden:
+                      type: boolean
+                    disabledAt:
+                      nullable: true
+                      type: number
+                    enabledAt:
+                      nullable: true
+                      type: number
+                  required:
+                    - price
+                    - batch
+                    - threshold
+                    - hidden
+                  type: object
+                blobTotalSimpleRequests:
+                  properties:
+                    matrix:
+                      properties:
+                        defaultUnitPrice:
+                          type: string
+                        dimensionPrices:
+                          additionalProperties:
+                            type: string
+                          type: object
+                      required:
+                        - defaultUnitPrice
+                        - dimensionPrices
+                      type: object
+                    tier:
+                      type: number
+                    price:
+                      type: number
+                    batch:
+                      type: number
+                    threshold:
+                      type: number
+                    name:
+                      type: string
+                    hidden:
+                      type: boolean
+                    disabledAt:
+                      nullable: true
+                      type: number
+                    enabledAt:
+                      nullable: true
+                      type: number
+                  required:
+                    - price
+                    - batch
+                    - threshold
+                    - hidden
+                  type: object
+                buildMinute:
+                  properties:
+                    matrix:
+                      properties:
+                        defaultUnitPrice:
+                          type: string
+                        dimensionPrices:
+                          additionalProperties:
+                            type: string
+                          type: object
+                      required:
+                        - defaultUnitPrice
+                        - dimensionPrices
+                      type: object
+                    tier:
+                      type: number
+                    price:
+                      type: number
+                    batch:
+                      type: number
+                    threshold:
+                      type: number
+                    name:
+                      type: string
+                    hidden:
+                      type: boolean
+                    disabledAt:
+                      nullable: true
+                      type: number
+                    enabledAt:
+                      nullable: true
+                      type: number
+                  required:
+                    - price
+                    - batch
+                    - threshold
+                    - hidden
+                  type: object
+                dataCacheRead:
+                  properties:
+                    matrix:
+                      properties:
+                        defaultUnitPrice:
+                          type: string
+                        dimensionPrices:
+                          additionalProperties:
+                            type: string
+                          type: object
+                      required:
+                        - defaultUnitPrice
+                        - dimensionPrices
+                      type: object
+                    tier:
+                      type: number
+                    price:
+                      type: number
+                    batch:
+                      type: number
+                    threshold:
+                      type: number
+                    name:
+                      type: string
+                    hidden:
+                      type: boolean
+                    disabledAt:
+                      nullable: true
+                      type: number
+                    enabledAt:
+                      nullable: true
+                      type: number
+                  required:
+                    - price
+                    - batch
+                    - threshold
+                    - hidden
+                  type: object
+                dataCacheRevalidation:
+                  properties:
+                    matrix:
+                      properties:
+                        defaultUnitPrice:
+                          type: string
+                        dimensionPrices:
+                          additionalProperties:
+                            type: string
+                          type: object
+                      required:
+                        - defaultUnitPrice
+                        - dimensionPrices
+                      type: object
+                    tier:
+                      type: number
+                    price:
+                      type: number
+                    batch:
+                      type: number
+                    threshold:
+                      type: number
+                    name:
+                      type: string
+                    hidden:
+                      type: boolean
+                    disabledAt:
+                      nullable: true
+                      type: number
+                    enabledAt:
+                      nullable: true
+                      type: number
+                  required:
+                    - price
+                    - batch
+                    - threshold
+                    - hidden
+                  type: object
+                dataCacheWrite:
+                  properties:
+                    matrix:
+                      properties:
+                        defaultUnitPrice:
+                          type: string
+                        dimensionPrices:
+                          additionalProperties:
+                            type: string
+                          type: object
+                      required:
+                        - defaultUnitPrice
+                        - dimensionPrices
+                      type: object
+                    tier:
+                      type: number
+                    price:
+                      type: number
+                    batch:
+                      type: number
+                    threshold:
+                      type: number
+                    name:
+                      type: string
+                    hidden:
+                      type: boolean
+                    disabledAt:
+                      nullable: true
+                      type: number
+                    enabledAt:
+                      nullable: true
+                      type: number
+                  required:
+                    - price
+                    - batch
+                    - threshold
+                    - hidden
+                  type: object
+                edgeConfigRead:
+                  properties:
+                    matrix:
+                      properties:
+                        defaultUnitPrice:
+                          type: string
+                        dimensionPrices:
+                          additionalProperties:
+                            type: string
+                          type: object
+                      required:
+                        - defaultUnitPrice
+                        - dimensionPrices
+                      type: object
+                    tier:
+                      type: number
+                    price:
+                      type: number
+                    batch:
+                      type: number
+                    threshold:
+                      type: number
+                    name:
+                      type: string
+                    hidden:
+                      type: boolean
+                    disabledAt:
+                      nullable: true
+                      type: number
+                    enabledAt:
+                      nullable: true
+                      type: number
+                  required:
+                    - price
+                    - batch
+                    - threshold
+                    - hidden
+                  type: object
+                edgeConfigWrite:
+                  properties:
+                    matrix:
+                      properties:
+                        defaultUnitPrice:
+                          type: string
+                        dimensionPrices:
+                          additionalProperties:
+                            type: string
+                          type: object
+                      required:
+                        - defaultUnitPrice
+                        - dimensionPrices
+                      type: object
+                    tier:
+                      type: number
+                    price:
+                      type: number
+                    batch:
+                      type: number
+                    threshold:
+                      type: number
+                    name:
+                      type: string
+                    hidden:
+                      type: boolean
+                    disabledAt:
+                      nullable: true
+                      type: number
+                    enabledAt:
+                      nullable: true
+                      type: number
+                  required:
+                    - price
+                    - batch
+                    - threshold
+                    - hidden
+                  type: object
+                edgeFunctionExecutionUnits:
+                  properties:
+                    matrix:
+                      properties:
+                        defaultUnitPrice:
+                          type: string
+                        dimensionPrices:
+                          additionalProperties:
+                            type: string
+                          type: object
+                      required:
+                        - defaultUnitPrice
+                        - dimensionPrices
+                      type: object
+                    tier:
+                      type: number
+                    price:
+                      type: number
+                    batch:
+                      type: number
+                    threshold:
+                      type: number
+                    name:
+                      type: string
+                    hidden:
+                      type: boolean
+                    disabledAt:
+                      nullable: true
+                      type: number
+                    enabledAt:
+                      nullable: true
+                      type: number
+                  required:
+                    - price
+                    - batch
+                    - threshold
+                    - hidden
+                  type: object
+                edgeMiddlewareInvocations:
+                  properties:
+                    matrix:
+                      properties:
+                        defaultUnitPrice:
+                          type: string
+                        dimensionPrices:
+                          additionalProperties:
+                            type: string
+                          type: object
+                      required:
+                        - defaultUnitPrice
+                        - dimensionPrices
+                      type: object
+                    tier:
+                      type: number
+                    price:
+                      type: number
+                    batch:
+                      type: number
+                    threshold:
+                      type: number
+                    name:
+                      type: string
+                    hidden:
+                      type: boolean
+                    disabledAt:
+                      nullable: true
+                      type: number
+                    enabledAt:
+                      nullable: true
+                      type: number
+                  required:
+                    - price
+                    - batch
+                    - threshold
+                    - hidden
+                  type: object
+                edgeRequest:
+                  properties:
+                    matrix:
+                      properties:
+                        defaultUnitPrice:
+                          type: string
+                        dimensionPrices:
+                          additionalProperties:
+                            type: string
+                          type: object
+                      required:
+                        - defaultUnitPrice
+                        - dimensionPrices
+                      type: object
+                    tier:
+                      type: number
+                    price:
+                      type: number
+                    batch:
+                      type: number
+                    threshold:
+                      type: number
+                    name:
+                      type: string
+                    hidden:
+                      type: boolean
+                    disabledAt:
+                      nullable: true
+                      type: number
+                    enabledAt:
+                      nullable: true
+                      type: number
+                  required:
+                    - price
+                    - batch
+                    - threshold
+                    - hidden
+                  type: object
+                edgeRequestAdditionalCpuDuration:
+                  properties:
+                    matrix:
+                      properties:
+                        defaultUnitPrice:
+                          type: string
+                        dimensionPrices:
+                          additionalProperties:
+                            type: string
+                          type: object
+                      required:
+                        - defaultUnitPrice
+                        - dimensionPrices
+                      type: object
+                    tier:
+                      type: number
+                    price:
+                      type: number
+                    batch:
+                      type: number
+                    threshold:
+                      type: number
+                    name:
+                      type: string
+                    hidden:
+                      type: boolean
+                    disabledAt:
+                      nullable: true
+                      type: number
+                    enabledAt:
+                      nullable: true
+                      type: number
+                  required:
+                    - price
+                    - batch
+                    - threshold
+                    - hidden
+                  type: object
+                fastDataTransfer:
+                  properties:
+                    matrix:
+                      properties:
+                        defaultUnitPrice:
+                          type: string
+                        dimensionPrices:
+                          additionalProperties:
+                            type: string
+                          type: object
+                      required:
+                        - defaultUnitPrice
+                        - dimensionPrices
+                      type: object
+                    tier:
+                      type: number
+                    price:
+                      type: number
+                    batch:
+                      type: number
+                    threshold:
+                      type: number
+                    name:
+                      type: string
+                    hidden:
+                      type: boolean
+                    disabledAt:
+                      nullable: true
+                      type: number
+                    enabledAt:
+                      nullable: true
+                      type: number
+                  required:
+                    - price
+                    - batch
+                    - threshold
+                    - hidden
+                  type: object
+                fastOriginTransfer:
+                  properties:
+                    matrix:
+                      properties:
+                        defaultUnitPrice:
+                          type: string
+                        dimensionPrices:
+                          additionalProperties:
+                            type: string
+                          type: object
+                      required:
+                        - defaultUnitPrice
+                        - dimensionPrices
+                      type: object
+                    tier:
+                      type: number
+                    price:
+                      type: number
+                    batch:
+                      type: number
+                    threshold:
+                      type: number
+                    name:
+                      type: string
+                    hidden:
+                      type: boolean
+                    disabledAt:
+                      nullable: true
+                      type: number
+                    enabledAt:
+                      nullable: true
+                      type: number
+                  required:
+                    - price
+                    - batch
+                    - threshold
+                    - hidden
+                  type: object
+                functionDuration:
+                  properties:
+                    matrix:
+                      properties:
+                        defaultUnitPrice:
+                          type: string
+                        dimensionPrices:
+                          additionalProperties:
+                            type: string
+                          type: object
+                      required:
+                        - defaultUnitPrice
+                        - dimensionPrices
+                      type: object
+                    tier:
+                      type: number
+                    price:
+                      type: number
+                    batch:
+                      type: number
+                    threshold:
+                      type: number
+                    name:
+                      type: string
+                    hidden:
+                      type: boolean
+                    disabledAt:
+                      nullable: true
+                      type: number
+                    enabledAt:
+                      nullable: true
+                      type: number
+                  required:
+                    - price
+                    - batch
+                    - threshold
+                    - hidden
+                  type: object
+                functionInvocation:
+                  properties:
+                    matrix:
+                      properties:
+                        defaultUnitPrice:
+                          type: string
+                        dimensionPrices:
+                          additionalProperties:
+                            type: string
+                          type: object
+                      required:
+                        - defaultUnitPrice
+                        - dimensionPrices
+                      type: object
+                    tier:
+                      type: number
+                    price:
+                      type: number
+                    batch:
+                      type: number
+                    threshold:
+                      type: number
+                    name:
+                      type: string
+                    hidden:
+                      type: boolean
+                    disabledAt:
+                      nullable: true
+                      type: number
+                    enabledAt:
+                      nullable: true
+                      type: number
+                  required:
+                    - price
+                    - batch
+                    - threshold
+                    - hidden
+                  type: object
+                logDrainsVolume:
+                  properties:
+                    matrix:
+                      properties:
+                        defaultUnitPrice:
+                          type: string
+                        dimensionPrices:
+                          additionalProperties:
+                            type: string
+                          type: object
+                      required:
+                        - defaultUnitPrice
+                        - dimensionPrices
+                      type: object
+                    tier:
+                      type: number
+                    price:
+                      type: number
+                    batch:
+                      type: number
+                    threshold:
+                      type: number
+                    name:
+                      type: string
+                    hidden:
+                      type: boolean
+                    disabledAt:
+                      nullable: true
+                      type: number
+                    enabledAt:
+                      nullable: true
+                      type: number
+                  required:
+                    - price
+                    - batch
+                    - threshold
+                    - hidden
+                  type: object
+                monitoringMetric:
+                  properties:
+                    matrix:
+                      properties:
+                        defaultUnitPrice:
+                          type: string
+                        dimensionPrices:
+                          additionalProperties:
+                            type: string
+                          type: object
+                      required:
+                        - defaultUnitPrice
+                        - dimensionPrices
+                      type: object
+                    tier:
+                      type: number
+                    price:
+                      type: number
+                    batch:
+                      type: number
+                    threshold:
+                      type: number
+                    name:
+                      type: string
+                    hidden:
+                      type: boolean
+                    disabledAt:
+                      nullable: true
+                      type: number
+                    enabledAt:
+                      nullable: true
+                      type: number
+                  required:
+                    - price
+                    - batch
+                    - threshold
+                    - hidden
+                  type: object
+                postgresComputeTime:
+                  properties:
+                    matrix:
+                      properties:
+                        defaultUnitPrice:
+                          type: string
+                        dimensionPrices:
+                          additionalProperties:
+                            type: string
+                          type: object
+                      required:
+                        - defaultUnitPrice
+                        - dimensionPrices
+                      type: object
+                    tier:
+                      type: number
+                    price:
+                      type: number
+                    batch:
+                      type: number
+                    threshold:
+                      type: number
+                    name:
+                      type: string
+                    hidden:
+                      type: boolean
+                    disabledAt:
+                      nullable: true
+                      type: number
+                    enabledAt:
+                      nullable: true
+                      type: number
+                  required:
+                    - price
+                    - batch
+                    - threshold
+                    - hidden
+                  type: object
+                postgresDataStorage:
+                  properties:
+                    matrix:
+                      properties:
+                        defaultUnitPrice:
+                          type: string
+                        dimensionPrices:
+                          additionalProperties:
+                            type: string
+                          type: object
+                      required:
+                        - defaultUnitPrice
+                        - dimensionPrices
+                      type: object
+                    tier:
+                      type: number
+                    price:
+                      type: number
+                    batch:
+                      type: number
+                    threshold:
+                      type: number
+                    name:
+                      type: string
+                    hidden:
+                      type: boolean
+                    disabledAt:
+                      nullable: true
+                      type: number
+                    enabledAt:
+                      nullable: true
+                      type: number
+                  required:
+                    - price
+                    - batch
+                    - threshold
+                    - hidden
+                  type: object
+                postgresDataTransfer:
+                  properties:
+                    matrix:
+                      properties:
+                        defaultUnitPrice:
+                          type: string
+                        dimensionPrices:
+                          additionalProperties:
+                            type: string
+                          type: object
+                      required:
+                        - defaultUnitPrice
+                        - dimensionPrices
+                      type: object
+                    tier:
+                      type: number
+                    price:
+                      type: number
+                    batch:
+                      type: number
+                    threshold:
+                      type: number
+                    name:
+                      type: string
+                    hidden:
+                      type: boolean
+                    disabledAt:
+                      nullable: true
+                      type: number
+                    enabledAt:
+                      nullable: true
+                      type: number
+                  required:
+                    - price
+                    - batch
+                    - threshold
+                    - hidden
+                  type: object
+                postgresDatabase:
+                  properties:
+                    matrix:
+                      properties:
+                        defaultUnitPrice:
+                          type: string
+                        dimensionPrices:
+                          additionalProperties:
+                            type: string
+                          type: object
+                      required:
+                        - defaultUnitPrice
+                        - dimensionPrices
+                      type: object
+                    tier:
+                      type: number
+                    price:
+                      type: number
+                    batch:
+                      type: number
+                    threshold:
+                      type: number
+                    name:
+                      type: string
+                    hidden:
+                      type: boolean
+                    disabledAt:
+                      nullable: true
+                      type: number
+                    enabledAt:
+                      nullable: true
+                      type: number
+                  required:
+                    - price
+                    - batch
+                    - threshold
+                    - hidden
+                  type: object
+                postgresWrittenData:
+                  properties:
+                    matrix:
+                      properties:
+                        defaultUnitPrice:
+                          type: string
+                        dimensionPrices:
+                          additionalProperties:
+                            type: string
+                          type: object
+                      required:
+                        - defaultUnitPrice
+                        - dimensionPrices
+                      type: object
+                    tier:
+                      type: number
+                    price:
+                      type: number
+                    batch:
+                      type: number
+                    threshold:
+                      type: number
+                    name:
+                      type: string
+                    hidden:
+                      type: boolean
+                    disabledAt:
+                      nullable: true
+                      type: number
+                    enabledAt:
+                      nullable: true
+                      type: number
+                  required:
+                    - price
+                    - batch
+                    - threshold
+                    - hidden
+                  type: object
+                serverlessFunctionExecution:
+                  properties:
+                    matrix:
+                      properties:
+                        defaultUnitPrice:
+                          type: string
+                        dimensionPrices:
+                          additionalProperties:
+                            type: string
+                          type: object
+                      required:
+                        - defaultUnitPrice
+                        - dimensionPrices
+                      type: object
+                    tier:
+                      type: number
+                    price:
+                      type: number
+                    batch:
+                      type: number
+                    threshold:
+                      type: number
+                    name:
+                      type: string
+                    hidden:
+                      type: boolean
+                    disabledAt:
+                      nullable: true
+                      type: number
+                    enabledAt:
+                      nullable: true
+                      type: number
+                  required:
+                    - price
+                    - batch
+                    - threshold
+                    - hidden
+                  type: object
+                sourceImages:
+                  properties:
+                    matrix:
+                      properties:
+                        defaultUnitPrice:
+                          type: string
+                        dimensionPrices:
+                          additionalProperties:
+                            type: string
+                          type: object
+                      required:
+                        - defaultUnitPrice
+                        - dimensionPrices
+                      type: object
+                    tier:
+                      type: number
+                    price:
+                      type: number
+                    batch:
+                      type: number
+                    threshold:
+                      type: number
+                    name:
+                      type: string
+                    hidden:
+                      type: boolean
+                    disabledAt:
+                      nullable: true
+                      type: number
+                    enabledAt:
+                      nullable: true
+                      type: number
+                  required:
+                    - price
+                    - batch
+                    - threshold
+                    - hidden
+                  type: object
+                storageRedisTotalBandwidthInBytes:
+                  properties:
+                    matrix:
+                      properties:
+                        defaultUnitPrice:
+                          type: string
+                        dimensionPrices:
+                          additionalProperties:
+                            type: string
+                          type: object
+                      required:
+                        - defaultUnitPrice
+                        - dimensionPrices
+                      type: object
+                    tier:
+                      type: number
+                    price:
+                      type: number
+                    batch:
+                      type: number
+                    threshold:
+                      type: number
+                    name:
+                      type: string
+                    hidden:
+                      type: boolean
+                    disabledAt:
+                      nullable: true
+                      type: number
+                    enabledAt:
+                      nullable: true
+                      type: number
+                  required:
+                    - price
+                    - batch
+                    - threshold
+                    - hidden
+                  type: object
+                storageRedisTotalCommands:
+                  properties:
+                    matrix:
+                      properties:
+                        defaultUnitPrice:
+                          type: string
+                        dimensionPrices:
+                          additionalProperties:
+                            type: string
+                          type: object
+                      required:
+                        - defaultUnitPrice
+                        - dimensionPrices
+                      type: object
+                    tier:
+                      type: number
+                    price:
+                      type: number
+                    batch:
+                      type: number
+                    threshold:
+                      type: number
+                    name:
+                      type: string
+                    hidden:
+                      type: boolean
+                    disabledAt:
+                      nullable: true
+                      type: number
+                    enabledAt:
+                      nullable: true
+                      type: number
+                  required:
+                    - price
+                    - batch
+                    - threshold
+                    - hidden
+                  type: object
+                storageRedisTotalDailyAvgStorageInBytes:
+                  properties:
+                    matrix:
+                      properties:
+                        defaultUnitPrice:
+                          type: string
+                        dimensionPrices:
+                          additionalProperties:
+                            type: string
+                          type: object
+                      required:
+                        - defaultUnitPrice
+                        - dimensionPrices
+                      type: object
+                    tier:
+                      type: number
+                    price:
+                      type: number
+                    batch:
+                      type: number
+                    threshold:
+                      type: number
+                    name:
+                      type: string
+                    hidden:
+                      type: boolean
+                    disabledAt:
+                      nullable: true
+                      type: number
+                    enabledAt:
+                      nullable: true
+                      type: number
+                  required:
+                    - price
+                    - batch
+                    - threshold
+                    - hidden
+                  type: object
+                storageRedisTotalDatabases:
+                  properties:
+                    matrix:
+                      properties:
+                        defaultUnitPrice:
+                          type: string
+                        dimensionPrices:
+                          additionalProperties:
+                            type: string
+                          type: object
+                      required:
+                        - defaultUnitPrice
+                        - dimensionPrices
+                      type: object
+                    tier:
+                      type: number
+                    price:
+                      type: number
+                    batch:
+                      type: number
+                    threshold:
+                      type: number
+                    name:
+                      type: string
+                    hidden:
+                      type: boolean
+                    disabledAt:
+                      nullable: true
+                      type: number
+                    enabledAt:
+                      nullable: true
+                      type: number
+                  required:
+                    - price
+                    - batch
+                    - threshold
+                    - hidden
+                  type: object
+                wafOwaspExcessBytes:
+                  properties:
+                    matrix:
+                      properties:
+                        defaultUnitPrice:
+                          type: string
+                        dimensionPrices:
+                          additionalProperties:
+                            type: string
+                          type: object
+                      required:
+                        - defaultUnitPrice
+                        - dimensionPrices
+                      type: object
+                    tier:
+                      type: number
+                    price:
+                      type: number
+                    batch:
+                      type: number
+                    threshold:
+                      type: number
+                    name:
+                      type: string
+                    hidden:
+                      type: boolean
+                    disabledAt:
+                      nullable: true
+                      type: number
+                    enabledAt:
+                      nullable: true
+                      type: number
+                  required:
+                    - price
+                    - batch
+                    - threshold
+                    - hidden
+                  type: object
+                wafOwaspRequests:
+                  properties:
+                    matrix:
+                      properties:
+                        defaultUnitPrice:
+                          type: string
+                        dimensionPrices:
+                          additionalProperties:
+                            type: string
+                          type: object
+                      required:
+                        - defaultUnitPrice
+                        - dimensionPrices
+                      type: object
+                    tier:
+                      type: number
+                    price:
+                      type: number
+                    batch:
+                      type: number
+                    threshold:
+                      type: number
+                    name:
+                      type: string
+                    hidden:
+                      type: boolean
+                    disabledAt:
+                      nullable: true
+                      type: number
+                    enabledAt:
+                      nullable: true
+                      type: number
+                  required:
+                    - price
+                    - batch
+                    - threshold
+                    - hidden
+                  type: object
+                webAnalyticsEvent:
+                  properties:
+                    matrix:
+                      properties:
+                        defaultUnitPrice:
+                          type: string
+                        dimensionPrices:
+                          additionalProperties:
+                            type: string
+                          type: object
+                      required:
+                        - defaultUnitPrice
+                        - dimensionPrices
+                      type: object
+                    tier:
+                      type: number
+                    price:
+                      type: number
+                    batch:
+                      type: number
+                    threshold:
+                      type: number
+                    name:
+                      type: string
+                    hidden:
+                      type: boolean
+                    disabledAt:
+                      nullable: true
+                      type: number
+                    enabledAt:
+                      nullable: true
+                      type: number
+                  required:
+                    - price
+                    - batch
+                    - threshold
+                    - hidden
+                  type: object
+              type: object
+            invoiceSettings:
+              properties:
+                footer:
+                  type: string
+              type: object
+            subscriptions:
+              nullable: true
+              items:
+                properties:
+                  id:
+                    type: string
+                  trial:
+                    nullable: true
+                    properties:
+                      start:
+                        type: number
+                      end:
+                        type: number
+                    required:
+                      - start
+                      - end
+                    type: object
+                  period:
+                    properties:
+                      start:
+                        type: number
+                      end:
+                        type: number
+                    required:
+                      - start
+                      - end
+                    type: object
+                  frequency:
+                    properties:
+                      interval:
+                        type: string
+                        enum:
+                          - month
+                          - day
+                          - week
+                          - year
+                      intervalCount:
+                        type: number
+                    required:
+                      - interval
+                      - intervalCount
+                    type: object
+                  discount:
+                    nullable: true
+                    properties:
+                      id:
+                        type: string
+                      coupon:
+                        properties:
+                          id:
+                            type: string
+                          name:
+                            nullable: true
+                            type: string
+                          amountOff:
+                            nullable: true
+                            type: number
+                          percentageOff:
+                            nullable: true
+                            type: number
+                          durationInMonths:
+                            nullable: true
+                            type: number
+                          duration:
+                            type: string
+                            enum:
+                              - forever
+                              - repeating
+                              - once
+                        required:
+                          - id
+                          - name
+                          - amountOff
+                          - percentageOff
+                          - durationInMonths
+                          - duration
+                        type: object
+                    required:
+                      - id
+                      - coupon
+                    type: object
+                  items:
+                    items:
+                      properties:
+                        id:
+                          type: string
+                        priceId:
+                          type: string
+                        productId:
+                          type: string
+                        amount:
+                          type: number
+                        quantity:
+                          type: number
+                      required:
+                        - id
+                        - priceId
+                        - productId
+                        - amount
+                        - quantity
+                      type: object
+                    type: array
+                required:
+                  - id
+                  - trial
+                  - period
+                  - frequency
+                  - discount
+                  - items
+                type: object
+              type: array
+            controls:
+              nullable: true
+              properties:
+                analyticsSampleRateInPercent:
+                  nullable: true
+                  type: number
+                analyticsSpendLimitInDollars:
+                  nullable: true
+                  type: number
+              type: object
+            purchaseOrder:
+              nullable: true
+              type: string
+            status:
+              type: string
+              enum:
+                - active
+                - trialing
+                - overdue
+                - expired
+                - canceled
+            pricingExperiment:
+              type: string
+              enum:
+                - august-2022
+            orbMigrationScheduledAt:
+              nullable: true
+              type: number
+          required:
+            - period
+            - plan
+          type: object
+          description:
+            An object containing billing infomation associated with the
+            User account.
+        resourceConfig:
+          properties:
+            blobStores:
+              type: number
+              description:
+                An object containing infomation related to the amount of
+                platform resources may be allocated to the User account.
+            nodeType:
+              type: string
+              description:
+                An object containing infomation related to the amount of
+                platform resources may be allocated to the User account.
+            concurrentBuilds:
+              type: number
+              description:
+                An object containing infomation related to the amount of
+                platform resources may be allocated to the User account.
+            awsAccountType:
+              type: string
+              description:
+                An object containing infomation related to the amount of
+                platform resources may be allocated to the User account.
+            awsAccountIds:
+              items:
+                type: string
+              type: array
+              description:
+                An object containing infomation related to the amount of
+                platform resources may be allocated to the User account.
+            cfZoneName:
+              type: string
+              description:
+                An object containing infomation related to the amount of
+                platform resources may be allocated to the User account.
+            edgeConfigs:
+              type: number
+              description:
+                An object containing infomation related to the amount of
+                platform resources may be allocated to the User account.
+            edgeConfigSize:
+              type: number
+              description:
+                An object containing infomation related to the amount of
+                platform resources may be allocated to the User account.
+            edgeFunctionMaxSizeBytes:
+              type: number
+              description:
+                An object containing infomation related to the amount of
+                platform resources may be allocated to the User account.
+            edgeFunctionExecutionTimeoutMs:
+              type: number
+              description:
+                An object containing infomation related to the amount of
+                platform resources may be allocated to the User account.
+            serverlessFunctionDefaultMaxExecutionTime:
+              type: number
+              description:
+                An object containing infomation related to the amount of
+                platform resources may be allocated to the User account.
+            kvDatabases:
+              type: number
+              description:
+                An object containing infomation related to the amount of
+                platform resources may be allocated to the User account.
+            postgresDatabases:
+              type: number
+              description:
+                An object containing infomation related to the amount of
+                platform resources may be allocated to the User account.
+            integrationStores:
+              type: number
+              description:
+                An object containing infomation related to the amount of
+                platform resources may be allocated to the User account.
+            cronJobs:
+              type: number
+              description:
+                An object containing infomation related to the amount of
+                platform resources may be allocated to the User account.
+            cronJobsPerProject:
+              type: number
+              description:
+                An object containing infomation related to the amount of
+                platform resources may be allocated to the User account.
+          type: object
+          description:
+            An object containing infomation related to the amount of platform
+            resources may be allocated to the User account.
+        stagingPrefix:
+          type: string
+          description:
+            Prefix that will be used in the URL of "Preview" deployments
+            created by the User account.
+        activeDashboardViews:
+          items:
+            properties:
+              scopeId:
+                type: string
+              viewPreference:
+                type: string
+                enum:
+                  - list
+                  - cards
+              favoritesViewPreference:
+                type: string
+                enum:
+                  - open
+                  - closed
+              recentsViewPreference:
+                type: string
+                enum:
+                  - open
+                  - closed
+            required:
+              - scopeId
+            type: object
+            description: set of dashboard view preferences (cards or list) per scopeId
+          type: array
+          description: set of dashboard view preferences (cards or list) per scopeId
+        importFlowGitNamespace:
+          nullable: true
+          oneOf:
+            - type: string
+            - type: number
+        importFlowGitNamespaceId:
+          nullable: true
+          oneOf:
+            - type: string
+            - type: number
+        importFlowGitProvider:
+          type: string
+          enum:
+            - github
+            - gitlab
+            - bitbucket
+        preferredScopesAndGitNamespaces:
+          items:
+            properties:
+              scopeId:
+                type: string
+              gitNamespaceId:
+                nullable: true
+                oneOf:
+                  - type: string
+                  - type: number
+            required:
+              - scopeId
+              - gitNamespaceId
+            type: object
+          type: array
+        dismissedToasts:
+          items:
+            properties:
+              name:
+                type: string
+              dismissals:
+                items:
+                  properties:
+                    scopeId:
+                      type: string
+                    createdAt:
+                      type: number
+                  required:
+                    - scopeId
+                    - createdAt
+                  type: object
+                type: array
+            required:
+              - name
+              - dismissals
+            type: object
+            description: A record of when, under a certain scopeId, a toast was dismissed
+          type: array
+          description: A record of when, under a certain scopeId, a toast was dismissed
+        favoriteProjectsAndSpaces:
+          items:
+            oneOf:
+              - properties:
+                  projectId:
+                    type: string
+                  scopeSlug:
+                    type: string
+                  scopeId:
+                    type: string
+                required:
+                  - projectId
+                  - scopeSlug
+                  - scopeId
+                type: object
+                description:
+                  A list of projects and spaces across teams that a user
+                  has marked as a favorite.
+              - properties:
+                  spaceId:
+                    type: string
+                  scopeSlug:
+                    type: string
+                  scopeId:
+                    type: string
+                required:
+                  - spaceId
+                  - scopeSlug
+                  - scopeId
+                type: object
+                description:
+                  A list of projects and spaces across teams that a user
+                  has marked as a favorite.
+          type: array
+          description:
+            A list of projects and spaces across teams that a user has
+            marked as a favorite.
+        hasTrialAvailable:
+          type: boolean
+          description: Whether the user has a trial available for a paid plan subscription.
+        remoteCaching:
+          properties:
+            enabled:
+              type: boolean
+          type: object
+          description: remote caching settings
+        dataCache:
+          properties:
+            excessBillingEnabled:
+              type: boolean
+          type: object
+          description: data cache settings
+        featureBlocks:
+          properties:
+            webAnalytics:
+              properties:
+                blockedFrom:
+                  type: number
+                blockedUntil:
+                  type: number
+                isCurrentlyBlocked:
+                  type: boolean
+              required:
+                - isCurrentlyBlocked
+              type: object
+          type: object
+          description: Feature blocks for the user
+        northstar:
+          properties:
+            migration:
+              properties:
+                teamId:
+                  type: string
+                status:
+                  type: string
+                  enum:
+                    - migrating
+                    - completed
+                    - failed
+                    - will-migrate
+                  description:
+                    '- `will-migrate`: Show dashboard toast saying "your
+                    account will be migrated soon" - `migrating`: Show dashboard toast
+                    saying "your account is currently migrating to `teamId`" - `completed`:
+                    Show dashboard toast saying "your account has been migrated to
+                    `teamId`" - `failed`: Show dashboard toast saying "your account
+                    migration has failed `teamId`"'
+              required:
+                - status
+              type: object
+          type: object
+          description: Northstar migration specific data
+        northstarMigration:
+          properties:
+            teamId:
+              type: string
+              description: The ID of the team we created for this user.
+            projects:
+              type: number
+              description: The number of projects migrated for this user.
+            stores:
+              type: number
+              description: The number of stores migrated for this user.
+            integrationConfigurations:
+              type: number
+              description:
+                The number of integration configurations migrated for this
+                user.
+            integrationClients:
+              type: number
+              description: The number of integration clients migrated for this user.
+            startTime:
+              type: number
+              description: The migration start time timestamp for this user.
+            endTime:
+              type: number
+              description: The migration end time timestamp for this user.
+          required:
+            - teamId
+            - projects
+            - stores
+            - integrationConfigurations
+            - integrationClients
+            - startTime
+            - endTime
+          type: object
+        id:
+          type: string
+          description: The User's unique identifier.
+          example: AEIIDYVk59zbFF2Sxfyxxmua
+        email:
+          type: string
+          description: Email address associated with the User account.
+          example: me@example.com
+        name:
+          nullable: true
+          type: string
+          description:
+            Name associated with the User account, or `null` if none has
+            been provided.
+          example: John Doe
+        username:
+          type: string
+          description: Unique username associated with the User account.
+          example: jdoe
+        avatar:
+          nullable: true
+          type: string
+          description:
+            SHA1 hash of the avatar for the User account. Can be used in
+            conjuction with the ... endpoint to retrieve the avatar image.
+          example: 22cb30c85ff45ac4c72de8981500006b28114aa1
+        defaultTeamId:
+          nullable: true
+          type: string
+          description:
+            The user's default team. Only applies if the user's `version`
+            is `'northstar'`.
+        version:
+          nullable: true
+          type: string
+          enum:
+            - northstar
+          description: The user's version. Will either be unset or `northstar`.
+      required:
+        - createdAt
+        - softBlock
+        - billing
+        - resourceConfig
+        - stagingPrefix
+        - hasTrialAvailable
+        - id
+        - email
+        - name
+        - username
+        - avatar
+        - defaultTeamId
+        - version
+      type: object
+      description: Data for the currently authenticated User.
+    AuthUserLimited:
+      properties:
+        limited:
+          type: boolean
+          description:
+            Property indicating that this User data contains only limited
+            information, due to the authentication token missing privileges to read
+            the full User data. Re-login with email, GitHub, GitLab or Bitbucket in
+            order to upgrade the authentication token with the necessary privileges.
+        id:
+          type: string
+          description: The User's unique identifier.
+          example: AEIIDYVk59zbFF2Sxfyxxmua
+        email:
+          type: string
+          description: Email address associated with the User account.
+          example: me@example.com
+        name:
+          nullable: true
+          type: string
+          description:
+            Name associated with the User account, or `null` if none has
+            been provided.
+          example: John Doe
+        username:
+          type: string
+          description: Unique username associated with the User account.
+          example: jdoe
+        avatar:
+          nullable: true
+          type: string
+          description:
+            SHA1 hash of the avatar for the User account. Can be used in
+            conjuction with the ... endpoint to retrieve the avatar image.
+          example: 22cb30c85ff45ac4c72de8981500006b28114aa1
+        defaultTeamId:
+          nullable: true
+          type: string
+          description:
+            The user's default team. Only applies if the user's `version`
+            is `'northstar'`.
+        version:
+          nullable: true
+          type: string
+          enum:
+            - northstar
+          description: The user's version. Will either be unset or `northstar`.
+      required:
+        - limited
+        - id
+        - email
+        - name
+        - username
+        - avatar
+        - defaultTeamId
+        - version
+      type: object
+      description:
+        A limited form of data for the currently authenticated User, due
+        to the authentication token missing privileges to read the full User data.
+    AuthToken:
+      properties:
+        id:
+          type: string
+          description: The unique identifier of the token.
+          example: 5d9f2ebd38ddca62e5d51e9c1704c72530bdc8bfdd41e782a6687c48399e8391
+        name:
+          type: string
+          description: The human-readable name of the token.
+        type:
+          type: string
+          description: The type of the token.
+          example: oauth2-token
+        origin:
+          type: string
+          description: The origin of how the token was created.
+          example: github
+        scopes:
+          items:
+            oneOf:
+              - properties:
+                  type:
+                    type: string
+                    enum:
+                      - user
+                  origin:
+                    type: string
+                    enum:
+                      - saml
+                      - github
+                      - gitlab
+                      - bitbucket
+                      - email
+                      - manual
+                      - passkey
+                  createdAt:
+                    type: number
+                  expiresAt:
+                    type: number
+                required:
+                  - type
+                  - origin
+                  - createdAt
+                type: object
+                description: The access scopes granted to the token.
+              - properties:
+                  type:
+                    type: string
+                    enum:
+                      - team
+                  teamId:
+                    type: string
+                  origin:
+                    type: string
+                    enum:
+                      - saml
+                      - github
+                      - gitlab
+                      - bitbucket
+                      - email
+                      - manual
+                      - passkey
+                  createdAt:
+                    type: number
+                  expiresAt:
+                    type: number
+                required:
+                  - type
+                  - teamId
+                  - origin
+                  - createdAt
+                type: object
+                description: The access scopes granted to the token.
+          type: array
+          description: The access scopes granted to the token.
+        expiresAt:
+          type: number
+          description: Timestamp (in milliseconds) of when the token expires.
+          example: 1632816536002
+        activeAt:
+          type: number
+          description:
+            Timestamp (in milliseconds) of when the token was most recently
+            used.
+          example: 1632816536002
+        createdAt:
+          type: number
+          description: Timestamp (in milliseconds) of when the token was created.
+          example: 1632816536002
+      required:
+        - id
+        - name
+        - type
+        - activeAt
+        - createdAt
+      type: object
+      description: Authentication token metadata.
+    FileTree:
+      properties:
+        name:
+          type: string
+          description: The name of the file tree entry
+          example: my-file.json
+        type:
+          type: string
+          enum:
+            - directory
+            - file
+            - symlink
+            - lambda
+            - middleware
+            - invalid
+          description: String indicating the type of file tree entry.
+          example: file
+        uid:
+          type: string
+          description:
+            The unique identifier of the file (only valid for the `file`
+            type)
+          example: 2d4aad419917f15b1146e9e03ddc9bb31747e4d0
+        children:
+          items:
+            "$ref": "#/components/schemas/FileTree"
+          type: array
+          description:
+            The list of children files of the directory (only valid for
+            the `directory` type)
+        contentType:
+          type: string
+          description: The content-type of the file (only valid for the `file` type)
+          example: application/json
+        mode:
+          type: number
+          description: The file "mode" indicating file type and permissions.
+        symlink:
+          type: string
+          description: Not currently used. See `file-list-to-tree.ts`.
+      required:
+        - name
+        - type
+        - mode
+      type: object
+      description: A deployment file tree entry
+  securitySchemes:
+    bearerToken:
+      type: http
+      description: Default authentication mechanism
+      scheme: bearer
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://api.vercel.com/oauth/authorize
+          tokenUrl: https://api.vercel.com/oauth/access_token
+          scopes: {}

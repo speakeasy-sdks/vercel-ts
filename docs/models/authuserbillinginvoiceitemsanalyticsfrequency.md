@@ -1,9 +1,0 @@
-# AuthUserBillingInvoiceItemsAnalyticsFrequency
-
-
-## Fields
-
-| Field                                                                                                            | Type                                                                                                             | Required                                                                                                         | Description                                                                                                      |
-| ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| `interval`                                                                                                       | [models.AuthUserBillingInvoiceItemsAnalyticsInterval](../models/authuserbillinginvoiceitemsanalyticsinterval.md) | :heavy_check_mark:                                                                                               | N/A                                                                                                              |
-| `intervalCount`                                                                                                  | *number*                                                                                                         | :heavy_check_mark:                                                                                               | N/A                                                                                                              |

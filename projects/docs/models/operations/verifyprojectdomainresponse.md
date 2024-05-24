@@ -1,0 +1,9 @@
+# VerifyProjectDomainResponse
+
+
+## Fields
+
+| Field                                                                                                    | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
+| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| `httpMeta`                                                                                               | [components.HTTPMetadata](../../models/components/httpmetadata.md)                                       | :heavy_check_mark:                                                                                       | N/A                                                                                                      |
+| `object`                                                                                                 | [operations.VerifyProjectDomainResponseBody](../../models/operations/verifyprojectdomainresponsebody.md) | :heavy_minus_sign:                                                                                       | The project domain was verified successfully<br/>Domain is already verified                              |
