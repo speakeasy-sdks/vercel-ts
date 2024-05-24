@@ -34,6 +34,6 @@ typescript:
   maxMethodParams: 4
   methodArguments: require-security-and-request
   outputModelSuffix: output
-  packageName: openapi
+  packageName: "@vercel/integrations"
   responseFormat: envelope-http
   templateVersion: v2
