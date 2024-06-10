@@ -211,7 +211,7 @@ export type EmailInviteCodes2 = {
     isDSyncUser: boolean;
     createdAt?: number | undefined;
     expired?: boolean | undefined;
-    projects?: Record<string, GetTeamMembersEmailInviteCodesProjects> | undefined;
+    projects?: { [k: string]: GetTeamMembersEmailInviteCodesProjects } | undefined;
 };
 
 export enum EmailInviteCodesRole {
@@ -236,7 +236,7 @@ export type EmailInviteCodes1 = {
     isDSyncUser: boolean;
     createdAt?: number | undefined;
     expired?: boolean | undefined;
-    projects?: Record<string, EmailInviteCodesProjects> | undefined;
+    projects?: { [k: string]: EmailInviteCodesProjects } | undefined;
 };
 
 export type EmailInviteCodes = EmailInviteCodes1 | EmailInviteCodes2;
@@ -271,31 +271,16 @@ export namespace QueryParamRole$ {
 
 /** @internal */
 export namespace GetTeamMembersRequest$ {
-    export const inboundSchema: z.ZodType<GetTeamMembersRequest, z.ZodTypeDef, unknown> = z
-        .object({
-            limit: z.number().optional(),
-            since: z.number().optional(),
-            until: z.number().optional(),
-            search: z.string().optional(),
-            role: QueryParamRole$.inboundSchema.optional(),
-            excludeProject: z.string().optional(),
-            eligibleMembersForProjectId: z.string().optional(),
-            teamId: z.string(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.limit === undefined ? null : { limit: v.limit }),
-                ...(v.since === undefined ? null : { since: v.since }),
-                ...(v.until === undefined ? null : { until: v.until }),
-                ...(v.search === undefined ? null : { search: v.search }),
-                ...(v.role === undefined ? null : { role: v.role }),
-                ...(v.excludeProject === undefined ? null : { excludeProject: v.excludeProject }),
-                ...(v.eligibleMembersForProjectId === undefined
-                    ? null
-                    : { eligibleMembersForProjectId: v.eligibleMembersForProjectId }),
-                teamId: v.teamId,
-            };
-        });
+    export const inboundSchema: z.ZodType<GetTeamMembersRequest, z.ZodTypeDef, unknown> = z.object({
+        limit: z.number().optional(),
+        since: z.number().optional(),
+        until: z.number().optional(),
+        search: z.string().optional(),
+        role: QueryParamRole$.inboundSchema.optional(),
+        excludeProject: z.string().optional(),
+        eligibleMembersForProjectId: z.string().optional(),
+        teamId: z.string(),
+    });
 
     export type Outbound = {
         limit?: number | undefined;
@@ -308,8 +293,8 @@ export namespace GetTeamMembersRequest$ {
         teamId: string;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetTeamMembersRequest> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetTeamMembersRequest> =
+        z.object({
             limit: z.number().optional(),
             since: z.number().optional(),
             until: z.number().optional(),
@@ -318,101 +303,57 @@ export namespace GetTeamMembersRequest$ {
             excludeProject: z.string().optional(),
             eligibleMembersForProjectId: z.string().optional(),
             teamId: z.string(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.limit === undefined ? null : { limit: v.limit }),
-                ...(v.since === undefined ? null : { since: v.since }),
-                ...(v.until === undefined ? null : { until: v.until }),
-                ...(v.search === undefined ? null : { search: v.search }),
-                ...(v.role === undefined ? null : { role: v.role }),
-                ...(v.excludeProject === undefined ? null : { excludeProject: v.excludeProject }),
-                ...(v.eligibleMembersForProjectId === undefined
-                    ? null
-                    : { eligibleMembersForProjectId: v.eligibleMembersForProjectId }),
-                teamId: v.teamId,
-            };
         });
 }
 
 /** @internal */
 export namespace GetTeamMembersGithub$ {
-    export const inboundSchema: z.ZodType<GetTeamMembersGithub, z.ZodTypeDef, unknown> = z
-        .object({
-            login: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.login === undefined ? null : { login: v.login }),
-            };
-        });
+    export const inboundSchema: z.ZodType<GetTeamMembersGithub, z.ZodTypeDef, unknown> = z.object({
+        login: z.string().optional(),
+    });
 
     export type Outbound = {
         login?: string | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetTeamMembersGithub> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetTeamMembersGithub> = z.object(
+        {
             login: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.login === undefined ? null : { login: v.login }),
-            };
-        });
+        }
+    );
 }
 
 /** @internal */
 export namespace GetTeamMembersGitlab$ {
-    export const inboundSchema: z.ZodType<GetTeamMembersGitlab, z.ZodTypeDef, unknown> = z
-        .object({
-            login: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.login === undefined ? null : { login: v.login }),
-            };
-        });
+    export const inboundSchema: z.ZodType<GetTeamMembersGitlab, z.ZodTypeDef, unknown> = z.object({
+        login: z.string().optional(),
+    });
 
     export type Outbound = {
         login?: string | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetTeamMembersGitlab> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetTeamMembersGitlab> = z.object(
+        {
             login: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.login === undefined ? null : { login: v.login }),
-            };
-        });
+        }
+    );
 }
 
 /** @internal */
 export namespace GetTeamMembersBitbucket$ {
-    export const inboundSchema: z.ZodType<GetTeamMembersBitbucket, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<GetTeamMembersBitbucket, z.ZodTypeDef, unknown> =
+        z.object({
             login: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.login === undefined ? null : { login: v.login }),
-            };
         });
 
     export type Outbound = {
         login?: string | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetTeamMembersBitbucket> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetTeamMembersBitbucket> =
+        z.object({
             login: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.login === undefined ? null : { login: v.login }),
-            };
         });
 }
 
@@ -441,8 +382,8 @@ export namespace GetTeamMembersGitUserId$ {
 
 /** @internal */
 export namespace GetTeamMembersJoinedFrom$ {
-    export const inboundSchema: z.ZodType<GetTeamMembersJoinedFrom, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<GetTeamMembersJoinedFrom, z.ZodTypeDef, unknown> =
+        z.object({
             origin: GetTeamMembersOrigin$.inboundSchema,
             commitId: z.string().optional(),
             repoId: z.string().optional(),
@@ -454,23 +395,6 @@ export namespace GetTeamMembersJoinedFrom$ {
             idpUserId: z.string().optional(),
             dsyncUserId: z.string().optional(),
             dsyncConnectedAt: z.number().optional(),
-        })
-        .transform((v) => {
-            return {
-                origin: v.origin,
-                ...(v.commitId === undefined ? null : { commitId: v.commitId }),
-                ...(v.repoId === undefined ? null : { repoId: v.repoId }),
-                ...(v.repoPath === undefined ? null : { repoPath: v.repoPath }),
-                ...(v.gitUserId === undefined ? null : { gitUserId: v.gitUserId }),
-                ...(v.gitUserLogin === undefined ? null : { gitUserLogin: v.gitUserLogin }),
-                ...(v.ssoUserId === undefined ? null : { ssoUserId: v.ssoUserId }),
-                ...(v.ssoConnectedAt === undefined ? null : { ssoConnectedAt: v.ssoConnectedAt }),
-                ...(v.idpUserId === undefined ? null : { idpUserId: v.idpUserId }),
-                ...(v.dsyncUserId === undefined ? null : { dsyncUserId: v.dsyncUserId }),
-                ...(v.dsyncConnectedAt === undefined
-                    ? null
-                    : { dsyncConnectedAt: v.dsyncConnectedAt }),
-            };
         });
 
     export type Outbound = {
@@ -487,8 +411,8 @@ export namespace GetTeamMembersJoinedFrom$ {
         dsyncConnectedAt?: number | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetTeamMembersJoinedFrom> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetTeamMembersJoinedFrom> =
+        z.object({
             origin: GetTeamMembersOrigin$.outboundSchema,
             commitId: z.string().optional(),
             repoId: z.string().optional(),
@@ -500,23 +424,6 @@ export namespace GetTeamMembersJoinedFrom$ {
             idpUserId: z.string().optional(),
             dsyncUserId: z.string().optional(),
             dsyncConnectedAt: z.number().optional(),
-        })
-        .transform((v) => {
-            return {
-                origin: v.origin,
-                ...(v.commitId === undefined ? null : { commitId: v.commitId }),
-                ...(v.repoId === undefined ? null : { repoId: v.repoId }),
-                ...(v.repoPath === undefined ? null : { repoPath: v.repoPath }),
-                ...(v.gitUserId === undefined ? null : { gitUserId: v.gitUserId }),
-                ...(v.gitUserLogin === undefined ? null : { gitUserLogin: v.gitUserLogin }),
-                ...(v.ssoUserId === undefined ? null : { ssoUserId: v.ssoUserId }),
-                ...(v.ssoConnectedAt === undefined ? null : { ssoConnectedAt: v.ssoConnectedAt }),
-                ...(v.idpUserId === undefined ? null : { idpUserId: v.idpUserId }),
-                ...(v.dsyncUserId === undefined ? null : { dsyncUserId: v.dsyncUserId }),
-                ...(v.dsyncConnectedAt === undefined
-                    ? null
-                    : { dsyncConnectedAt: v.dsyncConnectedAt }),
-            };
         });
 }
 
@@ -528,19 +435,13 @@ export namespace GetTeamMembersTeamsRole$ {
 
 /** @internal */
 export namespace GetTeamMembersProjects$ {
-    export const inboundSchema: z.ZodType<GetTeamMembersProjects, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<GetTeamMembersProjects, z.ZodTypeDef, unknown> = z.object(
+        {
             name: z.string().optional(),
             id: z.string().optional(),
             role: GetTeamMembersTeamsRole$.inboundSchema.optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.name === undefined ? null : { name: v.name }),
-                ...(v.id === undefined ? null : { id: v.id }),
-                ...(v.role === undefined ? null : { role: v.role }),
-            };
-        });
+        }
+    );
 
     export type Outbound = {
         name?: string | undefined;
@@ -548,60 +449,32 @@ export namespace GetTeamMembersProjects$ {
         role?: string | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetTeamMembersProjects> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetTeamMembersProjects> =
+        z.object({
             name: z.string().optional(),
             id: z.string().optional(),
             role: GetTeamMembersTeamsRole$.outboundSchema.optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.name === undefined ? null : { name: v.name }),
-                ...(v.id === undefined ? null : { id: v.id }),
-                ...(v.role === undefined ? null : { role: v.role }),
-            };
         });
 }
 
 /** @internal */
 export namespace Members$ {
-    export const inboundSchema: z.ZodType<Members, z.ZodTypeDef, unknown> = z
-        .object({
-            avatar: z.string().optional(),
-            confirmed: z.boolean(),
-            email: z.string(),
-            github: z.lazy(() => GetTeamMembersGithub$.inboundSchema).optional(),
-            gitlab: z.lazy(() => GetTeamMembersGitlab$.inboundSchema).optional(),
-            bitbucket: z.lazy(() => GetTeamMembersBitbucket$.inboundSchema).optional(),
-            role: GetTeamMembersRole$.inboundSchema,
-            uid: z.string(),
-            username: z.string(),
-            name: z.string().optional(),
-            createdAt: z.number(),
-            accessRequestedAt: z.number().optional(),
-            joinedFrom: z.lazy(() => GetTeamMembersJoinedFrom$.inboundSchema).optional(),
-            projects: z.array(z.lazy(() => GetTeamMembersProjects$.inboundSchema)).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.avatar === undefined ? null : { avatar: v.avatar }),
-                confirmed: v.confirmed,
-                email: v.email,
-                ...(v.github === undefined ? null : { github: v.github }),
-                ...(v.gitlab === undefined ? null : { gitlab: v.gitlab }),
-                ...(v.bitbucket === undefined ? null : { bitbucket: v.bitbucket }),
-                role: v.role,
-                uid: v.uid,
-                username: v.username,
-                ...(v.name === undefined ? null : { name: v.name }),
-                createdAt: v.createdAt,
-                ...(v.accessRequestedAt === undefined
-                    ? null
-                    : { accessRequestedAt: v.accessRequestedAt }),
-                ...(v.joinedFrom === undefined ? null : { joinedFrom: v.joinedFrom }),
-                ...(v.projects === undefined ? null : { projects: v.projects }),
-            };
-        });
+    export const inboundSchema: z.ZodType<Members, z.ZodTypeDef, unknown> = z.object({
+        avatar: z.string().optional(),
+        confirmed: z.boolean(),
+        email: z.string(),
+        github: z.lazy(() => GetTeamMembersGithub$.inboundSchema).optional(),
+        gitlab: z.lazy(() => GetTeamMembersGitlab$.inboundSchema).optional(),
+        bitbucket: z.lazy(() => GetTeamMembersBitbucket$.inboundSchema).optional(),
+        role: GetTeamMembersRole$.inboundSchema,
+        uid: z.string(),
+        username: z.string(),
+        name: z.string().optional(),
+        createdAt: z.number(),
+        accessRequestedAt: z.number().optional(),
+        joinedFrom: z.lazy(() => GetTeamMembersJoinedFrom$.inboundSchema).optional(),
+        projects: z.array(z.lazy(() => GetTeamMembersProjects$.inboundSchema)).optional(),
+    });
 
     export type Outbound = {
         avatar?: string | undefined;
@@ -620,43 +493,22 @@ export namespace Members$ {
         projects?: Array<GetTeamMembersProjects$.Outbound> | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, Members> = z
-        .object({
-            avatar: z.string().optional(),
-            confirmed: z.boolean(),
-            email: z.string(),
-            github: z.lazy(() => GetTeamMembersGithub$.outboundSchema).optional(),
-            gitlab: z.lazy(() => GetTeamMembersGitlab$.outboundSchema).optional(),
-            bitbucket: z.lazy(() => GetTeamMembersBitbucket$.outboundSchema).optional(),
-            role: GetTeamMembersRole$.outboundSchema,
-            uid: z.string(),
-            username: z.string(),
-            name: z.string().optional(),
-            createdAt: z.number(),
-            accessRequestedAt: z.number().optional(),
-            joinedFrom: z.lazy(() => GetTeamMembersJoinedFrom$.outboundSchema).optional(),
-            projects: z.array(z.lazy(() => GetTeamMembersProjects$.outboundSchema)).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.avatar === undefined ? null : { avatar: v.avatar }),
-                confirmed: v.confirmed,
-                email: v.email,
-                ...(v.github === undefined ? null : { github: v.github }),
-                ...(v.gitlab === undefined ? null : { gitlab: v.gitlab }),
-                ...(v.bitbucket === undefined ? null : { bitbucket: v.bitbucket }),
-                role: v.role,
-                uid: v.uid,
-                username: v.username,
-                ...(v.name === undefined ? null : { name: v.name }),
-                createdAt: v.createdAt,
-                ...(v.accessRequestedAt === undefined
-                    ? null
-                    : { accessRequestedAt: v.accessRequestedAt }),
-                ...(v.joinedFrom === undefined ? null : { joinedFrom: v.joinedFrom }),
-                ...(v.projects === undefined ? null : { projects: v.projects }),
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, Members> = z.object({
+        avatar: z.string().optional(),
+        confirmed: z.boolean(),
+        email: z.string(),
+        github: z.lazy(() => GetTeamMembersGithub$.outboundSchema).optional(),
+        gitlab: z.lazy(() => GetTeamMembersGitlab$.outboundSchema).optional(),
+        bitbucket: z.lazy(() => GetTeamMembersBitbucket$.outboundSchema).optional(),
+        role: GetTeamMembersRole$.outboundSchema,
+        uid: z.string(),
+        username: z.string(),
+        name: z.string().optional(),
+        createdAt: z.number(),
+        accessRequestedAt: z.number().optional(),
+        joinedFrom: z.lazy(() => GetTeamMembersJoinedFrom$.outboundSchema).optional(),
+        projects: z.array(z.lazy(() => GetTeamMembersProjects$.outboundSchema)).optional(),
+    });
 }
 
 /** @internal */
@@ -673,29 +525,16 @@ export namespace GetTeamMembersEmailInviteCodesProjects$ {
 
 /** @internal */
 export namespace EmailInviteCodes2$ {
-    export const inboundSchema: z.ZodType<EmailInviteCodes2, z.ZodTypeDef, unknown> = z
-        .object({
-            accessGroups: z.array(z.string()).optional(),
-            id: z.string(),
-            email: z.string().optional(),
-            role: GetTeamMembersEmailInviteCodesRole$.inboundSchema.optional(),
-            isDSyncUser: z.boolean(),
-            createdAt: z.number().optional(),
-            expired: z.boolean().optional(),
-            projects: z.record(GetTeamMembersEmailInviteCodesProjects$.inboundSchema).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.accessGroups === undefined ? null : { accessGroups: v.accessGroups }),
-                id: v.id,
-                ...(v.email === undefined ? null : { email: v.email }),
-                ...(v.role === undefined ? null : { role: v.role }),
-                isDSyncUser: v.isDSyncUser,
-                ...(v.createdAt === undefined ? null : { createdAt: v.createdAt }),
-                ...(v.expired === undefined ? null : { expired: v.expired }),
-                ...(v.projects === undefined ? null : { projects: v.projects }),
-            };
-        });
+    export const inboundSchema: z.ZodType<EmailInviteCodes2, z.ZodTypeDef, unknown> = z.object({
+        accessGroups: z.array(z.string()).optional(),
+        id: z.string(),
+        email: z.string().optional(),
+        role: GetTeamMembersEmailInviteCodesRole$.inboundSchema.optional(),
+        isDSyncUser: z.boolean(),
+        createdAt: z.number().optional(),
+        expired: z.boolean().optional(),
+        projects: z.record(GetTeamMembersEmailInviteCodesProjects$.inboundSchema).optional(),
+    });
 
     export type Outbound = {
         accessGroups?: Array<string> | undefined;
@@ -705,32 +544,19 @@ export namespace EmailInviteCodes2$ {
         isDSyncUser: boolean;
         createdAt?: number | undefined;
         expired?: boolean | undefined;
-        projects?: Record<string, string> | undefined;
+        projects?: { [k: string]: string } | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, EmailInviteCodes2> = z
-        .object({
-            accessGroups: z.array(z.string()).optional(),
-            id: z.string(),
-            email: z.string().optional(),
-            role: GetTeamMembersEmailInviteCodesRole$.outboundSchema.optional(),
-            isDSyncUser: z.boolean(),
-            createdAt: z.number().optional(),
-            expired: z.boolean().optional(),
-            projects: z.record(GetTeamMembersEmailInviteCodesProjects$.outboundSchema).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.accessGroups === undefined ? null : { accessGroups: v.accessGroups }),
-                id: v.id,
-                ...(v.email === undefined ? null : { email: v.email }),
-                ...(v.role === undefined ? null : { role: v.role }),
-                isDSyncUser: v.isDSyncUser,
-                ...(v.createdAt === undefined ? null : { createdAt: v.createdAt }),
-                ...(v.expired === undefined ? null : { expired: v.expired }),
-                ...(v.projects === undefined ? null : { projects: v.projects }),
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, EmailInviteCodes2> = z.object({
+        accessGroups: z.array(z.string()).optional(),
+        id: z.string(),
+        email: z.string().optional(),
+        role: GetTeamMembersEmailInviteCodesRole$.outboundSchema.optional(),
+        isDSyncUser: z.boolean(),
+        createdAt: z.number().optional(),
+        expired: z.boolean().optional(),
+        projects: z.record(GetTeamMembersEmailInviteCodesProjects$.outboundSchema).optional(),
+    });
 }
 
 /** @internal */
@@ -747,27 +573,15 @@ export namespace EmailInviteCodesProjects$ {
 
 /** @internal */
 export namespace EmailInviteCodes1$ {
-    export const inboundSchema: z.ZodType<EmailInviteCodes1, z.ZodTypeDef, unknown> = z
-        .object({
-            id: z.string(),
-            email: z.string().optional(),
-            role: EmailInviteCodesRole$.inboundSchema.optional(),
-            isDSyncUser: z.boolean(),
-            createdAt: z.number().optional(),
-            expired: z.boolean().optional(),
-            projects: z.record(EmailInviteCodesProjects$.inboundSchema).optional(),
-        })
-        .transform((v) => {
-            return {
-                id: v.id,
-                ...(v.email === undefined ? null : { email: v.email }),
-                ...(v.role === undefined ? null : { role: v.role }),
-                isDSyncUser: v.isDSyncUser,
-                ...(v.createdAt === undefined ? null : { createdAt: v.createdAt }),
-                ...(v.expired === undefined ? null : { expired: v.expired }),
-                ...(v.projects === undefined ? null : { projects: v.projects }),
-            };
-        });
+    export const inboundSchema: z.ZodType<EmailInviteCodes1, z.ZodTypeDef, unknown> = z.object({
+        id: z.string(),
+        email: z.string().optional(),
+        role: EmailInviteCodesRole$.inboundSchema.optional(),
+        isDSyncUser: z.boolean(),
+        createdAt: z.number().optional(),
+        expired: z.boolean().optional(),
+        projects: z.record(EmailInviteCodesProjects$.inboundSchema).optional(),
+    });
 
     export type Outbound = {
         id: string;
@@ -776,30 +590,18 @@ export namespace EmailInviteCodes1$ {
         isDSyncUser: boolean;
         createdAt?: number | undefined;
         expired?: boolean | undefined;
-        projects?: Record<string, string> | undefined;
+        projects?: { [k: string]: string } | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, EmailInviteCodes1> = z
-        .object({
-            id: z.string(),
-            email: z.string().optional(),
-            role: EmailInviteCodesRole$.outboundSchema.optional(),
-            isDSyncUser: z.boolean(),
-            createdAt: z.number().optional(),
-            expired: z.boolean().optional(),
-            projects: z.record(EmailInviteCodesProjects$.outboundSchema).optional(),
-        })
-        .transform((v) => {
-            return {
-                id: v.id,
-                ...(v.email === undefined ? null : { email: v.email }),
-                ...(v.role === undefined ? null : { role: v.role }),
-                isDSyncUser: v.isDSyncUser,
-                ...(v.createdAt === undefined ? null : { createdAt: v.createdAt }),
-                ...(v.expired === undefined ? null : { expired: v.expired }),
-                ...(v.projects === undefined ? null : { projects: v.projects }),
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, EmailInviteCodes1> = z.object({
+        id: z.string(),
+        email: z.string().optional(),
+        role: EmailInviteCodesRole$.outboundSchema.optional(),
+        isDSyncUser: z.boolean(),
+        createdAt: z.number().optional(),
+        expired: z.boolean().optional(),
+        projects: z.record(EmailInviteCodesProjects$.outboundSchema).optional(),
+    });
 }
 
 /** @internal */
@@ -818,20 +620,12 @@ export namespace EmailInviteCodes$ {
 
 /** @internal */
 export namespace GetTeamMembersPagination$ {
-    export const inboundSchema: z.ZodType<GetTeamMembersPagination, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<GetTeamMembersPagination, z.ZodTypeDef, unknown> =
+        z.object({
             hasNext: z.boolean(),
             count: z.number(),
             next: z.nullable(z.number()),
             prev: z.nullable(z.number()),
-        })
-        .transform((v) => {
-            return {
-                hasNext: v.hasNext,
-                count: v.count,
-                next: v.next,
-                prev: v.prev,
-            };
         });
 
     export type Outbound = {
@@ -841,27 +635,19 @@ export namespace GetTeamMembersPagination$ {
         prev: number | null;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetTeamMembersPagination> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetTeamMembersPagination> =
+        z.object({
             hasNext: z.boolean(),
             count: z.number(),
             next: z.nullable(z.number()),
             prev: z.nullable(z.number()),
-        })
-        .transform((v) => {
-            return {
-                hasNext: v.hasNext,
-                count: v.count,
-                next: v.next,
-                prev: v.prev,
-            };
         });
 }
 
 /** @internal */
 export namespace GetTeamMembersResponseBody$ {
-    export const inboundSchema: z.ZodType<GetTeamMembersResponseBody, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<GetTeamMembersResponseBody, z.ZodTypeDef, unknown> =
+        z.object({
             members: z.array(z.lazy(() => Members$.inboundSchema)),
             emailInviteCodes: z
                 .array(
@@ -872,15 +658,6 @@ export namespace GetTeamMembersResponseBody$ {
                 )
                 .optional(),
             pagination: z.lazy(() => GetTeamMembersPagination$.inboundSchema),
-        })
-        .transform((v) => {
-            return {
-                members: v.members,
-                ...(v.emailInviteCodes === undefined
-                    ? null
-                    : { emailInviteCodes: v.emailInviteCodes }),
-                pagination: v.pagination,
-            };
         });
 
     export type Outbound = {
@@ -891,8 +668,8 @@ export namespace GetTeamMembersResponseBody$ {
         pagination: GetTeamMembersPagination$.Outbound;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetTeamMembersResponseBody> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetTeamMembersResponseBody> =
+        z.object({
             members: z.array(z.lazy(() => Members$.outboundSchema)),
             emailInviteCodes: z
                 .array(
@@ -903,14 +680,5 @@ export namespace GetTeamMembersResponseBody$ {
                 )
                 .optional(),
             pagination: z.lazy(() => GetTeamMembersPagination$.outboundSchema),
-        })
-        .transform((v) => {
-            return {
-                members: v.members,
-                ...(v.emailInviteCodes === undefined
-                    ? null
-                    : { emailInviteCodes: v.emailInviteCodes }),
-                pagination: v.pagination,
-            };
         });
 }

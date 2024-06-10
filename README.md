@@ -8,19 +8,16 @@
 <!-- Start SDK Installation [installation] -->
 ## SDK Installation
 
-> [!WARNING] 
-> This SDK is not yet published to a package manager
-
 ### NPM
 
 ```bash
-npm add https://github.com/speakeasy-sdks/vercel-ts
+npm add vercel
 ```
 
 ### Yarn
 
 ```bash
-yarn add https://github.com/speakeasy-sdks/vercel-ts
+yarn add vercel
 ```
 <!-- End SDK Installation [installation] -->
 

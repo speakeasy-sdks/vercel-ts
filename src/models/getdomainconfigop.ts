@@ -72,21 +72,14 @@ export namespace Strict$ {
 
 /** @internal */
 export namespace GetDomainConfigRequest$ {
-    export const inboundSchema: z.ZodType<GetDomainConfigRequest, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<GetDomainConfigRequest, z.ZodTypeDef, unknown> = z.object(
+        {
             domain: z.string(),
             strict: Strict$.inboundSchema.optional(),
             teamId: z.string().optional(),
             slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                domain: v.domain,
-                ...(v.strict === undefined ? null : { strict: v.strict }),
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
-        });
+        }
+    );
 
     export type Outbound = {
         domain: string;
@@ -95,20 +88,12 @@ export namespace GetDomainConfigRequest$ {
         slug?: string | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetDomainConfigRequest> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetDomainConfigRequest> =
+        z.object({
             domain: z.string(),
             strict: Strict$.outboundSchema.optional(),
             teamId: z.string().optional(),
             slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                domain: v.domain,
-                ...(v.strict === undefined ? null : { strict: v.strict }),
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
         });
 }
 
@@ -126,20 +111,11 @@ export namespace AcceptedChallenges$ {
 
 /** @internal */
 export namespace GetDomainConfigResponseBody$ {
-    export const inboundSchema: z.ZodType<GetDomainConfigResponseBody, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<GetDomainConfigResponseBody, z.ZodTypeDef, unknown> =
+        z.object({
             configuredBy: z.nullable(ConfiguredBy$.inboundSchema).optional(),
             acceptedChallenges: z.array(AcceptedChallenges$.inboundSchema).optional(),
             misconfigured: z.boolean(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.configuredBy === undefined ? null : { configuredBy: v.configuredBy }),
-                ...(v.acceptedChallenges === undefined
-                    ? null
-                    : { acceptedChallenges: v.acceptedChallenges }),
-                misconfigured: v.misconfigured,
-            };
         });
 
     export type Outbound = {
@@ -148,19 +124,10 @@ export namespace GetDomainConfigResponseBody$ {
         misconfigured: boolean;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetDomainConfigResponseBody> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetDomainConfigResponseBody> =
+        z.object({
             configuredBy: z.nullable(ConfiguredBy$.outboundSchema).optional(),
             acceptedChallenges: z.array(AcceptedChallenges$.outboundSchema).optional(),
             misconfigured: z.boolean(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.configuredBy === undefined ? null : { configuredBy: v.configuredBy }),
-                ...(v.acceptedChallenges === undefined
-                    ? null
-                    : { acceptedChallenges: v.acceptedChallenges }),
-                misconfigured: v.misconfigured,
-            };
         });
 }

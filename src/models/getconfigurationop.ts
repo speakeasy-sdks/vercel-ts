@@ -356,18 +356,11 @@ export type GetConfigurationResponseBody =
 
 /** @internal */
 export namespace GetConfigurationRequest$ {
-    export const inboundSchema: z.ZodType<GetConfigurationRequest, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<GetConfigurationRequest, z.ZodTypeDef, unknown> =
+        z.object({
             id: z.string(),
             teamId: z.string().optional(),
             slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                id: v.id,
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
         });
 
     export type Outbound = {
@@ -376,18 +369,11 @@ export namespace GetConfigurationRequest$ {
         slug?: string | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetConfigurationRequest> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetConfigurationRequest> =
+        z.object({
             id: z.string(),
             teamId: z.string().optional(),
             slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                id: v.id,
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
         });
 }
 
@@ -427,17 +413,10 @@ export namespace GetConfigurationResponseBodyIntegrationsScopes$ {
         GetConfigurationResponseBodyIntegrationsScopes,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            added: z.array(GetConfigurationResponseBodyIntegrationsAdded$.inboundSchema),
-            upgraded: z.array(GetConfigurationResponseBodyIntegrationsUpgraded$.inboundSchema),
-        })
-        .transform((v) => {
-            return {
-                added: v.added,
-                upgraded: v.upgraded,
-            };
-        });
+    > = z.object({
+        added: z.array(GetConfigurationResponseBodyIntegrationsAdded$.inboundSchema),
+        upgraded: z.array(GetConfigurationResponseBodyIntegrationsUpgraded$.inboundSchema),
+    });
 
     export type Outbound = {
         added: Array<string>;
@@ -448,17 +427,10 @@ export namespace GetConfigurationResponseBodyIntegrationsScopes$ {
         Outbound,
         z.ZodTypeDef,
         GetConfigurationResponseBodyIntegrationsScopes
-    > = z
-        .object({
-            added: z.array(GetConfigurationResponseBodyIntegrationsAdded$.outboundSchema),
-            upgraded: z.array(GetConfigurationResponseBodyIntegrationsUpgraded$.outboundSchema),
-        })
-        .transform((v) => {
-            return {
-                added: v.added,
-                upgraded: v.upgraded,
-            };
-        });
+    > = z.object({
+        added: z.array(GetConfigurationResponseBodyIntegrationsAdded$.outboundSchema),
+        upgraded: z.array(GetConfigurationResponseBodyIntegrationsUpgraded$.outboundSchema),
+    });
 }
 
 /** @internal */
@@ -467,21 +439,12 @@ export namespace GetConfigurationResponseBodyIntegrationsScopesQueue$ {
         GetConfigurationResponseBodyIntegrationsScopesQueue,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            scopes: z.lazy(() => GetConfigurationResponseBodyIntegrationsScopes$.inboundSchema),
-            note: z.string(),
-            requestedAt: z.number(),
-            confirmedAt: z.number().optional(),
-        })
-        .transform((v) => {
-            return {
-                scopes: v.scopes,
-                note: v.note,
-                requestedAt: v.requestedAt,
-                ...(v.confirmedAt === undefined ? null : { confirmedAt: v.confirmedAt }),
-            };
-        });
+    > = z.object({
+        scopes: z.lazy(() => GetConfigurationResponseBodyIntegrationsScopes$.inboundSchema),
+        note: z.string(),
+        requestedAt: z.number(),
+        confirmedAt: z.number().optional(),
+    });
 
     export type Outbound = {
         scopes: GetConfigurationResponseBodyIntegrationsScopes$.Outbound;
@@ -494,21 +457,12 @@ export namespace GetConfigurationResponseBodyIntegrationsScopesQueue$ {
         Outbound,
         z.ZodTypeDef,
         GetConfigurationResponseBodyIntegrationsScopesQueue
-    > = z
-        .object({
-            scopes: z.lazy(() => GetConfigurationResponseBodyIntegrationsScopes$.outboundSchema),
-            note: z.string(),
-            requestedAt: z.number(),
-            confirmedAt: z.number().optional(),
-        })
-        .transform((v) => {
-            return {
-                scopes: v.scopes,
-                note: v.note,
-                requestedAt: v.requestedAt,
-                ...(v.confirmedAt === undefined ? null : { confirmedAt: v.confirmedAt }),
-            };
-        });
+    > = z.object({
+        scopes: z.lazy(() => GetConfigurationResponseBodyIntegrationsScopes$.outboundSchema),
+        note: z.string(),
+        requestedAt: z.number(),
+        confirmedAt: z.number().optional(),
+    });
 }
 
 /** @internal */
@@ -529,8 +483,8 @@ export namespace GetConfigurationResponseBodyIntegrationsInstallationType$ {
 
 /** @internal */
 export namespace GetConfigurationResponseBody2$ {
-    export const inboundSchema: z.ZodType<GetConfigurationResponseBody2, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<GetConfigurationResponseBody2, z.ZodTypeDef, unknown> =
+        z.object({
             projectSelection: ProjectSelection$.inboundSchema,
             projects: z.array(z.string()).optional(),
             completedAt: z.number().optional(),
@@ -562,49 +516,6 @@ export namespace GetConfigurationResponseBody2$ {
             installationType:
                 GetConfigurationResponseBodyIntegrationsInstallationType$.inboundSchema.optional(),
             canConfigureOpenTelemetry: z.boolean().optional(),
-        })
-        .transform((v) => {
-            return {
-                projectSelection: v.projectSelection,
-                ...(v.projects === undefined ? null : { projects: v.projects }),
-                ...(v.completedAt === undefined ? null : { completedAt: v.completedAt }),
-                createdAt: v.createdAt,
-                id: v.id,
-                integrationId: v.integrationId,
-                ownerId: v.ownerId,
-                ...(v.source === undefined ? null : { source: v.source }),
-                ...(v.removedLogDrainsAt === undefined
-                    ? null
-                    : { removedLogDrainsAt: v.removedLogDrainsAt }),
-                ...(v.removedProjectEnvsAt === undefined
-                    ? null
-                    : { removedProjectEnvsAt: v.removedProjectEnvsAt }),
-                ...(v.removedTokensAt === undefined
-                    ? null
-                    : { removedTokensAt: v.removedTokensAt }),
-                ...(v.removedWebhooksAt === undefined
-                    ? null
-                    : { removedWebhooksAt: v.removedWebhooksAt }),
-                slug: v.slug,
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                type: v.type,
-                updatedAt: v.updatedAt,
-                userId: v.userId,
-                scopes: v.scopes,
-                ...(v.scopesQueue === undefined ? null : { scopesQueue: v.scopesQueue }),
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.deletedAt === undefined ? null : { deletedAt: v.deletedAt }),
-                ...(v.disabledReason === undefined ? null : { disabledReason: v.disabledReason }),
-                ...(v.northstarMigratedAt === undefined
-                    ? null
-                    : { northstarMigratedAt: v.northstarMigratedAt }),
-                ...(v.installationType === undefined
-                    ? null
-                    : { installationType: v.installationType }),
-                ...(v.canConfigureOpenTelemetry === undefined
-                    ? null
-                    : { canConfigureOpenTelemetry: v.canConfigureOpenTelemetry }),
-            };
         });
 
     export type Outbound = {
@@ -638,88 +549,41 @@ export namespace GetConfigurationResponseBody2$ {
     };
 
     export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetConfigurationResponseBody2> =
-        z
-            .object({
-                projectSelection: ProjectSelection$.outboundSchema,
-                projects: z.array(z.string()).optional(),
-                completedAt: z.number().optional(),
-                createdAt: z.number(),
-                id: z.string(),
-                integrationId: z.string(),
-                ownerId: z.string(),
-                source: GetConfigurationResponseBodyIntegrationsSource$.outboundSchema.optional(),
-                removedLogDrainsAt: z.number().optional(),
-                removedProjectEnvsAt: z.number().optional(),
-                removedTokensAt: z.number().optional(),
-                removedWebhooksAt: z.number().optional(),
-                slug: z.string(),
-                teamId: z.nullable(z.string()).optional(),
-                type: GetConfigurationResponseBodyIntegrationsType$.outboundSchema,
-                updatedAt: z.number(),
-                userId: z.string(),
-                scopes: z.array(z.string()),
-                scopesQueue: z
-                    .array(
-                        z.lazy(
-                            () =>
-                                GetConfigurationResponseBodyIntegrationsScopesQueue$.outboundSchema
-                        )
+        z.object({
+            projectSelection: ProjectSelection$.outboundSchema,
+            projects: z.array(z.string()).optional(),
+            completedAt: z.number().optional(),
+            createdAt: z.number(),
+            id: z.string(),
+            integrationId: z.string(),
+            ownerId: z.string(),
+            source: GetConfigurationResponseBodyIntegrationsSource$.outboundSchema.optional(),
+            removedLogDrainsAt: z.number().optional(),
+            removedProjectEnvsAt: z.number().optional(),
+            removedTokensAt: z.number().optional(),
+            removedWebhooksAt: z.number().optional(),
+            slug: z.string(),
+            teamId: z.nullable(z.string()).optional(),
+            type: GetConfigurationResponseBodyIntegrationsType$.outboundSchema,
+            updatedAt: z.number(),
+            userId: z.string(),
+            scopes: z.array(z.string()),
+            scopesQueue: z
+                .array(
+                    z.lazy(
+                        () => GetConfigurationResponseBodyIntegrationsScopesQueue$.outboundSchema
                     )
-                    .optional(),
-                disabledAt: z.number().optional(),
-                deletedAt: z.nullable(z.number()).optional(),
-                disabledReason:
-                    GetConfigurationResponseBodyIntegrationsDisabledReason$.outboundSchema.optional(),
-                northstarMigratedAt: z.number().optional(),
-                installationType:
-                    GetConfigurationResponseBodyIntegrationsInstallationType$.outboundSchema.optional(),
-                canConfigureOpenTelemetry: z.boolean().optional(),
-            })
-            .transform((v) => {
-                return {
-                    projectSelection: v.projectSelection,
-                    ...(v.projects === undefined ? null : { projects: v.projects }),
-                    ...(v.completedAt === undefined ? null : { completedAt: v.completedAt }),
-                    createdAt: v.createdAt,
-                    id: v.id,
-                    integrationId: v.integrationId,
-                    ownerId: v.ownerId,
-                    ...(v.source === undefined ? null : { source: v.source }),
-                    ...(v.removedLogDrainsAt === undefined
-                        ? null
-                        : { removedLogDrainsAt: v.removedLogDrainsAt }),
-                    ...(v.removedProjectEnvsAt === undefined
-                        ? null
-                        : { removedProjectEnvsAt: v.removedProjectEnvsAt }),
-                    ...(v.removedTokensAt === undefined
-                        ? null
-                        : { removedTokensAt: v.removedTokensAt }),
-                    ...(v.removedWebhooksAt === undefined
-                        ? null
-                        : { removedWebhooksAt: v.removedWebhooksAt }),
-                    slug: v.slug,
-                    ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                    type: v.type,
-                    updatedAt: v.updatedAt,
-                    userId: v.userId,
-                    scopes: v.scopes,
-                    ...(v.scopesQueue === undefined ? null : { scopesQueue: v.scopesQueue }),
-                    ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                    ...(v.deletedAt === undefined ? null : { deletedAt: v.deletedAt }),
-                    ...(v.disabledReason === undefined
-                        ? null
-                        : { disabledReason: v.disabledReason }),
-                    ...(v.northstarMigratedAt === undefined
-                        ? null
-                        : { northstarMigratedAt: v.northstarMigratedAt }),
-                    ...(v.installationType === undefined
-                        ? null
-                        : { installationType: v.installationType }),
-                    ...(v.canConfigureOpenTelemetry === undefined
-                        ? null
-                        : { canConfigureOpenTelemetry: v.canConfigureOpenTelemetry }),
-                };
-            });
+                )
+                .optional(),
+            disabledAt: z.number().optional(),
+            deletedAt: z.nullable(z.number()).optional(),
+            disabledReason:
+                GetConfigurationResponseBodyIntegrationsDisabledReason$.outboundSchema.optional(),
+            northstarMigratedAt: z.number().optional(),
+            installationType:
+                GetConfigurationResponseBodyIntegrationsInstallationType$.outboundSchema.optional(),
+            canConfigureOpenTelemetry: z.boolean().optional(),
+        });
 }
 
 /** @internal */
@@ -752,17 +616,10 @@ export namespace GetConfigurationResponseBodyScopes$ {
         GetConfigurationResponseBodyScopes,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            added: z.array(GetConfigurationResponseBodyAdded$.inboundSchema),
-            upgraded: z.array(GetConfigurationResponseBodyUpgraded$.inboundSchema),
-        })
-        .transform((v) => {
-            return {
-                added: v.added,
-                upgraded: v.upgraded,
-            };
-        });
+    > = z.object({
+        added: z.array(GetConfigurationResponseBodyAdded$.inboundSchema),
+        upgraded: z.array(GetConfigurationResponseBodyUpgraded$.inboundSchema),
+    });
 
     export type Outbound = {
         added: Array<string>;
@@ -773,17 +630,10 @@ export namespace GetConfigurationResponseBodyScopes$ {
         Outbound,
         z.ZodTypeDef,
         GetConfigurationResponseBodyScopes
-    > = z
-        .object({
-            added: z.array(GetConfigurationResponseBodyAdded$.outboundSchema),
-            upgraded: z.array(GetConfigurationResponseBodyUpgraded$.outboundSchema),
-        })
-        .transform((v) => {
-            return {
-                added: v.added,
-                upgraded: v.upgraded,
-            };
-        });
+    > = z.object({
+        added: z.array(GetConfigurationResponseBodyAdded$.outboundSchema),
+        upgraded: z.array(GetConfigurationResponseBodyUpgraded$.outboundSchema),
+    });
 }
 
 /** @internal */
@@ -792,21 +642,12 @@ export namespace GetConfigurationResponseBodyScopesQueue$ {
         GetConfigurationResponseBodyScopesQueue,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            scopes: z.lazy(() => GetConfigurationResponseBodyScopes$.inboundSchema),
-            note: z.string(),
-            requestedAt: z.number(),
-            confirmedAt: z.number().optional(),
-        })
-        .transform((v) => {
-            return {
-                scopes: v.scopes,
-                note: v.note,
-                requestedAt: v.requestedAt,
-                ...(v.confirmedAt === undefined ? null : { confirmedAt: v.confirmedAt }),
-            };
-        });
+    > = z.object({
+        scopes: z.lazy(() => GetConfigurationResponseBodyScopes$.inboundSchema),
+        note: z.string(),
+        requestedAt: z.number(),
+        confirmedAt: z.number().optional(),
+    });
 
     export type Outbound = {
         scopes: GetConfigurationResponseBodyScopes$.Outbound;
@@ -819,21 +660,12 @@ export namespace GetConfigurationResponseBodyScopesQueue$ {
         Outbound,
         z.ZodTypeDef,
         GetConfigurationResponseBodyScopesQueue
-    > = z
-        .object({
-            scopes: z.lazy(() => GetConfigurationResponseBodyScopes$.outboundSchema),
-            note: z.string(),
-            requestedAt: z.number(),
-            confirmedAt: z.number().optional(),
-        })
-        .transform((v) => {
-            return {
-                scopes: v.scopes,
-                note: v.note,
-                requestedAt: v.requestedAt,
-                ...(v.confirmedAt === undefined ? null : { confirmedAt: v.confirmedAt }),
-            };
-        });
+    > = z.object({
+        scopes: z.lazy(() => GetConfigurationResponseBodyScopes$.outboundSchema),
+        note: z.string(),
+        requestedAt: z.number(),
+        confirmedAt: z.number().optional(),
+    });
 }
 
 /** @internal */
@@ -850,8 +682,8 @@ export namespace GetConfigurationResponseBodyInstallationType$ {
 
 /** @internal */
 export namespace GetConfigurationResponseBody1$ {
-    export const inboundSchema: z.ZodType<GetConfigurationResponseBody1, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<GetConfigurationResponseBody1, z.ZodTypeDef, unknown> =
+        z.object({
             completedAt: z.number().optional(),
             createdAt: z.number(),
             id: z.string(),
@@ -878,45 +710,6 @@ export namespace GetConfigurationResponseBody1$ {
             northstarMigratedAt: z.number().optional(),
             installationType:
                 GetConfigurationResponseBodyInstallationType$.inboundSchema.optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.completedAt === undefined ? null : { completedAt: v.completedAt }),
-                createdAt: v.createdAt,
-                id: v.id,
-                integrationId: v.integrationId,
-                ownerId: v.ownerId,
-                ...(v.projects === undefined ? null : { projects: v.projects }),
-                ...(v.source === undefined ? null : { source: v.source }),
-                ...(v.removedLogDrainsAt === undefined
-                    ? null
-                    : { removedLogDrainsAt: v.removedLogDrainsAt }),
-                ...(v.removedProjectEnvsAt === undefined
-                    ? null
-                    : { removedProjectEnvsAt: v.removedProjectEnvsAt }),
-                ...(v.removedTokensAt === undefined
-                    ? null
-                    : { removedTokensAt: v.removedTokensAt }),
-                ...(v.removedWebhooksAt === undefined
-                    ? null
-                    : { removedWebhooksAt: v.removedWebhooksAt }),
-                slug: v.slug,
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                type: v.type,
-                updatedAt: v.updatedAt,
-                userId: v.userId,
-                scopes: v.scopes,
-                ...(v.scopesQueue === undefined ? null : { scopesQueue: v.scopesQueue }),
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.deletedAt === undefined ? null : { deletedAt: v.deletedAt }),
-                ...(v.disabledReason === undefined ? null : { disabledReason: v.disabledReason }),
-                ...(v.northstarMigratedAt === undefined
-                    ? null
-                    : { northstarMigratedAt: v.northstarMigratedAt }),
-                ...(v.installationType === undefined
-                    ? null
-                    : { installationType: v.installationType }),
-            };
         });
 
     export type Outbound = {
@@ -946,77 +739,34 @@ export namespace GetConfigurationResponseBody1$ {
     };
 
     export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetConfigurationResponseBody1> =
-        z
-            .object({
-                completedAt: z.number().optional(),
-                createdAt: z.number(),
-                id: z.string(),
-                integrationId: z.string(),
-                ownerId: z.string(),
-                projects: z.array(z.string()).optional(),
-                source: GetConfigurationResponseBodySource$.outboundSchema.optional(),
-                removedLogDrainsAt: z.number().optional(),
-                removedProjectEnvsAt: z.number().optional(),
-                removedTokensAt: z.number().optional(),
-                removedWebhooksAt: z.number().optional(),
-                slug: z.string(),
-                teamId: z.nullable(z.string()).optional(),
-                type: GetConfigurationResponseBodyType$.outboundSchema,
-                updatedAt: z.number(),
-                userId: z.string(),
-                scopes: z.array(z.string()),
-                scopesQueue: z
-                    .array(z.lazy(() => GetConfigurationResponseBodyScopesQueue$.outboundSchema))
-                    .optional(),
-                disabledAt: z.number().optional(),
-                deletedAt: z.nullable(z.number()).optional(),
-                disabledReason:
-                    GetConfigurationResponseBodyDisabledReason$.outboundSchema.optional(),
-                northstarMigratedAt: z.number().optional(),
-                installationType:
-                    GetConfigurationResponseBodyInstallationType$.outboundSchema.optional(),
-            })
-            .transform((v) => {
-                return {
-                    ...(v.completedAt === undefined ? null : { completedAt: v.completedAt }),
-                    createdAt: v.createdAt,
-                    id: v.id,
-                    integrationId: v.integrationId,
-                    ownerId: v.ownerId,
-                    ...(v.projects === undefined ? null : { projects: v.projects }),
-                    ...(v.source === undefined ? null : { source: v.source }),
-                    ...(v.removedLogDrainsAt === undefined
-                        ? null
-                        : { removedLogDrainsAt: v.removedLogDrainsAt }),
-                    ...(v.removedProjectEnvsAt === undefined
-                        ? null
-                        : { removedProjectEnvsAt: v.removedProjectEnvsAt }),
-                    ...(v.removedTokensAt === undefined
-                        ? null
-                        : { removedTokensAt: v.removedTokensAt }),
-                    ...(v.removedWebhooksAt === undefined
-                        ? null
-                        : { removedWebhooksAt: v.removedWebhooksAt }),
-                    slug: v.slug,
-                    ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                    type: v.type,
-                    updatedAt: v.updatedAt,
-                    userId: v.userId,
-                    scopes: v.scopes,
-                    ...(v.scopesQueue === undefined ? null : { scopesQueue: v.scopesQueue }),
-                    ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                    ...(v.deletedAt === undefined ? null : { deletedAt: v.deletedAt }),
-                    ...(v.disabledReason === undefined
-                        ? null
-                        : { disabledReason: v.disabledReason }),
-                    ...(v.northstarMigratedAt === undefined
-                        ? null
-                        : { northstarMigratedAt: v.northstarMigratedAt }),
-                    ...(v.installationType === undefined
-                        ? null
-                        : { installationType: v.installationType }),
-                };
-            });
+        z.object({
+            completedAt: z.number().optional(),
+            createdAt: z.number(),
+            id: z.string(),
+            integrationId: z.string(),
+            ownerId: z.string(),
+            projects: z.array(z.string()).optional(),
+            source: GetConfigurationResponseBodySource$.outboundSchema.optional(),
+            removedLogDrainsAt: z.number().optional(),
+            removedProjectEnvsAt: z.number().optional(),
+            removedTokensAt: z.number().optional(),
+            removedWebhooksAt: z.number().optional(),
+            slug: z.string(),
+            teamId: z.nullable(z.string()).optional(),
+            type: GetConfigurationResponseBodyType$.outboundSchema,
+            updatedAt: z.number(),
+            userId: z.string(),
+            scopes: z.array(z.string()),
+            scopesQueue: z
+                .array(z.lazy(() => GetConfigurationResponseBodyScopesQueue$.outboundSchema))
+                .optional(),
+            disabledAt: z.number().optional(),
+            deletedAt: z.nullable(z.number()).optional(),
+            disabledReason: GetConfigurationResponseBodyDisabledReason$.outboundSchema.optional(),
+            northstarMigratedAt: z.number().optional(),
+            installationType:
+                GetConfigurationResponseBodyInstallationType$.outboundSchema.optional(),
+        });
 }
 
 /** @internal */

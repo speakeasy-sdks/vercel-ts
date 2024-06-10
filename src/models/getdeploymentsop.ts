@@ -337,7 +337,7 @@ export type GetDeploymentsDeployments = {
     /**
      * Metadata information from the Git provider.
      */
-    meta?: Record<string, string> | undefined;
+    meta?: { [k: string]: string } | undefined;
     /**
      * On which environment has the deployment been deployed to.
      */
@@ -413,41 +413,21 @@ export namespace QueryParamTarget$ {
 
 /** @internal */
 export namespace GetDeploymentsRequest$ {
-    export const inboundSchema: z.ZodType<GetDeploymentsRequest, z.ZodTypeDef, unknown> = z
-        .object({
-            app: z.string().optional(),
-            from: z.number().optional(),
-            limit: z.number().optional(),
-            projectId: z.string().optional(),
-            target: QueryParamTarget$.inboundSchema.optional(),
-            to: z.number().optional(),
-            users: z.string().optional(),
-            since: z.number().optional(),
-            until: z.number().optional(),
-            state: z.string().optional(),
-            rollbackCandidate: z.boolean().optional(),
-            teamId: z.string().optional(),
-            slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.app === undefined ? null : { app: v.app }),
-                ...(v.from === undefined ? null : { from: v.from }),
-                ...(v.limit === undefined ? null : { limit: v.limit }),
-                ...(v.projectId === undefined ? null : { projectId: v.projectId }),
-                ...(v.target === undefined ? null : { target: v.target }),
-                ...(v.to === undefined ? null : { to: v.to }),
-                ...(v.users === undefined ? null : { users: v.users }),
-                ...(v.since === undefined ? null : { since: v.since }),
-                ...(v.until === undefined ? null : { until: v.until }),
-                ...(v.state === undefined ? null : { state: v.state }),
-                ...(v.rollbackCandidate === undefined
-                    ? null
-                    : { rollbackCandidate: v.rollbackCandidate }),
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
-        });
+    export const inboundSchema: z.ZodType<GetDeploymentsRequest, z.ZodTypeDef, unknown> = z.object({
+        app: z.string().optional(),
+        from: z.number().optional(),
+        limit: z.number().optional(),
+        projectId: z.string().optional(),
+        target: QueryParamTarget$.inboundSchema.optional(),
+        to: z.number().optional(),
+        users: z.string().optional(),
+        since: z.number().optional(),
+        until: z.number().optional(),
+        state: z.string().optional(),
+        rollbackCandidate: z.boolean().optional(),
+        teamId: z.string().optional(),
+        slug: z.string().optional(),
+    });
 
     export type Outbound = {
         app?: string | undefined;
@@ -465,8 +445,8 @@ export namespace GetDeploymentsRequest$ {
         slug?: string | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetDeploymentsRequest> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetDeploymentsRequest> =
+        z.object({
             app: z.string().optional(),
             from: z.number().optional(),
             limit: z.number().optional(),
@@ -480,25 +460,6 @@ export namespace GetDeploymentsRequest$ {
             rollbackCandidate: z.boolean().optional(),
             teamId: z.string().optional(),
             slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.app === undefined ? null : { app: v.app }),
-                ...(v.from === undefined ? null : { from: v.from }),
-                ...(v.limit === undefined ? null : { limit: v.limit }),
-                ...(v.projectId === undefined ? null : { projectId: v.projectId }),
-                ...(v.target === undefined ? null : { target: v.target }),
-                ...(v.to === undefined ? null : { to: v.to }),
-                ...(v.users === undefined ? null : { users: v.users }),
-                ...(v.since === undefined ? null : { since: v.since }),
-                ...(v.until === undefined ? null : { until: v.until }),
-                ...(v.state === undefined ? null : { state: v.state }),
-                ...(v.rollbackCandidate === undefined
-                    ? null
-                    : { rollbackCandidate: v.rollbackCandidate }),
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
         });
 }
 
@@ -528,23 +489,13 @@ export namespace GetDeploymentsType$ {
 
 /** @internal */
 export namespace GetDeploymentsCreator$ {
-    export const inboundSchema: z.ZodType<GetDeploymentsCreator, z.ZodTypeDef, unknown> = z
-        .object({
-            uid: z.string(),
-            email: z.string().optional(),
-            username: z.string().optional(),
-            githubLogin: z.string().optional(),
-            gitlabLogin: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                uid: v.uid,
-                ...(v.email === undefined ? null : { email: v.email }),
-                ...(v.username === undefined ? null : { username: v.username }),
-                ...(v.githubLogin === undefined ? null : { githubLogin: v.githubLogin }),
-                ...(v.gitlabLogin === undefined ? null : { gitlabLogin: v.gitlabLogin }),
-            };
-        });
+    export const inboundSchema: z.ZodType<GetDeploymentsCreator, z.ZodTypeDef, unknown> = z.object({
+        uid: z.string(),
+        email: z.string().optional(),
+        username: z.string().optional(),
+        githubLogin: z.string().optional(),
+        gitlabLogin: z.string().optional(),
+    });
 
     export type Outbound = {
         uid: string;
@@ -554,22 +505,13 @@ export namespace GetDeploymentsCreator$ {
         gitlabLogin?: string | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetDeploymentsCreator> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetDeploymentsCreator> =
+        z.object({
             uid: z.string(),
             email: z.string().optional(),
             username: z.string().optional(),
             githubLogin: z.string().optional(),
             gitlabLogin: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                uid: v.uid,
-                ...(v.email === undefined ? null : { email: v.email }),
-                ...(v.username === undefined ? null : { username: v.username }),
-                ...(v.githubLogin === undefined ? null : { githubLogin: v.githubLogin }),
-                ...(v.gitlabLogin === undefined ? null : { gitlabLogin: v.gitlabLogin }),
-            };
         });
 }
 
@@ -581,16 +523,10 @@ export namespace GetDeploymentsTarget$ {
 
 /** @internal */
 export namespace GetDeploymentsAliasError$ {
-    export const inboundSchema: z.ZodType<GetDeploymentsAliasError, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<GetDeploymentsAliasError, z.ZodTypeDef, unknown> =
+        z.object({
             code: z.string(),
             message: z.string(),
-        })
-        .transform((v) => {
-            return {
-                code: v.code,
-                message: v.message,
-            };
         });
 
     export type Outbound = {
@@ -598,16 +534,10 @@ export namespace GetDeploymentsAliasError$ {
         message: string;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetDeploymentsAliasError> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetDeploymentsAliasError> =
+        z.object({
             code: z.string(),
             message: z.string(),
-        })
-        .transform((v) => {
-            return {
-                code: v.code,
-                message: v.message,
-            };
         });
 }
 
@@ -653,24 +583,14 @@ export namespace GetDeploymentsNodeVersion$ {
 
 /** @internal */
 export namespace GetDeploymentsSpeedInsights$ {
-    export const inboundSchema: z.ZodType<GetDeploymentsSpeedInsights, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<GetDeploymentsSpeedInsights, z.ZodTypeDef, unknown> =
+        z.object({
             id: z.string(),
             enabledAt: z.number().optional(),
             disabledAt: z.number().optional(),
             canceledAt: z.number().optional(),
             hasData: z.boolean().optional(),
             paidAt: z.number().optional(),
-        })
-        .transform((v) => {
-            return {
-                id: v.id,
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.canceledAt === undefined ? null : { canceledAt: v.canceledAt }),
-                ...(v.hasData === undefined ? null : { hasData: v.hasData }),
-                ...(v.paidAt === undefined ? null : { paidAt: v.paidAt }),
-            };
         });
 
     export type Outbound = {
@@ -682,45 +602,26 @@ export namespace GetDeploymentsSpeedInsights$ {
         paidAt?: number | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetDeploymentsSpeedInsights> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetDeploymentsSpeedInsights> =
+        z.object({
             id: z.string(),
             enabledAt: z.number().optional(),
             disabledAt: z.number().optional(),
             canceledAt: z.number().optional(),
             hasData: z.boolean().optional(),
             paidAt: z.number().optional(),
-        })
-        .transform((v) => {
-            return {
-                id: v.id,
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.canceledAt === undefined ? null : { canceledAt: v.canceledAt }),
-                ...(v.hasData === undefined ? null : { hasData: v.hasData }),
-                ...(v.paidAt === undefined ? null : { paidAt: v.paidAt }),
-            };
         });
 }
 
 /** @internal */
 export namespace GetDeploymentsWebAnalytics$ {
-    export const inboundSchema: z.ZodType<GetDeploymentsWebAnalytics, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<GetDeploymentsWebAnalytics, z.ZodTypeDef, unknown> =
+        z.object({
             id: z.string(),
             disabledAt: z.number().optional(),
             canceledAt: z.number().optional(),
             enabledAt: z.number().optional(),
             hasData: z.boolean().optional(),
-        })
-        .transform((v) => {
-            return {
-                id: v.id,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.canceledAt === undefined ? null : { canceledAt: v.canceledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-                ...(v.hasData === undefined ? null : { hasData: v.hasData }),
-            };
         });
 
     export type Outbound = {
@@ -731,37 +632,22 @@ export namespace GetDeploymentsWebAnalytics$ {
         hasData?: boolean | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetDeploymentsWebAnalytics> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetDeploymentsWebAnalytics> =
+        z.object({
             id: z.string(),
             disabledAt: z.number().optional(),
             canceledAt: z.number().optional(),
             enabledAt: z.number().optional(),
             hasData: z.boolean().optional(),
-        })
-        .transform((v) => {
-            return {
-                id: v.id,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.canceledAt === undefined ? null : { canceledAt: v.canceledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-                ...(v.hasData === undefined ? null : { hasData: v.hasData }),
-            };
         });
 }
 
 /** @internal */
 export namespace GetDeploymentsGitComments$ {
-    export const inboundSchema: z.ZodType<GetDeploymentsGitComments, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<GetDeploymentsGitComments, z.ZodTypeDef, unknown> =
+        z.object({
             onPullRequest: z.boolean(),
             onCommit: z.boolean(),
-        })
-        .transform((v) => {
-            return {
-                onPullRequest: v.onPullRequest,
-                onCommit: v.onCommit,
-            };
         });
 
     export type Outbound = {
@@ -769,23 +655,17 @@ export namespace GetDeploymentsGitComments$ {
         onCommit: boolean;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetDeploymentsGitComments> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetDeploymentsGitComments> =
+        z.object({
             onPullRequest: z.boolean(),
             onCommit: z.boolean(),
-        })
-        .transform((v) => {
-            return {
-                onPullRequest: v.onPullRequest,
-                onCommit: v.onCommit,
-            };
         });
 }
 
 /** @internal */
 export namespace GetDeploymentsProjectSettings$ {
-    export const inboundSchema: z.ZodType<GetDeploymentsProjectSettings, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<GetDeploymentsProjectSettings, z.ZodTypeDef, unknown> =
+        z.object({
             framework: z.nullable(GetDeploymentsFramework$.inboundSchema).optional(),
             gitForkProtection: z.boolean().optional(),
             customerSupportCodeVisibility: z.boolean().optional(),
@@ -805,43 +685,6 @@ export namespace GetDeploymentsProjectSettings$ {
             webAnalytics: z.lazy(() => GetDeploymentsWebAnalytics$.inboundSchema).optional(),
             skipGitConnectDuringLink: z.boolean().optional(),
             gitComments: z.lazy(() => GetDeploymentsGitComments$.inboundSchema).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.framework === undefined ? null : { framework: v.framework }),
-                ...(v.gitForkProtection === undefined
-                    ? null
-                    : { gitForkProtection: v.gitForkProtection }),
-                ...(v.customerSupportCodeVisibility === undefined
-                    ? null
-                    : { customerSupportCodeVisibility: v.customerSupportCodeVisibility }),
-                ...(v.gitLFS === undefined ? null : { gitLFS: v.gitLFS }),
-                ...(v.devCommand === undefined ? null : { devCommand: v.devCommand }),
-                ...(v.installCommand === undefined ? null : { installCommand: v.installCommand }),
-                ...(v.buildCommand === undefined ? null : { buildCommand: v.buildCommand }),
-                ...(v.nodeVersion === undefined ? null : { nodeVersion: v.nodeVersion }),
-                ...(v.outputDirectory === undefined
-                    ? null
-                    : { outputDirectory: v.outputDirectory }),
-                ...(v.publicSource === undefined ? null : { publicSource: v.publicSource }),
-                ...(v.rootDirectory === undefined ? null : { rootDirectory: v.rootDirectory }),
-                ...(v.serverlessFunctionRegion === undefined
-                    ? null
-                    : { serverlessFunctionRegion: v.serverlessFunctionRegion }),
-                ...(v.sourceFilesOutsideRootDirectory === undefined
-                    ? null
-                    : { sourceFilesOutsideRootDirectory: v.sourceFilesOutsideRootDirectory }),
-                ...(v.commandForIgnoringBuildStep === undefined
-                    ? null
-                    : { commandForIgnoringBuildStep: v.commandForIgnoringBuildStep }),
-                ...(v.createdAt === undefined ? null : { createdAt: v.createdAt }),
-                ...(v.speedInsights === undefined ? null : { speedInsights: v.speedInsights }),
-                ...(v.webAnalytics === undefined ? null : { webAnalytics: v.webAnalytics }),
-                ...(v.skipGitConnectDuringLink === undefined
-                    ? null
-                    : { skipGitConnectDuringLink: v.skipGitConnectDuringLink }),
-                ...(v.gitComments === undefined ? null : { gitComments: v.gitComments }),
-            };
         });
 
     export type Outbound = {
@@ -867,73 +710,33 @@ export namespace GetDeploymentsProjectSettings$ {
     };
 
     export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetDeploymentsProjectSettings> =
-        z
-            .object({
-                framework: z.nullable(GetDeploymentsFramework$.outboundSchema).optional(),
-                gitForkProtection: z.boolean().optional(),
-                customerSupportCodeVisibility: z.boolean().optional(),
-                gitLFS: z.boolean().optional(),
-                devCommand: z.nullable(z.string()).optional(),
-                installCommand: z.nullable(z.string()).optional(),
-                buildCommand: z.nullable(z.string()).optional(),
-                nodeVersion: GetDeploymentsNodeVersion$.outboundSchema.optional(),
-                outputDirectory: z.nullable(z.string()).optional(),
-                publicSource: z.nullable(z.boolean()).optional(),
-                rootDirectory: z.nullable(z.string()).optional(),
-                serverlessFunctionRegion: z.nullable(z.string()).optional(),
-                sourceFilesOutsideRootDirectory: z.boolean().optional(),
-                commandForIgnoringBuildStep: z.nullable(z.string()).optional(),
-                createdAt: z.number().optional(),
-                speedInsights: z.lazy(() => GetDeploymentsSpeedInsights$.outboundSchema).optional(),
-                webAnalytics: z.lazy(() => GetDeploymentsWebAnalytics$.outboundSchema).optional(),
-                skipGitConnectDuringLink: z.boolean().optional(),
-                gitComments: z.lazy(() => GetDeploymentsGitComments$.outboundSchema).optional(),
-            })
-            .transform((v) => {
-                return {
-                    ...(v.framework === undefined ? null : { framework: v.framework }),
-                    ...(v.gitForkProtection === undefined
-                        ? null
-                        : { gitForkProtection: v.gitForkProtection }),
-                    ...(v.customerSupportCodeVisibility === undefined
-                        ? null
-                        : { customerSupportCodeVisibility: v.customerSupportCodeVisibility }),
-                    ...(v.gitLFS === undefined ? null : { gitLFS: v.gitLFS }),
-                    ...(v.devCommand === undefined ? null : { devCommand: v.devCommand }),
-                    ...(v.installCommand === undefined
-                        ? null
-                        : { installCommand: v.installCommand }),
-                    ...(v.buildCommand === undefined ? null : { buildCommand: v.buildCommand }),
-                    ...(v.nodeVersion === undefined ? null : { nodeVersion: v.nodeVersion }),
-                    ...(v.outputDirectory === undefined
-                        ? null
-                        : { outputDirectory: v.outputDirectory }),
-                    ...(v.publicSource === undefined ? null : { publicSource: v.publicSource }),
-                    ...(v.rootDirectory === undefined ? null : { rootDirectory: v.rootDirectory }),
-                    ...(v.serverlessFunctionRegion === undefined
-                        ? null
-                        : { serverlessFunctionRegion: v.serverlessFunctionRegion }),
-                    ...(v.sourceFilesOutsideRootDirectory === undefined
-                        ? null
-                        : { sourceFilesOutsideRootDirectory: v.sourceFilesOutsideRootDirectory }),
-                    ...(v.commandForIgnoringBuildStep === undefined
-                        ? null
-                        : { commandForIgnoringBuildStep: v.commandForIgnoringBuildStep }),
-                    ...(v.createdAt === undefined ? null : { createdAt: v.createdAt }),
-                    ...(v.speedInsights === undefined ? null : { speedInsights: v.speedInsights }),
-                    ...(v.webAnalytics === undefined ? null : { webAnalytics: v.webAnalytics }),
-                    ...(v.skipGitConnectDuringLink === undefined
-                        ? null
-                        : { skipGitConnectDuringLink: v.skipGitConnectDuringLink }),
-                    ...(v.gitComments === undefined ? null : { gitComments: v.gitComments }),
-                };
-            });
+        z.object({
+            framework: z.nullable(GetDeploymentsFramework$.outboundSchema).optional(),
+            gitForkProtection: z.boolean().optional(),
+            customerSupportCodeVisibility: z.boolean().optional(),
+            gitLFS: z.boolean().optional(),
+            devCommand: z.nullable(z.string()).optional(),
+            installCommand: z.nullable(z.string()).optional(),
+            buildCommand: z.nullable(z.string()).optional(),
+            nodeVersion: GetDeploymentsNodeVersion$.outboundSchema.optional(),
+            outputDirectory: z.nullable(z.string()).optional(),
+            publicSource: z.nullable(z.boolean()).optional(),
+            rootDirectory: z.nullable(z.string()).optional(),
+            serverlessFunctionRegion: z.nullable(z.string()).optional(),
+            sourceFilesOutsideRootDirectory: z.boolean().optional(),
+            commandForIgnoringBuildStep: z.nullable(z.string()).optional(),
+            createdAt: z.number().optional(),
+            speedInsights: z.lazy(() => GetDeploymentsSpeedInsights$.outboundSchema).optional(),
+            webAnalytics: z.lazy(() => GetDeploymentsWebAnalytics$.outboundSchema).optional(),
+            skipGitConnectDuringLink: z.boolean().optional(),
+            gitComments: z.lazy(() => GetDeploymentsGitComments$.outboundSchema).optional(),
+        });
 }
 
 /** @internal */
 export namespace GetDeploymentsDeployments$ {
-    export const inboundSchema: z.ZodType<GetDeploymentsDeployments, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<GetDeploymentsDeployments, z.ZodTypeDef, unknown> =
+        z.object({
             uid: z.string(),
             name: z.string(),
             url: z.string(),
@@ -961,47 +764,6 @@ export namespace GetDeploymentsDeployments$ {
             connectBuildsEnabled: z.boolean().optional(),
             connectConfigurationId: z.string().optional(),
             passiveConnectConfigurationId: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                uid: v.uid,
-                name: v.name,
-                url: v.url,
-                created: v.created,
-                ...(v.source === undefined ? null : { source: v.source }),
-                ...(v.state === undefined ? null : { state: v.state }),
-                ...(v.readyState === undefined ? null : { readyState: v.readyState }),
-                type: v.type,
-                creator: v.creator,
-                ...(v.meta === undefined ? null : { meta: v.meta }),
-                ...(v.target === undefined ? null : { target: v.target }),
-                ...(v.aliasError === undefined ? null : { aliasError: v.aliasError }),
-                ...(v.aliasAssigned === undefined ? null : { aliasAssigned: v.aliasAssigned }),
-                ...(v.createdAt === undefined ? null : { createdAt: v.createdAt }),
-                ...(v.buildingAt === undefined ? null : { buildingAt: v.buildingAt }),
-                ...(v.ready === undefined ? null : { ready: v.ready }),
-                ...(v.readySubstate === undefined ? null : { readySubstate: v.readySubstate }),
-                ...(v.checksState === undefined ? null : { checksState: v.checksState }),
-                ...(v.checksConclusion === undefined
-                    ? null
-                    : { checksConclusion: v.checksConclusion }),
-                inspectorUrl: v.inspectorUrl,
-                ...(v.isRollbackCandidate === undefined
-                    ? null
-                    : { isRollbackCandidate: v.isRollbackCandidate }),
-                ...(v.projectSettings === undefined
-                    ? null
-                    : { projectSettings: v.projectSettings }),
-                ...(v.connectBuildsEnabled === undefined
-                    ? null
-                    : { connectBuildsEnabled: v.connectBuildsEnabled }),
-                ...(v.connectConfigurationId === undefined
-                    ? null
-                    : { connectConfigurationId: v.connectConfigurationId }),
-                ...(v.passiveConnectConfigurationId === undefined
-                    ? null
-                    : { passiveConnectConfigurationId: v.passiveConnectConfigurationId }),
-            };
         });
 
     export type Outbound = {
@@ -1014,7 +776,7 @@ export namespace GetDeploymentsDeployments$ {
         readyState?: string | undefined;
         type: string;
         creator: GetDeploymentsCreator$.Outbound;
-        meta?: Record<string, string> | undefined;
+        meta?: { [k: string]: string } | undefined;
         target?: string | null | undefined;
         aliasError?: GetDeploymentsAliasError$.Outbound | null | undefined;
         aliasAssigned?: number | boolean | null | undefined;
@@ -1032,8 +794,8 @@ export namespace GetDeploymentsDeployments$ {
         passiveConnectConfigurationId?: string | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetDeploymentsDeployments> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetDeploymentsDeployments> =
+        z.object({
             uid: z.string(),
             name: z.string(),
             url: z.string(),
@@ -1061,62 +823,15 @@ export namespace GetDeploymentsDeployments$ {
             connectBuildsEnabled: z.boolean().optional(),
             connectConfigurationId: z.string().optional(),
             passiveConnectConfigurationId: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                uid: v.uid,
-                name: v.name,
-                url: v.url,
-                created: v.created,
-                ...(v.source === undefined ? null : { source: v.source }),
-                ...(v.state === undefined ? null : { state: v.state }),
-                ...(v.readyState === undefined ? null : { readyState: v.readyState }),
-                type: v.type,
-                creator: v.creator,
-                ...(v.meta === undefined ? null : { meta: v.meta }),
-                ...(v.target === undefined ? null : { target: v.target }),
-                ...(v.aliasError === undefined ? null : { aliasError: v.aliasError }),
-                ...(v.aliasAssigned === undefined ? null : { aliasAssigned: v.aliasAssigned }),
-                ...(v.createdAt === undefined ? null : { createdAt: v.createdAt }),
-                ...(v.buildingAt === undefined ? null : { buildingAt: v.buildingAt }),
-                ...(v.ready === undefined ? null : { ready: v.ready }),
-                ...(v.readySubstate === undefined ? null : { readySubstate: v.readySubstate }),
-                ...(v.checksState === undefined ? null : { checksState: v.checksState }),
-                ...(v.checksConclusion === undefined
-                    ? null
-                    : { checksConclusion: v.checksConclusion }),
-                inspectorUrl: v.inspectorUrl,
-                ...(v.isRollbackCandidate === undefined
-                    ? null
-                    : { isRollbackCandidate: v.isRollbackCandidate }),
-                ...(v.projectSettings === undefined
-                    ? null
-                    : { projectSettings: v.projectSettings }),
-                ...(v.connectBuildsEnabled === undefined
-                    ? null
-                    : { connectBuildsEnabled: v.connectBuildsEnabled }),
-                ...(v.connectConfigurationId === undefined
-                    ? null
-                    : { connectConfigurationId: v.connectConfigurationId }),
-                ...(v.passiveConnectConfigurationId === undefined
-                    ? null
-                    : { passiveConnectConfigurationId: v.passiveConnectConfigurationId }),
-            };
         });
 }
 
 /** @internal */
 export namespace GetDeploymentsResponseBody$ {
-    export const inboundSchema: z.ZodType<GetDeploymentsResponseBody, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<GetDeploymentsResponseBody, z.ZodTypeDef, unknown> =
+        z.object({
             pagination: Pagination$.inboundSchema,
             deployments: z.array(z.lazy(() => GetDeploymentsDeployments$.inboundSchema)),
-        })
-        .transform((v) => {
-            return {
-                pagination: v.pagination,
-                deployments: v.deployments,
-            };
         });
 
     export type Outbound = {
@@ -1124,15 +839,9 @@ export namespace GetDeploymentsResponseBody$ {
         deployments: Array<GetDeploymentsDeployments$.Outbound>;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetDeploymentsResponseBody> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetDeploymentsResponseBody> =
+        z.object({
             pagination: Pagination$.outboundSchema,
             deployments: z.array(z.lazy(() => GetDeploymentsDeployments$.outboundSchema)),
-        })
-        .transform((v) => {
-            return {
-                pagination: v.pagination,
-                deployments: v.deployments,
-            };
         });
 }

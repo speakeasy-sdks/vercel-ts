@@ -109,24 +109,12 @@ export class Aliases extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        if (this.matchResponse(response, 200, "application/json")) {
-            const responseBody = await response.json();
-            const result = schemas$.parse(
-                responseBody,
-                (val$) => {
-                    return models.ListAliasesResponseBody$.inboundSchema.parse(val$);
-                },
-                "Response validation failed"
-            );
-            return result;
-        } else {
-            const responseBody = await response.text();
-            throw new models.SDKError(
-                "Unexpected API response status or content-type",
-                response,
-                responseBody
-            );
-        }
+        const [result$] = await this.matcher<models.ListAliasesResponseBody>()
+            .json(200, models.ListAliasesResponseBody$)
+            .fail([400, 401, 403, 404, "4XX", "5XX"])
+            .match(response);
+
+        return result$;
     }
 
     /**
@@ -201,24 +189,12 @@ export class Aliases extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        if (this.matchResponse(response, 200, "application/json")) {
-            const responseBody = await response.json();
-            const result = schemas$.parse(
-                responseBody,
-                (val$) => {
-                    return models.GetAliasResponseBody$.inboundSchema.parse(val$);
-                },
-                "Response validation failed"
-            );
-            return result;
-        } else {
-            const responseBody = await response.text();
-            throw new models.SDKError(
-                "Unexpected API response status or content-type",
-                response,
-                responseBody
-            );
-        }
+        const [result$] = await this.matcher<models.GetAliasResponseBody>()
+            .json(200, models.GetAliasResponseBody$)
+            .fail([400, 401, 403, 404, "4XX", "5XX"])
+            .match(response);
+
+        return result$;
     }
 
     /**
@@ -292,24 +268,12 @@ export class Aliases extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        if (this.matchResponse(response, 200, "application/json")) {
-            const responseBody = await response.json();
-            const result = schemas$.parse(
-                responseBody,
-                (val$) => {
-                    return models.DeleteAliasResponseBody$.inboundSchema.parse(val$);
-                },
-                "Response validation failed"
-            );
-            return result;
-        } else {
-            const responseBody = await response.text();
-            throw new models.SDKError(
-                "Unexpected API response status or content-type",
-                response,
-                responseBody
-            );
-        }
+        const [result$] = await this.matcher<models.DeleteAliasResponseBody>()
+            .json(200, models.DeleteAliasResponseBody$)
+            .fail([400, 401, 403, 404, "4XX", "5XX"])
+            .match(response);
+
+        return result$;
     }
 
     /**
@@ -380,24 +344,12 @@ export class Aliases extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        if (this.matchResponse(response, 200, "application/json")) {
-            const responseBody = await response.json();
-            const result = schemas$.parse(
-                responseBody,
-                (val$) => {
-                    return models.ListDeploymentAliasesResponseBody$.inboundSchema.parse(val$);
-                },
-                "Response validation failed"
-            );
-            return result;
-        } else {
-            const responseBody = await response.text();
-            throw new models.SDKError(
-                "Unexpected API response status or content-type",
-                response,
-                responseBody
-            );
-        }
+        const [result$] = await this.matcher<models.ListDeploymentAliasesResponseBody>()
+            .json(200, models.ListDeploymentAliasesResponseBody$)
+            .fail([400, 401, 403, 404, "4XX", "5XX"])
+            .match(response);
+
+        return result$;
     }
 
     /**
@@ -474,23 +426,11 @@ export class Aliases extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        if (this.matchResponse(response, 200, "application/json")) {
-            const responseBody = await response.json();
-            const result = schemas$.parse(
-                responseBody,
-                (val$) => {
-                    return models.AssignAliasResponseBody$.inboundSchema.parse(val$);
-                },
-                "Response validation failed"
-            );
-            return result;
-        } else {
-            const responseBody = await response.text();
-            throw new models.SDKError(
-                "Unexpected API response status or content-type",
-                response,
-                responseBody
-            );
-        }
+        const [result$] = await this.matcher<models.AssignAliasResponseBody>()
+            .json(200, models.AssignAliasResponseBody$)
+            .fail([400, 401, 402, 403, 404, 409, "4XX", "5XX"])
+            .match(response);
+
+        return result$;
     }
 }

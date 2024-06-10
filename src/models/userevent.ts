@@ -95,19 +95,11 @@ export namespace UserEventType$ {
 
 /** @internal */
 export namespace Entities$ {
-    export const inboundSchema: z.ZodType<Entities, z.ZodTypeDef, unknown> = z
-        .object({
-            type: UserEventType$.inboundSchema,
-            start: z.number(),
-            end: z.number(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                start: v.start,
-                end: v.end,
-            };
-        });
+    export const inboundSchema: z.ZodType<Entities, z.ZodTypeDef, unknown> = z.object({
+        type: UserEventType$.inboundSchema,
+        start: z.number(),
+        end: z.number(),
+    });
 
     export type Outbound = {
         type: string;
@@ -115,40 +107,22 @@ export namespace Entities$ {
         end: number;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, Entities> = z
-        .object({
-            type: UserEventType$.outboundSchema,
-            start: z.number(),
-            end: z.number(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                start: v.start,
-                end: v.end,
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, Entities> = z.object({
+        type: UserEventType$.outboundSchema,
+        start: z.number(),
+        end: z.number(),
+    });
 }
 
 /** @internal */
 export namespace UserModel$ {
-    export const inboundSchema: z.ZodType<UserModel, z.ZodTypeDef, unknown> = z
-        .object({
-            avatar: z.string(),
-            email: z.string(),
-            slug: z.string().optional(),
-            uid: z.string(),
-            username: z.string(),
-        })
-        .transform((v) => {
-            return {
-                avatar: v.avatar,
-                email: v.email,
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-                uid: v.uid,
-                username: v.username,
-            };
-        });
+    export const inboundSchema: z.ZodType<UserModel, z.ZodTypeDef, unknown> = z.object({
+        avatar: z.string(),
+        email: z.string(),
+        slug: z.string().optional(),
+        uid: z.string(),
+        username: z.string(),
+    });
 
     export type Outbound = {
         avatar: string;
@@ -158,46 +132,25 @@ export namespace UserModel$ {
         username: string;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, UserModel> = z
-        .object({
-            avatar: z.string(),
-            email: z.string(),
-            slug: z.string().optional(),
-            uid: z.string(),
-            username: z.string(),
-        })
-        .transform((v) => {
-            return {
-                avatar: v.avatar,
-                email: v.email,
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-                uid: v.uid,
-                username: v.username,
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, UserModel> = z.object({
+        avatar: z.string(),
+        email: z.string(),
+        slug: z.string().optional(),
+        uid: z.string(),
+        username: z.string(),
+    });
 }
 
 /** @internal */
 export namespace UserEvent$ {
-    export const inboundSchema: z.ZodType<UserEvent, z.ZodTypeDef, unknown> = z
-        .object({
-            id: z.string(),
-            text: z.string(),
-            entities: z.array(z.lazy(() => Entities$.inboundSchema)),
-            createdAt: z.number(),
-            user: z.lazy(() => UserModel$.inboundSchema).optional(),
-            userId: z.string(),
-        })
-        .transform((v) => {
-            return {
-                id: v.id,
-                text: v.text,
-                entities: v.entities,
-                createdAt: v.createdAt,
-                ...(v.user === undefined ? null : { user: v.user }),
-                userId: v.userId,
-            };
-        });
+    export const inboundSchema: z.ZodType<UserEvent, z.ZodTypeDef, unknown> = z.object({
+        id: z.string(),
+        text: z.string(),
+        entities: z.array(z.lazy(() => Entities$.inboundSchema)),
+        createdAt: z.number(),
+        user: z.lazy(() => UserModel$.inboundSchema).optional(),
+        userId: z.string(),
+    });
 
     export type Outbound = {
         id: string;
@@ -208,23 +161,12 @@ export namespace UserEvent$ {
         userId: string;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, UserEvent> = z
-        .object({
-            id: z.string(),
-            text: z.string(),
-            entities: z.array(z.lazy(() => Entities$.outboundSchema)),
-            createdAt: z.number(),
-            user: z.lazy(() => UserModel$.outboundSchema).optional(),
-            userId: z.string(),
-        })
-        .transform((v) => {
-            return {
-                id: v.id,
-                text: v.text,
-                entities: v.entities,
-                createdAt: v.createdAt,
-                ...(v.user === undefined ? null : { user: v.user }),
-                userId: v.userId,
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, UserEvent> = z.object({
+        id: z.string(),
+        text: z.string(),
+        entities: z.array(z.lazy(() => Entities$.outboundSchema)),
+        createdAt: z.number(),
+        user: z.lazy(() => UserModel$.outboundSchema).optional(),
+        userId: z.string(),
+    });
 }

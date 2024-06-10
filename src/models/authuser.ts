@@ -365,7 +365,7 @@ export type TeamSeats = {
 
 export type Matrix = {
     defaultUnitPrice: string;
-    dimensionPrices: Record<string, string>;
+    dimensionPrices: { [k: string]: string };
 };
 
 export type AnalyticsUsage = {
@@ -382,7 +382,7 @@ export type AnalyticsUsage = {
 
 export type AuthUserMatrix = {
     defaultUnitPrice: string;
-    dimensionPrices: Record<string, string>;
+    dimensionPrices: { [k: string]: string };
 };
 
 export type ArtifactsModel = {
@@ -399,7 +399,7 @@ export type ArtifactsModel = {
 
 export type AuthUserBillingMatrix = {
     defaultUnitPrice: string;
-    dimensionPrices: Record<string, string>;
+    dimensionPrices: { [k: string]: string };
 };
 
 export type Bandwidth = {
@@ -416,7 +416,7 @@ export type Bandwidth = {
 
 export type AuthUserBillingInvoiceItemsMatrix = {
     defaultUnitPrice: string;
-    dimensionPrices: Record<string, string>;
+    dimensionPrices: { [k: string]: string };
 };
 
 export type BlobStores = {
@@ -433,7 +433,7 @@ export type BlobStores = {
 
 export type AuthUserBillingInvoiceItemsBlobTotalAdvancedRequestsMatrix = {
     defaultUnitPrice: string;
-    dimensionPrices: Record<string, string>;
+    dimensionPrices: { [k: string]: string };
 };
 
 export type BlobTotalAdvancedRequests = {
@@ -450,7 +450,7 @@ export type BlobTotalAdvancedRequests = {
 
 export type AuthUserBillingInvoiceItemsBlobTotalAvgSizeInBytesMatrix = {
     defaultUnitPrice: string;
-    dimensionPrices: Record<string, string>;
+    dimensionPrices: { [k: string]: string };
 };
 
 export type BlobTotalAvgSizeInBytes = {
@@ -467,7 +467,7 @@ export type BlobTotalAvgSizeInBytes = {
 
 export type AuthUserBillingInvoiceItemsBlobTotalGetResponseObjectSizeInBytesMatrix = {
     defaultUnitPrice: string;
-    dimensionPrices: Record<string, string>;
+    dimensionPrices: { [k: string]: string };
 };
 
 export type BlobTotalGetResponseObjectSizeInBytes = {
@@ -484,7 +484,7 @@ export type BlobTotalGetResponseObjectSizeInBytes = {
 
 export type AuthUserBillingInvoiceItemsBlobTotalSimpleRequestsMatrix = {
     defaultUnitPrice: string;
-    dimensionPrices: Record<string, string>;
+    dimensionPrices: { [k: string]: string };
 };
 
 export type BlobTotalSimpleRequests = {
@@ -501,7 +501,7 @@ export type BlobTotalSimpleRequests = {
 
 export type AuthUserBillingInvoiceItemsBuildMinuteMatrix = {
     defaultUnitPrice: string;
-    dimensionPrices: Record<string, string>;
+    dimensionPrices: { [k: string]: string };
 };
 
 export type BuildMinute = {
@@ -518,7 +518,7 @@ export type BuildMinute = {
 
 export type AuthUserBillingInvoiceItemsDataCacheReadMatrix = {
     defaultUnitPrice: string;
-    dimensionPrices: Record<string, string>;
+    dimensionPrices: { [k: string]: string };
 };
 
 export type DataCacheRead = {
@@ -535,7 +535,7 @@ export type DataCacheRead = {
 
 export type AuthUserBillingInvoiceItemsDataCacheRevalidationMatrix = {
     defaultUnitPrice: string;
-    dimensionPrices: Record<string, string>;
+    dimensionPrices: { [k: string]: string };
 };
 
 export type DataCacheRevalidation = {
@@ -552,7 +552,7 @@ export type DataCacheRevalidation = {
 
 export type AuthUserBillingInvoiceItemsDataCacheWriteMatrix = {
     defaultUnitPrice: string;
-    dimensionPrices: Record<string, string>;
+    dimensionPrices: { [k: string]: string };
 };
 
 export type DataCacheWrite = {
@@ -569,7 +569,7 @@ export type DataCacheWrite = {
 
 export type AuthUserBillingInvoiceItemsEdgeConfigReadMatrix = {
     defaultUnitPrice: string;
-    dimensionPrices: Record<string, string>;
+    dimensionPrices: { [k: string]: string };
 };
 
 export type EdgeConfigRead = {
@@ -586,7 +586,7 @@ export type EdgeConfigRead = {
 
 export type AuthUserBillingInvoiceItemsEdgeConfigWriteMatrix = {
     defaultUnitPrice: string;
-    dimensionPrices: Record<string, string>;
+    dimensionPrices: { [k: string]: string };
 };
 
 export type EdgeConfigWrite = {
@@ -603,7 +603,7 @@ export type EdgeConfigWrite = {
 
 export type AuthUserBillingInvoiceItemsEdgeFunctionExecutionUnitsMatrix = {
     defaultUnitPrice: string;
-    dimensionPrices: Record<string, string>;
+    dimensionPrices: { [k: string]: string };
 };
 
 export type EdgeFunctionExecutionUnits = {
@@ -620,7 +620,7 @@ export type EdgeFunctionExecutionUnits = {
 
 export type AuthUserBillingInvoiceItemsEdgeMiddlewareInvocationsMatrix = {
     defaultUnitPrice: string;
-    dimensionPrices: Record<string, string>;
+    dimensionPrices: { [k: string]: string };
 };
 
 export type EdgeMiddlewareInvocations = {
@@ -637,7 +637,7 @@ export type EdgeMiddlewareInvocations = {
 
 export type AuthUserBillingInvoiceItemsEdgeRequestMatrix = {
     defaultUnitPrice: string;
-    dimensionPrices: Record<string, string>;
+    dimensionPrices: { [k: string]: string };
 };
 
 export type EdgeRequest = {
@@ -654,7 +654,7 @@ export type EdgeRequest = {
 
 export type AuthUserBillingInvoiceItemsEdgeRequestAdditionalCpuDurationMatrix = {
     defaultUnitPrice: string;
-    dimensionPrices: Record<string, string>;
+    dimensionPrices: { [k: string]: string };
 };
 
 export type EdgeRequestAdditionalCpuDuration = {
@@ -671,7 +671,7 @@ export type EdgeRequestAdditionalCpuDuration = {
 
 export type AuthUserBillingInvoiceItemsFastDataTransferMatrix = {
     defaultUnitPrice: string;
-    dimensionPrices: Record<string, string>;
+    dimensionPrices: { [k: string]: string };
 };
 
 export type FastDataTransfer = {
@@ -688,7 +688,7 @@ export type FastDataTransfer = {
 
 export type AuthUserBillingInvoiceItemsFastOriginTransferMatrix = {
     defaultUnitPrice: string;
-    dimensionPrices: Record<string, string>;
+    dimensionPrices: { [k: string]: string };
 };
 
 export type FastOriginTransfer = {
@@ -705,7 +705,7 @@ export type FastOriginTransfer = {
 
 export type AuthUserBillingInvoiceItemsFunctionDurationMatrix = {
     defaultUnitPrice: string;
-    dimensionPrices: Record<string, string>;
+    dimensionPrices: { [k: string]: string };
 };
 
 export type FunctionDuration = {
@@ -722,7 +722,7 @@ export type FunctionDuration = {
 
 export type AuthUserBillingInvoiceItemsFunctionInvocationMatrix = {
     defaultUnitPrice: string;
-    dimensionPrices: Record<string, string>;
+    dimensionPrices: { [k: string]: string };
 };
 
 export type FunctionInvocation = {
@@ -739,7 +739,7 @@ export type FunctionInvocation = {
 
 export type AuthUserBillingInvoiceItemsLogDrainsVolumeMatrix = {
     defaultUnitPrice: string;
-    dimensionPrices: Record<string, string>;
+    dimensionPrices: { [k: string]: string };
 };
 
 export type LogDrainsVolume = {
@@ -756,7 +756,7 @@ export type LogDrainsVolume = {
 
 export type AuthUserBillingInvoiceItemsMonitoringMetricMatrix = {
     defaultUnitPrice: string;
-    dimensionPrices: Record<string, string>;
+    dimensionPrices: { [k: string]: string };
 };
 
 export type MonitoringMetric = {
@@ -773,7 +773,7 @@ export type MonitoringMetric = {
 
 export type AuthUserBillingInvoiceItemsPostgresComputeTimeMatrix = {
     defaultUnitPrice: string;
-    dimensionPrices: Record<string, string>;
+    dimensionPrices: { [k: string]: string };
 };
 
 export type PostgresComputeTime = {
@@ -790,7 +790,7 @@ export type PostgresComputeTime = {
 
 export type AuthUserBillingInvoiceItemsPostgresDataStorageMatrix = {
     defaultUnitPrice: string;
-    dimensionPrices: Record<string, string>;
+    dimensionPrices: { [k: string]: string };
 };
 
 export type PostgresDataStorage = {
@@ -807,7 +807,7 @@ export type PostgresDataStorage = {
 
 export type AuthUserBillingInvoiceItemsPostgresDataTransferMatrix = {
     defaultUnitPrice: string;
-    dimensionPrices: Record<string, string>;
+    dimensionPrices: { [k: string]: string };
 };
 
 export type PostgresDataTransfer = {
@@ -824,7 +824,7 @@ export type PostgresDataTransfer = {
 
 export type AuthUserBillingInvoiceItemsPostgresDatabaseMatrix = {
     defaultUnitPrice: string;
-    dimensionPrices: Record<string, string>;
+    dimensionPrices: { [k: string]: string };
 };
 
 export type PostgresDatabase = {
@@ -841,7 +841,7 @@ export type PostgresDatabase = {
 
 export type AuthUserBillingInvoiceItemsPostgresWrittenDataMatrix = {
     defaultUnitPrice: string;
-    dimensionPrices: Record<string, string>;
+    dimensionPrices: { [k: string]: string };
 };
 
 export type PostgresWrittenData = {
@@ -858,7 +858,7 @@ export type PostgresWrittenData = {
 
 export type AuthUserBillingInvoiceItemsServerlessFunctionExecutionMatrix = {
     defaultUnitPrice: string;
-    dimensionPrices: Record<string, string>;
+    dimensionPrices: { [k: string]: string };
 };
 
 export type ServerlessFunctionExecution = {
@@ -875,7 +875,7 @@ export type ServerlessFunctionExecution = {
 
 export type AuthUserBillingInvoiceItemsSourceImagesMatrix = {
     defaultUnitPrice: string;
-    dimensionPrices: Record<string, string>;
+    dimensionPrices: { [k: string]: string };
 };
 
 export type SourceImages = {
@@ -892,7 +892,7 @@ export type SourceImages = {
 
 export type AuthUserBillingInvoiceItemsStorageRedisTotalBandwidthInBytesMatrix = {
     defaultUnitPrice: string;
-    dimensionPrices: Record<string, string>;
+    dimensionPrices: { [k: string]: string };
 };
 
 export type StorageRedisTotalBandwidthInBytes = {
@@ -909,7 +909,7 @@ export type StorageRedisTotalBandwidthInBytes = {
 
 export type AuthUserBillingInvoiceItemsStorageRedisTotalCommandsMatrix = {
     defaultUnitPrice: string;
-    dimensionPrices: Record<string, string>;
+    dimensionPrices: { [k: string]: string };
 };
 
 export type StorageRedisTotalCommands = {
@@ -926,7 +926,7 @@ export type StorageRedisTotalCommands = {
 
 export type AuthUserBillingInvoiceItemsStorageRedisTotalDailyAvgStorageInBytesMatrix = {
     defaultUnitPrice: string;
-    dimensionPrices: Record<string, string>;
+    dimensionPrices: { [k: string]: string };
 };
 
 export type StorageRedisTotalDailyAvgStorageInBytes = {
@@ -943,7 +943,7 @@ export type StorageRedisTotalDailyAvgStorageInBytes = {
 
 export type AuthUserBillingInvoiceItemsStorageRedisTotalDatabasesMatrix = {
     defaultUnitPrice: string;
-    dimensionPrices: Record<string, string>;
+    dimensionPrices: { [k: string]: string };
 };
 
 export type StorageRedisTotalDatabases = {
@@ -960,7 +960,7 @@ export type StorageRedisTotalDatabases = {
 
 export type AuthUserBillingInvoiceItemsWafOwaspExcessBytesMatrix = {
     defaultUnitPrice: string;
-    dimensionPrices: Record<string, string>;
+    dimensionPrices: { [k: string]: string };
 };
 
 export type WafOwaspExcessBytes = {
@@ -977,7 +977,7 @@ export type WafOwaspExcessBytes = {
 
 export type AuthUserBillingInvoiceItemsWafOwaspRequestsMatrix = {
     defaultUnitPrice: string;
-    dimensionPrices: Record<string, string>;
+    dimensionPrices: { [k: string]: string };
 };
 
 export type WafOwaspRequests = {
@@ -994,7 +994,7 @@ export type WafOwaspRequests = {
 
 export type AuthUserBillingInvoiceItemsWebAnalyticsEventMatrix = {
     defaultUnitPrice: string;
-    dimensionPrices: Record<string, string>;
+    dimensionPrices: { [k: string]: string };
 };
 
 export type WebAnalyticsEvent = {
@@ -1542,21 +1542,11 @@ export namespace BlockedDueToOverageType$ {
 
 /** @internal */
 export namespace SoftBlock$ {
-    export const inboundSchema: z.ZodType<SoftBlock, z.ZodTypeDef, unknown> = z
-        .object({
-            blockedAt: z.number(),
-            reason: Reason$.inboundSchema,
-            blockedDueToOverageType: BlockedDueToOverageType$.inboundSchema.optional(),
-        })
-        .transform((v) => {
-            return {
-                blockedAt: v.blockedAt,
-                reason: v.reason,
-                ...(v.blockedDueToOverageType === undefined
-                    ? null
-                    : { blockedDueToOverageType: v.blockedDueToOverageType }),
-            };
-        });
+    export const inboundSchema: z.ZodType<SoftBlock, z.ZodTypeDef, unknown> = z.object({
+        blockedAt: z.number(),
+        reason: Reason$.inboundSchema,
+        blockedDueToOverageType: BlockedDueToOverageType$.inboundSchema.optional(),
+    });
 
     export type Outbound = {
         blockedAt: number;
@@ -1564,21 +1554,11 @@ export namespace SoftBlock$ {
         blockedDueToOverageType?: string | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, SoftBlock> = z
-        .object({
-            blockedAt: z.number(),
-            reason: Reason$.outboundSchema,
-            blockedDueToOverageType: BlockedDueToOverageType$.outboundSchema.optional(),
-        })
-        .transform((v) => {
-            return {
-                blockedAt: v.blockedAt,
-                reason: v.reason,
-                ...(v.blockedDueToOverageType === undefined
-                    ? null
-                    : { blockedDueToOverageType: v.blockedDueToOverageType }),
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, SoftBlock> = z.object({
+        blockedAt: z.number(),
+        reason: Reason$.outboundSchema,
+        blockedDueToOverageType: BlockedDueToOverageType$.outboundSchema.optional(),
+    });
 }
 
 /** @internal */
@@ -1589,66 +1569,38 @@ export namespace Currency$ {
 
 /** @internal */
 export namespace Period$ {
-    export const inboundSchema: z.ZodType<Period, z.ZodTypeDef, unknown> = z
-        .object({
-            start: z.number(),
-            end: z.number(),
-        })
-        .transform((v) => {
-            return {
-                start: v.start,
-                end: v.end,
-            };
-        });
+    export const inboundSchema: z.ZodType<Period, z.ZodTypeDef, unknown> = z.object({
+        start: z.number(),
+        end: z.number(),
+    });
 
     export type Outbound = {
         start: number;
         end: number;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, Period> = z
-        .object({
-            start: z.number(),
-            end: z.number(),
-        })
-        .transform((v) => {
-            return {
-                start: v.start,
-                end: v.end,
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, Period> = z.object({
+        start: z.number(),
+        end: z.number(),
+    });
 }
 
 /** @internal */
 export namespace Contract$ {
-    export const inboundSchema: z.ZodType<Contract, z.ZodTypeDef, unknown> = z
-        .object({
-            start: z.number(),
-            end: z.number(),
-        })
-        .transform((v) => {
-            return {
-                start: v.start,
-                end: v.end,
-            };
-        });
+    export const inboundSchema: z.ZodType<Contract, z.ZodTypeDef, unknown> = z.object({
+        start: z.number(),
+        end: z.number(),
+    });
 
     export type Outbound = {
         start: number;
         end: number;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, Contract> = z
-        .object({
-            start: z.number(),
-            end: z.number(),
-        })
-        .transform((v) => {
-            return {
-                start: v.start,
-                end: v.end,
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, Contract> = z.object({
+        start: z.number(),
+        end: z.number(),
+    });
 }
 
 /** @internal */
@@ -1671,89 +1623,50 @@ export namespace ProgramType$ {
 
 /** @internal */
 export namespace Trial$ {
-    export const inboundSchema: z.ZodType<Trial, z.ZodTypeDef, unknown> = z
-        .object({
-            start: z.number(),
-            end: z.number(),
-        })
-        .transform((v) => {
-            return {
-                start: v.start,
-                end: v.end,
-            };
-        });
+    export const inboundSchema: z.ZodType<Trial, z.ZodTypeDef, unknown> = z.object({
+        start: z.number(),
+        end: z.number(),
+    });
 
     export type Outbound = {
         start: number;
         end: number;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, Trial> = z
-        .object({
-            start: z.number(),
-            end: z.number(),
-        })
-        .transform((v) => {
-            return {
-                start: v.start,
-                end: v.end,
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, Trial> = z.object({
+        start: z.number(),
+        end: z.number(),
+    });
 }
 
 /** @internal */
 export namespace Tax$ {
-    export const inboundSchema: z.ZodType<Tax, z.ZodTypeDef, unknown> = z
-        .object({
-            type: z.string(),
-            id: z.string(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                id: v.id,
-            };
-        });
+    export const inboundSchema: z.ZodType<Tax, z.ZodTypeDef, unknown> = z.object({
+        type: z.string(),
+        id: z.string(),
+    });
 
     export type Outbound = {
         type: string;
         id: string;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, Tax> = z
-        .object({
-            type: z.string(),
-            id: z.string(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                id: v.id,
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, Tax> = z.object({
+        type: z.string(),
+        id: z.string(),
+    });
 }
 
 /** @internal */
 export namespace Address$ {
-    export const inboundSchema: z.ZodType<Address, z.ZodTypeDef, unknown> = z
-        .object({
-            line1: z.string().optional(),
-            line2: z.string().optional(),
-            postalCode: z.string().optional(),
-            city: z.string().optional(),
-            country: z.string().optional(),
-            state: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.line1 === undefined ? null : { line1: v.line1 }),
-                ...(v.line2 === undefined ? null : { line2: v.line2 }),
-                ...(v.postalCode === undefined ? null : { postalCode: v.postalCode }),
-                ...(v.city === undefined ? null : { city: v.city }),
-                ...(v.country === undefined ? null : { country: v.country }),
-                ...(v.state === undefined ? null : { state: v.state }),
-            };
-        });
+    export const inboundSchema: z.ZodType<Address, z.ZodTypeDef, unknown> = z.object({
+        line1: z.string().optional(),
+        line2: z.string().optional(),
+        postalCode: z.string().optional(),
+        city: z.string().optional(),
+        country: z.string().optional(),
+        state: z.string().optional(),
+    });
 
     export type Outbound = {
         line1?: string | undefined;
@@ -1764,25 +1677,14 @@ export namespace Address$ {
         state?: string | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, Address> = z
-        .object({
-            line1: z.string().optional(),
-            line2: z.string().optional(),
-            postalCode: z.string().optional(),
-            city: z.string().optional(),
-            country: z.string().optional(),
-            state: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.line1 === undefined ? null : { line1: v.line1 }),
-                ...(v.line2 === undefined ? null : { line2: v.line2 }),
-                ...(v.postalCode === undefined ? null : { postalCode: v.postalCode }),
-                ...(v.city === undefined ? null : { city: v.city }),
-                ...(v.country === undefined ? null : { country: v.country }),
-                ...(v.state === undefined ? null : { state: v.state }),
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, Address> = z.object({
+        line1: z.string().optional(),
+        line2: z.string().optional(),
+        postalCode: z.string().optional(),
+        city: z.string().optional(),
+        country: z.string().optional(),
+        state: z.string().optional(),
+    });
 }
 
 /** @internal */
@@ -1797,17 +1699,10 @@ export namespace AuthUserBillingInvoiceItemsConcurrentBuildsFrequency$ {
         AuthUserBillingInvoiceItemsConcurrentBuildsFrequency,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            interval: AuthUserBillingInvoiceItemsConcurrentBuildsInterval$.inboundSchema,
-            intervalCount: z.number(),
-        })
-        .transform((v) => {
-            return {
-                interval: v.interval,
-                intervalCount: v.intervalCount,
-            };
-        });
+    > = z.object({
+        interval: AuthUserBillingInvoiceItemsConcurrentBuildsInterval$.inboundSchema,
+        intervalCount: z.number(),
+    });
 
     export type Outbound = {
         interval: string;
@@ -1818,52 +1713,28 @@ export namespace AuthUserBillingInvoiceItemsConcurrentBuildsFrequency$ {
         Outbound,
         z.ZodTypeDef,
         AuthUserBillingInvoiceItemsConcurrentBuildsFrequency
-    > = z
-        .object({
-            interval: AuthUserBillingInvoiceItemsConcurrentBuildsInterval$.outboundSchema,
-            intervalCount: z.number(),
-        })
-        .transform((v) => {
-            return {
-                interval: v.interval,
-                intervalCount: v.intervalCount,
-            };
-        });
+    > = z.object({
+        interval: AuthUserBillingInvoiceItemsConcurrentBuildsInterval$.outboundSchema,
+        intervalCount: z.number(),
+    });
 }
 
 /** @internal */
 export namespace ConcurrentBuilds$ {
-    export const inboundSchema: z.ZodType<ConcurrentBuilds, z.ZodTypeDef, unknown> = z
-        .object({
-            tier: z.number().optional(),
-            price: z.number(),
-            quantity: z.number(),
-            highestQuantity: z.number().optional(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            createdAt: z.number().optional(),
-            disabledAt: z.nullable(z.number()).optional(),
-            frequency: z
-                .lazy(() => AuthUserBillingInvoiceItemsConcurrentBuildsFrequency$.inboundSchema)
-                .optional(),
-            maxQuantity: z.number().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                quantity: v.quantity,
-                ...(v.highestQuantity === undefined
-                    ? null
-                    : { highestQuantity: v.highestQuantity }),
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.createdAt === undefined ? null : { createdAt: v.createdAt }),
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.frequency === undefined ? null : { frequency: v.frequency }),
-                ...(v.maxQuantity === undefined ? null : { maxQuantity: v.maxQuantity }),
-            };
-        });
+    export const inboundSchema: z.ZodType<ConcurrentBuilds, z.ZodTypeDef, unknown> = z.object({
+        tier: z.number().optional(),
+        price: z.number(),
+        quantity: z.number(),
+        highestQuantity: z.number().optional(),
+        name: z.string().optional(),
+        hidden: z.boolean(),
+        createdAt: z.number().optional(),
+        disabledAt: z.nullable(z.number()).optional(),
+        frequency: z
+            .lazy(() => AuthUserBillingInvoiceItemsConcurrentBuildsFrequency$.inboundSchema)
+            .optional(),
+        maxQuantity: z.number().optional(),
+    });
 
     export type Outbound = {
         tier?: number | undefined;
@@ -1878,37 +1749,20 @@ export namespace ConcurrentBuilds$ {
         maxQuantity?: number | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, ConcurrentBuilds> = z
-        .object({
-            tier: z.number().optional(),
-            price: z.number(),
-            quantity: z.number(),
-            highestQuantity: z.number().optional(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            createdAt: z.number().optional(),
-            disabledAt: z.nullable(z.number()).optional(),
-            frequency: z
-                .lazy(() => AuthUserBillingInvoiceItemsConcurrentBuildsFrequency$.outboundSchema)
-                .optional(),
-            maxQuantity: z.number().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                quantity: v.quantity,
-                ...(v.highestQuantity === undefined
-                    ? null
-                    : { highestQuantity: v.highestQuantity }),
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.createdAt === undefined ? null : { createdAt: v.createdAt }),
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.frequency === undefined ? null : { frequency: v.frequency }),
-                ...(v.maxQuantity === undefined ? null : { maxQuantity: v.maxQuantity }),
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, ConcurrentBuilds> = z.object({
+        tier: z.number().optional(),
+        price: z.number(),
+        quantity: z.number(),
+        highestQuantity: z.number().optional(),
+        name: z.string().optional(),
+        hidden: z.boolean(),
+        createdAt: z.number().optional(),
+        disabledAt: z.nullable(z.number()).optional(),
+        frequency: z
+            .lazy(() => AuthUserBillingInvoiceItemsConcurrentBuildsFrequency$.outboundSchema)
+            .optional(),
+        maxQuantity: z.number().optional(),
+    });
 }
 
 /** @internal */
@@ -1919,67 +1773,36 @@ export namespace AuthUserInterval$ {
 
 /** @internal */
 export namespace AuthUserFrequency$ {
-    export const inboundSchema: z.ZodType<AuthUserFrequency, z.ZodTypeDef, unknown> = z
-        .object({
-            interval: AuthUserInterval$.inboundSchema,
-            intervalCount: z.number(),
-        })
-        .transform((v) => {
-            return {
-                interval: v.interval,
-                intervalCount: v.intervalCount,
-            };
-        });
+    export const inboundSchema: z.ZodType<AuthUserFrequency, z.ZodTypeDef, unknown> = z.object({
+        interval: AuthUserInterval$.inboundSchema,
+        intervalCount: z.number(),
+    });
 
     export type Outbound = {
         interval: string;
         intervalCount: number;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, AuthUserFrequency> = z
-        .object({
-            interval: AuthUserInterval$.outboundSchema,
-            intervalCount: z.number(),
-        })
-        .transform((v) => {
-            return {
-                interval: v.interval,
-                intervalCount: v.intervalCount,
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, AuthUserFrequency> = z.object({
+        interval: AuthUserInterval$.outboundSchema,
+        intervalCount: z.number(),
+    });
 }
 
 /** @internal */
 export namespace AuthUserWebAnalytics$ {
-    export const inboundSchema: z.ZodType<AuthUserWebAnalytics, z.ZodTypeDef, unknown> = z
-        .object({
-            tier: z.number().optional(),
-            price: z.number(),
-            quantity: z.number(),
-            highestQuantity: z.number().optional(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            createdAt: z.number().optional(),
-            disabledAt: z.nullable(z.number()).optional(),
-            frequency: z.lazy(() => AuthUserFrequency$.inboundSchema).optional(),
-            maxQuantity: z.number().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                quantity: v.quantity,
-                ...(v.highestQuantity === undefined
-                    ? null
-                    : { highestQuantity: v.highestQuantity }),
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.createdAt === undefined ? null : { createdAt: v.createdAt }),
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.frequency === undefined ? null : { frequency: v.frequency }),
-                ...(v.maxQuantity === undefined ? null : { maxQuantity: v.maxQuantity }),
-            };
-        });
+    export const inboundSchema: z.ZodType<AuthUserWebAnalytics, z.ZodTypeDef, unknown> = z.object({
+        tier: z.number().optional(),
+        price: z.number(),
+        quantity: z.number(),
+        highestQuantity: z.number().optional(),
+        name: z.string().optional(),
+        hidden: z.boolean(),
+        createdAt: z.number().optional(),
+        disabledAt: z.nullable(z.number()).optional(),
+        frequency: z.lazy(() => AuthUserFrequency$.inboundSchema).optional(),
+        maxQuantity: z.number().optional(),
+    });
 
     export type Outbound = {
         tier?: number | undefined;
@@ -1994,8 +1817,8 @@ export namespace AuthUserWebAnalytics$ {
         maxQuantity?: number | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, AuthUserWebAnalytics> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, AuthUserWebAnalytics> = z.object(
+        {
             tier: z.number().optional(),
             price: z.number(),
             quantity: z.number(),
@@ -2006,23 +1829,8 @@ export namespace AuthUserWebAnalytics$ {
             disabledAt: z.nullable(z.number()).optional(),
             frequency: z.lazy(() => AuthUserFrequency$.outboundSchema).optional(),
             maxQuantity: z.number().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                quantity: v.quantity,
-                ...(v.highestQuantity === undefined
-                    ? null
-                    : { highestQuantity: v.highestQuantity }),
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.createdAt === undefined ? null : { createdAt: v.createdAt }),
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.frequency === undefined ? null : { frequency: v.frequency }),
-                ...(v.maxQuantity === undefined ? null : { maxQuantity: v.maxQuantity }),
-            };
-        });
+        }
+    );
 }
 
 /** @internal */
@@ -2033,16 +1841,10 @@ export namespace AuthUserBillingInterval$ {
 
 /** @internal */
 export namespace AuthUserBillingFrequency$ {
-    export const inboundSchema: z.ZodType<AuthUserBillingFrequency, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<AuthUserBillingFrequency, z.ZodTypeDef, unknown> =
+        z.object({
             interval: AuthUserBillingInterval$.inboundSchema,
             intervalCount: z.number(),
-        })
-        .transform((v) => {
-            return {
-                interval: v.interval,
-                intervalCount: v.intervalCount,
-            };
         });
 
     export type Outbound = {
@@ -2050,50 +1852,27 @@ export namespace AuthUserBillingFrequency$ {
         intervalCount: number;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, AuthUserBillingFrequency> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, AuthUserBillingFrequency> =
+        z.object({
             interval: AuthUserBillingInterval$.outboundSchema,
             intervalCount: z.number(),
-        })
-        .transform((v) => {
-            return {
-                interval: v.interval,
-                intervalCount: v.intervalCount,
-            };
         });
 }
 
 /** @internal */
 export namespace Pro$ {
-    export const inboundSchema: z.ZodType<Pro, z.ZodTypeDef, unknown> = z
-        .object({
-            tier: z.number().optional(),
-            price: z.number(),
-            quantity: z.number(),
-            highestQuantity: z.number().optional(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            createdAt: z.number().optional(),
-            disabledAt: z.nullable(z.number()).optional(),
-            frequency: z.lazy(() => AuthUserBillingFrequency$.inboundSchema).optional(),
-            maxQuantity: z.number().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                quantity: v.quantity,
-                ...(v.highestQuantity === undefined
-                    ? null
-                    : { highestQuantity: v.highestQuantity }),
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.createdAt === undefined ? null : { createdAt: v.createdAt }),
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.frequency === undefined ? null : { frequency: v.frequency }),
-                ...(v.maxQuantity === undefined ? null : { maxQuantity: v.maxQuantity }),
-            };
-        });
+    export const inboundSchema: z.ZodType<Pro, z.ZodTypeDef, unknown> = z.object({
+        tier: z.number().optional(),
+        price: z.number(),
+        quantity: z.number(),
+        highestQuantity: z.number().optional(),
+        name: z.string().optional(),
+        hidden: z.boolean(),
+        createdAt: z.number().optional(),
+        disabledAt: z.nullable(z.number()).optional(),
+        frequency: z.lazy(() => AuthUserBillingFrequency$.inboundSchema).optional(),
+        maxQuantity: z.number().optional(),
+    });
 
     export type Outbound = {
         tier?: number | undefined;
@@ -2108,35 +1887,18 @@ export namespace Pro$ {
         maxQuantity?: number | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, Pro> = z
-        .object({
-            tier: z.number().optional(),
-            price: z.number(),
-            quantity: z.number(),
-            highestQuantity: z.number().optional(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            createdAt: z.number().optional(),
-            disabledAt: z.nullable(z.number()).optional(),
-            frequency: z.lazy(() => AuthUserBillingFrequency$.outboundSchema).optional(),
-            maxQuantity: z.number().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                quantity: v.quantity,
-                ...(v.highestQuantity === undefined
-                    ? null
-                    : { highestQuantity: v.highestQuantity }),
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.createdAt === undefined ? null : { createdAt: v.createdAt }),
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.frequency === undefined ? null : { frequency: v.frequency }),
-                ...(v.maxQuantity === undefined ? null : { maxQuantity: v.maxQuantity }),
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, Pro> = z.object({
+        tier: z.number().optional(),
+        price: z.number(),
+        quantity: z.number(),
+        highestQuantity: z.number().optional(),
+        name: z.string().optional(),
+        hidden: z.boolean(),
+        createdAt: z.number().optional(),
+        disabledAt: z.nullable(z.number()).optional(),
+        frequency: z.lazy(() => AuthUserBillingFrequency$.outboundSchema).optional(),
+        maxQuantity: z.number().optional(),
+    });
 }
 
 /** @internal */
@@ -2151,17 +1913,10 @@ export namespace AuthUserBillingInvoiceItemsFrequency$ {
         AuthUserBillingInvoiceItemsFrequency,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            interval: AuthUserBillingInvoiceItemsInterval$.inboundSchema,
-            intervalCount: z.number(),
-        })
-        .transform((v) => {
-            return {
-                interval: v.interval,
-                intervalCount: v.intervalCount,
-            };
-        });
+    > = z.object({
+        interval: AuthUserBillingInvoiceItemsInterval$.inboundSchema,
+        intervalCount: z.number(),
+    });
 
     export type Outbound = {
         interval: string;
@@ -2172,50 +1927,26 @@ export namespace AuthUserBillingInvoiceItemsFrequency$ {
         Outbound,
         z.ZodTypeDef,
         AuthUserBillingInvoiceItemsFrequency
-    > = z
-        .object({
-            interval: AuthUserBillingInvoiceItemsInterval$.outboundSchema,
-            intervalCount: z.number(),
-        })
-        .transform((v) => {
-            return {
-                interval: v.interval,
-                intervalCount: v.intervalCount,
-            };
-        });
+    > = z.object({
+        interval: AuthUserBillingInvoiceItemsInterval$.outboundSchema,
+        intervalCount: z.number(),
+    });
 }
 
 /** @internal */
 export namespace Enterprise$ {
-    export const inboundSchema: z.ZodType<Enterprise, z.ZodTypeDef, unknown> = z
-        .object({
-            tier: z.number().optional(),
-            price: z.number(),
-            quantity: z.number(),
-            highestQuantity: z.number().optional(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            createdAt: z.number().optional(),
-            disabledAt: z.nullable(z.number()).optional(),
-            frequency: z.lazy(() => AuthUserBillingInvoiceItemsFrequency$.inboundSchema).optional(),
-            maxQuantity: z.number().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                quantity: v.quantity,
-                ...(v.highestQuantity === undefined
-                    ? null
-                    : { highestQuantity: v.highestQuantity }),
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.createdAt === undefined ? null : { createdAt: v.createdAt }),
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.frequency === undefined ? null : { frequency: v.frequency }),
-                ...(v.maxQuantity === undefined ? null : { maxQuantity: v.maxQuantity }),
-            };
-        });
+    export const inboundSchema: z.ZodType<Enterprise, z.ZodTypeDef, unknown> = z.object({
+        tier: z.number().optional(),
+        price: z.number(),
+        quantity: z.number(),
+        highestQuantity: z.number().optional(),
+        name: z.string().optional(),
+        hidden: z.boolean(),
+        createdAt: z.number().optional(),
+        disabledAt: z.nullable(z.number()).optional(),
+        frequency: z.lazy(() => AuthUserBillingInvoiceItemsFrequency$.inboundSchema).optional(),
+        maxQuantity: z.number().optional(),
+    });
 
     export type Outbound = {
         tier?: number | undefined;
@@ -2230,37 +1961,18 @@ export namespace Enterprise$ {
         maxQuantity?: number | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, Enterprise> = z
-        .object({
-            tier: z.number().optional(),
-            price: z.number(),
-            quantity: z.number(),
-            highestQuantity: z.number().optional(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            createdAt: z.number().optional(),
-            disabledAt: z.nullable(z.number()).optional(),
-            frequency: z
-                .lazy(() => AuthUserBillingInvoiceItemsFrequency$.outboundSchema)
-                .optional(),
-            maxQuantity: z.number().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                quantity: v.quantity,
-                ...(v.highestQuantity === undefined
-                    ? null
-                    : { highestQuantity: v.highestQuantity }),
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.createdAt === undefined ? null : { createdAt: v.createdAt }),
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.frequency === undefined ? null : { frequency: v.frequency }),
-                ...(v.maxQuantity === undefined ? null : { maxQuantity: v.maxQuantity }),
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, Enterprise> = z.object({
+        tier: z.number().optional(),
+        price: z.number(),
+        quantity: z.number(),
+        highestQuantity: z.number().optional(),
+        name: z.string().optional(),
+        hidden: z.boolean(),
+        createdAt: z.number().optional(),
+        disabledAt: z.nullable(z.number()).optional(),
+        frequency: z.lazy(() => AuthUserBillingInvoiceItemsFrequency$.outboundSchema).optional(),
+        maxQuantity: z.number().optional(),
+    });
 }
 
 /** @internal */
@@ -2275,17 +1987,10 @@ export namespace AuthUserBillingInvoiceItemsAnalyticsFrequency$ {
         AuthUserBillingInvoiceItemsAnalyticsFrequency,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            interval: AuthUserBillingInvoiceItemsAnalyticsInterval$.inboundSchema,
-            intervalCount: z.number(),
-        })
-        .transform((v) => {
-            return {
-                interval: v.interval,
-                intervalCount: v.intervalCount,
-            };
-        });
+    > = z.object({
+        interval: AuthUserBillingInvoiceItemsAnalyticsInterval$.inboundSchema,
+        intervalCount: z.number(),
+    });
 
     export type Outbound = {
         interval: string;
@@ -2296,52 +2001,28 @@ export namespace AuthUserBillingInvoiceItemsAnalyticsFrequency$ {
         Outbound,
         z.ZodTypeDef,
         AuthUserBillingInvoiceItemsAnalyticsFrequency
-    > = z
-        .object({
-            interval: AuthUserBillingInvoiceItemsAnalyticsInterval$.outboundSchema,
-            intervalCount: z.number(),
-        })
-        .transform((v) => {
-            return {
-                interval: v.interval,
-                intervalCount: v.intervalCount,
-            };
-        });
+    > = z.object({
+        interval: AuthUserBillingInvoiceItemsAnalyticsInterval$.outboundSchema,
+        intervalCount: z.number(),
+    });
 }
 
 /** @internal */
 export namespace Analytics$ {
-    export const inboundSchema: z.ZodType<Analytics, z.ZodTypeDef, unknown> = z
-        .object({
-            tier: z.number().optional(),
-            price: z.number(),
-            quantity: z.number(),
-            highestQuantity: z.number().optional(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            createdAt: z.number().optional(),
-            disabledAt: z.nullable(z.number()).optional(),
-            frequency: z
-                .lazy(() => AuthUserBillingInvoiceItemsAnalyticsFrequency$.inboundSchema)
-                .optional(),
-            maxQuantity: z.number().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                quantity: v.quantity,
-                ...(v.highestQuantity === undefined
-                    ? null
-                    : { highestQuantity: v.highestQuantity }),
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.createdAt === undefined ? null : { createdAt: v.createdAt }),
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.frequency === undefined ? null : { frequency: v.frequency }),
-                ...(v.maxQuantity === undefined ? null : { maxQuantity: v.maxQuantity }),
-            };
-        });
+    export const inboundSchema: z.ZodType<Analytics, z.ZodTypeDef, unknown> = z.object({
+        tier: z.number().optional(),
+        price: z.number(),
+        quantity: z.number(),
+        highestQuantity: z.number().optional(),
+        name: z.string().optional(),
+        hidden: z.boolean(),
+        createdAt: z.number().optional(),
+        disabledAt: z.nullable(z.number()).optional(),
+        frequency: z
+            .lazy(() => AuthUserBillingInvoiceItemsAnalyticsFrequency$.inboundSchema)
+            .optional(),
+        maxQuantity: z.number().optional(),
+    });
 
     export type Outbound = {
         tier?: number | undefined;
@@ -2356,37 +2037,20 @@ export namespace Analytics$ {
         maxQuantity?: number | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, Analytics> = z
-        .object({
-            tier: z.number().optional(),
-            price: z.number(),
-            quantity: z.number(),
-            highestQuantity: z.number().optional(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            createdAt: z.number().optional(),
-            disabledAt: z.nullable(z.number()).optional(),
-            frequency: z
-                .lazy(() => AuthUserBillingInvoiceItemsAnalyticsFrequency$.outboundSchema)
-                .optional(),
-            maxQuantity: z.number().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                quantity: v.quantity,
-                ...(v.highestQuantity === undefined
-                    ? null
-                    : { highestQuantity: v.highestQuantity }),
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.createdAt === undefined ? null : { createdAt: v.createdAt }),
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.frequency === undefined ? null : { frequency: v.frequency }),
-                ...(v.maxQuantity === undefined ? null : { maxQuantity: v.maxQuantity }),
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, Analytics> = z.object({
+        tier: z.number().optional(),
+        price: z.number(),
+        quantity: z.number(),
+        highestQuantity: z.number().optional(),
+        name: z.string().optional(),
+        hidden: z.boolean(),
+        createdAt: z.number().optional(),
+        disabledAt: z.nullable(z.number()).optional(),
+        frequency: z
+            .lazy(() => AuthUserBillingInvoiceItemsAnalyticsFrequency$.outboundSchema)
+            .optional(),
+        maxQuantity: z.number().optional(),
+    });
 }
 
 /** @internal */
@@ -2401,17 +2065,10 @@ export namespace AuthUserBillingInvoiceItemsMonitoringFrequency$ {
         AuthUserBillingInvoiceItemsMonitoringFrequency,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            interval: AuthUserBillingInvoiceItemsMonitoringInterval$.inboundSchema,
-            intervalCount: z.number(),
-        })
-        .transform((v) => {
-            return {
-                interval: v.interval,
-                intervalCount: v.intervalCount,
-            };
-        });
+    > = z.object({
+        interval: AuthUserBillingInvoiceItemsMonitoringInterval$.inboundSchema,
+        intervalCount: z.number(),
+    });
 
     export type Outbound = {
         interval: string;
@@ -2422,52 +2079,28 @@ export namespace AuthUserBillingInvoiceItemsMonitoringFrequency$ {
         Outbound,
         z.ZodTypeDef,
         AuthUserBillingInvoiceItemsMonitoringFrequency
-    > = z
-        .object({
-            interval: AuthUserBillingInvoiceItemsMonitoringInterval$.outboundSchema,
-            intervalCount: z.number(),
-        })
-        .transform((v) => {
-            return {
-                interval: v.interval,
-                intervalCount: v.intervalCount,
-            };
-        });
+    > = z.object({
+        interval: AuthUserBillingInvoiceItemsMonitoringInterval$.outboundSchema,
+        intervalCount: z.number(),
+    });
 }
 
 /** @internal */
 export namespace Monitoring$ {
-    export const inboundSchema: z.ZodType<Monitoring, z.ZodTypeDef, unknown> = z
-        .object({
-            tier: z.number().optional(),
-            price: z.number(),
-            quantity: z.number(),
-            highestQuantity: z.number().optional(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            createdAt: z.number().optional(),
-            disabledAt: z.nullable(z.number()).optional(),
-            frequency: z
-                .lazy(() => AuthUserBillingInvoiceItemsMonitoringFrequency$.inboundSchema)
-                .optional(),
-            maxQuantity: z.number().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                quantity: v.quantity,
-                ...(v.highestQuantity === undefined
-                    ? null
-                    : { highestQuantity: v.highestQuantity }),
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.createdAt === undefined ? null : { createdAt: v.createdAt }),
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.frequency === undefined ? null : { frequency: v.frequency }),
-                ...(v.maxQuantity === undefined ? null : { maxQuantity: v.maxQuantity }),
-            };
-        });
+    export const inboundSchema: z.ZodType<Monitoring, z.ZodTypeDef, unknown> = z.object({
+        tier: z.number().optional(),
+        price: z.number(),
+        quantity: z.number(),
+        highestQuantity: z.number().optional(),
+        name: z.string().optional(),
+        hidden: z.boolean(),
+        createdAt: z.number().optional(),
+        disabledAt: z.nullable(z.number()).optional(),
+        frequency: z
+            .lazy(() => AuthUserBillingInvoiceItemsMonitoringFrequency$.inboundSchema)
+            .optional(),
+        maxQuantity: z.number().optional(),
+    });
 
     export type Outbound = {
         tier?: number | undefined;
@@ -2482,37 +2115,20 @@ export namespace Monitoring$ {
         maxQuantity?: number | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, Monitoring> = z
-        .object({
-            tier: z.number().optional(),
-            price: z.number(),
-            quantity: z.number(),
-            highestQuantity: z.number().optional(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            createdAt: z.number().optional(),
-            disabledAt: z.nullable(z.number()).optional(),
-            frequency: z
-                .lazy(() => AuthUserBillingInvoiceItemsMonitoringFrequency$.outboundSchema)
-                .optional(),
-            maxQuantity: z.number().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                quantity: v.quantity,
-                ...(v.highestQuantity === undefined
-                    ? null
-                    : { highestQuantity: v.highestQuantity }),
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.createdAt === undefined ? null : { createdAt: v.createdAt }),
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.frequency === undefined ? null : { frequency: v.frequency }),
-                ...(v.maxQuantity === undefined ? null : { maxQuantity: v.maxQuantity }),
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, Monitoring> = z.object({
+        tier: z.number().optional(),
+        price: z.number(),
+        quantity: z.number(),
+        highestQuantity: z.number().optional(),
+        name: z.string().optional(),
+        hidden: z.boolean(),
+        createdAt: z.number().optional(),
+        disabledAt: z.nullable(z.number()).optional(),
+        frequency: z
+            .lazy(() => AuthUserBillingInvoiceItemsMonitoringFrequency$.outboundSchema)
+            .optional(),
+        maxQuantity: z.number().optional(),
+    });
 }
 
 /** @internal */
@@ -2529,17 +2145,10 @@ export namespace AuthUserBillingInvoiceItemsPasswordProtectionFrequency$ {
         AuthUserBillingInvoiceItemsPasswordProtectionFrequency,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            interval: AuthUserBillingInvoiceItemsPasswordProtectionInterval$.inboundSchema,
-            intervalCount: z.number(),
-        })
-        .transform((v) => {
-            return {
-                interval: v.interval,
-                intervalCount: v.intervalCount,
-            };
-        });
+    > = z.object({
+        interval: AuthUserBillingInvoiceItemsPasswordProtectionInterval$.inboundSchema,
+        intervalCount: z.number(),
+    });
 
     export type Outbound = {
         interval: string;
@@ -2550,52 +2159,28 @@ export namespace AuthUserBillingInvoiceItemsPasswordProtectionFrequency$ {
         Outbound,
         z.ZodTypeDef,
         AuthUserBillingInvoiceItemsPasswordProtectionFrequency
-    > = z
-        .object({
-            interval: AuthUserBillingInvoiceItemsPasswordProtectionInterval$.outboundSchema,
-            intervalCount: z.number(),
-        })
-        .transform((v) => {
-            return {
-                interval: v.interval,
-                intervalCount: v.intervalCount,
-            };
-        });
+    > = z.object({
+        interval: AuthUserBillingInvoiceItemsPasswordProtectionInterval$.outboundSchema,
+        intervalCount: z.number(),
+    });
 }
 
 /** @internal */
 export namespace PasswordProtection$ {
-    export const inboundSchema: z.ZodType<PasswordProtection, z.ZodTypeDef, unknown> = z
-        .object({
-            tier: z.number().optional(),
-            price: z.number(),
-            quantity: z.number(),
-            highestQuantity: z.number().optional(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            createdAt: z.number().optional(),
-            disabledAt: z.nullable(z.number()).optional(),
-            frequency: z
-                .lazy(() => AuthUserBillingInvoiceItemsPasswordProtectionFrequency$.inboundSchema)
-                .optional(),
-            maxQuantity: z.number().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                quantity: v.quantity,
-                ...(v.highestQuantity === undefined
-                    ? null
-                    : { highestQuantity: v.highestQuantity }),
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.createdAt === undefined ? null : { createdAt: v.createdAt }),
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.frequency === undefined ? null : { frequency: v.frequency }),
-                ...(v.maxQuantity === undefined ? null : { maxQuantity: v.maxQuantity }),
-            };
-        });
+    export const inboundSchema: z.ZodType<PasswordProtection, z.ZodTypeDef, unknown> = z.object({
+        tier: z.number().optional(),
+        price: z.number(),
+        quantity: z.number(),
+        highestQuantity: z.number().optional(),
+        name: z.string().optional(),
+        hidden: z.boolean(),
+        createdAt: z.number().optional(),
+        disabledAt: z.nullable(z.number()).optional(),
+        frequency: z
+            .lazy(() => AuthUserBillingInvoiceItemsPasswordProtectionFrequency$.inboundSchema)
+            .optional(),
+        maxQuantity: z.number().optional(),
+    });
 
     export type Outbound = {
         tier?: number | undefined;
@@ -2610,37 +2195,20 @@ export namespace PasswordProtection$ {
         maxQuantity?: number | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, PasswordProtection> = z
-        .object({
-            tier: z.number().optional(),
-            price: z.number(),
-            quantity: z.number(),
-            highestQuantity: z.number().optional(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            createdAt: z.number().optional(),
-            disabledAt: z.nullable(z.number()).optional(),
-            frequency: z
-                .lazy(() => AuthUserBillingInvoiceItemsPasswordProtectionFrequency$.outboundSchema)
-                .optional(),
-            maxQuantity: z.number().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                quantity: v.quantity,
-                ...(v.highestQuantity === undefined
-                    ? null
-                    : { highestQuantity: v.highestQuantity }),
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.createdAt === undefined ? null : { createdAt: v.createdAt }),
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.frequency === undefined ? null : { frequency: v.frequency }),
-                ...(v.maxQuantity === undefined ? null : { maxQuantity: v.maxQuantity }),
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, PasswordProtection> = z.object({
+        tier: z.number().optional(),
+        price: z.number(),
+        quantity: z.number(),
+        highestQuantity: z.number().optional(),
+        name: z.string().optional(),
+        hidden: z.boolean(),
+        createdAt: z.number().optional(),
+        disabledAt: z.nullable(z.number()).optional(),
+        frequency: z
+            .lazy(() => AuthUserBillingInvoiceItemsPasswordProtectionFrequency$.outboundSchema)
+            .optional(),
+        maxQuantity: z.number().optional(),
+    });
 }
 
 /** @internal */
@@ -2657,17 +2225,10 @@ export namespace AuthUserBillingInvoiceItemsPreviewDeploymentSuffixFrequency$ {
         AuthUserBillingInvoiceItemsPreviewDeploymentSuffixFrequency,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            interval: AuthUserBillingInvoiceItemsPreviewDeploymentSuffixInterval$.inboundSchema,
-            intervalCount: z.number(),
-        })
-        .transform((v) => {
-            return {
-                interval: v.interval,
-                intervalCount: v.intervalCount,
-            };
-        });
+    > = z.object({
+        interval: AuthUserBillingInvoiceItemsPreviewDeploymentSuffixInterval$.inboundSchema,
+        intervalCount: z.number(),
+    });
 
     export type Outbound = {
         interval: string;
@@ -2678,23 +2239,16 @@ export namespace AuthUserBillingInvoiceItemsPreviewDeploymentSuffixFrequency$ {
         Outbound,
         z.ZodTypeDef,
         AuthUserBillingInvoiceItemsPreviewDeploymentSuffixFrequency
-    > = z
-        .object({
-            interval: AuthUserBillingInvoiceItemsPreviewDeploymentSuffixInterval$.outboundSchema,
-            intervalCount: z.number(),
-        })
-        .transform((v) => {
-            return {
-                interval: v.interval,
-                intervalCount: v.intervalCount,
-            };
-        });
+    > = z.object({
+        interval: AuthUserBillingInvoiceItemsPreviewDeploymentSuffixInterval$.outboundSchema,
+        intervalCount: z.number(),
+    });
 }
 
 /** @internal */
 export namespace PreviewDeploymentSuffix$ {
-    export const inboundSchema: z.ZodType<PreviewDeploymentSuffix, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<PreviewDeploymentSuffix, z.ZodTypeDef, unknown> =
+        z.object({
             tier: z.number().optional(),
             price: z.number(),
             quantity: z.number(),
@@ -2709,22 +2263,6 @@ export namespace PreviewDeploymentSuffix$ {
                 )
                 .optional(),
             maxQuantity: z.number().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                quantity: v.quantity,
-                ...(v.highestQuantity === undefined
-                    ? null
-                    : { highestQuantity: v.highestQuantity }),
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.createdAt === undefined ? null : { createdAt: v.createdAt }),
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.frequency === undefined ? null : { frequency: v.frequency }),
-                ...(v.maxQuantity === undefined ? null : { maxQuantity: v.maxQuantity }),
-            };
         });
 
     export type Outbound = {
@@ -2742,8 +2280,8 @@ export namespace PreviewDeploymentSuffix$ {
         maxQuantity?: number | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, PreviewDeploymentSuffix> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, PreviewDeploymentSuffix> =
+        z.object({
             tier: z.number().optional(),
             price: z.number(),
             quantity: z.number(),
@@ -2759,22 +2297,6 @@ export namespace PreviewDeploymentSuffix$ {
                 )
                 .optional(),
             maxQuantity: z.number().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                quantity: v.quantity,
-                ...(v.highestQuantity === undefined
-                    ? null
-                    : { highestQuantity: v.highestQuantity }),
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.createdAt === undefined ? null : { createdAt: v.createdAt }),
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.frequency === undefined ? null : { frequency: v.frequency }),
-                ...(v.maxQuantity === undefined ? null : { maxQuantity: v.maxQuantity }),
-            };
         });
 }
 
@@ -2790,17 +2312,10 @@ export namespace AuthUserBillingInvoiceItemsSamlFrequency$ {
         AuthUserBillingInvoiceItemsSamlFrequency,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            interval: AuthUserBillingInvoiceItemsSamlInterval$.inboundSchema,
-            intervalCount: z.number(),
-        })
-        .transform((v) => {
-            return {
-                interval: v.interval,
-                intervalCount: v.intervalCount,
-            };
-        });
+    > = z.object({
+        interval: AuthUserBillingInvoiceItemsSamlInterval$.inboundSchema,
+        intervalCount: z.number(),
+    });
 
     export type Outbound = {
         interval: string;
@@ -2811,52 +2326,26 @@ export namespace AuthUserBillingInvoiceItemsSamlFrequency$ {
         Outbound,
         z.ZodTypeDef,
         AuthUserBillingInvoiceItemsSamlFrequency
-    > = z
-        .object({
-            interval: AuthUserBillingInvoiceItemsSamlInterval$.outboundSchema,
-            intervalCount: z.number(),
-        })
-        .transform((v) => {
-            return {
-                interval: v.interval,
-                intervalCount: v.intervalCount,
-            };
-        });
+    > = z.object({
+        interval: AuthUserBillingInvoiceItemsSamlInterval$.outboundSchema,
+        intervalCount: z.number(),
+    });
 }
 
 /** @internal */
 export namespace AuthUserSaml$ {
-    export const inboundSchema: z.ZodType<AuthUserSaml, z.ZodTypeDef, unknown> = z
-        .object({
-            tier: z.number().optional(),
-            price: z.number(),
-            quantity: z.number(),
-            highestQuantity: z.number().optional(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            createdAt: z.number().optional(),
-            disabledAt: z.nullable(z.number()).optional(),
-            frequency: z
-                .lazy(() => AuthUserBillingInvoiceItemsSamlFrequency$.inboundSchema)
-                .optional(),
-            maxQuantity: z.number().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                quantity: v.quantity,
-                ...(v.highestQuantity === undefined
-                    ? null
-                    : { highestQuantity: v.highestQuantity }),
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.createdAt === undefined ? null : { createdAt: v.createdAt }),
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.frequency === undefined ? null : { frequency: v.frequency }),
-                ...(v.maxQuantity === undefined ? null : { maxQuantity: v.maxQuantity }),
-            };
-        });
+    export const inboundSchema: z.ZodType<AuthUserSaml, z.ZodTypeDef, unknown> = z.object({
+        tier: z.number().optional(),
+        price: z.number(),
+        quantity: z.number(),
+        highestQuantity: z.number().optional(),
+        name: z.string().optional(),
+        hidden: z.boolean(),
+        createdAt: z.number().optional(),
+        disabledAt: z.nullable(z.number()).optional(),
+        frequency: z.lazy(() => AuthUserBillingInvoiceItemsSamlFrequency$.inboundSchema).optional(),
+        maxQuantity: z.number().optional(),
+    });
 
     export type Outbound = {
         tier?: number | undefined;
@@ -2871,37 +2360,20 @@ export namespace AuthUserSaml$ {
         maxQuantity?: number | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, AuthUserSaml> = z
-        .object({
-            tier: z.number().optional(),
-            price: z.number(),
-            quantity: z.number(),
-            highestQuantity: z.number().optional(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            createdAt: z.number().optional(),
-            disabledAt: z.nullable(z.number()).optional(),
-            frequency: z
-                .lazy(() => AuthUserBillingInvoiceItemsSamlFrequency$.outboundSchema)
-                .optional(),
-            maxQuantity: z.number().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                quantity: v.quantity,
-                ...(v.highestQuantity === undefined
-                    ? null
-                    : { highestQuantity: v.highestQuantity }),
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.createdAt === undefined ? null : { createdAt: v.createdAt }),
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.frequency === undefined ? null : { frequency: v.frequency }),
-                ...(v.maxQuantity === undefined ? null : { maxQuantity: v.maxQuantity }),
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, AuthUserSaml> = z.object({
+        tier: z.number().optional(),
+        price: z.number(),
+        quantity: z.number(),
+        highestQuantity: z.number().optional(),
+        name: z.string().optional(),
+        hidden: z.boolean(),
+        createdAt: z.number().optional(),
+        disabledAt: z.nullable(z.number()).optional(),
+        frequency: z
+            .lazy(() => AuthUserBillingInvoiceItemsSamlFrequency$.outboundSchema)
+            .optional(),
+        maxQuantity: z.number().optional(),
+    });
 }
 
 /** @internal */
@@ -2916,17 +2388,10 @@ export namespace AuthUserBillingInvoiceItemsTeamSeatsFrequency$ {
         AuthUserBillingInvoiceItemsTeamSeatsFrequency,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            interval: AuthUserBillingInvoiceItemsTeamSeatsInterval$.inboundSchema,
-            intervalCount: z.number(),
-        })
-        .transform((v) => {
-            return {
-                interval: v.interval,
-                intervalCount: v.intervalCount,
-            };
-        });
+    > = z.object({
+        interval: AuthUserBillingInvoiceItemsTeamSeatsInterval$.inboundSchema,
+        intervalCount: z.number(),
+    });
 
     export type Outbound = {
         interval: string;
@@ -2937,52 +2402,28 @@ export namespace AuthUserBillingInvoiceItemsTeamSeatsFrequency$ {
         Outbound,
         z.ZodTypeDef,
         AuthUserBillingInvoiceItemsTeamSeatsFrequency
-    > = z
-        .object({
-            interval: AuthUserBillingInvoiceItemsTeamSeatsInterval$.outboundSchema,
-            intervalCount: z.number(),
-        })
-        .transform((v) => {
-            return {
-                interval: v.interval,
-                intervalCount: v.intervalCount,
-            };
-        });
+    > = z.object({
+        interval: AuthUserBillingInvoiceItemsTeamSeatsInterval$.outboundSchema,
+        intervalCount: z.number(),
+    });
 }
 
 /** @internal */
 export namespace TeamSeats$ {
-    export const inboundSchema: z.ZodType<TeamSeats, z.ZodTypeDef, unknown> = z
-        .object({
-            tier: z.number().optional(),
-            price: z.number(),
-            quantity: z.number(),
-            highestQuantity: z.number().optional(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            createdAt: z.number().optional(),
-            disabledAt: z.nullable(z.number()).optional(),
-            frequency: z
-                .lazy(() => AuthUserBillingInvoiceItemsTeamSeatsFrequency$.inboundSchema)
-                .optional(),
-            maxQuantity: z.number().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                quantity: v.quantity,
-                ...(v.highestQuantity === undefined
-                    ? null
-                    : { highestQuantity: v.highestQuantity }),
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.createdAt === undefined ? null : { createdAt: v.createdAt }),
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.frequency === undefined ? null : { frequency: v.frequency }),
-                ...(v.maxQuantity === undefined ? null : { maxQuantity: v.maxQuantity }),
-            };
-        });
+    export const inboundSchema: z.ZodType<TeamSeats, z.ZodTypeDef, unknown> = z.object({
+        tier: z.number().optional(),
+        price: z.number(),
+        quantity: z.number(),
+        highestQuantity: z.number().optional(),
+        name: z.string().optional(),
+        hidden: z.boolean(),
+        createdAt: z.number().optional(),
+        disabledAt: z.nullable(z.number()).optional(),
+        frequency: z
+            .lazy(() => AuthUserBillingInvoiceItemsTeamSeatsFrequency$.inboundSchema)
+            .optional(),
+        maxQuantity: z.number().optional(),
+    });
 
     export type Outbound = {
         tier?: number | undefined;
@@ -2997,98 +2438,53 @@ export namespace TeamSeats$ {
         maxQuantity?: number | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, TeamSeats> = z
-        .object({
-            tier: z.number().optional(),
-            price: z.number(),
-            quantity: z.number(),
-            highestQuantity: z.number().optional(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            createdAt: z.number().optional(),
-            disabledAt: z.nullable(z.number()).optional(),
-            frequency: z
-                .lazy(() => AuthUserBillingInvoiceItemsTeamSeatsFrequency$.outboundSchema)
-                .optional(),
-            maxQuantity: z.number().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                quantity: v.quantity,
-                ...(v.highestQuantity === undefined
-                    ? null
-                    : { highestQuantity: v.highestQuantity }),
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.createdAt === undefined ? null : { createdAt: v.createdAt }),
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.frequency === undefined ? null : { frequency: v.frequency }),
-                ...(v.maxQuantity === undefined ? null : { maxQuantity: v.maxQuantity }),
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, TeamSeats> = z.object({
+        tier: z.number().optional(),
+        price: z.number(),
+        quantity: z.number(),
+        highestQuantity: z.number().optional(),
+        name: z.string().optional(),
+        hidden: z.boolean(),
+        createdAt: z.number().optional(),
+        disabledAt: z.nullable(z.number()).optional(),
+        frequency: z
+            .lazy(() => AuthUserBillingInvoiceItemsTeamSeatsFrequency$.outboundSchema)
+            .optional(),
+        maxQuantity: z.number().optional(),
+    });
 }
 
 /** @internal */
 export namespace Matrix$ {
-    export const inboundSchema: z.ZodType<Matrix, z.ZodTypeDef, unknown> = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    export const inboundSchema: z.ZodType<Matrix, z.ZodTypeDef, unknown> = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 
     export type Outbound = {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, Matrix> = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, Matrix> = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 }
 
 /** @internal */
 export namespace AnalyticsUsage$ {
-    export const inboundSchema: z.ZodType<AnalyticsUsage, z.ZodTypeDef, unknown> = z
-        .object({
-            matrix: z.lazy(() => Matrix$.inboundSchema).optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+    export const inboundSchema: z.ZodType<AnalyticsUsage, z.ZodTypeDef, unknown> = z.object({
+        matrix: z.lazy(() => Matrix$.inboundSchema).optional(),
+        tier: z.number().optional(),
+        price: z.number(),
+        batch: z.number(),
+        threshold: z.number(),
+        name: z.string().optional(),
+        hidden: z.boolean(),
+        disabledAt: z.nullable(z.number()).optional(),
+        enabledAt: z.nullable(z.number()).optional(),
+    });
 
     export type Outbound = {
         matrix?: Matrix$.Outbound | undefined;
@@ -3102,92 +2498,50 @@ export namespace AnalyticsUsage$ {
         enabledAt?: number | null | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, AnalyticsUsage> = z
-        .object({
-            matrix: z.lazy(() => Matrix$.outboundSchema).optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, AnalyticsUsage> = z.object({
+        matrix: z.lazy(() => Matrix$.outboundSchema).optional(),
+        tier: z.number().optional(),
+        price: z.number(),
+        batch: z.number(),
+        threshold: z.number(),
+        name: z.string().optional(),
+        hidden: z.boolean(),
+        disabledAt: z.nullable(z.number()).optional(),
+        enabledAt: z.nullable(z.number()).optional(),
+    });
 }
 
 /** @internal */
 export namespace AuthUserMatrix$ {
-    export const inboundSchema: z.ZodType<AuthUserMatrix, z.ZodTypeDef, unknown> = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    export const inboundSchema: z.ZodType<AuthUserMatrix, z.ZodTypeDef, unknown> = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 
     export type Outbound = {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, AuthUserMatrix> = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, AuthUserMatrix> = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 }
 
 /** @internal */
 export namespace ArtifactsModel$ {
-    export const inboundSchema: z.ZodType<ArtifactsModel, z.ZodTypeDef, unknown> = z
-        .object({
-            matrix: z.lazy(() => AuthUserMatrix$.inboundSchema).optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+    export const inboundSchema: z.ZodType<ArtifactsModel, z.ZodTypeDef, unknown> = z.object({
+        matrix: z.lazy(() => AuthUserMatrix$.inboundSchema).optional(),
+        tier: z.number().optional(),
+        price: z.number(),
+        batch: z.number(),
+        threshold: z.number(),
+        name: z.string().optional(),
+        hidden: z.boolean(),
+        disabledAt: z.nullable(z.number()).optional(),
+        enabledAt: z.nullable(z.number()).optional(),
+    });
 
     export type Outbound = {
         matrix?: AuthUserMatrix$.Outbound | undefined;
@@ -3201,92 +2555,51 @@ export namespace ArtifactsModel$ {
         enabledAt?: number | null | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, ArtifactsModel> = z
-        .object({
-            matrix: z.lazy(() => AuthUserMatrix$.outboundSchema).optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, ArtifactsModel> = z.object({
+        matrix: z.lazy(() => AuthUserMatrix$.outboundSchema).optional(),
+        tier: z.number().optional(),
+        price: z.number(),
+        batch: z.number(),
+        threshold: z.number(),
+        name: z.string().optional(),
+        hidden: z.boolean(),
+        disabledAt: z.nullable(z.number()).optional(),
+        enabledAt: z.nullable(z.number()).optional(),
+    });
 }
 
 /** @internal */
 export namespace AuthUserBillingMatrix$ {
-    export const inboundSchema: z.ZodType<AuthUserBillingMatrix, z.ZodTypeDef, unknown> = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    export const inboundSchema: z.ZodType<AuthUserBillingMatrix, z.ZodTypeDef, unknown> = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 
     export type Outbound = {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, AuthUserBillingMatrix> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, AuthUserBillingMatrix> =
+        z.object({
             defaultUnitPrice: z.string(),
             dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
         });
 }
 
 /** @internal */
 export namespace Bandwidth$ {
-    export const inboundSchema: z.ZodType<Bandwidth, z.ZodTypeDef, unknown> = z
-        .object({
-            matrix: z.lazy(() => AuthUserBillingMatrix$.inboundSchema).optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+    export const inboundSchema: z.ZodType<Bandwidth, z.ZodTypeDef, unknown> = z.object({
+        matrix: z.lazy(() => AuthUserBillingMatrix$.inboundSchema).optional(),
+        tier: z.number().optional(),
+        price: z.number(),
+        batch: z.number(),
+        threshold: z.number(),
+        name: z.string().optional(),
+        hidden: z.boolean(),
+        disabledAt: z.nullable(z.number()).optional(),
+        enabledAt: z.nullable(z.number()).optional(),
+    });
 
     export type Outbound = {
         matrix?: AuthUserBillingMatrix$.Outbound | undefined;
@@ -3300,31 +2613,17 @@ export namespace Bandwidth$ {
         enabledAt?: number | null | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, Bandwidth> = z
-        .object({
-            matrix: z.lazy(() => AuthUserBillingMatrix$.outboundSchema).optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, Bandwidth> = z.object({
+        matrix: z.lazy(() => AuthUserBillingMatrix$.outboundSchema).optional(),
+        tier: z.number().optional(),
+        price: z.number(),
+        batch: z.number(),
+        threshold: z.number(),
+        name: z.string().optional(),
+        hidden: z.boolean(),
+        disabledAt: z.nullable(z.number()).optional(),
+        enabledAt: z.nullable(z.number()).optional(),
+    });
 }
 
 /** @internal */
@@ -3333,67 +2632,39 @@ export namespace AuthUserBillingInvoiceItemsMatrix$ {
         AuthUserBillingInvoiceItemsMatrix,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 
     export type Outbound = {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
     export const outboundSchema: z.ZodType<
         Outbound,
         z.ZodTypeDef,
         AuthUserBillingInvoiceItemsMatrix
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 }
 
 /** @internal */
 export namespace BlobStores$ {
-    export const inboundSchema: z.ZodType<BlobStores, z.ZodTypeDef, unknown> = z
-        .object({
-            matrix: z.lazy(() => AuthUserBillingInvoiceItemsMatrix$.inboundSchema).optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+    export const inboundSchema: z.ZodType<BlobStores, z.ZodTypeDef, unknown> = z.object({
+        matrix: z.lazy(() => AuthUserBillingInvoiceItemsMatrix$.inboundSchema).optional(),
+        tier: z.number().optional(),
+        price: z.number(),
+        batch: z.number(),
+        threshold: z.number(),
+        name: z.string().optional(),
+        hidden: z.boolean(),
+        disabledAt: z.nullable(z.number()).optional(),
+        enabledAt: z.nullable(z.number()).optional(),
+    });
 
     export type Outbound = {
         matrix?: AuthUserBillingInvoiceItemsMatrix$.Outbound | undefined;
@@ -3407,31 +2678,17 @@ export namespace BlobStores$ {
         enabledAt?: number | null | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, BlobStores> = z
-        .object({
-            matrix: z.lazy(() => AuthUserBillingInvoiceItemsMatrix$.outboundSchema).optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, BlobStores> = z.object({
+        matrix: z.lazy(() => AuthUserBillingInvoiceItemsMatrix$.outboundSchema).optional(),
+        tier: z.number().optional(),
+        price: z.number(),
+        batch: z.number(),
+        threshold: z.number(),
+        name: z.string().optional(),
+        hidden: z.boolean(),
+        disabledAt: z.nullable(z.number()).optional(),
+        enabledAt: z.nullable(z.number()).optional(),
+    });
 }
 
 /** @internal */
@@ -3440,44 +2697,30 @@ export namespace AuthUserBillingInvoiceItemsBlobTotalAdvancedRequestsMatrix$ {
         AuthUserBillingInvoiceItemsBlobTotalAdvancedRequestsMatrix,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 
     export type Outbound = {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
     export const outboundSchema: z.ZodType<
         Outbound,
         z.ZodTypeDef,
         AuthUserBillingInvoiceItemsBlobTotalAdvancedRequestsMatrix
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 }
 
 /** @internal */
 export namespace BlobTotalAdvancedRequests$ {
-    export const inboundSchema: z.ZodType<BlobTotalAdvancedRequests, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<BlobTotalAdvancedRequests, z.ZodTypeDef, unknown> =
+        z.object({
             matrix: z
                 .lazy(
                     () => AuthUserBillingInvoiceItemsBlobTotalAdvancedRequestsMatrix$.inboundSchema
@@ -3491,19 +2734,6 @@ export namespace BlobTotalAdvancedRequests$ {
             hidden: z.boolean(),
             disabledAt: z.nullable(z.number()).optional(),
             enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
         });
 
     export type Outbound = {
@@ -3518,8 +2748,8 @@ export namespace BlobTotalAdvancedRequests$ {
         enabledAt?: number | null | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, BlobTotalAdvancedRequests> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, BlobTotalAdvancedRequests> =
+        z.object({
             matrix: z
                 .lazy(
                     () => AuthUserBillingInvoiceItemsBlobTotalAdvancedRequestsMatrix$.outboundSchema
@@ -3533,19 +2763,6 @@ export namespace BlobTotalAdvancedRequests$ {
             hidden: z.boolean(),
             disabledAt: z.nullable(z.number()).optional(),
             enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
         });
 }
 
@@ -3555,44 +2772,30 @@ export namespace AuthUserBillingInvoiceItemsBlobTotalAvgSizeInBytesMatrix$ {
         AuthUserBillingInvoiceItemsBlobTotalAvgSizeInBytesMatrix,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 
     export type Outbound = {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
     export const outboundSchema: z.ZodType<
         Outbound,
         z.ZodTypeDef,
         AuthUserBillingInvoiceItemsBlobTotalAvgSizeInBytesMatrix
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 }
 
 /** @internal */
 export namespace BlobTotalAvgSizeInBytes$ {
-    export const inboundSchema: z.ZodType<BlobTotalAvgSizeInBytes, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<BlobTotalAvgSizeInBytes, z.ZodTypeDef, unknown> =
+        z.object({
             matrix: z
                 .lazy(() => AuthUserBillingInvoiceItemsBlobTotalAvgSizeInBytesMatrix$.inboundSchema)
                 .optional(),
@@ -3604,19 +2807,6 @@ export namespace BlobTotalAvgSizeInBytes$ {
             hidden: z.boolean(),
             disabledAt: z.nullable(z.number()).optional(),
             enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
         });
 
     export type Outbound = {
@@ -3631,8 +2821,8 @@ export namespace BlobTotalAvgSizeInBytes$ {
         enabledAt?: number | null | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, BlobTotalAvgSizeInBytes> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, BlobTotalAvgSizeInBytes> =
+        z.object({
             matrix: z
                 .lazy(
                     () => AuthUserBillingInvoiceItemsBlobTotalAvgSizeInBytesMatrix$.outboundSchema
@@ -3646,19 +2836,6 @@ export namespace BlobTotalAvgSizeInBytes$ {
             hidden: z.boolean(),
             disabledAt: z.nullable(z.number()).optional(),
             enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
         });
 }
 
@@ -3668,38 +2845,24 @@ export namespace AuthUserBillingInvoiceItemsBlobTotalGetResponseObjectSizeInByte
         AuthUserBillingInvoiceItemsBlobTotalGetResponseObjectSizeInBytesMatrix,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 
     export type Outbound = {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
     export const outboundSchema: z.ZodType<
         Outbound,
         z.ZodTypeDef,
         AuthUserBillingInvoiceItemsBlobTotalGetResponseObjectSizeInBytesMatrix
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 }
 
 /** @internal */
@@ -3708,36 +2871,22 @@ export namespace BlobTotalGetResponseObjectSizeInBytes$ {
         BlobTotalGetResponseObjectSizeInBytes,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            matrix: z
-                .lazy(
-                    () =>
-                        AuthUserBillingInvoiceItemsBlobTotalGetResponseObjectSizeInBytesMatrix$.inboundSchema
-                )
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+    > = z.object({
+        matrix: z
+            .lazy(
+                () =>
+                    AuthUserBillingInvoiceItemsBlobTotalGetResponseObjectSizeInBytesMatrix$.inboundSchema
+            )
+            .optional(),
+        tier: z.number().optional(),
+        price: z.number(),
+        batch: z.number(),
+        threshold: z.number(),
+        name: z.string().optional(),
+        hidden: z.boolean(),
+        disabledAt: z.nullable(z.number()).optional(),
+        enabledAt: z.nullable(z.number()).optional(),
+    });
 
     export type Outbound = {
         matrix?:
@@ -3757,36 +2906,22 @@ export namespace BlobTotalGetResponseObjectSizeInBytes$ {
         Outbound,
         z.ZodTypeDef,
         BlobTotalGetResponseObjectSizeInBytes
-    > = z
-        .object({
-            matrix: z
-                .lazy(
-                    () =>
-                        AuthUserBillingInvoiceItemsBlobTotalGetResponseObjectSizeInBytesMatrix$.outboundSchema
-                )
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+    > = z.object({
+        matrix: z
+            .lazy(
+                () =>
+                    AuthUserBillingInvoiceItemsBlobTotalGetResponseObjectSizeInBytesMatrix$.outboundSchema
+            )
+            .optional(),
+        tier: z.number().optional(),
+        price: z.number(),
+        batch: z.number(),
+        threshold: z.number(),
+        name: z.string().optional(),
+        hidden: z.boolean(),
+        disabledAt: z.nullable(z.number()).optional(),
+        enabledAt: z.nullable(z.number()).optional(),
+    });
 }
 
 /** @internal */
@@ -3795,44 +2930,30 @@ export namespace AuthUserBillingInvoiceItemsBlobTotalSimpleRequestsMatrix$ {
         AuthUserBillingInvoiceItemsBlobTotalSimpleRequestsMatrix,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 
     export type Outbound = {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
     export const outboundSchema: z.ZodType<
         Outbound,
         z.ZodTypeDef,
         AuthUserBillingInvoiceItemsBlobTotalSimpleRequestsMatrix
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 }
 
 /** @internal */
 export namespace BlobTotalSimpleRequests$ {
-    export const inboundSchema: z.ZodType<BlobTotalSimpleRequests, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<BlobTotalSimpleRequests, z.ZodTypeDef, unknown> =
+        z.object({
             matrix: z
                 .lazy(() => AuthUserBillingInvoiceItemsBlobTotalSimpleRequestsMatrix$.inboundSchema)
                 .optional(),
@@ -3844,19 +2965,6 @@ export namespace BlobTotalSimpleRequests$ {
             hidden: z.boolean(),
             disabledAt: z.nullable(z.number()).optional(),
             enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
         });
 
     export type Outbound = {
@@ -3871,8 +2979,8 @@ export namespace BlobTotalSimpleRequests$ {
         enabledAt?: number | null | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, BlobTotalSimpleRequests> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, BlobTotalSimpleRequests> =
+        z.object({
             matrix: z
                 .lazy(
                     () => AuthUserBillingInvoiceItemsBlobTotalSimpleRequestsMatrix$.outboundSchema
@@ -3886,19 +2994,6 @@ export namespace BlobTotalSimpleRequests$ {
             hidden: z.boolean(),
             disabledAt: z.nullable(z.number()).optional(),
             enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
         });
 }
 
@@ -3908,69 +3003,41 @@ export namespace AuthUserBillingInvoiceItemsBuildMinuteMatrix$ {
         AuthUserBillingInvoiceItemsBuildMinuteMatrix,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 
     export type Outbound = {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
     export const outboundSchema: z.ZodType<
         Outbound,
         z.ZodTypeDef,
         AuthUserBillingInvoiceItemsBuildMinuteMatrix
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 }
 
 /** @internal */
 export namespace BuildMinute$ {
-    export const inboundSchema: z.ZodType<BuildMinute, z.ZodTypeDef, unknown> = z
-        .object({
-            matrix: z
-                .lazy(() => AuthUserBillingInvoiceItemsBuildMinuteMatrix$.inboundSchema)
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+    export const inboundSchema: z.ZodType<BuildMinute, z.ZodTypeDef, unknown> = z.object({
+        matrix: z
+            .lazy(() => AuthUserBillingInvoiceItemsBuildMinuteMatrix$.inboundSchema)
+            .optional(),
+        tier: z.number().optional(),
+        price: z.number(),
+        batch: z.number(),
+        threshold: z.number(),
+        name: z.string().optional(),
+        hidden: z.boolean(),
+        disabledAt: z.nullable(z.number()).optional(),
+        enabledAt: z.nullable(z.number()).optional(),
+    });
 
     export type Outbound = {
         matrix?: AuthUserBillingInvoiceItemsBuildMinuteMatrix$.Outbound | undefined;
@@ -3984,33 +3051,19 @@ export namespace BuildMinute$ {
         enabledAt?: number | null | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, BuildMinute> = z
-        .object({
-            matrix: z
-                .lazy(() => AuthUserBillingInvoiceItemsBuildMinuteMatrix$.outboundSchema)
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, BuildMinute> = z.object({
+        matrix: z
+            .lazy(() => AuthUserBillingInvoiceItemsBuildMinuteMatrix$.outboundSchema)
+            .optional(),
+        tier: z.number().optional(),
+        price: z.number(),
+        batch: z.number(),
+        threshold: z.number(),
+        name: z.string().optional(),
+        hidden: z.boolean(),
+        disabledAt: z.nullable(z.number()).optional(),
+        enabledAt: z.nullable(z.number()).optional(),
+    });
 }
 
 /** @internal */
@@ -4019,69 +3072,41 @@ export namespace AuthUserBillingInvoiceItemsDataCacheReadMatrix$ {
         AuthUserBillingInvoiceItemsDataCacheReadMatrix,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 
     export type Outbound = {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
     export const outboundSchema: z.ZodType<
         Outbound,
         z.ZodTypeDef,
         AuthUserBillingInvoiceItemsDataCacheReadMatrix
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 }
 
 /** @internal */
 export namespace DataCacheRead$ {
-    export const inboundSchema: z.ZodType<DataCacheRead, z.ZodTypeDef, unknown> = z
-        .object({
-            matrix: z
-                .lazy(() => AuthUserBillingInvoiceItemsDataCacheReadMatrix$.inboundSchema)
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+    export const inboundSchema: z.ZodType<DataCacheRead, z.ZodTypeDef, unknown> = z.object({
+        matrix: z
+            .lazy(() => AuthUserBillingInvoiceItemsDataCacheReadMatrix$.inboundSchema)
+            .optional(),
+        tier: z.number().optional(),
+        price: z.number(),
+        batch: z.number(),
+        threshold: z.number(),
+        name: z.string().optional(),
+        hidden: z.boolean(),
+        disabledAt: z.nullable(z.number()).optional(),
+        enabledAt: z.nullable(z.number()).optional(),
+    });
 
     export type Outbound = {
         matrix?: AuthUserBillingInvoiceItemsDataCacheReadMatrix$.Outbound | undefined;
@@ -4095,33 +3120,19 @@ export namespace DataCacheRead$ {
         enabledAt?: number | null | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, DataCacheRead> = z
-        .object({
-            matrix: z
-                .lazy(() => AuthUserBillingInvoiceItemsDataCacheReadMatrix$.outboundSchema)
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, DataCacheRead> = z.object({
+        matrix: z
+            .lazy(() => AuthUserBillingInvoiceItemsDataCacheReadMatrix$.outboundSchema)
+            .optional(),
+        tier: z.number().optional(),
+        price: z.number(),
+        batch: z.number(),
+        threshold: z.number(),
+        name: z.string().optional(),
+        hidden: z.boolean(),
+        disabledAt: z.nullable(z.number()).optional(),
+        enabledAt: z.nullable(z.number()).optional(),
+    });
 }
 
 /** @internal */
@@ -4130,69 +3141,41 @@ export namespace AuthUserBillingInvoiceItemsDataCacheRevalidationMatrix$ {
         AuthUserBillingInvoiceItemsDataCacheRevalidationMatrix,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 
     export type Outbound = {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
     export const outboundSchema: z.ZodType<
         Outbound,
         z.ZodTypeDef,
         AuthUserBillingInvoiceItemsDataCacheRevalidationMatrix
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 }
 
 /** @internal */
 export namespace DataCacheRevalidation$ {
-    export const inboundSchema: z.ZodType<DataCacheRevalidation, z.ZodTypeDef, unknown> = z
-        .object({
-            matrix: z
-                .lazy(() => AuthUserBillingInvoiceItemsDataCacheRevalidationMatrix$.inboundSchema)
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+    export const inboundSchema: z.ZodType<DataCacheRevalidation, z.ZodTypeDef, unknown> = z.object({
+        matrix: z
+            .lazy(() => AuthUserBillingInvoiceItemsDataCacheRevalidationMatrix$.inboundSchema)
+            .optional(),
+        tier: z.number().optional(),
+        price: z.number(),
+        batch: z.number(),
+        threshold: z.number(),
+        name: z.string().optional(),
+        hidden: z.boolean(),
+        disabledAt: z.nullable(z.number()).optional(),
+        enabledAt: z.nullable(z.number()).optional(),
+    });
 
     export type Outbound = {
         matrix?: AuthUserBillingInvoiceItemsDataCacheRevalidationMatrix$.Outbound | undefined;
@@ -4206,8 +3189,8 @@ export namespace DataCacheRevalidation$ {
         enabledAt?: number | null | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, DataCacheRevalidation> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, DataCacheRevalidation> =
+        z.object({
             matrix: z
                 .lazy(() => AuthUserBillingInvoiceItemsDataCacheRevalidationMatrix$.outboundSchema)
                 .optional(),
@@ -4219,19 +3202,6 @@ export namespace DataCacheRevalidation$ {
             hidden: z.boolean(),
             disabledAt: z.nullable(z.number()).optional(),
             enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
         });
 }
 
@@ -4241,69 +3211,41 @@ export namespace AuthUserBillingInvoiceItemsDataCacheWriteMatrix$ {
         AuthUserBillingInvoiceItemsDataCacheWriteMatrix,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 
     export type Outbound = {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
     export const outboundSchema: z.ZodType<
         Outbound,
         z.ZodTypeDef,
         AuthUserBillingInvoiceItemsDataCacheWriteMatrix
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 }
 
 /** @internal */
 export namespace DataCacheWrite$ {
-    export const inboundSchema: z.ZodType<DataCacheWrite, z.ZodTypeDef, unknown> = z
-        .object({
-            matrix: z
-                .lazy(() => AuthUserBillingInvoiceItemsDataCacheWriteMatrix$.inboundSchema)
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+    export const inboundSchema: z.ZodType<DataCacheWrite, z.ZodTypeDef, unknown> = z.object({
+        matrix: z
+            .lazy(() => AuthUserBillingInvoiceItemsDataCacheWriteMatrix$.inboundSchema)
+            .optional(),
+        tier: z.number().optional(),
+        price: z.number(),
+        batch: z.number(),
+        threshold: z.number(),
+        name: z.string().optional(),
+        hidden: z.boolean(),
+        disabledAt: z.nullable(z.number()).optional(),
+        enabledAt: z.nullable(z.number()).optional(),
+    });
 
     export type Outbound = {
         matrix?: AuthUserBillingInvoiceItemsDataCacheWriteMatrix$.Outbound | undefined;
@@ -4317,33 +3259,19 @@ export namespace DataCacheWrite$ {
         enabledAt?: number | null | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, DataCacheWrite> = z
-        .object({
-            matrix: z
-                .lazy(() => AuthUserBillingInvoiceItemsDataCacheWriteMatrix$.outboundSchema)
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, DataCacheWrite> = z.object({
+        matrix: z
+            .lazy(() => AuthUserBillingInvoiceItemsDataCacheWriteMatrix$.outboundSchema)
+            .optional(),
+        tier: z.number().optional(),
+        price: z.number(),
+        batch: z.number(),
+        threshold: z.number(),
+        name: z.string().optional(),
+        hidden: z.boolean(),
+        disabledAt: z.nullable(z.number()).optional(),
+        enabledAt: z.nullable(z.number()).optional(),
+    });
 }
 
 /** @internal */
@@ -4352,69 +3280,41 @@ export namespace AuthUserBillingInvoiceItemsEdgeConfigReadMatrix$ {
         AuthUserBillingInvoiceItemsEdgeConfigReadMatrix,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 
     export type Outbound = {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
     export const outboundSchema: z.ZodType<
         Outbound,
         z.ZodTypeDef,
         AuthUserBillingInvoiceItemsEdgeConfigReadMatrix
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 }
 
 /** @internal */
 export namespace EdgeConfigRead$ {
-    export const inboundSchema: z.ZodType<EdgeConfigRead, z.ZodTypeDef, unknown> = z
-        .object({
-            matrix: z
-                .lazy(() => AuthUserBillingInvoiceItemsEdgeConfigReadMatrix$.inboundSchema)
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+    export const inboundSchema: z.ZodType<EdgeConfigRead, z.ZodTypeDef, unknown> = z.object({
+        matrix: z
+            .lazy(() => AuthUserBillingInvoiceItemsEdgeConfigReadMatrix$.inboundSchema)
+            .optional(),
+        tier: z.number().optional(),
+        price: z.number(),
+        batch: z.number(),
+        threshold: z.number(),
+        name: z.string().optional(),
+        hidden: z.boolean(),
+        disabledAt: z.nullable(z.number()).optional(),
+        enabledAt: z.nullable(z.number()).optional(),
+    });
 
     export type Outbound = {
         matrix?: AuthUserBillingInvoiceItemsEdgeConfigReadMatrix$.Outbound | undefined;
@@ -4428,33 +3328,19 @@ export namespace EdgeConfigRead$ {
         enabledAt?: number | null | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, EdgeConfigRead> = z
-        .object({
-            matrix: z
-                .lazy(() => AuthUserBillingInvoiceItemsEdgeConfigReadMatrix$.outboundSchema)
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, EdgeConfigRead> = z.object({
+        matrix: z
+            .lazy(() => AuthUserBillingInvoiceItemsEdgeConfigReadMatrix$.outboundSchema)
+            .optional(),
+        tier: z.number().optional(),
+        price: z.number(),
+        batch: z.number(),
+        threshold: z.number(),
+        name: z.string().optional(),
+        hidden: z.boolean(),
+        disabledAt: z.nullable(z.number()).optional(),
+        enabledAt: z.nullable(z.number()).optional(),
+    });
 }
 
 /** @internal */
@@ -4463,69 +3349,41 @@ export namespace AuthUserBillingInvoiceItemsEdgeConfigWriteMatrix$ {
         AuthUserBillingInvoiceItemsEdgeConfigWriteMatrix,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 
     export type Outbound = {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
     export const outboundSchema: z.ZodType<
         Outbound,
         z.ZodTypeDef,
         AuthUserBillingInvoiceItemsEdgeConfigWriteMatrix
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 }
 
 /** @internal */
 export namespace EdgeConfigWrite$ {
-    export const inboundSchema: z.ZodType<EdgeConfigWrite, z.ZodTypeDef, unknown> = z
-        .object({
-            matrix: z
-                .lazy(() => AuthUserBillingInvoiceItemsEdgeConfigWriteMatrix$.inboundSchema)
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+    export const inboundSchema: z.ZodType<EdgeConfigWrite, z.ZodTypeDef, unknown> = z.object({
+        matrix: z
+            .lazy(() => AuthUserBillingInvoiceItemsEdgeConfigWriteMatrix$.inboundSchema)
+            .optional(),
+        tier: z.number().optional(),
+        price: z.number(),
+        batch: z.number(),
+        threshold: z.number(),
+        name: z.string().optional(),
+        hidden: z.boolean(),
+        disabledAt: z.nullable(z.number()).optional(),
+        enabledAt: z.nullable(z.number()).optional(),
+    });
 
     export type Outbound = {
         matrix?: AuthUserBillingInvoiceItemsEdgeConfigWriteMatrix$.Outbound | undefined;
@@ -4539,33 +3397,19 @@ export namespace EdgeConfigWrite$ {
         enabledAt?: number | null | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, EdgeConfigWrite> = z
-        .object({
-            matrix: z
-                .lazy(() => AuthUserBillingInvoiceItemsEdgeConfigWriteMatrix$.outboundSchema)
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, EdgeConfigWrite> = z.object({
+        matrix: z
+            .lazy(() => AuthUserBillingInvoiceItemsEdgeConfigWriteMatrix$.outboundSchema)
+            .optional(),
+        tier: z.number().optional(),
+        price: z.number(),
+        batch: z.number(),
+        threshold: z.number(),
+        name: z.string().optional(),
+        hidden: z.boolean(),
+        disabledAt: z.nullable(z.number()).optional(),
+        enabledAt: z.nullable(z.number()).optional(),
+    });
 }
 
 /** @internal */
@@ -4574,44 +3418,30 @@ export namespace AuthUserBillingInvoiceItemsEdgeFunctionExecutionUnitsMatrix$ {
         AuthUserBillingInvoiceItemsEdgeFunctionExecutionUnitsMatrix,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 
     export type Outbound = {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
     export const outboundSchema: z.ZodType<
         Outbound,
         z.ZodTypeDef,
         AuthUserBillingInvoiceItemsEdgeFunctionExecutionUnitsMatrix
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 }
 
 /** @internal */
 export namespace EdgeFunctionExecutionUnits$ {
-    export const inboundSchema: z.ZodType<EdgeFunctionExecutionUnits, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<EdgeFunctionExecutionUnits, z.ZodTypeDef, unknown> =
+        z.object({
             matrix: z
                 .lazy(
                     () => AuthUserBillingInvoiceItemsEdgeFunctionExecutionUnitsMatrix$.inboundSchema
@@ -4625,19 +3455,6 @@ export namespace EdgeFunctionExecutionUnits$ {
             hidden: z.boolean(),
             disabledAt: z.nullable(z.number()).optional(),
             enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
         });
 
     export type Outbound = {
@@ -4652,8 +3469,8 @@ export namespace EdgeFunctionExecutionUnits$ {
         enabledAt?: number | null | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, EdgeFunctionExecutionUnits> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, EdgeFunctionExecutionUnits> =
+        z.object({
             matrix: z
                 .lazy(
                     () =>
@@ -4668,19 +3485,6 @@ export namespace EdgeFunctionExecutionUnits$ {
             hidden: z.boolean(),
             disabledAt: z.nullable(z.number()).optional(),
             enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
         });
 }
 
@@ -4690,44 +3494,30 @@ export namespace AuthUserBillingInvoiceItemsEdgeMiddlewareInvocationsMatrix$ {
         AuthUserBillingInvoiceItemsEdgeMiddlewareInvocationsMatrix,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 
     export type Outbound = {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
     export const outboundSchema: z.ZodType<
         Outbound,
         z.ZodTypeDef,
         AuthUserBillingInvoiceItemsEdgeMiddlewareInvocationsMatrix
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 }
 
 /** @internal */
 export namespace EdgeMiddlewareInvocations$ {
-    export const inboundSchema: z.ZodType<EdgeMiddlewareInvocations, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<EdgeMiddlewareInvocations, z.ZodTypeDef, unknown> =
+        z.object({
             matrix: z
                 .lazy(
                     () => AuthUserBillingInvoiceItemsEdgeMiddlewareInvocationsMatrix$.inboundSchema
@@ -4741,19 +3531,6 @@ export namespace EdgeMiddlewareInvocations$ {
             hidden: z.boolean(),
             disabledAt: z.nullable(z.number()).optional(),
             enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
         });
 
     export type Outbound = {
@@ -4768,8 +3545,8 @@ export namespace EdgeMiddlewareInvocations$ {
         enabledAt?: number | null | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, EdgeMiddlewareInvocations> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, EdgeMiddlewareInvocations> =
+        z.object({
             matrix: z
                 .lazy(
                     () => AuthUserBillingInvoiceItemsEdgeMiddlewareInvocationsMatrix$.outboundSchema
@@ -4783,19 +3560,6 @@ export namespace EdgeMiddlewareInvocations$ {
             hidden: z.boolean(),
             disabledAt: z.nullable(z.number()).optional(),
             enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
         });
 }
 
@@ -4805,69 +3569,41 @@ export namespace AuthUserBillingInvoiceItemsEdgeRequestMatrix$ {
         AuthUserBillingInvoiceItemsEdgeRequestMatrix,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 
     export type Outbound = {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
     export const outboundSchema: z.ZodType<
         Outbound,
         z.ZodTypeDef,
         AuthUserBillingInvoiceItemsEdgeRequestMatrix
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 }
 
 /** @internal */
 export namespace EdgeRequest$ {
-    export const inboundSchema: z.ZodType<EdgeRequest, z.ZodTypeDef, unknown> = z
-        .object({
-            matrix: z
-                .lazy(() => AuthUserBillingInvoiceItemsEdgeRequestMatrix$.inboundSchema)
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+    export const inboundSchema: z.ZodType<EdgeRequest, z.ZodTypeDef, unknown> = z.object({
+        matrix: z
+            .lazy(() => AuthUserBillingInvoiceItemsEdgeRequestMatrix$.inboundSchema)
+            .optional(),
+        tier: z.number().optional(),
+        price: z.number(),
+        batch: z.number(),
+        threshold: z.number(),
+        name: z.string().optional(),
+        hidden: z.boolean(),
+        disabledAt: z.nullable(z.number()).optional(),
+        enabledAt: z.nullable(z.number()).optional(),
+    });
 
     export type Outbound = {
         matrix?: AuthUserBillingInvoiceItemsEdgeRequestMatrix$.Outbound | undefined;
@@ -4881,10 +3617,56 @@ export namespace EdgeRequest$ {
         enabledAt?: number | null | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, EdgeRequest> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, EdgeRequest> = z.object({
+        matrix: z
+            .lazy(() => AuthUserBillingInvoiceItemsEdgeRequestMatrix$.outboundSchema)
+            .optional(),
+        tier: z.number().optional(),
+        price: z.number(),
+        batch: z.number(),
+        threshold: z.number(),
+        name: z.string().optional(),
+        hidden: z.boolean(),
+        disabledAt: z.nullable(z.number()).optional(),
+        enabledAt: z.nullable(z.number()).optional(),
+    });
+}
+
+/** @internal */
+export namespace AuthUserBillingInvoiceItemsEdgeRequestAdditionalCpuDurationMatrix$ {
+    export const inboundSchema: z.ZodType<
+        AuthUserBillingInvoiceItemsEdgeRequestAdditionalCpuDurationMatrix,
+        z.ZodTypeDef,
+        unknown
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
+
+    export type Outbound = {
+        defaultUnitPrice: string;
+        dimensionPrices: { [k: string]: string };
+    };
+
+    export const outboundSchema: z.ZodType<
+        Outbound,
+        z.ZodTypeDef,
+        AuthUserBillingInvoiceItemsEdgeRequestAdditionalCpuDurationMatrix
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
+}
+
+/** @internal */
+export namespace EdgeRequestAdditionalCpuDuration$ {
+    export const inboundSchema: z.ZodType<EdgeRequestAdditionalCpuDuration, z.ZodTypeDef, unknown> =
+        z.object({
             matrix: z
-                .lazy(() => AuthUserBillingInvoiceItemsEdgeRequestMatrix$.outboundSchema)
+                .lazy(
+                    () =>
+                        AuthUserBillingInvoiceItemsEdgeRequestAdditionalCpuDurationMatrix$.inboundSchema
+                )
                 .optional(),
             tier: z.number().optional(),
             price: z.number(),
@@ -4894,95 +3676,7 @@ export namespace EdgeRequest$ {
             hidden: z.boolean(),
             disabledAt: z.nullable(z.number()).optional(),
             enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
         });
-}
-
-/** @internal */
-export namespace AuthUserBillingInvoiceItemsEdgeRequestAdditionalCpuDurationMatrix$ {
-    export const inboundSchema: z.ZodType<
-        AuthUserBillingInvoiceItemsEdgeRequestAdditionalCpuDurationMatrix,
-        z.ZodTypeDef,
-        unknown
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
-
-    export type Outbound = {
-        defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
-    };
-
-    export const outboundSchema: z.ZodType<
-        Outbound,
-        z.ZodTypeDef,
-        AuthUserBillingInvoiceItemsEdgeRequestAdditionalCpuDurationMatrix
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
-}
-
-/** @internal */
-export namespace EdgeRequestAdditionalCpuDuration$ {
-    export const inboundSchema: z.ZodType<EdgeRequestAdditionalCpuDuration, z.ZodTypeDef, unknown> =
-        z
-            .object({
-                matrix: z
-                    .lazy(
-                        () =>
-                            AuthUserBillingInvoiceItemsEdgeRequestAdditionalCpuDurationMatrix$.inboundSchema
-                    )
-                    .optional(),
-                tier: z.number().optional(),
-                price: z.number(),
-                batch: z.number(),
-                threshold: z.number(),
-                name: z.string().optional(),
-                hidden: z.boolean(),
-                disabledAt: z.nullable(z.number()).optional(),
-                enabledAt: z.nullable(z.number()).optional(),
-            })
-            .transform((v) => {
-                return {
-                    ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                    ...(v.tier === undefined ? null : { tier: v.tier }),
-                    price: v.price,
-                    batch: v.batch,
-                    threshold: v.threshold,
-                    ...(v.name === undefined ? null : { name: v.name }),
-                    hidden: v.hidden,
-                    ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                    ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-                };
-            });
 
     export type Outbound = {
         matrix?:
@@ -5002,36 +3696,22 @@ export namespace EdgeRequestAdditionalCpuDuration$ {
         Outbound,
         z.ZodTypeDef,
         EdgeRequestAdditionalCpuDuration
-    > = z
-        .object({
-            matrix: z
-                .lazy(
-                    () =>
-                        AuthUserBillingInvoiceItemsEdgeRequestAdditionalCpuDurationMatrix$.outboundSchema
-                )
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+    > = z.object({
+        matrix: z
+            .lazy(
+                () =>
+                    AuthUserBillingInvoiceItemsEdgeRequestAdditionalCpuDurationMatrix$.outboundSchema
+            )
+            .optional(),
+        tier: z.number().optional(),
+        price: z.number(),
+        batch: z.number(),
+        threshold: z.number(),
+        name: z.string().optional(),
+        hidden: z.boolean(),
+        disabledAt: z.nullable(z.number()).optional(),
+        enabledAt: z.nullable(z.number()).optional(),
+    });
 }
 
 /** @internal */
@@ -5040,69 +3720,41 @@ export namespace AuthUserBillingInvoiceItemsFastDataTransferMatrix$ {
         AuthUserBillingInvoiceItemsFastDataTransferMatrix,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 
     export type Outbound = {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
     export const outboundSchema: z.ZodType<
         Outbound,
         z.ZodTypeDef,
         AuthUserBillingInvoiceItemsFastDataTransferMatrix
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 }
 
 /** @internal */
 export namespace FastDataTransfer$ {
-    export const inboundSchema: z.ZodType<FastDataTransfer, z.ZodTypeDef, unknown> = z
-        .object({
-            matrix: z
-                .lazy(() => AuthUserBillingInvoiceItemsFastDataTransferMatrix$.inboundSchema)
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+    export const inboundSchema: z.ZodType<FastDataTransfer, z.ZodTypeDef, unknown> = z.object({
+        matrix: z
+            .lazy(() => AuthUserBillingInvoiceItemsFastDataTransferMatrix$.inboundSchema)
+            .optional(),
+        tier: z.number().optional(),
+        price: z.number(),
+        batch: z.number(),
+        threshold: z.number(),
+        name: z.string().optional(),
+        hidden: z.boolean(),
+        disabledAt: z.nullable(z.number()).optional(),
+        enabledAt: z.nullable(z.number()).optional(),
+    });
 
     export type Outbound = {
         matrix?: AuthUserBillingInvoiceItemsFastDataTransferMatrix$.Outbound | undefined;
@@ -5116,33 +3768,19 @@ export namespace FastDataTransfer$ {
         enabledAt?: number | null | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, FastDataTransfer> = z
-        .object({
-            matrix: z
-                .lazy(() => AuthUserBillingInvoiceItemsFastDataTransferMatrix$.outboundSchema)
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, FastDataTransfer> = z.object({
+        matrix: z
+            .lazy(() => AuthUserBillingInvoiceItemsFastDataTransferMatrix$.outboundSchema)
+            .optional(),
+        tier: z.number().optional(),
+        price: z.number(),
+        batch: z.number(),
+        threshold: z.number(),
+        name: z.string().optional(),
+        hidden: z.boolean(),
+        disabledAt: z.nullable(z.number()).optional(),
+        enabledAt: z.nullable(z.number()).optional(),
+    });
 }
 
 /** @internal */
@@ -5151,69 +3789,41 @@ export namespace AuthUserBillingInvoiceItemsFastOriginTransferMatrix$ {
         AuthUserBillingInvoiceItemsFastOriginTransferMatrix,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 
     export type Outbound = {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
     export const outboundSchema: z.ZodType<
         Outbound,
         z.ZodTypeDef,
         AuthUserBillingInvoiceItemsFastOriginTransferMatrix
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 }
 
 /** @internal */
 export namespace FastOriginTransfer$ {
-    export const inboundSchema: z.ZodType<FastOriginTransfer, z.ZodTypeDef, unknown> = z
-        .object({
-            matrix: z
-                .lazy(() => AuthUserBillingInvoiceItemsFastOriginTransferMatrix$.inboundSchema)
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+    export const inboundSchema: z.ZodType<FastOriginTransfer, z.ZodTypeDef, unknown> = z.object({
+        matrix: z
+            .lazy(() => AuthUserBillingInvoiceItemsFastOriginTransferMatrix$.inboundSchema)
+            .optional(),
+        tier: z.number().optional(),
+        price: z.number(),
+        batch: z.number(),
+        threshold: z.number(),
+        name: z.string().optional(),
+        hidden: z.boolean(),
+        disabledAt: z.nullable(z.number()).optional(),
+        enabledAt: z.nullable(z.number()).optional(),
+    });
 
     export type Outbound = {
         matrix?: AuthUserBillingInvoiceItemsFastOriginTransferMatrix$.Outbound | undefined;
@@ -5227,33 +3837,19 @@ export namespace FastOriginTransfer$ {
         enabledAt?: number | null | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, FastOriginTransfer> = z
-        .object({
-            matrix: z
-                .lazy(() => AuthUserBillingInvoiceItemsFastOriginTransferMatrix$.outboundSchema)
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, FastOriginTransfer> = z.object({
+        matrix: z
+            .lazy(() => AuthUserBillingInvoiceItemsFastOriginTransferMatrix$.outboundSchema)
+            .optional(),
+        tier: z.number().optional(),
+        price: z.number(),
+        batch: z.number(),
+        threshold: z.number(),
+        name: z.string().optional(),
+        hidden: z.boolean(),
+        disabledAt: z.nullable(z.number()).optional(),
+        enabledAt: z.nullable(z.number()).optional(),
+    });
 }
 
 /** @internal */
@@ -5262,69 +3858,41 @@ export namespace AuthUserBillingInvoiceItemsFunctionDurationMatrix$ {
         AuthUserBillingInvoiceItemsFunctionDurationMatrix,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 
     export type Outbound = {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
     export const outboundSchema: z.ZodType<
         Outbound,
         z.ZodTypeDef,
         AuthUserBillingInvoiceItemsFunctionDurationMatrix
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 }
 
 /** @internal */
 export namespace FunctionDuration$ {
-    export const inboundSchema: z.ZodType<FunctionDuration, z.ZodTypeDef, unknown> = z
-        .object({
-            matrix: z
-                .lazy(() => AuthUserBillingInvoiceItemsFunctionDurationMatrix$.inboundSchema)
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+    export const inboundSchema: z.ZodType<FunctionDuration, z.ZodTypeDef, unknown> = z.object({
+        matrix: z
+            .lazy(() => AuthUserBillingInvoiceItemsFunctionDurationMatrix$.inboundSchema)
+            .optional(),
+        tier: z.number().optional(),
+        price: z.number(),
+        batch: z.number(),
+        threshold: z.number(),
+        name: z.string().optional(),
+        hidden: z.boolean(),
+        disabledAt: z.nullable(z.number()).optional(),
+        enabledAt: z.nullable(z.number()).optional(),
+    });
 
     export type Outbound = {
         matrix?: AuthUserBillingInvoiceItemsFunctionDurationMatrix$.Outbound | undefined;
@@ -5338,33 +3906,19 @@ export namespace FunctionDuration$ {
         enabledAt?: number | null | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, FunctionDuration> = z
-        .object({
-            matrix: z
-                .lazy(() => AuthUserBillingInvoiceItemsFunctionDurationMatrix$.outboundSchema)
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, FunctionDuration> = z.object({
+        matrix: z
+            .lazy(() => AuthUserBillingInvoiceItemsFunctionDurationMatrix$.outboundSchema)
+            .optional(),
+        tier: z.number().optional(),
+        price: z.number(),
+        batch: z.number(),
+        threshold: z.number(),
+        name: z.string().optional(),
+        hidden: z.boolean(),
+        disabledAt: z.nullable(z.number()).optional(),
+        enabledAt: z.nullable(z.number()).optional(),
+    });
 }
 
 /** @internal */
@@ -5373,69 +3927,41 @@ export namespace AuthUserBillingInvoiceItemsFunctionInvocationMatrix$ {
         AuthUserBillingInvoiceItemsFunctionInvocationMatrix,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 
     export type Outbound = {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
     export const outboundSchema: z.ZodType<
         Outbound,
         z.ZodTypeDef,
         AuthUserBillingInvoiceItemsFunctionInvocationMatrix
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 }
 
 /** @internal */
 export namespace FunctionInvocation$ {
-    export const inboundSchema: z.ZodType<FunctionInvocation, z.ZodTypeDef, unknown> = z
-        .object({
-            matrix: z
-                .lazy(() => AuthUserBillingInvoiceItemsFunctionInvocationMatrix$.inboundSchema)
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+    export const inboundSchema: z.ZodType<FunctionInvocation, z.ZodTypeDef, unknown> = z.object({
+        matrix: z
+            .lazy(() => AuthUserBillingInvoiceItemsFunctionInvocationMatrix$.inboundSchema)
+            .optional(),
+        tier: z.number().optional(),
+        price: z.number(),
+        batch: z.number(),
+        threshold: z.number(),
+        name: z.string().optional(),
+        hidden: z.boolean(),
+        disabledAt: z.nullable(z.number()).optional(),
+        enabledAt: z.nullable(z.number()).optional(),
+    });
 
     export type Outbound = {
         matrix?: AuthUserBillingInvoiceItemsFunctionInvocationMatrix$.Outbound | undefined;
@@ -5449,33 +3975,19 @@ export namespace FunctionInvocation$ {
         enabledAt?: number | null | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, FunctionInvocation> = z
-        .object({
-            matrix: z
-                .lazy(() => AuthUserBillingInvoiceItemsFunctionInvocationMatrix$.outboundSchema)
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, FunctionInvocation> = z.object({
+        matrix: z
+            .lazy(() => AuthUserBillingInvoiceItemsFunctionInvocationMatrix$.outboundSchema)
+            .optional(),
+        tier: z.number().optional(),
+        price: z.number(),
+        batch: z.number(),
+        threshold: z.number(),
+        name: z.string().optional(),
+        hidden: z.boolean(),
+        disabledAt: z.nullable(z.number()).optional(),
+        enabledAt: z.nullable(z.number()).optional(),
+    });
 }
 
 /** @internal */
@@ -5484,69 +3996,41 @@ export namespace AuthUserBillingInvoiceItemsLogDrainsVolumeMatrix$ {
         AuthUserBillingInvoiceItemsLogDrainsVolumeMatrix,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 
     export type Outbound = {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
     export const outboundSchema: z.ZodType<
         Outbound,
         z.ZodTypeDef,
         AuthUserBillingInvoiceItemsLogDrainsVolumeMatrix
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 }
 
 /** @internal */
 export namespace LogDrainsVolume$ {
-    export const inboundSchema: z.ZodType<LogDrainsVolume, z.ZodTypeDef, unknown> = z
-        .object({
-            matrix: z
-                .lazy(() => AuthUserBillingInvoiceItemsLogDrainsVolumeMatrix$.inboundSchema)
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+    export const inboundSchema: z.ZodType<LogDrainsVolume, z.ZodTypeDef, unknown> = z.object({
+        matrix: z
+            .lazy(() => AuthUserBillingInvoiceItemsLogDrainsVolumeMatrix$.inboundSchema)
+            .optional(),
+        tier: z.number().optional(),
+        price: z.number(),
+        batch: z.number(),
+        threshold: z.number(),
+        name: z.string().optional(),
+        hidden: z.boolean(),
+        disabledAt: z.nullable(z.number()).optional(),
+        enabledAt: z.nullable(z.number()).optional(),
+    });
 
     export type Outbound = {
         matrix?: AuthUserBillingInvoiceItemsLogDrainsVolumeMatrix$.Outbound | undefined;
@@ -5560,33 +4044,19 @@ export namespace LogDrainsVolume$ {
         enabledAt?: number | null | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, LogDrainsVolume> = z
-        .object({
-            matrix: z
-                .lazy(() => AuthUserBillingInvoiceItemsLogDrainsVolumeMatrix$.outboundSchema)
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, LogDrainsVolume> = z.object({
+        matrix: z
+            .lazy(() => AuthUserBillingInvoiceItemsLogDrainsVolumeMatrix$.outboundSchema)
+            .optional(),
+        tier: z.number().optional(),
+        price: z.number(),
+        batch: z.number(),
+        threshold: z.number(),
+        name: z.string().optional(),
+        hidden: z.boolean(),
+        disabledAt: z.nullable(z.number()).optional(),
+        enabledAt: z.nullable(z.number()).optional(),
+    });
 }
 
 /** @internal */
@@ -5595,69 +4065,41 @@ export namespace AuthUserBillingInvoiceItemsMonitoringMetricMatrix$ {
         AuthUserBillingInvoiceItemsMonitoringMetricMatrix,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 
     export type Outbound = {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
     export const outboundSchema: z.ZodType<
         Outbound,
         z.ZodTypeDef,
         AuthUserBillingInvoiceItemsMonitoringMetricMatrix
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 }
 
 /** @internal */
 export namespace MonitoringMetric$ {
-    export const inboundSchema: z.ZodType<MonitoringMetric, z.ZodTypeDef, unknown> = z
-        .object({
-            matrix: z
-                .lazy(() => AuthUserBillingInvoiceItemsMonitoringMetricMatrix$.inboundSchema)
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+    export const inboundSchema: z.ZodType<MonitoringMetric, z.ZodTypeDef, unknown> = z.object({
+        matrix: z
+            .lazy(() => AuthUserBillingInvoiceItemsMonitoringMetricMatrix$.inboundSchema)
+            .optional(),
+        tier: z.number().optional(),
+        price: z.number(),
+        batch: z.number(),
+        threshold: z.number(),
+        name: z.string().optional(),
+        hidden: z.boolean(),
+        disabledAt: z.nullable(z.number()).optional(),
+        enabledAt: z.nullable(z.number()).optional(),
+    });
 
     export type Outbound = {
         matrix?: AuthUserBillingInvoiceItemsMonitoringMetricMatrix$.Outbound | undefined;
@@ -5671,33 +4113,19 @@ export namespace MonitoringMetric$ {
         enabledAt?: number | null | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, MonitoringMetric> = z
-        .object({
-            matrix: z
-                .lazy(() => AuthUserBillingInvoiceItemsMonitoringMetricMatrix$.outboundSchema)
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, MonitoringMetric> = z.object({
+        matrix: z
+            .lazy(() => AuthUserBillingInvoiceItemsMonitoringMetricMatrix$.outboundSchema)
+            .optional(),
+        tier: z.number().optional(),
+        price: z.number(),
+        batch: z.number(),
+        threshold: z.number(),
+        name: z.string().optional(),
+        hidden: z.boolean(),
+        disabledAt: z.nullable(z.number()).optional(),
+        enabledAt: z.nullable(z.number()).optional(),
+    });
 }
 
 /** @internal */
@@ -5706,69 +4134,41 @@ export namespace AuthUserBillingInvoiceItemsPostgresComputeTimeMatrix$ {
         AuthUserBillingInvoiceItemsPostgresComputeTimeMatrix,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 
     export type Outbound = {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
     export const outboundSchema: z.ZodType<
         Outbound,
         z.ZodTypeDef,
         AuthUserBillingInvoiceItemsPostgresComputeTimeMatrix
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 }
 
 /** @internal */
 export namespace PostgresComputeTime$ {
-    export const inboundSchema: z.ZodType<PostgresComputeTime, z.ZodTypeDef, unknown> = z
-        .object({
-            matrix: z
-                .lazy(() => AuthUserBillingInvoiceItemsPostgresComputeTimeMatrix$.inboundSchema)
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+    export const inboundSchema: z.ZodType<PostgresComputeTime, z.ZodTypeDef, unknown> = z.object({
+        matrix: z
+            .lazy(() => AuthUserBillingInvoiceItemsPostgresComputeTimeMatrix$.inboundSchema)
+            .optional(),
+        tier: z.number().optional(),
+        price: z.number(),
+        batch: z.number(),
+        threshold: z.number(),
+        name: z.string().optional(),
+        hidden: z.boolean(),
+        disabledAt: z.nullable(z.number()).optional(),
+        enabledAt: z.nullable(z.number()).optional(),
+    });
 
     export type Outbound = {
         matrix?: AuthUserBillingInvoiceItemsPostgresComputeTimeMatrix$.Outbound | undefined;
@@ -5782,33 +4182,19 @@ export namespace PostgresComputeTime$ {
         enabledAt?: number | null | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, PostgresComputeTime> = z
-        .object({
-            matrix: z
-                .lazy(() => AuthUserBillingInvoiceItemsPostgresComputeTimeMatrix$.outboundSchema)
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, PostgresComputeTime> = z.object({
+        matrix: z
+            .lazy(() => AuthUserBillingInvoiceItemsPostgresComputeTimeMatrix$.outboundSchema)
+            .optional(),
+        tier: z.number().optional(),
+        price: z.number(),
+        batch: z.number(),
+        threshold: z.number(),
+        name: z.string().optional(),
+        hidden: z.boolean(),
+        disabledAt: z.nullable(z.number()).optional(),
+        enabledAt: z.nullable(z.number()).optional(),
+    });
 }
 
 /** @internal */
@@ -5817,69 +4203,41 @@ export namespace AuthUserBillingInvoiceItemsPostgresDataStorageMatrix$ {
         AuthUserBillingInvoiceItemsPostgresDataStorageMatrix,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 
     export type Outbound = {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
     export const outboundSchema: z.ZodType<
         Outbound,
         z.ZodTypeDef,
         AuthUserBillingInvoiceItemsPostgresDataStorageMatrix
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 }
 
 /** @internal */
 export namespace PostgresDataStorage$ {
-    export const inboundSchema: z.ZodType<PostgresDataStorage, z.ZodTypeDef, unknown> = z
-        .object({
-            matrix: z
-                .lazy(() => AuthUserBillingInvoiceItemsPostgresDataStorageMatrix$.inboundSchema)
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+    export const inboundSchema: z.ZodType<PostgresDataStorage, z.ZodTypeDef, unknown> = z.object({
+        matrix: z
+            .lazy(() => AuthUserBillingInvoiceItemsPostgresDataStorageMatrix$.inboundSchema)
+            .optional(),
+        tier: z.number().optional(),
+        price: z.number(),
+        batch: z.number(),
+        threshold: z.number(),
+        name: z.string().optional(),
+        hidden: z.boolean(),
+        disabledAt: z.nullable(z.number()).optional(),
+        enabledAt: z.nullable(z.number()).optional(),
+    });
 
     export type Outbound = {
         matrix?: AuthUserBillingInvoiceItemsPostgresDataStorageMatrix$.Outbound | undefined;
@@ -5893,33 +4251,19 @@ export namespace PostgresDataStorage$ {
         enabledAt?: number | null | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, PostgresDataStorage> = z
-        .object({
-            matrix: z
-                .lazy(() => AuthUserBillingInvoiceItemsPostgresDataStorageMatrix$.outboundSchema)
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, PostgresDataStorage> = z.object({
+        matrix: z
+            .lazy(() => AuthUserBillingInvoiceItemsPostgresDataStorageMatrix$.outboundSchema)
+            .optional(),
+        tier: z.number().optional(),
+        price: z.number(),
+        batch: z.number(),
+        threshold: z.number(),
+        name: z.string().optional(),
+        hidden: z.boolean(),
+        disabledAt: z.nullable(z.number()).optional(),
+        enabledAt: z.nullable(z.number()).optional(),
+    });
 }
 
 /** @internal */
@@ -5928,69 +4272,41 @@ export namespace AuthUserBillingInvoiceItemsPostgresDataTransferMatrix$ {
         AuthUserBillingInvoiceItemsPostgresDataTransferMatrix,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 
     export type Outbound = {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
     export const outboundSchema: z.ZodType<
         Outbound,
         z.ZodTypeDef,
         AuthUserBillingInvoiceItemsPostgresDataTransferMatrix
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 }
 
 /** @internal */
 export namespace PostgresDataTransfer$ {
-    export const inboundSchema: z.ZodType<PostgresDataTransfer, z.ZodTypeDef, unknown> = z
-        .object({
-            matrix: z
-                .lazy(() => AuthUserBillingInvoiceItemsPostgresDataTransferMatrix$.inboundSchema)
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+    export const inboundSchema: z.ZodType<PostgresDataTransfer, z.ZodTypeDef, unknown> = z.object({
+        matrix: z
+            .lazy(() => AuthUserBillingInvoiceItemsPostgresDataTransferMatrix$.inboundSchema)
+            .optional(),
+        tier: z.number().optional(),
+        price: z.number(),
+        batch: z.number(),
+        threshold: z.number(),
+        name: z.string().optional(),
+        hidden: z.boolean(),
+        disabledAt: z.nullable(z.number()).optional(),
+        enabledAt: z.nullable(z.number()).optional(),
+    });
 
     export type Outbound = {
         matrix?: AuthUserBillingInvoiceItemsPostgresDataTransferMatrix$.Outbound | undefined;
@@ -6004,8 +4320,8 @@ export namespace PostgresDataTransfer$ {
         enabledAt?: number | null | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, PostgresDataTransfer> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, PostgresDataTransfer> = z.object(
+        {
             matrix: z
                 .lazy(() => AuthUserBillingInvoiceItemsPostgresDataTransferMatrix$.outboundSchema)
                 .optional(),
@@ -6017,20 +4333,8 @@ export namespace PostgresDataTransfer$ {
             hidden: z.boolean(),
             disabledAt: z.nullable(z.number()).optional(),
             enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+        }
+    );
 }
 
 /** @internal */
@@ -6039,69 +4343,41 @@ export namespace AuthUserBillingInvoiceItemsPostgresDatabaseMatrix$ {
         AuthUserBillingInvoiceItemsPostgresDatabaseMatrix,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 
     export type Outbound = {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
     export const outboundSchema: z.ZodType<
         Outbound,
         z.ZodTypeDef,
         AuthUserBillingInvoiceItemsPostgresDatabaseMatrix
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 }
 
 /** @internal */
 export namespace PostgresDatabase$ {
-    export const inboundSchema: z.ZodType<PostgresDatabase, z.ZodTypeDef, unknown> = z
-        .object({
-            matrix: z
-                .lazy(() => AuthUserBillingInvoiceItemsPostgresDatabaseMatrix$.inboundSchema)
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+    export const inboundSchema: z.ZodType<PostgresDatabase, z.ZodTypeDef, unknown> = z.object({
+        matrix: z
+            .lazy(() => AuthUserBillingInvoiceItemsPostgresDatabaseMatrix$.inboundSchema)
+            .optional(),
+        tier: z.number().optional(),
+        price: z.number(),
+        batch: z.number(),
+        threshold: z.number(),
+        name: z.string().optional(),
+        hidden: z.boolean(),
+        disabledAt: z.nullable(z.number()).optional(),
+        enabledAt: z.nullable(z.number()).optional(),
+    });
 
     export type Outbound = {
         matrix?: AuthUserBillingInvoiceItemsPostgresDatabaseMatrix$.Outbound | undefined;
@@ -6115,33 +4391,19 @@ export namespace PostgresDatabase$ {
         enabledAt?: number | null | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, PostgresDatabase> = z
-        .object({
-            matrix: z
-                .lazy(() => AuthUserBillingInvoiceItemsPostgresDatabaseMatrix$.outboundSchema)
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, PostgresDatabase> = z.object({
+        matrix: z
+            .lazy(() => AuthUserBillingInvoiceItemsPostgresDatabaseMatrix$.outboundSchema)
+            .optional(),
+        tier: z.number().optional(),
+        price: z.number(),
+        batch: z.number(),
+        threshold: z.number(),
+        name: z.string().optional(),
+        hidden: z.boolean(),
+        disabledAt: z.nullable(z.number()).optional(),
+        enabledAt: z.nullable(z.number()).optional(),
+    });
 }
 
 /** @internal */
@@ -6150,69 +4412,41 @@ export namespace AuthUserBillingInvoiceItemsPostgresWrittenDataMatrix$ {
         AuthUserBillingInvoiceItemsPostgresWrittenDataMatrix,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 
     export type Outbound = {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
     export const outboundSchema: z.ZodType<
         Outbound,
         z.ZodTypeDef,
         AuthUserBillingInvoiceItemsPostgresWrittenDataMatrix
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 }
 
 /** @internal */
 export namespace PostgresWrittenData$ {
-    export const inboundSchema: z.ZodType<PostgresWrittenData, z.ZodTypeDef, unknown> = z
-        .object({
-            matrix: z
-                .lazy(() => AuthUserBillingInvoiceItemsPostgresWrittenDataMatrix$.inboundSchema)
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+    export const inboundSchema: z.ZodType<PostgresWrittenData, z.ZodTypeDef, unknown> = z.object({
+        matrix: z
+            .lazy(() => AuthUserBillingInvoiceItemsPostgresWrittenDataMatrix$.inboundSchema)
+            .optional(),
+        tier: z.number().optional(),
+        price: z.number(),
+        batch: z.number(),
+        threshold: z.number(),
+        name: z.string().optional(),
+        hidden: z.boolean(),
+        disabledAt: z.nullable(z.number()).optional(),
+        enabledAt: z.nullable(z.number()).optional(),
+    });
 
     export type Outbound = {
         matrix?: AuthUserBillingInvoiceItemsPostgresWrittenDataMatrix$.Outbound | undefined;
@@ -6226,33 +4460,19 @@ export namespace PostgresWrittenData$ {
         enabledAt?: number | null | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, PostgresWrittenData> = z
-        .object({
-            matrix: z
-                .lazy(() => AuthUserBillingInvoiceItemsPostgresWrittenDataMatrix$.outboundSchema)
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, PostgresWrittenData> = z.object({
+        matrix: z
+            .lazy(() => AuthUserBillingInvoiceItemsPostgresWrittenDataMatrix$.outboundSchema)
+            .optional(),
+        tier: z.number().optional(),
+        price: z.number(),
+        batch: z.number(),
+        threshold: z.number(),
+        name: z.string().optional(),
+        hidden: z.boolean(),
+        disabledAt: z.nullable(z.number()).optional(),
+        enabledAt: z.nullable(z.number()).optional(),
+    });
 }
 
 /** @internal */
@@ -6261,44 +4481,30 @@ export namespace AuthUserBillingInvoiceItemsServerlessFunctionExecutionMatrix$ {
         AuthUserBillingInvoiceItemsServerlessFunctionExecutionMatrix,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 
     export type Outbound = {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
     export const outboundSchema: z.ZodType<
         Outbound,
         z.ZodTypeDef,
         AuthUserBillingInvoiceItemsServerlessFunctionExecutionMatrix
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 }
 
 /** @internal */
 export namespace ServerlessFunctionExecution$ {
-    export const inboundSchema: z.ZodType<ServerlessFunctionExecution, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<ServerlessFunctionExecution, z.ZodTypeDef, unknown> =
+        z.object({
             matrix: z
                 .lazy(
                     () =>
@@ -6313,19 +4519,6 @@ export namespace ServerlessFunctionExecution$ {
             hidden: z.boolean(),
             disabledAt: z.nullable(z.number()).optional(),
             enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
         });
 
     export type Outbound = {
@@ -6340,8 +4533,8 @@ export namespace ServerlessFunctionExecution$ {
         enabledAt?: number | null | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, ServerlessFunctionExecution> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, ServerlessFunctionExecution> =
+        z.object({
             matrix: z
                 .lazy(
                     () =>
@@ -6356,19 +4549,6 @@ export namespace ServerlessFunctionExecution$ {
             hidden: z.boolean(),
             disabledAt: z.nullable(z.number()).optional(),
             enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
         });
 }
 
@@ -6378,69 +4558,41 @@ export namespace AuthUserBillingInvoiceItemsSourceImagesMatrix$ {
         AuthUserBillingInvoiceItemsSourceImagesMatrix,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 
     export type Outbound = {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
     export const outboundSchema: z.ZodType<
         Outbound,
         z.ZodTypeDef,
         AuthUserBillingInvoiceItemsSourceImagesMatrix
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 }
 
 /** @internal */
 export namespace SourceImages$ {
-    export const inboundSchema: z.ZodType<SourceImages, z.ZodTypeDef, unknown> = z
-        .object({
-            matrix: z
-                .lazy(() => AuthUserBillingInvoiceItemsSourceImagesMatrix$.inboundSchema)
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+    export const inboundSchema: z.ZodType<SourceImages, z.ZodTypeDef, unknown> = z.object({
+        matrix: z
+            .lazy(() => AuthUserBillingInvoiceItemsSourceImagesMatrix$.inboundSchema)
+            .optional(),
+        tier: z.number().optional(),
+        price: z.number(),
+        batch: z.number(),
+        threshold: z.number(),
+        name: z.string().optional(),
+        hidden: z.boolean(),
+        disabledAt: z.nullable(z.number()).optional(),
+        enabledAt: z.nullable(z.number()).optional(),
+    });
 
     export type Outbound = {
         matrix?: AuthUserBillingInvoiceItemsSourceImagesMatrix$.Outbound | undefined;
@@ -6454,33 +4606,19 @@ export namespace SourceImages$ {
         enabledAt?: number | null | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, SourceImages> = z
-        .object({
-            matrix: z
-                .lazy(() => AuthUserBillingInvoiceItemsSourceImagesMatrix$.outboundSchema)
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, SourceImages> = z.object({
+        matrix: z
+            .lazy(() => AuthUserBillingInvoiceItemsSourceImagesMatrix$.outboundSchema)
+            .optional(),
+        tier: z.number().optional(),
+        price: z.number(),
+        batch: z.number(),
+        threshold: z.number(),
+        name: z.string().optional(),
+        hidden: z.boolean(),
+        disabledAt: z.nullable(z.number()).optional(),
+        enabledAt: z.nullable(z.number()).optional(),
+    });
 }
 
 /** @internal */
@@ -6489,38 +4627,24 @@ export namespace AuthUserBillingInvoiceItemsStorageRedisTotalBandwidthInBytesMat
         AuthUserBillingInvoiceItemsStorageRedisTotalBandwidthInBytesMatrix,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 
     export type Outbound = {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
     export const outboundSchema: z.ZodType<
         Outbound,
         z.ZodTypeDef,
         AuthUserBillingInvoiceItemsStorageRedisTotalBandwidthInBytesMatrix
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 }
 
 /** @internal */
@@ -6529,36 +4653,22 @@ export namespace StorageRedisTotalBandwidthInBytes$ {
         StorageRedisTotalBandwidthInBytes,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            matrix: z
-                .lazy(
-                    () =>
-                        AuthUserBillingInvoiceItemsStorageRedisTotalBandwidthInBytesMatrix$.inboundSchema
-                )
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+    > = z.object({
+        matrix: z
+            .lazy(
+                () =>
+                    AuthUserBillingInvoiceItemsStorageRedisTotalBandwidthInBytesMatrix$.inboundSchema
+            )
+            .optional(),
+        tier: z.number().optional(),
+        price: z.number(),
+        batch: z.number(),
+        threshold: z.number(),
+        name: z.string().optional(),
+        hidden: z.boolean(),
+        disabledAt: z.nullable(z.number()).optional(),
+        enabledAt: z.nullable(z.number()).optional(),
+    });
 
     export type Outbound = {
         matrix?:
@@ -6578,36 +4688,22 @@ export namespace StorageRedisTotalBandwidthInBytes$ {
         Outbound,
         z.ZodTypeDef,
         StorageRedisTotalBandwidthInBytes
-    > = z
-        .object({
-            matrix: z
-                .lazy(
-                    () =>
-                        AuthUserBillingInvoiceItemsStorageRedisTotalBandwidthInBytesMatrix$.outboundSchema
-                )
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+    > = z.object({
+        matrix: z
+            .lazy(
+                () =>
+                    AuthUserBillingInvoiceItemsStorageRedisTotalBandwidthInBytesMatrix$.outboundSchema
+            )
+            .optional(),
+        tier: z.number().optional(),
+        price: z.number(),
+        batch: z.number(),
+        threshold: z.number(),
+        name: z.string().optional(),
+        hidden: z.boolean(),
+        disabledAt: z.nullable(z.number()).optional(),
+        enabledAt: z.nullable(z.number()).optional(),
+    });
 }
 
 /** @internal */
@@ -6616,44 +4712,30 @@ export namespace AuthUserBillingInvoiceItemsStorageRedisTotalCommandsMatrix$ {
         AuthUserBillingInvoiceItemsStorageRedisTotalCommandsMatrix,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 
     export type Outbound = {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
     export const outboundSchema: z.ZodType<
         Outbound,
         z.ZodTypeDef,
         AuthUserBillingInvoiceItemsStorageRedisTotalCommandsMatrix
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 }
 
 /** @internal */
 export namespace StorageRedisTotalCommands$ {
-    export const inboundSchema: z.ZodType<StorageRedisTotalCommands, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<StorageRedisTotalCommands, z.ZodTypeDef, unknown> =
+        z.object({
             matrix: z
                 .lazy(
                     () => AuthUserBillingInvoiceItemsStorageRedisTotalCommandsMatrix$.inboundSchema
@@ -6667,19 +4749,6 @@ export namespace StorageRedisTotalCommands$ {
             hidden: z.boolean(),
             disabledAt: z.nullable(z.number()).optional(),
             enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
         });
 
     export type Outbound = {
@@ -6694,8 +4763,8 @@ export namespace StorageRedisTotalCommands$ {
         enabledAt?: number | null | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, StorageRedisTotalCommands> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, StorageRedisTotalCommands> =
+        z.object({
             matrix: z
                 .lazy(
                     () => AuthUserBillingInvoiceItemsStorageRedisTotalCommandsMatrix$.outboundSchema
@@ -6709,19 +4778,6 @@ export namespace StorageRedisTotalCommands$ {
             hidden: z.boolean(),
             disabledAt: z.nullable(z.number()).optional(),
             enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
         });
 }
 
@@ -6731,38 +4787,24 @@ export namespace AuthUserBillingInvoiceItemsStorageRedisTotalDailyAvgStorageInBy
         AuthUserBillingInvoiceItemsStorageRedisTotalDailyAvgStorageInBytesMatrix,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 
     export type Outbound = {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
     export const outboundSchema: z.ZodType<
         Outbound,
         z.ZodTypeDef,
         AuthUserBillingInvoiceItemsStorageRedisTotalDailyAvgStorageInBytesMatrix
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 }
 
 /** @internal */
@@ -6771,36 +4813,22 @@ export namespace StorageRedisTotalDailyAvgStorageInBytes$ {
         StorageRedisTotalDailyAvgStorageInBytes,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            matrix: z
-                .lazy(
-                    () =>
-                        AuthUserBillingInvoiceItemsStorageRedisTotalDailyAvgStorageInBytesMatrix$.inboundSchema
-                )
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+    > = z.object({
+        matrix: z
+            .lazy(
+                () =>
+                    AuthUserBillingInvoiceItemsStorageRedisTotalDailyAvgStorageInBytesMatrix$.inboundSchema
+            )
+            .optional(),
+        tier: z.number().optional(),
+        price: z.number(),
+        batch: z.number(),
+        threshold: z.number(),
+        name: z.string().optional(),
+        hidden: z.boolean(),
+        disabledAt: z.nullable(z.number()).optional(),
+        enabledAt: z.nullable(z.number()).optional(),
+    });
 
     export type Outbound = {
         matrix?:
@@ -6820,36 +4848,22 @@ export namespace StorageRedisTotalDailyAvgStorageInBytes$ {
         Outbound,
         z.ZodTypeDef,
         StorageRedisTotalDailyAvgStorageInBytes
-    > = z
-        .object({
-            matrix: z
-                .lazy(
-                    () =>
-                        AuthUserBillingInvoiceItemsStorageRedisTotalDailyAvgStorageInBytesMatrix$.outboundSchema
-                )
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+    > = z.object({
+        matrix: z
+            .lazy(
+                () =>
+                    AuthUserBillingInvoiceItemsStorageRedisTotalDailyAvgStorageInBytesMatrix$.outboundSchema
+            )
+            .optional(),
+        tier: z.number().optional(),
+        price: z.number(),
+        batch: z.number(),
+        threshold: z.number(),
+        name: z.string().optional(),
+        hidden: z.boolean(),
+        disabledAt: z.nullable(z.number()).optional(),
+        enabledAt: z.nullable(z.number()).optional(),
+    });
 }
 
 /** @internal */
@@ -6858,44 +4872,30 @@ export namespace AuthUserBillingInvoiceItemsStorageRedisTotalDatabasesMatrix$ {
         AuthUserBillingInvoiceItemsStorageRedisTotalDatabasesMatrix,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 
     export type Outbound = {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
     export const outboundSchema: z.ZodType<
         Outbound,
         z.ZodTypeDef,
         AuthUserBillingInvoiceItemsStorageRedisTotalDatabasesMatrix
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 }
 
 /** @internal */
 export namespace StorageRedisTotalDatabases$ {
-    export const inboundSchema: z.ZodType<StorageRedisTotalDatabases, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<StorageRedisTotalDatabases, z.ZodTypeDef, unknown> =
+        z.object({
             matrix: z
                 .lazy(
                     () => AuthUserBillingInvoiceItemsStorageRedisTotalDatabasesMatrix$.inboundSchema
@@ -6909,19 +4909,6 @@ export namespace StorageRedisTotalDatabases$ {
             hidden: z.boolean(),
             disabledAt: z.nullable(z.number()).optional(),
             enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
         });
 
     export type Outbound = {
@@ -6936,8 +4923,8 @@ export namespace StorageRedisTotalDatabases$ {
         enabledAt?: number | null | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, StorageRedisTotalDatabases> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, StorageRedisTotalDatabases> =
+        z.object({
             matrix: z
                 .lazy(
                     () =>
@@ -6952,19 +4939,6 @@ export namespace StorageRedisTotalDatabases$ {
             hidden: z.boolean(),
             disabledAt: z.nullable(z.number()).optional(),
             enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
         });
 }
 
@@ -6974,69 +4948,41 @@ export namespace AuthUserBillingInvoiceItemsWafOwaspExcessBytesMatrix$ {
         AuthUserBillingInvoiceItemsWafOwaspExcessBytesMatrix,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 
     export type Outbound = {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
     export const outboundSchema: z.ZodType<
         Outbound,
         z.ZodTypeDef,
         AuthUserBillingInvoiceItemsWafOwaspExcessBytesMatrix
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 }
 
 /** @internal */
 export namespace WafOwaspExcessBytes$ {
-    export const inboundSchema: z.ZodType<WafOwaspExcessBytes, z.ZodTypeDef, unknown> = z
-        .object({
-            matrix: z
-                .lazy(() => AuthUserBillingInvoiceItemsWafOwaspExcessBytesMatrix$.inboundSchema)
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+    export const inboundSchema: z.ZodType<WafOwaspExcessBytes, z.ZodTypeDef, unknown> = z.object({
+        matrix: z
+            .lazy(() => AuthUserBillingInvoiceItemsWafOwaspExcessBytesMatrix$.inboundSchema)
+            .optional(),
+        tier: z.number().optional(),
+        price: z.number(),
+        batch: z.number(),
+        threshold: z.number(),
+        name: z.string().optional(),
+        hidden: z.boolean(),
+        disabledAt: z.nullable(z.number()).optional(),
+        enabledAt: z.nullable(z.number()).optional(),
+    });
 
     export type Outbound = {
         matrix?: AuthUserBillingInvoiceItemsWafOwaspExcessBytesMatrix$.Outbound | undefined;
@@ -7050,33 +4996,19 @@ export namespace WafOwaspExcessBytes$ {
         enabledAt?: number | null | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, WafOwaspExcessBytes> = z
-        .object({
-            matrix: z
-                .lazy(() => AuthUserBillingInvoiceItemsWafOwaspExcessBytesMatrix$.outboundSchema)
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, WafOwaspExcessBytes> = z.object({
+        matrix: z
+            .lazy(() => AuthUserBillingInvoiceItemsWafOwaspExcessBytesMatrix$.outboundSchema)
+            .optional(),
+        tier: z.number().optional(),
+        price: z.number(),
+        batch: z.number(),
+        threshold: z.number(),
+        name: z.string().optional(),
+        hidden: z.boolean(),
+        disabledAt: z.nullable(z.number()).optional(),
+        enabledAt: z.nullable(z.number()).optional(),
+    });
 }
 
 /** @internal */
@@ -7085,69 +5017,41 @@ export namespace AuthUserBillingInvoiceItemsWafOwaspRequestsMatrix$ {
         AuthUserBillingInvoiceItemsWafOwaspRequestsMatrix,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 
     export type Outbound = {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
     export const outboundSchema: z.ZodType<
         Outbound,
         z.ZodTypeDef,
         AuthUserBillingInvoiceItemsWafOwaspRequestsMatrix
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 }
 
 /** @internal */
 export namespace WafOwaspRequests$ {
-    export const inboundSchema: z.ZodType<WafOwaspRequests, z.ZodTypeDef, unknown> = z
-        .object({
-            matrix: z
-                .lazy(() => AuthUserBillingInvoiceItemsWafOwaspRequestsMatrix$.inboundSchema)
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+    export const inboundSchema: z.ZodType<WafOwaspRequests, z.ZodTypeDef, unknown> = z.object({
+        matrix: z
+            .lazy(() => AuthUserBillingInvoiceItemsWafOwaspRequestsMatrix$.inboundSchema)
+            .optional(),
+        tier: z.number().optional(),
+        price: z.number(),
+        batch: z.number(),
+        threshold: z.number(),
+        name: z.string().optional(),
+        hidden: z.boolean(),
+        disabledAt: z.nullable(z.number()).optional(),
+        enabledAt: z.nullable(z.number()).optional(),
+    });
 
     export type Outbound = {
         matrix?: AuthUserBillingInvoiceItemsWafOwaspRequestsMatrix$.Outbound | undefined;
@@ -7161,33 +5065,19 @@ export namespace WafOwaspRequests$ {
         enabledAt?: number | null | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, WafOwaspRequests> = z
-        .object({
-            matrix: z
-                .lazy(() => AuthUserBillingInvoiceItemsWafOwaspRequestsMatrix$.outboundSchema)
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, WafOwaspRequests> = z.object({
+        matrix: z
+            .lazy(() => AuthUserBillingInvoiceItemsWafOwaspRequestsMatrix$.outboundSchema)
+            .optional(),
+        tier: z.number().optional(),
+        price: z.number(),
+        batch: z.number(),
+        threshold: z.number(),
+        name: z.string().optional(),
+        hidden: z.boolean(),
+        disabledAt: z.nullable(z.number()).optional(),
+        enabledAt: z.nullable(z.number()).optional(),
+    });
 }
 
 /** @internal */
@@ -7196,69 +5086,41 @@ export namespace AuthUserBillingInvoiceItemsWebAnalyticsEventMatrix$ {
         AuthUserBillingInvoiceItemsWebAnalyticsEventMatrix,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 
     export type Outbound = {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
     export const outboundSchema: z.ZodType<
         Outbound,
         z.ZodTypeDef,
         AuthUserBillingInvoiceItemsWebAnalyticsEventMatrix
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 }
 
 /** @internal */
 export namespace WebAnalyticsEvent$ {
-    export const inboundSchema: z.ZodType<WebAnalyticsEvent, z.ZodTypeDef, unknown> = z
-        .object({
-            matrix: z
-                .lazy(() => AuthUserBillingInvoiceItemsWebAnalyticsEventMatrix$.inboundSchema)
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+    export const inboundSchema: z.ZodType<WebAnalyticsEvent, z.ZodTypeDef, unknown> = z.object({
+        matrix: z
+            .lazy(() => AuthUserBillingInvoiceItemsWebAnalyticsEventMatrix$.inboundSchema)
+            .optional(),
+        tier: z.number().optional(),
+        price: z.number(),
+        batch: z.number(),
+        threshold: z.number(),
+        name: z.string().optional(),
+        hidden: z.boolean(),
+        disabledAt: z.nullable(z.number()).optional(),
+        enabledAt: z.nullable(z.number()).optional(),
+    });
 
     export type Outbound = {
         matrix?: AuthUserBillingInvoiceItemsWebAnalyticsEventMatrix$.Outbound | undefined;
@@ -7272,234 +5134,93 @@ export namespace WebAnalyticsEvent$ {
         enabledAt?: number | null | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, WebAnalyticsEvent> = z
-        .object({
-            matrix: z
-                .lazy(() => AuthUserBillingInvoiceItemsWebAnalyticsEventMatrix$.outboundSchema)
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, WebAnalyticsEvent> = z.object({
+        matrix: z
+            .lazy(() => AuthUserBillingInvoiceItemsWebAnalyticsEventMatrix$.outboundSchema)
+            .optional(),
+        tier: z.number().optional(),
+        price: z.number(),
+        batch: z.number(),
+        threshold: z.number(),
+        name: z.string().optional(),
+        hidden: z.boolean(),
+        disabledAt: z.nullable(z.number()).optional(),
+        enabledAt: z.nullable(z.number()).optional(),
+    });
 }
 
 /** @internal */
 export namespace InvoiceItems$ {
-    export const inboundSchema: z.ZodType<InvoiceItems, z.ZodTypeDef, unknown> = z
-        .object({
-            concurrentBuilds: z.lazy(() => ConcurrentBuilds$.inboundSchema).optional(),
-            webAnalytics: z.lazy(() => AuthUserWebAnalytics$.inboundSchema).optional(),
-            pro: z.lazy(() => Pro$.inboundSchema).optional(),
-            enterprise: z.lazy(() => Enterprise$.inboundSchema).optional(),
-            analytics: z.lazy(() => Analytics$.inboundSchema).optional(),
-            monitoring: z.lazy(() => Monitoring$.inboundSchema).optional(),
-            passwordProtection: z.lazy(() => PasswordProtection$.inboundSchema).optional(),
-            previewDeploymentSuffix: z
-                .lazy(() => PreviewDeploymentSuffix$.inboundSchema)
-                .optional(),
-            saml: z.lazy(() => AuthUserSaml$.inboundSchema).optional(),
-            teamSeats: z.lazy(() => TeamSeats$.inboundSchema).optional(),
-            analyticsUsage: z.lazy(() => AnalyticsUsage$.inboundSchema).optional(),
-            artifacts: z.lazy(() => ArtifactsModel$.inboundSchema).optional(),
-            bandwidth: z.lazy(() => Bandwidth$.inboundSchema).optional(),
-            blobStores: z.lazy(() => BlobStores$.inboundSchema).optional(),
-            blobTotalAdvancedRequests: z
-                .lazy(() => BlobTotalAdvancedRequests$.inboundSchema)
-                .optional(),
-            blobTotalAvgSizeInBytes: z
-                .lazy(() => BlobTotalAvgSizeInBytes$.inboundSchema)
-                .optional(),
-            blobTotalGetResponseObjectSizeInBytes: z
-                .lazy(() => BlobTotalGetResponseObjectSizeInBytes$.inboundSchema)
-                .optional(),
-            blobTotalSimpleRequests: z
-                .lazy(() => BlobTotalSimpleRequests$.inboundSchema)
-                .optional(),
-            buildMinute: z.lazy(() => BuildMinute$.inboundSchema).optional(),
-            dataCacheRead: z.lazy(() => DataCacheRead$.inboundSchema).optional(),
-            dataCacheRevalidation: z.lazy(() => DataCacheRevalidation$.inboundSchema).optional(),
-            dataCacheWrite: z.lazy(() => DataCacheWrite$.inboundSchema).optional(),
-            edgeConfigRead: z.lazy(() => EdgeConfigRead$.inboundSchema).optional(),
-            edgeConfigWrite: z.lazy(() => EdgeConfigWrite$.inboundSchema).optional(),
-            edgeFunctionExecutionUnits: z
-                .lazy(() => EdgeFunctionExecutionUnits$.inboundSchema)
-                .optional(),
-            edgeMiddlewareInvocations: z
-                .lazy(() => EdgeMiddlewareInvocations$.inboundSchema)
-                .optional(),
-            edgeRequest: z.lazy(() => EdgeRequest$.inboundSchema).optional(),
-            edgeRequestAdditionalCpuDuration: z
-                .lazy(() => EdgeRequestAdditionalCpuDuration$.inboundSchema)
-                .optional(),
-            fastDataTransfer: z.lazy(() => FastDataTransfer$.inboundSchema).optional(),
-            fastOriginTransfer: z.lazy(() => FastOriginTransfer$.inboundSchema).optional(),
-            functionDuration: z.lazy(() => FunctionDuration$.inboundSchema).optional(),
-            functionInvocation: z.lazy(() => FunctionInvocation$.inboundSchema).optional(),
-            logDrainsVolume: z.lazy(() => LogDrainsVolume$.inboundSchema).optional(),
-            monitoringMetric: z.lazy(() => MonitoringMetric$.inboundSchema).optional(),
-            postgresComputeTime: z.lazy(() => PostgresComputeTime$.inboundSchema).optional(),
-            postgresDataStorage: z.lazy(() => PostgresDataStorage$.inboundSchema).optional(),
-            postgresDataTransfer: z.lazy(() => PostgresDataTransfer$.inboundSchema).optional(),
-            postgresDatabase: z.lazy(() => PostgresDatabase$.inboundSchema).optional(),
-            postgresWrittenData: z.lazy(() => PostgresWrittenData$.inboundSchema).optional(),
-            serverlessFunctionExecution: z
-                .lazy(() => ServerlessFunctionExecution$.inboundSchema)
-                .optional(),
-            sourceImages: z.lazy(() => SourceImages$.inboundSchema).optional(),
-            storageRedisTotalBandwidthInBytes: z
-                .lazy(() => StorageRedisTotalBandwidthInBytes$.inboundSchema)
-                .optional(),
-            storageRedisTotalCommands: z
-                .lazy(() => StorageRedisTotalCommands$.inboundSchema)
-                .optional(),
-            storageRedisTotalDailyAvgStorageInBytes: z
-                .lazy(() => StorageRedisTotalDailyAvgStorageInBytes$.inboundSchema)
-                .optional(),
-            storageRedisTotalDatabases: z
-                .lazy(() => StorageRedisTotalDatabases$.inboundSchema)
-                .optional(),
-            wafOwaspExcessBytes: z.lazy(() => WafOwaspExcessBytes$.inboundSchema).optional(),
-            wafOwaspRequests: z.lazy(() => WafOwaspRequests$.inboundSchema).optional(),
-            webAnalyticsEvent: z.lazy(() => WebAnalyticsEvent$.inboundSchema).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.concurrentBuilds === undefined
-                    ? null
-                    : { concurrentBuilds: v.concurrentBuilds }),
-                ...(v.webAnalytics === undefined ? null : { webAnalytics: v.webAnalytics }),
-                ...(v.pro === undefined ? null : { pro: v.pro }),
-                ...(v.enterprise === undefined ? null : { enterprise: v.enterprise }),
-                ...(v.analytics === undefined ? null : { analytics: v.analytics }),
-                ...(v.monitoring === undefined ? null : { monitoring: v.monitoring }),
-                ...(v.passwordProtection === undefined
-                    ? null
-                    : { passwordProtection: v.passwordProtection }),
-                ...(v.previewDeploymentSuffix === undefined
-                    ? null
-                    : { previewDeploymentSuffix: v.previewDeploymentSuffix }),
-                ...(v.saml === undefined ? null : { saml: v.saml }),
-                ...(v.teamSeats === undefined ? null : { teamSeats: v.teamSeats }),
-                ...(v.analyticsUsage === undefined ? null : { analyticsUsage: v.analyticsUsage }),
-                ...(v.artifacts === undefined ? null : { artifacts: v.artifacts }),
-                ...(v.bandwidth === undefined ? null : { bandwidth: v.bandwidth }),
-                ...(v.blobStores === undefined ? null : { blobStores: v.blobStores }),
-                ...(v.blobTotalAdvancedRequests === undefined
-                    ? null
-                    : { blobTotalAdvancedRequests: v.blobTotalAdvancedRequests }),
-                ...(v.blobTotalAvgSizeInBytes === undefined
-                    ? null
-                    : { blobTotalAvgSizeInBytes: v.blobTotalAvgSizeInBytes }),
-                ...(v.blobTotalGetResponseObjectSizeInBytes === undefined
-                    ? null
-                    : {
-                          blobTotalGetResponseObjectSizeInBytes:
-                              v.blobTotalGetResponseObjectSizeInBytes,
-                      }),
-                ...(v.blobTotalSimpleRequests === undefined
-                    ? null
-                    : { blobTotalSimpleRequests: v.blobTotalSimpleRequests }),
-                ...(v.buildMinute === undefined ? null : { buildMinute: v.buildMinute }),
-                ...(v.dataCacheRead === undefined ? null : { dataCacheRead: v.dataCacheRead }),
-                ...(v.dataCacheRevalidation === undefined
-                    ? null
-                    : { dataCacheRevalidation: v.dataCacheRevalidation }),
-                ...(v.dataCacheWrite === undefined ? null : { dataCacheWrite: v.dataCacheWrite }),
-                ...(v.edgeConfigRead === undefined ? null : { edgeConfigRead: v.edgeConfigRead }),
-                ...(v.edgeConfigWrite === undefined
-                    ? null
-                    : { edgeConfigWrite: v.edgeConfigWrite }),
-                ...(v.edgeFunctionExecutionUnits === undefined
-                    ? null
-                    : { edgeFunctionExecutionUnits: v.edgeFunctionExecutionUnits }),
-                ...(v.edgeMiddlewareInvocations === undefined
-                    ? null
-                    : { edgeMiddlewareInvocations: v.edgeMiddlewareInvocations }),
-                ...(v.edgeRequest === undefined ? null : { edgeRequest: v.edgeRequest }),
-                ...(v.edgeRequestAdditionalCpuDuration === undefined
-                    ? null
-                    : { edgeRequestAdditionalCpuDuration: v.edgeRequestAdditionalCpuDuration }),
-                ...(v.fastDataTransfer === undefined
-                    ? null
-                    : { fastDataTransfer: v.fastDataTransfer }),
-                ...(v.fastOriginTransfer === undefined
-                    ? null
-                    : { fastOriginTransfer: v.fastOriginTransfer }),
-                ...(v.functionDuration === undefined
-                    ? null
-                    : { functionDuration: v.functionDuration }),
-                ...(v.functionInvocation === undefined
-                    ? null
-                    : { functionInvocation: v.functionInvocation }),
-                ...(v.logDrainsVolume === undefined
-                    ? null
-                    : { logDrainsVolume: v.logDrainsVolume }),
-                ...(v.monitoringMetric === undefined
-                    ? null
-                    : { monitoringMetric: v.monitoringMetric }),
-                ...(v.postgresComputeTime === undefined
-                    ? null
-                    : { postgresComputeTime: v.postgresComputeTime }),
-                ...(v.postgresDataStorage === undefined
-                    ? null
-                    : { postgresDataStorage: v.postgresDataStorage }),
-                ...(v.postgresDataTransfer === undefined
-                    ? null
-                    : { postgresDataTransfer: v.postgresDataTransfer }),
-                ...(v.postgresDatabase === undefined
-                    ? null
-                    : { postgresDatabase: v.postgresDatabase }),
-                ...(v.postgresWrittenData === undefined
-                    ? null
-                    : { postgresWrittenData: v.postgresWrittenData }),
-                ...(v.serverlessFunctionExecution === undefined
-                    ? null
-                    : { serverlessFunctionExecution: v.serverlessFunctionExecution }),
-                ...(v.sourceImages === undefined ? null : { sourceImages: v.sourceImages }),
-                ...(v.storageRedisTotalBandwidthInBytes === undefined
-                    ? null
-                    : { storageRedisTotalBandwidthInBytes: v.storageRedisTotalBandwidthInBytes }),
-                ...(v.storageRedisTotalCommands === undefined
-                    ? null
-                    : { storageRedisTotalCommands: v.storageRedisTotalCommands }),
-                ...(v.storageRedisTotalDailyAvgStorageInBytes === undefined
-                    ? null
-                    : {
-                          storageRedisTotalDailyAvgStorageInBytes:
-                              v.storageRedisTotalDailyAvgStorageInBytes,
-                      }),
-                ...(v.storageRedisTotalDatabases === undefined
-                    ? null
-                    : { storageRedisTotalDatabases: v.storageRedisTotalDatabases }),
-                ...(v.wafOwaspExcessBytes === undefined
-                    ? null
-                    : { wafOwaspExcessBytes: v.wafOwaspExcessBytes }),
-                ...(v.wafOwaspRequests === undefined
-                    ? null
-                    : { wafOwaspRequests: v.wafOwaspRequests }),
-                ...(v.webAnalyticsEvent === undefined
-                    ? null
-                    : { webAnalyticsEvent: v.webAnalyticsEvent }),
-            };
-        });
+    export const inboundSchema: z.ZodType<InvoiceItems, z.ZodTypeDef, unknown> = z.object({
+        concurrentBuilds: z.lazy(() => ConcurrentBuilds$.inboundSchema).optional(),
+        webAnalytics: z.lazy(() => AuthUserWebAnalytics$.inboundSchema).optional(),
+        pro: z.lazy(() => Pro$.inboundSchema).optional(),
+        enterprise: z.lazy(() => Enterprise$.inboundSchema).optional(),
+        analytics: z.lazy(() => Analytics$.inboundSchema).optional(),
+        monitoring: z.lazy(() => Monitoring$.inboundSchema).optional(),
+        passwordProtection: z.lazy(() => PasswordProtection$.inboundSchema).optional(),
+        previewDeploymentSuffix: z.lazy(() => PreviewDeploymentSuffix$.inboundSchema).optional(),
+        saml: z.lazy(() => AuthUserSaml$.inboundSchema).optional(),
+        teamSeats: z.lazy(() => TeamSeats$.inboundSchema).optional(),
+        analyticsUsage: z.lazy(() => AnalyticsUsage$.inboundSchema).optional(),
+        artifacts: z.lazy(() => ArtifactsModel$.inboundSchema).optional(),
+        bandwidth: z.lazy(() => Bandwidth$.inboundSchema).optional(),
+        blobStores: z.lazy(() => BlobStores$.inboundSchema).optional(),
+        blobTotalAdvancedRequests: z
+            .lazy(() => BlobTotalAdvancedRequests$.inboundSchema)
+            .optional(),
+        blobTotalAvgSizeInBytes: z.lazy(() => BlobTotalAvgSizeInBytes$.inboundSchema).optional(),
+        blobTotalGetResponseObjectSizeInBytes: z
+            .lazy(() => BlobTotalGetResponseObjectSizeInBytes$.inboundSchema)
+            .optional(),
+        blobTotalSimpleRequests: z.lazy(() => BlobTotalSimpleRequests$.inboundSchema).optional(),
+        buildMinute: z.lazy(() => BuildMinute$.inboundSchema).optional(),
+        dataCacheRead: z.lazy(() => DataCacheRead$.inboundSchema).optional(),
+        dataCacheRevalidation: z.lazy(() => DataCacheRevalidation$.inboundSchema).optional(),
+        dataCacheWrite: z.lazy(() => DataCacheWrite$.inboundSchema).optional(),
+        edgeConfigRead: z.lazy(() => EdgeConfigRead$.inboundSchema).optional(),
+        edgeConfigWrite: z.lazy(() => EdgeConfigWrite$.inboundSchema).optional(),
+        edgeFunctionExecutionUnits: z
+            .lazy(() => EdgeFunctionExecutionUnits$.inboundSchema)
+            .optional(),
+        edgeMiddlewareInvocations: z
+            .lazy(() => EdgeMiddlewareInvocations$.inboundSchema)
+            .optional(),
+        edgeRequest: z.lazy(() => EdgeRequest$.inboundSchema).optional(),
+        edgeRequestAdditionalCpuDuration: z
+            .lazy(() => EdgeRequestAdditionalCpuDuration$.inboundSchema)
+            .optional(),
+        fastDataTransfer: z.lazy(() => FastDataTransfer$.inboundSchema).optional(),
+        fastOriginTransfer: z.lazy(() => FastOriginTransfer$.inboundSchema).optional(),
+        functionDuration: z.lazy(() => FunctionDuration$.inboundSchema).optional(),
+        functionInvocation: z.lazy(() => FunctionInvocation$.inboundSchema).optional(),
+        logDrainsVolume: z.lazy(() => LogDrainsVolume$.inboundSchema).optional(),
+        monitoringMetric: z.lazy(() => MonitoringMetric$.inboundSchema).optional(),
+        postgresComputeTime: z.lazy(() => PostgresComputeTime$.inboundSchema).optional(),
+        postgresDataStorage: z.lazy(() => PostgresDataStorage$.inboundSchema).optional(),
+        postgresDataTransfer: z.lazy(() => PostgresDataTransfer$.inboundSchema).optional(),
+        postgresDatabase: z.lazy(() => PostgresDatabase$.inboundSchema).optional(),
+        postgresWrittenData: z.lazy(() => PostgresWrittenData$.inboundSchema).optional(),
+        serverlessFunctionExecution: z
+            .lazy(() => ServerlessFunctionExecution$.inboundSchema)
+            .optional(),
+        sourceImages: z.lazy(() => SourceImages$.inboundSchema).optional(),
+        storageRedisTotalBandwidthInBytes: z
+            .lazy(() => StorageRedisTotalBandwidthInBytes$.inboundSchema)
+            .optional(),
+        storageRedisTotalCommands: z
+            .lazy(() => StorageRedisTotalCommands$.inboundSchema)
+            .optional(),
+        storageRedisTotalDailyAvgStorageInBytes: z
+            .lazy(() => StorageRedisTotalDailyAvgStorageInBytes$.inboundSchema)
+            .optional(),
+        storageRedisTotalDatabases: z
+            .lazy(() => StorageRedisTotalDatabases$.inboundSchema)
+            .optional(),
+        wafOwaspExcessBytes: z.lazy(() => WafOwaspExcessBytes$.inboundSchema).optional(),
+        wafOwaspRequests: z.lazy(() => WafOwaspRequests$.inboundSchema).optional(),
+        webAnalyticsEvent: z.lazy(() => WebAnalyticsEvent$.inboundSchema).optional(),
+    });
 
     export type Outbound = {
         concurrentBuilds?: ConcurrentBuilds$.Outbound | undefined;
@@ -7556,294 +5277,127 @@ export namespace InvoiceItems$ {
         webAnalyticsEvent?: WebAnalyticsEvent$.Outbound | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, InvoiceItems> = z
-        .object({
-            concurrentBuilds: z.lazy(() => ConcurrentBuilds$.outboundSchema).optional(),
-            webAnalytics: z.lazy(() => AuthUserWebAnalytics$.outboundSchema).optional(),
-            pro: z.lazy(() => Pro$.outboundSchema).optional(),
-            enterprise: z.lazy(() => Enterprise$.outboundSchema).optional(),
-            analytics: z.lazy(() => Analytics$.outboundSchema).optional(),
-            monitoring: z.lazy(() => Monitoring$.outboundSchema).optional(),
-            passwordProtection: z.lazy(() => PasswordProtection$.outboundSchema).optional(),
-            previewDeploymentSuffix: z
-                .lazy(() => PreviewDeploymentSuffix$.outboundSchema)
-                .optional(),
-            saml: z.lazy(() => AuthUserSaml$.outboundSchema).optional(),
-            teamSeats: z.lazy(() => TeamSeats$.outboundSchema).optional(),
-            analyticsUsage: z.lazy(() => AnalyticsUsage$.outboundSchema).optional(),
-            artifacts: z.lazy(() => ArtifactsModel$.outboundSchema).optional(),
-            bandwidth: z.lazy(() => Bandwidth$.outboundSchema).optional(),
-            blobStores: z.lazy(() => BlobStores$.outboundSchema).optional(),
-            blobTotalAdvancedRequests: z
-                .lazy(() => BlobTotalAdvancedRequests$.outboundSchema)
-                .optional(),
-            blobTotalAvgSizeInBytes: z
-                .lazy(() => BlobTotalAvgSizeInBytes$.outboundSchema)
-                .optional(),
-            blobTotalGetResponseObjectSizeInBytes: z
-                .lazy(() => BlobTotalGetResponseObjectSizeInBytes$.outboundSchema)
-                .optional(),
-            blobTotalSimpleRequests: z
-                .lazy(() => BlobTotalSimpleRequests$.outboundSchema)
-                .optional(),
-            buildMinute: z.lazy(() => BuildMinute$.outboundSchema).optional(),
-            dataCacheRead: z.lazy(() => DataCacheRead$.outboundSchema).optional(),
-            dataCacheRevalidation: z.lazy(() => DataCacheRevalidation$.outboundSchema).optional(),
-            dataCacheWrite: z.lazy(() => DataCacheWrite$.outboundSchema).optional(),
-            edgeConfigRead: z.lazy(() => EdgeConfigRead$.outboundSchema).optional(),
-            edgeConfigWrite: z.lazy(() => EdgeConfigWrite$.outboundSchema).optional(),
-            edgeFunctionExecutionUnits: z
-                .lazy(() => EdgeFunctionExecutionUnits$.outboundSchema)
-                .optional(),
-            edgeMiddlewareInvocations: z
-                .lazy(() => EdgeMiddlewareInvocations$.outboundSchema)
-                .optional(),
-            edgeRequest: z.lazy(() => EdgeRequest$.outboundSchema).optional(),
-            edgeRequestAdditionalCpuDuration: z
-                .lazy(() => EdgeRequestAdditionalCpuDuration$.outboundSchema)
-                .optional(),
-            fastDataTransfer: z.lazy(() => FastDataTransfer$.outboundSchema).optional(),
-            fastOriginTransfer: z.lazy(() => FastOriginTransfer$.outboundSchema).optional(),
-            functionDuration: z.lazy(() => FunctionDuration$.outboundSchema).optional(),
-            functionInvocation: z.lazy(() => FunctionInvocation$.outboundSchema).optional(),
-            logDrainsVolume: z.lazy(() => LogDrainsVolume$.outboundSchema).optional(),
-            monitoringMetric: z.lazy(() => MonitoringMetric$.outboundSchema).optional(),
-            postgresComputeTime: z.lazy(() => PostgresComputeTime$.outboundSchema).optional(),
-            postgresDataStorage: z.lazy(() => PostgresDataStorage$.outboundSchema).optional(),
-            postgresDataTransfer: z.lazy(() => PostgresDataTransfer$.outboundSchema).optional(),
-            postgresDatabase: z.lazy(() => PostgresDatabase$.outboundSchema).optional(),
-            postgresWrittenData: z.lazy(() => PostgresWrittenData$.outboundSchema).optional(),
-            serverlessFunctionExecution: z
-                .lazy(() => ServerlessFunctionExecution$.outboundSchema)
-                .optional(),
-            sourceImages: z.lazy(() => SourceImages$.outboundSchema).optional(),
-            storageRedisTotalBandwidthInBytes: z
-                .lazy(() => StorageRedisTotalBandwidthInBytes$.outboundSchema)
-                .optional(),
-            storageRedisTotalCommands: z
-                .lazy(() => StorageRedisTotalCommands$.outboundSchema)
-                .optional(),
-            storageRedisTotalDailyAvgStorageInBytes: z
-                .lazy(() => StorageRedisTotalDailyAvgStorageInBytes$.outboundSchema)
-                .optional(),
-            storageRedisTotalDatabases: z
-                .lazy(() => StorageRedisTotalDatabases$.outboundSchema)
-                .optional(),
-            wafOwaspExcessBytes: z.lazy(() => WafOwaspExcessBytes$.outboundSchema).optional(),
-            wafOwaspRequests: z.lazy(() => WafOwaspRequests$.outboundSchema).optional(),
-            webAnalyticsEvent: z.lazy(() => WebAnalyticsEvent$.outboundSchema).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.concurrentBuilds === undefined
-                    ? null
-                    : { concurrentBuilds: v.concurrentBuilds }),
-                ...(v.webAnalytics === undefined ? null : { webAnalytics: v.webAnalytics }),
-                ...(v.pro === undefined ? null : { pro: v.pro }),
-                ...(v.enterprise === undefined ? null : { enterprise: v.enterprise }),
-                ...(v.analytics === undefined ? null : { analytics: v.analytics }),
-                ...(v.monitoring === undefined ? null : { monitoring: v.monitoring }),
-                ...(v.passwordProtection === undefined
-                    ? null
-                    : { passwordProtection: v.passwordProtection }),
-                ...(v.previewDeploymentSuffix === undefined
-                    ? null
-                    : { previewDeploymentSuffix: v.previewDeploymentSuffix }),
-                ...(v.saml === undefined ? null : { saml: v.saml }),
-                ...(v.teamSeats === undefined ? null : { teamSeats: v.teamSeats }),
-                ...(v.analyticsUsage === undefined ? null : { analyticsUsage: v.analyticsUsage }),
-                ...(v.artifacts === undefined ? null : { artifacts: v.artifacts }),
-                ...(v.bandwidth === undefined ? null : { bandwidth: v.bandwidth }),
-                ...(v.blobStores === undefined ? null : { blobStores: v.blobStores }),
-                ...(v.blobTotalAdvancedRequests === undefined
-                    ? null
-                    : { blobTotalAdvancedRequests: v.blobTotalAdvancedRequests }),
-                ...(v.blobTotalAvgSizeInBytes === undefined
-                    ? null
-                    : { blobTotalAvgSizeInBytes: v.blobTotalAvgSizeInBytes }),
-                ...(v.blobTotalGetResponseObjectSizeInBytes === undefined
-                    ? null
-                    : {
-                          blobTotalGetResponseObjectSizeInBytes:
-                              v.blobTotalGetResponseObjectSizeInBytes,
-                      }),
-                ...(v.blobTotalSimpleRequests === undefined
-                    ? null
-                    : { blobTotalSimpleRequests: v.blobTotalSimpleRequests }),
-                ...(v.buildMinute === undefined ? null : { buildMinute: v.buildMinute }),
-                ...(v.dataCacheRead === undefined ? null : { dataCacheRead: v.dataCacheRead }),
-                ...(v.dataCacheRevalidation === undefined
-                    ? null
-                    : { dataCacheRevalidation: v.dataCacheRevalidation }),
-                ...(v.dataCacheWrite === undefined ? null : { dataCacheWrite: v.dataCacheWrite }),
-                ...(v.edgeConfigRead === undefined ? null : { edgeConfigRead: v.edgeConfigRead }),
-                ...(v.edgeConfigWrite === undefined
-                    ? null
-                    : { edgeConfigWrite: v.edgeConfigWrite }),
-                ...(v.edgeFunctionExecutionUnits === undefined
-                    ? null
-                    : { edgeFunctionExecutionUnits: v.edgeFunctionExecutionUnits }),
-                ...(v.edgeMiddlewareInvocations === undefined
-                    ? null
-                    : { edgeMiddlewareInvocations: v.edgeMiddlewareInvocations }),
-                ...(v.edgeRequest === undefined ? null : { edgeRequest: v.edgeRequest }),
-                ...(v.edgeRequestAdditionalCpuDuration === undefined
-                    ? null
-                    : { edgeRequestAdditionalCpuDuration: v.edgeRequestAdditionalCpuDuration }),
-                ...(v.fastDataTransfer === undefined
-                    ? null
-                    : { fastDataTransfer: v.fastDataTransfer }),
-                ...(v.fastOriginTransfer === undefined
-                    ? null
-                    : { fastOriginTransfer: v.fastOriginTransfer }),
-                ...(v.functionDuration === undefined
-                    ? null
-                    : { functionDuration: v.functionDuration }),
-                ...(v.functionInvocation === undefined
-                    ? null
-                    : { functionInvocation: v.functionInvocation }),
-                ...(v.logDrainsVolume === undefined
-                    ? null
-                    : { logDrainsVolume: v.logDrainsVolume }),
-                ...(v.monitoringMetric === undefined
-                    ? null
-                    : { monitoringMetric: v.monitoringMetric }),
-                ...(v.postgresComputeTime === undefined
-                    ? null
-                    : { postgresComputeTime: v.postgresComputeTime }),
-                ...(v.postgresDataStorage === undefined
-                    ? null
-                    : { postgresDataStorage: v.postgresDataStorage }),
-                ...(v.postgresDataTransfer === undefined
-                    ? null
-                    : { postgresDataTransfer: v.postgresDataTransfer }),
-                ...(v.postgresDatabase === undefined
-                    ? null
-                    : { postgresDatabase: v.postgresDatabase }),
-                ...(v.postgresWrittenData === undefined
-                    ? null
-                    : { postgresWrittenData: v.postgresWrittenData }),
-                ...(v.serverlessFunctionExecution === undefined
-                    ? null
-                    : { serverlessFunctionExecution: v.serverlessFunctionExecution }),
-                ...(v.sourceImages === undefined ? null : { sourceImages: v.sourceImages }),
-                ...(v.storageRedisTotalBandwidthInBytes === undefined
-                    ? null
-                    : { storageRedisTotalBandwidthInBytes: v.storageRedisTotalBandwidthInBytes }),
-                ...(v.storageRedisTotalCommands === undefined
-                    ? null
-                    : { storageRedisTotalCommands: v.storageRedisTotalCommands }),
-                ...(v.storageRedisTotalDailyAvgStorageInBytes === undefined
-                    ? null
-                    : {
-                          storageRedisTotalDailyAvgStorageInBytes:
-                              v.storageRedisTotalDailyAvgStorageInBytes,
-                      }),
-                ...(v.storageRedisTotalDatabases === undefined
-                    ? null
-                    : { storageRedisTotalDatabases: v.storageRedisTotalDatabases }),
-                ...(v.wafOwaspExcessBytes === undefined
-                    ? null
-                    : { wafOwaspExcessBytes: v.wafOwaspExcessBytes }),
-                ...(v.wafOwaspRequests === undefined
-                    ? null
-                    : { wafOwaspRequests: v.wafOwaspRequests }),
-                ...(v.webAnalyticsEvent === undefined
-                    ? null
-                    : { webAnalyticsEvent: v.webAnalyticsEvent }),
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, InvoiceItems> = z.object({
+        concurrentBuilds: z.lazy(() => ConcurrentBuilds$.outboundSchema).optional(),
+        webAnalytics: z.lazy(() => AuthUserWebAnalytics$.outboundSchema).optional(),
+        pro: z.lazy(() => Pro$.outboundSchema).optional(),
+        enterprise: z.lazy(() => Enterprise$.outboundSchema).optional(),
+        analytics: z.lazy(() => Analytics$.outboundSchema).optional(),
+        monitoring: z.lazy(() => Monitoring$.outboundSchema).optional(),
+        passwordProtection: z.lazy(() => PasswordProtection$.outboundSchema).optional(),
+        previewDeploymentSuffix: z.lazy(() => PreviewDeploymentSuffix$.outboundSchema).optional(),
+        saml: z.lazy(() => AuthUserSaml$.outboundSchema).optional(),
+        teamSeats: z.lazy(() => TeamSeats$.outboundSchema).optional(),
+        analyticsUsage: z.lazy(() => AnalyticsUsage$.outboundSchema).optional(),
+        artifacts: z.lazy(() => ArtifactsModel$.outboundSchema).optional(),
+        bandwidth: z.lazy(() => Bandwidth$.outboundSchema).optional(),
+        blobStores: z.lazy(() => BlobStores$.outboundSchema).optional(),
+        blobTotalAdvancedRequests: z
+            .lazy(() => BlobTotalAdvancedRequests$.outboundSchema)
+            .optional(),
+        blobTotalAvgSizeInBytes: z.lazy(() => BlobTotalAvgSizeInBytes$.outboundSchema).optional(),
+        blobTotalGetResponseObjectSizeInBytes: z
+            .lazy(() => BlobTotalGetResponseObjectSizeInBytes$.outboundSchema)
+            .optional(),
+        blobTotalSimpleRequests: z.lazy(() => BlobTotalSimpleRequests$.outboundSchema).optional(),
+        buildMinute: z.lazy(() => BuildMinute$.outboundSchema).optional(),
+        dataCacheRead: z.lazy(() => DataCacheRead$.outboundSchema).optional(),
+        dataCacheRevalidation: z.lazy(() => DataCacheRevalidation$.outboundSchema).optional(),
+        dataCacheWrite: z.lazy(() => DataCacheWrite$.outboundSchema).optional(),
+        edgeConfigRead: z.lazy(() => EdgeConfigRead$.outboundSchema).optional(),
+        edgeConfigWrite: z.lazy(() => EdgeConfigWrite$.outboundSchema).optional(),
+        edgeFunctionExecutionUnits: z
+            .lazy(() => EdgeFunctionExecutionUnits$.outboundSchema)
+            .optional(),
+        edgeMiddlewareInvocations: z
+            .lazy(() => EdgeMiddlewareInvocations$.outboundSchema)
+            .optional(),
+        edgeRequest: z.lazy(() => EdgeRequest$.outboundSchema).optional(),
+        edgeRequestAdditionalCpuDuration: z
+            .lazy(() => EdgeRequestAdditionalCpuDuration$.outboundSchema)
+            .optional(),
+        fastDataTransfer: z.lazy(() => FastDataTransfer$.outboundSchema).optional(),
+        fastOriginTransfer: z.lazy(() => FastOriginTransfer$.outboundSchema).optional(),
+        functionDuration: z.lazy(() => FunctionDuration$.outboundSchema).optional(),
+        functionInvocation: z.lazy(() => FunctionInvocation$.outboundSchema).optional(),
+        logDrainsVolume: z.lazy(() => LogDrainsVolume$.outboundSchema).optional(),
+        monitoringMetric: z.lazy(() => MonitoringMetric$.outboundSchema).optional(),
+        postgresComputeTime: z.lazy(() => PostgresComputeTime$.outboundSchema).optional(),
+        postgresDataStorage: z.lazy(() => PostgresDataStorage$.outboundSchema).optional(),
+        postgresDataTransfer: z.lazy(() => PostgresDataTransfer$.outboundSchema).optional(),
+        postgresDatabase: z.lazy(() => PostgresDatabase$.outboundSchema).optional(),
+        postgresWrittenData: z.lazy(() => PostgresWrittenData$.outboundSchema).optional(),
+        serverlessFunctionExecution: z
+            .lazy(() => ServerlessFunctionExecution$.outboundSchema)
+            .optional(),
+        sourceImages: z.lazy(() => SourceImages$.outboundSchema).optional(),
+        storageRedisTotalBandwidthInBytes: z
+            .lazy(() => StorageRedisTotalBandwidthInBytes$.outboundSchema)
+            .optional(),
+        storageRedisTotalCommands: z
+            .lazy(() => StorageRedisTotalCommands$.outboundSchema)
+            .optional(),
+        storageRedisTotalDailyAvgStorageInBytes: z
+            .lazy(() => StorageRedisTotalDailyAvgStorageInBytes$.outboundSchema)
+            .optional(),
+        storageRedisTotalDatabases: z
+            .lazy(() => StorageRedisTotalDatabases$.outboundSchema)
+            .optional(),
+        wafOwaspExcessBytes: z.lazy(() => WafOwaspExcessBytes$.outboundSchema).optional(),
+        wafOwaspRequests: z.lazy(() => WafOwaspRequests$.outboundSchema).optional(),
+        webAnalyticsEvent: z.lazy(() => WebAnalyticsEvent$.outboundSchema).optional(),
+    });
 }
 
 /** @internal */
 export namespace InvoiceSettings$ {
-    export const inboundSchema: z.ZodType<InvoiceSettings, z.ZodTypeDef, unknown> = z
-        .object({
-            footer: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.footer === undefined ? null : { footer: v.footer }),
-            };
-        });
+    export const inboundSchema: z.ZodType<InvoiceSettings, z.ZodTypeDef, unknown> = z.object({
+        footer: z.string().optional(),
+    });
 
     export type Outbound = {
         footer?: string | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, InvoiceSettings> = z
-        .object({
-            footer: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.footer === undefined ? null : { footer: v.footer }),
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, InvoiceSettings> = z.object({
+        footer: z.string().optional(),
+    });
 }
 
 /** @internal */
 export namespace AuthUserTrial$ {
-    export const inboundSchema: z.ZodType<AuthUserTrial, z.ZodTypeDef, unknown> = z
-        .object({
-            start: z.number(),
-            end: z.number(),
-        })
-        .transform((v) => {
-            return {
-                start: v.start,
-                end: v.end,
-            };
-        });
+    export const inboundSchema: z.ZodType<AuthUserTrial, z.ZodTypeDef, unknown> = z.object({
+        start: z.number(),
+        end: z.number(),
+    });
 
     export type Outbound = {
         start: number;
         end: number;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, AuthUserTrial> = z
-        .object({
-            start: z.number(),
-            end: z.number(),
-        })
-        .transform((v) => {
-            return {
-                start: v.start,
-                end: v.end,
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, AuthUserTrial> = z.object({
+        start: z.number(),
+        end: z.number(),
+    });
 }
 
 /** @internal */
 export namespace AuthUserPeriod$ {
-    export const inboundSchema: z.ZodType<AuthUserPeriod, z.ZodTypeDef, unknown> = z
-        .object({
-            start: z.number(),
-            end: z.number(),
-        })
-        .transform((v) => {
-            return {
-                start: v.start,
-                end: v.end,
-            };
-        });
+    export const inboundSchema: z.ZodType<AuthUserPeriod, z.ZodTypeDef, unknown> = z.object({
+        start: z.number(),
+        end: z.number(),
+    });
 
     export type Outbound = {
         start: number;
         end: number;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, AuthUserPeriod> = z
-        .object({
-            start: z.number(),
-            end: z.number(),
-        })
-        .transform((v) => {
-            return {
-                start: v.start,
-                end: v.end,
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, AuthUserPeriod> = z.object({
+        start: z.number(),
+        end: z.number(),
+    });
 }
 
 /** @internal */
@@ -7854,34 +5408,20 @@ export namespace Interval$ {
 
 /** @internal */
 export namespace Frequency$ {
-    export const inboundSchema: z.ZodType<Frequency, z.ZodTypeDef, unknown> = z
-        .object({
-            interval: Interval$.inboundSchema,
-            intervalCount: z.number(),
-        })
-        .transform((v) => {
-            return {
-                interval: v.interval,
-                intervalCount: v.intervalCount,
-            };
-        });
+    export const inboundSchema: z.ZodType<Frequency, z.ZodTypeDef, unknown> = z.object({
+        interval: Interval$.inboundSchema,
+        intervalCount: z.number(),
+    });
 
     export type Outbound = {
         interval: string;
         intervalCount: number;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, Frequency> = z
-        .object({
-            interval: Interval$.outboundSchema,
-            intervalCount: z.number(),
-        })
-        .transform((v) => {
-            return {
-                interval: v.interval,
-                intervalCount: v.intervalCount,
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, Frequency> = z.object({
+        interval: Interval$.outboundSchema,
+        intervalCount: z.number(),
+    });
 }
 
 /** @internal */
@@ -7892,25 +5432,14 @@ export namespace Duration$ {
 
 /** @internal */
 export namespace Coupon$ {
-    export const inboundSchema: z.ZodType<Coupon, z.ZodTypeDef, unknown> = z
-        .object({
-            id: z.string(),
-            name: z.nullable(z.string()),
-            amountOff: z.nullable(z.number()),
-            percentageOff: z.nullable(z.number()),
-            durationInMonths: z.nullable(z.number()),
-            duration: Duration$.inboundSchema,
-        })
-        .transform((v) => {
-            return {
-                id: v.id,
-                name: v.name,
-                amountOff: v.amountOff,
-                percentageOff: v.percentageOff,
-                durationInMonths: v.durationInMonths,
-                duration: v.duration,
-            };
-        });
+    export const inboundSchema: z.ZodType<Coupon, z.ZodTypeDef, unknown> = z.object({
+        id: z.string(),
+        name: z.nullable(z.string()),
+        amountOff: z.nullable(z.number()),
+        percentageOff: z.nullable(z.number()),
+        durationInMonths: z.nullable(z.number()),
+        duration: Duration$.inboundSchema,
+    });
 
     export type Outbound = {
         id: string;
@@ -7921,78 +5450,43 @@ export namespace Coupon$ {
         duration: string;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, Coupon> = z
-        .object({
-            id: z.string(),
-            name: z.nullable(z.string()),
-            amountOff: z.nullable(z.number()),
-            percentageOff: z.nullable(z.number()),
-            durationInMonths: z.nullable(z.number()),
-            duration: Duration$.outboundSchema,
-        })
-        .transform((v) => {
-            return {
-                id: v.id,
-                name: v.name,
-                amountOff: v.amountOff,
-                percentageOff: v.percentageOff,
-                durationInMonths: v.durationInMonths,
-                duration: v.duration,
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, Coupon> = z.object({
+        id: z.string(),
+        name: z.nullable(z.string()),
+        amountOff: z.nullable(z.number()),
+        percentageOff: z.nullable(z.number()),
+        durationInMonths: z.nullable(z.number()),
+        duration: Duration$.outboundSchema,
+    });
 }
 
 /** @internal */
 export namespace Discount$ {
-    export const inboundSchema: z.ZodType<Discount, z.ZodTypeDef, unknown> = z
-        .object({
-            id: z.string(),
-            coupon: z.lazy(() => Coupon$.inboundSchema),
-        })
-        .transform((v) => {
-            return {
-                id: v.id,
-                coupon: v.coupon,
-            };
-        });
+    export const inboundSchema: z.ZodType<Discount, z.ZodTypeDef, unknown> = z.object({
+        id: z.string(),
+        coupon: z.lazy(() => Coupon$.inboundSchema),
+    });
 
     export type Outbound = {
         id: string;
         coupon: Coupon$.Outbound;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, Discount> = z
-        .object({
-            id: z.string(),
-            coupon: z.lazy(() => Coupon$.outboundSchema),
-        })
-        .transform((v) => {
-            return {
-                id: v.id,
-                coupon: v.coupon,
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, Discount> = z.object({
+        id: z.string(),
+        coupon: z.lazy(() => Coupon$.outboundSchema),
+    });
 }
 
 /** @internal */
 export namespace Items$ {
-    export const inboundSchema: z.ZodType<Items, z.ZodTypeDef, unknown> = z
-        .object({
-            id: z.string(),
-            priceId: z.string(),
-            productId: z.string(),
-            amount: z.number(),
-            quantity: z.number(),
-        })
-        .transform((v) => {
-            return {
-                id: v.id,
-                priceId: v.priceId,
-                productId: v.productId,
-                amount: v.amount,
-                quantity: v.quantity,
-            };
-        });
+    export const inboundSchema: z.ZodType<Items, z.ZodTypeDef, unknown> = z.object({
+        id: z.string(),
+        priceId: z.string(),
+        productId: z.string(),
+        amount: z.number(),
+        quantity: z.number(),
+    });
 
     export type Outbound = {
         id: string;
@@ -8002,46 +5496,25 @@ export namespace Items$ {
         quantity: number;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, Items> = z
-        .object({
-            id: z.string(),
-            priceId: z.string(),
-            productId: z.string(),
-            amount: z.number(),
-            quantity: z.number(),
-        })
-        .transform((v) => {
-            return {
-                id: v.id,
-                priceId: v.priceId,
-                productId: v.productId,
-                amount: v.amount,
-                quantity: v.quantity,
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, Items> = z.object({
+        id: z.string(),
+        priceId: z.string(),
+        productId: z.string(),
+        amount: z.number(),
+        quantity: z.number(),
+    });
 }
 
 /** @internal */
 export namespace Subscriptions$ {
-    export const inboundSchema: z.ZodType<Subscriptions, z.ZodTypeDef, unknown> = z
-        .object({
-            id: z.string(),
-            trial: z.nullable(z.lazy(() => AuthUserTrial$.inboundSchema)),
-            period: z.lazy(() => AuthUserPeriod$.inboundSchema),
-            frequency: z.lazy(() => Frequency$.inboundSchema),
-            discount: z.nullable(z.lazy(() => Discount$.inboundSchema)),
-            items: z.array(z.lazy(() => Items$.inboundSchema)),
-        })
-        .transform((v) => {
-            return {
-                id: v.id,
-                trial: v.trial,
-                period: v.period,
-                frequency: v.frequency,
-                discount: v.discount,
-                items: v.items,
-            };
-        });
+    export const inboundSchema: z.ZodType<Subscriptions, z.ZodTypeDef, unknown> = z.object({
+        id: z.string(),
+        trial: z.nullable(z.lazy(() => AuthUserTrial$.inboundSchema)),
+        period: z.lazy(() => AuthUserPeriod$.inboundSchema),
+        frequency: z.lazy(() => Frequency$.inboundSchema),
+        discount: z.nullable(z.lazy(() => Discount$.inboundSchema)),
+        items: z.array(z.lazy(() => Items$.inboundSchema)),
+    });
 
     export type Outbound = {
         id: string;
@@ -8052,65 +5525,32 @@ export namespace Subscriptions$ {
         items: Array<Items$.Outbound>;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, Subscriptions> = z
-        .object({
-            id: z.string(),
-            trial: z.nullable(z.lazy(() => AuthUserTrial$.outboundSchema)),
-            period: z.lazy(() => AuthUserPeriod$.outboundSchema),
-            frequency: z.lazy(() => Frequency$.outboundSchema),
-            discount: z.nullable(z.lazy(() => Discount$.outboundSchema)),
-            items: z.array(z.lazy(() => Items$.outboundSchema)),
-        })
-        .transform((v) => {
-            return {
-                id: v.id,
-                trial: v.trial,
-                period: v.period,
-                frequency: v.frequency,
-                discount: v.discount,
-                items: v.items,
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, Subscriptions> = z.object({
+        id: z.string(),
+        trial: z.nullable(z.lazy(() => AuthUserTrial$.outboundSchema)),
+        period: z.lazy(() => AuthUserPeriod$.outboundSchema),
+        frequency: z.lazy(() => Frequency$.outboundSchema),
+        discount: z.nullable(z.lazy(() => Discount$.outboundSchema)),
+        items: z.array(z.lazy(() => Items$.outboundSchema)),
+    });
 }
 
 /** @internal */
 export namespace Controls$ {
-    export const inboundSchema: z.ZodType<Controls, z.ZodTypeDef, unknown> = z
-        .object({
-            analyticsSampleRateInPercent: z.nullable(z.number()).optional(),
-            analyticsSpendLimitInDollars: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.analyticsSampleRateInPercent === undefined
-                    ? null
-                    : { analyticsSampleRateInPercent: v.analyticsSampleRateInPercent }),
-                ...(v.analyticsSpendLimitInDollars === undefined
-                    ? null
-                    : { analyticsSpendLimitInDollars: v.analyticsSpendLimitInDollars }),
-            };
-        });
+    export const inboundSchema: z.ZodType<Controls, z.ZodTypeDef, unknown> = z.object({
+        analyticsSampleRateInPercent: z.nullable(z.number()).optional(),
+        analyticsSpendLimitInDollars: z.nullable(z.number()).optional(),
+    });
 
     export type Outbound = {
         analyticsSampleRateInPercent?: number | null | undefined;
         analyticsSpendLimitInDollars?: number | null | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, Controls> = z
-        .object({
-            analyticsSampleRateInPercent: z.nullable(z.number()).optional(),
-            analyticsSpendLimitInDollars: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.analyticsSampleRateInPercent === undefined
-                    ? null
-                    : { analyticsSampleRateInPercent: v.analyticsSampleRateInPercent }),
-                ...(v.analyticsSpendLimitInDollars === undefined
-                    ? null
-                    : { analyticsSpendLimitInDollars: v.analyticsSpendLimitInDollars }),
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, Controls> = z.object({
+        analyticsSampleRateInPercent: z.nullable(z.number()).optional(),
+        analyticsSpendLimitInDollars: z.nullable(z.number()).optional(),
+    });
 }
 
 /** @internal */
@@ -8127,69 +5567,32 @@ export namespace PricingExperiment$ {
 
 /** @internal */
 export namespace Billing$ {
-    export const inboundSchema: z.ZodType<Billing, z.ZodTypeDef, unknown> = z
-        .object({
-            currency: Currency$.inboundSchema.optional(),
-            cancelation: z.nullable(z.number()).optional(),
-            period: z.nullable(z.lazy(() => Period$.inboundSchema)),
-            contract: z.nullable(z.lazy(() => Contract$.inboundSchema)).optional(),
-            plan: Plan$.inboundSchema,
-            planIteration: z.string().optional(),
-            platform: Platform$.inboundSchema.optional(),
-            orbCustomerId: z.string().optional(),
-            syncedAt: z.number().optional(),
-            programType: ProgramType$.inboundSchema.optional(),
-            trial: z.nullable(z.lazy(() => Trial$.inboundSchema)).optional(),
-            email: z.nullable(z.string()).optional(),
-            tax: z.nullable(z.lazy(() => Tax$.inboundSchema)).optional(),
-            language: z.nullable(z.string()).optional(),
-            address: z.nullable(z.lazy(() => Address$.inboundSchema)).optional(),
-            name: z.nullable(z.string()).optional(),
-            invoiceItems: z.nullable(z.lazy(() => InvoiceItems$.inboundSchema)).optional(),
-            invoiceSettings: z.lazy(() => InvoiceSettings$.inboundSchema).optional(),
-            subscriptions: z
-                .nullable(z.array(z.lazy(() => Subscriptions$.inboundSchema)))
-                .optional(),
-            controls: z.nullable(z.lazy(() => Controls$.inboundSchema)).optional(),
-            purchaseOrder: z.nullable(z.string()).optional(),
-            status: Status$.inboundSchema.optional(),
-            pricingExperiment: PricingExperiment$.inboundSchema.optional(),
-            orbMigrationScheduledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.currency === undefined ? null : { currency: v.currency }),
-                ...(v.cancelation === undefined ? null : { cancelation: v.cancelation }),
-                period: v.period,
-                ...(v.contract === undefined ? null : { contract: v.contract }),
-                plan: v.plan,
-                ...(v.planIteration === undefined ? null : { planIteration: v.planIteration }),
-                ...(v.platform === undefined ? null : { platform: v.platform }),
-                ...(v.orbCustomerId === undefined ? null : { orbCustomerId: v.orbCustomerId }),
-                ...(v.syncedAt === undefined ? null : { syncedAt: v.syncedAt }),
-                ...(v.programType === undefined ? null : { programType: v.programType }),
-                ...(v.trial === undefined ? null : { trial: v.trial }),
-                ...(v.email === undefined ? null : { email: v.email }),
-                ...(v.tax === undefined ? null : { tax: v.tax }),
-                ...(v.language === undefined ? null : { language: v.language }),
-                ...(v.address === undefined ? null : { address: v.address }),
-                ...(v.name === undefined ? null : { name: v.name }),
-                ...(v.invoiceItems === undefined ? null : { invoiceItems: v.invoiceItems }),
-                ...(v.invoiceSettings === undefined
-                    ? null
-                    : { invoiceSettings: v.invoiceSettings }),
-                ...(v.subscriptions === undefined ? null : { subscriptions: v.subscriptions }),
-                ...(v.controls === undefined ? null : { controls: v.controls }),
-                ...(v.purchaseOrder === undefined ? null : { purchaseOrder: v.purchaseOrder }),
-                ...(v.status === undefined ? null : { status: v.status }),
-                ...(v.pricingExperiment === undefined
-                    ? null
-                    : { pricingExperiment: v.pricingExperiment }),
-                ...(v.orbMigrationScheduledAt === undefined
-                    ? null
-                    : { orbMigrationScheduledAt: v.orbMigrationScheduledAt }),
-            };
-        });
+    export const inboundSchema: z.ZodType<Billing, z.ZodTypeDef, unknown> = z.object({
+        currency: Currency$.inboundSchema.optional(),
+        cancelation: z.nullable(z.number()).optional(),
+        period: z.nullable(z.lazy(() => Period$.inboundSchema)),
+        contract: z.nullable(z.lazy(() => Contract$.inboundSchema)).optional(),
+        plan: Plan$.inboundSchema,
+        planIteration: z.string().optional(),
+        platform: Platform$.inboundSchema.optional(),
+        orbCustomerId: z.string().optional(),
+        syncedAt: z.number().optional(),
+        programType: ProgramType$.inboundSchema.optional(),
+        trial: z.nullable(z.lazy(() => Trial$.inboundSchema)).optional(),
+        email: z.nullable(z.string()).optional(),
+        tax: z.nullable(z.lazy(() => Tax$.inboundSchema)).optional(),
+        language: z.nullable(z.string()).optional(),
+        address: z.nullable(z.lazy(() => Address$.inboundSchema)).optional(),
+        name: z.nullable(z.string()).optional(),
+        invoiceItems: z.nullable(z.lazy(() => InvoiceItems$.inboundSchema)).optional(),
+        invoiceSettings: z.lazy(() => InvoiceSettings$.inboundSchema).optional(),
+        subscriptions: z.nullable(z.array(z.lazy(() => Subscriptions$.inboundSchema))).optional(),
+        controls: z.nullable(z.lazy(() => Controls$.inboundSchema)).optional(),
+        purchaseOrder: z.nullable(z.string()).optional(),
+        status: Status$.inboundSchema.optional(),
+        pricingExperiment: PricingExperiment$.inboundSchema.optional(),
+        orbMigrationScheduledAt: z.nullable(z.number()).optional(),
+    });
 
     export type Outbound = {
         currency?: string | undefined;
@@ -8218,129 +5621,54 @@ export namespace Billing$ {
         orbMigrationScheduledAt?: number | null | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, Billing> = z
-        .object({
-            currency: Currency$.outboundSchema.optional(),
-            cancelation: z.nullable(z.number()).optional(),
-            period: z.nullable(z.lazy(() => Period$.outboundSchema)),
-            contract: z.nullable(z.lazy(() => Contract$.outboundSchema)).optional(),
-            plan: Plan$.outboundSchema,
-            planIteration: z.string().optional(),
-            platform: Platform$.outboundSchema.optional(),
-            orbCustomerId: z.string().optional(),
-            syncedAt: z.number().optional(),
-            programType: ProgramType$.outboundSchema.optional(),
-            trial: z.nullable(z.lazy(() => Trial$.outboundSchema)).optional(),
-            email: z.nullable(z.string()).optional(),
-            tax: z.nullable(z.lazy(() => Tax$.outboundSchema)).optional(),
-            language: z.nullable(z.string()).optional(),
-            address: z.nullable(z.lazy(() => Address$.outboundSchema)).optional(),
-            name: z.nullable(z.string()).optional(),
-            invoiceItems: z.nullable(z.lazy(() => InvoiceItems$.outboundSchema)).optional(),
-            invoiceSettings: z.lazy(() => InvoiceSettings$.outboundSchema).optional(),
-            subscriptions: z
-                .nullable(z.array(z.lazy(() => Subscriptions$.outboundSchema)))
-                .optional(),
-            controls: z.nullable(z.lazy(() => Controls$.outboundSchema)).optional(),
-            purchaseOrder: z.nullable(z.string()).optional(),
-            status: Status$.outboundSchema.optional(),
-            pricingExperiment: PricingExperiment$.outboundSchema.optional(),
-            orbMigrationScheduledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.currency === undefined ? null : { currency: v.currency }),
-                ...(v.cancelation === undefined ? null : { cancelation: v.cancelation }),
-                period: v.period,
-                ...(v.contract === undefined ? null : { contract: v.contract }),
-                plan: v.plan,
-                ...(v.planIteration === undefined ? null : { planIteration: v.planIteration }),
-                ...(v.platform === undefined ? null : { platform: v.platform }),
-                ...(v.orbCustomerId === undefined ? null : { orbCustomerId: v.orbCustomerId }),
-                ...(v.syncedAt === undefined ? null : { syncedAt: v.syncedAt }),
-                ...(v.programType === undefined ? null : { programType: v.programType }),
-                ...(v.trial === undefined ? null : { trial: v.trial }),
-                ...(v.email === undefined ? null : { email: v.email }),
-                ...(v.tax === undefined ? null : { tax: v.tax }),
-                ...(v.language === undefined ? null : { language: v.language }),
-                ...(v.address === undefined ? null : { address: v.address }),
-                ...(v.name === undefined ? null : { name: v.name }),
-                ...(v.invoiceItems === undefined ? null : { invoiceItems: v.invoiceItems }),
-                ...(v.invoiceSettings === undefined
-                    ? null
-                    : { invoiceSettings: v.invoiceSettings }),
-                ...(v.subscriptions === undefined ? null : { subscriptions: v.subscriptions }),
-                ...(v.controls === undefined ? null : { controls: v.controls }),
-                ...(v.purchaseOrder === undefined ? null : { purchaseOrder: v.purchaseOrder }),
-                ...(v.status === undefined ? null : { status: v.status }),
-                ...(v.pricingExperiment === undefined
-                    ? null
-                    : { pricingExperiment: v.pricingExperiment }),
-                ...(v.orbMigrationScheduledAt === undefined
-                    ? null
-                    : { orbMigrationScheduledAt: v.orbMigrationScheduledAt }),
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, Billing> = z.object({
+        currency: Currency$.outboundSchema.optional(),
+        cancelation: z.nullable(z.number()).optional(),
+        period: z.nullable(z.lazy(() => Period$.outboundSchema)),
+        contract: z.nullable(z.lazy(() => Contract$.outboundSchema)).optional(),
+        plan: Plan$.outboundSchema,
+        planIteration: z.string().optional(),
+        platform: Platform$.outboundSchema.optional(),
+        orbCustomerId: z.string().optional(),
+        syncedAt: z.number().optional(),
+        programType: ProgramType$.outboundSchema.optional(),
+        trial: z.nullable(z.lazy(() => Trial$.outboundSchema)).optional(),
+        email: z.nullable(z.string()).optional(),
+        tax: z.nullable(z.lazy(() => Tax$.outboundSchema)).optional(),
+        language: z.nullable(z.string()).optional(),
+        address: z.nullable(z.lazy(() => Address$.outboundSchema)).optional(),
+        name: z.nullable(z.string()).optional(),
+        invoiceItems: z.nullable(z.lazy(() => InvoiceItems$.outboundSchema)).optional(),
+        invoiceSettings: z.lazy(() => InvoiceSettings$.outboundSchema).optional(),
+        subscriptions: z.nullable(z.array(z.lazy(() => Subscriptions$.outboundSchema))).optional(),
+        controls: z.nullable(z.lazy(() => Controls$.outboundSchema)).optional(),
+        purchaseOrder: z.nullable(z.string()).optional(),
+        status: Status$.outboundSchema.optional(),
+        pricingExperiment: PricingExperiment$.outboundSchema.optional(),
+        orbMigrationScheduledAt: z.nullable(z.number()).optional(),
+    });
 }
 
 /** @internal */
 export namespace ResourceConfig$ {
-    export const inboundSchema: z.ZodType<ResourceConfig, z.ZodTypeDef, unknown> = z
-        .object({
-            blobStores: z.number().optional(),
-            nodeType: z.string().optional(),
-            concurrentBuilds: z.number().optional(),
-            awsAccountType: z.string().optional(),
-            awsAccountIds: z.array(z.string()).optional(),
-            cfZoneName: z.string().optional(),
-            edgeConfigs: z.number().optional(),
-            edgeConfigSize: z.number().optional(),
-            edgeFunctionMaxSizeBytes: z.number().optional(),
-            edgeFunctionExecutionTimeoutMs: z.number().optional(),
-            serverlessFunctionDefaultMaxExecutionTime: z.number().optional(),
-            kvDatabases: z.number().optional(),
-            postgresDatabases: z.number().optional(),
-            integrationStores: z.number().optional(),
-            cronJobs: z.number().optional(),
-            cronJobsPerProject: z.number().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.blobStores === undefined ? null : { blobStores: v.blobStores }),
-                ...(v.nodeType === undefined ? null : { nodeType: v.nodeType }),
-                ...(v.concurrentBuilds === undefined
-                    ? null
-                    : { concurrentBuilds: v.concurrentBuilds }),
-                ...(v.awsAccountType === undefined ? null : { awsAccountType: v.awsAccountType }),
-                ...(v.awsAccountIds === undefined ? null : { awsAccountIds: v.awsAccountIds }),
-                ...(v.cfZoneName === undefined ? null : { cfZoneName: v.cfZoneName }),
-                ...(v.edgeConfigs === undefined ? null : { edgeConfigs: v.edgeConfigs }),
-                ...(v.edgeConfigSize === undefined ? null : { edgeConfigSize: v.edgeConfigSize }),
-                ...(v.edgeFunctionMaxSizeBytes === undefined
-                    ? null
-                    : { edgeFunctionMaxSizeBytes: v.edgeFunctionMaxSizeBytes }),
-                ...(v.edgeFunctionExecutionTimeoutMs === undefined
-                    ? null
-                    : { edgeFunctionExecutionTimeoutMs: v.edgeFunctionExecutionTimeoutMs }),
-                ...(v.serverlessFunctionDefaultMaxExecutionTime === undefined
-                    ? null
-                    : {
-                          serverlessFunctionDefaultMaxExecutionTime:
-                              v.serverlessFunctionDefaultMaxExecutionTime,
-                      }),
-                ...(v.kvDatabases === undefined ? null : { kvDatabases: v.kvDatabases }),
-                ...(v.postgresDatabases === undefined
-                    ? null
-                    : { postgresDatabases: v.postgresDatabases }),
-                ...(v.integrationStores === undefined
-                    ? null
-                    : { integrationStores: v.integrationStores }),
-                ...(v.cronJobs === undefined ? null : { cronJobs: v.cronJobs }),
-                ...(v.cronJobsPerProject === undefined
-                    ? null
-                    : { cronJobsPerProject: v.cronJobsPerProject }),
-            };
-        });
+    export const inboundSchema: z.ZodType<ResourceConfig, z.ZodTypeDef, unknown> = z.object({
+        blobStores: z.number().optional(),
+        nodeType: z.string().optional(),
+        concurrentBuilds: z.number().optional(),
+        awsAccountType: z.string().optional(),
+        awsAccountIds: z.array(z.string()).optional(),
+        cfZoneName: z.string().optional(),
+        edgeConfigs: z.number().optional(),
+        edgeConfigSize: z.number().optional(),
+        edgeFunctionMaxSizeBytes: z.number().optional(),
+        edgeFunctionExecutionTimeoutMs: z.number().optional(),
+        serverlessFunctionDefaultMaxExecutionTime: z.number().optional(),
+        kvDatabases: z.number().optional(),
+        postgresDatabases: z.number().optional(),
+        integrationStores: z.number().optional(),
+        cronJobs: z.number().optional(),
+        cronJobsPerProject: z.number().optional(),
+    });
 
     export type Outbound = {
         blobStores?: number | undefined;
@@ -8361,62 +5689,24 @@ export namespace ResourceConfig$ {
         cronJobsPerProject?: number | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, ResourceConfig> = z
-        .object({
-            blobStores: z.number().optional(),
-            nodeType: z.string().optional(),
-            concurrentBuilds: z.number().optional(),
-            awsAccountType: z.string().optional(),
-            awsAccountIds: z.array(z.string()).optional(),
-            cfZoneName: z.string().optional(),
-            edgeConfigs: z.number().optional(),
-            edgeConfigSize: z.number().optional(),
-            edgeFunctionMaxSizeBytes: z.number().optional(),
-            edgeFunctionExecutionTimeoutMs: z.number().optional(),
-            serverlessFunctionDefaultMaxExecutionTime: z.number().optional(),
-            kvDatabases: z.number().optional(),
-            postgresDatabases: z.number().optional(),
-            integrationStores: z.number().optional(),
-            cronJobs: z.number().optional(),
-            cronJobsPerProject: z.number().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.blobStores === undefined ? null : { blobStores: v.blobStores }),
-                ...(v.nodeType === undefined ? null : { nodeType: v.nodeType }),
-                ...(v.concurrentBuilds === undefined
-                    ? null
-                    : { concurrentBuilds: v.concurrentBuilds }),
-                ...(v.awsAccountType === undefined ? null : { awsAccountType: v.awsAccountType }),
-                ...(v.awsAccountIds === undefined ? null : { awsAccountIds: v.awsAccountIds }),
-                ...(v.cfZoneName === undefined ? null : { cfZoneName: v.cfZoneName }),
-                ...(v.edgeConfigs === undefined ? null : { edgeConfigs: v.edgeConfigs }),
-                ...(v.edgeConfigSize === undefined ? null : { edgeConfigSize: v.edgeConfigSize }),
-                ...(v.edgeFunctionMaxSizeBytes === undefined
-                    ? null
-                    : { edgeFunctionMaxSizeBytes: v.edgeFunctionMaxSizeBytes }),
-                ...(v.edgeFunctionExecutionTimeoutMs === undefined
-                    ? null
-                    : { edgeFunctionExecutionTimeoutMs: v.edgeFunctionExecutionTimeoutMs }),
-                ...(v.serverlessFunctionDefaultMaxExecutionTime === undefined
-                    ? null
-                    : {
-                          serverlessFunctionDefaultMaxExecutionTime:
-                              v.serverlessFunctionDefaultMaxExecutionTime,
-                      }),
-                ...(v.kvDatabases === undefined ? null : { kvDatabases: v.kvDatabases }),
-                ...(v.postgresDatabases === undefined
-                    ? null
-                    : { postgresDatabases: v.postgresDatabases }),
-                ...(v.integrationStores === undefined
-                    ? null
-                    : { integrationStores: v.integrationStores }),
-                ...(v.cronJobs === undefined ? null : { cronJobs: v.cronJobs }),
-                ...(v.cronJobsPerProject === undefined
-                    ? null
-                    : { cronJobsPerProject: v.cronJobsPerProject }),
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, ResourceConfig> = z.object({
+        blobStores: z.number().optional(),
+        nodeType: z.string().optional(),
+        concurrentBuilds: z.number().optional(),
+        awsAccountType: z.string().optional(),
+        awsAccountIds: z.array(z.string()).optional(),
+        cfZoneName: z.string().optional(),
+        edgeConfigs: z.number().optional(),
+        edgeConfigSize: z.number().optional(),
+        edgeFunctionMaxSizeBytes: z.number().optional(),
+        edgeFunctionExecutionTimeoutMs: z.number().optional(),
+        serverlessFunctionDefaultMaxExecutionTime: z.number().optional(),
+        kvDatabases: z.number().optional(),
+        postgresDatabases: z.number().optional(),
+        integrationStores: z.number().optional(),
+        cronJobs: z.number().optional(),
+        cronJobsPerProject: z.number().optional(),
+    });
 }
 
 /** @internal */
@@ -8439,25 +5729,12 @@ export namespace RecentsViewPreference$ {
 
 /** @internal */
 export namespace ActiveDashboardViews$ {
-    export const inboundSchema: z.ZodType<ActiveDashboardViews, z.ZodTypeDef, unknown> = z
-        .object({
-            scopeId: z.string(),
-            viewPreference: ViewPreference$.inboundSchema.optional(),
-            favoritesViewPreference: FavoritesViewPreference$.inboundSchema.optional(),
-            recentsViewPreference: RecentsViewPreference$.inboundSchema.optional(),
-        })
-        .transform((v) => {
-            return {
-                scopeId: v.scopeId,
-                ...(v.viewPreference === undefined ? null : { viewPreference: v.viewPreference }),
-                ...(v.favoritesViewPreference === undefined
-                    ? null
-                    : { favoritesViewPreference: v.favoritesViewPreference }),
-                ...(v.recentsViewPreference === undefined
-                    ? null
-                    : { recentsViewPreference: v.recentsViewPreference }),
-            };
-        });
+    export const inboundSchema: z.ZodType<ActiveDashboardViews, z.ZodTypeDef, unknown> = z.object({
+        scopeId: z.string(),
+        viewPreference: ViewPreference$.inboundSchema.optional(),
+        favoritesViewPreference: FavoritesViewPreference$.inboundSchema.optional(),
+        recentsViewPreference: RecentsViewPreference$.inboundSchema.optional(),
+    });
 
     export type Outbound = {
         scopeId: string;
@@ -8466,25 +5743,14 @@ export namespace ActiveDashboardViews$ {
         recentsViewPreference?: string | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, ActiveDashboardViews> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, ActiveDashboardViews> = z.object(
+        {
             scopeId: z.string(),
             viewPreference: ViewPreference$.outboundSchema.optional(),
             favoritesViewPreference: FavoritesViewPreference$.outboundSchema.optional(),
             recentsViewPreference: RecentsViewPreference$.outboundSchema.optional(),
-        })
-        .transform((v) => {
-            return {
-                scopeId: v.scopeId,
-                ...(v.viewPreference === undefined ? null : { viewPreference: v.viewPreference }),
-                ...(v.favoritesViewPreference === undefined
-                    ? null
-                    : { favoritesViewPreference: v.favoritesViewPreference }),
-                ...(v.recentsViewPreference === undefined
-                    ? null
-                    : { recentsViewPreference: v.recentsViewPreference }),
-            };
-        });
+        }
+    );
 }
 
 /** @internal */
@@ -8532,17 +5798,10 @@ export namespace GitNamespaceId$ {
 /** @internal */
 export namespace PreferredScopesAndGitNamespaces$ {
     export const inboundSchema: z.ZodType<PreferredScopesAndGitNamespaces, z.ZodTypeDef, unknown> =
-        z
-            .object({
-                scopeId: z.string(),
-                gitNamespaceId: z.nullable(z.union([z.string(), z.number()])),
-            })
-            .transform((v) => {
-                return {
-                    scopeId: v.scopeId,
-                    gitNamespaceId: v.gitNamespaceId,
-                };
-            });
+        z.object({
+            scopeId: z.string(),
+            gitNamespaceId: z.nullable(z.union([z.string(), z.number()])),
+        });
 
     export type Outbound = {
         scopeId: string;
@@ -8553,97 +5812,55 @@ export namespace PreferredScopesAndGitNamespaces$ {
         Outbound,
         z.ZodTypeDef,
         PreferredScopesAndGitNamespaces
-    > = z
-        .object({
-            scopeId: z.string(),
-            gitNamespaceId: z.nullable(z.union([z.string(), z.number()])),
-        })
-        .transform((v) => {
-            return {
-                scopeId: v.scopeId,
-                gitNamespaceId: v.gitNamespaceId,
-            };
-        });
+    > = z.object({
+        scopeId: z.string(),
+        gitNamespaceId: z.nullable(z.union([z.string(), z.number()])),
+    });
 }
 
 /** @internal */
 export namespace Dismissals$ {
-    export const inboundSchema: z.ZodType<Dismissals, z.ZodTypeDef, unknown> = z
-        .object({
-            scopeId: z.string(),
-            createdAt: z.number(),
-        })
-        .transform((v) => {
-            return {
-                scopeId: v.scopeId,
-                createdAt: v.createdAt,
-            };
-        });
+    export const inboundSchema: z.ZodType<Dismissals, z.ZodTypeDef, unknown> = z.object({
+        scopeId: z.string(),
+        createdAt: z.number(),
+    });
 
     export type Outbound = {
         scopeId: string;
         createdAt: number;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, Dismissals> = z
-        .object({
-            scopeId: z.string(),
-            createdAt: z.number(),
-        })
-        .transform((v) => {
-            return {
-                scopeId: v.scopeId,
-                createdAt: v.createdAt,
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, Dismissals> = z.object({
+        scopeId: z.string(),
+        createdAt: z.number(),
+    });
 }
 
 /** @internal */
 export namespace DismissedToasts$ {
-    export const inboundSchema: z.ZodType<DismissedToasts, z.ZodTypeDef, unknown> = z
-        .object({
-            name: z.string(),
-            dismissals: z.array(z.lazy(() => Dismissals$.inboundSchema)),
-        })
-        .transform((v) => {
-            return {
-                name: v.name,
-                dismissals: v.dismissals,
-            };
-        });
+    export const inboundSchema: z.ZodType<DismissedToasts, z.ZodTypeDef, unknown> = z.object({
+        name: z.string(),
+        dismissals: z.array(z.lazy(() => Dismissals$.inboundSchema)),
+    });
 
     export type Outbound = {
         name: string;
         dismissals: Array<Dismissals$.Outbound>;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, DismissedToasts> = z
-        .object({
-            name: z.string(),
-            dismissals: z.array(z.lazy(() => Dismissals$.outboundSchema)),
-        })
-        .transform((v) => {
-            return {
-                name: v.name,
-                dismissals: v.dismissals,
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, DismissedToasts> = z.object({
+        name: z.string(),
+        dismissals: z.array(z.lazy(() => Dismissals$.outboundSchema)),
+    });
 }
 
 /** @internal */
 export namespace FavoriteProjectsAndSpaces2$ {
-    export const inboundSchema: z.ZodType<FavoriteProjectsAndSpaces2, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<FavoriteProjectsAndSpaces2, z.ZodTypeDef, unknown> =
+        z.object({
             spaceId: z.string(),
             scopeSlug: z.string(),
             scopeId: z.string(),
-        })
-        .transform((v) => {
-            return {
-                spaceId: v.spaceId,
-                scopeSlug: v.scopeSlug,
-                scopeId: v.scopeId,
-            };
         });
 
     export type Outbound = {
@@ -8652,35 +5869,21 @@ export namespace FavoriteProjectsAndSpaces2$ {
         scopeId: string;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, FavoriteProjectsAndSpaces2> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, FavoriteProjectsAndSpaces2> =
+        z.object({
             spaceId: z.string(),
             scopeSlug: z.string(),
             scopeId: z.string(),
-        })
-        .transform((v) => {
-            return {
-                spaceId: v.spaceId,
-                scopeSlug: v.scopeSlug,
-                scopeId: v.scopeId,
-            };
         });
 }
 
 /** @internal */
 export namespace FavoriteProjectsAndSpaces1$ {
-    export const inboundSchema: z.ZodType<FavoriteProjectsAndSpaces1, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<FavoriteProjectsAndSpaces1, z.ZodTypeDef, unknown> =
+        z.object({
             projectId: z.string(),
             scopeSlug: z.string(),
             scopeId: z.string(),
-        })
-        .transform((v) => {
-            return {
-                projectId: v.projectId,
-                scopeSlug: v.scopeSlug,
-                scopeId: v.scopeId,
-            };
         });
 
     export type Outbound = {
@@ -8689,18 +5892,11 @@ export namespace FavoriteProjectsAndSpaces1$ {
         scopeId: string;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, FavoriteProjectsAndSpaces1> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, FavoriteProjectsAndSpaces1> =
+        z.object({
             projectId: z.string(),
             scopeSlug: z.string(),
             scopeId: z.string(),
-        })
-        .transform((v) => {
-            return {
-                projectId: v.projectId,
-                scopeSlug: v.scopeSlug,
-                scopeId: v.scopeId,
-            };
         });
 }
 
@@ -8724,77 +5920,41 @@ export namespace FavoriteProjectsAndSpaces$ {
 
 /** @internal */
 export namespace RemoteCaching$ {
-    export const inboundSchema: z.ZodType<RemoteCaching, z.ZodTypeDef, unknown> = z
-        .object({
-            enabled: z.boolean().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.enabled === undefined ? null : { enabled: v.enabled }),
-            };
-        });
+    export const inboundSchema: z.ZodType<RemoteCaching, z.ZodTypeDef, unknown> = z.object({
+        enabled: z.boolean().optional(),
+    });
 
     export type Outbound = {
         enabled?: boolean | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, RemoteCaching> = z
-        .object({
-            enabled: z.boolean().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.enabled === undefined ? null : { enabled: v.enabled }),
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, RemoteCaching> = z.object({
+        enabled: z.boolean().optional(),
+    });
 }
 
 /** @internal */
 export namespace DataCache$ {
-    export const inboundSchema: z.ZodType<DataCache, z.ZodTypeDef, unknown> = z
-        .object({
-            excessBillingEnabled: z.boolean().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.excessBillingEnabled === undefined
-                    ? null
-                    : { excessBillingEnabled: v.excessBillingEnabled }),
-            };
-        });
+    export const inboundSchema: z.ZodType<DataCache, z.ZodTypeDef, unknown> = z.object({
+        excessBillingEnabled: z.boolean().optional(),
+    });
 
     export type Outbound = {
         excessBillingEnabled?: boolean | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, DataCache> = z
-        .object({
-            excessBillingEnabled: z.boolean().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.excessBillingEnabled === undefined
-                    ? null
-                    : { excessBillingEnabled: v.excessBillingEnabled }),
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, DataCache> = z.object({
+        excessBillingEnabled: z.boolean().optional(),
+    });
 }
 
 /** @internal */
 export namespace WebAnalytics$ {
-    export const inboundSchema: z.ZodType<WebAnalytics, z.ZodTypeDef, unknown> = z
-        .object({
-            blockedFrom: z.number().optional(),
-            blockedUntil: z.number().optional(),
-            isCurrentlyBlocked: z.boolean(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.blockedFrom === undefined ? null : { blockedFrom: v.blockedFrom }),
-                ...(v.blockedUntil === undefined ? null : { blockedUntil: v.blockedUntil }),
-                isCurrentlyBlocked: v.isCurrentlyBlocked,
-            };
-        });
+    export const inboundSchema: z.ZodType<WebAnalytics, z.ZodTypeDef, unknown> = z.object({
+        blockedFrom: z.number().optional(),
+        blockedUntil: z.number().optional(),
+        isCurrentlyBlocked: z.boolean(),
+    });
 
     export type Outbound = {
         blockedFrom?: number | undefined;
@@ -8802,46 +5962,26 @@ export namespace WebAnalytics$ {
         isCurrentlyBlocked: boolean;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, WebAnalytics> = z
-        .object({
-            blockedFrom: z.number().optional(),
-            blockedUntil: z.number().optional(),
-            isCurrentlyBlocked: z.boolean(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.blockedFrom === undefined ? null : { blockedFrom: v.blockedFrom }),
-                ...(v.blockedUntil === undefined ? null : { blockedUntil: v.blockedUntil }),
-                isCurrentlyBlocked: v.isCurrentlyBlocked,
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, WebAnalytics> = z.object({
+        blockedFrom: z.number().optional(),
+        blockedUntil: z.number().optional(),
+        isCurrentlyBlocked: z.boolean(),
+    });
 }
 
 /** @internal */
 export namespace FeatureBlocks$ {
-    export const inboundSchema: z.ZodType<FeatureBlocks, z.ZodTypeDef, unknown> = z
-        .object({
-            webAnalytics: z.lazy(() => WebAnalytics$.inboundSchema).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.webAnalytics === undefined ? null : { webAnalytics: v.webAnalytics }),
-            };
-        });
+    export const inboundSchema: z.ZodType<FeatureBlocks, z.ZodTypeDef, unknown> = z.object({
+        webAnalytics: z.lazy(() => WebAnalytics$.inboundSchema).optional(),
+    });
 
     export type Outbound = {
         webAnalytics?: WebAnalytics$.Outbound | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, FeatureBlocks> = z
-        .object({
-            webAnalytics: z.lazy(() => WebAnalytics$.outboundSchema).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.webAnalytics === undefined ? null : { webAnalytics: v.webAnalytics }),
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, FeatureBlocks> = z.object({
+        webAnalytics: z.lazy(() => WebAnalytics$.outboundSchema).optional(),
+    });
 }
 
 /** @internal */
@@ -8852,86 +5992,48 @@ export namespace AuthUserStatus$ {
 
 /** @internal */
 export namespace Migration$ {
-    export const inboundSchema: z.ZodType<Migration, z.ZodTypeDef, unknown> = z
-        .object({
-            teamId: z.string().optional(),
-            status: AuthUserStatus$.inboundSchema,
-        })
-        .transform((v) => {
-            return {
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                status: v.status,
-            };
-        });
+    export const inboundSchema: z.ZodType<Migration, z.ZodTypeDef, unknown> = z.object({
+        teamId: z.string().optional(),
+        status: AuthUserStatus$.inboundSchema,
+    });
 
     export type Outbound = {
         teamId?: string | undefined;
         status: string;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, Migration> = z
-        .object({
-            teamId: z.string().optional(),
-            status: AuthUserStatus$.outboundSchema,
-        })
-        .transform((v) => {
-            return {
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                status: v.status,
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, Migration> = z.object({
+        teamId: z.string().optional(),
+        status: AuthUserStatus$.outboundSchema,
+    });
 }
 
 /** @internal */
 export namespace Northstar$ {
-    export const inboundSchema: z.ZodType<Northstar, z.ZodTypeDef, unknown> = z
-        .object({
-            migration: z.lazy(() => Migration$.inboundSchema).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.migration === undefined ? null : { migration: v.migration }),
-            };
-        });
+    export const inboundSchema: z.ZodType<Northstar, z.ZodTypeDef, unknown> = z.object({
+        migration: z.lazy(() => Migration$.inboundSchema).optional(),
+    });
 
     export type Outbound = {
         migration?: Migration$.Outbound | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, Northstar> = z
-        .object({
-            migration: z.lazy(() => Migration$.outboundSchema).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.migration === undefined ? null : { migration: v.migration }),
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, Northstar> = z.object({
+        migration: z.lazy(() => Migration$.outboundSchema).optional(),
+    });
 }
 
 /** @internal */
 export namespace NorthstarMigration$ {
-    export const inboundSchema: z.ZodType<NorthstarMigration, z.ZodTypeDef, unknown> = z
-        .object({
-            teamId: z.string(),
-            projects: z.number(),
-            stores: z.number(),
-            integrationConfigurations: z.number(),
-            integrationClients: z.number(),
-            startTime: z.number(),
-            endTime: z.number(),
-        })
-        .transform((v) => {
-            return {
-                teamId: v.teamId,
-                projects: v.projects,
-                stores: v.stores,
-                integrationConfigurations: v.integrationConfigurations,
-                integrationClients: v.integrationClients,
-                startTime: v.startTime,
-                endTime: v.endTime,
-            };
-        });
+    export const inboundSchema: z.ZodType<NorthstarMigration, z.ZodTypeDef, unknown> = z.object({
+        teamId: z.string(),
+        projects: z.number(),
+        stores: z.number(),
+        integrationConfigurations: z.number(),
+        integrationClients: z.number(),
+        startTime: z.number(),
+        endTime: z.number(),
+    });
 
     export type Outbound = {
         teamId: string;
@@ -8943,27 +6045,15 @@ export namespace NorthstarMigration$ {
         endTime: number;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, NorthstarMigration> = z
-        .object({
-            teamId: z.string(),
-            projects: z.number(),
-            stores: z.number(),
-            integrationConfigurations: z.number(),
-            integrationClients: z.number(),
-            startTime: z.number(),
-            endTime: z.number(),
-        })
-        .transform((v) => {
-            return {
-                teamId: v.teamId,
-                projects: v.projects,
-                stores: v.stores,
-                integrationConfigurations: v.integrationConfigurations,
-                integrationClients: v.integrationClients,
-                startTime: v.startTime,
-                endTime: v.endTime,
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, NorthstarMigration> = z.object({
+        teamId: z.string(),
+        projects: z.number(),
+        stores: z.number(),
+        integrationConfigurations: z.number(),
+        integrationClients: z.number(),
+        startTime: z.number(),
+        endTime: z.number(),
+    });
 }
 
 /** @internal */
@@ -8974,90 +6064,42 @@ export namespace Version$ {
 
 /** @internal */
 export namespace AuthUser$ {
-    export const inboundSchema: z.ZodType<AuthUser, z.ZodTypeDef, unknown> = z
-        .object({
-            createdAt: z.number(),
-            softBlock: z.nullable(z.lazy(() => SoftBlock$.inboundSchema)),
-            billing: z.nullable(z.lazy(() => Billing$.inboundSchema)),
-            resourceConfig: z.lazy(() => ResourceConfig$.inboundSchema),
-            stagingPrefix: z.string(),
-            activeDashboardViews: z
-                .array(z.lazy(() => ActiveDashboardViews$.inboundSchema))
-                .optional(),
-            importFlowGitNamespace: z.nullable(z.union([z.string(), z.number()])).optional(),
-            importFlowGitNamespaceId: z.nullable(z.union([z.string(), z.number()])).optional(),
-            importFlowGitProvider: ImportFlowGitProvider$.inboundSchema.optional(),
-            preferredScopesAndGitNamespaces: z
-                .array(z.lazy(() => PreferredScopesAndGitNamespaces$.inboundSchema))
-                .optional(),
-            dismissedToasts: z.array(z.lazy(() => DismissedToasts$.inboundSchema)).optional(),
-            favoriteProjectsAndSpaces: z
-                .array(
-                    z.union([
-                        z.lazy(() => FavoriteProjectsAndSpaces1$.inboundSchema),
-                        z.lazy(() => FavoriteProjectsAndSpaces2$.inboundSchema),
-                    ])
-                )
-                .optional(),
-            hasTrialAvailable: z.boolean(),
-            remoteCaching: z.lazy(() => RemoteCaching$.inboundSchema).optional(),
-            dataCache: z.lazy(() => DataCache$.inboundSchema).optional(),
-            featureBlocks: z.lazy(() => FeatureBlocks$.inboundSchema).optional(),
-            northstar: z.lazy(() => Northstar$.inboundSchema).optional(),
-            northstarMigration: z.lazy(() => NorthstarMigration$.inboundSchema).optional(),
-            id: z.string(),
-            email: z.string(),
-            name: z.nullable(z.string()),
-            username: z.string(),
-            avatar: z.nullable(z.string()),
-            defaultTeamId: z.nullable(z.string()),
-            version: z.nullable(Version$.inboundSchema),
-        })
-        .transform((v) => {
-            return {
-                createdAt: v.createdAt,
-                softBlock: v.softBlock,
-                billing: v.billing,
-                resourceConfig: v.resourceConfig,
-                stagingPrefix: v.stagingPrefix,
-                ...(v.activeDashboardViews === undefined
-                    ? null
-                    : { activeDashboardViews: v.activeDashboardViews }),
-                ...(v.importFlowGitNamespace === undefined
-                    ? null
-                    : { importFlowGitNamespace: v.importFlowGitNamespace }),
-                ...(v.importFlowGitNamespaceId === undefined
-                    ? null
-                    : { importFlowGitNamespaceId: v.importFlowGitNamespaceId }),
-                ...(v.importFlowGitProvider === undefined
-                    ? null
-                    : { importFlowGitProvider: v.importFlowGitProvider }),
-                ...(v.preferredScopesAndGitNamespaces === undefined
-                    ? null
-                    : { preferredScopesAndGitNamespaces: v.preferredScopesAndGitNamespaces }),
-                ...(v.dismissedToasts === undefined
-                    ? null
-                    : { dismissedToasts: v.dismissedToasts }),
-                ...(v.favoriteProjectsAndSpaces === undefined
-                    ? null
-                    : { favoriteProjectsAndSpaces: v.favoriteProjectsAndSpaces }),
-                hasTrialAvailable: v.hasTrialAvailable,
-                ...(v.remoteCaching === undefined ? null : { remoteCaching: v.remoteCaching }),
-                ...(v.dataCache === undefined ? null : { dataCache: v.dataCache }),
-                ...(v.featureBlocks === undefined ? null : { featureBlocks: v.featureBlocks }),
-                ...(v.northstar === undefined ? null : { northstar: v.northstar }),
-                ...(v.northstarMigration === undefined
-                    ? null
-                    : { northstarMigration: v.northstarMigration }),
-                id: v.id,
-                email: v.email,
-                name: v.name,
-                username: v.username,
-                avatar: v.avatar,
-                defaultTeamId: v.defaultTeamId,
-                version: v.version,
-            };
-        });
+    export const inboundSchema: z.ZodType<AuthUser, z.ZodTypeDef, unknown> = z.object({
+        createdAt: z.number(),
+        softBlock: z.nullable(z.lazy(() => SoftBlock$.inboundSchema)),
+        billing: z.nullable(z.lazy(() => Billing$.inboundSchema)),
+        resourceConfig: z.lazy(() => ResourceConfig$.inboundSchema),
+        stagingPrefix: z.string(),
+        activeDashboardViews: z.array(z.lazy(() => ActiveDashboardViews$.inboundSchema)).optional(),
+        importFlowGitNamespace: z.nullable(z.union([z.string(), z.number()])).optional(),
+        importFlowGitNamespaceId: z.nullable(z.union([z.string(), z.number()])).optional(),
+        importFlowGitProvider: ImportFlowGitProvider$.inboundSchema.optional(),
+        preferredScopesAndGitNamespaces: z
+            .array(z.lazy(() => PreferredScopesAndGitNamespaces$.inboundSchema))
+            .optional(),
+        dismissedToasts: z.array(z.lazy(() => DismissedToasts$.inboundSchema)).optional(),
+        favoriteProjectsAndSpaces: z
+            .array(
+                z.union([
+                    z.lazy(() => FavoriteProjectsAndSpaces1$.inboundSchema),
+                    z.lazy(() => FavoriteProjectsAndSpaces2$.inboundSchema),
+                ])
+            )
+            .optional(),
+        hasTrialAvailable: z.boolean(),
+        remoteCaching: z.lazy(() => RemoteCaching$.inboundSchema).optional(),
+        dataCache: z.lazy(() => DataCache$.inboundSchema).optional(),
+        featureBlocks: z.lazy(() => FeatureBlocks$.inboundSchema).optional(),
+        northstar: z.lazy(() => Northstar$.inboundSchema).optional(),
+        northstarMigration: z.lazy(() => NorthstarMigration$.inboundSchema).optional(),
+        id: z.string(),
+        email: z.string(),
+        name: z.nullable(z.string()),
+        username: z.string(),
+        avatar: z.nullable(z.string()),
+        defaultTeamId: z.nullable(z.string()),
+        version: z.nullable(Version$.inboundSchema),
+    });
 
     export type Outbound = {
         createdAt: number;
@@ -9091,88 +6133,42 @@ export namespace AuthUser$ {
         version: string | null;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, AuthUser> = z
-        .object({
-            createdAt: z.number(),
-            softBlock: z.nullable(z.lazy(() => SoftBlock$.outboundSchema)),
-            billing: z.nullable(z.lazy(() => Billing$.outboundSchema)),
-            resourceConfig: z.lazy(() => ResourceConfig$.outboundSchema),
-            stagingPrefix: z.string(),
-            activeDashboardViews: z
-                .array(z.lazy(() => ActiveDashboardViews$.outboundSchema))
-                .optional(),
-            importFlowGitNamespace: z.nullable(z.union([z.string(), z.number()])).optional(),
-            importFlowGitNamespaceId: z.nullable(z.union([z.string(), z.number()])).optional(),
-            importFlowGitProvider: ImportFlowGitProvider$.outboundSchema.optional(),
-            preferredScopesAndGitNamespaces: z
-                .array(z.lazy(() => PreferredScopesAndGitNamespaces$.outboundSchema))
-                .optional(),
-            dismissedToasts: z.array(z.lazy(() => DismissedToasts$.outboundSchema)).optional(),
-            favoriteProjectsAndSpaces: z
-                .array(
-                    z.union([
-                        z.lazy(() => FavoriteProjectsAndSpaces1$.outboundSchema),
-                        z.lazy(() => FavoriteProjectsAndSpaces2$.outboundSchema),
-                    ])
-                )
-                .optional(),
-            hasTrialAvailable: z.boolean(),
-            remoteCaching: z.lazy(() => RemoteCaching$.outboundSchema).optional(),
-            dataCache: z.lazy(() => DataCache$.outboundSchema).optional(),
-            featureBlocks: z.lazy(() => FeatureBlocks$.outboundSchema).optional(),
-            northstar: z.lazy(() => Northstar$.outboundSchema).optional(),
-            northstarMigration: z.lazy(() => NorthstarMigration$.outboundSchema).optional(),
-            id: z.string(),
-            email: z.string(),
-            name: z.nullable(z.string()),
-            username: z.string(),
-            avatar: z.nullable(z.string()),
-            defaultTeamId: z.nullable(z.string()),
-            version: z.nullable(Version$.outboundSchema),
-        })
-        .transform((v) => {
-            return {
-                createdAt: v.createdAt,
-                softBlock: v.softBlock,
-                billing: v.billing,
-                resourceConfig: v.resourceConfig,
-                stagingPrefix: v.stagingPrefix,
-                ...(v.activeDashboardViews === undefined
-                    ? null
-                    : { activeDashboardViews: v.activeDashboardViews }),
-                ...(v.importFlowGitNamespace === undefined
-                    ? null
-                    : { importFlowGitNamespace: v.importFlowGitNamespace }),
-                ...(v.importFlowGitNamespaceId === undefined
-                    ? null
-                    : { importFlowGitNamespaceId: v.importFlowGitNamespaceId }),
-                ...(v.importFlowGitProvider === undefined
-                    ? null
-                    : { importFlowGitProvider: v.importFlowGitProvider }),
-                ...(v.preferredScopesAndGitNamespaces === undefined
-                    ? null
-                    : { preferredScopesAndGitNamespaces: v.preferredScopesAndGitNamespaces }),
-                ...(v.dismissedToasts === undefined
-                    ? null
-                    : { dismissedToasts: v.dismissedToasts }),
-                ...(v.favoriteProjectsAndSpaces === undefined
-                    ? null
-                    : { favoriteProjectsAndSpaces: v.favoriteProjectsAndSpaces }),
-                hasTrialAvailable: v.hasTrialAvailable,
-                ...(v.remoteCaching === undefined ? null : { remoteCaching: v.remoteCaching }),
-                ...(v.dataCache === undefined ? null : { dataCache: v.dataCache }),
-                ...(v.featureBlocks === undefined ? null : { featureBlocks: v.featureBlocks }),
-                ...(v.northstar === undefined ? null : { northstar: v.northstar }),
-                ...(v.northstarMigration === undefined
-                    ? null
-                    : { northstarMigration: v.northstarMigration }),
-                id: v.id,
-                email: v.email,
-                name: v.name,
-                username: v.username,
-                avatar: v.avatar,
-                defaultTeamId: v.defaultTeamId,
-                version: v.version,
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, AuthUser> = z.object({
+        createdAt: z.number(),
+        softBlock: z.nullable(z.lazy(() => SoftBlock$.outboundSchema)),
+        billing: z.nullable(z.lazy(() => Billing$.outboundSchema)),
+        resourceConfig: z.lazy(() => ResourceConfig$.outboundSchema),
+        stagingPrefix: z.string(),
+        activeDashboardViews: z
+            .array(z.lazy(() => ActiveDashboardViews$.outboundSchema))
+            .optional(),
+        importFlowGitNamespace: z.nullable(z.union([z.string(), z.number()])).optional(),
+        importFlowGitNamespaceId: z.nullable(z.union([z.string(), z.number()])).optional(),
+        importFlowGitProvider: ImportFlowGitProvider$.outboundSchema.optional(),
+        preferredScopesAndGitNamespaces: z
+            .array(z.lazy(() => PreferredScopesAndGitNamespaces$.outboundSchema))
+            .optional(),
+        dismissedToasts: z.array(z.lazy(() => DismissedToasts$.outboundSchema)).optional(),
+        favoriteProjectsAndSpaces: z
+            .array(
+                z.union([
+                    z.lazy(() => FavoriteProjectsAndSpaces1$.outboundSchema),
+                    z.lazy(() => FavoriteProjectsAndSpaces2$.outboundSchema),
+                ])
+            )
+            .optional(),
+        hasTrialAvailable: z.boolean(),
+        remoteCaching: z.lazy(() => RemoteCaching$.outboundSchema).optional(),
+        dataCache: z.lazy(() => DataCache$.outboundSchema).optional(),
+        featureBlocks: z.lazy(() => FeatureBlocks$.outboundSchema).optional(),
+        northstar: z.lazy(() => Northstar$.outboundSchema).optional(),
+        northstarMigration: z.lazy(() => NorthstarMigration$.outboundSchema).optional(),
+        id: z.string(),
+        email: z.string(),
+        name: z.nullable(z.string()),
+        username: z.string(),
+        avatar: z.nullable(z.string()),
+        defaultTeamId: z.nullable(z.string()),
+        version: z.nullable(Version$.outboundSchema),
+    });
 }

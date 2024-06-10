@@ -49,7 +49,7 @@ run();
 
 ### Response
 
-**Promise<[models.GetRecordsResponseBody](../../models/getrecordsresponsebody.md)>**
+**Promise\<[models.GetRecordsResponseBody](../../models/getrecordsresponsebody.md)\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -63,8 +63,7 @@ Creates a DNS record for a domain.
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
-import { CreateRecordRequestBodyDnsRequest5Type } from "vercel/models";
+import { CreateRecordRequestBodyDnsRequest5Type, Vercel } from "vercel";
 
 const vercel = new Vercel({
   security: {
@@ -102,7 +101,7 @@ run();
 
 ### Response
 
-**Promise<[models.CreateRecordResponseBody](../../models/createrecordresponsebody.md)>**
+**Promise\<[models.CreateRecordResponseBody](../../models/createrecordresponsebody.md)\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -116,8 +115,7 @@ Updates an existing DNS record for a domain name.
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
-import { UpdateRecordType } from "vercel/models";
+import { UpdateRecordType, Vercel } from "vercel";
 
 const vercel = new Vercel({
   security: {
@@ -165,7 +163,7 @@ run();
 
 ### Response
 
-**Promise<[models.UpdateRecordResponseBody](../../models/updaterecordresponsebody.md)>**
+**Promise\<[models.UpdateRecordResponseBody](../../models/updaterecordresponsebody.md)\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -211,7 +209,7 @@ run();
 
 ### Response
 
-**Promise<[models.RemoveRecordResponseBody](../../models/removerecordresponsebody.md)>**
+**Promise\<[models.RemoveRecordResponseBody](../../models/removerecordresponsebody.md)\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

@@ -113,24 +113,12 @@ export class Checks extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        if (this.matchResponse(response, 200, "application/json")) {
-            const responseBody = await response.json();
-            const result = schemas$.parse(
-                responseBody,
-                (val$) => {
-                    return models.CreateCheckResponseBody$.inboundSchema.parse(val$);
-                },
-                "Response validation failed"
-            );
-            return result;
-        } else {
-            const responseBody = await response.text();
-            throw new models.SDKError(
-                "Unexpected API response status or content-type",
-                response,
-                responseBody
-            );
-        }
+        const [result$] = await this.matcher<models.CreateCheckResponseBody>()
+            .json(200, models.CreateCheckResponseBody$)
+            .fail([400, 401, 403, 404, "4XX", "5XX"])
+            .match(response);
+
+        return result$;
     }
 
     /**
@@ -206,24 +194,12 @@ export class Checks extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        if (this.matchResponse(response, 200, "application/json")) {
-            const responseBody = await response.json();
-            const result = schemas$.parse(
-                responseBody,
-                (val$) => {
-                    return models.GetAllChecksResponseBody$.inboundSchema.parse(val$);
-                },
-                "Response validation failed"
-            );
-            return result;
-        } else {
-            const responseBody = await response.text();
-            throw new models.SDKError(
-                "Unexpected API response status or content-type",
-                response,
-                responseBody
-            );
-        }
+        const [result$] = await this.matcher<models.GetAllChecksResponseBody>()
+            .json(200, models.GetAllChecksResponseBody$)
+            .fail([400, 401, 403, 404, "4XX", "5XX"])
+            .match(response);
+
+        return result$;
     }
 
     /**
@@ -305,24 +281,12 @@ export class Checks extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        if (this.matchResponse(response, 200, "application/json")) {
-            const responseBody = await response.json();
-            const result = schemas$.parse(
-                responseBody,
-                (val$) => {
-                    return models.GetCheckResponseBody$.inboundSchema.parse(val$);
-                },
-                "Response validation failed"
-            );
-            return result;
-        } else {
-            const responseBody = await response.text();
-            throw new models.SDKError(
-                "Unexpected API response status or content-type",
-                response,
-                responseBody
-            );
-        }
+        const [result$] = await this.matcher<models.GetCheckResponseBody>()
+            .json(200, models.GetCheckResponseBody$)
+            .fail([400, 401, 403, 404, "4XX", "5XX"])
+            .match(response);
+
+        return result$;
     }
 
     /**
@@ -400,24 +364,12 @@ export class Checks extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        if (this.matchResponse(response, 200, "application/json")) {
-            const responseBody = await response.json();
-            const result = schemas$.parse(
-                responseBody,
-                (val$) => {
-                    return models.UpdateCheckResponseBody$.inboundSchema.parse(val$);
-                },
-                "Response validation failed"
-            );
-            return result;
-        } else {
-            const responseBody = await response.text();
-            throw new models.SDKError(
-                "Unexpected API response status or content-type",
-                response,
-                responseBody
-            );
-        }
+        const [result$] = await this.matcher<models.UpdateCheckResponseBody>()
+            .json(200, models.UpdateCheckResponseBody$)
+            .fail([400, 401, 403, 404, 413, "4XX", "5XX"])
+            .match(response);
+
+        return result$;
     }
 
     /**
@@ -499,23 +451,11 @@ export class Checks extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        if (this.matchResponse(response, 200, "application/json")) {
-            const responseBody = await response.json();
-            const result = schemas$.parse(
-                responseBody,
-                (val$) => {
-                    return models.RerequestCheckResponseBody$.inboundSchema.parse(val$);
-                },
-                "Response validation failed"
-            );
-            return result;
-        } else {
-            const responseBody = await response.text();
-            throw new models.SDKError(
-                "Unexpected API response status or content-type",
-                response,
-                responseBody
-            );
-        }
+        const [result$] = await this.matcher<models.RerequestCheckResponseBody>()
+            .json(200, models.RerequestCheckResponseBody$)
+            .fail([400, 401, 403, 404, "4XX", "5XX"])
+            .match(response);
+
+        return result$;
     }
 }

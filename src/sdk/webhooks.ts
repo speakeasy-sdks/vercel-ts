@@ -104,24 +104,12 @@ export class Webhooks extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        if (this.matchResponse(response, 200, "application/json")) {
-            const responseBody = await response.json();
-            const result = schemas$.parse(
-                responseBody,
-                (val$) => {
-                    return models.CreateWebhookResponseBody$.inboundSchema.parse(val$);
-                },
-                "Response validation failed"
-            );
-            return result;
-        } else {
-            const responseBody = await response.text();
-            throw new models.SDKError(
-                "Unexpected API response status or content-type",
-                response,
-                responseBody
-            );
-        }
+        const [result$] = await this.matcher<models.CreateWebhookResponseBody>()
+            .json(200, models.CreateWebhookResponseBody$)
+            .fail([400, 401, 403, "4XX", "5XX"])
+            .match(response);
+
+        return result$;
     }
 
     /**
@@ -193,24 +181,12 @@ export class Webhooks extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        if (this.matchResponse(response, 200, "application/json")) {
-            const responseBody = await response.json();
-            const result = schemas$.parse(
-                responseBody,
-                (val$) => {
-                    return z.array(models.GetWebhooksResponseBody$.inboundSchema).parse(val$);
-                },
-                "Response validation failed"
-            );
-            return result;
-        } else {
-            const responseBody = await response.text();
-            throw new models.SDKError(
-                "Unexpected API response status or content-type",
-                response,
-                responseBody
-            );
-        }
+        const [result$] = await this.matcher<Array<models.GetWebhooksResponseBody>>()
+            .json(200, z.array(models.GetWebhooksResponseBody$.inboundSchema))
+            .fail([400, 401, 403, "4XX", "5XX"])
+            .match(response);
+
+        return result$;
     }
 
     /**
@@ -281,24 +257,12 @@ export class Webhooks extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        if (this.matchResponse(response, 200, "application/json")) {
-            const responseBody = await response.json();
-            const result = schemas$.parse(
-                responseBody,
-                (val$) => {
-                    return models.GetWebhookResponseBody$.inboundSchema.parse(val$);
-                },
-                "Response validation failed"
-            );
-            return result;
-        } else {
-            const responseBody = await response.text();
-            throw new models.SDKError(
-                "Unexpected API response status or content-type",
-                response,
-                responseBody
-            );
-        }
+        const [result$] = await this.matcher<models.GetWebhookResponseBody>()
+            .json(200, models.GetWebhookResponseBody$)
+            .fail([400, 401, 403, "4XX", "5XX"])
+            .match(response);
+
+        return result$;
     }
 
     /**
@@ -312,7 +276,7 @@ export class Webhooks extends ClientSDK {
         teamId?: string | undefined,
         slug?: string | undefined,
         options?: RequestOptions
-    ): Promise<models.DeleteWebhookResponse | void> {
+    ): Promise<void> {
         const input$: models.DeleteWebhookRequest = {
             id: id,
             teamId: teamId,
@@ -369,15 +333,11 @@ export class Webhooks extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        if (this.matchStatusCode(response, 204)) {
-            return;
-        } else {
-            const responseBody = await response.text();
-            throw new models.SDKError(
-                "Unexpected API response status or content-type",
-                response,
-                responseBody
-            );
-        }
+        const [result$] = await this.matcher<void>()
+            .void(204, z.void())
+            .fail([400, 401, 403, "4XX", "5XX"])
+            .match(response);
+
+        return result$;
     }
 }

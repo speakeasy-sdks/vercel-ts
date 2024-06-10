@@ -113,24 +113,12 @@ export class Teams extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        if (this.matchResponse(response, 200, "application/json")) {
-            const responseBody = await response.json();
-            const result = schemas$.parse(
-                responseBody,
-                (val$) => {
-                    return models.GetTeamMembersResponseBody$.inboundSchema.parse(val$);
-                },
-                "Response validation failed"
-            );
-            return result;
-        } else {
-            const responseBody = await response.text();
-            throw new models.SDKError(
-                "Unexpected API response status or content-type",
-                response,
-                responseBody
-            );
-        }
+        const [result$] = await this.matcher<models.GetTeamMembersResponseBody>()
+            .json(200, models.GetTeamMembersResponseBody$)
+            .fail([400, 401, 403, 404, "4XX", "5XX"])
+            .match(response);
+
+        return result$;
     }
 
     /**
@@ -198,24 +186,12 @@ export class Teams extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        if (this.matchResponse(response, 200, "application/json")) {
-            const responseBody = await response.json();
-            const result = schemas$.parse(
-                responseBody,
-                (val$) => {
-                    return models.InviteUserToTeamResponseBody$.inboundSchema.parse(val$);
-                },
-                "Response validation failed"
-            );
-            return result;
-        } else {
-            const responseBody = await response.text();
-            throw new models.SDKError(
-                "Unexpected API response status or content-type",
-                response,
-                responseBody
-            );
-        }
+        const [result$] = await this.matcher<models.InviteUserToTeamResponseBody>()
+            .json(200, models.InviteUserToTeamResponseBody$)
+            .fail([400, 401, 403, 404, "4XX", "5XX"])
+            .match(response);
+
+        return result$;
     }
 
     /**
@@ -283,24 +259,12 @@ export class Teams extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        if (this.matchResponse(response, 200, "application/json")) {
-            const responseBody = await response.json();
-            const result = schemas$.parse(
-                responseBody,
-                (val$) => {
-                    return models.RequestAccessToTeamResponseBody$.inboundSchema.parse(val$);
-                },
-                "Response validation failed"
-            );
-            return result;
-        } else {
-            const responseBody = await response.text();
-            throw new models.SDKError(
-                "Unexpected API response status or content-type",
-                response,
-                responseBody
-            );
-        }
+        const [result$] = await this.matcher<models.RequestAccessToTeamResponseBody>()
+            .json(200, models.RequestAccessToTeamResponseBody$)
+            .fail([400, 401, 403, 404, "4XX", "5XX"])
+            .match(response);
+
+        return result$;
     }
 
     /**
@@ -371,24 +335,12 @@ export class Teams extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        if (this.matchResponse(response, 200, "application/json")) {
-            const responseBody = await response.json();
-            const result = schemas$.parse(
-                responseBody,
-                (val$) => {
-                    return models.GetTeamAccessRequestResponseBody$.inboundSchema.parse(val$);
-                },
-                "Response validation failed"
-            );
-            return result;
-        } else {
-            const responseBody = await response.text();
-            throw new models.SDKError(
-                "Unexpected API response status or content-type",
-                response,
-                responseBody
-            );
-        }
+        const [result$] = await this.matcher<models.GetTeamAccessRequestResponseBody>()
+            .json(200, models.GetTeamAccessRequestResponseBody$)
+            .fail([400, 403, 404, "4XX", "5XX"])
+            .match(response);
+
+        return result$;
     }
 
     /**
@@ -458,24 +410,12 @@ export class Teams extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        if (this.matchResponse(response, 200, "application/json")) {
-            const responseBody = await response.json();
-            const result = schemas$.parse(
-                responseBody,
-                (val$) => {
-                    return models.JoinTeamResponseBody$.inboundSchema.parse(val$);
-                },
-                "Response validation failed"
-            );
-            return result;
-        } else {
-            const responseBody = await response.text();
-            throw new models.SDKError(
-                "Unexpected API response status or content-type",
-                response,
-                responseBody
-            );
-        }
+        const [result$] = await this.matcher<models.JoinTeamResponseBody>()
+            .json(200, models.JoinTeamResponseBody$)
+            .fail([400, 402, 403, 404, "4XX", "5XX"])
+            .match(response);
+
+        return result$;
     }
 
     /**
@@ -552,24 +492,12 @@ export class Teams extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        if (this.matchResponse(response, 200, "application/json")) {
-            const responseBody = await response.json();
-            const result = schemas$.parse(
-                responseBody,
-                (val$) => {
-                    return models.UpdateTeamMemberResponseBody$.inboundSchema.parse(val$);
-                },
-                "Response validation failed"
-            );
-            return result;
-        } else {
-            const responseBody = await response.text();
-            throw new models.SDKError(
-                "Unexpected API response status or content-type",
-                response,
-                responseBody
-            );
-        }
+        const [result$] = await this.matcher<models.UpdateTeamMemberResponseBody>()
+            .json(200, models.UpdateTeamMemberResponseBody$)
+            .fail([400, 401, 402, 403, 404, "4XX", 500, "5XX"])
+            .match(response);
+
+        return result$;
     }
 
     /**
@@ -649,24 +577,12 @@ export class Teams extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        if (this.matchResponse(response, 200, "application/json")) {
-            const responseBody = await response.json();
-            const result = schemas$.parse(
-                responseBody,
-                (val$) => {
-                    return models.RemoveTeamMemberResponseBody$.inboundSchema.parse(val$);
-                },
-                "Response validation failed"
-            );
-            return result;
-        } else {
-            const responseBody = await response.text();
-            throw new models.SDKError(
-                "Unexpected API response status or content-type",
-                response,
-                responseBody
-            );
-        }
+        const [result$] = await this.matcher<models.RemoveTeamMemberResponseBody>()
+            .json(200, models.RemoveTeamMemberResponseBody$)
+            .fail([400, 401, 403, 404, "4XX", "5XX"])
+            .match(response);
+
+        return result$;
     }
 
     /**
@@ -737,24 +653,12 @@ export class Teams extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        if (this.matchResponse(response, 200, "application/json")) {
-            const responseBody = await response.json();
-            const result = schemas$.parse(
-                responseBody,
-                (val$) => {
-                    return models.Team$.inboundSchema.parse(val$);
-                },
-                "Response validation failed"
-            );
-            return result;
-        } else {
-            const responseBody = await response.text();
-            throw new models.SDKError(
-                "Unexpected API response status or content-type",
-                response,
-                responseBody
-            );
-        }
+        const [result$] = await this.matcher<models.Team>()
+            .json(200, models.Team$)
+            .fail([400, 401, 403, 404, "4XX", "5XX"])
+            .match(response);
+
+        return result$;
     }
 
     /**
@@ -831,24 +735,12 @@ export class Teams extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        if (this.matchResponse(response, 200, "application/json")) {
-            const responseBody = await response.json();
-            const result = schemas$.parse(
-                responseBody,
-                (val$) => {
-                    return models.Team$.inboundSchema.parse(val$);
-                },
-                "Response validation failed"
-            );
-            return result;
-        } else {
-            const responseBody = await response.text();
-            throw new models.SDKError(
-                "Unexpected API response status or content-type",
-                response,
-                responseBody
-            );
-        }
+        const [result$] = await this.matcher<models.Team>()
+            .json(200, models.Team$)
+            .fail([400, 401, 402, 403, 404, "4XX", "5XX"])
+            .match(response);
+
+        return result$;
     }
 
     /**
@@ -917,24 +809,12 @@ export class Teams extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        if (this.matchResponse(response, 200, "application/json")) {
-            const responseBody = await response.json();
-            const result = schemas$.parse(
-                responseBody,
-                (val$) => {
-                    return models.GetTeamsResponseBody$.inboundSchema.parse(val$);
-                },
-                "Response validation failed"
-            );
-            return result;
-        } else {
-            const responseBody = await response.text();
-            throw new models.SDKError(
-                "Unexpected API response status or content-type",
-                response,
-                responseBody
-            );
-        }
+        const [result$] = await this.matcher<models.GetTeamsResponseBody>()
+            .json(200, models.GetTeamsResponseBody$)
+            .fail([400, 403, "4XX", "5XX"])
+            .match(response);
+
+        return result$;
     }
 
     /**
@@ -993,24 +873,12 @@ export class Teams extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        if (this.matchResponse(response, 200, "application/json")) {
-            const responseBody = await response.json();
-            const result = schemas$.parse(
-                responseBody,
-                (val$) => {
-                    return models.CreateTeamResponseBody$.inboundSchema.parse(val$);
-                },
-                "Response validation failed"
-            );
-            return result;
-        } else {
-            const responseBody = await response.text();
-            throw new models.SDKError(
-                "Unexpected API response status or content-type",
-                response,
-                responseBody
-            );
-        }
+        const [result$] = await this.matcher<models.CreateTeamResponseBody>()
+            .json(200, models.CreateTeamResponseBody$)
+            .fail([400, 403, "4XX", "5XX"])
+            .match(response);
+
+        return result$;
     }
 
     /**
@@ -1027,8 +895,8 @@ export class Teams extends ClientSDK {
         options?: RequestOptions
     ): Promise<models.DeleteTeamResponseBody> {
         const input$: models.DeleteTeamRequest = {
-            teamId: teamId,
             newDefaultTeamId: newDefaultTeamId,
+            teamId: teamId,
             slug: slug,
             requestBody: requestBody,
         };
@@ -1093,24 +961,12 @@ export class Teams extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        if (this.matchResponse(response, 200, "application/json")) {
-            const responseBody = await response.json();
-            const result = schemas$.parse(
-                responseBody,
-                (val$) => {
-                    return models.DeleteTeamResponseBody$.inboundSchema.parse(val$);
-                },
-                "Response validation failed"
-            );
-            return result;
-        } else {
-            const responseBody = await response.text();
-            throw new models.SDKError(
-                "Unexpected API response status or content-type",
-                response,
-                responseBody
-            );
-        }
+        const [result$] = await this.matcher<models.DeleteTeamResponseBody>()
+            .json(200, models.DeleteTeamResponseBody$)
+            .fail([400, 401, 402, 403, 404, 409, "4XX", "5XX"])
+            .match(response);
+
+        return result$;
     }
 
     /**
@@ -1183,23 +1039,11 @@ export class Teams extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        if (this.matchResponse(response, 200, "application/json")) {
-            const responseBody = await response.json();
-            const result = schemas$.parse(
-                responseBody,
-                (val$) => {
-                    return models.DeleteTeamInviteCodeResponseBody$.inboundSchema.parse(val$);
-                },
-                "Response validation failed"
-            );
-            return result;
-        } else {
-            const responseBody = await response.text();
-            throw new models.SDKError(
-                "Unexpected API response status or content-type",
-                response,
-                responseBody
-            );
-        }
+        const [result$] = await this.matcher<models.DeleteTeamInviteCodeResponseBody>()
+            .json(200, models.DeleteTeamInviteCodeResponseBody$)
+            .fail([400, 401, 403, 404, "4XX", "5XX"])
+            .match(response);
+
+        return result$;
     }
 }

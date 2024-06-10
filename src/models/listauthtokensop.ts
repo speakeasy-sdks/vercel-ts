@@ -20,18 +20,11 @@ export type ListAuthTokensResponseBody = {
 
 /** @internal */
 export namespace ListAuthTokensResponseBody$ {
-    export const inboundSchema: z.ZodType<ListAuthTokensResponseBody, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<ListAuthTokensResponseBody, z.ZodTypeDef, unknown> =
+        z.object({
             tokens: z.array(AuthToken$.inboundSchema),
             testingToken: AuthToken$.inboundSchema.optional(),
             pagination: Pagination$.inboundSchema,
-        })
-        .transform((v) => {
-            return {
-                tokens: v.tokens,
-                ...(v.testingToken === undefined ? null : { testingToken: v.testingToken }),
-                pagination: v.pagination,
-            };
         });
 
     export type Outbound = {
@@ -40,17 +33,10 @@ export namespace ListAuthTokensResponseBody$ {
         pagination: Pagination$.Outbound;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, ListAuthTokensResponseBody> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, ListAuthTokensResponseBody> =
+        z.object({
             tokens: z.array(AuthToken$.outboundSchema),
             testingToken: AuthToken$.outboundSchema.optional(),
             pagination: Pagination$.outboundSchema,
-        })
-        .transform((v) => {
-            return {
-                tokens: v.tokens,
-                ...(v.testingToken === undefined ? null : { testingToken: v.testingToken }),
-                pagination: v.pagination,
-            };
         });
 }

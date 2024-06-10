@@ -20,23 +20,13 @@ export type EdgeConfigToken = {
 
 /** @internal */
 export namespace EdgeConfigToken$ {
-    export const inboundSchema: z.ZodType<EdgeConfigToken, z.ZodTypeDef, unknown> = z
-        .object({
-            token: z.string(),
-            label: z.string(),
-            id: z.string(),
-            edgeConfigId: z.string(),
-            createdAt: z.number(),
-        })
-        .transform((v) => {
-            return {
-                token: v.token,
-                label: v.label,
-                id: v.id,
-                edgeConfigId: v.edgeConfigId,
-                createdAt: v.createdAt,
-            };
-        });
+    export const inboundSchema: z.ZodType<EdgeConfigToken, z.ZodTypeDef, unknown> = z.object({
+        token: z.string(),
+        label: z.string(),
+        id: z.string(),
+        edgeConfigId: z.string(),
+        createdAt: z.number(),
+    });
 
     export type Outbound = {
         token: string;
@@ -46,21 +36,11 @@ export namespace EdgeConfigToken$ {
         createdAt: number;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, EdgeConfigToken> = z
-        .object({
-            token: z.string(),
-            label: z.string(),
-            id: z.string(),
-            edgeConfigId: z.string(),
-            createdAt: z.number(),
-        })
-        .transform((v) => {
-            return {
-                token: v.token,
-                label: v.label,
-                id: v.id,
-                edgeConfigId: v.edgeConfigId,
-                createdAt: v.createdAt,
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, EdgeConfigToken> = z.object({
+        token: z.string(),
+        label: z.string(),
+        id: z.string(),
+        edgeConfigId: z.string(),
+        createdAt: z.number(),
+    });
 }

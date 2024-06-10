@@ -45,7 +45,7 @@ run();
 
 ### Response
 
-**Promise<[models.ListAuthTokensResponseBody](../../models/listauthtokensresponsebody.md)>**
+**Promise\<[models.ListAuthTokensResponseBody](../../models/listauthtokensresponsebody.md)\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -92,7 +92,7 @@ run();
 
 ### Response
 
-**Promise<[models.CreateAuthTokenResponseBody](../../models/createauthtokenresponsebody.md)>**
+**Promise\<[models.CreateAuthTokenResponseBody](../../models/createauthtokenresponsebody.md)\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -135,7 +135,7 @@ run();
 
 ### Response
 
-**Promise<[models.GetAuthTokenResponseBody](../../models/getauthtokenresponsebody.md)>**
+**Promise\<[models.GetAuthTokenResponseBody](../../models/getauthtokenresponsebody.md)\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -178,7 +178,7 @@ run();
 
 ### Response
 
-**Promise<[models.DeleteAuthTokenResponseBody](../../models/deleteauthtokenresponsebody.md)>**
+**Promise\<[models.DeleteAuthTokenResponseBody](../../models/deleteauthtokenresponsebody.md)\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -220,7 +220,7 @@ run();
 
 ### Response
 
-**Promise<[models.VerifyTokenResponseBody](../../models/verifytokenresponsebody.md)>**
+**Promise\<[models.VerifyTokenResponseBody](../../models/verifytokenresponsebody.md)\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -262,7 +262,7 @@ run();
 
 ### Response
 
-**Promise<[models.EmailLoginResponseBody](../../models/emailloginresponsebody.md)>**
+**Promise\<[models.EmailLoginResponseBody](../../models/emailloginresponsebody.md)\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

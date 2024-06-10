@@ -101,26 +101,12 @@ export class LogDrains extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        if (this.matchResponse(response, 200, "application/json")) {
-            const responseBody = await response.json();
-            const result = schemas$.parse(
-                responseBody,
-                (val$) => {
-                    return z
-                        .array(models.GetIntegrationLogDrainsResponseBody$.inboundSchema)
-                        .parse(val$);
-                },
-                "Response validation failed"
-            );
-            return result;
-        } else {
-            const responseBody = await response.text();
-            throw new models.SDKError(
-                "Unexpected API response status or content-type",
-                response,
-                responseBody
-            );
-        }
+        const [result$] = await this.matcher<Array<models.GetIntegrationLogDrainsResponseBody>>()
+            .json(200, z.array(models.GetIntegrationLogDrainsResponseBody$.inboundSchema))
+            .fail([400, 401, 403, "4XX", "5XX"])
+            .match(response);
+
+        return result$;
     }
 
     /**
@@ -189,24 +175,12 @@ export class LogDrains extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        if (this.matchResponse(response, 200, "application/json")) {
-            const responseBody = await response.json();
-            const result = schemas$.parse(
-                responseBody,
-                (val$) => {
-                    return models.CreateLogDrainResponseBody$.inboundSchema.parse(val$);
-                },
-                "Response validation failed"
-            );
-            return result;
-        } else {
-            const responseBody = await response.text();
-            throw new models.SDKError(
-                "Unexpected API response status or content-type",
-                response,
-                responseBody
-            );
-        }
+        const [result$] = await this.matcher<models.CreateLogDrainResponseBody>()
+            .json(200, models.CreateLogDrainResponseBody$)
+            .fail([400, 401, 403, "4XX", "5XX"])
+            .match(response);
+
+        return result$;
     }
 
     /**
@@ -220,7 +194,7 @@ export class LogDrains extends ClientSDK {
         teamId?: string | undefined,
         slug?: string | undefined,
         options?: RequestOptions
-    ): Promise<models.DeleteIntegrationLogDrainResponse | void> {
+    ): Promise<void> {
         const input$: models.DeleteIntegrationLogDrainRequest = {
             id: id,
             teamId: teamId,
@@ -277,16 +251,12 @@ export class LogDrains extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        if (this.matchStatusCode(response, 204)) {
-            return;
-        } else {
-            const responseBody = await response.text();
-            throw new models.SDKError(
-                "Unexpected API response status or content-type",
-                response,
-                responseBody
-            );
-        }
+        const [result$] = await this.matcher<void>()
+            .void(204, z.void())
+            .fail([400, 401, 403, 404, "4XX", "5XX"])
+            .match(response);
+
+        return result$;
     }
 
     /**
@@ -357,24 +327,12 @@ export class LogDrains extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        if (this.matchResponse(response, 200, "application/json")) {
-            const responseBody = await response.json();
-            const result = schemas$.parse(
-                responseBody,
-                (val$) => {
-                    return models.GetConfigurableLogDrainResponseBody$.inboundSchema.parse(val$);
-                },
-                "Response validation failed"
-            );
-            return result;
-        } else {
-            const responseBody = await response.text();
-            throw new models.SDKError(
-                "Unexpected API response status or content-type",
-                response,
-                responseBody
-            );
-        }
+        const [result$] = await this.matcher<models.GetConfigurableLogDrainResponseBody>()
+            .json(200, models.GetConfigurableLogDrainResponseBody$)
+            .fail([400, 401, 403, 404, "4XX", "5XX"])
+            .match(response);
+
+        return result$;
     }
 
     /**
@@ -388,7 +346,7 @@ export class LogDrains extends ClientSDK {
         teamId?: string | undefined,
         slug?: string | undefined,
         options?: RequestOptions
-    ): Promise<models.DeleteConfigurableLogDrainResponse | void> {
+    ): Promise<void> {
         const input$: models.DeleteConfigurableLogDrainRequest = {
             id: id,
             teamId: teamId,
@@ -445,16 +403,12 @@ export class LogDrains extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        if (this.matchStatusCode(response, 204)) {
-            return;
-        } else {
-            const responseBody = await response.text();
-            throw new models.SDKError(
-                "Unexpected API response status or content-type",
-                response,
-                responseBody
-            );
-        }
+        const [result$] = await this.matcher<void>()
+            .void(204, z.void())
+            .fail([400, 401, 403, 404, "4XX", "5XX"])
+            .match(response);
+
+        return result$;
     }
 
     /**
@@ -526,24 +480,12 @@ export class LogDrains extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        if (this.matchResponse(response, 200, "application/json")) {
-            const responseBody = await response.json();
-            const result = schemas$.parse(
-                responseBody,
-                (val$) => {
-                    return z.array(models.GetAllLogDrainsResponseBody$.inboundSchema).parse(val$);
-                },
-                "Response validation failed"
-            );
-            return result;
-        } else {
-            const responseBody = await response.text();
-            throw new models.SDKError(
-                "Unexpected API response status or content-type",
-                response,
-                responseBody
-            );
-        }
+        const [result$] = await this.matcher<Array<models.GetAllLogDrainsResponseBody>>()
+            .json(200, z.array(models.GetAllLogDrainsResponseBody$.inboundSchema))
+            .fail([400, 401, 403, "4XX", "5XX"])
+            .match(response);
+
+        return result$;
     }
 
     /**
@@ -612,23 +554,11 @@ export class LogDrains extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        if (this.matchResponse(response, 200, "application/json")) {
-            const responseBody = await response.json();
-            const result = schemas$.parse(
-                responseBody,
-                (val$) => {
-                    return models.CreateConfigurableLogDrainResponseBody$.inboundSchema.parse(val$);
-                },
-                "Response validation failed"
-            );
-            return result;
-        } else {
-            const responseBody = await response.text();
-            throw new models.SDKError(
-                "Unexpected API response status or content-type",
-                response,
-                responseBody
-            );
-        }
+        const [result$] = await this.matcher<models.CreateConfigurableLogDrainResponseBody>()
+            .json(200, models.CreateConfigurableLogDrainResponseBody$)
+            .fail([400, 401, 403, "4XX", "5XX"])
+            .match(response);
+
+        return result$;
     }
 }

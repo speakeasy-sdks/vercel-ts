@@ -51,19 +51,11 @@ export type GetEdgeConfigResponseBody = {
 
 /** @internal */
 export namespace GetEdgeConfigRequest$ {
-    export const inboundSchema: z.ZodType<GetEdgeConfigRequest, z.ZodTypeDef, unknown> = z
-        .object({
-            edgeConfigId: z.string(),
-            teamId: z.string().optional(),
-            slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                edgeConfigId: v.edgeConfigId,
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
-        });
+    export const inboundSchema: z.ZodType<GetEdgeConfigRequest, z.ZodTypeDef, unknown> = z.object({
+        edgeConfigId: z.string(),
+        teamId: z.string().optional(),
+        slug: z.string().optional(),
+    });
 
     export type Outbound = {
         edgeConfigId: string;
@@ -71,36 +63,22 @@ export namespace GetEdgeConfigRequest$ {
         slug?: string | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetEdgeConfigRequest> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetEdgeConfigRequest> = z.object(
+        {
             edgeConfigId: z.string(),
             teamId: z.string().optional(),
             slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                edgeConfigId: v.edgeConfigId,
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
-        });
+        }
+    );
 }
 
 /** @internal */
 export namespace GetEdgeConfigTransfer$ {
-    export const inboundSchema: z.ZodType<GetEdgeConfigTransfer, z.ZodTypeDef, unknown> = z
-        .object({
-            fromAccountId: z.string(),
-            startedAt: z.number(),
-            doneAt: z.nullable(z.number()),
-        })
-        .transform((v) => {
-            return {
-                fromAccountId: v.fromAccountId,
-                startedAt: v.startedAt,
-                doneAt: v.doneAt,
-            };
-        });
+    export const inboundSchema: z.ZodType<GetEdgeConfigTransfer, z.ZodTypeDef, unknown> = z.object({
+        fromAccountId: z.string(),
+        startedAt: z.number(),
+        doneAt: z.nullable(z.number()),
+    });
 
     export type Outbound = {
         fromAccountId: string;
@@ -108,18 +86,11 @@ export namespace GetEdgeConfigTransfer$ {
         doneAt: number | null;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetEdgeConfigTransfer> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetEdgeConfigTransfer> =
+        z.object({
             fromAccountId: z.string(),
             startedAt: z.number(),
             doneAt: z.nullable(z.number()),
-        })
-        .transform((v) => {
-            return {
-                fromAccountId: v.fromAccountId,
-                startedAt: v.startedAt,
-                doneAt: v.doneAt,
-            };
         });
 }
 
@@ -138,8 +109,8 @@ export namespace GetEdgeConfigSchema$ {
 
 /** @internal */
 export namespace GetEdgeConfigResponseBody$ {
-    export const inboundSchema: z.ZodType<GetEdgeConfigResponseBody, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<GetEdgeConfigResponseBody, z.ZodTypeDef, unknown> =
+        z.object({
             createdAt: z.number().optional(),
             updatedAt: z.number().optional(),
             id: z.string().optional(),
@@ -150,20 +121,6 @@ export namespace GetEdgeConfigResponseBody$ {
             schema: z.lazy(() => GetEdgeConfigSchema$.inboundSchema).optional(),
             sizeInBytes: z.number(),
             itemCount: z.number(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.createdAt === undefined ? null : { createdAt: v.createdAt }),
-                ...(v.updatedAt === undefined ? null : { updatedAt: v.updatedAt }),
-                ...(v.id === undefined ? null : { id: v.id }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-                ...(v.ownerId === undefined ? null : { ownerId: v.ownerId }),
-                ...(v.digest === undefined ? null : { digest: v.digest }),
-                ...(v.transfer === undefined ? null : { transfer: v.transfer }),
-                ...(v.schema === undefined ? null : { schema: v.schema }),
-                sizeInBytes: v.sizeInBytes,
-                itemCount: v.itemCount,
-            };
         });
 
     export type Outbound = {
@@ -179,8 +136,8 @@ export namespace GetEdgeConfigResponseBody$ {
         itemCount: number;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetEdgeConfigResponseBody> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetEdgeConfigResponseBody> =
+        z.object({
             createdAt: z.number().optional(),
             updatedAt: z.number().optional(),
             id: z.string().optional(),
@@ -191,19 +148,5 @@ export namespace GetEdgeConfigResponseBody$ {
             schema: z.lazy(() => GetEdgeConfigSchema$.outboundSchema).optional(),
             sizeInBytes: z.number(),
             itemCount: z.number(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.createdAt === undefined ? null : { createdAt: v.createdAt }),
-                ...(v.updatedAt === undefined ? null : { updatedAt: v.updatedAt }),
-                ...(v.id === undefined ? null : { id: v.id }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-                ...(v.ownerId === undefined ? null : { ownerId: v.ownerId }),
-                ...(v.digest === undefined ? null : { digest: v.digest }),
-                ...(v.transfer === undefined ? null : { transfer: v.transfer }),
-                ...(v.schema === undefined ? null : { schema: v.schema }),
-                sizeInBytes: v.sizeInBytes,
-                itemCount: v.itemCount,
-            };
         });
 }

@@ -204,13 +204,13 @@ export type ListAliasesAliases = {
      * The protection bypass for the alias
      */
     protectionBypass?:
-        | Record<
-              string,
-              | ListAliasesProtectionBypass1
-              | ListAliasesProtectionBypass3
-              | ListAliasesProtectionBypass4
-              | ListAliasesProtectionBypass2
-          >
+        | {
+              [k: string]:
+                  | ListAliasesProtectionBypass1
+                  | ListAliasesProtectionBypass3
+                  | ListAliasesProtectionBypass4
+                  | ListAliasesProtectionBypass2;
+          }
         | undefined;
 };
 
@@ -241,33 +241,17 @@ export namespace Domain$ {
 
 /** @internal */
 export namespace ListAliasesRequest$ {
-    export const inboundSchema: z.ZodType<ListAliasesRequest, z.ZodTypeDef, unknown> = z
-        .object({
-            domain: z.union([z.array(z.string()), z.string()]).optional(),
-            from: z.number().optional(),
-            limit: z.number().optional(),
-            projectId: z.string().optional(),
-            since: z.number().optional(),
-            until: z.number().optional(),
-            rollbackDeploymentId: z.string().optional(),
-            teamId: z.string().optional(),
-            slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.domain === undefined ? null : { domain: v.domain }),
-                ...(v.from === undefined ? null : { from: v.from }),
-                ...(v.limit === undefined ? null : { limit: v.limit }),
-                ...(v.projectId === undefined ? null : { projectId: v.projectId }),
-                ...(v.since === undefined ? null : { since: v.since }),
-                ...(v.until === undefined ? null : { until: v.until }),
-                ...(v.rollbackDeploymentId === undefined
-                    ? null
-                    : { rollbackDeploymentId: v.rollbackDeploymentId }),
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
-        });
+    export const inboundSchema: z.ZodType<ListAliasesRequest, z.ZodTypeDef, unknown> = z.object({
+        domain: z.union([z.array(z.string()), z.string()]).optional(),
+        from: z.number().optional(),
+        limit: z.number().optional(),
+        projectId: z.string().optional(),
+        since: z.number().optional(),
+        until: z.number().optional(),
+        rollbackDeploymentId: z.string().optional(),
+        teamId: z.string().optional(),
+        slug: z.string().optional(),
+    });
 
     export type Outbound = {
         domain?: Array<string> | string | undefined;
@@ -281,50 +265,26 @@ export namespace ListAliasesRequest$ {
         slug?: string | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, ListAliasesRequest> = z
-        .object({
-            domain: z.union([z.array(z.string()), z.string()]).optional(),
-            from: z.number().optional(),
-            limit: z.number().optional(),
-            projectId: z.string().optional(),
-            since: z.number().optional(),
-            until: z.number().optional(),
-            rollbackDeploymentId: z.string().optional(),
-            teamId: z.string().optional(),
-            slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.domain === undefined ? null : { domain: v.domain }),
-                ...(v.from === undefined ? null : { from: v.from }),
-                ...(v.limit === undefined ? null : { limit: v.limit }),
-                ...(v.projectId === undefined ? null : { projectId: v.projectId }),
-                ...(v.since === undefined ? null : { since: v.since }),
-                ...(v.until === undefined ? null : { until: v.until }),
-                ...(v.rollbackDeploymentId === undefined
-                    ? null
-                    : { rollbackDeploymentId: v.rollbackDeploymentId }),
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, ListAliasesRequest> = z.object({
+        domain: z.union([z.array(z.string()), z.string()]).optional(),
+        from: z.number().optional(),
+        limit: z.number().optional(),
+        projectId: z.string().optional(),
+        since: z.number().optional(),
+        until: z.number().optional(),
+        rollbackDeploymentId: z.string().optional(),
+        teamId: z.string().optional(),
+        slug: z.string().optional(),
+    });
 }
 
 /** @internal */
 export namespace ListAliasesCreator$ {
-    export const inboundSchema: z.ZodType<ListAliasesCreator, z.ZodTypeDef, unknown> = z
-        .object({
-            uid: z.string(),
-            email: z.string(),
-            username: z.string(),
-        })
-        .transform((v) => {
-            return {
-                uid: v.uid,
-                email: v.email,
-                username: v.username,
-            };
-        });
+    export const inboundSchema: z.ZodType<ListAliasesCreator, z.ZodTypeDef, unknown> = z.object({
+        uid: z.string(),
+        email: z.string(),
+        username: z.string(),
+    });
 
     export type Outbound = {
         uid: string;
@@ -332,36 +292,20 @@ export namespace ListAliasesCreator$ {
         username: string;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, ListAliasesCreator> = z
-        .object({
-            uid: z.string(),
-            email: z.string(),
-            username: z.string(),
-        })
-        .transform((v) => {
-            return {
-                uid: v.uid,
-                email: v.email,
-                username: v.username,
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, ListAliasesCreator> = z.object({
+        uid: z.string(),
+        email: z.string(),
+        username: z.string(),
+    });
 }
 
 /** @internal */
 export namespace ListAliasesDeployment$ {
-    export const inboundSchema: z.ZodType<ListAliasesDeployment, z.ZodTypeDef, unknown> = z
-        .object({
-            id: z.string(),
-            url: z.string(),
-            meta: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                id: v.id,
-                url: v.url,
-                ...(v.meta === undefined ? null : { meta: v.meta }),
-            };
-        });
+    export const inboundSchema: z.ZodType<ListAliasesDeployment, z.ZodTypeDef, unknown> = z.object({
+        id: z.string(),
+        url: z.string(),
+        meta: z.string().optional(),
+    });
 
     export type Outbound = {
         id: string;
@@ -369,18 +313,11 @@ export namespace ListAliasesDeployment$ {
         meta?: string | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, ListAliasesDeployment> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, ListAliasesDeployment> =
+        z.object({
             id: z.string(),
             url: z.string(),
             meta: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                id: v.id,
-                url: v.url,
-                ...(v.meta === undefined ? null : { meta: v.meta }),
-            };
         });
 }
 
@@ -392,20 +329,12 @@ export namespace ListAliasesProtectionBypassAliasesResponseScope$ {
 
 /** @internal */
 export namespace ListAliasesProtectionBypass4$ {
-    export const inboundSchema: z.ZodType<ListAliasesProtectionBypass4, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<ListAliasesProtectionBypass4, z.ZodTypeDef, unknown> =
+        z.object({
             createdAt: z.number(),
             lastUpdatedAt: z.number(),
             lastUpdatedBy: z.string(),
             scope: ListAliasesProtectionBypassAliasesResponseScope$.inboundSchema,
-        })
-        .transform((v) => {
-            return {
-                createdAt: v.createdAt,
-                lastUpdatedAt: v.lastUpdatedAt,
-                lastUpdatedBy: v.lastUpdatedBy,
-                scope: v.scope,
-            };
         });
 
     export type Outbound = {
@@ -415,20 +344,12 @@ export namespace ListAliasesProtectionBypass4$ {
         scope: string;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, ListAliasesProtectionBypass4> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, ListAliasesProtectionBypass4> =
+        z.object({
             createdAt: z.number(),
             lastUpdatedAt: z.number(),
             lastUpdatedBy: z.string(),
             scope: ListAliasesProtectionBypassAliasesResponseScope$.outboundSchema,
-        })
-        .transform((v) => {
-            return {
-                createdAt: v.createdAt,
-                lastUpdatedAt: v.lastUpdatedAt,
-                lastUpdatedBy: v.lastUpdatedBy,
-                scope: v.scope,
-            };
         });
 }
 
@@ -440,18 +361,11 @@ export namespace ListAliasesProtectionBypassAliasesScope$ {
 
 /** @internal */
 export namespace ListAliasesProtectionBypass3$ {
-    export const inboundSchema: z.ZodType<ListAliasesProtectionBypass3, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<ListAliasesProtectionBypass3, z.ZodTypeDef, unknown> =
+        z.object({
             createdAt: z.number(),
             createdBy: z.string(),
             scope: ListAliasesProtectionBypassAliasesScope$.inboundSchema,
-        })
-        .transform((v) => {
-            return {
-                createdAt: v.createdAt,
-                createdBy: v.createdBy,
-                scope: v.scope,
-            };
         });
 
     export type Outbound = {
@@ -460,18 +374,11 @@ export namespace ListAliasesProtectionBypass3$ {
         scope: string;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, ListAliasesProtectionBypass3> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, ListAliasesProtectionBypass3> =
+        z.object({
             createdAt: z.number(),
             createdBy: z.string(),
             scope: ListAliasesProtectionBypassAliasesScope$.outboundSchema,
-        })
-        .transform((v) => {
-            return {
-                createdAt: v.createdAt,
-                createdBy: v.createdBy,
-                scope: v.scope,
-            };
         });
 }
 
@@ -489,22 +396,13 @@ export namespace ListAliasesProtectionBypassScope$ {
 
 /** @internal */
 export namespace ListAliasesProtectionBypass2$ {
-    export const inboundSchema: z.ZodType<ListAliasesProtectionBypass2, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<ListAliasesProtectionBypass2, z.ZodTypeDef, unknown> =
+        z.object({
             createdAt: z.number(),
             lastUpdatedAt: z.number(),
             lastUpdatedBy: z.string(),
             access: ProtectionBypassAccess$.inboundSchema,
             scope: ListAliasesProtectionBypassScope$.inboundSchema,
-        })
-        .transform((v) => {
-            return {
-                createdAt: v.createdAt,
-                lastUpdatedAt: v.lastUpdatedAt,
-                lastUpdatedBy: v.lastUpdatedBy,
-                access: v.access,
-                scope: v.scope,
-            };
         });
 
     export type Outbound = {
@@ -515,22 +413,13 @@ export namespace ListAliasesProtectionBypass2$ {
         scope: string;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, ListAliasesProtectionBypass2> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, ListAliasesProtectionBypass2> =
+        z.object({
             createdAt: z.number(),
             lastUpdatedAt: z.number(),
             lastUpdatedBy: z.string(),
             access: ProtectionBypassAccess$.outboundSchema,
             scope: ListAliasesProtectionBypassScope$.outboundSchema,
-        })
-        .transform((v) => {
-            return {
-                createdAt: v.createdAt,
-                lastUpdatedAt: v.lastUpdatedAt,
-                lastUpdatedBy: v.lastUpdatedBy,
-                access: v.access,
-                scope: v.scope,
-            };
         });
 }
 
@@ -542,18 +431,11 @@ export namespace ListAliasesProtectionBypassAliasesResponse200Scope$ {
 
 /** @internal */
 export namespace ListAliasesProtectionBypass1$ {
-    export const inboundSchema: z.ZodType<ListAliasesProtectionBypass1, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<ListAliasesProtectionBypass1, z.ZodTypeDef, unknown> =
+        z.object({
             createdAt: z.number(),
             createdBy: z.string(),
             scope: ListAliasesProtectionBypassAliasesResponse200Scope$.inboundSchema,
-        })
-        .transform((v) => {
-            return {
-                createdAt: v.createdAt,
-                createdBy: v.createdBy,
-                scope: v.scope,
-            };
         });
 
     export type Outbound = {
@@ -562,18 +444,11 @@ export namespace ListAliasesProtectionBypass1$ {
         scope: string;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, ListAliasesProtectionBypass1> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, ListAliasesProtectionBypass1> =
+        z.object({
             createdAt: z.number(),
             createdBy: z.string(),
             scope: ListAliasesProtectionBypassAliasesResponse200Scope$.outboundSchema,
-        })
-        .transform((v) => {
-            return {
-                createdAt: v.createdAt,
-                createdBy: v.createdBy,
-                scope: v.scope,
-            };
         });
 }
 
@@ -603,55 +478,33 @@ export namespace ListAliasesProtectionBypass$ {
 
 /** @internal */
 export namespace ListAliasesAliases$ {
-    export const inboundSchema: z.ZodType<ListAliasesAliases, z.ZodTypeDef, unknown> = z
-        .object({
-            alias: z.string(),
-            created: z
-                .string()
-                .datetime({ offset: true })
-                .transform((v) => new Date(v)),
-            createdAt: z.number().optional(),
-            creator: z.lazy(() => ListAliasesCreator$.inboundSchema).optional(),
-            deletedAt: z.number().optional(),
-            deployment: z.lazy(() => ListAliasesDeployment$.inboundSchema).optional(),
-            deploymentId: z.nullable(z.string()),
-            projectId: z.nullable(z.string()),
-            redirect: z.nullable(z.string()).optional(),
-            redirectStatusCode: z.nullable(z.number()).optional(),
-            uid: z.string(),
-            updatedAt: z.number().optional(),
-            protectionBypass: z
-                .record(
-                    z.union([
-                        z.lazy(() => ListAliasesProtectionBypass1$.inboundSchema),
-                        z.lazy(() => ListAliasesProtectionBypass3$.inboundSchema),
-                        z.lazy(() => ListAliasesProtectionBypass4$.inboundSchema),
-                        z.lazy(() => ListAliasesProtectionBypass2$.inboundSchema),
-                    ])
-                )
-                .optional(),
-        })
-        .transform((v) => {
-            return {
-                alias: v.alias,
-                created: v.created,
-                ...(v.createdAt === undefined ? null : { createdAt: v.createdAt }),
-                ...(v.creator === undefined ? null : { creator: v.creator }),
-                ...(v.deletedAt === undefined ? null : { deletedAt: v.deletedAt }),
-                ...(v.deployment === undefined ? null : { deployment: v.deployment }),
-                deploymentId: v.deploymentId,
-                projectId: v.projectId,
-                ...(v.redirect === undefined ? null : { redirect: v.redirect }),
-                ...(v.redirectStatusCode === undefined
-                    ? null
-                    : { redirectStatusCode: v.redirectStatusCode }),
-                uid: v.uid,
-                ...(v.updatedAt === undefined ? null : { updatedAt: v.updatedAt }),
-                ...(v.protectionBypass === undefined
-                    ? null
-                    : { protectionBypass: v.protectionBypass }),
-            };
-        });
+    export const inboundSchema: z.ZodType<ListAliasesAliases, z.ZodTypeDef, unknown> = z.object({
+        alias: z.string(),
+        created: z
+            .string()
+            .datetime({ offset: true })
+            .transform((v) => new Date(v)),
+        createdAt: z.number().optional(),
+        creator: z.lazy(() => ListAliasesCreator$.inboundSchema).optional(),
+        deletedAt: z.number().optional(),
+        deployment: z.lazy(() => ListAliasesDeployment$.inboundSchema).optional(),
+        deploymentId: z.nullable(z.string()),
+        projectId: z.nullable(z.string()),
+        redirect: z.nullable(z.string()).optional(),
+        redirectStatusCode: z.nullable(z.number()).optional(),
+        uid: z.string(),
+        updatedAt: z.number().optional(),
+        protectionBypass: z
+            .record(
+                z.union([
+                    z.lazy(() => ListAliasesProtectionBypass1$.inboundSchema),
+                    z.lazy(() => ListAliasesProtectionBypass3$.inboundSchema),
+                    z.lazy(() => ListAliasesProtectionBypass4$.inboundSchema),
+                    z.lazy(() => ListAliasesProtectionBypass2$.inboundSchema),
+                ])
+            )
+            .optional(),
+    });
 
     export type Outbound = {
         alias: string;
@@ -667,76 +520,48 @@ export namespace ListAliasesAliases$ {
         uid: string;
         updatedAt?: number | undefined;
         protectionBypass?:
-            | Record<
-                  string,
-                  | ListAliasesProtectionBypass1$.Outbound
-                  | ListAliasesProtectionBypass3$.Outbound
-                  | ListAliasesProtectionBypass4$.Outbound
-                  | ListAliasesProtectionBypass2$.Outbound
-              >
+            | {
+                  [k: string]:
+                      | ListAliasesProtectionBypass1$.Outbound
+                      | ListAliasesProtectionBypass3$.Outbound
+                      | ListAliasesProtectionBypass4$.Outbound
+                      | ListAliasesProtectionBypass2$.Outbound;
+              }
             | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, ListAliasesAliases> = z
-        .object({
-            alias: z.string(),
-            created: z.date().transform((v) => v.toISOString()),
-            createdAt: z.number().optional(),
-            creator: z.lazy(() => ListAliasesCreator$.outboundSchema).optional(),
-            deletedAt: z.number().optional(),
-            deployment: z.lazy(() => ListAliasesDeployment$.outboundSchema).optional(),
-            deploymentId: z.nullable(z.string()),
-            projectId: z.nullable(z.string()),
-            redirect: z.nullable(z.string()).optional(),
-            redirectStatusCode: z.nullable(z.number()).optional(),
-            uid: z.string(),
-            updatedAt: z.number().optional(),
-            protectionBypass: z
-                .record(
-                    z.union([
-                        z.lazy(() => ListAliasesProtectionBypass1$.outboundSchema),
-                        z.lazy(() => ListAliasesProtectionBypass3$.outboundSchema),
-                        z.lazy(() => ListAliasesProtectionBypass4$.outboundSchema),
-                        z.lazy(() => ListAliasesProtectionBypass2$.outboundSchema),
-                    ])
-                )
-                .optional(),
-        })
-        .transform((v) => {
-            return {
-                alias: v.alias,
-                created: v.created,
-                ...(v.createdAt === undefined ? null : { createdAt: v.createdAt }),
-                ...(v.creator === undefined ? null : { creator: v.creator }),
-                ...(v.deletedAt === undefined ? null : { deletedAt: v.deletedAt }),
-                ...(v.deployment === undefined ? null : { deployment: v.deployment }),
-                deploymentId: v.deploymentId,
-                projectId: v.projectId,
-                ...(v.redirect === undefined ? null : { redirect: v.redirect }),
-                ...(v.redirectStatusCode === undefined
-                    ? null
-                    : { redirectStatusCode: v.redirectStatusCode }),
-                uid: v.uid,
-                ...(v.updatedAt === undefined ? null : { updatedAt: v.updatedAt }),
-                ...(v.protectionBypass === undefined
-                    ? null
-                    : { protectionBypass: v.protectionBypass }),
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, ListAliasesAliases> = z.object({
+        alias: z.string(),
+        created: z.date().transform((v) => v.toISOString()),
+        createdAt: z.number().optional(),
+        creator: z.lazy(() => ListAliasesCreator$.outboundSchema).optional(),
+        deletedAt: z.number().optional(),
+        deployment: z.lazy(() => ListAliasesDeployment$.outboundSchema).optional(),
+        deploymentId: z.nullable(z.string()),
+        projectId: z.nullable(z.string()),
+        redirect: z.nullable(z.string()).optional(),
+        redirectStatusCode: z.nullable(z.number()).optional(),
+        uid: z.string(),
+        updatedAt: z.number().optional(),
+        protectionBypass: z
+            .record(
+                z.union([
+                    z.lazy(() => ListAliasesProtectionBypass1$.outboundSchema),
+                    z.lazy(() => ListAliasesProtectionBypass3$.outboundSchema),
+                    z.lazy(() => ListAliasesProtectionBypass4$.outboundSchema),
+                    z.lazy(() => ListAliasesProtectionBypass2$.outboundSchema),
+                ])
+            )
+            .optional(),
+    });
 }
 
 /** @internal */
 export namespace ListAliasesResponseBody$ {
-    export const inboundSchema: z.ZodType<ListAliasesResponseBody, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<ListAliasesResponseBody, z.ZodTypeDef, unknown> =
+        z.object({
             aliases: z.array(z.lazy(() => ListAliasesAliases$.inboundSchema)),
             pagination: Pagination$.inboundSchema,
-        })
-        .transform((v) => {
-            return {
-                aliases: v.aliases,
-                pagination: v.pagination,
-            };
         });
 
     export type Outbound = {
@@ -744,15 +569,9 @@ export namespace ListAliasesResponseBody$ {
         pagination: Pagination$.Outbound;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, ListAliasesResponseBody> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, ListAliasesResponseBody> =
+        z.object({
             aliases: z.array(z.lazy(() => ListAliasesAliases$.outboundSchema)),
             pagination: Pagination$.outboundSchema,
-        })
-        .transform((v) => {
-            return {
-                aliases: v.aliases,
-                pagination: v.pagination,
-            };
         });
 }

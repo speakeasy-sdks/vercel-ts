@@ -105,24 +105,12 @@ export class Dns extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        if (this.matchResponse(response, 200, "application/json")) {
-            const responseBody = await response.json();
-            const result = schemas$.parse(
-                responseBody,
-                (val$) => {
-                    return models.GetRecordsResponseBody$.inboundSchema.parse(val$);
-                },
-                "Response validation failed"
-            );
-            return result;
-        } else {
-            const responseBody = await response.text();
-            throw new models.SDKError(
-                "Unexpected API response status or content-type",
-                response,
-                responseBody
-            );
-        }
+        const [result$] = await this.matcher<models.GetRecordsResponseBody>()
+            .json(200, models.GetRecordsResponseBody$)
+            .fail([400, 401, 403, 404, "4XX", "5XX"])
+            .match(response);
+
+        return result$;
     }
 
     /**
@@ -202,24 +190,12 @@ export class Dns extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        if (this.matchResponse(response, 200, "application/json")) {
-            const responseBody = await response.json();
-            const result = schemas$.parse(
-                responseBody,
-                (val$) => {
-                    return models.CreateRecordResponseBody$.inboundSchema.parse(val$);
-                },
-                "Response validation failed"
-            );
-            return result;
-        } else {
-            const responseBody = await response.text();
-            throw new models.SDKError(
-                "Unexpected API response status or content-type",
-                response,
-                responseBody
-            );
-        }
+        const [result$] = await this.matcher<models.CreateRecordResponseBody>()
+            .json(200, models.CreateRecordResponseBody$)
+            .fail([400, 401, 402, 403, 404, 409, "4XX", "5XX"])
+            .match(response);
+
+        return result$;
     }
 
     /**
@@ -299,24 +275,12 @@ export class Dns extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        if (this.matchResponse(response, 200, "application/json")) {
-            const responseBody = await response.json();
-            const result = schemas$.parse(
-                responseBody,
-                (val$) => {
-                    return models.UpdateRecordResponseBody$.inboundSchema.parse(val$);
-                },
-                "Response validation failed"
-            );
-            return result;
-        } else {
-            const responseBody = await response.text();
-            throw new models.SDKError(
-                "Unexpected API response status or content-type",
-                response,
-                responseBody
-            );
-        }
+        const [result$] = await this.matcher<models.UpdateRecordResponseBody>()
+            .json(200, models.UpdateRecordResponseBody$)
+            .fail([400, 401, 402, 403, 404, 409, "4XX", "5XX"])
+            .match(response);
+
+        return result$;
     }
 
     /**
@@ -398,23 +362,11 @@ export class Dns extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        if (this.matchResponse(response, 200, "application/json")) {
-            const responseBody = await response.json();
-            const result = schemas$.parse(
-                responseBody,
-                (val$) => {
-                    return models.RemoveRecordResponseBody$.inboundSchema.parse(val$);
-                },
-                "Response validation failed"
-            );
-            return result;
-        } else {
-            const responseBody = await response.text();
-            throw new models.SDKError(
-                "Unexpected API response status or content-type",
-                response,
-                responseBody
-            );
-        }
+        const [result$] = await this.matcher<models.RemoveRecordResponseBody>()
+            .json(200, models.RemoveRecordResponseBody$)
+            .fail([400, 401, 403, 404, "4XX", "5XX"])
+            .match(response);
+
+        return result$;
     }
 }

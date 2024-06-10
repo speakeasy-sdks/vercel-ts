@@ -106,34 +106,13 @@ export class Domains extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        if (this.matchResponse(response, 201, "application/json")) {
-            const responseBody = await response.json();
-            const result = schemas$.parse(
-                responseBody,
-                (val$) => {
-                    return models.BuyDomainResponse$.inboundSchema.parse(val$);
-                },
-                "Response validation failed"
-            );
-            return result;
-        } else if (this.matchResponse(response, 202, "application/json")) {
-            const responseBody = await response.json();
-            const result = schemas$.parse(
-                responseBody,
-                (val$) => {
-                    return models.BuyDomainResponse$.inboundSchema.parse(val$);
-                },
-                "Response validation failed"
-            );
-            return result;
-        } else {
-            const responseBody = await response.text();
-            throw new models.SDKError(
-                "Unexpected API response status or content-type",
-                response,
-                responseBody
-            );
-        }
+        const [result$] = await this.matcher<models.BuyDomainResponse>()
+            .json(201, models.BuyDomainResponse$)
+            .json(202, models.BuyDomainResponse$)
+            .fail([400, 401, 403, 409, 429, "4XX", "5XX"])
+            .match(response);
+
+        return result$;
     }
 
     /**
@@ -205,24 +184,12 @@ export class Domains extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        if (this.matchResponse(response, 200, "application/json")) {
-            const responseBody = await response.json();
-            const result = schemas$.parse(
-                responseBody,
-                (val$) => {
-                    return models.CheckDomainPriceResponseBody$.inboundSchema.parse(val$);
-                },
-                "Response validation failed"
-            );
-            return result;
-        } else {
-            const responseBody = await response.text();
-            throw new models.SDKError(
-                "Unexpected API response status or content-type",
-                response,
-                responseBody
-            );
-        }
+        const [result$] = await this.matcher<models.CheckDomainPriceResponseBody>()
+            .json(200, models.CheckDomainPriceResponseBody$)
+            .fail([400, 401, 403, "4XX", "5XX"])
+            .match(response);
+
+        return result$;
     }
 
     /**
@@ -291,24 +258,12 @@ export class Domains extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        if (this.matchResponse(response, 200, "application/json")) {
-            const responseBody = await response.json();
-            const result = schemas$.parse(
-                responseBody,
-                (val$) => {
-                    return models.CheckDomainStatusResponseBody$.inboundSchema.parse(val$);
-                },
-                "Response validation failed"
-            );
-            return result;
-        } else {
-            const responseBody = await response.text();
-            throw new models.SDKError(
-                "Unexpected API response status or content-type",
-                response,
-                responseBody
-            );
-        }
+        const [result$] = await this.matcher<models.CheckDomainStatusResponseBody>()
+            .json(200, models.CheckDomainStatusResponseBody$)
+            .fail([400, 401, 403, "4XX", "5XX"])
+            .match(response);
+
+        return result$;
     }
 
     /**
@@ -382,24 +337,12 @@ export class Domains extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        if (this.matchResponse(response, 200, "application/json")) {
-            const responseBody = await response.json();
-            const result = schemas$.parse(
-                responseBody,
-                (val$) => {
-                    return models.GetDomainTransferResponseBody$.inboundSchema.parse(val$);
-                },
-                "Response validation failed"
-            );
-            return result;
-        } else {
-            const responseBody = await response.text();
-            throw new models.SDKError(
-                "Unexpected API response status or content-type",
-                response,
-                responseBody
-            );
-        }
+        const [result$] = await this.matcher<models.GetDomainTransferResponseBody>()
+            .json(200, models.GetDomainTransferResponseBody$)
+            .fail([400, 401, 403, "4XX", "5XX"])
+            .match(response);
+
+        return result$;
     }
 
     /**
@@ -476,24 +419,12 @@ export class Domains extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        if (this.matchResponse(response, 200, "application/json")) {
-            const responseBody = await response.json();
-            const result = schemas$.parse(
-                responseBody,
-                (val$) => {
-                    return models.GetDomainConfigResponseBody$.inboundSchema.parse(val$);
-                },
-                "Response validation failed"
-            );
-            return result;
-        } else {
-            const responseBody = await response.text();
-            throw new models.SDKError(
-                "Unexpected API response status or content-type",
-                response,
-                responseBody
-            );
-        }
+        const [result$] = await this.matcher<models.GetDomainConfigResponseBody>()
+            .json(200, models.GetDomainConfigResponseBody$)
+            .fail([400, 401, 403, "4XX", "5XX"])
+            .match(response);
+
+        return result$;
     }
 
     /**
@@ -567,24 +498,12 @@ export class Domains extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        if (this.matchResponse(response, 200, "application/json")) {
-            const responseBody = await response.json();
-            const result = schemas$.parse(
-                responseBody,
-                (val$) => {
-                    return models.GetDomainResponseBody$.inboundSchema.parse(val$);
-                },
-                "Response validation failed"
-            );
-            return result;
-        } else {
-            const responseBody = await response.text();
-            throw new models.SDKError(
-                "Unexpected API response status or content-type",
-                response,
-                responseBody
-            );
-        }
+        const [result$] = await this.matcher<models.GetDomainResponseBody>()
+            .json(200, models.GetDomainResponseBody$)
+            .fail([400, 401, 403, 404, "4XX", "5XX"])
+            .match(response);
+
+        return result$;
     }
 
     /**
@@ -649,24 +568,12 @@ export class Domains extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        if (this.matchResponse(response, 200, "application/json")) {
-            const responseBody = await response.json();
-            const result = schemas$.parse(
-                responseBody,
-                (val$) => {
-                    return models.GetDomainsResponseBody$.inboundSchema.parse(val$);
-                },
-                "Response validation failed"
-            );
-            return result;
-        } else {
-            const responseBody = await response.text();
-            throw new models.SDKError(
-                "Unexpected API response status or content-type",
-                response,
-                responseBody
-            );
-        }
+        const [result$] = await this.matcher<models.GetDomainsResponseBody>()
+            .json(200, models.GetDomainsResponseBody$)
+            .fail([400, 401, 403, 409, "4XX", "5XX"])
+            .match(response);
+
+        return result$;
     }
 
     /**
@@ -738,24 +645,12 @@ export class Domains extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        if (this.matchResponse(response, 200, "application/json")) {
-            const responseBody = await response.json();
-            const result = schemas$.parse(
-                responseBody,
-                (val$) => {
-                    return models.CreateOrTransferDomainResponseBody$.inboundSchema.parse(val$);
-                },
-                "Response validation failed"
-            );
-            return result;
-        } else {
-            const responseBody = await response.text();
-            throw new models.SDKError(
-                "Unexpected API response status or content-type",
-                response,
-                responseBody
-            );
-        }
+        const [result$] = await this.matcher<models.CreateOrTransferDomainResponseBody>()
+            .json(200, models.CreateOrTransferDomainResponseBody$)
+            .fail([400, 401, 402, 403, 404, 409, "4XX", "5XX"])
+            .match(response);
+
+        return result$;
     }
 
     /**
@@ -835,24 +730,12 @@ export class Domains extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        if (this.matchResponse(response, 200, "application/json")) {
-            const responseBody = await response.json();
-            const result = schemas$.parse(
-                responseBody,
-                (val$) => {
-                    return models.PatchDomainResponseBody$.inboundSchema.parse(val$);
-                },
-                "Response validation failed"
-            );
-            return result;
-        } else {
-            const responseBody = await response.text();
-            throw new models.SDKError(
-                "Unexpected API response status or content-type",
-                response,
-                responseBody
-            );
-        }
+        const [result$] = await this.matcher<models.PatchDomainResponseBody>()
+            .json(200, models.PatchDomainResponseBody$)
+            .fail([400, 401, 403, 404, 409, "4XX", "5XX"])
+            .match(response);
+
+        return result$;
     }
 
     /**
@@ -929,23 +812,11 @@ export class Domains extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        if (this.matchResponse(response, 200, "application/json")) {
-            const responseBody = await response.json();
-            const result = schemas$.parse(
-                responseBody,
-                (val$) => {
-                    return models.DeleteDomainResponseBody$.inboundSchema.parse(val$);
-                },
-                "Response validation failed"
-            );
-            return result;
-        } else {
-            const responseBody = await response.text();
-            throw new models.SDKError(
-                "Unexpected API response status or content-type",
-                response,
-                responseBody
-            );
-        }
+        const [result$] = await this.matcher<models.DeleteDomainResponseBody>()
+            .json(200, models.DeleteDomainResponseBody$)
+            .fail([400, 401, 403, 404, 409, "4XX", "5XX"])
+            .match(response);
+
+        return result$;
     }
 }

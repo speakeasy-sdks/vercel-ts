@@ -104,24 +104,12 @@ export class Integrations extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        if (this.matchResponse(response, 200, "application/json")) {
-            const responseBody = await response.json();
-            const result = schemas$.parse(
-                responseBody,
-                (val$) => {
-                    return models.GetConfigurationsResponseBody$.inboundSchema.parse(val$);
-                },
-                "Response validation failed"
-            );
-            return result;
-        } else {
-            const responseBody = await response.text();
-            throw new models.SDKError(
-                "Unexpected API response status or content-type",
-                response,
-                responseBody
-            );
-        }
+        const [result$] = await this.matcher<models.GetConfigurationsResponseBody>()
+            .json(200, models.GetConfigurationsResponseBody$)
+            .fail([400, 401, 403, "4XX", "5XX"])
+            .match(response);
+
+        return result$;
     }
 
     /**
@@ -192,24 +180,12 @@ export class Integrations extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        if (this.matchResponse(response, 200, "application/json")) {
-            const responseBody = await response.json();
-            const result = schemas$.parse(
-                responseBody,
-                (val$) => {
-                    return models.GetConfigurationResponseBody$.inboundSchema.parse(val$);
-                },
-                "Response validation failed"
-            );
-            return result;
-        } else {
-            const responseBody = await response.text();
-            throw new models.SDKError(
-                "Unexpected API response status or content-type",
-                response,
-                responseBody
-            );
-        }
+        const [result$] = await this.matcher<models.GetConfigurationResponseBody>()
+            .json(200, models.GetConfigurationResponseBody$)
+            .fail([400, 401, 403, 404, "4XX", "5XX"])
+            .match(response);
+
+        return result$;
     }
 
     /**
@@ -223,7 +199,7 @@ export class Integrations extends ClientSDK {
         teamId?: string | undefined,
         slug?: string | undefined,
         options?: RequestOptions
-    ): Promise<models.DeleteConfigurationResponse | void> {
+    ): Promise<void> {
         const input$: models.DeleteConfigurationRequest = {
             id: id,
             teamId: teamId,
@@ -280,16 +256,12 @@ export class Integrations extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        if (this.matchStatusCode(response, 204)) {
-            return;
-        } else {
-            const responseBody = await response.text();
-            throw new models.SDKError(
-                "Unexpected API response status or content-type",
-                response,
-                responseBody
-            );
-        }
+        const [result$] = await this.matcher<void>()
+            .void(204, z.void())
+            .fail([400, 401, 403, 404, "4XX", "5XX"])
+            .match(response);
+
+        return result$;
     }
 
     /**
@@ -364,24 +336,12 @@ export class Integrations extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        if (this.matchResponse(response, 200, "application/json")) {
-            const responseBody = await response.json();
-            const result = schemas$.parse(
-                responseBody,
-                (val$) => {
-                    return z.array(models.GitNamespacesResponseBody$.inboundSchema).parse(val$);
-                },
-                "Response validation failed"
-            );
-            return result;
-        } else {
-            const responseBody = await response.text();
-            throw new models.SDKError(
-                "Unexpected API response status or content-type",
-                response,
-                responseBody
-            );
-        }
+        const [result$] = await this.matcher<Array<models.GitNamespacesResponseBody>>()
+            .json(200, z.array(models.GitNamespacesResponseBody$.inboundSchema))
+            .fail([400, 403, "4XX", "5XX"])
+            .match(response);
+
+        return result$;
     }
 
     /**
@@ -457,23 +417,11 @@ export class Integrations extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        if (this.matchResponse(response, 200, "application/json")) {
-            const responseBody = await response.json();
-            const result = schemas$.parse(
-                responseBody,
-                (val$) => {
-                    return models.ListGitReposResponseBody$.inboundSchema.parse(val$);
-                },
-                "Response validation failed"
-            );
-            return result;
-        } else {
-            const responseBody = await response.text();
-            throw new models.SDKError(
-                "Unexpected API response status or content-type",
-                response,
-                responseBody
-            );
-        }
+        const [result$] = await this.matcher<models.ListGitReposResponseBody>()
+            .json(200, models.ListGitReposResponseBody$)
+            .fail([400, 403, "4XX", "5XX"])
+            .match(response);
+
+        return result$;
     }
 }

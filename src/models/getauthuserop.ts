@@ -31,27 +31,17 @@ export namespace GetAuthUserUser$ {
 
 /** @internal */
 export namespace GetAuthUserResponseBody$ {
-    export const inboundSchema: z.ZodType<GetAuthUserResponseBody, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<GetAuthUserResponseBody, z.ZodTypeDef, unknown> =
+        z.object({
             user: z.union([AuthUserLimited$.inboundSchema, AuthUser$.inboundSchema]),
-        })
-        .transform((v) => {
-            return {
-                user: v.user,
-            };
         });
 
     export type Outbound = {
         user: AuthUserLimited$.Outbound | AuthUser$.Outbound;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetAuthUserResponseBody> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetAuthUserResponseBody> =
+        z.object({
             user: z.union([AuthUserLimited$.outboundSchema, AuthUser$.outboundSchema]),
-        })
-        .transform((v) => {
-            return {
-                user: v.user,
-            };
         });
 }

@@ -19,23 +19,13 @@ export type UnpauseProjectRequest = {
     slug?: string | undefined;
 };
 
-export type UnpauseProjectResponse = {};
-
 /** @internal */
 export namespace UnpauseProjectRequest$ {
-    export const inboundSchema: z.ZodType<UnpauseProjectRequest, z.ZodTypeDef, unknown> = z
-        .object({
-            projectId: z.string(),
-            teamId: z.string().optional(),
-            slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                projectId: v.projectId,
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
-        });
+    export const inboundSchema: z.ZodType<UnpauseProjectRequest, z.ZodTypeDef, unknown> = z.object({
+        projectId: z.string(),
+        teamId: z.string().optional(),
+        slug: z.string().optional(),
+    });
 
     export type Outbound = {
         projectId: string;
@@ -43,29 +33,10 @@ export namespace UnpauseProjectRequest$ {
         slug?: string | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, UnpauseProjectRequest> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, UnpauseProjectRequest> =
+        z.object({
             projectId: z.string(),
             teamId: z.string().optional(),
             slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                projectId: v.projectId,
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
         });
-}
-
-/** @internal */
-export namespace UnpauseProjectResponse$ {
-    export const inboundSchema: z.ZodType<UnpauseProjectResponse, z.ZodTypeDef, unknown> = z.object(
-        {}
-    );
-
-    export type Outbound = {};
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, UnpauseProjectResponse> =
-        z.object({});
 }

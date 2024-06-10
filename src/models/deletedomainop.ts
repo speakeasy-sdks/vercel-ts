@@ -28,19 +28,11 @@ export type DeleteDomainResponseBody = {
 
 /** @internal */
 export namespace DeleteDomainRequest$ {
-    export const inboundSchema: z.ZodType<DeleteDomainRequest, z.ZodTypeDef, unknown> = z
-        .object({
-            domain: z.string(),
-            teamId: z.string().optional(),
-            slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                domain: v.domain,
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
-        });
+    export const inboundSchema: z.ZodType<DeleteDomainRequest, z.ZodTypeDef, unknown> = z.object({
+        domain: z.string(),
+        teamId: z.string().optional(),
+        slug: z.string().optional(),
+    });
 
     export type Outbound = {
         domain: string;
@@ -48,44 +40,26 @@ export namespace DeleteDomainRequest$ {
         slug?: string | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, DeleteDomainRequest> = z
-        .object({
-            domain: z.string(),
-            teamId: z.string().optional(),
-            slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                domain: v.domain,
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, DeleteDomainRequest> = z.object({
+        domain: z.string(),
+        teamId: z.string().optional(),
+        slug: z.string().optional(),
+    });
 }
 
 /** @internal */
 export namespace DeleteDomainResponseBody$ {
-    export const inboundSchema: z.ZodType<DeleteDomainResponseBody, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<DeleteDomainResponseBody, z.ZodTypeDef, unknown> =
+        z.object({
             uid: z.string(),
-        })
-        .transform((v) => {
-            return {
-                uid: v.uid,
-            };
         });
 
     export type Outbound = {
         uid: string;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, DeleteDomainResponseBody> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, DeleteDomainResponseBody> =
+        z.object({
             uid: z.string(),
-        })
-        .transform((v) => {
-            return {
-                uid: v.uid,
-            };
         });
 }

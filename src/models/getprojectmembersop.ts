@@ -139,8 +139,8 @@ export type GetProjectMembersResponseBody =
 
 /** @internal */
 export namespace GetProjectMembersRequest$ {
-    export const inboundSchema: z.ZodType<GetProjectMembersRequest, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<GetProjectMembersRequest, z.ZodTypeDef, unknown> =
+        z.object({
             idOrName: z.string(),
             limit: z.number().int().optional(),
             since: z.number().int().optional(),
@@ -148,17 +148,6 @@ export namespace GetProjectMembersRequest$ {
             search: z.string().optional(),
             teamId: z.string().optional(),
             slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                idOrName: v.idOrName,
-                ...(v.limit === undefined ? null : { limit: v.limit }),
-                ...(v.since === undefined ? null : { since: v.since }),
-                ...(v.until === undefined ? null : { until: v.until }),
-                ...(v.search === undefined ? null : { search: v.search }),
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
         });
 
     export type Outbound = {
@@ -171,8 +160,8 @@ export namespace GetProjectMembersRequest$ {
         slug?: string | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetProjectMembersRequest> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetProjectMembersRequest> =
+        z.object({
             idOrName: z.string(),
             limit: z.number().int().optional(),
             since: z.number().int().optional(),
@@ -180,17 +169,6 @@ export namespace GetProjectMembersRequest$ {
             search: z.string().optional(),
             teamId: z.string().optional(),
             slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                idOrName: v.idOrName,
-                ...(v.limit === undefined ? null : { limit: v.limit }),
-                ...(v.since === undefined ? null : { since: v.since }),
-                ...(v.until === undefined ? null : { until: v.until }),
-                ...(v.search === undefined ? null : { search: v.search }),
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
         });
 }
 
@@ -214,31 +192,17 @@ export namespace TeamRole$ {
 
 /** @internal */
 export namespace ResponseBodyMembers$ {
-    export const inboundSchema: z.ZodType<ResponseBodyMembers, z.ZodTypeDef, unknown> = z
-        .object({
-            avatar: z.string().optional(),
-            email: z.string(),
-            role: GetProjectMembersResponseBodyRole$.inboundSchema,
-            computedProjectRole: ComputedProjectRole$.inboundSchema,
-            uid: z.string(),
-            username: z.string(),
-            name: z.string().optional(),
-            createdAt: z.number(),
-            teamRole: TeamRole$.inboundSchema,
-        })
-        .transform((v) => {
-            return {
-                ...(v.avatar === undefined ? null : { avatar: v.avatar }),
-                email: v.email,
-                role: v.role,
-                computedProjectRole: v.computedProjectRole,
-                uid: v.uid,
-                username: v.username,
-                ...(v.name === undefined ? null : { name: v.name }),
-                createdAt: v.createdAt,
-                teamRole: v.teamRole,
-            };
-        });
+    export const inboundSchema: z.ZodType<ResponseBodyMembers, z.ZodTypeDef, unknown> = z.object({
+        avatar: z.string().optional(),
+        email: z.string(),
+        role: GetProjectMembersResponseBodyRole$.inboundSchema,
+        computedProjectRole: ComputedProjectRole$.inboundSchema,
+        uid: z.string(),
+        username: z.string(),
+        name: z.string().optional(),
+        createdAt: z.number(),
+        teamRole: TeamRole$.inboundSchema,
+    });
 
     export type Outbound = {
         avatar?: string | undefined;
@@ -252,50 +216,29 @@ export namespace ResponseBodyMembers$ {
         teamRole: string;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, ResponseBodyMembers> = z
-        .object({
-            avatar: z.string().optional(),
-            email: z.string(),
-            role: GetProjectMembersResponseBodyRole$.outboundSchema,
-            computedProjectRole: ComputedProjectRole$.outboundSchema,
-            uid: z.string(),
-            username: z.string(),
-            name: z.string().optional(),
-            createdAt: z.number(),
-            teamRole: TeamRole$.outboundSchema,
-        })
-        .transform((v) => {
-            return {
-                ...(v.avatar === undefined ? null : { avatar: v.avatar }),
-                email: v.email,
-                role: v.role,
-                computedProjectRole: v.computedProjectRole,
-                uid: v.uid,
-                username: v.username,
-                ...(v.name === undefined ? null : { name: v.name }),
-                createdAt: v.createdAt,
-                teamRole: v.teamRole,
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, ResponseBodyMembers> = z.object({
+        avatar: z.string().optional(),
+        email: z.string(),
+        role: GetProjectMembersResponseBodyRole$.outboundSchema,
+        computedProjectRole: ComputedProjectRole$.outboundSchema,
+        uid: z.string(),
+        username: z.string(),
+        name: z.string().optional(),
+        createdAt: z.number(),
+        teamRole: TeamRole$.outboundSchema,
+    });
 }
 
 /** @internal */
 export namespace ResponseBodyPagination$ {
-    export const inboundSchema: z.ZodType<ResponseBodyPagination, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<ResponseBodyPagination, z.ZodTypeDef, unknown> = z.object(
+        {
             hasNext: z.boolean(),
             count: z.number(),
             next: z.nullable(z.number()),
             prev: z.nullable(z.number()),
-        })
-        .transform((v) => {
-            return {
-                hasNext: v.hasNext,
-                count: v.count,
-                next: v.next,
-                prev: v.prev,
-            };
-        });
+        }
+    );
 
     export type Outbound = {
         hasNext: boolean;
@@ -304,35 +247,21 @@ export namespace ResponseBodyPagination$ {
         prev: number | null;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, ResponseBodyPagination> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, ResponseBodyPagination> =
+        z.object({
             hasNext: z.boolean(),
             count: z.number(),
             next: z.nullable(z.number()),
             prev: z.nullable(z.number()),
-        })
-        .transform((v) => {
-            return {
-                hasNext: v.hasNext,
-                count: v.count,
-                next: v.next,
-                prev: v.prev,
-            };
         });
 }
 
 /** @internal */
 export namespace GetProjectMembersResponseBody2$ {
-    export const inboundSchema: z.ZodType<GetProjectMembersResponseBody2, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<GetProjectMembersResponseBody2, z.ZodTypeDef, unknown> =
+        z.object({
             members: z.array(z.lazy(() => ResponseBodyMembers$.inboundSchema)),
             pagination: z.lazy(() => ResponseBodyPagination$.inboundSchema),
-        })
-        .transform((v) => {
-            return {
-                members: v.members,
-                pagination: v.pagination,
-            };
         });
 
     export type Outbound = {
@@ -341,17 +270,10 @@ export namespace GetProjectMembersResponseBody2$ {
     };
 
     export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetProjectMembersResponseBody2> =
-        z
-            .object({
-                members: z.array(z.lazy(() => ResponseBodyMembers$.outboundSchema)),
-                pagination: z.lazy(() => ResponseBodyPagination$.outboundSchema),
-            })
-            .transform((v) => {
-                return {
-                    members: v.members,
-                    pagination: v.pagination,
-                };
-            });
+        z.object({
+            members: z.array(z.lazy(() => ResponseBodyMembers$.outboundSchema)),
+            pagination: z.lazy(() => ResponseBodyPagination$.outboundSchema),
+        });
 }
 
 /** @internal */

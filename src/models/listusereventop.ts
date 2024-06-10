@@ -48,27 +48,15 @@ export type ListUserEventResponseBody = {
 
 /** @internal */
 export namespace ListUserEventRequest$ {
-    export const inboundSchema: z.ZodType<ListUserEventRequest, z.ZodTypeDef, unknown> = z
-        .object({
-            limit: z.number().optional(),
-            since: z.string().optional(),
-            until: z.string().optional(),
-            types: z.string().optional(),
-            userId: z.string().optional(),
-            teamId: z.string().optional(),
-            slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.limit === undefined ? null : { limit: v.limit }),
-                ...(v.since === undefined ? null : { since: v.since }),
-                ...(v.until === undefined ? null : { until: v.until }),
-                ...(v.types === undefined ? null : { types: v.types }),
-                ...(v.userId === undefined ? null : { userId: v.userId }),
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
-        });
+    export const inboundSchema: z.ZodType<ListUserEventRequest, z.ZodTypeDef, unknown> = z.object({
+        limit: z.number().optional(),
+        since: z.string().optional(),
+        until: z.string().optional(),
+        types: z.string().optional(),
+        userId: z.string().optional(),
+        teamId: z.string().optional(),
+        slug: z.string().optional(),
+    });
 
     export type Outbound = {
         limit?: number | undefined;
@@ -80,8 +68,8 @@ export namespace ListUserEventRequest$ {
         slug?: string | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, ListUserEventRequest> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, ListUserEventRequest> = z.object(
+        {
             limit: z.number().optional(),
             since: z.string().optional(),
             until: z.string().optional(),
@@ -89,43 +77,23 @@ export namespace ListUserEventRequest$ {
             userId: z.string().optional(),
             teamId: z.string().optional(),
             slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.limit === undefined ? null : { limit: v.limit }),
-                ...(v.since === undefined ? null : { since: v.since }),
-                ...(v.until === undefined ? null : { until: v.until }),
-                ...(v.types === undefined ? null : { types: v.types }),
-                ...(v.userId === undefined ? null : { userId: v.userId }),
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
-        });
+        }
+    );
 }
 
 /** @internal */
 export namespace ListUserEventResponseBody$ {
-    export const inboundSchema: z.ZodType<ListUserEventResponseBody, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<ListUserEventResponseBody, z.ZodTypeDef, unknown> =
+        z.object({
             events: z.array(UserEvent$.inboundSchema),
-        })
-        .transform((v) => {
-            return {
-                events: v.events,
-            };
         });
 
     export type Outbound = {
         events: Array<UserEvent$.Outbound>;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, ListUserEventResponseBody> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, ListUserEventResponseBody> =
+        z.object({
             events: z.array(UserEvent$.outboundSchema),
-        })
-        .transform((v) => {
-            return {
-                events: v.events,
-            };
         });
 }

@@ -49,7 +49,7 @@ run();
 
 ### Response
 
-**Promise<[models.ListUserEventResponseBody](../../models/listusereventresponsebody.md)>**
+**Promise\<[models.ListUserEventResponseBody](../../models/listusereventresponsebody.md)\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -91,7 +91,7 @@ run();
 
 ### Response
 
-**Promise<[models.GetAuthUserResponseBody](../../models/getauthuserresponsebody.md)>**
+**Promise\<[models.GetAuthUserResponseBody](../../models/getauthuserresponsebody.md)\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -134,7 +134,7 @@ run();
 
 ### Response
 
-**Promise<[models.RequestDeleteResponseBody](../../models/requestdeleteresponsebody.md)>**
+**Promise\<[models.RequestDeleteResponseBody](../../models/requestdeleteresponsebody.md)\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

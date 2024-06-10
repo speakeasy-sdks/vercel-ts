@@ -106,24 +106,12 @@ export class ProjectMembers extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        if (this.matchResponse(response, 200, "application/json")) {
-            const responseBody = await response.json();
-            const result = schemas$.parse(
-                responseBody,
-                (val$) => {
-                    return models.GetProjectMembersResponseBody$.inboundSchema.parse(val$);
-                },
-                "Response validation failed"
-            );
-            return result;
-        } else {
-            const responseBody = await response.text();
-            throw new models.SDKError(
-                "Unexpected API response status or content-type",
-                response,
-                responseBody
-            );
-        }
+        const [result$] = await this.matcher<models.GetProjectMembersResponseBody>()
+            .json(200, models.GetProjectMembersResponseBody$)
+            .fail([400, 401, 403, "4XX", "5XX"])
+            .match(response);
+
+        return result$;
     }
 
     /**
@@ -200,24 +188,12 @@ export class ProjectMembers extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        if (this.matchResponse(response, 200, "application/json")) {
-            const responseBody = await response.json();
-            const result = schemas$.parse(
-                responseBody,
-                (val$) => {
-                    return models.AddProjectMemberResponseBody$.inboundSchema.parse(val$);
-                },
-                "Response validation failed"
-            );
-            return result;
-        } else {
-            const responseBody = await response.text();
-            throw new models.SDKError(
-                "Unexpected API response status or content-type",
-                response,
-                responseBody
-            );
-        }
+        const [result$] = await this.matcher<models.AddProjectMemberResponseBody>()
+            .json(200, models.AddProjectMemberResponseBody$)
+            .fail([400, 401, 403, "4XX", 500, "5XX"])
+            .match(response);
+
+        return result$;
     }
 
     /**
@@ -299,23 +275,11 @@ export class ProjectMembers extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        if (this.matchResponse(response, 200, "application/json")) {
-            const responseBody = await response.json();
-            const result = schemas$.parse(
-                responseBody,
-                (val$) => {
-                    return models.RemoveProjectMemberResponseBody$.inboundSchema.parse(val$);
-                },
-                "Response validation failed"
-            );
-            return result;
-        } else {
-            const responseBody = await response.text();
-            throw new models.SDKError(
-                "Unexpected API response status or content-type",
-                response,
-                responseBody
-            );
-        }
+        const [result$] = await this.matcher<models.RemoveProjectMemberResponseBody>()
+            .json(200, models.RemoveProjectMemberResponseBody$)
+            .fail([400, 401, 403, "4XX", "5XX"])
+            .match(response);
+
+        return result$;
     }
 }

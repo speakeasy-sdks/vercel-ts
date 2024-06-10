@@ -109,24 +109,12 @@ export class Secrets extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        if (this.matchResponse(response, 200, "application/json")) {
-            const responseBody = await response.json();
-            const result = schemas$.parse(
-                responseBody,
-                (val$) => {
-                    return models.GetSecretsResponseBody$.inboundSchema.parse(val$);
-                },
-                "Response validation failed"
-            );
-            return result;
-        } else {
-            const responseBody = await response.text();
-            throw new models.SDKError(
-                "Unexpected API response status or content-type",
-                response,
-                responseBody
-            );
-        }
+        const [result$] = await this.matcher<models.GetSecretsResponseBody>()
+            .json(200, models.GetSecretsResponseBody$)
+            .fail([400, 401, 403, 410, "4XX", "5XX"])
+            .match(response);
+
+        return result$;
     }
 
     /**
@@ -206,24 +194,12 @@ export class Secrets extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        if (this.matchResponse(response, 200, "application/json")) {
-            const responseBody = await response.json();
-            const result = schemas$.parse(
-                responseBody,
-                (val$) => {
-                    return models.CreateSecretResponseBody$.inboundSchema.parse(val$);
-                },
-                "Response validation failed"
-            );
-            return result;
-        } else {
-            const responseBody = await response.text();
-            throw new models.SDKError(
-                "Unexpected API response status or content-type",
-                response,
-                responseBody
-            );
-        }
+        const [result$] = await this.matcher<models.CreateSecretResponseBody>()
+            .json(200, models.CreateSecretResponseBody$)
+            .fail([400, 401, 402, 403, 410, "4XX", "5XX"])
+            .match(response);
+
+        return result$;
     }
 
     /**
@@ -300,24 +276,12 @@ export class Secrets extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        if (this.matchResponse(response, 200, "application/json")) {
-            const responseBody = await response.json();
-            const result = schemas$.parse(
-                responseBody,
-                (val$) => {
-                    return models.RenameSecretResponseBody$.inboundSchema.parse(val$);
-                },
-                "Response validation failed"
-            );
-            return result;
-        } else {
-            const responseBody = await response.text();
-            throw new models.SDKError(
-                "Unexpected API response status or content-type",
-                response,
-                responseBody
-            );
-        }
+        const [result$] = await this.matcher<models.RenameSecretResponseBody>()
+            .json(200, models.RenameSecretResponseBody$)
+            .fail([400, 401, 403, 410, "4XX", "5XX"])
+            .match(response);
+
+        return result$;
     }
 
     /**
@@ -400,24 +364,12 @@ export class Secrets extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        if (this.matchResponse(response, 200, "application/json")) {
-            const responseBody = await response.json();
-            const result = schemas$.parse(
-                responseBody,
-                (val$) => {
-                    return models.GetSecretResponseBody$.inboundSchema.parse(val$);
-                },
-                "Response validation failed"
-            );
-            return result;
-        } else {
-            const responseBody = await response.text();
-            throw new models.SDKError(
-                "Unexpected API response status or content-type",
-                response,
-                responseBody
-            );
-        }
+        const [result$] = await this.matcher<models.GetSecretResponseBody>()
+            .json(200, models.GetSecretResponseBody$)
+            .fail([400, 401, 403, 404, 410, "4XX", "5XX"])
+            .match(response);
+
+        return result$;
     }
 
     /**
@@ -491,23 +443,11 @@ export class Secrets extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        if (this.matchResponse(response, 200, "application/json")) {
-            const responseBody = await response.json();
-            const result = schemas$.parse(
-                responseBody,
-                (val$) => {
-                    return models.DeleteSecretResponseBody$.inboundSchema.parse(val$);
-                },
-                "Response validation failed"
-            );
-            return result;
-        } else {
-            const responseBody = await response.text();
-            throw new models.SDKError(
-                "Unexpected API response status or content-type",
-                response,
-                responseBody
-            );
-        }
+        const [result$] = await this.matcher<models.DeleteSecretResponseBody>()
+            .json(200, models.DeleteSecretResponseBody$)
+            .fail([400, 401, 403, 410, "4XX", "5XX"])
+            .match(response);
+
+        return result$;
     }
 }

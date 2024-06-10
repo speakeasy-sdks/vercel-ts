@@ -53,7 +53,7 @@ run();
 
 ### Response
 
-**Promise<[models.ListAliasesResponseBody](../../models/listaliasesresponsebody.md)>**
+**Promise\<[models.ListAliasesResponseBody](../../models/listaliasesresponsebody.md)\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -102,7 +102,7 @@ run();
 
 ### Response
 
-**Promise<[models.GetAliasResponseBody](../../models/getaliasresponsebody.md)>**
+**Promise\<[models.GetAliasResponseBody](../../models/getaliasresponsebody.md)\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -147,7 +147,7 @@ run();
 
 ### Response
 
-**Promise<[models.DeleteAliasResponseBody](../../models/deletealiasresponsebody.md)>**
+**Promise\<[models.DeleteAliasResponseBody](../../models/deletealiasresponsebody.md)\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -192,7 +192,7 @@ run();
 
 ### Response
 
-**Promise<[models.ListDeploymentAliasesResponseBody](../../models/listdeploymentaliasesresponsebody.md)>**
+**Promise\<[models.ListDeploymentAliasesResponseBody](../../models/listdeploymentaliasesresponsebody.md)\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -241,7 +241,7 @@ run();
 
 ### Response
 
-**Promise<[models.AssignAliasResponseBody](../../models/assignaliasresponsebody.md)>**
+**Promise\<[models.AssignAliasResponseBody](../../models/assignaliasresponsebody.md)\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

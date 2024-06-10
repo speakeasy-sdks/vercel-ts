@@ -101,24 +101,12 @@ export class User extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        if (this.matchResponse(response, 200, "application/json")) {
-            const responseBody = await response.json();
-            const result = schemas$.parse(
-                responseBody,
-                (val$) => {
-                    return models.ListUserEventResponseBody$.inboundSchema.parse(val$);
-                },
-                "Response validation failed"
-            );
-            return result;
-        } else {
-            const responseBody = await response.text();
-            throw new models.SDKError(
-                "Unexpected API response status or content-type",
-                response,
-                responseBody
-            );
-        }
+        const [result$] = await this.matcher<models.ListUserEventResponseBody>()
+            .json(200, models.ListUserEventResponseBody$)
+            .fail([400, 401, 403, "4XX", "5XX"])
+            .match(response);
+
+        return result$;
     }
 
     /**
@@ -127,7 +115,9 @@ export class User extends ClientSDK {
      * @remarks
      * Retrieves information related to the currently authenticated User.
      */
-    async getAuthUser(options?: RequestOptions): Promise<models.GetAuthUserResponseBody | void> {
+    async getAuthUser(
+        options?: RequestOptions
+    ): Promise<models.GetAuthUserResponseBody | undefined> {
         const headers$ = new Headers();
         headers$.set("user-agent", SDK_METADATA.userAgent);
         headers$.set("Accept", "application/json");
@@ -163,26 +153,13 @@ export class User extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        if (this.matchResponse(response, 200, "application/json")) {
-            const responseBody = await response.json();
-            const result = schemas$.parse(
-                responseBody,
-                (val$) => {
-                    return models.GetAuthUserResponseBody$.inboundSchema.parse(val$);
-                },
-                "Response validation failed"
-            );
-            return result;
-        } else if (this.matchStatusCode(response, 302)) {
-            return;
-        } else {
-            const responseBody = await response.text();
-            throw new models.SDKError(
-                "Unexpected API response status or content-type",
-                response,
-                responseBody
-            );
-        }
+        const [result$] = await this.matcher<models.GetAuthUserResponseBody | undefined>()
+            .json(200, models.GetAuthUserResponseBody$.inboundSchema.optional())
+            .void(302, models.GetAuthUserResponseBody$.inboundSchema.optional())
+            .fail([400, 401, 403, 409, "4XX", "5XX"])
+            .match(response);
+
+        return result$;
     }
 
     /**
@@ -241,23 +218,11 @@ export class User extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        if (this.matchResponse(response, 202, "application/json")) {
-            const responseBody = await response.json();
-            const result = schemas$.parse(
-                responseBody,
-                (val$) => {
-                    return models.RequestDeleteResponseBody$.inboundSchema.parse(val$);
-                },
-                "Response validation failed"
-            );
-            return result;
-        } else {
-            const responseBody = await response.text();
-            throw new models.SDKError(
-                "Unexpected API response status or content-type",
-                response,
-                responseBody
-            );
-        }
+        const [result$] = await this.matcher<models.RequestDeleteResponseBody>()
+            .json(202, models.RequestDeleteResponseBody$)
+            .fail([400, 403, "4XX", "5XX"])
+            .match(response);
+
+        return result$;
     }
 }

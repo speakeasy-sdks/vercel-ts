@@ -26,6 +26,7 @@ import { Secrets } from "./secrets";
 import { Teams } from "./teams";
 import { User } from "./user";
 import { Webhooks } from "./webhooks";
+import * as z from "zod";
 
 export class Vercel extends ClientSDK {
     private readonly options$: SDKOptions & { hooks?: SDKHooks };
@@ -185,30 +186,15 @@ export class Vercel extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        if (this.matchResponse(response, 200, "application/json")) {
-            const responseBody = await response.json();
-            const result = schemas$.parse(
-                responseBody,
-                (val$) => {
-                    return models.GetDeploymentBuildsResponseBody$.inboundSchema.parse(val$);
-                },
-                "Response validation failed"
-            );
-            return result;
-        } else {
-            const responseBody = await response.text();
-            throw new models.SDKError(
-                "Unexpected API response status or content-type",
-                response,
-                responseBody
-            );
-        }
+        const [result$] = await this.matcher<models.GetDeploymentBuildsResponseBody>()
+            .json(200, models.GetDeploymentBuildsResponseBody$)
+            .fail([400, 401, 403, 404, "4XX", "5XX"])
+            .match(response);
+
+        return result$;
     }
 
-    async purgeDataCache(
-        projectIdOrName: string,
-        options?: RequestOptions
-    ): Promise<models.PurgeDataCacheResponse | void> {
+    async purgeDataCache(projectIdOrName: string, options?: RequestOptions): Promise<void> {
         const input$: models.PurgeDataCacheRequest = {
             projectIdOrName: projectIdOrName,
         };
@@ -245,16 +231,12 @@ export class Vercel extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        if (this.matchStatusCode(response, 200)) {
-            return;
-        } else {
-            const responseBody = await response.text();
-            throw new models.SDKError(
-                "Unexpected API response status or content-type",
-                response,
-                responseBody
-            );
-        }
+        const [result$] = await this.matcher<void>()
+            .void(200, z.void())
+            .fail([400, 401, 403, 404, "4XX", "5XX"])
+            .match(response);
+
+        return result$;
     }
 
     async updateBillingSettings(
@@ -295,23 +277,11 @@ export class Vercel extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        if (this.matchResponse(response, 200, "application/json")) {
-            const responseBody = await response.json();
-            const result = schemas$.parse(
-                responseBody,
-                (val$) => {
-                    return models.UpdateBillingSettingsResponseBody$.inboundSchema.parse(val$);
-                },
-                "Response validation failed"
-            );
-            return result;
-        } else {
-            const responseBody = await response.text();
-            throw new models.SDKError(
-                "Unexpected API response status or content-type",
-                response,
-                responseBody
-            );
-        }
+        const [result$] = await this.matcher<models.UpdateBillingSettingsResponseBody>()
+            .json(200, models.UpdateBillingSettingsResponseBody$)
+            .fail([400, 401, 403, 404, "4XX", "5XX"])
+            .match(response);
+
+        return result$;
     }
 }

@@ -81,21 +81,12 @@ export namespace QueryParamDecrypt$ {
 
 /** @internal */
 export namespace GetSecretRequest$ {
-    export const inboundSchema: z.ZodType<GetSecretRequest, z.ZodTypeDef, unknown> = z
-        .object({
-            idOrName: z.string(),
-            decrypt: QueryParamDecrypt$.inboundSchema.optional(),
-            teamId: z.string().optional(),
-            slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                idOrName: v.idOrName,
-                ...(v.decrypt === undefined ? null : { decrypt: v.decrypt }),
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
-        });
+    export const inboundSchema: z.ZodType<GetSecretRequest, z.ZodTypeDef, unknown> = z.object({
+        idOrName: z.string(),
+        decrypt: QueryParamDecrypt$.inboundSchema.optional(),
+        teamId: z.string().optional(),
+        slug: z.string().optional(),
+    });
 
     export type Outbound = {
         idOrName: string;
@@ -104,53 +95,30 @@ export namespace GetSecretRequest$ {
         slug?: string | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetSecretRequest> = z
-        .object({
-            idOrName: z.string(),
-            decrypt: QueryParamDecrypt$.outboundSchema.optional(),
-            teamId: z.string().optional(),
-            slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                idOrName: v.idOrName,
-                ...(v.decrypt === undefined ? null : { decrypt: v.decrypt }),
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetSecretRequest> = z.object({
+        idOrName: z.string(),
+        decrypt: QueryParamDecrypt$.outboundSchema.optional(),
+        teamId: z.string().optional(),
+        slug: z.string().optional(),
+    });
 }
 
 /** @internal */
 export namespace GetSecretResponseBody$ {
-    export const inboundSchema: z.ZodType<GetSecretResponseBody, z.ZodTypeDef, unknown> = z
-        .object({
-            created: z
-                .string()
-                .datetime({ offset: true })
-                .transform((v) => new Date(v)),
-            name: z.string(),
-            teamId: z.nullable(z.string()).optional(),
-            uid: z.string(),
-            userId: z.string().optional(),
-            value: z.string().optional(),
-            createdAt: z.number().optional(),
-            projectId: z.string().optional(),
-            decryptable: z.boolean().optional(),
-        })
-        .transform((v) => {
-            return {
-                created: v.created,
-                name: v.name,
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                uid: v.uid,
-                ...(v.userId === undefined ? null : { userId: v.userId }),
-                ...(v.value === undefined ? null : { value: v.value }),
-                ...(v.createdAt === undefined ? null : { createdAt: v.createdAt }),
-                ...(v.projectId === undefined ? null : { projectId: v.projectId }),
-                ...(v.decryptable === undefined ? null : { decryptable: v.decryptable }),
-            };
-        });
+    export const inboundSchema: z.ZodType<GetSecretResponseBody, z.ZodTypeDef, unknown> = z.object({
+        created: z
+            .string()
+            .datetime({ offset: true })
+            .transform((v) => new Date(v)),
+        name: z.string(),
+        teamId: z.nullable(z.string()).optional(),
+        uid: z.string(),
+        userId: z.string().optional(),
+        value: z.string().optional(),
+        createdAt: z.number().optional(),
+        projectId: z.string().optional(),
+        decryptable: z.boolean().optional(),
+    });
 
     export type Outbound = {
         created: string;
@@ -164,8 +132,8 @@ export namespace GetSecretResponseBody$ {
         decryptable?: boolean | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetSecretResponseBody> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetSecretResponseBody> =
+        z.object({
             created: z.date().transform((v) => v.toISOString()),
             name: z.string(),
             teamId: z.nullable(z.string()).optional(),
@@ -175,18 +143,5 @@ export namespace GetSecretResponseBody$ {
             createdAt: z.number().optional(),
             projectId: z.string().optional(),
             decryptable: z.boolean().optional(),
-        })
-        .transform((v) => {
-            return {
-                created: v.created,
-                name: v.name,
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                uid: v.uid,
-                ...(v.userId === undefined ? null : { userId: v.userId }),
-                ...(v.value === undefined ? null : { value: v.value }),
-                ...(v.createdAt === undefined ? null : { createdAt: v.createdAt }),
-                ...(v.projectId === undefined ? null : { projectId: v.projectId }),
-                ...(v.decryptable === undefined ? null : { decryptable: v.decryptable }),
-            };
         });
 }

@@ -47,7 +47,7 @@ export class Artifacts extends ClientSDK {
     async recordEvents(
         request: models.RecordEventsRequest,
         options?: RequestOptions
-    ): Promise<models.RecordEventsResponse | void> {
+    ): Promise<void> {
         const input$ = typeof request === "undefined" ? {} : request;
         const headers$ = new Headers();
         headers$.set("user-agent", SDK_METADATA.userAgent);
@@ -114,16 +114,12 @@ export class Artifacts extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        if (this.matchStatusCode(response, 200)) {
-            return;
-        } else {
-            const responseBody = await response.text();
-            throw new models.SDKError(
-                "Unexpected API response status or content-type",
-                response,
-                responseBody
-            );
-        }
+        const [result$] = await this.matcher<void>()
+            .void(200, z.void())
+            .fail([400, 401, 402, 403, "4XX", "5XX"])
+            .match(response);
+
+        return result$;
     }
 
     /**
@@ -189,24 +185,12 @@ export class Artifacts extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        if (this.matchResponse(response, 200, "application/json")) {
-            const responseBody = await response.json();
-            const result = schemas$.parse(
-                responseBody,
-                (val$) => {
-                    return models.StatusResponseBody$.inboundSchema.parse(val$);
-                },
-                "Response validation failed"
-            );
-            return result;
-        } else {
-            const responseBody = await response.text();
-            throw new models.SDKError(
-                "Unexpected API response status or content-type",
-                response,
-                responseBody
-            );
-        }
+        const [result$] = await this.matcher<models.StatusResponseBody>()
+            .json(200, models.StatusResponseBody$)
+            .fail([400, 401, 402, 403, "4XX", "5XX"])
+            .match(response);
+
+        return result$;
     }
 
     /**
@@ -312,24 +296,12 @@ export class Artifacts extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        if (this.matchResponse(response, 202, "application/json")) {
-            const responseBody = await response.json();
-            const result = schemas$.parse(
-                responseBody,
-                (val$) => {
-                    return models.UploadArtifactResponseBody$.inboundSchema.parse(val$);
-                },
-                "Response validation failed"
-            );
-            return result;
-        } else {
-            const responseBody = await response.text();
-            throw new models.SDKError(
-                "Unexpected API response status or content-type",
-                response,
-                responseBody
-            );
-        }
+        const [result$] = await this.matcher<models.UploadArtifactResponseBody>()
+            .json(202, models.UploadArtifactResponseBody$)
+            .fail([400, 401, 402, 403, "4XX", "5XX"])
+            .match(response);
+
+        return result$;
     }
 
     /**
@@ -416,24 +388,12 @@ export class Artifacts extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        if (this.matchResponse(response, 200, "application/json")) {
-            const responseBody = response.body ?? undefined;
-            const result = schemas$.parse(
-                responseBody,
-                (val$) => {
-                    return z.instanceof(ReadableStream<Uint8Array>).parse(val$);
-                },
-                "Response validation failed"
-            );
-            return result;
-        } else {
-            const responseBody = await response.text();
-            throw new models.SDKError(
-                "Unexpected API response status or content-type",
-                response,
-                responseBody
-            );
-        }
+        const [result$] = await this.matcher<ReadableStream<Uint8Array>>()
+            .stream(200, z.instanceof(ReadableStream<Uint8Array>), { ctype: "application/json" })
+            .fail([400, 401, 402, 403, 404, "4XX", "5XX"])
+            .match(response);
+
+        return result$;
     }
 
     /**
@@ -447,7 +407,7 @@ export class Artifacts extends ClientSDK {
         teamId?: string | undefined,
         slug?: string | undefined,
         options?: RequestOptions
-    ): Promise<models.ArtifactExistsResponse | void> {
+    ): Promise<void> {
         const input$: models.ArtifactExistsRequest = {
             hash: hash,
             teamId: teamId,
@@ -510,16 +470,12 @@ export class Artifacts extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        if (this.matchStatusCode(response, 200)) {
-            return;
-        } else {
-            const responseBody = await response.text();
-            throw new models.SDKError(
-                "Unexpected API response status or content-type",
-                response,
-                responseBody
-            );
-        }
+        const [result$] = await this.matcher<void>()
+            .void(200, z.void())
+            .fail([400, 401, 402, 403, 404, "4XX", "5XX"])
+            .match(response);
+
+        return result$;
     }
 
     /**
@@ -533,7 +489,7 @@ export class Artifacts extends ClientSDK {
         slug?: string | undefined,
         requestBody?: models.ArtifactQueryRequestBody | undefined,
         options?: RequestOptions
-    ): Promise<Record<string, models.ResponseBody>> {
+    ): Promise<{ [k: string]: models.ResponseBody }> {
         const input$: models.ArtifactQueryRequest = {
             teamId: teamId,
             slug: slug,
@@ -588,23 +544,11 @@ export class Artifacts extends ClientSDK {
 
         const response = await this.do$(request$, doOptions);
 
-        if (this.matchResponse(response, 200, "application/json")) {
-            const responseBody = await response.json();
-            const result = schemas$.parse(
-                responseBody,
-                (val$) => {
-                    return z.record(models.ResponseBody$.inboundSchema).parse(val$);
-                },
-                "Response validation failed"
-            );
-            return result;
-        } else {
-            const responseBody = await response.text();
-            throw new models.SDKError(
-                "Unexpected API response status or content-type",
-                response,
-                responseBody
-            );
-        }
+        const [result$] = await this.matcher<{ [k: string]: models.ResponseBody }>()
+            .json(200, z.record(models.ResponseBody$.inboundSchema))
+            .fail([400, 401, 402, 403, "4XX", "5XX"])
+            .match(response);
+
+        return result$;
     }
 }

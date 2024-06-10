@@ -69,7 +69,7 @@ export type GetAllLogDrainsResponseBody = {
     projectIds?: Array<string> | undefined;
     createdAt: number;
     sources?: Array<GetAllLogDrainsSources> | undefined;
-    headers?: Record<string, string> | undefined;
+    headers?: { [k: string]: string } | undefined;
     environments: Array<GetAllLogDrainsEnvironments>;
     status?: GetAllLogDrainsStatus | undefined;
     disabledAt?: number | undefined;
@@ -84,19 +84,13 @@ export type GetAllLogDrainsResponseBody = {
 
 /** @internal */
 export namespace GetAllLogDrainsRequest$ {
-    export const inboundSchema: z.ZodType<GetAllLogDrainsRequest, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<GetAllLogDrainsRequest, z.ZodTypeDef, unknown> = z.object(
+        {
             projectId: z.string().optional(),
             teamId: z.string().optional(),
             slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.projectId === undefined ? null : { projectId: v.projectId }),
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
-        });
+        }
+    );
 
     export type Outbound = {
         projectId?: string | undefined;
@@ -104,18 +98,11 @@ export namespace GetAllLogDrainsRequest$ {
         slug?: string | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetAllLogDrainsRequest> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetAllLogDrainsRequest> =
+        z.object({
             projectId: z.string().optional(),
             teamId: z.string().optional(),
             slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.projectId === undefined ? null : { projectId: v.projectId }),
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
         });
 }
 
@@ -163,8 +150,8 @@ export namespace GetAllLogDrainsCreatedFrom$ {
 
 /** @internal */
 export namespace GetAllLogDrainsResponseBody$ {
-    export const inboundSchema: z.ZodType<GetAllLogDrainsResponseBody, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<GetAllLogDrainsResponseBody, z.ZodTypeDef, unknown> =
+        z.object({
             id: z.string(),
             deliveryFormat: GetAllLogDrainsDeliveryFormat$.inboundSchema,
             url: z.string(),
@@ -187,36 +174,6 @@ export namespace GetAllLogDrainsResponseBody$ {
             compression: GetAllLogDrainsCompression$.inboundSchema.optional(),
             secret: z.string(),
             createdFrom: GetAllLogDrainsCreatedFrom$.inboundSchema.optional(),
-        })
-        .transform((v) => {
-            return {
-                id: v.id,
-                deliveryFormat: v.deliveryFormat,
-                url: v.url,
-                name: v.name,
-                ...(v.clientId === undefined ? null : { clientId: v.clientId }),
-                ...(v.configurationId === undefined
-                    ? null
-                    : { configurationId: v.configurationId }),
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ownerId: v.ownerId,
-                ...(v.projectIds === undefined ? null : { projectIds: v.projectIds }),
-                createdAt: v.createdAt,
-                ...(v.sources === undefined ? null : { sources: v.sources }),
-                ...(v.headers === undefined ? null : { headers: v.headers }),
-                environments: v.environments,
-                ...(v.status === undefined ? null : { status: v.status }),
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.disabledReason === undefined ? null : { disabledReason: v.disabledReason }),
-                ...(v.disabledBy === undefined ? null : { disabledBy: v.disabledBy }),
-                ...(v.firstErrorTimestamp === undefined
-                    ? null
-                    : { firstErrorTimestamp: v.firstErrorTimestamp }),
-                ...(v.samplingRate === undefined ? null : { samplingRate: v.samplingRate }),
-                ...(v.compression === undefined ? null : { compression: v.compression }),
-                secret: v.secret,
-                ...(v.createdFrom === undefined ? null : { createdFrom: v.createdFrom }),
-            };
         });
 
     export type Outbound = {
@@ -231,7 +188,7 @@ export namespace GetAllLogDrainsResponseBody$ {
         projectIds?: Array<string> | undefined;
         createdAt: number;
         sources?: Array<string> | undefined;
-        headers?: Record<string, string> | undefined;
+        headers?: { [k: string]: string } | undefined;
         environments: Array<string>;
         status?: string | undefined;
         disabledAt?: number | undefined;
@@ -244,8 +201,8 @@ export namespace GetAllLogDrainsResponseBody$ {
         createdFrom?: string | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetAllLogDrainsResponseBody> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetAllLogDrainsResponseBody> =
+        z.object({
             id: z.string(),
             deliveryFormat: GetAllLogDrainsDeliveryFormat$.outboundSchema,
             url: z.string(),
@@ -268,35 +225,5 @@ export namespace GetAllLogDrainsResponseBody$ {
             compression: GetAllLogDrainsCompression$.outboundSchema.optional(),
             secret: z.string(),
             createdFrom: GetAllLogDrainsCreatedFrom$.outboundSchema.optional(),
-        })
-        .transform((v) => {
-            return {
-                id: v.id,
-                deliveryFormat: v.deliveryFormat,
-                url: v.url,
-                name: v.name,
-                ...(v.clientId === undefined ? null : { clientId: v.clientId }),
-                ...(v.configurationId === undefined
-                    ? null
-                    : { configurationId: v.configurationId }),
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ownerId: v.ownerId,
-                ...(v.projectIds === undefined ? null : { projectIds: v.projectIds }),
-                createdAt: v.createdAt,
-                ...(v.sources === undefined ? null : { sources: v.sources }),
-                ...(v.headers === undefined ? null : { headers: v.headers }),
-                environments: v.environments,
-                ...(v.status === undefined ? null : { status: v.status }),
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.disabledReason === undefined ? null : { disabledReason: v.disabledReason }),
-                ...(v.disabledBy === undefined ? null : { disabledBy: v.disabledBy }),
-                ...(v.firstErrorTimestamp === undefined
-                    ? null
-                    : { firstErrorTimestamp: v.firstErrorTimestamp }),
-                ...(v.samplingRate === undefined ? null : { samplingRate: v.samplingRate }),
-                ...(v.compression === undefined ? null : { compression: v.compression }),
-                secret: v.secret,
-                ...(v.createdFrom === undefined ? null : { createdFrom: v.createdFrom }),
-            };
         });
 }

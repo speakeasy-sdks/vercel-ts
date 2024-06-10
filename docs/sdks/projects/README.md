@@ -64,7 +64,7 @@ run();
 
 ### Response
 
-**Promise<[models.UpdateProjectDataCacheResponseBody](../../models/updateprojectdatacacheresponsebody.md)>**
+**Promise\<[models.UpdateProjectDataCacheResponseBody](../../models/updateprojectdatacacheresponsebody.md)\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -78,8 +78,7 @@ Allows to retrieve the list of projects of the authenticated user or team. The l
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
-import { GitForkProtection } from "vercel/models";
+import { GitForkProtection, Vercel } from "vercel";
 
 const vercel = new Vercel({
   security: {
@@ -111,7 +110,7 @@ run();
 
 ### Response
 
-**Promise<[models.GetProjectsResponseBody](../../models/getprojectsresponsebody.md)>**
+**Promise\<[models.GetProjectsResponseBody](../../models/getprojectsresponsebody.md)\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -158,7 +157,7 @@ run();
 
 ### Response
 
-**Promise<[models.CreateProjectResponseBody](../../models/createprojectresponsebody.md)>**
+**Promise\<[models.CreateProjectResponseBody](../../models/createprojectresponsebody.md)\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -206,7 +205,7 @@ run();
 
 ### Response
 
-**Promise<[models.UpdateProjectResponseBody](../../models/updateprojectresponsebody.md)>**
+**Promise\<[models.UpdateProjectResponseBody](../../models/updateprojectresponsebody.md)\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -229,10 +228,9 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.projects.delete("prj_12HKQaOmR5t5Uy6vdcQsNIiZgHGB", "<value>", "<value>");
+  await vercel.projects.delete("prj_12HKQaOmR5t5Uy6vdcQsNIiZgHGB", "<value>", "<value>");
 
-  // Handle the result
-  console.log(result)
+  
 }
 
 run();
@@ -251,7 +249,7 @@ run();
 
 ### Response
 
-**Promise<[models.DeleteProjectResponse](../../models/deleteprojectresponse.md)>**
+**Promise\<void\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -297,7 +295,7 @@ run();
 
 ### Response
 
-**Promise<[models.GetProjectDomainResponseBody](../../models/getprojectdomainresponsebody.md)>**
+**Promise\<[models.GetProjectDomainResponseBody](../../models/getprojectdomainresponsebody.md)\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -311,8 +309,7 @@ Update a project domain's configuration, including the name, git branch and redi
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
-import { RedirectStatusCode } from "vercel/models";
+import { RedirectStatusCode, Vercel } from "vercel";
 
 const vercel = new Vercel({
   security: {
@@ -349,7 +346,7 @@ run();
 
 ### Response
 
-**Promise<[models.UpdateProjectDomainResponseBody](../../models/updateprojectdomainresponsebody.md)>**
+**Promise\<[models.UpdateProjectDomainResponseBody](../../models/updateprojectdomainresponsebody.md)\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -395,7 +392,7 @@ run();
 
 ### Response
 
-**Promise<[models.RemoveProjectDomainResponseBody](../../models/removeprojectdomainresponsebody.md)>**
+**Promise\<[models.RemoveProjectDomainResponseBody](../../models/removeprojectdomainresponsebody.md)\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -409,8 +406,7 @@ Add a domain to the project by passing its domain name and by specifying the pro
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
-import { AddProjectDomainRedirectStatusCode } from "vercel/models";
+import { AddProjectDomainRedirectStatusCode, Vercel } from "vercel";
 
 const vercel = new Vercel({
   security: {
@@ -447,7 +443,7 @@ run();
 
 ### Response
 
-**Promise<[models.AddProjectDomainResponseBody](../../models/addprojectdomainresponsebody.md)>**
+**Promise\<[models.AddProjectDomainResponseBody](../../models/addprojectdomainresponsebody.md)\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -493,7 +489,7 @@ run();
 
 ### Response
 
-**Promise<[models.VerifyProjectDomainResponseBody](../../models/verifyprojectdomainresponsebody.md)>**
+**Promise\<[models.VerifyProjectDomainResponseBody](../../models/verifyprojectdomainresponsebody.md)\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -541,7 +537,7 @@ run();
 
 ### Response
 
-**Promise<[models.FilterProjectEnvsResponseBody](../../models/filterprojectenvsresponsebody.md)>**
+**Promise\<[models.FilterProjectEnvsResponseBody](../../models/filterprojectenvsresponsebody.md)\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -587,7 +583,7 @@ run();
 
 ### Response
 
-**Promise<[models.GetProjectEnvResponseBody](../../models/getprojectenvresponsebody.md)>**
+**Promise\<[models.GetProjectEnvResponseBody](../../models/getprojectenvresponsebody.md)\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -601,8 +597,11 @@ Create one ore more environment variables for a project by passing its `key`, `v
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
-import { CreateProjectEnvRequestBodyProjectsType, CreateProjectEnvRequestBodyTarget } from "vercel/models";
+import {
+  CreateProjectEnvRequestBodyProjectsType,
+  CreateProjectEnvRequestBodyTarget,
+  Vercel,
+} from "vercel";
 
 const vercel = new Vercel({
   security: {
@@ -647,7 +646,7 @@ run();
 
 ### Response
 
-**Promise<[models.CreateProjectEnvResponseBody](../../models/createprojectenvresponsebody.md)>**
+**Promise\<[models.CreateProjectEnvResponseBody](../../models/createprojectenvresponsebody.md)\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -694,7 +693,7 @@ run();
 
 ### Response
 
-**Promise<[models.RemoveProjectEnvResponseBody](../../models/removeprojectenvresponsebody.md)>**
+**Promise\<[models.RemoveProjectEnvResponseBody](../../models/removeprojectenvresponsebody.md)\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -708,8 +707,7 @@ Edit a specific environment variable for a given project by passing the environm
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
-import { EditProjectEnvTarget, EditProjectEnvType } from "vercel/models";
+import { EditProjectEnvTarget, EditProjectEnvType, Vercel } from "vercel";
 
 const vercel = new Vercel({
   security: {
@@ -752,7 +750,7 @@ run();
 
 ### Response
 
-**Promise<[models.EditProjectEnvResponseBody](../../models/editprojectenvresponsebody.md)>**
+**Promise\<[models.EditProjectEnvResponseBody](../../models/editprojectenvresponsebody.md)\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -775,10 +773,9 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.projects.requestPromote("<value>", "<value>", "<value>", "<value>");
+  await vercel.projects.requestPromote("<value>", "<value>", "<value>", "<value>");
 
-  // Handle the result
-  console.log(result)
+  
 }
 
 run();
@@ -798,7 +795,7 @@ run();
 
 ### Response
 
-**Promise<[models.RequestPromoteResponse](../../models/requestpromoteresponse.md)>**
+**Promise\<void\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -846,7 +843,7 @@ run();
 
 ### Response
 
-**Promise<[models.GetEequestPromoteAliasesResponseBody](../../models/geteequestpromotealiasesresponsebody.md)>**
+**Promise\<[models.GetEequestPromoteAliasesResponseBody](../../models/geteequestpromotealiasesresponsebody.md)\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -869,10 +866,9 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.projects.pause("<value>", "<value>", "<value>");
+  await vercel.projects.pause("<value>", "<value>", "<value>");
 
-  // Handle the result
-  console.log(result)
+  
 }
 
 run();
@@ -891,7 +887,7 @@ run();
 
 ### Response
 
-**Promise<[models.PauseProjectResponse](../../models/pauseprojectresponse.md)>**
+**Promise\<void\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -914,10 +910,9 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.projects.unpause("<value>", "<value>", "<value>");
+  await vercel.projects.unpause("<value>", "<value>", "<value>");
 
-  // Handle the result
-  console.log(result)
+  
 }
 
 run();
@@ -936,7 +931,7 @@ run();
 
 ### Response
 
-**Promise<[models.UnpauseProjectResponse](../../models/unpauseprojectresponse.md)>**
+**Promise\<void\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

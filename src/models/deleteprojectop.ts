@@ -19,23 +19,13 @@ export type DeleteProjectRequest = {
     slug?: string | undefined;
 };
 
-export type DeleteProjectResponse = {};
-
 /** @internal */
 export namespace DeleteProjectRequest$ {
-    export const inboundSchema: z.ZodType<DeleteProjectRequest, z.ZodTypeDef, unknown> = z
-        .object({
-            idOrName: z.string(),
-            teamId: z.string().optional(),
-            slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                idOrName: v.idOrName,
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
-        });
+    export const inboundSchema: z.ZodType<DeleteProjectRequest, z.ZodTypeDef, unknown> = z.object({
+        idOrName: z.string(),
+        teamId: z.string().optional(),
+        slug: z.string().optional(),
+    });
 
     export type Outbound = {
         idOrName: string;
@@ -43,29 +33,11 @@ export namespace DeleteProjectRequest$ {
         slug?: string | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, DeleteProjectRequest> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, DeleteProjectRequest> = z.object(
+        {
             idOrName: z.string(),
             teamId: z.string().optional(),
             slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                idOrName: v.idOrName,
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
-        });
-}
-
-/** @internal */
-export namespace DeleteProjectResponse$ {
-    export const inboundSchema: z.ZodType<DeleteProjectResponse, z.ZodTypeDef, unknown> = z.object(
-        {}
+        }
     );
-
-    export type Outbound = {};
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, DeleteProjectResponse> =
-        z.object({});
 }

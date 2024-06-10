@@ -53,20 +53,12 @@ export namespace QueryParamType$ {
 
 /** @internal */
 export namespace CheckDomainPriceRequest$ {
-    export const inboundSchema: z.ZodType<CheckDomainPriceRequest, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<CheckDomainPriceRequest, z.ZodTypeDef, unknown> =
+        z.object({
             name: z.string(),
             type: QueryParamType$.inboundSchema.optional(),
             teamId: z.string().optional(),
             slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                name: v.name,
-                ...(v.type === undefined ? null : { type: v.type }),
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
         });
 
     export type Outbound = {
@@ -76,35 +68,21 @@ export namespace CheckDomainPriceRequest$ {
         slug?: string | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CheckDomainPriceRequest> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CheckDomainPriceRequest> =
+        z.object({
             name: z.string(),
             type: QueryParamType$.outboundSchema.optional(),
             teamId: z.string().optional(),
             slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                name: v.name,
-                ...(v.type === undefined ? null : { type: v.type }),
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
         });
 }
 
 /** @internal */
 export namespace CheckDomainPriceResponseBody$ {
-    export const inboundSchema: z.ZodType<CheckDomainPriceResponseBody, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<CheckDomainPriceResponseBody, z.ZodTypeDef, unknown> =
+        z.object({
             price: z.number(),
             period: z.number(),
-        })
-        .transform((v) => {
-            return {
-                price: v.price,
-                period: v.period,
-            };
         });
 
     export type Outbound = {
@@ -112,15 +90,9 @@ export namespace CheckDomainPriceResponseBody$ {
         period: number;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CheckDomainPriceResponseBody> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CheckDomainPriceResponseBody> =
+        z.object({
             price: z.number(),
             period: z.number(),
-        })
-        .transform((v) => {
-            return {
-                price: v.price,
-                period: v.period,
-            };
         });
 }

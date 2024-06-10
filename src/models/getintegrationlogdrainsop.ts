@@ -100,7 +100,7 @@ export type GetIntegrationLogDrainsResponseBody = {
     /**
      * The headers to send with the request
      */
-    headers?: Record<string, string> | undefined;
+    headers?: { [k: string]: string } | undefined;
     /**
      * The environment of log drain
      */
@@ -117,16 +117,10 @@ export type GetIntegrationLogDrainsResponseBody = {
 
 /** @internal */
 export namespace GetIntegrationLogDrainsRequest$ {
-    export const inboundSchema: z.ZodType<GetIntegrationLogDrainsRequest, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<GetIntegrationLogDrainsRequest, z.ZodTypeDef, unknown> =
+        z.object({
             teamId: z.string().optional(),
             slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
         });
 
     export type Outbound = {
@@ -135,17 +129,10 @@ export namespace GetIntegrationLogDrainsRequest$ {
     };
 
     export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetIntegrationLogDrainsRequest> =
-        z
-            .object({
-                teamId: z.string().optional(),
-                slug: z.string().optional(),
-            })
-            .transform((v) => {
-                return {
-                    ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                    ...(v.slug === undefined ? null : { slug: v.slug }),
-                };
-            });
+        z.object({
+            teamId: z.string().optional(),
+            slug: z.string().optional(),
+        });
 }
 
 /** @internal */
@@ -178,47 +165,24 @@ export namespace GetIntegrationLogDrainsResponseBody$ {
         GetIntegrationLogDrainsResponseBody,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            clientId: z.string().optional(),
-            configurationId: z.string().optional(),
-            createdAt: z.number(),
-            id: z.string(),
-            deliveryFormat: GetIntegrationLogDrainsDeliveryFormat$.inboundSchema.optional(),
-            name: z.string(),
-            ownerId: z.string(),
-            projectId: z.nullable(z.string()).optional(),
-            projectIds: z.array(z.string()).optional(),
-            url: z.string(),
-            sources: z.array(GetIntegrationLogDrainsSources$.inboundSchema).optional(),
-            createdFrom: CreatedFrom$.inboundSchema.optional(),
-            headers: z.record(z.string()).optional(),
-            environments: z.array(GetIntegrationLogDrainsEnvironments$.inboundSchema),
-            branch: z.string().optional(),
-            samplingRate: z.number().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.clientId === undefined ? null : { clientId: v.clientId }),
-                ...(v.configurationId === undefined
-                    ? null
-                    : { configurationId: v.configurationId }),
-                createdAt: v.createdAt,
-                id: v.id,
-                ...(v.deliveryFormat === undefined ? null : { deliveryFormat: v.deliveryFormat }),
-                name: v.name,
-                ownerId: v.ownerId,
-                ...(v.projectId === undefined ? null : { projectId: v.projectId }),
-                ...(v.projectIds === undefined ? null : { projectIds: v.projectIds }),
-                url: v.url,
-                ...(v.sources === undefined ? null : { sources: v.sources }),
-                ...(v.createdFrom === undefined ? null : { createdFrom: v.createdFrom }),
-                ...(v.headers === undefined ? null : { headers: v.headers }),
-                environments: v.environments,
-                ...(v.branch === undefined ? null : { branch: v.branch }),
-                ...(v.samplingRate === undefined ? null : { samplingRate: v.samplingRate }),
-            };
-        });
+    > = z.object({
+        clientId: z.string().optional(),
+        configurationId: z.string().optional(),
+        createdAt: z.number(),
+        id: z.string(),
+        deliveryFormat: GetIntegrationLogDrainsDeliveryFormat$.inboundSchema.optional(),
+        name: z.string(),
+        ownerId: z.string(),
+        projectId: z.nullable(z.string()).optional(),
+        projectIds: z.array(z.string()).optional(),
+        url: z.string(),
+        sources: z.array(GetIntegrationLogDrainsSources$.inboundSchema).optional(),
+        createdFrom: CreatedFrom$.inboundSchema.optional(),
+        headers: z.record(z.string()).optional(),
+        environments: z.array(GetIntegrationLogDrainsEnvironments$.inboundSchema),
+        branch: z.string().optional(),
+        samplingRate: z.number().optional(),
+    });
 
     export type Outbound = {
         clientId?: string | undefined;
@@ -233,7 +197,7 @@ export namespace GetIntegrationLogDrainsResponseBody$ {
         url: string;
         sources?: Array<string> | undefined;
         createdFrom?: string | undefined;
-        headers?: Record<string, string> | undefined;
+        headers?: { [k: string]: string } | undefined;
         environments: Array<string>;
         branch?: string | undefined;
         samplingRate?: number | undefined;
@@ -243,45 +207,22 @@ export namespace GetIntegrationLogDrainsResponseBody$ {
         Outbound,
         z.ZodTypeDef,
         GetIntegrationLogDrainsResponseBody
-    > = z
-        .object({
-            clientId: z.string().optional(),
-            configurationId: z.string().optional(),
-            createdAt: z.number(),
-            id: z.string(),
-            deliveryFormat: GetIntegrationLogDrainsDeliveryFormat$.outboundSchema.optional(),
-            name: z.string(),
-            ownerId: z.string(),
-            projectId: z.nullable(z.string()).optional(),
-            projectIds: z.array(z.string()).optional(),
-            url: z.string(),
-            sources: z.array(GetIntegrationLogDrainsSources$.outboundSchema).optional(),
-            createdFrom: CreatedFrom$.outboundSchema.optional(),
-            headers: z.record(z.string()).optional(),
-            environments: z.array(GetIntegrationLogDrainsEnvironments$.outboundSchema),
-            branch: z.string().optional(),
-            samplingRate: z.number().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.clientId === undefined ? null : { clientId: v.clientId }),
-                ...(v.configurationId === undefined
-                    ? null
-                    : { configurationId: v.configurationId }),
-                createdAt: v.createdAt,
-                id: v.id,
-                ...(v.deliveryFormat === undefined ? null : { deliveryFormat: v.deliveryFormat }),
-                name: v.name,
-                ownerId: v.ownerId,
-                ...(v.projectId === undefined ? null : { projectId: v.projectId }),
-                ...(v.projectIds === undefined ? null : { projectIds: v.projectIds }),
-                url: v.url,
-                ...(v.sources === undefined ? null : { sources: v.sources }),
-                ...(v.createdFrom === undefined ? null : { createdFrom: v.createdFrom }),
-                ...(v.headers === undefined ? null : { headers: v.headers }),
-                environments: v.environments,
-                ...(v.branch === undefined ? null : { branch: v.branch }),
-                ...(v.samplingRate === undefined ? null : { samplingRate: v.samplingRate }),
-            };
-        });
+    > = z.object({
+        clientId: z.string().optional(),
+        configurationId: z.string().optional(),
+        createdAt: z.number(),
+        id: z.string(),
+        deliveryFormat: GetIntegrationLogDrainsDeliveryFormat$.outboundSchema.optional(),
+        name: z.string(),
+        ownerId: z.string(),
+        projectId: z.nullable(z.string()).optional(),
+        projectIds: z.array(z.string()).optional(),
+        url: z.string(),
+        sources: z.array(GetIntegrationLogDrainsSources$.outboundSchema).optional(),
+        createdFrom: CreatedFrom$.outboundSchema.optional(),
+        headers: z.record(z.string()).optional(),
+        environments: z.array(GetIntegrationLogDrainsEnvironments$.outboundSchema),
+        branch: z.string().optional(),
+        samplingRate: z.number().optional(),
+    });
 }

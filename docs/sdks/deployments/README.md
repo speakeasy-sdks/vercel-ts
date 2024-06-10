@@ -20,8 +20,7 @@ Get the build logs of a deployment by deployment ID and build ID. It can work as
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
-import { Direction } from "vercel/models";
+import { Direction, Vercel } from "vercel";
 
 const vercel = new Vercel({
   security: {
@@ -61,7 +60,7 @@ run();
 
 ### Response
 
-**Promise<[models.GetDeploymentEventsResponse](../../models/getdeploymenteventsresponse.md)>**
+**Promise\<[models.GetDeploymentEventsResponse](../../models/getdeploymenteventsresponse.md)\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -107,7 +106,7 @@ run();
 
 ### Response
 
-**Promise<[models.GetDeploymentResponseBody](../../models/getdeploymentresponsebody.md)>**
+**Promise\<[models.GetDeploymentResponseBody](../../models/getdeploymentresponsebody.md)\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -172,7 +171,7 @@ run();
 
 ### Response
 
-**Promise<[models.CreateDeploymentResponseBody](../../models/createdeploymentresponsebody.md)>**
+**Promise\<[models.CreateDeploymentResponseBody](../../models/createdeploymentresponsebody.md)\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -217,7 +216,7 @@ run();
 
 ### Response
 
-**Promise<[models.CancelDeploymentResponseBody](../../models/canceldeploymentresponsebody.md)>**
+**Promise\<[models.CancelDeploymentResponseBody](../../models/canceldeploymentresponsebody.md)\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -260,7 +259,7 @@ run();
 
 ### Response
 
-**Promise<[models.UploadFileResponseBody](../../models/uploadfileresponsebody.md)>**
+**Promise\<[models.UploadFileResponseBody](../../models/uploadfileresponsebody.md)\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -305,7 +304,7 @@ run();
 
 ### Response
 
-**Promise<[models.FileTree[]](../../models/.md)>**
+**Promise\<[models.FileTree[]](../../models/.md)\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -328,13 +327,12 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.deployments.getDeploymentFileContents({
+  await vercel.deployments.getDeploymentFileContents({
     id: "<id>",
     fileId: "<value>",
   });
 
-  // Handle the result
-  console.log(result)
+  
 }
 
 run();
@@ -351,7 +349,7 @@ run();
 
 ### Response
 
-**Promise<[models.GetDeploymentFileContentsResponse](../../models/getdeploymentfilecontentsresponse.md)>**
+**Promise\<void\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -365,8 +363,7 @@ List deployments under the authenticated user or team. If a deployment hasn't fi
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
-import { QueryParamTarget } from "vercel/models";
+import { QueryParamTarget, Vercel } from "vercel";
 
 const vercel = new Vercel({
   security: {
@@ -406,7 +403,7 @@ run();
 
 ### Response
 
-**Promise<[models.GetDeploymentsResponseBody](../../models/getdeploymentsresponsebody.md)>**
+**Promise\<[models.GetDeploymentsResponseBody](../../models/getdeploymentsresponsebody.md)\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -452,7 +449,7 @@ run();
 
 ### Response
 
-**Promise<[models.DeleteDeploymentResponseBody](../../models/deletedeploymentresponsebody.md)>**
+**Promise\<[models.DeleteDeploymentResponseBody](../../models/deletedeploymentresponsebody.md)\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

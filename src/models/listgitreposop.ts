@@ -92,27 +92,15 @@ export namespace QueryParamProvider$ {
 
 /** @internal */
 export namespace ListGitReposRequest$ {
-    export const inboundSchema: z.ZodType<ListGitReposRequest, z.ZodTypeDef, unknown> = z
-        .object({
-            query: z.string().optional(),
-            namespaceId: z.any().optional(),
-            provider: QueryParamProvider$.inboundSchema.optional(),
-            installationId: z.string().optional(),
-            host: z.string().optional(),
-            teamId: z.string().optional(),
-            slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.query === undefined ? null : { query: v.query }),
-                ...(v.namespaceId === undefined ? null : { namespaceId: v.namespaceId }),
-                ...(v.provider === undefined ? null : { provider: v.provider }),
-                ...(v.installationId === undefined ? null : { installationId: v.installationId }),
-                ...(v.host === undefined ? null : { host: v.host }),
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
-        });
+    export const inboundSchema: z.ZodType<ListGitReposRequest, z.ZodTypeDef, unknown> = z.object({
+        query: z.string().optional(),
+        namespaceId: z.any().optional(),
+        provider: QueryParamProvider$.inboundSchema.optional(),
+        installationId: z.string().optional(),
+        host: z.string().optional(),
+        teamId: z.string().optional(),
+        slug: z.string().optional(),
+    });
 
     export type Outbound = {
         query?: string | undefined;
@@ -124,27 +112,15 @@ export namespace ListGitReposRequest$ {
         slug?: string | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, ListGitReposRequest> = z
-        .object({
-            query: z.string().optional(),
-            namespaceId: z.any().optional(),
-            provider: QueryParamProvider$.outboundSchema.optional(),
-            installationId: z.string().optional(),
-            host: z.string().optional(),
-            teamId: z.string().optional(),
-            slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.query === undefined ? null : { query: v.query }),
-                ...(v.namespaceId === undefined ? null : { namespaceId: v.namespaceId }),
-                ...(v.provider === undefined ? null : { provider: v.provider }),
-                ...(v.installationId === undefined ? null : { installationId: v.installationId }),
-                ...(v.host === undefined ? null : { host: v.host }),
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, ListGitReposRequest> = z.object({
+        query: z.string().optional(),
+        namespaceId: z.any().optional(),
+        provider: QueryParamProvider$.outboundSchema.optional(),
+        installationId: z.string().optional(),
+        host: z.string().optional(),
+        teamId: z.string().optional(),
+        slug: z.string().optional(),
+    });
 }
 
 /** @internal */
@@ -169,34 +145,20 @@ export namespace NamespaceId$ {
 
 /** @internal */
 export namespace GitAccount$ {
-    export const inboundSchema: z.ZodType<GitAccount, z.ZodTypeDef, unknown> = z
-        .object({
-            provider: ListGitReposProvider$.inboundSchema,
-            namespaceId: z.nullable(z.union([z.string(), z.number()])),
-        })
-        .transform((v) => {
-            return {
-                provider: v.provider,
-                namespaceId: v.namespaceId,
-            };
-        });
+    export const inboundSchema: z.ZodType<GitAccount, z.ZodTypeDef, unknown> = z.object({
+        provider: ListGitReposProvider$.inboundSchema,
+        namespaceId: z.nullable(z.union([z.string(), z.number()])),
+    });
 
     export type Outbound = {
         provider: string;
         namespaceId: string | number | null;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GitAccount> = z
-        .object({
-            provider: ListGitReposProvider$.outboundSchema,
-            namespaceId: z.nullable(z.union([z.string(), z.number()])),
-        })
-        .transform((v) => {
-            return {
-                provider: v.provider,
-                namespaceId: v.namespaceId,
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GitAccount> = z.object({
+        provider: ListGitReposProvider$.outboundSchema,
+        namespaceId: z.nullable(z.union([z.string(), z.number()])),
+    });
 }
 
 /** @internal */
@@ -231,34 +193,20 @@ export namespace ListGitReposIntegrationsId$ {
 
 /** @internal */
 export namespace Owner$ {
-    export const inboundSchema: z.ZodType<Owner, z.ZodTypeDef, unknown> = z
-        .object({
-            id: z.union([z.string(), z.number()]),
-            name: z.string(),
-        })
-        .transform((v) => {
-            return {
-                id: v.id,
-                name: v.name,
-            };
-        });
+    export const inboundSchema: z.ZodType<Owner, z.ZodTypeDef, unknown> = z.object({
+        id: z.union([z.string(), z.number()]),
+        name: z.string(),
+    });
 
     export type Outbound = {
         id: string | number;
         name: string;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, Owner> = z
-        .object({
-            id: z.union([z.string(), z.number()]),
-            name: z.string(),
-        })
-        .transform((v) => {
-            return {
-                id: v.id,
-                name: v.name,
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, Owner> = z.object({
+        id: z.union([z.string(), z.number()]),
+        name: z.string(),
+    });
 }
 
 /** @internal */
@@ -269,35 +217,19 @@ export namespace OwnerType$ {
 
 /** @internal */
 export namespace Repos$ {
-    export const inboundSchema: z.ZodType<Repos, z.ZodTypeDef, unknown> = z
-        .object({
-            id: z.union([z.string(), z.number()]),
-            provider: ListGitReposIntegrationsProvider$.inboundSchema,
-            url: z.string(),
-            name: z.string(),
-            slug: z.string(),
-            namespace: z.string(),
-            owner: z.lazy(() => Owner$.inboundSchema),
-            ownerType: OwnerType$.inboundSchema,
-            private: z.boolean(),
-            defaultBranch: z.string(),
-            updatedAt: z.number(),
-        })
-        .transform((v) => {
-            return {
-                id: v.id,
-                provider: v.provider,
-                url: v.url,
-                name: v.name,
-                slug: v.slug,
-                namespace: v.namespace,
-                owner: v.owner,
-                ownerType: v.ownerType,
-                private: v.private,
-                defaultBranch: v.defaultBranch,
-                updatedAt: v.updatedAt,
-            };
-        });
+    export const inboundSchema: z.ZodType<Repos, z.ZodTypeDef, unknown> = z.object({
+        id: z.union([z.string(), z.number()]),
+        provider: ListGitReposIntegrationsProvider$.inboundSchema,
+        url: z.string(),
+        name: z.string(),
+        slug: z.string(),
+        namespace: z.string(),
+        owner: z.lazy(() => Owner$.inboundSchema),
+        ownerType: OwnerType$.inboundSchema,
+        private: z.boolean(),
+        defaultBranch: z.string(),
+        updatedAt: z.number(),
+    });
 
     export type Outbound = {
         id: string | number;
@@ -313,49 +245,27 @@ export namespace Repos$ {
         updatedAt: number;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, Repos> = z
-        .object({
-            id: z.union([z.string(), z.number()]),
-            provider: ListGitReposIntegrationsProvider$.outboundSchema,
-            url: z.string(),
-            name: z.string(),
-            slug: z.string(),
-            namespace: z.string(),
-            owner: z.lazy(() => Owner$.outboundSchema),
-            ownerType: OwnerType$.outboundSchema,
-            private: z.boolean(),
-            defaultBranch: z.string(),
-            updatedAt: z.number(),
-        })
-        .transform((v) => {
-            return {
-                id: v.id,
-                provider: v.provider,
-                url: v.url,
-                name: v.name,
-                slug: v.slug,
-                namespace: v.namespace,
-                owner: v.owner,
-                ownerType: v.ownerType,
-                private: v.private,
-                defaultBranch: v.defaultBranch,
-                updatedAt: v.updatedAt,
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, Repos> = z.object({
+        id: z.union([z.string(), z.number()]),
+        provider: ListGitReposIntegrationsProvider$.outboundSchema,
+        url: z.string(),
+        name: z.string(),
+        slug: z.string(),
+        namespace: z.string(),
+        owner: z.lazy(() => Owner$.outboundSchema),
+        ownerType: OwnerType$.outboundSchema,
+        private: z.boolean(),
+        defaultBranch: z.string(),
+        updatedAt: z.number(),
+    });
 }
 
 /** @internal */
 export namespace ListGitReposResponseBody$ {
-    export const inboundSchema: z.ZodType<ListGitReposResponseBody, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<ListGitReposResponseBody, z.ZodTypeDef, unknown> =
+        z.object({
             gitAccount: z.lazy(() => GitAccount$.inboundSchema),
             repos: z.array(z.lazy(() => Repos$.inboundSchema)),
-        })
-        .transform((v) => {
-            return {
-                gitAccount: v.gitAccount,
-                repos: v.repos,
-            };
         });
 
     export type Outbound = {
@@ -363,15 +273,9 @@ export namespace ListGitReposResponseBody$ {
         repos: Array<Repos$.Outbound>;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, ListGitReposResponseBody> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, ListGitReposResponseBody> =
+        z.object({
             gitAccount: z.lazy(() => GitAccount$.outboundSchema),
             repos: z.array(z.lazy(() => Repos$.outboundSchema)),
-        })
-        .transform((v) => {
-            return {
-                gitAccount: v.gitAccount,
-                repos: v.repos,
-            };
         });
 }

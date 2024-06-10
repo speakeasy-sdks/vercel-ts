@@ -109,13 +109,13 @@ export type ListDeploymentAliasesAliases = {
      * The protection bypass for the alias
      */
     protectionBypass?:
-        | Record<
-              string,
-              | ListDeploymentAliasesProtectionBypass1
-              | ListDeploymentAliasesProtectionBypass3
-              | ListDeploymentAliasesProtectionBypass4
-              | ListDeploymentAliasesProtectionBypass2
-          >
+        | {
+              [k: string]:
+                  | ListDeploymentAliasesProtectionBypass1
+                  | ListDeploymentAliasesProtectionBypass3
+                  | ListDeploymentAliasesProtectionBypass4
+                  | ListDeploymentAliasesProtectionBypass2;
+          }
         | undefined;
 };
 
@@ -131,18 +131,11 @@ export type ListDeploymentAliasesResponseBody = {
 
 /** @internal */
 export namespace ListDeploymentAliasesRequest$ {
-    export const inboundSchema: z.ZodType<ListDeploymentAliasesRequest, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<ListDeploymentAliasesRequest, z.ZodTypeDef, unknown> =
+        z.object({
             id: z.string(),
             teamId: z.string().optional(),
             slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                id: v.id,
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
         });
 
     export type Outbound = {
@@ -151,18 +144,11 @@ export namespace ListDeploymentAliasesRequest$ {
         slug?: string | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, ListDeploymentAliasesRequest> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, ListDeploymentAliasesRequest> =
+        z.object({
             id: z.string(),
             teamId: z.string().optional(),
             slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                id: v.id,
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
         });
 }
 
@@ -180,21 +166,12 @@ export namespace ListDeploymentAliasesProtectionBypass4$ {
         ListDeploymentAliasesProtectionBypass4,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            createdAt: z.number(),
-            lastUpdatedAt: z.number(),
-            lastUpdatedBy: z.string(),
-            scope: ListDeploymentAliasesProtectionBypassAliasesResponse200Scope$.inboundSchema,
-        })
-        .transform((v) => {
-            return {
-                createdAt: v.createdAt,
-                lastUpdatedAt: v.lastUpdatedAt,
-                lastUpdatedBy: v.lastUpdatedBy,
-                scope: v.scope,
-            };
-        });
+    > = z.object({
+        createdAt: z.number(),
+        lastUpdatedAt: z.number(),
+        lastUpdatedBy: z.string(),
+        scope: ListDeploymentAliasesProtectionBypassAliasesResponse200Scope$.inboundSchema,
+    });
 
     export type Outbound = {
         createdAt: number;
@@ -207,21 +184,12 @@ export namespace ListDeploymentAliasesProtectionBypass4$ {
         Outbound,
         z.ZodTypeDef,
         ListDeploymentAliasesProtectionBypass4
-    > = z
-        .object({
-            createdAt: z.number(),
-            lastUpdatedAt: z.number(),
-            lastUpdatedBy: z.string(),
-            scope: ListDeploymentAliasesProtectionBypassAliasesResponse200Scope$.outboundSchema,
-        })
-        .transform((v) => {
-            return {
-                createdAt: v.createdAt,
-                lastUpdatedAt: v.lastUpdatedAt,
-                lastUpdatedBy: v.lastUpdatedBy,
-                scope: v.scope,
-            };
-        });
+    > = z.object({
+        createdAt: z.number(),
+        lastUpdatedAt: z.number(),
+        lastUpdatedBy: z.string(),
+        scope: ListDeploymentAliasesProtectionBypassAliasesResponse200Scope$.outboundSchema,
+    });
 }
 
 /** @internal */
@@ -238,19 +206,11 @@ export namespace ListDeploymentAliasesProtectionBypass3$ {
         ListDeploymentAliasesProtectionBypass3,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            createdAt: z.number(),
-            createdBy: z.string(),
-            scope: ListDeploymentAliasesProtectionBypassAliasesResponseScope$.inboundSchema,
-        })
-        .transform((v) => {
-            return {
-                createdAt: v.createdAt,
-                createdBy: v.createdBy,
-                scope: v.scope,
-            };
-        });
+    > = z.object({
+        createdAt: z.number(),
+        createdBy: z.string(),
+        scope: ListDeploymentAliasesProtectionBypassAliasesResponseScope$.inboundSchema,
+    });
 
     export type Outbound = {
         createdAt: number;
@@ -262,19 +222,11 @@ export namespace ListDeploymentAliasesProtectionBypass3$ {
         Outbound,
         z.ZodTypeDef,
         ListDeploymentAliasesProtectionBypass3
-    > = z
-        .object({
-            createdAt: z.number(),
-            createdBy: z.string(),
-            scope: ListDeploymentAliasesProtectionBypassAliasesResponseScope$.outboundSchema,
-        })
-        .transform((v) => {
-            return {
-                createdAt: v.createdAt,
-                createdBy: v.createdBy,
-                scope: v.scope,
-            };
-        });
+    > = z.object({
+        createdAt: z.number(),
+        createdBy: z.string(),
+        scope: ListDeploymentAliasesProtectionBypassAliasesResponseScope$.outboundSchema,
+    });
 }
 
 /** @internal */
@@ -295,23 +247,13 @@ export namespace ListDeploymentAliasesProtectionBypass2$ {
         ListDeploymentAliasesProtectionBypass2,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            createdAt: z.number(),
-            lastUpdatedAt: z.number(),
-            lastUpdatedBy: z.string(),
-            access: ListDeploymentAliasesProtectionBypassAccess$.inboundSchema,
-            scope: ListDeploymentAliasesProtectionBypassAliasesScope$.inboundSchema,
-        })
-        .transform((v) => {
-            return {
-                createdAt: v.createdAt,
-                lastUpdatedAt: v.lastUpdatedAt,
-                lastUpdatedBy: v.lastUpdatedBy,
-                access: v.access,
-                scope: v.scope,
-            };
-        });
+    > = z.object({
+        createdAt: z.number(),
+        lastUpdatedAt: z.number(),
+        lastUpdatedBy: z.string(),
+        access: ListDeploymentAliasesProtectionBypassAccess$.inboundSchema,
+        scope: ListDeploymentAliasesProtectionBypassAliasesScope$.inboundSchema,
+    });
 
     export type Outbound = {
         createdAt: number;
@@ -325,23 +267,13 @@ export namespace ListDeploymentAliasesProtectionBypass2$ {
         Outbound,
         z.ZodTypeDef,
         ListDeploymentAliasesProtectionBypass2
-    > = z
-        .object({
-            createdAt: z.number(),
-            lastUpdatedAt: z.number(),
-            lastUpdatedBy: z.string(),
-            access: ListDeploymentAliasesProtectionBypassAccess$.outboundSchema,
-            scope: ListDeploymentAliasesProtectionBypassAliasesScope$.outboundSchema,
-        })
-        .transform((v) => {
-            return {
-                createdAt: v.createdAt,
-                lastUpdatedAt: v.lastUpdatedAt,
-                lastUpdatedBy: v.lastUpdatedBy,
-                access: v.access,
-                scope: v.scope,
-            };
-        });
+    > = z.object({
+        createdAt: z.number(),
+        lastUpdatedAt: z.number(),
+        lastUpdatedBy: z.string(),
+        access: ListDeploymentAliasesProtectionBypassAccess$.outboundSchema,
+        scope: ListDeploymentAliasesProtectionBypassAliasesScope$.outboundSchema,
+    });
 }
 
 /** @internal */
@@ -356,19 +288,11 @@ export namespace ListDeploymentAliasesProtectionBypass1$ {
         ListDeploymentAliasesProtectionBypass1,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            createdAt: z.number(),
-            createdBy: z.string(),
-            scope: ListDeploymentAliasesProtectionBypassScope$.inboundSchema,
-        })
-        .transform((v) => {
-            return {
-                createdAt: v.createdAt,
-                createdBy: v.createdBy,
-                scope: v.scope,
-            };
-        });
+    > = z.object({
+        createdAt: z.number(),
+        createdBy: z.string(),
+        scope: ListDeploymentAliasesProtectionBypassScope$.inboundSchema,
+    });
 
     export type Outbound = {
         createdAt: number;
@@ -380,19 +304,11 @@ export namespace ListDeploymentAliasesProtectionBypass1$ {
         Outbound,
         z.ZodTypeDef,
         ListDeploymentAliasesProtectionBypass1
-    > = z
-        .object({
-            createdAt: z.number(),
-            createdBy: z.string(),
-            scope: ListDeploymentAliasesProtectionBypassScope$.outboundSchema,
-        })
-        .transform((v) => {
-            return {
-                createdAt: v.createdAt,
-                createdBy: v.createdBy,
-                scope: v.scope,
-            };
-        });
+    > = z.object({
+        createdAt: z.number(),
+        createdBy: z.string(),
+        scope: ListDeploymentAliasesProtectionBypassScope$.outboundSchema,
+    });
 }
 
 /** @internal */
@@ -427,8 +343,8 @@ export namespace ListDeploymentAliasesProtectionBypass$ {
 
 /** @internal */
 export namespace ListDeploymentAliasesAliases$ {
-    export const inboundSchema: z.ZodType<ListDeploymentAliasesAliases, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<ListDeploymentAliasesAliases, z.ZodTypeDef, unknown> =
+        z.object({
             uid: z.string(),
             alias: z.string(),
             created: z
@@ -446,17 +362,6 @@ export namespace ListDeploymentAliasesAliases$ {
                     ])
                 )
                 .optional(),
-        })
-        .transform((v) => {
-            return {
-                uid: v.uid,
-                alias: v.alias,
-                created: v.created,
-                ...(v.redirect === undefined ? null : { redirect: v.redirect }),
-                ...(v.protectionBypass === undefined
-                    ? null
-                    : { protectionBypass: v.protectionBypass }),
-            };
         });
 
     export type Outbound = {
@@ -465,18 +370,18 @@ export namespace ListDeploymentAliasesAliases$ {
         created: string;
         redirect?: string | null | undefined;
         protectionBypass?:
-            | Record<
-                  string,
-                  | ListDeploymentAliasesProtectionBypass1$.Outbound
-                  | ListDeploymentAliasesProtectionBypass3$.Outbound
-                  | ListDeploymentAliasesProtectionBypass4$.Outbound
-                  | ListDeploymentAliasesProtectionBypass2$.Outbound
-              >
+            | {
+                  [k: string]:
+                      | ListDeploymentAliasesProtectionBypass1$.Outbound
+                      | ListDeploymentAliasesProtectionBypass3$.Outbound
+                      | ListDeploymentAliasesProtectionBypass4$.Outbound
+                      | ListDeploymentAliasesProtectionBypass2$.Outbound;
+              }
             | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, ListDeploymentAliasesAliases> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, ListDeploymentAliasesAliases> =
+        z.object({
             uid: z.string(),
             alias: z.string(),
             created: z.date().transform((v) => v.toISOString()),
@@ -491,17 +396,6 @@ export namespace ListDeploymentAliasesAliases$ {
                     ])
                 )
                 .optional(),
-        })
-        .transform((v) => {
-            return {
-                uid: v.uid,
-                alias: v.alias,
-                created: v.created,
-                ...(v.redirect === undefined ? null : { redirect: v.redirect }),
-                ...(v.protectionBypass === undefined
-                    ? null
-                    : { protectionBypass: v.protectionBypass }),
-            };
         });
 }
 
@@ -511,15 +405,9 @@ export namespace ListDeploymentAliasesResponseBody$ {
         ListDeploymentAliasesResponseBody,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            aliases: z.array(z.lazy(() => ListDeploymentAliasesAliases$.inboundSchema)),
-        })
-        .transform((v) => {
-            return {
-                aliases: v.aliases,
-            };
-        });
+    > = z.object({
+        aliases: z.array(z.lazy(() => ListDeploymentAliasesAliases$.inboundSchema)),
+    });
 
     export type Outbound = {
         aliases: Array<ListDeploymentAliasesAliases$.Outbound>;
@@ -529,13 +417,7 @@ export namespace ListDeploymentAliasesResponseBody$ {
         Outbound,
         z.ZodTypeDef,
         ListDeploymentAliasesResponseBody
-    > = z
-        .object({
-            aliases: z.array(z.lazy(() => ListDeploymentAliasesAliases$.outboundSchema)),
-        })
-        .transform((v) => {
-            return {
-                aliases: v.aliases,
-            };
-        });
+    > = z.object({
+        aliases: z.array(z.lazy(() => ListDeploymentAliasesAliases$.outboundSchema)),
+    });
 }

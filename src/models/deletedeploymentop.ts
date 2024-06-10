@@ -46,20 +46,12 @@ export type DeleteDeploymentResponseBody = {
 
 /** @internal */
 export namespace DeleteDeploymentRequest$ {
-    export const inboundSchema: z.ZodType<DeleteDeploymentRequest, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<DeleteDeploymentRequest, z.ZodTypeDef, unknown> =
+        z.object({
             id: z.string(),
             url: z.string().optional(),
             teamId: z.string().optional(),
             slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                id: v.id,
-                ...(v.url === undefined ? null : { url: v.url }),
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
         });
 
     export type Outbound = {
@@ -69,20 +61,12 @@ export namespace DeleteDeploymentRequest$ {
         slug?: string | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, DeleteDeploymentRequest> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, DeleteDeploymentRequest> =
+        z.object({
             id: z.string(),
             url: z.string().optional(),
             teamId: z.string().optional(),
             slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                id: v.id,
-                ...(v.url === undefined ? null : { url: v.url }),
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
         });
 }
 
@@ -94,16 +78,10 @@ export namespace State$ {
 
 /** @internal */
 export namespace DeleteDeploymentResponseBody$ {
-    export const inboundSchema: z.ZodType<DeleteDeploymentResponseBody, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<DeleteDeploymentResponseBody, z.ZodTypeDef, unknown> =
+        z.object({
             uid: z.string(),
             state: State$.inboundSchema,
-        })
-        .transform((v) => {
-            return {
-                uid: v.uid,
-                state: v.state,
-            };
         });
 
     export type Outbound = {
@@ -111,15 +89,9 @@ export namespace DeleteDeploymentResponseBody$ {
         state: string;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, DeleteDeploymentResponseBody> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, DeleteDeploymentResponseBody> =
+        z.object({
             uid: z.string(),
             state: State$.outboundSchema,
-        })
-        .transform((v) => {
-            return {
-                uid: v.uid,
-                state: v.state,
-            };
         });
 }

@@ -55,7 +55,7 @@ run();
 
 ### Response
 
-**Promise<[models.GetEdgeConfigsResponseBody](../../models/getedgeconfigsresponsebody.md)>**
+**Promise\<[models.GetEdgeConfigsResponseBody](../../models/getedgeconfigsresponsebody.md)\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -102,7 +102,7 @@ run();
 
 ### Response
 
-**Promise<[models.CreateEdgeConfigResponseBody](../../models/createedgeconfigresponsebody.md)>**
+**Promise\<[models.CreateEdgeConfigResponseBody](../../models/createedgeconfigresponsebody.md)\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -147,7 +147,7 @@ run();
 
 ### Response
 
-**Promise<[models.GetEdgeConfigResponseBody](../../models/getedgeconfigresponsebody.md)>**
+**Promise\<[models.GetEdgeConfigResponseBody](../../models/getedgeconfigresponsebody.md)\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -195,7 +195,7 @@ run();
 
 ### Response
 
-**Promise<[models.UpdateEdgeConfigResponseBody](../../models/updateedgeconfigresponsebody.md)>**
+**Promise\<[models.UpdateEdgeConfigResponseBody](../../models/updateedgeconfigresponsebody.md)\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -218,10 +218,9 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.edgeConfig.delete("<value>", "<value>", "<value>");
+  await vercel.edgeConfig.delete("<value>", "<value>", "<value>");
 
-  // Handle the result
-  console.log(result)
+  
 }
 
 run();
@@ -240,7 +239,7 @@ run();
 
 ### Response
 
-**Promise<[models.DeleteEdgeConfigResponse](../../models/deleteedgeconfigresponse.md)>**
+**Promise\<void\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -263,10 +262,9 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.edgeConfig.listItems("<value>", "<value>", "<value>");
+  await vercel.edgeConfig.listItems("<value>", "<value>", "<value>");
 
-  // Handle the result
-  console.log(result)
+  
 }
 
 run();
@@ -285,7 +283,7 @@ run();
 
 ### Response
 
-**Promise<[models.GetEdgeConfigItemsResponse](../../models/getedgeconfigitemsresponse.md)>**
+**Promise\<void\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -330,7 +328,7 @@ run();
 
 ### Response
 
-**Promise<[models.GetEdgeConfigSchemaResponseBody](../../models/getedgeconfigschemaresponsebody.md)>**
+**Promise\<[models.GetEdgeConfigSchemaResponseBody](../../models/getedgeconfigschemaresponsebody.md)\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -375,7 +373,7 @@ run();
 
 ### Response
 
-**Promise<[models.PatchEdgeConfigSchemaResponseBody](../../models/patchedgeconfigschemaresponsebody.md)>**
+**Promise\<[models.PatchEdgeConfigSchemaResponseBody](../../models/patchedgeconfigschemaresponsebody.md)\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -398,10 +396,9 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.edgeConfig.deleteSchema("<value>", "<value>", "<value>");
+  await vercel.edgeConfig.deleteSchema("<value>", "<value>", "<value>");
 
-  // Handle the result
-  console.log(result)
+  
 }
 
 run();
@@ -420,7 +417,7 @@ run();
 
 ### Response
 
-**Promise<[models.DeleteEdgeConfigSchemaResponse](../../models/deleteedgeconfigschemaresponse.md)>**
+**Promise\<void\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -443,10 +440,9 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.edgeConfig.getItem("<value>", "<value>", "<value>", "<value>");
+  await vercel.edgeConfig.getItem("<value>", "<value>", "<value>", "<value>");
 
-  // Handle the result
-  console.log(result)
+  
 }
 
 run();
@@ -466,7 +462,7 @@ run();
 
 ### Response
 
-**Promise<[models.GetEdgeConfigItemResponse](../../models/getedgeconfigitemresponse.md)>**
+**Promise\<void\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -511,7 +507,7 @@ run();
 
 ### Response
 
-**Promise<[models.EdgeConfigToken](../../models/edgeconfigtoken.md)>**
+**Promise\<[models.EdgeConfigToken](../../models/edgeconfigtoken.md)\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -534,14 +530,13 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.edgeConfig.deleteTokens("<value>", "<value>", "<value>", {
+  await vercel.edgeConfig.deleteTokens("<value>", "<value>", "<value>", {
     tokens: [
       "<value>",
     ],
   });
 
-  // Handle the result
-  console.log(result)
+  
 }
 
 run();
@@ -561,7 +556,7 @@ run();
 
 ### Response
 
-**Promise<[models.DeleteTokensResponse](../../models/deletetokensresponse.md)>**
+**Promise\<void\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -607,7 +602,7 @@ run();
 
 ### Response
 
-**Promise<[models.EdgeConfigToken](../../models/edgeconfigtoken.md)>**
+**Promise\<[models.EdgeConfigToken](../../models/edgeconfigtoken.md)\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -655,7 +650,7 @@ run();
 
 ### Response
 
-**Promise<[models.CreateEdgeConfigTokenResponseBody](../../models/createedgeconfigtokenresponsebody.md)>**
+**Promise\<[models.CreateEdgeConfigTokenResponseBody](../../models/createedgeconfigtokenresponsebody.md)\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
