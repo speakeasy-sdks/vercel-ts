@@ -43,7 +43,7 @@ run();
 
 ### Response
 
-**Promise<[models.GetDeploymentBuildsResponseBody](../../models/getdeploymentbuildsresponsebody.md)>**
+**Promise\<[models.GetDeploymentBuildsResponseBody](../../models/getdeploymentbuildsresponsebody.md)\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -60,10 +60,9 @@ import { Vercel } from "vercel";
 const vercel = new Vercel();
 
 async function run() {
-  const result = await vercel.purgeDataCache("<value>");
+  await vercel.purgeDataCache("<value>");
 
-  // Handle the result
-  console.log(result)
+  
 }
 
 run();
@@ -80,7 +79,7 @@ run();
 
 ### Response
 
-**Promise<[models.PurgeDataCacheResponse](../../models/purgedatacacheresponse.md)>**
+**Promise\<void\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -117,7 +116,7 @@ run();
 
 ### Response
 
-**Promise<[models.UpdateBillingSettingsResponseBody](../../models/updatebillingsettingsresponsebody.md)>**
+**Promise\<[models.UpdateBillingSettingsResponseBody](../../models/updatebillingsettingsresponsebody.md)\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

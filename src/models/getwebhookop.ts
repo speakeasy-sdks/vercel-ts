@@ -83,19 +83,11 @@ export type GetWebhookResponseBody = {
 
 /** @internal */
 export namespace GetWebhookRequest$ {
-    export const inboundSchema: z.ZodType<GetWebhookRequest, z.ZodTypeDef, unknown> = z
-        .object({
-            id: z.string(),
-            teamId: z.string().optional(),
-            slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                id: v.id,
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
-        });
+    export const inboundSchema: z.ZodType<GetWebhookRequest, z.ZodTypeDef, unknown> = z.object({
+        id: z.string(),
+        teamId: z.string().optional(),
+        slug: z.string().optional(),
+    });
 
     export type Outbound = {
         id: string;
@@ -103,31 +95,24 @@ export namespace GetWebhookRequest$ {
         slug?: string | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetWebhookRequest> = z
-        .object({
-            id: z.string(),
-            teamId: z.string().optional(),
-            slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                id: v.id,
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetWebhookRequest> = z.object({
+        id: z.string(),
+        teamId: z.string().optional(),
+        slug: z.string().optional(),
+    });
 }
 
 /** @internal */
 export namespace GetWebhookEvents$ {
-    export const inboundSchema = z.nativeEnum(GetWebhookEvents);
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<typeof GetWebhookEvents> =
+        z.nativeEnum(GetWebhookEvents);
+    export const outboundSchema: z.ZodNativeEnum<typeof GetWebhookEvents> = inboundSchema;
 }
 
 /** @internal */
 export namespace GetWebhookResponseBody$ {
-    export const inboundSchema: z.ZodType<GetWebhookResponseBody, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<GetWebhookResponseBody, z.ZodTypeDef, unknown> = z.object(
+        {
             events: z.array(GetWebhookEvents$.inboundSchema),
             id: z.string(),
             url: z.string(),
@@ -135,18 +120,8 @@ export namespace GetWebhookResponseBody$ {
             createdAt: z.number(),
             updatedAt: z.number(),
             projectIds: z.array(z.string()).optional(),
-        })
-        .transform((v) => {
-            return {
-                events: v.events,
-                id: v.id,
-                url: v.url,
-                ownerId: v.ownerId,
-                createdAt: v.createdAt,
-                updatedAt: v.updatedAt,
-                ...(v.projectIds === undefined ? null : { projectIds: v.projectIds }),
-            };
-        });
+        }
+    );
 
     export type Outbound = {
         events: Array<string>;
@@ -158,8 +133,8 @@ export namespace GetWebhookResponseBody$ {
         projectIds?: Array<string> | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetWebhookResponseBody> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetWebhookResponseBody> =
+        z.object({
             events: z.array(GetWebhookEvents$.outboundSchema),
             id: z.string(),
             url: z.string(),
@@ -167,16 +142,5 @@ export namespace GetWebhookResponseBody$ {
             createdAt: z.number(),
             updatedAt: z.number(),
             projectIds: z.array(z.string()).optional(),
-        })
-        .transform((v) => {
-            return {
-                events: v.events,
-                id: v.id,
-                url: v.url,
-                ownerId: v.ownerId,
-                createdAt: v.createdAt,
-                updatedAt: v.updatedAt,
-                ...(v.projectIds === undefined ? null : { projectIds: v.projectIds }),
-            };
         });
 }

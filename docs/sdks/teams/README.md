@@ -24,8 +24,7 @@ Get a paginated list of team members for the provided team.
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
-import { QueryParamRole } from "vercel/models";
+import { QueryParamRole, Vercel } from "vercel";
 
 const vercel = new Vercel({
   security: {
@@ -60,7 +59,7 @@ run();
 
 ### Response
 
-**Promise<[models.GetTeamMembersResponseBody](../../models/getteammembersresponsebody.md)>**
+**Promise\<[models.GetTeamMembersResponseBody](../../models/getteammembersresponsebody.md)\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -74,8 +73,7 @@ Invite a user to join the team specified in the URL. The authenticated user need
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
-import { InviteUserToTeamRole, InviteUserToTeamTeamsRole } from "vercel/models";
+import { InviteUserToTeamRole, InviteUserToTeamTeamsRole, Vercel } from "vercel";
 
 const vercel = new Vercel({
   security: {
@@ -115,7 +113,7 @@ run();
 
 ### Response
 
-**Promise<[models.InviteUserToTeamResponseBody](../../models/inviteusertoteamresponsebody.md)>**
+**Promise\<[models.InviteUserToTeamResponseBody](../../models/inviteusertoteamresponsebody.md)\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -129,8 +127,7 @@ Request access to a team as a member. An owner has to approve the request. Only 
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
-import { RequestAccessToTeamOrigin } from "vercel/models";
+import { RequestAccessToTeamOrigin, Vercel } from "vercel";
 
 const vercel = new Vercel({
   security: {
@@ -169,7 +166,7 @@ run();
 
 ### Response
 
-**Promise<[models.RequestAccessToTeamResponseBody](../../models/requestaccesstoteamresponsebody.md)>**
+**Promise\<[models.RequestAccessToTeamResponseBody](../../models/requestaccesstoteamresponsebody.md)\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -213,7 +210,7 @@ run();
 
 ### Response
 
-**Promise<[models.GetTeamAccessRequestResponseBody](../../models/getteamaccessrequestresponsebody.md)>**
+**Promise\<[models.GetTeamAccessRequestResponseBody](../../models/getteamaccessrequestresponsebody.md)\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -259,7 +256,7 @@ run();
 
 ### Response
 
-**Promise<[models.JoinTeamResponseBody](../../models/jointeamresponsebody.md)>**
+**Promise\<[models.JoinTeamResponseBody](../../models/jointeamresponsebody.md)\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -273,8 +270,7 @@ Update the membership of a Team Member on the Team specified by `teamId`, such a
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
-import { UpdateTeamMemberRole } from "vercel/models";
+import { UpdateTeamMemberRole, Vercel } from "vercel";
 
 const vercel = new Vercel({
   security: {
@@ -314,7 +310,7 @@ run();
 
 ### Response
 
-**Promise<[models.UpdateTeamMemberResponseBody](../../models/updateteammemberresponsebody.md)>**
+**Promise\<[models.UpdateTeamMemberResponseBody](../../models/updateteammemberresponsebody.md)\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -359,7 +355,7 @@ run();
 
 ### Response
 
-**Promise<[models.RemoveTeamMemberResponseBody](../../models/removeteammemberresponsebody.md)>**
+**Promise\<[models.RemoveTeamMemberResponseBody](../../models/removeteammemberresponsebody.md)\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -403,7 +399,7 @@ run();
 
 ### Response
 
-**Promise<[models.Team](../../models/team.md)>**
+**Promise\<[models.Team](../../models/team.md)\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -464,7 +460,7 @@ run();
 
 ### Response
 
-**Promise<[models.Team](../../models/team.md)>**
+**Promise\<[models.Team](../../models/team.md)\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -509,7 +505,7 @@ run();
 
 ### Response
 
-**Promise<[models.GetTeamsResponseBody](../../models/getteamsresponsebody.md)>**
+**Promise\<[models.GetTeamsResponseBody](../../models/getteamsresponsebody.md)\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -555,7 +551,7 @@ run();
 
 ### Response
 
-**Promise<[models.CreateTeamResponseBody](../../models/createteamresponsebody.md)>**
+**Promise\<[models.CreateTeamResponseBody](../../models/createteamresponsebody.md)\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -601,7 +597,7 @@ run();
 
 ### Response
 
-**Promise<[models.DeleteTeamResponseBody](../../models/deleteteamresponsebody.md)>**
+**Promise\<[models.DeleteTeamResponseBody](../../models/deleteteamresponsebody.md)\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -645,7 +641,7 @@ run();
 
 ### Response
 
-**Promise<[models.DeleteTeamInviteCodeResponseBody](../../models/deleteteaminvitecoderesponsebody.md)>**
+**Promise\<[models.DeleteTeamInviteCodeResponseBody](../../models/deleteteaminvitecoderesponsebody.md)\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

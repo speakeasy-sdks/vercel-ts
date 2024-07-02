@@ -55,7 +55,7 @@ run();
 
 ### Response
 
-**Promise<[models.CreateCheckResponseBody](../../models/createcheckresponsebody.md)>**
+**Promise\<[models.CreateCheckResponseBody](../../models/createcheckresponsebody.md)\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -100,7 +100,7 @@ run();
 
 ### Response
 
-**Promise<[models.GetAllChecksResponseBody](../../models/getallchecksresponsebody.md)>**
+**Promise\<[models.GetAllChecksResponseBody](../../models/getallchecksresponsebody.md)\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -146,7 +146,7 @@ run();
 
 ### Response
 
-**Promise<[models.GetCheckResponseBody](../../models/getcheckresponsebody.md)>**
+**Promise\<[models.GetCheckResponseBody](../../models/getcheckresponsebody.md)\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -160,14 +160,14 @@ Update an existing check. This endpoint must be called with an OAuth2 or it will
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
 import {
   UpdateCheckChecksRequestRequestBodyOutputSource,
   UpdateCheckChecksRequestRequestBodySource,
   UpdateCheckChecksRequestSource,
   UpdateCheckChecksSource,
   UpdateCheckSource,
-} from "vercel/models";
+  Vercel,
+} from "vercel";
 
 const vercel = new Vercel({
   security: {
@@ -234,7 +234,7 @@ run();
 
 ### Response
 
-**Promise<[models.UpdateCheckResponseBody](../../models/updatecheckresponsebody.md)>**
+**Promise\<[models.UpdateCheckResponseBody](../../models/updatecheckresponsebody.md)\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -280,7 +280,7 @@ run();
 
 ### Response
 
-**Promise<[models.RerequestCheckResponseBody](../../models/rerequestcheckresponsebody.md)>**
+**Promise\<[models.RerequestCheckResponseBody](../../models/rerequestcheckresponsebody.md)\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

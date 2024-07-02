@@ -56,7 +56,7 @@ run();
 
 ### Response
 
-**Promise<[models.BuyDomainResponse](../../models/buydomainresponse.md)>**
+**Promise\<[models.BuyDomainResponse](../../models/buydomainresponse.md)\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -70,8 +70,7 @@ Check the price to purchase a domain and how long a single purchase period is.
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
-import { QueryParamType } from "vercel/models";
+import { QueryParamType, Vercel } from "vercel";
 
 const vercel = new Vercel({
   security: {
@@ -103,7 +102,7 @@ run();
 
 ### Response
 
-**Promise<[models.CheckDomainPriceResponseBody](../../models/checkdomainpriceresponsebody.md)>**
+**Promise\<[models.CheckDomainPriceResponseBody](../../models/checkdomainpriceresponsebody.md)\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -148,7 +147,7 @@ run();
 
 ### Response
 
-**Promise<[models.CheckDomainStatusResponseBody](../../models/checkdomainstatusresponsebody.md)>**
+**Promise\<[models.CheckDomainStatusResponseBody](../../models/checkdomainstatusresponsebody.md)\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -193,7 +192,7 @@ run();
 
 ### Response
 
-**Promise<[models.GetDomainTransferResponseBody](../../models/getdomaintransferresponsebody.md)>**
+**Promise\<[models.GetDomainTransferResponseBody](../../models/getdomaintransferresponsebody.md)\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -207,8 +206,7 @@ Get a Domain's configuration.
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
-import { Strict } from "vercel/models";
+import { Strict, Vercel } from "vercel";
 
 const vercel = new Vercel({
   security: {
@@ -240,7 +238,7 @@ run();
 
 ### Response
 
-**Promise<[models.GetDomainConfigResponseBody](../../models/getdomainconfigresponsebody.md)>**
+**Promise\<[models.GetDomainConfigResponseBody](../../models/getdomainconfigresponsebody.md)\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -285,7 +283,7 @@ run();
 
 ### Response
 
-**Promise<[models.GetDomainResponseBody](../../models/getdomainresponsebody.md)>**
+**Promise\<[models.GetDomainResponseBody](../../models/getdomainresponsebody.md)\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -332,7 +330,7 @@ run();
 
 ### Response
 
-**Promise<[models.GetDomainsResponseBody](../../models/getdomainsresponsebody.md)>**
+**Promise\<[models.GetDomainsResponseBody](../../models/getdomainsresponsebody.md)\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -382,7 +380,7 @@ run();
 
 ### Response
 
-**Promise<[models.CreateOrTransferDomainResponseBody](../../models/createortransferdomainresponsebody.md)>**
+**Promise\<[models.CreateOrTransferDomainResponseBody](../../models/createortransferdomainresponsebody.md)\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -430,7 +428,7 @@ run();
 
 ### Response
 
-**Promise<[models.PatchDomainResponseBody](../../models/patchdomainresponsebody.md)>**
+**Promise\<[models.PatchDomainResponseBody](../../models/patchdomainresponsebody.md)\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -475,7 +473,7 @@ run();
 
 ### Response
 
-**Promise<[models.DeleteDomainResponseBody](../../models/deletedomainresponsebody.md)>**
+**Promise\<[models.DeleteDomainResponseBody](../../models/deletedomainresponsebody.md)\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

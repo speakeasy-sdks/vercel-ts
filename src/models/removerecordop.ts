@@ -24,21 +24,12 @@ export type RemoveRecordResponseBody = {};
 
 /** @internal */
 export namespace RemoveRecordRequest$ {
-    export const inboundSchema: z.ZodType<RemoveRecordRequest, z.ZodTypeDef, unknown> = z
-        .object({
-            domain: z.string(),
-            recordId: z.string(),
-            teamId: z.string().optional(),
-            slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                domain: v.domain,
-                recordId: v.recordId,
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
-        });
+    export const inboundSchema: z.ZodType<RemoveRecordRequest, z.ZodTypeDef, unknown> = z.object({
+        domain: z.string(),
+        recordId: z.string(),
+        teamId: z.string().optional(),
+        slug: z.string().optional(),
+    });
 
     export type Outbound = {
         domain: string;
@@ -47,21 +38,12 @@ export namespace RemoveRecordRequest$ {
         slug?: string | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, RemoveRecordRequest> = z
-        .object({
-            domain: z.string(),
-            recordId: z.string(),
-            teamId: z.string().optional(),
-            slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                domain: v.domain,
-                recordId: v.recordId,
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, RemoveRecordRequest> = z.object({
+        domain: z.string(),
+        recordId: z.string(),
+        teamId: z.string().optional(),
+        slug: z.string().optional(),
+    });
 }
 
 /** @internal */

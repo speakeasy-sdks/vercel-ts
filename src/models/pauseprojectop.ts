@@ -19,23 +19,13 @@ export type PauseProjectRequest = {
     slug?: string | undefined;
 };
 
-export type PauseProjectResponse = {};
-
 /** @internal */
 export namespace PauseProjectRequest$ {
-    export const inboundSchema: z.ZodType<PauseProjectRequest, z.ZodTypeDef, unknown> = z
-        .object({
-            projectId: z.string(),
-            teamId: z.string().optional(),
-            slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                projectId: v.projectId,
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
-        });
+    export const inboundSchema: z.ZodType<PauseProjectRequest, z.ZodTypeDef, unknown> = z.object({
+        projectId: z.string(),
+        teamId: z.string().optional(),
+        slug: z.string().optional(),
+    });
 
     export type Outbound = {
         projectId: string;
@@ -43,30 +33,9 @@ export namespace PauseProjectRequest$ {
         slug?: string | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, PauseProjectRequest> = z
-        .object({
-            projectId: z.string(),
-            teamId: z.string().optional(),
-            slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                projectId: v.projectId,
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
-        });
-}
-
-/** @internal */
-export namespace PauseProjectResponse$ {
-    export const inboundSchema: z.ZodType<PauseProjectResponse, z.ZodTypeDef, unknown> = z.object(
-        {}
-    );
-
-    export type Outbound = {};
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, PauseProjectResponse> = z.object(
-        {}
-    );
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, PauseProjectRequest> = z.object({
+        projectId: z.string(),
+        teamId: z.string().optional(),
+        slug: z.string().optional(),
+    });
 }

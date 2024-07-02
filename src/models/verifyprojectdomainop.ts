@@ -61,20 +61,12 @@ export type VerifyProjectDomainResponseBody = {
 
 /** @internal */
 export namespace VerifyProjectDomainRequest$ {
-    export const inboundSchema: z.ZodType<VerifyProjectDomainRequest, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<VerifyProjectDomainRequest, z.ZodTypeDef, unknown> =
+        z.object({
             idOrName: z.string(),
             domain: z.string(),
             teamId: z.string().optional(),
             slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                idOrName: v.idOrName,
-                domain: v.domain,
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
         });
 
     export type Outbound = {
@@ -84,41 +76,24 @@ export namespace VerifyProjectDomainRequest$ {
         slug?: string | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, VerifyProjectDomainRequest> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, VerifyProjectDomainRequest> =
+        z.object({
             idOrName: z.string(),
             domain: z.string(),
             teamId: z.string().optional(),
             slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                idOrName: v.idOrName,
-                domain: v.domain,
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
         });
 }
 
 /** @internal */
 export namespace VerifyProjectDomainVerification$ {
     export const inboundSchema: z.ZodType<VerifyProjectDomainVerification, z.ZodTypeDef, unknown> =
-        z
-            .object({
-                type: z.string(),
-                domain: z.string(),
-                value: z.string(),
-                reason: z.string(),
-            })
-            .transform((v) => {
-                return {
-                    type: v.type,
-                    domain: v.domain,
-                    value: v.value,
-                    reason: v.reason,
-                };
-            });
+        z.object({
+            type: z.string(),
+            domain: z.string(),
+            value: z.string(),
+            reason: z.string(),
+        });
 
     export type Outbound = {
         type: string;
@@ -131,61 +106,32 @@ export namespace VerifyProjectDomainVerification$ {
         Outbound,
         z.ZodTypeDef,
         VerifyProjectDomainVerification
-    > = z
-        .object({
-            type: z.string(),
-            domain: z.string(),
-            value: z.string(),
-            reason: z.string(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                domain: v.domain,
-                value: v.value,
-                reason: v.reason,
-            };
-        });
+    > = z.object({
+        type: z.string(),
+        domain: z.string(),
+        value: z.string(),
+        reason: z.string(),
+    });
 }
 
 /** @internal */
 export namespace VerifyProjectDomainResponseBody$ {
     export const inboundSchema: z.ZodType<VerifyProjectDomainResponseBody, z.ZodTypeDef, unknown> =
-        z
-            .object({
-                name: z.string(),
-                apexName: z.string(),
-                projectId: z.string(),
-                redirect: z.nullable(z.string()).optional(),
-                redirectStatusCode: z.nullable(z.number()).optional(),
-                gitBranch: z.nullable(z.string()).optional(),
-                customEnvironmentId: z.nullable(z.string()).optional(),
-                updatedAt: z.number().optional(),
-                createdAt: z.number().optional(),
-                verified: z.boolean(),
-                verification: z
-                    .array(z.lazy(() => VerifyProjectDomainVerification$.inboundSchema))
-                    .optional(),
-            })
-            .transform((v) => {
-                return {
-                    name: v.name,
-                    apexName: v.apexName,
-                    projectId: v.projectId,
-                    ...(v.redirect === undefined ? null : { redirect: v.redirect }),
-                    ...(v.redirectStatusCode === undefined
-                        ? null
-                        : { redirectStatusCode: v.redirectStatusCode }),
-                    ...(v.gitBranch === undefined ? null : { gitBranch: v.gitBranch }),
-                    ...(v.customEnvironmentId === undefined
-                        ? null
-                        : { customEnvironmentId: v.customEnvironmentId }),
-                    ...(v.updatedAt === undefined ? null : { updatedAt: v.updatedAt }),
-                    ...(v.createdAt === undefined ? null : { createdAt: v.createdAt }),
-                    verified: v.verified,
-                    ...(v.verification === undefined ? null : { verification: v.verification }),
-                };
-            });
+        z.object({
+            name: z.string(),
+            apexName: z.string(),
+            projectId: z.string(),
+            redirect: z.nullable(z.string()).optional(),
+            redirectStatusCode: z.nullable(z.number()).optional(),
+            gitBranch: z.nullable(z.string()).optional(),
+            customEnvironmentId: z.nullable(z.string()).optional(),
+            updatedAt: z.number().optional(),
+            createdAt: z.number().optional(),
+            verified: z.boolean(),
+            verification: z
+                .array(z.lazy(() => VerifyProjectDomainVerification$.inboundSchema))
+                .optional(),
+        });
 
     export type Outbound = {
         name: string;
@@ -205,39 +151,19 @@ export namespace VerifyProjectDomainResponseBody$ {
         Outbound,
         z.ZodTypeDef,
         VerifyProjectDomainResponseBody
-    > = z
-        .object({
-            name: z.string(),
-            apexName: z.string(),
-            projectId: z.string(),
-            redirect: z.nullable(z.string()).optional(),
-            redirectStatusCode: z.nullable(z.number()).optional(),
-            gitBranch: z.nullable(z.string()).optional(),
-            customEnvironmentId: z.nullable(z.string()).optional(),
-            updatedAt: z.number().optional(),
-            createdAt: z.number().optional(),
-            verified: z.boolean(),
-            verification: z
-                .array(z.lazy(() => VerifyProjectDomainVerification$.outboundSchema))
-                .optional(),
-        })
-        .transform((v) => {
-            return {
-                name: v.name,
-                apexName: v.apexName,
-                projectId: v.projectId,
-                ...(v.redirect === undefined ? null : { redirect: v.redirect }),
-                ...(v.redirectStatusCode === undefined
-                    ? null
-                    : { redirectStatusCode: v.redirectStatusCode }),
-                ...(v.gitBranch === undefined ? null : { gitBranch: v.gitBranch }),
-                ...(v.customEnvironmentId === undefined
-                    ? null
-                    : { customEnvironmentId: v.customEnvironmentId }),
-                ...(v.updatedAt === undefined ? null : { updatedAt: v.updatedAt }),
-                ...(v.createdAt === undefined ? null : { createdAt: v.createdAt }),
-                verified: v.verified,
-                ...(v.verification === undefined ? null : { verification: v.verification }),
-            };
-        });
+    > = z.object({
+        name: z.string(),
+        apexName: z.string(),
+        projectId: z.string(),
+        redirect: z.nullable(z.string()).optional(),
+        redirectStatusCode: z.nullable(z.number()).optional(),
+        gitBranch: z.nullable(z.string()).optional(),
+        customEnvironmentId: z.nullable(z.string()).optional(),
+        updatedAt: z.number().optional(),
+        createdAt: z.number().optional(),
+        verified: z.boolean(),
+        verification: z
+            .array(z.lazy(() => VerifyProjectDomainVerification$.outboundSchema))
+            .optional(),
+    });
 }

@@ -16,22 +16,13 @@ export type GetEdgeConfigItemsRequest = {
     slug?: string | undefined;
 };
 
-export type GetEdgeConfigItemsResponse = {};
-
 /** @internal */
 export namespace GetEdgeConfigItemsRequest$ {
-    export const inboundSchema: z.ZodType<GetEdgeConfigItemsRequest, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<GetEdgeConfigItemsRequest, z.ZodTypeDef, unknown> =
+        z.object({
             edgeConfigId: z.string(),
             teamId: z.string().optional(),
             slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                edgeConfigId: v.edgeConfigId,
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
         });
 
     export type Outbound = {
@@ -40,28 +31,10 @@ export namespace GetEdgeConfigItemsRequest$ {
         slug?: string | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetEdgeConfigItemsRequest> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetEdgeConfigItemsRequest> =
+        z.object({
             edgeConfigId: z.string(),
             teamId: z.string().optional(),
             slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                edgeConfigId: v.edgeConfigId,
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
         });
-}
-
-/** @internal */
-export namespace GetEdgeConfigItemsResponse$ {
-    export const inboundSchema: z.ZodType<GetEdgeConfigItemsResponse, z.ZodTypeDef, unknown> =
-        z.object({});
-
-    export type Outbound = {};
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetEdgeConfigItemsResponse> =
-        z.object({});
 }

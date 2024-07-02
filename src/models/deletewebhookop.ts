@@ -16,23 +16,13 @@ export type DeleteWebhookRequest = {
     slug?: string | undefined;
 };
 
-export type DeleteWebhookResponse = {};
-
 /** @internal */
 export namespace DeleteWebhookRequest$ {
-    export const inboundSchema: z.ZodType<DeleteWebhookRequest, z.ZodTypeDef, unknown> = z
-        .object({
-            id: z.string(),
-            teamId: z.string().optional(),
-            slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                id: v.id,
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
-        });
+    export const inboundSchema: z.ZodType<DeleteWebhookRequest, z.ZodTypeDef, unknown> = z.object({
+        id: z.string(),
+        teamId: z.string().optional(),
+        slug: z.string().optional(),
+    });
 
     export type Outbound = {
         id: string;
@@ -40,29 +30,11 @@ export namespace DeleteWebhookRequest$ {
         slug?: string | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, DeleteWebhookRequest> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, DeleteWebhookRequest> = z.object(
+        {
             id: z.string(),
             teamId: z.string().optional(),
             slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                id: v.id,
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
-        });
-}
-
-/** @internal */
-export namespace DeleteWebhookResponse$ {
-    export const inboundSchema: z.ZodType<DeleteWebhookResponse, z.ZodTypeDef, unknown> = z.object(
-        {}
+        }
     );
-
-    export type Outbound = {};
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, DeleteWebhookResponse> =
-        z.object({});
 }

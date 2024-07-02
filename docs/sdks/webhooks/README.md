@@ -15,8 +15,7 @@ Creates a webhook
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
-import { Events } from "vercel/models";
+import { Events, Vercel } from "vercel";
 
 const vercel = new Vercel({
   security: {
@@ -52,7 +51,7 @@ run();
 
 ### Response
 
-**Promise<[models.CreateWebhookResponseBody](../../models/createwebhookresponsebody.md)>**
+**Promise\<[models.CreateWebhookResponseBody](../../models/createwebhookresponsebody.md)\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -97,7 +96,7 @@ run();
 
 ### Response
 
-**Promise<[models.GetWebhooksResponseBody[]](../../models/.md)>**
+**Promise\<[models.GetWebhooksResponseBody[]](../../models/.md)\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -142,7 +141,7 @@ run();
 
 ### Response
 
-**Promise<[models.GetWebhookResponseBody](../../models/getwebhookresponsebody.md)>**
+**Promise\<[models.GetWebhookResponseBody](../../models/getwebhookresponsebody.md)\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -165,10 +164,9 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.webhooks.delete("<value>", "<value>", "<value>");
+  await vercel.webhooks.delete("<value>", "<value>", "<value>");
 
-  // Handle the result
-  console.log(result)
+  
 }
 
 run();
@@ -187,7 +185,7 @@ run();
 
 ### Response
 
-**Promise<[models.DeleteWebhookResponse](../../models/deletewebhookresponse.md)>**
+**Promise\<void\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

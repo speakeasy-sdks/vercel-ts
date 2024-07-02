@@ -52,33 +52,21 @@ export type FileTree = {
 
 /** @internal */
 export namespace Type$ {
-    export const inboundSchema = z.nativeEnum(Type);
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<typeof Type> = z.nativeEnum(Type);
+    export const outboundSchema: z.ZodNativeEnum<typeof Type> = inboundSchema;
 }
 
 /** @internal */
 export namespace FileTree$ {
-    export const inboundSchema: z.ZodType<FileTree, z.ZodTypeDef, unknown> = z
-        .object({
-            name: z.string(),
-            type: Type$.inboundSchema,
-            uid: z.string().optional(),
-            children: z.array(z.lazy(() => FileTree$.inboundSchema)).optional(),
-            contentType: z.string().optional(),
-            mode: z.number(),
-            symlink: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                name: v.name,
-                type: v.type,
-                ...(v.uid === undefined ? null : { uid: v.uid }),
-                ...(v.children === undefined ? null : { children: v.children }),
-                ...(v.contentType === undefined ? null : { contentType: v.contentType }),
-                mode: v.mode,
-                ...(v.symlink === undefined ? null : { symlink: v.symlink }),
-            };
-        });
+    export const inboundSchema: z.ZodType<FileTree, z.ZodTypeDef, unknown> = z.object({
+        name: z.string(),
+        type: Type$.inboundSchema,
+        uid: z.string().optional(),
+        children: z.array(z.lazy(() => FileTree$.inboundSchema)).optional(),
+        contentType: z.string().optional(),
+        mode: z.number(),
+        symlink: z.string().optional(),
+    });
 
     export type Outbound = {
         name: string;
@@ -90,25 +78,13 @@ export namespace FileTree$ {
         symlink?: string | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, FileTree> = z
-        .object({
-            name: z.string(),
-            type: Type$.outboundSchema,
-            uid: z.string().optional(),
-            children: z.array(z.lazy(() => FileTree$.outboundSchema)).optional(),
-            contentType: z.string().optional(),
-            mode: z.number(),
-            symlink: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                name: v.name,
-                type: v.type,
-                ...(v.uid === undefined ? null : { uid: v.uid }),
-                ...(v.children === undefined ? null : { children: v.children }),
-                ...(v.contentType === undefined ? null : { contentType: v.contentType }),
-                mode: v.mode,
-                ...(v.symlink === undefined ? null : { symlink: v.symlink }),
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, FileTree> = z.object({
+        name: z.string(),
+        type: Type$.outboundSchema,
+        uid: z.string().optional(),
+        children: z.array(z.lazy(() => FileTree$.outboundSchema)).optional(),
+        contentType: z.string().optional(),
+        mode: z.number(),
+        symlink: z.string().optional(),
+    });
 }

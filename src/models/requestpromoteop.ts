@@ -17,25 +17,14 @@ export type RequestPromoteRequest = {
     slug?: string | undefined;
 };
 
-export type RequestPromoteResponse = {};
-
 /** @internal */
 export namespace RequestPromoteRequest$ {
-    export const inboundSchema: z.ZodType<RequestPromoteRequest, z.ZodTypeDef, unknown> = z
-        .object({
-            projectId: z.string(),
-            deploymentId: z.string(),
-            teamId: z.string().optional(),
-            slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                projectId: v.projectId,
-                deploymentId: v.deploymentId,
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
-        });
+    export const inboundSchema: z.ZodType<RequestPromoteRequest, z.ZodTypeDef, unknown> = z.object({
+        projectId: z.string(),
+        deploymentId: z.string(),
+        teamId: z.string().optional(),
+        slug: z.string().optional(),
+    });
 
     export type Outbound = {
         projectId: string;
@@ -44,31 +33,11 @@ export namespace RequestPromoteRequest$ {
         slug?: string | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, RequestPromoteRequest> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, RequestPromoteRequest> =
+        z.object({
             projectId: z.string(),
             deploymentId: z.string(),
             teamId: z.string().optional(),
             slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                projectId: v.projectId,
-                deploymentId: v.deploymentId,
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
         });
-}
-
-/** @internal */
-export namespace RequestPromoteResponse$ {
-    export const inboundSchema: z.ZodType<RequestPromoteResponse, z.ZodTypeDef, unknown> = z.object(
-        {}
-    );
-
-    export type Outbound = {};
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, RequestPromoteResponse> =
-        z.object({});
 }

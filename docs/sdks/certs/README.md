@@ -46,7 +46,7 @@ run();
 
 ### Response
 
-**Promise<[models.GetCertByIdResponseBody](../../models/getcertbyidresponsebody.md)>**
+**Promise\<[models.GetCertByIdResponseBody](../../models/getcertbyidresponsebody.md)\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -91,7 +91,7 @@ run();
 
 ### Response
 
-**Promise<[models.RemoveCertResponseBody](../../models/removecertresponsebody.md)>**
+**Promise\<[models.RemoveCertResponseBody](../../models/removecertresponsebody.md)\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -136,7 +136,7 @@ run();
 
 ### Response
 
-**Promise<[models.IssueCertResponseBody](../../models/issuecertresponsebody.md)>**
+**Promise\<[models.IssueCertResponseBody](../../models/issuecertresponsebody.md)\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -185,7 +185,7 @@ run();
 
 ### Response
 
-**Promise<[models.UploadCertResponseBody](../../models/uploadcertresponsebody.md)>**
+**Promise\<[models.UploadCertResponseBody](../../models/uploadcertresponsebody.md)\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

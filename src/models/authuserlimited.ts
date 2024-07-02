@@ -51,35 +51,23 @@ export type AuthUserLimited = {
 
 /** @internal */
 export namespace AuthUserLimitedVersion$ {
-    export const inboundSchema = z.nativeEnum(AuthUserLimitedVersion);
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<typeof AuthUserLimitedVersion> =
+        z.nativeEnum(AuthUserLimitedVersion);
+    export const outboundSchema: z.ZodNativeEnum<typeof AuthUserLimitedVersion> = inboundSchema;
 }
 
 /** @internal */
 export namespace AuthUserLimited$ {
-    export const inboundSchema: z.ZodType<AuthUserLimited, z.ZodTypeDef, unknown> = z
-        .object({
-            limited: z.boolean(),
-            id: z.string(),
-            email: z.string(),
-            name: z.nullable(z.string()),
-            username: z.string(),
-            avatar: z.nullable(z.string()),
-            defaultTeamId: z.nullable(z.string()),
-            version: z.nullable(AuthUserLimitedVersion$.inboundSchema),
-        })
-        .transform((v) => {
-            return {
-                limited: v.limited,
-                id: v.id,
-                email: v.email,
-                name: v.name,
-                username: v.username,
-                avatar: v.avatar,
-                defaultTeamId: v.defaultTeamId,
-                version: v.version,
-            };
-        });
+    export const inboundSchema: z.ZodType<AuthUserLimited, z.ZodTypeDef, unknown> = z.object({
+        limited: z.boolean(),
+        id: z.string(),
+        email: z.string(),
+        name: z.nullable(z.string()),
+        username: z.string(),
+        avatar: z.nullable(z.string()),
+        defaultTeamId: z.nullable(z.string()),
+        version: z.nullable(AuthUserLimitedVersion$.inboundSchema),
+    });
 
     export type Outbound = {
         limited: boolean;
@@ -92,27 +80,14 @@ export namespace AuthUserLimited$ {
         version: string | null;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, AuthUserLimited> = z
-        .object({
-            limited: z.boolean(),
-            id: z.string(),
-            email: z.string(),
-            name: z.nullable(z.string()),
-            username: z.string(),
-            avatar: z.nullable(z.string()),
-            defaultTeamId: z.nullable(z.string()),
-            version: z.nullable(AuthUserLimitedVersion$.outboundSchema),
-        })
-        .transform((v) => {
-            return {
-                limited: v.limited,
-                id: v.id,
-                email: v.email,
-                name: v.name,
-                username: v.username,
-                avatar: v.avatar,
-                defaultTeamId: v.defaultTeamId,
-                version: v.version,
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, AuthUserLimited> = z.object({
+        limited: z.boolean(),
+        id: z.string(),
+        email: z.string(),
+        name: z.nullable(z.string()),
+        username: z.string(),
+        avatar: z.nullable(z.string()),
+        defaultTeamId: z.nullable(z.string()),
+        version: z.nullable(AuthUserLimitedVersion$.outboundSchema),
+    });
 }

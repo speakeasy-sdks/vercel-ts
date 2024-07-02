@@ -19,23 +19,13 @@ export type ArtifactExistsRequest = {
     slug?: string | undefined;
 };
 
-export type ArtifactExistsResponse = {};
-
 /** @internal */
 export namespace ArtifactExistsRequest$ {
-    export const inboundSchema: z.ZodType<ArtifactExistsRequest, z.ZodTypeDef, unknown> = z
-        .object({
-            hash: z.string(),
-            teamId: z.string().optional(),
-            slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                hash: v.hash,
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
-        });
+    export const inboundSchema: z.ZodType<ArtifactExistsRequest, z.ZodTypeDef, unknown> = z.object({
+        hash: z.string(),
+        teamId: z.string().optional(),
+        slug: z.string().optional(),
+    });
 
     export type Outbound = {
         hash: string;
@@ -43,29 +33,10 @@ export namespace ArtifactExistsRequest$ {
         slug?: string | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, ArtifactExistsRequest> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, ArtifactExistsRequest> =
+        z.object({
             hash: z.string(),
             teamId: z.string().optional(),
             slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                hash: v.hash,
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
         });
-}
-
-/** @internal */
-export namespace ArtifactExistsResponse$ {
-    export const inboundSchema: z.ZodType<ArtifactExistsResponse, z.ZodTypeDef, unknown> = z.object(
-        {}
-    );
-
-    export type Outbound = {};
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, ArtifactExistsResponse> =
-        z.object({});
 }

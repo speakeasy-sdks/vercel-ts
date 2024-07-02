@@ -24,19 +24,11 @@ export type Pagination = {
 
 /** @internal */
 export namespace Pagination$ {
-    export const inboundSchema: z.ZodType<Pagination, z.ZodTypeDef, unknown> = z
-        .object({
-            count: z.number(),
-            next: z.nullable(z.number()),
-            prev: z.nullable(z.number()),
-        })
-        .transform((v) => {
-            return {
-                count: v.count,
-                next: v.next,
-                prev: v.prev,
-            };
-        });
+    export const inboundSchema: z.ZodType<Pagination, z.ZodTypeDef, unknown> = z.object({
+        count: z.number(),
+        next: z.nullable(z.number()),
+        prev: z.nullable(z.number()),
+    });
 
     export type Outbound = {
         count: number;
@@ -44,17 +36,9 @@ export namespace Pagination$ {
         prev: number | null;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, Pagination> = z
-        .object({
-            count: z.number(),
-            next: z.nullable(z.number()),
-            prev: z.nullable(z.number()),
-        })
-        .transform((v) => {
-            return {
-                count: v.count,
-                next: v.next,
-                prev: v.prev,
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, Pagination> = z.object({
+        count: z.number(),
+        next: z.nullable(z.number()),
+        prev: z.nullable(z.number()),
+    });
 }

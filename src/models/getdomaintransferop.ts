@@ -64,18 +64,11 @@ export type GetDomainTransferResponseBody = {
 
 /** @internal */
 export namespace GetDomainTransferRequest$ {
-    export const inboundSchema: z.ZodType<GetDomainTransferRequest, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<GetDomainTransferRequest, z.ZodTypeDef, unknown> =
+        z.object({
             domain: z.string(),
             teamId: z.string().optional(),
             slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                domain: v.domain,
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
         });
 
     export type Outbound = {
@@ -84,49 +77,36 @@ export namespace GetDomainTransferRequest$ {
         slug?: string | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetDomainTransferRequest> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetDomainTransferRequest> =
+        z.object({
             domain: z.string(),
             teamId: z.string().optional(),
             slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                domain: v.domain,
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
         });
 }
 
 /** @internal */
 export namespace TransferPolicy$ {
-    export const inboundSchema = z.nativeEnum(TransferPolicy);
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<typeof TransferPolicy> =
+        z.nativeEnum(TransferPolicy);
+    export const outboundSchema: z.ZodNativeEnum<typeof TransferPolicy> = inboundSchema;
 }
 
 /** @internal */
 export namespace GetDomainTransferStatus$ {
-    export const inboundSchema = z.nativeEnum(GetDomainTransferStatus);
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<typeof GetDomainTransferStatus> =
+        z.nativeEnum(GetDomainTransferStatus);
+    export const outboundSchema: z.ZodNativeEnum<typeof GetDomainTransferStatus> = inboundSchema;
 }
 
 /** @internal */
 export namespace GetDomainTransferResponseBody$ {
-    export const inboundSchema: z.ZodType<GetDomainTransferResponseBody, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<GetDomainTransferResponseBody, z.ZodTypeDef, unknown> =
+        z.object({
             transferable: z.boolean(),
             transferPolicy: z.nullable(TransferPolicy$.inboundSchema),
             reason: z.string(),
             status: GetDomainTransferStatus$.inboundSchema,
-        })
-        .transform((v) => {
-            return {
-                transferable: v.transferable,
-                transferPolicy: v.transferPolicy,
-                reason: v.reason,
-                status: v.status,
-            };
         });
 
     export type Outbound = {
@@ -137,19 +117,10 @@ export namespace GetDomainTransferResponseBody$ {
     };
 
     export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetDomainTransferResponseBody> =
-        z
-            .object({
-                transferable: z.boolean(),
-                transferPolicy: z.nullable(TransferPolicy$.outboundSchema),
-                reason: z.string(),
-                status: GetDomainTransferStatus$.outboundSchema,
-            })
-            .transform((v) => {
-                return {
-                    transferable: v.transferable,
-                    transferPolicy: v.transferPolicy,
-                    reason: v.reason,
-                    status: v.status,
-                };
-            });
+        z.object({
+            transferable: z.boolean(),
+            transferPolicy: z.nullable(TransferPolicy$.outboundSchema),
+            reason: z.string(),
+            status: GetDomainTransferStatus$.outboundSchema,
+        });
 }

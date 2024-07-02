@@ -27,16 +27,10 @@ export type DeleteTeamInviteCodeResponseBody = {
 
 /** @internal */
 export namespace DeleteTeamInviteCodeRequest$ {
-    export const inboundSchema: z.ZodType<DeleteTeamInviteCodeRequest, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<DeleteTeamInviteCodeRequest, z.ZodTypeDef, unknown> =
+        z.object({
             teamId: z.string(),
             inviteId: z.string(),
-        })
-        .transform((v) => {
-            return {
-                teamId: v.teamId,
-                inviteId: v.inviteId,
-            };
         });
 
     export type Outbound = {
@@ -44,31 +38,19 @@ export namespace DeleteTeamInviteCodeRequest$ {
         inviteId: string;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, DeleteTeamInviteCodeRequest> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, DeleteTeamInviteCodeRequest> =
+        z.object({
             teamId: z.string(),
             inviteId: z.string(),
-        })
-        .transform((v) => {
-            return {
-                teamId: v.teamId,
-                inviteId: v.inviteId,
-            };
         });
 }
 
 /** @internal */
 export namespace DeleteTeamInviteCodeResponseBody$ {
     export const inboundSchema: z.ZodType<DeleteTeamInviteCodeResponseBody, z.ZodTypeDef, unknown> =
-        z
-            .object({
-                id: z.string(),
-            })
-            .transform((v) => {
-                return {
-                    id: v.id,
-                };
-            });
+        z.object({
+            id: z.string(),
+        });
 
     export type Outbound = {
         id: string;
@@ -78,13 +60,7 @@ export namespace DeleteTeamInviteCodeResponseBody$ {
         Outbound,
         z.ZodTypeDef,
         DeleteTeamInviteCodeResponseBody
-    > = z
-        .object({
-            id: z.string(),
-        })
-        .transform((v) => {
-            return {
-                id: v.id,
-            };
-        });
+    > = z.object({
+        id: z.string(),
+    });
 }

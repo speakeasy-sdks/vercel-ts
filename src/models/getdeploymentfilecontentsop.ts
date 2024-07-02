@@ -27,28 +27,16 @@ export type GetDeploymentFileContentsRequest = {
     slug?: string | undefined;
 };
 
-export type GetDeploymentFileContentsResponse = {};
-
 /** @internal */
 export namespace GetDeploymentFileContentsRequest$ {
     export const inboundSchema: z.ZodType<GetDeploymentFileContentsRequest, z.ZodTypeDef, unknown> =
-        z
-            .object({
-                id: z.string(),
-                fileId: z.string(),
-                path: z.string().optional(),
-                teamId: z.string().optional(),
-                slug: z.string().optional(),
-            })
-            .transform((v) => {
-                return {
-                    id: v.id,
-                    fileId: v.fileId,
-                    ...(v.path === undefined ? null : { path: v.path }),
-                    ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                    ...(v.slug === undefined ? null : { slug: v.slug }),
-                };
-            });
+        z.object({
+            id: z.string(),
+            fileId: z.string(),
+            path: z.string().optional(),
+            teamId: z.string().optional(),
+            slug: z.string().optional(),
+        });
 
     export type Outbound = {
         id: string;
@@ -62,38 +50,11 @@ export namespace GetDeploymentFileContentsRequest$ {
         Outbound,
         z.ZodTypeDef,
         GetDeploymentFileContentsRequest
-    > = z
-        .object({
-            id: z.string(),
-            fileId: z.string(),
-            path: z.string().optional(),
-            teamId: z.string().optional(),
-            slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                id: v.id,
-                fileId: v.fileId,
-                ...(v.path === undefined ? null : { path: v.path }),
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
-        });
-}
-
-/** @internal */
-export namespace GetDeploymentFileContentsResponse$ {
-    export const inboundSchema: z.ZodType<
-        GetDeploymentFileContentsResponse,
-        z.ZodTypeDef,
-        unknown
-    > = z.object({});
-
-    export type Outbound = {};
-
-    export const outboundSchema: z.ZodType<
-        Outbound,
-        z.ZodTypeDef,
-        GetDeploymentFileContentsResponse
-    > = z.object({});
+    > = z.object({
+        id: z.string(),
+        fileId: z.string(),
+        path: z.string().optional(),
+        teamId: z.string().optional(),
+        slug: z.string().optional(),
+    });
 }

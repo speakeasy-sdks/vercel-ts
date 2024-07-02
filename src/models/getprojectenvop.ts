@@ -469,21 +469,12 @@ export type GetProjectEnvResponseBody = GetProjectEnvResponseBody1 | GetProjectE
 
 /** @internal */
 export namespace GetProjectEnvRequest$ {
-    export const inboundSchema: z.ZodType<GetProjectEnvRequest, z.ZodTypeDef, unknown> = z
-        .object({
-            idOrName: z.string(),
-            id: z.string(),
-            teamId: z.string().optional(),
-            slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                idOrName: v.idOrName,
-                id: v.id,
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
-        });
+    export const inboundSchema: z.ZodType<GetProjectEnvRequest, z.ZodTypeDef, unknown> = z.object({
+        idOrName: z.string(),
+        id: z.string(),
+        teamId: z.string().optional(),
+        slug: z.string().optional(),
+    });
 
     export type Outbound = {
         idOrName: string;
@@ -492,33 +483,32 @@ export namespace GetProjectEnvRequest$ {
         slug?: string | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetProjectEnvRequest> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetProjectEnvRequest> = z.object(
+        {
             idOrName: z.string(),
             id: z.string(),
             teamId: z.string().optional(),
             slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                idOrName: v.idOrName,
-                id: v.id,
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
-        });
+        }
+    );
 }
 
 /** @internal */
 export namespace GetProjectEnvTargetProjects2$ {
-    export const inboundSchema = z.nativeEnum(GetProjectEnvTargetProjects2);
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<typeof GetProjectEnvTargetProjects2> = z.nativeEnum(
+        GetProjectEnvTargetProjects2
+    );
+    export const outboundSchema: z.ZodNativeEnum<typeof GetProjectEnvTargetProjects2> =
+        inboundSchema;
 }
 
 /** @internal */
 export namespace GetProjectEnvTargetProjects1$ {
-    export const inboundSchema = z.nativeEnum(GetProjectEnvTargetProjects1);
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<typeof GetProjectEnvTargetProjects1> = z.nativeEnum(
+        GetProjectEnvTargetProjects1
+    );
+    export const outboundSchema: z.ZodNativeEnum<typeof GetProjectEnvTargetProjects1> =
+        inboundSchema;
 }
 
 /** @internal */
@@ -545,16 +535,20 @@ export namespace GetProjectEnvResponseBodyProjectsTarget$ {
 
 /** @internal */
 export namespace GetProjectEnvResponseBodyProjectsType$ {
-    export const inboundSchema = z.nativeEnum(GetProjectEnvResponseBodyProjectsType);
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<typeof GetProjectEnvResponseBodyProjectsType> =
+        z.nativeEnum(GetProjectEnvResponseBodyProjectsType);
+    export const outboundSchema: z.ZodNativeEnum<typeof GetProjectEnvResponseBodyProjectsType> =
+        inboundSchema;
 }
 
 /** @internal */
 export namespace GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody214Type$ {
-    export const inboundSchema = z.nativeEnum(
-        GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody214Type
-    );
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<
+        typeof GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody214Type
+    > = z.nativeEnum(GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody214Type);
+    export const outboundSchema: z.ZodNativeEnum<
+        typeof GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody214Type
+    > = inboundSchema;
 }
 
 /** @internal */
@@ -563,17 +557,10 @@ export namespace GetProjectEnvContentHintProjects14$ {
         GetProjectEnvContentHintProjects14,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody214Type$.inboundSchema,
-            storeId: z.string(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                storeId: v.storeId,
-            };
-        });
+    > = z.object({
+        type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody214Type$.inboundSchema,
+        storeId: z.string(),
+    });
 
     export type Outbound = {
         type: string;
@@ -584,25 +571,20 @@ export namespace GetProjectEnvContentHintProjects14$ {
         Outbound,
         z.ZodTypeDef,
         GetProjectEnvContentHintProjects14
-    > = z
-        .object({
-            type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody214Type$.outboundSchema,
-            storeId: z.string(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                storeId: v.storeId,
-            };
-        });
+    > = z.object({
+        type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody214Type$.outboundSchema,
+        storeId: z.string(),
+    });
 }
 
 /** @internal */
 export namespace GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody213Type$ {
-    export const inboundSchema = z.nativeEnum(
-        GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody213Type
-    );
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<
+        typeof GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody213Type
+    > = z.nativeEnum(GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody213Type);
+    export const outboundSchema: z.ZodNativeEnum<
+        typeof GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody213Type
+    > = inboundSchema;
 }
 
 /** @internal */
@@ -611,17 +593,10 @@ export namespace GetProjectEnvContentHintProjects13$ {
         GetProjectEnvContentHintProjects13,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody213Type$.inboundSchema,
-            storeId: z.string(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                storeId: v.storeId,
-            };
-        });
+    > = z.object({
+        type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody213Type$.inboundSchema,
+        storeId: z.string(),
+    });
 
     export type Outbound = {
         type: string;
@@ -632,25 +607,20 @@ export namespace GetProjectEnvContentHintProjects13$ {
         Outbound,
         z.ZodTypeDef,
         GetProjectEnvContentHintProjects13
-    > = z
-        .object({
-            type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody213Type$.outboundSchema,
-            storeId: z.string(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                storeId: v.storeId,
-            };
-        });
+    > = z.object({
+        type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody213Type$.outboundSchema,
+        storeId: z.string(),
+    });
 }
 
 /** @internal */
 export namespace GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody212Type$ {
-    export const inboundSchema = z.nativeEnum(
-        GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody212Type
-    );
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<
+        typeof GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody212Type
+    > = z.nativeEnum(GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody212Type);
+    export const outboundSchema: z.ZodNativeEnum<
+        typeof GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody212Type
+    > = inboundSchema;
 }
 
 /** @internal */
@@ -659,17 +629,10 @@ export namespace GetProjectEnvContentHintProjects12$ {
         GetProjectEnvContentHintProjects12,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody212Type$.inboundSchema,
-            storeId: z.string(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                storeId: v.storeId,
-            };
-        });
+    > = z.object({
+        type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody212Type$.inboundSchema,
+        storeId: z.string(),
+    });
 
     export type Outbound = {
         type: string;
@@ -680,25 +643,20 @@ export namespace GetProjectEnvContentHintProjects12$ {
         Outbound,
         z.ZodTypeDef,
         GetProjectEnvContentHintProjects12
-    > = z
-        .object({
-            type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody212Type$.outboundSchema,
-            storeId: z.string(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                storeId: v.storeId,
-            };
-        });
+    > = z.object({
+        type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody212Type$.outboundSchema,
+        storeId: z.string(),
+    });
 }
 
 /** @internal */
 export namespace GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody211Type$ {
-    export const inboundSchema = z.nativeEnum(
-        GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody211Type
-    );
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<
+        typeof GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody211Type
+    > = z.nativeEnum(GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody211Type);
+    export const outboundSchema: z.ZodNativeEnum<
+        typeof GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody211Type
+    > = inboundSchema;
 }
 
 /** @internal */
@@ -707,17 +665,10 @@ export namespace GetProjectEnvContentHintProjects11$ {
         GetProjectEnvContentHintProjects11,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody211Type$.inboundSchema,
-            storeId: z.string(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                storeId: v.storeId,
-            };
-        });
+    > = z.object({
+        type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody211Type$.inboundSchema,
+        storeId: z.string(),
+    });
 
     export type Outbound = {
         type: string;
@@ -728,25 +679,20 @@ export namespace GetProjectEnvContentHintProjects11$ {
         Outbound,
         z.ZodTypeDef,
         GetProjectEnvContentHintProjects11
-    > = z
-        .object({
-            type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody211Type$.outboundSchema,
-            storeId: z.string(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                storeId: v.storeId,
-            };
-        });
+    > = z.object({
+        type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody211Type$.outboundSchema,
+        storeId: z.string(),
+    });
 }
 
 /** @internal */
 export namespace GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody210Type$ {
-    export const inboundSchema = z.nativeEnum(
-        GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody210Type
-    );
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<
+        typeof GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody210Type
+    > = z.nativeEnum(GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody210Type);
+    export const outboundSchema: z.ZodNativeEnum<
+        typeof GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody210Type
+    > = inboundSchema;
 }
 
 /** @internal */
@@ -755,17 +701,10 @@ export namespace GetProjectEnvContentHintProjects10$ {
         GetProjectEnvContentHintProjects10,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody210Type$.inboundSchema,
-            storeId: z.string(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                storeId: v.storeId,
-            };
-        });
+    > = z.object({
+        type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody210Type$.inboundSchema,
+        storeId: z.string(),
+    });
 
     export type Outbound = {
         type: string;
@@ -776,25 +715,20 @@ export namespace GetProjectEnvContentHintProjects10$ {
         Outbound,
         z.ZodTypeDef,
         GetProjectEnvContentHintProjects10
-    > = z
-        .object({
-            type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody210Type$.outboundSchema,
-            storeId: z.string(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                storeId: v.storeId,
-            };
-        });
+    > = z.object({
+        type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody210Type$.outboundSchema,
+        storeId: z.string(),
+    });
 }
 
 /** @internal */
 export namespace GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody29Type$ {
-    export const inboundSchema = z.nativeEnum(
-        GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody29Type
-    );
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<
+        typeof GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody29Type
+    > = z.nativeEnum(GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody29Type);
+    export const outboundSchema: z.ZodNativeEnum<
+        typeof GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody29Type
+    > = inboundSchema;
 }
 
 /** @internal */
@@ -803,17 +737,10 @@ export namespace GetProjectEnvContentHintProjects9$ {
         GetProjectEnvContentHintProjects9,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody29Type$.inboundSchema,
-            storeId: z.string(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                storeId: v.storeId,
-            };
-        });
+    > = z.object({
+        type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody29Type$.inboundSchema,
+        storeId: z.string(),
+    });
 
     export type Outbound = {
         type: string;
@@ -824,25 +751,20 @@ export namespace GetProjectEnvContentHintProjects9$ {
         Outbound,
         z.ZodTypeDef,
         GetProjectEnvContentHintProjects9
-    > = z
-        .object({
-            type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody29Type$.outboundSchema,
-            storeId: z.string(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                storeId: v.storeId,
-            };
-        });
+    > = z.object({
+        type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody29Type$.outboundSchema,
+        storeId: z.string(),
+    });
 }
 
 /** @internal */
 export namespace GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody28Type$ {
-    export const inboundSchema = z.nativeEnum(
-        GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody28Type
-    );
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<
+        typeof GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody28Type
+    > = z.nativeEnum(GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody28Type);
+    export const outboundSchema: z.ZodNativeEnum<
+        typeof GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody28Type
+    > = inboundSchema;
 }
 
 /** @internal */
@@ -851,17 +773,10 @@ export namespace GetProjectEnvContentHintProjects8$ {
         GetProjectEnvContentHintProjects8,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody28Type$.inboundSchema,
-            storeId: z.string(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                storeId: v.storeId,
-            };
-        });
+    > = z.object({
+        type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody28Type$.inboundSchema,
+        storeId: z.string(),
+    });
 
     export type Outbound = {
         type: string;
@@ -872,25 +787,20 @@ export namespace GetProjectEnvContentHintProjects8$ {
         Outbound,
         z.ZodTypeDef,
         GetProjectEnvContentHintProjects8
-    > = z
-        .object({
-            type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody28Type$.outboundSchema,
-            storeId: z.string(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                storeId: v.storeId,
-            };
-        });
+    > = z.object({
+        type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody28Type$.outboundSchema,
+        storeId: z.string(),
+    });
 }
 
 /** @internal */
 export namespace GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody27Type$ {
-    export const inboundSchema = z.nativeEnum(
-        GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody27Type
-    );
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<
+        typeof GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody27Type
+    > = z.nativeEnum(GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody27Type);
+    export const outboundSchema: z.ZodNativeEnum<
+        typeof GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody27Type
+    > = inboundSchema;
 }
 
 /** @internal */
@@ -899,17 +809,10 @@ export namespace GetProjectEnvContentHintProjects7$ {
         GetProjectEnvContentHintProjects7,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody27Type$.inboundSchema,
-            storeId: z.string(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                storeId: v.storeId,
-            };
-        });
+    > = z.object({
+        type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody27Type$.inboundSchema,
+        storeId: z.string(),
+    });
 
     export type Outbound = {
         type: string;
@@ -920,25 +823,20 @@ export namespace GetProjectEnvContentHintProjects7$ {
         Outbound,
         z.ZodTypeDef,
         GetProjectEnvContentHintProjects7
-    > = z
-        .object({
-            type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody27Type$.outboundSchema,
-            storeId: z.string(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                storeId: v.storeId,
-            };
-        });
+    > = z.object({
+        type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody27Type$.outboundSchema,
+        storeId: z.string(),
+    });
 }
 
 /** @internal */
 export namespace GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody26Type$ {
-    export const inboundSchema = z.nativeEnum(
-        GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody26Type
-    );
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<
+        typeof GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody26Type
+    > = z.nativeEnum(GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody26Type);
+    export const outboundSchema: z.ZodNativeEnum<
+        typeof GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody26Type
+    > = inboundSchema;
 }
 
 /** @internal */
@@ -947,17 +845,10 @@ export namespace GetProjectEnvContentHintProjects6$ {
         GetProjectEnvContentHintProjects6,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody26Type$.inboundSchema,
-            storeId: z.string(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                storeId: v.storeId,
-            };
-        });
+    > = z.object({
+        type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody26Type$.inboundSchema,
+        storeId: z.string(),
+    });
 
     export type Outbound = {
         type: string;
@@ -968,25 +859,20 @@ export namespace GetProjectEnvContentHintProjects6$ {
         Outbound,
         z.ZodTypeDef,
         GetProjectEnvContentHintProjects6
-    > = z
-        .object({
-            type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody26Type$.outboundSchema,
-            storeId: z.string(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                storeId: v.storeId,
-            };
-        });
+    > = z.object({
+        type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody26Type$.outboundSchema,
+        storeId: z.string(),
+    });
 }
 
 /** @internal */
 export namespace GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody25Type$ {
-    export const inboundSchema = z.nativeEnum(
-        GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody25Type
-    );
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<
+        typeof GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody25Type
+    > = z.nativeEnum(GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody25Type);
+    export const outboundSchema: z.ZodNativeEnum<
+        typeof GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody25Type
+    > = inboundSchema;
 }
 
 /** @internal */
@@ -995,17 +881,10 @@ export namespace GetProjectEnvContentHintProjects5$ {
         GetProjectEnvContentHintProjects5,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody25Type$.inboundSchema,
-            storeId: z.string(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                storeId: v.storeId,
-            };
-        });
+    > = z.object({
+        type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody25Type$.inboundSchema,
+        storeId: z.string(),
+    });
 
     export type Outbound = {
         type: string;
@@ -1016,25 +895,20 @@ export namespace GetProjectEnvContentHintProjects5$ {
         Outbound,
         z.ZodTypeDef,
         GetProjectEnvContentHintProjects5
-    > = z
-        .object({
-            type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody25Type$.outboundSchema,
-            storeId: z.string(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                storeId: v.storeId,
-            };
-        });
+    > = z.object({
+        type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody25Type$.outboundSchema,
+        storeId: z.string(),
+    });
 }
 
 /** @internal */
 export namespace GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody24Type$ {
-    export const inboundSchema = z.nativeEnum(
-        GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody24Type
-    );
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<
+        typeof GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody24Type
+    > = z.nativeEnum(GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody24Type);
+    export const outboundSchema: z.ZodNativeEnum<
+        typeof GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody24Type
+    > = inboundSchema;
 }
 
 /** @internal */
@@ -1043,17 +917,10 @@ export namespace GetProjectEnvContentHintProjects4$ {
         GetProjectEnvContentHintProjects4,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody24Type$.inboundSchema,
-            storeId: z.string(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                storeId: v.storeId,
-            };
-        });
+    > = z.object({
+        type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody24Type$.inboundSchema,
+        storeId: z.string(),
+    });
 
     export type Outbound = {
         type: string;
@@ -1064,25 +931,20 @@ export namespace GetProjectEnvContentHintProjects4$ {
         Outbound,
         z.ZodTypeDef,
         GetProjectEnvContentHintProjects4
-    > = z
-        .object({
-            type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody24Type$.outboundSchema,
-            storeId: z.string(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                storeId: v.storeId,
-            };
-        });
+    > = z.object({
+        type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody24Type$.outboundSchema,
+        storeId: z.string(),
+    });
 }
 
 /** @internal */
 export namespace GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody23Type$ {
-    export const inboundSchema = z.nativeEnum(
-        GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody23Type
-    );
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<
+        typeof GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody23Type
+    > = z.nativeEnum(GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody23Type);
+    export const outboundSchema: z.ZodNativeEnum<
+        typeof GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody23Type
+    > = inboundSchema;
 }
 
 /** @internal */
@@ -1091,17 +953,10 @@ export namespace GetProjectEnvContentHintProjects3$ {
         GetProjectEnvContentHintProjects3,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody23Type$.inboundSchema,
-            storeId: z.string(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                storeId: v.storeId,
-            };
-        });
+    > = z.object({
+        type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody23Type$.inboundSchema,
+        storeId: z.string(),
+    });
 
     export type Outbound = {
         type: string;
@@ -1112,25 +967,20 @@ export namespace GetProjectEnvContentHintProjects3$ {
         Outbound,
         z.ZodTypeDef,
         GetProjectEnvContentHintProjects3
-    > = z
-        .object({
-            type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody23Type$.outboundSchema,
-            storeId: z.string(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                storeId: v.storeId,
-            };
-        });
+    > = z.object({
+        type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody23Type$.outboundSchema,
+        storeId: z.string(),
+    });
 }
 
 /** @internal */
 export namespace GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody22Type$ {
-    export const inboundSchema = z.nativeEnum(
-        GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody22Type
-    );
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<
+        typeof GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody22Type
+    > = z.nativeEnum(GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody22Type);
+    export const outboundSchema: z.ZodNativeEnum<
+        typeof GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody22Type
+    > = inboundSchema;
 }
 
 /** @internal */
@@ -1139,17 +989,10 @@ export namespace GetProjectEnvContentHintProjects2$ {
         GetProjectEnvContentHintProjects2,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody22Type$.inboundSchema,
-            storeId: z.string(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                storeId: v.storeId,
-            };
-        });
+    > = z.object({
+        type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody22Type$.inboundSchema,
+        storeId: z.string(),
+    });
 
     export type Outbound = {
         type: string;
@@ -1160,25 +1003,20 @@ export namespace GetProjectEnvContentHintProjects2$ {
         Outbound,
         z.ZodTypeDef,
         GetProjectEnvContentHintProjects2
-    > = z
-        .object({
-            type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody22Type$.outboundSchema,
-            storeId: z.string(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                storeId: v.storeId,
-            };
-        });
+    > = z.object({
+        type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody22Type$.outboundSchema,
+        storeId: z.string(),
+    });
 }
 
 /** @internal */
 export namespace GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody2Type$ {
-    export const inboundSchema = z.nativeEnum(
-        GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody2Type
-    );
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<
+        typeof GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody2Type
+    > = z.nativeEnum(GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody2Type);
+    export const outboundSchema: z.ZodNativeEnum<
+        typeof GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody2Type
+    > = inboundSchema;
 }
 
 /** @internal */
@@ -1187,17 +1025,10 @@ export namespace GetProjectEnvContentHintProjects1$ {
         GetProjectEnvContentHintProjects1,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody2Type$.inboundSchema,
-            storeId: z.string(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                storeId: v.storeId,
-            };
-        });
+    > = z.object({
+        type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody2Type$.inboundSchema,
+        storeId: z.string(),
+    });
 
     export type Outbound = {
         type: string;
@@ -1208,17 +1039,10 @@ export namespace GetProjectEnvContentHintProjects1$ {
         Outbound,
         z.ZodTypeDef,
         GetProjectEnvContentHintProjects1
-    > = z
-        .object({
-            type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody2Type$.outboundSchema,
-            storeId: z.string(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                storeId: v.storeId,
-            };
-        });
+    > = z.object({
+        type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody2Type$.outboundSchema,
+        storeId: z.string(),
+    });
 }
 
 /** @internal */
@@ -1283,8 +1107,12 @@ export namespace GetProjectEnvResponseBodyProjectsContentHint$ {
 
 /** @internal */
 export namespace GetProjectEnvResponseBodyProjectsResponse200Type$ {
-    export const inboundSchema = z.nativeEnum(GetProjectEnvResponseBodyProjectsResponse200Type);
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<
+        typeof GetProjectEnvResponseBodyProjectsResponse200Type
+    > = z.nativeEnum(GetProjectEnvResponseBodyProjectsResponse200Type);
+    export const outboundSchema: z.ZodNativeEnum<
+        typeof GetProjectEnvResponseBodyProjectsResponse200Type
+    > = inboundSchema;
 }
 
 /** @internal */
@@ -1293,17 +1121,10 @@ export namespace GetProjectEnvResponseBodyProjectsInternalContentHint$ {
         GetProjectEnvResponseBodyProjectsInternalContentHint,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            type: GetProjectEnvResponseBodyProjectsResponse200Type$.inboundSchema,
-            encryptedValue: z.string(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                encryptedValue: v.encryptedValue,
-            };
-        });
+    > = z.object({
+        type: GetProjectEnvResponseBodyProjectsResponse200Type$.inboundSchema,
+        encryptedValue: z.string(),
+    });
 
     export type Outbound = {
         type: string;
@@ -1314,23 +1135,16 @@ export namespace GetProjectEnvResponseBodyProjectsInternalContentHint$ {
         Outbound,
         z.ZodTypeDef,
         GetProjectEnvResponseBodyProjectsInternalContentHint
-    > = z
-        .object({
-            type: GetProjectEnvResponseBodyProjectsResponse200Type$.outboundSchema,
-            encryptedValue: z.string(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                encryptedValue: v.encryptedValue,
-            };
-        });
+    > = z.object({
+        type: GetProjectEnvResponseBodyProjectsResponse200Type$.outboundSchema,
+        encryptedValue: z.string(),
+    });
 }
 
 /** @internal */
 export namespace GetProjectEnvResponseBody2$ {
-    export const inboundSchema: z.ZodType<GetProjectEnvResponseBody2, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<GetProjectEnvResponseBody2, z.ZodTypeDef, unknown> =
+        z.object({
             target: z
                 .union([
                     z.array(GetProjectEnvTargetProjects1$.inboundSchema),
@@ -1379,36 +1193,6 @@ export namespace GetProjectEnvResponseBody2$ {
             decrypted: z.boolean().optional(),
             comment: z.string().optional(),
             customEnvironmentId: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.target === undefined ? null : { target: v.target }),
-                type: v.type,
-                ...(v.id === undefined ? null : { id: v.id }),
-                key: v.key,
-                value: v.value,
-                ...(v.configurationId === undefined
-                    ? null
-                    : { configurationId: v.configurationId }),
-                ...(v.createdAt === undefined ? null : { createdAt: v.createdAt }),
-                ...(v.updatedAt === undefined ? null : { updatedAt: v.updatedAt }),
-                ...(v.createdBy === undefined ? null : { createdBy: v.createdBy }),
-                ...(v.updatedBy === undefined ? null : { updatedBy: v.updatedBy }),
-                ...(v.gitBranch === undefined ? null : { gitBranch: v.gitBranch }),
-                ...(v.edgeConfigId === undefined ? null : { edgeConfigId: v.edgeConfigId }),
-                ...(v.edgeConfigTokenId === undefined
-                    ? null
-                    : { edgeConfigTokenId: v.edgeConfigTokenId }),
-                ...(v.contentHint === undefined ? null : { contentHint: v.contentHint }),
-                ...(v.internalContentHint === undefined
-                    ? null
-                    : { internalContentHint: v.internalContentHint }),
-                ...(v.decrypted === undefined ? null : { decrypted: v.decrypted }),
-                ...(v.comment === undefined ? null : { comment: v.comment }),
-                ...(v.customEnvironmentId === undefined
-                    ? null
-                    : { customEnvironmentId: v.customEnvironmentId }),
-            };
         });
 
     export type Outbound = {
@@ -1451,8 +1235,8 @@ export namespace GetProjectEnvResponseBody2$ {
         customEnvironmentId?: string | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetProjectEnvResponseBody2> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetProjectEnvResponseBody2> =
+        z.object({
             target: z
                 .union([
                     z.array(GetProjectEnvTargetProjects1$.outboundSchema),
@@ -1501,49 +1285,21 @@ export namespace GetProjectEnvResponseBody2$ {
             decrypted: z.boolean().optional(),
             comment: z.string().optional(),
             customEnvironmentId: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.target === undefined ? null : { target: v.target }),
-                type: v.type,
-                ...(v.id === undefined ? null : { id: v.id }),
-                key: v.key,
-                value: v.value,
-                ...(v.configurationId === undefined
-                    ? null
-                    : { configurationId: v.configurationId }),
-                ...(v.createdAt === undefined ? null : { createdAt: v.createdAt }),
-                ...(v.updatedAt === undefined ? null : { updatedAt: v.updatedAt }),
-                ...(v.createdBy === undefined ? null : { createdBy: v.createdBy }),
-                ...(v.updatedBy === undefined ? null : { updatedBy: v.updatedBy }),
-                ...(v.gitBranch === undefined ? null : { gitBranch: v.gitBranch }),
-                ...(v.edgeConfigId === undefined ? null : { edgeConfigId: v.edgeConfigId }),
-                ...(v.edgeConfigTokenId === undefined
-                    ? null
-                    : { edgeConfigTokenId: v.edgeConfigTokenId }),
-                ...(v.contentHint === undefined ? null : { contentHint: v.contentHint }),
-                ...(v.internalContentHint === undefined
-                    ? null
-                    : { internalContentHint: v.internalContentHint }),
-                ...(v.decrypted === undefined ? null : { decrypted: v.decrypted }),
-                ...(v.comment === undefined ? null : { comment: v.comment }),
-                ...(v.customEnvironmentId === undefined
-                    ? null
-                    : { customEnvironmentId: v.customEnvironmentId }),
-            };
         });
 }
 
 /** @internal */
 export namespace GetProjectEnvTarget2$ {
-    export const inboundSchema = z.nativeEnum(GetProjectEnvTarget2);
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<typeof GetProjectEnvTarget2> =
+        z.nativeEnum(GetProjectEnvTarget2);
+    export const outboundSchema: z.ZodNativeEnum<typeof GetProjectEnvTarget2> = inboundSchema;
 }
 
 /** @internal */
 export namespace GetProjectEnvTarget1$ {
-    export const inboundSchema = z.nativeEnum(GetProjectEnvTarget1);
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<typeof GetProjectEnvTarget1> =
+        z.nativeEnum(GetProjectEnvTarget1);
+    export const outboundSchema: z.ZodNativeEnum<typeof GetProjectEnvTarget1> = inboundSchema;
 }
 
 /** @internal */
@@ -1567,30 +1323,28 @@ export namespace GetProjectEnvResponseBodyTarget$ {
 
 /** @internal */
 export namespace GetProjectEnvResponseBodyType$ {
-    export const inboundSchema = z.nativeEnum(GetProjectEnvResponseBodyType);
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<typeof GetProjectEnvResponseBodyType> =
+        z.nativeEnum(GetProjectEnvResponseBodyType);
+    export const outboundSchema: z.ZodNativeEnum<typeof GetProjectEnvResponseBodyType> =
+        inboundSchema;
 }
 
 /** @internal */
 export namespace GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody114Type$ {
-    export const inboundSchema = z.nativeEnum(
-        GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody114Type
-    );
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<
+        typeof GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody114Type
+    > = z.nativeEnum(GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody114Type);
+    export const outboundSchema: z.ZodNativeEnum<
+        typeof GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody114Type
+    > = inboundSchema;
 }
 
 /** @internal */
 export namespace GetProjectEnvContentHint14$ {
-    export const inboundSchema: z.ZodType<GetProjectEnvContentHint14, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<GetProjectEnvContentHint14, z.ZodTypeDef, unknown> =
+        z.object({
             type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody114Type$.inboundSchema,
             storeId: z.string(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                storeId: v.storeId,
-            };
         });
 
     export type Outbound = {
@@ -1598,39 +1352,29 @@ export namespace GetProjectEnvContentHint14$ {
         storeId: string;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetProjectEnvContentHint14> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetProjectEnvContentHint14> =
+        z.object({
             type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody114Type$.outboundSchema,
             storeId: z.string(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                storeId: v.storeId,
-            };
         });
 }
 
 /** @internal */
 export namespace GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody113Type$ {
-    export const inboundSchema = z.nativeEnum(
-        GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody113Type
-    );
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<
+        typeof GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody113Type
+    > = z.nativeEnum(GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody113Type);
+    export const outboundSchema: z.ZodNativeEnum<
+        typeof GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody113Type
+    > = inboundSchema;
 }
 
 /** @internal */
 export namespace GetProjectEnvContentHint13$ {
-    export const inboundSchema: z.ZodType<GetProjectEnvContentHint13, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<GetProjectEnvContentHint13, z.ZodTypeDef, unknown> =
+        z.object({
             type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody113Type$.inboundSchema,
             storeId: z.string(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                storeId: v.storeId,
-            };
         });
 
     export type Outbound = {
@@ -1638,39 +1382,29 @@ export namespace GetProjectEnvContentHint13$ {
         storeId: string;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetProjectEnvContentHint13> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetProjectEnvContentHint13> =
+        z.object({
             type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody113Type$.outboundSchema,
             storeId: z.string(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                storeId: v.storeId,
-            };
         });
 }
 
 /** @internal */
 export namespace GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody112Type$ {
-    export const inboundSchema = z.nativeEnum(
-        GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody112Type
-    );
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<
+        typeof GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody112Type
+    > = z.nativeEnum(GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody112Type);
+    export const outboundSchema: z.ZodNativeEnum<
+        typeof GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody112Type
+    > = inboundSchema;
 }
 
 /** @internal */
 export namespace GetProjectEnvContentHint12$ {
-    export const inboundSchema: z.ZodType<GetProjectEnvContentHint12, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<GetProjectEnvContentHint12, z.ZodTypeDef, unknown> =
+        z.object({
             type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody112Type$.inboundSchema,
             storeId: z.string(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                storeId: v.storeId,
-            };
         });
 
     export type Outbound = {
@@ -1678,39 +1412,29 @@ export namespace GetProjectEnvContentHint12$ {
         storeId: string;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetProjectEnvContentHint12> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetProjectEnvContentHint12> =
+        z.object({
             type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody112Type$.outboundSchema,
             storeId: z.string(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                storeId: v.storeId,
-            };
         });
 }
 
 /** @internal */
 export namespace GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody111Type$ {
-    export const inboundSchema = z.nativeEnum(
-        GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody111Type
-    );
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<
+        typeof GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody111Type
+    > = z.nativeEnum(GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody111Type);
+    export const outboundSchema: z.ZodNativeEnum<
+        typeof GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody111Type
+    > = inboundSchema;
 }
 
 /** @internal */
 export namespace GetProjectEnvContentHint11$ {
-    export const inboundSchema: z.ZodType<GetProjectEnvContentHint11, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<GetProjectEnvContentHint11, z.ZodTypeDef, unknown> =
+        z.object({
             type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody111Type$.inboundSchema,
             storeId: z.string(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                storeId: v.storeId,
-            };
         });
 
     export type Outbound = {
@@ -1718,39 +1442,29 @@ export namespace GetProjectEnvContentHint11$ {
         storeId: string;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetProjectEnvContentHint11> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetProjectEnvContentHint11> =
+        z.object({
             type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody111Type$.outboundSchema,
             storeId: z.string(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                storeId: v.storeId,
-            };
         });
 }
 
 /** @internal */
 export namespace GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody110Type$ {
-    export const inboundSchema = z.nativeEnum(
-        GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody110Type
-    );
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<
+        typeof GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody110Type
+    > = z.nativeEnum(GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody110Type);
+    export const outboundSchema: z.ZodNativeEnum<
+        typeof GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody110Type
+    > = inboundSchema;
 }
 
 /** @internal */
 export namespace GetProjectEnvContentHint10$ {
-    export const inboundSchema: z.ZodType<GetProjectEnvContentHint10, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<GetProjectEnvContentHint10, z.ZodTypeDef, unknown> =
+        z.object({
             type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody110Type$.inboundSchema,
             storeId: z.string(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                storeId: v.storeId,
-            };
         });
 
     export type Outbound = {
@@ -1758,39 +1472,29 @@ export namespace GetProjectEnvContentHint10$ {
         storeId: string;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetProjectEnvContentHint10> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetProjectEnvContentHint10> =
+        z.object({
             type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody110Type$.outboundSchema,
             storeId: z.string(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                storeId: v.storeId,
-            };
         });
 }
 
 /** @internal */
 export namespace GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody19Type$ {
-    export const inboundSchema = z.nativeEnum(
-        GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody19Type
-    );
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<
+        typeof GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody19Type
+    > = z.nativeEnum(GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody19Type);
+    export const outboundSchema: z.ZodNativeEnum<
+        typeof GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody19Type
+    > = inboundSchema;
 }
 
 /** @internal */
 export namespace GetProjectEnvContentHint9$ {
-    export const inboundSchema: z.ZodType<GetProjectEnvContentHint9, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<GetProjectEnvContentHint9, z.ZodTypeDef, unknown> =
+        z.object({
             type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody19Type$.inboundSchema,
             storeId: z.string(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                storeId: v.storeId,
-            };
         });
 
     export type Outbound = {
@@ -1798,39 +1502,29 @@ export namespace GetProjectEnvContentHint9$ {
         storeId: string;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetProjectEnvContentHint9> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetProjectEnvContentHint9> =
+        z.object({
             type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody19Type$.outboundSchema,
             storeId: z.string(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                storeId: v.storeId,
-            };
         });
 }
 
 /** @internal */
 export namespace GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody18Type$ {
-    export const inboundSchema = z.nativeEnum(
-        GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody18Type
-    );
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<
+        typeof GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody18Type
+    > = z.nativeEnum(GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody18Type);
+    export const outboundSchema: z.ZodNativeEnum<
+        typeof GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody18Type
+    > = inboundSchema;
 }
 
 /** @internal */
 export namespace GetProjectEnvContentHint8$ {
-    export const inboundSchema: z.ZodType<GetProjectEnvContentHint8, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<GetProjectEnvContentHint8, z.ZodTypeDef, unknown> =
+        z.object({
             type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody18Type$.inboundSchema,
             storeId: z.string(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                storeId: v.storeId,
-            };
         });
 
     export type Outbound = {
@@ -1838,39 +1532,29 @@ export namespace GetProjectEnvContentHint8$ {
         storeId: string;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetProjectEnvContentHint8> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetProjectEnvContentHint8> =
+        z.object({
             type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody18Type$.outboundSchema,
             storeId: z.string(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                storeId: v.storeId,
-            };
         });
 }
 
 /** @internal */
 export namespace GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody1Type$ {
-    export const inboundSchema = z.nativeEnum(
-        GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody1Type
-    );
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<
+        typeof GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody1Type
+    > = z.nativeEnum(GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody1Type);
+    export const outboundSchema: z.ZodNativeEnum<
+        typeof GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody1Type
+    > = inboundSchema;
 }
 
 /** @internal */
 export namespace GetProjectEnvContentHint7$ {
-    export const inboundSchema: z.ZodType<GetProjectEnvContentHint7, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<GetProjectEnvContentHint7, z.ZodTypeDef, unknown> =
+        z.object({
             type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody1Type$.inboundSchema,
             storeId: z.string(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                storeId: v.storeId,
-            };
         });
 
     export type Outbound = {
@@ -1878,39 +1562,29 @@ export namespace GetProjectEnvContentHint7$ {
         storeId: string;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetProjectEnvContentHint7> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetProjectEnvContentHint7> =
+        z.object({
             type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody1Type$.outboundSchema,
             storeId: z.string(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                storeId: v.storeId,
-            };
         });
 }
 
 /** @internal */
 export namespace GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBodyType$ {
-    export const inboundSchema = z.nativeEnum(
-        GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBodyType
-    );
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<
+        typeof GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBodyType
+    > = z.nativeEnum(GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBodyType);
+    export const outboundSchema: z.ZodNativeEnum<
+        typeof GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBodyType
+    > = inboundSchema;
 }
 
 /** @internal */
 export namespace GetProjectEnvContentHint6$ {
-    export const inboundSchema: z.ZodType<GetProjectEnvContentHint6, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<GetProjectEnvContentHint6, z.ZodTypeDef, unknown> =
+        z.object({
             type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBodyType$.inboundSchema,
             storeId: z.string(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                storeId: v.storeId,
-            };
         });
 
     export type Outbound = {
@@ -1918,39 +1592,29 @@ export namespace GetProjectEnvContentHint6$ {
         storeId: string;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetProjectEnvContentHint6> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetProjectEnvContentHint6> =
+        z.object({
             type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBodyType$.outboundSchema,
             storeId: z.string(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                storeId: v.storeId,
-            };
         });
 }
 
 /** @internal */
 export namespace GetProjectEnvContentHintProjectsResponse200ApplicationJSONType$ {
-    export const inboundSchema = z.nativeEnum(
-        GetProjectEnvContentHintProjectsResponse200ApplicationJSONType
-    );
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<
+        typeof GetProjectEnvContentHintProjectsResponse200ApplicationJSONType
+    > = z.nativeEnum(GetProjectEnvContentHintProjectsResponse200ApplicationJSONType);
+    export const outboundSchema: z.ZodNativeEnum<
+        typeof GetProjectEnvContentHintProjectsResponse200ApplicationJSONType
+    > = inboundSchema;
 }
 
 /** @internal */
 export namespace GetProjectEnvContentHint5$ {
-    export const inboundSchema: z.ZodType<GetProjectEnvContentHint5, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<GetProjectEnvContentHint5, z.ZodTypeDef, unknown> =
+        z.object({
             type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONType$.inboundSchema,
             storeId: z.string(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                storeId: v.storeId,
-            };
         });
 
     export type Outbound = {
@@ -1958,37 +1622,29 @@ export namespace GetProjectEnvContentHint5$ {
         storeId: string;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetProjectEnvContentHint5> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetProjectEnvContentHint5> =
+        z.object({
             type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONType$.outboundSchema,
             storeId: z.string(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                storeId: v.storeId,
-            };
         });
 }
 
 /** @internal */
 export namespace GetProjectEnvContentHintProjectsResponse200Type$ {
-    export const inboundSchema = z.nativeEnum(GetProjectEnvContentHintProjectsResponse200Type);
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<
+        typeof GetProjectEnvContentHintProjectsResponse200Type
+    > = z.nativeEnum(GetProjectEnvContentHintProjectsResponse200Type);
+    export const outboundSchema: z.ZodNativeEnum<
+        typeof GetProjectEnvContentHintProjectsResponse200Type
+    > = inboundSchema;
 }
 
 /** @internal */
 export namespace GetProjectEnvContentHint4$ {
-    export const inboundSchema: z.ZodType<GetProjectEnvContentHint4, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<GetProjectEnvContentHint4, z.ZodTypeDef, unknown> =
+        z.object({
             type: GetProjectEnvContentHintProjectsResponse200Type$.inboundSchema,
             storeId: z.string(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                storeId: v.storeId,
-            };
         });
 
     export type Outbound = {
@@ -1996,37 +1652,29 @@ export namespace GetProjectEnvContentHint4$ {
         storeId: string;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetProjectEnvContentHint4> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetProjectEnvContentHint4> =
+        z.object({
             type: GetProjectEnvContentHintProjectsResponse200Type$.outboundSchema,
             storeId: z.string(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                storeId: v.storeId,
-            };
         });
 }
 
 /** @internal */
 export namespace GetProjectEnvContentHintProjectsResponseType$ {
-    export const inboundSchema = z.nativeEnum(GetProjectEnvContentHintProjectsResponseType);
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<
+        typeof GetProjectEnvContentHintProjectsResponseType
+    > = z.nativeEnum(GetProjectEnvContentHintProjectsResponseType);
+    export const outboundSchema: z.ZodNativeEnum<
+        typeof GetProjectEnvContentHintProjectsResponseType
+    > = inboundSchema;
 }
 
 /** @internal */
 export namespace GetProjectEnvContentHint3$ {
-    export const inboundSchema: z.ZodType<GetProjectEnvContentHint3, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<GetProjectEnvContentHint3, z.ZodTypeDef, unknown> =
+        z.object({
             type: GetProjectEnvContentHintProjectsResponseType$.inboundSchema,
             storeId: z.string(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                storeId: v.storeId,
-            };
         });
 
     export type Outbound = {
@@ -2034,37 +1682,27 @@ export namespace GetProjectEnvContentHint3$ {
         storeId: string;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetProjectEnvContentHint3> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetProjectEnvContentHint3> =
+        z.object({
             type: GetProjectEnvContentHintProjectsResponseType$.outboundSchema,
             storeId: z.string(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                storeId: v.storeId,
-            };
         });
 }
 
 /** @internal */
 export namespace GetProjectEnvContentHintProjectsType$ {
-    export const inboundSchema = z.nativeEnum(GetProjectEnvContentHintProjectsType);
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<typeof GetProjectEnvContentHintProjectsType> =
+        z.nativeEnum(GetProjectEnvContentHintProjectsType);
+    export const outboundSchema: z.ZodNativeEnum<typeof GetProjectEnvContentHintProjectsType> =
+        inboundSchema;
 }
 
 /** @internal */
 export namespace GetProjectEnvContentHint2$ {
-    export const inboundSchema: z.ZodType<GetProjectEnvContentHint2, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<GetProjectEnvContentHint2, z.ZodTypeDef, unknown> =
+        z.object({
             type: GetProjectEnvContentHintProjectsType$.inboundSchema,
             storeId: z.string(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                storeId: v.storeId,
-            };
         });
 
     export type Outbound = {
@@ -2072,37 +1710,28 @@ export namespace GetProjectEnvContentHint2$ {
         storeId: string;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetProjectEnvContentHint2> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetProjectEnvContentHint2> =
+        z.object({
             type: GetProjectEnvContentHintProjectsType$.outboundSchema,
             storeId: z.string(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                storeId: v.storeId,
-            };
         });
 }
 
 /** @internal */
 export namespace GetProjectEnvContentHintType$ {
-    export const inboundSchema = z.nativeEnum(GetProjectEnvContentHintType);
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<typeof GetProjectEnvContentHintType> = z.nativeEnum(
+        GetProjectEnvContentHintType
+    );
+    export const outboundSchema: z.ZodNativeEnum<typeof GetProjectEnvContentHintType> =
+        inboundSchema;
 }
 
 /** @internal */
 export namespace GetProjectEnvContentHint1$ {
-    export const inboundSchema: z.ZodType<GetProjectEnvContentHint1, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<GetProjectEnvContentHint1, z.ZodTypeDef, unknown> =
+        z.object({
             type: GetProjectEnvContentHintType$.inboundSchema,
             storeId: z.string(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                storeId: v.storeId,
-            };
         });
 
     export type Outbound = {
@@ -2110,16 +1739,10 @@ export namespace GetProjectEnvContentHint1$ {
         storeId: string;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetProjectEnvContentHint1> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetProjectEnvContentHint1> =
+        z.object({
             type: GetProjectEnvContentHintType$.outboundSchema,
             storeId: z.string(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                storeId: v.storeId,
-            };
         });
 }
 
@@ -2185,8 +1808,12 @@ export namespace GetProjectEnvResponseBodyContentHint$ {
 
 /** @internal */
 export namespace GetProjectEnvResponseBodyProjectsResponseType$ {
-    export const inboundSchema = z.nativeEnum(GetProjectEnvResponseBodyProjectsResponseType);
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<
+        typeof GetProjectEnvResponseBodyProjectsResponseType
+    > = z.nativeEnum(GetProjectEnvResponseBodyProjectsResponseType);
+    export const outboundSchema: z.ZodNativeEnum<
+        typeof GetProjectEnvResponseBodyProjectsResponseType
+    > = inboundSchema;
 }
 
 /** @internal */
@@ -2195,17 +1822,10 @@ export namespace GetProjectEnvResponseBodyInternalContentHint$ {
         GetProjectEnvResponseBodyInternalContentHint,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            type: GetProjectEnvResponseBodyProjectsResponseType$.inboundSchema,
-            encryptedValue: z.string(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                encryptedValue: v.encryptedValue,
-            };
-        });
+    > = z.object({
+        type: GetProjectEnvResponseBodyProjectsResponseType$.inboundSchema,
+        encryptedValue: z.string(),
+    });
 
     export type Outbound = {
         type: string;
@@ -2216,23 +1836,16 @@ export namespace GetProjectEnvResponseBodyInternalContentHint$ {
         Outbound,
         z.ZodTypeDef,
         GetProjectEnvResponseBodyInternalContentHint
-    > = z
-        .object({
-            type: GetProjectEnvResponseBodyProjectsResponseType$.outboundSchema,
-            encryptedValue: z.string(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                encryptedValue: v.encryptedValue,
-            };
-        });
+    > = z.object({
+        type: GetProjectEnvResponseBodyProjectsResponseType$.outboundSchema,
+        encryptedValue: z.string(),
+    });
 }
 
 /** @internal */
 export namespace GetProjectEnvResponseBody1$ {
-    export const inboundSchema: z.ZodType<GetProjectEnvResponseBody1, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<GetProjectEnvResponseBody1, z.ZodTypeDef, unknown> =
+        z.object({
             decrypted: z.boolean(),
             target: z
                 .union([
@@ -2276,35 +1889,6 @@ export namespace GetProjectEnvResponseBody1$ {
                 .optional(),
             comment: z.string().optional(),
             customEnvironmentId: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                decrypted: v.decrypted,
-                ...(v.target === undefined ? null : { target: v.target }),
-                type: v.type,
-                ...(v.id === undefined ? null : { id: v.id }),
-                key: v.key,
-                ...(v.configurationId === undefined
-                    ? null
-                    : { configurationId: v.configurationId }),
-                ...(v.createdAt === undefined ? null : { createdAt: v.createdAt }),
-                ...(v.updatedAt === undefined ? null : { updatedAt: v.updatedAt }),
-                ...(v.createdBy === undefined ? null : { createdBy: v.createdBy }),
-                ...(v.updatedBy === undefined ? null : { updatedBy: v.updatedBy }),
-                ...(v.gitBranch === undefined ? null : { gitBranch: v.gitBranch }),
-                ...(v.edgeConfigId === undefined ? null : { edgeConfigId: v.edgeConfigId }),
-                ...(v.edgeConfigTokenId === undefined
-                    ? null
-                    : { edgeConfigTokenId: v.edgeConfigTokenId }),
-                ...(v.contentHint === undefined ? null : { contentHint: v.contentHint }),
-                ...(v.internalContentHint === undefined
-                    ? null
-                    : { internalContentHint: v.internalContentHint }),
-                ...(v.comment === undefined ? null : { comment: v.comment }),
-                ...(v.customEnvironmentId === undefined
-                    ? null
-                    : { customEnvironmentId: v.customEnvironmentId }),
-            };
         });
 
     export type Outbound = {
@@ -2346,8 +1930,8 @@ export namespace GetProjectEnvResponseBody1$ {
         customEnvironmentId?: string | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetProjectEnvResponseBody1> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetProjectEnvResponseBody1> =
+        z.object({
             decrypted: z.boolean(),
             target: z
                 .union([
@@ -2393,35 +1977,6 @@ export namespace GetProjectEnvResponseBody1$ {
                 .optional(),
             comment: z.string().optional(),
             customEnvironmentId: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                decrypted: v.decrypted,
-                ...(v.target === undefined ? null : { target: v.target }),
-                type: v.type,
-                ...(v.id === undefined ? null : { id: v.id }),
-                key: v.key,
-                ...(v.configurationId === undefined
-                    ? null
-                    : { configurationId: v.configurationId }),
-                ...(v.createdAt === undefined ? null : { createdAt: v.createdAt }),
-                ...(v.updatedAt === undefined ? null : { updatedAt: v.updatedAt }),
-                ...(v.createdBy === undefined ? null : { createdBy: v.createdBy }),
-                ...(v.updatedBy === undefined ? null : { updatedBy: v.updatedBy }),
-                ...(v.gitBranch === undefined ? null : { gitBranch: v.gitBranch }),
-                ...(v.edgeConfigId === undefined ? null : { edgeConfigId: v.edgeConfigId }),
-                ...(v.edgeConfigTokenId === undefined
-                    ? null
-                    : { edgeConfigTokenId: v.edgeConfigTokenId }),
-                ...(v.contentHint === undefined ? null : { contentHint: v.contentHint }),
-                ...(v.internalContentHint === undefined
-                    ? null
-                    : { internalContentHint: v.internalContentHint }),
-                ...(v.comment === undefined ? null : { comment: v.comment }),
-                ...(v.customEnvironmentId === undefined
-                    ? null
-                    : { customEnvironmentId: v.customEnvironmentId }),
-            };
         });
 }
 

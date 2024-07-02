@@ -80,53 +80,29 @@ export type VerifyTokenResponseBody = {
 
 /** @internal */
 export namespace TeamPlan$ {
-    export const inboundSchema = z.nativeEnum(TeamPlan);
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<typeof TeamPlan> = z.nativeEnum(TeamPlan);
+    export const outboundSchema: z.ZodNativeEnum<typeof TeamPlan> = inboundSchema;
 }
 
 /** @internal */
 export namespace VerifyTokenRequest$ {
-    export const inboundSchema: z.ZodType<VerifyTokenRequest, z.ZodTypeDef, unknown> = z
-        .object({
-            email: z.string().optional(),
-            token: z.string(),
-            tokenName: z.string().optional(),
-            ssoUserId: z.string().optional(),
-            teamName: z.string().optional(),
-            teamSlug: z.string().optional(),
-            teamPlan: TeamPlan$.inboundSchema.optional(),
-            sessionReferrer: z.string().optional(),
-            landingPage: z.string().optional(),
-            pageBeforeConversionPage: z.string().optional(),
-            utmSource: z.string().optional(),
-            utmMedium: z.string().optional(),
-            utmCampaign: z.string().optional(),
-            utmTerm: z.string().optional(),
-            oppId: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.email === undefined ? null : { email: v.email }),
-                token: v.token,
-                ...(v.tokenName === undefined ? null : { tokenName: v.tokenName }),
-                ...(v.ssoUserId === undefined ? null : { ssoUserId: v.ssoUserId }),
-                ...(v.teamName === undefined ? null : { teamName: v.teamName }),
-                ...(v.teamSlug === undefined ? null : { teamSlug: v.teamSlug }),
-                ...(v.teamPlan === undefined ? null : { teamPlan: v.teamPlan }),
-                ...(v.sessionReferrer === undefined
-                    ? null
-                    : { sessionReferrer: v.sessionReferrer }),
-                ...(v.landingPage === undefined ? null : { landingPage: v.landingPage }),
-                ...(v.pageBeforeConversionPage === undefined
-                    ? null
-                    : { pageBeforeConversionPage: v.pageBeforeConversionPage }),
-                ...(v.utmSource === undefined ? null : { utmSource: v.utmSource }),
-                ...(v.utmMedium === undefined ? null : { utmMedium: v.utmMedium }),
-                ...(v.utmCampaign === undefined ? null : { utmCampaign: v.utmCampaign }),
-                ...(v.utmTerm === undefined ? null : { utmTerm: v.utmTerm }),
-                ...(v.oppId === undefined ? null : { oppId: v.oppId }),
-            };
-        });
+    export const inboundSchema: z.ZodType<VerifyTokenRequest, z.ZodTypeDef, unknown> = z.object({
+        email: z.string().optional(),
+        token: z.string(),
+        tokenName: z.string().optional(),
+        ssoUserId: z.string().optional(),
+        teamName: z.string().optional(),
+        teamSlug: z.string().optional(),
+        teamPlan: TeamPlan$.inboundSchema.optional(),
+        sessionReferrer: z.string().optional(),
+        landingPage: z.string().optional(),
+        pageBeforeConversionPage: z.string().optional(),
+        utmSource: z.string().optional(),
+        utmMedium: z.string().optional(),
+        utmCampaign: z.string().optional(),
+        utmTerm: z.string().optional(),
+        oppId: z.string().optional(),
+    });
 
     export type Outbound = {
         email?: string | undefined;
@@ -146,63 +122,32 @@ export namespace VerifyTokenRequest$ {
         oppId?: string | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, VerifyTokenRequest> = z
-        .object({
-            email: z.string().optional(),
-            token: z.string(),
-            tokenName: z.string().optional(),
-            ssoUserId: z.string().optional(),
-            teamName: z.string().optional(),
-            teamSlug: z.string().optional(),
-            teamPlan: TeamPlan$.outboundSchema.optional(),
-            sessionReferrer: z.string().optional(),
-            landingPage: z.string().optional(),
-            pageBeforeConversionPage: z.string().optional(),
-            utmSource: z.string().optional(),
-            utmMedium: z.string().optional(),
-            utmCampaign: z.string().optional(),
-            utmTerm: z.string().optional(),
-            oppId: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.email === undefined ? null : { email: v.email }),
-                token: v.token,
-                ...(v.tokenName === undefined ? null : { tokenName: v.tokenName }),
-                ...(v.ssoUserId === undefined ? null : { ssoUserId: v.ssoUserId }),
-                ...(v.teamName === undefined ? null : { teamName: v.teamName }),
-                ...(v.teamSlug === undefined ? null : { teamSlug: v.teamSlug }),
-                ...(v.teamPlan === undefined ? null : { teamPlan: v.teamPlan }),
-                ...(v.sessionReferrer === undefined
-                    ? null
-                    : { sessionReferrer: v.sessionReferrer }),
-                ...(v.landingPage === undefined ? null : { landingPage: v.landingPage }),
-                ...(v.pageBeforeConversionPage === undefined
-                    ? null
-                    : { pageBeforeConversionPage: v.pageBeforeConversionPage }),
-                ...(v.utmSource === undefined ? null : { utmSource: v.utmSource }),
-                ...(v.utmMedium === undefined ? null : { utmMedium: v.utmMedium }),
-                ...(v.utmCampaign === undefined ? null : { utmCampaign: v.utmCampaign }),
-                ...(v.utmTerm === undefined ? null : { utmTerm: v.utmTerm }),
-                ...(v.oppId === undefined ? null : { oppId: v.oppId }),
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, VerifyTokenRequest> = z.object({
+        email: z.string().optional(),
+        token: z.string(),
+        tokenName: z.string().optional(),
+        ssoUserId: z.string().optional(),
+        teamName: z.string().optional(),
+        teamSlug: z.string().optional(),
+        teamPlan: TeamPlan$.outboundSchema.optional(),
+        sessionReferrer: z.string().optional(),
+        landingPage: z.string().optional(),
+        pageBeforeConversionPage: z.string().optional(),
+        utmSource: z.string().optional(),
+        utmMedium: z.string().optional(),
+        utmCampaign: z.string().optional(),
+        utmTerm: z.string().optional(),
+        oppId: z.string().optional(),
+    });
 }
 
 /** @internal */
 export namespace VerifyTokenResponseBody$ {
-    export const inboundSchema: z.ZodType<VerifyTokenResponseBody, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<VerifyTokenResponseBody, z.ZodTypeDef, unknown> =
+        z.object({
             token: z.string(),
             email: z.string(),
             teamId: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                token: v.token,
-                email: v.email,
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-            };
         });
 
     export type Outbound = {
@@ -211,17 +156,10 @@ export namespace VerifyTokenResponseBody$ {
         teamId?: string | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, VerifyTokenResponseBody> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, VerifyTokenResponseBody> =
+        z.object({
             token: z.string(),
             email: z.string(),
             teamId: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                token: v.token,
-                email: v.email,
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-            };
         });
 }

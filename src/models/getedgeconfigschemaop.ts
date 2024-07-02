@@ -23,18 +23,11 @@ export type GetEdgeConfigSchemaResponseBody = {};
 
 /** @internal */
 export namespace GetEdgeConfigSchemaRequest$ {
-    export const inboundSchema: z.ZodType<GetEdgeConfigSchemaRequest, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<GetEdgeConfigSchemaRequest, z.ZodTypeDef, unknown> =
+        z.object({
             edgeConfigId: z.string(),
             teamId: z.string().optional(),
             slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                edgeConfigId: v.edgeConfigId,
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
         });
 
     export type Outbound = {
@@ -43,18 +36,11 @@ export namespace GetEdgeConfigSchemaRequest$ {
         slug?: string | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetEdgeConfigSchemaRequest> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetEdgeConfigSchemaRequest> =
+        z.object({
             edgeConfigId: z.string(),
             teamId: z.string().optional(),
             slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                edgeConfigId: v.edgeConfigId,
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
         });
 }
 

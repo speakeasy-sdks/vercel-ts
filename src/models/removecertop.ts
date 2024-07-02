@@ -23,19 +23,11 @@ export type RemoveCertResponseBody = {};
 
 /** @internal */
 export namespace RemoveCertRequest$ {
-    export const inboundSchema: z.ZodType<RemoveCertRequest, z.ZodTypeDef, unknown> = z
-        .object({
-            id: z.string(),
-            teamId: z.string().optional(),
-            slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                id: v.id,
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
-        });
+    export const inboundSchema: z.ZodType<RemoveCertRequest, z.ZodTypeDef, unknown> = z.object({
+        id: z.string(),
+        teamId: z.string().optional(),
+        slug: z.string().optional(),
+    });
 
     export type Outbound = {
         id: string;
@@ -43,19 +35,11 @@ export namespace RemoveCertRequest$ {
         slug?: string | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, RemoveCertRequest> = z
-        .object({
-            id: z.string(),
-            teamId: z.string().optional(),
-            slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                id: v.id,
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, RemoveCertRequest> = z.object({
+        id: z.string(),
+        teamId: z.string().optional(),
+        slug: z.string().optional(),
+    });
 }
 
 /** @internal */

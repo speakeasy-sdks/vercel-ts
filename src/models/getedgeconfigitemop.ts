@@ -17,24 +17,14 @@ export type GetEdgeConfigItemRequest = {
     slug?: string | undefined;
 };
 
-export type GetEdgeConfigItemResponse = {};
-
 /** @internal */
 export namespace GetEdgeConfigItemRequest$ {
-    export const inboundSchema: z.ZodType<GetEdgeConfigItemRequest, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<GetEdgeConfigItemRequest, z.ZodTypeDef, unknown> =
+        z.object({
             edgeConfigId: z.string(),
             edgeConfigItemKey: z.string(),
             teamId: z.string().optional(),
             slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                edgeConfigId: v.edgeConfigId,
-                edgeConfigItemKey: v.edgeConfigItemKey,
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
         });
 
     export type Outbound = {
@@ -44,30 +34,11 @@ export namespace GetEdgeConfigItemRequest$ {
         slug?: string | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetEdgeConfigItemRequest> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetEdgeConfigItemRequest> =
+        z.object({
             edgeConfigId: z.string(),
             edgeConfigItemKey: z.string(),
             teamId: z.string().optional(),
             slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                edgeConfigId: v.edgeConfigId,
-                edgeConfigItemKey: v.edgeConfigItemKey,
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
         });
-}
-
-/** @internal */
-export namespace GetEdgeConfigItemResponse$ {
-    export const inboundSchema: z.ZodType<GetEdgeConfigItemResponse, z.ZodTypeDef, unknown> =
-        z.object({});
-
-    export type Outbound = {};
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetEdgeConfigItemResponse> =
-        z.object({});
 }

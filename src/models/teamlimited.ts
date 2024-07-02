@@ -225,25 +225,13 @@ export type TeamLimited = {
 
 /** @internal */
 export namespace Connection$ {
-    export const inboundSchema: z.ZodType<Connection, z.ZodTypeDef, unknown> = z
-        .object({
-            type: z.string(),
-            status: z.string(),
-            state: z.string(),
-            connectedAt: z.number(),
-            lastReceivedWebhookEvent: z.number().optional(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                status: v.status,
-                state: v.state,
-                connectedAt: v.connectedAt,
-                ...(v.lastReceivedWebhookEvent === undefined
-                    ? null
-                    : { lastReceivedWebhookEvent: v.lastReceivedWebhookEvent }),
-            };
-        });
+    export const inboundSchema: z.ZodType<Connection, z.ZodTypeDef, unknown> = z.object({
+        type: z.string(),
+        status: z.string(),
+        state: z.string(),
+        connectedAt: z.number(),
+        lastReceivedWebhookEvent: z.number().optional(),
+    });
 
     export type Outbound = {
         type: string;
@@ -253,48 +241,24 @@ export namespace Connection$ {
         lastReceivedWebhookEvent?: number | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, Connection> = z
-        .object({
-            type: z.string(),
-            status: z.string(),
-            state: z.string(),
-            connectedAt: z.number(),
-            lastReceivedWebhookEvent: z.number().optional(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                status: v.status,
-                state: v.state,
-                connectedAt: v.connectedAt,
-                ...(v.lastReceivedWebhookEvent === undefined
-                    ? null
-                    : { lastReceivedWebhookEvent: v.lastReceivedWebhookEvent }),
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, Connection> = z.object({
+        type: z.string(),
+        status: z.string(),
+        state: z.string(),
+        connectedAt: z.number(),
+        lastReceivedWebhookEvent: z.number().optional(),
+    });
 }
 
 /** @internal */
 export namespace Directory$ {
-    export const inboundSchema: z.ZodType<Directory, z.ZodTypeDef, unknown> = z
-        .object({
-            type: z.string(),
-            status: z.string(),
-            state: z.string(),
-            connectedAt: z.number(),
-            lastReceivedWebhookEvent: z.number().optional(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                status: v.status,
-                state: v.state,
-                connectedAt: v.connectedAt,
-                ...(v.lastReceivedWebhookEvent === undefined
-                    ? null
-                    : { lastReceivedWebhookEvent: v.lastReceivedWebhookEvent }),
-            };
-        });
+    export const inboundSchema: z.ZodType<Directory, z.ZodTypeDef, unknown> = z.object({
+        type: z.string(),
+        status: z.string(),
+        state: z.string(),
+        connectedAt: z.number(),
+        lastReceivedWebhookEvent: z.number().optional(),
+    });
 
     export type Outbound = {
         type: string;
@@ -304,42 +268,22 @@ export namespace Directory$ {
         lastReceivedWebhookEvent?: number | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, Directory> = z
-        .object({
-            type: z.string(),
-            status: z.string(),
-            state: z.string(),
-            connectedAt: z.number(),
-            lastReceivedWebhookEvent: z.number().optional(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                status: v.status,
-                state: v.state,
-                connectedAt: v.connectedAt,
-                ...(v.lastReceivedWebhookEvent === undefined
-                    ? null
-                    : { lastReceivedWebhookEvent: v.lastReceivedWebhookEvent }),
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, Directory> = z.object({
+        type: z.string(),
+        status: z.string(),
+        state: z.string(),
+        connectedAt: z.number(),
+        lastReceivedWebhookEvent: z.number().optional(),
+    });
 }
 
 /** @internal */
 export namespace Saml$ {
-    export const inboundSchema: z.ZodType<Saml, z.ZodTypeDef, unknown> = z
-        .object({
-            connection: z.lazy(() => Connection$.inboundSchema).optional(),
-            directory: z.lazy(() => Directory$.inboundSchema).optional(),
-            enforced: z.boolean(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.connection === undefined ? null : { connection: v.connection }),
-                ...(v.directory === undefined ? null : { directory: v.directory }),
-                enforced: v.enforced,
-            };
-        });
+    export const inboundSchema: z.ZodType<Saml, z.ZodTypeDef, unknown> = z.object({
+        connection: z.lazy(() => Connection$.inboundSchema).optional(),
+        directory: z.lazy(() => Directory$.inboundSchema).optional(),
+        enforced: z.boolean(),
+    });
 
     export type Outbound = {
         connection?: Connection$.Outbound | undefined;
@@ -347,31 +291,25 @@ export namespace Saml$ {
         enforced: boolean;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, Saml> = z
-        .object({
-            connection: z.lazy(() => Connection$.outboundSchema).optional(),
-            directory: z.lazy(() => Directory$.outboundSchema).optional(),
-            enforced: z.boolean(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.connection === undefined ? null : { connection: v.connection }),
-                ...(v.directory === undefined ? null : { directory: v.directory }),
-                enforced: v.enforced,
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, Saml> = z.object({
+        connection: z.lazy(() => Connection$.outboundSchema).optional(),
+        directory: z.lazy(() => Directory$.outboundSchema).optional(),
+        enforced: z.boolean(),
+    });
 }
 
 /** @internal */
 export namespace MembershipRole$ {
-    export const inboundSchema = z.nativeEnum(MembershipRole);
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<typeof MembershipRole> =
+        z.nativeEnum(MembershipRole);
+    export const outboundSchema: z.ZodNativeEnum<typeof MembershipRole> = inboundSchema;
 }
 
 /** @internal */
 export namespace MembershipOrigin$ {
-    export const inboundSchema = z.nativeEnum(MembershipOrigin);
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<typeof MembershipOrigin> =
+        z.nativeEnum(MembershipOrigin);
+    export const outboundSchema: z.ZodNativeEnum<typeof MembershipOrigin> = inboundSchema;
 }
 
 /** @internal */
@@ -390,37 +328,19 @@ export namespace MembershipGitUserId$ {
 
 /** @internal */
 export namespace MembershipJoinedFrom$ {
-    export const inboundSchema: z.ZodType<MembershipJoinedFrom, z.ZodTypeDef, unknown> = z
-        .object({
-            origin: MembershipOrigin$.inboundSchema,
-            commitId: z.string().optional(),
-            repoId: z.string().optional(),
-            repoPath: z.string().optional(),
-            gitUserId: z.union([z.string(), z.number()]).optional(),
-            gitUserLogin: z.string().optional(),
-            ssoUserId: z.string().optional(),
-            ssoConnectedAt: z.number().optional(),
-            idpUserId: z.string().optional(),
-            dsyncUserId: z.string().optional(),
-            dsyncConnectedAt: z.number().optional(),
-        })
-        .transform((v) => {
-            return {
-                origin: v.origin,
-                ...(v.commitId === undefined ? null : { commitId: v.commitId }),
-                ...(v.repoId === undefined ? null : { repoId: v.repoId }),
-                ...(v.repoPath === undefined ? null : { repoPath: v.repoPath }),
-                ...(v.gitUserId === undefined ? null : { gitUserId: v.gitUserId }),
-                ...(v.gitUserLogin === undefined ? null : { gitUserLogin: v.gitUserLogin }),
-                ...(v.ssoUserId === undefined ? null : { ssoUserId: v.ssoUserId }),
-                ...(v.ssoConnectedAt === undefined ? null : { ssoConnectedAt: v.ssoConnectedAt }),
-                ...(v.idpUserId === undefined ? null : { idpUserId: v.idpUserId }),
-                ...(v.dsyncUserId === undefined ? null : { dsyncUserId: v.dsyncUserId }),
-                ...(v.dsyncConnectedAt === undefined
-                    ? null
-                    : { dsyncConnectedAt: v.dsyncConnectedAt }),
-            };
-        });
+    export const inboundSchema: z.ZodType<MembershipJoinedFrom, z.ZodTypeDef, unknown> = z.object({
+        origin: MembershipOrigin$.inboundSchema,
+        commitId: z.string().optional(),
+        repoId: z.string().optional(),
+        repoPath: z.string().optional(),
+        gitUserId: z.union([z.string(), z.number()]).optional(),
+        gitUserLogin: z.string().optional(),
+        ssoUserId: z.string().optional(),
+        ssoConnectedAt: z.number().optional(),
+        idpUserId: z.string().optional(),
+        dsyncUserId: z.string().optional(),
+        dsyncConnectedAt: z.number().optional(),
+    });
 
     export type Outbound = {
         origin: string;
@@ -436,8 +356,8 @@ export namespace MembershipJoinedFrom$ {
         dsyncConnectedAt?: number | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, MembershipJoinedFrom> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, MembershipJoinedFrom> = z.object(
+        {
             origin: MembershipOrigin$.outboundSchema,
             commitId: z.string().optional(),
             repoId: z.string().optional(),
@@ -449,53 +369,23 @@ export namespace MembershipJoinedFrom$ {
             idpUserId: z.string().optional(),
             dsyncUserId: z.string().optional(),
             dsyncConnectedAt: z.number().optional(),
-        })
-        .transform((v) => {
-            return {
-                origin: v.origin,
-                ...(v.commitId === undefined ? null : { commitId: v.commitId }),
-                ...(v.repoId === undefined ? null : { repoId: v.repoId }),
-                ...(v.repoPath === undefined ? null : { repoPath: v.repoPath }),
-                ...(v.gitUserId === undefined ? null : { gitUserId: v.gitUserId }),
-                ...(v.gitUserLogin === undefined ? null : { gitUserLogin: v.gitUserLogin }),
-                ...(v.ssoUserId === undefined ? null : { ssoUserId: v.ssoUserId }),
-                ...(v.ssoConnectedAt === undefined ? null : { ssoConnectedAt: v.ssoConnectedAt }),
-                ...(v.idpUserId === undefined ? null : { idpUserId: v.idpUserId }),
-                ...(v.dsyncUserId === undefined ? null : { dsyncUserId: v.dsyncUserId }),
-                ...(v.dsyncConnectedAt === undefined
-                    ? null
-                    : { dsyncConnectedAt: v.dsyncConnectedAt }),
-            };
-        });
+        }
+    );
 }
 
 /** @internal */
 export namespace Two$ {
-    export const inboundSchema: z.ZodType<Two, z.ZodTypeDef, unknown> = z
-        .object({
-            confirmed: z.boolean(),
-            confirmedAt: z.number().optional(),
-            accessRequestedAt: z.number(),
-            role: MembershipRole$.inboundSchema,
-            teamId: z.string().optional(),
-            uid: z.string(),
-            createdAt: z.number(),
-            created: z.number(),
-            joinedFrom: z.lazy(() => MembershipJoinedFrom$.inboundSchema).optional(),
-        })
-        .transform((v) => {
-            return {
-                confirmed: v.confirmed,
-                ...(v.confirmedAt === undefined ? null : { confirmedAt: v.confirmedAt }),
-                accessRequestedAt: v.accessRequestedAt,
-                role: v.role,
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                uid: v.uid,
-                createdAt: v.createdAt,
-                created: v.created,
-                ...(v.joinedFrom === undefined ? null : { joinedFrom: v.joinedFrom }),
-            };
-        });
+    export const inboundSchema: z.ZodType<Two, z.ZodTypeDef, unknown> = z.object({
+        confirmed: z.boolean(),
+        confirmedAt: z.number().optional(),
+        accessRequestedAt: z.number(),
+        role: MembershipRole$.inboundSchema,
+        teamId: z.string().optional(),
+        uid: z.string(),
+        createdAt: z.number(),
+        created: z.number(),
+        joinedFrom: z.lazy(() => MembershipJoinedFrom$.inboundSchema).optional(),
+    });
 
     export type Outbound = {
         confirmed: boolean;
@@ -509,43 +399,32 @@ export namespace Two$ {
         joinedFrom?: MembershipJoinedFrom$.Outbound | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, Two> = z
-        .object({
-            confirmed: z.boolean(),
-            confirmedAt: z.number().optional(),
-            accessRequestedAt: z.number(),
-            role: MembershipRole$.outboundSchema,
-            teamId: z.string().optional(),
-            uid: z.string(),
-            createdAt: z.number(),
-            created: z.number(),
-            joinedFrom: z.lazy(() => MembershipJoinedFrom$.outboundSchema).optional(),
-        })
-        .transform((v) => {
-            return {
-                confirmed: v.confirmed,
-                ...(v.confirmedAt === undefined ? null : { confirmedAt: v.confirmedAt }),
-                accessRequestedAt: v.accessRequestedAt,
-                role: v.role,
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                uid: v.uid,
-                createdAt: v.createdAt,
-                created: v.created,
-                ...(v.joinedFrom === undefined ? null : { joinedFrom: v.joinedFrom }),
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, Two> = z.object({
+        confirmed: z.boolean(),
+        confirmedAt: z.number().optional(),
+        accessRequestedAt: z.number(),
+        role: MembershipRole$.outboundSchema,
+        teamId: z.string().optional(),
+        uid: z.string(),
+        createdAt: z.number(),
+        created: z.number(),
+        joinedFrom: z.lazy(() => MembershipJoinedFrom$.outboundSchema).optional(),
+    });
 }
 
 /** @internal */
 export namespace Role$ {
-    export const inboundSchema = z.nativeEnum(Role);
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<typeof Role> = z.nativeEnum(Role);
+    export const outboundSchema: z.ZodNativeEnum<typeof Role> = inboundSchema;
 }
 
 /** @internal */
 export namespace TeamLimitedMembershipOrigin$ {
-    export const inboundSchema = z.nativeEnum(TeamLimitedMembershipOrigin);
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<typeof TeamLimitedMembershipOrigin> = z.nativeEnum(
+        TeamLimitedMembershipOrigin
+    );
+    export const outboundSchema: z.ZodNativeEnum<typeof TeamLimitedMembershipOrigin> =
+        inboundSchema;
 }
 
 /** @internal */
@@ -564,37 +443,19 @@ export namespace GitUserId$ {
 
 /** @internal */
 export namespace JoinedFrom$ {
-    export const inboundSchema: z.ZodType<JoinedFrom, z.ZodTypeDef, unknown> = z
-        .object({
-            origin: TeamLimitedMembershipOrigin$.inboundSchema,
-            commitId: z.string().optional(),
-            repoId: z.string().optional(),
-            repoPath: z.string().optional(),
-            gitUserId: z.union([z.string(), z.number()]).optional(),
-            gitUserLogin: z.string().optional(),
-            ssoUserId: z.string().optional(),
-            ssoConnectedAt: z.number().optional(),
-            idpUserId: z.string().optional(),
-            dsyncUserId: z.string().optional(),
-            dsyncConnectedAt: z.number().optional(),
-        })
-        .transform((v) => {
-            return {
-                origin: v.origin,
-                ...(v.commitId === undefined ? null : { commitId: v.commitId }),
-                ...(v.repoId === undefined ? null : { repoId: v.repoId }),
-                ...(v.repoPath === undefined ? null : { repoPath: v.repoPath }),
-                ...(v.gitUserId === undefined ? null : { gitUserId: v.gitUserId }),
-                ...(v.gitUserLogin === undefined ? null : { gitUserLogin: v.gitUserLogin }),
-                ...(v.ssoUserId === undefined ? null : { ssoUserId: v.ssoUserId }),
-                ...(v.ssoConnectedAt === undefined ? null : { ssoConnectedAt: v.ssoConnectedAt }),
-                ...(v.idpUserId === undefined ? null : { idpUserId: v.idpUserId }),
-                ...(v.dsyncUserId === undefined ? null : { dsyncUserId: v.dsyncUserId }),
-                ...(v.dsyncConnectedAt === undefined
-                    ? null
-                    : { dsyncConnectedAt: v.dsyncConnectedAt }),
-            };
-        });
+    export const inboundSchema: z.ZodType<JoinedFrom, z.ZodTypeDef, unknown> = z.object({
+        origin: TeamLimitedMembershipOrigin$.inboundSchema,
+        commitId: z.string().optional(),
+        repoId: z.string().optional(),
+        repoPath: z.string().optional(),
+        gitUserId: z.union([z.string(), z.number()]).optional(),
+        gitUserLogin: z.string().optional(),
+        ssoUserId: z.string().optional(),
+        ssoConnectedAt: z.number().optional(),
+        idpUserId: z.string().optional(),
+        dsyncUserId: z.string().optional(),
+        dsyncConnectedAt: z.number().optional(),
+    });
 
     export type Outbound = {
         origin: string;
@@ -610,68 +471,34 @@ export namespace JoinedFrom$ {
         dsyncConnectedAt?: number | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, JoinedFrom> = z
-        .object({
-            origin: TeamLimitedMembershipOrigin$.outboundSchema,
-            commitId: z.string().optional(),
-            repoId: z.string().optional(),
-            repoPath: z.string().optional(),
-            gitUserId: z.union([z.string(), z.number()]).optional(),
-            gitUserLogin: z.string().optional(),
-            ssoUserId: z.string().optional(),
-            ssoConnectedAt: z.number().optional(),
-            idpUserId: z.string().optional(),
-            dsyncUserId: z.string().optional(),
-            dsyncConnectedAt: z.number().optional(),
-        })
-        .transform((v) => {
-            return {
-                origin: v.origin,
-                ...(v.commitId === undefined ? null : { commitId: v.commitId }),
-                ...(v.repoId === undefined ? null : { repoId: v.repoId }),
-                ...(v.repoPath === undefined ? null : { repoPath: v.repoPath }),
-                ...(v.gitUserId === undefined ? null : { gitUserId: v.gitUserId }),
-                ...(v.gitUserLogin === undefined ? null : { gitUserLogin: v.gitUserLogin }),
-                ...(v.ssoUserId === undefined ? null : { ssoUserId: v.ssoUserId }),
-                ...(v.ssoConnectedAt === undefined ? null : { ssoConnectedAt: v.ssoConnectedAt }),
-                ...(v.idpUserId === undefined ? null : { idpUserId: v.idpUserId }),
-                ...(v.dsyncUserId === undefined ? null : { dsyncUserId: v.dsyncUserId }),
-                ...(v.dsyncConnectedAt === undefined
-                    ? null
-                    : { dsyncConnectedAt: v.dsyncConnectedAt }),
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, JoinedFrom> = z.object({
+        origin: TeamLimitedMembershipOrigin$.outboundSchema,
+        commitId: z.string().optional(),
+        repoId: z.string().optional(),
+        repoPath: z.string().optional(),
+        gitUserId: z.union([z.string(), z.number()]).optional(),
+        gitUserLogin: z.string().optional(),
+        ssoUserId: z.string().optional(),
+        ssoConnectedAt: z.number().optional(),
+        idpUserId: z.string().optional(),
+        dsyncUserId: z.string().optional(),
+        dsyncConnectedAt: z.number().optional(),
+    });
 }
 
 /** @internal */
 export namespace One$ {
-    export const inboundSchema: z.ZodType<One, z.ZodTypeDef, unknown> = z
-        .object({
-            confirmed: z.boolean(),
-            confirmedAt: z.number(),
-            accessRequestedAt: z.number().optional(),
-            role: Role$.inboundSchema,
-            teamId: z.string().optional(),
-            uid: z.string(),
-            createdAt: z.number(),
-            created: z.number(),
-            joinedFrom: z.lazy(() => JoinedFrom$.inboundSchema).optional(),
-        })
-        .transform((v) => {
-            return {
-                confirmed: v.confirmed,
-                confirmedAt: v.confirmedAt,
-                ...(v.accessRequestedAt === undefined
-                    ? null
-                    : { accessRequestedAt: v.accessRequestedAt }),
-                role: v.role,
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                uid: v.uid,
-                createdAt: v.createdAt,
-                created: v.created,
-                ...(v.joinedFrom === undefined ? null : { joinedFrom: v.joinedFrom }),
-            };
-        });
+    export const inboundSchema: z.ZodType<One, z.ZodTypeDef, unknown> = z.object({
+        confirmed: z.boolean(),
+        confirmedAt: z.number(),
+        accessRequestedAt: z.number().optional(),
+        role: Role$.inboundSchema,
+        teamId: z.string().optional(),
+        uid: z.string(),
+        createdAt: z.number(),
+        created: z.number(),
+        joinedFrom: z.lazy(() => JoinedFrom$.inboundSchema).optional(),
+    });
 
     export type Outbound = {
         confirmed: boolean;
@@ -685,33 +512,17 @@ export namespace One$ {
         joinedFrom?: JoinedFrom$.Outbound | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, One> = z
-        .object({
-            confirmed: z.boolean(),
-            confirmedAt: z.number(),
-            accessRequestedAt: z.number().optional(),
-            role: Role$.outboundSchema,
-            teamId: z.string().optional(),
-            uid: z.string(),
-            createdAt: z.number(),
-            created: z.number(),
-            joinedFrom: z.lazy(() => JoinedFrom$.outboundSchema).optional(),
-        })
-        .transform((v) => {
-            return {
-                confirmed: v.confirmed,
-                confirmedAt: v.confirmedAt,
-                ...(v.accessRequestedAt === undefined
-                    ? null
-                    : { accessRequestedAt: v.accessRequestedAt }),
-                role: v.role,
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                uid: v.uid,
-                createdAt: v.createdAt,
-                created: v.created,
-                ...(v.joinedFrom === undefined ? null : { joinedFrom: v.joinedFrom }),
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, One> = z.object({
+        confirmed: z.boolean(),
+        confirmedAt: z.number(),
+        accessRequestedAt: z.number().optional(),
+        role: Role$.outboundSchema,
+        teamId: z.string().optional(),
+        uid: z.string(),
+        createdAt: z.number(),
+        created: z.number(),
+        joinedFrom: z.lazy(() => JoinedFrom$.outboundSchema).optional(),
+    });
 }
 
 /** @internal */
@@ -730,34 +541,17 @@ export namespace Membership$ {
 
 /** @internal */
 export namespace TeamLimited$ {
-    export const inboundSchema: z.ZodType<TeamLimited, z.ZodTypeDef, unknown> = z
-        .object({
-            limited: z.boolean(),
-            saml: z.lazy(() => Saml$.inboundSchema).optional(),
-            id: z.string(),
-            slug: z.string(),
-            name: z.nullable(z.string()),
-            avatar: z.nullable(z.string()),
-            membership: z.union([
-                z.lazy(() => One$.inboundSchema),
-                z.lazy(() => Two$.inboundSchema),
-            ]),
-            created: z.string(),
-            createdAt: z.number(),
-        })
-        .transform((v) => {
-            return {
-                limited: v.limited,
-                ...(v.saml === undefined ? null : { saml: v.saml }),
-                id: v.id,
-                slug: v.slug,
-                name: v.name,
-                avatar: v.avatar,
-                membership: v.membership,
-                created: v.created,
-                createdAt: v.createdAt,
-            };
-        });
+    export const inboundSchema: z.ZodType<TeamLimited, z.ZodTypeDef, unknown> = z.object({
+        limited: z.boolean(),
+        saml: z.lazy(() => Saml$.inboundSchema).optional(),
+        id: z.string(),
+        slug: z.string(),
+        name: z.nullable(z.string()),
+        avatar: z.nullable(z.string()),
+        membership: z.union([z.lazy(() => One$.inboundSchema), z.lazy(() => Two$.inboundSchema)]),
+        created: z.string(),
+        createdAt: z.number(),
+    });
 
     export type Outbound = {
         limited: boolean;
@@ -771,32 +565,15 @@ export namespace TeamLimited$ {
         createdAt: number;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, TeamLimited> = z
-        .object({
-            limited: z.boolean(),
-            saml: z.lazy(() => Saml$.outboundSchema).optional(),
-            id: z.string(),
-            slug: z.string(),
-            name: z.nullable(z.string()),
-            avatar: z.nullable(z.string()),
-            membership: z.union([
-                z.lazy(() => One$.outboundSchema),
-                z.lazy(() => Two$.outboundSchema),
-            ]),
-            created: z.string(),
-            createdAt: z.number(),
-        })
-        .transform((v) => {
-            return {
-                limited: v.limited,
-                ...(v.saml === undefined ? null : { saml: v.saml }),
-                id: v.id,
-                slug: v.slug,
-                name: v.name,
-                avatar: v.avatar,
-                membership: v.membership,
-                created: v.created,
-                createdAt: v.createdAt,
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, TeamLimited> = z.object({
+        limited: z.boolean(),
+        saml: z.lazy(() => Saml$.outboundSchema).optional(),
+        id: z.string(),
+        slug: z.string(),
+        name: z.nullable(z.string()),
+        avatar: z.nullable(z.string()),
+        membership: z.union([z.lazy(() => One$.outboundSchema), z.lazy(() => Two$.outboundSchema)]),
+        created: z.string(),
+        createdAt: z.number(),
+    });
 }

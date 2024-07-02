@@ -21,18 +21,11 @@ export type ListDeploymentFilesRequest = {
 
 /** @internal */
 export namespace ListDeploymentFilesRequest$ {
-    export const inboundSchema: z.ZodType<ListDeploymentFilesRequest, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<ListDeploymentFilesRequest, z.ZodTypeDef, unknown> =
+        z.object({
             id: z.string(),
             teamId: z.string().optional(),
             slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                id: v.id,
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
         });
 
     export type Outbound = {
@@ -41,17 +34,10 @@ export namespace ListDeploymentFilesRequest$ {
         slug?: string | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, ListDeploymentFilesRequest> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, ListDeploymentFilesRequest> =
+        z.object({
             id: z.string(),
             teamId: z.string().optional(),
             slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                id: v.id,
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
         });
 }

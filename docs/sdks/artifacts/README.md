@@ -17,8 +17,7 @@ Records an artifacts cache usage event. The body of this request is an array of 
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
-import { Event, Source } from "vercel/models";
+import { Event, Source, Vercel } from "vercel";
 
 const vercel = new Vercel({
   security: {
@@ -27,7 +26,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.artifacts.recordEvents({
+  await vercel.artifacts.recordEvents({
     xArtifactClientCi: "VERCEL",
     xArtifactClientInteractive: 0,
     requestBody: [
@@ -41,8 +40,7 @@ async function run() {
     ],
   });
 
-  // Handle the result
-  console.log(result)
+  
 }
 
 run();
@@ -59,7 +57,7 @@ run();
 
 ### Response
 
-**Promise<[models.RecordEventsResponse](../../models/recordeventsresponse.md)>**
+**Promise\<void\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -103,7 +101,7 @@ run();
 
 ### Response
 
-**Promise<[models.StatusResponseBody](../../models/statusresponsebody.md)>**
+**Promise\<[models.StatusResponseBody](../../models/statusresponsebody.md)\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -153,7 +151,7 @@ run();
 
 ### Response
 
-**Promise<[models.UploadArtifactResponseBody](../../models/uploadartifactresponsebody.md)>**
+**Promise\<[models.UploadArtifactResponseBody](../../models/uploadartifactresponsebody.md)\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -200,7 +198,7 @@ run();
 
 ### Response
 
-**Promise<[ReadableStream<Uint8Array>](../../models/.md)>**
+**Promise\<[ReadableStream<Uint8Array>](../../models/.md)\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -223,10 +221,9 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.artifacts.exists("12HKQaOmR5t5Uy6vdcQsNIiZgHGB", "<value>", "<value>");
+  await vercel.artifacts.exists("12HKQaOmR5t5Uy6vdcQsNIiZgHGB", "<value>", "<value>");
 
-  // Handle the result
-  console.log(result)
+  
 }
 
 run();
@@ -245,7 +242,7 @@ run();
 
 ### Response
 
-**Promise<[models.ArtifactExistsResponse](../../models/artifactexistsresponse.md)>**
+**Promise\<void\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -294,7 +291,7 @@ run();
 
 ### Response
 
-**Promise<[Record<string, models.ResponseBody>](../../models/.md)>**
+**Promise\<[{ [k: string]: models.ResponseBody }](../../models/.md)\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

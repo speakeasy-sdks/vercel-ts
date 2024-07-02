@@ -11,32 +11,18 @@ export type Security = {
 
 /** @internal */
 export namespace Security$ {
-    export const inboundSchema: z.ZodType<Security, z.ZodTypeDef, unknown> = z
-        .object({
-            bearerToken: z.string().optional(),
-            oauth2: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.bearerToken === undefined ? null : { bearerToken: v.bearerToken }),
-                ...(v.oauth2 === undefined ? null : { oauth2: v.oauth2 }),
-            };
-        });
+    export const inboundSchema: z.ZodType<Security, z.ZodTypeDef, unknown> = z.object({
+        bearerToken: z.string().optional(),
+        oauth2: z.string().optional(),
+    });
 
     export type Outbound = {
         bearerToken?: string | undefined;
         oauth2?: string | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, Security> = z
-        .object({
-            bearerToken: z.string().optional(),
-            oauth2: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.bearerToken === undefined ? null : { bearerToken: v.bearerToken }),
-                ...(v.oauth2 === undefined ? null : { oauth2: v.oauth2 }),
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, Security> = z.object({
+        bearerToken: z.string().optional(),
+        oauth2: z.string().optional(),
+    });
 }

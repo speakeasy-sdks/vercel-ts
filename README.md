@@ -8,19 +8,31 @@
 <!-- Start SDK Installation [installation] -->
 ## SDK Installation
 
-> [!WARNING] 
-> This SDK is not yet published to a package manager
-
 ### NPM
 
 ```bash
-npm add https://github.com/speakeasy-sdks/vercel-ts
+npm add vercel
+```
+
+### PNPM
+
+```bash
+pnpm add vercel
+```
+
+### Bun
+
+```bash
+bun add vercel
 ```
 
 ### Yarn
 
 ```bash
-yarn add https://github.com/speakeasy-sdks/vercel-ts
+yarn add vercel zod
+
+# Note that Yarn does not install peer dependencies automatically. You will need
+# to install zod as shown above.
 ```
 <!-- End SDK Installation [installation] -->
 
@@ -291,7 +303,7 @@ Validation errors can also occur when either method arguments or data returned f
 
 ```typescript
 import { Vercel } from "vercel";
-import * as errors from "vercel/models";
+import { SDKValidationError } from "vercel/models";
 
 const vercel = new Vercel();
 
@@ -301,7 +313,7 @@ async function run() {
         result = await vercel.getDeploymentBuilds("<value>");
     } catch (err) {
         switch (true) {
-            case err instanceof errors.SDKValidationError: {
+            case err instanceof SDKValidationError: {
                 // Validation errors can be pretty-printed
                 console.error(err.pretty());
                 // Raw value may also be inspected

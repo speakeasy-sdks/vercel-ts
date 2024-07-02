@@ -36,19 +36,11 @@ export type DeleteSecretResponseBody = {
 
 /** @internal */
 export namespace DeleteSecretRequest$ {
-    export const inboundSchema: z.ZodType<DeleteSecretRequest, z.ZodTypeDef, unknown> = z
-        .object({
-            idOrName: z.string(),
-            teamId: z.string().optional(),
-            slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                idOrName: v.idOrName,
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
-        });
+    export const inboundSchema: z.ZodType<DeleteSecretRequest, z.ZodTypeDef, unknown> = z.object({
+        idOrName: z.string(),
+        teamId: z.string().optional(),
+        slug: z.string().optional(),
+    });
 
     export type Outbound = {
         idOrName: string;
@@ -56,35 +48,20 @@ export namespace DeleteSecretRequest$ {
         slug?: string | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, DeleteSecretRequest> = z
-        .object({
-            idOrName: z.string(),
-            teamId: z.string().optional(),
-            slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                idOrName: v.idOrName,
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, DeleteSecretRequest> = z.object({
+        idOrName: z.string(),
+        teamId: z.string().optional(),
+        slug: z.string().optional(),
+    });
 }
 
 /** @internal */
 export namespace DeleteSecretResponseBody$ {
-    export const inboundSchema: z.ZodType<DeleteSecretResponseBody, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<DeleteSecretResponseBody, z.ZodTypeDef, unknown> =
+        z.object({
             uid: z.string(),
             name: z.string(),
             created: z.number(),
-        })
-        .transform((v) => {
-            return {
-                uid: v.uid,
-                name: v.name,
-                created: v.created,
-            };
         });
 
     export type Outbound = {
@@ -93,17 +70,10 @@ export namespace DeleteSecretResponseBody$ {
         created: number;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, DeleteSecretResponseBody> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, DeleteSecretResponseBody> =
+        z.object({
             uid: z.string(),
             name: z.string(),
             created: z.number(),
-        })
-        .transform((v) => {
-            return {
-                uid: v.uid,
-                name: v.name,
-                created: v.created,
-            };
         });
 }

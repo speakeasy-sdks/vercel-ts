@@ -137,19 +137,11 @@ export type GetWebhooksResponseBody = {
 
 /** @internal */
 export namespace GetWebhooksRequest$ {
-    export const inboundSchema: z.ZodType<GetWebhooksRequest, z.ZodTypeDef, unknown> = z
-        .object({
-            projectId: z.string().optional(),
-            teamId: z.string().optional(),
-            slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.projectId === undefined ? null : { projectId: v.projectId }),
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
-        });
+    export const inboundSchema: z.ZodType<GetWebhooksRequest, z.ZodTypeDef, unknown> = z.object({
+        projectId: z.string().optional(),
+        teamId: z.string().optional(),
+        slug: z.string().optional(),
+    });
 
     export type Outbound = {
         projectId?: string | undefined;
@@ -157,46 +149,28 @@ export namespace GetWebhooksRequest$ {
         slug?: string | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetWebhooksRequest> = z
-        .object({
-            projectId: z.string().optional(),
-            teamId: z.string().optional(),
-            slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.projectId === undefined ? null : { projectId: v.projectId }),
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetWebhooksRequest> = z.object({
+        projectId: z.string().optional(),
+        teamId: z.string().optional(),
+        slug: z.string().optional(),
+    });
 }
 
 /** @internal */
 export namespace ResponseBodyFramework$ {
-    export const inboundSchema = z.nativeEnum(ResponseBodyFramework);
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<typeof ResponseBodyFramework> =
+        z.nativeEnum(ResponseBodyFramework);
+    export const outboundSchema: z.ZodNativeEnum<typeof ResponseBodyFramework> = inboundSchema;
 }
 
 /** @internal */
 export namespace ProjectsMetadata$ {
-    export const inboundSchema: z.ZodType<ProjectsMetadata, z.ZodTypeDef, unknown> = z
-        .object({
-            id: z.string(),
-            name: z.string(),
-            framework: z.nullable(ResponseBodyFramework$.inboundSchema).optional(),
-            latestDeployment: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                id: v.id,
-                name: v.name,
-                ...(v.framework === undefined ? null : { framework: v.framework }),
-                ...(v.latestDeployment === undefined
-                    ? null
-                    : { latestDeployment: v.latestDeployment }),
-            };
-        });
+    export const inboundSchema: z.ZodType<ProjectsMetadata, z.ZodTypeDef, unknown> = z.object({
+        id: z.string(),
+        name: z.string(),
+        framework: z.nullable(ResponseBodyFramework$.inboundSchema).optional(),
+        latestDeployment: z.string().optional(),
+    });
 
     export type Outbound = {
         id: string;
@@ -205,35 +179,25 @@ export namespace ProjectsMetadata$ {
         latestDeployment?: string | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, ProjectsMetadata> = z
-        .object({
-            id: z.string(),
-            name: z.string(),
-            framework: z.nullable(ResponseBodyFramework$.outboundSchema).optional(),
-            latestDeployment: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                id: v.id,
-                name: v.name,
-                ...(v.framework === undefined ? null : { framework: v.framework }),
-                ...(v.latestDeployment === undefined
-                    ? null
-                    : { latestDeployment: v.latestDeployment }),
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, ProjectsMetadata> = z.object({
+        id: z.string(),
+        name: z.string(),
+        framework: z.nullable(ResponseBodyFramework$.outboundSchema).optional(),
+        latestDeployment: z.string().optional(),
+    });
 }
 
 /** @internal */
 export namespace ResponseBodyEvents$ {
-    export const inboundSchema = z.nativeEnum(ResponseBodyEvents);
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<typeof ResponseBodyEvents> =
+        z.nativeEnum(ResponseBodyEvents);
+    export const outboundSchema: z.ZodNativeEnum<typeof ResponseBodyEvents> = inboundSchema;
 }
 
 /** @internal */
 export namespace GetWebhooksResponseBody$ {
-    export const inboundSchema: z.ZodType<GetWebhooksResponseBody, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<GetWebhooksResponseBody, z.ZodTypeDef, unknown> =
+        z.object({
             projectsMetadata: z.nullable(z.array(z.lazy(() => ProjectsMetadata$.inboundSchema))),
             events: z.array(ResponseBodyEvents$.inboundSchema),
             id: z.string(),
@@ -242,18 +206,6 @@ export namespace GetWebhooksResponseBody$ {
             createdAt: z.number(),
             updatedAt: z.number(),
             projectIds: z.array(z.string()).optional(),
-        })
-        .transform((v) => {
-            return {
-                projectsMetadata: v.projectsMetadata,
-                events: v.events,
-                id: v.id,
-                url: v.url,
-                ownerId: v.ownerId,
-                createdAt: v.createdAt,
-                updatedAt: v.updatedAt,
-                ...(v.projectIds === undefined ? null : { projectIds: v.projectIds }),
-            };
         });
 
     export type Outbound = {
@@ -267,8 +219,8 @@ export namespace GetWebhooksResponseBody$ {
         projectIds?: Array<string> | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetWebhooksResponseBody> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetWebhooksResponseBody> =
+        z.object({
             projectsMetadata: z.nullable(z.array(z.lazy(() => ProjectsMetadata$.outboundSchema))),
             events: z.array(ResponseBodyEvents$.outboundSchema),
             id: z.string(),
@@ -277,17 +229,5 @@ export namespace GetWebhooksResponseBody$ {
             createdAt: z.number(),
             updatedAt: z.number(),
             projectIds: z.array(z.string()).optional(),
-        })
-        .transform((v) => {
-            return {
-                projectsMetadata: v.projectsMetadata,
-                events: v.events,
-                id: v.id,
-                url: v.url,
-                ownerId: v.ownerId,
-                createdAt: v.createdAt,
-                updatedAt: v.updatedAt,
-                ...(v.projectIds === undefined ? null : { projectIds: v.projectIds }),
-            };
         });
 }

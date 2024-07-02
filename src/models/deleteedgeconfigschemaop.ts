@@ -16,22 +16,13 @@ export type DeleteEdgeConfigSchemaRequest = {
     slug?: string | undefined;
 };
 
-export type DeleteEdgeConfigSchemaResponse = {};
-
 /** @internal */
 export namespace DeleteEdgeConfigSchemaRequest$ {
-    export const inboundSchema: z.ZodType<DeleteEdgeConfigSchemaRequest, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<DeleteEdgeConfigSchemaRequest, z.ZodTypeDef, unknown> =
+        z.object({
             edgeConfigId: z.string(),
             teamId: z.string().optional(),
             slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                edgeConfigId: v.edgeConfigId,
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
         });
 
     export type Outbound = {
@@ -41,28 +32,9 @@ export namespace DeleteEdgeConfigSchemaRequest$ {
     };
 
     export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, DeleteEdgeConfigSchemaRequest> =
-        z
-            .object({
-                edgeConfigId: z.string(),
-                teamId: z.string().optional(),
-                slug: z.string().optional(),
-            })
-            .transform((v) => {
-                return {
-                    edgeConfigId: v.edgeConfigId,
-                    ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                    ...(v.slug === undefined ? null : { slug: v.slug }),
-                };
-            });
-}
-
-/** @internal */
-export namespace DeleteEdgeConfigSchemaResponse$ {
-    export const inboundSchema: z.ZodType<DeleteEdgeConfigSchemaResponse, z.ZodTypeDef, unknown> =
-        z.object({});
-
-    export type Outbound = {};
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, DeleteEdgeConfigSchemaResponse> =
-        z.object({});
+        z.object({
+            edgeConfigId: z.string(),
+            teamId: z.string().optional(),
+            slug: z.string().optional(),
+        });
 }

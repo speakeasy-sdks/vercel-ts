@@ -23,54 +23,35 @@ export type DeleteAuthTokenResponseBody = {
 
 /** @internal */
 export namespace DeleteAuthTokenRequest$ {
-    export const inboundSchema: z.ZodType<DeleteAuthTokenRequest, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<DeleteAuthTokenRequest, z.ZodTypeDef, unknown> = z.object(
+        {
             tokenId: z.string(),
-        })
-        .transform((v) => {
-            return {
-                tokenId: v.tokenId,
-            };
-        });
+        }
+    );
 
     export type Outbound = {
         tokenId: string;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, DeleteAuthTokenRequest> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, DeleteAuthTokenRequest> =
+        z.object({
             tokenId: z.string(),
-        })
-        .transform((v) => {
-            return {
-                tokenId: v.tokenId,
-            };
         });
 }
 
 /** @internal */
 export namespace DeleteAuthTokenResponseBody$ {
-    export const inboundSchema: z.ZodType<DeleteAuthTokenResponseBody, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<DeleteAuthTokenResponseBody, z.ZodTypeDef, unknown> =
+        z.object({
             tokenId: z.string(),
-        })
-        .transform((v) => {
-            return {
-                tokenId: v.tokenId,
-            };
         });
 
     export type Outbound = {
         tokenId: string;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, DeleteAuthTokenResponseBody> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, DeleteAuthTokenResponseBody> =
+        z.object({
             tokenId: z.string(),
-        })
-        .transform((v) => {
-            return {
-                tokenId: v.tokenId,
-            };
         });
 }

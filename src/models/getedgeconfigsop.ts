@@ -50,51 +50,30 @@ export type GetEdgeConfigsResponseBody = {
 
 /** @internal */
 export namespace GetEdgeConfigsRequest$ {
-    export const inboundSchema: z.ZodType<GetEdgeConfigsRequest, z.ZodTypeDef, unknown> = z
-        .object({
-            teamId: z.string().optional(),
-            slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
-        });
+    export const inboundSchema: z.ZodType<GetEdgeConfigsRequest, z.ZodTypeDef, unknown> = z.object({
+        teamId: z.string().optional(),
+        slug: z.string().optional(),
+    });
 
     export type Outbound = {
         teamId?: string | undefined;
         slug?: string | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetEdgeConfigsRequest> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetEdgeConfigsRequest> =
+        z.object({
             teamId: z.string().optional(),
             slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
         });
 }
 
 /** @internal */
 export namespace Transfer$ {
-    export const inboundSchema: z.ZodType<Transfer, z.ZodTypeDef, unknown> = z
-        .object({
-            fromAccountId: z.string(),
-            startedAt: z.number(),
-            doneAt: z.nullable(z.number()),
-        })
-        .transform((v) => {
-            return {
-                fromAccountId: v.fromAccountId,
-                startedAt: v.startedAt,
-                doneAt: v.doneAt,
-            };
-        });
+    export const inboundSchema: z.ZodType<Transfer, z.ZodTypeDef, unknown> = z.object({
+        fromAccountId: z.string(),
+        startedAt: z.number(),
+        doneAt: z.nullable(z.number()),
+    });
 
     export type Outbound = {
         fromAccountId: string;
@@ -102,19 +81,11 @@ export namespace Transfer$ {
         doneAt: number | null;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, Transfer> = z
-        .object({
-            fromAccountId: z.string(),
-            startedAt: z.number(),
-            doneAt: z.nullable(z.number()),
-        })
-        .transform((v) => {
-            return {
-                fromAccountId: v.fromAccountId,
-                startedAt: v.startedAt,
-                doneAt: v.doneAt,
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, Transfer> = z.object({
+        fromAccountId: z.string(),
+        startedAt: z.number(),
+        doneAt: z.nullable(z.number()),
+    });
 }
 
 /** @internal */
@@ -128,8 +99,8 @@ export namespace Schema$ {
 
 /** @internal */
 export namespace GetEdgeConfigsResponseBody$ {
-    export const inboundSchema: z.ZodType<GetEdgeConfigsResponseBody, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<GetEdgeConfigsResponseBody, z.ZodTypeDef, unknown> =
+        z.object({
             id: z.string().optional(),
             createdAt: z.number().optional(),
             ownerId: z.string().optional(),
@@ -140,20 +111,6 @@ export namespace GetEdgeConfigsResponseBody$ {
             schema: z.lazy(() => Schema$.inboundSchema).optional(),
             sizeInBytes: z.number(),
             itemCount: z.number(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.id === undefined ? null : { id: v.id }),
-                ...(v.createdAt === undefined ? null : { createdAt: v.createdAt }),
-                ...(v.ownerId === undefined ? null : { ownerId: v.ownerId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-                ...(v.updatedAt === undefined ? null : { updatedAt: v.updatedAt }),
-                ...(v.digest === undefined ? null : { digest: v.digest }),
-                ...(v.transfer === undefined ? null : { transfer: v.transfer }),
-                ...(v.schema === undefined ? null : { schema: v.schema }),
-                sizeInBytes: v.sizeInBytes,
-                itemCount: v.itemCount,
-            };
         });
 
     export type Outbound = {
@@ -169,8 +126,8 @@ export namespace GetEdgeConfigsResponseBody$ {
         itemCount: number;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetEdgeConfigsResponseBody> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetEdgeConfigsResponseBody> =
+        z.object({
             id: z.string().optional(),
             createdAt: z.number().optional(),
             ownerId: z.string().optional(),
@@ -181,19 +138,5 @@ export namespace GetEdgeConfigsResponseBody$ {
             schema: z.lazy(() => Schema$.outboundSchema).optional(),
             sizeInBytes: z.number(),
             itemCount: z.number(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.id === undefined ? null : { id: v.id }),
-                ...(v.createdAt === undefined ? null : { createdAt: v.createdAt }),
-                ...(v.ownerId === undefined ? null : { ownerId: v.ownerId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-                ...(v.updatedAt === undefined ? null : { updatedAt: v.updatedAt }),
-                ...(v.digest === undefined ? null : { digest: v.digest }),
-                ...(v.transfer === undefined ? null : { transfer: v.transfer }),
-                ...(v.schema === undefined ? null : { schema: v.schema }),
-                sizeInBytes: v.sizeInBytes,
-                itemCount: v.itemCount,
-            };
         });
 }

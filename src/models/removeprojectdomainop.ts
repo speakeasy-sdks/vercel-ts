@@ -30,20 +30,12 @@ export type RemoveProjectDomainResponseBody = {};
 
 /** @internal */
 export namespace RemoveProjectDomainRequest$ {
-    export const inboundSchema: z.ZodType<RemoveProjectDomainRequest, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<RemoveProjectDomainRequest, z.ZodTypeDef, unknown> =
+        z.object({
             idOrName: z.string(),
             domain: z.string(),
             teamId: z.string().optional(),
             slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                idOrName: v.idOrName,
-                domain: v.domain,
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
         });
 
     export type Outbound = {
@@ -53,20 +45,12 @@ export namespace RemoveProjectDomainRequest$ {
         slug?: string | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, RemoveProjectDomainRequest> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, RemoveProjectDomainRequest> =
+        z.object({
             idOrName: z.string(),
             domain: z.string(),
             teamId: z.string().optional(),
             slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                idOrName: v.idOrName,
-                domain: v.domain,
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
         });
 }
 

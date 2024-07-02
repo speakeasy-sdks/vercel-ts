@@ -48,7 +48,7 @@ run();
 
 ### Response
 
-**Promise<[models.GetSecretsResponseBody](../../models/getsecretsresponsebody.md)>**
+**Promise\<[models.GetSecretsResponseBody](../../models/getsecretsresponsebody.md)\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -98,7 +98,7 @@ run();
 
 ### Response
 
-**Promise<[models.CreateSecretResponseBody](../../models/createsecretresponsebody.md)>**
+**Promise\<[models.CreateSecretResponseBody](../../models/createsecretresponsebody.md)\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -146,7 +146,7 @@ run();
 
 ### Response
 
-**Promise<[models.RenameSecretResponseBody](../../models/renamesecretresponsebody.md)>**
+**Promise\<[models.RenameSecretResponseBody](../../models/renamesecretresponsebody.md)\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -160,8 +160,7 @@ Retrieves the information for a specific secret by passing either the secret id 
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
-import { QueryParamDecrypt } from "vercel/models";
+import { QueryParamDecrypt, Vercel } from "vercel";
 
 const vercel = new Vercel({
   security: {
@@ -193,7 +192,7 @@ run();
 
 ### Response
 
-**Promise<[models.GetSecretResponseBody](../../models/getsecretresponsebody.md)>**
+**Promise\<[models.GetSecretResponseBody](../../models/getsecretresponsebody.md)\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -238,7 +237,7 @@ run();
 
 ### Response
 
-**Promise<[models.DeleteSecretResponseBody](../../models/deletesecretresponsebody.md)>**
+**Promise\<[models.DeleteSecretResponseBody](../../models/deletesecretresponsebody.md)\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

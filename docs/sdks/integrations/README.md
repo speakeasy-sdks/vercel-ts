@@ -16,8 +16,7 @@ Allows to retrieve all configurations for an authenticated integration. When the
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
-import { View } from "vercel/models";
+import { Vercel, View } from "vercel";
 
 const vercel = new Vercel({
   security: {
@@ -48,7 +47,7 @@ run();
 
 ### Response
 
-**Promise<[models.GetConfigurationsResponseBody](../../models/getconfigurationsresponsebody.md)>**
+**Promise\<[models.GetConfigurationsResponseBody](../../models/getconfigurationsresponsebody.md)\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -93,7 +92,7 @@ run();
 
 ### Response
 
-**Promise<[models.GetConfigurationResponseBody](../../models/getconfigurationresponsebody.md)>**
+**Promise\<[models.GetConfigurationResponseBody](../../models/getconfigurationresponsebody.md)\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -116,10 +115,9 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.integrations.deleteConfiguration("<value>", "<value>", "<value>");
+  await vercel.integrations.deleteConfiguration("<value>", "<value>", "<value>");
 
-  // Handle the result
-  console.log(result)
+  
 }
 
 run();
@@ -138,7 +136,7 @@ run();
 
 ### Response
 
-**Promise<[models.DeleteConfigurationResponse](../../models/deleteconfigurationresponse.md)>**
+**Promise\<void\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -152,8 +150,7 @@ Lists git namespaces for a supported provider. Supported providers are `github`,
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
-import { Provider } from "vercel/models";
+import { Provider, Vercel } from "vercel";
 
 const vercel = new Vercel({
   security: {
@@ -185,7 +182,7 @@ run();
 
 ### Response
 
-**Promise<[models.GitNamespacesResponseBody[]](../../models/.md)>**
+**Promise\<[models.GitNamespacesResponseBody[]](../../models/.md)\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -230,7 +227,7 @@ run();
 
 ### Response
 
-**Promise<[models.ListGitReposResponseBody](../../models/listgitreposresponsebody.md)>**
+**Promise\<[models.ListGitReposResponseBody](../../models/listgitreposresponsebody.md)\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

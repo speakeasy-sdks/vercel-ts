@@ -370,7 +370,7 @@ export type CreateTeamWebAnalytics = {
 export type CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsAnalyticsUsageMatrix =
     {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
 export type CreateTeamAnalyticsUsage = {
@@ -389,7 +389,7 @@ export type CreateTeamAnalyticsUsage = {
 
 export type CreateTeamMatrix = {
     defaultUnitPrice: string;
-    dimensionPrices: Record<string, string>;
+    dimensionPrices: { [k: string]: string };
 };
 
 export type CreateTeamArtifacts = {
@@ -406,7 +406,7 @@ export type CreateTeamArtifacts = {
 
 export type CreateTeamTeamsMatrix = {
     defaultUnitPrice: string;
-    dimensionPrices: Record<string, string>;
+    dimensionPrices: { [k: string]: string };
 };
 
 export type CreateTeamBandwidth = {
@@ -423,7 +423,7 @@ export type CreateTeamBandwidth = {
 
 export type CreateTeamTeamsResponseMatrix = {
     defaultUnitPrice: string;
-    dimensionPrices: Record<string, string>;
+    dimensionPrices: { [k: string]: string };
 };
 
 export type CreateTeamBlobStores = {
@@ -440,7 +440,7 @@ export type CreateTeamBlobStores = {
 
 export type CreateTeamTeamsResponse200Matrix = {
     defaultUnitPrice: string;
-    dimensionPrices: Record<string, string>;
+    dimensionPrices: { [k: string]: string };
 };
 
 export type CreateTeamBlobTotalAdvancedRequests = {
@@ -457,7 +457,7 @@ export type CreateTeamBlobTotalAdvancedRequests = {
 
 export type CreateTeamTeamsResponse200ApplicationJSONMatrix = {
     defaultUnitPrice: string;
-    dimensionPrices: Record<string, string>;
+    dimensionPrices: { [k: string]: string };
 };
 
 export type CreateTeamBlobTotalAvgSizeInBytes = {
@@ -474,7 +474,7 @@ export type CreateTeamBlobTotalAvgSizeInBytes = {
 
 export type CreateTeamTeamsResponse200ApplicationJSONResponseBodyMatrix = {
     defaultUnitPrice: string;
-    dimensionPrices: Record<string, string>;
+    dimensionPrices: { [k: string]: string };
 };
 
 export type CreateTeamBlobTotalGetResponseObjectSizeInBytes = {
@@ -491,7 +491,7 @@ export type CreateTeamBlobTotalGetResponseObjectSizeInBytes = {
 
 export type CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingMatrix = {
     defaultUnitPrice: string;
-    dimensionPrices: Record<string, string>;
+    dimensionPrices: { [k: string]: string };
 };
 
 export type CreateTeamBlobTotalSimpleRequests = {
@@ -508,7 +508,7 @@ export type CreateTeamBlobTotalSimpleRequests = {
 
 export type CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsMatrix = {
     defaultUnitPrice: string;
-    dimensionPrices: Record<string, string>;
+    dimensionPrices: { [k: string]: string };
 };
 
 export type CreateTeamBuildMinute = {
@@ -528,7 +528,7 @@ export type CreateTeamBuildMinute = {
 export type CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsDataCacheReadMatrix =
     {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
 export type CreateTeamDataCacheRead = {
@@ -548,7 +548,7 @@ export type CreateTeamDataCacheRead = {
 export type CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsDataCacheRevalidationMatrix =
     {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
 export type CreateTeamDataCacheRevalidation = {
@@ -568,7 +568,7 @@ export type CreateTeamDataCacheRevalidation = {
 export type CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsDataCacheWriteMatrix =
     {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
 export type CreateTeamDataCacheWrite = {
@@ -588,7 +588,7 @@ export type CreateTeamDataCacheWrite = {
 export type CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeConfigReadMatrix =
     {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
 export type CreateTeamEdgeConfigRead = {
@@ -608,7 +608,7 @@ export type CreateTeamEdgeConfigRead = {
 export type CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeConfigWriteMatrix =
     {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
 export type CreateTeamEdgeConfigWrite = {
@@ -628,7 +628,7 @@ export type CreateTeamEdgeConfigWrite = {
 export type CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeFunctionExecutionUnitsMatrix =
     {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
 export type CreateTeamEdgeFunctionExecutionUnits = {
@@ -648,7 +648,7 @@ export type CreateTeamEdgeFunctionExecutionUnits = {
 export type CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeMiddlewareInvocationsMatrix =
     {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
 export type CreateTeamEdgeMiddlewareInvocations = {
@@ -668,7 +668,7 @@ export type CreateTeamEdgeMiddlewareInvocations = {
 export type CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeRequestMatrix =
     {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
 export type CreateTeamEdgeRequest = {
@@ -688,7 +688,7 @@ export type CreateTeamEdgeRequest = {
 export type CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeRequestAdditionalCpuDurationMatrix =
     {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
 export type CreateTeamEdgeRequestAdditionalCpuDuration = {
@@ -708,7 +708,7 @@ export type CreateTeamEdgeRequestAdditionalCpuDuration = {
 export type CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFastDataTransferMatrix =
     {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
 export type CreateTeamFastDataTransfer = {
@@ -728,7 +728,7 @@ export type CreateTeamFastDataTransfer = {
 export type CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFastOriginTransferMatrix =
     {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
 export type CreateTeamFastOriginTransfer = {
@@ -748,7 +748,7 @@ export type CreateTeamFastOriginTransfer = {
 export type CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFunctionDurationMatrix =
     {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
 export type CreateTeamFunctionDuration = {
@@ -768,7 +768,7 @@ export type CreateTeamFunctionDuration = {
 export type CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFunctionInvocationMatrix =
     {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
 export type CreateTeamFunctionInvocation = {
@@ -788,7 +788,7 @@ export type CreateTeamFunctionInvocation = {
 export type CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsLogDrainsVolumeMatrix =
     {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
 export type CreateTeamLogDrainsVolume = {
@@ -808,7 +808,7 @@ export type CreateTeamLogDrainsVolume = {
 export type CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsMonitoringMetricMatrix =
     {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
 export type CreateTeamMonitoringMetric = {
@@ -828,7 +828,7 @@ export type CreateTeamMonitoringMetric = {
 export type CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresComputeTimeMatrix =
     {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
 export type CreateTeamPostgresComputeTime = {
@@ -848,7 +848,7 @@ export type CreateTeamPostgresComputeTime = {
 export type CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresDataStorageMatrix =
     {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
 export type CreateTeamPostgresDataStorage = {
@@ -868,7 +868,7 @@ export type CreateTeamPostgresDataStorage = {
 export type CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresDataTransferMatrix =
     {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
 export type CreateTeamPostgresDataTransfer = {
@@ -888,7 +888,7 @@ export type CreateTeamPostgresDataTransfer = {
 export type CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresDatabaseMatrix =
     {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
 export type CreateTeamPostgresDatabase = {
@@ -908,7 +908,7 @@ export type CreateTeamPostgresDatabase = {
 export type CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresWrittenDataMatrix =
     {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
 export type CreateTeamPostgresWrittenData = {
@@ -928,7 +928,7 @@ export type CreateTeamPostgresWrittenData = {
 export type CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsServerlessFunctionExecutionMatrix =
     {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
 export type CreateTeamServerlessFunctionExecution = {
@@ -948,7 +948,7 @@ export type CreateTeamServerlessFunctionExecution = {
 export type CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsSourceImagesMatrix =
     {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
 export type CreateTeamSourceImages = {
@@ -968,7 +968,7 @@ export type CreateTeamSourceImages = {
 export type CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsStorageRedisTotalBandwidthInBytesMatrix =
     {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
 export type CreateTeamStorageRedisTotalBandwidthInBytes = {
@@ -988,7 +988,7 @@ export type CreateTeamStorageRedisTotalBandwidthInBytes = {
 export type CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsStorageRedisTotalCommandsMatrix =
     {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
 export type CreateTeamStorageRedisTotalCommands = {
@@ -1008,7 +1008,7 @@ export type CreateTeamStorageRedisTotalCommands = {
 export type CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsStorageRedisTotalDailyAvgStorageInBytesMatrix =
     {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
 export type CreateTeamStorageRedisTotalDailyAvgStorageInBytes = {
@@ -1028,7 +1028,7 @@ export type CreateTeamStorageRedisTotalDailyAvgStorageInBytes = {
 export type CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsStorageRedisTotalDatabasesMatrix =
     {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
 export type CreateTeamStorageRedisTotalDatabases = {
@@ -1048,7 +1048,7 @@ export type CreateTeamStorageRedisTotalDatabases = {
 export type CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWafOwaspExcessBytesMatrix =
     {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
 export type CreateTeamWafOwaspExcessBytes = {
@@ -1068,7 +1068,7 @@ export type CreateTeamWafOwaspExcessBytes = {
 export type CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWafOwaspRequestsMatrix =
     {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
 export type CreateTeamWafOwaspRequests = {
@@ -1088,7 +1088,7 @@ export type CreateTeamWafOwaspRequests = {
 export type CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWebAnalyticsEventMatrix =
     {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
 export type CreateTeamWebAnalyticsEvent = {
@@ -1311,21 +1311,12 @@ export type CreateTeamResponseBody = {
 
 /** @internal */
 export namespace Utm$ {
-    export const inboundSchema: z.ZodType<Utm, z.ZodTypeDef, unknown> = z
-        .object({
-            utmSource: z.string().optional(),
-            utmMedium: z.string().optional(),
-            utmCampaign: z.string().optional(),
-            utmTerm: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.utmSource === undefined ? null : { utmSource: v.utmSource }),
-                ...(v.utmMedium === undefined ? null : { utmMedium: v.utmMedium }),
-                ...(v.utmCampaign === undefined ? null : { utmCampaign: v.utmCampaign }),
-                ...(v.utmTerm === undefined ? null : { utmTerm: v.utmTerm }),
-            };
-        });
+    export const inboundSchema: z.ZodType<Utm, z.ZodTypeDef, unknown> = z.object({
+        utmSource: z.string().optional(),
+        utmMedium: z.string().optional(),
+        utmCampaign: z.string().optional(),
+        utmTerm: z.string().optional(),
+    });
 
     export type Outbound = {
         utmSource?: string | undefined;
@@ -1334,44 +1325,22 @@ export namespace Utm$ {
         utmTerm?: string | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, Utm> = z
-        .object({
-            utmSource: z.string().optional(),
-            utmMedium: z.string().optional(),
-            utmCampaign: z.string().optional(),
-            utmTerm: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.utmSource === undefined ? null : { utmSource: v.utmSource }),
-                ...(v.utmMedium === undefined ? null : { utmMedium: v.utmMedium }),
-                ...(v.utmCampaign === undefined ? null : { utmCampaign: v.utmCampaign }),
-                ...(v.utmTerm === undefined ? null : { utmTerm: v.utmTerm }),
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, Utm> = z.object({
+        utmSource: z.string().optional(),
+        utmMedium: z.string().optional(),
+        utmCampaign: z.string().optional(),
+        utmTerm: z.string().optional(),
+    });
 }
 
 /** @internal */
 export namespace Attribution$ {
-    export const inboundSchema: z.ZodType<Attribution, z.ZodTypeDef, unknown> = z
-        .object({
-            sessionReferrer: z.string().optional(),
-            landingPage: z.string().optional(),
-            pageBeforeConversionPage: z.string().optional(),
-            utm: z.lazy(() => Utm$.inboundSchema).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.sessionReferrer === undefined
-                    ? null
-                    : { sessionReferrer: v.sessionReferrer }),
-                ...(v.landingPage === undefined ? null : { landingPage: v.landingPage }),
-                ...(v.pageBeforeConversionPage === undefined
-                    ? null
-                    : { pageBeforeConversionPage: v.pageBeforeConversionPage }),
-                ...(v.utm === undefined ? null : { utm: v.utm }),
-            };
-        });
+    export const inboundSchema: z.ZodType<Attribution, z.ZodTypeDef, unknown> = z.object({
+        sessionReferrer: z.string().optional(),
+        landingPage: z.string().optional(),
+        pageBeforeConversionPage: z.string().optional(),
+        utm: z.lazy(() => Utm$.inboundSchema).optional(),
+    });
 
     export type Outbound = {
         sessionReferrer?: string | undefined;
@@ -1380,42 +1349,21 @@ export namespace Attribution$ {
         utm?: Utm$.Outbound | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, Attribution> = z
-        .object({
-            sessionReferrer: z.string().optional(),
-            landingPage: z.string().optional(),
-            pageBeforeConversionPage: z.string().optional(),
-            utm: z.lazy(() => Utm$.outboundSchema).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.sessionReferrer === undefined
-                    ? null
-                    : { sessionReferrer: v.sessionReferrer }),
-                ...(v.landingPage === undefined ? null : { landingPage: v.landingPage }),
-                ...(v.pageBeforeConversionPage === undefined
-                    ? null
-                    : { pageBeforeConversionPage: v.pageBeforeConversionPage }),
-                ...(v.utm === undefined ? null : { utm: v.utm }),
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, Attribution> = z.object({
+        sessionReferrer: z.string().optional(),
+        landingPage: z.string().optional(),
+        pageBeforeConversionPage: z.string().optional(),
+        utm: z.lazy(() => Utm$.outboundSchema).optional(),
+    });
 }
 
 /** @internal */
 export namespace CreateTeamRequestBody$ {
-    export const inboundSchema: z.ZodType<CreateTeamRequestBody, z.ZodTypeDef, unknown> = z
-        .object({
-            slug: z.string(),
-            name: z.string().optional(),
-            attribution: z.lazy(() => Attribution$.inboundSchema).optional(),
-        })
-        .transform((v) => {
-            return {
-                slug: v.slug,
-                ...(v.name === undefined ? null : { name: v.name }),
-                ...(v.attribution === undefined ? null : { attribution: v.attribution }),
-            };
-        });
+    export const inboundSchema: z.ZodType<CreateTeamRequestBody, z.ZodTypeDef, unknown> = z.object({
+        slug: z.string(),
+        name: z.string().optional(),
+        attribution: z.lazy(() => Attribution$.inboundSchema).optional(),
+    });
 
     export type Outbound = {
         slug: string;
@@ -1423,194 +1371,124 @@ export namespace CreateTeamRequestBody$ {
         attribution?: Attribution$.Outbound | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamRequestBody> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamRequestBody> =
+        z.object({
             slug: z.string(),
             name: z.string().optional(),
             attribution: z.lazy(() => Attribution$.outboundSchema).optional(),
-        })
-        .transform((v) => {
-            return {
-                slug: v.slug,
-                ...(v.name === undefined ? null : { name: v.name }),
-                ...(v.attribution === undefined ? null : { attribution: v.attribution }),
-            };
         });
 }
 
 /** @internal */
 export namespace CreateTeamCurrency$ {
-    export const inboundSchema = z.nativeEnum(CreateTeamCurrency);
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<typeof CreateTeamCurrency> =
+        z.nativeEnum(CreateTeamCurrency);
+    export const outboundSchema: z.ZodNativeEnum<typeof CreateTeamCurrency> = inboundSchema;
 }
 
 /** @internal */
 export namespace CreateTeamPeriod$ {
-    export const inboundSchema: z.ZodType<CreateTeamPeriod, z.ZodTypeDef, unknown> = z
-        .object({
-            start: z.number(),
-            end: z.number(),
-        })
-        .transform((v) => {
-            return {
-                start: v.start,
-                end: v.end,
-            };
-        });
+    export const inboundSchema: z.ZodType<CreateTeamPeriod, z.ZodTypeDef, unknown> = z.object({
+        start: z.number(),
+        end: z.number(),
+    });
 
     export type Outbound = {
         start: number;
         end: number;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamPeriod> = z
-        .object({
-            start: z.number(),
-            end: z.number(),
-        })
-        .transform((v) => {
-            return {
-                start: v.start,
-                end: v.end,
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamPeriod> = z.object({
+        start: z.number(),
+        end: z.number(),
+    });
 }
 
 /** @internal */
 export namespace CreateTeamContract$ {
-    export const inboundSchema: z.ZodType<CreateTeamContract, z.ZodTypeDef, unknown> = z
-        .object({
-            start: z.number(),
-            end: z.number(),
-        })
-        .transform((v) => {
-            return {
-                start: v.start,
-                end: v.end,
-            };
-        });
+    export const inboundSchema: z.ZodType<CreateTeamContract, z.ZodTypeDef, unknown> = z.object({
+        start: z.number(),
+        end: z.number(),
+    });
 
     export type Outbound = {
         start: number;
         end: number;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamContract> = z
-        .object({
-            start: z.number(),
-            end: z.number(),
-        })
-        .transform((v) => {
-            return {
-                start: v.start,
-                end: v.end,
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamContract> = z.object({
+        start: z.number(),
+        end: z.number(),
+    });
 }
 
 /** @internal */
 export namespace CreateTeamPlan$ {
-    export const inboundSchema = z.nativeEnum(CreateTeamPlan);
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<typeof CreateTeamPlan> =
+        z.nativeEnum(CreateTeamPlan);
+    export const outboundSchema: z.ZodNativeEnum<typeof CreateTeamPlan> = inboundSchema;
 }
 
 /** @internal */
 export namespace CreateTeamPlatform$ {
-    export const inboundSchema = z.nativeEnum(CreateTeamPlatform);
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<typeof CreateTeamPlatform> =
+        z.nativeEnum(CreateTeamPlatform);
+    export const outboundSchema: z.ZodNativeEnum<typeof CreateTeamPlatform> = inboundSchema;
 }
 
 /** @internal */
 export namespace CreateTeamProgramType$ {
-    export const inboundSchema = z.nativeEnum(CreateTeamProgramType);
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<typeof CreateTeamProgramType> =
+        z.nativeEnum(CreateTeamProgramType);
+    export const outboundSchema: z.ZodNativeEnum<typeof CreateTeamProgramType> = inboundSchema;
 }
 
 /** @internal */
 export namespace CreateTeamTrial$ {
-    export const inboundSchema: z.ZodType<CreateTeamTrial, z.ZodTypeDef, unknown> = z
-        .object({
-            start: z.number(),
-            end: z.number(),
-        })
-        .transform((v) => {
-            return {
-                start: v.start,
-                end: v.end,
-            };
-        });
+    export const inboundSchema: z.ZodType<CreateTeamTrial, z.ZodTypeDef, unknown> = z.object({
+        start: z.number(),
+        end: z.number(),
+    });
 
     export type Outbound = {
         start: number;
         end: number;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamTrial> = z
-        .object({
-            start: z.number(),
-            end: z.number(),
-        })
-        .transform((v) => {
-            return {
-                start: v.start,
-                end: v.end,
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamTrial> = z.object({
+        start: z.number(),
+        end: z.number(),
+    });
 }
 
 /** @internal */
 export namespace CreateTeamTax$ {
-    export const inboundSchema: z.ZodType<CreateTeamTax, z.ZodTypeDef, unknown> = z
-        .object({
-            type: z.string(),
-            id: z.string(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                id: v.id,
-            };
-        });
+    export const inboundSchema: z.ZodType<CreateTeamTax, z.ZodTypeDef, unknown> = z.object({
+        type: z.string(),
+        id: z.string(),
+    });
 
     export type Outbound = {
         type: string;
         id: string;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamTax> = z
-        .object({
-            type: z.string(),
-            id: z.string(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                id: v.id,
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamTax> = z.object({
+        type: z.string(),
+        id: z.string(),
+    });
 }
 
 /** @internal */
 export namespace CreateTeamAddress$ {
-    export const inboundSchema: z.ZodType<CreateTeamAddress, z.ZodTypeDef, unknown> = z
-        .object({
-            line1: z.string().optional(),
-            line2: z.string().optional(),
-            postalCode: z.string().optional(),
-            city: z.string().optional(),
-            country: z.string().optional(),
-            state: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.line1 === undefined ? null : { line1: v.line1 }),
-                ...(v.line2 === undefined ? null : { line2: v.line2 }),
-                ...(v.postalCode === undefined ? null : { postalCode: v.postalCode }),
-                ...(v.city === undefined ? null : { city: v.city }),
-                ...(v.country === undefined ? null : { country: v.country }),
-                ...(v.state === undefined ? null : { state: v.state }),
-            };
-        });
+    export const inboundSchema: z.ZodType<CreateTeamAddress, z.ZodTypeDef, unknown> = z.object({
+        line1: z.string().optional(),
+        line2: z.string().optional(),
+        postalCode: z.string().optional(),
+        city: z.string().optional(),
+        country: z.string().optional(),
+        state: z.string().optional(),
+    });
 
     export type Outbound = {
         line1?: string | undefined;
@@ -1621,33 +1499,26 @@ export namespace CreateTeamAddress$ {
         state?: string | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamAddress> = z
-        .object({
-            line1: z.string().optional(),
-            line2: z.string().optional(),
-            postalCode: z.string().optional(),
-            city: z.string().optional(),
-            country: z.string().optional(),
-            state: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.line1 === undefined ? null : { line1: v.line1 }),
-                ...(v.line2 === undefined ? null : { line2: v.line2 }),
-                ...(v.postalCode === undefined ? null : { postalCode: v.postalCode }),
-                ...(v.city === undefined ? null : { city: v.city }),
-                ...(v.country === undefined ? null : { country: v.country }),
-                ...(v.state === undefined ? null : { state: v.state }),
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamAddress> = z.object({
+        line1: z.string().optional(),
+        line2: z.string().optional(),
+        postalCode: z.string().optional(),
+        city: z.string().optional(),
+        country: z.string().optional(),
+        state: z.string().optional(),
+    });
 }
 
 /** @internal */
 export namespace CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsProInterval$ {
-    export const inboundSchema = z.nativeEnum(
+    export const inboundSchema: z.ZodNativeEnum<
+        typeof CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsProInterval
+    > = z.nativeEnum(
         CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsProInterval
     );
-    export const outboundSchema = inboundSchema;
+    export const outboundSchema: z.ZodNativeEnum<
+        typeof CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsProInterval
+    > = inboundSchema;
 }
 
 /** @internal */
@@ -1656,18 +1527,11 @@ export namespace CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInv
         CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsProFrequency,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            interval:
-                CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsProInterval$.inboundSchema,
-            intervalCount: z.number(),
-        })
-        .transform((v) => {
-            return {
-                interval: v.interval,
-                intervalCount: v.intervalCount,
-            };
-        });
+    > = z.object({
+        interval:
+            CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsProInterval$.inboundSchema,
+        intervalCount: z.number(),
+    });
 
     export type Outbound = {
         interval: string;
@@ -1678,56 +1542,32 @@ export namespace CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInv
         Outbound,
         z.ZodTypeDef,
         CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsProFrequency
-    > = z
-        .object({
-            interval:
-                CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsProInterval$.outboundSchema,
-            intervalCount: z.number(),
-        })
-        .transform((v) => {
-            return {
-                interval: v.interval,
-                intervalCount: v.intervalCount,
-            };
-        });
+    > = z.object({
+        interval:
+            CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsProInterval$.outboundSchema,
+        intervalCount: z.number(),
+    });
 }
 
 /** @internal */
 export namespace CreateTeamPro$ {
-    export const inboundSchema: z.ZodType<CreateTeamPro, z.ZodTypeDef, unknown> = z
-        .object({
-            tier: z.number().optional(),
-            price: z.number(),
-            quantity: z.number(),
-            highestQuantity: z.number().optional(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            createdAt: z.number().optional(),
-            disabledAt: z.nullable(z.number()).optional(),
-            frequency: z
-                .lazy(
-                    () =>
-                        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsProFrequency$.inboundSchema
-                )
-                .optional(),
-            maxQuantity: z.number().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                quantity: v.quantity,
-                ...(v.highestQuantity === undefined
-                    ? null
-                    : { highestQuantity: v.highestQuantity }),
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.createdAt === undefined ? null : { createdAt: v.createdAt }),
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.frequency === undefined ? null : { frequency: v.frequency }),
-                ...(v.maxQuantity === undefined ? null : { maxQuantity: v.maxQuantity }),
-            };
-        });
+    export const inboundSchema: z.ZodType<CreateTeamPro, z.ZodTypeDef, unknown> = z.object({
+        tier: z.number().optional(),
+        price: z.number(),
+        quantity: z.number(),
+        highestQuantity: z.number().optional(),
+        name: z.string().optional(),
+        hidden: z.boolean(),
+        createdAt: z.number().optional(),
+        disabledAt: z.nullable(z.number()).optional(),
+        frequency: z
+            .lazy(
+                () =>
+                    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsProFrequency$.inboundSchema
+            )
+            .optional(),
+        maxQuantity: z.number().optional(),
+    });
 
     export type Outbound = {
         tier?: number | undefined;
@@ -1744,48 +1584,35 @@ export namespace CreateTeamPro$ {
         maxQuantity?: number | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamPro> = z
-        .object({
-            tier: z.number().optional(),
-            price: z.number(),
-            quantity: z.number(),
-            highestQuantity: z.number().optional(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            createdAt: z.number().optional(),
-            disabledAt: z.nullable(z.number()).optional(),
-            frequency: z
-                .lazy(
-                    () =>
-                        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsProFrequency$.outboundSchema
-                )
-                .optional(),
-            maxQuantity: z.number().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                quantity: v.quantity,
-                ...(v.highestQuantity === undefined
-                    ? null
-                    : { highestQuantity: v.highestQuantity }),
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.createdAt === undefined ? null : { createdAt: v.createdAt }),
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.frequency === undefined ? null : { frequency: v.frequency }),
-                ...(v.maxQuantity === undefined ? null : { maxQuantity: v.maxQuantity }),
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamPro> = z.object({
+        tier: z.number().optional(),
+        price: z.number(),
+        quantity: z.number(),
+        highestQuantity: z.number().optional(),
+        name: z.string().optional(),
+        hidden: z.boolean(),
+        createdAt: z.number().optional(),
+        disabledAt: z.nullable(z.number()).optional(),
+        frequency: z
+            .lazy(
+                () =>
+                    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsProFrequency$.outboundSchema
+            )
+            .optional(),
+        maxQuantity: z.number().optional(),
+    });
 }
 
 /** @internal */
 export namespace CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEnterpriseInterval$ {
-    export const inboundSchema = z.nativeEnum(
+    export const inboundSchema: z.ZodNativeEnum<
+        typeof CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEnterpriseInterval
+    > = z.nativeEnum(
         CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEnterpriseInterval
     );
-    export const outboundSchema = inboundSchema;
+    export const outboundSchema: z.ZodNativeEnum<
+        typeof CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEnterpriseInterval
+    > = inboundSchema;
 }
 
 /** @internal */
@@ -1794,18 +1621,11 @@ export namespace CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInv
         CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEnterpriseFrequency,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            interval:
-                CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEnterpriseInterval$.inboundSchema,
-            intervalCount: z.number(),
-        })
-        .transform((v) => {
-            return {
-                interval: v.interval,
-                intervalCount: v.intervalCount,
-            };
-        });
+    > = z.object({
+        interval:
+            CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEnterpriseInterval$.inboundSchema,
+        intervalCount: z.number(),
+    });
 
     export type Outbound = {
         interval: string;
@@ -1816,56 +1636,32 @@ export namespace CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInv
         Outbound,
         z.ZodTypeDef,
         CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEnterpriseFrequency
-    > = z
-        .object({
-            interval:
-                CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEnterpriseInterval$.outboundSchema,
-            intervalCount: z.number(),
-        })
-        .transform((v) => {
-            return {
-                interval: v.interval,
-                intervalCount: v.intervalCount,
-            };
-        });
+    > = z.object({
+        interval:
+            CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEnterpriseInterval$.outboundSchema,
+        intervalCount: z.number(),
+    });
 }
 
 /** @internal */
 export namespace CreateTeamEnterprise$ {
-    export const inboundSchema: z.ZodType<CreateTeamEnterprise, z.ZodTypeDef, unknown> = z
-        .object({
-            tier: z.number().optional(),
-            price: z.number(),
-            quantity: z.number(),
-            highestQuantity: z.number().optional(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            createdAt: z.number().optional(),
-            disabledAt: z.nullable(z.number()).optional(),
-            frequency: z
-                .lazy(
-                    () =>
-                        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEnterpriseFrequency$.inboundSchema
-                )
-                .optional(),
-            maxQuantity: z.number().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                quantity: v.quantity,
-                ...(v.highestQuantity === undefined
-                    ? null
-                    : { highestQuantity: v.highestQuantity }),
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.createdAt === undefined ? null : { createdAt: v.createdAt }),
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.frequency === undefined ? null : { frequency: v.frequency }),
-                ...(v.maxQuantity === undefined ? null : { maxQuantity: v.maxQuantity }),
-            };
-        });
+    export const inboundSchema: z.ZodType<CreateTeamEnterprise, z.ZodTypeDef, unknown> = z.object({
+        tier: z.number().optional(),
+        price: z.number(),
+        quantity: z.number(),
+        highestQuantity: z.number().optional(),
+        name: z.string().optional(),
+        hidden: z.boolean(),
+        createdAt: z.number().optional(),
+        disabledAt: z.nullable(z.number()).optional(),
+        frequency: z
+            .lazy(
+                () =>
+                    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEnterpriseFrequency$.inboundSchema
+            )
+            .optional(),
+        maxQuantity: z.number().optional(),
+    });
 
     export type Outbound = {
         tier?: number | undefined;
@@ -1882,8 +1678,8 @@ export namespace CreateTeamEnterprise$ {
         maxQuantity?: number | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamEnterprise> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamEnterprise> = z.object(
+        {
             tier: z.number().optional(),
             price: z.number(),
             quantity: z.number(),
@@ -1899,43 +1695,23 @@ export namespace CreateTeamEnterprise$ {
                 )
                 .optional(),
             maxQuantity: z.number().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                quantity: v.quantity,
-                ...(v.highestQuantity === undefined
-                    ? null
-                    : { highestQuantity: v.highestQuantity }),
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.createdAt === undefined ? null : { createdAt: v.createdAt }),
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.frequency === undefined ? null : { frequency: v.frequency }),
-                ...(v.maxQuantity === undefined ? null : { maxQuantity: v.maxQuantity }),
-            };
-        });
+        }
+    );
 }
 
 /** @internal */
 export namespace CreateTeamTeamsInterval$ {
-    export const inboundSchema = z.nativeEnum(CreateTeamTeamsInterval);
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<typeof CreateTeamTeamsInterval> =
+        z.nativeEnum(CreateTeamTeamsInterval);
+    export const outboundSchema: z.ZodNativeEnum<typeof CreateTeamTeamsInterval> = inboundSchema;
 }
 
 /** @internal */
 export namespace CreateTeamTeamsFrequency$ {
-    export const inboundSchema: z.ZodType<CreateTeamTeamsFrequency, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<CreateTeamTeamsFrequency, z.ZodTypeDef, unknown> =
+        z.object({
             interval: CreateTeamTeamsInterval$.inboundSchema,
             intervalCount: z.number(),
-        })
-        .transform((v) => {
-            return {
-                interval: v.interval,
-                intervalCount: v.intervalCount,
-            };
         });
 
     export type Outbound = {
@@ -1943,50 +1719,27 @@ export namespace CreateTeamTeamsFrequency$ {
         intervalCount: number;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamTeamsFrequency> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamTeamsFrequency> =
+        z.object({
             interval: CreateTeamTeamsInterval$.outboundSchema,
             intervalCount: z.number(),
-        })
-        .transform((v) => {
-            return {
-                interval: v.interval,
-                intervalCount: v.intervalCount,
-            };
         });
 }
 
 /** @internal */
 export namespace CreateTeamAnalytics$ {
-    export const inboundSchema: z.ZodType<CreateTeamAnalytics, z.ZodTypeDef, unknown> = z
-        .object({
-            tier: z.number().optional(),
-            price: z.number(),
-            quantity: z.number(),
-            highestQuantity: z.number().optional(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            createdAt: z.number().optional(),
-            disabledAt: z.nullable(z.number()).optional(),
-            frequency: z.lazy(() => CreateTeamTeamsFrequency$.inboundSchema).optional(),
-            maxQuantity: z.number().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                quantity: v.quantity,
-                ...(v.highestQuantity === undefined
-                    ? null
-                    : { highestQuantity: v.highestQuantity }),
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.createdAt === undefined ? null : { createdAt: v.createdAt }),
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.frequency === undefined ? null : { frequency: v.frequency }),
-                ...(v.maxQuantity === undefined ? null : { maxQuantity: v.maxQuantity }),
-            };
-        });
+    export const inboundSchema: z.ZodType<CreateTeamAnalytics, z.ZodTypeDef, unknown> = z.object({
+        tier: z.number().optional(),
+        price: z.number(),
+        quantity: z.number(),
+        highestQuantity: z.number().optional(),
+        name: z.string().optional(),
+        hidden: z.boolean(),
+        createdAt: z.number().optional(),
+        disabledAt: z.nullable(z.number()).optional(),
+        frequency: z.lazy(() => CreateTeamTeamsFrequency$.inboundSchema).optional(),
+        maxQuantity: z.number().optional(),
+    });
 
     export type Outbound = {
         tier?: number | undefined;
@@ -2001,57 +1754,35 @@ export namespace CreateTeamAnalytics$ {
         maxQuantity?: number | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamAnalytics> = z
-        .object({
-            tier: z.number().optional(),
-            price: z.number(),
-            quantity: z.number(),
-            highestQuantity: z.number().optional(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            createdAt: z.number().optional(),
-            disabledAt: z.nullable(z.number()).optional(),
-            frequency: z.lazy(() => CreateTeamTeamsFrequency$.outboundSchema).optional(),
-            maxQuantity: z.number().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                quantity: v.quantity,
-                ...(v.highestQuantity === undefined
-                    ? null
-                    : { highestQuantity: v.highestQuantity }),
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.createdAt === undefined ? null : { createdAt: v.createdAt }),
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.frequency === undefined ? null : { frequency: v.frequency }),
-                ...(v.maxQuantity === undefined ? null : { maxQuantity: v.maxQuantity }),
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamAnalytics> = z.object({
+        tier: z.number().optional(),
+        price: z.number(),
+        quantity: z.number(),
+        highestQuantity: z.number().optional(),
+        name: z.string().optional(),
+        hidden: z.boolean(),
+        createdAt: z.number().optional(),
+        disabledAt: z.nullable(z.number()).optional(),
+        frequency: z.lazy(() => CreateTeamTeamsFrequency$.outboundSchema).optional(),
+        maxQuantity: z.number().optional(),
+    });
 }
 
 /** @internal */
 export namespace CreateTeamTeamsResponseInterval$ {
-    export const inboundSchema = z.nativeEnum(CreateTeamTeamsResponseInterval);
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<typeof CreateTeamTeamsResponseInterval> =
+        z.nativeEnum(CreateTeamTeamsResponseInterval);
+    export const outboundSchema: z.ZodNativeEnum<typeof CreateTeamTeamsResponseInterval> =
+        inboundSchema;
 }
 
 /** @internal */
 export namespace CreateTeamTeamsResponseFrequency$ {
     export const inboundSchema: z.ZodType<CreateTeamTeamsResponseFrequency, z.ZodTypeDef, unknown> =
-        z
-            .object({
-                interval: CreateTeamTeamsResponseInterval$.inboundSchema,
-                intervalCount: z.number(),
-            })
-            .transform((v) => {
-                return {
-                    interval: v.interval,
-                    intervalCount: v.intervalCount,
-                };
-            });
+        z.object({
+            interval: CreateTeamTeamsResponseInterval$.inboundSchema,
+            intervalCount: z.number(),
+        });
 
     export type Outbound = {
         interval: string;
@@ -2062,23 +1793,16 @@ export namespace CreateTeamTeamsResponseFrequency$ {
         Outbound,
         z.ZodTypeDef,
         CreateTeamTeamsResponseFrequency
-    > = z
-        .object({
-            interval: CreateTeamTeamsResponseInterval$.outboundSchema,
-            intervalCount: z.number(),
-        })
-        .transform((v) => {
-            return {
-                interval: v.interval,
-                intervalCount: v.intervalCount,
-            };
-        });
+    > = z.object({
+        interval: CreateTeamTeamsResponseInterval$.outboundSchema,
+        intervalCount: z.number(),
+    });
 }
 
 /** @internal */
 export namespace CreateTeamConcurrentBuilds$ {
-    export const inboundSchema: z.ZodType<CreateTeamConcurrentBuilds, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<CreateTeamConcurrentBuilds, z.ZodTypeDef, unknown> =
+        z.object({
             tier: z.number().optional(),
             price: z.number(),
             quantity: z.number(),
@@ -2089,22 +1813,6 @@ export namespace CreateTeamConcurrentBuilds$ {
             disabledAt: z.nullable(z.number()).optional(),
             frequency: z.lazy(() => CreateTeamTeamsResponseFrequency$.inboundSchema).optional(),
             maxQuantity: z.number().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                quantity: v.quantity,
-                ...(v.highestQuantity === undefined
-                    ? null
-                    : { highestQuantity: v.highestQuantity }),
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.createdAt === undefined ? null : { createdAt: v.createdAt }),
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.frequency === undefined ? null : { frequency: v.frequency }),
-                ...(v.maxQuantity === undefined ? null : { maxQuantity: v.maxQuantity }),
-            };
         });
 
     export type Outbound = {
@@ -2120,8 +1828,8 @@ export namespace CreateTeamConcurrentBuilds$ {
         maxQuantity?: number | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamConcurrentBuilds> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamConcurrentBuilds> =
+        z.object({
             tier: z.number().optional(),
             price: z.number(),
             quantity: z.number(),
@@ -2132,29 +1840,15 @@ export namespace CreateTeamConcurrentBuilds$ {
             disabledAt: z.nullable(z.number()).optional(),
             frequency: z.lazy(() => CreateTeamTeamsResponseFrequency$.outboundSchema).optional(),
             maxQuantity: z.number().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                quantity: v.quantity,
-                ...(v.highestQuantity === undefined
-                    ? null
-                    : { highestQuantity: v.highestQuantity }),
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.createdAt === undefined ? null : { createdAt: v.createdAt }),
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.frequency === undefined ? null : { frequency: v.frequency }),
-                ...(v.maxQuantity === undefined ? null : { maxQuantity: v.maxQuantity }),
-            };
         });
 }
 
 /** @internal */
 export namespace CreateTeamTeamsResponse200Interval$ {
-    export const inboundSchema = z.nativeEnum(CreateTeamTeamsResponse200Interval);
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<typeof CreateTeamTeamsResponse200Interval> =
+        z.nativeEnum(CreateTeamTeamsResponse200Interval);
+    export const outboundSchema: z.ZodNativeEnum<typeof CreateTeamTeamsResponse200Interval> =
+        inboundSchema;
 }
 
 /** @internal */
@@ -2163,17 +1857,10 @@ export namespace CreateTeamTeamsResponse200Frequency$ {
         CreateTeamTeamsResponse200Frequency,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            interval: CreateTeamTeamsResponse200Interval$.inboundSchema,
-            intervalCount: z.number(),
-        })
-        .transform((v) => {
-            return {
-                interval: v.interval,
-                intervalCount: v.intervalCount,
-            };
-        });
+    > = z.object({
+        interval: CreateTeamTeamsResponse200Interval$.inboundSchema,
+        intervalCount: z.number(),
+    });
 
     export type Outbound = {
         interval: string;
@@ -2184,50 +1871,26 @@ export namespace CreateTeamTeamsResponse200Frequency$ {
         Outbound,
         z.ZodTypeDef,
         CreateTeamTeamsResponse200Frequency
-    > = z
-        .object({
-            interval: CreateTeamTeamsResponse200Interval$.outboundSchema,
-            intervalCount: z.number(),
-        })
-        .transform((v) => {
-            return {
-                interval: v.interval,
-                intervalCount: v.intervalCount,
-            };
-        });
+    > = z.object({
+        interval: CreateTeamTeamsResponse200Interval$.outboundSchema,
+        intervalCount: z.number(),
+    });
 }
 
 /** @internal */
 export namespace CreateTeamMonitoring$ {
-    export const inboundSchema: z.ZodType<CreateTeamMonitoring, z.ZodTypeDef, unknown> = z
-        .object({
-            tier: z.number().optional(),
-            price: z.number(),
-            quantity: z.number(),
-            highestQuantity: z.number().optional(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            createdAt: z.number().optional(),
-            disabledAt: z.nullable(z.number()).optional(),
-            frequency: z.lazy(() => CreateTeamTeamsResponse200Frequency$.inboundSchema).optional(),
-            maxQuantity: z.number().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                quantity: v.quantity,
-                ...(v.highestQuantity === undefined
-                    ? null
-                    : { highestQuantity: v.highestQuantity }),
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.createdAt === undefined ? null : { createdAt: v.createdAt }),
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.frequency === undefined ? null : { frequency: v.frequency }),
-                ...(v.maxQuantity === undefined ? null : { maxQuantity: v.maxQuantity }),
-            };
-        });
+    export const inboundSchema: z.ZodType<CreateTeamMonitoring, z.ZodTypeDef, unknown> = z.object({
+        tier: z.number().optional(),
+        price: z.number(),
+        quantity: z.number(),
+        highestQuantity: z.number().optional(),
+        name: z.string().optional(),
+        hidden: z.boolean(),
+        createdAt: z.number().optional(),
+        disabledAt: z.nullable(z.number()).optional(),
+        frequency: z.lazy(() => CreateTeamTeamsResponse200Frequency$.inboundSchema).optional(),
+        maxQuantity: z.number().optional(),
+    });
 
     export type Outbound = {
         tier?: number | undefined;
@@ -2242,8 +1905,8 @@ export namespace CreateTeamMonitoring$ {
         maxQuantity?: number | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamMonitoring> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamMonitoring> = z.object(
+        {
             tier: z.number().optional(),
             price: z.number(),
             quantity: z.number(),
@@ -2254,29 +1917,18 @@ export namespace CreateTeamMonitoring$ {
             disabledAt: z.nullable(z.number()).optional(),
             frequency: z.lazy(() => CreateTeamTeamsResponse200Frequency$.outboundSchema).optional(),
             maxQuantity: z.number().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                quantity: v.quantity,
-                ...(v.highestQuantity === undefined
-                    ? null
-                    : { highestQuantity: v.highestQuantity }),
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.createdAt === undefined ? null : { createdAt: v.createdAt }),
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.frequency === undefined ? null : { frequency: v.frequency }),
-                ...(v.maxQuantity === undefined ? null : { maxQuantity: v.maxQuantity }),
-            };
-        });
+        }
+    );
 }
 
 /** @internal */
 export namespace CreateTeamTeamsResponse200ApplicationJSONInterval$ {
-    export const inboundSchema = z.nativeEnum(CreateTeamTeamsResponse200ApplicationJSONInterval);
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<
+        typeof CreateTeamTeamsResponse200ApplicationJSONInterval
+    > = z.nativeEnum(CreateTeamTeamsResponse200ApplicationJSONInterval);
+    export const outboundSchema: z.ZodNativeEnum<
+        typeof CreateTeamTeamsResponse200ApplicationJSONInterval
+    > = inboundSchema;
 }
 
 /** @internal */
@@ -2285,17 +1937,10 @@ export namespace CreateTeamTeamsResponse200ApplicationJSONFrequency$ {
         CreateTeamTeamsResponse200ApplicationJSONFrequency,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            interval: CreateTeamTeamsResponse200ApplicationJSONInterval$.inboundSchema,
-            intervalCount: z.number(),
-        })
-        .transform((v) => {
-            return {
-                interval: v.interval,
-                intervalCount: v.intervalCount,
-            };
-        });
+    > = z.object({
+        interval: CreateTeamTeamsResponse200ApplicationJSONInterval$.inboundSchema,
+        intervalCount: z.number(),
+    });
 
     export type Outbound = {
         interval: string;
@@ -2306,23 +1951,16 @@ export namespace CreateTeamTeamsResponse200ApplicationJSONFrequency$ {
         Outbound,
         z.ZodTypeDef,
         CreateTeamTeamsResponse200ApplicationJSONFrequency
-    > = z
-        .object({
-            interval: CreateTeamTeamsResponse200ApplicationJSONInterval$.outboundSchema,
-            intervalCount: z.number(),
-        })
-        .transform((v) => {
-            return {
-                interval: v.interval,
-                intervalCount: v.intervalCount,
-            };
-        });
+    > = z.object({
+        interval: CreateTeamTeamsResponse200ApplicationJSONInterval$.outboundSchema,
+        intervalCount: z.number(),
+    });
 }
 
 /** @internal */
 export namespace CreateTeamPasswordProtection$ {
-    export const inboundSchema: z.ZodType<CreateTeamPasswordProtection, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<CreateTeamPasswordProtection, z.ZodTypeDef, unknown> =
+        z.object({
             tier: z.number().optional(),
             price: z.number(),
             quantity: z.number(),
@@ -2335,22 +1973,6 @@ export namespace CreateTeamPasswordProtection$ {
                 .lazy(() => CreateTeamTeamsResponse200ApplicationJSONFrequency$.inboundSchema)
                 .optional(),
             maxQuantity: z.number().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                quantity: v.quantity,
-                ...(v.highestQuantity === undefined
-                    ? null
-                    : { highestQuantity: v.highestQuantity }),
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.createdAt === undefined ? null : { createdAt: v.createdAt }),
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.frequency === undefined ? null : { frequency: v.frequency }),
-                ...(v.maxQuantity === undefined ? null : { maxQuantity: v.maxQuantity }),
-            };
         });
 
     export type Outbound = {
@@ -2366,8 +1988,8 @@ export namespace CreateTeamPasswordProtection$ {
         maxQuantity?: number | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamPasswordProtection> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamPasswordProtection> =
+        z.object({
             tier: z.number().optional(),
             price: z.number(),
             quantity: z.number(),
@@ -2380,31 +2002,17 @@ export namespace CreateTeamPasswordProtection$ {
                 .lazy(() => CreateTeamTeamsResponse200ApplicationJSONFrequency$.outboundSchema)
                 .optional(),
             maxQuantity: z.number().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                quantity: v.quantity,
-                ...(v.highestQuantity === undefined
-                    ? null
-                    : { highestQuantity: v.highestQuantity }),
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.createdAt === undefined ? null : { createdAt: v.createdAt }),
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.frequency === undefined ? null : { frequency: v.frequency }),
-                ...(v.maxQuantity === undefined ? null : { maxQuantity: v.maxQuantity }),
-            };
         });
 }
 
 /** @internal */
 export namespace CreateTeamTeamsResponse200ApplicationJSONResponseBodyInterval$ {
-    export const inboundSchema = z.nativeEnum(
-        CreateTeamTeamsResponse200ApplicationJSONResponseBodyInterval
-    );
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<
+        typeof CreateTeamTeamsResponse200ApplicationJSONResponseBodyInterval
+    > = z.nativeEnum(CreateTeamTeamsResponse200ApplicationJSONResponseBodyInterval);
+    export const outboundSchema: z.ZodNativeEnum<
+        typeof CreateTeamTeamsResponse200ApplicationJSONResponseBodyInterval
+    > = inboundSchema;
 }
 
 /** @internal */
@@ -2413,17 +2021,10 @@ export namespace CreateTeamTeamsResponse200ApplicationJSONResponseBodyFrequency$
         CreateTeamTeamsResponse200ApplicationJSONResponseBodyFrequency,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            interval: CreateTeamTeamsResponse200ApplicationJSONResponseBodyInterval$.inboundSchema,
-            intervalCount: z.number(),
-        })
-        .transform((v) => {
-            return {
-                interval: v.interval,
-                intervalCount: v.intervalCount,
-            };
-        });
+    > = z.object({
+        interval: CreateTeamTeamsResponse200ApplicationJSONResponseBodyInterval$.inboundSchema,
+        intervalCount: z.number(),
+    });
 
     export type Outbound = {
         interval: string;
@@ -2434,17 +2035,10 @@ export namespace CreateTeamTeamsResponse200ApplicationJSONResponseBodyFrequency$
         Outbound,
         z.ZodTypeDef,
         CreateTeamTeamsResponse200ApplicationJSONResponseBodyFrequency
-    > = z
-        .object({
-            interval: CreateTeamTeamsResponse200ApplicationJSONResponseBodyInterval$.outboundSchema,
-            intervalCount: z.number(),
-        })
-        .transform((v) => {
-            return {
-                interval: v.interval,
-                intervalCount: v.intervalCount,
-            };
-        });
+    > = z.object({
+        interval: CreateTeamTeamsResponse200ApplicationJSONResponseBodyInterval$.outboundSchema,
+        intervalCount: z.number(),
+    });
 }
 
 /** @internal */
@@ -2453,40 +2047,22 @@ export namespace CreateTeamPreviewDeploymentSuffix$ {
         CreateTeamPreviewDeploymentSuffix,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            tier: z.number().optional(),
-            price: z.number(),
-            quantity: z.number(),
-            highestQuantity: z.number().optional(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            createdAt: z.number().optional(),
-            disabledAt: z.nullable(z.number()).optional(),
-            frequency: z
-                .lazy(
-                    () =>
-                        CreateTeamTeamsResponse200ApplicationJSONResponseBodyFrequency$.inboundSchema
-                )
-                .optional(),
-            maxQuantity: z.number().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                quantity: v.quantity,
-                ...(v.highestQuantity === undefined
-                    ? null
-                    : { highestQuantity: v.highestQuantity }),
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.createdAt === undefined ? null : { createdAt: v.createdAt }),
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.frequency === undefined ? null : { frequency: v.frequency }),
-                ...(v.maxQuantity === undefined ? null : { maxQuantity: v.maxQuantity }),
-            };
-        });
+    > = z.object({
+        tier: z.number().optional(),
+        price: z.number(),
+        quantity: z.number(),
+        highestQuantity: z.number().optional(),
+        name: z.string().optional(),
+        hidden: z.boolean(),
+        createdAt: z.number().optional(),
+        disabledAt: z.nullable(z.number()).optional(),
+        frequency: z
+            .lazy(
+                () => CreateTeamTeamsResponse200ApplicationJSONResponseBodyFrequency$.inboundSchema
+            )
+            .optional(),
+        maxQuantity: z.number().optional(),
+    });
 
     export type Outbound = {
         tier?: number | undefined;
@@ -2507,48 +2083,32 @@ export namespace CreateTeamPreviewDeploymentSuffix$ {
         Outbound,
         z.ZodTypeDef,
         CreateTeamPreviewDeploymentSuffix
-    > = z
-        .object({
-            tier: z.number().optional(),
-            price: z.number(),
-            quantity: z.number(),
-            highestQuantity: z.number().optional(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            createdAt: z.number().optional(),
-            disabledAt: z.nullable(z.number()).optional(),
-            frequency: z
-                .lazy(
-                    () =>
-                        CreateTeamTeamsResponse200ApplicationJSONResponseBodyFrequency$.outboundSchema
-                )
-                .optional(),
-            maxQuantity: z.number().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                quantity: v.quantity,
-                ...(v.highestQuantity === undefined
-                    ? null
-                    : { highestQuantity: v.highestQuantity }),
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.createdAt === undefined ? null : { createdAt: v.createdAt }),
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.frequency === undefined ? null : { frequency: v.frequency }),
-                ...(v.maxQuantity === undefined ? null : { maxQuantity: v.maxQuantity }),
-            };
-        });
+    > = z.object({
+        tier: z.number().optional(),
+        price: z.number(),
+        quantity: z.number(),
+        highestQuantity: z.number().optional(),
+        name: z.string().optional(),
+        hidden: z.boolean(),
+        createdAt: z.number().optional(),
+        disabledAt: z.nullable(z.number()).optional(),
+        frequency: z
+            .lazy(
+                () => CreateTeamTeamsResponse200ApplicationJSONResponseBodyFrequency$.outboundSchema
+            )
+            .optional(),
+        maxQuantity: z.number().optional(),
+    });
 }
 
 /** @internal */
 export namespace CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInterval$ {
-    export const inboundSchema = z.nativeEnum(
-        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInterval
-    );
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<
+        typeof CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInterval
+    > = z.nativeEnum(CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInterval);
+    export const outboundSchema: z.ZodNativeEnum<
+        typeof CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInterval
+    > = inboundSchema;
 }
 
 /** @internal */
@@ -2557,18 +2117,11 @@ export namespace CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingFre
         CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingFrequency,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            interval:
-                CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInterval$.inboundSchema,
-            intervalCount: z.number(),
-        })
-        .transform((v) => {
-            return {
-                interval: v.interval,
-                intervalCount: v.intervalCount,
-            };
-        });
+    > = z.object({
+        interval:
+            CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInterval$.inboundSchema,
+        intervalCount: z.number(),
+    });
 
     export type Outbound = {
         interval: string;
@@ -2579,56 +2132,32 @@ export namespace CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingFre
         Outbound,
         z.ZodTypeDef,
         CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingFrequency
-    > = z
-        .object({
-            interval:
-                CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInterval$.outboundSchema,
-            intervalCount: z.number(),
-        })
-        .transform((v) => {
-            return {
-                interval: v.interval,
-                intervalCount: v.intervalCount,
-            };
-        });
+    > = z.object({
+        interval:
+            CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInterval$.outboundSchema,
+        intervalCount: z.number(),
+    });
 }
 
 /** @internal */
 export namespace CreateTeamSaml$ {
-    export const inboundSchema: z.ZodType<CreateTeamSaml, z.ZodTypeDef, unknown> = z
-        .object({
-            tier: z.number().optional(),
-            price: z.number(),
-            quantity: z.number(),
-            highestQuantity: z.number().optional(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            createdAt: z.number().optional(),
-            disabledAt: z.nullable(z.number()).optional(),
-            frequency: z
-                .lazy(
-                    () =>
-                        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingFrequency$.inboundSchema
-                )
-                .optional(),
-            maxQuantity: z.number().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                quantity: v.quantity,
-                ...(v.highestQuantity === undefined
-                    ? null
-                    : { highestQuantity: v.highestQuantity }),
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.createdAt === undefined ? null : { createdAt: v.createdAt }),
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.frequency === undefined ? null : { frequency: v.frequency }),
-                ...(v.maxQuantity === undefined ? null : { maxQuantity: v.maxQuantity }),
-            };
-        });
+    export const inboundSchema: z.ZodType<CreateTeamSaml, z.ZodTypeDef, unknown> = z.object({
+        tier: z.number().optional(),
+        price: z.number(),
+        quantity: z.number(),
+        highestQuantity: z.number().optional(),
+        name: z.string().optional(),
+        hidden: z.boolean(),
+        createdAt: z.number().optional(),
+        disabledAt: z.nullable(z.number()).optional(),
+        frequency: z
+            .lazy(
+                () =>
+                    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingFrequency$.inboundSchema
+            )
+            .optional(),
+        maxQuantity: z.number().optional(),
+    });
 
     export type Outbound = {
         tier?: number | undefined;
@@ -2645,48 +2174,35 @@ export namespace CreateTeamSaml$ {
         maxQuantity?: number | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamSaml> = z
-        .object({
-            tier: z.number().optional(),
-            price: z.number(),
-            quantity: z.number(),
-            highestQuantity: z.number().optional(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            createdAt: z.number().optional(),
-            disabledAt: z.nullable(z.number()).optional(),
-            frequency: z
-                .lazy(
-                    () =>
-                        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingFrequency$.outboundSchema
-                )
-                .optional(),
-            maxQuantity: z.number().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                quantity: v.quantity,
-                ...(v.highestQuantity === undefined
-                    ? null
-                    : { highestQuantity: v.highestQuantity }),
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.createdAt === undefined ? null : { createdAt: v.createdAt }),
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.frequency === undefined ? null : { frequency: v.frequency }),
-                ...(v.maxQuantity === undefined ? null : { maxQuantity: v.maxQuantity }),
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamSaml> = z.object({
+        tier: z.number().optional(),
+        price: z.number(),
+        quantity: z.number(),
+        highestQuantity: z.number().optional(),
+        name: z.string().optional(),
+        hidden: z.boolean(),
+        createdAt: z.number().optional(),
+        disabledAt: z.nullable(z.number()).optional(),
+        frequency: z
+            .lazy(
+                () =>
+                    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingFrequency$.outboundSchema
+            )
+            .optional(),
+        maxQuantity: z.number().optional(),
+    });
 }
 
 /** @internal */
 export namespace CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsInterval$ {
-    export const inboundSchema = z.nativeEnum(
+    export const inboundSchema: z.ZodNativeEnum<
+        typeof CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsInterval
+    > = z.nativeEnum(
         CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsInterval
     );
-    export const outboundSchema = inboundSchema;
+    export const outboundSchema: z.ZodNativeEnum<
+        typeof CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsInterval
+    > = inboundSchema;
 }
 
 /** @internal */
@@ -2695,18 +2211,11 @@ export namespace CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInv
         CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFrequency,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            interval:
-                CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsInterval$.inboundSchema,
-            intervalCount: z.number(),
-        })
-        .transform((v) => {
-            return {
-                interval: v.interval,
-                intervalCount: v.intervalCount,
-            };
-        });
+    > = z.object({
+        interval:
+            CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsInterval$.inboundSchema,
+        intervalCount: z.number(),
+    });
 
     export type Outbound = {
         interval: string;
@@ -2717,56 +2226,32 @@ export namespace CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInv
         Outbound,
         z.ZodTypeDef,
         CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFrequency
-    > = z
-        .object({
-            interval:
-                CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsInterval$.outboundSchema,
-            intervalCount: z.number(),
-        })
-        .transform((v) => {
-            return {
-                interval: v.interval,
-                intervalCount: v.intervalCount,
-            };
-        });
+    > = z.object({
+        interval:
+            CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsInterval$.outboundSchema,
+        intervalCount: z.number(),
+    });
 }
 
 /** @internal */
 export namespace CreateTeamTeamSeats$ {
-    export const inboundSchema: z.ZodType<CreateTeamTeamSeats, z.ZodTypeDef, unknown> = z
-        .object({
-            tier: z.number().optional(),
-            price: z.number(),
-            quantity: z.number(),
-            highestQuantity: z.number().optional(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            createdAt: z.number().optional(),
-            disabledAt: z.nullable(z.number()).optional(),
-            frequency: z
-                .lazy(
-                    () =>
-                        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFrequency$.inboundSchema
-                )
-                .optional(),
-            maxQuantity: z.number().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                quantity: v.quantity,
-                ...(v.highestQuantity === undefined
-                    ? null
-                    : { highestQuantity: v.highestQuantity }),
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.createdAt === undefined ? null : { createdAt: v.createdAt }),
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.frequency === undefined ? null : { frequency: v.frequency }),
-                ...(v.maxQuantity === undefined ? null : { maxQuantity: v.maxQuantity }),
-            };
-        });
+    export const inboundSchema: z.ZodType<CreateTeamTeamSeats, z.ZodTypeDef, unknown> = z.object({
+        tier: z.number().optional(),
+        price: z.number(),
+        quantity: z.number(),
+        highestQuantity: z.number().optional(),
+        name: z.string().optional(),
+        hidden: z.boolean(),
+        createdAt: z.number().optional(),
+        disabledAt: z.nullable(z.number()).optional(),
+        frequency: z
+            .lazy(
+                () =>
+                    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFrequency$.inboundSchema
+            )
+            .optional(),
+        maxQuantity: z.number().optional(),
+    });
 
     export type Outbound = {
         tier?: number | undefined;
@@ -2783,48 +2268,35 @@ export namespace CreateTeamTeamSeats$ {
         maxQuantity?: number | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamTeamSeats> = z
-        .object({
-            tier: z.number().optional(),
-            price: z.number(),
-            quantity: z.number(),
-            highestQuantity: z.number().optional(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            createdAt: z.number().optional(),
-            disabledAt: z.nullable(z.number()).optional(),
-            frequency: z
-                .lazy(
-                    () =>
-                        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFrequency$.outboundSchema
-                )
-                .optional(),
-            maxQuantity: z.number().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                quantity: v.quantity,
-                ...(v.highestQuantity === undefined
-                    ? null
-                    : { highestQuantity: v.highestQuantity }),
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.createdAt === undefined ? null : { createdAt: v.createdAt }),
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.frequency === undefined ? null : { frequency: v.frequency }),
-                ...(v.maxQuantity === undefined ? null : { maxQuantity: v.maxQuantity }),
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamTeamSeats> = z.object({
+        tier: z.number().optional(),
+        price: z.number(),
+        quantity: z.number(),
+        highestQuantity: z.number().optional(),
+        name: z.string().optional(),
+        hidden: z.boolean(),
+        createdAt: z.number().optional(),
+        disabledAt: z.nullable(z.number()).optional(),
+        frequency: z
+            .lazy(
+                () =>
+                    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFrequency$.outboundSchema
+            )
+            .optional(),
+        maxQuantity: z.number().optional(),
+    });
 }
 
 /** @internal */
 export namespace CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWebAnalyticsInterval$ {
-    export const inboundSchema = z.nativeEnum(
+    export const inboundSchema: z.ZodNativeEnum<
+        typeof CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWebAnalyticsInterval
+    > = z.nativeEnum(
         CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWebAnalyticsInterval
     );
-    export const outboundSchema = inboundSchema;
+    export const outboundSchema: z.ZodNativeEnum<
+        typeof CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWebAnalyticsInterval
+    > = inboundSchema;
 }
 
 /** @internal */
@@ -2833,18 +2305,11 @@ export namespace CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInv
         CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWebAnalyticsFrequency,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            interval:
-                CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWebAnalyticsInterval$.inboundSchema,
-            intervalCount: z.number(),
-        })
-        .transform((v) => {
-            return {
-                interval: v.interval,
-                intervalCount: v.intervalCount,
-            };
-        });
+    > = z.object({
+        interval:
+            CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWebAnalyticsInterval$.inboundSchema,
+        intervalCount: z.number(),
+    });
 
     export type Outbound = {
         interval: string;
@@ -2855,24 +2320,17 @@ export namespace CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInv
         Outbound,
         z.ZodTypeDef,
         CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWebAnalyticsFrequency
-    > = z
-        .object({
-            interval:
-                CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWebAnalyticsInterval$.outboundSchema,
-            intervalCount: z.number(),
-        })
-        .transform((v) => {
-            return {
-                interval: v.interval,
-                intervalCount: v.intervalCount,
-            };
-        });
+    > = z.object({
+        interval:
+            CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWebAnalyticsInterval$.outboundSchema,
+        intervalCount: z.number(),
+    });
 }
 
 /** @internal */
 export namespace CreateTeamWebAnalytics$ {
-    export const inboundSchema: z.ZodType<CreateTeamWebAnalytics, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<CreateTeamWebAnalytics, z.ZodTypeDef, unknown> = z.object(
+        {
             tier: z.number().optional(),
             price: z.number(),
             quantity: z.number(),
@@ -2888,23 +2346,8 @@ export namespace CreateTeamWebAnalytics$ {
                 )
                 .optional(),
             maxQuantity: z.number().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                quantity: v.quantity,
-                ...(v.highestQuantity === undefined
-                    ? null
-                    : { highestQuantity: v.highestQuantity }),
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.createdAt === undefined ? null : { createdAt: v.createdAt }),
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.frequency === undefined ? null : { frequency: v.frequency }),
-                ...(v.maxQuantity === undefined ? null : { maxQuantity: v.maxQuantity }),
-            };
-        });
+        }
+    );
 
     export type Outbound = {
         tier?: number | undefined;
@@ -2921,8 +2364,8 @@ export namespace CreateTeamWebAnalytics$ {
         maxQuantity?: number | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamWebAnalytics> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamWebAnalytics> =
+        z.object({
             tier: z.number().optional(),
             price: z.number(),
             quantity: z.number(),
@@ -2938,22 +2381,6 @@ export namespace CreateTeamWebAnalytics$ {
                 )
                 .optional(),
             maxQuantity: z.number().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                quantity: v.quantity,
-                ...(v.highestQuantity === undefined
-                    ? null
-                    : { highestQuantity: v.highestQuantity }),
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.createdAt === undefined ? null : { createdAt: v.createdAt }),
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.frequency === undefined ? null : { frequency: v.frequency }),
-                ...(v.maxQuantity === undefined ? null : { maxQuantity: v.maxQuantity }),
-            };
         });
 }
 
@@ -2963,44 +2390,30 @@ export namespace CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInv
         CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsAnalyticsUsageMatrix,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 
     export type Outbound = {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
     export const outboundSchema: z.ZodType<
         Outbound,
         z.ZodTypeDef,
         CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsAnalyticsUsageMatrix
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 }
 
 /** @internal */
 export namespace CreateTeamAnalyticsUsage$ {
-    export const inboundSchema: z.ZodType<CreateTeamAnalyticsUsage, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<CreateTeamAnalyticsUsage, z.ZodTypeDef, unknown> =
+        z.object({
             matrix: z
                 .lazy(
                     () =>
@@ -3015,19 +2428,6 @@ export namespace CreateTeamAnalyticsUsage$ {
             hidden: z.boolean(),
             disabledAt: z.nullable(z.number()).optional(),
             enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
         });
 
     export type Outbound = {
@@ -3044,8 +2444,8 @@ export namespace CreateTeamAnalyticsUsage$ {
         enabledAt?: number | null | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamAnalyticsUsage> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamAnalyticsUsage> =
+        z.object({
             matrix: z
                 .lazy(
                     () =>
@@ -3060,81 +2460,40 @@ export namespace CreateTeamAnalyticsUsage$ {
             hidden: z.boolean(),
             disabledAt: z.nullable(z.number()).optional(),
             enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
         });
 }
 
 /** @internal */
 export namespace CreateTeamMatrix$ {
-    export const inboundSchema: z.ZodType<CreateTeamMatrix, z.ZodTypeDef, unknown> = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    export const inboundSchema: z.ZodType<CreateTeamMatrix, z.ZodTypeDef, unknown> = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 
     export type Outbound = {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamMatrix> = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamMatrix> = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 }
 
 /** @internal */
 export namespace CreateTeamArtifacts$ {
-    export const inboundSchema: z.ZodType<CreateTeamArtifacts, z.ZodTypeDef, unknown> = z
-        .object({
-            matrix: z.lazy(() => CreateTeamMatrix$.inboundSchema).optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+    export const inboundSchema: z.ZodType<CreateTeamArtifacts, z.ZodTypeDef, unknown> = z.object({
+        matrix: z.lazy(() => CreateTeamMatrix$.inboundSchema).optional(),
+        tier: z.number().optional(),
+        price: z.number(),
+        batch: z.number(),
+        threshold: z.number(),
+        name: z.string().optional(),
+        hidden: z.boolean(),
+        disabledAt: z.nullable(z.number()).optional(),
+        enabledAt: z.nullable(z.number()).optional(),
+    });
 
     export type Outbound = {
         matrix?: CreateTeamMatrix$.Outbound | undefined;
@@ -3148,92 +2507,51 @@ export namespace CreateTeamArtifacts$ {
         enabledAt?: number | null | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamArtifacts> = z
-        .object({
-            matrix: z.lazy(() => CreateTeamMatrix$.outboundSchema).optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamArtifacts> = z.object({
+        matrix: z.lazy(() => CreateTeamMatrix$.outboundSchema).optional(),
+        tier: z.number().optional(),
+        price: z.number(),
+        batch: z.number(),
+        threshold: z.number(),
+        name: z.string().optional(),
+        hidden: z.boolean(),
+        disabledAt: z.nullable(z.number()).optional(),
+        enabledAt: z.nullable(z.number()).optional(),
+    });
 }
 
 /** @internal */
 export namespace CreateTeamTeamsMatrix$ {
-    export const inboundSchema: z.ZodType<CreateTeamTeamsMatrix, z.ZodTypeDef, unknown> = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    export const inboundSchema: z.ZodType<CreateTeamTeamsMatrix, z.ZodTypeDef, unknown> = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 
     export type Outbound = {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamTeamsMatrix> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamTeamsMatrix> =
+        z.object({
             defaultUnitPrice: z.string(),
             dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
         });
 }
 
 /** @internal */
 export namespace CreateTeamBandwidth$ {
-    export const inboundSchema: z.ZodType<CreateTeamBandwidth, z.ZodTypeDef, unknown> = z
-        .object({
-            matrix: z.lazy(() => CreateTeamTeamsMatrix$.inboundSchema).optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+    export const inboundSchema: z.ZodType<CreateTeamBandwidth, z.ZodTypeDef, unknown> = z.object({
+        matrix: z.lazy(() => CreateTeamTeamsMatrix$.inboundSchema).optional(),
+        tier: z.number().optional(),
+        price: z.number(),
+        batch: z.number(),
+        threshold: z.number(),
+        name: z.string().optional(),
+        hidden: z.boolean(),
+        disabledAt: z.nullable(z.number()).optional(),
+        enabledAt: z.nullable(z.number()).optional(),
+    });
 
     export type Outbound = {
         matrix?: CreateTeamTeamsMatrix$.Outbound | undefined;
@@ -3247,93 +2565,52 @@ export namespace CreateTeamBandwidth$ {
         enabledAt?: number | null | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamBandwidth> = z
-        .object({
-            matrix: z.lazy(() => CreateTeamTeamsMatrix$.outboundSchema).optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamBandwidth> = z.object({
+        matrix: z.lazy(() => CreateTeamTeamsMatrix$.outboundSchema).optional(),
+        tier: z.number().optional(),
+        price: z.number(),
+        batch: z.number(),
+        threshold: z.number(),
+        name: z.string().optional(),
+        hidden: z.boolean(),
+        disabledAt: z.nullable(z.number()).optional(),
+        enabledAt: z.nullable(z.number()).optional(),
+    });
 }
 
 /** @internal */
 export namespace CreateTeamTeamsResponseMatrix$ {
-    export const inboundSchema: z.ZodType<CreateTeamTeamsResponseMatrix, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<CreateTeamTeamsResponseMatrix, z.ZodTypeDef, unknown> =
+        z.object({
             defaultUnitPrice: z.string(),
             dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
         });
 
     export type Outbound = {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
     export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamTeamsResponseMatrix> =
-        z
-            .object({
-                defaultUnitPrice: z.string(),
-                dimensionPrices: z.record(z.string()),
-            })
-            .transform((v) => {
-                return {
-                    defaultUnitPrice: v.defaultUnitPrice,
-                    dimensionPrices: v.dimensionPrices,
-                };
-            });
+        z.object({
+            defaultUnitPrice: z.string(),
+            dimensionPrices: z.record(z.string()),
+        });
 }
 
 /** @internal */
 export namespace CreateTeamBlobStores$ {
-    export const inboundSchema: z.ZodType<CreateTeamBlobStores, z.ZodTypeDef, unknown> = z
-        .object({
-            matrix: z.lazy(() => CreateTeamTeamsResponseMatrix$.inboundSchema).optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+    export const inboundSchema: z.ZodType<CreateTeamBlobStores, z.ZodTypeDef, unknown> = z.object({
+        matrix: z.lazy(() => CreateTeamTeamsResponseMatrix$.inboundSchema).optional(),
+        tier: z.number().optional(),
+        price: z.number(),
+        batch: z.number(),
+        threshold: z.number(),
+        name: z.string().optional(),
+        hidden: z.boolean(),
+        disabledAt: z.nullable(z.number()).optional(),
+        enabledAt: z.nullable(z.number()).optional(),
+    });
 
     export type Outbound = {
         matrix?: CreateTeamTeamsResponseMatrix$.Outbound | undefined;
@@ -3347,8 +2624,8 @@ export namespace CreateTeamBlobStores$ {
         enabledAt?: number | null | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamBlobStores> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamBlobStores> = z.object(
+        {
             matrix: z.lazy(() => CreateTeamTeamsResponseMatrix$.outboundSchema).optional(),
             tier: z.number().optional(),
             price: z.number(),
@@ -3358,57 +2635,31 @@ export namespace CreateTeamBlobStores$ {
             hidden: z.boolean(),
             disabledAt: z.nullable(z.number()).optional(),
             enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+        }
+    );
 }
 
 /** @internal */
 export namespace CreateTeamTeamsResponse200Matrix$ {
     export const inboundSchema: z.ZodType<CreateTeamTeamsResponse200Matrix, z.ZodTypeDef, unknown> =
-        z
-            .object({
-                defaultUnitPrice: z.string(),
-                dimensionPrices: z.record(z.string()),
-            })
-            .transform((v) => {
-                return {
-                    defaultUnitPrice: v.defaultUnitPrice,
-                    dimensionPrices: v.dimensionPrices,
-                };
-            });
+        z.object({
+            defaultUnitPrice: z.string(),
+            dimensionPrices: z.record(z.string()),
+        });
 
     export type Outbound = {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
     export const outboundSchema: z.ZodType<
         Outbound,
         z.ZodTypeDef,
         CreateTeamTeamsResponse200Matrix
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 }
 
 /** @internal */
@@ -3417,31 +2668,17 @@ export namespace CreateTeamBlobTotalAdvancedRequests$ {
         CreateTeamBlobTotalAdvancedRequests,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            matrix: z.lazy(() => CreateTeamTeamsResponse200Matrix$.inboundSchema).optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+    > = z.object({
+        matrix: z.lazy(() => CreateTeamTeamsResponse200Matrix$.inboundSchema).optional(),
+        tier: z.number().optional(),
+        price: z.number(),
+        batch: z.number(),
+        threshold: z.number(),
+        name: z.string().optional(),
+        hidden: z.boolean(),
+        disabledAt: z.nullable(z.number()).optional(),
+        enabledAt: z.nullable(z.number()).optional(),
+    });
 
     export type Outbound = {
         matrix?: CreateTeamTeamsResponse200Matrix$.Outbound | undefined;
@@ -3459,31 +2696,17 @@ export namespace CreateTeamBlobTotalAdvancedRequests$ {
         Outbound,
         z.ZodTypeDef,
         CreateTeamBlobTotalAdvancedRequests
-    > = z
-        .object({
-            matrix: z.lazy(() => CreateTeamTeamsResponse200Matrix$.outboundSchema).optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+    > = z.object({
+        matrix: z.lazy(() => CreateTeamTeamsResponse200Matrix$.outboundSchema).optional(),
+        tier: z.number().optional(),
+        price: z.number(),
+        batch: z.number(),
+        threshold: z.number(),
+        name: z.string().optional(),
+        hidden: z.boolean(),
+        disabledAt: z.nullable(z.number()).optional(),
+        enabledAt: z.nullable(z.number()).optional(),
+    });
 }
 
 /** @internal */
@@ -3492,38 +2715,24 @@ export namespace CreateTeamTeamsResponse200ApplicationJSONMatrix$ {
         CreateTeamTeamsResponse200ApplicationJSONMatrix,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 
     export type Outbound = {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
     export const outboundSchema: z.ZodType<
         Outbound,
         z.ZodTypeDef,
         CreateTeamTeamsResponse200ApplicationJSONMatrix
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 }
 
 /** @internal */
@@ -3532,33 +2741,19 @@ export namespace CreateTeamBlobTotalAvgSizeInBytes$ {
         CreateTeamBlobTotalAvgSizeInBytes,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            matrix: z
-                .lazy(() => CreateTeamTeamsResponse200ApplicationJSONMatrix$.inboundSchema)
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+    > = z.object({
+        matrix: z
+            .lazy(() => CreateTeamTeamsResponse200ApplicationJSONMatrix$.inboundSchema)
+            .optional(),
+        tier: z.number().optional(),
+        price: z.number(),
+        batch: z.number(),
+        threshold: z.number(),
+        name: z.string().optional(),
+        hidden: z.boolean(),
+        disabledAt: z.nullable(z.number()).optional(),
+        enabledAt: z.nullable(z.number()).optional(),
+    });
 
     export type Outbound = {
         matrix?: CreateTeamTeamsResponse200ApplicationJSONMatrix$.Outbound | undefined;
@@ -3576,33 +2771,19 @@ export namespace CreateTeamBlobTotalAvgSizeInBytes$ {
         Outbound,
         z.ZodTypeDef,
         CreateTeamBlobTotalAvgSizeInBytes
-    > = z
-        .object({
-            matrix: z
-                .lazy(() => CreateTeamTeamsResponse200ApplicationJSONMatrix$.outboundSchema)
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+    > = z.object({
+        matrix: z
+            .lazy(() => CreateTeamTeamsResponse200ApplicationJSONMatrix$.outboundSchema)
+            .optional(),
+        tier: z.number().optional(),
+        price: z.number(),
+        batch: z.number(),
+        threshold: z.number(),
+        name: z.string().optional(),
+        hidden: z.boolean(),
+        disabledAt: z.nullable(z.number()).optional(),
+        enabledAt: z.nullable(z.number()).optional(),
+    });
 }
 
 /** @internal */
@@ -3611,38 +2792,24 @@ export namespace CreateTeamTeamsResponse200ApplicationJSONResponseBodyMatrix$ {
         CreateTeamTeamsResponse200ApplicationJSONResponseBodyMatrix,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 
     export type Outbound = {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
     export const outboundSchema: z.ZodType<
         Outbound,
         z.ZodTypeDef,
         CreateTeamTeamsResponse200ApplicationJSONResponseBodyMatrix
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 }
 
 /** @internal */
@@ -3651,35 +2818,19 @@ export namespace CreateTeamBlobTotalGetResponseObjectSizeInBytes$ {
         CreateTeamBlobTotalGetResponseObjectSizeInBytes,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            matrix: z
-                .lazy(
-                    () => CreateTeamTeamsResponse200ApplicationJSONResponseBodyMatrix$.inboundSchema
-                )
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+    > = z.object({
+        matrix: z
+            .lazy(() => CreateTeamTeamsResponse200ApplicationJSONResponseBodyMatrix$.inboundSchema)
+            .optional(),
+        tier: z.number().optional(),
+        price: z.number(),
+        batch: z.number(),
+        threshold: z.number(),
+        name: z.string().optional(),
+        hidden: z.boolean(),
+        disabledAt: z.nullable(z.number()).optional(),
+        enabledAt: z.nullable(z.number()).optional(),
+    });
 
     export type Outbound = {
         matrix?: CreateTeamTeamsResponse200ApplicationJSONResponseBodyMatrix$.Outbound | undefined;
@@ -3697,36 +2848,19 @@ export namespace CreateTeamBlobTotalGetResponseObjectSizeInBytes$ {
         Outbound,
         z.ZodTypeDef,
         CreateTeamBlobTotalGetResponseObjectSizeInBytes
-    > = z
-        .object({
-            matrix: z
-                .lazy(
-                    () =>
-                        CreateTeamTeamsResponse200ApplicationJSONResponseBodyMatrix$.outboundSchema
-                )
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+    > = z.object({
+        matrix: z
+            .lazy(() => CreateTeamTeamsResponse200ApplicationJSONResponseBodyMatrix$.outboundSchema)
+            .optional(),
+        tier: z.number().optional(),
+        price: z.number(),
+        batch: z.number(),
+        threshold: z.number(),
+        name: z.string().optional(),
+        hidden: z.boolean(),
+        disabledAt: z.nullable(z.number()).optional(),
+        enabledAt: z.nullable(z.number()).optional(),
+    });
 }
 
 /** @internal */
@@ -3735,38 +2869,24 @@ export namespace CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingMat
         CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingMatrix,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 
     export type Outbound = {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
     export const outboundSchema: z.ZodType<
         Outbound,
         z.ZodTypeDef,
         CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingMatrix
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 }
 
 /** @internal */
@@ -3775,36 +2895,22 @@ export namespace CreateTeamBlobTotalSimpleRequests$ {
         CreateTeamBlobTotalSimpleRequests,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            matrix: z
-                .lazy(
-                    () =>
-                        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingMatrix$.inboundSchema
-                )
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+    > = z.object({
+        matrix: z
+            .lazy(
+                () =>
+                    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingMatrix$.inboundSchema
+            )
+            .optional(),
+        tier: z.number().optional(),
+        price: z.number(),
+        batch: z.number(),
+        threshold: z.number(),
+        name: z.string().optional(),
+        hidden: z.boolean(),
+        disabledAt: z.nullable(z.number()).optional(),
+        enabledAt: z.nullable(z.number()).optional(),
+    });
 
     export type Outbound = {
         matrix?:
@@ -3824,36 +2930,22 @@ export namespace CreateTeamBlobTotalSimpleRequests$ {
         Outbound,
         z.ZodTypeDef,
         CreateTeamBlobTotalSimpleRequests
-    > = z
-        .object({
-            matrix: z
-                .lazy(
-                    () =>
-                        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingMatrix$.outboundSchema
-                )
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+    > = z.object({
+        matrix: z
+            .lazy(
+                () =>
+                    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingMatrix$.outboundSchema
+            )
+            .optional(),
+        tier: z.number().optional(),
+        price: z.number(),
+        batch: z.number(),
+        threshold: z.number(),
+        name: z.string().optional(),
+        hidden: z.boolean(),
+        disabledAt: z.nullable(z.number()).optional(),
+        enabledAt: z.nullable(z.number()).optional(),
+    });
 }
 
 /** @internal */
@@ -3862,72 +2954,44 @@ export namespace CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInv
         CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsMatrix,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 
     export type Outbound = {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
     export const outboundSchema: z.ZodType<
         Outbound,
         z.ZodTypeDef,
         CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsMatrix
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 }
 
 /** @internal */
 export namespace CreateTeamBuildMinute$ {
-    export const inboundSchema: z.ZodType<CreateTeamBuildMinute, z.ZodTypeDef, unknown> = z
-        .object({
-            matrix: z
-                .lazy(
-                    () =>
-                        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsMatrix$.inboundSchema
-                )
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+    export const inboundSchema: z.ZodType<CreateTeamBuildMinute, z.ZodTypeDef, unknown> = z.object({
+        matrix: z
+            .lazy(
+                () =>
+                    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsMatrix$.inboundSchema
+            )
+            .optional(),
+        tier: z.number().optional(),
+        price: z.number(),
+        batch: z.number(),
+        threshold: z.number(),
+        name: z.string().optional(),
+        hidden: z.boolean(),
+        disabledAt: z.nullable(z.number()).optional(),
+        enabledAt: z.nullable(z.number()).optional(),
+    });
 
     export type Outbound = {
         matrix?:
@@ -3943,8 +3007,8 @@ export namespace CreateTeamBuildMinute$ {
         enabledAt?: number | null | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamBuildMinute> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamBuildMinute> =
+        z.object({
             matrix: z
                 .lazy(
                     () =>
@@ -3959,19 +3023,6 @@ export namespace CreateTeamBuildMinute$ {
             hidden: z.boolean(),
             disabledAt: z.nullable(z.number()).optional(),
             enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
         });
 }
 
@@ -3981,44 +3032,30 @@ export namespace CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInv
         CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsDataCacheReadMatrix,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 
     export type Outbound = {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
     export const outboundSchema: z.ZodType<
         Outbound,
         z.ZodTypeDef,
         CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsDataCacheReadMatrix
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 }
 
 /** @internal */
 export namespace CreateTeamDataCacheRead$ {
-    export const inboundSchema: z.ZodType<CreateTeamDataCacheRead, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<CreateTeamDataCacheRead, z.ZodTypeDef, unknown> =
+        z.object({
             matrix: z
                 .lazy(
                     () =>
@@ -4033,19 +3070,6 @@ export namespace CreateTeamDataCacheRead$ {
             hidden: z.boolean(),
             disabledAt: z.nullable(z.number()).optional(),
             enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
         });
 
     export type Outbound = {
@@ -4062,8 +3086,8 @@ export namespace CreateTeamDataCacheRead$ {
         enabledAt?: number | null | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamDataCacheRead> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamDataCacheRead> =
+        z.object({
             matrix: z
                 .lazy(
                     () =>
@@ -4078,19 +3102,6 @@ export namespace CreateTeamDataCacheRead$ {
             hidden: z.boolean(),
             disabledAt: z.nullable(z.number()).optional(),
             enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
         });
 }
 
@@ -4100,73 +3111,45 @@ export namespace CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInv
         CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsDataCacheRevalidationMatrix,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 
     export type Outbound = {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
     export const outboundSchema: z.ZodType<
         Outbound,
         z.ZodTypeDef,
         CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsDataCacheRevalidationMatrix
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 }
 
 /** @internal */
 export namespace CreateTeamDataCacheRevalidation$ {
     export const inboundSchema: z.ZodType<CreateTeamDataCacheRevalidation, z.ZodTypeDef, unknown> =
-        z
-            .object({
-                matrix: z
-                    .lazy(
-                        () =>
-                            CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsDataCacheRevalidationMatrix$.inboundSchema
-                    )
-                    .optional(),
-                tier: z.number().optional(),
-                price: z.number(),
-                batch: z.number(),
-                threshold: z.number(),
-                name: z.string().optional(),
-                hidden: z.boolean(),
-                disabledAt: z.nullable(z.number()).optional(),
-                enabledAt: z.nullable(z.number()).optional(),
-            })
-            .transform((v) => {
-                return {
-                    ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                    ...(v.tier === undefined ? null : { tier: v.tier }),
-                    price: v.price,
-                    batch: v.batch,
-                    threshold: v.threshold,
-                    ...(v.name === undefined ? null : { name: v.name }),
-                    hidden: v.hidden,
-                    ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                    ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-                };
-            });
+        z.object({
+            matrix: z
+                .lazy(
+                    () =>
+                        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsDataCacheRevalidationMatrix$.inboundSchema
+                )
+                .optional(),
+            tier: z.number().optional(),
+            price: z.number(),
+            batch: z.number(),
+            threshold: z.number(),
+            name: z.string().optional(),
+            hidden: z.boolean(),
+            disabledAt: z.nullable(z.number()).optional(),
+            enabledAt: z.nullable(z.number()).optional(),
+        });
 
     export type Outbound = {
         matrix?:
@@ -4186,36 +3169,22 @@ export namespace CreateTeamDataCacheRevalidation$ {
         Outbound,
         z.ZodTypeDef,
         CreateTeamDataCacheRevalidation
-    > = z
-        .object({
-            matrix: z
-                .lazy(
-                    () =>
-                        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsDataCacheRevalidationMatrix$.outboundSchema
-                )
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+    > = z.object({
+        matrix: z
+            .lazy(
+                () =>
+                    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsDataCacheRevalidationMatrix$.outboundSchema
+            )
+            .optional(),
+        tier: z.number().optional(),
+        price: z.number(),
+        batch: z.number(),
+        threshold: z.number(),
+        name: z.string().optional(),
+        hidden: z.boolean(),
+        disabledAt: z.nullable(z.number()).optional(),
+        enabledAt: z.nullable(z.number()).optional(),
+    });
 }
 
 /** @internal */
@@ -4224,44 +3193,30 @@ export namespace CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInv
         CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsDataCacheWriteMatrix,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 
     export type Outbound = {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
     export const outboundSchema: z.ZodType<
         Outbound,
         z.ZodTypeDef,
         CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsDataCacheWriteMatrix
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 }
 
 /** @internal */
 export namespace CreateTeamDataCacheWrite$ {
-    export const inboundSchema: z.ZodType<CreateTeamDataCacheWrite, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<CreateTeamDataCacheWrite, z.ZodTypeDef, unknown> =
+        z.object({
             matrix: z
                 .lazy(
                     () =>
@@ -4276,19 +3231,6 @@ export namespace CreateTeamDataCacheWrite$ {
             hidden: z.boolean(),
             disabledAt: z.nullable(z.number()).optional(),
             enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
         });
 
     export type Outbound = {
@@ -4305,8 +3247,8 @@ export namespace CreateTeamDataCacheWrite$ {
         enabledAt?: number | null | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamDataCacheWrite> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamDataCacheWrite> =
+        z.object({
             matrix: z
                 .lazy(
                     () =>
@@ -4321,19 +3263,6 @@ export namespace CreateTeamDataCacheWrite$ {
             hidden: z.boolean(),
             disabledAt: z.nullable(z.number()).optional(),
             enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
         });
 }
 
@@ -4343,44 +3272,30 @@ export namespace CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInv
         CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeConfigReadMatrix,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 
     export type Outbound = {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
     export const outboundSchema: z.ZodType<
         Outbound,
         z.ZodTypeDef,
         CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeConfigReadMatrix
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 }
 
 /** @internal */
 export namespace CreateTeamEdgeConfigRead$ {
-    export const inboundSchema: z.ZodType<CreateTeamEdgeConfigRead, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<CreateTeamEdgeConfigRead, z.ZodTypeDef, unknown> =
+        z.object({
             matrix: z
                 .lazy(
                     () =>
@@ -4395,19 +3310,6 @@ export namespace CreateTeamEdgeConfigRead$ {
             hidden: z.boolean(),
             disabledAt: z.nullable(z.number()).optional(),
             enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
         });
 
     export type Outbound = {
@@ -4424,8 +3326,8 @@ export namespace CreateTeamEdgeConfigRead$ {
         enabledAt?: number | null | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamEdgeConfigRead> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamEdgeConfigRead> =
+        z.object({
             matrix: z
                 .lazy(
                     () =>
@@ -4440,19 +3342,6 @@ export namespace CreateTeamEdgeConfigRead$ {
             hidden: z.boolean(),
             disabledAt: z.nullable(z.number()).optional(),
             enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
         });
 }
 
@@ -4462,44 +3351,30 @@ export namespace CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInv
         CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeConfigWriteMatrix,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 
     export type Outbound = {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
     export const outboundSchema: z.ZodType<
         Outbound,
         z.ZodTypeDef,
         CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeConfigWriteMatrix
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 }
 
 /** @internal */
 export namespace CreateTeamEdgeConfigWrite$ {
-    export const inboundSchema: z.ZodType<CreateTeamEdgeConfigWrite, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<CreateTeamEdgeConfigWrite, z.ZodTypeDef, unknown> =
+        z.object({
             matrix: z
                 .lazy(
                     () =>
@@ -4514,19 +3389,6 @@ export namespace CreateTeamEdgeConfigWrite$ {
             hidden: z.boolean(),
             disabledAt: z.nullable(z.number()).optional(),
             enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
         });
 
     export type Outbound = {
@@ -4543,8 +3405,8 @@ export namespace CreateTeamEdgeConfigWrite$ {
         enabledAt?: number | null | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamEdgeConfigWrite> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamEdgeConfigWrite> =
+        z.object({
             matrix: z
                 .lazy(
                     () =>
@@ -4559,19 +3421,6 @@ export namespace CreateTeamEdgeConfigWrite$ {
             hidden: z.boolean(),
             disabledAt: z.nullable(z.number()).optional(),
             enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
         });
 }
 
@@ -4581,38 +3430,24 @@ export namespace CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInv
         CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeFunctionExecutionUnitsMatrix,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 
     export type Outbound = {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
     export const outboundSchema: z.ZodType<
         Outbound,
         z.ZodTypeDef,
         CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeFunctionExecutionUnitsMatrix
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 }
 
 /** @internal */
@@ -4621,36 +3456,22 @@ export namespace CreateTeamEdgeFunctionExecutionUnits$ {
         CreateTeamEdgeFunctionExecutionUnits,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            matrix: z
-                .lazy(
-                    () =>
-                        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeFunctionExecutionUnitsMatrix$.inboundSchema
-                )
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+    > = z.object({
+        matrix: z
+            .lazy(
+                () =>
+                    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeFunctionExecutionUnitsMatrix$.inboundSchema
+            )
+            .optional(),
+        tier: z.number().optional(),
+        price: z.number(),
+        batch: z.number(),
+        threshold: z.number(),
+        name: z.string().optional(),
+        hidden: z.boolean(),
+        disabledAt: z.nullable(z.number()).optional(),
+        enabledAt: z.nullable(z.number()).optional(),
+    });
 
     export type Outbound = {
         matrix?:
@@ -4670,36 +3491,22 @@ export namespace CreateTeamEdgeFunctionExecutionUnits$ {
         Outbound,
         z.ZodTypeDef,
         CreateTeamEdgeFunctionExecutionUnits
-    > = z
-        .object({
-            matrix: z
-                .lazy(
-                    () =>
-                        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeFunctionExecutionUnitsMatrix$.outboundSchema
-                )
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+    > = z.object({
+        matrix: z
+            .lazy(
+                () =>
+                    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeFunctionExecutionUnitsMatrix$.outboundSchema
+            )
+            .optional(),
+        tier: z.number().optional(),
+        price: z.number(),
+        batch: z.number(),
+        threshold: z.number(),
+        name: z.string().optional(),
+        hidden: z.boolean(),
+        disabledAt: z.nullable(z.number()).optional(),
+        enabledAt: z.nullable(z.number()).optional(),
+    });
 }
 
 /** @internal */
@@ -4708,38 +3515,24 @@ export namespace CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInv
         CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeMiddlewareInvocationsMatrix,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 
     export type Outbound = {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
     export const outboundSchema: z.ZodType<
         Outbound,
         z.ZodTypeDef,
         CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeMiddlewareInvocationsMatrix
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 }
 
 /** @internal */
@@ -4748,36 +3541,22 @@ export namespace CreateTeamEdgeMiddlewareInvocations$ {
         CreateTeamEdgeMiddlewareInvocations,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            matrix: z
-                .lazy(
-                    () =>
-                        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeMiddlewareInvocationsMatrix$.inboundSchema
-                )
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+    > = z.object({
+        matrix: z
+            .lazy(
+                () =>
+                    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeMiddlewareInvocationsMatrix$.inboundSchema
+            )
+            .optional(),
+        tier: z.number().optional(),
+        price: z.number(),
+        batch: z.number(),
+        threshold: z.number(),
+        name: z.string().optional(),
+        hidden: z.boolean(),
+        disabledAt: z.nullable(z.number()).optional(),
+        enabledAt: z.nullable(z.number()).optional(),
+    });
 
     export type Outbound = {
         matrix?:
@@ -4797,36 +3576,22 @@ export namespace CreateTeamEdgeMiddlewareInvocations$ {
         Outbound,
         z.ZodTypeDef,
         CreateTeamEdgeMiddlewareInvocations
-    > = z
-        .object({
-            matrix: z
-                .lazy(
-                    () =>
-                        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeMiddlewareInvocationsMatrix$.outboundSchema
-                )
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+    > = z.object({
+        matrix: z
+            .lazy(
+                () =>
+                    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeMiddlewareInvocationsMatrix$.outboundSchema
+            )
+            .optional(),
+        tier: z.number().optional(),
+        price: z.number(),
+        batch: z.number(),
+        threshold: z.number(),
+        name: z.string().optional(),
+        hidden: z.boolean(),
+        disabledAt: z.nullable(z.number()).optional(),
+        enabledAt: z.nullable(z.number()).optional(),
+    });
 }
 
 /** @internal */
@@ -4835,72 +3600,44 @@ export namespace CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInv
         CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeRequestMatrix,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 
     export type Outbound = {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
     export const outboundSchema: z.ZodType<
         Outbound,
         z.ZodTypeDef,
         CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeRequestMatrix
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 }
 
 /** @internal */
 export namespace CreateTeamEdgeRequest$ {
-    export const inboundSchema: z.ZodType<CreateTeamEdgeRequest, z.ZodTypeDef, unknown> = z
-        .object({
-            matrix: z
-                .lazy(
-                    () =>
-                        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeRequestMatrix$.inboundSchema
-                )
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+    export const inboundSchema: z.ZodType<CreateTeamEdgeRequest, z.ZodTypeDef, unknown> = z.object({
+        matrix: z
+            .lazy(
+                () =>
+                    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeRequestMatrix$.inboundSchema
+            )
+            .optional(),
+        tier: z.number().optional(),
+        price: z.number(),
+        batch: z.number(),
+        threshold: z.number(),
+        name: z.string().optional(),
+        hidden: z.boolean(),
+        disabledAt: z.nullable(z.number()).optional(),
+        enabledAt: z.nullable(z.number()).optional(),
+    });
 
     export type Outbound = {
         matrix?:
@@ -4916,8 +3653,8 @@ export namespace CreateTeamEdgeRequest$ {
         enabledAt?: number | null | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamEdgeRequest> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamEdgeRequest> =
+        z.object({
             matrix: z
                 .lazy(
                     () =>
@@ -4932,19 +3669,6 @@ export namespace CreateTeamEdgeRequest$ {
             hidden: z.boolean(),
             disabledAt: z.nullable(z.number()).optional(),
             enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
         });
 }
 
@@ -4954,38 +3678,24 @@ export namespace CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInv
         CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeRequestAdditionalCpuDurationMatrix,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 
     export type Outbound = {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
     export const outboundSchema: z.ZodType<
         Outbound,
         z.ZodTypeDef,
         CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeRequestAdditionalCpuDurationMatrix
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 }
 
 /** @internal */
@@ -4994,36 +3704,22 @@ export namespace CreateTeamEdgeRequestAdditionalCpuDuration$ {
         CreateTeamEdgeRequestAdditionalCpuDuration,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            matrix: z
-                .lazy(
-                    () =>
-                        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeRequestAdditionalCpuDurationMatrix$.inboundSchema
-                )
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+    > = z.object({
+        matrix: z
+            .lazy(
+                () =>
+                    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeRequestAdditionalCpuDurationMatrix$.inboundSchema
+            )
+            .optional(),
+        tier: z.number().optional(),
+        price: z.number(),
+        batch: z.number(),
+        threshold: z.number(),
+        name: z.string().optional(),
+        hidden: z.boolean(),
+        disabledAt: z.nullable(z.number()).optional(),
+        enabledAt: z.nullable(z.number()).optional(),
+    });
 
     export type Outbound = {
         matrix?:
@@ -5043,36 +3739,22 @@ export namespace CreateTeamEdgeRequestAdditionalCpuDuration$ {
         Outbound,
         z.ZodTypeDef,
         CreateTeamEdgeRequestAdditionalCpuDuration
-    > = z
-        .object({
-            matrix: z
-                .lazy(
-                    () =>
-                        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeRequestAdditionalCpuDurationMatrix$.outboundSchema
-                )
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+    > = z.object({
+        matrix: z
+            .lazy(
+                () =>
+                    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeRequestAdditionalCpuDurationMatrix$.outboundSchema
+            )
+            .optional(),
+        tier: z.number().optional(),
+        price: z.number(),
+        batch: z.number(),
+        threshold: z.number(),
+        name: z.string().optional(),
+        hidden: z.boolean(),
+        disabledAt: z.nullable(z.number()).optional(),
+        enabledAt: z.nullable(z.number()).optional(),
+    });
 }
 
 /** @internal */
@@ -5081,44 +3763,30 @@ export namespace CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInv
         CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFastDataTransferMatrix,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 
     export type Outbound = {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
     export const outboundSchema: z.ZodType<
         Outbound,
         z.ZodTypeDef,
         CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFastDataTransferMatrix
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 }
 
 /** @internal */
 export namespace CreateTeamFastDataTransfer$ {
-    export const inboundSchema: z.ZodType<CreateTeamFastDataTransfer, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<CreateTeamFastDataTransfer, z.ZodTypeDef, unknown> =
+        z.object({
             matrix: z
                 .lazy(
                     () =>
@@ -5133,19 +3801,6 @@ export namespace CreateTeamFastDataTransfer$ {
             hidden: z.boolean(),
             disabledAt: z.nullable(z.number()).optional(),
             enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
         });
 
     export type Outbound = {
@@ -5162,8 +3817,8 @@ export namespace CreateTeamFastDataTransfer$ {
         enabledAt?: number | null | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamFastDataTransfer> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamFastDataTransfer> =
+        z.object({
             matrix: z
                 .lazy(
                     () =>
@@ -5178,19 +3833,6 @@ export namespace CreateTeamFastDataTransfer$ {
             hidden: z.boolean(),
             disabledAt: z.nullable(z.number()).optional(),
             enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
         });
 }
 
@@ -5200,44 +3842,30 @@ export namespace CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInv
         CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFastOriginTransferMatrix,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 
     export type Outbound = {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
     export const outboundSchema: z.ZodType<
         Outbound,
         z.ZodTypeDef,
         CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFastOriginTransferMatrix
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 }
 
 /** @internal */
 export namespace CreateTeamFastOriginTransfer$ {
-    export const inboundSchema: z.ZodType<CreateTeamFastOriginTransfer, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<CreateTeamFastOriginTransfer, z.ZodTypeDef, unknown> =
+        z.object({
             matrix: z
                 .lazy(
                     () =>
@@ -5252,19 +3880,6 @@ export namespace CreateTeamFastOriginTransfer$ {
             hidden: z.boolean(),
             disabledAt: z.nullable(z.number()).optional(),
             enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
         });
 
     export type Outbound = {
@@ -5281,8 +3896,8 @@ export namespace CreateTeamFastOriginTransfer$ {
         enabledAt?: number | null | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamFastOriginTransfer> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamFastOriginTransfer> =
+        z.object({
             matrix: z
                 .lazy(
                     () =>
@@ -5297,19 +3912,6 @@ export namespace CreateTeamFastOriginTransfer$ {
             hidden: z.boolean(),
             disabledAt: z.nullable(z.number()).optional(),
             enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
         });
 }
 
@@ -5319,44 +3921,30 @@ export namespace CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInv
         CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFunctionDurationMatrix,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 
     export type Outbound = {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
     export const outboundSchema: z.ZodType<
         Outbound,
         z.ZodTypeDef,
         CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFunctionDurationMatrix
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 }
 
 /** @internal */
 export namespace CreateTeamFunctionDuration$ {
-    export const inboundSchema: z.ZodType<CreateTeamFunctionDuration, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<CreateTeamFunctionDuration, z.ZodTypeDef, unknown> =
+        z.object({
             matrix: z
                 .lazy(
                     () =>
@@ -5371,19 +3959,6 @@ export namespace CreateTeamFunctionDuration$ {
             hidden: z.boolean(),
             disabledAt: z.nullable(z.number()).optional(),
             enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
         });
 
     export type Outbound = {
@@ -5400,8 +3975,8 @@ export namespace CreateTeamFunctionDuration$ {
         enabledAt?: number | null | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamFunctionDuration> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamFunctionDuration> =
+        z.object({
             matrix: z
                 .lazy(
                     () =>
@@ -5416,19 +3991,6 @@ export namespace CreateTeamFunctionDuration$ {
             hidden: z.boolean(),
             disabledAt: z.nullable(z.number()).optional(),
             enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
         });
 }
 
@@ -5438,44 +4000,30 @@ export namespace CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInv
         CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFunctionInvocationMatrix,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 
     export type Outbound = {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
     export const outboundSchema: z.ZodType<
         Outbound,
         z.ZodTypeDef,
         CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFunctionInvocationMatrix
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 }
 
 /** @internal */
 export namespace CreateTeamFunctionInvocation$ {
-    export const inboundSchema: z.ZodType<CreateTeamFunctionInvocation, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<CreateTeamFunctionInvocation, z.ZodTypeDef, unknown> =
+        z.object({
             matrix: z
                 .lazy(
                     () =>
@@ -5490,19 +4038,6 @@ export namespace CreateTeamFunctionInvocation$ {
             hidden: z.boolean(),
             disabledAt: z.nullable(z.number()).optional(),
             enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
         });
 
     export type Outbound = {
@@ -5519,8 +4054,8 @@ export namespace CreateTeamFunctionInvocation$ {
         enabledAt?: number | null | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamFunctionInvocation> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamFunctionInvocation> =
+        z.object({
             matrix: z
                 .lazy(
                     () =>
@@ -5535,19 +4070,6 @@ export namespace CreateTeamFunctionInvocation$ {
             hidden: z.boolean(),
             disabledAt: z.nullable(z.number()).optional(),
             enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
         });
 }
 
@@ -5557,44 +4079,30 @@ export namespace CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInv
         CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsLogDrainsVolumeMatrix,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 
     export type Outbound = {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
     export const outboundSchema: z.ZodType<
         Outbound,
         z.ZodTypeDef,
         CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsLogDrainsVolumeMatrix
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 }
 
 /** @internal */
 export namespace CreateTeamLogDrainsVolume$ {
-    export const inboundSchema: z.ZodType<CreateTeamLogDrainsVolume, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<CreateTeamLogDrainsVolume, z.ZodTypeDef, unknown> =
+        z.object({
             matrix: z
                 .lazy(
                     () =>
@@ -5609,19 +4117,6 @@ export namespace CreateTeamLogDrainsVolume$ {
             hidden: z.boolean(),
             disabledAt: z.nullable(z.number()).optional(),
             enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
         });
 
     export type Outbound = {
@@ -5638,8 +4133,8 @@ export namespace CreateTeamLogDrainsVolume$ {
         enabledAt?: number | null | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamLogDrainsVolume> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamLogDrainsVolume> =
+        z.object({
             matrix: z
                 .lazy(
                     () =>
@@ -5654,19 +4149,6 @@ export namespace CreateTeamLogDrainsVolume$ {
             hidden: z.boolean(),
             disabledAt: z.nullable(z.number()).optional(),
             enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
         });
 }
 
@@ -5676,44 +4158,30 @@ export namespace CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInv
         CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsMonitoringMetricMatrix,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 
     export type Outbound = {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
     export const outboundSchema: z.ZodType<
         Outbound,
         z.ZodTypeDef,
         CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsMonitoringMetricMatrix
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 }
 
 /** @internal */
 export namespace CreateTeamMonitoringMetric$ {
-    export const inboundSchema: z.ZodType<CreateTeamMonitoringMetric, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<CreateTeamMonitoringMetric, z.ZodTypeDef, unknown> =
+        z.object({
             matrix: z
                 .lazy(
                     () =>
@@ -5728,19 +4196,6 @@ export namespace CreateTeamMonitoringMetric$ {
             hidden: z.boolean(),
             disabledAt: z.nullable(z.number()).optional(),
             enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
         });
 
     export type Outbound = {
@@ -5757,8 +4212,8 @@ export namespace CreateTeamMonitoringMetric$ {
         enabledAt?: number | null | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamMonitoringMetric> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamMonitoringMetric> =
+        z.object({
             matrix: z
                 .lazy(
                     () =>
@@ -5773,19 +4228,6 @@ export namespace CreateTeamMonitoringMetric$ {
             hidden: z.boolean(),
             disabledAt: z.nullable(z.number()).optional(),
             enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
         });
 }
 
@@ -5795,44 +4237,30 @@ export namespace CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInv
         CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresComputeTimeMatrix,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 
     export type Outbound = {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
     export const outboundSchema: z.ZodType<
         Outbound,
         z.ZodTypeDef,
         CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresComputeTimeMatrix
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 }
 
 /** @internal */
 export namespace CreateTeamPostgresComputeTime$ {
-    export const inboundSchema: z.ZodType<CreateTeamPostgresComputeTime, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<CreateTeamPostgresComputeTime, z.ZodTypeDef, unknown> =
+        z.object({
             matrix: z
                 .lazy(
                     () =>
@@ -5847,19 +4275,6 @@ export namespace CreateTeamPostgresComputeTime$ {
             hidden: z.boolean(),
             disabledAt: z.nullable(z.number()).optional(),
             enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
         });
 
     export type Outbound = {
@@ -5877,36 +4292,22 @@ export namespace CreateTeamPostgresComputeTime$ {
     };
 
     export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamPostgresComputeTime> =
-        z
-            .object({
-                matrix: z
-                    .lazy(
-                        () =>
-                            CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresComputeTimeMatrix$.outboundSchema
-                    )
-                    .optional(),
-                tier: z.number().optional(),
-                price: z.number(),
-                batch: z.number(),
-                threshold: z.number(),
-                name: z.string().optional(),
-                hidden: z.boolean(),
-                disabledAt: z.nullable(z.number()).optional(),
-                enabledAt: z.nullable(z.number()).optional(),
-            })
-            .transform((v) => {
-                return {
-                    ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                    ...(v.tier === undefined ? null : { tier: v.tier }),
-                    price: v.price,
-                    batch: v.batch,
-                    threshold: v.threshold,
-                    ...(v.name === undefined ? null : { name: v.name }),
-                    hidden: v.hidden,
-                    ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                    ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-                };
-            });
+        z.object({
+            matrix: z
+                .lazy(
+                    () =>
+                        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresComputeTimeMatrix$.outboundSchema
+                )
+                .optional(),
+            tier: z.number().optional(),
+            price: z.number(),
+            batch: z.number(),
+            threshold: z.number(),
+            name: z.string().optional(),
+            hidden: z.boolean(),
+            disabledAt: z.nullable(z.number()).optional(),
+            enabledAt: z.nullable(z.number()).optional(),
+        });
 }
 
 /** @internal */
@@ -5915,44 +4316,30 @@ export namespace CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInv
         CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresDataStorageMatrix,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 
     export type Outbound = {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
     export const outboundSchema: z.ZodType<
         Outbound,
         z.ZodTypeDef,
         CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresDataStorageMatrix
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 }
 
 /** @internal */
 export namespace CreateTeamPostgresDataStorage$ {
-    export const inboundSchema: z.ZodType<CreateTeamPostgresDataStorage, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<CreateTeamPostgresDataStorage, z.ZodTypeDef, unknown> =
+        z.object({
             matrix: z
                 .lazy(
                     () =>
@@ -5967,19 +4354,6 @@ export namespace CreateTeamPostgresDataStorage$ {
             hidden: z.boolean(),
             disabledAt: z.nullable(z.number()).optional(),
             enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
         });
 
     export type Outbound = {
@@ -5997,36 +4371,22 @@ export namespace CreateTeamPostgresDataStorage$ {
     };
 
     export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamPostgresDataStorage> =
-        z
-            .object({
-                matrix: z
-                    .lazy(
-                        () =>
-                            CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresDataStorageMatrix$.outboundSchema
-                    )
-                    .optional(),
-                tier: z.number().optional(),
-                price: z.number(),
-                batch: z.number(),
-                threshold: z.number(),
-                name: z.string().optional(),
-                hidden: z.boolean(),
-                disabledAt: z.nullable(z.number()).optional(),
-                enabledAt: z.nullable(z.number()).optional(),
-            })
-            .transform((v) => {
-                return {
-                    ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                    ...(v.tier === undefined ? null : { tier: v.tier }),
-                    price: v.price,
-                    batch: v.batch,
-                    threshold: v.threshold,
-                    ...(v.name === undefined ? null : { name: v.name }),
-                    hidden: v.hidden,
-                    ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                    ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-                };
-            });
+        z.object({
+            matrix: z
+                .lazy(
+                    () =>
+                        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresDataStorageMatrix$.outboundSchema
+                )
+                .optional(),
+            tier: z.number().optional(),
+            price: z.number(),
+            batch: z.number(),
+            threshold: z.number(),
+            name: z.string().optional(),
+            hidden: z.boolean(),
+            disabledAt: z.nullable(z.number()).optional(),
+            enabledAt: z.nullable(z.number()).optional(),
+        });
 }
 
 /** @internal */
@@ -6035,44 +4395,30 @@ export namespace CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInv
         CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresDataTransferMatrix,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 
     export type Outbound = {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
     export const outboundSchema: z.ZodType<
         Outbound,
         z.ZodTypeDef,
         CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresDataTransferMatrix
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 }
 
 /** @internal */
 export namespace CreateTeamPostgresDataTransfer$ {
-    export const inboundSchema: z.ZodType<CreateTeamPostgresDataTransfer, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<CreateTeamPostgresDataTransfer, z.ZodTypeDef, unknown> =
+        z.object({
             matrix: z
                 .lazy(
                     () =>
@@ -6087,19 +4433,6 @@ export namespace CreateTeamPostgresDataTransfer$ {
             hidden: z.boolean(),
             disabledAt: z.nullable(z.number()).optional(),
             enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
         });
 
     export type Outbound = {
@@ -6117,36 +4450,22 @@ export namespace CreateTeamPostgresDataTransfer$ {
     };
 
     export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamPostgresDataTransfer> =
-        z
-            .object({
-                matrix: z
-                    .lazy(
-                        () =>
-                            CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresDataTransferMatrix$.outboundSchema
-                    )
-                    .optional(),
-                tier: z.number().optional(),
-                price: z.number(),
-                batch: z.number(),
-                threshold: z.number(),
-                name: z.string().optional(),
-                hidden: z.boolean(),
-                disabledAt: z.nullable(z.number()).optional(),
-                enabledAt: z.nullable(z.number()).optional(),
-            })
-            .transform((v) => {
-                return {
-                    ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                    ...(v.tier === undefined ? null : { tier: v.tier }),
-                    price: v.price,
-                    batch: v.batch,
-                    threshold: v.threshold,
-                    ...(v.name === undefined ? null : { name: v.name }),
-                    hidden: v.hidden,
-                    ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                    ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-                };
-            });
+        z.object({
+            matrix: z
+                .lazy(
+                    () =>
+                        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresDataTransferMatrix$.outboundSchema
+                )
+                .optional(),
+            tier: z.number().optional(),
+            price: z.number(),
+            batch: z.number(),
+            threshold: z.number(),
+            name: z.string().optional(),
+            hidden: z.boolean(),
+            disabledAt: z.nullable(z.number()).optional(),
+            enabledAt: z.nullable(z.number()).optional(),
+        });
 }
 
 /** @internal */
@@ -6155,44 +4474,30 @@ export namespace CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInv
         CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresDatabaseMatrix,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 
     export type Outbound = {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
     export const outboundSchema: z.ZodType<
         Outbound,
         z.ZodTypeDef,
         CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresDatabaseMatrix
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 }
 
 /** @internal */
 export namespace CreateTeamPostgresDatabase$ {
-    export const inboundSchema: z.ZodType<CreateTeamPostgresDatabase, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<CreateTeamPostgresDatabase, z.ZodTypeDef, unknown> =
+        z.object({
             matrix: z
                 .lazy(
                     () =>
@@ -6207,19 +4512,6 @@ export namespace CreateTeamPostgresDatabase$ {
             hidden: z.boolean(),
             disabledAt: z.nullable(z.number()).optional(),
             enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
         });
 
     export type Outbound = {
@@ -6236,8 +4528,8 @@ export namespace CreateTeamPostgresDatabase$ {
         enabledAt?: number | null | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamPostgresDatabase> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamPostgresDatabase> =
+        z.object({
             matrix: z
                 .lazy(
                     () =>
@@ -6252,19 +4544,6 @@ export namespace CreateTeamPostgresDatabase$ {
             hidden: z.boolean(),
             disabledAt: z.nullable(z.number()).optional(),
             enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
         });
 }
 
@@ -6274,44 +4553,30 @@ export namespace CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInv
         CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresWrittenDataMatrix,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 
     export type Outbound = {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
     export const outboundSchema: z.ZodType<
         Outbound,
         z.ZodTypeDef,
         CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresWrittenDataMatrix
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 }
 
 /** @internal */
 export namespace CreateTeamPostgresWrittenData$ {
-    export const inboundSchema: z.ZodType<CreateTeamPostgresWrittenData, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<CreateTeamPostgresWrittenData, z.ZodTypeDef, unknown> =
+        z.object({
             matrix: z
                 .lazy(
                     () =>
@@ -6326,19 +4591,6 @@ export namespace CreateTeamPostgresWrittenData$ {
             hidden: z.boolean(),
             disabledAt: z.nullable(z.number()).optional(),
             enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
         });
 
     export type Outbound = {
@@ -6356,90 +4608,11 @@ export namespace CreateTeamPostgresWrittenData$ {
     };
 
     export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamPostgresWrittenData> =
-        z
-            .object({
-                matrix: z
-                    .lazy(
-                        () =>
-                            CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresWrittenDataMatrix$.outboundSchema
-                    )
-                    .optional(),
-                tier: z.number().optional(),
-                price: z.number(),
-                batch: z.number(),
-                threshold: z.number(),
-                name: z.string().optional(),
-                hidden: z.boolean(),
-                disabledAt: z.nullable(z.number()).optional(),
-                enabledAt: z.nullable(z.number()).optional(),
-            })
-            .transform((v) => {
-                return {
-                    ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                    ...(v.tier === undefined ? null : { tier: v.tier }),
-                    price: v.price,
-                    batch: v.batch,
-                    threshold: v.threshold,
-                    ...(v.name === undefined ? null : { name: v.name }),
-                    hidden: v.hidden,
-                    ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                    ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-                };
-            });
-}
-
-/** @internal */
-export namespace CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsServerlessFunctionExecutionMatrix$ {
-    export const inboundSchema: z.ZodType<
-        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsServerlessFunctionExecutionMatrix,
-        z.ZodTypeDef,
-        unknown
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
-
-    export type Outbound = {
-        defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
-    };
-
-    export const outboundSchema: z.ZodType<
-        Outbound,
-        z.ZodTypeDef,
-        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsServerlessFunctionExecutionMatrix
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
-}
-
-/** @internal */
-export namespace CreateTeamServerlessFunctionExecution$ {
-    export const inboundSchema: z.ZodType<
-        CreateTeamServerlessFunctionExecution,
-        z.ZodTypeDef,
-        unknown
-    > = z
-        .object({
+        z.object({
             matrix: z
                 .lazy(
                     () =>
-                        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsServerlessFunctionExecutionMatrix$.inboundSchema
+                        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresWrittenDataMatrix$.outboundSchema
                 )
                 .optional(),
             tier: z.number().optional(),
@@ -6450,20 +4623,57 @@ export namespace CreateTeamServerlessFunctionExecution$ {
             hidden: z.boolean(),
             disabledAt: z.nullable(z.number()).optional(),
             enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
         });
+}
+
+/** @internal */
+export namespace CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsServerlessFunctionExecutionMatrix$ {
+    export const inboundSchema: z.ZodType<
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsServerlessFunctionExecutionMatrix,
+        z.ZodTypeDef,
+        unknown
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
+
+    export type Outbound = {
+        defaultUnitPrice: string;
+        dimensionPrices: { [k: string]: string };
+    };
+
+    export const outboundSchema: z.ZodType<
+        Outbound,
+        z.ZodTypeDef,
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsServerlessFunctionExecutionMatrix
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
+}
+
+/** @internal */
+export namespace CreateTeamServerlessFunctionExecution$ {
+    export const inboundSchema: z.ZodType<
+        CreateTeamServerlessFunctionExecution,
+        z.ZodTypeDef,
+        unknown
+    > = z.object({
+        matrix: z
+            .lazy(
+                () =>
+                    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsServerlessFunctionExecutionMatrix$.inboundSchema
+            )
+            .optional(),
+        tier: z.number().optional(),
+        price: z.number(),
+        batch: z.number(),
+        threshold: z.number(),
+        name: z.string().optional(),
+        hidden: z.boolean(),
+        disabledAt: z.nullable(z.number()).optional(),
+        enabledAt: z.nullable(z.number()).optional(),
+    });
 
     export type Outbound = {
         matrix?:
@@ -6483,36 +4693,22 @@ export namespace CreateTeamServerlessFunctionExecution$ {
         Outbound,
         z.ZodTypeDef,
         CreateTeamServerlessFunctionExecution
-    > = z
-        .object({
-            matrix: z
-                .lazy(
-                    () =>
-                        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsServerlessFunctionExecutionMatrix$.outboundSchema
-                )
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+    > = z.object({
+        matrix: z
+            .lazy(
+                () =>
+                    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsServerlessFunctionExecutionMatrix$.outboundSchema
+            )
+            .optional(),
+        tier: z.number().optional(),
+        price: z.number(),
+        batch: z.number(),
+        threshold: z.number(),
+        name: z.string().optional(),
+        hidden: z.boolean(),
+        disabledAt: z.nullable(z.number()).optional(),
+        enabledAt: z.nullable(z.number()).optional(),
+    });
 }
 
 /** @internal */
@@ -6521,44 +4717,30 @@ export namespace CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInv
         CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsSourceImagesMatrix,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 
     export type Outbound = {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
     export const outboundSchema: z.ZodType<
         Outbound,
         z.ZodTypeDef,
         CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsSourceImagesMatrix
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 }
 
 /** @internal */
 export namespace CreateTeamSourceImages$ {
-    export const inboundSchema: z.ZodType<CreateTeamSourceImages, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<CreateTeamSourceImages, z.ZodTypeDef, unknown> = z.object(
+        {
             matrix: z
                 .lazy(
                     () =>
@@ -6573,20 +4755,8 @@ export namespace CreateTeamSourceImages$ {
             hidden: z.boolean(),
             disabledAt: z.nullable(z.number()).optional(),
             enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+        }
+    );
 
     export type Outbound = {
         matrix?:
@@ -6602,8 +4772,8 @@ export namespace CreateTeamSourceImages$ {
         enabledAt?: number | null | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamSourceImages> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamSourceImages> =
+        z.object({
             matrix: z
                 .lazy(
                     () =>
@@ -6618,19 +4788,6 @@ export namespace CreateTeamSourceImages$ {
             hidden: z.boolean(),
             disabledAt: z.nullable(z.number()).optional(),
             enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
         });
 }
 
@@ -6640,38 +4797,24 @@ export namespace CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInv
         CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsStorageRedisTotalBandwidthInBytesMatrix,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 
     export type Outbound = {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
     export const outboundSchema: z.ZodType<
         Outbound,
         z.ZodTypeDef,
         CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsStorageRedisTotalBandwidthInBytesMatrix
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 }
 
 /** @internal */
@@ -6680,36 +4823,22 @@ export namespace CreateTeamStorageRedisTotalBandwidthInBytes$ {
         CreateTeamStorageRedisTotalBandwidthInBytes,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            matrix: z
-                .lazy(
-                    () =>
-                        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsStorageRedisTotalBandwidthInBytesMatrix$.inboundSchema
-                )
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+    > = z.object({
+        matrix: z
+            .lazy(
+                () =>
+                    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsStorageRedisTotalBandwidthInBytesMatrix$.inboundSchema
+            )
+            .optional(),
+        tier: z.number().optional(),
+        price: z.number(),
+        batch: z.number(),
+        threshold: z.number(),
+        name: z.string().optional(),
+        hidden: z.boolean(),
+        disabledAt: z.nullable(z.number()).optional(),
+        enabledAt: z.nullable(z.number()).optional(),
+    });
 
     export type Outbound = {
         matrix?:
@@ -6729,36 +4858,22 @@ export namespace CreateTeamStorageRedisTotalBandwidthInBytes$ {
         Outbound,
         z.ZodTypeDef,
         CreateTeamStorageRedisTotalBandwidthInBytes
-    > = z
-        .object({
-            matrix: z
-                .lazy(
-                    () =>
-                        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsStorageRedisTotalBandwidthInBytesMatrix$.outboundSchema
-                )
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+    > = z.object({
+        matrix: z
+            .lazy(
+                () =>
+                    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsStorageRedisTotalBandwidthInBytesMatrix$.outboundSchema
+            )
+            .optional(),
+        tier: z.number().optional(),
+        price: z.number(),
+        batch: z.number(),
+        threshold: z.number(),
+        name: z.string().optional(),
+        hidden: z.boolean(),
+        disabledAt: z.nullable(z.number()).optional(),
+        enabledAt: z.nullable(z.number()).optional(),
+    });
 }
 
 /** @internal */
@@ -6767,38 +4882,24 @@ export namespace CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInv
         CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsStorageRedisTotalCommandsMatrix,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 
     export type Outbound = {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
     export const outboundSchema: z.ZodType<
         Outbound,
         z.ZodTypeDef,
         CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsStorageRedisTotalCommandsMatrix
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 }
 
 /** @internal */
@@ -6807,36 +4908,22 @@ export namespace CreateTeamStorageRedisTotalCommands$ {
         CreateTeamStorageRedisTotalCommands,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            matrix: z
-                .lazy(
-                    () =>
-                        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsStorageRedisTotalCommandsMatrix$.inboundSchema
-                )
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+    > = z.object({
+        matrix: z
+            .lazy(
+                () =>
+                    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsStorageRedisTotalCommandsMatrix$.inboundSchema
+            )
+            .optional(),
+        tier: z.number().optional(),
+        price: z.number(),
+        batch: z.number(),
+        threshold: z.number(),
+        name: z.string().optional(),
+        hidden: z.boolean(),
+        disabledAt: z.nullable(z.number()).optional(),
+        enabledAt: z.nullable(z.number()).optional(),
+    });
 
     export type Outbound = {
         matrix?:
@@ -6856,36 +4943,22 @@ export namespace CreateTeamStorageRedisTotalCommands$ {
         Outbound,
         z.ZodTypeDef,
         CreateTeamStorageRedisTotalCommands
-    > = z
-        .object({
-            matrix: z
-                .lazy(
-                    () =>
-                        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsStorageRedisTotalCommandsMatrix$.outboundSchema
-                )
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+    > = z.object({
+        matrix: z
+            .lazy(
+                () =>
+                    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsStorageRedisTotalCommandsMatrix$.outboundSchema
+            )
+            .optional(),
+        tier: z.number().optional(),
+        price: z.number(),
+        batch: z.number(),
+        threshold: z.number(),
+        name: z.string().optional(),
+        hidden: z.boolean(),
+        disabledAt: z.nullable(z.number()).optional(),
+        enabledAt: z.nullable(z.number()).optional(),
+    });
 }
 
 /** @internal */
@@ -6894,38 +4967,24 @@ export namespace CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInv
         CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsStorageRedisTotalDailyAvgStorageInBytesMatrix,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 
     export type Outbound = {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
     export const outboundSchema: z.ZodType<
         Outbound,
         z.ZodTypeDef,
         CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsStorageRedisTotalDailyAvgStorageInBytesMatrix
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 }
 
 /** @internal */
@@ -6934,36 +4993,22 @@ export namespace CreateTeamStorageRedisTotalDailyAvgStorageInBytes$ {
         CreateTeamStorageRedisTotalDailyAvgStorageInBytes,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            matrix: z
-                .lazy(
-                    () =>
-                        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsStorageRedisTotalDailyAvgStorageInBytesMatrix$.inboundSchema
-                )
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+    > = z.object({
+        matrix: z
+            .lazy(
+                () =>
+                    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsStorageRedisTotalDailyAvgStorageInBytesMatrix$.inboundSchema
+            )
+            .optional(),
+        tier: z.number().optional(),
+        price: z.number(),
+        batch: z.number(),
+        threshold: z.number(),
+        name: z.string().optional(),
+        hidden: z.boolean(),
+        disabledAt: z.nullable(z.number()).optional(),
+        enabledAt: z.nullable(z.number()).optional(),
+    });
 
     export type Outbound = {
         matrix?:
@@ -6983,36 +5028,22 @@ export namespace CreateTeamStorageRedisTotalDailyAvgStorageInBytes$ {
         Outbound,
         z.ZodTypeDef,
         CreateTeamStorageRedisTotalDailyAvgStorageInBytes
-    > = z
-        .object({
-            matrix: z
-                .lazy(
-                    () =>
-                        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsStorageRedisTotalDailyAvgStorageInBytesMatrix$.outboundSchema
-                )
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+    > = z.object({
+        matrix: z
+            .lazy(
+                () =>
+                    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsStorageRedisTotalDailyAvgStorageInBytesMatrix$.outboundSchema
+            )
+            .optional(),
+        tier: z.number().optional(),
+        price: z.number(),
+        batch: z.number(),
+        threshold: z.number(),
+        name: z.string().optional(),
+        hidden: z.boolean(),
+        disabledAt: z.nullable(z.number()).optional(),
+        enabledAt: z.nullable(z.number()).optional(),
+    });
 }
 
 /** @internal */
@@ -7021,38 +5052,24 @@ export namespace CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInv
         CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsStorageRedisTotalDatabasesMatrix,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 
     export type Outbound = {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
     export const outboundSchema: z.ZodType<
         Outbound,
         z.ZodTypeDef,
         CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsStorageRedisTotalDatabasesMatrix
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 }
 
 /** @internal */
@@ -7061,36 +5078,22 @@ export namespace CreateTeamStorageRedisTotalDatabases$ {
         CreateTeamStorageRedisTotalDatabases,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            matrix: z
-                .lazy(
-                    () =>
-                        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsStorageRedisTotalDatabasesMatrix$.inboundSchema
-                )
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+    > = z.object({
+        matrix: z
+            .lazy(
+                () =>
+                    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsStorageRedisTotalDatabasesMatrix$.inboundSchema
+            )
+            .optional(),
+        tier: z.number().optional(),
+        price: z.number(),
+        batch: z.number(),
+        threshold: z.number(),
+        name: z.string().optional(),
+        hidden: z.boolean(),
+        disabledAt: z.nullable(z.number()).optional(),
+        enabledAt: z.nullable(z.number()).optional(),
+    });
 
     export type Outbound = {
         matrix?:
@@ -7110,36 +5113,22 @@ export namespace CreateTeamStorageRedisTotalDatabases$ {
         Outbound,
         z.ZodTypeDef,
         CreateTeamStorageRedisTotalDatabases
-    > = z
-        .object({
-            matrix: z
-                .lazy(
-                    () =>
-                        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsStorageRedisTotalDatabasesMatrix$.outboundSchema
-                )
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+    > = z.object({
+        matrix: z
+            .lazy(
+                () =>
+                    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsStorageRedisTotalDatabasesMatrix$.outboundSchema
+            )
+            .optional(),
+        tier: z.number().optional(),
+        price: z.number(),
+        batch: z.number(),
+        threshold: z.number(),
+        name: z.string().optional(),
+        hidden: z.boolean(),
+        disabledAt: z.nullable(z.number()).optional(),
+        enabledAt: z.nullable(z.number()).optional(),
+    });
 }
 
 /** @internal */
@@ -7148,44 +5137,30 @@ export namespace CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInv
         CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWafOwaspExcessBytesMatrix,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 
     export type Outbound = {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
     export const outboundSchema: z.ZodType<
         Outbound,
         z.ZodTypeDef,
         CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWafOwaspExcessBytesMatrix
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 }
 
 /** @internal */
 export namespace CreateTeamWafOwaspExcessBytes$ {
-    export const inboundSchema: z.ZodType<CreateTeamWafOwaspExcessBytes, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<CreateTeamWafOwaspExcessBytes, z.ZodTypeDef, unknown> =
+        z.object({
             matrix: z
                 .lazy(
                     () =>
@@ -7200,19 +5175,6 @@ export namespace CreateTeamWafOwaspExcessBytes$ {
             hidden: z.boolean(),
             disabledAt: z.nullable(z.number()).optional(),
             enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
         });
 
     export type Outbound = {
@@ -7230,36 +5192,22 @@ export namespace CreateTeamWafOwaspExcessBytes$ {
     };
 
     export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamWafOwaspExcessBytes> =
-        z
-            .object({
-                matrix: z
-                    .lazy(
-                        () =>
-                            CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWafOwaspExcessBytesMatrix$.outboundSchema
-                    )
-                    .optional(),
-                tier: z.number().optional(),
-                price: z.number(),
-                batch: z.number(),
-                threshold: z.number(),
-                name: z.string().optional(),
-                hidden: z.boolean(),
-                disabledAt: z.nullable(z.number()).optional(),
-                enabledAt: z.nullable(z.number()).optional(),
-            })
-            .transform((v) => {
-                return {
-                    ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                    ...(v.tier === undefined ? null : { tier: v.tier }),
-                    price: v.price,
-                    batch: v.batch,
-                    threshold: v.threshold,
-                    ...(v.name === undefined ? null : { name: v.name }),
-                    hidden: v.hidden,
-                    ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                    ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-                };
-            });
+        z.object({
+            matrix: z
+                .lazy(
+                    () =>
+                        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWafOwaspExcessBytesMatrix$.outboundSchema
+                )
+                .optional(),
+            tier: z.number().optional(),
+            price: z.number(),
+            batch: z.number(),
+            threshold: z.number(),
+            name: z.string().optional(),
+            hidden: z.boolean(),
+            disabledAt: z.nullable(z.number()).optional(),
+            enabledAt: z.nullable(z.number()).optional(),
+        });
 }
 
 /** @internal */
@@ -7268,44 +5216,30 @@ export namespace CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInv
         CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWafOwaspRequestsMatrix,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 
     export type Outbound = {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
     export const outboundSchema: z.ZodType<
         Outbound,
         z.ZodTypeDef,
         CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWafOwaspRequestsMatrix
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 }
 
 /** @internal */
 export namespace CreateTeamWafOwaspRequests$ {
-    export const inboundSchema: z.ZodType<CreateTeamWafOwaspRequests, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<CreateTeamWafOwaspRequests, z.ZodTypeDef, unknown> =
+        z.object({
             matrix: z
                 .lazy(
                     () =>
@@ -7320,19 +5254,6 @@ export namespace CreateTeamWafOwaspRequests$ {
             hidden: z.boolean(),
             disabledAt: z.nullable(z.number()).optional(),
             enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
         });
 
     export type Outbound = {
@@ -7349,8 +5270,8 @@ export namespace CreateTeamWafOwaspRequests$ {
         enabledAt?: number | null | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamWafOwaspRequests> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamWafOwaspRequests> =
+        z.object({
             matrix: z
                 .lazy(
                     () =>
@@ -7365,19 +5286,6 @@ export namespace CreateTeamWafOwaspRequests$ {
             hidden: z.boolean(),
             disabledAt: z.nullable(z.number()).optional(),
             enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
         });
 }
 
@@ -7387,44 +5295,30 @@ export namespace CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInv
         CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWebAnalyticsEventMatrix,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 
     export type Outbound = {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
     export const outboundSchema: z.ZodType<
         Outbound,
         z.ZodTypeDef,
         CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWebAnalyticsEventMatrix
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    > = z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
 }
 
 /** @internal */
 export namespace CreateTeamWebAnalyticsEvent$ {
-    export const inboundSchema: z.ZodType<CreateTeamWebAnalyticsEvent, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<CreateTeamWebAnalyticsEvent, z.ZodTypeDef, unknown> =
+        z.object({
             matrix: z
                 .lazy(
                     () =>
@@ -7439,19 +5333,6 @@ export namespace CreateTeamWebAnalyticsEvent$ {
             hidden: z.boolean(),
             disabledAt: z.nullable(z.number()).optional(),
             enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
         });
 
     export type Outbound = {
@@ -7468,8 +5349,8 @@ export namespace CreateTeamWebAnalyticsEvent$ {
         enabledAt?: number | null | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamWebAnalyticsEvent> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamWebAnalyticsEvent> =
+        z.object({
             matrix: z
                 .lazy(
                     () =>
@@ -7484,26 +5365,13 @@ export namespace CreateTeamWebAnalyticsEvent$ {
             hidden: z.boolean(),
             disabledAt: z.nullable(z.number()).optional(),
             enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
         });
 }
 
 /** @internal */
 export namespace CreateTeamInvoiceItems$ {
-    export const inboundSchema: z.ZodType<CreateTeamInvoiceItems, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<CreateTeamInvoiceItems, z.ZodTypeDef, unknown> = z.object(
+        {
             pro: z.lazy(() => CreateTeamPro$.inboundSchema).optional(),
             enterprise: z.lazy(() => CreateTeamEnterprise$.inboundSchema).optional(),
             analytics: z.lazy(() => CreateTeamAnalytics$.inboundSchema).optional(),
@@ -7596,127 +5464,8 @@ export namespace CreateTeamInvoiceItems$ {
                 .optional(),
             wafOwaspRequests: z.lazy(() => CreateTeamWafOwaspRequests$.inboundSchema).optional(),
             webAnalyticsEvent: z.lazy(() => CreateTeamWebAnalyticsEvent$.inboundSchema).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.pro === undefined ? null : { pro: v.pro }),
-                ...(v.enterprise === undefined ? null : { enterprise: v.enterprise }),
-                ...(v.analytics === undefined ? null : { analytics: v.analytics }),
-                ...(v.concurrentBuilds === undefined
-                    ? null
-                    : { concurrentBuilds: v.concurrentBuilds }),
-                ...(v.monitoring === undefined ? null : { monitoring: v.monitoring }),
-                ...(v.passwordProtection === undefined
-                    ? null
-                    : { passwordProtection: v.passwordProtection }),
-                ...(v.previewDeploymentSuffix === undefined
-                    ? null
-                    : { previewDeploymentSuffix: v.previewDeploymentSuffix }),
-                ...(v.saml === undefined ? null : { saml: v.saml }),
-                ...(v.teamSeats === undefined ? null : { teamSeats: v.teamSeats }),
-                ...(v.webAnalytics === undefined ? null : { webAnalytics: v.webAnalytics }),
-                ...(v.analyticsUsage === undefined ? null : { analyticsUsage: v.analyticsUsage }),
-                ...(v.artifacts === undefined ? null : { artifacts: v.artifacts }),
-                ...(v.bandwidth === undefined ? null : { bandwidth: v.bandwidth }),
-                ...(v.blobStores === undefined ? null : { blobStores: v.blobStores }),
-                ...(v.blobTotalAdvancedRequests === undefined
-                    ? null
-                    : { blobTotalAdvancedRequests: v.blobTotalAdvancedRequests }),
-                ...(v.blobTotalAvgSizeInBytes === undefined
-                    ? null
-                    : { blobTotalAvgSizeInBytes: v.blobTotalAvgSizeInBytes }),
-                ...(v.blobTotalGetResponseObjectSizeInBytes === undefined
-                    ? null
-                    : {
-                          blobTotalGetResponseObjectSizeInBytes:
-                              v.blobTotalGetResponseObjectSizeInBytes,
-                      }),
-                ...(v.blobTotalSimpleRequests === undefined
-                    ? null
-                    : { blobTotalSimpleRequests: v.blobTotalSimpleRequests }),
-                ...(v.buildMinute === undefined ? null : { buildMinute: v.buildMinute }),
-                ...(v.dataCacheRead === undefined ? null : { dataCacheRead: v.dataCacheRead }),
-                ...(v.dataCacheRevalidation === undefined
-                    ? null
-                    : { dataCacheRevalidation: v.dataCacheRevalidation }),
-                ...(v.dataCacheWrite === undefined ? null : { dataCacheWrite: v.dataCacheWrite }),
-                ...(v.edgeConfigRead === undefined ? null : { edgeConfigRead: v.edgeConfigRead }),
-                ...(v.edgeConfigWrite === undefined
-                    ? null
-                    : { edgeConfigWrite: v.edgeConfigWrite }),
-                ...(v.edgeFunctionExecutionUnits === undefined
-                    ? null
-                    : { edgeFunctionExecutionUnits: v.edgeFunctionExecutionUnits }),
-                ...(v.edgeMiddlewareInvocations === undefined
-                    ? null
-                    : { edgeMiddlewareInvocations: v.edgeMiddlewareInvocations }),
-                ...(v.edgeRequest === undefined ? null : { edgeRequest: v.edgeRequest }),
-                ...(v.edgeRequestAdditionalCpuDuration === undefined
-                    ? null
-                    : { edgeRequestAdditionalCpuDuration: v.edgeRequestAdditionalCpuDuration }),
-                ...(v.fastDataTransfer === undefined
-                    ? null
-                    : { fastDataTransfer: v.fastDataTransfer }),
-                ...(v.fastOriginTransfer === undefined
-                    ? null
-                    : { fastOriginTransfer: v.fastOriginTransfer }),
-                ...(v.functionDuration === undefined
-                    ? null
-                    : { functionDuration: v.functionDuration }),
-                ...(v.functionInvocation === undefined
-                    ? null
-                    : { functionInvocation: v.functionInvocation }),
-                ...(v.logDrainsVolume === undefined
-                    ? null
-                    : { logDrainsVolume: v.logDrainsVolume }),
-                ...(v.monitoringMetric === undefined
-                    ? null
-                    : { monitoringMetric: v.monitoringMetric }),
-                ...(v.postgresComputeTime === undefined
-                    ? null
-                    : { postgresComputeTime: v.postgresComputeTime }),
-                ...(v.postgresDataStorage === undefined
-                    ? null
-                    : { postgresDataStorage: v.postgresDataStorage }),
-                ...(v.postgresDataTransfer === undefined
-                    ? null
-                    : { postgresDataTransfer: v.postgresDataTransfer }),
-                ...(v.postgresDatabase === undefined
-                    ? null
-                    : { postgresDatabase: v.postgresDatabase }),
-                ...(v.postgresWrittenData === undefined
-                    ? null
-                    : { postgresWrittenData: v.postgresWrittenData }),
-                ...(v.serverlessFunctionExecution === undefined
-                    ? null
-                    : { serverlessFunctionExecution: v.serverlessFunctionExecution }),
-                ...(v.sourceImages === undefined ? null : { sourceImages: v.sourceImages }),
-                ...(v.storageRedisTotalBandwidthInBytes === undefined
-                    ? null
-                    : { storageRedisTotalBandwidthInBytes: v.storageRedisTotalBandwidthInBytes }),
-                ...(v.storageRedisTotalCommands === undefined
-                    ? null
-                    : { storageRedisTotalCommands: v.storageRedisTotalCommands }),
-                ...(v.storageRedisTotalDailyAvgStorageInBytes === undefined
-                    ? null
-                    : {
-                          storageRedisTotalDailyAvgStorageInBytes:
-                              v.storageRedisTotalDailyAvgStorageInBytes,
-                      }),
-                ...(v.storageRedisTotalDatabases === undefined
-                    ? null
-                    : { storageRedisTotalDatabases: v.storageRedisTotalDatabases }),
-                ...(v.wafOwaspExcessBytes === undefined
-                    ? null
-                    : { wafOwaspExcessBytes: v.wafOwaspExcessBytes }),
-                ...(v.wafOwaspRequests === undefined
-                    ? null
-                    : { wafOwaspRequests: v.wafOwaspRequests }),
-                ...(v.webAnalyticsEvent === undefined
-                    ? null
-                    : { webAnalyticsEvent: v.webAnalyticsEvent }),
-            };
-        });
+        }
+    );
 
     export type Outbound = {
         pro?: CreateTeamPro$.Outbound | undefined;
@@ -7777,8 +5526,8 @@ export namespace CreateTeamInvoiceItems$ {
         webAnalyticsEvent?: CreateTeamWebAnalyticsEvent$.Outbound | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamInvoiceItems> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamInvoiceItems> =
+        z.object({
             pro: z.lazy(() => CreateTeamPro$.outboundSchema).optional(),
             enterprise: z.lazy(() => CreateTeamEnterprise$.outboundSchema).optional(),
             analytics: z.lazy(() => CreateTeamAnalytics$.outboundSchema).optional(),
@@ -7871,285 +5620,107 @@ export namespace CreateTeamInvoiceItems$ {
                 .optional(),
             wafOwaspRequests: z.lazy(() => CreateTeamWafOwaspRequests$.outboundSchema).optional(),
             webAnalyticsEvent: z.lazy(() => CreateTeamWebAnalyticsEvent$.outboundSchema).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.pro === undefined ? null : { pro: v.pro }),
-                ...(v.enterprise === undefined ? null : { enterprise: v.enterprise }),
-                ...(v.analytics === undefined ? null : { analytics: v.analytics }),
-                ...(v.concurrentBuilds === undefined
-                    ? null
-                    : { concurrentBuilds: v.concurrentBuilds }),
-                ...(v.monitoring === undefined ? null : { monitoring: v.monitoring }),
-                ...(v.passwordProtection === undefined
-                    ? null
-                    : { passwordProtection: v.passwordProtection }),
-                ...(v.previewDeploymentSuffix === undefined
-                    ? null
-                    : { previewDeploymentSuffix: v.previewDeploymentSuffix }),
-                ...(v.saml === undefined ? null : { saml: v.saml }),
-                ...(v.teamSeats === undefined ? null : { teamSeats: v.teamSeats }),
-                ...(v.webAnalytics === undefined ? null : { webAnalytics: v.webAnalytics }),
-                ...(v.analyticsUsage === undefined ? null : { analyticsUsage: v.analyticsUsage }),
-                ...(v.artifacts === undefined ? null : { artifacts: v.artifacts }),
-                ...(v.bandwidth === undefined ? null : { bandwidth: v.bandwidth }),
-                ...(v.blobStores === undefined ? null : { blobStores: v.blobStores }),
-                ...(v.blobTotalAdvancedRequests === undefined
-                    ? null
-                    : { blobTotalAdvancedRequests: v.blobTotalAdvancedRequests }),
-                ...(v.blobTotalAvgSizeInBytes === undefined
-                    ? null
-                    : { blobTotalAvgSizeInBytes: v.blobTotalAvgSizeInBytes }),
-                ...(v.blobTotalGetResponseObjectSizeInBytes === undefined
-                    ? null
-                    : {
-                          blobTotalGetResponseObjectSizeInBytes:
-                              v.blobTotalGetResponseObjectSizeInBytes,
-                      }),
-                ...(v.blobTotalSimpleRequests === undefined
-                    ? null
-                    : { blobTotalSimpleRequests: v.blobTotalSimpleRequests }),
-                ...(v.buildMinute === undefined ? null : { buildMinute: v.buildMinute }),
-                ...(v.dataCacheRead === undefined ? null : { dataCacheRead: v.dataCacheRead }),
-                ...(v.dataCacheRevalidation === undefined
-                    ? null
-                    : { dataCacheRevalidation: v.dataCacheRevalidation }),
-                ...(v.dataCacheWrite === undefined ? null : { dataCacheWrite: v.dataCacheWrite }),
-                ...(v.edgeConfigRead === undefined ? null : { edgeConfigRead: v.edgeConfigRead }),
-                ...(v.edgeConfigWrite === undefined
-                    ? null
-                    : { edgeConfigWrite: v.edgeConfigWrite }),
-                ...(v.edgeFunctionExecutionUnits === undefined
-                    ? null
-                    : { edgeFunctionExecutionUnits: v.edgeFunctionExecutionUnits }),
-                ...(v.edgeMiddlewareInvocations === undefined
-                    ? null
-                    : { edgeMiddlewareInvocations: v.edgeMiddlewareInvocations }),
-                ...(v.edgeRequest === undefined ? null : { edgeRequest: v.edgeRequest }),
-                ...(v.edgeRequestAdditionalCpuDuration === undefined
-                    ? null
-                    : { edgeRequestAdditionalCpuDuration: v.edgeRequestAdditionalCpuDuration }),
-                ...(v.fastDataTransfer === undefined
-                    ? null
-                    : { fastDataTransfer: v.fastDataTransfer }),
-                ...(v.fastOriginTransfer === undefined
-                    ? null
-                    : { fastOriginTransfer: v.fastOriginTransfer }),
-                ...(v.functionDuration === undefined
-                    ? null
-                    : { functionDuration: v.functionDuration }),
-                ...(v.functionInvocation === undefined
-                    ? null
-                    : { functionInvocation: v.functionInvocation }),
-                ...(v.logDrainsVolume === undefined
-                    ? null
-                    : { logDrainsVolume: v.logDrainsVolume }),
-                ...(v.monitoringMetric === undefined
-                    ? null
-                    : { monitoringMetric: v.monitoringMetric }),
-                ...(v.postgresComputeTime === undefined
-                    ? null
-                    : { postgresComputeTime: v.postgresComputeTime }),
-                ...(v.postgresDataStorage === undefined
-                    ? null
-                    : { postgresDataStorage: v.postgresDataStorage }),
-                ...(v.postgresDataTransfer === undefined
-                    ? null
-                    : { postgresDataTransfer: v.postgresDataTransfer }),
-                ...(v.postgresDatabase === undefined
-                    ? null
-                    : { postgresDatabase: v.postgresDatabase }),
-                ...(v.postgresWrittenData === undefined
-                    ? null
-                    : { postgresWrittenData: v.postgresWrittenData }),
-                ...(v.serverlessFunctionExecution === undefined
-                    ? null
-                    : { serverlessFunctionExecution: v.serverlessFunctionExecution }),
-                ...(v.sourceImages === undefined ? null : { sourceImages: v.sourceImages }),
-                ...(v.storageRedisTotalBandwidthInBytes === undefined
-                    ? null
-                    : { storageRedisTotalBandwidthInBytes: v.storageRedisTotalBandwidthInBytes }),
-                ...(v.storageRedisTotalCommands === undefined
-                    ? null
-                    : { storageRedisTotalCommands: v.storageRedisTotalCommands }),
-                ...(v.storageRedisTotalDailyAvgStorageInBytes === undefined
-                    ? null
-                    : {
-                          storageRedisTotalDailyAvgStorageInBytes:
-                              v.storageRedisTotalDailyAvgStorageInBytes,
-                      }),
-                ...(v.storageRedisTotalDatabases === undefined
-                    ? null
-                    : { storageRedisTotalDatabases: v.storageRedisTotalDatabases }),
-                ...(v.wafOwaspExcessBytes === undefined
-                    ? null
-                    : { wafOwaspExcessBytes: v.wafOwaspExcessBytes }),
-                ...(v.wafOwaspRequests === undefined
-                    ? null
-                    : { wafOwaspRequests: v.wafOwaspRequests }),
-                ...(v.webAnalyticsEvent === undefined
-                    ? null
-                    : { webAnalyticsEvent: v.webAnalyticsEvent }),
-            };
         });
 }
 
 /** @internal */
 export namespace CreateTeamInvoiceSettings$ {
-    export const inboundSchema: z.ZodType<CreateTeamInvoiceSettings, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<CreateTeamInvoiceSettings, z.ZodTypeDef, unknown> =
+        z.object({
             footer: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.footer === undefined ? null : { footer: v.footer }),
-            };
         });
 
     export type Outbound = {
         footer?: string | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamInvoiceSettings> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamInvoiceSettings> =
+        z.object({
             footer: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.footer === undefined ? null : { footer: v.footer }),
-            };
         });
 }
 
 /** @internal */
 export namespace CreateTeamTeamsTrial$ {
-    export const inboundSchema: z.ZodType<CreateTeamTeamsTrial, z.ZodTypeDef, unknown> = z
-        .object({
-            start: z.number(),
-            end: z.number(),
-        })
-        .transform((v) => {
-            return {
-                start: v.start,
-                end: v.end,
-            };
-        });
+    export const inboundSchema: z.ZodType<CreateTeamTeamsTrial, z.ZodTypeDef, unknown> = z.object({
+        start: z.number(),
+        end: z.number(),
+    });
 
     export type Outbound = {
         start: number;
         end: number;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamTeamsTrial> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamTeamsTrial> = z.object(
+        {
             start: z.number(),
             end: z.number(),
-        })
-        .transform((v) => {
-            return {
-                start: v.start,
-                end: v.end,
-            };
-        });
+        }
+    );
 }
 
 /** @internal */
 export namespace CreateTeamTeamsPeriod$ {
-    export const inboundSchema: z.ZodType<CreateTeamTeamsPeriod, z.ZodTypeDef, unknown> = z
-        .object({
-            start: z.number(),
-            end: z.number(),
-        })
-        .transform((v) => {
-            return {
-                start: v.start,
-                end: v.end,
-            };
-        });
+    export const inboundSchema: z.ZodType<CreateTeamTeamsPeriod, z.ZodTypeDef, unknown> = z.object({
+        start: z.number(),
+        end: z.number(),
+    });
 
     export type Outbound = {
         start: number;
         end: number;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamTeamsPeriod> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamTeamsPeriod> =
+        z.object({
             start: z.number(),
             end: z.number(),
-        })
-        .transform((v) => {
-            return {
-                start: v.start,
-                end: v.end,
-            };
         });
 }
 
 /** @internal */
 export namespace CreateTeamInterval$ {
-    export const inboundSchema = z.nativeEnum(CreateTeamInterval);
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<typeof CreateTeamInterval> =
+        z.nativeEnum(CreateTeamInterval);
+    export const outboundSchema: z.ZodNativeEnum<typeof CreateTeamInterval> = inboundSchema;
 }
 
 /** @internal */
 export namespace CreateTeamFrequency$ {
-    export const inboundSchema: z.ZodType<CreateTeamFrequency, z.ZodTypeDef, unknown> = z
-        .object({
-            interval: CreateTeamInterval$.inboundSchema,
-            intervalCount: z.number(),
-        })
-        .transform((v) => {
-            return {
-                interval: v.interval,
-                intervalCount: v.intervalCount,
-            };
-        });
+    export const inboundSchema: z.ZodType<CreateTeamFrequency, z.ZodTypeDef, unknown> = z.object({
+        interval: CreateTeamInterval$.inboundSchema,
+        intervalCount: z.number(),
+    });
 
     export type Outbound = {
         interval: string;
         intervalCount: number;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamFrequency> = z
-        .object({
-            interval: CreateTeamInterval$.outboundSchema,
-            intervalCount: z.number(),
-        })
-        .transform((v) => {
-            return {
-                interval: v.interval,
-                intervalCount: v.intervalCount,
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamFrequency> = z.object({
+        interval: CreateTeamInterval$.outboundSchema,
+        intervalCount: z.number(),
+    });
 }
 
 /** @internal */
 export namespace CreateTeamDuration$ {
-    export const inboundSchema = z.nativeEnum(CreateTeamDuration);
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<typeof CreateTeamDuration> =
+        z.nativeEnum(CreateTeamDuration);
+    export const outboundSchema: z.ZodNativeEnum<typeof CreateTeamDuration> = inboundSchema;
 }
 
 /** @internal */
 export namespace CreateTeamCoupon$ {
-    export const inboundSchema: z.ZodType<CreateTeamCoupon, z.ZodTypeDef, unknown> = z
-        .object({
-            id: z.string(),
-            name: z.nullable(z.string()),
-            amountOff: z.nullable(z.number()),
-            percentageOff: z.nullable(z.number()),
-            durationInMonths: z.nullable(z.number()),
-            duration: CreateTeamDuration$.inboundSchema,
-        })
-        .transform((v) => {
-            return {
-                id: v.id,
-                name: v.name,
-                amountOff: v.amountOff,
-                percentageOff: v.percentageOff,
-                durationInMonths: v.durationInMonths,
-                duration: v.duration,
-            };
-        });
+    export const inboundSchema: z.ZodType<CreateTeamCoupon, z.ZodTypeDef, unknown> = z.object({
+        id: z.string(),
+        name: z.nullable(z.string()),
+        amountOff: z.nullable(z.number()),
+        percentageOff: z.nullable(z.number()),
+        durationInMonths: z.nullable(z.number()),
+        duration: CreateTeamDuration$.inboundSchema,
+    });
 
     export type Outbound = {
         id: string;
@@ -8160,78 +5731,43 @@ export namespace CreateTeamCoupon$ {
         duration: string;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamCoupon> = z
-        .object({
-            id: z.string(),
-            name: z.nullable(z.string()),
-            amountOff: z.nullable(z.number()),
-            percentageOff: z.nullable(z.number()),
-            durationInMonths: z.nullable(z.number()),
-            duration: CreateTeamDuration$.outboundSchema,
-        })
-        .transform((v) => {
-            return {
-                id: v.id,
-                name: v.name,
-                amountOff: v.amountOff,
-                percentageOff: v.percentageOff,
-                durationInMonths: v.durationInMonths,
-                duration: v.duration,
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamCoupon> = z.object({
+        id: z.string(),
+        name: z.nullable(z.string()),
+        amountOff: z.nullable(z.number()),
+        percentageOff: z.nullable(z.number()),
+        durationInMonths: z.nullable(z.number()),
+        duration: CreateTeamDuration$.outboundSchema,
+    });
 }
 
 /** @internal */
 export namespace CreateTeamDiscount$ {
-    export const inboundSchema: z.ZodType<CreateTeamDiscount, z.ZodTypeDef, unknown> = z
-        .object({
-            id: z.string(),
-            coupon: z.lazy(() => CreateTeamCoupon$.inboundSchema),
-        })
-        .transform((v) => {
-            return {
-                id: v.id,
-                coupon: v.coupon,
-            };
-        });
+    export const inboundSchema: z.ZodType<CreateTeamDiscount, z.ZodTypeDef, unknown> = z.object({
+        id: z.string(),
+        coupon: z.lazy(() => CreateTeamCoupon$.inboundSchema),
+    });
 
     export type Outbound = {
         id: string;
         coupon: CreateTeamCoupon$.Outbound;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamDiscount> = z
-        .object({
-            id: z.string(),
-            coupon: z.lazy(() => CreateTeamCoupon$.outboundSchema),
-        })
-        .transform((v) => {
-            return {
-                id: v.id,
-                coupon: v.coupon,
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamDiscount> = z.object({
+        id: z.string(),
+        coupon: z.lazy(() => CreateTeamCoupon$.outboundSchema),
+    });
 }
 
 /** @internal */
 export namespace CreateTeamItems$ {
-    export const inboundSchema: z.ZodType<CreateTeamItems, z.ZodTypeDef, unknown> = z
-        .object({
-            id: z.string(),
-            priceId: z.string(),
-            productId: z.string(),
-            amount: z.number(),
-            quantity: z.number(),
-        })
-        .transform((v) => {
-            return {
-                id: v.id,
-                priceId: v.priceId,
-                productId: v.productId,
-                amount: v.amount,
-                quantity: v.quantity,
-            };
-        });
+    export const inboundSchema: z.ZodType<CreateTeamItems, z.ZodTypeDef, unknown> = z.object({
+        id: z.string(),
+        priceId: z.string(),
+        productId: z.string(),
+        amount: z.number(),
+        quantity: z.number(),
+    });
 
     export type Outbound = {
         id: string;
@@ -8241,45 +5777,25 @@ export namespace CreateTeamItems$ {
         quantity: number;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamItems> = z
-        .object({
-            id: z.string(),
-            priceId: z.string(),
-            productId: z.string(),
-            amount: z.number(),
-            quantity: z.number(),
-        })
-        .transform((v) => {
-            return {
-                id: v.id,
-                priceId: v.priceId,
-                productId: v.productId,
-                amount: v.amount,
-                quantity: v.quantity,
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamItems> = z.object({
+        id: z.string(),
+        priceId: z.string(),
+        productId: z.string(),
+        amount: z.number(),
+        quantity: z.number(),
+    });
 }
 
 /** @internal */
 export namespace CreateTeamSubscriptions$ {
-    export const inboundSchema: z.ZodType<CreateTeamSubscriptions, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<CreateTeamSubscriptions, z.ZodTypeDef, unknown> =
+        z.object({
             id: z.string(),
             trial: z.nullable(z.lazy(() => CreateTeamTeamsTrial$.inboundSchema)),
             period: z.lazy(() => CreateTeamTeamsPeriod$.inboundSchema),
             frequency: z.lazy(() => CreateTeamFrequency$.inboundSchema),
             discount: z.nullable(z.lazy(() => CreateTeamDiscount$.inboundSchema)),
             items: z.array(z.lazy(() => CreateTeamItems$.inboundSchema)),
-        })
-        .transform((v) => {
-            return {
-                id: v.id,
-                trial: v.trial,
-                period: v.period,
-                frequency: v.frequency,
-                discount: v.discount,
-                items: v.items,
-            };
         });
 
     export type Outbound = {
@@ -8291,146 +5807,81 @@ export namespace CreateTeamSubscriptions$ {
         items: Array<CreateTeamItems$.Outbound>;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamSubscriptions> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamSubscriptions> =
+        z.object({
             id: z.string(),
             trial: z.nullable(z.lazy(() => CreateTeamTeamsTrial$.outboundSchema)),
             period: z.lazy(() => CreateTeamTeamsPeriod$.outboundSchema),
             frequency: z.lazy(() => CreateTeamFrequency$.outboundSchema),
             discount: z.nullable(z.lazy(() => CreateTeamDiscount$.outboundSchema)),
             items: z.array(z.lazy(() => CreateTeamItems$.outboundSchema)),
-        })
-        .transform((v) => {
-            return {
-                id: v.id,
-                trial: v.trial,
-                period: v.period,
-                frequency: v.frequency,
-                discount: v.discount,
-                items: v.items,
-            };
         });
 }
 
 /** @internal */
 export namespace CreateTeamControls$ {
-    export const inboundSchema: z.ZodType<CreateTeamControls, z.ZodTypeDef, unknown> = z
-        .object({
-            analyticsSampleRateInPercent: z.nullable(z.number()).optional(),
-            analyticsSpendLimitInDollars: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.analyticsSampleRateInPercent === undefined
-                    ? null
-                    : { analyticsSampleRateInPercent: v.analyticsSampleRateInPercent }),
-                ...(v.analyticsSpendLimitInDollars === undefined
-                    ? null
-                    : { analyticsSpendLimitInDollars: v.analyticsSpendLimitInDollars }),
-            };
-        });
+    export const inboundSchema: z.ZodType<CreateTeamControls, z.ZodTypeDef, unknown> = z.object({
+        analyticsSampleRateInPercent: z.nullable(z.number()).optional(),
+        analyticsSpendLimitInDollars: z.nullable(z.number()).optional(),
+    });
 
     export type Outbound = {
         analyticsSampleRateInPercent?: number | null | undefined;
         analyticsSpendLimitInDollars?: number | null | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamControls> = z
-        .object({
-            analyticsSampleRateInPercent: z.nullable(z.number()).optional(),
-            analyticsSpendLimitInDollars: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.analyticsSampleRateInPercent === undefined
-                    ? null
-                    : { analyticsSampleRateInPercent: v.analyticsSampleRateInPercent }),
-                ...(v.analyticsSpendLimitInDollars === undefined
-                    ? null
-                    : { analyticsSpendLimitInDollars: v.analyticsSpendLimitInDollars }),
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamControls> = z.object({
+        analyticsSampleRateInPercent: z.nullable(z.number()).optional(),
+        analyticsSpendLimitInDollars: z.nullable(z.number()).optional(),
+    });
 }
 
 /** @internal */
 export namespace CreateTeamStatus$ {
-    export const inboundSchema = z.nativeEnum(CreateTeamStatus);
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<typeof CreateTeamStatus> =
+        z.nativeEnum(CreateTeamStatus);
+    export const outboundSchema: z.ZodNativeEnum<typeof CreateTeamStatus> = inboundSchema;
 }
 
 /** @internal */
 export namespace CreateTeamPricingExperiment$ {
-    export const inboundSchema = z.nativeEnum(CreateTeamPricingExperiment);
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<typeof CreateTeamPricingExperiment> = z.nativeEnum(
+        CreateTeamPricingExperiment
+    );
+    export const outboundSchema: z.ZodNativeEnum<typeof CreateTeamPricingExperiment> =
+        inboundSchema;
 }
 
 /** @internal */
 export namespace CreateTeamBilling$ {
-    export const inboundSchema: z.ZodType<CreateTeamBilling, z.ZodTypeDef, unknown> = z
-        .object({
-            currency: CreateTeamCurrency$.inboundSchema.optional(),
-            cancelation: z.nullable(z.number()).optional(),
-            period: z.nullable(z.lazy(() => CreateTeamPeriod$.inboundSchema)),
-            contract: z.nullable(z.lazy(() => CreateTeamContract$.inboundSchema)).optional(),
-            plan: CreateTeamPlan$.inboundSchema,
-            planIteration: z.string().optional(),
-            platform: CreateTeamPlatform$.inboundSchema.optional(),
-            orbCustomerId: z.string().optional(),
-            syncedAt: z.number().optional(),
-            programType: CreateTeamProgramType$.inboundSchema.optional(),
-            trial: z.nullable(z.lazy(() => CreateTeamTrial$.inboundSchema)).optional(),
-            email: z.nullable(z.string()).optional(),
-            tax: z.nullable(z.lazy(() => CreateTeamTax$.inboundSchema)).optional(),
-            language: z.nullable(z.string()).optional(),
-            address: z.nullable(z.lazy(() => CreateTeamAddress$.inboundSchema)).optional(),
-            name: z.nullable(z.string()).optional(),
-            invoiceItems: z
-                .nullable(z.lazy(() => CreateTeamInvoiceItems$.inboundSchema))
-                .optional(),
-            invoiceSettings: z.lazy(() => CreateTeamInvoiceSettings$.inboundSchema).optional(),
-            subscriptions: z
-                .nullable(z.array(z.lazy(() => CreateTeamSubscriptions$.inboundSchema)))
-                .optional(),
-            controls: z.nullable(z.lazy(() => CreateTeamControls$.inboundSchema)).optional(),
-            purchaseOrder: z.nullable(z.string()).optional(),
-            status: CreateTeamStatus$.inboundSchema.optional(),
-            pricingExperiment: CreateTeamPricingExperiment$.inboundSchema.optional(),
-            orbMigrationScheduledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.currency === undefined ? null : { currency: v.currency }),
-                ...(v.cancelation === undefined ? null : { cancelation: v.cancelation }),
-                period: v.period,
-                ...(v.contract === undefined ? null : { contract: v.contract }),
-                plan: v.plan,
-                ...(v.planIteration === undefined ? null : { planIteration: v.planIteration }),
-                ...(v.platform === undefined ? null : { platform: v.platform }),
-                ...(v.orbCustomerId === undefined ? null : { orbCustomerId: v.orbCustomerId }),
-                ...(v.syncedAt === undefined ? null : { syncedAt: v.syncedAt }),
-                ...(v.programType === undefined ? null : { programType: v.programType }),
-                ...(v.trial === undefined ? null : { trial: v.trial }),
-                ...(v.email === undefined ? null : { email: v.email }),
-                ...(v.tax === undefined ? null : { tax: v.tax }),
-                ...(v.language === undefined ? null : { language: v.language }),
-                ...(v.address === undefined ? null : { address: v.address }),
-                ...(v.name === undefined ? null : { name: v.name }),
-                ...(v.invoiceItems === undefined ? null : { invoiceItems: v.invoiceItems }),
-                ...(v.invoiceSettings === undefined
-                    ? null
-                    : { invoiceSettings: v.invoiceSettings }),
-                ...(v.subscriptions === undefined ? null : { subscriptions: v.subscriptions }),
-                ...(v.controls === undefined ? null : { controls: v.controls }),
-                ...(v.purchaseOrder === undefined ? null : { purchaseOrder: v.purchaseOrder }),
-                ...(v.status === undefined ? null : { status: v.status }),
-                ...(v.pricingExperiment === undefined
-                    ? null
-                    : { pricingExperiment: v.pricingExperiment }),
-                ...(v.orbMigrationScheduledAt === undefined
-                    ? null
-                    : { orbMigrationScheduledAt: v.orbMigrationScheduledAt }),
-            };
-        });
+    export const inboundSchema: z.ZodType<CreateTeamBilling, z.ZodTypeDef, unknown> = z.object({
+        currency: CreateTeamCurrency$.inboundSchema.optional(),
+        cancelation: z.nullable(z.number()).optional(),
+        period: z.nullable(z.lazy(() => CreateTeamPeriod$.inboundSchema)),
+        contract: z.nullable(z.lazy(() => CreateTeamContract$.inboundSchema)).optional(),
+        plan: CreateTeamPlan$.inboundSchema,
+        planIteration: z.string().optional(),
+        platform: CreateTeamPlatform$.inboundSchema.optional(),
+        orbCustomerId: z.string().optional(),
+        syncedAt: z.number().optional(),
+        programType: CreateTeamProgramType$.inboundSchema.optional(),
+        trial: z.nullable(z.lazy(() => CreateTeamTrial$.inboundSchema)).optional(),
+        email: z.nullable(z.string()).optional(),
+        tax: z.nullable(z.lazy(() => CreateTeamTax$.inboundSchema)).optional(),
+        language: z.nullable(z.string()).optional(),
+        address: z.nullable(z.lazy(() => CreateTeamAddress$.inboundSchema)).optional(),
+        name: z.nullable(z.string()).optional(),
+        invoiceItems: z.nullable(z.lazy(() => CreateTeamInvoiceItems$.inboundSchema)).optional(),
+        invoiceSettings: z.lazy(() => CreateTeamInvoiceSettings$.inboundSchema).optional(),
+        subscriptions: z
+            .nullable(z.array(z.lazy(() => CreateTeamSubscriptions$.inboundSchema)))
+            .optional(),
+        controls: z.nullable(z.lazy(() => CreateTeamControls$.inboundSchema)).optional(),
+        purchaseOrder: z.nullable(z.string()).optional(),
+        status: CreateTeamStatus$.inboundSchema.optional(),
+        pricingExperiment: CreateTeamPricingExperiment$.inboundSchema.optional(),
+        orbMigrationScheduledAt: z.nullable(z.number()).optional(),
+    });
 
     export type Outbound = {
         currency?: string | undefined;
@@ -8459,88 +5910,45 @@ export namespace CreateTeamBilling$ {
         orbMigrationScheduledAt?: number | null | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamBilling> = z
-        .object({
-            currency: CreateTeamCurrency$.outboundSchema.optional(),
-            cancelation: z.nullable(z.number()).optional(),
-            period: z.nullable(z.lazy(() => CreateTeamPeriod$.outboundSchema)),
-            contract: z.nullable(z.lazy(() => CreateTeamContract$.outboundSchema)).optional(),
-            plan: CreateTeamPlan$.outboundSchema,
-            planIteration: z.string().optional(),
-            platform: CreateTeamPlatform$.outboundSchema.optional(),
-            orbCustomerId: z.string().optional(),
-            syncedAt: z.number().optional(),
-            programType: CreateTeamProgramType$.outboundSchema.optional(),
-            trial: z.nullable(z.lazy(() => CreateTeamTrial$.outboundSchema)).optional(),
-            email: z.nullable(z.string()).optional(),
-            tax: z.nullable(z.lazy(() => CreateTeamTax$.outboundSchema)).optional(),
-            language: z.nullable(z.string()).optional(),
-            address: z.nullable(z.lazy(() => CreateTeamAddress$.outboundSchema)).optional(),
-            name: z.nullable(z.string()).optional(),
-            invoiceItems: z
-                .nullable(z.lazy(() => CreateTeamInvoiceItems$.outboundSchema))
-                .optional(),
-            invoiceSettings: z.lazy(() => CreateTeamInvoiceSettings$.outboundSchema).optional(),
-            subscriptions: z
-                .nullable(z.array(z.lazy(() => CreateTeamSubscriptions$.outboundSchema)))
-                .optional(),
-            controls: z.nullable(z.lazy(() => CreateTeamControls$.outboundSchema)).optional(),
-            purchaseOrder: z.nullable(z.string()).optional(),
-            status: CreateTeamStatus$.outboundSchema.optional(),
-            pricingExperiment: CreateTeamPricingExperiment$.outboundSchema.optional(),
-            orbMigrationScheduledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.currency === undefined ? null : { currency: v.currency }),
-                ...(v.cancelation === undefined ? null : { cancelation: v.cancelation }),
-                period: v.period,
-                ...(v.contract === undefined ? null : { contract: v.contract }),
-                plan: v.plan,
-                ...(v.planIteration === undefined ? null : { planIteration: v.planIteration }),
-                ...(v.platform === undefined ? null : { platform: v.platform }),
-                ...(v.orbCustomerId === undefined ? null : { orbCustomerId: v.orbCustomerId }),
-                ...(v.syncedAt === undefined ? null : { syncedAt: v.syncedAt }),
-                ...(v.programType === undefined ? null : { programType: v.programType }),
-                ...(v.trial === undefined ? null : { trial: v.trial }),
-                ...(v.email === undefined ? null : { email: v.email }),
-                ...(v.tax === undefined ? null : { tax: v.tax }),
-                ...(v.language === undefined ? null : { language: v.language }),
-                ...(v.address === undefined ? null : { address: v.address }),
-                ...(v.name === undefined ? null : { name: v.name }),
-                ...(v.invoiceItems === undefined ? null : { invoiceItems: v.invoiceItems }),
-                ...(v.invoiceSettings === undefined
-                    ? null
-                    : { invoiceSettings: v.invoiceSettings }),
-                ...(v.subscriptions === undefined ? null : { subscriptions: v.subscriptions }),
-                ...(v.controls === undefined ? null : { controls: v.controls }),
-                ...(v.purchaseOrder === undefined ? null : { purchaseOrder: v.purchaseOrder }),
-                ...(v.status === undefined ? null : { status: v.status }),
-                ...(v.pricingExperiment === undefined
-                    ? null
-                    : { pricingExperiment: v.pricingExperiment }),
-                ...(v.orbMigrationScheduledAt === undefined
-                    ? null
-                    : { orbMigrationScheduledAt: v.orbMigrationScheduledAt }),
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamBilling> = z.object({
+        currency: CreateTeamCurrency$.outboundSchema.optional(),
+        cancelation: z.nullable(z.number()).optional(),
+        period: z.nullable(z.lazy(() => CreateTeamPeriod$.outboundSchema)),
+        contract: z.nullable(z.lazy(() => CreateTeamContract$.outboundSchema)).optional(),
+        plan: CreateTeamPlan$.outboundSchema,
+        planIteration: z.string().optional(),
+        platform: CreateTeamPlatform$.outboundSchema.optional(),
+        orbCustomerId: z.string().optional(),
+        syncedAt: z.number().optional(),
+        programType: CreateTeamProgramType$.outboundSchema.optional(),
+        trial: z.nullable(z.lazy(() => CreateTeamTrial$.outboundSchema)).optional(),
+        email: z.nullable(z.string()).optional(),
+        tax: z.nullable(z.lazy(() => CreateTeamTax$.outboundSchema)).optional(),
+        language: z.nullable(z.string()).optional(),
+        address: z.nullable(z.lazy(() => CreateTeamAddress$.outboundSchema)).optional(),
+        name: z.nullable(z.string()).optional(),
+        invoiceItems: z.nullable(z.lazy(() => CreateTeamInvoiceItems$.outboundSchema)).optional(),
+        invoiceSettings: z.lazy(() => CreateTeamInvoiceSettings$.outboundSchema).optional(),
+        subscriptions: z
+            .nullable(z.array(z.lazy(() => CreateTeamSubscriptions$.outboundSchema)))
+            .optional(),
+        controls: z.nullable(z.lazy(() => CreateTeamControls$.outboundSchema)).optional(),
+        purchaseOrder: z.nullable(z.string()).optional(),
+        status: CreateTeamStatus$.outboundSchema.optional(),
+        pricingExperiment: CreateTeamPricingExperiment$.outboundSchema.optional(),
+        orbMigrationScheduledAt: z.nullable(z.number()).optional(),
+    });
 }
 
 /** @internal */
 export namespace CreateTeamResponseBody$ {
-    export const inboundSchema: z.ZodType<CreateTeamResponseBody, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<CreateTeamResponseBody, z.ZodTypeDef, unknown> = z.object(
+        {
             id: z.string(),
             slug: z.string(),
             billing: z.lazy(() => CreateTeamBilling$.inboundSchema),
-        })
-        .transform((v) => {
-            return {
-                id: v.id,
-                slug: v.slug,
-                billing: v.billing,
-            };
-        });
+        }
+    );
 
     export type Outbound = {
         id: string;
@@ -8548,17 +5956,10 @@ export namespace CreateTeamResponseBody$ {
         billing: CreateTeamBilling$.Outbound;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamResponseBody> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamResponseBody> =
+        z.object({
             id: z.string(),
             slug: z.string(),
             billing: z.lazy(() => CreateTeamBilling$.outboundSchema),
-        })
-        .transform((v) => {
-            return {
-                id: v.id,
-                slug: v.slug,
-                billing: v.billing,
-            };
         });
 }

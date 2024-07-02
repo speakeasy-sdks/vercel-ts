@@ -1,18 +1,19 @@
-speakeasyVersion: 1.293.0
+speakeasyVersion: 1.325.0
 sources:
     Vercel-API:
         sourceNamespace: vercel-api
-        sourceRevisionDigest: sha256:e735a9897356f13603012e5c89587acbdc7ce2c408fda771a6e998bd298f6c1f
-        sourceBlobDigest: sha256:d3e60242117d421079c83d18c8cb648b142a7c36505370f777ec66ea688e0574
+        sourceRevisionDigest: sha256:b268f4c628128346bf25d861c357f101e7c1ab2e5747ec6bf1654fd5296a8ab9
+        sourceBlobDigest: sha256:250fbddbbfbdb14fa7368f8342ea591b1840878a9efce373ebe9065953776d89
         tags:
             - latest
+            - main
 targets:
     typescript:
         source: Vercel-API
         sourceNamespace: vercel-api
-        sourceRevisionDigest: sha256:e735a9897356f13603012e5c89587acbdc7ce2c408fda771a6e998bd298f6c1f
-        sourceBlobDigest: sha256:d3e60242117d421079c83d18c8cb648b142a7c36505370f777ec66ea688e0574
-        outLocation: /Users/sagar/vercel-ts
+        sourceRevisionDigest: sha256:b268f4c628128346bf25d861c357f101e7c1ab2e5747ec6bf1654fd5296a8ab9
+        sourceBlobDigest: sha256:250fbddbbfbdb14fa7368f8342ea591b1840878a9efce373ebe9065953776d89
+        outLocation: /github/workspace/repo
 workflow:
     workflowVersion: 1.0.0
     speakeasyVersion: latest

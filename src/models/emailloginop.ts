@@ -38,48 +38,29 @@ export type EmailLoginResponseBody = EmailLoginResponseBody1 | EmailLoginRespons
 
 /** @internal */
 export namespace EmailLoginRequestBody$ {
-    export const inboundSchema: z.ZodType<EmailLoginRequestBody, z.ZodTypeDef, unknown> = z
-        .object({
-            email: z.string(),
-            tokenName: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                email: v.email,
-                ...(v.tokenName === undefined ? null : { tokenName: v.tokenName }),
-            };
-        });
+    export const inboundSchema: z.ZodType<EmailLoginRequestBody, z.ZodTypeDef, unknown> = z.object({
+        email: z.string(),
+        tokenName: z.string().optional(),
+    });
 
     export type Outbound = {
         email: string;
         tokenName?: string | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, EmailLoginRequestBody> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, EmailLoginRequestBody> =
+        z.object({
             email: z.string(),
             tokenName: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                email: v.email,
-                ...(v.tokenName === undefined ? null : { tokenName: v.tokenName }),
-            };
         });
 }
 
 /** @internal */
 export namespace EmailLoginResponseBody2$ {
-    export const inboundSchema: z.ZodType<EmailLoginResponseBody2, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<EmailLoginResponseBody2, z.ZodTypeDef, unknown> =
+        z.object({
             token: z.string(),
             securityCode: z.string(),
-        })
-        .transform((v) => {
-            return {
-                token: v.token,
-                securityCode: v.securityCode,
-            };
         });
 
     export type Outbound = {
@@ -87,31 +68,19 @@ export namespace EmailLoginResponseBody2$ {
         securityCode: string;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, EmailLoginResponseBody2> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, EmailLoginResponseBody2> =
+        z.object({
             token: z.string(),
             securityCode: z.string(),
-        })
-        .transform((v) => {
-            return {
-                token: v.token,
-                securityCode: v.securityCode,
-            };
         });
 }
 
 /** @internal */
 export namespace EmailLoginResponseBody1$ {
-    export const inboundSchema: z.ZodType<EmailLoginResponseBody1, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<EmailLoginResponseBody1, z.ZodTypeDef, unknown> =
+        z.object({
             token: z.string(),
             securityCode: z.string(),
-        })
-        .transform((v) => {
-            return {
-                token: v.token,
-                securityCode: v.securityCode,
-            };
         });
 
     export type Outbound = {
@@ -119,16 +88,10 @@ export namespace EmailLoginResponseBody1$ {
         securityCode: string;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, EmailLoginResponseBody1> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, EmailLoginResponseBody1> =
+        z.object({
             token: z.string(),
             securityCode: z.string(),
-        })
-        .transform((v) => {
-            return {
-                token: v.token,
-                securityCode: v.securityCode,
-            };
         });
 }
 

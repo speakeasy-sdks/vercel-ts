@@ -28,20 +28,11 @@ export type RemoveTeamMemberResponseBody = {
 
 /** @internal */
 export namespace RemoveTeamMemberRequest$ {
-    export const inboundSchema: z.ZodType<RemoveTeamMemberRequest, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<RemoveTeamMemberRequest, z.ZodTypeDef, unknown> =
+        z.object({
             teamId: z.string(),
             uid: z.string(),
             newDefaultTeamId: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                teamId: v.teamId,
-                uid: v.uid,
-                ...(v.newDefaultTeamId === undefined
-                    ? null
-                    : { newDefaultTeamId: v.newDefaultTeamId }),
-            };
         });
 
     export type Outbound = {
@@ -50,46 +41,27 @@ export namespace RemoveTeamMemberRequest$ {
         newDefaultTeamId?: string | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, RemoveTeamMemberRequest> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, RemoveTeamMemberRequest> =
+        z.object({
             teamId: z.string(),
             uid: z.string(),
             newDefaultTeamId: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                teamId: v.teamId,
-                uid: v.uid,
-                ...(v.newDefaultTeamId === undefined
-                    ? null
-                    : { newDefaultTeamId: v.newDefaultTeamId }),
-            };
         });
 }
 
 /** @internal */
 export namespace RemoveTeamMemberResponseBody$ {
-    export const inboundSchema: z.ZodType<RemoveTeamMemberResponseBody, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<RemoveTeamMemberResponseBody, z.ZodTypeDef, unknown> =
+        z.object({
             id: z.string(),
-        })
-        .transform((v) => {
-            return {
-                id: v.id,
-            };
         });
 
     export type Outbound = {
         id: string;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, RemoveTeamMemberResponseBody> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, RemoveTeamMemberResponseBody> =
+        z.object({
             id: z.string(),
-        })
-        .transform((v) => {
-            return {
-                id: v.id,
-            };
         });
 }

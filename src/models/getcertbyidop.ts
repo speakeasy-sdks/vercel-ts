@@ -29,19 +29,11 @@ export type GetCertByIdResponseBody = {
 
 /** @internal */
 export namespace GetCertByIdRequest$ {
-    export const inboundSchema: z.ZodType<GetCertByIdRequest, z.ZodTypeDef, unknown> = z
-        .object({
-            id: z.string(),
-            teamId: z.string().optional(),
-            slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                id: v.id,
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
-        });
+    export const inboundSchema: z.ZodType<GetCertByIdRequest, z.ZodTypeDef, unknown> = z.object({
+        id: z.string(),
+        teamId: z.string().optional(),
+        slug: z.string().optional(),
+    });
 
     export type Outbound = {
         id: string;
@@ -49,39 +41,22 @@ export namespace GetCertByIdRequest$ {
         slug?: string | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetCertByIdRequest> = z
-        .object({
-            id: z.string(),
-            teamId: z.string().optional(),
-            slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                id: v.id,
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetCertByIdRequest> = z.object({
+        id: z.string(),
+        teamId: z.string().optional(),
+        slug: z.string().optional(),
+    });
 }
 
 /** @internal */
 export namespace GetCertByIdResponseBody$ {
-    export const inboundSchema: z.ZodType<GetCertByIdResponseBody, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<GetCertByIdResponseBody, z.ZodTypeDef, unknown> =
+        z.object({
             id: z.string(),
             createdAt: z.number(),
             expiresAt: z.number(),
             autoRenew: z.boolean(),
             cns: z.array(z.string()),
-        })
-        .transform((v) => {
-            return {
-                id: v.id,
-                createdAt: v.createdAt,
-                expiresAt: v.expiresAt,
-                autoRenew: v.autoRenew,
-                cns: v.cns,
-            };
         });
 
     export type Outbound = {
@@ -92,21 +67,12 @@ export namespace GetCertByIdResponseBody$ {
         cns: Array<string>;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetCertByIdResponseBody> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetCertByIdResponseBody> =
+        z.object({
             id: z.string(),
             createdAt: z.number(),
             expiresAt: z.number(),
             autoRenew: z.boolean(),
             cns: z.array(z.string()),
-        })
-        .transform((v) => {
-            return {
-                id: v.id,
-                createdAt: v.createdAt,
-                expiresAt: v.expiresAt,
-                autoRenew: v.autoRenew,
-                cns: v.cns,
-            };
         });
 }
