@@ -103,16 +103,10 @@ export type GetTeamAccessRequestResponseBody = {
 
 /** @internal */
 export namespace GetTeamAccessRequestRequest$ {
-    export const inboundSchema: z.ZodType<GetTeamAccessRequestRequest, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<GetTeamAccessRequestRequest, z.ZodTypeDef, unknown> =
+        z.object({
             teamId: z.string(),
             userId: z.string(),
-        })
-        .transform((v) => {
-            return {
-                teamId: v.teamId,
-                userId: v.userId,
-            };
         });
 
     export type Outbound = {
@@ -120,23 +114,19 @@ export namespace GetTeamAccessRequestRequest$ {
         userId: string;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetTeamAccessRequestRequest> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetTeamAccessRequestRequest> =
+        z.object({
             teamId: z.string(),
             userId: z.string(),
-        })
-        .transform((v) => {
-            return {
-                teamId: v.teamId,
-                userId: v.userId,
-            };
         });
 }
 
 /** @internal */
 export namespace GetTeamAccessRequestOrigin$ {
-    export const inboundSchema = z.nativeEnum(GetTeamAccessRequestOrigin);
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<typeof GetTeamAccessRequestOrigin> = z.nativeEnum(
+        GetTeamAccessRequestOrigin
+    );
+    export const outboundSchema: z.ZodNativeEnum<typeof GetTeamAccessRequestOrigin> = inboundSchema;
 }
 
 /** @internal */
@@ -151,8 +141,8 @@ export namespace GetTeamAccessRequestGitUserId$ {
 
 /** @internal */
 export namespace GetTeamAccessRequestJoinedFrom$ {
-    export const inboundSchema: z.ZodType<GetTeamAccessRequestJoinedFrom, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<GetTeamAccessRequestJoinedFrom, z.ZodTypeDef, unknown> =
+        z.object({
             origin: GetTeamAccessRequestOrigin$.inboundSchema,
             commitId: z.string().optional(),
             repoId: z.string().optional(),
@@ -164,23 +154,6 @@ export namespace GetTeamAccessRequestJoinedFrom$ {
             idpUserId: z.string().optional(),
             dsyncUserId: z.string().optional(),
             dsyncConnectedAt: z.number().optional(),
-        })
-        .transform((v) => {
-            return {
-                origin: v.origin,
-                ...(v.commitId === undefined ? null : { commitId: v.commitId }),
-                ...(v.repoId === undefined ? null : { repoId: v.repoId }),
-                ...(v.repoPath === undefined ? null : { repoPath: v.repoPath }),
-                ...(v.gitUserId === undefined ? null : { gitUserId: v.gitUserId }),
-                ...(v.gitUserLogin === undefined ? null : { gitUserLogin: v.gitUserLogin }),
-                ...(v.ssoUserId === undefined ? null : { ssoUserId: v.ssoUserId }),
-                ...(v.ssoConnectedAt === undefined ? null : { ssoConnectedAt: v.ssoConnectedAt }),
-                ...(v.idpUserId === undefined ? null : { idpUserId: v.idpUserId }),
-                ...(v.dsyncUserId === undefined ? null : { dsyncUserId: v.dsyncUserId }),
-                ...(v.dsyncConnectedAt === undefined
-                    ? null
-                    : { dsyncConnectedAt: v.dsyncConnectedAt }),
-            };
         });
 
     export type Outbound = {
@@ -198,105 +171,60 @@ export namespace GetTeamAccessRequestJoinedFrom$ {
     };
 
     export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetTeamAccessRequestJoinedFrom> =
-        z
-            .object({
-                origin: GetTeamAccessRequestOrigin$.outboundSchema,
-                commitId: z.string().optional(),
-                repoId: z.string().optional(),
-                repoPath: z.string().optional(),
-                gitUserId: z.union([z.string(), z.number()]).optional(),
-                gitUserLogin: z.string().optional(),
-                ssoUserId: z.string().optional(),
-                ssoConnectedAt: z.number().optional(),
-                idpUserId: z.string().optional(),
-                dsyncUserId: z.string().optional(),
-                dsyncConnectedAt: z.number().optional(),
-            })
-            .transform((v) => {
-                return {
-                    origin: v.origin,
-                    ...(v.commitId === undefined ? null : { commitId: v.commitId }),
-                    ...(v.repoId === undefined ? null : { repoId: v.repoId }),
-                    ...(v.repoPath === undefined ? null : { repoPath: v.repoPath }),
-                    ...(v.gitUserId === undefined ? null : { gitUserId: v.gitUserId }),
-                    ...(v.gitUserLogin === undefined ? null : { gitUserLogin: v.gitUserLogin }),
-                    ...(v.ssoUserId === undefined ? null : { ssoUserId: v.ssoUserId }),
-                    ...(v.ssoConnectedAt === undefined
-                        ? null
-                        : { ssoConnectedAt: v.ssoConnectedAt }),
-                    ...(v.idpUserId === undefined ? null : { idpUserId: v.idpUserId }),
-                    ...(v.dsyncUserId === undefined ? null : { dsyncUserId: v.dsyncUserId }),
-                    ...(v.dsyncConnectedAt === undefined
-                        ? null
-                        : { dsyncConnectedAt: v.dsyncConnectedAt }),
-                };
-            });
+        z.object({
+            origin: GetTeamAccessRequestOrigin$.outboundSchema,
+            commitId: z.string().optional(),
+            repoId: z.string().optional(),
+            repoPath: z.string().optional(),
+            gitUserId: z.union([z.string(), z.number()]).optional(),
+            gitUserLogin: z.string().optional(),
+            ssoUserId: z.string().optional(),
+            ssoConnectedAt: z.number().optional(),
+            idpUserId: z.string().optional(),
+            dsyncUserId: z.string().optional(),
+            dsyncConnectedAt: z.number().optional(),
+        });
 }
 
 /** @internal */
 export namespace GetTeamAccessRequestGithub$ {
-    export const inboundSchema: z.ZodType<GetTeamAccessRequestGithub, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<GetTeamAccessRequestGithub, z.ZodTypeDef, unknown> =
+        z.object({
             login: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.login === undefined ? null : { login: v.login }),
-            };
         });
 
     export type Outbound = {
         login?: string | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetTeamAccessRequestGithub> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetTeamAccessRequestGithub> =
+        z.object({
             login: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.login === undefined ? null : { login: v.login }),
-            };
         });
 }
 
 /** @internal */
 export namespace GetTeamAccessRequestGitlab$ {
-    export const inboundSchema: z.ZodType<GetTeamAccessRequestGitlab, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<GetTeamAccessRequestGitlab, z.ZodTypeDef, unknown> =
+        z.object({
             login: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.login === undefined ? null : { login: v.login }),
-            };
         });
 
     export type Outbound = {
         login?: string | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetTeamAccessRequestGitlab> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetTeamAccessRequestGitlab> =
+        z.object({
             login: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.login === undefined ? null : { login: v.login }),
-            };
         });
 }
 
 /** @internal */
 export namespace GetTeamAccessRequestBitbucket$ {
-    export const inboundSchema: z.ZodType<GetTeamAccessRequestBitbucket, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<GetTeamAccessRequestBitbucket, z.ZodTypeDef, unknown> =
+        z.object({
             login: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.login === undefined ? null : { login: v.login }),
-            };
         });
 
     export type Outbound = {
@@ -304,43 +232,24 @@ export namespace GetTeamAccessRequestBitbucket$ {
     };
 
     export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetTeamAccessRequestBitbucket> =
-        z
-            .object({
-                login: z.string().optional(),
-            })
-            .transform((v) => {
-                return {
-                    ...(v.login === undefined ? null : { login: v.login }),
-                };
-            });
+        z.object({
+            login: z.string().optional(),
+        });
 }
 
 /** @internal */
 export namespace GetTeamAccessRequestResponseBody$ {
     export const inboundSchema: z.ZodType<GetTeamAccessRequestResponseBody, z.ZodTypeDef, unknown> =
-        z
-            .object({
-                teamSlug: z.string(),
-                teamName: z.string(),
-                confirmed: z.boolean(),
-                joinedFrom: z.lazy(() => GetTeamAccessRequestJoinedFrom$.inboundSchema),
-                accessRequestedAt: z.number(),
-                github: z.nullable(z.lazy(() => GetTeamAccessRequestGithub$.inboundSchema)),
-                gitlab: z.nullable(z.lazy(() => GetTeamAccessRequestGitlab$.inboundSchema)),
-                bitbucket: z.nullable(z.lazy(() => GetTeamAccessRequestBitbucket$.inboundSchema)),
-            })
-            .transform((v) => {
-                return {
-                    teamSlug: v.teamSlug,
-                    teamName: v.teamName,
-                    confirmed: v.confirmed,
-                    joinedFrom: v.joinedFrom,
-                    accessRequestedAt: v.accessRequestedAt,
-                    github: v.github,
-                    gitlab: v.gitlab,
-                    bitbucket: v.bitbucket,
-                };
-            });
+        z.object({
+            teamSlug: z.string(),
+            teamName: z.string(),
+            confirmed: z.boolean(),
+            joinedFrom: z.lazy(() => GetTeamAccessRequestJoinedFrom$.inboundSchema),
+            accessRequestedAt: z.number(),
+            github: z.nullable(z.lazy(() => GetTeamAccessRequestGithub$.inboundSchema)),
+            gitlab: z.nullable(z.lazy(() => GetTeamAccessRequestGitlab$.inboundSchema)),
+            bitbucket: z.nullable(z.lazy(() => GetTeamAccessRequestBitbucket$.inboundSchema)),
+        });
 
     export type Outbound = {
         teamSlug: string;
@@ -357,27 +266,14 @@ export namespace GetTeamAccessRequestResponseBody$ {
         Outbound,
         z.ZodTypeDef,
         GetTeamAccessRequestResponseBody
-    > = z
-        .object({
-            teamSlug: z.string(),
-            teamName: z.string(),
-            confirmed: z.boolean(),
-            joinedFrom: z.lazy(() => GetTeamAccessRequestJoinedFrom$.outboundSchema),
-            accessRequestedAt: z.number(),
-            github: z.nullable(z.lazy(() => GetTeamAccessRequestGithub$.outboundSchema)),
-            gitlab: z.nullable(z.lazy(() => GetTeamAccessRequestGitlab$.outboundSchema)),
-            bitbucket: z.nullable(z.lazy(() => GetTeamAccessRequestBitbucket$.outboundSchema)),
-        })
-        .transform((v) => {
-            return {
-                teamSlug: v.teamSlug,
-                teamName: v.teamName,
-                confirmed: v.confirmed,
-                joinedFrom: v.joinedFrom,
-                accessRequestedAt: v.accessRequestedAt,
-                github: v.github,
-                gitlab: v.gitlab,
-                bitbucket: v.bitbucket,
-            };
-        });
+    > = z.object({
+        teamSlug: z.string(),
+        teamName: z.string(),
+        confirmed: z.boolean(),
+        joinedFrom: z.lazy(() => GetTeamAccessRequestJoinedFrom$.outboundSchema),
+        accessRequestedAt: z.number(),
+        github: z.nullable(z.lazy(() => GetTeamAccessRequestGithub$.outboundSchema)),
+        gitlab: z.nullable(z.lazy(() => GetTeamAccessRequestGitlab$.outboundSchema)),
+        bitbucket: z.nullable(z.lazy(() => GetTeamAccessRequestBitbucket$.outboundSchema)),
+    });
 }

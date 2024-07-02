@@ -27,21 +27,12 @@ export type RerequestCheckResponseBody = {};
 
 /** @internal */
 export namespace RerequestCheckRequest$ {
-    export const inboundSchema: z.ZodType<RerequestCheckRequest, z.ZodTypeDef, unknown> = z
-        .object({
-            deploymentId: z.string(),
-            checkId: z.string(),
-            teamId: z.string().optional(),
-            slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                deploymentId: v.deploymentId,
-                checkId: v.checkId,
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
-        });
+    export const inboundSchema: z.ZodType<RerequestCheckRequest, z.ZodTypeDef, unknown> = z.object({
+        deploymentId: z.string(),
+        checkId: z.string(),
+        teamId: z.string().optional(),
+        slug: z.string().optional(),
+    });
 
     export type Outbound = {
         deploymentId: string;
@@ -50,20 +41,12 @@ export namespace RerequestCheckRequest$ {
         slug?: string | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, RerequestCheckRequest> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, RerequestCheckRequest> =
+        z.object({
             deploymentId: z.string(),
             checkId: z.string(),
             teamId: z.string().optional(),
             slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                deploymentId: v.deploymentId,
-                checkId: v.checkId,
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
         });
 }
 

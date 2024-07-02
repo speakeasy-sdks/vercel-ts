@@ -45,77 +45,48 @@ export type RequestDeleteResponseBody = {
 
 /** @internal */
 export namespace RequestDeleteReasons$ {
-    export const inboundSchema: z.ZodType<RequestDeleteReasons, z.ZodTypeDef, unknown> = z
-        .object({
-            slug: z.string(),
-            description: z.string(),
-        })
-        .transform((v) => {
-            return {
-                slug: v.slug,
-                description: v.description,
-            };
-        });
+    export const inboundSchema: z.ZodType<RequestDeleteReasons, z.ZodTypeDef, unknown> = z.object({
+        slug: z.string(),
+        description: z.string(),
+    });
 
     export type Outbound = {
         slug: string;
         description: string;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, RequestDeleteReasons> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, RequestDeleteReasons> = z.object(
+        {
             slug: z.string(),
             description: z.string(),
-        })
-        .transform((v) => {
-            return {
-                slug: v.slug,
-                description: v.description,
-            };
-        });
+        }
+    );
 }
 
 /** @internal */
 export namespace RequestDeleteRequestBody$ {
-    export const inboundSchema: z.ZodType<RequestDeleteRequestBody, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<RequestDeleteRequestBody, z.ZodTypeDef, unknown> =
+        z.object({
             reasons: z.array(z.lazy(() => RequestDeleteReasons$.inboundSchema)).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.reasons === undefined ? null : { reasons: v.reasons }),
-            };
         });
 
     export type Outbound = {
         reasons?: Array<RequestDeleteReasons$.Outbound> | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, RequestDeleteRequestBody> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, RequestDeleteRequestBody> =
+        z.object({
             reasons: z.array(z.lazy(() => RequestDeleteReasons$.outboundSchema)).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.reasons === undefined ? null : { reasons: v.reasons }),
-            };
         });
 }
 
 /** @internal */
 export namespace RequestDeleteResponseBody$ {
-    export const inboundSchema: z.ZodType<RequestDeleteResponseBody, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<RequestDeleteResponseBody, z.ZodTypeDef, unknown> =
+        z.object({
             id: z.string(),
             email: z.string(),
             message: z.string(),
-        })
-        .transform((v) => {
-            return {
-                id: v.id,
-                email: v.email,
-                message: v.message,
-            };
         });
 
     export type Outbound = {
@@ -124,17 +95,10 @@ export namespace RequestDeleteResponseBody$ {
         message: string;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, RequestDeleteResponseBody> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, RequestDeleteResponseBody> =
+        z.object({
             id: z.string(),
             email: z.string(),
             message: z.string(),
-        })
-        .transform((v) => {
-            return {
-                id: v.id,
-                email: v.email,
-                message: v.message,
-            };
         });
 }

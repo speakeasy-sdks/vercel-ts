@@ -16,27 +16,17 @@ export type DeleteConfigurableLogDrainRequest = {
     slug?: string | undefined;
 };
 
-export type DeleteConfigurableLogDrainResponse = {};
-
 /** @internal */
 export namespace DeleteConfigurableLogDrainRequest$ {
     export const inboundSchema: z.ZodType<
         DeleteConfigurableLogDrainRequest,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            id: z.string(),
-            teamId: z.string().optional(),
-            slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                id: v.id,
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
-        });
+    > = z.object({
+        id: z.string(),
+        teamId: z.string().optional(),
+        slug: z.string().optional(),
+    });
 
     export type Outbound = {
         id: string;
@@ -48,34 +38,9 @@ export namespace DeleteConfigurableLogDrainRequest$ {
         Outbound,
         z.ZodTypeDef,
         DeleteConfigurableLogDrainRequest
-    > = z
-        .object({
-            id: z.string(),
-            teamId: z.string().optional(),
-            slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                id: v.id,
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
-        });
-}
-
-/** @internal */
-export namespace DeleteConfigurableLogDrainResponse$ {
-    export const inboundSchema: z.ZodType<
-        DeleteConfigurableLogDrainResponse,
-        z.ZodTypeDef,
-        unknown
-    > = z.object({});
-
-    export type Outbound = {};
-
-    export const outboundSchema: z.ZodType<
-        Outbound,
-        z.ZodTypeDef,
-        DeleteConfigurableLogDrainResponse
-    > = z.object({});
+    > = z.object({
+        id: z.string(),
+        teamId: z.string().optional(),
+        slug: z.string().optional(),
+    });
 }

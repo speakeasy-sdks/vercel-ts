@@ -32,19 +32,11 @@ export type DeleteAliasResponseBody = {
 
 /** @internal */
 export namespace DeleteAliasRequest$ {
-    export const inboundSchema: z.ZodType<DeleteAliasRequest, z.ZodTypeDef, unknown> = z
-        .object({
-            aliasId: z.string(),
-            teamId: z.string().optional(),
-            slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                aliasId: v.aliasId,
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
-        });
+    export const inboundSchema: z.ZodType<DeleteAliasRequest, z.ZodTypeDef, unknown> = z.object({
+        aliasId: z.string(),
+        teamId: z.string().optional(),
+        slug: z.string().optional(),
+    });
 
     export type Outbound = {
         aliasId: string;
@@ -52,50 +44,33 @@ export namespace DeleteAliasRequest$ {
         slug?: string | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, DeleteAliasRequest> = z
-        .object({
-            aliasId: z.string(),
-            teamId: z.string().optional(),
-            slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                aliasId: v.aliasId,
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, DeleteAliasRequest> = z.object({
+        aliasId: z.string(),
+        teamId: z.string().optional(),
+        slug: z.string().optional(),
+    });
 }
 
 /** @internal */
 export namespace DeleteAliasStatus$ {
-    export const inboundSchema = z.nativeEnum(DeleteAliasStatus);
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<typeof DeleteAliasStatus> =
+        z.nativeEnum(DeleteAliasStatus);
+    export const outboundSchema: z.ZodNativeEnum<typeof DeleteAliasStatus> = inboundSchema;
 }
 
 /** @internal */
 export namespace DeleteAliasResponseBody$ {
-    export const inboundSchema: z.ZodType<DeleteAliasResponseBody, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<DeleteAliasResponseBody, z.ZodTypeDef, unknown> =
+        z.object({
             status: DeleteAliasStatus$.inboundSchema,
-        })
-        .transform((v) => {
-            return {
-                status: v.status,
-            };
         });
 
     export type Outbound = {
         status: string;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, DeleteAliasResponseBody> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, DeleteAliasResponseBody> =
+        z.object({
             status: DeleteAliasStatus$.outboundSchema,
-        })
-        .transform((v) => {
-            return {
-                status: v.status,
-            };
         });
 }

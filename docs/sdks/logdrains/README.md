@@ -48,7 +48,7 @@ run();
 
 ### Response
 
-**Promise<[models.GetIntegrationLogDrainsResponseBody[]](../../models/.md)>**
+**Promise\<[models.GetIntegrationLogDrainsResponseBody[]](../../models/.md)\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -62,8 +62,7 @@ Creates an Integration log drain. This endpoint must be called with an OAuth2 cl
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
-import { DeliveryFormat } from "vercel/models";
+import { DeliveryFormat, Vercel } from "vercel";
 
 const vercel = new Vercel({
   security: {
@@ -99,7 +98,7 @@ run();
 
 ### Response
 
-**Promise<[models.CreateLogDrainResponseBody](../../models/createlogdrainresponsebody.md)>**
+**Promise\<[models.CreateLogDrainResponseBody](../../models/createlogdrainresponsebody.md)\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -122,10 +121,9 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.logDrains.delete("<value>", "<value>", "<value>");
+  await vercel.logDrains.delete("<value>", "<value>", "<value>");
 
-  // Handle the result
-  console.log(result)
+  
 }
 
 run();
@@ -144,7 +142,7 @@ run();
 
 ### Response
 
-**Promise<[models.DeleteIntegrationLogDrainResponse](../../models/deleteintegrationlogdrainresponse.md)>**
+**Promise\<void\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -189,7 +187,7 @@ run();
 
 ### Response
 
-**Promise<[models.GetConfigurableLogDrainResponseBody](../../models/getconfigurablelogdrainresponsebody.md)>**
+**Promise\<[models.GetConfigurableLogDrainResponseBody](../../models/getconfigurablelogdrainresponsebody.md)\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -212,10 +210,9 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.logDrains.deleteConfigurableLogDrain("<value>", "<value>", "<value>");
+  await vercel.logDrains.deleteConfigurableLogDrain("<value>", "<value>", "<value>");
 
-  // Handle the result
-  console.log(result)
+  
 }
 
 run();
@@ -234,7 +231,7 @@ run();
 
 ### Response
 
-**Promise<[models.DeleteConfigurableLogDrainResponse](../../models/deleteconfigurablelogdrainresponse.md)>**
+**Promise\<void\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -279,7 +276,7 @@ run();
 
 ### Response
 
-**Promise<[models.GetAllLogDrainsResponseBody[]](../../models/.md)>**
+**Promise\<[models.GetAllLogDrainsResponseBody[]](../../models/.md)\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -293,8 +290,11 @@ Creates a configurable log drain. This endpoint must be called with a team Acces
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
-import { CreateConfigurableLogDrainDeliveryFormat, CreateConfigurableLogDrainSources } from "vercel/models";
+import {
+  CreateConfigurableLogDrainDeliveryFormat,
+  CreateConfigurableLogDrainSources,
+  Vercel,
+} from "vercel";
 
 const vercel = new Vercel({
   security: {
@@ -331,7 +331,7 @@ run();
 
 ### Response
 
-**Promise<[models.CreateConfigurableLogDrainResponseBody](../../models/createconfigurablelogdrainresponsebody.md)>**
+**Promise\<[models.CreateConfigurableLogDrainResponseBody](../../models/createconfigurablelogdrainresponsebody.md)\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

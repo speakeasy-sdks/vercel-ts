@@ -48,7 +48,7 @@ run();
 
 ### Response
 
-**Promise<[models.GetProjectMembersResponseBody](../../models/getprojectmembersresponsebody.md)>**
+**Promise\<[models.GetProjectMembersResponseBody](../../models/getprojectmembersresponsebody.md)\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -62,8 +62,7 @@ Adds a new member to the project.
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
-import { RequestBodyRole } from "vercel/models";
+import { RequestBodyRole, Vercel } from "vercel";
 
 const vercel = new Vercel({
   security: {
@@ -100,7 +99,7 @@ run();
 
 ### Response
 
-**Promise<[models.AddProjectMemberResponseBody](../../models/addprojectmemberresponsebody.md)>**
+**Promise\<[models.AddProjectMemberResponseBody](../../models/addprojectmemberresponsebody.md)\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -146,7 +145,7 @@ run();
 
 ### Response
 
-**Promise<[models.RemoveProjectMemberResponseBody](../../models/removeprojectmemberresponsebody.md)>**
+**Promise\<[models.RemoveProjectMemberResponseBody](../../models/removeprojectmemberresponsebody.md)\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

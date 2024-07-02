@@ -17,6 +17,6 @@ export enum ACLAction {
 
 /** @internal */
 export namespace ACLAction$ {
-    export const inboundSchema = z.nativeEnum(ACLAction);
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<typeof ACLAction> = z.nativeEnum(ACLAction);
+    export const outboundSchema: z.ZodNativeEnum<typeof ACLAction> = inboundSchema;
 }

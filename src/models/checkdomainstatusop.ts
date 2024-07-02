@@ -28,18 +28,11 @@ export type CheckDomainStatusResponseBody = {
 
 /** @internal */
 export namespace CheckDomainStatusRequest$ {
-    export const inboundSchema: z.ZodType<CheckDomainStatusRequest, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<CheckDomainStatusRequest, z.ZodTypeDef, unknown> =
+        z.object({
             name: z.string(),
             teamId: z.string().optional(),
             slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                name: v.name,
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
         });
 
     export type Outbound = {
@@ -48,31 +41,19 @@ export namespace CheckDomainStatusRequest$ {
         slug?: string | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CheckDomainStatusRequest> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CheckDomainStatusRequest> =
+        z.object({
             name: z.string(),
             teamId: z.string().optional(),
             slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                name: v.name,
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
         });
 }
 
 /** @internal */
 export namespace CheckDomainStatusResponseBody$ {
-    export const inboundSchema: z.ZodType<CheckDomainStatusResponseBody, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<CheckDomainStatusResponseBody, z.ZodTypeDef, unknown> =
+        z.object({
             available: z.boolean(),
-        })
-        .transform((v) => {
-            return {
-                available: v.available,
-            };
         });
 
     export type Outbound = {
@@ -80,13 +61,7 @@ export namespace CheckDomainStatusResponseBody$ {
     };
 
     export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CheckDomainStatusResponseBody> =
-        z
-            .object({
-                available: z.boolean(),
-            })
-            .transform((v) => {
-                return {
-                    available: v.available,
-                };
-            });
+        z.object({
+            available: z.boolean(),
+        });
 }

@@ -15,17 +15,9 @@ export type UpdateBillingSettingsResponseBody = {
 /** @internal */
 export namespace UpdateBillingSettingsRequestBody$ {
     export const inboundSchema: z.ZodType<UpdateBillingSettingsRequestBody, z.ZodTypeDef, unknown> =
-        z
-            .object({
-                excessBillingEnabled: z.boolean().optional(),
-            })
-            .transform((v) => {
-                return {
-                    ...(v.excessBillingEnabled === undefined
-                        ? null
-                        : { excessBillingEnabled: v.excessBillingEnabled }),
-                };
-            });
+        z.object({
+            excessBillingEnabled: z.boolean().optional(),
+        });
 
     export type Outbound = {
         excessBillingEnabled?: boolean | undefined;
@@ -35,17 +27,9 @@ export namespace UpdateBillingSettingsRequestBody$ {
         Outbound,
         z.ZodTypeDef,
         UpdateBillingSettingsRequestBody
-    > = z
-        .object({
-            excessBillingEnabled: z.boolean().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.excessBillingEnabled === undefined
-                    ? null
-                    : { excessBillingEnabled: v.excessBillingEnabled }),
-            };
-        });
+    > = z.object({
+        excessBillingEnabled: z.boolean().optional(),
+    });
 }
 
 /** @internal */
@@ -54,17 +38,9 @@ export namespace UpdateBillingSettingsResponseBody$ {
         UpdateBillingSettingsResponseBody,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            excessBillingEnabled: z.boolean().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.excessBillingEnabled === undefined
-                    ? null
-                    : { excessBillingEnabled: v.excessBillingEnabled }),
-            };
-        });
+    > = z.object({
+        excessBillingEnabled: z.boolean().optional(),
+    });
 
     export type Outbound = {
         excessBillingEnabled?: boolean | undefined;
@@ -74,15 +50,7 @@ export namespace UpdateBillingSettingsResponseBody$ {
         Outbound,
         z.ZodTypeDef,
         UpdateBillingSettingsResponseBody
-    > = z
-        .object({
-            excessBillingEnabled: z.boolean().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.excessBillingEnabled === undefined
-                    ? null
-                    : { excessBillingEnabled: v.excessBillingEnabled }),
-            };
-        });
+    > = z.object({
+        excessBillingEnabled: z.boolean().optional(),
+    });
 }

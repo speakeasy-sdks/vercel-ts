@@ -1,9 +1,13 @@
 {
   "name": "vercel",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "author": "Speakeasy",  
   "main": "./index.js",
   "sideEffects": false,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/speakeasy-sdks/vercel-ts.git"
+  },
   "scripts": {
     "lint": "eslint --max-warnings=0 src",
     "build": "tsc",

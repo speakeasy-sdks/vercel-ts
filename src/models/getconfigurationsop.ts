@@ -352,24 +352,17 @@ export type GetConfigurationsResponseBody =
 
 /** @internal */
 export namespace View$ {
-    export const inboundSchema = z.nativeEnum(View);
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<typeof View> = z.nativeEnum(View);
+    export const outboundSchema: z.ZodNativeEnum<typeof View> = inboundSchema;
 }
 
 /** @internal */
 export namespace GetConfigurationsRequest$ {
-    export const inboundSchema: z.ZodType<GetConfigurationsRequest, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<GetConfigurationsRequest, z.ZodTypeDef, unknown> =
+        z.object({
             view: View$.inboundSchema,
             teamId: z.string().optional(),
             slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                view: v.view,
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
         });
 
     export type Outbound = {
@@ -378,44 +371,24 @@ export namespace GetConfigurationsRequest$ {
         slug?: string | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetConfigurationsRequest> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetConfigurationsRequest> =
+        z.object({
             view: View$.outboundSchema,
             teamId: z.string().optional(),
             slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                view: v.view,
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
         });
 }
 
 /** @internal */
 export namespace Integration$ {
-    export const inboundSchema: z.ZodType<Integration, z.ZodTypeDef, unknown> = z
-        .object({
-            name: z.string(),
-            icon: z.string(),
-            category: z.string(),
-            isLegacy: z.boolean(),
-            flags: z.array(z.string()).optional(),
-            assignedBetaLabelAt: z.number().optional(),
-        })
-        .transform((v) => {
-            return {
-                name: v.name,
-                icon: v.icon,
-                category: v.category,
-                isLegacy: v.isLegacy,
-                ...(v.flags === undefined ? null : { flags: v.flags }),
-                ...(v.assignedBetaLabelAt === undefined
-                    ? null
-                    : { assignedBetaLabelAt: v.assignedBetaLabelAt }),
-            };
-        });
+    export const inboundSchema: z.ZodType<Integration, z.ZodTypeDef, unknown> = z.object({
+        name: z.string(),
+        icon: z.string(),
+        category: z.string(),
+        isLegacy: z.boolean(),
+        flags: z.array(z.string()).optional(),
+        assignedBetaLabelAt: z.number().optional(),
+    });
 
     export type Outbound = {
         name: string;
@@ -426,101 +399,76 @@ export namespace Integration$ {
         assignedBetaLabelAt?: number | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, Integration> = z
-        .object({
-            name: z.string(),
-            icon: z.string(),
-            category: z.string(),
-            isLegacy: z.boolean(),
-            flags: z.array(z.string()).optional(),
-            assignedBetaLabelAt: z.number().optional(),
-        })
-        .transform((v) => {
-            return {
-                name: v.name,
-                icon: v.icon,
-                category: v.category,
-                isLegacy: v.isLegacy,
-                ...(v.flags === undefined ? null : { flags: v.flags }),
-                ...(v.assignedBetaLabelAt === undefined
-                    ? null
-                    : { assignedBetaLabelAt: v.assignedBetaLabelAt }),
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, Integration> = z.object({
+        name: z.string(),
+        icon: z.string(),
+        category: z.string(),
+        isLegacy: z.boolean(),
+        flags: z.array(z.string()).optional(),
+        assignedBetaLabelAt: z.number().optional(),
+    });
 }
 
 /** @internal */
 export namespace GetConfigurationsResponseBodyIntegrationsSource$ {
-    export const inboundSchema = z.nativeEnum(GetConfigurationsResponseBodyIntegrationsSource);
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<
+        typeof GetConfigurationsResponseBodyIntegrationsSource
+    > = z.nativeEnum(GetConfigurationsResponseBodyIntegrationsSource);
+    export const outboundSchema: z.ZodNativeEnum<
+        typeof GetConfigurationsResponseBodyIntegrationsSource
+    > = inboundSchema;
 }
 
 /** @internal */
 export namespace GetConfigurationsResponseBodyIntegrationsType$ {
-    export const inboundSchema = z.nativeEnum(GetConfigurationsResponseBodyIntegrationsType);
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<
+        typeof GetConfigurationsResponseBodyIntegrationsType
+    > = z.nativeEnum(GetConfigurationsResponseBodyIntegrationsType);
+    export const outboundSchema: z.ZodNativeEnum<
+        typeof GetConfigurationsResponseBodyIntegrationsType
+    > = inboundSchema;
 }
 
 /** @internal */
 export namespace ResponseBodyAdded$ {
-    export const inboundSchema = z.nativeEnum(ResponseBodyAdded);
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<typeof ResponseBodyAdded> =
+        z.nativeEnum(ResponseBodyAdded);
+    export const outboundSchema: z.ZodNativeEnum<typeof ResponseBodyAdded> = inboundSchema;
 }
 
 /** @internal */
 export namespace ResponseBodyUpgraded$ {
-    export const inboundSchema = z.nativeEnum(ResponseBodyUpgraded);
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<typeof ResponseBodyUpgraded> =
+        z.nativeEnum(ResponseBodyUpgraded);
+    export const outboundSchema: z.ZodNativeEnum<typeof ResponseBodyUpgraded> = inboundSchema;
 }
 
 /** @internal */
 export namespace ResponseBodyScopes$ {
-    export const inboundSchema: z.ZodType<ResponseBodyScopes, z.ZodTypeDef, unknown> = z
-        .object({
-            added: z.array(ResponseBodyAdded$.inboundSchema),
-            upgraded: z.array(ResponseBodyUpgraded$.inboundSchema),
-        })
-        .transform((v) => {
-            return {
-                added: v.added,
-                upgraded: v.upgraded,
-            };
-        });
+    export const inboundSchema: z.ZodType<ResponseBodyScopes, z.ZodTypeDef, unknown> = z.object({
+        added: z.array(ResponseBodyAdded$.inboundSchema),
+        upgraded: z.array(ResponseBodyUpgraded$.inboundSchema),
+    });
 
     export type Outbound = {
         added: Array<string>;
         upgraded: Array<string>;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, ResponseBodyScopes> = z
-        .object({
-            added: z.array(ResponseBodyAdded$.outboundSchema),
-            upgraded: z.array(ResponseBodyUpgraded$.outboundSchema),
-        })
-        .transform((v) => {
-            return {
-                added: v.added,
-                upgraded: v.upgraded,
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, ResponseBodyScopes> = z.object({
+        added: z.array(ResponseBodyAdded$.outboundSchema),
+        upgraded: z.array(ResponseBodyUpgraded$.outboundSchema),
+    });
 }
 
 /** @internal */
 export namespace ResponseBodyScopesQueue$ {
-    export const inboundSchema: z.ZodType<ResponseBodyScopesQueue, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<ResponseBodyScopesQueue, z.ZodTypeDef, unknown> =
+        z.object({
             scopes: z.lazy(() => ResponseBodyScopes$.inboundSchema),
             note: z.string(),
             requestedAt: z.number(),
             confirmedAt: z.number().optional(),
-        })
-        .transform((v) => {
-            return {
-                scopes: v.scopes,
-                note: v.note,
-                requestedAt: v.requestedAt,
-                ...(v.confirmedAt === undefined ? null : { confirmedAt: v.confirmedAt }),
-            };
         });
 
     export type Outbound = {
@@ -530,39 +478,36 @@ export namespace ResponseBodyScopesQueue$ {
         confirmedAt?: number | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, ResponseBodyScopesQueue> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, ResponseBodyScopesQueue> =
+        z.object({
             scopes: z.lazy(() => ResponseBodyScopes$.outboundSchema),
             note: z.string(),
             requestedAt: z.number(),
             confirmedAt: z.number().optional(),
-        })
-        .transform((v) => {
-            return {
-                scopes: v.scopes,
-                note: v.note,
-                requestedAt: v.requestedAt,
-                ...(v.confirmedAt === undefined ? null : { confirmedAt: v.confirmedAt }),
-            };
         });
 }
 
 /** @internal */
 export namespace ResponseBodyDisabledReason$ {
-    export const inboundSchema = z.nativeEnum(ResponseBodyDisabledReason);
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<typeof ResponseBodyDisabledReason> = z.nativeEnum(
+        ResponseBodyDisabledReason
+    );
+    export const outboundSchema: z.ZodNativeEnum<typeof ResponseBodyDisabledReason> = inboundSchema;
 }
 
 /** @internal */
 export namespace ResponseBodyInstallationType$ {
-    export const inboundSchema = z.nativeEnum(ResponseBodyInstallationType);
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<typeof ResponseBodyInstallationType> = z.nativeEnum(
+        ResponseBodyInstallationType
+    );
+    export const outboundSchema: z.ZodNativeEnum<typeof ResponseBodyInstallationType> =
+        inboundSchema;
 }
 
 /** @internal */
 export namespace GetConfigurationsResponseBody2$ {
-    export const inboundSchema: z.ZodType<GetConfigurationsResponseBody2, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<GetConfigurationsResponseBody2, z.ZodTypeDef, unknown> =
+        z.object({
             integration: z.lazy(() => Integration$.inboundSchema),
             completedAt: z.number().optional(),
             createdAt: z.number(),
@@ -587,46 +532,6 @@ export namespace GetConfigurationsResponseBody2$ {
             disabledReason: ResponseBodyDisabledReason$.inboundSchema.optional(),
             northstarMigratedAt: z.number().optional(),
             installationType: ResponseBodyInstallationType$.inboundSchema.optional(),
-        })
-        .transform((v) => {
-            return {
-                integration: v.integration,
-                ...(v.completedAt === undefined ? null : { completedAt: v.completedAt }),
-                createdAt: v.createdAt,
-                id: v.id,
-                integrationId: v.integrationId,
-                ownerId: v.ownerId,
-                ...(v.projects === undefined ? null : { projects: v.projects }),
-                ...(v.source === undefined ? null : { source: v.source }),
-                ...(v.removedLogDrainsAt === undefined
-                    ? null
-                    : { removedLogDrainsAt: v.removedLogDrainsAt }),
-                ...(v.removedProjectEnvsAt === undefined
-                    ? null
-                    : { removedProjectEnvsAt: v.removedProjectEnvsAt }),
-                ...(v.removedTokensAt === undefined
-                    ? null
-                    : { removedTokensAt: v.removedTokensAt }),
-                ...(v.removedWebhooksAt === undefined
-                    ? null
-                    : { removedWebhooksAt: v.removedWebhooksAt }),
-                slug: v.slug,
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                type: v.type,
-                updatedAt: v.updatedAt,
-                userId: v.userId,
-                scopes: v.scopes,
-                ...(v.scopesQueue === undefined ? null : { scopesQueue: v.scopesQueue }),
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.deletedAt === undefined ? null : { deletedAt: v.deletedAt }),
-                ...(v.disabledReason === undefined ? null : { disabledReason: v.disabledReason }),
-                ...(v.northstarMigratedAt === undefined
-                    ? null
-                    : { northstarMigratedAt: v.northstarMigratedAt }),
-                ...(v.installationType === undefined
-                    ? null
-                    : { installationType: v.installationType }),
-            };
         });
 
     export type Outbound = {
@@ -657,101 +562,60 @@ export namespace GetConfigurationsResponseBody2$ {
     };
 
     export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetConfigurationsResponseBody2> =
-        z
-            .object({
-                integration: z.lazy(() => Integration$.outboundSchema),
-                completedAt: z.number().optional(),
-                createdAt: z.number(),
-                id: z.string(),
-                integrationId: z.string(),
-                ownerId: z.string(),
-                projects: z.array(z.string()).optional(),
-                source: GetConfigurationsResponseBodyIntegrationsSource$.outboundSchema.optional(),
-                removedLogDrainsAt: z.number().optional(),
-                removedProjectEnvsAt: z.number().optional(),
-                removedTokensAt: z.number().optional(),
-                removedWebhooksAt: z.number().optional(),
-                slug: z.string(),
-                teamId: z.nullable(z.string()).optional(),
-                type: GetConfigurationsResponseBodyIntegrationsType$.outboundSchema,
-                updatedAt: z.number(),
-                userId: z.string(),
-                scopes: z.array(z.string()),
-                scopesQueue: z
-                    .array(z.lazy(() => ResponseBodyScopesQueue$.outboundSchema))
-                    .optional(),
-                disabledAt: z.number().optional(),
-                deletedAt: z.nullable(z.number()).optional(),
-                disabledReason: ResponseBodyDisabledReason$.outboundSchema.optional(),
-                northstarMigratedAt: z.number().optional(),
-                installationType: ResponseBodyInstallationType$.outboundSchema.optional(),
-            })
-            .transform((v) => {
-                return {
-                    integration: v.integration,
-                    ...(v.completedAt === undefined ? null : { completedAt: v.completedAt }),
-                    createdAt: v.createdAt,
-                    id: v.id,
-                    integrationId: v.integrationId,
-                    ownerId: v.ownerId,
-                    ...(v.projects === undefined ? null : { projects: v.projects }),
-                    ...(v.source === undefined ? null : { source: v.source }),
-                    ...(v.removedLogDrainsAt === undefined
-                        ? null
-                        : { removedLogDrainsAt: v.removedLogDrainsAt }),
-                    ...(v.removedProjectEnvsAt === undefined
-                        ? null
-                        : { removedProjectEnvsAt: v.removedProjectEnvsAt }),
-                    ...(v.removedTokensAt === undefined
-                        ? null
-                        : { removedTokensAt: v.removedTokensAt }),
-                    ...(v.removedWebhooksAt === undefined
-                        ? null
-                        : { removedWebhooksAt: v.removedWebhooksAt }),
-                    slug: v.slug,
-                    ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                    type: v.type,
-                    updatedAt: v.updatedAt,
-                    userId: v.userId,
-                    scopes: v.scopes,
-                    ...(v.scopesQueue === undefined ? null : { scopesQueue: v.scopesQueue }),
-                    ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                    ...(v.deletedAt === undefined ? null : { deletedAt: v.deletedAt }),
-                    ...(v.disabledReason === undefined
-                        ? null
-                        : { disabledReason: v.disabledReason }),
-                    ...(v.northstarMigratedAt === undefined
-                        ? null
-                        : { northstarMigratedAt: v.northstarMigratedAt }),
-                    ...(v.installationType === undefined
-                        ? null
-                        : { installationType: v.installationType }),
-                };
-            });
+        z.object({
+            integration: z.lazy(() => Integration$.outboundSchema),
+            completedAt: z.number().optional(),
+            createdAt: z.number(),
+            id: z.string(),
+            integrationId: z.string(),
+            ownerId: z.string(),
+            projects: z.array(z.string()).optional(),
+            source: GetConfigurationsResponseBodyIntegrationsSource$.outboundSchema.optional(),
+            removedLogDrainsAt: z.number().optional(),
+            removedProjectEnvsAt: z.number().optional(),
+            removedTokensAt: z.number().optional(),
+            removedWebhooksAt: z.number().optional(),
+            slug: z.string(),
+            teamId: z.nullable(z.string()).optional(),
+            type: GetConfigurationsResponseBodyIntegrationsType$.outboundSchema,
+            updatedAt: z.number(),
+            userId: z.string(),
+            scopes: z.array(z.string()),
+            scopesQueue: z.array(z.lazy(() => ResponseBodyScopesQueue$.outboundSchema)).optional(),
+            disabledAt: z.number().optional(),
+            deletedAt: z.nullable(z.number()).optional(),
+            disabledReason: ResponseBodyDisabledReason$.outboundSchema.optional(),
+            northstarMigratedAt: z.number().optional(),
+            installationType: ResponseBodyInstallationType$.outboundSchema.optional(),
+        });
 }
 
 /** @internal */
 export namespace GetConfigurationsResponseBodySource$ {
-    export const inboundSchema = z.nativeEnum(GetConfigurationsResponseBodySource);
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<typeof GetConfigurationsResponseBodySource> =
+        z.nativeEnum(GetConfigurationsResponseBodySource);
+    export const outboundSchema: z.ZodNativeEnum<typeof GetConfigurationsResponseBodySource> =
+        inboundSchema;
 }
 
 /** @internal */
 export namespace GetConfigurationsResponseBodyType$ {
-    export const inboundSchema = z.nativeEnum(GetConfigurationsResponseBodyType);
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<typeof GetConfigurationsResponseBodyType> =
+        z.nativeEnum(GetConfigurationsResponseBodyType);
+    export const outboundSchema: z.ZodNativeEnum<typeof GetConfigurationsResponseBodyType> =
+        inboundSchema;
 }
 
 /** @internal */
 export namespace Added$ {
-    export const inboundSchema = z.nativeEnum(Added);
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<typeof Added> = z.nativeEnum(Added);
+    export const outboundSchema: z.ZodNativeEnum<typeof Added> = inboundSchema;
 }
 
 /** @internal */
 export namespace Upgraded$ {
-    export const inboundSchema = z.nativeEnum(Upgraded);
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<typeof Upgraded> = z.nativeEnum(Upgraded);
+    export const outboundSchema: z.ZodNativeEnum<typeof Upgraded> = inboundSchema;
 }
 
 /** @internal */
@@ -760,17 +624,10 @@ export namespace GetConfigurationsResponseBodyScopes$ {
         GetConfigurationsResponseBodyScopes,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            added: z.array(Added$.inboundSchema),
-            upgraded: z.array(Upgraded$.inboundSchema),
-        })
-        .transform((v) => {
-            return {
-                added: v.added,
-                upgraded: v.upgraded,
-            };
-        });
+    > = z.object({
+        added: z.array(Added$.inboundSchema),
+        upgraded: z.array(Upgraded$.inboundSchema),
+    });
 
     export type Outbound = {
         added: Array<string>;
@@ -781,36 +638,20 @@ export namespace GetConfigurationsResponseBodyScopes$ {
         Outbound,
         z.ZodTypeDef,
         GetConfigurationsResponseBodyScopes
-    > = z
-        .object({
-            added: z.array(Added$.outboundSchema),
-            upgraded: z.array(Upgraded$.outboundSchema),
-        })
-        .transform((v) => {
-            return {
-                added: v.added,
-                upgraded: v.upgraded,
-            };
-        });
+    > = z.object({
+        added: z.array(Added$.outboundSchema),
+        upgraded: z.array(Upgraded$.outboundSchema),
+    });
 }
 
 /** @internal */
 export namespace ScopesQueue$ {
-    export const inboundSchema: z.ZodType<ScopesQueue, z.ZodTypeDef, unknown> = z
-        .object({
-            scopes: z.lazy(() => GetConfigurationsResponseBodyScopes$.inboundSchema),
-            note: z.string(),
-            requestedAt: z.number(),
-            confirmedAt: z.number().optional(),
-        })
-        .transform((v) => {
-            return {
-                scopes: v.scopes,
-                note: v.note,
-                requestedAt: v.requestedAt,
-                ...(v.confirmedAt === undefined ? null : { confirmedAt: v.confirmedAt }),
-            };
-        });
+    export const inboundSchema: z.ZodType<ScopesQueue, z.ZodTypeDef, unknown> = z.object({
+        scopes: z.lazy(() => GetConfigurationsResponseBodyScopes$.inboundSchema),
+        note: z.string(),
+        requestedAt: z.number(),
+        confirmedAt: z.number().optional(),
+    });
 
     export type Outbound = {
         scopes: GetConfigurationsResponseBodyScopes$.Outbound;
@@ -819,39 +660,35 @@ export namespace ScopesQueue$ {
         confirmedAt?: number | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, ScopesQueue> = z
-        .object({
-            scopes: z.lazy(() => GetConfigurationsResponseBodyScopes$.outboundSchema),
-            note: z.string(),
-            requestedAt: z.number(),
-            confirmedAt: z.number().optional(),
-        })
-        .transform((v) => {
-            return {
-                scopes: v.scopes,
-                note: v.note,
-                requestedAt: v.requestedAt,
-                ...(v.confirmedAt === undefined ? null : { confirmedAt: v.confirmedAt }),
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, ScopesQueue> = z.object({
+        scopes: z.lazy(() => GetConfigurationsResponseBodyScopes$.outboundSchema),
+        note: z.string(),
+        requestedAt: z.number(),
+        confirmedAt: z.number().optional(),
+    });
 }
 
 /** @internal */
 export namespace GetConfigurationsResponseBodyDisabledReason$ {
-    export const inboundSchema = z.nativeEnum(GetConfigurationsResponseBodyDisabledReason);
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<
+        typeof GetConfigurationsResponseBodyDisabledReason
+    > = z.nativeEnum(GetConfigurationsResponseBodyDisabledReason);
+    export const outboundSchema: z.ZodNativeEnum<
+        typeof GetConfigurationsResponseBodyDisabledReason
+    > = inboundSchema;
 }
 
 /** @internal */
 export namespace InstallationType$ {
-    export const inboundSchema = z.nativeEnum(InstallationType);
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<typeof InstallationType> =
+        z.nativeEnum(InstallationType);
+    export const outboundSchema: z.ZodNativeEnum<typeof InstallationType> = inboundSchema;
 }
 
 /** @internal */
 export namespace GetConfigurationsResponseBody1$ {
-    export const inboundSchema: z.ZodType<GetConfigurationsResponseBody1, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<GetConfigurationsResponseBody1, z.ZodTypeDef, unknown> =
+        z.object({
             completedAt: z.number().optional(),
             createdAt: z.number(),
             id: z.string(),
@@ -875,45 +712,6 @@ export namespace GetConfigurationsResponseBody1$ {
             disabledReason: GetConfigurationsResponseBodyDisabledReason$.inboundSchema.optional(),
             northstarMigratedAt: z.number().optional(),
             installationType: InstallationType$.inboundSchema.optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.completedAt === undefined ? null : { completedAt: v.completedAt }),
-                createdAt: v.createdAt,
-                id: v.id,
-                integrationId: v.integrationId,
-                ownerId: v.ownerId,
-                ...(v.projects === undefined ? null : { projects: v.projects }),
-                ...(v.source === undefined ? null : { source: v.source }),
-                ...(v.removedLogDrainsAt === undefined
-                    ? null
-                    : { removedLogDrainsAt: v.removedLogDrainsAt }),
-                ...(v.removedProjectEnvsAt === undefined
-                    ? null
-                    : { removedProjectEnvsAt: v.removedProjectEnvsAt }),
-                ...(v.removedTokensAt === undefined
-                    ? null
-                    : { removedTokensAt: v.removedTokensAt }),
-                ...(v.removedWebhooksAt === undefined
-                    ? null
-                    : { removedWebhooksAt: v.removedWebhooksAt }),
-                slug: v.slug,
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                type: v.type,
-                updatedAt: v.updatedAt,
-                userId: v.userId,
-                scopes: v.scopes,
-                ...(v.scopesQueue === undefined ? null : { scopesQueue: v.scopesQueue }),
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.deletedAt === undefined ? null : { deletedAt: v.deletedAt }),
-                ...(v.disabledReason === undefined ? null : { disabledReason: v.disabledReason }),
-                ...(v.northstarMigratedAt === undefined
-                    ? null
-                    : { northstarMigratedAt: v.northstarMigratedAt }),
-                ...(v.installationType === undefined
-                    ? null
-                    : { installationType: v.installationType }),
-            };
         });
 
     export type Outbound = {
@@ -943,74 +741,31 @@ export namespace GetConfigurationsResponseBody1$ {
     };
 
     export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetConfigurationsResponseBody1> =
-        z
-            .object({
-                completedAt: z.number().optional(),
-                createdAt: z.number(),
-                id: z.string(),
-                integrationId: z.string(),
-                ownerId: z.string(),
-                projects: z.array(z.string()).optional(),
-                source: GetConfigurationsResponseBodySource$.outboundSchema.optional(),
-                removedLogDrainsAt: z.number().optional(),
-                removedProjectEnvsAt: z.number().optional(),
-                removedTokensAt: z.number().optional(),
-                removedWebhooksAt: z.number().optional(),
-                slug: z.string(),
-                teamId: z.nullable(z.string()).optional(),
-                type: GetConfigurationsResponseBodyType$.outboundSchema,
-                updatedAt: z.number(),
-                userId: z.string(),
-                scopes: z.array(z.string()),
-                scopesQueue: z.array(z.lazy(() => ScopesQueue$.outboundSchema)).optional(),
-                disabledAt: z.number().optional(),
-                deletedAt: z.nullable(z.number()).optional(),
-                disabledReason:
-                    GetConfigurationsResponseBodyDisabledReason$.outboundSchema.optional(),
-                northstarMigratedAt: z.number().optional(),
-                installationType: InstallationType$.outboundSchema.optional(),
-            })
-            .transform((v) => {
-                return {
-                    ...(v.completedAt === undefined ? null : { completedAt: v.completedAt }),
-                    createdAt: v.createdAt,
-                    id: v.id,
-                    integrationId: v.integrationId,
-                    ownerId: v.ownerId,
-                    ...(v.projects === undefined ? null : { projects: v.projects }),
-                    ...(v.source === undefined ? null : { source: v.source }),
-                    ...(v.removedLogDrainsAt === undefined
-                        ? null
-                        : { removedLogDrainsAt: v.removedLogDrainsAt }),
-                    ...(v.removedProjectEnvsAt === undefined
-                        ? null
-                        : { removedProjectEnvsAt: v.removedProjectEnvsAt }),
-                    ...(v.removedTokensAt === undefined
-                        ? null
-                        : { removedTokensAt: v.removedTokensAt }),
-                    ...(v.removedWebhooksAt === undefined
-                        ? null
-                        : { removedWebhooksAt: v.removedWebhooksAt }),
-                    slug: v.slug,
-                    ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                    type: v.type,
-                    updatedAt: v.updatedAt,
-                    userId: v.userId,
-                    scopes: v.scopes,
-                    ...(v.scopesQueue === undefined ? null : { scopesQueue: v.scopesQueue }),
-                    ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                    ...(v.deletedAt === undefined ? null : { deletedAt: v.deletedAt }),
-                    ...(v.disabledReason === undefined
-                        ? null
-                        : { disabledReason: v.disabledReason }),
-                    ...(v.northstarMigratedAt === undefined
-                        ? null
-                        : { northstarMigratedAt: v.northstarMigratedAt }),
-                    ...(v.installationType === undefined
-                        ? null
-                        : { installationType: v.installationType }),
-                };
-            });
+        z.object({
+            completedAt: z.number().optional(),
+            createdAt: z.number(),
+            id: z.string(),
+            integrationId: z.string(),
+            ownerId: z.string(),
+            projects: z.array(z.string()).optional(),
+            source: GetConfigurationsResponseBodySource$.outboundSchema.optional(),
+            removedLogDrainsAt: z.number().optional(),
+            removedProjectEnvsAt: z.number().optional(),
+            removedTokensAt: z.number().optional(),
+            removedWebhooksAt: z.number().optional(),
+            slug: z.string(),
+            teamId: z.nullable(z.string()).optional(),
+            type: GetConfigurationsResponseBodyType$.outboundSchema,
+            updatedAt: z.number(),
+            userId: z.string(),
+            scopes: z.array(z.string()),
+            scopesQueue: z.array(z.lazy(() => ScopesQueue$.outboundSchema)).optional(),
+            disabledAt: z.number().optional(),
+            deletedAt: z.nullable(z.number()).optional(),
+            disabledReason: GetConfigurationsResponseBodyDisabledReason$.outboundSchema.optional(),
+            northstarMigratedAt: z.number().optional(),
+            installationType: InstallationType$.outboundSchema.optional(),
+        });
 }
 
 /** @internal */

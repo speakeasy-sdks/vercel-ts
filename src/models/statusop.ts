@@ -28,65 +28,39 @@ export type StatusResponseBody = {
 
 /** @internal */
 export namespace StatusRequest$ {
-    export const inboundSchema: z.ZodType<StatusRequest, z.ZodTypeDef, unknown> = z
-        .object({
-            teamId: z.string().optional(),
-            slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
-        });
+    export const inboundSchema: z.ZodType<StatusRequest, z.ZodTypeDef, unknown> = z.object({
+        teamId: z.string().optional(),
+        slug: z.string().optional(),
+    });
 
     export type Outbound = {
         teamId?: string | undefined;
         slug?: string | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, StatusRequest> = z
-        .object({
-            teamId: z.string().optional(),
-            slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, StatusRequest> = z.object({
+        teamId: z.string().optional(),
+        slug: z.string().optional(),
+    });
 }
 
 /** @internal */
 export namespace StatusStatus$ {
-    export const inboundSchema = z.nativeEnum(StatusStatus);
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<typeof StatusStatus> = z.nativeEnum(StatusStatus);
+    export const outboundSchema: z.ZodNativeEnum<typeof StatusStatus> = inboundSchema;
 }
 
 /** @internal */
 export namespace StatusResponseBody$ {
-    export const inboundSchema: z.ZodType<StatusResponseBody, z.ZodTypeDef, unknown> = z
-        .object({
-            status: StatusStatus$.inboundSchema,
-        })
-        .transform((v) => {
-            return {
-                status: v.status,
-            };
-        });
+    export const inboundSchema: z.ZodType<StatusResponseBody, z.ZodTypeDef, unknown> = z.object({
+        status: StatusStatus$.inboundSchema,
+    });
 
     export type Outbound = {
         status: string;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, StatusResponseBody> = z
-        .object({
-            status: StatusStatus$.outboundSchema,
-        })
-        .transform((v) => {
-            return {
-                status: v.status,
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, StatusResponseBody> = z.object({
+        status: StatusStatus$.outboundSchema,
+    });
 }

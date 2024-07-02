@@ -95,35 +95,26 @@ export type AuthToken = {
 
 /** @internal */
 export namespace AuthTokenScopesType$ {
-    export const inboundSchema = z.nativeEnum(AuthTokenScopesType);
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<typeof AuthTokenScopesType> =
+        z.nativeEnum(AuthTokenScopesType);
+    export const outboundSchema: z.ZodNativeEnum<typeof AuthTokenScopesType> = inboundSchema;
 }
 
 /** @internal */
 export namespace ScopesOrigin$ {
-    export const inboundSchema = z.nativeEnum(ScopesOrigin);
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<typeof ScopesOrigin> = z.nativeEnum(ScopesOrigin);
+    export const outboundSchema: z.ZodNativeEnum<typeof ScopesOrigin> = inboundSchema;
 }
 
 /** @internal */
 export namespace Scopes2$ {
-    export const inboundSchema: z.ZodType<Scopes2, z.ZodTypeDef, unknown> = z
-        .object({
-            type: AuthTokenScopesType$.inboundSchema,
-            teamId: z.string(),
-            origin: ScopesOrigin$.inboundSchema,
-            createdAt: z.number(),
-            expiresAt: z.number().optional(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                teamId: v.teamId,
-                origin: v.origin,
-                createdAt: v.createdAt,
-                ...(v.expiresAt === undefined ? null : { expiresAt: v.expiresAt }),
-            };
-        });
+    export const inboundSchema: z.ZodType<Scopes2, z.ZodTypeDef, unknown> = z.object({
+        type: AuthTokenScopesType$.inboundSchema,
+        teamId: z.string(),
+        origin: ScopesOrigin$.inboundSchema,
+        createdAt: z.number(),
+        expiresAt: z.number().optional(),
+    });
 
     export type Outbound = {
         type: string;
@@ -133,54 +124,35 @@ export namespace Scopes2$ {
         expiresAt?: number | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, Scopes2> = z
-        .object({
-            type: AuthTokenScopesType$.outboundSchema,
-            teamId: z.string(),
-            origin: ScopesOrigin$.outboundSchema,
-            createdAt: z.number(),
-            expiresAt: z.number().optional(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                teamId: v.teamId,
-                origin: v.origin,
-                createdAt: v.createdAt,
-                ...(v.expiresAt === undefined ? null : { expiresAt: v.expiresAt }),
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, Scopes2> = z.object({
+        type: AuthTokenScopesType$.outboundSchema,
+        teamId: z.string(),
+        origin: ScopesOrigin$.outboundSchema,
+        createdAt: z.number(),
+        expiresAt: z.number().optional(),
+    });
 }
 
 /** @internal */
 export namespace ScopesType$ {
-    export const inboundSchema = z.nativeEnum(ScopesType);
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<typeof ScopesType> = z.nativeEnum(ScopesType);
+    export const outboundSchema: z.ZodNativeEnum<typeof ScopesType> = inboundSchema;
 }
 
 /** @internal */
 export namespace Origin$ {
-    export const inboundSchema = z.nativeEnum(Origin);
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<typeof Origin> = z.nativeEnum(Origin);
+    export const outboundSchema: z.ZodNativeEnum<typeof Origin> = inboundSchema;
 }
 
 /** @internal */
 export namespace Scopes1$ {
-    export const inboundSchema: z.ZodType<Scopes1, z.ZodTypeDef, unknown> = z
-        .object({
-            type: ScopesType$.inboundSchema,
-            origin: Origin$.inboundSchema,
-            createdAt: z.number(),
-            expiresAt: z.number().optional(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                origin: v.origin,
-                createdAt: v.createdAt,
-                ...(v.expiresAt === undefined ? null : { expiresAt: v.expiresAt }),
-            };
-        });
+    export const inboundSchema: z.ZodType<Scopes1, z.ZodTypeDef, unknown> = z.object({
+        type: ScopesType$.inboundSchema,
+        origin: Origin$.inboundSchema,
+        createdAt: z.number(),
+        expiresAt: z.number().optional(),
+    });
 
     export type Outbound = {
         type: string;
@@ -189,21 +161,12 @@ export namespace Scopes1$ {
         expiresAt?: number | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, Scopes1> = z
-        .object({
-            type: ScopesType$.outboundSchema,
-            origin: Origin$.outboundSchema,
-            createdAt: z.number(),
-            expiresAt: z.number().optional(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                origin: v.origin,
-                createdAt: v.createdAt,
-                ...(v.expiresAt === undefined ? null : { expiresAt: v.expiresAt }),
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, Scopes1> = z.object({
+        type: ScopesType$.outboundSchema,
+        origin: Origin$.outboundSchema,
+        createdAt: z.number(),
+        expiresAt: z.number().optional(),
+    });
 }
 
 /** @internal */
@@ -222,36 +185,23 @@ export namespace Scopes$ {
 
 /** @internal */
 export namespace AuthToken$ {
-    export const inboundSchema: z.ZodType<AuthToken, z.ZodTypeDef, unknown> = z
-        .object({
-            id: z.string(),
-            name: z.string(),
-            type: z.string(),
-            origin: z.string().optional(),
-            scopes: z
-                .array(
-                    z.union([
-                        z.lazy(() => Scopes1$.inboundSchema),
-                        z.lazy(() => Scopes2$.inboundSchema),
-                    ])
-                )
-                .optional(),
-            expiresAt: z.number().optional(),
-            activeAt: z.number(),
-            createdAt: z.number(),
-        })
-        .transform((v) => {
-            return {
-                id: v.id,
-                name: v.name,
-                type: v.type,
-                ...(v.origin === undefined ? null : { origin: v.origin }),
-                ...(v.scopes === undefined ? null : { scopes: v.scopes }),
-                ...(v.expiresAt === undefined ? null : { expiresAt: v.expiresAt }),
-                activeAt: v.activeAt,
-                createdAt: v.createdAt,
-            };
-        });
+    export const inboundSchema: z.ZodType<AuthToken, z.ZodTypeDef, unknown> = z.object({
+        id: z.string(),
+        name: z.string(),
+        type: z.string(),
+        origin: z.string().optional(),
+        scopes: z
+            .array(
+                z.union([
+                    z.lazy(() => Scopes1$.inboundSchema),
+                    z.lazy(() => Scopes2$.inboundSchema),
+                ])
+            )
+            .optional(),
+        expiresAt: z.number().optional(),
+        activeAt: z.number(),
+        createdAt: z.number(),
+    });
 
     export type Outbound = {
         id: string;
@@ -264,34 +214,21 @@ export namespace AuthToken$ {
         createdAt: number;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, AuthToken> = z
-        .object({
-            id: z.string(),
-            name: z.string(),
-            type: z.string(),
-            origin: z.string().optional(),
-            scopes: z
-                .array(
-                    z.union([
-                        z.lazy(() => Scopes1$.outboundSchema),
-                        z.lazy(() => Scopes2$.outboundSchema),
-                    ])
-                )
-                .optional(),
-            expiresAt: z.number().optional(),
-            activeAt: z.number(),
-            createdAt: z.number(),
-        })
-        .transform((v) => {
-            return {
-                id: v.id,
-                name: v.name,
-                type: v.type,
-                ...(v.origin === undefined ? null : { origin: v.origin }),
-                ...(v.scopes === undefined ? null : { scopes: v.scopes }),
-                ...(v.expiresAt === undefined ? null : { expiresAt: v.expiresAt }),
-                activeAt: v.activeAt,
-                createdAt: v.createdAt,
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, AuthToken> = z.object({
+        id: z.string(),
+        name: z.string(),
+        type: z.string(),
+        origin: z.string().optional(),
+        scopes: z
+            .array(
+                z.union([
+                    z.lazy(() => Scopes1$.outboundSchema),
+                    z.lazy(() => Scopes2$.outboundSchema),
+                ])
+            )
+            .optional(),
+        expiresAt: z.number().optional(),
+        activeAt: z.number(),
+        createdAt: z.number(),
+    });
 }

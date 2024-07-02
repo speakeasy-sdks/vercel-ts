@@ -3,20 +3,22 @@ id: 08d4af4d-7f06-4aa7-83b0-4bcfdb3dadd5
 management:
   docChecksum: b77c0d972dc7b8018f9afd7d2a29e8df
   docVersion: 0.0.1
-  speakeasyVersion: 1.293.0
-  generationVersion: 2.332.4
-  releaseVersion: 0.2.0
-  configChecksum: d9df156370bbd968295470c67faee640
+  speakeasyVersion: 1.325.0
+  generationVersion: 2.356.0
+  releaseVersion: 0.3.0
+  configChecksum: ae53d8dea2d7f095d2413325923b69f8
+  repoURL: https://github.com/speakeasy-sdks/vercel-ts.git
+  installationURL: https://github.com/speakeasy-sdks/vercel-ts
   published: true
 features:
   typescript:
     acceptHeaders: 2.81.2
     additionalDependencies: 0.1.0
     constsAndDefaults: 0.1.5
-    core: 3.9.4
+    core: 3.10.2
     deprecations: 2.81.1
     downloadStreams: 0.1.1
-    enums: 2.82.0
+    enums: 2.82.1
     flattening: 2.81.1
     globalSecurity: 2.82.9
     globalSecurityCallbacks: 0.1.0
@@ -27,7 +29,7 @@ features:
     sdkHooks: 0.1.0
     serverIDs: 2.81.2
     typeOverrides: 2.81.1
-    unions: 2.85.4
+    unions: 2.85.5
 generatedFiles:
   - src/sdk/artifacts.ts
   - src/sdk/checks.ts
@@ -47,7 +49,7 @@ generatedFiles:
   - src/sdk/certs.ts
   - src/sdk/secrets.ts
   - src/sdk/sdk.ts
-  - .eslintrc.js
+  - .eslintrc.cjs
   - .npmignore
   - RUNTIMES.md
   - jsr.json
@@ -57,6 +59,8 @@ generatedFiles:
   - src/lib/config.ts
   - src/lib/encodings.ts
   - src/lib/http.ts
+  - src/lib/is-plain-object.ts
+  - src/lib/primitives.ts
   - src/lib/retries.ts
   - src/lib/schemas.ts
   - src/lib/sdks.ts
@@ -218,14 +222,12 @@ generatedFiles:
   - docs/models/builds.md
   - docs/models/getdeploymentbuildsresponsebody.md
   - docs/models/purgedatacacherequest.md
-  - docs/models/purgedatacacheresponse.md
   - docs/models/updatebillingsettingsrequestbody.md
   - docs/models/updatebillingsettingsresponsebody.md
   - docs/models/source.md
   - docs/models/event.md
   - docs/models/requestbody.md
   - docs/models/recordeventsrequest.md
-  - docs/models/recordeventsresponse.md
   - docs/models/statusrequest.md
   - docs/models/statusstatus.md
   - docs/models/statusresponsebody.md
@@ -233,7 +235,6 @@ generatedFiles:
   - docs/models/uploadartifactresponsebody.md
   - docs/models/downloadartifactrequest.md
   - docs/models/artifactexistsrequest.md
-  - docs/models/artifactexistsresponse.md
   - docs/models/artifactqueryrequestbody.md
   - docs/models/artifactqueryrequest.md
   - docs/models/errort.md
@@ -779,7 +780,6 @@ generatedFiles:
   - docs/models/updateprojectoidctokenconfig.md
   - docs/models/updateprojectresponsebody.md
   - docs/models/deleteprojectrequest.md
-  - docs/models/deleteprojectresponse.md
   - docs/models/getprojectdomainrequest.md
   - docs/models/verification.md
   - docs/models/getprojectdomainresponsebody.md
@@ -1225,16 +1225,13 @@ generatedFiles:
   - docs/models/internalcontenthint.md
   - docs/models/editprojectenvresponsebody.md
   - docs/models/requestpromoterequest.md
-  - docs/models/requestpromoteresponse.md
   - docs/models/geteequestpromotealiasesrequest.md
   - docs/models/responsebodyaliases.md
   - docs/models/geteequestpromotealiasesresponsebody2.md
   - docs/models/geteequestpromotealiasesresponsebody1.md
   - docs/models/geteequestpromotealiasesresponsebody.md
   - docs/models/pauseprojectrequest.md
-  - docs/models/pauseprojectresponse.md
   - docs/models/unpauseprojectrequest.md
-  - docs/models/unpauseprojectresponse.md
   - docs/models/direction.md
   - docs/models/statuscode.md
   - docs/models/getdeploymenteventsrequest.md
@@ -1556,7 +1553,6 @@ generatedFiles:
   - docs/models/filetree.md
   - docs/models/listdeploymentfilesrequest.md
   - docs/models/getdeploymentfilecontentsrequest.md
-  - docs/models/getdeploymentfilecontentsresponse.md
   - docs/models/queryparamtarget.md
   - docs/models/getdeploymentsrequest.md
   - docs/models/getdeploymentssource.md
@@ -1695,23 +1691,18 @@ generatedFiles:
   - docs/models/updateedgeconfigschema.md
   - docs/models/updateedgeconfigresponsebody.md
   - docs/models/deleteedgeconfigrequest.md
-  - docs/models/deleteedgeconfigresponse.md
   - docs/models/getedgeconfigitemsrequest.md
-  - docs/models/getedgeconfigitemsresponse.md
   - docs/models/getedgeconfigschemarequest.md
   - docs/models/getedgeconfigschemaresponsebody.md
   - docs/models/patchedgeconfigschemarequestbody.md
   - docs/models/patchedgeconfigschemarequest.md
   - docs/models/patchedgeconfigschemaresponsebody.md
   - docs/models/deleteedgeconfigschemarequest.md
-  - docs/models/deleteedgeconfigschemaresponse.md
   - docs/models/getedgeconfigitemrequest.md
-  - docs/models/getedgeconfigitemresponse.md
   - docs/models/edgeconfigtoken.md
   - docs/models/getedgeconfigtokensrequest.md
   - docs/models/deletetokensrequestbody.md
   - docs/models/deletetokensrequest.md
-  - docs/models/deletetokensresponse.md
   - docs/models/getedgeconfigtokenrequest.md
   - docs/models/createedgeconfigtokenrequestbody.md
   - docs/models/createedgeconfigtokenrequest.md
@@ -1931,7 +1922,6 @@ generatedFiles:
   - docs/models/getconfigurationresponsebody1.md
   - docs/models/getconfigurationresponsebody.md
   - docs/models/deleteconfigurationrequest.md
-  - docs/models/deleteconfigurationresponse.md
   - docs/models/provider.md
   - docs/models/gitnamespacesrequest.md
   - docs/models/id.md
@@ -1965,7 +1955,6 @@ generatedFiles:
   - docs/models/createlogdrainenvironments.md
   - docs/models/createlogdrainresponsebody.md
   - docs/models/deleteintegrationlogdrainrequest.md
-  - docs/models/deleteintegrationlogdrainresponse.md
   - docs/models/getconfigurablelogdrainrequest.md
   - docs/models/getconfigurablelogdraindeliveryformat.md
   - docs/models/getconfigurablelogdrainsources.md
@@ -1976,7 +1965,6 @@ generatedFiles:
   - docs/models/getconfigurablelogdraincreatedfrom.md
   - docs/models/getconfigurablelogdrainresponsebody.md
   - docs/models/deleteconfigurablelogdrainrequest.md
-  - docs/models/deleteconfigurablelogdrainresponse.md
   - docs/models/getalllogdrainsrequest.md
   - docs/models/getalllogdrainsdeliveryformat.md
   - docs/models/getalllogdrainssources.md
@@ -2286,7 +2274,6 @@ generatedFiles:
   - docs/models/getwebhookevents.md
   - docs/models/getwebhookresponsebody.md
   - docs/models/deletewebhookrequest.md
-  - docs/models/deletewebhookresponse.md
   - docs/models/domain.md
   - docs/models/listaliasesrequest.md
   - docs/models/listaliasescreator.md

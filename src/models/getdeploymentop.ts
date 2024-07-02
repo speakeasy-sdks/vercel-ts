@@ -304,7 +304,7 @@ export type GetDeploymentResponseBody2 = {
     /**
      * An object containing the deployment's metadata
      */
-    meta: Record<string, string>;
+    meta: { [k: string]: string };
     /**
      * The public project information associated with the deployment.
      */
@@ -518,7 +518,7 @@ export type GetDeploymentMissing1 = {
 export type GetDeploymentRoutesMissing = GetDeploymentMissing1 | GetDeploymentMissing2;
 
 export type GetDeploymentRoutesLocale = {
-    redirect?: Record<string, string> | undefined;
+    redirect?: { [k: string]: string } | undefined;
     cookie?: string | undefined;
 };
 
@@ -528,7 +528,7 @@ export type GetDeploymentRoutesLocale = {
 export type GetDeploymentRoutes1 = {
     src: string;
     dest?: string | undefined;
-    headers?: Record<string, string> | undefined;
+    headers?: { [k: string]: string } | undefined;
     methods?: Array<string> | undefined;
     continue?: boolean | undefined;
     override?: boolean | undefined;
@@ -925,7 +925,7 @@ export type GetDeploymentResponseBody1 = {
     /**
      * An object used to configure your Serverless Functions
      */
-    functions?: Record<string, ResponseBodyFunctions> | null | undefined;
+    functions?: { [k: string]: ResponseBodyFunctions } | null | undefined;
     /**
      * Vercel URL to inspect the deployment.
      */
@@ -937,7 +937,7 @@ export type GetDeploymentResponseBody1 = {
     /**
      * An object containing the deployment's metadata
      */
-    meta: Record<string, string>;
+    meta: { [k: string]: string };
     /**
      * An monorepo manager that was used for the deployment
      */
@@ -1085,23 +1085,12 @@ export type GetDeploymentResponseBody = GetDeploymentResponseBody2 | GetDeployme
 
 /** @internal */
 export namespace GetDeploymentRequest$ {
-    export const inboundSchema: z.ZodType<GetDeploymentRequest, z.ZodTypeDef, unknown> = z
-        .object({
-            idOrUrl: z.string(),
-            withGitRepoInfo: z.string().optional(),
-            teamId: z.string().optional(),
-            slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                idOrUrl: v.idOrUrl,
-                ...(v.withGitRepoInfo === undefined
-                    ? null
-                    : { withGitRepoInfo: v.withGitRepoInfo }),
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
-        });
+    export const inboundSchema: z.ZodType<GetDeploymentRequest, z.ZodTypeDef, unknown> = z.object({
+        idOrUrl: z.string(),
+        withGitRepoInfo: z.string().optional(),
+        teamId: z.string().optional(),
+        slug: z.string().optional(),
+    });
 
     export type Outbound = {
         idOrUrl: string;
@@ -1110,45 +1099,33 @@ export namespace GetDeploymentRequest$ {
         slug?: string | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetDeploymentRequest> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetDeploymentRequest> = z.object(
+        {
             idOrUrl: z.string(),
             withGitRepoInfo: z.string().optional(),
             teamId: z.string().optional(),
             slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                idOrUrl: v.idOrUrl,
-                ...(v.withGitRepoInfo === undefined
-                    ? null
-                    : { withGitRepoInfo: v.withGitRepoInfo }),
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
-        });
+        }
+    );
 }
 
 /** @internal */
 export namespace GetDeploymentResponseBodyDeploymentsReadyState$ {
-    export const inboundSchema = z.nativeEnum(GetDeploymentResponseBodyDeploymentsReadyState);
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<
+        typeof GetDeploymentResponseBodyDeploymentsReadyState
+    > = z.nativeEnum(GetDeploymentResponseBodyDeploymentsReadyState);
+    export const outboundSchema: z.ZodNativeEnum<
+        typeof GetDeploymentResponseBodyDeploymentsReadyState
+    > = inboundSchema;
 }
 
 /** @internal */
 export namespace GetDeploymentResponseBodyOutput$ {
     export const inboundSchema: z.ZodType<GetDeploymentResponseBodyOutput, z.ZodTypeDef, unknown> =
-        z
-            .object({
-                path: z.string(),
-                functionName: z.string(),
-            })
-            .transform((v) => {
-                return {
-                    path: v.path,
-                    functionName: v.functionName,
-                };
-            });
+        z.object({
+            path: z.string(),
+            functionName: z.string(),
+        });
 
     export type Outbound = {
         path: string;
@@ -1159,40 +1136,22 @@ export namespace GetDeploymentResponseBodyOutput$ {
         Outbound,
         z.ZodTypeDef,
         GetDeploymentResponseBodyOutput
-    > = z
-        .object({
-            path: z.string(),
-            functionName: z.string(),
-        })
-        .transform((v) => {
-            return {
-                path: v.path,
-                functionName: v.functionName,
-            };
-        });
+    > = z.object({
+        path: z.string(),
+        functionName: z.string(),
+    });
 }
 
 /** @internal */
 export namespace ResponseBodyLambdas$ {
-    export const inboundSchema: z.ZodType<ResponseBodyLambdas, z.ZodTypeDef, unknown> = z
-        .object({
-            id: z.string(),
-            createdAt: z.number().optional(),
-            entrypoint: z.nullable(z.string()).optional(),
-            readyState: GetDeploymentResponseBodyDeploymentsReadyState$.inboundSchema.optional(),
-            readyStateAt: z.number().optional(),
-            output: z.array(z.lazy(() => GetDeploymentResponseBodyOutput$.inboundSchema)),
-        })
-        .transform((v) => {
-            return {
-                id: v.id,
-                ...(v.createdAt === undefined ? null : { createdAt: v.createdAt }),
-                ...(v.entrypoint === undefined ? null : { entrypoint: v.entrypoint }),
-                ...(v.readyState === undefined ? null : { readyState: v.readyState }),
-                ...(v.readyStateAt === undefined ? null : { readyStateAt: v.readyStateAt }),
-                output: v.output,
-            };
-        });
+    export const inboundSchema: z.ZodType<ResponseBodyLambdas, z.ZodTypeDef, unknown> = z.object({
+        id: z.string(),
+        createdAt: z.number().optional(),
+        entrypoint: z.nullable(z.string()).optional(),
+        readyState: GetDeploymentResponseBodyDeploymentsReadyState$.inboundSchema.optional(),
+        readyStateAt: z.number().optional(),
+        output: z.array(z.lazy(() => GetDeploymentResponseBodyOutput$.inboundSchema)),
+    });
 
     export type Outbound = {
         id: string;
@@ -1203,42 +1162,23 @@ export namespace ResponseBodyLambdas$ {
         output: Array<GetDeploymentResponseBodyOutput$.Outbound>;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, ResponseBodyLambdas> = z
-        .object({
-            id: z.string(),
-            createdAt: z.number().optional(),
-            entrypoint: z.nullable(z.string()).optional(),
-            readyState: GetDeploymentResponseBodyDeploymentsReadyState$.outboundSchema.optional(),
-            readyStateAt: z.number().optional(),
-            output: z.array(z.lazy(() => GetDeploymentResponseBodyOutput$.outboundSchema)),
-        })
-        .transform((v) => {
-            return {
-                id: v.id,
-                ...(v.createdAt === undefined ? null : { createdAt: v.createdAt }),
-                ...(v.entrypoint === undefined ? null : { entrypoint: v.entrypoint }),
-                ...(v.readyState === undefined ? null : { readyState: v.readyState }),
-                ...(v.readyStateAt === undefined ? null : { readyStateAt: v.readyStateAt }),
-                output: v.output,
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, ResponseBodyLambdas> = z.object({
+        id: z.string(),
+        createdAt: z.number().optional(),
+        entrypoint: z.nullable(z.string()).optional(),
+        readyState: GetDeploymentResponseBodyDeploymentsReadyState$.outboundSchema.optional(),
+        readyStateAt: z.number().optional(),
+        output: z.array(z.lazy(() => GetDeploymentResponseBodyOutput$.outboundSchema)),
+    });
 }
 
 /** @internal */
 export namespace ResponseBodyProject$ {
-    export const inboundSchema: z.ZodType<ResponseBodyProject, z.ZodTypeDef, unknown> = z
-        .object({
-            id: z.string(),
-            name: z.string(),
-            framework: z.nullable(z.string()).optional(),
-        })
-        .transform((v) => {
-            return {
-                id: v.id,
-                name: v.name,
-                ...(v.framework === undefined ? null : { framework: v.framework }),
-            };
-        });
+    export const inboundSchema: z.ZodType<ResponseBodyProject, z.ZodTypeDef, unknown> = z.object({
+        id: z.string(),
+        name: z.string(),
+        framework: z.nullable(z.string()).optional(),
+    });
 
     export type Outbound = {
         id: string;
@@ -1246,62 +1186,53 @@ export namespace ResponseBodyProject$ {
         framework?: string | null | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, ResponseBodyProject> = z
-        .object({
-            id: z.string(),
-            name: z.string(),
-            framework: z.nullable(z.string()).optional(),
-        })
-        .transform((v) => {
-            return {
-                id: v.id,
-                name: v.name,
-                ...(v.framework === undefined ? null : { framework: v.framework }),
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, ResponseBodyProject> = z.object({
+        id: z.string(),
+        name: z.string(),
+        framework: z.nullable(z.string()).optional(),
+    });
 }
 
 /** @internal */
 export namespace GetDeploymentResponseBodyReadyState$ {
-    export const inboundSchema = z.nativeEnum(GetDeploymentResponseBodyReadyState);
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<typeof GetDeploymentResponseBodyReadyState> =
+        z.nativeEnum(GetDeploymentResponseBodyReadyState);
+    export const outboundSchema: z.ZodNativeEnum<typeof GetDeploymentResponseBodyReadyState> =
+        inboundSchema;
 }
 
 /** @internal */
 export namespace GetDeploymentResponseBodyReadySubstate$ {
-    export const inboundSchema = z.nativeEnum(GetDeploymentResponseBodyReadySubstate);
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<typeof GetDeploymentResponseBodyReadySubstate> =
+        z.nativeEnum(GetDeploymentResponseBodyReadySubstate);
+    export const outboundSchema: z.ZodNativeEnum<typeof GetDeploymentResponseBodyReadySubstate> =
+        inboundSchema;
 }
 
 /** @internal */
 export namespace GetDeploymentResponseBodySource$ {
-    export const inboundSchema = z.nativeEnum(GetDeploymentResponseBodySource);
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<typeof GetDeploymentResponseBodySource> =
+        z.nativeEnum(GetDeploymentResponseBodySource);
+    export const outboundSchema: z.ZodNativeEnum<typeof GetDeploymentResponseBodySource> =
+        inboundSchema;
 }
 
 /** @internal */
 export namespace GetDeploymentResponseBodyTarget$ {
-    export const inboundSchema = z.nativeEnum(GetDeploymentResponseBodyTarget);
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<typeof GetDeploymentResponseBodyTarget> =
+        z.nativeEnum(GetDeploymentResponseBodyTarget);
+    export const outboundSchema: z.ZodNativeEnum<typeof GetDeploymentResponseBodyTarget> =
+        inboundSchema;
 }
 
 /** @internal */
 export namespace ResponseBodyTeam$ {
-    export const inboundSchema: z.ZodType<ResponseBodyTeam, z.ZodTypeDef, unknown> = z
-        .object({
-            id: z.string(),
-            name: z.string(),
-            slug: z.string(),
-            avatar: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                id: v.id,
-                name: v.name,
-                slug: v.slug,
-                ...(v.avatar === undefined ? null : { avatar: v.avatar }),
-            };
-        });
+    export const inboundSchema: z.ZodType<ResponseBodyTeam, z.ZodTypeDef, unknown> = z.object({
+        id: z.string(),
+        name: z.string(),
+        slug: z.string(),
+        avatar: z.string().optional(),
+    });
 
     export type Outbound = {
         id: string;
@@ -1310,27 +1241,20 @@ export namespace ResponseBodyTeam$ {
         avatar?: string | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, ResponseBodyTeam> = z
-        .object({
-            id: z.string(),
-            name: z.string(),
-            slug: z.string(),
-            avatar: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                id: v.id,
-                name: v.name,
-                slug: v.slug,
-                ...(v.avatar === undefined ? null : { avatar: v.avatar }),
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, ResponseBodyTeam> = z.object({
+        id: z.string(),
+        name: z.string(),
+        slug: z.string(),
+        avatar: z.string().optional(),
+    });
 }
 
 /** @internal */
 export namespace GetDeploymentResponseBodyDeploymentsType$ {
-    export const inboundSchema = z.nativeEnum(GetDeploymentResponseBodyDeploymentsType);
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<typeof GetDeploymentResponseBodyDeploymentsType> =
+        z.nativeEnum(GetDeploymentResponseBodyDeploymentsType);
+    export const outboundSchema: z.ZodNativeEnum<typeof GetDeploymentResponseBodyDeploymentsType> =
+        inboundSchema;
 }
 
 /** @internal */
@@ -1339,17 +1263,10 @@ export namespace GetDeploymentResponseBodyAliasError$ {
         GetDeploymentResponseBodyAliasError,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            code: z.string(),
-            message: z.string(),
-        })
-        .transform((v) => {
-            return {
-                code: v.code,
-                message: v.message,
-            };
-        });
+    > = z.object({
+        code: z.string(),
+        message: z.string(),
+    });
 
     export type Outbound = {
         code: string;
@@ -1360,35 +1277,20 @@ export namespace GetDeploymentResponseBodyAliasError$ {
         Outbound,
         z.ZodTypeDef,
         GetDeploymentResponseBodyAliasError
-    > = z
-        .object({
-            code: z.string(),
-            message: z.string(),
-        })
-        .transform((v) => {
-            return {
-                code: v.code,
-                message: v.message,
-            };
-        });
+    > = z.object({
+        code: z.string(),
+        message: z.string(),
+    });
 }
 
 /** @internal */
 export namespace ResponseBodyAliasWarning$ {
-    export const inboundSchema: z.ZodType<ResponseBodyAliasWarning, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<ResponseBodyAliasWarning, z.ZodTypeDef, unknown> =
+        z.object({
             code: z.string(),
             message: z.string(),
             link: z.string().optional(),
             action: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                code: v.code,
-                message: v.message,
-                ...(v.link === undefined ? null : { link: v.link }),
-                ...(v.action === undefined ? null : { action: v.action }),
-            };
         });
 
     export type Outbound = {
@@ -1398,51 +1300,39 @@ export namespace ResponseBodyAliasWarning$ {
         action?: string | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, ResponseBodyAliasWarning> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, ResponseBodyAliasWarning> =
+        z.object({
             code: z.string(),
             message: z.string(),
             link: z.string().optional(),
             action: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                code: v.code,
-                message: v.message,
-                ...(v.link === undefined ? null : { link: v.link }),
-                ...(v.action === undefined ? null : { action: v.action }),
-            };
         });
 }
 
 /** @internal */
 export namespace GetDeploymentResponseBodyChecksState$ {
-    export const inboundSchema = z.nativeEnum(GetDeploymentResponseBodyChecksState);
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<typeof GetDeploymentResponseBodyChecksState> =
+        z.nativeEnum(GetDeploymentResponseBodyChecksState);
+    export const outboundSchema: z.ZodNativeEnum<typeof GetDeploymentResponseBodyChecksState> =
+        inboundSchema;
 }
 
 /** @internal */
 export namespace GetDeploymentResponseBodyChecksConclusion$ {
-    export const inboundSchema = z.nativeEnum(GetDeploymentResponseBodyChecksConclusion);
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<typeof GetDeploymentResponseBodyChecksConclusion> =
+        z.nativeEnum(GetDeploymentResponseBodyChecksConclusion);
+    export const outboundSchema: z.ZodNativeEnum<typeof GetDeploymentResponseBodyChecksConclusion> =
+        inboundSchema;
 }
 
 /** @internal */
 export namespace GetDeploymentResponseBodyCreator$ {
     export const inboundSchema: z.ZodType<GetDeploymentResponseBodyCreator, z.ZodTypeDef, unknown> =
-        z
-            .object({
-                uid: z.string(),
-                username: z.string().optional(),
-                avatar: z.string().optional(),
-            })
-            .transform((v) => {
-                return {
-                    uid: v.uid,
-                    ...(v.username === undefined ? null : { username: v.username }),
-                    ...(v.avatar === undefined ? null : { avatar: v.avatar }),
-                };
-            });
+        z.object({
+            uid: z.string(),
+            username: z.string().optional(),
+            avatar: z.string().optional(),
+        });
 
     export type Outbound = {
         uid: string;
@@ -1454,33 +1344,27 @@ export namespace GetDeploymentResponseBodyCreator$ {
         Outbound,
         z.ZodTypeDef,
         GetDeploymentResponseBodyCreator
-    > = z
-        .object({
-            uid: z.string(),
-            username: z.string().optional(),
-            avatar: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                uid: v.uid,
-                ...(v.username === undefined ? null : { username: v.username }),
-                ...(v.avatar === undefined ? null : { avatar: v.avatar }),
-            };
-        });
+    > = z.object({
+        uid: z.string(),
+        username: z.string().optional(),
+        avatar: z.string().optional(),
+    });
 }
 
 /** @internal */
 export namespace GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody29Type$ {
-    export const inboundSchema = z.nativeEnum(
-        GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody29Type
-    );
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<
+        typeof GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody29Type
+    > = z.nativeEnum(GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody29Type);
+    export const outboundSchema: z.ZodNativeEnum<
+        typeof GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody29Type
+    > = inboundSchema;
 }
 
 /** @internal */
 export namespace GetDeploymentGitSource9$ {
-    export const inboundSchema: z.ZodType<GetDeploymentGitSource9, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<GetDeploymentGitSource9, z.ZodTypeDef, unknown> =
+        z.object({
             type: GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody29Type$.inboundSchema,
             ref: z.string(),
             sha: z.string(),
@@ -1488,17 +1372,6 @@ export namespace GetDeploymentGitSource9$ {
             slug: z.string().optional(),
             workspaceUuid: z.string(),
             repoUuid: z.string(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                ref: v.ref,
-                sha: v.sha,
-                ...(v.owner === undefined ? null : { owner: v.owner }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-                workspaceUuid: v.workspaceUuid,
-                repoUuid: v.repoUuid,
-            };
         });
 
     export type Outbound = {
@@ -1511,8 +1384,8 @@ export namespace GetDeploymentGitSource9$ {
         repoUuid: string;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetDeploymentGitSource9> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetDeploymentGitSource9> =
+        z.object({
             type: GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody29Type$.outboundSchema,
             ref: z.string(),
             sha: z.string(),
@@ -1520,44 +1393,27 @@ export namespace GetDeploymentGitSource9$ {
             slug: z.string().optional(),
             workspaceUuid: z.string(),
             repoUuid: z.string(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                ref: v.ref,
-                sha: v.sha,
-                ...(v.owner === undefined ? null : { owner: v.owner }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-                workspaceUuid: v.workspaceUuid,
-                repoUuid: v.repoUuid,
-            };
         });
 }
 
 /** @internal */
 export namespace GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody28Type$ {
-    export const inboundSchema = z.nativeEnum(
-        GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody28Type
-    );
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<
+        typeof GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody28Type
+    > = z.nativeEnum(GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody28Type);
+    export const outboundSchema: z.ZodNativeEnum<
+        typeof GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody28Type
+    > = inboundSchema;
 }
 
 /** @internal */
 export namespace GetDeploymentGitSource8$ {
-    export const inboundSchema: z.ZodType<GetDeploymentGitSource8, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<GetDeploymentGitSource8, z.ZodTypeDef, unknown> =
+        z.object({
             type: GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody28Type$.inboundSchema,
             ref: z.string(),
             sha: z.string(),
             projectId: z.number(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                ref: v.ref,
-                sha: v.sha,
-                projectId: v.projectId,
-            };
         });
 
     export type Outbound = {
@@ -1567,51 +1423,35 @@ export namespace GetDeploymentGitSource8$ {
         projectId: number;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetDeploymentGitSource8> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetDeploymentGitSource8> =
+        z.object({
             type: GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody28Type$.outboundSchema,
             ref: z.string(),
             sha: z.string(),
             projectId: z.number(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                ref: v.ref,
-                sha: v.sha,
-                projectId: v.projectId,
-            };
         });
 }
 
 /** @internal */
 export namespace GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody27Type$ {
-    export const inboundSchema = z.nativeEnum(
-        GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody27Type
-    );
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<
+        typeof GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody27Type
+    > = z.nativeEnum(GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody27Type);
+    export const outboundSchema: z.ZodNativeEnum<
+        typeof GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody27Type
+    > = inboundSchema;
 }
 
 /** @internal */
 export namespace GetDeploymentGitSource7$ {
-    export const inboundSchema: z.ZodType<GetDeploymentGitSource7, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<GetDeploymentGitSource7, z.ZodTypeDef, unknown> =
+        z.object({
             type: GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody27Type$.inboundSchema,
             ref: z.string(),
             sha: z.string(),
             repoId: z.number(),
             org: z.string().optional(),
             repo: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                ref: v.ref,
-                sha: v.sha,
-                repoId: v.repoId,
-                ...(v.org === undefined ? null : { org: v.org }),
-                ...(v.repo === undefined ? null : { repo: v.repo }),
-            };
         });
 
     export type Outbound = {
@@ -1623,51 +1463,35 @@ export namespace GetDeploymentGitSource7$ {
         repo?: string | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetDeploymentGitSource7> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetDeploymentGitSource7> =
+        z.object({
             type: GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody27Type$.outboundSchema,
             ref: z.string(),
             sha: z.string(),
             repoId: z.number(),
             org: z.string().optional(),
             repo: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                ref: v.ref,
-                sha: v.sha,
-                repoId: v.repoId,
-                ...(v.org === undefined ? null : { org: v.org }),
-                ...(v.repo === undefined ? null : { repo: v.repo }),
-            };
         });
 }
 
 /** @internal */
 export namespace GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody26Type$ {
-    export const inboundSchema = z.nativeEnum(
-        GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody26Type
-    );
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<
+        typeof GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody26Type
+    > = z.nativeEnum(GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody26Type);
+    export const outboundSchema: z.ZodNativeEnum<
+        typeof GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody26Type
+    > = inboundSchema;
 }
 
 /** @internal */
 export namespace GetDeploymentGitSource6$ {
-    export const inboundSchema: z.ZodType<GetDeploymentGitSource6, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<GetDeploymentGitSource6, z.ZodTypeDef, unknown> =
+        z.object({
             type: GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody26Type$.inboundSchema,
             ref: z.string(),
             sha: z.string(),
             gitUrl: z.string(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                ref: v.ref,
-                sha: v.sha,
-                gitUrl: v.gitUrl,
-            };
         });
 
     export type Outbound = {
@@ -1677,51 +1501,35 @@ export namespace GetDeploymentGitSource6$ {
         gitUrl: string;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetDeploymentGitSource6> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetDeploymentGitSource6> =
+        z.object({
             type: GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody26Type$.outboundSchema,
             ref: z.string(),
             sha: z.string(),
             gitUrl: z.string(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                ref: v.ref,
-                sha: v.sha,
-                gitUrl: v.gitUrl,
-            };
         });
 }
 
 /** @internal */
 export namespace GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody25Type$ {
-    export const inboundSchema = z.nativeEnum(
-        GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody25Type
-    );
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<
+        typeof GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody25Type
+    > = z.nativeEnum(GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody25Type);
+    export const outboundSchema: z.ZodNativeEnum<
+        typeof GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody25Type
+    > = inboundSchema;
 }
 
 /** @internal */
 export namespace GetDeploymentGitSource5$ {
-    export const inboundSchema: z.ZodType<GetDeploymentGitSource5, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<GetDeploymentGitSource5, z.ZodTypeDef, unknown> =
+        z.object({
             type: GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody25Type$.inboundSchema,
             owner: z.string(),
             slug: z.string(),
             ref: z.nullable(z.string()).optional(),
             sha: z.string().optional(),
             prId: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                owner: v.owner,
-                slug: v.slug,
-                ...(v.ref === undefined ? null : { ref: v.ref }),
-                ...(v.sha === undefined ? null : { sha: v.sha }),
-                ...(v.prId === undefined ? null : { prId: v.prId }),
-            };
         });
 
     export type Outbound = {
@@ -1733,55 +1541,37 @@ export namespace GetDeploymentGitSource5$ {
         prId?: number | null | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetDeploymentGitSource5> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetDeploymentGitSource5> =
+        z.object({
             type: GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody25Type$.outboundSchema,
             owner: z.string(),
             slug: z.string(),
             ref: z.nullable(z.string()).optional(),
             sha: z.string().optional(),
             prId: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                owner: v.owner,
-                slug: v.slug,
-                ...(v.ref === undefined ? null : { ref: v.ref }),
-                ...(v.sha === undefined ? null : { sha: v.sha }),
-                ...(v.prId === undefined ? null : { prId: v.prId }),
-            };
         });
 }
 
 /** @internal */
 export namespace GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody24Type$ {
-    export const inboundSchema = z.nativeEnum(
-        GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody24Type
-    );
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<
+        typeof GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody24Type
+    > = z.nativeEnum(GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody24Type);
+    export const outboundSchema: z.ZodNativeEnum<
+        typeof GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody24Type
+    > = inboundSchema;
 }
 
 /** @internal */
 export namespace GetDeploymentGitSource4$ {
-    export const inboundSchema: z.ZodType<GetDeploymentGitSource4, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<GetDeploymentGitSource4, z.ZodTypeDef, unknown> =
+        z.object({
             type: GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody24Type$.inboundSchema,
             workspaceUuid: z.string().optional(),
             repoUuid: z.string(),
             ref: z.nullable(z.string()).optional(),
             sha: z.string().optional(),
             prId: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                ...(v.workspaceUuid === undefined ? null : { workspaceUuid: v.workspaceUuid }),
-                repoUuid: v.repoUuid,
-                ...(v.ref === undefined ? null : { ref: v.ref }),
-                ...(v.sha === undefined ? null : { sha: v.sha }),
-                ...(v.prId === undefined ? null : { prId: v.prId }),
-            };
         });
 
     export type Outbound = {
@@ -1793,33 +1583,25 @@ export namespace GetDeploymentGitSource4$ {
         prId?: number | null | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetDeploymentGitSource4> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetDeploymentGitSource4> =
+        z.object({
             type: GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody24Type$.outboundSchema,
             workspaceUuid: z.string().optional(),
             repoUuid: z.string(),
             ref: z.nullable(z.string()).optional(),
             sha: z.string().optional(),
             prId: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                ...(v.workspaceUuid === undefined ? null : { workspaceUuid: v.workspaceUuid }),
-                repoUuid: v.repoUuid,
-                ...(v.ref === undefined ? null : { ref: v.ref }),
-                ...(v.sha === undefined ? null : { sha: v.sha }),
-                ...(v.prId === undefined ? null : { prId: v.prId }),
-            };
         });
 }
 
 /** @internal */
 export namespace GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody23Type$ {
-    export const inboundSchema = z.nativeEnum(
-        GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody23Type
-    );
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<
+        typeof GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody23Type
+    > = z.nativeEnum(GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody23Type);
+    export const outboundSchema: z.ZodNativeEnum<
+        typeof GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody23Type
+    > = inboundSchema;
 }
 
 /** @internal */
@@ -1840,22 +1622,13 @@ export namespace GetDeploymentGitSourceDeploymentsProjectId$ {
 
 /** @internal */
 export namespace GetDeploymentGitSource3$ {
-    export const inboundSchema: z.ZodType<GetDeploymentGitSource3, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<GetDeploymentGitSource3, z.ZodTypeDef, unknown> =
+        z.object({
             type: GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody23Type$.inboundSchema,
             projectId: z.union([z.string(), z.number()]),
             ref: z.nullable(z.string()).optional(),
             sha: z.string().optional(),
             prId: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                projectId: v.projectId,
-                ...(v.ref === undefined ? null : { ref: v.ref }),
-                ...(v.sha === undefined ? null : { sha: v.sha }),
-                ...(v.prId === undefined ? null : { prId: v.prId }),
-            };
         });
 
     export type Outbound = {
@@ -1866,53 +1639,36 @@ export namespace GetDeploymentGitSource3$ {
         prId?: number | null | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetDeploymentGitSource3> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetDeploymentGitSource3> =
+        z.object({
             type: GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody23Type$.outboundSchema,
             projectId: z.union([z.string(), z.number()]),
             ref: z.nullable(z.string()).optional(),
             sha: z.string().optional(),
             prId: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                projectId: v.projectId,
-                ...(v.ref === undefined ? null : { ref: v.ref }),
-                ...(v.sha === undefined ? null : { sha: v.sha }),
-                ...(v.prId === undefined ? null : { prId: v.prId }),
-            };
         });
 }
 
 /** @internal */
 export namespace GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody22Type$ {
-    export const inboundSchema = z.nativeEnum(
-        GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody22Type
-    );
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<
+        typeof GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody22Type
+    > = z.nativeEnum(GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody22Type);
+    export const outboundSchema: z.ZodNativeEnum<
+        typeof GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody22Type
+    > = inboundSchema;
 }
 
 /** @internal */
 export namespace GetDeploymentGitSource2$ {
-    export const inboundSchema: z.ZodType<GetDeploymentGitSource2, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<GetDeploymentGitSource2, z.ZodTypeDef, unknown> =
+        z.object({
             type: GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody22Type$.inboundSchema,
             org: z.string(),
             repo: z.string(),
             ref: z.nullable(z.string()).optional(),
             sha: z.string().optional(),
             prId: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                org: v.org,
-                repo: v.repo,
-                ...(v.ref === undefined ? null : { ref: v.ref }),
-                ...(v.sha === undefined ? null : { sha: v.sha }),
-                ...(v.prId === undefined ? null : { prId: v.prId }),
-            };
         });
 
     export type Outbound = {
@@ -1924,33 +1680,25 @@ export namespace GetDeploymentGitSource2$ {
         prId?: number | null | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetDeploymentGitSource2> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetDeploymentGitSource2> =
+        z.object({
             type: GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody22Type$.outboundSchema,
             org: z.string(),
             repo: z.string(),
             ref: z.nullable(z.string()).optional(),
             sha: z.string().optional(),
             prId: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                org: v.org,
-                repo: v.repo,
-                ...(v.ref === undefined ? null : { ref: v.ref }),
-                ...(v.sha === undefined ? null : { sha: v.sha }),
-                ...(v.prId === undefined ? null : { prId: v.prId }),
-            };
         });
 }
 
 /** @internal */
 export namespace GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody2Type$ {
-    export const inboundSchema = z.nativeEnum(
-        GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody2Type
-    );
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<
+        typeof GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody2Type
+    > = z.nativeEnum(GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody2Type);
+    export const outboundSchema: z.ZodNativeEnum<
+        typeof GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody2Type
+    > = inboundSchema;
 }
 
 /** @internal */
@@ -1971,22 +1719,13 @@ export namespace GetDeploymentGitSourceDeploymentsRepoId$ {
 
 /** @internal */
 export namespace GetDeploymentGitSource1$ {
-    export const inboundSchema: z.ZodType<GetDeploymentGitSource1, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<GetDeploymentGitSource1, z.ZodTypeDef, unknown> =
+        z.object({
             type: GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody2Type$.inboundSchema,
             repoId: z.union([z.string(), z.number()]),
             ref: z.nullable(z.string()).optional(),
             sha: z.string().optional(),
             prId: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                repoId: v.repoId,
-                ...(v.ref === undefined ? null : { ref: v.ref }),
-                ...(v.sha === undefined ? null : { sha: v.sha }),
-                ...(v.prId === undefined ? null : { prId: v.prId }),
-            };
         });
 
     export type Outbound = {
@@ -1997,22 +1736,13 @@ export namespace GetDeploymentGitSource1$ {
         prId?: number | null | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetDeploymentGitSource1> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetDeploymentGitSource1> =
+        z.object({
             type: GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody2Type$.outboundSchema,
             repoId: z.union([z.string(), z.number()]),
             ref: z.nullable(z.string()).optional(),
             sha: z.string().optional(),
             prId: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                repoId: v.repoId,
-                ...(v.ref === undefined ? null : { ref: v.ref }),
-                ...(v.sha === undefined ? null : { sha: v.sha }),
-                ...(v.prId === undefined ? null : { prId: v.prId }),
-            };
         });
 }
 
@@ -2057,8 +1787,8 @@ export namespace ResponseBodyGitSource$ {
 
 /** @internal */
 export namespace GetDeploymentResponseBody2$ {
-    export const inboundSchema: z.ZodType<GetDeploymentResponseBody2, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<GetDeploymentResponseBody2, z.ZodTypeDef, unknown> =
+        z.object({
             lambdas: z.array(z.lazy(() => ResponseBodyLambdas$.inboundSchema)).optional(),
             name: z.string(),
             meta: z.record(z.string()),
@@ -2113,62 +1843,12 @@ export namespace GetDeploymentResponseBody2$ {
                 ])
                 .optional(),
             id: z.string(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.lambdas === undefined ? null : { lambdas: v.lambdas }),
-                name: v.name,
-                meta: v.meta,
-                ...(v.project === undefined ? null : { project: v.project }),
-                public: v.public,
-                readyState: v.readyState,
-                ...(v.readySubstate === undefined ? null : { readySubstate: v.readySubstate }),
-                regions: v.regions,
-                ...(v.source === undefined ? null : { source: v.source }),
-                ...(v.target === undefined ? null : { target: v.target }),
-                ...(v.team === undefined ? null : { team: v.team }),
-                type: v.type,
-                url: v.url,
-                ...(v.userAliases === undefined ? null : { userAliases: v.userAliases }),
-                version: v.version,
-                ...(v.previewCommentsEnabled === undefined
-                    ? null
-                    : { previewCommentsEnabled: v.previewCommentsEnabled }),
-                alias: v.alias,
-                aliasAssigned: v.aliasAssigned,
-                ...(v.aliasError === undefined ? null : { aliasError: v.aliasError }),
-                ...(v.aliasFinal === undefined ? null : { aliasFinal: v.aliasFinal }),
-                ...(v.aliasWarning === undefined ? null : { aliasWarning: v.aliasWarning }),
-                ...(v.autoAssignCustomDomains === undefined
-                    ? null
-                    : { autoAssignCustomDomains: v.autoAssignCustomDomains }),
-                ...(v.automaticAliases === undefined
-                    ? null
-                    : { automaticAliases: v.automaticAliases }),
-                bootedAt: v.bootedAt,
-                ...(v.buildErrorAt === undefined ? null : { buildErrorAt: v.buildErrorAt }),
-                buildingAt: v.buildingAt,
-                ...(v.canceledAt === undefined ? null : { canceledAt: v.canceledAt }),
-                ...(v.checksState === undefined ? null : { checksState: v.checksState }),
-                ...(v.checksConclusion === undefined
-                    ? null
-                    : { checksConclusion: v.checksConclusion }),
-                createdAt: v.createdAt,
-                creator: v.creator,
-                ...(v.errorCode === undefined ? null : { errorCode: v.errorCode }),
-                ...(v.errorLink === undefined ? null : { errorLink: v.errorLink }),
-                ...(v.errorMessage === undefined ? null : { errorMessage: v.errorMessage }),
-                ...(v.errorStep === undefined ? null : { errorStep: v.errorStep }),
-                ...(v.passiveRegions === undefined ? null : { passiveRegions: v.passiveRegions }),
-                ...(v.gitSource === undefined ? null : { gitSource: v.gitSource }),
-                id: v.id,
-            };
         });
 
     export type Outbound = {
         lambdas?: Array<ResponseBodyLambdas$.Outbound> | undefined;
         name: string;
-        meta: Record<string, string>;
+        meta: { [k: string]: string };
         project?: ResponseBodyProject$.Outbound | undefined;
         public: boolean;
         readyState: string;
@@ -2216,8 +1896,8 @@ export namespace GetDeploymentResponseBody2$ {
         id: string;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetDeploymentResponseBody2> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetDeploymentResponseBody2> =
+        z.object({
             lambdas: z.array(z.lazy(() => ResponseBodyLambdas$.outboundSchema)).optional(),
             name: z.string(),
             meta: z.record(z.string()),
@@ -2272,84 +1952,22 @@ export namespace GetDeploymentResponseBody2$ {
                 ])
                 .optional(),
             id: z.string(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.lambdas === undefined ? null : { lambdas: v.lambdas }),
-                name: v.name,
-                meta: v.meta,
-                ...(v.project === undefined ? null : { project: v.project }),
-                public: v.public,
-                readyState: v.readyState,
-                ...(v.readySubstate === undefined ? null : { readySubstate: v.readySubstate }),
-                regions: v.regions,
-                ...(v.source === undefined ? null : { source: v.source }),
-                ...(v.target === undefined ? null : { target: v.target }),
-                ...(v.team === undefined ? null : { team: v.team }),
-                type: v.type,
-                url: v.url,
-                ...(v.userAliases === undefined ? null : { userAliases: v.userAliases }),
-                version: v.version,
-                ...(v.previewCommentsEnabled === undefined
-                    ? null
-                    : { previewCommentsEnabled: v.previewCommentsEnabled }),
-                alias: v.alias,
-                aliasAssigned: v.aliasAssigned,
-                ...(v.aliasError === undefined ? null : { aliasError: v.aliasError }),
-                ...(v.aliasFinal === undefined ? null : { aliasFinal: v.aliasFinal }),
-                ...(v.aliasWarning === undefined ? null : { aliasWarning: v.aliasWarning }),
-                ...(v.autoAssignCustomDomains === undefined
-                    ? null
-                    : { autoAssignCustomDomains: v.autoAssignCustomDomains }),
-                ...(v.automaticAliases === undefined
-                    ? null
-                    : { automaticAliases: v.automaticAliases }),
-                bootedAt: v.bootedAt,
-                ...(v.buildErrorAt === undefined ? null : { buildErrorAt: v.buildErrorAt }),
-                buildingAt: v.buildingAt,
-                ...(v.canceledAt === undefined ? null : { canceledAt: v.canceledAt }),
-                ...(v.checksState === undefined ? null : { checksState: v.checksState }),
-                ...(v.checksConclusion === undefined
-                    ? null
-                    : { checksConclusion: v.checksConclusion }),
-                createdAt: v.createdAt,
-                creator: v.creator,
-                ...(v.errorCode === undefined ? null : { errorCode: v.errorCode }),
-                ...(v.errorLink === undefined ? null : { errorLink: v.errorLink }),
-                ...(v.errorMessage === undefined ? null : { errorMessage: v.errorMessage }),
-                ...(v.errorStep === undefined ? null : { errorStep: v.errorStep }),
-                ...(v.passiveRegions === undefined ? null : { passiveRegions: v.passiveRegions }),
-                ...(v.gitSource === undefined ? null : { gitSource: v.gitSource }),
-                id: v.id,
-            };
         });
 }
 
 /** @internal */
 export namespace ResponseBodyBuild$ {
-    export const inboundSchema: z.ZodType<ResponseBodyBuild, z.ZodTypeDef, unknown> = z
-        .object({
-            env: z.array(z.string()),
-        })
-        .transform((v) => {
-            return {
-                env: v.env,
-            };
-        });
+    export const inboundSchema: z.ZodType<ResponseBodyBuild, z.ZodTypeDef, unknown> = z.object({
+        env: z.array(z.string()),
+    });
 
     export type Outbound = {
         env: Array<string>;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, ResponseBodyBuild> = z
-        .object({
-            env: z.array(z.string()),
-        })
-        .transform((v) => {
-            return {
-                env: v.env,
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, ResponseBodyBuild> = z.object({
+        env: z.array(z.string()),
+    });
 }
 
 /** @internal */
@@ -2365,55 +1983,31 @@ export namespace ResponseBodyBuilds$ {
 
 /** @internal */
 export namespace ResponseBodyCrons$ {
-    export const inboundSchema: z.ZodType<ResponseBodyCrons, z.ZodTypeDef, unknown> = z
-        .object({
-            schedule: z.string(),
-            path: z.string(),
-        })
-        .transform((v) => {
-            return {
-                schedule: v.schedule,
-                path: v.path,
-            };
-        });
+    export const inboundSchema: z.ZodType<ResponseBodyCrons, z.ZodTypeDef, unknown> = z.object({
+        schedule: z.string(),
+        path: z.string(),
+    });
 
     export type Outbound = {
         schedule: string;
         path: string;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, ResponseBodyCrons> = z
-        .object({
-            schedule: z.string(),
-            path: z.string(),
-        })
-        .transform((v) => {
-            return {
-                schedule: v.schedule,
-                path: v.path,
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, ResponseBodyCrons> = z.object({
+        schedule: z.string(),
+        path: z.string(),
+    });
 }
 
 /** @internal */
 export namespace ResponseBodyFunctions$ {
-    export const inboundSchema: z.ZodType<ResponseBodyFunctions, z.ZodTypeDef, unknown> = z
-        .object({
-            memory: z.number().optional(),
-            maxDuration: z.number().optional(),
-            runtime: z.string().optional(),
-            includeFiles: z.string().optional(),
-            excludeFiles: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.memory === undefined ? null : { memory: v.memory }),
-                ...(v.maxDuration === undefined ? null : { maxDuration: v.maxDuration }),
-                ...(v.runtime === undefined ? null : { runtime: v.runtime }),
-                ...(v.includeFiles === undefined ? null : { includeFiles: v.includeFiles }),
-                ...(v.excludeFiles === undefined ? null : { excludeFiles: v.excludeFiles }),
-            };
-        });
+    export const inboundSchema: z.ZodType<ResponseBodyFunctions, z.ZodTypeDef, unknown> = z.object({
+        memory: z.number().optional(),
+        maxDuration: z.number().optional(),
+        runtime: z.string().optional(),
+        includeFiles: z.string().optional(),
+        excludeFiles: z.string().optional(),
+    });
 
     export type Outbound = {
         memory?: number | undefined;
@@ -2423,46 +2017,30 @@ export namespace ResponseBodyFunctions$ {
         excludeFiles?: string | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, ResponseBodyFunctions> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, ResponseBodyFunctions> =
+        z.object({
             memory: z.number().optional(),
             maxDuration: z.number().optional(),
             runtime: z.string().optional(),
             includeFiles: z.string().optional(),
             excludeFiles: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.memory === undefined ? null : { memory: v.memory }),
-                ...(v.maxDuration === undefined ? null : { maxDuration: v.maxDuration }),
-                ...(v.runtime === undefined ? null : { runtime: v.runtime }),
-                ...(v.includeFiles === undefined ? null : { includeFiles: v.includeFiles }),
-                ...(v.excludeFiles === undefined ? null : { excludeFiles: v.excludeFiles }),
-            };
         });
 }
 
 /** @internal */
 export namespace ResponseBodyPlan$ {
-    export const inboundSchema = z.nativeEnum(ResponseBodyPlan);
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<typeof ResponseBodyPlan> =
+        z.nativeEnum(ResponseBodyPlan);
+    export const outboundSchema: z.ZodNativeEnum<typeof ResponseBodyPlan> = inboundSchema;
 }
 
 /** @internal */
 export namespace GetDeploymentRoutes3$ {
-    export const inboundSchema: z.ZodType<GetDeploymentRoutes3, z.ZodTypeDef, unknown> = z
-        .object({
-            src: z.string(),
-            continue: z.boolean(),
-            middleware: z.number(),
-        })
-        .transform((v) => {
-            return {
-                src: v.src,
-                continue: v.continue,
-                middleware: v.middleware,
-            };
-        });
+    export const inboundSchema: z.ZodType<GetDeploymentRoutes3, z.ZodTypeDef, unknown> = z.object({
+        src: z.string(),
+        continue: z.boolean(),
+        middleware: z.number(),
+    });
 
     export type Outbound = {
         src: string;
@@ -2470,44 +2048,30 @@ export namespace GetDeploymentRoutes3$ {
         middleware: number;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetDeploymentRoutes3> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetDeploymentRoutes3> = z.object(
+        {
             src: z.string(),
             continue: z.boolean(),
             middleware: z.number(),
-        })
-        .transform((v) => {
-            return {
-                src: v.src,
-                continue: v.continue,
-                middleware: v.middleware,
-            };
-        });
+        }
+    );
 }
 
 /** @internal */
 export namespace GetDeploymentRoutesHandle$ {
-    export const inboundSchema = z.nativeEnum(GetDeploymentRoutesHandle);
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<typeof GetDeploymentRoutesHandle> =
+        z.nativeEnum(GetDeploymentRoutesHandle);
+    export const outboundSchema: z.ZodNativeEnum<typeof GetDeploymentRoutesHandle> = inboundSchema;
 }
 
 /** @internal */
 export namespace GetDeploymentRoutes2$ {
-    export const inboundSchema: z.ZodType<GetDeploymentRoutes2, z.ZodTypeDef, unknown> = z
-        .object({
-            handle: GetDeploymentRoutesHandle$.inboundSchema,
-            src: z.string().optional(),
-            dest: z.string().optional(),
-            status: z.number().optional(),
-        })
-        .transform((v) => {
-            return {
-                handle: v.handle,
-                ...(v.src === undefined ? null : { src: v.src }),
-                ...(v.dest === undefined ? null : { dest: v.dest }),
-                ...(v.status === undefined ? null : { status: v.status }),
-            };
-        });
+    export const inboundSchema: z.ZodType<GetDeploymentRoutes2, z.ZodTypeDef, unknown> = z.object({
+        handle: GetDeploymentRoutesHandle$.inboundSchema,
+        src: z.string().optional(),
+        dest: z.string().optional(),
+        status: z.number().optional(),
+    });
 
     export type Outbound = {
         handle: string;
@@ -2516,44 +2080,30 @@ export namespace GetDeploymentRoutes2$ {
         status?: number | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetDeploymentRoutes2> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetDeploymentRoutes2> = z.object(
+        {
             handle: GetDeploymentRoutesHandle$.outboundSchema,
             src: z.string().optional(),
             dest: z.string().optional(),
             status: z.number().optional(),
-        })
-        .transform((v) => {
-            return {
-                handle: v.handle,
-                ...(v.src === undefined ? null : { src: v.src }),
-                ...(v.dest === undefined ? null : { dest: v.dest }),
-                ...(v.status === undefined ? null : { status: v.status }),
-            };
-        });
+        }
+    );
 }
 
 /** @internal */
 export namespace GetDeploymentHasType$ {
-    export const inboundSchema = z.nativeEnum(GetDeploymentHasType);
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<typeof GetDeploymentHasType> =
+        z.nativeEnum(GetDeploymentHasType);
+    export const outboundSchema: z.ZodNativeEnum<typeof GetDeploymentHasType> = inboundSchema;
 }
 
 /** @internal */
 export namespace GetDeploymentHas2$ {
-    export const inboundSchema: z.ZodType<GetDeploymentHas2, z.ZodTypeDef, unknown> = z
-        .object({
-            type: GetDeploymentHasType$.inboundSchema,
-            key: z.string(),
-            value: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                key: v.key,
-                ...(v.value === undefined ? null : { value: v.value }),
-            };
-        });
+    export const inboundSchema: z.ZodType<GetDeploymentHas2, z.ZodTypeDef, unknown> = z.object({
+        type: GetDeploymentHasType$.inboundSchema,
+        key: z.string(),
+        value: z.string().optional(),
+    });
 
     export type Outbound = {
         type: string;
@@ -2561,57 +2111,37 @@ export namespace GetDeploymentHas2$ {
         value?: string | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetDeploymentHas2> = z
-        .object({
-            type: GetDeploymentHasType$.outboundSchema,
-            key: z.string(),
-            value: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                key: v.key,
-                ...(v.value === undefined ? null : { value: v.value }),
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetDeploymentHas2> = z.object({
+        type: GetDeploymentHasType$.outboundSchema,
+        key: z.string(),
+        value: z.string().optional(),
+    });
 }
 
 /** @internal */
 export namespace GetDeploymentHasDeploymentsType$ {
-    export const inboundSchema = z.nativeEnum(GetDeploymentHasDeploymentsType);
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<typeof GetDeploymentHasDeploymentsType> =
+        z.nativeEnum(GetDeploymentHasDeploymentsType);
+    export const outboundSchema: z.ZodNativeEnum<typeof GetDeploymentHasDeploymentsType> =
+        inboundSchema;
 }
 
 /** @internal */
 export namespace GetDeploymentHas1$ {
-    export const inboundSchema: z.ZodType<GetDeploymentHas1, z.ZodTypeDef, unknown> = z
-        .object({
-            type: GetDeploymentHasDeploymentsType$.inboundSchema,
-            value: z.string(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                value: v.value,
-            };
-        });
+    export const inboundSchema: z.ZodType<GetDeploymentHas1, z.ZodTypeDef, unknown> = z.object({
+        type: GetDeploymentHasDeploymentsType$.inboundSchema,
+        value: z.string(),
+    });
 
     export type Outbound = {
         type: string;
         value: string;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetDeploymentHas1> = z
-        .object({
-            type: GetDeploymentHasDeploymentsType$.outboundSchema,
-            value: z.string(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                value: v.value,
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetDeploymentHas1> = z.object({
+        type: GetDeploymentHasDeploymentsType$.outboundSchema,
+        value: z.string(),
+    });
 }
 
 /** @internal */
@@ -2631,25 +2161,18 @@ export namespace GetDeploymentRoutesHas$ {
 
 /** @internal */
 export namespace GetDeploymentMissingType$ {
-    export const inboundSchema = z.nativeEnum(GetDeploymentMissingType);
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<typeof GetDeploymentMissingType> =
+        z.nativeEnum(GetDeploymentMissingType);
+    export const outboundSchema: z.ZodNativeEnum<typeof GetDeploymentMissingType> = inboundSchema;
 }
 
 /** @internal */
 export namespace GetDeploymentMissing2$ {
-    export const inboundSchema: z.ZodType<GetDeploymentMissing2, z.ZodTypeDef, unknown> = z
-        .object({
-            type: GetDeploymentMissingType$.inboundSchema,
-            key: z.string(),
-            value: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                key: v.key,
-                ...(v.value === undefined ? null : { value: v.value }),
-            };
-        });
+    export const inboundSchema: z.ZodType<GetDeploymentMissing2, z.ZodTypeDef, unknown> = z.object({
+        type: GetDeploymentMissingType$.inboundSchema,
+        key: z.string(),
+        value: z.string().optional(),
+    });
 
     export type Outbound = {
         type: string;
@@ -2657,56 +2180,38 @@ export namespace GetDeploymentMissing2$ {
         value?: string | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetDeploymentMissing2> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetDeploymentMissing2> =
+        z.object({
             type: GetDeploymentMissingType$.outboundSchema,
             key: z.string(),
             value: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                key: v.key,
-                ...(v.value === undefined ? null : { value: v.value }),
-            };
         });
 }
 
 /** @internal */
 export namespace GetDeploymentMissingDeploymentsType$ {
-    export const inboundSchema = z.nativeEnum(GetDeploymentMissingDeploymentsType);
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<typeof GetDeploymentMissingDeploymentsType> =
+        z.nativeEnum(GetDeploymentMissingDeploymentsType);
+    export const outboundSchema: z.ZodNativeEnum<typeof GetDeploymentMissingDeploymentsType> =
+        inboundSchema;
 }
 
 /** @internal */
 export namespace GetDeploymentMissing1$ {
-    export const inboundSchema: z.ZodType<GetDeploymentMissing1, z.ZodTypeDef, unknown> = z
-        .object({
-            type: GetDeploymentMissingDeploymentsType$.inboundSchema,
-            value: z.string(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                value: v.value,
-            };
-        });
+    export const inboundSchema: z.ZodType<GetDeploymentMissing1, z.ZodTypeDef, unknown> = z.object({
+        type: GetDeploymentMissingDeploymentsType$.inboundSchema,
+        value: z.string(),
+    });
 
     export type Outbound = {
         type: string;
         value: string;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetDeploymentMissing1> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetDeploymentMissing1> =
+        z.object({
             type: GetDeploymentMissingDeploymentsType$.outboundSchema,
             value: z.string(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                value: v.value,
-            };
         });
 }
 
@@ -2728,98 +2233,63 @@ export namespace GetDeploymentRoutesMissing$ {
 
 /** @internal */
 export namespace GetDeploymentRoutesLocale$ {
-    export const inboundSchema: z.ZodType<GetDeploymentRoutesLocale, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<GetDeploymentRoutesLocale, z.ZodTypeDef, unknown> =
+        z.object({
             redirect: z.record(z.string()).optional(),
             cookie: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.redirect === undefined ? null : { redirect: v.redirect }),
-                ...(v.cookie === undefined ? null : { cookie: v.cookie }),
-            };
         });
 
     export type Outbound = {
-        redirect?: Record<string, string> | undefined;
+        redirect?: { [k: string]: string } | undefined;
         cookie?: string | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetDeploymentRoutesLocale> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetDeploymentRoutesLocale> =
+        z.object({
             redirect: z.record(z.string()).optional(),
             cookie: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.redirect === undefined ? null : { redirect: v.redirect }),
-                ...(v.cookie === undefined ? null : { cookie: v.cookie }),
-            };
         });
 }
 
 /** @internal */
 export namespace GetDeploymentRoutes1$ {
-    export const inboundSchema: z.ZodType<GetDeploymentRoutes1, z.ZodTypeDef, unknown> = z
-        .object({
-            src: z.string(),
-            dest: z.string().optional(),
-            headers: z.record(z.string()).optional(),
-            methods: z.array(z.string()).optional(),
-            continue: z.boolean().optional(),
-            override: z.boolean().optional(),
-            caseSensitive: z.boolean().optional(),
-            check: z.boolean().optional(),
-            important: z.boolean().optional(),
-            status: z.number().optional(),
-            has: z
-                .array(
-                    z.union([
-                        z.lazy(() => GetDeploymentHas1$.inboundSchema),
-                        z.lazy(() => GetDeploymentHas2$.inboundSchema),
-                    ])
-                )
-                .optional(),
-            missing: z
-                .array(
-                    z.union([
-                        z.lazy(() => GetDeploymentMissing1$.inboundSchema),
-                        z.lazy(() => GetDeploymentMissing2$.inboundSchema),
-                    ])
-                )
-                .optional(),
-            locale: z.lazy(() => GetDeploymentRoutesLocale$.inboundSchema).optional(),
-            middlewarePath: z.string().optional(),
-            middlewareRawSrc: z.array(z.string()).optional(),
-            middleware: z.number().optional(),
-        })
-        .transform((v) => {
-            return {
-                src: v.src,
-                ...(v.dest === undefined ? null : { dest: v.dest }),
-                ...(v.headers === undefined ? null : { headers: v.headers }),
-                ...(v.methods === undefined ? null : { methods: v.methods }),
-                ...(v.continue === undefined ? null : { continue: v.continue }),
-                ...(v.override === undefined ? null : { override: v.override }),
-                ...(v.caseSensitive === undefined ? null : { caseSensitive: v.caseSensitive }),
-                ...(v.check === undefined ? null : { check: v.check }),
-                ...(v.important === undefined ? null : { important: v.important }),
-                ...(v.status === undefined ? null : { status: v.status }),
-                ...(v.has === undefined ? null : { has: v.has }),
-                ...(v.missing === undefined ? null : { missing: v.missing }),
-                ...(v.locale === undefined ? null : { locale: v.locale }),
-                ...(v.middlewarePath === undefined ? null : { middlewarePath: v.middlewarePath }),
-                ...(v.middlewareRawSrc === undefined
-                    ? null
-                    : { middlewareRawSrc: v.middlewareRawSrc }),
-                ...(v.middleware === undefined ? null : { middleware: v.middleware }),
-            };
-        });
+    export const inboundSchema: z.ZodType<GetDeploymentRoutes1, z.ZodTypeDef, unknown> = z.object({
+        src: z.string(),
+        dest: z.string().optional(),
+        headers: z.record(z.string()).optional(),
+        methods: z.array(z.string()).optional(),
+        continue: z.boolean().optional(),
+        override: z.boolean().optional(),
+        caseSensitive: z.boolean().optional(),
+        check: z.boolean().optional(),
+        important: z.boolean().optional(),
+        status: z.number().optional(),
+        has: z
+            .array(
+                z.union([
+                    z.lazy(() => GetDeploymentHas1$.inboundSchema),
+                    z.lazy(() => GetDeploymentHas2$.inboundSchema),
+                ])
+            )
+            .optional(),
+        missing: z
+            .array(
+                z.union([
+                    z.lazy(() => GetDeploymentMissing1$.inboundSchema),
+                    z.lazy(() => GetDeploymentMissing2$.inboundSchema),
+                ])
+            )
+            .optional(),
+        locale: z.lazy(() => GetDeploymentRoutesLocale$.inboundSchema).optional(),
+        middlewarePath: z.string().optional(),
+        middlewareRawSrc: z.array(z.string()).optional(),
+        middleware: z.number().optional(),
+    });
 
     export type Outbound = {
         src: string;
         dest?: string | undefined;
-        headers?: Record<string, string> | undefined;
+        headers?: { [k: string]: string } | undefined;
         methods?: Array<string> | undefined;
         continue?: boolean | undefined;
         override?: boolean | undefined;
@@ -2837,8 +2307,8 @@ export namespace GetDeploymentRoutes1$ {
         middleware?: number | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetDeploymentRoutes1> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetDeploymentRoutes1> = z.object(
+        {
             src: z.string(),
             dest: z.string().optional(),
             headers: z.record(z.string()).optional(),
@@ -2869,29 +2339,8 @@ export namespace GetDeploymentRoutes1$ {
             middlewarePath: z.string().optional(),
             middlewareRawSrc: z.array(z.string()).optional(),
             middleware: z.number().optional(),
-        })
-        .transform((v) => {
-            return {
-                src: v.src,
-                ...(v.dest === undefined ? null : { dest: v.dest }),
-                ...(v.headers === undefined ? null : { headers: v.headers }),
-                ...(v.methods === undefined ? null : { methods: v.methods }),
-                ...(v.continue === undefined ? null : { continue: v.continue }),
-                ...(v.override === undefined ? null : { override: v.override }),
-                ...(v.caseSensitive === undefined ? null : { caseSensitive: v.caseSensitive }),
-                ...(v.check === undefined ? null : { check: v.check }),
-                ...(v.important === undefined ? null : { important: v.important }),
-                ...(v.status === undefined ? null : { status: v.status }),
-                ...(v.has === undefined ? null : { has: v.has }),
-                ...(v.missing === undefined ? null : { missing: v.missing }),
-                ...(v.locale === undefined ? null : { locale: v.locale }),
-                ...(v.middlewarePath === undefined ? null : { middlewarePath: v.middlewarePath }),
-                ...(v.middlewareRawSrc === undefined
-                    ? null
-                    : { middlewareRawSrc: v.middlewareRawSrc }),
-                ...(v.middleware === undefined ? null : { middleware: v.middleware }),
-            };
-        });
+        }
+    );
 }
 
 /** @internal */
@@ -2915,45 +2364,34 @@ export namespace ResponseBodyRoutes$ {
 
 /** @internal */
 export namespace GetDeploymentGitRepoDeploymentsType$ {
-    export const inboundSchema = z.nativeEnum(GetDeploymentGitRepoDeploymentsType);
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<typeof GetDeploymentGitRepoDeploymentsType> =
+        z.nativeEnum(GetDeploymentGitRepoDeploymentsType);
+    export const outboundSchema: z.ZodNativeEnum<typeof GetDeploymentGitRepoDeploymentsType> =
+        inboundSchema;
 }
 
 /** @internal */
 export namespace GetDeploymentGitRepoOwnerType$ {
-    export const inboundSchema = z.nativeEnum(GetDeploymentGitRepoOwnerType);
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<typeof GetDeploymentGitRepoOwnerType> =
+        z.nativeEnum(GetDeploymentGitRepoOwnerType);
+    export const outboundSchema: z.ZodNativeEnum<typeof GetDeploymentGitRepoOwnerType> =
+        inboundSchema;
 }
 
 /** @internal */
 export namespace GetDeploymentGitRepo3$ {
-    export const inboundSchema: z.ZodType<GetDeploymentGitRepo3, z.ZodTypeDef, unknown> = z
-        .object({
-            owner: z.string(),
-            repoUuid: z.string(),
-            slug: z.string(),
-            type: GetDeploymentGitRepoDeploymentsType$.inboundSchema,
-            workspaceUuid: z.string(),
-            path: z.string(),
-            defaultBranch: z.string(),
-            name: z.string(),
-            private: z.boolean(),
-            ownerType: GetDeploymentGitRepoOwnerType$.inboundSchema,
-        })
-        .transform((v) => {
-            return {
-                owner: v.owner,
-                repoUuid: v.repoUuid,
-                slug: v.slug,
-                type: v.type,
-                workspaceUuid: v.workspaceUuid,
-                path: v.path,
-                defaultBranch: v.defaultBranch,
-                name: v.name,
-                private: v.private,
-                ownerType: v.ownerType,
-            };
-        });
+    export const inboundSchema: z.ZodType<GetDeploymentGitRepo3, z.ZodTypeDef, unknown> = z.object({
+        owner: z.string(),
+        repoUuid: z.string(),
+        slug: z.string(),
+        type: GetDeploymentGitRepoDeploymentsType$.inboundSchema,
+        workspaceUuid: z.string(),
+        path: z.string(),
+        defaultBranch: z.string(),
+        name: z.string(),
+        private: z.boolean(),
+        ownerType: GetDeploymentGitRepoOwnerType$.inboundSchema,
+    });
 
     export type Outbound = {
         owner: string;
@@ -2968,8 +2406,8 @@ export namespace GetDeploymentGitRepo3$ {
         ownerType: string;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetDeploymentGitRepo3> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetDeploymentGitRepo3> =
+        z.object({
             owner: z.string(),
             repoUuid: z.string(),
             slug: z.string(),
@@ -2980,64 +2418,40 @@ export namespace GetDeploymentGitRepo3$ {
             name: z.string(),
             private: z.boolean(),
             ownerType: GetDeploymentGitRepoOwnerType$.outboundSchema,
-        })
-        .transform((v) => {
-            return {
-                owner: v.owner,
-                repoUuid: v.repoUuid,
-                slug: v.slug,
-                type: v.type,
-                workspaceUuid: v.workspaceUuid,
-                path: v.path,
-                defaultBranch: v.defaultBranch,
-                name: v.name,
-                private: v.private,
-                ownerType: v.ownerType,
-            };
         });
 }
 
 /** @internal */
 export namespace GetDeploymentGitRepoType$ {
-    export const inboundSchema = z.nativeEnum(GetDeploymentGitRepoType);
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<typeof GetDeploymentGitRepoType> =
+        z.nativeEnum(GetDeploymentGitRepoType);
+    export const outboundSchema: z.ZodNativeEnum<typeof GetDeploymentGitRepoType> = inboundSchema;
 }
 
 /** @internal */
 export namespace GetDeploymentGitRepoDeploymentsResponseOwnerType$ {
-    export const inboundSchema = z.nativeEnum(GetDeploymentGitRepoDeploymentsResponseOwnerType);
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<
+        typeof GetDeploymentGitRepoDeploymentsResponseOwnerType
+    > = z.nativeEnum(GetDeploymentGitRepoDeploymentsResponseOwnerType);
+    export const outboundSchema: z.ZodNativeEnum<
+        typeof GetDeploymentGitRepoDeploymentsResponseOwnerType
+    > = inboundSchema;
 }
 
 /** @internal */
 export namespace GetDeploymentGitRepo2$ {
-    export const inboundSchema: z.ZodType<GetDeploymentGitRepo2, z.ZodTypeDef, unknown> = z
-        .object({
-            org: z.string(),
-            repo: z.string(),
-            repoId: z.number(),
-            type: GetDeploymentGitRepoType$.inboundSchema,
-            repoOwnerId: z.string(),
-            path: z.string(),
-            defaultBranch: z.string(),
-            name: z.string(),
-            private: z.boolean(),
-            ownerType: GetDeploymentGitRepoDeploymentsResponseOwnerType$.inboundSchema,
-        })
-        .transform((v) => {
-            return {
-                org: v.org,
-                repo: v.repo,
-                repoId: v.repoId,
-                type: v.type,
-                repoOwnerId: v.repoOwnerId,
-                path: v.path,
-                defaultBranch: v.defaultBranch,
-                name: v.name,
-                private: v.private,
-                ownerType: v.ownerType,
-            };
-        });
+    export const inboundSchema: z.ZodType<GetDeploymentGitRepo2, z.ZodTypeDef, unknown> = z.object({
+        org: z.string(),
+        repo: z.string(),
+        repoId: z.number(),
+        type: GetDeploymentGitRepoType$.inboundSchema,
+        repoOwnerId: z.string(),
+        path: z.string(),
+        defaultBranch: z.string(),
+        name: z.string(),
+        private: z.boolean(),
+        ownerType: GetDeploymentGitRepoDeploymentsResponseOwnerType$.inboundSchema,
+    });
 
     export type Outbound = {
         org: string;
@@ -3052,8 +2466,8 @@ export namespace GetDeploymentGitRepo2$ {
         ownerType: string;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetDeploymentGitRepo2> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetDeploymentGitRepo2> =
+        z.object({
             org: z.string(),
             repo: z.string(),
             repoId: z.number(),
@@ -3064,62 +2478,40 @@ export namespace GetDeploymentGitRepo2$ {
             name: z.string(),
             private: z.boolean(),
             ownerType: GetDeploymentGitRepoDeploymentsResponseOwnerType$.outboundSchema,
-        })
-        .transform((v) => {
-            return {
-                org: v.org,
-                repo: v.repo,
-                repoId: v.repoId,
-                type: v.type,
-                repoOwnerId: v.repoOwnerId,
-                path: v.path,
-                defaultBranch: v.defaultBranch,
-                name: v.name,
-                private: v.private,
-                ownerType: v.ownerType,
-            };
         });
 }
 
 /** @internal */
 export namespace GetDeploymentGitRepoDeploymentsResponseType$ {
-    export const inboundSchema = z.nativeEnum(GetDeploymentGitRepoDeploymentsResponseType);
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<
+        typeof GetDeploymentGitRepoDeploymentsResponseType
+    > = z.nativeEnum(GetDeploymentGitRepoDeploymentsResponseType);
+    export const outboundSchema: z.ZodNativeEnum<
+        typeof GetDeploymentGitRepoDeploymentsResponseType
+    > = inboundSchema;
 }
 
 /** @internal */
 export namespace GetDeploymentGitRepoDeploymentsOwnerType$ {
-    export const inboundSchema = z.nativeEnum(GetDeploymentGitRepoDeploymentsOwnerType);
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<typeof GetDeploymentGitRepoDeploymentsOwnerType> =
+        z.nativeEnum(GetDeploymentGitRepoDeploymentsOwnerType);
+    export const outboundSchema: z.ZodNativeEnum<typeof GetDeploymentGitRepoDeploymentsOwnerType> =
+        inboundSchema;
 }
 
 /** @internal */
 export namespace GetDeploymentGitRepo1$ {
-    export const inboundSchema: z.ZodType<GetDeploymentGitRepo1, z.ZodTypeDef, unknown> = z
-        .object({
-            namespace: z.string(),
-            projectId: z.number(),
-            type: GetDeploymentGitRepoDeploymentsResponseType$.inboundSchema,
-            url: z.string(),
-            path: z.string(),
-            defaultBranch: z.string(),
-            name: z.string(),
-            private: z.boolean(),
-            ownerType: GetDeploymentGitRepoDeploymentsOwnerType$.inboundSchema,
-        })
-        .transform((v) => {
-            return {
-                namespace: v.namespace,
-                projectId: v.projectId,
-                type: v.type,
-                url: v.url,
-                path: v.path,
-                defaultBranch: v.defaultBranch,
-                name: v.name,
-                private: v.private,
-                ownerType: v.ownerType,
-            };
-        });
+    export const inboundSchema: z.ZodType<GetDeploymentGitRepo1, z.ZodTypeDef, unknown> = z.object({
+        namespace: z.string(),
+        projectId: z.number(),
+        type: GetDeploymentGitRepoDeploymentsResponseType$.inboundSchema,
+        url: z.string(),
+        path: z.string(),
+        defaultBranch: z.string(),
+        name: z.string(),
+        private: z.boolean(),
+        ownerType: GetDeploymentGitRepoDeploymentsOwnerType$.inboundSchema,
+    });
 
     export type Outbound = {
         namespace: string;
@@ -3133,8 +2525,8 @@ export namespace GetDeploymentGitRepo1$ {
         ownerType: string;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetDeploymentGitRepo1> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetDeploymentGitRepo1> =
+        z.object({
             namespace: z.string(),
             projectId: z.number(),
             type: GetDeploymentGitRepoDeploymentsResponseType$.outboundSchema,
@@ -3144,19 +2536,6 @@ export namespace GetDeploymentGitRepo1$ {
             name: z.string(),
             private: z.boolean(),
             ownerType: GetDeploymentGitRepoDeploymentsOwnerType$.outboundSchema,
-        })
-        .transform((v) => {
-            return {
-                namespace: v.namespace,
-                projectId: v.projectId,
-                type: v.type,
-                url: v.url,
-                path: v.path,
-                defaultBranch: v.defaultBranch,
-                name: v.name,
-                private: v.private,
-                ownerType: v.ownerType,
-            };
         });
 }
 
@@ -3191,67 +2570,44 @@ export namespace ResponseBodyAliasAssignedAt$ {
 
 /** @internal */
 export namespace GetDeploymentResponseBodyDeploymentsResponseReadyState$ {
-    export const inboundSchema = z.nativeEnum(
-        GetDeploymentResponseBodyDeploymentsResponseReadyState
-    );
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<
+        typeof GetDeploymentResponseBodyDeploymentsResponseReadyState
+    > = z.nativeEnum(GetDeploymentResponseBodyDeploymentsResponseReadyState);
+    export const outboundSchema: z.ZodNativeEnum<
+        typeof GetDeploymentResponseBodyDeploymentsResponseReadyState
+    > = inboundSchema;
 }
 
 /** @internal */
 export namespace ResponseBodyOutput$ {
-    export const inboundSchema: z.ZodType<ResponseBodyOutput, z.ZodTypeDef, unknown> = z
-        .object({
-            path: z.string(),
-            functionName: z.string(),
-        })
-        .transform((v) => {
-            return {
-                path: v.path,
-                functionName: v.functionName,
-            };
-        });
+    export const inboundSchema: z.ZodType<ResponseBodyOutput, z.ZodTypeDef, unknown> = z.object({
+        path: z.string(),
+        functionName: z.string(),
+    });
 
     export type Outbound = {
         path: string;
         functionName: string;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, ResponseBodyOutput> = z
-        .object({
-            path: z.string(),
-            functionName: z.string(),
-        })
-        .transform((v) => {
-            return {
-                path: v.path,
-                functionName: v.functionName,
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, ResponseBodyOutput> = z.object({
+        path: z.string(),
+        functionName: z.string(),
+    });
 }
 
 /** @internal */
 export namespace GetDeploymentResponseBodyLambdas$ {
     export const inboundSchema: z.ZodType<GetDeploymentResponseBodyLambdas, z.ZodTypeDef, unknown> =
-        z
-            .object({
-                id: z.string(),
-                createdAt: z.number().optional(),
-                entrypoint: z.nullable(z.string()).optional(),
-                readyState:
-                    GetDeploymentResponseBodyDeploymentsResponseReadyState$.inboundSchema.optional(),
-                readyStateAt: z.number().optional(),
-                output: z.array(z.lazy(() => ResponseBodyOutput$.inboundSchema)),
-            })
-            .transform((v) => {
-                return {
-                    id: v.id,
-                    ...(v.createdAt === undefined ? null : { createdAt: v.createdAt }),
-                    ...(v.entrypoint === undefined ? null : { entrypoint: v.entrypoint }),
-                    ...(v.readyState === undefined ? null : { readyState: v.readyState }),
-                    ...(v.readyStateAt === undefined ? null : { readyStateAt: v.readyStateAt }),
-                    output: v.output,
-                };
-            });
+        z.object({
+            id: z.string(),
+            createdAt: z.number().optional(),
+            entrypoint: z.nullable(z.string()).optional(),
+            readyState:
+                GetDeploymentResponseBodyDeploymentsResponseReadyState$.inboundSchema.optional(),
+            readyStateAt: z.number().optional(),
+            output: z.array(z.lazy(() => ResponseBodyOutput$.inboundSchema)),
+        });
 
     export type Outbound = {
         id: string;
@@ -3266,44 +2622,25 @@ export namespace GetDeploymentResponseBodyLambdas$ {
         Outbound,
         z.ZodTypeDef,
         GetDeploymentResponseBodyLambdas
-    > = z
-        .object({
-            id: z.string(),
-            createdAt: z.number().optional(),
-            entrypoint: z.nullable(z.string()).optional(),
-            readyState:
-                GetDeploymentResponseBodyDeploymentsResponseReadyState$.outboundSchema.optional(),
-            readyStateAt: z.number().optional(),
-            output: z.array(z.lazy(() => ResponseBodyOutput$.outboundSchema)),
-        })
-        .transform((v) => {
-            return {
-                id: v.id,
-                ...(v.createdAt === undefined ? null : { createdAt: v.createdAt }),
-                ...(v.entrypoint === undefined ? null : { entrypoint: v.entrypoint }),
-                ...(v.readyState === undefined ? null : { readyState: v.readyState }),
-                ...(v.readyStateAt === undefined ? null : { readyStateAt: v.readyStateAt }),
-                output: v.output,
-            };
-        });
+    > = z.object({
+        id: z.string(),
+        createdAt: z.number().optional(),
+        entrypoint: z.nullable(z.string()).optional(),
+        readyState:
+            GetDeploymentResponseBodyDeploymentsResponseReadyState$.outboundSchema.optional(),
+        readyStateAt: z.number().optional(),
+        output: z.array(z.lazy(() => ResponseBodyOutput$.outboundSchema)),
+    });
 }
 
 /** @internal */
 export namespace GetDeploymentResponseBodyProject$ {
     export const inboundSchema: z.ZodType<GetDeploymentResponseBodyProject, z.ZodTypeDef, unknown> =
-        z
-            .object({
-                id: z.string(),
-                name: z.string(),
-                framework: z.nullable(z.string()).optional(),
-            })
-            .transform((v) => {
-                return {
-                    id: v.id,
-                    name: v.name,
-                    ...(v.framework === undefined ? null : { framework: v.framework }),
-                };
-            });
+        z.object({
+            id: z.string(),
+            name: z.string(),
+            framework: z.nullable(z.string()).optional(),
+        });
 
     export type Outbound = {
         id: string;
@@ -3315,61 +2652,49 @@ export namespace GetDeploymentResponseBodyProject$ {
         Outbound,
         z.ZodTypeDef,
         GetDeploymentResponseBodyProject
-    > = z
-        .object({
-            id: z.string(),
-            name: z.string(),
-            framework: z.nullable(z.string()).optional(),
-        })
-        .transform((v) => {
-            return {
-                id: v.id,
-                name: v.name,
-                ...(v.framework === undefined ? null : { framework: v.framework }),
-            };
-        });
+    > = z.object({
+        id: z.string(),
+        name: z.string(),
+        framework: z.nullable(z.string()).optional(),
+    });
 }
 
 /** @internal */
 export namespace ResponseBodyReadyState$ {
-    export const inboundSchema = z.nativeEnum(ResponseBodyReadyState);
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<typeof ResponseBodyReadyState> =
+        z.nativeEnum(ResponseBodyReadyState);
+    export const outboundSchema: z.ZodNativeEnum<typeof ResponseBodyReadyState> = inboundSchema;
 }
 
 /** @internal */
 export namespace ResponseBodyReadySubstate$ {
-    export const inboundSchema = z.nativeEnum(ResponseBodyReadySubstate);
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<typeof ResponseBodyReadySubstate> =
+        z.nativeEnum(ResponseBodyReadySubstate);
+    export const outboundSchema: z.ZodNativeEnum<typeof ResponseBodyReadySubstate> = inboundSchema;
 }
 
 /** @internal */
 export namespace ResponseBodySource$ {
-    export const inboundSchema = z.nativeEnum(ResponseBodySource);
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<typeof ResponseBodySource> =
+        z.nativeEnum(ResponseBodySource);
+    export const outboundSchema: z.ZodNativeEnum<typeof ResponseBodySource> = inboundSchema;
 }
 
 /** @internal */
 export namespace ResponseBodyTarget$ {
-    export const inboundSchema = z.nativeEnum(ResponseBodyTarget);
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<typeof ResponseBodyTarget> =
+        z.nativeEnum(ResponseBodyTarget);
+    export const outboundSchema: z.ZodNativeEnum<typeof ResponseBodyTarget> = inboundSchema;
 }
 
 /** @internal */
 export namespace GetDeploymentResponseBodyTeam$ {
-    export const inboundSchema: z.ZodType<GetDeploymentResponseBodyTeam, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<GetDeploymentResponseBodyTeam, z.ZodTypeDef, unknown> =
+        z.object({
             id: z.string(),
             name: z.string(),
             slug: z.string(),
             avatar: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                id: v.id,
-                name: v.name,
-                slug: v.slug,
-                ...(v.avatar === undefined ? null : { avatar: v.avatar }),
-            };
         });
 
     export type Outbound = {
@@ -3380,58 +2705,40 @@ export namespace GetDeploymentResponseBodyTeam$ {
     };
 
     export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetDeploymentResponseBodyTeam> =
-        z
-            .object({
-                id: z.string(),
-                name: z.string(),
-                slug: z.string(),
-                avatar: z.string().optional(),
-            })
-            .transform((v) => {
-                return {
-                    id: v.id,
-                    name: v.name,
-                    slug: v.slug,
-                    ...(v.avatar === undefined ? null : { avatar: v.avatar }),
-                };
-            });
+        z.object({
+            id: z.string(),
+            name: z.string(),
+            slug: z.string(),
+            avatar: z.string().optional(),
+        });
 }
 
 /** @internal */
 export namespace GetDeploymentResponseBodyType$ {
-    export const inboundSchema = z.nativeEnum(GetDeploymentResponseBodyType);
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<typeof GetDeploymentResponseBodyType> =
+        z.nativeEnum(GetDeploymentResponseBodyType);
+    export const outboundSchema: z.ZodNativeEnum<typeof GetDeploymentResponseBodyType> =
+        inboundSchema;
 }
 
 /** @internal */
 export namespace ResponseBodyAliasError$ {
-    export const inboundSchema: z.ZodType<ResponseBodyAliasError, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<ResponseBodyAliasError, z.ZodTypeDef, unknown> = z.object(
+        {
             code: z.string(),
             message: z.string(),
-        })
-        .transform((v) => {
-            return {
-                code: v.code,
-                message: v.message,
-            };
-        });
+        }
+    );
 
     export type Outbound = {
         code: string;
         message: string;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, ResponseBodyAliasError> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, ResponseBodyAliasError> =
+        z.object({
             code: z.string(),
             message: z.string(),
-        })
-        .transform((v) => {
-            return {
-                code: v.code,
-                message: v.message,
-            };
         });
 }
 
@@ -3441,21 +2748,12 @@ export namespace GetDeploymentResponseBodyAliasWarning$ {
         GetDeploymentResponseBodyAliasWarning,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            code: z.string(),
-            message: z.string(),
-            link: z.string().optional(),
-            action: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                code: v.code,
-                message: v.message,
-                ...(v.link === undefined ? null : { link: v.link }),
-                ...(v.action === undefined ? null : { action: v.action }),
-            };
-        });
+    > = z.object({
+        code: z.string(),
+        message: z.string(),
+        link: z.string().optional(),
+        action: z.string().optional(),
+    });
 
     export type Outbound = {
         code: string;
@@ -3468,50 +2766,37 @@ export namespace GetDeploymentResponseBodyAliasWarning$ {
         Outbound,
         z.ZodTypeDef,
         GetDeploymentResponseBodyAliasWarning
-    > = z
-        .object({
-            code: z.string(),
-            message: z.string(),
-            link: z.string().optional(),
-            action: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                code: v.code,
-                message: v.message,
-                ...(v.link === undefined ? null : { link: v.link }),
-                ...(v.action === undefined ? null : { action: v.action }),
-            };
-        });
+    > = z.object({
+        code: z.string(),
+        message: z.string(),
+        link: z.string().optional(),
+        action: z.string().optional(),
+    });
 }
 
 /** @internal */
 export namespace ResponseBodyChecksState$ {
-    export const inboundSchema = z.nativeEnum(ResponseBodyChecksState);
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<typeof ResponseBodyChecksState> =
+        z.nativeEnum(ResponseBodyChecksState);
+    export const outboundSchema: z.ZodNativeEnum<typeof ResponseBodyChecksState> = inboundSchema;
 }
 
 /** @internal */
 export namespace ResponseBodyChecksConclusion$ {
-    export const inboundSchema = z.nativeEnum(ResponseBodyChecksConclusion);
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<typeof ResponseBodyChecksConclusion> = z.nativeEnum(
+        ResponseBodyChecksConclusion
+    );
+    export const outboundSchema: z.ZodNativeEnum<typeof ResponseBodyChecksConclusion> =
+        inboundSchema;
 }
 
 /** @internal */
 export namespace ResponseBodyCreator$ {
-    export const inboundSchema: z.ZodType<ResponseBodyCreator, z.ZodTypeDef, unknown> = z
-        .object({
-            uid: z.string(),
-            username: z.string().optional(),
-            avatar: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                uid: v.uid,
-                ...(v.username === undefined ? null : { username: v.username }),
-                ...(v.avatar === undefined ? null : { avatar: v.avatar }),
-            };
-        });
+    export const inboundSchema: z.ZodType<ResponseBodyCreator, z.ZodTypeDef, unknown> = z.object({
+        uid: z.string(),
+        username: z.string().optional(),
+        avatar: z.string().optional(),
+    });
 
     export type Outbound = {
         uid: string;
@@ -3519,27 +2804,21 @@ export namespace ResponseBodyCreator$ {
         avatar?: string | undefined;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, ResponseBodyCreator> = z
-        .object({
-            uid: z.string(),
-            username: z.string().optional(),
-            avatar: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                uid: v.uid,
-                ...(v.username === undefined ? null : { username: v.username }),
-                ...(v.avatar === undefined ? null : { avatar: v.avatar }),
-            };
-        });
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, ResponseBodyCreator> = z.object({
+        uid: z.string(),
+        username: z.string().optional(),
+        avatar: z.string().optional(),
+    });
 }
 
 /** @internal */
 export namespace GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody19Type$ {
-    export const inboundSchema = z.nativeEnum(
-        GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody19Type
-    );
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<
+        typeof GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody19Type
+    > = z.nativeEnum(GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody19Type);
+    export const outboundSchema: z.ZodNativeEnum<
+        typeof GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody19Type
+    > = inboundSchema;
 }
 
 /** @internal */
@@ -3548,27 +2827,15 @@ export namespace GetDeploymentGitSourceDeployments9$ {
         GetDeploymentGitSourceDeployments9,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            type: GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody19Type$.inboundSchema,
-            ref: z.string(),
-            sha: z.string(),
-            owner: z.string().optional(),
-            slug: z.string().optional(),
-            workspaceUuid: z.string(),
-            repoUuid: z.string(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                ref: v.ref,
-                sha: v.sha,
-                ...(v.owner === undefined ? null : { owner: v.owner }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-                workspaceUuid: v.workspaceUuid,
-                repoUuid: v.repoUuid,
-            };
-        });
+    > = z.object({
+        type: GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody19Type$.inboundSchema,
+        ref: z.string(),
+        sha: z.string(),
+        owner: z.string().optional(),
+        slug: z.string().optional(),
+        workspaceUuid: z.string(),
+        repoUuid: z.string(),
+    });
 
     export type Outbound = {
         type: string;
@@ -3584,35 +2851,25 @@ export namespace GetDeploymentGitSourceDeployments9$ {
         Outbound,
         z.ZodTypeDef,
         GetDeploymentGitSourceDeployments9
-    > = z
-        .object({
-            type: GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody19Type$.outboundSchema,
-            ref: z.string(),
-            sha: z.string(),
-            owner: z.string().optional(),
-            slug: z.string().optional(),
-            workspaceUuid: z.string(),
-            repoUuid: z.string(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                ref: v.ref,
-                sha: v.sha,
-                ...(v.owner === undefined ? null : { owner: v.owner }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-                workspaceUuid: v.workspaceUuid,
-                repoUuid: v.repoUuid,
-            };
-        });
+    > = z.object({
+        type: GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody19Type$.outboundSchema,
+        ref: z.string(),
+        sha: z.string(),
+        owner: z.string().optional(),
+        slug: z.string().optional(),
+        workspaceUuid: z.string(),
+        repoUuid: z.string(),
+    });
 }
 
 /** @internal */
 export namespace GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody1Type$ {
-    export const inboundSchema = z.nativeEnum(
-        GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody1Type
-    );
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<
+        typeof GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody1Type
+    > = z.nativeEnum(GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody1Type);
+    export const outboundSchema: z.ZodNativeEnum<
+        typeof GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody1Type
+    > = inboundSchema;
 }
 
 /** @internal */
@@ -3621,21 +2878,12 @@ export namespace GetDeploymentGitSourceDeployments8$ {
         GetDeploymentGitSourceDeployments8,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            type: GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody1Type$.inboundSchema,
-            ref: z.string(),
-            sha: z.string(),
-            projectId: z.number(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                ref: v.ref,
-                sha: v.sha,
-                projectId: v.projectId,
-            };
-        });
+    > = z.object({
+        type: GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody1Type$.inboundSchema,
+        ref: z.string(),
+        sha: z.string(),
+        projectId: z.number(),
+    });
 
     export type Outbound = {
         type: string;
@@ -3648,29 +2896,22 @@ export namespace GetDeploymentGitSourceDeployments8$ {
         Outbound,
         z.ZodTypeDef,
         GetDeploymentGitSourceDeployments8
-    > = z
-        .object({
-            type: GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody1Type$.outboundSchema,
-            ref: z.string(),
-            sha: z.string(),
-            projectId: z.number(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                ref: v.ref,
-                sha: v.sha,
-                projectId: v.projectId,
-            };
-        });
+    > = z.object({
+        type: GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody1Type$.outboundSchema,
+        ref: z.string(),
+        sha: z.string(),
+        projectId: z.number(),
+    });
 }
 
 /** @internal */
 export namespace GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBodyType$ {
-    export const inboundSchema = z.nativeEnum(
-        GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBodyType
-    );
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<
+        typeof GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBodyType
+    > = z.nativeEnum(GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBodyType);
+    export const outboundSchema: z.ZodNativeEnum<
+        typeof GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBodyType
+    > = inboundSchema;
 }
 
 /** @internal */
@@ -3679,25 +2920,14 @@ export namespace GetDeploymentGitSourceDeployments7$ {
         GetDeploymentGitSourceDeployments7,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            type: GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBodyType$.inboundSchema,
-            ref: z.string(),
-            sha: z.string(),
-            repoId: z.number(),
-            org: z.string().optional(),
-            repo: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                ref: v.ref,
-                sha: v.sha,
-                repoId: v.repoId,
-                ...(v.org === undefined ? null : { org: v.org }),
-                ...(v.repo === undefined ? null : { repo: v.repo }),
-            };
-        });
+    > = z.object({
+        type: GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBodyType$.inboundSchema,
+        ref: z.string(),
+        sha: z.string(),
+        repoId: z.number(),
+        org: z.string().optional(),
+        repo: z.string().optional(),
+    });
 
     export type Outbound = {
         type: string;
@@ -3712,33 +2942,24 @@ export namespace GetDeploymentGitSourceDeployments7$ {
         Outbound,
         z.ZodTypeDef,
         GetDeploymentGitSourceDeployments7
-    > = z
-        .object({
-            type: GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBodyType$.outboundSchema,
-            ref: z.string(),
-            sha: z.string(),
-            repoId: z.number(),
-            org: z.string().optional(),
-            repo: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                ref: v.ref,
-                sha: v.sha,
-                repoId: v.repoId,
-                ...(v.org === undefined ? null : { org: v.org }),
-                ...(v.repo === undefined ? null : { repo: v.repo }),
-            };
-        });
+    > = z.object({
+        type: GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBodyType$.outboundSchema,
+        ref: z.string(),
+        sha: z.string(),
+        repoId: z.number(),
+        org: z.string().optional(),
+        repo: z.string().optional(),
+    });
 }
 
 /** @internal */
 export namespace GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONType$ {
-    export const inboundSchema = z.nativeEnum(
-        GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONType
-    );
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<
+        typeof GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONType
+    > = z.nativeEnum(GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONType);
+    export const outboundSchema: z.ZodNativeEnum<
+        typeof GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONType
+    > = inboundSchema;
 }
 
 /** @internal */
@@ -3747,21 +2968,12 @@ export namespace GetDeploymentGitSourceDeployments6$ {
         GetDeploymentGitSourceDeployments6,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            type: GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONType$.inboundSchema,
-            ref: z.string(),
-            sha: z.string(),
-            gitUrl: z.string(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                ref: v.ref,
-                sha: v.sha,
-                gitUrl: v.gitUrl,
-            };
-        });
+    > = z.object({
+        type: GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONType$.inboundSchema,
+        ref: z.string(),
+        sha: z.string(),
+        gitUrl: z.string(),
+    });
 
     export type Outbound = {
         type: string;
@@ -3774,27 +2986,22 @@ export namespace GetDeploymentGitSourceDeployments6$ {
         Outbound,
         z.ZodTypeDef,
         GetDeploymentGitSourceDeployments6
-    > = z
-        .object({
-            type: GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONType$.outboundSchema,
-            ref: z.string(),
-            sha: z.string(),
-            gitUrl: z.string(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                ref: v.ref,
-                sha: v.sha,
-                gitUrl: v.gitUrl,
-            };
-        });
+    > = z.object({
+        type: GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONType$.outboundSchema,
+        ref: z.string(),
+        sha: z.string(),
+        gitUrl: z.string(),
+    });
 }
 
 /** @internal */
 export namespace GetDeploymentGitSourceDeploymentsResponse200Type$ {
-    export const inboundSchema = z.nativeEnum(GetDeploymentGitSourceDeploymentsResponse200Type);
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<
+        typeof GetDeploymentGitSourceDeploymentsResponse200Type
+    > = z.nativeEnum(GetDeploymentGitSourceDeploymentsResponse200Type);
+    export const outboundSchema: z.ZodNativeEnum<
+        typeof GetDeploymentGitSourceDeploymentsResponse200Type
+    > = inboundSchema;
 }
 
 /** @internal */
@@ -3803,25 +3010,14 @@ export namespace GetDeploymentGitSourceDeployments5$ {
         GetDeploymentGitSourceDeployments5,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            type: GetDeploymentGitSourceDeploymentsResponse200Type$.inboundSchema,
-            owner: z.string(),
-            slug: z.string(),
-            ref: z.nullable(z.string()).optional(),
-            sha: z.string().optional(),
-            prId: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                owner: v.owner,
-                slug: v.slug,
-                ...(v.ref === undefined ? null : { ref: v.ref }),
-                ...(v.sha === undefined ? null : { sha: v.sha }),
-                ...(v.prId === undefined ? null : { prId: v.prId }),
-            };
-        });
+    > = z.object({
+        type: GetDeploymentGitSourceDeploymentsResponse200Type$.inboundSchema,
+        owner: z.string(),
+        slug: z.string(),
+        ref: z.nullable(z.string()).optional(),
+        sha: z.string().optional(),
+        prId: z.nullable(z.number()).optional(),
+    });
 
     export type Outbound = {
         type: string;
@@ -3836,31 +3032,24 @@ export namespace GetDeploymentGitSourceDeployments5$ {
         Outbound,
         z.ZodTypeDef,
         GetDeploymentGitSourceDeployments5
-    > = z
-        .object({
-            type: GetDeploymentGitSourceDeploymentsResponse200Type$.outboundSchema,
-            owner: z.string(),
-            slug: z.string(),
-            ref: z.nullable(z.string()).optional(),
-            sha: z.string().optional(),
-            prId: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                owner: v.owner,
-                slug: v.slug,
-                ...(v.ref === undefined ? null : { ref: v.ref }),
-                ...(v.sha === undefined ? null : { sha: v.sha }),
-                ...(v.prId === undefined ? null : { prId: v.prId }),
-            };
-        });
+    > = z.object({
+        type: GetDeploymentGitSourceDeploymentsResponse200Type$.outboundSchema,
+        owner: z.string(),
+        slug: z.string(),
+        ref: z.nullable(z.string()).optional(),
+        sha: z.string().optional(),
+        prId: z.nullable(z.number()).optional(),
+    });
 }
 
 /** @internal */
 export namespace GetDeploymentGitSourceDeploymentsResponseType$ {
-    export const inboundSchema = z.nativeEnum(GetDeploymentGitSourceDeploymentsResponseType);
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<
+        typeof GetDeploymentGitSourceDeploymentsResponseType
+    > = z.nativeEnum(GetDeploymentGitSourceDeploymentsResponseType);
+    export const outboundSchema: z.ZodNativeEnum<
+        typeof GetDeploymentGitSourceDeploymentsResponseType
+    > = inboundSchema;
 }
 
 /** @internal */
@@ -3869,25 +3058,14 @@ export namespace GetDeploymentGitSourceDeployments4$ {
         GetDeploymentGitSourceDeployments4,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            type: GetDeploymentGitSourceDeploymentsResponseType$.inboundSchema,
-            workspaceUuid: z.string().optional(),
-            repoUuid: z.string(),
-            ref: z.nullable(z.string()).optional(),
-            sha: z.string().optional(),
-            prId: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                ...(v.workspaceUuid === undefined ? null : { workspaceUuid: v.workspaceUuid }),
-                repoUuid: v.repoUuid,
-                ...(v.ref === undefined ? null : { ref: v.ref }),
-                ...(v.sha === undefined ? null : { sha: v.sha }),
-                ...(v.prId === undefined ? null : { prId: v.prId }),
-            };
-        });
+    > = z.object({
+        type: GetDeploymentGitSourceDeploymentsResponseType$.inboundSchema,
+        workspaceUuid: z.string().optional(),
+        repoUuid: z.string(),
+        ref: z.nullable(z.string()).optional(),
+        sha: z.string().optional(),
+        prId: z.nullable(z.number()).optional(),
+    });
 
     export type Outbound = {
         type: string;
@@ -3902,31 +3080,22 @@ export namespace GetDeploymentGitSourceDeployments4$ {
         Outbound,
         z.ZodTypeDef,
         GetDeploymentGitSourceDeployments4
-    > = z
-        .object({
-            type: GetDeploymentGitSourceDeploymentsResponseType$.outboundSchema,
-            workspaceUuid: z.string().optional(),
-            repoUuid: z.string(),
-            ref: z.nullable(z.string()).optional(),
-            sha: z.string().optional(),
-            prId: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                ...(v.workspaceUuid === undefined ? null : { workspaceUuid: v.workspaceUuid }),
-                repoUuid: v.repoUuid,
-                ...(v.ref === undefined ? null : { ref: v.ref }),
-                ...(v.sha === undefined ? null : { sha: v.sha }),
-                ...(v.prId === undefined ? null : { prId: v.prId }),
-            };
-        });
+    > = z.object({
+        type: GetDeploymentGitSourceDeploymentsResponseType$.outboundSchema,
+        workspaceUuid: z.string().optional(),
+        repoUuid: z.string(),
+        ref: z.nullable(z.string()).optional(),
+        sha: z.string().optional(),
+        prId: z.nullable(z.number()).optional(),
+    });
 }
 
 /** @internal */
 export namespace GetDeploymentGitSourceDeploymentsType$ {
-    export const inboundSchema = z.nativeEnum(GetDeploymentGitSourceDeploymentsType);
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<typeof GetDeploymentGitSourceDeploymentsType> =
+        z.nativeEnum(GetDeploymentGitSourceDeploymentsType);
+    export const outboundSchema: z.ZodNativeEnum<typeof GetDeploymentGitSourceDeploymentsType> =
+        inboundSchema;
 }
 
 /** @internal */
@@ -3948,23 +3117,13 @@ export namespace GetDeploymentGitSourceDeployments3$ {
         GetDeploymentGitSourceDeployments3,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            type: GetDeploymentGitSourceDeploymentsType$.inboundSchema,
-            projectId: z.union([z.string(), z.number()]),
-            ref: z.nullable(z.string()).optional(),
-            sha: z.string().optional(),
-            prId: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                projectId: v.projectId,
-                ...(v.ref === undefined ? null : { ref: v.ref }),
-                ...(v.sha === undefined ? null : { sha: v.sha }),
-                ...(v.prId === undefined ? null : { prId: v.prId }),
-            };
-        });
+    > = z.object({
+        type: GetDeploymentGitSourceDeploymentsType$.inboundSchema,
+        projectId: z.union([z.string(), z.number()]),
+        ref: z.nullable(z.string()).optional(),
+        sha: z.string().optional(),
+        prId: z.nullable(z.number()).optional(),
+    });
 
     export type Outbound = {
         type: string;
@@ -3978,29 +3137,21 @@ export namespace GetDeploymentGitSourceDeployments3$ {
         Outbound,
         z.ZodTypeDef,
         GetDeploymentGitSourceDeployments3
-    > = z
-        .object({
-            type: GetDeploymentGitSourceDeploymentsType$.outboundSchema,
-            projectId: z.union([z.string(), z.number()]),
-            ref: z.nullable(z.string()).optional(),
-            sha: z.string().optional(),
-            prId: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                projectId: v.projectId,
-                ...(v.ref === undefined ? null : { ref: v.ref }),
-                ...(v.sha === undefined ? null : { sha: v.sha }),
-                ...(v.prId === undefined ? null : { prId: v.prId }),
-            };
-        });
+    > = z.object({
+        type: GetDeploymentGitSourceDeploymentsType$.outboundSchema,
+        projectId: z.union([z.string(), z.number()]),
+        ref: z.nullable(z.string()).optional(),
+        sha: z.string().optional(),
+        prId: z.nullable(z.number()).optional(),
+    });
 }
 
 /** @internal */
 export namespace GetDeploymentGitSourceType$ {
-    export const inboundSchema = z.nativeEnum(GetDeploymentGitSourceType);
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<typeof GetDeploymentGitSourceType> = z.nativeEnum(
+        GetDeploymentGitSourceType
+    );
+    export const outboundSchema: z.ZodNativeEnum<typeof GetDeploymentGitSourceType> = inboundSchema;
 }
 
 /** @internal */
@@ -4009,25 +3160,14 @@ export namespace GetDeploymentGitSourceDeployments2$ {
         GetDeploymentGitSourceDeployments2,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            type: GetDeploymentGitSourceType$.inboundSchema,
-            org: z.string(),
-            repo: z.string(),
-            ref: z.nullable(z.string()).optional(),
-            sha: z.string().optional(),
-            prId: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                org: v.org,
-                repo: v.repo,
-                ...(v.ref === undefined ? null : { ref: v.ref }),
-                ...(v.sha === undefined ? null : { sha: v.sha }),
-                ...(v.prId === undefined ? null : { prId: v.prId }),
-            };
-        });
+    > = z.object({
+        type: GetDeploymentGitSourceType$.inboundSchema,
+        org: z.string(),
+        repo: z.string(),
+        ref: z.nullable(z.string()).optional(),
+        sha: z.string().optional(),
+        prId: z.nullable(z.number()).optional(),
+    });
 
     export type Outbound = {
         type: string;
@@ -4042,33 +3182,24 @@ export namespace GetDeploymentGitSourceDeployments2$ {
         Outbound,
         z.ZodTypeDef,
         GetDeploymentGitSourceDeployments2
-    > = z
-        .object({
-            type: GetDeploymentGitSourceType$.outboundSchema,
-            org: z.string(),
-            repo: z.string(),
-            ref: z.nullable(z.string()).optional(),
-            sha: z.string().optional(),
-            prId: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                org: v.org,
-                repo: v.repo,
-                ...(v.ref === undefined ? null : { ref: v.ref }),
-                ...(v.sha === undefined ? null : { sha: v.sha }),
-                ...(v.prId === undefined ? null : { prId: v.prId }),
-            };
-        });
+    > = z.object({
+        type: GetDeploymentGitSourceType$.outboundSchema,
+        org: z.string(),
+        repo: z.string(),
+        ref: z.nullable(z.string()).optional(),
+        sha: z.string().optional(),
+        prId: z.nullable(z.number()).optional(),
+    });
 }
 
 /** @internal */
 export namespace GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody11Type$ {
-    export const inboundSchema = z.nativeEnum(
-        GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody11Type
-    );
-    export const outboundSchema = inboundSchema;
+    export const inboundSchema: z.ZodNativeEnum<
+        typeof GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody11Type
+    > = z.nativeEnum(GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody11Type);
+    export const outboundSchema: z.ZodNativeEnum<
+        typeof GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody11Type
+    > = inboundSchema;
 }
 
 /** @internal */
@@ -4087,23 +3218,13 @@ export namespace GetDeploymentGitSourceDeployments1$ {
         GetDeploymentGitSourceDeployments1,
         z.ZodTypeDef,
         unknown
-    > = z
-        .object({
-            type: GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody11Type$.inboundSchema,
-            repoId: z.union([z.string(), z.number()]),
-            ref: z.nullable(z.string()).optional(),
-            sha: z.string().optional(),
-            prId: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                repoId: v.repoId,
-                ...(v.ref === undefined ? null : { ref: v.ref }),
-                ...(v.sha === undefined ? null : { sha: v.sha }),
-                ...(v.prId === undefined ? null : { prId: v.prId }),
-            };
-        });
+    > = z.object({
+        type: GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody11Type$.inboundSchema,
+        repoId: z.union([z.string(), z.number()]),
+        ref: z.nullable(z.string()).optional(),
+        sha: z.string().optional(),
+        prId: z.nullable(z.number()).optional(),
+    });
 
     export type Outbound = {
         type: string;
@@ -4117,23 +3238,13 @@ export namespace GetDeploymentGitSourceDeployments1$ {
         Outbound,
         z.ZodTypeDef,
         GetDeploymentGitSourceDeployments1
-    > = z
-        .object({
-            type: GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody11Type$.outboundSchema,
-            repoId: z.union([z.string(), z.number()]),
-            ref: z.nullable(z.string()).optional(),
-            sha: z.string().optional(),
-            prId: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                repoId: v.repoId,
-                ...(v.ref === undefined ? null : { ref: v.ref }),
-                ...(v.sha === undefined ? null : { sha: v.sha }),
-                ...(v.prId === undefined ? null : { prId: v.prId }),
-            };
-        });
+    > = z.object({
+        type: GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody11Type$.outboundSchema,
+        repoId: z.union([z.string(), z.number()]),
+        ref: z.nullable(z.string()).optional(),
+        sha: z.string().optional(),
+        prId: z.nullable(z.number()).optional(),
+    });
 }
 
 /** @internal */
@@ -4183,8 +3294,8 @@ export namespace GetDeploymentResponseBodyGitSource$ {
 
 /** @internal */
 export namespace GetDeploymentResponseBody1$ {
-    export const inboundSchema: z.ZodType<GetDeploymentResponseBody1, z.ZodTypeDef, unknown> = z
-        .object({
+    export const inboundSchema: z.ZodType<GetDeploymentResponseBody1, z.ZodTypeDef, unknown> =
+        z.object({
             build: z.lazy(() => ResponseBodyBuild$.inboundSchema),
             builds: z.array(z.lazy(() => ResponseBodyBuilds$.inboundSchema)).optional(),
             connectBuildsEnabled: z.boolean().optional(),
@@ -4275,84 +3386,6 @@ export namespace GetDeploymentResponseBody1$ {
                 ])
                 .optional(),
             id: z.string(),
-        })
-        .transform((v) => {
-            return {
-                build: v.build,
-                ...(v.builds === undefined ? null : { builds: v.builds }),
-                ...(v.connectBuildsEnabled === undefined
-                    ? null
-                    : { connectBuildsEnabled: v.connectBuildsEnabled }),
-                ...(v.connectConfigurationId === undefined
-                    ? null
-                    : { connectConfigurationId: v.connectConfigurationId }),
-                createdIn: v.createdIn,
-                ...(v.crons === undefined ? null : { crons: v.crons }),
-                env: v.env,
-                ...(v.functions === undefined ? null : { functions: v.functions }),
-                inspectorUrl: v.inspectorUrl,
-                isInConcurrentBuildsQueue: v.isInConcurrentBuildsQueue,
-                meta: v.meta,
-                ...(v.monorepoManager === undefined
-                    ? null
-                    : { monorepoManager: v.monorepoManager }),
-                name: v.name,
-                ownerId: v.ownerId,
-                ...(v.passiveConnectConfigurationId === undefined
-                    ? null
-                    : { passiveConnectConfigurationId: v.passiveConnectConfigurationId }),
-                plan: v.plan,
-                projectId: v.projectId,
-                routes: v.routes,
-                ...(v.gitRepo === undefined ? null : { gitRepo: v.gitRepo }),
-                ...(v.aliasAssignedAt === undefined
-                    ? null
-                    : { aliasAssignedAt: v.aliasAssignedAt }),
-                ...(v.lambdas === undefined ? null : { lambdas: v.lambdas }),
-                ...(v.project === undefined ? null : { project: v.project }),
-                public: v.public,
-                readyState: v.readyState,
-                ...(v.readySubstate === undefined ? null : { readySubstate: v.readySubstate }),
-                regions: v.regions,
-                ...(v.source === undefined ? null : { source: v.source }),
-                ...(v.target === undefined ? null : { target: v.target }),
-                ...(v.team === undefined ? null : { team: v.team }),
-                type: v.type,
-                url: v.url,
-                ...(v.userAliases === undefined ? null : { userAliases: v.userAliases }),
-                version: v.version,
-                ...(v.previewCommentsEnabled === undefined
-                    ? null
-                    : { previewCommentsEnabled: v.previewCommentsEnabled }),
-                alias: v.alias,
-                aliasAssigned: v.aliasAssigned,
-                ...(v.aliasError === undefined ? null : { aliasError: v.aliasError }),
-                ...(v.aliasFinal === undefined ? null : { aliasFinal: v.aliasFinal }),
-                ...(v.aliasWarning === undefined ? null : { aliasWarning: v.aliasWarning }),
-                ...(v.autoAssignCustomDomains === undefined
-                    ? null
-                    : { autoAssignCustomDomains: v.autoAssignCustomDomains }),
-                ...(v.automaticAliases === undefined
-                    ? null
-                    : { automaticAliases: v.automaticAliases }),
-                bootedAt: v.bootedAt,
-                ...(v.buildErrorAt === undefined ? null : { buildErrorAt: v.buildErrorAt }),
-                buildingAt: v.buildingAt,
-                ...(v.canceledAt === undefined ? null : { canceledAt: v.canceledAt }),
-                ...(v.checksState === undefined ? null : { checksState: v.checksState }),
-                ...(v.checksConclusion === undefined
-                    ? null
-                    : { checksConclusion: v.checksConclusion }),
-                createdAt: v.createdAt,
-                creator: v.creator,
-                ...(v.errorCode === undefined ? null : { errorCode: v.errorCode }),
-                ...(v.errorLink === undefined ? null : { errorLink: v.errorLink }),
-                ...(v.errorMessage === undefined ? null : { errorMessage: v.errorMessage }),
-                ...(v.errorStep === undefined ? null : { errorStep: v.errorStep }),
-                ...(v.passiveRegions === undefined ? null : { passiveRegions: v.passiveRegions }),
-                ...(v.gitSource === undefined ? null : { gitSource: v.gitSource }),
-                id: v.id,
-            };
         });
 
     export type Outbound = {
@@ -4363,10 +3396,10 @@ export namespace GetDeploymentResponseBody1$ {
         createdIn: string;
         crons?: Array<ResponseBodyCrons$.Outbound> | undefined;
         env: Array<string>;
-        functions?: Record<string, ResponseBodyFunctions$.Outbound> | null | undefined;
+        functions?: { [k: string]: ResponseBodyFunctions$.Outbound } | null | undefined;
         inspectorUrl: string | null;
         isInConcurrentBuildsQueue: boolean;
-        meta: Record<string, string>;
+        meta: { [k: string]: string };
         monorepoManager?: string | null | undefined;
         name: string;
         ownerId: string;
@@ -4433,8 +3466,8 @@ export namespace GetDeploymentResponseBody1$ {
         id: string;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetDeploymentResponseBody1> = z
-        .object({
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetDeploymentResponseBody1> =
+        z.object({
             build: z.lazy(() => ResponseBodyBuild$.outboundSchema),
             builds: z.array(z.lazy(() => ResponseBodyBuilds$.outboundSchema)).optional(),
             connectBuildsEnabled: z.boolean().optional(),
@@ -4525,84 +3558,6 @@ export namespace GetDeploymentResponseBody1$ {
                 ])
                 .optional(),
             id: z.string(),
-        })
-        .transform((v) => {
-            return {
-                build: v.build,
-                ...(v.builds === undefined ? null : { builds: v.builds }),
-                ...(v.connectBuildsEnabled === undefined
-                    ? null
-                    : { connectBuildsEnabled: v.connectBuildsEnabled }),
-                ...(v.connectConfigurationId === undefined
-                    ? null
-                    : { connectConfigurationId: v.connectConfigurationId }),
-                createdIn: v.createdIn,
-                ...(v.crons === undefined ? null : { crons: v.crons }),
-                env: v.env,
-                ...(v.functions === undefined ? null : { functions: v.functions }),
-                inspectorUrl: v.inspectorUrl,
-                isInConcurrentBuildsQueue: v.isInConcurrentBuildsQueue,
-                meta: v.meta,
-                ...(v.monorepoManager === undefined
-                    ? null
-                    : { monorepoManager: v.monorepoManager }),
-                name: v.name,
-                ownerId: v.ownerId,
-                ...(v.passiveConnectConfigurationId === undefined
-                    ? null
-                    : { passiveConnectConfigurationId: v.passiveConnectConfigurationId }),
-                plan: v.plan,
-                projectId: v.projectId,
-                routes: v.routes,
-                ...(v.gitRepo === undefined ? null : { gitRepo: v.gitRepo }),
-                ...(v.aliasAssignedAt === undefined
-                    ? null
-                    : { aliasAssignedAt: v.aliasAssignedAt }),
-                ...(v.lambdas === undefined ? null : { lambdas: v.lambdas }),
-                ...(v.project === undefined ? null : { project: v.project }),
-                public: v.public,
-                readyState: v.readyState,
-                ...(v.readySubstate === undefined ? null : { readySubstate: v.readySubstate }),
-                regions: v.regions,
-                ...(v.source === undefined ? null : { source: v.source }),
-                ...(v.target === undefined ? null : { target: v.target }),
-                ...(v.team === undefined ? null : { team: v.team }),
-                type: v.type,
-                url: v.url,
-                ...(v.userAliases === undefined ? null : { userAliases: v.userAliases }),
-                version: v.version,
-                ...(v.previewCommentsEnabled === undefined
-                    ? null
-                    : { previewCommentsEnabled: v.previewCommentsEnabled }),
-                alias: v.alias,
-                aliasAssigned: v.aliasAssigned,
-                ...(v.aliasError === undefined ? null : { aliasError: v.aliasError }),
-                ...(v.aliasFinal === undefined ? null : { aliasFinal: v.aliasFinal }),
-                ...(v.aliasWarning === undefined ? null : { aliasWarning: v.aliasWarning }),
-                ...(v.autoAssignCustomDomains === undefined
-                    ? null
-                    : { autoAssignCustomDomains: v.autoAssignCustomDomains }),
-                ...(v.automaticAliases === undefined
-                    ? null
-                    : { automaticAliases: v.automaticAliases }),
-                bootedAt: v.bootedAt,
-                ...(v.buildErrorAt === undefined ? null : { buildErrorAt: v.buildErrorAt }),
-                buildingAt: v.buildingAt,
-                ...(v.canceledAt === undefined ? null : { canceledAt: v.canceledAt }),
-                ...(v.checksState === undefined ? null : { checksState: v.checksState }),
-                ...(v.checksConclusion === undefined
-                    ? null
-                    : { checksConclusion: v.checksConclusion }),
-                createdAt: v.createdAt,
-                creator: v.creator,
-                ...(v.errorCode === undefined ? null : { errorCode: v.errorCode }),
-                ...(v.errorLink === undefined ? null : { errorLink: v.errorLink }),
-                ...(v.errorMessage === undefined ? null : { errorMessage: v.errorMessage }),
-                ...(v.errorStep === undefined ? null : { errorStep: v.errorStep }),
-                ...(v.passiveRegions === undefined ? null : { passiveRegions: v.passiveRegions }),
-                ...(v.gitSource === undefined ? null : { gitSource: v.gitSource }),
-                id: v.id,
-            };
         });
 }
 
