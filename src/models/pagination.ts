@@ -23,38 +23,36 @@ export type Pagination = {
 };
 
 /** @internal */
+export const Pagination$inboundSchema: z.ZodType<Pagination, z.ZodTypeDef, unknown> = z.object({
+    count: z.number(),
+    next: z.nullable(z.number()),
+    prev: z.nullable(z.number()),
+});
+
+/** @internal */
+export type Pagination$Outbound = {
+    count: number;
+    next: number | null;
+    prev: number | null;
+};
+
+/** @internal */
+export const Pagination$outboundSchema: z.ZodType<Pagination$Outbound, z.ZodTypeDef, Pagination> =
+    z.object({
+        count: z.number(),
+        next: z.nullable(z.number()),
+        prev: z.nullable(z.number()),
+    });
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace Pagination$ {
-    export const inboundSchema: z.ZodType<Pagination, z.ZodTypeDef, unknown> = z
-        .object({
-            count: z.number(),
-            next: z.nullable(z.number()),
-            prev: z.nullable(z.number()),
-        })
-        .transform((v) => {
-            return {
-                count: v.count,
-                next: v.next,
-                prev: v.prev,
-            };
-        });
-
-    export type Outbound = {
-        count: number;
-        next: number | null;
-        prev: number | null;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, Pagination> = z
-        .object({
-            count: z.number(),
-            next: z.nullable(z.number()),
-            prev: z.nullable(z.number()),
-        })
-        .transform((v) => {
-            return {
-                count: v.count,
-                next: v.next,
-                prev: v.prev,
-            };
-        });
+    /** @deprecated use `Pagination$inboundSchema` instead. */
+    export const inboundSchema = Pagination$inboundSchema;
+    /** @deprecated use `Pagination$outboundSchema` instead. */
+    export const outboundSchema = Pagination$outboundSchema;
+    /** @deprecated use `Pagination$Outbound` instead. */
+    export type Outbound = Pagination$Outbound;
 }

@@ -19,53 +19,44 @@ export type DeleteProjectRequest = {
     slug?: string | undefined;
 };
 
-export type DeleteProjectResponse = {};
+/** @internal */
+export const DeleteProjectRequest$inboundSchema: z.ZodType<
+    DeleteProjectRequest,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    idOrName: z.string(),
+    teamId: z.string().optional(),
+    slug: z.string().optional(),
+});
 
 /** @internal */
+export type DeleteProjectRequest$Outbound = {
+    idOrName: string;
+    teamId?: string | undefined;
+    slug?: string | undefined;
+};
+
+/** @internal */
+export const DeleteProjectRequest$outboundSchema: z.ZodType<
+    DeleteProjectRequest$Outbound,
+    z.ZodTypeDef,
+    DeleteProjectRequest
+> = z.object({
+    idOrName: z.string(),
+    teamId: z.string().optional(),
+    slug: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace DeleteProjectRequest$ {
-    export const inboundSchema: z.ZodType<DeleteProjectRequest, z.ZodTypeDef, unknown> = z
-        .object({
-            idOrName: z.string(),
-            teamId: z.string().optional(),
-            slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                idOrName: v.idOrName,
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
-        });
-
-    export type Outbound = {
-        idOrName: string;
-        teamId?: string | undefined;
-        slug?: string | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, DeleteProjectRequest> = z
-        .object({
-            idOrName: z.string(),
-            teamId: z.string().optional(),
-            slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                idOrName: v.idOrName,
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
-        });
-}
-
-/** @internal */
-export namespace DeleteProjectResponse$ {
-    export const inboundSchema: z.ZodType<DeleteProjectResponse, z.ZodTypeDef, unknown> = z.object(
-        {}
-    );
-
-    export type Outbound = {};
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, DeleteProjectResponse> =
-        z.object({});
+    /** @deprecated use `DeleteProjectRequest$inboundSchema` instead. */
+    export const inboundSchema = DeleteProjectRequest$inboundSchema;
+    /** @deprecated use `DeleteProjectRequest$outboundSchema` instead. */
+    export const outboundSchema = DeleteProjectRequest$outboundSchema;
+    /** @deprecated use `DeleteProjectRequest$Outbound` instead. */
+    export type Outbound = DeleteProjectRequest$Outbound;
 }

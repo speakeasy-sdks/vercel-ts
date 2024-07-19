@@ -22,55 +22,73 @@ export type DeleteAuthTokenResponseBody = {
 };
 
 /** @internal */
+export const DeleteAuthTokenRequest$inboundSchema: z.ZodType<
+    DeleteAuthTokenRequest,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    tokenId: z.string(),
+});
+
+/** @internal */
+export type DeleteAuthTokenRequest$Outbound = {
+    tokenId: string;
+};
+
+/** @internal */
+export const DeleteAuthTokenRequest$outboundSchema: z.ZodType<
+    DeleteAuthTokenRequest$Outbound,
+    z.ZodTypeDef,
+    DeleteAuthTokenRequest
+> = z.object({
+    tokenId: z.string(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace DeleteAuthTokenRequest$ {
-    export const inboundSchema: z.ZodType<DeleteAuthTokenRequest, z.ZodTypeDef, unknown> = z
-        .object({
-            tokenId: z.string(),
-        })
-        .transform((v) => {
-            return {
-                tokenId: v.tokenId,
-            };
-        });
-
-    export type Outbound = {
-        tokenId: string;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, DeleteAuthTokenRequest> = z
-        .object({
-            tokenId: z.string(),
-        })
-        .transform((v) => {
-            return {
-                tokenId: v.tokenId,
-            };
-        });
+    /** @deprecated use `DeleteAuthTokenRequest$inboundSchema` instead. */
+    export const inboundSchema = DeleteAuthTokenRequest$inboundSchema;
+    /** @deprecated use `DeleteAuthTokenRequest$outboundSchema` instead. */
+    export const outboundSchema = DeleteAuthTokenRequest$outboundSchema;
+    /** @deprecated use `DeleteAuthTokenRequest$Outbound` instead. */
+    export type Outbound = DeleteAuthTokenRequest$Outbound;
 }
 
 /** @internal */
+export const DeleteAuthTokenResponseBody$inboundSchema: z.ZodType<
+    DeleteAuthTokenResponseBody,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    tokenId: z.string(),
+});
+
+/** @internal */
+export type DeleteAuthTokenResponseBody$Outbound = {
+    tokenId: string;
+};
+
+/** @internal */
+export const DeleteAuthTokenResponseBody$outboundSchema: z.ZodType<
+    DeleteAuthTokenResponseBody$Outbound,
+    z.ZodTypeDef,
+    DeleteAuthTokenResponseBody
+> = z.object({
+    tokenId: z.string(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace DeleteAuthTokenResponseBody$ {
-    export const inboundSchema: z.ZodType<DeleteAuthTokenResponseBody, z.ZodTypeDef, unknown> = z
-        .object({
-            tokenId: z.string(),
-        })
-        .transform((v) => {
-            return {
-                tokenId: v.tokenId,
-            };
-        });
-
-    export type Outbound = {
-        tokenId: string;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, DeleteAuthTokenResponseBody> = z
-        .object({
-            tokenId: z.string(),
-        })
-        .transform((v) => {
-            return {
-                tokenId: v.tokenId,
-            };
-        });
+    /** @deprecated use `DeleteAuthTokenResponseBody$inboundSchema` instead. */
+    export const inboundSchema = DeleteAuthTokenResponseBody$inboundSchema;
+    /** @deprecated use `DeleteAuthTokenResponseBody$outboundSchema` instead. */
+    export const outboundSchema = DeleteAuthTokenResponseBody$outboundSchema;
+    /** @deprecated use `DeleteAuthTokenResponseBody$Outbound` instead. */
+    export type Outbound = DeleteAuthTokenResponseBody$Outbound;
 }

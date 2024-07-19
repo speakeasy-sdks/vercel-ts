@@ -63,93 +63,128 @@ export type GetDomainTransferResponseBody = {
 };
 
 /** @internal */
+export const GetDomainTransferRequest$inboundSchema: z.ZodType<
+    GetDomainTransferRequest,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    domain: z.string(),
+    teamId: z.string().optional(),
+    slug: z.string().optional(),
+});
+
+/** @internal */
+export type GetDomainTransferRequest$Outbound = {
+    domain: string;
+    teamId?: string | undefined;
+    slug?: string | undefined;
+};
+
+/** @internal */
+export const GetDomainTransferRequest$outboundSchema: z.ZodType<
+    GetDomainTransferRequest$Outbound,
+    z.ZodTypeDef,
+    GetDomainTransferRequest
+> = z.object({
+    domain: z.string(),
+    teamId: z.string().optional(),
+    slug: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetDomainTransferRequest$ {
-    export const inboundSchema: z.ZodType<GetDomainTransferRequest, z.ZodTypeDef, unknown> = z
-        .object({
-            domain: z.string(),
-            teamId: z.string().optional(),
-            slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                domain: v.domain,
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
-        });
-
-    export type Outbound = {
-        domain: string;
-        teamId?: string | undefined;
-        slug?: string | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetDomainTransferRequest> = z
-        .object({
-            domain: z.string(),
-            teamId: z.string().optional(),
-            slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                domain: v.domain,
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
-        });
+    /** @deprecated use `GetDomainTransferRequest$inboundSchema` instead. */
+    export const inboundSchema = GetDomainTransferRequest$inboundSchema;
+    /** @deprecated use `GetDomainTransferRequest$outboundSchema` instead. */
+    export const outboundSchema = GetDomainTransferRequest$outboundSchema;
+    /** @deprecated use `GetDomainTransferRequest$Outbound` instead. */
+    export type Outbound = GetDomainTransferRequest$Outbound;
 }
 
 /** @internal */
+export const TransferPolicy$inboundSchema: z.ZodNativeEnum<typeof TransferPolicy> =
+    z.nativeEnum(TransferPolicy);
+
+/** @internal */
+export const TransferPolicy$outboundSchema: z.ZodNativeEnum<typeof TransferPolicy> =
+    TransferPolicy$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace TransferPolicy$ {
-    export const inboundSchema = z.nativeEnum(TransferPolicy);
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `TransferPolicy$inboundSchema` instead. */
+    export const inboundSchema = TransferPolicy$inboundSchema;
+    /** @deprecated use `TransferPolicy$outboundSchema` instead. */
+    export const outboundSchema = TransferPolicy$outboundSchema;
 }
 
 /** @internal */
+export const GetDomainTransferStatus$inboundSchema: z.ZodNativeEnum<
+    typeof GetDomainTransferStatus
+> = z.nativeEnum(GetDomainTransferStatus);
+
+/** @internal */
+export const GetDomainTransferStatus$outboundSchema: z.ZodNativeEnum<
+    typeof GetDomainTransferStatus
+> = GetDomainTransferStatus$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetDomainTransferStatus$ {
-    export const inboundSchema = z.nativeEnum(GetDomainTransferStatus);
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `GetDomainTransferStatus$inboundSchema` instead. */
+    export const inboundSchema = GetDomainTransferStatus$inboundSchema;
+    /** @deprecated use `GetDomainTransferStatus$outboundSchema` instead. */
+    export const outboundSchema = GetDomainTransferStatus$outboundSchema;
 }
 
 /** @internal */
+export const GetDomainTransferResponseBody$inboundSchema: z.ZodType<
+    GetDomainTransferResponseBody,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    transferable: z.boolean(),
+    transferPolicy: z.nullable(TransferPolicy$inboundSchema),
+    reason: z.string(),
+    status: GetDomainTransferStatus$inboundSchema,
+});
+
+/** @internal */
+export type GetDomainTransferResponseBody$Outbound = {
+    transferable: boolean;
+    transferPolicy: string | null;
+    reason: string;
+    status: string;
+};
+
+/** @internal */
+export const GetDomainTransferResponseBody$outboundSchema: z.ZodType<
+    GetDomainTransferResponseBody$Outbound,
+    z.ZodTypeDef,
+    GetDomainTransferResponseBody
+> = z.object({
+    transferable: z.boolean(),
+    transferPolicy: z.nullable(TransferPolicy$outboundSchema),
+    reason: z.string(),
+    status: GetDomainTransferStatus$outboundSchema,
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetDomainTransferResponseBody$ {
-    export const inboundSchema: z.ZodType<GetDomainTransferResponseBody, z.ZodTypeDef, unknown> = z
-        .object({
-            transferable: z.boolean(),
-            transferPolicy: z.nullable(TransferPolicy$.inboundSchema),
-            reason: z.string(),
-            status: GetDomainTransferStatus$.inboundSchema,
-        })
-        .transform((v) => {
-            return {
-                transferable: v.transferable,
-                transferPolicy: v.transferPolicy,
-                reason: v.reason,
-                status: v.status,
-            };
-        });
-
-    export type Outbound = {
-        transferable: boolean;
-        transferPolicy: string | null;
-        reason: string;
-        status: string;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetDomainTransferResponseBody> =
-        z
-            .object({
-                transferable: z.boolean(),
-                transferPolicy: z.nullable(TransferPolicy$.outboundSchema),
-                reason: z.string(),
-                status: GetDomainTransferStatus$.outboundSchema,
-            })
-            .transform((v) => {
-                return {
-                    transferable: v.transferable,
-                    transferPolicy: v.transferPolicy,
-                    reason: v.reason,
-                    status: v.status,
-                };
-            });
+    /** @deprecated use `GetDomainTransferResponseBody$inboundSchema` instead. */
+    export const inboundSchema = GetDomainTransferResponseBody$inboundSchema;
+    /** @deprecated use `GetDomainTransferResponseBody$outboundSchema` instead. */
+    export const outboundSchema = GetDomainTransferResponseBody$outboundSchema;
+    /** @deprecated use `GetDomainTransferResponseBody$Outbound` instead. */
+    export type Outbound = GetDomainTransferResponseBody$Outbound;
 }

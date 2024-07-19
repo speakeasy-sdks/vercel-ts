@@ -17,57 +17,47 @@ export type GetEdgeConfigItemRequest = {
     slug?: string | undefined;
 };
 
-export type GetEdgeConfigItemResponse = {};
+/** @internal */
+export const GetEdgeConfigItemRequest$inboundSchema: z.ZodType<
+    GetEdgeConfigItemRequest,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    edgeConfigId: z.string(),
+    edgeConfigItemKey: z.string(),
+    teamId: z.string().optional(),
+    slug: z.string().optional(),
+});
 
 /** @internal */
+export type GetEdgeConfigItemRequest$Outbound = {
+    edgeConfigId: string;
+    edgeConfigItemKey: string;
+    teamId?: string | undefined;
+    slug?: string | undefined;
+};
+
+/** @internal */
+export const GetEdgeConfigItemRequest$outboundSchema: z.ZodType<
+    GetEdgeConfigItemRequest$Outbound,
+    z.ZodTypeDef,
+    GetEdgeConfigItemRequest
+> = z.object({
+    edgeConfigId: z.string(),
+    edgeConfigItemKey: z.string(),
+    teamId: z.string().optional(),
+    slug: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetEdgeConfigItemRequest$ {
-    export const inboundSchema: z.ZodType<GetEdgeConfigItemRequest, z.ZodTypeDef, unknown> = z
-        .object({
-            edgeConfigId: z.string(),
-            edgeConfigItemKey: z.string(),
-            teamId: z.string().optional(),
-            slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                edgeConfigId: v.edgeConfigId,
-                edgeConfigItemKey: v.edgeConfigItemKey,
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
-        });
-
-    export type Outbound = {
-        edgeConfigId: string;
-        edgeConfigItemKey: string;
-        teamId?: string | undefined;
-        slug?: string | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetEdgeConfigItemRequest> = z
-        .object({
-            edgeConfigId: z.string(),
-            edgeConfigItemKey: z.string(),
-            teamId: z.string().optional(),
-            slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                edgeConfigId: v.edgeConfigId,
-                edgeConfigItemKey: v.edgeConfigItemKey,
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
-        });
-}
-
-/** @internal */
-export namespace GetEdgeConfigItemResponse$ {
-    export const inboundSchema: z.ZodType<GetEdgeConfigItemResponse, z.ZodTypeDef, unknown> =
-        z.object({});
-
-    export type Outbound = {};
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetEdgeConfigItemResponse> =
-        z.object({});
+    /** @deprecated use `GetEdgeConfigItemRequest$inboundSchema` instead. */
+    export const inboundSchema = GetEdgeConfigItemRequest$inboundSchema;
+    /** @deprecated use `GetEdgeConfigItemRequest$outboundSchema` instead. */
+    export const outboundSchema = GetEdgeConfigItemRequest$outboundSchema;
+    /** @deprecated use `GetEdgeConfigItemRequest$Outbound` instead. */
+    export type Outbound = GetEdgeConfigItemRequest$Outbound;
 }

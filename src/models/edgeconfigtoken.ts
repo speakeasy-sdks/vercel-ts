@@ -19,48 +19,46 @@ export type EdgeConfigToken = {
 };
 
 /** @internal */
+export const EdgeConfigToken$inboundSchema: z.ZodType<EdgeConfigToken, z.ZodTypeDef, unknown> =
+    z.object({
+        token: z.string(),
+        label: z.string(),
+        id: z.string(),
+        edgeConfigId: z.string(),
+        createdAt: z.number(),
+    });
+
+/** @internal */
+export type EdgeConfigToken$Outbound = {
+    token: string;
+    label: string;
+    id: string;
+    edgeConfigId: string;
+    createdAt: number;
+};
+
+/** @internal */
+export const EdgeConfigToken$outboundSchema: z.ZodType<
+    EdgeConfigToken$Outbound,
+    z.ZodTypeDef,
+    EdgeConfigToken
+> = z.object({
+    token: z.string(),
+    label: z.string(),
+    id: z.string(),
+    edgeConfigId: z.string(),
+    createdAt: z.number(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace EdgeConfigToken$ {
-    export const inboundSchema: z.ZodType<EdgeConfigToken, z.ZodTypeDef, unknown> = z
-        .object({
-            token: z.string(),
-            label: z.string(),
-            id: z.string(),
-            edgeConfigId: z.string(),
-            createdAt: z.number(),
-        })
-        .transform((v) => {
-            return {
-                token: v.token,
-                label: v.label,
-                id: v.id,
-                edgeConfigId: v.edgeConfigId,
-                createdAt: v.createdAt,
-            };
-        });
-
-    export type Outbound = {
-        token: string;
-        label: string;
-        id: string;
-        edgeConfigId: string;
-        createdAt: number;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, EdgeConfigToken> = z
-        .object({
-            token: z.string(),
-            label: z.string(),
-            id: z.string(),
-            edgeConfigId: z.string(),
-            createdAt: z.number(),
-        })
-        .transform((v) => {
-            return {
-                token: v.token,
-                label: v.label,
-                id: v.id,
-                edgeConfigId: v.edgeConfigId,
-                createdAt: v.createdAt,
-            };
-        });
+    /** @deprecated use `EdgeConfigToken$inboundSchema` instead. */
+    export const inboundSchema = EdgeConfigToken$inboundSchema;
+    /** @deprecated use `EdgeConfigToken$outboundSchema` instead. */
+    export const outboundSchema = EdgeConfigToken$outboundSchema;
+    /** @deprecated use `EdgeConfigToken$Outbound` instead. */
+    export type Outbound = EdgeConfigToken$Outbound;
 }

@@ -28,85 +28,91 @@ export type GetCertByIdResponseBody = {
 };
 
 /** @internal */
+export const GetCertByIdRequest$inboundSchema: z.ZodType<
+    GetCertByIdRequest,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    id: z.string(),
+    teamId: z.string().optional(),
+    slug: z.string().optional(),
+});
+
+/** @internal */
+export type GetCertByIdRequest$Outbound = {
+    id: string;
+    teamId?: string | undefined;
+    slug?: string | undefined;
+};
+
+/** @internal */
+export const GetCertByIdRequest$outboundSchema: z.ZodType<
+    GetCertByIdRequest$Outbound,
+    z.ZodTypeDef,
+    GetCertByIdRequest
+> = z.object({
+    id: z.string(),
+    teamId: z.string().optional(),
+    slug: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetCertByIdRequest$ {
-    export const inboundSchema: z.ZodType<GetCertByIdRequest, z.ZodTypeDef, unknown> = z
-        .object({
-            id: z.string(),
-            teamId: z.string().optional(),
-            slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                id: v.id,
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
-        });
-
-    export type Outbound = {
-        id: string;
-        teamId?: string | undefined;
-        slug?: string | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetCertByIdRequest> = z
-        .object({
-            id: z.string(),
-            teamId: z.string().optional(),
-            slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                id: v.id,
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
-        });
+    /** @deprecated use `GetCertByIdRequest$inboundSchema` instead. */
+    export const inboundSchema = GetCertByIdRequest$inboundSchema;
+    /** @deprecated use `GetCertByIdRequest$outboundSchema` instead. */
+    export const outboundSchema = GetCertByIdRequest$outboundSchema;
+    /** @deprecated use `GetCertByIdRequest$Outbound` instead. */
+    export type Outbound = GetCertByIdRequest$Outbound;
 }
 
 /** @internal */
+export const GetCertByIdResponseBody$inboundSchema: z.ZodType<
+    GetCertByIdResponseBody,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    id: z.string(),
+    createdAt: z.number(),
+    expiresAt: z.number(),
+    autoRenew: z.boolean(),
+    cns: z.array(z.string()),
+});
+
+/** @internal */
+export type GetCertByIdResponseBody$Outbound = {
+    id: string;
+    createdAt: number;
+    expiresAt: number;
+    autoRenew: boolean;
+    cns: Array<string>;
+};
+
+/** @internal */
+export const GetCertByIdResponseBody$outboundSchema: z.ZodType<
+    GetCertByIdResponseBody$Outbound,
+    z.ZodTypeDef,
+    GetCertByIdResponseBody
+> = z.object({
+    id: z.string(),
+    createdAt: z.number(),
+    expiresAt: z.number(),
+    autoRenew: z.boolean(),
+    cns: z.array(z.string()),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetCertByIdResponseBody$ {
-    export const inboundSchema: z.ZodType<GetCertByIdResponseBody, z.ZodTypeDef, unknown> = z
-        .object({
-            id: z.string(),
-            createdAt: z.number(),
-            expiresAt: z.number(),
-            autoRenew: z.boolean(),
-            cns: z.array(z.string()),
-        })
-        .transform((v) => {
-            return {
-                id: v.id,
-                createdAt: v.createdAt,
-                expiresAt: v.expiresAt,
-                autoRenew: v.autoRenew,
-                cns: v.cns,
-            };
-        });
-
-    export type Outbound = {
-        id: string;
-        createdAt: number;
-        expiresAt: number;
-        autoRenew: boolean;
-        cns: Array<string>;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetCertByIdResponseBody> = z
-        .object({
-            id: z.string(),
-            createdAt: z.number(),
-            expiresAt: z.number(),
-            autoRenew: z.boolean(),
-            cns: z.array(z.string()),
-        })
-        .transform((v) => {
-            return {
-                id: v.id,
-                createdAt: v.createdAt,
-                expiresAt: v.expiresAt,
-                autoRenew: v.autoRenew,
-                cns: v.cns,
-            };
-        });
+    /** @deprecated use `GetCertByIdResponseBody$inboundSchema` instead. */
+    export const inboundSchema = GetCertByIdResponseBody$inboundSchema;
+    /** @deprecated use `GetCertByIdResponseBody$outboundSchema` instead. */
+    export const outboundSchema = GetCertByIdResponseBody$outboundSchema;
+    /** @deprecated use `GetCertByIdResponseBody$Outbound` instead. */
+    export type Outbound = GetCertByIdResponseBody$Outbound;
 }

@@ -26,65 +26,76 @@ export type DeleteTeamInviteCodeResponseBody = {
 };
 
 /** @internal */
+export const DeleteTeamInviteCodeRequest$inboundSchema: z.ZodType<
+    DeleteTeamInviteCodeRequest,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    teamId: z.string(),
+    inviteId: z.string(),
+});
+
+/** @internal */
+export type DeleteTeamInviteCodeRequest$Outbound = {
+    teamId: string;
+    inviteId: string;
+};
+
+/** @internal */
+export const DeleteTeamInviteCodeRequest$outboundSchema: z.ZodType<
+    DeleteTeamInviteCodeRequest$Outbound,
+    z.ZodTypeDef,
+    DeleteTeamInviteCodeRequest
+> = z.object({
+    teamId: z.string(),
+    inviteId: z.string(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace DeleteTeamInviteCodeRequest$ {
-    export const inboundSchema: z.ZodType<DeleteTeamInviteCodeRequest, z.ZodTypeDef, unknown> = z
-        .object({
-            teamId: z.string(),
-            inviteId: z.string(),
-        })
-        .transform((v) => {
-            return {
-                teamId: v.teamId,
-                inviteId: v.inviteId,
-            };
-        });
-
-    export type Outbound = {
-        teamId: string;
-        inviteId: string;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, DeleteTeamInviteCodeRequest> = z
-        .object({
-            teamId: z.string(),
-            inviteId: z.string(),
-        })
-        .transform((v) => {
-            return {
-                teamId: v.teamId,
-                inviteId: v.inviteId,
-            };
-        });
+    /** @deprecated use `DeleteTeamInviteCodeRequest$inboundSchema` instead. */
+    export const inboundSchema = DeleteTeamInviteCodeRequest$inboundSchema;
+    /** @deprecated use `DeleteTeamInviteCodeRequest$outboundSchema` instead. */
+    export const outboundSchema = DeleteTeamInviteCodeRequest$outboundSchema;
+    /** @deprecated use `DeleteTeamInviteCodeRequest$Outbound` instead. */
+    export type Outbound = DeleteTeamInviteCodeRequest$Outbound;
 }
 
 /** @internal */
+export const DeleteTeamInviteCodeResponseBody$inboundSchema: z.ZodType<
+    DeleteTeamInviteCodeResponseBody,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    id: z.string(),
+});
+
+/** @internal */
+export type DeleteTeamInviteCodeResponseBody$Outbound = {
+    id: string;
+};
+
+/** @internal */
+export const DeleteTeamInviteCodeResponseBody$outboundSchema: z.ZodType<
+    DeleteTeamInviteCodeResponseBody$Outbound,
+    z.ZodTypeDef,
+    DeleteTeamInviteCodeResponseBody
+> = z.object({
+    id: z.string(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace DeleteTeamInviteCodeResponseBody$ {
-    export const inboundSchema: z.ZodType<DeleteTeamInviteCodeResponseBody, z.ZodTypeDef, unknown> =
-        z
-            .object({
-                id: z.string(),
-            })
-            .transform((v) => {
-                return {
-                    id: v.id,
-                };
-            });
-
-    export type Outbound = {
-        id: string;
-    };
-
-    export const outboundSchema: z.ZodType<
-        Outbound,
-        z.ZodTypeDef,
-        DeleteTeamInviteCodeResponseBody
-    > = z
-        .object({
-            id: z.string(),
-        })
-        .transform((v) => {
-            return {
-                id: v.id,
-            };
-        });
+    /** @deprecated use `DeleteTeamInviteCodeResponseBody$inboundSchema` instead. */
+    export const inboundSchema = DeleteTeamInviteCodeResponseBody$inboundSchema;
+    /** @deprecated use `DeleteTeamInviteCodeResponseBody$outboundSchema` instead. */
+    export const outboundSchema = DeleteTeamInviteCodeResponseBody$outboundSchema;
+    /** @deprecated use `DeleteTeamInviteCodeResponseBody$Outbound` instead. */
+    export type Outbound = DeleteTeamInviteCodeResponseBody$Outbound;
 }

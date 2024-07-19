@@ -136,158 +136,180 @@ export type GetWebhooksResponseBody = {
 };
 
 /** @internal */
+export const GetWebhooksRequest$inboundSchema: z.ZodType<
+    GetWebhooksRequest,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    projectId: z.string().optional(),
+    teamId: z.string().optional(),
+    slug: z.string().optional(),
+});
+
+/** @internal */
+export type GetWebhooksRequest$Outbound = {
+    projectId?: string | undefined;
+    teamId?: string | undefined;
+    slug?: string | undefined;
+};
+
+/** @internal */
+export const GetWebhooksRequest$outboundSchema: z.ZodType<
+    GetWebhooksRequest$Outbound,
+    z.ZodTypeDef,
+    GetWebhooksRequest
+> = z.object({
+    projectId: z.string().optional(),
+    teamId: z.string().optional(),
+    slug: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetWebhooksRequest$ {
-    export const inboundSchema: z.ZodType<GetWebhooksRequest, z.ZodTypeDef, unknown> = z
-        .object({
-            projectId: z.string().optional(),
-            teamId: z.string().optional(),
-            slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.projectId === undefined ? null : { projectId: v.projectId }),
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
-        });
-
-    export type Outbound = {
-        projectId?: string | undefined;
-        teamId?: string | undefined;
-        slug?: string | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetWebhooksRequest> = z
-        .object({
-            projectId: z.string().optional(),
-            teamId: z.string().optional(),
-            slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.projectId === undefined ? null : { projectId: v.projectId }),
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
-        });
+    /** @deprecated use `GetWebhooksRequest$inboundSchema` instead. */
+    export const inboundSchema = GetWebhooksRequest$inboundSchema;
+    /** @deprecated use `GetWebhooksRequest$outboundSchema` instead. */
+    export const outboundSchema = GetWebhooksRequest$outboundSchema;
+    /** @deprecated use `GetWebhooksRequest$Outbound` instead. */
+    export type Outbound = GetWebhooksRequest$Outbound;
 }
 
 /** @internal */
+export const ResponseBodyFramework$inboundSchema: z.ZodNativeEnum<typeof ResponseBodyFramework> =
+    z.nativeEnum(ResponseBodyFramework);
+
+/** @internal */
+export const ResponseBodyFramework$outboundSchema: z.ZodNativeEnum<typeof ResponseBodyFramework> =
+    ResponseBodyFramework$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace ResponseBodyFramework$ {
-    export const inboundSchema = z.nativeEnum(ResponseBodyFramework);
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `ResponseBodyFramework$inboundSchema` instead. */
+    export const inboundSchema = ResponseBodyFramework$inboundSchema;
+    /** @deprecated use `ResponseBodyFramework$outboundSchema` instead. */
+    export const outboundSchema = ResponseBodyFramework$outboundSchema;
 }
 
 /** @internal */
+export const ProjectsMetadata$inboundSchema: z.ZodType<ProjectsMetadata, z.ZodTypeDef, unknown> =
+    z.object({
+        id: z.string(),
+        name: z.string(),
+        framework: z.nullable(ResponseBodyFramework$inboundSchema).optional(),
+        latestDeployment: z.string().optional(),
+    });
+
+/** @internal */
+export type ProjectsMetadata$Outbound = {
+    id: string;
+    name: string;
+    framework?: string | null | undefined;
+    latestDeployment?: string | undefined;
+};
+
+/** @internal */
+export const ProjectsMetadata$outboundSchema: z.ZodType<
+    ProjectsMetadata$Outbound,
+    z.ZodTypeDef,
+    ProjectsMetadata
+> = z.object({
+    id: z.string(),
+    name: z.string(),
+    framework: z.nullable(ResponseBodyFramework$outboundSchema).optional(),
+    latestDeployment: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace ProjectsMetadata$ {
-    export const inboundSchema: z.ZodType<ProjectsMetadata, z.ZodTypeDef, unknown> = z
-        .object({
-            id: z.string(),
-            name: z.string(),
-            framework: z.nullable(ResponseBodyFramework$.inboundSchema).optional(),
-            latestDeployment: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                id: v.id,
-                name: v.name,
-                ...(v.framework === undefined ? null : { framework: v.framework }),
-                ...(v.latestDeployment === undefined
-                    ? null
-                    : { latestDeployment: v.latestDeployment }),
-            };
-        });
-
-    export type Outbound = {
-        id: string;
-        name: string;
-        framework?: string | null | undefined;
-        latestDeployment?: string | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, ProjectsMetadata> = z
-        .object({
-            id: z.string(),
-            name: z.string(),
-            framework: z.nullable(ResponseBodyFramework$.outboundSchema).optional(),
-            latestDeployment: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                id: v.id,
-                name: v.name,
-                ...(v.framework === undefined ? null : { framework: v.framework }),
-                ...(v.latestDeployment === undefined
-                    ? null
-                    : { latestDeployment: v.latestDeployment }),
-            };
-        });
+    /** @deprecated use `ProjectsMetadata$inboundSchema` instead. */
+    export const inboundSchema = ProjectsMetadata$inboundSchema;
+    /** @deprecated use `ProjectsMetadata$outboundSchema` instead. */
+    export const outboundSchema = ProjectsMetadata$outboundSchema;
+    /** @deprecated use `ProjectsMetadata$Outbound` instead. */
+    export type Outbound = ProjectsMetadata$Outbound;
 }
 
 /** @internal */
+export const ResponseBodyEvents$inboundSchema: z.ZodNativeEnum<typeof ResponseBodyEvents> =
+    z.nativeEnum(ResponseBodyEvents);
+
+/** @internal */
+export const ResponseBodyEvents$outboundSchema: z.ZodNativeEnum<typeof ResponseBodyEvents> =
+    ResponseBodyEvents$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace ResponseBodyEvents$ {
-    export const inboundSchema = z.nativeEnum(ResponseBodyEvents);
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `ResponseBodyEvents$inboundSchema` instead. */
+    export const inboundSchema = ResponseBodyEvents$inboundSchema;
+    /** @deprecated use `ResponseBodyEvents$outboundSchema` instead. */
+    export const outboundSchema = ResponseBodyEvents$outboundSchema;
 }
 
 /** @internal */
+export const GetWebhooksResponseBody$inboundSchema: z.ZodType<
+    GetWebhooksResponseBody,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    projectsMetadata: z.nullable(z.array(z.lazy(() => ProjectsMetadata$inboundSchema))),
+    events: z.array(ResponseBodyEvents$inboundSchema),
+    id: z.string(),
+    url: z.string(),
+    ownerId: z.string(),
+    createdAt: z.number(),
+    updatedAt: z.number(),
+    projectIds: z.array(z.string()).optional(),
+});
+
+/** @internal */
+export type GetWebhooksResponseBody$Outbound = {
+    projectsMetadata: Array<ProjectsMetadata$Outbound> | null;
+    events: Array<string>;
+    id: string;
+    url: string;
+    ownerId: string;
+    createdAt: number;
+    updatedAt: number;
+    projectIds?: Array<string> | undefined;
+};
+
+/** @internal */
+export const GetWebhooksResponseBody$outboundSchema: z.ZodType<
+    GetWebhooksResponseBody$Outbound,
+    z.ZodTypeDef,
+    GetWebhooksResponseBody
+> = z.object({
+    projectsMetadata: z.nullable(z.array(z.lazy(() => ProjectsMetadata$outboundSchema))),
+    events: z.array(ResponseBodyEvents$outboundSchema),
+    id: z.string(),
+    url: z.string(),
+    ownerId: z.string(),
+    createdAt: z.number(),
+    updatedAt: z.number(),
+    projectIds: z.array(z.string()).optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetWebhooksResponseBody$ {
-    export const inboundSchema: z.ZodType<GetWebhooksResponseBody, z.ZodTypeDef, unknown> = z
-        .object({
-            projectsMetadata: z.nullable(z.array(z.lazy(() => ProjectsMetadata$.inboundSchema))),
-            events: z.array(ResponseBodyEvents$.inboundSchema),
-            id: z.string(),
-            url: z.string(),
-            ownerId: z.string(),
-            createdAt: z.number(),
-            updatedAt: z.number(),
-            projectIds: z.array(z.string()).optional(),
-        })
-        .transform((v) => {
-            return {
-                projectsMetadata: v.projectsMetadata,
-                events: v.events,
-                id: v.id,
-                url: v.url,
-                ownerId: v.ownerId,
-                createdAt: v.createdAt,
-                updatedAt: v.updatedAt,
-                ...(v.projectIds === undefined ? null : { projectIds: v.projectIds }),
-            };
-        });
-
-    export type Outbound = {
-        projectsMetadata: Array<ProjectsMetadata$.Outbound> | null;
-        events: Array<string>;
-        id: string;
-        url: string;
-        ownerId: string;
-        createdAt: number;
-        updatedAt: number;
-        projectIds?: Array<string> | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetWebhooksResponseBody> = z
-        .object({
-            projectsMetadata: z.nullable(z.array(z.lazy(() => ProjectsMetadata$.outboundSchema))),
-            events: z.array(ResponseBodyEvents$.outboundSchema),
-            id: z.string(),
-            url: z.string(),
-            ownerId: z.string(),
-            createdAt: z.number(),
-            updatedAt: z.number(),
-            projectIds: z.array(z.string()).optional(),
-        })
-        .transform((v) => {
-            return {
-                projectsMetadata: v.projectsMetadata,
-                events: v.events,
-                id: v.id,
-                url: v.url,
-                ownerId: v.ownerId,
-                createdAt: v.createdAt,
-                updatedAt: v.updatedAt,
-                ...(v.projectIds === undefined ? null : { projectIds: v.projectIds }),
-            };
-        });
+    /** @deprecated use `GetWebhooksResponseBody$inboundSchema` instead. */
+    export const inboundSchema = GetWebhooksResponseBody$inboundSchema;
+    /** @deprecated use `GetWebhooksResponseBody$outboundSchema` instead. */
+    export const outboundSchema = GetWebhooksResponseBody$outboundSchema;
+    /** @deprecated use `GetWebhooksResponseBody$Outbound` instead. */
+    export type Outbound = GetWebhooksResponseBody$Outbound;
 }

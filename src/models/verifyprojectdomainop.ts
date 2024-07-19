@@ -60,184 +60,157 @@ export type VerifyProjectDomainResponseBody = {
 };
 
 /** @internal */
+export const VerifyProjectDomainRequest$inboundSchema: z.ZodType<
+    VerifyProjectDomainRequest,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    idOrName: z.string(),
+    domain: z.string(),
+    teamId: z.string().optional(),
+    slug: z.string().optional(),
+});
+
+/** @internal */
+export type VerifyProjectDomainRequest$Outbound = {
+    idOrName: string;
+    domain: string;
+    teamId?: string | undefined;
+    slug?: string | undefined;
+};
+
+/** @internal */
+export const VerifyProjectDomainRequest$outboundSchema: z.ZodType<
+    VerifyProjectDomainRequest$Outbound,
+    z.ZodTypeDef,
+    VerifyProjectDomainRequest
+> = z.object({
+    idOrName: z.string(),
+    domain: z.string(),
+    teamId: z.string().optional(),
+    slug: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace VerifyProjectDomainRequest$ {
-    export const inboundSchema: z.ZodType<VerifyProjectDomainRequest, z.ZodTypeDef, unknown> = z
-        .object({
-            idOrName: z.string(),
-            domain: z.string(),
-            teamId: z.string().optional(),
-            slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                idOrName: v.idOrName,
-                domain: v.domain,
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
-        });
-
-    export type Outbound = {
-        idOrName: string;
-        domain: string;
-        teamId?: string | undefined;
-        slug?: string | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, VerifyProjectDomainRequest> = z
-        .object({
-            idOrName: z.string(),
-            domain: z.string(),
-            teamId: z.string().optional(),
-            slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                idOrName: v.idOrName,
-                domain: v.domain,
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
-        });
+    /** @deprecated use `VerifyProjectDomainRequest$inboundSchema` instead. */
+    export const inboundSchema = VerifyProjectDomainRequest$inboundSchema;
+    /** @deprecated use `VerifyProjectDomainRequest$outboundSchema` instead. */
+    export const outboundSchema = VerifyProjectDomainRequest$outboundSchema;
+    /** @deprecated use `VerifyProjectDomainRequest$Outbound` instead. */
+    export type Outbound = VerifyProjectDomainRequest$Outbound;
 }
 
 /** @internal */
+export const VerifyProjectDomainVerification$inboundSchema: z.ZodType<
+    VerifyProjectDomainVerification,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    type: z.string(),
+    domain: z.string(),
+    value: z.string(),
+    reason: z.string(),
+});
+
+/** @internal */
+export type VerifyProjectDomainVerification$Outbound = {
+    type: string;
+    domain: string;
+    value: string;
+    reason: string;
+};
+
+/** @internal */
+export const VerifyProjectDomainVerification$outboundSchema: z.ZodType<
+    VerifyProjectDomainVerification$Outbound,
+    z.ZodTypeDef,
+    VerifyProjectDomainVerification
+> = z.object({
+    type: z.string(),
+    domain: z.string(),
+    value: z.string(),
+    reason: z.string(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace VerifyProjectDomainVerification$ {
-    export const inboundSchema: z.ZodType<VerifyProjectDomainVerification, z.ZodTypeDef, unknown> =
-        z
-            .object({
-                type: z.string(),
-                domain: z.string(),
-                value: z.string(),
-                reason: z.string(),
-            })
-            .transform((v) => {
-                return {
-                    type: v.type,
-                    domain: v.domain,
-                    value: v.value,
-                    reason: v.reason,
-                };
-            });
-
-    export type Outbound = {
-        type: string;
-        domain: string;
-        value: string;
-        reason: string;
-    };
-
-    export const outboundSchema: z.ZodType<
-        Outbound,
-        z.ZodTypeDef,
-        VerifyProjectDomainVerification
-    > = z
-        .object({
-            type: z.string(),
-            domain: z.string(),
-            value: z.string(),
-            reason: z.string(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                domain: v.domain,
-                value: v.value,
-                reason: v.reason,
-            };
-        });
+    /** @deprecated use `VerifyProjectDomainVerification$inboundSchema` instead. */
+    export const inboundSchema = VerifyProjectDomainVerification$inboundSchema;
+    /** @deprecated use `VerifyProjectDomainVerification$outboundSchema` instead. */
+    export const outboundSchema = VerifyProjectDomainVerification$outboundSchema;
+    /** @deprecated use `VerifyProjectDomainVerification$Outbound` instead. */
+    export type Outbound = VerifyProjectDomainVerification$Outbound;
 }
 
 /** @internal */
+export const VerifyProjectDomainResponseBody$inboundSchema: z.ZodType<
+    VerifyProjectDomainResponseBody,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    name: z.string(),
+    apexName: z.string(),
+    projectId: z.string(),
+    redirect: z.nullable(z.string()).optional(),
+    redirectStatusCode: z.nullable(z.number()).optional(),
+    gitBranch: z.nullable(z.string()).optional(),
+    customEnvironmentId: z.nullable(z.string()).optional(),
+    updatedAt: z.number().optional(),
+    createdAt: z.number().optional(),
+    verified: z.boolean(),
+    verification: z.array(z.lazy(() => VerifyProjectDomainVerification$inboundSchema)).optional(),
+});
+
+/** @internal */
+export type VerifyProjectDomainResponseBody$Outbound = {
+    name: string;
+    apexName: string;
+    projectId: string;
+    redirect?: string | null | undefined;
+    redirectStatusCode?: number | null | undefined;
+    gitBranch?: string | null | undefined;
+    customEnvironmentId?: string | null | undefined;
+    updatedAt?: number | undefined;
+    createdAt?: number | undefined;
+    verified: boolean;
+    verification?: Array<VerifyProjectDomainVerification$Outbound> | undefined;
+};
+
+/** @internal */
+export const VerifyProjectDomainResponseBody$outboundSchema: z.ZodType<
+    VerifyProjectDomainResponseBody$Outbound,
+    z.ZodTypeDef,
+    VerifyProjectDomainResponseBody
+> = z.object({
+    name: z.string(),
+    apexName: z.string(),
+    projectId: z.string(),
+    redirect: z.nullable(z.string()).optional(),
+    redirectStatusCode: z.nullable(z.number()).optional(),
+    gitBranch: z.nullable(z.string()).optional(),
+    customEnvironmentId: z.nullable(z.string()).optional(),
+    updatedAt: z.number().optional(),
+    createdAt: z.number().optional(),
+    verified: z.boolean(),
+    verification: z.array(z.lazy(() => VerifyProjectDomainVerification$outboundSchema)).optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace VerifyProjectDomainResponseBody$ {
-    export const inboundSchema: z.ZodType<VerifyProjectDomainResponseBody, z.ZodTypeDef, unknown> =
-        z
-            .object({
-                name: z.string(),
-                apexName: z.string(),
-                projectId: z.string(),
-                redirect: z.nullable(z.string()).optional(),
-                redirectStatusCode: z.nullable(z.number()).optional(),
-                gitBranch: z.nullable(z.string()).optional(),
-                customEnvironmentId: z.nullable(z.string()).optional(),
-                updatedAt: z.number().optional(),
-                createdAt: z.number().optional(),
-                verified: z.boolean(),
-                verification: z
-                    .array(z.lazy(() => VerifyProjectDomainVerification$.inboundSchema))
-                    .optional(),
-            })
-            .transform((v) => {
-                return {
-                    name: v.name,
-                    apexName: v.apexName,
-                    projectId: v.projectId,
-                    ...(v.redirect === undefined ? null : { redirect: v.redirect }),
-                    ...(v.redirectStatusCode === undefined
-                        ? null
-                        : { redirectStatusCode: v.redirectStatusCode }),
-                    ...(v.gitBranch === undefined ? null : { gitBranch: v.gitBranch }),
-                    ...(v.customEnvironmentId === undefined
-                        ? null
-                        : { customEnvironmentId: v.customEnvironmentId }),
-                    ...(v.updatedAt === undefined ? null : { updatedAt: v.updatedAt }),
-                    ...(v.createdAt === undefined ? null : { createdAt: v.createdAt }),
-                    verified: v.verified,
-                    ...(v.verification === undefined ? null : { verification: v.verification }),
-                };
-            });
-
-    export type Outbound = {
-        name: string;
-        apexName: string;
-        projectId: string;
-        redirect?: string | null | undefined;
-        redirectStatusCode?: number | null | undefined;
-        gitBranch?: string | null | undefined;
-        customEnvironmentId?: string | null | undefined;
-        updatedAt?: number | undefined;
-        createdAt?: number | undefined;
-        verified: boolean;
-        verification?: Array<VerifyProjectDomainVerification$.Outbound> | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<
-        Outbound,
-        z.ZodTypeDef,
-        VerifyProjectDomainResponseBody
-    > = z
-        .object({
-            name: z.string(),
-            apexName: z.string(),
-            projectId: z.string(),
-            redirect: z.nullable(z.string()).optional(),
-            redirectStatusCode: z.nullable(z.number()).optional(),
-            gitBranch: z.nullable(z.string()).optional(),
-            customEnvironmentId: z.nullable(z.string()).optional(),
-            updatedAt: z.number().optional(),
-            createdAt: z.number().optional(),
-            verified: z.boolean(),
-            verification: z
-                .array(z.lazy(() => VerifyProjectDomainVerification$.outboundSchema))
-                .optional(),
-        })
-        .transform((v) => {
-            return {
-                name: v.name,
-                apexName: v.apexName,
-                projectId: v.projectId,
-                ...(v.redirect === undefined ? null : { redirect: v.redirect }),
-                ...(v.redirectStatusCode === undefined
-                    ? null
-                    : { redirectStatusCode: v.redirectStatusCode }),
-                ...(v.gitBranch === undefined ? null : { gitBranch: v.gitBranch }),
-                ...(v.customEnvironmentId === undefined
-                    ? null
-                    : { customEnvironmentId: v.customEnvironmentId }),
-                ...(v.updatedAt === undefined ? null : { updatedAt: v.updatedAt }),
-                ...(v.createdAt === undefined ? null : { createdAt: v.createdAt }),
-                verified: v.verified,
-                ...(v.verification === undefined ? null : { verification: v.verification }),
-            };
-        });
+    /** @deprecated use `VerifyProjectDomainResponseBody$inboundSchema` instead. */
+    export const inboundSchema = VerifyProjectDomainResponseBody$inboundSchema;
+    /** @deprecated use `VerifyProjectDomainResponseBody$outboundSchema` instead. */
+    export const outboundSchema = VerifyProjectDomainResponseBody$outboundSchema;
+    /** @deprecated use `VerifyProjectDomainResponseBody$Outbound` instead. */
+    export type Outbound = VerifyProjectDomainResponseBody$Outbound;
 }

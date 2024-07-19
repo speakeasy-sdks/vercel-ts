@@ -211,7 +211,7 @@ export type EmailInviteCodes2 = {
     isDSyncUser: boolean;
     createdAt?: number | undefined;
     expired?: boolean | undefined;
-    projects?: Record<string, GetTeamMembersEmailInviteCodesProjects> | undefined;
+    projects?: { [k: string]: GetTeamMembersEmailInviteCodesProjects } | undefined;
 };
 
 export enum EmailInviteCodesRole {
@@ -236,7 +236,7 @@ export type EmailInviteCodes1 = {
     isDSyncUser: boolean;
     createdAt?: number | undefined;
     expired?: boolean | undefined;
-    projects?: Record<string, EmailInviteCodesProjects> | undefined;
+    projects?: { [k: string]: EmailInviteCodesProjects } | undefined;
 };
 
 export type EmailInviteCodes = EmailInviteCodes1 | EmailInviteCodes2;
@@ -264,653 +264,770 @@ export type GetTeamMembersResponseBody = {
 };
 
 /** @internal */
+export const QueryParamRole$inboundSchema: z.ZodNativeEnum<typeof QueryParamRole> =
+    z.nativeEnum(QueryParamRole);
+
+/** @internal */
+export const QueryParamRole$outboundSchema: z.ZodNativeEnum<typeof QueryParamRole> =
+    QueryParamRole$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace QueryParamRole$ {
-    export const inboundSchema = z.nativeEnum(QueryParamRole);
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `QueryParamRole$inboundSchema` instead. */
+    export const inboundSchema = QueryParamRole$inboundSchema;
+    /** @deprecated use `QueryParamRole$outboundSchema` instead. */
+    export const outboundSchema = QueryParamRole$outboundSchema;
 }
 
 /** @internal */
+export const GetTeamMembersRequest$inboundSchema: z.ZodType<
+    GetTeamMembersRequest,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    limit: z.number().optional(),
+    since: z.number().optional(),
+    until: z.number().optional(),
+    search: z.string().optional(),
+    role: QueryParamRole$inboundSchema.optional(),
+    excludeProject: z.string().optional(),
+    eligibleMembersForProjectId: z.string().optional(),
+    teamId: z.string(),
+});
+
+/** @internal */
+export type GetTeamMembersRequest$Outbound = {
+    limit?: number | undefined;
+    since?: number | undefined;
+    until?: number | undefined;
+    search?: string | undefined;
+    role?: string | undefined;
+    excludeProject?: string | undefined;
+    eligibleMembersForProjectId?: string | undefined;
+    teamId: string;
+};
+
+/** @internal */
+export const GetTeamMembersRequest$outboundSchema: z.ZodType<
+    GetTeamMembersRequest$Outbound,
+    z.ZodTypeDef,
+    GetTeamMembersRequest
+> = z.object({
+    limit: z.number().optional(),
+    since: z.number().optional(),
+    until: z.number().optional(),
+    search: z.string().optional(),
+    role: QueryParamRole$outboundSchema.optional(),
+    excludeProject: z.string().optional(),
+    eligibleMembersForProjectId: z.string().optional(),
+    teamId: z.string(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetTeamMembersRequest$ {
-    export const inboundSchema: z.ZodType<GetTeamMembersRequest, z.ZodTypeDef, unknown> = z
-        .object({
-            limit: z.number().optional(),
-            since: z.number().optional(),
-            until: z.number().optional(),
-            search: z.string().optional(),
-            role: QueryParamRole$.inboundSchema.optional(),
-            excludeProject: z.string().optional(),
-            eligibleMembersForProjectId: z.string().optional(),
-            teamId: z.string(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.limit === undefined ? null : { limit: v.limit }),
-                ...(v.since === undefined ? null : { since: v.since }),
-                ...(v.until === undefined ? null : { until: v.until }),
-                ...(v.search === undefined ? null : { search: v.search }),
-                ...(v.role === undefined ? null : { role: v.role }),
-                ...(v.excludeProject === undefined ? null : { excludeProject: v.excludeProject }),
-                ...(v.eligibleMembersForProjectId === undefined
-                    ? null
-                    : { eligibleMembersForProjectId: v.eligibleMembersForProjectId }),
-                teamId: v.teamId,
-            };
-        });
-
-    export type Outbound = {
-        limit?: number | undefined;
-        since?: number | undefined;
-        until?: number | undefined;
-        search?: string | undefined;
-        role?: string | undefined;
-        excludeProject?: string | undefined;
-        eligibleMembersForProjectId?: string | undefined;
-        teamId: string;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetTeamMembersRequest> = z
-        .object({
-            limit: z.number().optional(),
-            since: z.number().optional(),
-            until: z.number().optional(),
-            search: z.string().optional(),
-            role: QueryParamRole$.outboundSchema.optional(),
-            excludeProject: z.string().optional(),
-            eligibleMembersForProjectId: z.string().optional(),
-            teamId: z.string(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.limit === undefined ? null : { limit: v.limit }),
-                ...(v.since === undefined ? null : { since: v.since }),
-                ...(v.until === undefined ? null : { until: v.until }),
-                ...(v.search === undefined ? null : { search: v.search }),
-                ...(v.role === undefined ? null : { role: v.role }),
-                ...(v.excludeProject === undefined ? null : { excludeProject: v.excludeProject }),
-                ...(v.eligibleMembersForProjectId === undefined
-                    ? null
-                    : { eligibleMembersForProjectId: v.eligibleMembersForProjectId }),
-                teamId: v.teamId,
-            };
-        });
+    /** @deprecated use `GetTeamMembersRequest$inboundSchema` instead. */
+    export const inboundSchema = GetTeamMembersRequest$inboundSchema;
+    /** @deprecated use `GetTeamMembersRequest$outboundSchema` instead. */
+    export const outboundSchema = GetTeamMembersRequest$outboundSchema;
+    /** @deprecated use `GetTeamMembersRequest$Outbound` instead. */
+    export type Outbound = GetTeamMembersRequest$Outbound;
 }
 
 /** @internal */
+export const GetTeamMembersGithub$inboundSchema: z.ZodType<
+    GetTeamMembersGithub,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    login: z.string().optional(),
+});
+
+/** @internal */
+export type GetTeamMembersGithub$Outbound = {
+    login?: string | undefined;
+};
+
+/** @internal */
+export const GetTeamMembersGithub$outboundSchema: z.ZodType<
+    GetTeamMembersGithub$Outbound,
+    z.ZodTypeDef,
+    GetTeamMembersGithub
+> = z.object({
+    login: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetTeamMembersGithub$ {
-    export const inboundSchema: z.ZodType<GetTeamMembersGithub, z.ZodTypeDef, unknown> = z
-        .object({
-            login: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.login === undefined ? null : { login: v.login }),
-            };
-        });
-
-    export type Outbound = {
-        login?: string | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetTeamMembersGithub> = z
-        .object({
-            login: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.login === undefined ? null : { login: v.login }),
-            };
-        });
+    /** @deprecated use `GetTeamMembersGithub$inboundSchema` instead. */
+    export const inboundSchema = GetTeamMembersGithub$inboundSchema;
+    /** @deprecated use `GetTeamMembersGithub$outboundSchema` instead. */
+    export const outboundSchema = GetTeamMembersGithub$outboundSchema;
+    /** @deprecated use `GetTeamMembersGithub$Outbound` instead. */
+    export type Outbound = GetTeamMembersGithub$Outbound;
 }
 
 /** @internal */
+export const GetTeamMembersGitlab$inboundSchema: z.ZodType<
+    GetTeamMembersGitlab,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    login: z.string().optional(),
+});
+
+/** @internal */
+export type GetTeamMembersGitlab$Outbound = {
+    login?: string | undefined;
+};
+
+/** @internal */
+export const GetTeamMembersGitlab$outboundSchema: z.ZodType<
+    GetTeamMembersGitlab$Outbound,
+    z.ZodTypeDef,
+    GetTeamMembersGitlab
+> = z.object({
+    login: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetTeamMembersGitlab$ {
-    export const inboundSchema: z.ZodType<GetTeamMembersGitlab, z.ZodTypeDef, unknown> = z
-        .object({
-            login: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.login === undefined ? null : { login: v.login }),
-            };
-        });
-
-    export type Outbound = {
-        login?: string | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetTeamMembersGitlab> = z
-        .object({
-            login: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.login === undefined ? null : { login: v.login }),
-            };
-        });
+    /** @deprecated use `GetTeamMembersGitlab$inboundSchema` instead. */
+    export const inboundSchema = GetTeamMembersGitlab$inboundSchema;
+    /** @deprecated use `GetTeamMembersGitlab$outboundSchema` instead. */
+    export const outboundSchema = GetTeamMembersGitlab$outboundSchema;
+    /** @deprecated use `GetTeamMembersGitlab$Outbound` instead. */
+    export type Outbound = GetTeamMembersGitlab$Outbound;
 }
 
 /** @internal */
+export const GetTeamMembersBitbucket$inboundSchema: z.ZodType<
+    GetTeamMembersBitbucket,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    login: z.string().optional(),
+});
+
+/** @internal */
+export type GetTeamMembersBitbucket$Outbound = {
+    login?: string | undefined;
+};
+
+/** @internal */
+export const GetTeamMembersBitbucket$outboundSchema: z.ZodType<
+    GetTeamMembersBitbucket$Outbound,
+    z.ZodTypeDef,
+    GetTeamMembersBitbucket
+> = z.object({
+    login: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetTeamMembersBitbucket$ {
-    export const inboundSchema: z.ZodType<GetTeamMembersBitbucket, z.ZodTypeDef, unknown> = z
-        .object({
-            login: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.login === undefined ? null : { login: v.login }),
-            };
-        });
-
-    export type Outbound = {
-        login?: string | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetTeamMembersBitbucket> = z
-        .object({
-            login: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.login === undefined ? null : { login: v.login }),
-            };
-        });
+    /** @deprecated use `GetTeamMembersBitbucket$inboundSchema` instead. */
+    export const inboundSchema = GetTeamMembersBitbucket$inboundSchema;
+    /** @deprecated use `GetTeamMembersBitbucket$outboundSchema` instead. */
+    export const outboundSchema = GetTeamMembersBitbucket$outboundSchema;
+    /** @deprecated use `GetTeamMembersBitbucket$Outbound` instead. */
+    export type Outbound = GetTeamMembersBitbucket$Outbound;
 }
 
 /** @internal */
+export const GetTeamMembersRole$inboundSchema: z.ZodNativeEnum<typeof GetTeamMembersRole> =
+    z.nativeEnum(GetTeamMembersRole);
+
+/** @internal */
+export const GetTeamMembersRole$outboundSchema: z.ZodNativeEnum<typeof GetTeamMembersRole> =
+    GetTeamMembersRole$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetTeamMembersRole$ {
-    export const inboundSchema = z.nativeEnum(GetTeamMembersRole);
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `GetTeamMembersRole$inboundSchema` instead. */
+    export const inboundSchema = GetTeamMembersRole$inboundSchema;
+    /** @deprecated use `GetTeamMembersRole$outboundSchema` instead. */
+    export const outboundSchema = GetTeamMembersRole$outboundSchema;
 }
 
 /** @internal */
+export const GetTeamMembersOrigin$inboundSchema: z.ZodNativeEnum<typeof GetTeamMembersOrigin> =
+    z.nativeEnum(GetTeamMembersOrigin);
+
+/** @internal */
+export const GetTeamMembersOrigin$outboundSchema: z.ZodNativeEnum<typeof GetTeamMembersOrigin> =
+    GetTeamMembersOrigin$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetTeamMembersOrigin$ {
-    export const inboundSchema = z.nativeEnum(GetTeamMembersOrigin);
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `GetTeamMembersOrigin$inboundSchema` instead. */
+    export const inboundSchema = GetTeamMembersOrigin$inboundSchema;
+    /** @deprecated use `GetTeamMembersOrigin$outboundSchema` instead. */
+    export const outboundSchema = GetTeamMembersOrigin$outboundSchema;
 }
 
 /** @internal */
+export const GetTeamMembersGitUserId$inboundSchema: z.ZodType<
+    GetTeamMembersGitUserId,
+    z.ZodTypeDef,
+    unknown
+> = z.union([z.string(), z.number()]);
+
+/** @internal */
+export type GetTeamMembersGitUserId$Outbound = string | number;
+
+/** @internal */
+export const GetTeamMembersGitUserId$outboundSchema: z.ZodType<
+    GetTeamMembersGitUserId$Outbound,
+    z.ZodTypeDef,
+    GetTeamMembersGitUserId
+> = z.union([z.string(), z.number()]);
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetTeamMembersGitUserId$ {
-    export const inboundSchema: z.ZodType<GetTeamMembersGitUserId, z.ZodTypeDef, unknown> = z.union(
-        [z.string(), z.number()]
-    );
-
-    export type Outbound = string | number;
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetTeamMembersGitUserId> =
-        z.union([z.string(), z.number()]);
+    /** @deprecated use `GetTeamMembersGitUserId$inboundSchema` instead. */
+    export const inboundSchema = GetTeamMembersGitUserId$inboundSchema;
+    /** @deprecated use `GetTeamMembersGitUserId$outboundSchema` instead. */
+    export const outboundSchema = GetTeamMembersGitUserId$outboundSchema;
+    /** @deprecated use `GetTeamMembersGitUserId$Outbound` instead. */
+    export type Outbound = GetTeamMembersGitUserId$Outbound;
 }
 
 /** @internal */
+export const GetTeamMembersJoinedFrom$inboundSchema: z.ZodType<
+    GetTeamMembersJoinedFrom,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    origin: GetTeamMembersOrigin$inboundSchema,
+    commitId: z.string().optional(),
+    repoId: z.string().optional(),
+    repoPath: z.string().optional(),
+    gitUserId: z.union([z.string(), z.number()]).optional(),
+    gitUserLogin: z.string().optional(),
+    ssoUserId: z.string().optional(),
+    ssoConnectedAt: z.number().optional(),
+    idpUserId: z.string().optional(),
+    dsyncUserId: z.string().optional(),
+    dsyncConnectedAt: z.number().optional(),
+});
+
+/** @internal */
+export type GetTeamMembersJoinedFrom$Outbound = {
+    origin: string;
+    commitId?: string | undefined;
+    repoId?: string | undefined;
+    repoPath?: string | undefined;
+    gitUserId?: string | number | undefined;
+    gitUserLogin?: string | undefined;
+    ssoUserId?: string | undefined;
+    ssoConnectedAt?: number | undefined;
+    idpUserId?: string | undefined;
+    dsyncUserId?: string | undefined;
+    dsyncConnectedAt?: number | undefined;
+};
+
+/** @internal */
+export const GetTeamMembersJoinedFrom$outboundSchema: z.ZodType<
+    GetTeamMembersJoinedFrom$Outbound,
+    z.ZodTypeDef,
+    GetTeamMembersJoinedFrom
+> = z.object({
+    origin: GetTeamMembersOrigin$outboundSchema,
+    commitId: z.string().optional(),
+    repoId: z.string().optional(),
+    repoPath: z.string().optional(),
+    gitUserId: z.union([z.string(), z.number()]).optional(),
+    gitUserLogin: z.string().optional(),
+    ssoUserId: z.string().optional(),
+    ssoConnectedAt: z.number().optional(),
+    idpUserId: z.string().optional(),
+    dsyncUserId: z.string().optional(),
+    dsyncConnectedAt: z.number().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetTeamMembersJoinedFrom$ {
-    export const inboundSchema: z.ZodType<GetTeamMembersJoinedFrom, z.ZodTypeDef, unknown> = z
-        .object({
-            origin: GetTeamMembersOrigin$.inboundSchema,
-            commitId: z.string().optional(),
-            repoId: z.string().optional(),
-            repoPath: z.string().optional(),
-            gitUserId: z.union([z.string(), z.number()]).optional(),
-            gitUserLogin: z.string().optional(),
-            ssoUserId: z.string().optional(),
-            ssoConnectedAt: z.number().optional(),
-            idpUserId: z.string().optional(),
-            dsyncUserId: z.string().optional(),
-            dsyncConnectedAt: z.number().optional(),
-        })
-        .transform((v) => {
-            return {
-                origin: v.origin,
-                ...(v.commitId === undefined ? null : { commitId: v.commitId }),
-                ...(v.repoId === undefined ? null : { repoId: v.repoId }),
-                ...(v.repoPath === undefined ? null : { repoPath: v.repoPath }),
-                ...(v.gitUserId === undefined ? null : { gitUserId: v.gitUserId }),
-                ...(v.gitUserLogin === undefined ? null : { gitUserLogin: v.gitUserLogin }),
-                ...(v.ssoUserId === undefined ? null : { ssoUserId: v.ssoUserId }),
-                ...(v.ssoConnectedAt === undefined ? null : { ssoConnectedAt: v.ssoConnectedAt }),
-                ...(v.idpUserId === undefined ? null : { idpUserId: v.idpUserId }),
-                ...(v.dsyncUserId === undefined ? null : { dsyncUserId: v.dsyncUserId }),
-                ...(v.dsyncConnectedAt === undefined
-                    ? null
-                    : { dsyncConnectedAt: v.dsyncConnectedAt }),
-            };
-        });
-
-    export type Outbound = {
-        origin: string;
-        commitId?: string | undefined;
-        repoId?: string | undefined;
-        repoPath?: string | undefined;
-        gitUserId?: string | number | undefined;
-        gitUserLogin?: string | undefined;
-        ssoUserId?: string | undefined;
-        ssoConnectedAt?: number | undefined;
-        idpUserId?: string | undefined;
-        dsyncUserId?: string | undefined;
-        dsyncConnectedAt?: number | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetTeamMembersJoinedFrom> = z
-        .object({
-            origin: GetTeamMembersOrigin$.outboundSchema,
-            commitId: z.string().optional(),
-            repoId: z.string().optional(),
-            repoPath: z.string().optional(),
-            gitUserId: z.union([z.string(), z.number()]).optional(),
-            gitUserLogin: z.string().optional(),
-            ssoUserId: z.string().optional(),
-            ssoConnectedAt: z.number().optional(),
-            idpUserId: z.string().optional(),
-            dsyncUserId: z.string().optional(),
-            dsyncConnectedAt: z.number().optional(),
-        })
-        .transform((v) => {
-            return {
-                origin: v.origin,
-                ...(v.commitId === undefined ? null : { commitId: v.commitId }),
-                ...(v.repoId === undefined ? null : { repoId: v.repoId }),
-                ...(v.repoPath === undefined ? null : { repoPath: v.repoPath }),
-                ...(v.gitUserId === undefined ? null : { gitUserId: v.gitUserId }),
-                ...(v.gitUserLogin === undefined ? null : { gitUserLogin: v.gitUserLogin }),
-                ...(v.ssoUserId === undefined ? null : { ssoUserId: v.ssoUserId }),
-                ...(v.ssoConnectedAt === undefined ? null : { ssoConnectedAt: v.ssoConnectedAt }),
-                ...(v.idpUserId === undefined ? null : { idpUserId: v.idpUserId }),
-                ...(v.dsyncUserId === undefined ? null : { dsyncUserId: v.dsyncUserId }),
-                ...(v.dsyncConnectedAt === undefined
-                    ? null
-                    : { dsyncConnectedAt: v.dsyncConnectedAt }),
-            };
-        });
+    /** @deprecated use `GetTeamMembersJoinedFrom$inboundSchema` instead. */
+    export const inboundSchema = GetTeamMembersJoinedFrom$inboundSchema;
+    /** @deprecated use `GetTeamMembersJoinedFrom$outboundSchema` instead. */
+    export const outboundSchema = GetTeamMembersJoinedFrom$outboundSchema;
+    /** @deprecated use `GetTeamMembersJoinedFrom$Outbound` instead. */
+    export type Outbound = GetTeamMembersJoinedFrom$Outbound;
 }
 
 /** @internal */
+export const GetTeamMembersTeamsRole$inboundSchema: z.ZodNativeEnum<
+    typeof GetTeamMembersTeamsRole
+> = z.nativeEnum(GetTeamMembersTeamsRole);
+
+/** @internal */
+export const GetTeamMembersTeamsRole$outboundSchema: z.ZodNativeEnum<
+    typeof GetTeamMembersTeamsRole
+> = GetTeamMembersTeamsRole$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetTeamMembersTeamsRole$ {
-    export const inboundSchema = z.nativeEnum(GetTeamMembersTeamsRole);
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `GetTeamMembersTeamsRole$inboundSchema` instead. */
+    export const inboundSchema = GetTeamMembersTeamsRole$inboundSchema;
+    /** @deprecated use `GetTeamMembersTeamsRole$outboundSchema` instead. */
+    export const outboundSchema = GetTeamMembersTeamsRole$outboundSchema;
 }
 
 /** @internal */
+export const GetTeamMembersProjects$inboundSchema: z.ZodType<
+    GetTeamMembersProjects,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    name: z.string().optional(),
+    id: z.string().optional(),
+    role: GetTeamMembersTeamsRole$inboundSchema.optional(),
+});
+
+/** @internal */
+export type GetTeamMembersProjects$Outbound = {
+    name?: string | undefined;
+    id?: string | undefined;
+    role?: string | undefined;
+};
+
+/** @internal */
+export const GetTeamMembersProjects$outboundSchema: z.ZodType<
+    GetTeamMembersProjects$Outbound,
+    z.ZodTypeDef,
+    GetTeamMembersProjects
+> = z.object({
+    name: z.string().optional(),
+    id: z.string().optional(),
+    role: GetTeamMembersTeamsRole$outboundSchema.optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetTeamMembersProjects$ {
-    export const inboundSchema: z.ZodType<GetTeamMembersProjects, z.ZodTypeDef, unknown> = z
-        .object({
-            name: z.string().optional(),
-            id: z.string().optional(),
-            role: GetTeamMembersTeamsRole$.inboundSchema.optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.name === undefined ? null : { name: v.name }),
-                ...(v.id === undefined ? null : { id: v.id }),
-                ...(v.role === undefined ? null : { role: v.role }),
-            };
-        });
-
-    export type Outbound = {
-        name?: string | undefined;
-        id?: string | undefined;
-        role?: string | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetTeamMembersProjects> = z
-        .object({
-            name: z.string().optional(),
-            id: z.string().optional(),
-            role: GetTeamMembersTeamsRole$.outboundSchema.optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.name === undefined ? null : { name: v.name }),
-                ...(v.id === undefined ? null : { id: v.id }),
-                ...(v.role === undefined ? null : { role: v.role }),
-            };
-        });
+    /** @deprecated use `GetTeamMembersProjects$inboundSchema` instead. */
+    export const inboundSchema = GetTeamMembersProjects$inboundSchema;
+    /** @deprecated use `GetTeamMembersProjects$outboundSchema` instead. */
+    export const outboundSchema = GetTeamMembersProjects$outboundSchema;
+    /** @deprecated use `GetTeamMembersProjects$Outbound` instead. */
+    export type Outbound = GetTeamMembersProjects$Outbound;
 }
 
 /** @internal */
+export const Members$inboundSchema: z.ZodType<Members, z.ZodTypeDef, unknown> = z.object({
+    avatar: z.string().optional(),
+    confirmed: z.boolean(),
+    email: z.string(),
+    github: z.lazy(() => GetTeamMembersGithub$inboundSchema).optional(),
+    gitlab: z.lazy(() => GetTeamMembersGitlab$inboundSchema).optional(),
+    bitbucket: z.lazy(() => GetTeamMembersBitbucket$inboundSchema).optional(),
+    role: GetTeamMembersRole$inboundSchema,
+    uid: z.string(),
+    username: z.string(),
+    name: z.string().optional(),
+    createdAt: z.number(),
+    accessRequestedAt: z.number().optional(),
+    joinedFrom: z.lazy(() => GetTeamMembersJoinedFrom$inboundSchema).optional(),
+    projects: z.array(z.lazy(() => GetTeamMembersProjects$inboundSchema)).optional(),
+});
+
+/** @internal */
+export type Members$Outbound = {
+    avatar?: string | undefined;
+    confirmed: boolean;
+    email: string;
+    github?: GetTeamMembersGithub$Outbound | undefined;
+    gitlab?: GetTeamMembersGitlab$Outbound | undefined;
+    bitbucket?: GetTeamMembersBitbucket$Outbound | undefined;
+    role: string;
+    uid: string;
+    username: string;
+    name?: string | undefined;
+    createdAt: number;
+    accessRequestedAt?: number | undefined;
+    joinedFrom?: GetTeamMembersJoinedFrom$Outbound | undefined;
+    projects?: Array<GetTeamMembersProjects$Outbound> | undefined;
+};
+
+/** @internal */
+export const Members$outboundSchema: z.ZodType<Members$Outbound, z.ZodTypeDef, Members> = z.object({
+    avatar: z.string().optional(),
+    confirmed: z.boolean(),
+    email: z.string(),
+    github: z.lazy(() => GetTeamMembersGithub$outboundSchema).optional(),
+    gitlab: z.lazy(() => GetTeamMembersGitlab$outboundSchema).optional(),
+    bitbucket: z.lazy(() => GetTeamMembersBitbucket$outboundSchema).optional(),
+    role: GetTeamMembersRole$outboundSchema,
+    uid: z.string(),
+    username: z.string(),
+    name: z.string().optional(),
+    createdAt: z.number(),
+    accessRequestedAt: z.number().optional(),
+    joinedFrom: z.lazy(() => GetTeamMembersJoinedFrom$outboundSchema).optional(),
+    projects: z.array(z.lazy(() => GetTeamMembersProjects$outboundSchema)).optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace Members$ {
-    export const inboundSchema: z.ZodType<Members, z.ZodTypeDef, unknown> = z
-        .object({
-            avatar: z.string().optional(),
-            confirmed: z.boolean(),
-            email: z.string(),
-            github: z.lazy(() => GetTeamMembersGithub$.inboundSchema).optional(),
-            gitlab: z.lazy(() => GetTeamMembersGitlab$.inboundSchema).optional(),
-            bitbucket: z.lazy(() => GetTeamMembersBitbucket$.inboundSchema).optional(),
-            role: GetTeamMembersRole$.inboundSchema,
-            uid: z.string(),
-            username: z.string(),
-            name: z.string().optional(),
-            createdAt: z.number(),
-            accessRequestedAt: z.number().optional(),
-            joinedFrom: z.lazy(() => GetTeamMembersJoinedFrom$.inboundSchema).optional(),
-            projects: z.array(z.lazy(() => GetTeamMembersProjects$.inboundSchema)).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.avatar === undefined ? null : { avatar: v.avatar }),
-                confirmed: v.confirmed,
-                email: v.email,
-                ...(v.github === undefined ? null : { github: v.github }),
-                ...(v.gitlab === undefined ? null : { gitlab: v.gitlab }),
-                ...(v.bitbucket === undefined ? null : { bitbucket: v.bitbucket }),
-                role: v.role,
-                uid: v.uid,
-                username: v.username,
-                ...(v.name === undefined ? null : { name: v.name }),
-                createdAt: v.createdAt,
-                ...(v.accessRequestedAt === undefined
-                    ? null
-                    : { accessRequestedAt: v.accessRequestedAt }),
-                ...(v.joinedFrom === undefined ? null : { joinedFrom: v.joinedFrom }),
-                ...(v.projects === undefined ? null : { projects: v.projects }),
-            };
-        });
-
-    export type Outbound = {
-        avatar?: string | undefined;
-        confirmed: boolean;
-        email: string;
-        github?: GetTeamMembersGithub$.Outbound | undefined;
-        gitlab?: GetTeamMembersGitlab$.Outbound | undefined;
-        bitbucket?: GetTeamMembersBitbucket$.Outbound | undefined;
-        role: string;
-        uid: string;
-        username: string;
-        name?: string | undefined;
-        createdAt: number;
-        accessRequestedAt?: number | undefined;
-        joinedFrom?: GetTeamMembersJoinedFrom$.Outbound | undefined;
-        projects?: Array<GetTeamMembersProjects$.Outbound> | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, Members> = z
-        .object({
-            avatar: z.string().optional(),
-            confirmed: z.boolean(),
-            email: z.string(),
-            github: z.lazy(() => GetTeamMembersGithub$.outboundSchema).optional(),
-            gitlab: z.lazy(() => GetTeamMembersGitlab$.outboundSchema).optional(),
-            bitbucket: z.lazy(() => GetTeamMembersBitbucket$.outboundSchema).optional(),
-            role: GetTeamMembersRole$.outboundSchema,
-            uid: z.string(),
-            username: z.string(),
-            name: z.string().optional(),
-            createdAt: z.number(),
-            accessRequestedAt: z.number().optional(),
-            joinedFrom: z.lazy(() => GetTeamMembersJoinedFrom$.outboundSchema).optional(),
-            projects: z.array(z.lazy(() => GetTeamMembersProjects$.outboundSchema)).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.avatar === undefined ? null : { avatar: v.avatar }),
-                confirmed: v.confirmed,
-                email: v.email,
-                ...(v.github === undefined ? null : { github: v.github }),
-                ...(v.gitlab === undefined ? null : { gitlab: v.gitlab }),
-                ...(v.bitbucket === undefined ? null : { bitbucket: v.bitbucket }),
-                role: v.role,
-                uid: v.uid,
-                username: v.username,
-                ...(v.name === undefined ? null : { name: v.name }),
-                createdAt: v.createdAt,
-                ...(v.accessRequestedAt === undefined
-                    ? null
-                    : { accessRequestedAt: v.accessRequestedAt }),
-                ...(v.joinedFrom === undefined ? null : { joinedFrom: v.joinedFrom }),
-                ...(v.projects === undefined ? null : { projects: v.projects }),
-            };
-        });
+    /** @deprecated use `Members$inboundSchema` instead. */
+    export const inboundSchema = Members$inboundSchema;
+    /** @deprecated use `Members$outboundSchema` instead. */
+    export const outboundSchema = Members$outboundSchema;
+    /** @deprecated use `Members$Outbound` instead. */
+    export type Outbound = Members$Outbound;
 }
 
 /** @internal */
+export const GetTeamMembersEmailInviteCodesRole$inboundSchema: z.ZodNativeEnum<
+    typeof GetTeamMembersEmailInviteCodesRole
+> = z.nativeEnum(GetTeamMembersEmailInviteCodesRole);
+
+/** @internal */
+export const GetTeamMembersEmailInviteCodesRole$outboundSchema: z.ZodNativeEnum<
+    typeof GetTeamMembersEmailInviteCodesRole
+> = GetTeamMembersEmailInviteCodesRole$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetTeamMembersEmailInviteCodesRole$ {
-    export const inboundSchema = z.nativeEnum(GetTeamMembersEmailInviteCodesRole);
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `GetTeamMembersEmailInviteCodesRole$inboundSchema` instead. */
+    export const inboundSchema = GetTeamMembersEmailInviteCodesRole$inboundSchema;
+    /** @deprecated use `GetTeamMembersEmailInviteCodesRole$outboundSchema` instead. */
+    export const outboundSchema = GetTeamMembersEmailInviteCodesRole$outboundSchema;
 }
 
 /** @internal */
+export const GetTeamMembersEmailInviteCodesProjects$inboundSchema: z.ZodNativeEnum<
+    typeof GetTeamMembersEmailInviteCodesProjects
+> = z.nativeEnum(GetTeamMembersEmailInviteCodesProjects);
+
+/** @internal */
+export const GetTeamMembersEmailInviteCodesProjects$outboundSchema: z.ZodNativeEnum<
+    typeof GetTeamMembersEmailInviteCodesProjects
+> = GetTeamMembersEmailInviteCodesProjects$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetTeamMembersEmailInviteCodesProjects$ {
-    export const inboundSchema = z.nativeEnum(GetTeamMembersEmailInviteCodesProjects);
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `GetTeamMembersEmailInviteCodesProjects$inboundSchema` instead. */
+    export const inboundSchema = GetTeamMembersEmailInviteCodesProjects$inboundSchema;
+    /** @deprecated use `GetTeamMembersEmailInviteCodesProjects$outboundSchema` instead. */
+    export const outboundSchema = GetTeamMembersEmailInviteCodesProjects$outboundSchema;
 }
 
 /** @internal */
+export const EmailInviteCodes2$inboundSchema: z.ZodType<EmailInviteCodes2, z.ZodTypeDef, unknown> =
+    z.object({
+        accessGroups: z.array(z.string()).optional(),
+        id: z.string(),
+        email: z.string().optional(),
+        role: GetTeamMembersEmailInviteCodesRole$inboundSchema.optional(),
+        isDSyncUser: z.boolean(),
+        createdAt: z.number().optional(),
+        expired: z.boolean().optional(),
+        projects: z.record(GetTeamMembersEmailInviteCodesProjects$inboundSchema).optional(),
+    });
+
+/** @internal */
+export type EmailInviteCodes2$Outbound = {
+    accessGroups?: Array<string> | undefined;
+    id: string;
+    email?: string | undefined;
+    role?: string | undefined;
+    isDSyncUser: boolean;
+    createdAt?: number | undefined;
+    expired?: boolean | undefined;
+    projects?: { [k: string]: string } | undefined;
+};
+
+/** @internal */
+export const EmailInviteCodes2$outboundSchema: z.ZodType<
+    EmailInviteCodes2$Outbound,
+    z.ZodTypeDef,
+    EmailInviteCodes2
+> = z.object({
+    accessGroups: z.array(z.string()).optional(),
+    id: z.string(),
+    email: z.string().optional(),
+    role: GetTeamMembersEmailInviteCodesRole$outboundSchema.optional(),
+    isDSyncUser: z.boolean(),
+    createdAt: z.number().optional(),
+    expired: z.boolean().optional(),
+    projects: z.record(GetTeamMembersEmailInviteCodesProjects$outboundSchema).optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace EmailInviteCodes2$ {
-    export const inboundSchema: z.ZodType<EmailInviteCodes2, z.ZodTypeDef, unknown> = z
-        .object({
-            accessGroups: z.array(z.string()).optional(),
-            id: z.string(),
-            email: z.string().optional(),
-            role: GetTeamMembersEmailInviteCodesRole$.inboundSchema.optional(),
-            isDSyncUser: z.boolean(),
-            createdAt: z.number().optional(),
-            expired: z.boolean().optional(),
-            projects: z.record(GetTeamMembersEmailInviteCodesProjects$.inboundSchema).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.accessGroups === undefined ? null : { accessGroups: v.accessGroups }),
-                id: v.id,
-                ...(v.email === undefined ? null : { email: v.email }),
-                ...(v.role === undefined ? null : { role: v.role }),
-                isDSyncUser: v.isDSyncUser,
-                ...(v.createdAt === undefined ? null : { createdAt: v.createdAt }),
-                ...(v.expired === undefined ? null : { expired: v.expired }),
-                ...(v.projects === undefined ? null : { projects: v.projects }),
-            };
-        });
-
-    export type Outbound = {
-        accessGroups?: Array<string> | undefined;
-        id: string;
-        email?: string | undefined;
-        role?: string | undefined;
-        isDSyncUser: boolean;
-        createdAt?: number | undefined;
-        expired?: boolean | undefined;
-        projects?: Record<string, string> | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, EmailInviteCodes2> = z
-        .object({
-            accessGroups: z.array(z.string()).optional(),
-            id: z.string(),
-            email: z.string().optional(),
-            role: GetTeamMembersEmailInviteCodesRole$.outboundSchema.optional(),
-            isDSyncUser: z.boolean(),
-            createdAt: z.number().optional(),
-            expired: z.boolean().optional(),
-            projects: z.record(GetTeamMembersEmailInviteCodesProjects$.outboundSchema).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.accessGroups === undefined ? null : { accessGroups: v.accessGroups }),
-                id: v.id,
-                ...(v.email === undefined ? null : { email: v.email }),
-                ...(v.role === undefined ? null : { role: v.role }),
-                isDSyncUser: v.isDSyncUser,
-                ...(v.createdAt === undefined ? null : { createdAt: v.createdAt }),
-                ...(v.expired === undefined ? null : { expired: v.expired }),
-                ...(v.projects === undefined ? null : { projects: v.projects }),
-            };
-        });
+    /** @deprecated use `EmailInviteCodes2$inboundSchema` instead. */
+    export const inboundSchema = EmailInviteCodes2$inboundSchema;
+    /** @deprecated use `EmailInviteCodes2$outboundSchema` instead. */
+    export const outboundSchema = EmailInviteCodes2$outboundSchema;
+    /** @deprecated use `EmailInviteCodes2$Outbound` instead. */
+    export type Outbound = EmailInviteCodes2$Outbound;
 }
 
 /** @internal */
+export const EmailInviteCodesRole$inboundSchema: z.ZodNativeEnum<typeof EmailInviteCodesRole> =
+    z.nativeEnum(EmailInviteCodesRole);
+
+/** @internal */
+export const EmailInviteCodesRole$outboundSchema: z.ZodNativeEnum<typeof EmailInviteCodesRole> =
+    EmailInviteCodesRole$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace EmailInviteCodesRole$ {
-    export const inboundSchema = z.nativeEnum(EmailInviteCodesRole);
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `EmailInviteCodesRole$inboundSchema` instead. */
+    export const inboundSchema = EmailInviteCodesRole$inboundSchema;
+    /** @deprecated use `EmailInviteCodesRole$outboundSchema` instead. */
+    export const outboundSchema = EmailInviteCodesRole$outboundSchema;
 }
 
 /** @internal */
+export const EmailInviteCodesProjects$inboundSchema: z.ZodNativeEnum<
+    typeof EmailInviteCodesProjects
+> = z.nativeEnum(EmailInviteCodesProjects);
+
+/** @internal */
+export const EmailInviteCodesProjects$outboundSchema: z.ZodNativeEnum<
+    typeof EmailInviteCodesProjects
+> = EmailInviteCodesProjects$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace EmailInviteCodesProjects$ {
-    export const inboundSchema = z.nativeEnum(EmailInviteCodesProjects);
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `EmailInviteCodesProjects$inboundSchema` instead. */
+    export const inboundSchema = EmailInviteCodesProjects$inboundSchema;
+    /** @deprecated use `EmailInviteCodesProjects$outboundSchema` instead. */
+    export const outboundSchema = EmailInviteCodesProjects$outboundSchema;
 }
 
 /** @internal */
+export const EmailInviteCodes1$inboundSchema: z.ZodType<EmailInviteCodes1, z.ZodTypeDef, unknown> =
+    z.object({
+        id: z.string(),
+        email: z.string().optional(),
+        role: EmailInviteCodesRole$inboundSchema.optional(),
+        isDSyncUser: z.boolean(),
+        createdAt: z.number().optional(),
+        expired: z.boolean().optional(),
+        projects: z.record(EmailInviteCodesProjects$inboundSchema).optional(),
+    });
+
+/** @internal */
+export type EmailInviteCodes1$Outbound = {
+    id: string;
+    email?: string | undefined;
+    role?: string | undefined;
+    isDSyncUser: boolean;
+    createdAt?: number | undefined;
+    expired?: boolean | undefined;
+    projects?: { [k: string]: string } | undefined;
+};
+
+/** @internal */
+export const EmailInviteCodes1$outboundSchema: z.ZodType<
+    EmailInviteCodes1$Outbound,
+    z.ZodTypeDef,
+    EmailInviteCodes1
+> = z.object({
+    id: z.string(),
+    email: z.string().optional(),
+    role: EmailInviteCodesRole$outboundSchema.optional(),
+    isDSyncUser: z.boolean(),
+    createdAt: z.number().optional(),
+    expired: z.boolean().optional(),
+    projects: z.record(EmailInviteCodesProjects$outboundSchema).optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace EmailInviteCodes1$ {
-    export const inboundSchema: z.ZodType<EmailInviteCodes1, z.ZodTypeDef, unknown> = z
-        .object({
-            id: z.string(),
-            email: z.string().optional(),
-            role: EmailInviteCodesRole$.inboundSchema.optional(),
-            isDSyncUser: z.boolean(),
-            createdAt: z.number().optional(),
-            expired: z.boolean().optional(),
-            projects: z.record(EmailInviteCodesProjects$.inboundSchema).optional(),
-        })
-        .transform((v) => {
-            return {
-                id: v.id,
-                ...(v.email === undefined ? null : { email: v.email }),
-                ...(v.role === undefined ? null : { role: v.role }),
-                isDSyncUser: v.isDSyncUser,
-                ...(v.createdAt === undefined ? null : { createdAt: v.createdAt }),
-                ...(v.expired === undefined ? null : { expired: v.expired }),
-                ...(v.projects === undefined ? null : { projects: v.projects }),
-            };
-        });
-
-    export type Outbound = {
-        id: string;
-        email?: string | undefined;
-        role?: string | undefined;
-        isDSyncUser: boolean;
-        createdAt?: number | undefined;
-        expired?: boolean | undefined;
-        projects?: Record<string, string> | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, EmailInviteCodes1> = z
-        .object({
-            id: z.string(),
-            email: z.string().optional(),
-            role: EmailInviteCodesRole$.outboundSchema.optional(),
-            isDSyncUser: z.boolean(),
-            createdAt: z.number().optional(),
-            expired: z.boolean().optional(),
-            projects: z.record(EmailInviteCodesProjects$.outboundSchema).optional(),
-        })
-        .transform((v) => {
-            return {
-                id: v.id,
-                ...(v.email === undefined ? null : { email: v.email }),
-                ...(v.role === undefined ? null : { role: v.role }),
-                isDSyncUser: v.isDSyncUser,
-                ...(v.createdAt === undefined ? null : { createdAt: v.createdAt }),
-                ...(v.expired === undefined ? null : { expired: v.expired }),
-                ...(v.projects === undefined ? null : { projects: v.projects }),
-            };
-        });
+    /** @deprecated use `EmailInviteCodes1$inboundSchema` instead. */
+    export const inboundSchema = EmailInviteCodes1$inboundSchema;
+    /** @deprecated use `EmailInviteCodes1$outboundSchema` instead. */
+    export const outboundSchema = EmailInviteCodes1$outboundSchema;
+    /** @deprecated use `EmailInviteCodes1$Outbound` instead. */
+    export type Outbound = EmailInviteCodes1$Outbound;
 }
 
 /** @internal */
+export const EmailInviteCodes$inboundSchema: z.ZodType<EmailInviteCodes, z.ZodTypeDef, unknown> =
+    z.union([
+        z.lazy(() => EmailInviteCodes1$inboundSchema),
+        z.lazy(() => EmailInviteCodes2$inboundSchema),
+    ]);
+
+/** @internal */
+export type EmailInviteCodes$Outbound = EmailInviteCodes1$Outbound | EmailInviteCodes2$Outbound;
+
+/** @internal */
+export const EmailInviteCodes$outboundSchema: z.ZodType<
+    EmailInviteCodes$Outbound,
+    z.ZodTypeDef,
+    EmailInviteCodes
+> = z.union([
+    z.lazy(() => EmailInviteCodes1$outboundSchema),
+    z.lazy(() => EmailInviteCodes2$outboundSchema),
+]);
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace EmailInviteCodes$ {
-    export const inboundSchema: z.ZodType<EmailInviteCodes, z.ZodTypeDef, unknown> = z.union([
-        z.lazy(() => EmailInviteCodes1$.inboundSchema),
-        z.lazy(() => EmailInviteCodes2$.inboundSchema),
-    ]);
-
-    export type Outbound = EmailInviteCodes1$.Outbound | EmailInviteCodes2$.Outbound;
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, EmailInviteCodes> = z.union([
-        z.lazy(() => EmailInviteCodes1$.outboundSchema),
-        z.lazy(() => EmailInviteCodes2$.outboundSchema),
-    ]);
+    /** @deprecated use `EmailInviteCodes$inboundSchema` instead. */
+    export const inboundSchema = EmailInviteCodes$inboundSchema;
+    /** @deprecated use `EmailInviteCodes$outboundSchema` instead. */
+    export const outboundSchema = EmailInviteCodes$outboundSchema;
+    /** @deprecated use `EmailInviteCodes$Outbound` instead. */
+    export type Outbound = EmailInviteCodes$Outbound;
 }
 
 /** @internal */
+export const GetTeamMembersPagination$inboundSchema: z.ZodType<
+    GetTeamMembersPagination,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    hasNext: z.boolean(),
+    count: z.number(),
+    next: z.nullable(z.number()),
+    prev: z.nullable(z.number()),
+});
+
+/** @internal */
+export type GetTeamMembersPagination$Outbound = {
+    hasNext: boolean;
+    count: number;
+    next: number | null;
+    prev: number | null;
+};
+
+/** @internal */
+export const GetTeamMembersPagination$outboundSchema: z.ZodType<
+    GetTeamMembersPagination$Outbound,
+    z.ZodTypeDef,
+    GetTeamMembersPagination
+> = z.object({
+    hasNext: z.boolean(),
+    count: z.number(),
+    next: z.nullable(z.number()),
+    prev: z.nullable(z.number()),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetTeamMembersPagination$ {
-    export const inboundSchema: z.ZodType<GetTeamMembersPagination, z.ZodTypeDef, unknown> = z
-        .object({
-            hasNext: z.boolean(),
-            count: z.number(),
-            next: z.nullable(z.number()),
-            prev: z.nullable(z.number()),
-        })
-        .transform((v) => {
-            return {
-                hasNext: v.hasNext,
-                count: v.count,
-                next: v.next,
-                prev: v.prev,
-            };
-        });
-
-    export type Outbound = {
-        hasNext: boolean;
-        count: number;
-        next: number | null;
-        prev: number | null;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetTeamMembersPagination> = z
-        .object({
-            hasNext: z.boolean(),
-            count: z.number(),
-            next: z.nullable(z.number()),
-            prev: z.nullable(z.number()),
-        })
-        .transform((v) => {
-            return {
-                hasNext: v.hasNext,
-                count: v.count,
-                next: v.next,
-                prev: v.prev,
-            };
-        });
+    /** @deprecated use `GetTeamMembersPagination$inboundSchema` instead. */
+    export const inboundSchema = GetTeamMembersPagination$inboundSchema;
+    /** @deprecated use `GetTeamMembersPagination$outboundSchema` instead. */
+    export const outboundSchema = GetTeamMembersPagination$outboundSchema;
+    /** @deprecated use `GetTeamMembersPagination$Outbound` instead. */
+    export type Outbound = GetTeamMembersPagination$Outbound;
 }
 
 /** @internal */
+export const GetTeamMembersResponseBody$inboundSchema: z.ZodType<
+    GetTeamMembersResponseBody,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    members: z.array(z.lazy(() => Members$inboundSchema)),
+    emailInviteCodes: z
+        .array(
+            z.union([
+                z.lazy(() => EmailInviteCodes1$inboundSchema),
+                z.lazy(() => EmailInviteCodes2$inboundSchema),
+            ])
+        )
+        .optional(),
+    pagination: z.lazy(() => GetTeamMembersPagination$inboundSchema),
+});
+
+/** @internal */
+export type GetTeamMembersResponseBody$Outbound = {
+    members: Array<Members$Outbound>;
+    emailInviteCodes?: Array<EmailInviteCodes1$Outbound | EmailInviteCodes2$Outbound> | undefined;
+    pagination: GetTeamMembersPagination$Outbound;
+};
+
+/** @internal */
+export const GetTeamMembersResponseBody$outboundSchema: z.ZodType<
+    GetTeamMembersResponseBody$Outbound,
+    z.ZodTypeDef,
+    GetTeamMembersResponseBody
+> = z.object({
+    members: z.array(z.lazy(() => Members$outboundSchema)),
+    emailInviteCodes: z
+        .array(
+            z.union([
+                z.lazy(() => EmailInviteCodes1$outboundSchema),
+                z.lazy(() => EmailInviteCodes2$outboundSchema),
+            ])
+        )
+        .optional(),
+    pagination: z.lazy(() => GetTeamMembersPagination$outboundSchema),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetTeamMembersResponseBody$ {
-    export const inboundSchema: z.ZodType<GetTeamMembersResponseBody, z.ZodTypeDef, unknown> = z
-        .object({
-            members: z.array(z.lazy(() => Members$.inboundSchema)),
-            emailInviteCodes: z
-                .array(
-                    z.union([
-                        z.lazy(() => EmailInviteCodes1$.inboundSchema),
-                        z.lazy(() => EmailInviteCodes2$.inboundSchema),
-                    ])
-                )
-                .optional(),
-            pagination: z.lazy(() => GetTeamMembersPagination$.inboundSchema),
-        })
-        .transform((v) => {
-            return {
-                members: v.members,
-                ...(v.emailInviteCodes === undefined
-                    ? null
-                    : { emailInviteCodes: v.emailInviteCodes }),
-                pagination: v.pagination,
-            };
-        });
-
-    export type Outbound = {
-        members: Array<Members$.Outbound>;
-        emailInviteCodes?:
-            | Array<EmailInviteCodes1$.Outbound | EmailInviteCodes2$.Outbound>
-            | undefined;
-        pagination: GetTeamMembersPagination$.Outbound;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetTeamMembersResponseBody> = z
-        .object({
-            members: z.array(z.lazy(() => Members$.outboundSchema)),
-            emailInviteCodes: z
-                .array(
-                    z.union([
-                        z.lazy(() => EmailInviteCodes1$.outboundSchema),
-                        z.lazy(() => EmailInviteCodes2$.outboundSchema),
-                    ])
-                )
-                .optional(),
-            pagination: z.lazy(() => GetTeamMembersPagination$.outboundSchema),
-        })
-        .transform((v) => {
-            return {
-                members: v.members,
-                ...(v.emailInviteCodes === undefined
-                    ? null
-                    : { emailInviteCodes: v.emailInviteCodes }),
-                pagination: v.pagination,
-            };
-        });
+    /** @deprecated use `GetTeamMembersResponseBody$inboundSchema` instead. */
+    export const inboundSchema = GetTeamMembersResponseBody$inboundSchema;
+    /** @deprecated use `GetTeamMembersResponseBody$outboundSchema` instead. */
+    export const outboundSchema = GetTeamMembersResponseBody$outboundSchema;
+    /** @deprecated use `GetTeamMembersResponseBody$Outbound` instead. */
+    export type Outbound = GetTeamMembersResponseBody$Outbound;
 }

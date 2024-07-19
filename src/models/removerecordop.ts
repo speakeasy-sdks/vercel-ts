@@ -23,54 +23,76 @@ export type RemoveRecordRequest = {
 export type RemoveRecordResponseBody = {};
 
 /** @internal */
+export const RemoveRecordRequest$inboundSchema: z.ZodType<
+    RemoveRecordRequest,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    domain: z.string(),
+    recordId: z.string(),
+    teamId: z.string().optional(),
+    slug: z.string().optional(),
+});
+
+/** @internal */
+export type RemoveRecordRequest$Outbound = {
+    domain: string;
+    recordId: string;
+    teamId?: string | undefined;
+    slug?: string | undefined;
+};
+
+/** @internal */
+export const RemoveRecordRequest$outboundSchema: z.ZodType<
+    RemoveRecordRequest$Outbound,
+    z.ZodTypeDef,
+    RemoveRecordRequest
+> = z.object({
+    domain: z.string(),
+    recordId: z.string(),
+    teamId: z.string().optional(),
+    slug: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace RemoveRecordRequest$ {
-    export const inboundSchema: z.ZodType<RemoveRecordRequest, z.ZodTypeDef, unknown> = z
-        .object({
-            domain: z.string(),
-            recordId: z.string(),
-            teamId: z.string().optional(),
-            slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                domain: v.domain,
-                recordId: v.recordId,
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
-        });
-
-    export type Outbound = {
-        domain: string;
-        recordId: string;
-        teamId?: string | undefined;
-        slug?: string | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, RemoveRecordRequest> = z
-        .object({
-            domain: z.string(),
-            recordId: z.string(),
-            teamId: z.string().optional(),
-            slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                domain: v.domain,
-                recordId: v.recordId,
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
-        });
+    /** @deprecated use `RemoveRecordRequest$inboundSchema` instead. */
+    export const inboundSchema = RemoveRecordRequest$inboundSchema;
+    /** @deprecated use `RemoveRecordRequest$outboundSchema` instead. */
+    export const outboundSchema = RemoveRecordRequest$outboundSchema;
+    /** @deprecated use `RemoveRecordRequest$Outbound` instead. */
+    export type Outbound = RemoveRecordRequest$Outbound;
 }
 
 /** @internal */
+export const RemoveRecordResponseBody$inboundSchema: z.ZodType<
+    RemoveRecordResponseBody,
+    z.ZodTypeDef,
+    unknown
+> = z.object({});
+
+/** @internal */
+export type RemoveRecordResponseBody$Outbound = {};
+
+/** @internal */
+export const RemoveRecordResponseBody$outboundSchema: z.ZodType<
+    RemoveRecordResponseBody$Outbound,
+    z.ZodTypeDef,
+    RemoveRecordResponseBody
+> = z.object({});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace RemoveRecordResponseBody$ {
-    export const inboundSchema: z.ZodType<RemoveRecordResponseBody, z.ZodTypeDef, unknown> =
-        z.object({});
-
-    export type Outbound = {};
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, RemoveRecordResponseBody> =
-        z.object({});
+    /** @deprecated use `RemoveRecordResponseBody$inboundSchema` instead. */
+    export const inboundSchema = RemoveRecordResponseBody$inboundSchema;
+    /** @deprecated use `RemoveRecordResponseBody$outboundSchema` instead. */
+    export const outboundSchema = RemoveRecordResponseBody$outboundSchema;
+    /** @deprecated use `RemoveRecordResponseBody$Outbound` instead. */
+    export type Outbound = RemoveRecordResponseBody$Outbound;
 }

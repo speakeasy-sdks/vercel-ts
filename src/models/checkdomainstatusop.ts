@@ -27,66 +27,79 @@ export type CheckDomainStatusResponseBody = {
 };
 
 /** @internal */
+export const CheckDomainStatusRequest$inboundSchema: z.ZodType<
+    CheckDomainStatusRequest,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    name: z.string(),
+    teamId: z.string().optional(),
+    slug: z.string().optional(),
+});
+
+/** @internal */
+export type CheckDomainStatusRequest$Outbound = {
+    name: string;
+    teamId?: string | undefined;
+    slug?: string | undefined;
+};
+
+/** @internal */
+export const CheckDomainStatusRequest$outboundSchema: z.ZodType<
+    CheckDomainStatusRequest$Outbound,
+    z.ZodTypeDef,
+    CheckDomainStatusRequest
+> = z.object({
+    name: z.string(),
+    teamId: z.string().optional(),
+    slug: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CheckDomainStatusRequest$ {
-    export const inboundSchema: z.ZodType<CheckDomainStatusRequest, z.ZodTypeDef, unknown> = z
-        .object({
-            name: z.string(),
-            teamId: z.string().optional(),
-            slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                name: v.name,
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
-        });
-
-    export type Outbound = {
-        name: string;
-        teamId?: string | undefined;
-        slug?: string | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CheckDomainStatusRequest> = z
-        .object({
-            name: z.string(),
-            teamId: z.string().optional(),
-            slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                name: v.name,
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
-        });
+    /** @deprecated use `CheckDomainStatusRequest$inboundSchema` instead. */
+    export const inboundSchema = CheckDomainStatusRequest$inboundSchema;
+    /** @deprecated use `CheckDomainStatusRequest$outboundSchema` instead. */
+    export const outboundSchema = CheckDomainStatusRequest$outboundSchema;
+    /** @deprecated use `CheckDomainStatusRequest$Outbound` instead. */
+    export type Outbound = CheckDomainStatusRequest$Outbound;
 }
 
 /** @internal */
+export const CheckDomainStatusResponseBody$inboundSchema: z.ZodType<
+    CheckDomainStatusResponseBody,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    available: z.boolean(),
+});
+
+/** @internal */
+export type CheckDomainStatusResponseBody$Outbound = {
+    available: boolean;
+};
+
+/** @internal */
+export const CheckDomainStatusResponseBody$outboundSchema: z.ZodType<
+    CheckDomainStatusResponseBody$Outbound,
+    z.ZodTypeDef,
+    CheckDomainStatusResponseBody
+> = z.object({
+    available: z.boolean(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CheckDomainStatusResponseBody$ {
-    export const inboundSchema: z.ZodType<CheckDomainStatusResponseBody, z.ZodTypeDef, unknown> = z
-        .object({
-            available: z.boolean(),
-        })
-        .transform((v) => {
-            return {
-                available: v.available,
-            };
-        });
-
-    export type Outbound = {
-        available: boolean;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CheckDomainStatusResponseBody> =
-        z
-            .object({
-                available: z.boolean(),
-            })
-            .transform((v) => {
-                return {
-                    available: v.available,
-                };
-            });
+    /** @deprecated use `CheckDomainStatusResponseBody$inboundSchema` instead. */
+    export const inboundSchema = CheckDomainStatusResponseBody$inboundSchema;
+    /** @deprecated use `CheckDomainStatusResponseBody$outboundSchema` instead. */
+    export const outboundSchema = CheckDomainStatusResponseBody$outboundSchema;
+    /** @deprecated use `CheckDomainStatusResponseBody$Outbound` instead. */
+    export type Outbound = CheckDomainStatusResponseBody$Outbound;
 }

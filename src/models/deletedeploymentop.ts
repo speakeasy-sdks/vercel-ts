@@ -45,81 +45,102 @@ export type DeleteDeploymentResponseBody = {
 };
 
 /** @internal */
+export const DeleteDeploymentRequest$inboundSchema: z.ZodType<
+    DeleteDeploymentRequest,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    id: z.string(),
+    url: z.string().optional(),
+    teamId: z.string().optional(),
+    slug: z.string().optional(),
+});
+
+/** @internal */
+export type DeleteDeploymentRequest$Outbound = {
+    id: string;
+    url?: string | undefined;
+    teamId?: string | undefined;
+    slug?: string | undefined;
+};
+
+/** @internal */
+export const DeleteDeploymentRequest$outboundSchema: z.ZodType<
+    DeleteDeploymentRequest$Outbound,
+    z.ZodTypeDef,
+    DeleteDeploymentRequest
+> = z.object({
+    id: z.string(),
+    url: z.string().optional(),
+    teamId: z.string().optional(),
+    slug: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace DeleteDeploymentRequest$ {
-    export const inboundSchema: z.ZodType<DeleteDeploymentRequest, z.ZodTypeDef, unknown> = z
-        .object({
-            id: z.string(),
-            url: z.string().optional(),
-            teamId: z.string().optional(),
-            slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                id: v.id,
-                ...(v.url === undefined ? null : { url: v.url }),
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
-        });
-
-    export type Outbound = {
-        id: string;
-        url?: string | undefined;
-        teamId?: string | undefined;
-        slug?: string | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, DeleteDeploymentRequest> = z
-        .object({
-            id: z.string(),
-            url: z.string().optional(),
-            teamId: z.string().optional(),
-            slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                id: v.id,
-                ...(v.url === undefined ? null : { url: v.url }),
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
-        });
+    /** @deprecated use `DeleteDeploymentRequest$inboundSchema` instead. */
+    export const inboundSchema = DeleteDeploymentRequest$inboundSchema;
+    /** @deprecated use `DeleteDeploymentRequest$outboundSchema` instead. */
+    export const outboundSchema = DeleteDeploymentRequest$outboundSchema;
+    /** @deprecated use `DeleteDeploymentRequest$Outbound` instead. */
+    export type Outbound = DeleteDeploymentRequest$Outbound;
 }
 
 /** @internal */
+export const State$inboundSchema: z.ZodNativeEnum<typeof State> = z.nativeEnum(State);
+
+/** @internal */
+export const State$outboundSchema: z.ZodNativeEnum<typeof State> = State$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace State$ {
-    export const inboundSchema = z.nativeEnum(State);
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `State$inboundSchema` instead. */
+    export const inboundSchema = State$inboundSchema;
+    /** @deprecated use `State$outboundSchema` instead. */
+    export const outboundSchema = State$outboundSchema;
 }
 
 /** @internal */
+export const DeleteDeploymentResponseBody$inboundSchema: z.ZodType<
+    DeleteDeploymentResponseBody,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    uid: z.string(),
+    state: State$inboundSchema,
+});
+
+/** @internal */
+export type DeleteDeploymentResponseBody$Outbound = {
+    uid: string;
+    state: string;
+};
+
+/** @internal */
+export const DeleteDeploymentResponseBody$outboundSchema: z.ZodType<
+    DeleteDeploymentResponseBody$Outbound,
+    z.ZodTypeDef,
+    DeleteDeploymentResponseBody
+> = z.object({
+    uid: z.string(),
+    state: State$outboundSchema,
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace DeleteDeploymentResponseBody$ {
-    export const inboundSchema: z.ZodType<DeleteDeploymentResponseBody, z.ZodTypeDef, unknown> = z
-        .object({
-            uid: z.string(),
-            state: State$.inboundSchema,
-        })
-        .transform((v) => {
-            return {
-                uid: v.uid,
-                state: v.state,
-            };
-        });
-
-    export type Outbound = {
-        uid: string;
-        state: string;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, DeleteDeploymentResponseBody> = z
-        .object({
-            uid: z.string(),
-            state: State$.outboundSchema,
-        })
-        .transform((v) => {
-            return {
-                uid: v.uid,
-                state: v.state,
-            };
-        });
+    /** @deprecated use `DeleteDeploymentResponseBody$inboundSchema` instead. */
+    export const inboundSchema = DeleteDeploymentResponseBody$inboundSchema;
+    /** @deprecated use `DeleteDeploymentResponseBody$outboundSchema` instead. */
+    export const outboundSchema = DeleteDeploymentResponseBody$outboundSchema;
+    /** @deprecated use `DeleteDeploymentResponseBody$Outbound` instead. */
+    export type Outbound = DeleteDeploymentResponseBody$Outbound;
 }

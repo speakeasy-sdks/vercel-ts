@@ -13,76 +13,73 @@ export type UpdateBillingSettingsResponseBody = {
 };
 
 /** @internal */
+export const UpdateBillingSettingsRequestBody$inboundSchema: z.ZodType<
+    UpdateBillingSettingsRequestBody,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    excessBillingEnabled: z.boolean().optional(),
+});
+
+/** @internal */
+export type UpdateBillingSettingsRequestBody$Outbound = {
+    excessBillingEnabled?: boolean | undefined;
+};
+
+/** @internal */
+export const UpdateBillingSettingsRequestBody$outboundSchema: z.ZodType<
+    UpdateBillingSettingsRequestBody$Outbound,
+    z.ZodTypeDef,
+    UpdateBillingSettingsRequestBody
+> = z.object({
+    excessBillingEnabled: z.boolean().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace UpdateBillingSettingsRequestBody$ {
-    export const inboundSchema: z.ZodType<UpdateBillingSettingsRequestBody, z.ZodTypeDef, unknown> =
-        z
-            .object({
-                excessBillingEnabled: z.boolean().optional(),
-            })
-            .transform((v) => {
-                return {
-                    ...(v.excessBillingEnabled === undefined
-                        ? null
-                        : { excessBillingEnabled: v.excessBillingEnabled }),
-                };
-            });
-
-    export type Outbound = {
-        excessBillingEnabled?: boolean | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<
-        Outbound,
-        z.ZodTypeDef,
-        UpdateBillingSettingsRequestBody
-    > = z
-        .object({
-            excessBillingEnabled: z.boolean().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.excessBillingEnabled === undefined
-                    ? null
-                    : { excessBillingEnabled: v.excessBillingEnabled }),
-            };
-        });
+    /** @deprecated use `UpdateBillingSettingsRequestBody$inboundSchema` instead. */
+    export const inboundSchema = UpdateBillingSettingsRequestBody$inboundSchema;
+    /** @deprecated use `UpdateBillingSettingsRequestBody$outboundSchema` instead. */
+    export const outboundSchema = UpdateBillingSettingsRequestBody$outboundSchema;
+    /** @deprecated use `UpdateBillingSettingsRequestBody$Outbound` instead. */
+    export type Outbound = UpdateBillingSettingsRequestBody$Outbound;
 }
 
 /** @internal */
+export const UpdateBillingSettingsResponseBody$inboundSchema: z.ZodType<
+    UpdateBillingSettingsResponseBody,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    excessBillingEnabled: z.boolean().optional(),
+});
+
+/** @internal */
+export type UpdateBillingSettingsResponseBody$Outbound = {
+    excessBillingEnabled?: boolean | undefined;
+};
+
+/** @internal */
+export const UpdateBillingSettingsResponseBody$outboundSchema: z.ZodType<
+    UpdateBillingSettingsResponseBody$Outbound,
+    z.ZodTypeDef,
+    UpdateBillingSettingsResponseBody
+> = z.object({
+    excessBillingEnabled: z.boolean().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace UpdateBillingSettingsResponseBody$ {
-    export const inboundSchema: z.ZodType<
-        UpdateBillingSettingsResponseBody,
-        z.ZodTypeDef,
-        unknown
-    > = z
-        .object({
-            excessBillingEnabled: z.boolean().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.excessBillingEnabled === undefined
-                    ? null
-                    : { excessBillingEnabled: v.excessBillingEnabled }),
-            };
-        });
-
-    export type Outbound = {
-        excessBillingEnabled?: boolean | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<
-        Outbound,
-        z.ZodTypeDef,
-        UpdateBillingSettingsResponseBody
-    > = z
-        .object({
-            excessBillingEnabled: z.boolean().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.excessBillingEnabled === undefined
-                    ? null
-                    : { excessBillingEnabled: v.excessBillingEnabled }),
-            };
-        });
+    /** @deprecated use `UpdateBillingSettingsResponseBody$inboundSchema` instead. */
+    export const inboundSchema = UpdateBillingSettingsResponseBody$inboundSchema;
+    /** @deprecated use `UpdateBillingSettingsResponseBody$outboundSchema` instead. */
+    export const outboundSchema = UpdateBillingSettingsResponseBody$outboundSchema;
+    /** @deprecated use `UpdateBillingSettingsResponseBody$Outbound` instead. */
+    export type Outbound = UpdateBillingSettingsResponseBody$Outbound;
 }

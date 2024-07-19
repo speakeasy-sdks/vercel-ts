@@ -164,341 +164,339 @@ export type GetDeploymentBuildsResponseBody = {
 };
 
 /** @internal */
+export const GetDeploymentBuildsRequest$inboundSchema: z.ZodType<
+    GetDeploymentBuildsRequest,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    deploymentId: z.string(),
+});
+
+/** @internal */
+export type GetDeploymentBuildsRequest$Outbound = {
+    deploymentId: string;
+};
+
+/** @internal */
+export const GetDeploymentBuildsRequest$outboundSchema: z.ZodType<
+    GetDeploymentBuildsRequest$Outbound,
+    z.ZodTypeDef,
+    GetDeploymentBuildsRequest
+> = z.object({
+    deploymentId: z.string(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetDeploymentBuildsRequest$ {
-    export const inboundSchema: z.ZodType<GetDeploymentBuildsRequest, z.ZodTypeDef, unknown> = z
-        .object({
-            deploymentId: z.string(),
-        })
-        .transform((v) => {
-            return {
-                deploymentId: v.deploymentId,
-            };
-        });
-
-    export type Outbound = {
-        deploymentId: string;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetDeploymentBuildsRequest> = z
-        .object({
-            deploymentId: z.string(),
-        })
-        .transform((v) => {
-            return {
-                deploymentId: v.deploymentId,
-            };
-        });
+    /** @deprecated use `GetDeploymentBuildsRequest$inboundSchema` instead. */
+    export const inboundSchema = GetDeploymentBuildsRequest$inboundSchema;
+    /** @deprecated use `GetDeploymentBuildsRequest$outboundSchema` instead. */
+    export const outboundSchema = GetDeploymentBuildsRequest$outboundSchema;
+    /** @deprecated use `GetDeploymentBuildsRequest$Outbound` instead. */
+    export type Outbound = GetDeploymentBuildsRequest$Outbound;
 }
 
 /** @internal */
+export const ReadyState$inboundSchema: z.ZodNativeEnum<typeof ReadyState> =
+    z.nativeEnum(ReadyState);
+
+/** @internal */
+export const ReadyState$outboundSchema: z.ZodNativeEnum<typeof ReadyState> =
+    ReadyState$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace ReadyState$ {
-    export const inboundSchema = z.nativeEnum(ReadyState);
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `ReadyState$inboundSchema` instead. */
+    export const inboundSchema = ReadyState$inboundSchema;
+    /** @deprecated use `ReadyState$outboundSchema` instead. */
+    export const outboundSchema = ReadyState$outboundSchema;
 }
 
 /** @internal */
+export const Config$inboundSchema: z.ZodType<Config, z.ZodTypeDef, unknown> = z.object({
+    distDir: z.string().optional(),
+    forceBuildIn: z.string().optional(),
+    reuseWorkPathFrom: z.string().optional(),
+    zeroConfig: z.boolean().optional(),
+});
+
+/** @internal */
+export type Config$Outbound = {
+    distDir?: string | undefined;
+    forceBuildIn?: string | undefined;
+    reuseWorkPathFrom?: string | undefined;
+    zeroConfig?: boolean | undefined;
+};
+
+/** @internal */
+export const Config$outboundSchema: z.ZodType<Config$Outbound, z.ZodTypeDef, Config> = z.object({
+    distDir: z.string().optional(),
+    forceBuildIn: z.string().optional(),
+    reuseWorkPathFrom: z.string().optional(),
+    zeroConfig: z.boolean().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace Config$ {
-    export const inboundSchema: z.ZodType<Config, z.ZodTypeDef, unknown> = z
-        .object({
-            distDir: z.string().optional(),
-            forceBuildIn: z.string().optional(),
-            reuseWorkPathFrom: z.string().optional(),
-            zeroConfig: z.boolean().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.distDir === undefined ? null : { distDir: v.distDir }),
-                ...(v.forceBuildIn === undefined ? null : { forceBuildIn: v.forceBuildIn }),
-                ...(v.reuseWorkPathFrom === undefined
-                    ? null
-                    : { reuseWorkPathFrom: v.reuseWorkPathFrom }),
-                ...(v.zeroConfig === undefined ? null : { zeroConfig: v.zeroConfig }),
-            };
-        });
-
-    export type Outbound = {
-        distDir?: string | undefined;
-        forceBuildIn?: string | undefined;
-        reuseWorkPathFrom?: string | undefined;
-        zeroConfig?: boolean | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, Config> = z
-        .object({
-            distDir: z.string().optional(),
-            forceBuildIn: z.string().optional(),
-            reuseWorkPathFrom: z.string().optional(),
-            zeroConfig: z.boolean().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.distDir === undefined ? null : { distDir: v.distDir }),
-                ...(v.forceBuildIn === undefined ? null : { forceBuildIn: v.forceBuildIn }),
-                ...(v.reuseWorkPathFrom === undefined
-                    ? null
-                    : { reuseWorkPathFrom: v.reuseWorkPathFrom }),
-                ...(v.zeroConfig === undefined ? null : { zeroConfig: v.zeroConfig }),
-            };
-        });
+    /** @deprecated use `Config$inboundSchema` instead. */
+    export const inboundSchema = Config$inboundSchema;
+    /** @deprecated use `Config$outboundSchema` instead. */
+    export const outboundSchema = Config$outboundSchema;
+    /** @deprecated use `Config$Outbound` instead. */
+    export type Outbound = Config$Outbound;
 }
 
 /** @internal */
+export const GetDeploymentBuildsType$inboundSchema: z.ZodNativeEnum<
+    typeof GetDeploymentBuildsType
+> = z.nativeEnum(GetDeploymentBuildsType);
+
+/** @internal */
+export const GetDeploymentBuildsType$outboundSchema: z.ZodNativeEnum<
+    typeof GetDeploymentBuildsType
+> = GetDeploymentBuildsType$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetDeploymentBuildsType$ {
-    export const inboundSchema = z.nativeEnum(GetDeploymentBuildsType);
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `GetDeploymentBuildsType$inboundSchema` instead. */
+    export const inboundSchema = GetDeploymentBuildsType$inboundSchema;
+    /** @deprecated use `GetDeploymentBuildsType$outboundSchema` instead. */
+    export const outboundSchema = GetDeploymentBuildsType$outboundSchema;
 }
 
 /** @internal */
+export const Lambda$inboundSchema: z.ZodType<Lambda, z.ZodTypeDef, unknown> = z.object({
+    functionName: z.string(),
+    deployedTo: z.array(z.string()),
+    memorySize: z.number().optional(),
+    timeout: z.number().optional(),
+    layers: z.array(z.string()).optional(),
+});
+
+/** @internal */
+export type Lambda$Outbound = {
+    functionName: string;
+    deployedTo: Array<string>;
+    memorySize?: number | undefined;
+    timeout?: number | undefined;
+    layers?: Array<string> | undefined;
+};
+
+/** @internal */
+export const Lambda$outboundSchema: z.ZodType<Lambda$Outbound, z.ZodTypeDef, Lambda> = z.object({
+    functionName: z.string(),
+    deployedTo: z.array(z.string()),
+    memorySize: z.number().optional(),
+    timeout: z.number().optional(),
+    layers: z.array(z.string()).optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace Lambda$ {
-    export const inboundSchema: z.ZodType<Lambda, z.ZodTypeDef, unknown> = z
-        .object({
-            functionName: z.string(),
-            deployedTo: z.array(z.string()),
-            memorySize: z.number().optional(),
-            timeout: z.number().optional(),
-            layers: z.array(z.string()).optional(),
-        })
-        .transform((v) => {
-            return {
-                functionName: v.functionName,
-                deployedTo: v.deployedTo,
-                ...(v.memorySize === undefined ? null : { memorySize: v.memorySize }),
-                ...(v.timeout === undefined ? null : { timeout: v.timeout }),
-                ...(v.layers === undefined ? null : { layers: v.layers }),
-            };
-        });
-
-    export type Outbound = {
-        functionName: string;
-        deployedTo: Array<string>;
-        memorySize?: number | undefined;
-        timeout?: number | undefined;
-        layers?: Array<string> | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, Lambda> = z
-        .object({
-            functionName: z.string(),
-            deployedTo: z.array(z.string()),
-            memorySize: z.number().optional(),
-            timeout: z.number().optional(),
-            layers: z.array(z.string()).optional(),
-        })
-        .transform((v) => {
-            return {
-                functionName: v.functionName,
-                deployedTo: v.deployedTo,
-                ...(v.memorySize === undefined ? null : { memorySize: v.memorySize }),
-                ...(v.timeout === undefined ? null : { timeout: v.timeout }),
-                ...(v.layers === undefined ? null : { layers: v.layers }),
-            };
-        });
+    /** @deprecated use `Lambda$inboundSchema` instead. */
+    export const inboundSchema = Lambda$inboundSchema;
+    /** @deprecated use `Lambda$outboundSchema` instead. */
+    export const outboundSchema = Lambda$outboundSchema;
+    /** @deprecated use `Lambda$Outbound` instead. */
+    export type Outbound = Lambda$Outbound;
 }
 
 /** @internal */
+export const Edge$inboundSchema: z.ZodType<Edge, z.ZodTypeDef, unknown> = z.object({
+    regions: z.nullable(z.array(z.string())),
+});
+
+/** @internal */
+export type Edge$Outbound = {
+    regions: Array<string> | null;
+};
+
+/** @internal */
+export const Edge$outboundSchema: z.ZodType<Edge$Outbound, z.ZodTypeDef, Edge> = z.object({
+    regions: z.nullable(z.array(z.string())),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace Edge$ {
-    export const inboundSchema: z.ZodType<Edge, z.ZodTypeDef, unknown> = z
-        .object({
-            regions: z.nullable(z.array(z.string())),
-        })
-        .transform((v) => {
-            return {
-                regions: v.regions,
-            };
-        });
-
-    export type Outbound = {
-        regions: Array<string> | null;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, Edge> = z
-        .object({
-            regions: z.nullable(z.array(z.string())),
-        })
-        .transform((v) => {
-            return {
-                regions: v.regions,
-            };
-        });
+    /** @deprecated use `Edge$inboundSchema` instead. */
+    export const inboundSchema = Edge$inboundSchema;
+    /** @deprecated use `Edge$outboundSchema` instead. */
+    export const outboundSchema = Edge$outboundSchema;
+    /** @deprecated use `Edge$Outbound` instead. */
+    export type Outbound = Edge$Outbound;
 }
 
 /** @internal */
+export const GetDeploymentBuildsOutput$inboundSchema: z.ZodType<
+    GetDeploymentBuildsOutput,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    type: GetDeploymentBuildsType$inboundSchema.optional(),
+    path: z.string(),
+    digest: z.string(),
+    mode: z.number(),
+    size: z.number().optional(),
+    lambda: z.nullable(z.lazy(() => Lambda$inboundSchema)).optional(),
+    edge: z.nullable(z.lazy(() => Edge$inboundSchema)).optional(),
+});
+
+/** @internal */
+export type GetDeploymentBuildsOutput$Outbound = {
+    type?: string | undefined;
+    path: string;
+    digest: string;
+    mode: number;
+    size?: number | undefined;
+    lambda?: Lambda$Outbound | null | undefined;
+    edge?: Edge$Outbound | null | undefined;
+};
+
+/** @internal */
+export const GetDeploymentBuildsOutput$outboundSchema: z.ZodType<
+    GetDeploymentBuildsOutput$Outbound,
+    z.ZodTypeDef,
+    GetDeploymentBuildsOutput
+> = z.object({
+    type: GetDeploymentBuildsType$outboundSchema.optional(),
+    path: z.string(),
+    digest: z.string(),
+    mode: z.number(),
+    size: z.number().optional(),
+    lambda: z.nullable(z.lazy(() => Lambda$outboundSchema)).optional(),
+    edge: z.nullable(z.lazy(() => Edge$outboundSchema)).optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetDeploymentBuildsOutput$ {
-    export const inboundSchema: z.ZodType<GetDeploymentBuildsOutput, z.ZodTypeDef, unknown> = z
-        .object({
-            type: GetDeploymentBuildsType$.inboundSchema.optional(),
-            path: z.string(),
-            digest: z.string(),
-            mode: z.number(),
-            size: z.number().optional(),
-            lambda: z.nullable(z.lazy(() => Lambda$.inboundSchema)).optional(),
-            edge: z.nullable(z.lazy(() => Edge$.inboundSchema)).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.type === undefined ? null : { type: v.type }),
-                path: v.path,
-                digest: v.digest,
-                mode: v.mode,
-                ...(v.size === undefined ? null : { size: v.size }),
-                ...(v.lambda === undefined ? null : { lambda: v.lambda }),
-                ...(v.edge === undefined ? null : { edge: v.edge }),
-            };
-        });
-
-    export type Outbound = {
-        type?: string | undefined;
-        path: string;
-        digest: string;
-        mode: number;
-        size?: number | undefined;
-        lambda?: Lambda$.Outbound | null | undefined;
-        edge?: Edge$.Outbound | null | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetDeploymentBuildsOutput> = z
-        .object({
-            type: GetDeploymentBuildsType$.outboundSchema.optional(),
-            path: z.string(),
-            digest: z.string(),
-            mode: z.number(),
-            size: z.number().optional(),
-            lambda: z.nullable(z.lazy(() => Lambda$.outboundSchema)).optional(),
-            edge: z.nullable(z.lazy(() => Edge$.outboundSchema)).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.type === undefined ? null : { type: v.type }),
-                path: v.path,
-                digest: v.digest,
-                mode: v.mode,
-                ...(v.size === undefined ? null : { size: v.size }),
-                ...(v.lambda === undefined ? null : { lambda: v.lambda }),
-                ...(v.edge === undefined ? null : { edge: v.edge }),
-            };
-        });
+    /** @deprecated use `GetDeploymentBuildsOutput$inboundSchema` instead. */
+    export const inboundSchema = GetDeploymentBuildsOutput$inboundSchema;
+    /** @deprecated use `GetDeploymentBuildsOutput$outboundSchema` instead. */
+    export const outboundSchema = GetDeploymentBuildsOutput$outboundSchema;
+    /** @deprecated use `GetDeploymentBuildsOutput$Outbound` instead. */
+    export type Outbound = GetDeploymentBuildsOutput$Outbound;
 }
 
 /** @internal */
+export const Builds$inboundSchema: z.ZodType<Builds, z.ZodTypeDef, unknown> = z.object({
+    id: z.string(),
+    deploymentId: z.string(),
+    entrypoint: z.string(),
+    readyState: ReadyState$inboundSchema,
+    readyStateAt: z.number().optional(),
+    scheduledAt: z.nullable(z.number()).optional(),
+    createdAt: z.number().optional(),
+    deployedAt: z.number().optional(),
+    createdIn: z.string().optional(),
+    use: z.string().optional(),
+    config: z.lazy(() => Config$inboundSchema).optional(),
+    output: z.array(z.lazy(() => GetDeploymentBuildsOutput$inboundSchema)),
+    fingerprint: z.nullable(z.string()).optional(),
+    copiedFrom: z.string().optional(),
+});
+
+/** @internal */
+export type Builds$Outbound = {
+    id: string;
+    deploymentId: string;
+    entrypoint: string;
+    readyState: string;
+    readyStateAt?: number | undefined;
+    scheduledAt?: number | null | undefined;
+    createdAt?: number | undefined;
+    deployedAt?: number | undefined;
+    createdIn?: string | undefined;
+    use?: string | undefined;
+    config?: Config$Outbound | undefined;
+    output: Array<GetDeploymentBuildsOutput$Outbound>;
+    fingerprint?: string | null | undefined;
+    copiedFrom?: string | undefined;
+};
+
+/** @internal */
+export const Builds$outboundSchema: z.ZodType<Builds$Outbound, z.ZodTypeDef, Builds> = z.object({
+    id: z.string(),
+    deploymentId: z.string(),
+    entrypoint: z.string(),
+    readyState: ReadyState$outboundSchema,
+    readyStateAt: z.number().optional(),
+    scheduledAt: z.nullable(z.number()).optional(),
+    createdAt: z.number().optional(),
+    deployedAt: z.number().optional(),
+    createdIn: z.string().optional(),
+    use: z.string().optional(),
+    config: z.lazy(() => Config$outboundSchema).optional(),
+    output: z.array(z.lazy(() => GetDeploymentBuildsOutput$outboundSchema)),
+    fingerprint: z.nullable(z.string()).optional(),
+    copiedFrom: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace Builds$ {
-    export const inboundSchema: z.ZodType<Builds, z.ZodTypeDef, unknown> = z
-        .object({
-            id: z.string(),
-            deploymentId: z.string(),
-            entrypoint: z.string(),
-            readyState: ReadyState$.inboundSchema,
-            readyStateAt: z.number().optional(),
-            scheduledAt: z.nullable(z.number()).optional(),
-            createdAt: z.number().optional(),
-            deployedAt: z.number().optional(),
-            createdIn: z.string().optional(),
-            use: z.string().optional(),
-            config: z.lazy(() => Config$.inboundSchema).optional(),
-            output: z.array(z.lazy(() => GetDeploymentBuildsOutput$.inboundSchema)),
-            fingerprint: z.nullable(z.string()).optional(),
-            copiedFrom: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                id: v.id,
-                deploymentId: v.deploymentId,
-                entrypoint: v.entrypoint,
-                readyState: v.readyState,
-                ...(v.readyStateAt === undefined ? null : { readyStateAt: v.readyStateAt }),
-                ...(v.scheduledAt === undefined ? null : { scheduledAt: v.scheduledAt }),
-                ...(v.createdAt === undefined ? null : { createdAt: v.createdAt }),
-                ...(v.deployedAt === undefined ? null : { deployedAt: v.deployedAt }),
-                ...(v.createdIn === undefined ? null : { createdIn: v.createdIn }),
-                ...(v.use === undefined ? null : { use: v.use }),
-                ...(v.config === undefined ? null : { config: v.config }),
-                output: v.output,
-                ...(v.fingerprint === undefined ? null : { fingerprint: v.fingerprint }),
-                ...(v.copiedFrom === undefined ? null : { copiedFrom: v.copiedFrom }),
-            };
-        });
-
-    export type Outbound = {
-        id: string;
-        deploymentId: string;
-        entrypoint: string;
-        readyState: string;
-        readyStateAt?: number | undefined;
-        scheduledAt?: number | null | undefined;
-        createdAt?: number | undefined;
-        deployedAt?: number | undefined;
-        createdIn?: string | undefined;
-        use?: string | undefined;
-        config?: Config$.Outbound | undefined;
-        output: Array<GetDeploymentBuildsOutput$.Outbound>;
-        fingerprint?: string | null | undefined;
-        copiedFrom?: string | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, Builds> = z
-        .object({
-            id: z.string(),
-            deploymentId: z.string(),
-            entrypoint: z.string(),
-            readyState: ReadyState$.outboundSchema,
-            readyStateAt: z.number().optional(),
-            scheduledAt: z.nullable(z.number()).optional(),
-            createdAt: z.number().optional(),
-            deployedAt: z.number().optional(),
-            createdIn: z.string().optional(),
-            use: z.string().optional(),
-            config: z.lazy(() => Config$.outboundSchema).optional(),
-            output: z.array(z.lazy(() => GetDeploymentBuildsOutput$.outboundSchema)),
-            fingerprint: z.nullable(z.string()).optional(),
-            copiedFrom: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                id: v.id,
-                deploymentId: v.deploymentId,
-                entrypoint: v.entrypoint,
-                readyState: v.readyState,
-                ...(v.readyStateAt === undefined ? null : { readyStateAt: v.readyStateAt }),
-                ...(v.scheduledAt === undefined ? null : { scheduledAt: v.scheduledAt }),
-                ...(v.createdAt === undefined ? null : { createdAt: v.createdAt }),
-                ...(v.deployedAt === undefined ? null : { deployedAt: v.deployedAt }),
-                ...(v.createdIn === undefined ? null : { createdIn: v.createdIn }),
-                ...(v.use === undefined ? null : { use: v.use }),
-                ...(v.config === undefined ? null : { config: v.config }),
-                output: v.output,
-                ...(v.fingerprint === undefined ? null : { fingerprint: v.fingerprint }),
-                ...(v.copiedFrom === undefined ? null : { copiedFrom: v.copiedFrom }),
-            };
-        });
+    /** @deprecated use `Builds$inboundSchema` instead. */
+    export const inboundSchema = Builds$inboundSchema;
+    /** @deprecated use `Builds$outboundSchema` instead. */
+    export const outboundSchema = Builds$outboundSchema;
+    /** @deprecated use `Builds$Outbound` instead. */
+    export type Outbound = Builds$Outbound;
 }
 
 /** @internal */
+export const GetDeploymentBuildsResponseBody$inboundSchema: z.ZodType<
+    GetDeploymentBuildsResponseBody,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    builds: z.array(z.lazy(() => Builds$inboundSchema)),
+});
+
+/** @internal */
+export type GetDeploymentBuildsResponseBody$Outbound = {
+    builds: Array<Builds$Outbound>;
+};
+
+/** @internal */
+export const GetDeploymentBuildsResponseBody$outboundSchema: z.ZodType<
+    GetDeploymentBuildsResponseBody$Outbound,
+    z.ZodTypeDef,
+    GetDeploymentBuildsResponseBody
+> = z.object({
+    builds: z.array(z.lazy(() => Builds$outboundSchema)),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetDeploymentBuildsResponseBody$ {
-    export const inboundSchema: z.ZodType<GetDeploymentBuildsResponseBody, z.ZodTypeDef, unknown> =
-        z
-            .object({
-                builds: z.array(z.lazy(() => Builds$.inboundSchema)),
-            })
-            .transform((v) => {
-                return {
-                    builds: v.builds,
-                };
-            });
-
-    export type Outbound = {
-        builds: Array<Builds$.Outbound>;
-    };
-
-    export const outboundSchema: z.ZodType<
-        Outbound,
-        z.ZodTypeDef,
-        GetDeploymentBuildsResponseBody
-    > = z
-        .object({
-            builds: z.array(z.lazy(() => Builds$.outboundSchema)),
-        })
-        .transform((v) => {
-            return {
-                builds: v.builds,
-            };
-        });
+    /** @deprecated use `GetDeploymentBuildsResponseBody$inboundSchema` instead. */
+    export const inboundSchema = GetDeploymentBuildsResponseBody$inboundSchema;
+    /** @deprecated use `GetDeploymentBuildsResponseBody$outboundSchema` instead. */
+    export const outboundSchema = GetDeploymentBuildsResponseBody$outboundSchema;
+    /** @deprecated use `GetDeploymentBuildsResponseBody$Outbound` instead. */
+    export type Outbound = GetDeploymentBuildsResponseBody$Outbound;
 }

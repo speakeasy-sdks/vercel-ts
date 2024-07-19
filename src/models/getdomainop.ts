@@ -111,232 +111,218 @@ export type GetDomainResponseBody = {
 };
 
 /** @internal */
+export const GetDomainRequest$inboundSchema: z.ZodType<GetDomainRequest, z.ZodTypeDef, unknown> =
+    z.object({
+        domain: z.string(),
+        teamId: z.string().optional(),
+        slug: z.string().optional(),
+    });
+
+/** @internal */
+export type GetDomainRequest$Outbound = {
+    domain: string;
+    teamId?: string | undefined;
+    slug?: string | undefined;
+};
+
+/** @internal */
+export const GetDomainRequest$outboundSchema: z.ZodType<
+    GetDomainRequest$Outbound,
+    z.ZodTypeDef,
+    GetDomainRequest
+> = z.object({
+    domain: z.string(),
+    teamId: z.string().optional(),
+    slug: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetDomainRequest$ {
-    export const inboundSchema: z.ZodType<GetDomainRequest, z.ZodTypeDef, unknown> = z
-        .object({
-            domain: z.string(),
-            teamId: z.string().optional(),
-            slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                domain: v.domain,
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
-        });
-
-    export type Outbound = {
-        domain: string;
-        teamId?: string | undefined;
-        slug?: string | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetDomainRequest> = z
-        .object({
-            domain: z.string(),
-            teamId: z.string().optional(),
-            slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                domain: v.domain,
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
-        });
+    /** @deprecated use `GetDomainRequest$inboundSchema` instead. */
+    export const inboundSchema = GetDomainRequest$inboundSchema;
+    /** @deprecated use `GetDomainRequest$outboundSchema` instead. */
+    export const outboundSchema = GetDomainRequest$outboundSchema;
+    /** @deprecated use `GetDomainRequest$Outbound` instead. */
+    export type Outbound = GetDomainRequest$Outbound;
 }
 
 /** @internal */
+export const GetDomainCreator$inboundSchema: z.ZodType<GetDomainCreator, z.ZodTypeDef, unknown> =
+    z.object({
+        username: z.string(),
+        email: z.string(),
+        customerId: z.nullable(z.string()).optional(),
+        isDomainReseller: z.boolean().optional(),
+        id: z.string(),
+    });
+
+/** @internal */
+export type GetDomainCreator$Outbound = {
+    username: string;
+    email: string;
+    customerId?: string | null | undefined;
+    isDomainReseller?: boolean | undefined;
+    id: string;
+};
+
+/** @internal */
+export const GetDomainCreator$outboundSchema: z.ZodType<
+    GetDomainCreator$Outbound,
+    z.ZodTypeDef,
+    GetDomainCreator
+> = z.object({
+    username: z.string(),
+    email: z.string(),
+    customerId: z.nullable(z.string()).optional(),
+    isDomainReseller: z.boolean().optional(),
+    id: z.string(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetDomainCreator$ {
-    export const inboundSchema: z.ZodType<GetDomainCreator, z.ZodTypeDef, unknown> = z
-        .object({
-            username: z.string(),
-            email: z.string(),
-            customerId: z.nullable(z.string()).optional(),
-            isDomainReseller: z.boolean().optional(),
-            id: z.string(),
-        })
-        .transform((v) => {
-            return {
-                username: v.username,
-                email: v.email,
-                ...(v.customerId === undefined ? null : { customerId: v.customerId }),
-                ...(v.isDomainReseller === undefined
-                    ? null
-                    : { isDomainReseller: v.isDomainReseller }),
-                id: v.id,
-            };
-        });
-
-    export type Outbound = {
-        username: string;
-        email: string;
-        customerId?: string | null | undefined;
-        isDomainReseller?: boolean | undefined;
-        id: string;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetDomainCreator> = z
-        .object({
-            username: z.string(),
-            email: z.string(),
-            customerId: z.nullable(z.string()).optional(),
-            isDomainReseller: z.boolean().optional(),
-            id: z.string(),
-        })
-        .transform((v) => {
-            return {
-                username: v.username,
-                email: v.email,
-                ...(v.customerId === undefined ? null : { customerId: v.customerId }),
-                ...(v.isDomainReseller === undefined
-                    ? null
-                    : { isDomainReseller: v.isDomainReseller }),
-                id: v.id,
-            };
-        });
+    /** @deprecated use `GetDomainCreator$inboundSchema` instead. */
+    export const inboundSchema = GetDomainCreator$inboundSchema;
+    /** @deprecated use `GetDomainCreator$outboundSchema` instead. */
+    export const outboundSchema = GetDomainCreator$outboundSchema;
+    /** @deprecated use `GetDomainCreator$Outbound` instead. */
+    export type Outbound = GetDomainCreator$Outbound;
 }
 
 /** @internal */
+export const ServiceType$inboundSchema: z.ZodNativeEnum<typeof ServiceType> =
+    z.nativeEnum(ServiceType);
+
+/** @internal */
+export const ServiceType$outboundSchema: z.ZodNativeEnum<typeof ServiceType> =
+    ServiceType$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace ServiceType$ {
-    export const inboundSchema = z.nativeEnum(ServiceType);
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `ServiceType$inboundSchema` instead. */
+    export const inboundSchema = ServiceType$inboundSchema;
+    /** @deprecated use `ServiceType$outboundSchema` instead. */
+    export const outboundSchema = ServiceType$outboundSchema;
 }
 
 /** @internal */
+export const GetDomainDomain$inboundSchema: z.ZodType<GetDomainDomain, z.ZodTypeDef, unknown> =
+    z.object({
+        suffix: z.boolean(),
+        verified: z.boolean(),
+        nameservers: z.array(z.string()),
+        intendedNameservers: z.array(z.string()),
+        customNameservers: z.array(z.string()).optional(),
+        creator: z.lazy(() => GetDomainCreator$inboundSchema),
+        boughtAt: z.nullable(z.number()),
+        createdAt: z.number(),
+        expiresAt: z.nullable(z.number()),
+        id: z.string(),
+        name: z.string(),
+        orderedAt: z.number().optional(),
+        renew: z.boolean().optional(),
+        serviceType: ServiceType$inboundSchema,
+        transferredAt: z.nullable(z.number()).optional(),
+        transferStartedAt: z.number().optional(),
+    });
+
+/** @internal */
+export type GetDomainDomain$Outbound = {
+    suffix: boolean;
+    verified: boolean;
+    nameservers: Array<string>;
+    intendedNameservers: Array<string>;
+    customNameservers?: Array<string> | undefined;
+    creator: GetDomainCreator$Outbound;
+    boughtAt: number | null;
+    createdAt: number;
+    expiresAt: number | null;
+    id: string;
+    name: string;
+    orderedAt?: number | undefined;
+    renew?: boolean | undefined;
+    serviceType: string;
+    transferredAt?: number | null | undefined;
+    transferStartedAt?: number | undefined;
+};
+
+/** @internal */
+export const GetDomainDomain$outboundSchema: z.ZodType<
+    GetDomainDomain$Outbound,
+    z.ZodTypeDef,
+    GetDomainDomain
+> = z.object({
+    suffix: z.boolean(),
+    verified: z.boolean(),
+    nameservers: z.array(z.string()),
+    intendedNameservers: z.array(z.string()),
+    customNameservers: z.array(z.string()).optional(),
+    creator: z.lazy(() => GetDomainCreator$outboundSchema),
+    boughtAt: z.nullable(z.number()),
+    createdAt: z.number(),
+    expiresAt: z.nullable(z.number()),
+    id: z.string(),
+    name: z.string(),
+    orderedAt: z.number().optional(),
+    renew: z.boolean().optional(),
+    serviceType: ServiceType$outboundSchema,
+    transferredAt: z.nullable(z.number()).optional(),
+    transferStartedAt: z.number().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetDomainDomain$ {
-    export const inboundSchema: z.ZodType<GetDomainDomain, z.ZodTypeDef, unknown> = z
-        .object({
-            suffix: z.boolean(),
-            verified: z.boolean(),
-            nameservers: z.array(z.string()),
-            intendedNameservers: z.array(z.string()),
-            customNameservers: z.array(z.string()).optional(),
-            creator: z.lazy(() => GetDomainCreator$.inboundSchema),
-            boughtAt: z.nullable(z.number()),
-            createdAt: z.number(),
-            expiresAt: z.nullable(z.number()),
-            id: z.string(),
-            name: z.string(),
-            orderedAt: z.number().optional(),
-            renew: z.boolean().optional(),
-            serviceType: ServiceType$.inboundSchema,
-            transferredAt: z.nullable(z.number()).optional(),
-            transferStartedAt: z.number().optional(),
-        })
-        .transform((v) => {
-            return {
-                suffix: v.suffix,
-                verified: v.verified,
-                nameservers: v.nameservers,
-                intendedNameservers: v.intendedNameservers,
-                ...(v.customNameservers === undefined
-                    ? null
-                    : { customNameservers: v.customNameservers }),
-                creator: v.creator,
-                boughtAt: v.boughtAt,
-                createdAt: v.createdAt,
-                expiresAt: v.expiresAt,
-                id: v.id,
-                name: v.name,
-                ...(v.orderedAt === undefined ? null : { orderedAt: v.orderedAt }),
-                ...(v.renew === undefined ? null : { renew: v.renew }),
-                serviceType: v.serviceType,
-                ...(v.transferredAt === undefined ? null : { transferredAt: v.transferredAt }),
-                ...(v.transferStartedAt === undefined
-                    ? null
-                    : { transferStartedAt: v.transferStartedAt }),
-            };
-        });
-
-    export type Outbound = {
-        suffix: boolean;
-        verified: boolean;
-        nameservers: Array<string>;
-        intendedNameservers: Array<string>;
-        customNameservers?: Array<string> | undefined;
-        creator: GetDomainCreator$.Outbound;
-        boughtAt: number | null;
-        createdAt: number;
-        expiresAt: number | null;
-        id: string;
-        name: string;
-        orderedAt?: number | undefined;
-        renew?: boolean | undefined;
-        serviceType: string;
-        transferredAt?: number | null | undefined;
-        transferStartedAt?: number | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetDomainDomain> = z
-        .object({
-            suffix: z.boolean(),
-            verified: z.boolean(),
-            nameservers: z.array(z.string()),
-            intendedNameservers: z.array(z.string()),
-            customNameservers: z.array(z.string()).optional(),
-            creator: z.lazy(() => GetDomainCreator$.outboundSchema),
-            boughtAt: z.nullable(z.number()),
-            createdAt: z.number(),
-            expiresAt: z.nullable(z.number()),
-            id: z.string(),
-            name: z.string(),
-            orderedAt: z.number().optional(),
-            renew: z.boolean().optional(),
-            serviceType: ServiceType$.outboundSchema,
-            transferredAt: z.nullable(z.number()).optional(),
-            transferStartedAt: z.number().optional(),
-        })
-        .transform((v) => {
-            return {
-                suffix: v.suffix,
-                verified: v.verified,
-                nameservers: v.nameservers,
-                intendedNameservers: v.intendedNameservers,
-                ...(v.customNameservers === undefined
-                    ? null
-                    : { customNameservers: v.customNameservers }),
-                creator: v.creator,
-                boughtAt: v.boughtAt,
-                createdAt: v.createdAt,
-                expiresAt: v.expiresAt,
-                id: v.id,
-                name: v.name,
-                ...(v.orderedAt === undefined ? null : { orderedAt: v.orderedAt }),
-                ...(v.renew === undefined ? null : { renew: v.renew }),
-                serviceType: v.serviceType,
-                ...(v.transferredAt === undefined ? null : { transferredAt: v.transferredAt }),
-                ...(v.transferStartedAt === undefined
-                    ? null
-                    : { transferStartedAt: v.transferStartedAt }),
-            };
-        });
+    /** @deprecated use `GetDomainDomain$inboundSchema` instead. */
+    export const inboundSchema = GetDomainDomain$inboundSchema;
+    /** @deprecated use `GetDomainDomain$outboundSchema` instead. */
+    export const outboundSchema = GetDomainDomain$outboundSchema;
+    /** @deprecated use `GetDomainDomain$Outbound` instead. */
+    export type Outbound = GetDomainDomain$Outbound;
 }
 
 /** @internal */
+export const GetDomainResponseBody$inboundSchema: z.ZodType<
+    GetDomainResponseBody,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    domain: z.lazy(() => GetDomainDomain$inboundSchema),
+});
+
+/** @internal */
+export type GetDomainResponseBody$Outbound = {
+    domain: GetDomainDomain$Outbound;
+};
+
+/** @internal */
+export const GetDomainResponseBody$outboundSchema: z.ZodType<
+    GetDomainResponseBody$Outbound,
+    z.ZodTypeDef,
+    GetDomainResponseBody
+> = z.object({
+    domain: z.lazy(() => GetDomainDomain$outboundSchema),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetDomainResponseBody$ {
-    export const inboundSchema: z.ZodType<GetDomainResponseBody, z.ZodTypeDef, unknown> = z
-        .object({
-            domain: z.lazy(() => GetDomainDomain$.inboundSchema),
-        })
-        .transform((v) => {
-            return {
-                domain: v.domain,
-            };
-        });
-
-    export type Outbound = {
-        domain: GetDomainDomain$.Outbound;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetDomainResponseBody> = z
-        .object({
-            domain: z.lazy(() => GetDomainDomain$.outboundSchema),
-        })
-        .transform((v) => {
-            return {
-                domain: v.domain,
-            };
-        });
+    /** @deprecated use `GetDomainResponseBody$inboundSchema` instead. */
+    export const inboundSchema = GetDomainResponseBody$inboundSchema;
+    /** @deprecated use `GetDomainResponseBody$outboundSchema` instead. */
+    export const outboundSchema = GetDomainResponseBody$outboundSchema;
+    /** @deprecated use `GetDomainResponseBody$Outbound` instead. */
+    export type Outbound = GetDomainResponseBody$Outbound;
 }

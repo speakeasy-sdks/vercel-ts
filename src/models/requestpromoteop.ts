@@ -17,58 +17,47 @@ export type RequestPromoteRequest = {
     slug?: string | undefined;
 };
 
-export type RequestPromoteResponse = {};
+/** @internal */
+export const RequestPromoteRequest$inboundSchema: z.ZodType<
+    RequestPromoteRequest,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    projectId: z.string(),
+    deploymentId: z.string(),
+    teamId: z.string().optional(),
+    slug: z.string().optional(),
+});
 
 /** @internal */
+export type RequestPromoteRequest$Outbound = {
+    projectId: string;
+    deploymentId: string;
+    teamId?: string | undefined;
+    slug?: string | undefined;
+};
+
+/** @internal */
+export const RequestPromoteRequest$outboundSchema: z.ZodType<
+    RequestPromoteRequest$Outbound,
+    z.ZodTypeDef,
+    RequestPromoteRequest
+> = z.object({
+    projectId: z.string(),
+    deploymentId: z.string(),
+    teamId: z.string().optional(),
+    slug: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace RequestPromoteRequest$ {
-    export const inboundSchema: z.ZodType<RequestPromoteRequest, z.ZodTypeDef, unknown> = z
-        .object({
-            projectId: z.string(),
-            deploymentId: z.string(),
-            teamId: z.string().optional(),
-            slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                projectId: v.projectId,
-                deploymentId: v.deploymentId,
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
-        });
-
-    export type Outbound = {
-        projectId: string;
-        deploymentId: string;
-        teamId?: string | undefined;
-        slug?: string | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, RequestPromoteRequest> = z
-        .object({
-            projectId: z.string(),
-            deploymentId: z.string(),
-            teamId: z.string().optional(),
-            slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                projectId: v.projectId,
-                deploymentId: v.deploymentId,
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
-        });
-}
-
-/** @internal */
-export namespace RequestPromoteResponse$ {
-    export const inboundSchema: z.ZodType<RequestPromoteResponse, z.ZodTypeDef, unknown> = z.object(
-        {}
-    );
-
-    export type Outbound = {};
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, RequestPromoteResponse> =
-        z.object({});
+    /** @deprecated use `RequestPromoteRequest$inboundSchema` instead. */
+    export const inboundSchema = RequestPromoteRequest$inboundSchema;
+    /** @deprecated use `RequestPromoteRequest$outboundSchema` instead. */
+    export const outboundSchema = RequestPromoteRequest$outboundSchema;
+    /** @deprecated use `RequestPromoteRequest$Outbound` instead. */
+    export type Outbound = RequestPromoteRequest$Outbound;
 }

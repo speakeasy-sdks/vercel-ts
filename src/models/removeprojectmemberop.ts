@@ -28,75 +28,82 @@ export type RemoveProjectMemberResponseBody = {
 };
 
 /** @internal */
+export const RemoveProjectMemberRequest$inboundSchema: z.ZodType<
+    RemoveProjectMemberRequest,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    idOrName: z.string(),
+    uid: z.string(),
+    teamId: z.string().optional(),
+    slug: z.string().optional(),
+});
+
+/** @internal */
+export type RemoveProjectMemberRequest$Outbound = {
+    idOrName: string;
+    uid: string;
+    teamId?: string | undefined;
+    slug?: string | undefined;
+};
+
+/** @internal */
+export const RemoveProjectMemberRequest$outboundSchema: z.ZodType<
+    RemoveProjectMemberRequest$Outbound,
+    z.ZodTypeDef,
+    RemoveProjectMemberRequest
+> = z.object({
+    idOrName: z.string(),
+    uid: z.string(),
+    teamId: z.string().optional(),
+    slug: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace RemoveProjectMemberRequest$ {
-    export const inboundSchema: z.ZodType<RemoveProjectMemberRequest, z.ZodTypeDef, unknown> = z
-        .object({
-            idOrName: z.string(),
-            uid: z.string(),
-            teamId: z.string().optional(),
-            slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                idOrName: v.idOrName,
-                uid: v.uid,
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
-        });
-
-    export type Outbound = {
-        idOrName: string;
-        uid: string;
-        teamId?: string | undefined;
-        slug?: string | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, RemoveProjectMemberRequest> = z
-        .object({
-            idOrName: z.string(),
-            uid: z.string(),
-            teamId: z.string().optional(),
-            slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                idOrName: v.idOrName,
-                uid: v.uid,
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
-        });
+    /** @deprecated use `RemoveProjectMemberRequest$inboundSchema` instead. */
+    export const inboundSchema = RemoveProjectMemberRequest$inboundSchema;
+    /** @deprecated use `RemoveProjectMemberRequest$outboundSchema` instead. */
+    export const outboundSchema = RemoveProjectMemberRequest$outboundSchema;
+    /** @deprecated use `RemoveProjectMemberRequest$Outbound` instead. */
+    export type Outbound = RemoveProjectMemberRequest$Outbound;
 }
 
 /** @internal */
+export const RemoveProjectMemberResponseBody$inboundSchema: z.ZodType<
+    RemoveProjectMemberResponseBody,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    id: z.string(),
+});
+
+/** @internal */
+export type RemoveProjectMemberResponseBody$Outbound = {
+    id: string;
+};
+
+/** @internal */
+export const RemoveProjectMemberResponseBody$outboundSchema: z.ZodType<
+    RemoveProjectMemberResponseBody$Outbound,
+    z.ZodTypeDef,
+    RemoveProjectMemberResponseBody
+> = z.object({
+    id: z.string(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace RemoveProjectMemberResponseBody$ {
-    export const inboundSchema: z.ZodType<RemoveProjectMemberResponseBody, z.ZodTypeDef, unknown> =
-        z
-            .object({
-                id: z.string(),
-            })
-            .transform((v) => {
-                return {
-                    id: v.id,
-                };
-            });
-
-    export type Outbound = {
-        id: string;
-    };
-
-    export const outboundSchema: z.ZodType<
-        Outbound,
-        z.ZodTypeDef,
-        RemoveProjectMemberResponseBody
-    > = z
-        .object({
-            id: z.string(),
-        })
-        .transform((v) => {
-            return {
-                id: v.id,
-            };
-        });
+    /** @deprecated use `RemoveProjectMemberResponseBody$inboundSchema` instead. */
+    export const inboundSchema = RemoveProjectMemberResponseBody$inboundSchema;
+    /** @deprecated use `RemoveProjectMemberResponseBody$outboundSchema` instead. */
+    export const outboundSchema = RemoveProjectMemberResponseBody$outboundSchema;
+    /** @deprecated use `RemoveProjectMemberResponseBody$Outbound` instead. */
+    export type Outbound = RemoveProjectMemberResponseBody$Outbound;
 }
