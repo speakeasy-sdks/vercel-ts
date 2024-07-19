@@ -17,38 +17,43 @@ export type GetEdgeConfigTokensRequest = {
 };
 
 /** @internal */
+export const GetEdgeConfigTokensRequest$inboundSchema: z.ZodType<
+    GetEdgeConfigTokensRequest,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    edgeConfigId: z.string(),
+    teamId: z.string().optional(),
+    slug: z.string().optional(),
+});
+
+/** @internal */
+export type GetEdgeConfigTokensRequest$Outbound = {
+    edgeConfigId: string;
+    teamId?: string | undefined;
+    slug?: string | undefined;
+};
+
+/** @internal */
+export const GetEdgeConfigTokensRequest$outboundSchema: z.ZodType<
+    GetEdgeConfigTokensRequest$Outbound,
+    z.ZodTypeDef,
+    GetEdgeConfigTokensRequest
+> = z.object({
+    edgeConfigId: z.string(),
+    teamId: z.string().optional(),
+    slug: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetEdgeConfigTokensRequest$ {
-    export const inboundSchema: z.ZodType<GetEdgeConfigTokensRequest, z.ZodTypeDef, unknown> = z
-        .object({
-            edgeConfigId: z.string(),
-            teamId: z.string().optional(),
-            slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                edgeConfigId: v.edgeConfigId,
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
-        });
-
-    export type Outbound = {
-        edgeConfigId: string;
-        teamId?: string | undefined;
-        slug?: string | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetEdgeConfigTokensRequest> = z
-        .object({
-            edgeConfigId: z.string(),
-            teamId: z.string().optional(),
-            slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                edgeConfigId: v.edgeConfigId,
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
-        });
+    /** @deprecated use `GetEdgeConfigTokensRequest$inboundSchema` instead. */
+    export const inboundSchema = GetEdgeConfigTokensRequest$inboundSchema;
+    /** @deprecated use `GetEdgeConfigTokensRequest$outboundSchema` instead. */
+    export const outboundSchema = GetEdgeConfigTokensRequest$outboundSchema;
+    /** @deprecated use `GetEdgeConfigTokensRequest$Outbound` instead. */
+    export type Outbound = GetEdgeConfigTokensRequest$Outbound;
 }

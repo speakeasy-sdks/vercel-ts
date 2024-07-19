@@ -29,57 +29,76 @@ export type RemoveProjectDomainRequest = {
 export type RemoveProjectDomainResponseBody = {};
 
 /** @internal */
+export const RemoveProjectDomainRequest$inboundSchema: z.ZodType<
+    RemoveProjectDomainRequest,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    idOrName: z.string(),
+    domain: z.string(),
+    teamId: z.string().optional(),
+    slug: z.string().optional(),
+});
+
+/** @internal */
+export type RemoveProjectDomainRequest$Outbound = {
+    idOrName: string;
+    domain: string;
+    teamId?: string | undefined;
+    slug?: string | undefined;
+};
+
+/** @internal */
+export const RemoveProjectDomainRequest$outboundSchema: z.ZodType<
+    RemoveProjectDomainRequest$Outbound,
+    z.ZodTypeDef,
+    RemoveProjectDomainRequest
+> = z.object({
+    idOrName: z.string(),
+    domain: z.string(),
+    teamId: z.string().optional(),
+    slug: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace RemoveProjectDomainRequest$ {
-    export const inboundSchema: z.ZodType<RemoveProjectDomainRequest, z.ZodTypeDef, unknown> = z
-        .object({
-            idOrName: z.string(),
-            domain: z.string(),
-            teamId: z.string().optional(),
-            slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                idOrName: v.idOrName,
-                domain: v.domain,
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
-        });
-
-    export type Outbound = {
-        idOrName: string;
-        domain: string;
-        teamId?: string | undefined;
-        slug?: string | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, RemoveProjectDomainRequest> = z
-        .object({
-            idOrName: z.string(),
-            domain: z.string(),
-            teamId: z.string().optional(),
-            slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                idOrName: v.idOrName,
-                domain: v.domain,
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
-        });
+    /** @deprecated use `RemoveProjectDomainRequest$inboundSchema` instead. */
+    export const inboundSchema = RemoveProjectDomainRequest$inboundSchema;
+    /** @deprecated use `RemoveProjectDomainRequest$outboundSchema` instead. */
+    export const outboundSchema = RemoveProjectDomainRequest$outboundSchema;
+    /** @deprecated use `RemoveProjectDomainRequest$Outbound` instead. */
+    export type Outbound = RemoveProjectDomainRequest$Outbound;
 }
 
 /** @internal */
+export const RemoveProjectDomainResponseBody$inboundSchema: z.ZodType<
+    RemoveProjectDomainResponseBody,
+    z.ZodTypeDef,
+    unknown
+> = z.object({});
+
+/** @internal */
+export type RemoveProjectDomainResponseBody$Outbound = {};
+
+/** @internal */
+export const RemoveProjectDomainResponseBody$outboundSchema: z.ZodType<
+    RemoveProjectDomainResponseBody$Outbound,
+    z.ZodTypeDef,
+    RemoveProjectDomainResponseBody
+> = z.object({});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace RemoveProjectDomainResponseBody$ {
-    export const inboundSchema: z.ZodType<RemoveProjectDomainResponseBody, z.ZodTypeDef, unknown> =
-        z.object({});
-
-    export type Outbound = {};
-
-    export const outboundSchema: z.ZodType<
-        Outbound,
-        z.ZodTypeDef,
-        RemoveProjectDomainResponseBody
-    > = z.object({});
+    /** @deprecated use `RemoveProjectDomainResponseBody$inboundSchema` instead. */
+    export const inboundSchema = RemoveProjectDomainResponseBody$inboundSchema;
+    /** @deprecated use `RemoveProjectDomainResponseBody$outboundSchema` instead. */
+    export const outboundSchema = RemoveProjectDomainResponseBody$outboundSchema;
+    /** @deprecated use `RemoveProjectDomainResponseBody$Outbound` instead. */
+    export type Outbound = RemoveProjectDomainResponseBody$Outbound;
 }

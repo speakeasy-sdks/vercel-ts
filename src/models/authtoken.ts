@@ -94,204 +94,239 @@ export type AuthToken = {
 };
 
 /** @internal */
+export const AuthTokenScopesType$inboundSchema: z.ZodNativeEnum<typeof AuthTokenScopesType> =
+    z.nativeEnum(AuthTokenScopesType);
+
+/** @internal */
+export const AuthTokenScopesType$outboundSchema: z.ZodNativeEnum<typeof AuthTokenScopesType> =
+    AuthTokenScopesType$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace AuthTokenScopesType$ {
-    export const inboundSchema = z.nativeEnum(AuthTokenScopesType);
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `AuthTokenScopesType$inboundSchema` instead. */
+    export const inboundSchema = AuthTokenScopesType$inboundSchema;
+    /** @deprecated use `AuthTokenScopesType$outboundSchema` instead. */
+    export const outboundSchema = AuthTokenScopesType$outboundSchema;
 }
 
 /** @internal */
+export const ScopesOrigin$inboundSchema: z.ZodNativeEnum<typeof ScopesOrigin> =
+    z.nativeEnum(ScopesOrigin);
+
+/** @internal */
+export const ScopesOrigin$outboundSchema: z.ZodNativeEnum<typeof ScopesOrigin> =
+    ScopesOrigin$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace ScopesOrigin$ {
-    export const inboundSchema = z.nativeEnum(ScopesOrigin);
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `ScopesOrigin$inboundSchema` instead. */
+    export const inboundSchema = ScopesOrigin$inboundSchema;
+    /** @deprecated use `ScopesOrigin$outboundSchema` instead. */
+    export const outboundSchema = ScopesOrigin$outboundSchema;
 }
 
 /** @internal */
+export const Scopes2$inboundSchema: z.ZodType<Scopes2, z.ZodTypeDef, unknown> = z.object({
+    type: AuthTokenScopesType$inboundSchema,
+    teamId: z.string(),
+    origin: ScopesOrigin$inboundSchema,
+    createdAt: z.number(),
+    expiresAt: z.number().optional(),
+});
+
+/** @internal */
+export type Scopes2$Outbound = {
+    type: string;
+    teamId: string;
+    origin: string;
+    createdAt: number;
+    expiresAt?: number | undefined;
+};
+
+/** @internal */
+export const Scopes2$outboundSchema: z.ZodType<Scopes2$Outbound, z.ZodTypeDef, Scopes2> = z.object({
+    type: AuthTokenScopesType$outboundSchema,
+    teamId: z.string(),
+    origin: ScopesOrigin$outboundSchema,
+    createdAt: z.number(),
+    expiresAt: z.number().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace Scopes2$ {
-    export const inboundSchema: z.ZodType<Scopes2, z.ZodTypeDef, unknown> = z
-        .object({
-            type: AuthTokenScopesType$.inboundSchema,
-            teamId: z.string(),
-            origin: ScopesOrigin$.inboundSchema,
-            createdAt: z.number(),
-            expiresAt: z.number().optional(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                teamId: v.teamId,
-                origin: v.origin,
-                createdAt: v.createdAt,
-                ...(v.expiresAt === undefined ? null : { expiresAt: v.expiresAt }),
-            };
-        });
-
-    export type Outbound = {
-        type: string;
-        teamId: string;
-        origin: string;
-        createdAt: number;
-        expiresAt?: number | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, Scopes2> = z
-        .object({
-            type: AuthTokenScopesType$.outboundSchema,
-            teamId: z.string(),
-            origin: ScopesOrigin$.outboundSchema,
-            createdAt: z.number(),
-            expiresAt: z.number().optional(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                teamId: v.teamId,
-                origin: v.origin,
-                createdAt: v.createdAt,
-                ...(v.expiresAt === undefined ? null : { expiresAt: v.expiresAt }),
-            };
-        });
+    /** @deprecated use `Scopes2$inboundSchema` instead. */
+    export const inboundSchema = Scopes2$inboundSchema;
+    /** @deprecated use `Scopes2$outboundSchema` instead. */
+    export const outboundSchema = Scopes2$outboundSchema;
+    /** @deprecated use `Scopes2$Outbound` instead. */
+    export type Outbound = Scopes2$Outbound;
 }
 
 /** @internal */
+export const ScopesType$inboundSchema: z.ZodNativeEnum<typeof ScopesType> =
+    z.nativeEnum(ScopesType);
+
+/** @internal */
+export const ScopesType$outboundSchema: z.ZodNativeEnum<typeof ScopesType> =
+    ScopesType$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace ScopesType$ {
-    export const inboundSchema = z.nativeEnum(ScopesType);
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `ScopesType$inboundSchema` instead. */
+    export const inboundSchema = ScopesType$inboundSchema;
+    /** @deprecated use `ScopesType$outboundSchema` instead. */
+    export const outboundSchema = ScopesType$outboundSchema;
 }
 
 /** @internal */
+export const Origin$inboundSchema: z.ZodNativeEnum<typeof Origin> = z.nativeEnum(Origin);
+
+/** @internal */
+export const Origin$outboundSchema: z.ZodNativeEnum<typeof Origin> = Origin$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace Origin$ {
-    export const inboundSchema = z.nativeEnum(Origin);
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `Origin$inboundSchema` instead. */
+    export const inboundSchema = Origin$inboundSchema;
+    /** @deprecated use `Origin$outboundSchema` instead. */
+    export const outboundSchema = Origin$outboundSchema;
 }
 
 /** @internal */
+export const Scopes1$inboundSchema: z.ZodType<Scopes1, z.ZodTypeDef, unknown> = z.object({
+    type: ScopesType$inboundSchema,
+    origin: Origin$inboundSchema,
+    createdAt: z.number(),
+    expiresAt: z.number().optional(),
+});
+
+/** @internal */
+export type Scopes1$Outbound = {
+    type: string;
+    origin: string;
+    createdAt: number;
+    expiresAt?: number | undefined;
+};
+
+/** @internal */
+export const Scopes1$outboundSchema: z.ZodType<Scopes1$Outbound, z.ZodTypeDef, Scopes1> = z.object({
+    type: ScopesType$outboundSchema,
+    origin: Origin$outboundSchema,
+    createdAt: z.number(),
+    expiresAt: z.number().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace Scopes1$ {
-    export const inboundSchema: z.ZodType<Scopes1, z.ZodTypeDef, unknown> = z
-        .object({
-            type: ScopesType$.inboundSchema,
-            origin: Origin$.inboundSchema,
-            createdAt: z.number(),
-            expiresAt: z.number().optional(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                origin: v.origin,
-                createdAt: v.createdAt,
-                ...(v.expiresAt === undefined ? null : { expiresAt: v.expiresAt }),
-            };
-        });
-
-    export type Outbound = {
-        type: string;
-        origin: string;
-        createdAt: number;
-        expiresAt?: number | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, Scopes1> = z
-        .object({
-            type: ScopesType$.outboundSchema,
-            origin: Origin$.outboundSchema,
-            createdAt: z.number(),
-            expiresAt: z.number().optional(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                origin: v.origin,
-                createdAt: v.createdAt,
-                ...(v.expiresAt === undefined ? null : { expiresAt: v.expiresAt }),
-            };
-        });
+    /** @deprecated use `Scopes1$inboundSchema` instead. */
+    export const inboundSchema = Scopes1$inboundSchema;
+    /** @deprecated use `Scopes1$outboundSchema` instead. */
+    export const outboundSchema = Scopes1$outboundSchema;
+    /** @deprecated use `Scopes1$Outbound` instead. */
+    export type Outbound = Scopes1$Outbound;
 }
 
 /** @internal */
+export const Scopes$inboundSchema: z.ZodType<Scopes, z.ZodTypeDef, unknown> = z.union([
+    z.lazy(() => Scopes1$inboundSchema),
+    z.lazy(() => Scopes2$inboundSchema),
+]);
+
+/** @internal */
+export type Scopes$Outbound = Scopes1$Outbound | Scopes2$Outbound;
+
+/** @internal */
+export const Scopes$outboundSchema: z.ZodType<Scopes$Outbound, z.ZodTypeDef, Scopes> = z.union([
+    z.lazy(() => Scopes1$outboundSchema),
+    z.lazy(() => Scopes2$outboundSchema),
+]);
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace Scopes$ {
-    export const inboundSchema: z.ZodType<Scopes, z.ZodTypeDef, unknown> = z.union([
-        z.lazy(() => Scopes1$.inboundSchema),
-        z.lazy(() => Scopes2$.inboundSchema),
-    ]);
-
-    export type Outbound = Scopes1$.Outbound | Scopes2$.Outbound;
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, Scopes> = z.union([
-        z.lazy(() => Scopes1$.outboundSchema),
-        z.lazy(() => Scopes2$.outboundSchema),
-    ]);
+    /** @deprecated use `Scopes$inboundSchema` instead. */
+    export const inboundSchema = Scopes$inboundSchema;
+    /** @deprecated use `Scopes$outboundSchema` instead. */
+    export const outboundSchema = Scopes$outboundSchema;
+    /** @deprecated use `Scopes$Outbound` instead. */
+    export type Outbound = Scopes$Outbound;
 }
 
 /** @internal */
+export const AuthToken$inboundSchema: z.ZodType<AuthToken, z.ZodTypeDef, unknown> = z.object({
+    id: z.string(),
+    name: z.string(),
+    type: z.string(),
+    origin: z.string().optional(),
+    scopes: z
+        .array(z.union([z.lazy(() => Scopes1$inboundSchema), z.lazy(() => Scopes2$inboundSchema)]))
+        .optional(),
+    expiresAt: z.number().optional(),
+    activeAt: z.number(),
+    createdAt: z.number(),
+});
+
+/** @internal */
+export type AuthToken$Outbound = {
+    id: string;
+    name: string;
+    type: string;
+    origin?: string | undefined;
+    scopes?: Array<Scopes1$Outbound | Scopes2$Outbound> | undefined;
+    expiresAt?: number | undefined;
+    activeAt: number;
+    createdAt: number;
+};
+
+/** @internal */
+export const AuthToken$outboundSchema: z.ZodType<AuthToken$Outbound, z.ZodTypeDef, AuthToken> =
+    z.object({
+        id: z.string(),
+        name: z.string(),
+        type: z.string(),
+        origin: z.string().optional(),
+        scopes: z
+            .array(
+                z.union([
+                    z.lazy(() => Scopes1$outboundSchema),
+                    z.lazy(() => Scopes2$outboundSchema),
+                ])
+            )
+            .optional(),
+        expiresAt: z.number().optional(),
+        activeAt: z.number(),
+        createdAt: z.number(),
+    });
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace AuthToken$ {
-    export const inboundSchema: z.ZodType<AuthToken, z.ZodTypeDef, unknown> = z
-        .object({
-            id: z.string(),
-            name: z.string(),
-            type: z.string(),
-            origin: z.string().optional(),
-            scopes: z
-                .array(
-                    z.union([
-                        z.lazy(() => Scopes1$.inboundSchema),
-                        z.lazy(() => Scopes2$.inboundSchema),
-                    ])
-                )
-                .optional(),
-            expiresAt: z.number().optional(),
-            activeAt: z.number(),
-            createdAt: z.number(),
-        })
-        .transform((v) => {
-            return {
-                id: v.id,
-                name: v.name,
-                type: v.type,
-                ...(v.origin === undefined ? null : { origin: v.origin }),
-                ...(v.scopes === undefined ? null : { scopes: v.scopes }),
-                ...(v.expiresAt === undefined ? null : { expiresAt: v.expiresAt }),
-                activeAt: v.activeAt,
-                createdAt: v.createdAt,
-            };
-        });
-
-    export type Outbound = {
-        id: string;
-        name: string;
-        type: string;
-        origin?: string | undefined;
-        scopes?: Array<Scopes1$.Outbound | Scopes2$.Outbound> | undefined;
-        expiresAt?: number | undefined;
-        activeAt: number;
-        createdAt: number;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, AuthToken> = z
-        .object({
-            id: z.string(),
-            name: z.string(),
-            type: z.string(),
-            origin: z.string().optional(),
-            scopes: z
-                .array(
-                    z.union([
-                        z.lazy(() => Scopes1$.outboundSchema),
-                        z.lazy(() => Scopes2$.outboundSchema),
-                    ])
-                )
-                .optional(),
-            expiresAt: z.number().optional(),
-            activeAt: z.number(),
-            createdAt: z.number(),
-        })
-        .transform((v) => {
-            return {
-                id: v.id,
-                name: v.name,
-                type: v.type,
-                ...(v.origin === undefined ? null : { origin: v.origin }),
-                ...(v.scopes === undefined ? null : { scopes: v.scopes }),
-                ...(v.expiresAt === undefined ? null : { expiresAt: v.expiresAt }),
-                activeAt: v.activeAt,
-                createdAt: v.createdAt,
-            };
-        });
+    /** @deprecated use `AuthToken$inboundSchema` instead. */
+    export const inboundSchema = AuthToken$inboundSchema;
+    /** @deprecated use `AuthToken$outboundSchema` instead. */
+    export const outboundSchema = AuthToken$outboundSchema;
+    /** @deprecated use `AuthToken$Outbound` instead. */
+    export type Outbound = AuthToken$Outbound;
 }

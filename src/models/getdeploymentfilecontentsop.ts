@@ -27,73 +27,50 @@ export type GetDeploymentFileContentsRequest = {
     slug?: string | undefined;
 };
 
-export type GetDeploymentFileContentsResponse = {};
+/** @internal */
+export const GetDeploymentFileContentsRequest$inboundSchema: z.ZodType<
+    GetDeploymentFileContentsRequest,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    id: z.string(),
+    fileId: z.string(),
+    path: z.string().optional(),
+    teamId: z.string().optional(),
+    slug: z.string().optional(),
+});
 
 /** @internal */
+export type GetDeploymentFileContentsRequest$Outbound = {
+    id: string;
+    fileId: string;
+    path?: string | undefined;
+    teamId?: string | undefined;
+    slug?: string | undefined;
+};
+
+/** @internal */
+export const GetDeploymentFileContentsRequest$outboundSchema: z.ZodType<
+    GetDeploymentFileContentsRequest$Outbound,
+    z.ZodTypeDef,
+    GetDeploymentFileContentsRequest
+> = z.object({
+    id: z.string(),
+    fileId: z.string(),
+    path: z.string().optional(),
+    teamId: z.string().optional(),
+    slug: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetDeploymentFileContentsRequest$ {
-    export const inboundSchema: z.ZodType<GetDeploymentFileContentsRequest, z.ZodTypeDef, unknown> =
-        z
-            .object({
-                id: z.string(),
-                fileId: z.string(),
-                path: z.string().optional(),
-                teamId: z.string().optional(),
-                slug: z.string().optional(),
-            })
-            .transform((v) => {
-                return {
-                    id: v.id,
-                    fileId: v.fileId,
-                    ...(v.path === undefined ? null : { path: v.path }),
-                    ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                    ...(v.slug === undefined ? null : { slug: v.slug }),
-                };
-            });
-
-    export type Outbound = {
-        id: string;
-        fileId: string;
-        path?: string | undefined;
-        teamId?: string | undefined;
-        slug?: string | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<
-        Outbound,
-        z.ZodTypeDef,
-        GetDeploymentFileContentsRequest
-    > = z
-        .object({
-            id: z.string(),
-            fileId: z.string(),
-            path: z.string().optional(),
-            teamId: z.string().optional(),
-            slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                id: v.id,
-                fileId: v.fileId,
-                ...(v.path === undefined ? null : { path: v.path }),
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
-        });
-}
-
-/** @internal */
-export namespace GetDeploymentFileContentsResponse$ {
-    export const inboundSchema: z.ZodType<
-        GetDeploymentFileContentsResponse,
-        z.ZodTypeDef,
-        unknown
-    > = z.object({});
-
-    export type Outbound = {};
-
-    export const outboundSchema: z.ZodType<
-        Outbound,
-        z.ZodTypeDef,
-        GetDeploymentFileContentsResponse
-    > = z.object({});
+    /** @deprecated use `GetDeploymentFileContentsRequest$inboundSchema` instead. */
+    export const inboundSchema = GetDeploymentFileContentsRequest$inboundSchema;
+    /** @deprecated use `GetDeploymentFileContentsRequest$outboundSchema` instead. */
+    export const outboundSchema = GetDeploymentFileContentsRequest$outboundSchema;
+    /** @deprecated use `GetDeploymentFileContentsRequest$Outbound` instead. */
+    export type Outbound = GetDeploymentFileContentsRequest$Outbound;
 }

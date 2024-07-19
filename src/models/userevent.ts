@@ -88,143 +88,140 @@ export type UserEvent = {
 };
 
 /** @internal */
+export const UserEventType$inboundSchema: z.ZodNativeEnum<typeof UserEventType> =
+    z.nativeEnum(UserEventType);
+
+/** @internal */
+export const UserEventType$outboundSchema: z.ZodNativeEnum<typeof UserEventType> =
+    UserEventType$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace UserEventType$ {
-    export const inboundSchema = z.nativeEnum(UserEventType);
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `UserEventType$inboundSchema` instead. */
+    export const inboundSchema = UserEventType$inboundSchema;
+    /** @deprecated use `UserEventType$outboundSchema` instead. */
+    export const outboundSchema = UserEventType$outboundSchema;
 }
 
 /** @internal */
+export const Entities$inboundSchema: z.ZodType<Entities, z.ZodTypeDef, unknown> = z.object({
+    type: UserEventType$inboundSchema,
+    start: z.number(),
+    end: z.number(),
+});
+
+/** @internal */
+export type Entities$Outbound = {
+    type: string;
+    start: number;
+    end: number;
+};
+
+/** @internal */
+export const Entities$outboundSchema: z.ZodType<Entities$Outbound, z.ZodTypeDef, Entities> =
+    z.object({
+        type: UserEventType$outboundSchema,
+        start: z.number(),
+        end: z.number(),
+    });
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace Entities$ {
-    export const inboundSchema: z.ZodType<Entities, z.ZodTypeDef, unknown> = z
-        .object({
-            type: UserEventType$.inboundSchema,
-            start: z.number(),
-            end: z.number(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                start: v.start,
-                end: v.end,
-            };
-        });
-
-    export type Outbound = {
-        type: string;
-        start: number;
-        end: number;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, Entities> = z
-        .object({
-            type: UserEventType$.outboundSchema,
-            start: z.number(),
-            end: z.number(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                start: v.start,
-                end: v.end,
-            };
-        });
+    /** @deprecated use `Entities$inboundSchema` instead. */
+    export const inboundSchema = Entities$inboundSchema;
+    /** @deprecated use `Entities$outboundSchema` instead. */
+    export const outboundSchema = Entities$outboundSchema;
+    /** @deprecated use `Entities$Outbound` instead. */
+    export type Outbound = Entities$Outbound;
 }
 
 /** @internal */
+export const UserModel$inboundSchema: z.ZodType<UserModel, z.ZodTypeDef, unknown> = z.object({
+    avatar: z.string(),
+    email: z.string(),
+    slug: z.string().optional(),
+    uid: z.string(),
+    username: z.string(),
+});
+
+/** @internal */
+export type UserModel$Outbound = {
+    avatar: string;
+    email: string;
+    slug?: string | undefined;
+    uid: string;
+    username: string;
+};
+
+/** @internal */
+export const UserModel$outboundSchema: z.ZodType<UserModel$Outbound, z.ZodTypeDef, UserModel> =
+    z.object({
+        avatar: z.string(),
+        email: z.string(),
+        slug: z.string().optional(),
+        uid: z.string(),
+        username: z.string(),
+    });
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace UserModel$ {
-    export const inboundSchema: z.ZodType<UserModel, z.ZodTypeDef, unknown> = z
-        .object({
-            avatar: z.string(),
-            email: z.string(),
-            slug: z.string().optional(),
-            uid: z.string(),
-            username: z.string(),
-        })
-        .transform((v) => {
-            return {
-                avatar: v.avatar,
-                email: v.email,
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-                uid: v.uid,
-                username: v.username,
-            };
-        });
-
-    export type Outbound = {
-        avatar: string;
-        email: string;
-        slug?: string | undefined;
-        uid: string;
-        username: string;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, UserModel> = z
-        .object({
-            avatar: z.string(),
-            email: z.string(),
-            slug: z.string().optional(),
-            uid: z.string(),
-            username: z.string(),
-        })
-        .transform((v) => {
-            return {
-                avatar: v.avatar,
-                email: v.email,
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-                uid: v.uid,
-                username: v.username,
-            };
-        });
+    /** @deprecated use `UserModel$inboundSchema` instead. */
+    export const inboundSchema = UserModel$inboundSchema;
+    /** @deprecated use `UserModel$outboundSchema` instead. */
+    export const outboundSchema = UserModel$outboundSchema;
+    /** @deprecated use `UserModel$Outbound` instead. */
+    export type Outbound = UserModel$Outbound;
 }
 
 /** @internal */
+export const UserEvent$inboundSchema: z.ZodType<UserEvent, z.ZodTypeDef, unknown> = z.object({
+    id: z.string(),
+    text: z.string(),
+    entities: z.array(z.lazy(() => Entities$inboundSchema)),
+    createdAt: z.number(),
+    user: z.lazy(() => UserModel$inboundSchema).optional(),
+    userId: z.string(),
+});
+
+/** @internal */
+export type UserEvent$Outbound = {
+    id: string;
+    text: string;
+    entities: Array<Entities$Outbound>;
+    createdAt: number;
+    user?: UserModel$Outbound | undefined;
+    userId: string;
+};
+
+/** @internal */
+export const UserEvent$outboundSchema: z.ZodType<UserEvent$Outbound, z.ZodTypeDef, UserEvent> =
+    z.object({
+        id: z.string(),
+        text: z.string(),
+        entities: z.array(z.lazy(() => Entities$outboundSchema)),
+        createdAt: z.number(),
+        user: z.lazy(() => UserModel$outboundSchema).optional(),
+        userId: z.string(),
+    });
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace UserEvent$ {
-    export const inboundSchema: z.ZodType<UserEvent, z.ZodTypeDef, unknown> = z
-        .object({
-            id: z.string(),
-            text: z.string(),
-            entities: z.array(z.lazy(() => Entities$.inboundSchema)),
-            createdAt: z.number(),
-            user: z.lazy(() => UserModel$.inboundSchema).optional(),
-            userId: z.string(),
-        })
-        .transform((v) => {
-            return {
-                id: v.id,
-                text: v.text,
-                entities: v.entities,
-                createdAt: v.createdAt,
-                ...(v.user === undefined ? null : { user: v.user }),
-                userId: v.userId,
-            };
-        });
-
-    export type Outbound = {
-        id: string;
-        text: string;
-        entities: Array<Entities$.Outbound>;
-        createdAt: number;
-        user?: UserModel$.Outbound | undefined;
-        userId: string;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, UserEvent> = z
-        .object({
-            id: z.string(),
-            text: z.string(),
-            entities: z.array(z.lazy(() => Entities$.outboundSchema)),
-            createdAt: z.number(),
-            user: z.lazy(() => UserModel$.outboundSchema).optional(),
-            userId: z.string(),
-        })
-        .transform((v) => {
-            return {
-                id: v.id,
-                text: v.text,
-                entities: v.entities,
-                createdAt: v.createdAt,
-                ...(v.user === undefined ? null : { user: v.user }),
-                userId: v.userId,
-            };
-        });
+    /** @deprecated use `UserEvent$inboundSchema` instead. */
+    export const inboundSchema = UserEvent$inboundSchema;
+    /** @deprecated use `UserEvent$outboundSchema` instead. */
+    export const outboundSchema = UserEvent$outboundSchema;
+    /** @deprecated use `UserEvent$Outbound` instead. */
+    export type Outbound = UserEvent$Outbound;
 }

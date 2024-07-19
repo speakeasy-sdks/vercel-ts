@@ -41,129 +41,148 @@ export type GitNamespacesResponseBody = {
 };
 
 /** @internal */
+export const Provider$inboundSchema: z.ZodNativeEnum<typeof Provider> = z.nativeEnum(Provider);
+
+/** @internal */
+export const Provider$outboundSchema: z.ZodNativeEnum<typeof Provider> = Provider$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace Provider$ {
-    export const inboundSchema = z.nativeEnum(Provider);
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `Provider$inboundSchema` instead. */
+    export const inboundSchema = Provider$inboundSchema;
+    /** @deprecated use `Provider$outboundSchema` instead. */
+    export const outboundSchema = Provider$outboundSchema;
 }
 
 /** @internal */
+export const GitNamespacesRequest$inboundSchema: z.ZodType<
+    GitNamespacesRequest,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    host: z.string().optional(),
+    provider: Provider$inboundSchema.optional(),
+    teamId: z.string().optional(),
+    slug: z.string().optional(),
+});
+
+/** @internal */
+export type GitNamespacesRequest$Outbound = {
+    host?: string | undefined;
+    provider?: string | undefined;
+    teamId?: string | undefined;
+    slug?: string | undefined;
+};
+
+/** @internal */
+export const GitNamespacesRequest$outboundSchema: z.ZodType<
+    GitNamespacesRequest$Outbound,
+    z.ZodTypeDef,
+    GitNamespacesRequest
+> = z.object({
+    host: z.string().optional(),
+    provider: Provider$outboundSchema.optional(),
+    teamId: z.string().optional(),
+    slug: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GitNamespacesRequest$ {
-    export const inboundSchema: z.ZodType<GitNamespacesRequest, z.ZodTypeDef, unknown> = z
-        .object({
-            host: z.string().optional(),
-            provider: Provider$.inboundSchema.optional(),
-            teamId: z.string().optional(),
-            slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.host === undefined ? null : { host: v.host }),
-                ...(v.provider === undefined ? null : { provider: v.provider }),
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
-        });
-
-    export type Outbound = {
-        host?: string | undefined;
-        provider?: string | undefined;
-        teamId?: string | undefined;
-        slug?: string | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GitNamespacesRequest> = z
-        .object({
-            host: z.string().optional(),
-            provider: Provider$.outboundSchema.optional(),
-            teamId: z.string().optional(),
-            slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.host === undefined ? null : { host: v.host }),
-                ...(v.provider === undefined ? null : { provider: v.provider }),
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
-        });
+    /** @deprecated use `GitNamespacesRequest$inboundSchema` instead. */
+    export const inboundSchema = GitNamespacesRequest$inboundSchema;
+    /** @deprecated use `GitNamespacesRequest$outboundSchema` instead. */
+    export const outboundSchema = GitNamespacesRequest$outboundSchema;
+    /** @deprecated use `GitNamespacesRequest$Outbound` instead. */
+    export type Outbound = GitNamespacesRequest$Outbound;
 }
 
 /** @internal */
+export const Id$inboundSchema: z.ZodType<Id, z.ZodTypeDef, unknown> = z.union([
+    z.string(),
+    z.number(),
+]);
+
+/** @internal */
+export type Id$Outbound = string | number;
+
+/** @internal */
+export const Id$outboundSchema: z.ZodType<Id$Outbound, z.ZodTypeDef, Id> = z.union([
+    z.string(),
+    z.number(),
+]);
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace Id$ {
-    export const inboundSchema: z.ZodType<Id, z.ZodTypeDef, unknown> = z.union([
-        z.string(),
-        z.number(),
-    ]);
-
-    export type Outbound = string | number;
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, Id> = z.union([
-        z.string(),
-        z.number(),
-    ]);
+    /** @deprecated use `Id$inboundSchema` instead. */
+    export const inboundSchema = Id$inboundSchema;
+    /** @deprecated use `Id$outboundSchema` instead. */
+    export const outboundSchema = Id$outboundSchema;
+    /** @deprecated use `Id$Outbound` instead. */
+    export type Outbound = Id$Outbound;
 }
 
 /** @internal */
+export const GitNamespacesResponseBody$inboundSchema: z.ZodType<
+    GitNamespacesResponseBody,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    provider: z.string(),
+    slug: z.string(),
+    id: z.union([z.string(), z.number()]),
+    ownerType: z.string(),
+    name: z.string().optional(),
+    isAccessRestricted: z.boolean().optional(),
+    installationId: z.number().optional(),
+    requireReauth: z.boolean().optional(),
+});
+
+/** @internal */
+export type GitNamespacesResponseBody$Outbound = {
+    provider: string;
+    slug: string;
+    id: string | number;
+    ownerType: string;
+    name?: string | undefined;
+    isAccessRestricted?: boolean | undefined;
+    installationId?: number | undefined;
+    requireReauth?: boolean | undefined;
+};
+
+/** @internal */
+export const GitNamespacesResponseBody$outboundSchema: z.ZodType<
+    GitNamespacesResponseBody$Outbound,
+    z.ZodTypeDef,
+    GitNamespacesResponseBody
+> = z.object({
+    provider: z.string(),
+    slug: z.string(),
+    id: z.union([z.string(), z.number()]),
+    ownerType: z.string(),
+    name: z.string().optional(),
+    isAccessRestricted: z.boolean().optional(),
+    installationId: z.number().optional(),
+    requireReauth: z.boolean().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GitNamespacesResponseBody$ {
-    export const inboundSchema: z.ZodType<GitNamespacesResponseBody, z.ZodTypeDef, unknown> = z
-        .object({
-            provider: z.string(),
-            slug: z.string(),
-            id: z.union([z.string(), z.number()]),
-            ownerType: z.string(),
-            name: z.string().optional(),
-            isAccessRestricted: z.boolean().optional(),
-            installationId: z.number().optional(),
-            requireReauth: z.boolean().optional(),
-        })
-        .transform((v) => {
-            return {
-                provider: v.provider,
-                slug: v.slug,
-                id: v.id,
-                ownerType: v.ownerType,
-                ...(v.name === undefined ? null : { name: v.name }),
-                ...(v.isAccessRestricted === undefined
-                    ? null
-                    : { isAccessRestricted: v.isAccessRestricted }),
-                ...(v.installationId === undefined ? null : { installationId: v.installationId }),
-                ...(v.requireReauth === undefined ? null : { requireReauth: v.requireReauth }),
-            };
-        });
-
-    export type Outbound = {
-        provider: string;
-        slug: string;
-        id: string | number;
-        ownerType: string;
-        name?: string | undefined;
-        isAccessRestricted?: boolean | undefined;
-        installationId?: number | undefined;
-        requireReauth?: boolean | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GitNamespacesResponseBody> = z
-        .object({
-            provider: z.string(),
-            slug: z.string(),
-            id: z.union([z.string(), z.number()]),
-            ownerType: z.string(),
-            name: z.string().optional(),
-            isAccessRestricted: z.boolean().optional(),
-            installationId: z.number().optional(),
-            requireReauth: z.boolean().optional(),
-        })
-        .transform((v) => {
-            return {
-                provider: v.provider,
-                slug: v.slug,
-                id: v.id,
-                ownerType: v.ownerType,
-                ...(v.name === undefined ? null : { name: v.name }),
-                ...(v.isAccessRestricted === undefined
-                    ? null
-                    : { isAccessRestricted: v.isAccessRestricted }),
-                ...(v.installationId === undefined ? null : { installationId: v.installationId }),
-                ...(v.requireReauth === undefined ? null : { requireReauth: v.requireReauth }),
-            };
-        });
+    /** @deprecated use `GitNamespacesResponseBody$inboundSchema` instead. */
+    export const inboundSchema = GitNamespacesResponseBody$inboundSchema;
+    /** @deprecated use `GitNamespacesResponseBody$outboundSchema` instead. */
+    export const outboundSchema = GitNamespacesResponseBody$outboundSchema;
+    /** @deprecated use `GitNamespacesResponseBody$Outbound` instead. */
+    export type Outbound = GitNamespacesResponseBody$Outbound;
 }

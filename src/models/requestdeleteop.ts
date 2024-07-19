@@ -44,97 +44,118 @@ export type RequestDeleteResponseBody = {
 };
 
 /** @internal */
+export const RequestDeleteReasons$inboundSchema: z.ZodType<
+    RequestDeleteReasons,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    slug: z.string(),
+    description: z.string(),
+});
+
+/** @internal */
+export type RequestDeleteReasons$Outbound = {
+    slug: string;
+    description: string;
+};
+
+/** @internal */
+export const RequestDeleteReasons$outboundSchema: z.ZodType<
+    RequestDeleteReasons$Outbound,
+    z.ZodTypeDef,
+    RequestDeleteReasons
+> = z.object({
+    slug: z.string(),
+    description: z.string(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace RequestDeleteReasons$ {
-    export const inboundSchema: z.ZodType<RequestDeleteReasons, z.ZodTypeDef, unknown> = z
-        .object({
-            slug: z.string(),
-            description: z.string(),
-        })
-        .transform((v) => {
-            return {
-                slug: v.slug,
-                description: v.description,
-            };
-        });
-
-    export type Outbound = {
-        slug: string;
-        description: string;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, RequestDeleteReasons> = z
-        .object({
-            slug: z.string(),
-            description: z.string(),
-        })
-        .transform((v) => {
-            return {
-                slug: v.slug,
-                description: v.description,
-            };
-        });
+    /** @deprecated use `RequestDeleteReasons$inboundSchema` instead. */
+    export const inboundSchema = RequestDeleteReasons$inboundSchema;
+    /** @deprecated use `RequestDeleteReasons$outboundSchema` instead. */
+    export const outboundSchema = RequestDeleteReasons$outboundSchema;
+    /** @deprecated use `RequestDeleteReasons$Outbound` instead. */
+    export type Outbound = RequestDeleteReasons$Outbound;
 }
 
 /** @internal */
+export const RequestDeleteRequestBody$inboundSchema: z.ZodType<
+    RequestDeleteRequestBody,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    reasons: z.array(z.lazy(() => RequestDeleteReasons$inboundSchema)).optional(),
+});
+
+/** @internal */
+export type RequestDeleteRequestBody$Outbound = {
+    reasons?: Array<RequestDeleteReasons$Outbound> | undefined;
+};
+
+/** @internal */
+export const RequestDeleteRequestBody$outboundSchema: z.ZodType<
+    RequestDeleteRequestBody$Outbound,
+    z.ZodTypeDef,
+    RequestDeleteRequestBody
+> = z.object({
+    reasons: z.array(z.lazy(() => RequestDeleteReasons$outboundSchema)).optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace RequestDeleteRequestBody$ {
-    export const inboundSchema: z.ZodType<RequestDeleteRequestBody, z.ZodTypeDef, unknown> = z
-        .object({
-            reasons: z.array(z.lazy(() => RequestDeleteReasons$.inboundSchema)).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.reasons === undefined ? null : { reasons: v.reasons }),
-            };
-        });
-
-    export type Outbound = {
-        reasons?: Array<RequestDeleteReasons$.Outbound> | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, RequestDeleteRequestBody> = z
-        .object({
-            reasons: z.array(z.lazy(() => RequestDeleteReasons$.outboundSchema)).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.reasons === undefined ? null : { reasons: v.reasons }),
-            };
-        });
+    /** @deprecated use `RequestDeleteRequestBody$inboundSchema` instead. */
+    export const inboundSchema = RequestDeleteRequestBody$inboundSchema;
+    /** @deprecated use `RequestDeleteRequestBody$outboundSchema` instead. */
+    export const outboundSchema = RequestDeleteRequestBody$outboundSchema;
+    /** @deprecated use `RequestDeleteRequestBody$Outbound` instead. */
+    export type Outbound = RequestDeleteRequestBody$Outbound;
 }
 
 /** @internal */
+export const RequestDeleteResponseBody$inboundSchema: z.ZodType<
+    RequestDeleteResponseBody,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    id: z.string(),
+    email: z.string(),
+    message: z.string(),
+});
+
+/** @internal */
+export type RequestDeleteResponseBody$Outbound = {
+    id: string;
+    email: string;
+    message: string;
+};
+
+/** @internal */
+export const RequestDeleteResponseBody$outboundSchema: z.ZodType<
+    RequestDeleteResponseBody$Outbound,
+    z.ZodTypeDef,
+    RequestDeleteResponseBody
+> = z.object({
+    id: z.string(),
+    email: z.string(),
+    message: z.string(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace RequestDeleteResponseBody$ {
-    export const inboundSchema: z.ZodType<RequestDeleteResponseBody, z.ZodTypeDef, unknown> = z
-        .object({
-            id: z.string(),
-            email: z.string(),
-            message: z.string(),
-        })
-        .transform((v) => {
-            return {
-                id: v.id,
-                email: v.email,
-                message: v.message,
-            };
-        });
-
-    export type Outbound = {
-        id: string;
-        email: string;
-        message: string;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, RequestDeleteResponseBody> = z
-        .object({
-            id: z.string(),
-            email: z.string(),
-            message: z.string(),
-        })
-        .transform((v) => {
-            return {
-                id: v.id,
-                email: v.email,
-                message: v.message,
-            };
-        });
+    /** @deprecated use `RequestDeleteResponseBody$inboundSchema` instead. */
+    export const inboundSchema = RequestDeleteResponseBody$inboundSchema;
+    /** @deprecated use `RequestDeleteResponseBody$outboundSchema` instead. */
+    export const outboundSchema = RequestDeleteResponseBody$outboundSchema;
+    /** @deprecated use `RequestDeleteResponseBody$Outbound` instead. */
+    export type Outbound = RequestDeleteResponseBody$Outbound;
 }

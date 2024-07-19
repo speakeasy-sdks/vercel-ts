@@ -79,149 +79,138 @@ export type VerifyTokenResponseBody = {
 };
 
 /** @internal */
+export const TeamPlan$inboundSchema: z.ZodNativeEnum<typeof TeamPlan> = z.nativeEnum(TeamPlan);
+
+/** @internal */
+export const TeamPlan$outboundSchema: z.ZodNativeEnum<typeof TeamPlan> = TeamPlan$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace TeamPlan$ {
-    export const inboundSchema = z.nativeEnum(TeamPlan);
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `TeamPlan$inboundSchema` instead. */
+    export const inboundSchema = TeamPlan$inboundSchema;
+    /** @deprecated use `TeamPlan$outboundSchema` instead. */
+    export const outboundSchema = TeamPlan$outboundSchema;
 }
 
 /** @internal */
+export const VerifyTokenRequest$inboundSchema: z.ZodType<
+    VerifyTokenRequest,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    email: z.string().optional(),
+    token: z.string(),
+    tokenName: z.string().optional(),
+    ssoUserId: z.string().optional(),
+    teamName: z.string().optional(),
+    teamSlug: z.string().optional(),
+    teamPlan: TeamPlan$inboundSchema.optional(),
+    sessionReferrer: z.string().optional(),
+    landingPage: z.string().optional(),
+    pageBeforeConversionPage: z.string().optional(),
+    utmSource: z.string().optional(),
+    utmMedium: z.string().optional(),
+    utmCampaign: z.string().optional(),
+    utmTerm: z.string().optional(),
+    oppId: z.string().optional(),
+});
+
+/** @internal */
+export type VerifyTokenRequest$Outbound = {
+    email?: string | undefined;
+    token: string;
+    tokenName?: string | undefined;
+    ssoUserId?: string | undefined;
+    teamName?: string | undefined;
+    teamSlug?: string | undefined;
+    teamPlan?: string | undefined;
+    sessionReferrer?: string | undefined;
+    landingPage?: string | undefined;
+    pageBeforeConversionPage?: string | undefined;
+    utmSource?: string | undefined;
+    utmMedium?: string | undefined;
+    utmCampaign?: string | undefined;
+    utmTerm?: string | undefined;
+    oppId?: string | undefined;
+};
+
+/** @internal */
+export const VerifyTokenRequest$outboundSchema: z.ZodType<
+    VerifyTokenRequest$Outbound,
+    z.ZodTypeDef,
+    VerifyTokenRequest
+> = z.object({
+    email: z.string().optional(),
+    token: z.string(),
+    tokenName: z.string().optional(),
+    ssoUserId: z.string().optional(),
+    teamName: z.string().optional(),
+    teamSlug: z.string().optional(),
+    teamPlan: TeamPlan$outboundSchema.optional(),
+    sessionReferrer: z.string().optional(),
+    landingPage: z.string().optional(),
+    pageBeforeConversionPage: z.string().optional(),
+    utmSource: z.string().optional(),
+    utmMedium: z.string().optional(),
+    utmCampaign: z.string().optional(),
+    utmTerm: z.string().optional(),
+    oppId: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace VerifyTokenRequest$ {
-    export const inboundSchema: z.ZodType<VerifyTokenRequest, z.ZodTypeDef, unknown> = z
-        .object({
-            email: z.string().optional(),
-            token: z.string(),
-            tokenName: z.string().optional(),
-            ssoUserId: z.string().optional(),
-            teamName: z.string().optional(),
-            teamSlug: z.string().optional(),
-            teamPlan: TeamPlan$.inboundSchema.optional(),
-            sessionReferrer: z.string().optional(),
-            landingPage: z.string().optional(),
-            pageBeforeConversionPage: z.string().optional(),
-            utmSource: z.string().optional(),
-            utmMedium: z.string().optional(),
-            utmCampaign: z.string().optional(),
-            utmTerm: z.string().optional(),
-            oppId: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.email === undefined ? null : { email: v.email }),
-                token: v.token,
-                ...(v.tokenName === undefined ? null : { tokenName: v.tokenName }),
-                ...(v.ssoUserId === undefined ? null : { ssoUserId: v.ssoUserId }),
-                ...(v.teamName === undefined ? null : { teamName: v.teamName }),
-                ...(v.teamSlug === undefined ? null : { teamSlug: v.teamSlug }),
-                ...(v.teamPlan === undefined ? null : { teamPlan: v.teamPlan }),
-                ...(v.sessionReferrer === undefined
-                    ? null
-                    : { sessionReferrer: v.sessionReferrer }),
-                ...(v.landingPage === undefined ? null : { landingPage: v.landingPage }),
-                ...(v.pageBeforeConversionPage === undefined
-                    ? null
-                    : { pageBeforeConversionPage: v.pageBeforeConversionPage }),
-                ...(v.utmSource === undefined ? null : { utmSource: v.utmSource }),
-                ...(v.utmMedium === undefined ? null : { utmMedium: v.utmMedium }),
-                ...(v.utmCampaign === undefined ? null : { utmCampaign: v.utmCampaign }),
-                ...(v.utmTerm === undefined ? null : { utmTerm: v.utmTerm }),
-                ...(v.oppId === undefined ? null : { oppId: v.oppId }),
-            };
-        });
-
-    export type Outbound = {
-        email?: string | undefined;
-        token: string;
-        tokenName?: string | undefined;
-        ssoUserId?: string | undefined;
-        teamName?: string | undefined;
-        teamSlug?: string | undefined;
-        teamPlan?: string | undefined;
-        sessionReferrer?: string | undefined;
-        landingPage?: string | undefined;
-        pageBeforeConversionPage?: string | undefined;
-        utmSource?: string | undefined;
-        utmMedium?: string | undefined;
-        utmCampaign?: string | undefined;
-        utmTerm?: string | undefined;
-        oppId?: string | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, VerifyTokenRequest> = z
-        .object({
-            email: z.string().optional(),
-            token: z.string(),
-            tokenName: z.string().optional(),
-            ssoUserId: z.string().optional(),
-            teamName: z.string().optional(),
-            teamSlug: z.string().optional(),
-            teamPlan: TeamPlan$.outboundSchema.optional(),
-            sessionReferrer: z.string().optional(),
-            landingPage: z.string().optional(),
-            pageBeforeConversionPage: z.string().optional(),
-            utmSource: z.string().optional(),
-            utmMedium: z.string().optional(),
-            utmCampaign: z.string().optional(),
-            utmTerm: z.string().optional(),
-            oppId: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.email === undefined ? null : { email: v.email }),
-                token: v.token,
-                ...(v.tokenName === undefined ? null : { tokenName: v.tokenName }),
-                ...(v.ssoUserId === undefined ? null : { ssoUserId: v.ssoUserId }),
-                ...(v.teamName === undefined ? null : { teamName: v.teamName }),
-                ...(v.teamSlug === undefined ? null : { teamSlug: v.teamSlug }),
-                ...(v.teamPlan === undefined ? null : { teamPlan: v.teamPlan }),
-                ...(v.sessionReferrer === undefined
-                    ? null
-                    : { sessionReferrer: v.sessionReferrer }),
-                ...(v.landingPage === undefined ? null : { landingPage: v.landingPage }),
-                ...(v.pageBeforeConversionPage === undefined
-                    ? null
-                    : { pageBeforeConversionPage: v.pageBeforeConversionPage }),
-                ...(v.utmSource === undefined ? null : { utmSource: v.utmSource }),
-                ...(v.utmMedium === undefined ? null : { utmMedium: v.utmMedium }),
-                ...(v.utmCampaign === undefined ? null : { utmCampaign: v.utmCampaign }),
-                ...(v.utmTerm === undefined ? null : { utmTerm: v.utmTerm }),
-                ...(v.oppId === undefined ? null : { oppId: v.oppId }),
-            };
-        });
+    /** @deprecated use `VerifyTokenRequest$inboundSchema` instead. */
+    export const inboundSchema = VerifyTokenRequest$inboundSchema;
+    /** @deprecated use `VerifyTokenRequest$outboundSchema` instead. */
+    export const outboundSchema = VerifyTokenRequest$outboundSchema;
+    /** @deprecated use `VerifyTokenRequest$Outbound` instead. */
+    export type Outbound = VerifyTokenRequest$Outbound;
 }
 
 /** @internal */
+export const VerifyTokenResponseBody$inboundSchema: z.ZodType<
+    VerifyTokenResponseBody,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    token: z.string(),
+    email: z.string(),
+    teamId: z.string().optional(),
+});
+
+/** @internal */
+export type VerifyTokenResponseBody$Outbound = {
+    token: string;
+    email: string;
+    teamId?: string | undefined;
+};
+
+/** @internal */
+export const VerifyTokenResponseBody$outboundSchema: z.ZodType<
+    VerifyTokenResponseBody$Outbound,
+    z.ZodTypeDef,
+    VerifyTokenResponseBody
+> = z.object({
+    token: z.string(),
+    email: z.string(),
+    teamId: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace VerifyTokenResponseBody$ {
-    export const inboundSchema: z.ZodType<VerifyTokenResponseBody, z.ZodTypeDef, unknown> = z
-        .object({
-            token: z.string(),
-            email: z.string(),
-            teamId: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                token: v.token,
-                email: v.email,
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-            };
-        });
-
-    export type Outbound = {
-        token: string;
-        email: string;
-        teamId?: string | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, VerifyTokenResponseBody> = z
-        .object({
-            token: z.string(),
-            email: z.string(),
-            teamId: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                token: v.token,
-                email: v.email,
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-            };
-        });
+    /** @deprecated use `VerifyTokenResponseBody$inboundSchema` instead. */
+    export const inboundSchema = VerifyTokenResponseBody$inboundSchema;
+    /** @deprecated use `VerifyTokenResponseBody$outboundSchema` instead. */
+    export const outboundSchema = VerifyTokenResponseBody$outboundSchema;
+    /** @deprecated use `VerifyTokenResponseBody$Outbound` instead. */
+    export type Outbound = VerifyTokenResponseBody$Outbound;
 }

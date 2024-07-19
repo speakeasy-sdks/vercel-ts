@@ -51,64 +51,65 @@ export type FileTree = {
 };
 
 /** @internal */
+export const Type$inboundSchema: z.ZodNativeEnum<typeof Type> = z.nativeEnum(Type);
+
+/** @internal */
+export const Type$outboundSchema: z.ZodNativeEnum<typeof Type> = Type$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace Type$ {
-    export const inboundSchema = z.nativeEnum(Type);
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `Type$inboundSchema` instead. */
+    export const inboundSchema = Type$inboundSchema;
+    /** @deprecated use `Type$outboundSchema` instead. */
+    export const outboundSchema = Type$outboundSchema;
 }
 
 /** @internal */
+export const FileTree$inboundSchema: z.ZodType<FileTree, z.ZodTypeDef, unknown> = z.object({
+    name: z.string(),
+    type: Type$inboundSchema,
+    uid: z.string().optional(),
+    children: z.array(z.lazy(() => FileTree$inboundSchema)).optional(),
+    contentType: z.string().optional(),
+    mode: z.number(),
+    symlink: z.string().optional(),
+});
+
+/** @internal */
+export type FileTree$Outbound = {
+    name: string;
+    type: string;
+    uid?: string | undefined;
+    children?: Array<FileTree$Outbound> | undefined;
+    contentType?: string | undefined;
+    mode: number;
+    symlink?: string | undefined;
+};
+
+/** @internal */
+export const FileTree$outboundSchema: z.ZodType<FileTree$Outbound, z.ZodTypeDef, FileTree> =
+    z.object({
+        name: z.string(),
+        type: Type$outboundSchema,
+        uid: z.string().optional(),
+        children: z.array(z.lazy(() => FileTree$outboundSchema)).optional(),
+        contentType: z.string().optional(),
+        mode: z.number(),
+        symlink: z.string().optional(),
+    });
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace FileTree$ {
-    export const inboundSchema: z.ZodType<FileTree, z.ZodTypeDef, unknown> = z
-        .object({
-            name: z.string(),
-            type: Type$.inboundSchema,
-            uid: z.string().optional(),
-            children: z.array(z.lazy(() => FileTree$.inboundSchema)).optional(),
-            contentType: z.string().optional(),
-            mode: z.number(),
-            symlink: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                name: v.name,
-                type: v.type,
-                ...(v.uid === undefined ? null : { uid: v.uid }),
-                ...(v.children === undefined ? null : { children: v.children }),
-                ...(v.contentType === undefined ? null : { contentType: v.contentType }),
-                mode: v.mode,
-                ...(v.symlink === undefined ? null : { symlink: v.symlink }),
-            };
-        });
-
-    export type Outbound = {
-        name: string;
-        type: string;
-        uid?: string | undefined;
-        children?: Array<FileTree$.Outbound> | undefined;
-        contentType?: string | undefined;
-        mode: number;
-        symlink?: string | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, FileTree> = z
-        .object({
-            name: z.string(),
-            type: Type$.outboundSchema,
-            uid: z.string().optional(),
-            children: z.array(z.lazy(() => FileTree$.outboundSchema)).optional(),
-            contentType: z.string().optional(),
-            mode: z.number(),
-            symlink: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                name: v.name,
-                type: v.type,
-                ...(v.uid === undefined ? null : { uid: v.uid }),
-                ...(v.children === undefined ? null : { children: v.children }),
-                ...(v.contentType === undefined ? null : { contentType: v.contentType }),
-                mode: v.mode,
-                ...(v.symlink === undefined ? null : { symlink: v.symlink }),
-            };
-        });
+    /** @deprecated use `FileTree$inboundSchema` instead. */
+    export const inboundSchema = FileTree$inboundSchema;
+    /** @deprecated use `FileTree$outboundSchema` instead. */
+    export const outboundSchema = FileTree$outboundSchema;
+    /** @deprecated use `FileTree$Outbound` instead. */
+    export type Outbound = FileTree$Outbound;
 }

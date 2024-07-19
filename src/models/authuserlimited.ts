@@ -50,69 +50,74 @@ export type AuthUserLimited = {
 };
 
 /** @internal */
+export const AuthUserLimitedVersion$inboundSchema: z.ZodNativeEnum<typeof AuthUserLimitedVersion> =
+    z.nativeEnum(AuthUserLimitedVersion);
+
+/** @internal */
+export const AuthUserLimitedVersion$outboundSchema: z.ZodNativeEnum<typeof AuthUserLimitedVersion> =
+    AuthUserLimitedVersion$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace AuthUserLimitedVersion$ {
-    export const inboundSchema = z.nativeEnum(AuthUserLimitedVersion);
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `AuthUserLimitedVersion$inboundSchema` instead. */
+    export const inboundSchema = AuthUserLimitedVersion$inboundSchema;
+    /** @deprecated use `AuthUserLimitedVersion$outboundSchema` instead. */
+    export const outboundSchema = AuthUserLimitedVersion$outboundSchema;
 }
 
 /** @internal */
+export const AuthUserLimited$inboundSchema: z.ZodType<AuthUserLimited, z.ZodTypeDef, unknown> =
+    z.object({
+        limited: z.boolean(),
+        id: z.string(),
+        email: z.string(),
+        name: z.nullable(z.string()),
+        username: z.string(),
+        avatar: z.nullable(z.string()),
+        defaultTeamId: z.nullable(z.string()),
+        version: z.nullable(AuthUserLimitedVersion$inboundSchema),
+    });
+
+/** @internal */
+export type AuthUserLimited$Outbound = {
+    limited: boolean;
+    id: string;
+    email: string;
+    name: string | null;
+    username: string;
+    avatar: string | null;
+    defaultTeamId: string | null;
+    version: string | null;
+};
+
+/** @internal */
+export const AuthUserLimited$outboundSchema: z.ZodType<
+    AuthUserLimited$Outbound,
+    z.ZodTypeDef,
+    AuthUserLimited
+> = z.object({
+    limited: z.boolean(),
+    id: z.string(),
+    email: z.string(),
+    name: z.nullable(z.string()),
+    username: z.string(),
+    avatar: z.nullable(z.string()),
+    defaultTeamId: z.nullable(z.string()),
+    version: z.nullable(AuthUserLimitedVersion$outboundSchema),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace AuthUserLimited$ {
-    export const inboundSchema: z.ZodType<AuthUserLimited, z.ZodTypeDef, unknown> = z
-        .object({
-            limited: z.boolean(),
-            id: z.string(),
-            email: z.string(),
-            name: z.nullable(z.string()),
-            username: z.string(),
-            avatar: z.nullable(z.string()),
-            defaultTeamId: z.nullable(z.string()),
-            version: z.nullable(AuthUserLimitedVersion$.inboundSchema),
-        })
-        .transform((v) => {
-            return {
-                limited: v.limited,
-                id: v.id,
-                email: v.email,
-                name: v.name,
-                username: v.username,
-                avatar: v.avatar,
-                defaultTeamId: v.defaultTeamId,
-                version: v.version,
-            };
-        });
-
-    export type Outbound = {
-        limited: boolean;
-        id: string;
-        email: string;
-        name: string | null;
-        username: string;
-        avatar: string | null;
-        defaultTeamId: string | null;
-        version: string | null;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, AuthUserLimited> = z
-        .object({
-            limited: z.boolean(),
-            id: z.string(),
-            email: z.string(),
-            name: z.nullable(z.string()),
-            username: z.string(),
-            avatar: z.nullable(z.string()),
-            defaultTeamId: z.nullable(z.string()),
-            version: z.nullable(AuthUserLimitedVersion$.outboundSchema),
-        })
-        .transform((v) => {
-            return {
-                limited: v.limited,
-                id: v.id,
-                email: v.email,
-                name: v.name,
-                username: v.username,
-                avatar: v.avatar,
-                defaultTeamId: v.defaultTeamId,
-                version: v.version,
-            };
-        });
+    /** @deprecated use `AuthUserLimited$inboundSchema` instead. */
+    export const inboundSchema = AuthUserLimited$inboundSchema;
+    /** @deprecated use `AuthUserLimited$outboundSchema` instead. */
+    export const outboundSchema = AuthUserLimited$outboundSchema;
+    /** @deprecated use `AuthUserLimited$Outbound` instead. */
+    export type Outbound = AuthUserLimited$Outbound;
 }

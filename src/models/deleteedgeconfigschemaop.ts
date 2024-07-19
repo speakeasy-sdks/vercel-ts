@@ -16,53 +16,44 @@ export type DeleteEdgeConfigSchemaRequest = {
     slug?: string | undefined;
 };
 
-export type DeleteEdgeConfigSchemaResponse = {};
+/** @internal */
+export const DeleteEdgeConfigSchemaRequest$inboundSchema: z.ZodType<
+    DeleteEdgeConfigSchemaRequest,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    edgeConfigId: z.string(),
+    teamId: z.string().optional(),
+    slug: z.string().optional(),
+});
 
 /** @internal */
+export type DeleteEdgeConfigSchemaRequest$Outbound = {
+    edgeConfigId: string;
+    teamId?: string | undefined;
+    slug?: string | undefined;
+};
+
+/** @internal */
+export const DeleteEdgeConfigSchemaRequest$outboundSchema: z.ZodType<
+    DeleteEdgeConfigSchemaRequest$Outbound,
+    z.ZodTypeDef,
+    DeleteEdgeConfigSchemaRequest
+> = z.object({
+    edgeConfigId: z.string(),
+    teamId: z.string().optional(),
+    slug: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace DeleteEdgeConfigSchemaRequest$ {
-    export const inboundSchema: z.ZodType<DeleteEdgeConfigSchemaRequest, z.ZodTypeDef, unknown> = z
-        .object({
-            edgeConfigId: z.string(),
-            teamId: z.string().optional(),
-            slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                edgeConfigId: v.edgeConfigId,
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
-        });
-
-    export type Outbound = {
-        edgeConfigId: string;
-        teamId?: string | undefined;
-        slug?: string | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, DeleteEdgeConfigSchemaRequest> =
-        z
-            .object({
-                edgeConfigId: z.string(),
-                teamId: z.string().optional(),
-                slug: z.string().optional(),
-            })
-            .transform((v) => {
-                return {
-                    edgeConfigId: v.edgeConfigId,
-                    ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                    ...(v.slug === undefined ? null : { slug: v.slug }),
-                };
-            });
-}
-
-/** @internal */
-export namespace DeleteEdgeConfigSchemaResponse$ {
-    export const inboundSchema: z.ZodType<DeleteEdgeConfigSchemaResponse, z.ZodTypeDef, unknown> =
-        z.object({});
-
-    export type Outbound = {};
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, DeleteEdgeConfigSchemaResponse> =
-        z.object({});
+    /** @deprecated use `DeleteEdgeConfigSchemaRequest$inboundSchema` instead. */
+    export const inboundSchema = DeleteEdgeConfigSchemaRequest$inboundSchema;
+    /** @deprecated use `DeleteEdgeConfigSchemaRequest$outboundSchema` instead. */
+    export const outboundSchema = DeleteEdgeConfigSchemaRequest$outboundSchema;
+    /** @deprecated use `DeleteEdgeConfigSchemaRequest$Outbound` instead. */
+    export type Outbound = DeleteEdgeConfigSchemaRequest$Outbound;
 }

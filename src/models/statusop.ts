@@ -27,66 +27,92 @@ export type StatusResponseBody = {
 };
 
 /** @internal */
+export const StatusRequest$inboundSchema: z.ZodType<StatusRequest, z.ZodTypeDef, unknown> =
+    z.object({
+        teamId: z.string().optional(),
+        slug: z.string().optional(),
+    });
+
+/** @internal */
+export type StatusRequest$Outbound = {
+    teamId?: string | undefined;
+    slug?: string | undefined;
+};
+
+/** @internal */
+export const StatusRequest$outboundSchema: z.ZodType<
+    StatusRequest$Outbound,
+    z.ZodTypeDef,
+    StatusRequest
+> = z.object({
+    teamId: z.string().optional(),
+    slug: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace StatusRequest$ {
-    export const inboundSchema: z.ZodType<StatusRequest, z.ZodTypeDef, unknown> = z
-        .object({
-            teamId: z.string().optional(),
-            slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
-        });
-
-    export type Outbound = {
-        teamId?: string | undefined;
-        slug?: string | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, StatusRequest> = z
-        .object({
-            teamId: z.string().optional(),
-            slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
-        });
+    /** @deprecated use `StatusRequest$inboundSchema` instead. */
+    export const inboundSchema = StatusRequest$inboundSchema;
+    /** @deprecated use `StatusRequest$outboundSchema` instead. */
+    export const outboundSchema = StatusRequest$outboundSchema;
+    /** @deprecated use `StatusRequest$Outbound` instead. */
+    export type Outbound = StatusRequest$Outbound;
 }
 
 /** @internal */
+export const StatusStatus$inboundSchema: z.ZodNativeEnum<typeof StatusStatus> =
+    z.nativeEnum(StatusStatus);
+
+/** @internal */
+export const StatusStatus$outboundSchema: z.ZodNativeEnum<typeof StatusStatus> =
+    StatusStatus$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace StatusStatus$ {
-    export const inboundSchema = z.nativeEnum(StatusStatus);
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `StatusStatus$inboundSchema` instead. */
+    export const inboundSchema = StatusStatus$inboundSchema;
+    /** @deprecated use `StatusStatus$outboundSchema` instead. */
+    export const outboundSchema = StatusStatus$outboundSchema;
 }
 
 /** @internal */
+export const StatusResponseBody$inboundSchema: z.ZodType<
+    StatusResponseBody,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    status: StatusStatus$inboundSchema,
+});
+
+/** @internal */
+export type StatusResponseBody$Outbound = {
+    status: string;
+};
+
+/** @internal */
+export const StatusResponseBody$outboundSchema: z.ZodType<
+    StatusResponseBody$Outbound,
+    z.ZodTypeDef,
+    StatusResponseBody
+> = z.object({
+    status: StatusStatus$outboundSchema,
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace StatusResponseBody$ {
-    export const inboundSchema: z.ZodType<StatusResponseBody, z.ZodTypeDef, unknown> = z
-        .object({
-            status: StatusStatus$.inboundSchema,
-        })
-        .transform((v) => {
-            return {
-                status: v.status,
-            };
-        });
-
-    export type Outbound = {
-        status: string;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, StatusResponseBody> = z
-        .object({
-            status: StatusStatus$.outboundSchema,
-        })
-        .transform((v) => {
-            return {
-                status: v.status,
-            };
-        });
+    /** @deprecated use `StatusResponseBody$inboundSchema` instead. */
+    export const inboundSchema = StatusResponseBody$inboundSchema;
+    /** @deprecated use `StatusResponseBody$outboundSchema` instead. */
+    export const outboundSchema = StatusResponseBody$outboundSchema;
+    /** @deprecated use `StatusResponseBody$Outbound` instead. */
+    export type Outbound = StatusResponseBody$Outbound;
 }

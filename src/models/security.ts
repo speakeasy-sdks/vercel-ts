@@ -10,33 +10,33 @@ export type Security = {
 };
 
 /** @internal */
+export const Security$inboundSchema: z.ZodType<Security, z.ZodTypeDef, unknown> = z.object({
+    bearerToken: z.string().optional(),
+    oauth2: z.string().optional(),
+});
+
+/** @internal */
+export type Security$Outbound = {
+    bearerToken?: string | undefined;
+    oauth2?: string | undefined;
+};
+
+/** @internal */
+export const Security$outboundSchema: z.ZodType<Security$Outbound, z.ZodTypeDef, Security> =
+    z.object({
+        bearerToken: z.string().optional(),
+        oauth2: z.string().optional(),
+    });
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace Security$ {
-    export const inboundSchema: z.ZodType<Security, z.ZodTypeDef, unknown> = z
-        .object({
-            bearerToken: z.string().optional(),
-            oauth2: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.bearerToken === undefined ? null : { bearerToken: v.bearerToken }),
-                ...(v.oauth2 === undefined ? null : { oauth2: v.oauth2 }),
-            };
-        });
-
-    export type Outbound = {
-        bearerToken?: string | undefined;
-        oauth2?: string | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, Security> = z
-        .object({
-            bearerToken: z.string().optional(),
-            oauth2: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.bearerToken === undefined ? null : { bearerToken: v.bearerToken }),
-                ...(v.oauth2 === undefined ? null : { oauth2: v.oauth2 }),
-            };
-        });
+    /** @deprecated use `Security$inboundSchema` instead. */
+    export const inboundSchema = Security$inboundSchema;
+    /** @deprecated use `Security$outboundSchema` instead. */
+    export const outboundSchema = Security$outboundSchema;
+    /** @deprecated use `Security$Outbound` instead. */
+    export type Outbound = Security$Outbound;
 }

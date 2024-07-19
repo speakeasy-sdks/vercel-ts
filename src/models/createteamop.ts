@@ -370,7 +370,7 @@ export type CreateTeamWebAnalytics = {
 export type CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsAnalyticsUsageMatrix =
     {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
 export type CreateTeamAnalyticsUsage = {
@@ -389,7 +389,7 @@ export type CreateTeamAnalyticsUsage = {
 
 export type CreateTeamMatrix = {
     defaultUnitPrice: string;
-    dimensionPrices: Record<string, string>;
+    dimensionPrices: { [k: string]: string };
 };
 
 export type CreateTeamArtifacts = {
@@ -406,7 +406,7 @@ export type CreateTeamArtifacts = {
 
 export type CreateTeamTeamsMatrix = {
     defaultUnitPrice: string;
-    dimensionPrices: Record<string, string>;
+    dimensionPrices: { [k: string]: string };
 };
 
 export type CreateTeamBandwidth = {
@@ -423,7 +423,7 @@ export type CreateTeamBandwidth = {
 
 export type CreateTeamTeamsResponseMatrix = {
     defaultUnitPrice: string;
-    dimensionPrices: Record<string, string>;
+    dimensionPrices: { [k: string]: string };
 };
 
 export type CreateTeamBlobStores = {
@@ -440,7 +440,7 @@ export type CreateTeamBlobStores = {
 
 export type CreateTeamTeamsResponse200Matrix = {
     defaultUnitPrice: string;
-    dimensionPrices: Record<string, string>;
+    dimensionPrices: { [k: string]: string };
 };
 
 export type CreateTeamBlobTotalAdvancedRequests = {
@@ -457,7 +457,7 @@ export type CreateTeamBlobTotalAdvancedRequests = {
 
 export type CreateTeamTeamsResponse200ApplicationJSONMatrix = {
     defaultUnitPrice: string;
-    dimensionPrices: Record<string, string>;
+    dimensionPrices: { [k: string]: string };
 };
 
 export type CreateTeamBlobTotalAvgSizeInBytes = {
@@ -474,7 +474,7 @@ export type CreateTeamBlobTotalAvgSizeInBytes = {
 
 export type CreateTeamTeamsResponse200ApplicationJSONResponseBodyMatrix = {
     defaultUnitPrice: string;
-    dimensionPrices: Record<string, string>;
+    dimensionPrices: { [k: string]: string };
 };
 
 export type CreateTeamBlobTotalGetResponseObjectSizeInBytes = {
@@ -491,7 +491,7 @@ export type CreateTeamBlobTotalGetResponseObjectSizeInBytes = {
 
 export type CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingMatrix = {
     defaultUnitPrice: string;
-    dimensionPrices: Record<string, string>;
+    dimensionPrices: { [k: string]: string };
 };
 
 export type CreateTeamBlobTotalSimpleRequests = {
@@ -508,7 +508,7 @@ export type CreateTeamBlobTotalSimpleRequests = {
 
 export type CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsMatrix = {
     defaultUnitPrice: string;
-    dimensionPrices: Record<string, string>;
+    dimensionPrices: { [k: string]: string };
 };
 
 export type CreateTeamBuildMinute = {
@@ -528,7 +528,7 @@ export type CreateTeamBuildMinute = {
 export type CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsDataCacheReadMatrix =
     {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
 export type CreateTeamDataCacheRead = {
@@ -548,7 +548,7 @@ export type CreateTeamDataCacheRead = {
 export type CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsDataCacheRevalidationMatrix =
     {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
 export type CreateTeamDataCacheRevalidation = {
@@ -568,7 +568,7 @@ export type CreateTeamDataCacheRevalidation = {
 export type CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsDataCacheWriteMatrix =
     {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
 export type CreateTeamDataCacheWrite = {
@@ -588,7 +588,7 @@ export type CreateTeamDataCacheWrite = {
 export type CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeConfigReadMatrix =
     {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
 export type CreateTeamEdgeConfigRead = {
@@ -608,7 +608,7 @@ export type CreateTeamEdgeConfigRead = {
 export type CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeConfigWriteMatrix =
     {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
 export type CreateTeamEdgeConfigWrite = {
@@ -628,7 +628,7 @@ export type CreateTeamEdgeConfigWrite = {
 export type CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeFunctionExecutionUnitsMatrix =
     {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
 export type CreateTeamEdgeFunctionExecutionUnits = {
@@ -648,7 +648,7 @@ export type CreateTeamEdgeFunctionExecutionUnits = {
 export type CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeMiddlewareInvocationsMatrix =
     {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
 export type CreateTeamEdgeMiddlewareInvocations = {
@@ -668,7 +668,7 @@ export type CreateTeamEdgeMiddlewareInvocations = {
 export type CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeRequestMatrix =
     {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
 export type CreateTeamEdgeRequest = {
@@ -688,7 +688,7 @@ export type CreateTeamEdgeRequest = {
 export type CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeRequestAdditionalCpuDurationMatrix =
     {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
 export type CreateTeamEdgeRequestAdditionalCpuDuration = {
@@ -708,7 +708,7 @@ export type CreateTeamEdgeRequestAdditionalCpuDuration = {
 export type CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFastDataTransferMatrix =
     {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
 export type CreateTeamFastDataTransfer = {
@@ -728,7 +728,7 @@ export type CreateTeamFastDataTransfer = {
 export type CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFastOriginTransferMatrix =
     {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
 export type CreateTeamFastOriginTransfer = {
@@ -748,7 +748,7 @@ export type CreateTeamFastOriginTransfer = {
 export type CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFunctionDurationMatrix =
     {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
 export type CreateTeamFunctionDuration = {
@@ -768,7 +768,7 @@ export type CreateTeamFunctionDuration = {
 export type CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFunctionInvocationMatrix =
     {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
 export type CreateTeamFunctionInvocation = {
@@ -788,7 +788,7 @@ export type CreateTeamFunctionInvocation = {
 export type CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsLogDrainsVolumeMatrix =
     {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
 export type CreateTeamLogDrainsVolume = {
@@ -808,7 +808,7 @@ export type CreateTeamLogDrainsVolume = {
 export type CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsMonitoringMetricMatrix =
     {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
 export type CreateTeamMonitoringMetric = {
@@ -828,7 +828,7 @@ export type CreateTeamMonitoringMetric = {
 export type CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresComputeTimeMatrix =
     {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
 export type CreateTeamPostgresComputeTime = {
@@ -848,7 +848,7 @@ export type CreateTeamPostgresComputeTime = {
 export type CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresDataStorageMatrix =
     {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
 export type CreateTeamPostgresDataStorage = {
@@ -868,7 +868,7 @@ export type CreateTeamPostgresDataStorage = {
 export type CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresDataTransferMatrix =
     {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
 export type CreateTeamPostgresDataTransfer = {
@@ -888,7 +888,7 @@ export type CreateTeamPostgresDataTransfer = {
 export type CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresDatabaseMatrix =
     {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
 export type CreateTeamPostgresDatabase = {
@@ -908,7 +908,7 @@ export type CreateTeamPostgresDatabase = {
 export type CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresWrittenDataMatrix =
     {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
 export type CreateTeamPostgresWrittenData = {
@@ -928,7 +928,7 @@ export type CreateTeamPostgresWrittenData = {
 export type CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsServerlessFunctionExecutionMatrix =
     {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
 export type CreateTeamServerlessFunctionExecution = {
@@ -948,7 +948,7 @@ export type CreateTeamServerlessFunctionExecution = {
 export type CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsSourceImagesMatrix =
     {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
 export type CreateTeamSourceImages = {
@@ -968,7 +968,7 @@ export type CreateTeamSourceImages = {
 export type CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsStorageRedisTotalBandwidthInBytesMatrix =
     {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
 export type CreateTeamStorageRedisTotalBandwidthInBytes = {
@@ -988,7 +988,7 @@ export type CreateTeamStorageRedisTotalBandwidthInBytes = {
 export type CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsStorageRedisTotalCommandsMatrix =
     {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
 export type CreateTeamStorageRedisTotalCommands = {
@@ -1008,7 +1008,7 @@ export type CreateTeamStorageRedisTotalCommands = {
 export type CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsStorageRedisTotalDailyAvgStorageInBytesMatrix =
     {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
 export type CreateTeamStorageRedisTotalDailyAvgStorageInBytes = {
@@ -1028,7 +1028,7 @@ export type CreateTeamStorageRedisTotalDailyAvgStorageInBytes = {
 export type CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsStorageRedisTotalDatabasesMatrix =
     {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
 export type CreateTeamStorageRedisTotalDatabases = {
@@ -1048,7 +1048,7 @@ export type CreateTeamStorageRedisTotalDatabases = {
 export type CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWafOwaspExcessBytesMatrix =
     {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
 export type CreateTeamWafOwaspExcessBytes = {
@@ -1068,7 +1068,7 @@ export type CreateTeamWafOwaspExcessBytes = {
 export type CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWafOwaspRequestsMatrix =
     {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
 export type CreateTeamWafOwaspRequests = {
@@ -1088,7 +1088,7 @@ export type CreateTeamWafOwaspRequests = {
 export type CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWebAnalyticsEventMatrix =
     {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
 export type CreateTeamWebAnalyticsEvent = {
@@ -1310,7255 +1310,6846 @@ export type CreateTeamResponseBody = {
 };
 
 /** @internal */
+export const Utm$inboundSchema: z.ZodType<Utm, z.ZodTypeDef, unknown> = z.object({
+    utmSource: z.string().optional(),
+    utmMedium: z.string().optional(),
+    utmCampaign: z.string().optional(),
+    utmTerm: z.string().optional(),
+});
+
+/** @internal */
+export type Utm$Outbound = {
+    utmSource?: string | undefined;
+    utmMedium?: string | undefined;
+    utmCampaign?: string | undefined;
+    utmTerm?: string | undefined;
+};
+
+/** @internal */
+export const Utm$outboundSchema: z.ZodType<Utm$Outbound, z.ZodTypeDef, Utm> = z.object({
+    utmSource: z.string().optional(),
+    utmMedium: z.string().optional(),
+    utmCampaign: z.string().optional(),
+    utmTerm: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace Utm$ {
-    export const inboundSchema: z.ZodType<Utm, z.ZodTypeDef, unknown> = z
-        .object({
-            utmSource: z.string().optional(),
-            utmMedium: z.string().optional(),
-            utmCampaign: z.string().optional(),
-            utmTerm: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.utmSource === undefined ? null : { utmSource: v.utmSource }),
-                ...(v.utmMedium === undefined ? null : { utmMedium: v.utmMedium }),
-                ...(v.utmCampaign === undefined ? null : { utmCampaign: v.utmCampaign }),
-                ...(v.utmTerm === undefined ? null : { utmTerm: v.utmTerm }),
-            };
-        });
-
-    export type Outbound = {
-        utmSource?: string | undefined;
-        utmMedium?: string | undefined;
-        utmCampaign?: string | undefined;
-        utmTerm?: string | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, Utm> = z
-        .object({
-            utmSource: z.string().optional(),
-            utmMedium: z.string().optional(),
-            utmCampaign: z.string().optional(),
-            utmTerm: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.utmSource === undefined ? null : { utmSource: v.utmSource }),
-                ...(v.utmMedium === undefined ? null : { utmMedium: v.utmMedium }),
-                ...(v.utmCampaign === undefined ? null : { utmCampaign: v.utmCampaign }),
-                ...(v.utmTerm === undefined ? null : { utmTerm: v.utmTerm }),
-            };
-        });
+    /** @deprecated use `Utm$inboundSchema` instead. */
+    export const inboundSchema = Utm$inboundSchema;
+    /** @deprecated use `Utm$outboundSchema` instead. */
+    export const outboundSchema = Utm$outboundSchema;
+    /** @deprecated use `Utm$Outbound` instead. */
+    export type Outbound = Utm$Outbound;
 }
 
 /** @internal */
+export const Attribution$inboundSchema: z.ZodType<Attribution, z.ZodTypeDef, unknown> = z.object({
+    sessionReferrer: z.string().optional(),
+    landingPage: z.string().optional(),
+    pageBeforeConversionPage: z.string().optional(),
+    utm: z.lazy(() => Utm$inboundSchema).optional(),
+});
+
+/** @internal */
+export type Attribution$Outbound = {
+    sessionReferrer?: string | undefined;
+    landingPage?: string | undefined;
+    pageBeforeConversionPage?: string | undefined;
+    utm?: Utm$Outbound | undefined;
+};
+
+/** @internal */
+export const Attribution$outboundSchema: z.ZodType<
+    Attribution$Outbound,
+    z.ZodTypeDef,
+    Attribution
+> = z.object({
+    sessionReferrer: z.string().optional(),
+    landingPage: z.string().optional(),
+    pageBeforeConversionPage: z.string().optional(),
+    utm: z.lazy(() => Utm$outboundSchema).optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace Attribution$ {
-    export const inboundSchema: z.ZodType<Attribution, z.ZodTypeDef, unknown> = z
-        .object({
-            sessionReferrer: z.string().optional(),
-            landingPage: z.string().optional(),
-            pageBeforeConversionPage: z.string().optional(),
-            utm: z.lazy(() => Utm$.inboundSchema).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.sessionReferrer === undefined
-                    ? null
-                    : { sessionReferrer: v.sessionReferrer }),
-                ...(v.landingPage === undefined ? null : { landingPage: v.landingPage }),
-                ...(v.pageBeforeConversionPage === undefined
-                    ? null
-                    : { pageBeforeConversionPage: v.pageBeforeConversionPage }),
-                ...(v.utm === undefined ? null : { utm: v.utm }),
-            };
-        });
-
-    export type Outbound = {
-        sessionReferrer?: string | undefined;
-        landingPage?: string | undefined;
-        pageBeforeConversionPage?: string | undefined;
-        utm?: Utm$.Outbound | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, Attribution> = z
-        .object({
-            sessionReferrer: z.string().optional(),
-            landingPage: z.string().optional(),
-            pageBeforeConversionPage: z.string().optional(),
-            utm: z.lazy(() => Utm$.outboundSchema).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.sessionReferrer === undefined
-                    ? null
-                    : { sessionReferrer: v.sessionReferrer }),
-                ...(v.landingPage === undefined ? null : { landingPage: v.landingPage }),
-                ...(v.pageBeforeConversionPage === undefined
-                    ? null
-                    : { pageBeforeConversionPage: v.pageBeforeConversionPage }),
-                ...(v.utm === undefined ? null : { utm: v.utm }),
-            };
-        });
+    /** @deprecated use `Attribution$inboundSchema` instead. */
+    export const inboundSchema = Attribution$inboundSchema;
+    /** @deprecated use `Attribution$outboundSchema` instead. */
+    export const outboundSchema = Attribution$outboundSchema;
+    /** @deprecated use `Attribution$Outbound` instead. */
+    export type Outbound = Attribution$Outbound;
 }
 
 /** @internal */
+export const CreateTeamRequestBody$inboundSchema: z.ZodType<
+    CreateTeamRequestBody,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    slug: z.string(),
+    name: z.string().optional(),
+    attribution: z.lazy(() => Attribution$inboundSchema).optional(),
+});
+
+/** @internal */
+export type CreateTeamRequestBody$Outbound = {
+    slug: string;
+    name?: string | undefined;
+    attribution?: Attribution$Outbound | undefined;
+};
+
+/** @internal */
+export const CreateTeamRequestBody$outboundSchema: z.ZodType<
+    CreateTeamRequestBody$Outbound,
+    z.ZodTypeDef,
+    CreateTeamRequestBody
+> = z.object({
+    slug: z.string(),
+    name: z.string().optional(),
+    attribution: z.lazy(() => Attribution$outboundSchema).optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamRequestBody$ {
-    export const inboundSchema: z.ZodType<CreateTeamRequestBody, z.ZodTypeDef, unknown> = z
-        .object({
-            slug: z.string(),
-            name: z.string().optional(),
-            attribution: z.lazy(() => Attribution$.inboundSchema).optional(),
-        })
-        .transform((v) => {
-            return {
-                slug: v.slug,
-                ...(v.name === undefined ? null : { name: v.name }),
-                ...(v.attribution === undefined ? null : { attribution: v.attribution }),
-            };
-        });
-
-    export type Outbound = {
-        slug: string;
-        name?: string | undefined;
-        attribution?: Attribution$.Outbound | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamRequestBody> = z
-        .object({
-            slug: z.string(),
-            name: z.string().optional(),
-            attribution: z.lazy(() => Attribution$.outboundSchema).optional(),
-        })
-        .transform((v) => {
-            return {
-                slug: v.slug,
-                ...(v.name === undefined ? null : { name: v.name }),
-                ...(v.attribution === undefined ? null : { attribution: v.attribution }),
-            };
-        });
+    /** @deprecated use `CreateTeamRequestBody$inboundSchema` instead. */
+    export const inboundSchema = CreateTeamRequestBody$inboundSchema;
+    /** @deprecated use `CreateTeamRequestBody$outboundSchema` instead. */
+    export const outboundSchema = CreateTeamRequestBody$outboundSchema;
+    /** @deprecated use `CreateTeamRequestBody$Outbound` instead. */
+    export type Outbound = CreateTeamRequestBody$Outbound;
 }
 
 /** @internal */
+export const CreateTeamCurrency$inboundSchema: z.ZodNativeEnum<typeof CreateTeamCurrency> =
+    z.nativeEnum(CreateTeamCurrency);
+
+/** @internal */
+export const CreateTeamCurrency$outboundSchema: z.ZodNativeEnum<typeof CreateTeamCurrency> =
+    CreateTeamCurrency$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamCurrency$ {
-    export const inboundSchema = z.nativeEnum(CreateTeamCurrency);
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `CreateTeamCurrency$inboundSchema` instead. */
+    export const inboundSchema = CreateTeamCurrency$inboundSchema;
+    /** @deprecated use `CreateTeamCurrency$outboundSchema` instead. */
+    export const outboundSchema = CreateTeamCurrency$outboundSchema;
 }
 
 /** @internal */
+export const CreateTeamPeriod$inboundSchema: z.ZodType<CreateTeamPeriod, z.ZodTypeDef, unknown> =
+    z.object({
+        start: z.number(),
+        end: z.number(),
+    });
+
+/** @internal */
+export type CreateTeamPeriod$Outbound = {
+    start: number;
+    end: number;
+};
+
+/** @internal */
+export const CreateTeamPeriod$outboundSchema: z.ZodType<
+    CreateTeamPeriod$Outbound,
+    z.ZodTypeDef,
+    CreateTeamPeriod
+> = z.object({
+    start: z.number(),
+    end: z.number(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamPeriod$ {
-    export const inboundSchema: z.ZodType<CreateTeamPeriod, z.ZodTypeDef, unknown> = z
-        .object({
-            start: z.number(),
-            end: z.number(),
-        })
-        .transform((v) => {
-            return {
-                start: v.start,
-                end: v.end,
-            };
-        });
-
-    export type Outbound = {
-        start: number;
-        end: number;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamPeriod> = z
-        .object({
-            start: z.number(),
-            end: z.number(),
-        })
-        .transform((v) => {
-            return {
-                start: v.start,
-                end: v.end,
-            };
-        });
+    /** @deprecated use `CreateTeamPeriod$inboundSchema` instead. */
+    export const inboundSchema = CreateTeamPeriod$inboundSchema;
+    /** @deprecated use `CreateTeamPeriod$outboundSchema` instead. */
+    export const outboundSchema = CreateTeamPeriod$outboundSchema;
+    /** @deprecated use `CreateTeamPeriod$Outbound` instead. */
+    export type Outbound = CreateTeamPeriod$Outbound;
 }
 
 /** @internal */
+export const CreateTeamContract$inboundSchema: z.ZodType<
+    CreateTeamContract,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    start: z.number(),
+    end: z.number(),
+});
+
+/** @internal */
+export type CreateTeamContract$Outbound = {
+    start: number;
+    end: number;
+};
+
+/** @internal */
+export const CreateTeamContract$outboundSchema: z.ZodType<
+    CreateTeamContract$Outbound,
+    z.ZodTypeDef,
+    CreateTeamContract
+> = z.object({
+    start: z.number(),
+    end: z.number(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamContract$ {
-    export const inboundSchema: z.ZodType<CreateTeamContract, z.ZodTypeDef, unknown> = z
-        .object({
-            start: z.number(),
-            end: z.number(),
-        })
-        .transform((v) => {
-            return {
-                start: v.start,
-                end: v.end,
-            };
-        });
-
-    export type Outbound = {
-        start: number;
-        end: number;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamContract> = z
-        .object({
-            start: z.number(),
-            end: z.number(),
-        })
-        .transform((v) => {
-            return {
-                start: v.start,
-                end: v.end,
-            };
-        });
+    /** @deprecated use `CreateTeamContract$inboundSchema` instead. */
+    export const inboundSchema = CreateTeamContract$inboundSchema;
+    /** @deprecated use `CreateTeamContract$outboundSchema` instead. */
+    export const outboundSchema = CreateTeamContract$outboundSchema;
+    /** @deprecated use `CreateTeamContract$Outbound` instead. */
+    export type Outbound = CreateTeamContract$Outbound;
 }
 
 /** @internal */
+export const CreateTeamPlan$inboundSchema: z.ZodNativeEnum<typeof CreateTeamPlan> =
+    z.nativeEnum(CreateTeamPlan);
+
+/** @internal */
+export const CreateTeamPlan$outboundSchema: z.ZodNativeEnum<typeof CreateTeamPlan> =
+    CreateTeamPlan$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamPlan$ {
-    export const inboundSchema = z.nativeEnum(CreateTeamPlan);
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `CreateTeamPlan$inboundSchema` instead. */
+    export const inboundSchema = CreateTeamPlan$inboundSchema;
+    /** @deprecated use `CreateTeamPlan$outboundSchema` instead. */
+    export const outboundSchema = CreateTeamPlan$outboundSchema;
 }
 
 /** @internal */
+export const CreateTeamPlatform$inboundSchema: z.ZodNativeEnum<typeof CreateTeamPlatform> =
+    z.nativeEnum(CreateTeamPlatform);
+
+/** @internal */
+export const CreateTeamPlatform$outboundSchema: z.ZodNativeEnum<typeof CreateTeamPlatform> =
+    CreateTeamPlatform$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamPlatform$ {
-    export const inboundSchema = z.nativeEnum(CreateTeamPlatform);
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `CreateTeamPlatform$inboundSchema` instead. */
+    export const inboundSchema = CreateTeamPlatform$inboundSchema;
+    /** @deprecated use `CreateTeamPlatform$outboundSchema` instead. */
+    export const outboundSchema = CreateTeamPlatform$outboundSchema;
 }
 
 /** @internal */
+export const CreateTeamProgramType$inboundSchema: z.ZodNativeEnum<typeof CreateTeamProgramType> =
+    z.nativeEnum(CreateTeamProgramType);
+
+/** @internal */
+export const CreateTeamProgramType$outboundSchema: z.ZodNativeEnum<typeof CreateTeamProgramType> =
+    CreateTeamProgramType$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamProgramType$ {
-    export const inboundSchema = z.nativeEnum(CreateTeamProgramType);
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `CreateTeamProgramType$inboundSchema` instead. */
+    export const inboundSchema = CreateTeamProgramType$inboundSchema;
+    /** @deprecated use `CreateTeamProgramType$outboundSchema` instead. */
+    export const outboundSchema = CreateTeamProgramType$outboundSchema;
 }
 
 /** @internal */
+export const CreateTeamTrial$inboundSchema: z.ZodType<CreateTeamTrial, z.ZodTypeDef, unknown> =
+    z.object({
+        start: z.number(),
+        end: z.number(),
+    });
+
+/** @internal */
+export type CreateTeamTrial$Outbound = {
+    start: number;
+    end: number;
+};
+
+/** @internal */
+export const CreateTeamTrial$outboundSchema: z.ZodType<
+    CreateTeamTrial$Outbound,
+    z.ZodTypeDef,
+    CreateTeamTrial
+> = z.object({
+    start: z.number(),
+    end: z.number(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamTrial$ {
-    export const inboundSchema: z.ZodType<CreateTeamTrial, z.ZodTypeDef, unknown> = z
-        .object({
-            start: z.number(),
-            end: z.number(),
-        })
-        .transform((v) => {
-            return {
-                start: v.start,
-                end: v.end,
-            };
-        });
-
-    export type Outbound = {
-        start: number;
-        end: number;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamTrial> = z
-        .object({
-            start: z.number(),
-            end: z.number(),
-        })
-        .transform((v) => {
-            return {
-                start: v.start,
-                end: v.end,
-            };
-        });
+    /** @deprecated use `CreateTeamTrial$inboundSchema` instead. */
+    export const inboundSchema = CreateTeamTrial$inboundSchema;
+    /** @deprecated use `CreateTeamTrial$outboundSchema` instead. */
+    export const outboundSchema = CreateTeamTrial$outboundSchema;
+    /** @deprecated use `CreateTeamTrial$Outbound` instead. */
+    export type Outbound = CreateTeamTrial$Outbound;
 }
 
 /** @internal */
+export const CreateTeamTax$inboundSchema: z.ZodType<CreateTeamTax, z.ZodTypeDef, unknown> =
+    z.object({
+        type: z.string(),
+        id: z.string(),
+    });
+
+/** @internal */
+export type CreateTeamTax$Outbound = {
+    type: string;
+    id: string;
+};
+
+/** @internal */
+export const CreateTeamTax$outboundSchema: z.ZodType<
+    CreateTeamTax$Outbound,
+    z.ZodTypeDef,
+    CreateTeamTax
+> = z.object({
+    type: z.string(),
+    id: z.string(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamTax$ {
-    export const inboundSchema: z.ZodType<CreateTeamTax, z.ZodTypeDef, unknown> = z
-        .object({
-            type: z.string(),
-            id: z.string(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                id: v.id,
-            };
-        });
-
-    export type Outbound = {
-        type: string;
-        id: string;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamTax> = z
-        .object({
-            type: z.string(),
-            id: z.string(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                id: v.id,
-            };
-        });
+    /** @deprecated use `CreateTeamTax$inboundSchema` instead. */
+    export const inboundSchema = CreateTeamTax$inboundSchema;
+    /** @deprecated use `CreateTeamTax$outboundSchema` instead. */
+    export const outboundSchema = CreateTeamTax$outboundSchema;
+    /** @deprecated use `CreateTeamTax$Outbound` instead. */
+    export type Outbound = CreateTeamTax$Outbound;
 }
 
 /** @internal */
+export const CreateTeamAddress$inboundSchema: z.ZodType<CreateTeamAddress, z.ZodTypeDef, unknown> =
+    z.object({
+        line1: z.string().optional(),
+        line2: z.string().optional(),
+        postalCode: z.string().optional(),
+        city: z.string().optional(),
+        country: z.string().optional(),
+        state: z.string().optional(),
+    });
+
+/** @internal */
+export type CreateTeamAddress$Outbound = {
+    line1?: string | undefined;
+    line2?: string | undefined;
+    postalCode?: string | undefined;
+    city?: string | undefined;
+    country?: string | undefined;
+    state?: string | undefined;
+};
+
+/** @internal */
+export const CreateTeamAddress$outboundSchema: z.ZodType<
+    CreateTeamAddress$Outbound,
+    z.ZodTypeDef,
+    CreateTeamAddress
+> = z.object({
+    line1: z.string().optional(),
+    line2: z.string().optional(),
+    postalCode: z.string().optional(),
+    city: z.string().optional(),
+    country: z.string().optional(),
+    state: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamAddress$ {
-    export const inboundSchema: z.ZodType<CreateTeamAddress, z.ZodTypeDef, unknown> = z
-        .object({
-            line1: z.string().optional(),
-            line2: z.string().optional(),
-            postalCode: z.string().optional(),
-            city: z.string().optional(),
-            country: z.string().optional(),
-            state: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.line1 === undefined ? null : { line1: v.line1 }),
-                ...(v.line2 === undefined ? null : { line2: v.line2 }),
-                ...(v.postalCode === undefined ? null : { postalCode: v.postalCode }),
-                ...(v.city === undefined ? null : { city: v.city }),
-                ...(v.country === undefined ? null : { country: v.country }),
-                ...(v.state === undefined ? null : { state: v.state }),
-            };
-        });
-
-    export type Outbound = {
-        line1?: string | undefined;
-        line2?: string | undefined;
-        postalCode?: string | undefined;
-        city?: string | undefined;
-        country?: string | undefined;
-        state?: string | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamAddress> = z
-        .object({
-            line1: z.string().optional(),
-            line2: z.string().optional(),
-            postalCode: z.string().optional(),
-            city: z.string().optional(),
-            country: z.string().optional(),
-            state: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.line1 === undefined ? null : { line1: v.line1 }),
-                ...(v.line2 === undefined ? null : { line2: v.line2 }),
-                ...(v.postalCode === undefined ? null : { postalCode: v.postalCode }),
-                ...(v.city === undefined ? null : { city: v.city }),
-                ...(v.country === undefined ? null : { country: v.country }),
-                ...(v.state === undefined ? null : { state: v.state }),
-            };
-        });
+    /** @deprecated use `CreateTeamAddress$inboundSchema` instead. */
+    export const inboundSchema = CreateTeamAddress$inboundSchema;
+    /** @deprecated use `CreateTeamAddress$outboundSchema` instead. */
+    export const outboundSchema = CreateTeamAddress$outboundSchema;
+    /** @deprecated use `CreateTeamAddress$Outbound` instead. */
+    export type Outbound = CreateTeamAddress$Outbound;
 }
 
 /** @internal */
+export const CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsProInterval$inboundSchema: z.ZodNativeEnum<
+    typeof CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsProInterval
+> = z.nativeEnum(
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsProInterval
+);
+
+/** @internal */
+export const CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsProInterval$outboundSchema: z.ZodNativeEnum<
+    typeof CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsProInterval
+> =
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsProInterval$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsProInterval$ {
-    export const inboundSchema = z.nativeEnum(
-        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsProInterval
-    );
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsProInterval$inboundSchema` instead. */
+    export const inboundSchema =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsProInterval$inboundSchema;
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsProInterval$outboundSchema` instead. */
+    export const outboundSchema =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsProInterval$outboundSchema;
 }
 
 /** @internal */
+export const CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsProFrequency$inboundSchema: z.ZodType<
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsProFrequency,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    interval:
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsProInterval$inboundSchema,
+    intervalCount: z.number(),
+});
+
+/** @internal */
+export type CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsProFrequency$Outbound =
+    {
+        interval: string;
+        intervalCount: number;
+    };
+
+/** @internal */
+export const CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsProFrequency$outboundSchema: z.ZodType<
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsProFrequency$Outbound,
+    z.ZodTypeDef,
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsProFrequency
+> = z.object({
+    interval:
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsProInterval$outboundSchema,
+    intervalCount: z.number(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsProFrequency$ {
-    export const inboundSchema: z.ZodType<
-        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsProFrequency,
-        z.ZodTypeDef,
-        unknown
-    > = z
-        .object({
-            interval:
-                CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsProInterval$.inboundSchema,
-            intervalCount: z.number(),
-        })
-        .transform((v) => {
-            return {
-                interval: v.interval,
-                intervalCount: v.intervalCount,
-            };
-        });
-
-    export type Outbound = {
-        interval: string;
-        intervalCount: number;
-    };
-
-    export const outboundSchema: z.ZodType<
-        Outbound,
-        z.ZodTypeDef,
-        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsProFrequency
-    > = z
-        .object({
-            interval:
-                CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsProInterval$.outboundSchema,
-            intervalCount: z.number(),
-        })
-        .transform((v) => {
-            return {
-                interval: v.interval,
-                intervalCount: v.intervalCount,
-            };
-        });
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsProFrequency$inboundSchema` instead. */
+    export const inboundSchema =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsProFrequency$inboundSchema;
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsProFrequency$outboundSchema` instead. */
+    export const outboundSchema =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsProFrequency$outboundSchema;
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsProFrequency$Outbound` instead. */
+    export type Outbound =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsProFrequency$Outbound;
 }
 
 /** @internal */
+export const CreateTeamPro$inboundSchema: z.ZodType<CreateTeamPro, z.ZodTypeDef, unknown> =
+    z.object({
+        tier: z.number().optional(),
+        price: z.number(),
+        quantity: z.number(),
+        highestQuantity: z.number().optional(),
+        name: z.string().optional(),
+        hidden: z.boolean(),
+        createdAt: z.number().optional(),
+        disabledAt: z.nullable(z.number()).optional(),
+        frequency: z
+            .lazy(
+                () =>
+                    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsProFrequency$inboundSchema
+            )
+            .optional(),
+        maxQuantity: z.number().optional(),
+    });
+
+/** @internal */
+export type CreateTeamPro$Outbound = {
+    tier?: number | undefined;
+    price: number;
+    quantity: number;
+    highestQuantity?: number | undefined;
+    name?: string | undefined;
+    hidden: boolean;
+    createdAt?: number | undefined;
+    disabledAt?: number | null | undefined;
+    frequency?:
+        | CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsProFrequency$Outbound
+        | undefined;
+    maxQuantity?: number | undefined;
+};
+
+/** @internal */
+export const CreateTeamPro$outboundSchema: z.ZodType<
+    CreateTeamPro$Outbound,
+    z.ZodTypeDef,
+    CreateTeamPro
+> = z.object({
+    tier: z.number().optional(),
+    price: z.number(),
+    quantity: z.number(),
+    highestQuantity: z.number().optional(),
+    name: z.string().optional(),
+    hidden: z.boolean(),
+    createdAt: z.number().optional(),
+    disabledAt: z.nullable(z.number()).optional(),
+    frequency: z
+        .lazy(
+            () =>
+                CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsProFrequency$outboundSchema
+        )
+        .optional(),
+    maxQuantity: z.number().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamPro$ {
-    export const inboundSchema: z.ZodType<CreateTeamPro, z.ZodTypeDef, unknown> = z
-        .object({
-            tier: z.number().optional(),
-            price: z.number(),
-            quantity: z.number(),
-            highestQuantity: z.number().optional(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            createdAt: z.number().optional(),
-            disabledAt: z.nullable(z.number()).optional(),
-            frequency: z
-                .lazy(
-                    () =>
-                        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsProFrequency$.inboundSchema
-                )
-                .optional(),
-            maxQuantity: z.number().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                quantity: v.quantity,
-                ...(v.highestQuantity === undefined
-                    ? null
-                    : { highestQuantity: v.highestQuantity }),
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.createdAt === undefined ? null : { createdAt: v.createdAt }),
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.frequency === undefined ? null : { frequency: v.frequency }),
-                ...(v.maxQuantity === undefined ? null : { maxQuantity: v.maxQuantity }),
-            };
-        });
-
-    export type Outbound = {
-        tier?: number | undefined;
-        price: number;
-        quantity: number;
-        highestQuantity?: number | undefined;
-        name?: string | undefined;
-        hidden: boolean;
-        createdAt?: number | undefined;
-        disabledAt?: number | null | undefined;
-        frequency?:
-            | CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsProFrequency$.Outbound
-            | undefined;
-        maxQuantity?: number | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamPro> = z
-        .object({
-            tier: z.number().optional(),
-            price: z.number(),
-            quantity: z.number(),
-            highestQuantity: z.number().optional(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            createdAt: z.number().optional(),
-            disabledAt: z.nullable(z.number()).optional(),
-            frequency: z
-                .lazy(
-                    () =>
-                        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsProFrequency$.outboundSchema
-                )
-                .optional(),
-            maxQuantity: z.number().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                quantity: v.quantity,
-                ...(v.highestQuantity === undefined
-                    ? null
-                    : { highestQuantity: v.highestQuantity }),
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.createdAt === undefined ? null : { createdAt: v.createdAt }),
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.frequency === undefined ? null : { frequency: v.frequency }),
-                ...(v.maxQuantity === undefined ? null : { maxQuantity: v.maxQuantity }),
-            };
-        });
+    /** @deprecated use `CreateTeamPro$inboundSchema` instead. */
+    export const inboundSchema = CreateTeamPro$inboundSchema;
+    /** @deprecated use `CreateTeamPro$outboundSchema` instead. */
+    export const outboundSchema = CreateTeamPro$outboundSchema;
+    /** @deprecated use `CreateTeamPro$Outbound` instead. */
+    export type Outbound = CreateTeamPro$Outbound;
 }
 
 /** @internal */
+export const CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEnterpriseInterval$inboundSchema: z.ZodNativeEnum<
+    typeof CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEnterpriseInterval
+> = z.nativeEnum(
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEnterpriseInterval
+);
+
+/** @internal */
+export const CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEnterpriseInterval$outboundSchema: z.ZodNativeEnum<
+    typeof CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEnterpriseInterval
+> =
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEnterpriseInterval$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEnterpriseInterval$ {
-    export const inboundSchema = z.nativeEnum(
-        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEnterpriseInterval
-    );
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEnterpriseInterval$inboundSchema` instead. */
+    export const inboundSchema =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEnterpriseInterval$inboundSchema;
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEnterpriseInterval$outboundSchema` instead. */
+    export const outboundSchema =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEnterpriseInterval$outboundSchema;
 }
 
 /** @internal */
+export const CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEnterpriseFrequency$inboundSchema: z.ZodType<
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEnterpriseFrequency,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    interval:
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEnterpriseInterval$inboundSchema,
+    intervalCount: z.number(),
+});
+
+/** @internal */
+export type CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEnterpriseFrequency$Outbound =
+    {
+        interval: string;
+        intervalCount: number;
+    };
+
+/** @internal */
+export const CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEnterpriseFrequency$outboundSchema: z.ZodType<
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEnterpriseFrequency$Outbound,
+    z.ZodTypeDef,
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEnterpriseFrequency
+> = z.object({
+    interval:
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEnterpriseInterval$outboundSchema,
+    intervalCount: z.number(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEnterpriseFrequency$ {
-    export const inboundSchema: z.ZodType<
-        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEnterpriseFrequency,
-        z.ZodTypeDef,
-        unknown
-    > = z
-        .object({
-            interval:
-                CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEnterpriseInterval$.inboundSchema,
-            intervalCount: z.number(),
-        })
-        .transform((v) => {
-            return {
-                interval: v.interval,
-                intervalCount: v.intervalCount,
-            };
-        });
-
-    export type Outbound = {
-        interval: string;
-        intervalCount: number;
-    };
-
-    export const outboundSchema: z.ZodType<
-        Outbound,
-        z.ZodTypeDef,
-        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEnterpriseFrequency
-    > = z
-        .object({
-            interval:
-                CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEnterpriseInterval$.outboundSchema,
-            intervalCount: z.number(),
-        })
-        .transform((v) => {
-            return {
-                interval: v.interval,
-                intervalCount: v.intervalCount,
-            };
-        });
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEnterpriseFrequency$inboundSchema` instead. */
+    export const inboundSchema =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEnterpriseFrequency$inboundSchema;
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEnterpriseFrequency$outboundSchema` instead. */
+    export const outboundSchema =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEnterpriseFrequency$outboundSchema;
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEnterpriseFrequency$Outbound` instead. */
+    export type Outbound =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEnterpriseFrequency$Outbound;
 }
 
 /** @internal */
+export const CreateTeamEnterprise$inboundSchema: z.ZodType<
+    CreateTeamEnterprise,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    tier: z.number().optional(),
+    price: z.number(),
+    quantity: z.number(),
+    highestQuantity: z.number().optional(),
+    name: z.string().optional(),
+    hidden: z.boolean(),
+    createdAt: z.number().optional(),
+    disabledAt: z.nullable(z.number()).optional(),
+    frequency: z
+        .lazy(
+            () =>
+                CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEnterpriseFrequency$inboundSchema
+        )
+        .optional(),
+    maxQuantity: z.number().optional(),
+});
+
+/** @internal */
+export type CreateTeamEnterprise$Outbound = {
+    tier?: number | undefined;
+    price: number;
+    quantity: number;
+    highestQuantity?: number | undefined;
+    name?: string | undefined;
+    hidden: boolean;
+    createdAt?: number | undefined;
+    disabledAt?: number | null | undefined;
+    frequency?:
+        | CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEnterpriseFrequency$Outbound
+        | undefined;
+    maxQuantity?: number | undefined;
+};
+
+/** @internal */
+export const CreateTeamEnterprise$outboundSchema: z.ZodType<
+    CreateTeamEnterprise$Outbound,
+    z.ZodTypeDef,
+    CreateTeamEnterprise
+> = z.object({
+    tier: z.number().optional(),
+    price: z.number(),
+    quantity: z.number(),
+    highestQuantity: z.number().optional(),
+    name: z.string().optional(),
+    hidden: z.boolean(),
+    createdAt: z.number().optional(),
+    disabledAt: z.nullable(z.number()).optional(),
+    frequency: z
+        .lazy(
+            () =>
+                CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEnterpriseFrequency$outboundSchema
+        )
+        .optional(),
+    maxQuantity: z.number().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamEnterprise$ {
-    export const inboundSchema: z.ZodType<CreateTeamEnterprise, z.ZodTypeDef, unknown> = z
-        .object({
-            tier: z.number().optional(),
-            price: z.number(),
-            quantity: z.number(),
-            highestQuantity: z.number().optional(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            createdAt: z.number().optional(),
-            disabledAt: z.nullable(z.number()).optional(),
-            frequency: z
-                .lazy(
-                    () =>
-                        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEnterpriseFrequency$.inboundSchema
-                )
-                .optional(),
-            maxQuantity: z.number().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                quantity: v.quantity,
-                ...(v.highestQuantity === undefined
-                    ? null
-                    : { highestQuantity: v.highestQuantity }),
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.createdAt === undefined ? null : { createdAt: v.createdAt }),
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.frequency === undefined ? null : { frequency: v.frequency }),
-                ...(v.maxQuantity === undefined ? null : { maxQuantity: v.maxQuantity }),
-            };
-        });
-
-    export type Outbound = {
-        tier?: number | undefined;
-        price: number;
-        quantity: number;
-        highestQuantity?: number | undefined;
-        name?: string | undefined;
-        hidden: boolean;
-        createdAt?: number | undefined;
-        disabledAt?: number | null | undefined;
-        frequency?:
-            | CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEnterpriseFrequency$.Outbound
-            | undefined;
-        maxQuantity?: number | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamEnterprise> = z
-        .object({
-            tier: z.number().optional(),
-            price: z.number(),
-            quantity: z.number(),
-            highestQuantity: z.number().optional(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            createdAt: z.number().optional(),
-            disabledAt: z.nullable(z.number()).optional(),
-            frequency: z
-                .lazy(
-                    () =>
-                        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEnterpriseFrequency$.outboundSchema
-                )
-                .optional(),
-            maxQuantity: z.number().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                quantity: v.quantity,
-                ...(v.highestQuantity === undefined
-                    ? null
-                    : { highestQuantity: v.highestQuantity }),
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.createdAt === undefined ? null : { createdAt: v.createdAt }),
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.frequency === undefined ? null : { frequency: v.frequency }),
-                ...(v.maxQuantity === undefined ? null : { maxQuantity: v.maxQuantity }),
-            };
-        });
+    /** @deprecated use `CreateTeamEnterprise$inboundSchema` instead. */
+    export const inboundSchema = CreateTeamEnterprise$inboundSchema;
+    /** @deprecated use `CreateTeamEnterprise$outboundSchema` instead. */
+    export const outboundSchema = CreateTeamEnterprise$outboundSchema;
+    /** @deprecated use `CreateTeamEnterprise$Outbound` instead. */
+    export type Outbound = CreateTeamEnterprise$Outbound;
 }
 
 /** @internal */
+export const CreateTeamTeamsInterval$inboundSchema: z.ZodNativeEnum<
+    typeof CreateTeamTeamsInterval
+> = z.nativeEnum(CreateTeamTeamsInterval);
+
+/** @internal */
+export const CreateTeamTeamsInterval$outboundSchema: z.ZodNativeEnum<
+    typeof CreateTeamTeamsInterval
+> = CreateTeamTeamsInterval$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamTeamsInterval$ {
-    export const inboundSchema = z.nativeEnum(CreateTeamTeamsInterval);
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `CreateTeamTeamsInterval$inboundSchema` instead. */
+    export const inboundSchema = CreateTeamTeamsInterval$inboundSchema;
+    /** @deprecated use `CreateTeamTeamsInterval$outboundSchema` instead. */
+    export const outboundSchema = CreateTeamTeamsInterval$outboundSchema;
 }
 
 /** @internal */
+export const CreateTeamTeamsFrequency$inboundSchema: z.ZodType<
+    CreateTeamTeamsFrequency,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    interval: CreateTeamTeamsInterval$inboundSchema,
+    intervalCount: z.number(),
+});
+
+/** @internal */
+export type CreateTeamTeamsFrequency$Outbound = {
+    interval: string;
+    intervalCount: number;
+};
+
+/** @internal */
+export const CreateTeamTeamsFrequency$outboundSchema: z.ZodType<
+    CreateTeamTeamsFrequency$Outbound,
+    z.ZodTypeDef,
+    CreateTeamTeamsFrequency
+> = z.object({
+    interval: CreateTeamTeamsInterval$outboundSchema,
+    intervalCount: z.number(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamTeamsFrequency$ {
-    export const inboundSchema: z.ZodType<CreateTeamTeamsFrequency, z.ZodTypeDef, unknown> = z
-        .object({
-            interval: CreateTeamTeamsInterval$.inboundSchema,
-            intervalCount: z.number(),
-        })
-        .transform((v) => {
-            return {
-                interval: v.interval,
-                intervalCount: v.intervalCount,
-            };
-        });
-
-    export type Outbound = {
-        interval: string;
-        intervalCount: number;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamTeamsFrequency> = z
-        .object({
-            interval: CreateTeamTeamsInterval$.outboundSchema,
-            intervalCount: z.number(),
-        })
-        .transform((v) => {
-            return {
-                interval: v.interval,
-                intervalCount: v.intervalCount,
-            };
-        });
+    /** @deprecated use `CreateTeamTeamsFrequency$inboundSchema` instead. */
+    export const inboundSchema = CreateTeamTeamsFrequency$inboundSchema;
+    /** @deprecated use `CreateTeamTeamsFrequency$outboundSchema` instead. */
+    export const outboundSchema = CreateTeamTeamsFrequency$outboundSchema;
+    /** @deprecated use `CreateTeamTeamsFrequency$Outbound` instead. */
+    export type Outbound = CreateTeamTeamsFrequency$Outbound;
 }
 
 /** @internal */
+export const CreateTeamAnalytics$inboundSchema: z.ZodType<
+    CreateTeamAnalytics,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    tier: z.number().optional(),
+    price: z.number(),
+    quantity: z.number(),
+    highestQuantity: z.number().optional(),
+    name: z.string().optional(),
+    hidden: z.boolean(),
+    createdAt: z.number().optional(),
+    disabledAt: z.nullable(z.number()).optional(),
+    frequency: z.lazy(() => CreateTeamTeamsFrequency$inboundSchema).optional(),
+    maxQuantity: z.number().optional(),
+});
+
+/** @internal */
+export type CreateTeamAnalytics$Outbound = {
+    tier?: number | undefined;
+    price: number;
+    quantity: number;
+    highestQuantity?: number | undefined;
+    name?: string | undefined;
+    hidden: boolean;
+    createdAt?: number | undefined;
+    disabledAt?: number | null | undefined;
+    frequency?: CreateTeamTeamsFrequency$Outbound | undefined;
+    maxQuantity?: number | undefined;
+};
+
+/** @internal */
+export const CreateTeamAnalytics$outboundSchema: z.ZodType<
+    CreateTeamAnalytics$Outbound,
+    z.ZodTypeDef,
+    CreateTeamAnalytics
+> = z.object({
+    tier: z.number().optional(),
+    price: z.number(),
+    quantity: z.number(),
+    highestQuantity: z.number().optional(),
+    name: z.string().optional(),
+    hidden: z.boolean(),
+    createdAt: z.number().optional(),
+    disabledAt: z.nullable(z.number()).optional(),
+    frequency: z.lazy(() => CreateTeamTeamsFrequency$outboundSchema).optional(),
+    maxQuantity: z.number().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamAnalytics$ {
-    export const inboundSchema: z.ZodType<CreateTeamAnalytics, z.ZodTypeDef, unknown> = z
-        .object({
-            tier: z.number().optional(),
-            price: z.number(),
-            quantity: z.number(),
-            highestQuantity: z.number().optional(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            createdAt: z.number().optional(),
-            disabledAt: z.nullable(z.number()).optional(),
-            frequency: z.lazy(() => CreateTeamTeamsFrequency$.inboundSchema).optional(),
-            maxQuantity: z.number().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                quantity: v.quantity,
-                ...(v.highestQuantity === undefined
-                    ? null
-                    : { highestQuantity: v.highestQuantity }),
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.createdAt === undefined ? null : { createdAt: v.createdAt }),
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.frequency === undefined ? null : { frequency: v.frequency }),
-                ...(v.maxQuantity === undefined ? null : { maxQuantity: v.maxQuantity }),
-            };
-        });
-
-    export type Outbound = {
-        tier?: number | undefined;
-        price: number;
-        quantity: number;
-        highestQuantity?: number | undefined;
-        name?: string | undefined;
-        hidden: boolean;
-        createdAt?: number | undefined;
-        disabledAt?: number | null | undefined;
-        frequency?: CreateTeamTeamsFrequency$.Outbound | undefined;
-        maxQuantity?: number | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamAnalytics> = z
-        .object({
-            tier: z.number().optional(),
-            price: z.number(),
-            quantity: z.number(),
-            highestQuantity: z.number().optional(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            createdAt: z.number().optional(),
-            disabledAt: z.nullable(z.number()).optional(),
-            frequency: z.lazy(() => CreateTeamTeamsFrequency$.outboundSchema).optional(),
-            maxQuantity: z.number().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                quantity: v.quantity,
-                ...(v.highestQuantity === undefined
-                    ? null
-                    : { highestQuantity: v.highestQuantity }),
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.createdAt === undefined ? null : { createdAt: v.createdAt }),
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.frequency === undefined ? null : { frequency: v.frequency }),
-                ...(v.maxQuantity === undefined ? null : { maxQuantity: v.maxQuantity }),
-            };
-        });
+    /** @deprecated use `CreateTeamAnalytics$inboundSchema` instead. */
+    export const inboundSchema = CreateTeamAnalytics$inboundSchema;
+    /** @deprecated use `CreateTeamAnalytics$outboundSchema` instead. */
+    export const outboundSchema = CreateTeamAnalytics$outboundSchema;
+    /** @deprecated use `CreateTeamAnalytics$Outbound` instead. */
+    export type Outbound = CreateTeamAnalytics$Outbound;
 }
 
 /** @internal */
+export const CreateTeamTeamsResponseInterval$inboundSchema: z.ZodNativeEnum<
+    typeof CreateTeamTeamsResponseInterval
+> = z.nativeEnum(CreateTeamTeamsResponseInterval);
+
+/** @internal */
+export const CreateTeamTeamsResponseInterval$outboundSchema: z.ZodNativeEnum<
+    typeof CreateTeamTeamsResponseInterval
+> = CreateTeamTeamsResponseInterval$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamTeamsResponseInterval$ {
-    export const inboundSchema = z.nativeEnum(CreateTeamTeamsResponseInterval);
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `CreateTeamTeamsResponseInterval$inboundSchema` instead. */
+    export const inboundSchema = CreateTeamTeamsResponseInterval$inboundSchema;
+    /** @deprecated use `CreateTeamTeamsResponseInterval$outboundSchema` instead. */
+    export const outboundSchema = CreateTeamTeamsResponseInterval$outboundSchema;
 }
 
 /** @internal */
+export const CreateTeamTeamsResponseFrequency$inboundSchema: z.ZodType<
+    CreateTeamTeamsResponseFrequency,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    interval: CreateTeamTeamsResponseInterval$inboundSchema,
+    intervalCount: z.number(),
+});
+
+/** @internal */
+export type CreateTeamTeamsResponseFrequency$Outbound = {
+    interval: string;
+    intervalCount: number;
+};
+
+/** @internal */
+export const CreateTeamTeamsResponseFrequency$outboundSchema: z.ZodType<
+    CreateTeamTeamsResponseFrequency$Outbound,
+    z.ZodTypeDef,
+    CreateTeamTeamsResponseFrequency
+> = z.object({
+    interval: CreateTeamTeamsResponseInterval$outboundSchema,
+    intervalCount: z.number(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamTeamsResponseFrequency$ {
-    export const inboundSchema: z.ZodType<CreateTeamTeamsResponseFrequency, z.ZodTypeDef, unknown> =
-        z
-            .object({
-                interval: CreateTeamTeamsResponseInterval$.inboundSchema,
-                intervalCount: z.number(),
-            })
-            .transform((v) => {
-                return {
-                    interval: v.interval,
-                    intervalCount: v.intervalCount,
-                };
-            });
-
-    export type Outbound = {
-        interval: string;
-        intervalCount: number;
-    };
-
-    export const outboundSchema: z.ZodType<
-        Outbound,
-        z.ZodTypeDef,
-        CreateTeamTeamsResponseFrequency
-    > = z
-        .object({
-            interval: CreateTeamTeamsResponseInterval$.outboundSchema,
-            intervalCount: z.number(),
-        })
-        .transform((v) => {
-            return {
-                interval: v.interval,
-                intervalCount: v.intervalCount,
-            };
-        });
+    /** @deprecated use `CreateTeamTeamsResponseFrequency$inboundSchema` instead. */
+    export const inboundSchema = CreateTeamTeamsResponseFrequency$inboundSchema;
+    /** @deprecated use `CreateTeamTeamsResponseFrequency$outboundSchema` instead. */
+    export const outboundSchema = CreateTeamTeamsResponseFrequency$outboundSchema;
+    /** @deprecated use `CreateTeamTeamsResponseFrequency$Outbound` instead. */
+    export type Outbound = CreateTeamTeamsResponseFrequency$Outbound;
 }
 
 /** @internal */
+export const CreateTeamConcurrentBuilds$inboundSchema: z.ZodType<
+    CreateTeamConcurrentBuilds,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    tier: z.number().optional(),
+    price: z.number(),
+    quantity: z.number(),
+    highestQuantity: z.number().optional(),
+    name: z.string().optional(),
+    hidden: z.boolean(),
+    createdAt: z.number().optional(),
+    disabledAt: z.nullable(z.number()).optional(),
+    frequency: z.lazy(() => CreateTeamTeamsResponseFrequency$inboundSchema).optional(),
+    maxQuantity: z.number().optional(),
+});
+
+/** @internal */
+export type CreateTeamConcurrentBuilds$Outbound = {
+    tier?: number | undefined;
+    price: number;
+    quantity: number;
+    highestQuantity?: number | undefined;
+    name?: string | undefined;
+    hidden: boolean;
+    createdAt?: number | undefined;
+    disabledAt?: number | null | undefined;
+    frequency?: CreateTeamTeamsResponseFrequency$Outbound | undefined;
+    maxQuantity?: number | undefined;
+};
+
+/** @internal */
+export const CreateTeamConcurrentBuilds$outboundSchema: z.ZodType<
+    CreateTeamConcurrentBuilds$Outbound,
+    z.ZodTypeDef,
+    CreateTeamConcurrentBuilds
+> = z.object({
+    tier: z.number().optional(),
+    price: z.number(),
+    quantity: z.number(),
+    highestQuantity: z.number().optional(),
+    name: z.string().optional(),
+    hidden: z.boolean(),
+    createdAt: z.number().optional(),
+    disabledAt: z.nullable(z.number()).optional(),
+    frequency: z.lazy(() => CreateTeamTeamsResponseFrequency$outboundSchema).optional(),
+    maxQuantity: z.number().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamConcurrentBuilds$ {
-    export const inboundSchema: z.ZodType<CreateTeamConcurrentBuilds, z.ZodTypeDef, unknown> = z
-        .object({
-            tier: z.number().optional(),
-            price: z.number(),
-            quantity: z.number(),
-            highestQuantity: z.number().optional(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            createdAt: z.number().optional(),
-            disabledAt: z.nullable(z.number()).optional(),
-            frequency: z.lazy(() => CreateTeamTeamsResponseFrequency$.inboundSchema).optional(),
-            maxQuantity: z.number().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                quantity: v.quantity,
-                ...(v.highestQuantity === undefined
-                    ? null
-                    : { highestQuantity: v.highestQuantity }),
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.createdAt === undefined ? null : { createdAt: v.createdAt }),
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.frequency === undefined ? null : { frequency: v.frequency }),
-                ...(v.maxQuantity === undefined ? null : { maxQuantity: v.maxQuantity }),
-            };
-        });
-
-    export type Outbound = {
-        tier?: number | undefined;
-        price: number;
-        quantity: number;
-        highestQuantity?: number | undefined;
-        name?: string | undefined;
-        hidden: boolean;
-        createdAt?: number | undefined;
-        disabledAt?: number | null | undefined;
-        frequency?: CreateTeamTeamsResponseFrequency$.Outbound | undefined;
-        maxQuantity?: number | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamConcurrentBuilds> = z
-        .object({
-            tier: z.number().optional(),
-            price: z.number(),
-            quantity: z.number(),
-            highestQuantity: z.number().optional(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            createdAt: z.number().optional(),
-            disabledAt: z.nullable(z.number()).optional(),
-            frequency: z.lazy(() => CreateTeamTeamsResponseFrequency$.outboundSchema).optional(),
-            maxQuantity: z.number().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                quantity: v.quantity,
-                ...(v.highestQuantity === undefined
-                    ? null
-                    : { highestQuantity: v.highestQuantity }),
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.createdAt === undefined ? null : { createdAt: v.createdAt }),
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.frequency === undefined ? null : { frequency: v.frequency }),
-                ...(v.maxQuantity === undefined ? null : { maxQuantity: v.maxQuantity }),
-            };
-        });
+    /** @deprecated use `CreateTeamConcurrentBuilds$inboundSchema` instead. */
+    export const inboundSchema = CreateTeamConcurrentBuilds$inboundSchema;
+    /** @deprecated use `CreateTeamConcurrentBuilds$outboundSchema` instead. */
+    export const outboundSchema = CreateTeamConcurrentBuilds$outboundSchema;
+    /** @deprecated use `CreateTeamConcurrentBuilds$Outbound` instead. */
+    export type Outbound = CreateTeamConcurrentBuilds$Outbound;
 }
 
 /** @internal */
+export const CreateTeamTeamsResponse200Interval$inboundSchema: z.ZodNativeEnum<
+    typeof CreateTeamTeamsResponse200Interval
+> = z.nativeEnum(CreateTeamTeamsResponse200Interval);
+
+/** @internal */
+export const CreateTeamTeamsResponse200Interval$outboundSchema: z.ZodNativeEnum<
+    typeof CreateTeamTeamsResponse200Interval
+> = CreateTeamTeamsResponse200Interval$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamTeamsResponse200Interval$ {
-    export const inboundSchema = z.nativeEnum(CreateTeamTeamsResponse200Interval);
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `CreateTeamTeamsResponse200Interval$inboundSchema` instead. */
+    export const inboundSchema = CreateTeamTeamsResponse200Interval$inboundSchema;
+    /** @deprecated use `CreateTeamTeamsResponse200Interval$outboundSchema` instead. */
+    export const outboundSchema = CreateTeamTeamsResponse200Interval$outboundSchema;
 }
 
 /** @internal */
+export const CreateTeamTeamsResponse200Frequency$inboundSchema: z.ZodType<
+    CreateTeamTeamsResponse200Frequency,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    interval: CreateTeamTeamsResponse200Interval$inboundSchema,
+    intervalCount: z.number(),
+});
+
+/** @internal */
+export type CreateTeamTeamsResponse200Frequency$Outbound = {
+    interval: string;
+    intervalCount: number;
+};
+
+/** @internal */
+export const CreateTeamTeamsResponse200Frequency$outboundSchema: z.ZodType<
+    CreateTeamTeamsResponse200Frequency$Outbound,
+    z.ZodTypeDef,
+    CreateTeamTeamsResponse200Frequency
+> = z.object({
+    interval: CreateTeamTeamsResponse200Interval$outboundSchema,
+    intervalCount: z.number(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamTeamsResponse200Frequency$ {
-    export const inboundSchema: z.ZodType<
-        CreateTeamTeamsResponse200Frequency,
-        z.ZodTypeDef,
-        unknown
-    > = z
-        .object({
-            interval: CreateTeamTeamsResponse200Interval$.inboundSchema,
-            intervalCount: z.number(),
-        })
-        .transform((v) => {
-            return {
-                interval: v.interval,
-                intervalCount: v.intervalCount,
-            };
-        });
-
-    export type Outbound = {
-        interval: string;
-        intervalCount: number;
-    };
-
-    export const outboundSchema: z.ZodType<
-        Outbound,
-        z.ZodTypeDef,
-        CreateTeamTeamsResponse200Frequency
-    > = z
-        .object({
-            interval: CreateTeamTeamsResponse200Interval$.outboundSchema,
-            intervalCount: z.number(),
-        })
-        .transform((v) => {
-            return {
-                interval: v.interval,
-                intervalCount: v.intervalCount,
-            };
-        });
+    /** @deprecated use `CreateTeamTeamsResponse200Frequency$inboundSchema` instead. */
+    export const inboundSchema = CreateTeamTeamsResponse200Frequency$inboundSchema;
+    /** @deprecated use `CreateTeamTeamsResponse200Frequency$outboundSchema` instead. */
+    export const outboundSchema = CreateTeamTeamsResponse200Frequency$outboundSchema;
+    /** @deprecated use `CreateTeamTeamsResponse200Frequency$Outbound` instead. */
+    export type Outbound = CreateTeamTeamsResponse200Frequency$Outbound;
 }
 
 /** @internal */
+export const CreateTeamMonitoring$inboundSchema: z.ZodType<
+    CreateTeamMonitoring,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    tier: z.number().optional(),
+    price: z.number(),
+    quantity: z.number(),
+    highestQuantity: z.number().optional(),
+    name: z.string().optional(),
+    hidden: z.boolean(),
+    createdAt: z.number().optional(),
+    disabledAt: z.nullable(z.number()).optional(),
+    frequency: z.lazy(() => CreateTeamTeamsResponse200Frequency$inboundSchema).optional(),
+    maxQuantity: z.number().optional(),
+});
+
+/** @internal */
+export type CreateTeamMonitoring$Outbound = {
+    tier?: number | undefined;
+    price: number;
+    quantity: number;
+    highestQuantity?: number | undefined;
+    name?: string | undefined;
+    hidden: boolean;
+    createdAt?: number | undefined;
+    disabledAt?: number | null | undefined;
+    frequency?: CreateTeamTeamsResponse200Frequency$Outbound | undefined;
+    maxQuantity?: number | undefined;
+};
+
+/** @internal */
+export const CreateTeamMonitoring$outboundSchema: z.ZodType<
+    CreateTeamMonitoring$Outbound,
+    z.ZodTypeDef,
+    CreateTeamMonitoring
+> = z.object({
+    tier: z.number().optional(),
+    price: z.number(),
+    quantity: z.number(),
+    highestQuantity: z.number().optional(),
+    name: z.string().optional(),
+    hidden: z.boolean(),
+    createdAt: z.number().optional(),
+    disabledAt: z.nullable(z.number()).optional(),
+    frequency: z.lazy(() => CreateTeamTeamsResponse200Frequency$outboundSchema).optional(),
+    maxQuantity: z.number().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamMonitoring$ {
-    export const inboundSchema: z.ZodType<CreateTeamMonitoring, z.ZodTypeDef, unknown> = z
-        .object({
-            tier: z.number().optional(),
-            price: z.number(),
-            quantity: z.number(),
-            highestQuantity: z.number().optional(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            createdAt: z.number().optional(),
-            disabledAt: z.nullable(z.number()).optional(),
-            frequency: z.lazy(() => CreateTeamTeamsResponse200Frequency$.inboundSchema).optional(),
-            maxQuantity: z.number().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                quantity: v.quantity,
-                ...(v.highestQuantity === undefined
-                    ? null
-                    : { highestQuantity: v.highestQuantity }),
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.createdAt === undefined ? null : { createdAt: v.createdAt }),
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.frequency === undefined ? null : { frequency: v.frequency }),
-                ...(v.maxQuantity === undefined ? null : { maxQuantity: v.maxQuantity }),
-            };
-        });
-
-    export type Outbound = {
-        tier?: number | undefined;
-        price: number;
-        quantity: number;
-        highestQuantity?: number | undefined;
-        name?: string | undefined;
-        hidden: boolean;
-        createdAt?: number | undefined;
-        disabledAt?: number | null | undefined;
-        frequency?: CreateTeamTeamsResponse200Frequency$.Outbound | undefined;
-        maxQuantity?: number | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamMonitoring> = z
-        .object({
-            tier: z.number().optional(),
-            price: z.number(),
-            quantity: z.number(),
-            highestQuantity: z.number().optional(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            createdAt: z.number().optional(),
-            disabledAt: z.nullable(z.number()).optional(),
-            frequency: z.lazy(() => CreateTeamTeamsResponse200Frequency$.outboundSchema).optional(),
-            maxQuantity: z.number().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                quantity: v.quantity,
-                ...(v.highestQuantity === undefined
-                    ? null
-                    : { highestQuantity: v.highestQuantity }),
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.createdAt === undefined ? null : { createdAt: v.createdAt }),
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.frequency === undefined ? null : { frequency: v.frequency }),
-                ...(v.maxQuantity === undefined ? null : { maxQuantity: v.maxQuantity }),
-            };
-        });
+    /** @deprecated use `CreateTeamMonitoring$inboundSchema` instead. */
+    export const inboundSchema = CreateTeamMonitoring$inboundSchema;
+    /** @deprecated use `CreateTeamMonitoring$outboundSchema` instead. */
+    export const outboundSchema = CreateTeamMonitoring$outboundSchema;
+    /** @deprecated use `CreateTeamMonitoring$Outbound` instead. */
+    export type Outbound = CreateTeamMonitoring$Outbound;
 }
 
 /** @internal */
+export const CreateTeamTeamsResponse200ApplicationJSONInterval$inboundSchema: z.ZodNativeEnum<
+    typeof CreateTeamTeamsResponse200ApplicationJSONInterval
+> = z.nativeEnum(CreateTeamTeamsResponse200ApplicationJSONInterval);
+
+/** @internal */
+export const CreateTeamTeamsResponse200ApplicationJSONInterval$outboundSchema: z.ZodNativeEnum<
+    typeof CreateTeamTeamsResponse200ApplicationJSONInterval
+> = CreateTeamTeamsResponse200ApplicationJSONInterval$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamTeamsResponse200ApplicationJSONInterval$ {
-    export const inboundSchema = z.nativeEnum(CreateTeamTeamsResponse200ApplicationJSONInterval);
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONInterval$inboundSchema` instead. */
+    export const inboundSchema = CreateTeamTeamsResponse200ApplicationJSONInterval$inboundSchema;
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONInterval$outboundSchema` instead. */
+    export const outboundSchema = CreateTeamTeamsResponse200ApplicationJSONInterval$outboundSchema;
 }
 
 /** @internal */
+export const CreateTeamTeamsResponse200ApplicationJSONFrequency$inboundSchema: z.ZodType<
+    CreateTeamTeamsResponse200ApplicationJSONFrequency,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    interval: CreateTeamTeamsResponse200ApplicationJSONInterval$inboundSchema,
+    intervalCount: z.number(),
+});
+
+/** @internal */
+export type CreateTeamTeamsResponse200ApplicationJSONFrequency$Outbound = {
+    interval: string;
+    intervalCount: number;
+};
+
+/** @internal */
+export const CreateTeamTeamsResponse200ApplicationJSONFrequency$outboundSchema: z.ZodType<
+    CreateTeamTeamsResponse200ApplicationJSONFrequency$Outbound,
+    z.ZodTypeDef,
+    CreateTeamTeamsResponse200ApplicationJSONFrequency
+> = z.object({
+    interval: CreateTeamTeamsResponse200ApplicationJSONInterval$outboundSchema,
+    intervalCount: z.number(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamTeamsResponse200ApplicationJSONFrequency$ {
-    export const inboundSchema: z.ZodType<
-        CreateTeamTeamsResponse200ApplicationJSONFrequency,
-        z.ZodTypeDef,
-        unknown
-    > = z
-        .object({
-            interval: CreateTeamTeamsResponse200ApplicationJSONInterval$.inboundSchema,
-            intervalCount: z.number(),
-        })
-        .transform((v) => {
-            return {
-                interval: v.interval,
-                intervalCount: v.intervalCount,
-            };
-        });
-
-    export type Outbound = {
-        interval: string;
-        intervalCount: number;
-    };
-
-    export const outboundSchema: z.ZodType<
-        Outbound,
-        z.ZodTypeDef,
-        CreateTeamTeamsResponse200ApplicationJSONFrequency
-    > = z
-        .object({
-            interval: CreateTeamTeamsResponse200ApplicationJSONInterval$.outboundSchema,
-            intervalCount: z.number(),
-        })
-        .transform((v) => {
-            return {
-                interval: v.interval,
-                intervalCount: v.intervalCount,
-            };
-        });
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONFrequency$inboundSchema` instead. */
+    export const inboundSchema = CreateTeamTeamsResponse200ApplicationJSONFrequency$inboundSchema;
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONFrequency$outboundSchema` instead. */
+    export const outboundSchema = CreateTeamTeamsResponse200ApplicationJSONFrequency$outboundSchema;
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONFrequency$Outbound` instead. */
+    export type Outbound = CreateTeamTeamsResponse200ApplicationJSONFrequency$Outbound;
 }
 
 /** @internal */
+export const CreateTeamPasswordProtection$inboundSchema: z.ZodType<
+    CreateTeamPasswordProtection,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    tier: z.number().optional(),
+    price: z.number(),
+    quantity: z.number(),
+    highestQuantity: z.number().optional(),
+    name: z.string().optional(),
+    hidden: z.boolean(),
+    createdAt: z.number().optional(),
+    disabledAt: z.nullable(z.number()).optional(),
+    frequency: z
+        .lazy(() => CreateTeamTeamsResponse200ApplicationJSONFrequency$inboundSchema)
+        .optional(),
+    maxQuantity: z.number().optional(),
+});
+
+/** @internal */
+export type CreateTeamPasswordProtection$Outbound = {
+    tier?: number | undefined;
+    price: number;
+    quantity: number;
+    highestQuantity?: number | undefined;
+    name?: string | undefined;
+    hidden: boolean;
+    createdAt?: number | undefined;
+    disabledAt?: number | null | undefined;
+    frequency?: CreateTeamTeamsResponse200ApplicationJSONFrequency$Outbound | undefined;
+    maxQuantity?: number | undefined;
+};
+
+/** @internal */
+export const CreateTeamPasswordProtection$outboundSchema: z.ZodType<
+    CreateTeamPasswordProtection$Outbound,
+    z.ZodTypeDef,
+    CreateTeamPasswordProtection
+> = z.object({
+    tier: z.number().optional(),
+    price: z.number(),
+    quantity: z.number(),
+    highestQuantity: z.number().optional(),
+    name: z.string().optional(),
+    hidden: z.boolean(),
+    createdAt: z.number().optional(),
+    disabledAt: z.nullable(z.number()).optional(),
+    frequency: z
+        .lazy(() => CreateTeamTeamsResponse200ApplicationJSONFrequency$outboundSchema)
+        .optional(),
+    maxQuantity: z.number().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamPasswordProtection$ {
-    export const inboundSchema: z.ZodType<CreateTeamPasswordProtection, z.ZodTypeDef, unknown> = z
-        .object({
-            tier: z.number().optional(),
-            price: z.number(),
-            quantity: z.number(),
-            highestQuantity: z.number().optional(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            createdAt: z.number().optional(),
-            disabledAt: z.nullable(z.number()).optional(),
-            frequency: z
-                .lazy(() => CreateTeamTeamsResponse200ApplicationJSONFrequency$.inboundSchema)
-                .optional(),
-            maxQuantity: z.number().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                quantity: v.quantity,
-                ...(v.highestQuantity === undefined
-                    ? null
-                    : { highestQuantity: v.highestQuantity }),
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.createdAt === undefined ? null : { createdAt: v.createdAt }),
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.frequency === undefined ? null : { frequency: v.frequency }),
-                ...(v.maxQuantity === undefined ? null : { maxQuantity: v.maxQuantity }),
-            };
-        });
-
-    export type Outbound = {
-        tier?: number | undefined;
-        price: number;
-        quantity: number;
-        highestQuantity?: number | undefined;
-        name?: string | undefined;
-        hidden: boolean;
-        createdAt?: number | undefined;
-        disabledAt?: number | null | undefined;
-        frequency?: CreateTeamTeamsResponse200ApplicationJSONFrequency$.Outbound | undefined;
-        maxQuantity?: number | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamPasswordProtection> = z
-        .object({
-            tier: z.number().optional(),
-            price: z.number(),
-            quantity: z.number(),
-            highestQuantity: z.number().optional(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            createdAt: z.number().optional(),
-            disabledAt: z.nullable(z.number()).optional(),
-            frequency: z
-                .lazy(() => CreateTeamTeamsResponse200ApplicationJSONFrequency$.outboundSchema)
-                .optional(),
-            maxQuantity: z.number().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                quantity: v.quantity,
-                ...(v.highestQuantity === undefined
-                    ? null
-                    : { highestQuantity: v.highestQuantity }),
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.createdAt === undefined ? null : { createdAt: v.createdAt }),
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.frequency === undefined ? null : { frequency: v.frequency }),
-                ...(v.maxQuantity === undefined ? null : { maxQuantity: v.maxQuantity }),
-            };
-        });
+    /** @deprecated use `CreateTeamPasswordProtection$inboundSchema` instead. */
+    export const inboundSchema = CreateTeamPasswordProtection$inboundSchema;
+    /** @deprecated use `CreateTeamPasswordProtection$outboundSchema` instead. */
+    export const outboundSchema = CreateTeamPasswordProtection$outboundSchema;
+    /** @deprecated use `CreateTeamPasswordProtection$Outbound` instead. */
+    export type Outbound = CreateTeamPasswordProtection$Outbound;
 }
 
 /** @internal */
+export const CreateTeamTeamsResponse200ApplicationJSONResponseBodyInterval$inboundSchema: z.ZodNativeEnum<
+    typeof CreateTeamTeamsResponse200ApplicationJSONResponseBodyInterval
+> = z.nativeEnum(CreateTeamTeamsResponse200ApplicationJSONResponseBodyInterval);
+
+/** @internal */
+export const CreateTeamTeamsResponse200ApplicationJSONResponseBodyInterval$outboundSchema: z.ZodNativeEnum<
+    typeof CreateTeamTeamsResponse200ApplicationJSONResponseBodyInterval
+> = CreateTeamTeamsResponse200ApplicationJSONResponseBodyInterval$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamTeamsResponse200ApplicationJSONResponseBodyInterval$ {
-    export const inboundSchema = z.nativeEnum(
-        CreateTeamTeamsResponse200ApplicationJSONResponseBodyInterval
-    );
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyInterval$inboundSchema` instead. */
+    export const inboundSchema =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyInterval$inboundSchema;
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyInterval$outboundSchema` instead. */
+    export const outboundSchema =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyInterval$outboundSchema;
 }
 
 /** @internal */
+export const CreateTeamTeamsResponse200ApplicationJSONResponseBodyFrequency$inboundSchema: z.ZodType<
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyFrequency,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    interval: CreateTeamTeamsResponse200ApplicationJSONResponseBodyInterval$inboundSchema,
+    intervalCount: z.number(),
+});
+
+/** @internal */
+export type CreateTeamTeamsResponse200ApplicationJSONResponseBodyFrequency$Outbound = {
+    interval: string;
+    intervalCount: number;
+};
+
+/** @internal */
+export const CreateTeamTeamsResponse200ApplicationJSONResponseBodyFrequency$outboundSchema: z.ZodType<
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyFrequency$Outbound,
+    z.ZodTypeDef,
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyFrequency
+> = z.object({
+    interval: CreateTeamTeamsResponse200ApplicationJSONResponseBodyInterval$outboundSchema,
+    intervalCount: z.number(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamTeamsResponse200ApplicationJSONResponseBodyFrequency$ {
-    export const inboundSchema: z.ZodType<
-        CreateTeamTeamsResponse200ApplicationJSONResponseBodyFrequency,
-        z.ZodTypeDef,
-        unknown
-    > = z
-        .object({
-            interval: CreateTeamTeamsResponse200ApplicationJSONResponseBodyInterval$.inboundSchema,
-            intervalCount: z.number(),
-        })
-        .transform((v) => {
-            return {
-                interval: v.interval,
-                intervalCount: v.intervalCount,
-            };
-        });
-
-    export type Outbound = {
-        interval: string;
-        intervalCount: number;
-    };
-
-    export const outboundSchema: z.ZodType<
-        Outbound,
-        z.ZodTypeDef,
-        CreateTeamTeamsResponse200ApplicationJSONResponseBodyFrequency
-    > = z
-        .object({
-            interval: CreateTeamTeamsResponse200ApplicationJSONResponseBodyInterval$.outboundSchema,
-            intervalCount: z.number(),
-        })
-        .transform((v) => {
-            return {
-                interval: v.interval,
-                intervalCount: v.intervalCount,
-            };
-        });
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyFrequency$inboundSchema` instead. */
+    export const inboundSchema =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyFrequency$inboundSchema;
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyFrequency$outboundSchema` instead. */
+    export const outboundSchema =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyFrequency$outboundSchema;
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyFrequency$Outbound` instead. */
+    export type Outbound = CreateTeamTeamsResponse200ApplicationJSONResponseBodyFrequency$Outbound;
 }
 
 /** @internal */
+export const CreateTeamPreviewDeploymentSuffix$inboundSchema: z.ZodType<
+    CreateTeamPreviewDeploymentSuffix,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    tier: z.number().optional(),
+    price: z.number(),
+    quantity: z.number(),
+    highestQuantity: z.number().optional(),
+    name: z.string().optional(),
+    hidden: z.boolean(),
+    createdAt: z.number().optional(),
+    disabledAt: z.nullable(z.number()).optional(),
+    frequency: z
+        .lazy(() => CreateTeamTeamsResponse200ApplicationJSONResponseBodyFrequency$inboundSchema)
+        .optional(),
+    maxQuantity: z.number().optional(),
+});
+
+/** @internal */
+export type CreateTeamPreviewDeploymentSuffix$Outbound = {
+    tier?: number | undefined;
+    price: number;
+    quantity: number;
+    highestQuantity?: number | undefined;
+    name?: string | undefined;
+    hidden: boolean;
+    createdAt?: number | undefined;
+    disabledAt?: number | null | undefined;
+    frequency?: CreateTeamTeamsResponse200ApplicationJSONResponseBodyFrequency$Outbound | undefined;
+    maxQuantity?: number | undefined;
+};
+
+/** @internal */
+export const CreateTeamPreviewDeploymentSuffix$outboundSchema: z.ZodType<
+    CreateTeamPreviewDeploymentSuffix$Outbound,
+    z.ZodTypeDef,
+    CreateTeamPreviewDeploymentSuffix
+> = z.object({
+    tier: z.number().optional(),
+    price: z.number(),
+    quantity: z.number(),
+    highestQuantity: z.number().optional(),
+    name: z.string().optional(),
+    hidden: z.boolean(),
+    createdAt: z.number().optional(),
+    disabledAt: z.nullable(z.number()).optional(),
+    frequency: z
+        .lazy(() => CreateTeamTeamsResponse200ApplicationJSONResponseBodyFrequency$outboundSchema)
+        .optional(),
+    maxQuantity: z.number().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamPreviewDeploymentSuffix$ {
-    export const inboundSchema: z.ZodType<
-        CreateTeamPreviewDeploymentSuffix,
-        z.ZodTypeDef,
-        unknown
-    > = z
-        .object({
-            tier: z.number().optional(),
-            price: z.number(),
-            quantity: z.number(),
-            highestQuantity: z.number().optional(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            createdAt: z.number().optional(),
-            disabledAt: z.nullable(z.number()).optional(),
-            frequency: z
-                .lazy(
-                    () =>
-                        CreateTeamTeamsResponse200ApplicationJSONResponseBodyFrequency$.inboundSchema
-                )
-                .optional(),
-            maxQuantity: z.number().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                quantity: v.quantity,
-                ...(v.highestQuantity === undefined
-                    ? null
-                    : { highestQuantity: v.highestQuantity }),
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.createdAt === undefined ? null : { createdAt: v.createdAt }),
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.frequency === undefined ? null : { frequency: v.frequency }),
-                ...(v.maxQuantity === undefined ? null : { maxQuantity: v.maxQuantity }),
-            };
-        });
-
-    export type Outbound = {
-        tier?: number | undefined;
-        price: number;
-        quantity: number;
-        highestQuantity?: number | undefined;
-        name?: string | undefined;
-        hidden: boolean;
-        createdAt?: number | undefined;
-        disabledAt?: number | null | undefined;
-        frequency?:
-            | CreateTeamTeamsResponse200ApplicationJSONResponseBodyFrequency$.Outbound
-            | undefined;
-        maxQuantity?: number | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<
-        Outbound,
-        z.ZodTypeDef,
-        CreateTeamPreviewDeploymentSuffix
-    > = z
-        .object({
-            tier: z.number().optional(),
-            price: z.number(),
-            quantity: z.number(),
-            highestQuantity: z.number().optional(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            createdAt: z.number().optional(),
-            disabledAt: z.nullable(z.number()).optional(),
-            frequency: z
-                .lazy(
-                    () =>
-                        CreateTeamTeamsResponse200ApplicationJSONResponseBodyFrequency$.outboundSchema
-                )
-                .optional(),
-            maxQuantity: z.number().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                quantity: v.quantity,
-                ...(v.highestQuantity === undefined
-                    ? null
-                    : { highestQuantity: v.highestQuantity }),
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.createdAt === undefined ? null : { createdAt: v.createdAt }),
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.frequency === undefined ? null : { frequency: v.frequency }),
-                ...(v.maxQuantity === undefined ? null : { maxQuantity: v.maxQuantity }),
-            };
-        });
+    /** @deprecated use `CreateTeamPreviewDeploymentSuffix$inboundSchema` instead. */
+    export const inboundSchema = CreateTeamPreviewDeploymentSuffix$inboundSchema;
+    /** @deprecated use `CreateTeamPreviewDeploymentSuffix$outboundSchema` instead. */
+    export const outboundSchema = CreateTeamPreviewDeploymentSuffix$outboundSchema;
+    /** @deprecated use `CreateTeamPreviewDeploymentSuffix$Outbound` instead. */
+    export type Outbound = CreateTeamPreviewDeploymentSuffix$Outbound;
 }
 
 /** @internal */
+export const CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInterval$inboundSchema: z.ZodNativeEnum<
+    typeof CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInterval
+> = z.nativeEnum(CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInterval);
+
+/** @internal */
+export const CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInterval$outboundSchema: z.ZodNativeEnum<
+    typeof CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInterval
+> = CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInterval$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInterval$ {
-    export const inboundSchema = z.nativeEnum(
-        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInterval
-    );
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInterval$inboundSchema` instead. */
+    export const inboundSchema =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInterval$inboundSchema;
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInterval$outboundSchema` instead. */
+    export const outboundSchema =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInterval$outboundSchema;
 }
 
 /** @internal */
+export const CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingFrequency$inboundSchema: z.ZodType<
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingFrequency,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    interval: CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInterval$inboundSchema,
+    intervalCount: z.number(),
+});
+
+/** @internal */
+export type CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingFrequency$Outbound = {
+    interval: string;
+    intervalCount: number;
+};
+
+/** @internal */
+export const CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingFrequency$outboundSchema: z.ZodType<
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingFrequency$Outbound,
+    z.ZodTypeDef,
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingFrequency
+> = z.object({
+    interval: CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInterval$outboundSchema,
+    intervalCount: z.number(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingFrequency$ {
-    export const inboundSchema: z.ZodType<
-        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingFrequency,
-        z.ZodTypeDef,
-        unknown
-    > = z
-        .object({
-            interval:
-                CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInterval$.inboundSchema,
-            intervalCount: z.number(),
-        })
-        .transform((v) => {
-            return {
-                interval: v.interval,
-                intervalCount: v.intervalCount,
-            };
-        });
-
-    export type Outbound = {
-        interval: string;
-        intervalCount: number;
-    };
-
-    export const outboundSchema: z.ZodType<
-        Outbound,
-        z.ZodTypeDef,
-        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingFrequency
-    > = z
-        .object({
-            interval:
-                CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInterval$.outboundSchema,
-            intervalCount: z.number(),
-        })
-        .transform((v) => {
-            return {
-                interval: v.interval,
-                intervalCount: v.intervalCount,
-            };
-        });
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingFrequency$inboundSchema` instead. */
+    export const inboundSchema =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingFrequency$inboundSchema;
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingFrequency$outboundSchema` instead. */
+    export const outboundSchema =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingFrequency$outboundSchema;
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingFrequency$Outbound` instead. */
+    export type Outbound =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingFrequency$Outbound;
 }
 
 /** @internal */
+export const CreateTeamSaml$inboundSchema: z.ZodType<CreateTeamSaml, z.ZodTypeDef, unknown> =
+    z.object({
+        tier: z.number().optional(),
+        price: z.number(),
+        quantity: z.number(),
+        highestQuantity: z.number().optional(),
+        name: z.string().optional(),
+        hidden: z.boolean(),
+        createdAt: z.number().optional(),
+        disabledAt: z.nullable(z.number()).optional(),
+        frequency: z
+            .lazy(
+                () =>
+                    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingFrequency$inboundSchema
+            )
+            .optional(),
+        maxQuantity: z.number().optional(),
+    });
+
+/** @internal */
+export type CreateTeamSaml$Outbound = {
+    tier?: number | undefined;
+    price: number;
+    quantity: number;
+    highestQuantity?: number | undefined;
+    name?: string | undefined;
+    hidden: boolean;
+    createdAt?: number | undefined;
+    disabledAt?: number | null | undefined;
+    frequency?:
+        | CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingFrequency$Outbound
+        | undefined;
+    maxQuantity?: number | undefined;
+};
+
+/** @internal */
+export const CreateTeamSaml$outboundSchema: z.ZodType<
+    CreateTeamSaml$Outbound,
+    z.ZodTypeDef,
+    CreateTeamSaml
+> = z.object({
+    tier: z.number().optional(),
+    price: z.number(),
+    quantity: z.number(),
+    highestQuantity: z.number().optional(),
+    name: z.string().optional(),
+    hidden: z.boolean(),
+    createdAt: z.number().optional(),
+    disabledAt: z.nullable(z.number()).optional(),
+    frequency: z
+        .lazy(
+            () =>
+                CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingFrequency$outboundSchema
+        )
+        .optional(),
+    maxQuantity: z.number().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamSaml$ {
-    export const inboundSchema: z.ZodType<CreateTeamSaml, z.ZodTypeDef, unknown> = z
-        .object({
-            tier: z.number().optional(),
-            price: z.number(),
-            quantity: z.number(),
-            highestQuantity: z.number().optional(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            createdAt: z.number().optional(),
-            disabledAt: z.nullable(z.number()).optional(),
-            frequency: z
-                .lazy(
-                    () =>
-                        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingFrequency$.inboundSchema
-                )
-                .optional(),
-            maxQuantity: z.number().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                quantity: v.quantity,
-                ...(v.highestQuantity === undefined
-                    ? null
-                    : { highestQuantity: v.highestQuantity }),
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.createdAt === undefined ? null : { createdAt: v.createdAt }),
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.frequency === undefined ? null : { frequency: v.frequency }),
-                ...(v.maxQuantity === undefined ? null : { maxQuantity: v.maxQuantity }),
-            };
-        });
-
-    export type Outbound = {
-        tier?: number | undefined;
-        price: number;
-        quantity: number;
-        highestQuantity?: number | undefined;
-        name?: string | undefined;
-        hidden: boolean;
-        createdAt?: number | undefined;
-        disabledAt?: number | null | undefined;
-        frequency?:
-            | CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingFrequency$.Outbound
-            | undefined;
-        maxQuantity?: number | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamSaml> = z
-        .object({
-            tier: z.number().optional(),
-            price: z.number(),
-            quantity: z.number(),
-            highestQuantity: z.number().optional(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            createdAt: z.number().optional(),
-            disabledAt: z.nullable(z.number()).optional(),
-            frequency: z
-                .lazy(
-                    () =>
-                        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingFrequency$.outboundSchema
-                )
-                .optional(),
-            maxQuantity: z.number().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                quantity: v.quantity,
-                ...(v.highestQuantity === undefined
-                    ? null
-                    : { highestQuantity: v.highestQuantity }),
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.createdAt === undefined ? null : { createdAt: v.createdAt }),
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.frequency === undefined ? null : { frequency: v.frequency }),
-                ...(v.maxQuantity === undefined ? null : { maxQuantity: v.maxQuantity }),
-            };
-        });
+    /** @deprecated use `CreateTeamSaml$inboundSchema` instead. */
+    export const inboundSchema = CreateTeamSaml$inboundSchema;
+    /** @deprecated use `CreateTeamSaml$outboundSchema` instead. */
+    export const outboundSchema = CreateTeamSaml$outboundSchema;
+    /** @deprecated use `CreateTeamSaml$Outbound` instead. */
+    export type Outbound = CreateTeamSaml$Outbound;
 }
 
 /** @internal */
+export const CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsInterval$inboundSchema: z.ZodNativeEnum<
+    typeof CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsInterval
+> = z.nativeEnum(CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsInterval);
+
+/** @internal */
+export const CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsInterval$outboundSchema: z.ZodNativeEnum<
+    typeof CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsInterval
+> = CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsInterval$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsInterval$ {
-    export const inboundSchema = z.nativeEnum(
-        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsInterval
-    );
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsInterval$inboundSchema` instead. */
+    export const inboundSchema =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsInterval$inboundSchema;
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsInterval$outboundSchema` instead. */
+    export const outboundSchema =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsInterval$outboundSchema;
 }
 
 /** @internal */
+export const CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFrequency$inboundSchema: z.ZodType<
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFrequency,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    interval:
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsInterval$inboundSchema,
+    intervalCount: z.number(),
+});
+
+/** @internal */
+export type CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFrequency$Outbound =
+    {
+        interval: string;
+        intervalCount: number;
+    };
+
+/** @internal */
+export const CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFrequency$outboundSchema: z.ZodType<
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFrequency$Outbound,
+    z.ZodTypeDef,
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFrequency
+> = z.object({
+    interval:
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsInterval$outboundSchema,
+    intervalCount: z.number(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFrequency$ {
-    export const inboundSchema: z.ZodType<
-        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFrequency,
-        z.ZodTypeDef,
-        unknown
-    > = z
-        .object({
-            interval:
-                CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsInterval$.inboundSchema,
-            intervalCount: z.number(),
-        })
-        .transform((v) => {
-            return {
-                interval: v.interval,
-                intervalCount: v.intervalCount,
-            };
-        });
-
-    export type Outbound = {
-        interval: string;
-        intervalCount: number;
-    };
-
-    export const outboundSchema: z.ZodType<
-        Outbound,
-        z.ZodTypeDef,
-        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFrequency
-    > = z
-        .object({
-            interval:
-                CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsInterval$.outboundSchema,
-            intervalCount: z.number(),
-        })
-        .transform((v) => {
-            return {
-                interval: v.interval,
-                intervalCount: v.intervalCount,
-            };
-        });
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFrequency$inboundSchema` instead. */
+    export const inboundSchema =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFrequency$inboundSchema;
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFrequency$outboundSchema` instead. */
+    export const outboundSchema =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFrequency$outboundSchema;
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFrequency$Outbound` instead. */
+    export type Outbound =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFrequency$Outbound;
 }
 
 /** @internal */
+export const CreateTeamTeamSeats$inboundSchema: z.ZodType<
+    CreateTeamTeamSeats,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    tier: z.number().optional(),
+    price: z.number(),
+    quantity: z.number(),
+    highestQuantity: z.number().optional(),
+    name: z.string().optional(),
+    hidden: z.boolean(),
+    createdAt: z.number().optional(),
+    disabledAt: z.nullable(z.number()).optional(),
+    frequency: z
+        .lazy(
+            () =>
+                CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFrequency$inboundSchema
+        )
+        .optional(),
+    maxQuantity: z.number().optional(),
+});
+
+/** @internal */
+export type CreateTeamTeamSeats$Outbound = {
+    tier?: number | undefined;
+    price: number;
+    quantity: number;
+    highestQuantity?: number | undefined;
+    name?: string | undefined;
+    hidden: boolean;
+    createdAt?: number | undefined;
+    disabledAt?: number | null | undefined;
+    frequency?:
+        | CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFrequency$Outbound
+        | undefined;
+    maxQuantity?: number | undefined;
+};
+
+/** @internal */
+export const CreateTeamTeamSeats$outboundSchema: z.ZodType<
+    CreateTeamTeamSeats$Outbound,
+    z.ZodTypeDef,
+    CreateTeamTeamSeats
+> = z.object({
+    tier: z.number().optional(),
+    price: z.number(),
+    quantity: z.number(),
+    highestQuantity: z.number().optional(),
+    name: z.string().optional(),
+    hidden: z.boolean(),
+    createdAt: z.number().optional(),
+    disabledAt: z.nullable(z.number()).optional(),
+    frequency: z
+        .lazy(
+            () =>
+                CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFrequency$outboundSchema
+        )
+        .optional(),
+    maxQuantity: z.number().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamTeamSeats$ {
-    export const inboundSchema: z.ZodType<CreateTeamTeamSeats, z.ZodTypeDef, unknown> = z
-        .object({
-            tier: z.number().optional(),
-            price: z.number(),
-            quantity: z.number(),
-            highestQuantity: z.number().optional(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            createdAt: z.number().optional(),
-            disabledAt: z.nullable(z.number()).optional(),
-            frequency: z
-                .lazy(
-                    () =>
-                        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFrequency$.inboundSchema
-                )
-                .optional(),
-            maxQuantity: z.number().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                quantity: v.quantity,
-                ...(v.highestQuantity === undefined
-                    ? null
-                    : { highestQuantity: v.highestQuantity }),
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.createdAt === undefined ? null : { createdAt: v.createdAt }),
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.frequency === undefined ? null : { frequency: v.frequency }),
-                ...(v.maxQuantity === undefined ? null : { maxQuantity: v.maxQuantity }),
-            };
-        });
-
-    export type Outbound = {
-        tier?: number | undefined;
-        price: number;
-        quantity: number;
-        highestQuantity?: number | undefined;
-        name?: string | undefined;
-        hidden: boolean;
-        createdAt?: number | undefined;
-        disabledAt?: number | null | undefined;
-        frequency?:
-            | CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFrequency$.Outbound
-            | undefined;
-        maxQuantity?: number | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamTeamSeats> = z
-        .object({
-            tier: z.number().optional(),
-            price: z.number(),
-            quantity: z.number(),
-            highestQuantity: z.number().optional(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            createdAt: z.number().optional(),
-            disabledAt: z.nullable(z.number()).optional(),
-            frequency: z
-                .lazy(
-                    () =>
-                        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFrequency$.outboundSchema
-                )
-                .optional(),
-            maxQuantity: z.number().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                quantity: v.quantity,
-                ...(v.highestQuantity === undefined
-                    ? null
-                    : { highestQuantity: v.highestQuantity }),
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.createdAt === undefined ? null : { createdAt: v.createdAt }),
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.frequency === undefined ? null : { frequency: v.frequency }),
-                ...(v.maxQuantity === undefined ? null : { maxQuantity: v.maxQuantity }),
-            };
-        });
+    /** @deprecated use `CreateTeamTeamSeats$inboundSchema` instead. */
+    export const inboundSchema = CreateTeamTeamSeats$inboundSchema;
+    /** @deprecated use `CreateTeamTeamSeats$outboundSchema` instead. */
+    export const outboundSchema = CreateTeamTeamSeats$outboundSchema;
+    /** @deprecated use `CreateTeamTeamSeats$Outbound` instead. */
+    export type Outbound = CreateTeamTeamSeats$Outbound;
 }
 
 /** @internal */
+export const CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWebAnalyticsInterval$inboundSchema: z.ZodNativeEnum<
+    typeof CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWebAnalyticsInterval
+> = z.nativeEnum(
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWebAnalyticsInterval
+);
+
+/** @internal */
+export const CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWebAnalyticsInterval$outboundSchema: z.ZodNativeEnum<
+    typeof CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWebAnalyticsInterval
+> =
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWebAnalyticsInterval$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWebAnalyticsInterval$ {
-    export const inboundSchema = z.nativeEnum(
-        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWebAnalyticsInterval
-    );
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWebAnalyticsInterval$inboundSchema` instead. */
+    export const inboundSchema =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWebAnalyticsInterval$inboundSchema;
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWebAnalyticsInterval$outboundSchema` instead. */
+    export const outboundSchema =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWebAnalyticsInterval$outboundSchema;
 }
 
 /** @internal */
+export const CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWebAnalyticsFrequency$inboundSchema: z.ZodType<
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWebAnalyticsFrequency,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    interval:
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWebAnalyticsInterval$inboundSchema,
+    intervalCount: z.number(),
+});
+
+/** @internal */
+export type CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWebAnalyticsFrequency$Outbound =
+    {
+        interval: string;
+        intervalCount: number;
+    };
+
+/** @internal */
+export const CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWebAnalyticsFrequency$outboundSchema: z.ZodType<
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWebAnalyticsFrequency$Outbound,
+    z.ZodTypeDef,
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWebAnalyticsFrequency
+> = z.object({
+    interval:
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWebAnalyticsInterval$outboundSchema,
+    intervalCount: z.number(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWebAnalyticsFrequency$ {
-    export const inboundSchema: z.ZodType<
-        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWebAnalyticsFrequency,
-        z.ZodTypeDef,
-        unknown
-    > = z
-        .object({
-            interval:
-                CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWebAnalyticsInterval$.inboundSchema,
-            intervalCount: z.number(),
-        })
-        .transform((v) => {
-            return {
-                interval: v.interval,
-                intervalCount: v.intervalCount,
-            };
-        });
-
-    export type Outbound = {
-        interval: string;
-        intervalCount: number;
-    };
-
-    export const outboundSchema: z.ZodType<
-        Outbound,
-        z.ZodTypeDef,
-        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWebAnalyticsFrequency
-    > = z
-        .object({
-            interval:
-                CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWebAnalyticsInterval$.outboundSchema,
-            intervalCount: z.number(),
-        })
-        .transform((v) => {
-            return {
-                interval: v.interval,
-                intervalCount: v.intervalCount,
-            };
-        });
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWebAnalyticsFrequency$inboundSchema` instead. */
+    export const inboundSchema =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWebAnalyticsFrequency$inboundSchema;
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWebAnalyticsFrequency$outboundSchema` instead. */
+    export const outboundSchema =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWebAnalyticsFrequency$outboundSchema;
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWebAnalyticsFrequency$Outbound` instead. */
+    export type Outbound =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWebAnalyticsFrequency$Outbound;
 }
 
 /** @internal */
+export const CreateTeamWebAnalytics$inboundSchema: z.ZodType<
+    CreateTeamWebAnalytics,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    tier: z.number().optional(),
+    price: z.number(),
+    quantity: z.number(),
+    highestQuantity: z.number().optional(),
+    name: z.string().optional(),
+    hidden: z.boolean(),
+    createdAt: z.number().optional(),
+    disabledAt: z.nullable(z.number()).optional(),
+    frequency: z
+        .lazy(
+            () =>
+                CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWebAnalyticsFrequency$inboundSchema
+        )
+        .optional(),
+    maxQuantity: z.number().optional(),
+});
+
+/** @internal */
+export type CreateTeamWebAnalytics$Outbound = {
+    tier?: number | undefined;
+    price: number;
+    quantity: number;
+    highestQuantity?: number | undefined;
+    name?: string | undefined;
+    hidden: boolean;
+    createdAt?: number | undefined;
+    disabledAt?: number | null | undefined;
+    frequency?:
+        | CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWebAnalyticsFrequency$Outbound
+        | undefined;
+    maxQuantity?: number | undefined;
+};
+
+/** @internal */
+export const CreateTeamWebAnalytics$outboundSchema: z.ZodType<
+    CreateTeamWebAnalytics$Outbound,
+    z.ZodTypeDef,
+    CreateTeamWebAnalytics
+> = z.object({
+    tier: z.number().optional(),
+    price: z.number(),
+    quantity: z.number(),
+    highestQuantity: z.number().optional(),
+    name: z.string().optional(),
+    hidden: z.boolean(),
+    createdAt: z.number().optional(),
+    disabledAt: z.nullable(z.number()).optional(),
+    frequency: z
+        .lazy(
+            () =>
+                CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWebAnalyticsFrequency$outboundSchema
+        )
+        .optional(),
+    maxQuantity: z.number().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamWebAnalytics$ {
-    export const inboundSchema: z.ZodType<CreateTeamWebAnalytics, z.ZodTypeDef, unknown> = z
-        .object({
-            tier: z.number().optional(),
-            price: z.number(),
-            quantity: z.number(),
-            highestQuantity: z.number().optional(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            createdAt: z.number().optional(),
-            disabledAt: z.nullable(z.number()).optional(),
-            frequency: z
-                .lazy(
-                    () =>
-                        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWebAnalyticsFrequency$.inboundSchema
-                )
-                .optional(),
-            maxQuantity: z.number().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                quantity: v.quantity,
-                ...(v.highestQuantity === undefined
-                    ? null
-                    : { highestQuantity: v.highestQuantity }),
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.createdAt === undefined ? null : { createdAt: v.createdAt }),
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.frequency === undefined ? null : { frequency: v.frequency }),
-                ...(v.maxQuantity === undefined ? null : { maxQuantity: v.maxQuantity }),
-            };
-        });
-
-    export type Outbound = {
-        tier?: number | undefined;
-        price: number;
-        quantity: number;
-        highestQuantity?: number | undefined;
-        name?: string | undefined;
-        hidden: boolean;
-        createdAt?: number | undefined;
-        disabledAt?: number | null | undefined;
-        frequency?:
-            | CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWebAnalyticsFrequency$.Outbound
-            | undefined;
-        maxQuantity?: number | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamWebAnalytics> = z
-        .object({
-            tier: z.number().optional(),
-            price: z.number(),
-            quantity: z.number(),
-            highestQuantity: z.number().optional(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            createdAt: z.number().optional(),
-            disabledAt: z.nullable(z.number()).optional(),
-            frequency: z
-                .lazy(
-                    () =>
-                        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWebAnalyticsFrequency$.outboundSchema
-                )
-                .optional(),
-            maxQuantity: z.number().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                quantity: v.quantity,
-                ...(v.highestQuantity === undefined
-                    ? null
-                    : { highestQuantity: v.highestQuantity }),
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.createdAt === undefined ? null : { createdAt: v.createdAt }),
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.frequency === undefined ? null : { frequency: v.frequency }),
-                ...(v.maxQuantity === undefined ? null : { maxQuantity: v.maxQuantity }),
-            };
-        });
+    /** @deprecated use `CreateTeamWebAnalytics$inboundSchema` instead. */
+    export const inboundSchema = CreateTeamWebAnalytics$inboundSchema;
+    /** @deprecated use `CreateTeamWebAnalytics$outboundSchema` instead. */
+    export const outboundSchema = CreateTeamWebAnalytics$outboundSchema;
+    /** @deprecated use `CreateTeamWebAnalytics$Outbound` instead. */
+    export type Outbound = CreateTeamWebAnalytics$Outbound;
 }
 
 /** @internal */
+export const CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsAnalyticsUsageMatrix$inboundSchema: z.ZodType<
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsAnalyticsUsageMatrix,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    defaultUnitPrice: z.string(),
+    dimensionPrices: z.record(z.string()),
+});
+
+/** @internal */
+export type CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsAnalyticsUsageMatrix$Outbound =
+    {
+        defaultUnitPrice: string;
+        dimensionPrices: { [k: string]: string };
+    };
+
+/** @internal */
+export const CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsAnalyticsUsageMatrix$outboundSchema: z.ZodType<
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsAnalyticsUsageMatrix$Outbound,
+    z.ZodTypeDef,
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsAnalyticsUsageMatrix
+> = z.object({
+    defaultUnitPrice: z.string(),
+    dimensionPrices: z.record(z.string()),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsAnalyticsUsageMatrix$ {
-    export const inboundSchema: z.ZodType<
-        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsAnalyticsUsageMatrix,
-        z.ZodTypeDef,
-        unknown
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
-
-    export type Outbound = {
-        defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
-    };
-
-    export const outboundSchema: z.ZodType<
-        Outbound,
-        z.ZodTypeDef,
-        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsAnalyticsUsageMatrix
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsAnalyticsUsageMatrix$inboundSchema` instead. */
+    export const inboundSchema =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsAnalyticsUsageMatrix$inboundSchema;
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsAnalyticsUsageMatrix$outboundSchema` instead. */
+    export const outboundSchema =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsAnalyticsUsageMatrix$outboundSchema;
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsAnalyticsUsageMatrix$Outbound` instead. */
+    export type Outbound =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsAnalyticsUsageMatrix$Outbound;
 }
 
 /** @internal */
+export const CreateTeamAnalyticsUsage$inboundSchema: z.ZodType<
+    CreateTeamAnalyticsUsage,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    matrix: z
+        .lazy(
+            () =>
+                CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsAnalyticsUsageMatrix$inboundSchema
+        )
+        .optional(),
+    tier: z.number().optional(),
+    price: z.number(),
+    batch: z.number(),
+    threshold: z.number(),
+    name: z.string().optional(),
+    hidden: z.boolean(),
+    disabledAt: z.nullable(z.number()).optional(),
+    enabledAt: z.nullable(z.number()).optional(),
+});
+
+/** @internal */
+export type CreateTeamAnalyticsUsage$Outbound = {
+    matrix?:
+        | CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsAnalyticsUsageMatrix$Outbound
+        | undefined;
+    tier?: number | undefined;
+    price: number;
+    batch: number;
+    threshold: number;
+    name?: string | undefined;
+    hidden: boolean;
+    disabledAt?: number | null | undefined;
+    enabledAt?: number | null | undefined;
+};
+
+/** @internal */
+export const CreateTeamAnalyticsUsage$outboundSchema: z.ZodType<
+    CreateTeamAnalyticsUsage$Outbound,
+    z.ZodTypeDef,
+    CreateTeamAnalyticsUsage
+> = z.object({
+    matrix: z
+        .lazy(
+            () =>
+                CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsAnalyticsUsageMatrix$outboundSchema
+        )
+        .optional(),
+    tier: z.number().optional(),
+    price: z.number(),
+    batch: z.number(),
+    threshold: z.number(),
+    name: z.string().optional(),
+    hidden: z.boolean(),
+    disabledAt: z.nullable(z.number()).optional(),
+    enabledAt: z.nullable(z.number()).optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamAnalyticsUsage$ {
-    export const inboundSchema: z.ZodType<CreateTeamAnalyticsUsage, z.ZodTypeDef, unknown> = z
-        .object({
-            matrix: z
-                .lazy(
-                    () =>
-                        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsAnalyticsUsageMatrix$.inboundSchema
-                )
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
-
-    export type Outbound = {
-        matrix?:
-            | CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsAnalyticsUsageMatrix$.Outbound
-            | undefined;
-        tier?: number | undefined;
-        price: number;
-        batch: number;
-        threshold: number;
-        name?: string | undefined;
-        hidden: boolean;
-        disabledAt?: number | null | undefined;
-        enabledAt?: number | null | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamAnalyticsUsage> = z
-        .object({
-            matrix: z
-                .lazy(
-                    () =>
-                        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsAnalyticsUsageMatrix$.outboundSchema
-                )
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+    /** @deprecated use `CreateTeamAnalyticsUsage$inboundSchema` instead. */
+    export const inboundSchema = CreateTeamAnalyticsUsage$inboundSchema;
+    /** @deprecated use `CreateTeamAnalyticsUsage$outboundSchema` instead. */
+    export const outboundSchema = CreateTeamAnalyticsUsage$outboundSchema;
+    /** @deprecated use `CreateTeamAnalyticsUsage$Outbound` instead. */
+    export type Outbound = CreateTeamAnalyticsUsage$Outbound;
 }
 
 /** @internal */
+export const CreateTeamMatrix$inboundSchema: z.ZodType<CreateTeamMatrix, z.ZodTypeDef, unknown> =
+    z.object({
+        defaultUnitPrice: z.string(),
+        dimensionPrices: z.record(z.string()),
+    });
+
+/** @internal */
+export type CreateTeamMatrix$Outbound = {
+    defaultUnitPrice: string;
+    dimensionPrices: { [k: string]: string };
+};
+
+/** @internal */
+export const CreateTeamMatrix$outboundSchema: z.ZodType<
+    CreateTeamMatrix$Outbound,
+    z.ZodTypeDef,
+    CreateTeamMatrix
+> = z.object({
+    defaultUnitPrice: z.string(),
+    dimensionPrices: z.record(z.string()),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamMatrix$ {
-    export const inboundSchema: z.ZodType<CreateTeamMatrix, z.ZodTypeDef, unknown> = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
-
-    export type Outbound = {
-        defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamMatrix> = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    /** @deprecated use `CreateTeamMatrix$inboundSchema` instead. */
+    export const inboundSchema = CreateTeamMatrix$inboundSchema;
+    /** @deprecated use `CreateTeamMatrix$outboundSchema` instead. */
+    export const outboundSchema = CreateTeamMatrix$outboundSchema;
+    /** @deprecated use `CreateTeamMatrix$Outbound` instead. */
+    export type Outbound = CreateTeamMatrix$Outbound;
 }
 
 /** @internal */
+export const CreateTeamArtifacts$inboundSchema: z.ZodType<
+    CreateTeamArtifacts,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    matrix: z.lazy(() => CreateTeamMatrix$inboundSchema).optional(),
+    tier: z.number().optional(),
+    price: z.number(),
+    batch: z.number(),
+    threshold: z.number(),
+    name: z.string().optional(),
+    hidden: z.boolean(),
+    disabledAt: z.nullable(z.number()).optional(),
+    enabledAt: z.nullable(z.number()).optional(),
+});
+
+/** @internal */
+export type CreateTeamArtifacts$Outbound = {
+    matrix?: CreateTeamMatrix$Outbound | undefined;
+    tier?: number | undefined;
+    price: number;
+    batch: number;
+    threshold: number;
+    name?: string | undefined;
+    hidden: boolean;
+    disabledAt?: number | null | undefined;
+    enabledAt?: number | null | undefined;
+};
+
+/** @internal */
+export const CreateTeamArtifacts$outboundSchema: z.ZodType<
+    CreateTeamArtifacts$Outbound,
+    z.ZodTypeDef,
+    CreateTeamArtifacts
+> = z.object({
+    matrix: z.lazy(() => CreateTeamMatrix$outboundSchema).optional(),
+    tier: z.number().optional(),
+    price: z.number(),
+    batch: z.number(),
+    threshold: z.number(),
+    name: z.string().optional(),
+    hidden: z.boolean(),
+    disabledAt: z.nullable(z.number()).optional(),
+    enabledAt: z.nullable(z.number()).optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamArtifacts$ {
-    export const inboundSchema: z.ZodType<CreateTeamArtifacts, z.ZodTypeDef, unknown> = z
-        .object({
-            matrix: z.lazy(() => CreateTeamMatrix$.inboundSchema).optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
-
-    export type Outbound = {
-        matrix?: CreateTeamMatrix$.Outbound | undefined;
-        tier?: number | undefined;
-        price: number;
-        batch: number;
-        threshold: number;
-        name?: string | undefined;
-        hidden: boolean;
-        disabledAt?: number | null | undefined;
-        enabledAt?: number | null | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamArtifacts> = z
-        .object({
-            matrix: z.lazy(() => CreateTeamMatrix$.outboundSchema).optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+    /** @deprecated use `CreateTeamArtifacts$inboundSchema` instead. */
+    export const inboundSchema = CreateTeamArtifacts$inboundSchema;
+    /** @deprecated use `CreateTeamArtifacts$outboundSchema` instead. */
+    export const outboundSchema = CreateTeamArtifacts$outboundSchema;
+    /** @deprecated use `CreateTeamArtifacts$Outbound` instead. */
+    export type Outbound = CreateTeamArtifacts$Outbound;
 }
 
 /** @internal */
+export const CreateTeamTeamsMatrix$inboundSchema: z.ZodType<
+    CreateTeamTeamsMatrix,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    defaultUnitPrice: z.string(),
+    dimensionPrices: z.record(z.string()),
+});
+
+/** @internal */
+export type CreateTeamTeamsMatrix$Outbound = {
+    defaultUnitPrice: string;
+    dimensionPrices: { [k: string]: string };
+};
+
+/** @internal */
+export const CreateTeamTeamsMatrix$outboundSchema: z.ZodType<
+    CreateTeamTeamsMatrix$Outbound,
+    z.ZodTypeDef,
+    CreateTeamTeamsMatrix
+> = z.object({
+    defaultUnitPrice: z.string(),
+    dimensionPrices: z.record(z.string()),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamTeamsMatrix$ {
-    export const inboundSchema: z.ZodType<CreateTeamTeamsMatrix, z.ZodTypeDef, unknown> = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
-
-    export type Outbound = {
-        defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamTeamsMatrix> = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    /** @deprecated use `CreateTeamTeamsMatrix$inboundSchema` instead. */
+    export const inboundSchema = CreateTeamTeamsMatrix$inboundSchema;
+    /** @deprecated use `CreateTeamTeamsMatrix$outboundSchema` instead. */
+    export const outboundSchema = CreateTeamTeamsMatrix$outboundSchema;
+    /** @deprecated use `CreateTeamTeamsMatrix$Outbound` instead. */
+    export type Outbound = CreateTeamTeamsMatrix$Outbound;
 }
 
 /** @internal */
+export const CreateTeamBandwidth$inboundSchema: z.ZodType<
+    CreateTeamBandwidth,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    matrix: z.lazy(() => CreateTeamTeamsMatrix$inboundSchema).optional(),
+    tier: z.number().optional(),
+    price: z.number(),
+    batch: z.number(),
+    threshold: z.number(),
+    name: z.string().optional(),
+    hidden: z.boolean(),
+    disabledAt: z.nullable(z.number()).optional(),
+    enabledAt: z.nullable(z.number()).optional(),
+});
+
+/** @internal */
+export type CreateTeamBandwidth$Outbound = {
+    matrix?: CreateTeamTeamsMatrix$Outbound | undefined;
+    tier?: number | undefined;
+    price: number;
+    batch: number;
+    threshold: number;
+    name?: string | undefined;
+    hidden: boolean;
+    disabledAt?: number | null | undefined;
+    enabledAt?: number | null | undefined;
+};
+
+/** @internal */
+export const CreateTeamBandwidth$outboundSchema: z.ZodType<
+    CreateTeamBandwidth$Outbound,
+    z.ZodTypeDef,
+    CreateTeamBandwidth
+> = z.object({
+    matrix: z.lazy(() => CreateTeamTeamsMatrix$outboundSchema).optional(),
+    tier: z.number().optional(),
+    price: z.number(),
+    batch: z.number(),
+    threshold: z.number(),
+    name: z.string().optional(),
+    hidden: z.boolean(),
+    disabledAt: z.nullable(z.number()).optional(),
+    enabledAt: z.nullable(z.number()).optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamBandwidth$ {
-    export const inboundSchema: z.ZodType<CreateTeamBandwidth, z.ZodTypeDef, unknown> = z
-        .object({
-            matrix: z.lazy(() => CreateTeamTeamsMatrix$.inboundSchema).optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
-
-    export type Outbound = {
-        matrix?: CreateTeamTeamsMatrix$.Outbound | undefined;
-        tier?: number | undefined;
-        price: number;
-        batch: number;
-        threshold: number;
-        name?: string | undefined;
-        hidden: boolean;
-        disabledAt?: number | null | undefined;
-        enabledAt?: number | null | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamBandwidth> = z
-        .object({
-            matrix: z.lazy(() => CreateTeamTeamsMatrix$.outboundSchema).optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+    /** @deprecated use `CreateTeamBandwidth$inboundSchema` instead. */
+    export const inboundSchema = CreateTeamBandwidth$inboundSchema;
+    /** @deprecated use `CreateTeamBandwidth$outboundSchema` instead. */
+    export const outboundSchema = CreateTeamBandwidth$outboundSchema;
+    /** @deprecated use `CreateTeamBandwidth$Outbound` instead. */
+    export type Outbound = CreateTeamBandwidth$Outbound;
 }
 
 /** @internal */
+export const CreateTeamTeamsResponseMatrix$inboundSchema: z.ZodType<
+    CreateTeamTeamsResponseMatrix,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    defaultUnitPrice: z.string(),
+    dimensionPrices: z.record(z.string()),
+});
+
+/** @internal */
+export type CreateTeamTeamsResponseMatrix$Outbound = {
+    defaultUnitPrice: string;
+    dimensionPrices: { [k: string]: string };
+};
+
+/** @internal */
+export const CreateTeamTeamsResponseMatrix$outboundSchema: z.ZodType<
+    CreateTeamTeamsResponseMatrix$Outbound,
+    z.ZodTypeDef,
+    CreateTeamTeamsResponseMatrix
+> = z.object({
+    defaultUnitPrice: z.string(),
+    dimensionPrices: z.record(z.string()),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamTeamsResponseMatrix$ {
-    export const inboundSchema: z.ZodType<CreateTeamTeamsResponseMatrix, z.ZodTypeDef, unknown> = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
-
-    export type Outbound = {
-        defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamTeamsResponseMatrix> =
-        z
-            .object({
-                defaultUnitPrice: z.string(),
-                dimensionPrices: z.record(z.string()),
-            })
-            .transform((v) => {
-                return {
-                    defaultUnitPrice: v.defaultUnitPrice,
-                    dimensionPrices: v.dimensionPrices,
-                };
-            });
+    /** @deprecated use `CreateTeamTeamsResponseMatrix$inboundSchema` instead. */
+    export const inboundSchema = CreateTeamTeamsResponseMatrix$inboundSchema;
+    /** @deprecated use `CreateTeamTeamsResponseMatrix$outboundSchema` instead. */
+    export const outboundSchema = CreateTeamTeamsResponseMatrix$outboundSchema;
+    /** @deprecated use `CreateTeamTeamsResponseMatrix$Outbound` instead. */
+    export type Outbound = CreateTeamTeamsResponseMatrix$Outbound;
 }
 
 /** @internal */
+export const CreateTeamBlobStores$inboundSchema: z.ZodType<
+    CreateTeamBlobStores,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    matrix: z.lazy(() => CreateTeamTeamsResponseMatrix$inboundSchema).optional(),
+    tier: z.number().optional(),
+    price: z.number(),
+    batch: z.number(),
+    threshold: z.number(),
+    name: z.string().optional(),
+    hidden: z.boolean(),
+    disabledAt: z.nullable(z.number()).optional(),
+    enabledAt: z.nullable(z.number()).optional(),
+});
+
+/** @internal */
+export type CreateTeamBlobStores$Outbound = {
+    matrix?: CreateTeamTeamsResponseMatrix$Outbound | undefined;
+    tier?: number | undefined;
+    price: number;
+    batch: number;
+    threshold: number;
+    name?: string | undefined;
+    hidden: boolean;
+    disabledAt?: number | null | undefined;
+    enabledAt?: number | null | undefined;
+};
+
+/** @internal */
+export const CreateTeamBlobStores$outboundSchema: z.ZodType<
+    CreateTeamBlobStores$Outbound,
+    z.ZodTypeDef,
+    CreateTeamBlobStores
+> = z.object({
+    matrix: z.lazy(() => CreateTeamTeamsResponseMatrix$outboundSchema).optional(),
+    tier: z.number().optional(),
+    price: z.number(),
+    batch: z.number(),
+    threshold: z.number(),
+    name: z.string().optional(),
+    hidden: z.boolean(),
+    disabledAt: z.nullable(z.number()).optional(),
+    enabledAt: z.nullable(z.number()).optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamBlobStores$ {
-    export const inboundSchema: z.ZodType<CreateTeamBlobStores, z.ZodTypeDef, unknown> = z
-        .object({
-            matrix: z.lazy(() => CreateTeamTeamsResponseMatrix$.inboundSchema).optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
-
-    export type Outbound = {
-        matrix?: CreateTeamTeamsResponseMatrix$.Outbound | undefined;
-        tier?: number | undefined;
-        price: number;
-        batch: number;
-        threshold: number;
-        name?: string | undefined;
-        hidden: boolean;
-        disabledAt?: number | null | undefined;
-        enabledAt?: number | null | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamBlobStores> = z
-        .object({
-            matrix: z.lazy(() => CreateTeamTeamsResponseMatrix$.outboundSchema).optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+    /** @deprecated use `CreateTeamBlobStores$inboundSchema` instead. */
+    export const inboundSchema = CreateTeamBlobStores$inboundSchema;
+    /** @deprecated use `CreateTeamBlobStores$outboundSchema` instead. */
+    export const outboundSchema = CreateTeamBlobStores$outboundSchema;
+    /** @deprecated use `CreateTeamBlobStores$Outbound` instead. */
+    export type Outbound = CreateTeamBlobStores$Outbound;
 }
 
 /** @internal */
+export const CreateTeamTeamsResponse200Matrix$inboundSchema: z.ZodType<
+    CreateTeamTeamsResponse200Matrix,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    defaultUnitPrice: z.string(),
+    dimensionPrices: z.record(z.string()),
+});
+
+/** @internal */
+export type CreateTeamTeamsResponse200Matrix$Outbound = {
+    defaultUnitPrice: string;
+    dimensionPrices: { [k: string]: string };
+};
+
+/** @internal */
+export const CreateTeamTeamsResponse200Matrix$outboundSchema: z.ZodType<
+    CreateTeamTeamsResponse200Matrix$Outbound,
+    z.ZodTypeDef,
+    CreateTeamTeamsResponse200Matrix
+> = z.object({
+    defaultUnitPrice: z.string(),
+    dimensionPrices: z.record(z.string()),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamTeamsResponse200Matrix$ {
-    export const inboundSchema: z.ZodType<CreateTeamTeamsResponse200Matrix, z.ZodTypeDef, unknown> =
-        z
-            .object({
-                defaultUnitPrice: z.string(),
-                dimensionPrices: z.record(z.string()),
-            })
-            .transform((v) => {
-                return {
-                    defaultUnitPrice: v.defaultUnitPrice,
-                    dimensionPrices: v.dimensionPrices,
-                };
-            });
-
-    export type Outbound = {
-        defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
-    };
-
-    export const outboundSchema: z.ZodType<
-        Outbound,
-        z.ZodTypeDef,
-        CreateTeamTeamsResponse200Matrix
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    /** @deprecated use `CreateTeamTeamsResponse200Matrix$inboundSchema` instead. */
+    export const inboundSchema = CreateTeamTeamsResponse200Matrix$inboundSchema;
+    /** @deprecated use `CreateTeamTeamsResponse200Matrix$outboundSchema` instead. */
+    export const outboundSchema = CreateTeamTeamsResponse200Matrix$outboundSchema;
+    /** @deprecated use `CreateTeamTeamsResponse200Matrix$Outbound` instead. */
+    export type Outbound = CreateTeamTeamsResponse200Matrix$Outbound;
 }
 
 /** @internal */
+export const CreateTeamBlobTotalAdvancedRequests$inboundSchema: z.ZodType<
+    CreateTeamBlobTotalAdvancedRequests,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    matrix: z.lazy(() => CreateTeamTeamsResponse200Matrix$inboundSchema).optional(),
+    tier: z.number().optional(),
+    price: z.number(),
+    batch: z.number(),
+    threshold: z.number(),
+    name: z.string().optional(),
+    hidden: z.boolean(),
+    disabledAt: z.nullable(z.number()).optional(),
+    enabledAt: z.nullable(z.number()).optional(),
+});
+
+/** @internal */
+export type CreateTeamBlobTotalAdvancedRequests$Outbound = {
+    matrix?: CreateTeamTeamsResponse200Matrix$Outbound | undefined;
+    tier?: number | undefined;
+    price: number;
+    batch: number;
+    threshold: number;
+    name?: string | undefined;
+    hidden: boolean;
+    disabledAt?: number | null | undefined;
+    enabledAt?: number | null | undefined;
+};
+
+/** @internal */
+export const CreateTeamBlobTotalAdvancedRequests$outboundSchema: z.ZodType<
+    CreateTeamBlobTotalAdvancedRequests$Outbound,
+    z.ZodTypeDef,
+    CreateTeamBlobTotalAdvancedRequests
+> = z.object({
+    matrix: z.lazy(() => CreateTeamTeamsResponse200Matrix$outboundSchema).optional(),
+    tier: z.number().optional(),
+    price: z.number(),
+    batch: z.number(),
+    threshold: z.number(),
+    name: z.string().optional(),
+    hidden: z.boolean(),
+    disabledAt: z.nullable(z.number()).optional(),
+    enabledAt: z.nullable(z.number()).optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamBlobTotalAdvancedRequests$ {
-    export const inboundSchema: z.ZodType<
-        CreateTeamBlobTotalAdvancedRequests,
-        z.ZodTypeDef,
-        unknown
-    > = z
-        .object({
-            matrix: z.lazy(() => CreateTeamTeamsResponse200Matrix$.inboundSchema).optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
-
-    export type Outbound = {
-        matrix?: CreateTeamTeamsResponse200Matrix$.Outbound | undefined;
-        tier?: number | undefined;
-        price: number;
-        batch: number;
-        threshold: number;
-        name?: string | undefined;
-        hidden: boolean;
-        disabledAt?: number | null | undefined;
-        enabledAt?: number | null | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<
-        Outbound,
-        z.ZodTypeDef,
-        CreateTeamBlobTotalAdvancedRequests
-    > = z
-        .object({
-            matrix: z.lazy(() => CreateTeamTeamsResponse200Matrix$.outboundSchema).optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+    /** @deprecated use `CreateTeamBlobTotalAdvancedRequests$inboundSchema` instead. */
+    export const inboundSchema = CreateTeamBlobTotalAdvancedRequests$inboundSchema;
+    /** @deprecated use `CreateTeamBlobTotalAdvancedRequests$outboundSchema` instead. */
+    export const outboundSchema = CreateTeamBlobTotalAdvancedRequests$outboundSchema;
+    /** @deprecated use `CreateTeamBlobTotalAdvancedRequests$Outbound` instead. */
+    export type Outbound = CreateTeamBlobTotalAdvancedRequests$Outbound;
 }
 
 /** @internal */
+export const CreateTeamTeamsResponse200ApplicationJSONMatrix$inboundSchema: z.ZodType<
+    CreateTeamTeamsResponse200ApplicationJSONMatrix,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    defaultUnitPrice: z.string(),
+    dimensionPrices: z.record(z.string()),
+});
+
+/** @internal */
+export type CreateTeamTeamsResponse200ApplicationJSONMatrix$Outbound = {
+    defaultUnitPrice: string;
+    dimensionPrices: { [k: string]: string };
+};
+
+/** @internal */
+export const CreateTeamTeamsResponse200ApplicationJSONMatrix$outboundSchema: z.ZodType<
+    CreateTeamTeamsResponse200ApplicationJSONMatrix$Outbound,
+    z.ZodTypeDef,
+    CreateTeamTeamsResponse200ApplicationJSONMatrix
+> = z.object({
+    defaultUnitPrice: z.string(),
+    dimensionPrices: z.record(z.string()),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamTeamsResponse200ApplicationJSONMatrix$ {
-    export const inboundSchema: z.ZodType<
-        CreateTeamTeamsResponse200ApplicationJSONMatrix,
-        z.ZodTypeDef,
-        unknown
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
-
-    export type Outbound = {
-        defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
-    };
-
-    export const outboundSchema: z.ZodType<
-        Outbound,
-        z.ZodTypeDef,
-        CreateTeamTeamsResponse200ApplicationJSONMatrix
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONMatrix$inboundSchema` instead. */
+    export const inboundSchema = CreateTeamTeamsResponse200ApplicationJSONMatrix$inboundSchema;
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONMatrix$outboundSchema` instead. */
+    export const outboundSchema = CreateTeamTeamsResponse200ApplicationJSONMatrix$outboundSchema;
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONMatrix$Outbound` instead. */
+    export type Outbound = CreateTeamTeamsResponse200ApplicationJSONMatrix$Outbound;
 }
 
 /** @internal */
+export const CreateTeamBlobTotalAvgSizeInBytes$inboundSchema: z.ZodType<
+    CreateTeamBlobTotalAvgSizeInBytes,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    matrix: z.lazy(() => CreateTeamTeamsResponse200ApplicationJSONMatrix$inboundSchema).optional(),
+    tier: z.number().optional(),
+    price: z.number(),
+    batch: z.number(),
+    threshold: z.number(),
+    name: z.string().optional(),
+    hidden: z.boolean(),
+    disabledAt: z.nullable(z.number()).optional(),
+    enabledAt: z.nullable(z.number()).optional(),
+});
+
+/** @internal */
+export type CreateTeamBlobTotalAvgSizeInBytes$Outbound = {
+    matrix?: CreateTeamTeamsResponse200ApplicationJSONMatrix$Outbound | undefined;
+    tier?: number | undefined;
+    price: number;
+    batch: number;
+    threshold: number;
+    name?: string | undefined;
+    hidden: boolean;
+    disabledAt?: number | null | undefined;
+    enabledAt?: number | null | undefined;
+};
+
+/** @internal */
+export const CreateTeamBlobTotalAvgSizeInBytes$outboundSchema: z.ZodType<
+    CreateTeamBlobTotalAvgSizeInBytes$Outbound,
+    z.ZodTypeDef,
+    CreateTeamBlobTotalAvgSizeInBytes
+> = z.object({
+    matrix: z.lazy(() => CreateTeamTeamsResponse200ApplicationJSONMatrix$outboundSchema).optional(),
+    tier: z.number().optional(),
+    price: z.number(),
+    batch: z.number(),
+    threshold: z.number(),
+    name: z.string().optional(),
+    hidden: z.boolean(),
+    disabledAt: z.nullable(z.number()).optional(),
+    enabledAt: z.nullable(z.number()).optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamBlobTotalAvgSizeInBytes$ {
-    export const inboundSchema: z.ZodType<
-        CreateTeamBlobTotalAvgSizeInBytes,
-        z.ZodTypeDef,
-        unknown
-    > = z
-        .object({
-            matrix: z
-                .lazy(() => CreateTeamTeamsResponse200ApplicationJSONMatrix$.inboundSchema)
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
-
-    export type Outbound = {
-        matrix?: CreateTeamTeamsResponse200ApplicationJSONMatrix$.Outbound | undefined;
-        tier?: number | undefined;
-        price: number;
-        batch: number;
-        threshold: number;
-        name?: string | undefined;
-        hidden: boolean;
-        disabledAt?: number | null | undefined;
-        enabledAt?: number | null | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<
-        Outbound,
-        z.ZodTypeDef,
-        CreateTeamBlobTotalAvgSizeInBytes
-    > = z
-        .object({
-            matrix: z
-                .lazy(() => CreateTeamTeamsResponse200ApplicationJSONMatrix$.outboundSchema)
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+    /** @deprecated use `CreateTeamBlobTotalAvgSizeInBytes$inboundSchema` instead. */
+    export const inboundSchema = CreateTeamBlobTotalAvgSizeInBytes$inboundSchema;
+    /** @deprecated use `CreateTeamBlobTotalAvgSizeInBytes$outboundSchema` instead. */
+    export const outboundSchema = CreateTeamBlobTotalAvgSizeInBytes$outboundSchema;
+    /** @deprecated use `CreateTeamBlobTotalAvgSizeInBytes$Outbound` instead. */
+    export type Outbound = CreateTeamBlobTotalAvgSizeInBytes$Outbound;
 }
 
 /** @internal */
+export const CreateTeamTeamsResponse200ApplicationJSONResponseBodyMatrix$inboundSchema: z.ZodType<
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyMatrix,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    defaultUnitPrice: z.string(),
+    dimensionPrices: z.record(z.string()),
+});
+
+/** @internal */
+export type CreateTeamTeamsResponse200ApplicationJSONResponseBodyMatrix$Outbound = {
+    defaultUnitPrice: string;
+    dimensionPrices: { [k: string]: string };
+};
+
+/** @internal */
+export const CreateTeamTeamsResponse200ApplicationJSONResponseBodyMatrix$outboundSchema: z.ZodType<
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyMatrix$Outbound,
+    z.ZodTypeDef,
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyMatrix
+> = z.object({
+    defaultUnitPrice: z.string(),
+    dimensionPrices: z.record(z.string()),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamTeamsResponse200ApplicationJSONResponseBodyMatrix$ {
-    export const inboundSchema: z.ZodType<
-        CreateTeamTeamsResponse200ApplicationJSONResponseBodyMatrix,
-        z.ZodTypeDef,
-        unknown
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
-
-    export type Outbound = {
-        defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
-    };
-
-    export const outboundSchema: z.ZodType<
-        Outbound,
-        z.ZodTypeDef,
-        CreateTeamTeamsResponse200ApplicationJSONResponseBodyMatrix
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyMatrix$inboundSchema` instead. */
+    export const inboundSchema =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyMatrix$inboundSchema;
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyMatrix$outboundSchema` instead. */
+    export const outboundSchema =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyMatrix$outboundSchema;
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyMatrix$Outbound` instead. */
+    export type Outbound = CreateTeamTeamsResponse200ApplicationJSONResponseBodyMatrix$Outbound;
 }
 
 /** @internal */
+export const CreateTeamBlobTotalGetResponseObjectSizeInBytes$inboundSchema: z.ZodType<
+    CreateTeamBlobTotalGetResponseObjectSizeInBytes,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    matrix: z
+        .lazy(() => CreateTeamTeamsResponse200ApplicationJSONResponseBodyMatrix$inboundSchema)
+        .optional(),
+    tier: z.number().optional(),
+    price: z.number(),
+    batch: z.number(),
+    threshold: z.number(),
+    name: z.string().optional(),
+    hidden: z.boolean(),
+    disabledAt: z.nullable(z.number()).optional(),
+    enabledAt: z.nullable(z.number()).optional(),
+});
+
+/** @internal */
+export type CreateTeamBlobTotalGetResponseObjectSizeInBytes$Outbound = {
+    matrix?: CreateTeamTeamsResponse200ApplicationJSONResponseBodyMatrix$Outbound | undefined;
+    tier?: number | undefined;
+    price: number;
+    batch: number;
+    threshold: number;
+    name?: string | undefined;
+    hidden: boolean;
+    disabledAt?: number | null | undefined;
+    enabledAt?: number | null | undefined;
+};
+
+/** @internal */
+export const CreateTeamBlobTotalGetResponseObjectSizeInBytes$outboundSchema: z.ZodType<
+    CreateTeamBlobTotalGetResponseObjectSizeInBytes$Outbound,
+    z.ZodTypeDef,
+    CreateTeamBlobTotalGetResponseObjectSizeInBytes
+> = z.object({
+    matrix: z
+        .lazy(() => CreateTeamTeamsResponse200ApplicationJSONResponseBodyMatrix$outboundSchema)
+        .optional(),
+    tier: z.number().optional(),
+    price: z.number(),
+    batch: z.number(),
+    threshold: z.number(),
+    name: z.string().optional(),
+    hidden: z.boolean(),
+    disabledAt: z.nullable(z.number()).optional(),
+    enabledAt: z.nullable(z.number()).optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamBlobTotalGetResponseObjectSizeInBytes$ {
-    export const inboundSchema: z.ZodType<
-        CreateTeamBlobTotalGetResponseObjectSizeInBytes,
-        z.ZodTypeDef,
-        unknown
-    > = z
-        .object({
-            matrix: z
-                .lazy(
-                    () => CreateTeamTeamsResponse200ApplicationJSONResponseBodyMatrix$.inboundSchema
-                )
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
-
-    export type Outbound = {
-        matrix?: CreateTeamTeamsResponse200ApplicationJSONResponseBodyMatrix$.Outbound | undefined;
-        tier?: number | undefined;
-        price: number;
-        batch: number;
-        threshold: number;
-        name?: string | undefined;
-        hidden: boolean;
-        disabledAt?: number | null | undefined;
-        enabledAt?: number | null | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<
-        Outbound,
-        z.ZodTypeDef,
-        CreateTeamBlobTotalGetResponseObjectSizeInBytes
-    > = z
-        .object({
-            matrix: z
-                .lazy(
-                    () =>
-                        CreateTeamTeamsResponse200ApplicationJSONResponseBodyMatrix$.outboundSchema
-                )
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+    /** @deprecated use `CreateTeamBlobTotalGetResponseObjectSizeInBytes$inboundSchema` instead. */
+    export const inboundSchema = CreateTeamBlobTotalGetResponseObjectSizeInBytes$inboundSchema;
+    /** @deprecated use `CreateTeamBlobTotalGetResponseObjectSizeInBytes$outboundSchema` instead. */
+    export const outboundSchema = CreateTeamBlobTotalGetResponseObjectSizeInBytes$outboundSchema;
+    /** @deprecated use `CreateTeamBlobTotalGetResponseObjectSizeInBytes$Outbound` instead. */
+    export type Outbound = CreateTeamBlobTotalGetResponseObjectSizeInBytes$Outbound;
 }
 
 /** @internal */
+export const CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingMatrix$inboundSchema: z.ZodType<
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingMatrix,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    defaultUnitPrice: z.string(),
+    dimensionPrices: z.record(z.string()),
+});
+
+/** @internal */
+export type CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingMatrix$Outbound = {
+    defaultUnitPrice: string;
+    dimensionPrices: { [k: string]: string };
+};
+
+/** @internal */
+export const CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingMatrix$outboundSchema: z.ZodType<
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingMatrix$Outbound,
+    z.ZodTypeDef,
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingMatrix
+> = z.object({
+    defaultUnitPrice: z.string(),
+    dimensionPrices: z.record(z.string()),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingMatrix$ {
-    export const inboundSchema: z.ZodType<
-        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingMatrix,
-        z.ZodTypeDef,
-        unknown
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
-
-    export type Outbound = {
-        defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
-    };
-
-    export const outboundSchema: z.ZodType<
-        Outbound,
-        z.ZodTypeDef,
-        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingMatrix
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingMatrix$inboundSchema` instead. */
+    export const inboundSchema =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingMatrix$inboundSchema;
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingMatrix$outboundSchema` instead. */
+    export const outboundSchema =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingMatrix$outboundSchema;
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingMatrix$Outbound` instead. */
+    export type Outbound =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingMatrix$Outbound;
 }
 
 /** @internal */
+export const CreateTeamBlobTotalSimpleRequests$inboundSchema: z.ZodType<
+    CreateTeamBlobTotalSimpleRequests,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    matrix: z
+        .lazy(
+            () => CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingMatrix$inboundSchema
+        )
+        .optional(),
+    tier: z.number().optional(),
+    price: z.number(),
+    batch: z.number(),
+    threshold: z.number(),
+    name: z.string().optional(),
+    hidden: z.boolean(),
+    disabledAt: z.nullable(z.number()).optional(),
+    enabledAt: z.nullable(z.number()).optional(),
+});
+
+/** @internal */
+export type CreateTeamBlobTotalSimpleRequests$Outbound = {
+    matrix?:
+        | CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingMatrix$Outbound
+        | undefined;
+    tier?: number | undefined;
+    price: number;
+    batch: number;
+    threshold: number;
+    name?: string | undefined;
+    hidden: boolean;
+    disabledAt?: number | null | undefined;
+    enabledAt?: number | null | undefined;
+};
+
+/** @internal */
+export const CreateTeamBlobTotalSimpleRequests$outboundSchema: z.ZodType<
+    CreateTeamBlobTotalSimpleRequests$Outbound,
+    z.ZodTypeDef,
+    CreateTeamBlobTotalSimpleRequests
+> = z.object({
+    matrix: z
+        .lazy(
+            () => CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingMatrix$outboundSchema
+        )
+        .optional(),
+    tier: z.number().optional(),
+    price: z.number(),
+    batch: z.number(),
+    threshold: z.number(),
+    name: z.string().optional(),
+    hidden: z.boolean(),
+    disabledAt: z.nullable(z.number()).optional(),
+    enabledAt: z.nullable(z.number()).optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamBlobTotalSimpleRequests$ {
-    export const inboundSchema: z.ZodType<
-        CreateTeamBlobTotalSimpleRequests,
-        z.ZodTypeDef,
-        unknown
-    > = z
-        .object({
-            matrix: z
-                .lazy(
-                    () =>
-                        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingMatrix$.inboundSchema
-                )
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
-
-    export type Outbound = {
-        matrix?:
-            | CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingMatrix$.Outbound
-            | undefined;
-        tier?: number | undefined;
-        price: number;
-        batch: number;
-        threshold: number;
-        name?: string | undefined;
-        hidden: boolean;
-        disabledAt?: number | null | undefined;
-        enabledAt?: number | null | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<
-        Outbound,
-        z.ZodTypeDef,
-        CreateTeamBlobTotalSimpleRequests
-    > = z
-        .object({
-            matrix: z
-                .lazy(
-                    () =>
-                        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingMatrix$.outboundSchema
-                )
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+    /** @deprecated use `CreateTeamBlobTotalSimpleRequests$inboundSchema` instead. */
+    export const inboundSchema = CreateTeamBlobTotalSimpleRequests$inboundSchema;
+    /** @deprecated use `CreateTeamBlobTotalSimpleRequests$outboundSchema` instead. */
+    export const outboundSchema = CreateTeamBlobTotalSimpleRequests$outboundSchema;
+    /** @deprecated use `CreateTeamBlobTotalSimpleRequests$Outbound` instead. */
+    export type Outbound = CreateTeamBlobTotalSimpleRequests$Outbound;
 }
 
 /** @internal */
+export const CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsMatrix$inboundSchema: z.ZodType<
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsMatrix,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    defaultUnitPrice: z.string(),
+    dimensionPrices: z.record(z.string()),
+});
+
+/** @internal */
+export type CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsMatrix$Outbound =
+    {
+        defaultUnitPrice: string;
+        dimensionPrices: { [k: string]: string };
+    };
+
+/** @internal */
+export const CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsMatrix$outboundSchema: z.ZodType<
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsMatrix$Outbound,
+    z.ZodTypeDef,
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsMatrix
+> = z.object({
+    defaultUnitPrice: z.string(),
+    dimensionPrices: z.record(z.string()),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsMatrix$ {
-    export const inboundSchema: z.ZodType<
-        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsMatrix,
-        z.ZodTypeDef,
-        unknown
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
-
-    export type Outbound = {
-        defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
-    };
-
-    export const outboundSchema: z.ZodType<
-        Outbound,
-        z.ZodTypeDef,
-        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsMatrix
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsMatrix$inboundSchema` instead. */
+    export const inboundSchema =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsMatrix$inboundSchema;
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsMatrix$outboundSchema` instead. */
+    export const outboundSchema =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsMatrix$outboundSchema;
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsMatrix$Outbound` instead. */
+    export type Outbound =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsMatrix$Outbound;
 }
 
 /** @internal */
+export const CreateTeamBuildMinute$inboundSchema: z.ZodType<
+    CreateTeamBuildMinute,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    matrix: z
+        .lazy(
+            () =>
+                CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsMatrix$inboundSchema
+        )
+        .optional(),
+    tier: z.number().optional(),
+    price: z.number(),
+    batch: z.number(),
+    threshold: z.number(),
+    name: z.string().optional(),
+    hidden: z.boolean(),
+    disabledAt: z.nullable(z.number()).optional(),
+    enabledAt: z.nullable(z.number()).optional(),
+});
+
+/** @internal */
+export type CreateTeamBuildMinute$Outbound = {
+    matrix?:
+        | CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsMatrix$Outbound
+        | undefined;
+    tier?: number | undefined;
+    price: number;
+    batch: number;
+    threshold: number;
+    name?: string | undefined;
+    hidden: boolean;
+    disabledAt?: number | null | undefined;
+    enabledAt?: number | null | undefined;
+};
+
+/** @internal */
+export const CreateTeamBuildMinute$outboundSchema: z.ZodType<
+    CreateTeamBuildMinute$Outbound,
+    z.ZodTypeDef,
+    CreateTeamBuildMinute
+> = z.object({
+    matrix: z
+        .lazy(
+            () =>
+                CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsMatrix$outboundSchema
+        )
+        .optional(),
+    tier: z.number().optional(),
+    price: z.number(),
+    batch: z.number(),
+    threshold: z.number(),
+    name: z.string().optional(),
+    hidden: z.boolean(),
+    disabledAt: z.nullable(z.number()).optional(),
+    enabledAt: z.nullable(z.number()).optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamBuildMinute$ {
-    export const inboundSchema: z.ZodType<CreateTeamBuildMinute, z.ZodTypeDef, unknown> = z
-        .object({
-            matrix: z
-                .lazy(
-                    () =>
-                        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsMatrix$.inboundSchema
-                )
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
-
-    export type Outbound = {
-        matrix?:
-            | CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsMatrix$.Outbound
-            | undefined;
-        tier?: number | undefined;
-        price: number;
-        batch: number;
-        threshold: number;
-        name?: string | undefined;
-        hidden: boolean;
-        disabledAt?: number | null | undefined;
-        enabledAt?: number | null | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamBuildMinute> = z
-        .object({
-            matrix: z
-                .lazy(
-                    () =>
-                        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsMatrix$.outboundSchema
-                )
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+    /** @deprecated use `CreateTeamBuildMinute$inboundSchema` instead. */
+    export const inboundSchema = CreateTeamBuildMinute$inboundSchema;
+    /** @deprecated use `CreateTeamBuildMinute$outboundSchema` instead. */
+    export const outboundSchema = CreateTeamBuildMinute$outboundSchema;
+    /** @deprecated use `CreateTeamBuildMinute$Outbound` instead. */
+    export type Outbound = CreateTeamBuildMinute$Outbound;
 }
 
 /** @internal */
+export const CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsDataCacheReadMatrix$inboundSchema: z.ZodType<
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsDataCacheReadMatrix,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    defaultUnitPrice: z.string(),
+    dimensionPrices: z.record(z.string()),
+});
+
+/** @internal */
+export type CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsDataCacheReadMatrix$Outbound =
+    {
+        defaultUnitPrice: string;
+        dimensionPrices: { [k: string]: string };
+    };
+
+/** @internal */
+export const CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsDataCacheReadMatrix$outboundSchema: z.ZodType<
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsDataCacheReadMatrix$Outbound,
+    z.ZodTypeDef,
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsDataCacheReadMatrix
+> = z.object({
+    defaultUnitPrice: z.string(),
+    dimensionPrices: z.record(z.string()),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsDataCacheReadMatrix$ {
-    export const inboundSchema: z.ZodType<
-        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsDataCacheReadMatrix,
-        z.ZodTypeDef,
-        unknown
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
-
-    export type Outbound = {
-        defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
-    };
-
-    export const outboundSchema: z.ZodType<
-        Outbound,
-        z.ZodTypeDef,
-        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsDataCacheReadMatrix
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsDataCacheReadMatrix$inboundSchema` instead. */
+    export const inboundSchema =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsDataCacheReadMatrix$inboundSchema;
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsDataCacheReadMatrix$outboundSchema` instead. */
+    export const outboundSchema =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsDataCacheReadMatrix$outboundSchema;
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsDataCacheReadMatrix$Outbound` instead. */
+    export type Outbound =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsDataCacheReadMatrix$Outbound;
 }
 
 /** @internal */
+export const CreateTeamDataCacheRead$inboundSchema: z.ZodType<
+    CreateTeamDataCacheRead,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    matrix: z
+        .lazy(
+            () =>
+                CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsDataCacheReadMatrix$inboundSchema
+        )
+        .optional(),
+    tier: z.number().optional(),
+    price: z.number(),
+    batch: z.number(),
+    threshold: z.number(),
+    name: z.string().optional(),
+    hidden: z.boolean(),
+    disabledAt: z.nullable(z.number()).optional(),
+    enabledAt: z.nullable(z.number()).optional(),
+});
+
+/** @internal */
+export type CreateTeamDataCacheRead$Outbound = {
+    matrix?:
+        | CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsDataCacheReadMatrix$Outbound
+        | undefined;
+    tier?: number | undefined;
+    price: number;
+    batch: number;
+    threshold: number;
+    name?: string | undefined;
+    hidden: boolean;
+    disabledAt?: number | null | undefined;
+    enabledAt?: number | null | undefined;
+};
+
+/** @internal */
+export const CreateTeamDataCacheRead$outboundSchema: z.ZodType<
+    CreateTeamDataCacheRead$Outbound,
+    z.ZodTypeDef,
+    CreateTeamDataCacheRead
+> = z.object({
+    matrix: z
+        .lazy(
+            () =>
+                CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsDataCacheReadMatrix$outboundSchema
+        )
+        .optional(),
+    tier: z.number().optional(),
+    price: z.number(),
+    batch: z.number(),
+    threshold: z.number(),
+    name: z.string().optional(),
+    hidden: z.boolean(),
+    disabledAt: z.nullable(z.number()).optional(),
+    enabledAt: z.nullable(z.number()).optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamDataCacheRead$ {
-    export const inboundSchema: z.ZodType<CreateTeamDataCacheRead, z.ZodTypeDef, unknown> = z
-        .object({
-            matrix: z
-                .lazy(
-                    () =>
-                        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsDataCacheReadMatrix$.inboundSchema
-                )
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
-
-    export type Outbound = {
-        matrix?:
-            | CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsDataCacheReadMatrix$.Outbound
-            | undefined;
-        tier?: number | undefined;
-        price: number;
-        batch: number;
-        threshold: number;
-        name?: string | undefined;
-        hidden: boolean;
-        disabledAt?: number | null | undefined;
-        enabledAt?: number | null | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamDataCacheRead> = z
-        .object({
-            matrix: z
-                .lazy(
-                    () =>
-                        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsDataCacheReadMatrix$.outboundSchema
-                )
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+    /** @deprecated use `CreateTeamDataCacheRead$inboundSchema` instead. */
+    export const inboundSchema = CreateTeamDataCacheRead$inboundSchema;
+    /** @deprecated use `CreateTeamDataCacheRead$outboundSchema` instead. */
+    export const outboundSchema = CreateTeamDataCacheRead$outboundSchema;
+    /** @deprecated use `CreateTeamDataCacheRead$Outbound` instead. */
+    export type Outbound = CreateTeamDataCacheRead$Outbound;
 }
 
 /** @internal */
+export const CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsDataCacheRevalidationMatrix$inboundSchema: z.ZodType<
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsDataCacheRevalidationMatrix,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    defaultUnitPrice: z.string(),
+    dimensionPrices: z.record(z.string()),
+});
+
+/** @internal */
+export type CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsDataCacheRevalidationMatrix$Outbound =
+    {
+        defaultUnitPrice: string;
+        dimensionPrices: { [k: string]: string };
+    };
+
+/** @internal */
+export const CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsDataCacheRevalidationMatrix$outboundSchema: z.ZodType<
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsDataCacheRevalidationMatrix$Outbound,
+    z.ZodTypeDef,
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsDataCacheRevalidationMatrix
+> = z.object({
+    defaultUnitPrice: z.string(),
+    dimensionPrices: z.record(z.string()),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsDataCacheRevalidationMatrix$ {
-    export const inboundSchema: z.ZodType<
-        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsDataCacheRevalidationMatrix,
-        z.ZodTypeDef,
-        unknown
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
-
-    export type Outbound = {
-        defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
-    };
-
-    export const outboundSchema: z.ZodType<
-        Outbound,
-        z.ZodTypeDef,
-        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsDataCacheRevalidationMatrix
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsDataCacheRevalidationMatrix$inboundSchema` instead. */
+    export const inboundSchema =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsDataCacheRevalidationMatrix$inboundSchema;
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsDataCacheRevalidationMatrix$outboundSchema` instead. */
+    export const outboundSchema =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsDataCacheRevalidationMatrix$outboundSchema;
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsDataCacheRevalidationMatrix$Outbound` instead. */
+    export type Outbound =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsDataCacheRevalidationMatrix$Outbound;
 }
 
 /** @internal */
+export const CreateTeamDataCacheRevalidation$inboundSchema: z.ZodType<
+    CreateTeamDataCacheRevalidation,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    matrix: z
+        .lazy(
+            () =>
+                CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsDataCacheRevalidationMatrix$inboundSchema
+        )
+        .optional(),
+    tier: z.number().optional(),
+    price: z.number(),
+    batch: z.number(),
+    threshold: z.number(),
+    name: z.string().optional(),
+    hidden: z.boolean(),
+    disabledAt: z.nullable(z.number()).optional(),
+    enabledAt: z.nullable(z.number()).optional(),
+});
+
+/** @internal */
+export type CreateTeamDataCacheRevalidation$Outbound = {
+    matrix?:
+        | CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsDataCacheRevalidationMatrix$Outbound
+        | undefined;
+    tier?: number | undefined;
+    price: number;
+    batch: number;
+    threshold: number;
+    name?: string | undefined;
+    hidden: boolean;
+    disabledAt?: number | null | undefined;
+    enabledAt?: number | null | undefined;
+};
+
+/** @internal */
+export const CreateTeamDataCacheRevalidation$outboundSchema: z.ZodType<
+    CreateTeamDataCacheRevalidation$Outbound,
+    z.ZodTypeDef,
+    CreateTeamDataCacheRevalidation
+> = z.object({
+    matrix: z
+        .lazy(
+            () =>
+                CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsDataCacheRevalidationMatrix$outboundSchema
+        )
+        .optional(),
+    tier: z.number().optional(),
+    price: z.number(),
+    batch: z.number(),
+    threshold: z.number(),
+    name: z.string().optional(),
+    hidden: z.boolean(),
+    disabledAt: z.nullable(z.number()).optional(),
+    enabledAt: z.nullable(z.number()).optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamDataCacheRevalidation$ {
-    export const inboundSchema: z.ZodType<CreateTeamDataCacheRevalidation, z.ZodTypeDef, unknown> =
-        z
-            .object({
-                matrix: z
-                    .lazy(
-                        () =>
-                            CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsDataCacheRevalidationMatrix$.inboundSchema
-                    )
-                    .optional(),
-                tier: z.number().optional(),
-                price: z.number(),
-                batch: z.number(),
-                threshold: z.number(),
-                name: z.string().optional(),
-                hidden: z.boolean(),
-                disabledAt: z.nullable(z.number()).optional(),
-                enabledAt: z.nullable(z.number()).optional(),
-            })
-            .transform((v) => {
-                return {
-                    ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                    ...(v.tier === undefined ? null : { tier: v.tier }),
-                    price: v.price,
-                    batch: v.batch,
-                    threshold: v.threshold,
-                    ...(v.name === undefined ? null : { name: v.name }),
-                    hidden: v.hidden,
-                    ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                    ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-                };
-            });
-
-    export type Outbound = {
-        matrix?:
-            | CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsDataCacheRevalidationMatrix$.Outbound
-            | undefined;
-        tier?: number | undefined;
-        price: number;
-        batch: number;
-        threshold: number;
-        name?: string | undefined;
-        hidden: boolean;
-        disabledAt?: number | null | undefined;
-        enabledAt?: number | null | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<
-        Outbound,
-        z.ZodTypeDef,
-        CreateTeamDataCacheRevalidation
-    > = z
-        .object({
-            matrix: z
-                .lazy(
-                    () =>
-                        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsDataCacheRevalidationMatrix$.outboundSchema
-                )
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+    /** @deprecated use `CreateTeamDataCacheRevalidation$inboundSchema` instead. */
+    export const inboundSchema = CreateTeamDataCacheRevalidation$inboundSchema;
+    /** @deprecated use `CreateTeamDataCacheRevalidation$outboundSchema` instead. */
+    export const outboundSchema = CreateTeamDataCacheRevalidation$outboundSchema;
+    /** @deprecated use `CreateTeamDataCacheRevalidation$Outbound` instead. */
+    export type Outbound = CreateTeamDataCacheRevalidation$Outbound;
 }
 
 /** @internal */
+export const CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsDataCacheWriteMatrix$inboundSchema: z.ZodType<
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsDataCacheWriteMatrix,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    defaultUnitPrice: z.string(),
+    dimensionPrices: z.record(z.string()),
+});
+
+/** @internal */
+export type CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsDataCacheWriteMatrix$Outbound =
+    {
+        defaultUnitPrice: string;
+        dimensionPrices: { [k: string]: string };
+    };
+
+/** @internal */
+export const CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsDataCacheWriteMatrix$outboundSchema: z.ZodType<
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsDataCacheWriteMatrix$Outbound,
+    z.ZodTypeDef,
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsDataCacheWriteMatrix
+> = z.object({
+    defaultUnitPrice: z.string(),
+    dimensionPrices: z.record(z.string()),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsDataCacheWriteMatrix$ {
-    export const inboundSchema: z.ZodType<
-        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsDataCacheWriteMatrix,
-        z.ZodTypeDef,
-        unknown
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
-
-    export type Outbound = {
-        defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
-    };
-
-    export const outboundSchema: z.ZodType<
-        Outbound,
-        z.ZodTypeDef,
-        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsDataCacheWriteMatrix
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsDataCacheWriteMatrix$inboundSchema` instead. */
+    export const inboundSchema =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsDataCacheWriteMatrix$inboundSchema;
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsDataCacheWriteMatrix$outboundSchema` instead. */
+    export const outboundSchema =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsDataCacheWriteMatrix$outboundSchema;
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsDataCacheWriteMatrix$Outbound` instead. */
+    export type Outbound =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsDataCacheWriteMatrix$Outbound;
 }
 
 /** @internal */
+export const CreateTeamDataCacheWrite$inboundSchema: z.ZodType<
+    CreateTeamDataCacheWrite,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    matrix: z
+        .lazy(
+            () =>
+                CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsDataCacheWriteMatrix$inboundSchema
+        )
+        .optional(),
+    tier: z.number().optional(),
+    price: z.number(),
+    batch: z.number(),
+    threshold: z.number(),
+    name: z.string().optional(),
+    hidden: z.boolean(),
+    disabledAt: z.nullable(z.number()).optional(),
+    enabledAt: z.nullable(z.number()).optional(),
+});
+
+/** @internal */
+export type CreateTeamDataCacheWrite$Outbound = {
+    matrix?:
+        | CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsDataCacheWriteMatrix$Outbound
+        | undefined;
+    tier?: number | undefined;
+    price: number;
+    batch: number;
+    threshold: number;
+    name?: string | undefined;
+    hidden: boolean;
+    disabledAt?: number | null | undefined;
+    enabledAt?: number | null | undefined;
+};
+
+/** @internal */
+export const CreateTeamDataCacheWrite$outboundSchema: z.ZodType<
+    CreateTeamDataCacheWrite$Outbound,
+    z.ZodTypeDef,
+    CreateTeamDataCacheWrite
+> = z.object({
+    matrix: z
+        .lazy(
+            () =>
+                CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsDataCacheWriteMatrix$outboundSchema
+        )
+        .optional(),
+    tier: z.number().optional(),
+    price: z.number(),
+    batch: z.number(),
+    threshold: z.number(),
+    name: z.string().optional(),
+    hidden: z.boolean(),
+    disabledAt: z.nullable(z.number()).optional(),
+    enabledAt: z.nullable(z.number()).optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamDataCacheWrite$ {
-    export const inboundSchema: z.ZodType<CreateTeamDataCacheWrite, z.ZodTypeDef, unknown> = z
-        .object({
-            matrix: z
-                .lazy(
-                    () =>
-                        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsDataCacheWriteMatrix$.inboundSchema
-                )
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
-
-    export type Outbound = {
-        matrix?:
-            | CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsDataCacheWriteMatrix$.Outbound
-            | undefined;
-        tier?: number | undefined;
-        price: number;
-        batch: number;
-        threshold: number;
-        name?: string | undefined;
-        hidden: boolean;
-        disabledAt?: number | null | undefined;
-        enabledAt?: number | null | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamDataCacheWrite> = z
-        .object({
-            matrix: z
-                .lazy(
-                    () =>
-                        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsDataCacheWriteMatrix$.outboundSchema
-                )
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+    /** @deprecated use `CreateTeamDataCacheWrite$inboundSchema` instead. */
+    export const inboundSchema = CreateTeamDataCacheWrite$inboundSchema;
+    /** @deprecated use `CreateTeamDataCacheWrite$outboundSchema` instead. */
+    export const outboundSchema = CreateTeamDataCacheWrite$outboundSchema;
+    /** @deprecated use `CreateTeamDataCacheWrite$Outbound` instead. */
+    export type Outbound = CreateTeamDataCacheWrite$Outbound;
 }
 
 /** @internal */
+export const CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeConfigReadMatrix$inboundSchema: z.ZodType<
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeConfigReadMatrix,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    defaultUnitPrice: z.string(),
+    dimensionPrices: z.record(z.string()),
+});
+
+/** @internal */
+export type CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeConfigReadMatrix$Outbound =
+    {
+        defaultUnitPrice: string;
+        dimensionPrices: { [k: string]: string };
+    };
+
+/** @internal */
+export const CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeConfigReadMatrix$outboundSchema: z.ZodType<
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeConfigReadMatrix$Outbound,
+    z.ZodTypeDef,
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeConfigReadMatrix
+> = z.object({
+    defaultUnitPrice: z.string(),
+    dimensionPrices: z.record(z.string()),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeConfigReadMatrix$ {
-    export const inboundSchema: z.ZodType<
-        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeConfigReadMatrix,
-        z.ZodTypeDef,
-        unknown
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
-
-    export type Outbound = {
-        defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
-    };
-
-    export const outboundSchema: z.ZodType<
-        Outbound,
-        z.ZodTypeDef,
-        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeConfigReadMatrix
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeConfigReadMatrix$inboundSchema` instead. */
+    export const inboundSchema =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeConfigReadMatrix$inboundSchema;
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeConfigReadMatrix$outboundSchema` instead. */
+    export const outboundSchema =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeConfigReadMatrix$outboundSchema;
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeConfigReadMatrix$Outbound` instead. */
+    export type Outbound =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeConfigReadMatrix$Outbound;
 }
 
 /** @internal */
+export const CreateTeamEdgeConfigRead$inboundSchema: z.ZodType<
+    CreateTeamEdgeConfigRead,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    matrix: z
+        .lazy(
+            () =>
+                CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeConfigReadMatrix$inboundSchema
+        )
+        .optional(),
+    tier: z.number().optional(),
+    price: z.number(),
+    batch: z.number(),
+    threshold: z.number(),
+    name: z.string().optional(),
+    hidden: z.boolean(),
+    disabledAt: z.nullable(z.number()).optional(),
+    enabledAt: z.nullable(z.number()).optional(),
+});
+
+/** @internal */
+export type CreateTeamEdgeConfigRead$Outbound = {
+    matrix?:
+        | CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeConfigReadMatrix$Outbound
+        | undefined;
+    tier?: number | undefined;
+    price: number;
+    batch: number;
+    threshold: number;
+    name?: string | undefined;
+    hidden: boolean;
+    disabledAt?: number | null | undefined;
+    enabledAt?: number | null | undefined;
+};
+
+/** @internal */
+export const CreateTeamEdgeConfigRead$outboundSchema: z.ZodType<
+    CreateTeamEdgeConfigRead$Outbound,
+    z.ZodTypeDef,
+    CreateTeamEdgeConfigRead
+> = z.object({
+    matrix: z
+        .lazy(
+            () =>
+                CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeConfigReadMatrix$outboundSchema
+        )
+        .optional(),
+    tier: z.number().optional(),
+    price: z.number(),
+    batch: z.number(),
+    threshold: z.number(),
+    name: z.string().optional(),
+    hidden: z.boolean(),
+    disabledAt: z.nullable(z.number()).optional(),
+    enabledAt: z.nullable(z.number()).optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamEdgeConfigRead$ {
-    export const inboundSchema: z.ZodType<CreateTeamEdgeConfigRead, z.ZodTypeDef, unknown> = z
-        .object({
-            matrix: z
-                .lazy(
-                    () =>
-                        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeConfigReadMatrix$.inboundSchema
-                )
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
-
-    export type Outbound = {
-        matrix?:
-            | CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeConfigReadMatrix$.Outbound
-            | undefined;
-        tier?: number | undefined;
-        price: number;
-        batch: number;
-        threshold: number;
-        name?: string | undefined;
-        hidden: boolean;
-        disabledAt?: number | null | undefined;
-        enabledAt?: number | null | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamEdgeConfigRead> = z
-        .object({
-            matrix: z
-                .lazy(
-                    () =>
-                        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeConfigReadMatrix$.outboundSchema
-                )
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+    /** @deprecated use `CreateTeamEdgeConfigRead$inboundSchema` instead. */
+    export const inboundSchema = CreateTeamEdgeConfigRead$inboundSchema;
+    /** @deprecated use `CreateTeamEdgeConfigRead$outboundSchema` instead. */
+    export const outboundSchema = CreateTeamEdgeConfigRead$outboundSchema;
+    /** @deprecated use `CreateTeamEdgeConfigRead$Outbound` instead. */
+    export type Outbound = CreateTeamEdgeConfigRead$Outbound;
 }
 
 /** @internal */
+export const CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeConfigWriteMatrix$inboundSchema: z.ZodType<
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeConfigWriteMatrix,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    defaultUnitPrice: z.string(),
+    dimensionPrices: z.record(z.string()),
+});
+
+/** @internal */
+export type CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeConfigWriteMatrix$Outbound =
+    {
+        defaultUnitPrice: string;
+        dimensionPrices: { [k: string]: string };
+    };
+
+/** @internal */
+export const CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeConfigWriteMatrix$outboundSchema: z.ZodType<
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeConfigWriteMatrix$Outbound,
+    z.ZodTypeDef,
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeConfigWriteMatrix
+> = z.object({
+    defaultUnitPrice: z.string(),
+    dimensionPrices: z.record(z.string()),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeConfigWriteMatrix$ {
-    export const inboundSchema: z.ZodType<
-        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeConfigWriteMatrix,
-        z.ZodTypeDef,
-        unknown
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
-
-    export type Outbound = {
-        defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
-    };
-
-    export const outboundSchema: z.ZodType<
-        Outbound,
-        z.ZodTypeDef,
-        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeConfigWriteMatrix
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeConfigWriteMatrix$inboundSchema` instead. */
+    export const inboundSchema =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeConfigWriteMatrix$inboundSchema;
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeConfigWriteMatrix$outboundSchema` instead. */
+    export const outboundSchema =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeConfigWriteMatrix$outboundSchema;
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeConfigWriteMatrix$Outbound` instead. */
+    export type Outbound =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeConfigWriteMatrix$Outbound;
 }
 
 /** @internal */
+export const CreateTeamEdgeConfigWrite$inboundSchema: z.ZodType<
+    CreateTeamEdgeConfigWrite,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    matrix: z
+        .lazy(
+            () =>
+                CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeConfigWriteMatrix$inboundSchema
+        )
+        .optional(),
+    tier: z.number().optional(),
+    price: z.number(),
+    batch: z.number(),
+    threshold: z.number(),
+    name: z.string().optional(),
+    hidden: z.boolean(),
+    disabledAt: z.nullable(z.number()).optional(),
+    enabledAt: z.nullable(z.number()).optional(),
+});
+
+/** @internal */
+export type CreateTeamEdgeConfigWrite$Outbound = {
+    matrix?:
+        | CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeConfigWriteMatrix$Outbound
+        | undefined;
+    tier?: number | undefined;
+    price: number;
+    batch: number;
+    threshold: number;
+    name?: string | undefined;
+    hidden: boolean;
+    disabledAt?: number | null | undefined;
+    enabledAt?: number | null | undefined;
+};
+
+/** @internal */
+export const CreateTeamEdgeConfigWrite$outboundSchema: z.ZodType<
+    CreateTeamEdgeConfigWrite$Outbound,
+    z.ZodTypeDef,
+    CreateTeamEdgeConfigWrite
+> = z.object({
+    matrix: z
+        .lazy(
+            () =>
+                CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeConfigWriteMatrix$outboundSchema
+        )
+        .optional(),
+    tier: z.number().optional(),
+    price: z.number(),
+    batch: z.number(),
+    threshold: z.number(),
+    name: z.string().optional(),
+    hidden: z.boolean(),
+    disabledAt: z.nullable(z.number()).optional(),
+    enabledAt: z.nullable(z.number()).optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamEdgeConfigWrite$ {
-    export const inboundSchema: z.ZodType<CreateTeamEdgeConfigWrite, z.ZodTypeDef, unknown> = z
-        .object({
-            matrix: z
-                .lazy(
-                    () =>
-                        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeConfigWriteMatrix$.inboundSchema
-                )
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
-
-    export type Outbound = {
-        matrix?:
-            | CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeConfigWriteMatrix$.Outbound
-            | undefined;
-        tier?: number | undefined;
-        price: number;
-        batch: number;
-        threshold: number;
-        name?: string | undefined;
-        hidden: boolean;
-        disabledAt?: number | null | undefined;
-        enabledAt?: number | null | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamEdgeConfigWrite> = z
-        .object({
-            matrix: z
-                .lazy(
-                    () =>
-                        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeConfigWriteMatrix$.outboundSchema
-                )
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+    /** @deprecated use `CreateTeamEdgeConfigWrite$inboundSchema` instead. */
+    export const inboundSchema = CreateTeamEdgeConfigWrite$inboundSchema;
+    /** @deprecated use `CreateTeamEdgeConfigWrite$outboundSchema` instead. */
+    export const outboundSchema = CreateTeamEdgeConfigWrite$outboundSchema;
+    /** @deprecated use `CreateTeamEdgeConfigWrite$Outbound` instead. */
+    export type Outbound = CreateTeamEdgeConfigWrite$Outbound;
 }
 
 /** @internal */
+export const CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeFunctionExecutionUnitsMatrix$inboundSchema: z.ZodType<
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeFunctionExecutionUnitsMatrix,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    defaultUnitPrice: z.string(),
+    dimensionPrices: z.record(z.string()),
+});
+
+/** @internal */
+export type CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeFunctionExecutionUnitsMatrix$Outbound =
+    {
+        defaultUnitPrice: string;
+        dimensionPrices: { [k: string]: string };
+    };
+
+/** @internal */
+export const CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeFunctionExecutionUnitsMatrix$outboundSchema: z.ZodType<
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeFunctionExecutionUnitsMatrix$Outbound,
+    z.ZodTypeDef,
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeFunctionExecutionUnitsMatrix
+> = z.object({
+    defaultUnitPrice: z.string(),
+    dimensionPrices: z.record(z.string()),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeFunctionExecutionUnitsMatrix$ {
-    export const inboundSchema: z.ZodType<
-        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeFunctionExecutionUnitsMatrix,
-        z.ZodTypeDef,
-        unknown
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
-
-    export type Outbound = {
-        defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
-    };
-
-    export const outboundSchema: z.ZodType<
-        Outbound,
-        z.ZodTypeDef,
-        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeFunctionExecutionUnitsMatrix
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeFunctionExecutionUnitsMatrix$inboundSchema` instead. */
+    export const inboundSchema =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeFunctionExecutionUnitsMatrix$inboundSchema;
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeFunctionExecutionUnitsMatrix$outboundSchema` instead. */
+    export const outboundSchema =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeFunctionExecutionUnitsMatrix$outboundSchema;
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeFunctionExecutionUnitsMatrix$Outbound` instead. */
+    export type Outbound =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeFunctionExecutionUnitsMatrix$Outbound;
 }
 
 /** @internal */
+export const CreateTeamEdgeFunctionExecutionUnits$inboundSchema: z.ZodType<
+    CreateTeamEdgeFunctionExecutionUnits,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    matrix: z
+        .lazy(
+            () =>
+                CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeFunctionExecutionUnitsMatrix$inboundSchema
+        )
+        .optional(),
+    tier: z.number().optional(),
+    price: z.number(),
+    batch: z.number(),
+    threshold: z.number(),
+    name: z.string().optional(),
+    hidden: z.boolean(),
+    disabledAt: z.nullable(z.number()).optional(),
+    enabledAt: z.nullable(z.number()).optional(),
+});
+
+/** @internal */
+export type CreateTeamEdgeFunctionExecutionUnits$Outbound = {
+    matrix?:
+        | CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeFunctionExecutionUnitsMatrix$Outbound
+        | undefined;
+    tier?: number | undefined;
+    price: number;
+    batch: number;
+    threshold: number;
+    name?: string | undefined;
+    hidden: boolean;
+    disabledAt?: number | null | undefined;
+    enabledAt?: number | null | undefined;
+};
+
+/** @internal */
+export const CreateTeamEdgeFunctionExecutionUnits$outboundSchema: z.ZodType<
+    CreateTeamEdgeFunctionExecutionUnits$Outbound,
+    z.ZodTypeDef,
+    CreateTeamEdgeFunctionExecutionUnits
+> = z.object({
+    matrix: z
+        .lazy(
+            () =>
+                CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeFunctionExecutionUnitsMatrix$outboundSchema
+        )
+        .optional(),
+    tier: z.number().optional(),
+    price: z.number(),
+    batch: z.number(),
+    threshold: z.number(),
+    name: z.string().optional(),
+    hidden: z.boolean(),
+    disabledAt: z.nullable(z.number()).optional(),
+    enabledAt: z.nullable(z.number()).optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamEdgeFunctionExecutionUnits$ {
-    export const inboundSchema: z.ZodType<
-        CreateTeamEdgeFunctionExecutionUnits,
-        z.ZodTypeDef,
-        unknown
-    > = z
-        .object({
-            matrix: z
-                .lazy(
-                    () =>
-                        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeFunctionExecutionUnitsMatrix$.inboundSchema
-                )
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
-
-    export type Outbound = {
-        matrix?:
-            | CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeFunctionExecutionUnitsMatrix$.Outbound
-            | undefined;
-        tier?: number | undefined;
-        price: number;
-        batch: number;
-        threshold: number;
-        name?: string | undefined;
-        hidden: boolean;
-        disabledAt?: number | null | undefined;
-        enabledAt?: number | null | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<
-        Outbound,
-        z.ZodTypeDef,
-        CreateTeamEdgeFunctionExecutionUnits
-    > = z
-        .object({
-            matrix: z
-                .lazy(
-                    () =>
-                        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeFunctionExecutionUnitsMatrix$.outboundSchema
-                )
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+    /** @deprecated use `CreateTeamEdgeFunctionExecutionUnits$inboundSchema` instead. */
+    export const inboundSchema = CreateTeamEdgeFunctionExecutionUnits$inboundSchema;
+    /** @deprecated use `CreateTeamEdgeFunctionExecutionUnits$outboundSchema` instead. */
+    export const outboundSchema = CreateTeamEdgeFunctionExecutionUnits$outboundSchema;
+    /** @deprecated use `CreateTeamEdgeFunctionExecutionUnits$Outbound` instead. */
+    export type Outbound = CreateTeamEdgeFunctionExecutionUnits$Outbound;
 }
 
 /** @internal */
+export const CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeMiddlewareInvocationsMatrix$inboundSchema: z.ZodType<
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeMiddlewareInvocationsMatrix,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    defaultUnitPrice: z.string(),
+    dimensionPrices: z.record(z.string()),
+});
+
+/** @internal */
+export type CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeMiddlewareInvocationsMatrix$Outbound =
+    {
+        defaultUnitPrice: string;
+        dimensionPrices: { [k: string]: string };
+    };
+
+/** @internal */
+export const CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeMiddlewareInvocationsMatrix$outboundSchema: z.ZodType<
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeMiddlewareInvocationsMatrix$Outbound,
+    z.ZodTypeDef,
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeMiddlewareInvocationsMatrix
+> = z.object({
+    defaultUnitPrice: z.string(),
+    dimensionPrices: z.record(z.string()),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeMiddlewareInvocationsMatrix$ {
-    export const inboundSchema: z.ZodType<
-        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeMiddlewareInvocationsMatrix,
-        z.ZodTypeDef,
-        unknown
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
-
-    export type Outbound = {
-        defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
-    };
-
-    export const outboundSchema: z.ZodType<
-        Outbound,
-        z.ZodTypeDef,
-        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeMiddlewareInvocationsMatrix
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeMiddlewareInvocationsMatrix$inboundSchema` instead. */
+    export const inboundSchema =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeMiddlewareInvocationsMatrix$inboundSchema;
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeMiddlewareInvocationsMatrix$outboundSchema` instead. */
+    export const outboundSchema =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeMiddlewareInvocationsMatrix$outboundSchema;
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeMiddlewareInvocationsMatrix$Outbound` instead. */
+    export type Outbound =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeMiddlewareInvocationsMatrix$Outbound;
 }
 
 /** @internal */
+export const CreateTeamEdgeMiddlewareInvocations$inboundSchema: z.ZodType<
+    CreateTeamEdgeMiddlewareInvocations,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    matrix: z
+        .lazy(
+            () =>
+                CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeMiddlewareInvocationsMatrix$inboundSchema
+        )
+        .optional(),
+    tier: z.number().optional(),
+    price: z.number(),
+    batch: z.number(),
+    threshold: z.number(),
+    name: z.string().optional(),
+    hidden: z.boolean(),
+    disabledAt: z.nullable(z.number()).optional(),
+    enabledAt: z.nullable(z.number()).optional(),
+});
+
+/** @internal */
+export type CreateTeamEdgeMiddlewareInvocations$Outbound = {
+    matrix?:
+        | CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeMiddlewareInvocationsMatrix$Outbound
+        | undefined;
+    tier?: number | undefined;
+    price: number;
+    batch: number;
+    threshold: number;
+    name?: string | undefined;
+    hidden: boolean;
+    disabledAt?: number | null | undefined;
+    enabledAt?: number | null | undefined;
+};
+
+/** @internal */
+export const CreateTeamEdgeMiddlewareInvocations$outboundSchema: z.ZodType<
+    CreateTeamEdgeMiddlewareInvocations$Outbound,
+    z.ZodTypeDef,
+    CreateTeamEdgeMiddlewareInvocations
+> = z.object({
+    matrix: z
+        .lazy(
+            () =>
+                CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeMiddlewareInvocationsMatrix$outboundSchema
+        )
+        .optional(),
+    tier: z.number().optional(),
+    price: z.number(),
+    batch: z.number(),
+    threshold: z.number(),
+    name: z.string().optional(),
+    hidden: z.boolean(),
+    disabledAt: z.nullable(z.number()).optional(),
+    enabledAt: z.nullable(z.number()).optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamEdgeMiddlewareInvocations$ {
-    export const inboundSchema: z.ZodType<
-        CreateTeamEdgeMiddlewareInvocations,
-        z.ZodTypeDef,
-        unknown
-    > = z
-        .object({
-            matrix: z
-                .lazy(
-                    () =>
-                        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeMiddlewareInvocationsMatrix$.inboundSchema
-                )
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
-
-    export type Outbound = {
-        matrix?:
-            | CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeMiddlewareInvocationsMatrix$.Outbound
-            | undefined;
-        tier?: number | undefined;
-        price: number;
-        batch: number;
-        threshold: number;
-        name?: string | undefined;
-        hidden: boolean;
-        disabledAt?: number | null | undefined;
-        enabledAt?: number | null | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<
-        Outbound,
-        z.ZodTypeDef,
-        CreateTeamEdgeMiddlewareInvocations
-    > = z
-        .object({
-            matrix: z
-                .lazy(
-                    () =>
-                        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeMiddlewareInvocationsMatrix$.outboundSchema
-                )
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+    /** @deprecated use `CreateTeamEdgeMiddlewareInvocations$inboundSchema` instead. */
+    export const inboundSchema = CreateTeamEdgeMiddlewareInvocations$inboundSchema;
+    /** @deprecated use `CreateTeamEdgeMiddlewareInvocations$outboundSchema` instead. */
+    export const outboundSchema = CreateTeamEdgeMiddlewareInvocations$outboundSchema;
+    /** @deprecated use `CreateTeamEdgeMiddlewareInvocations$Outbound` instead. */
+    export type Outbound = CreateTeamEdgeMiddlewareInvocations$Outbound;
 }
 
 /** @internal */
+export const CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeRequestMatrix$inboundSchema: z.ZodType<
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeRequestMatrix,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    defaultUnitPrice: z.string(),
+    dimensionPrices: z.record(z.string()),
+});
+
+/** @internal */
+export type CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeRequestMatrix$Outbound =
+    {
+        defaultUnitPrice: string;
+        dimensionPrices: { [k: string]: string };
+    };
+
+/** @internal */
+export const CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeRequestMatrix$outboundSchema: z.ZodType<
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeRequestMatrix$Outbound,
+    z.ZodTypeDef,
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeRequestMatrix
+> = z.object({
+    defaultUnitPrice: z.string(),
+    dimensionPrices: z.record(z.string()),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeRequestMatrix$ {
-    export const inboundSchema: z.ZodType<
-        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeRequestMatrix,
-        z.ZodTypeDef,
-        unknown
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
-
-    export type Outbound = {
-        defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
-    };
-
-    export const outboundSchema: z.ZodType<
-        Outbound,
-        z.ZodTypeDef,
-        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeRequestMatrix
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeRequestMatrix$inboundSchema` instead. */
+    export const inboundSchema =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeRequestMatrix$inboundSchema;
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeRequestMatrix$outboundSchema` instead. */
+    export const outboundSchema =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeRequestMatrix$outboundSchema;
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeRequestMatrix$Outbound` instead. */
+    export type Outbound =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeRequestMatrix$Outbound;
 }
 
 /** @internal */
+export const CreateTeamEdgeRequest$inboundSchema: z.ZodType<
+    CreateTeamEdgeRequest,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    matrix: z
+        .lazy(
+            () =>
+                CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeRequestMatrix$inboundSchema
+        )
+        .optional(),
+    tier: z.number().optional(),
+    price: z.number(),
+    batch: z.number(),
+    threshold: z.number(),
+    name: z.string().optional(),
+    hidden: z.boolean(),
+    disabledAt: z.nullable(z.number()).optional(),
+    enabledAt: z.nullable(z.number()).optional(),
+});
+
+/** @internal */
+export type CreateTeamEdgeRequest$Outbound = {
+    matrix?:
+        | CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeRequestMatrix$Outbound
+        | undefined;
+    tier?: number | undefined;
+    price: number;
+    batch: number;
+    threshold: number;
+    name?: string | undefined;
+    hidden: boolean;
+    disabledAt?: number | null | undefined;
+    enabledAt?: number | null | undefined;
+};
+
+/** @internal */
+export const CreateTeamEdgeRequest$outboundSchema: z.ZodType<
+    CreateTeamEdgeRequest$Outbound,
+    z.ZodTypeDef,
+    CreateTeamEdgeRequest
+> = z.object({
+    matrix: z
+        .lazy(
+            () =>
+                CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeRequestMatrix$outboundSchema
+        )
+        .optional(),
+    tier: z.number().optional(),
+    price: z.number(),
+    batch: z.number(),
+    threshold: z.number(),
+    name: z.string().optional(),
+    hidden: z.boolean(),
+    disabledAt: z.nullable(z.number()).optional(),
+    enabledAt: z.nullable(z.number()).optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamEdgeRequest$ {
-    export const inboundSchema: z.ZodType<CreateTeamEdgeRequest, z.ZodTypeDef, unknown> = z
-        .object({
-            matrix: z
-                .lazy(
-                    () =>
-                        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeRequestMatrix$.inboundSchema
-                )
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
-
-    export type Outbound = {
-        matrix?:
-            | CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeRequestMatrix$.Outbound
-            | undefined;
-        tier?: number | undefined;
-        price: number;
-        batch: number;
-        threshold: number;
-        name?: string | undefined;
-        hidden: boolean;
-        disabledAt?: number | null | undefined;
-        enabledAt?: number | null | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamEdgeRequest> = z
-        .object({
-            matrix: z
-                .lazy(
-                    () =>
-                        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeRequestMatrix$.outboundSchema
-                )
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+    /** @deprecated use `CreateTeamEdgeRequest$inboundSchema` instead. */
+    export const inboundSchema = CreateTeamEdgeRequest$inboundSchema;
+    /** @deprecated use `CreateTeamEdgeRequest$outboundSchema` instead. */
+    export const outboundSchema = CreateTeamEdgeRequest$outboundSchema;
+    /** @deprecated use `CreateTeamEdgeRequest$Outbound` instead. */
+    export type Outbound = CreateTeamEdgeRequest$Outbound;
 }
 
 /** @internal */
+export const CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeRequestAdditionalCpuDurationMatrix$inboundSchema: z.ZodType<
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeRequestAdditionalCpuDurationMatrix,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    defaultUnitPrice: z.string(),
+    dimensionPrices: z.record(z.string()),
+});
+
+/** @internal */
+export type CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeRequestAdditionalCpuDurationMatrix$Outbound =
+    {
+        defaultUnitPrice: string;
+        dimensionPrices: { [k: string]: string };
+    };
+
+/** @internal */
+export const CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeRequestAdditionalCpuDurationMatrix$outboundSchema: z.ZodType<
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeRequestAdditionalCpuDurationMatrix$Outbound,
+    z.ZodTypeDef,
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeRequestAdditionalCpuDurationMatrix
+> = z.object({
+    defaultUnitPrice: z.string(),
+    dimensionPrices: z.record(z.string()),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeRequestAdditionalCpuDurationMatrix$ {
-    export const inboundSchema: z.ZodType<
-        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeRequestAdditionalCpuDurationMatrix,
-        z.ZodTypeDef,
-        unknown
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
-
-    export type Outbound = {
-        defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
-    };
-
-    export const outboundSchema: z.ZodType<
-        Outbound,
-        z.ZodTypeDef,
-        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeRequestAdditionalCpuDurationMatrix
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeRequestAdditionalCpuDurationMatrix$inboundSchema` instead. */
+    export const inboundSchema =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeRequestAdditionalCpuDurationMatrix$inboundSchema;
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeRequestAdditionalCpuDurationMatrix$outboundSchema` instead. */
+    export const outboundSchema =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeRequestAdditionalCpuDurationMatrix$outboundSchema;
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeRequestAdditionalCpuDurationMatrix$Outbound` instead. */
+    export type Outbound =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeRequestAdditionalCpuDurationMatrix$Outbound;
 }
 
 /** @internal */
+export const CreateTeamEdgeRequestAdditionalCpuDuration$inboundSchema: z.ZodType<
+    CreateTeamEdgeRequestAdditionalCpuDuration,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    matrix: z
+        .lazy(
+            () =>
+                CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeRequestAdditionalCpuDurationMatrix$inboundSchema
+        )
+        .optional(),
+    tier: z.number().optional(),
+    price: z.number(),
+    batch: z.number(),
+    threshold: z.number(),
+    name: z.string().optional(),
+    hidden: z.boolean(),
+    disabledAt: z.nullable(z.number()).optional(),
+    enabledAt: z.nullable(z.number()).optional(),
+});
+
+/** @internal */
+export type CreateTeamEdgeRequestAdditionalCpuDuration$Outbound = {
+    matrix?:
+        | CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeRequestAdditionalCpuDurationMatrix$Outbound
+        | undefined;
+    tier?: number | undefined;
+    price: number;
+    batch: number;
+    threshold: number;
+    name?: string | undefined;
+    hidden: boolean;
+    disabledAt?: number | null | undefined;
+    enabledAt?: number | null | undefined;
+};
+
+/** @internal */
+export const CreateTeamEdgeRequestAdditionalCpuDuration$outboundSchema: z.ZodType<
+    CreateTeamEdgeRequestAdditionalCpuDuration$Outbound,
+    z.ZodTypeDef,
+    CreateTeamEdgeRequestAdditionalCpuDuration
+> = z.object({
+    matrix: z
+        .lazy(
+            () =>
+                CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeRequestAdditionalCpuDurationMatrix$outboundSchema
+        )
+        .optional(),
+    tier: z.number().optional(),
+    price: z.number(),
+    batch: z.number(),
+    threshold: z.number(),
+    name: z.string().optional(),
+    hidden: z.boolean(),
+    disabledAt: z.nullable(z.number()).optional(),
+    enabledAt: z.nullable(z.number()).optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamEdgeRequestAdditionalCpuDuration$ {
-    export const inboundSchema: z.ZodType<
-        CreateTeamEdgeRequestAdditionalCpuDuration,
-        z.ZodTypeDef,
-        unknown
-    > = z
-        .object({
-            matrix: z
-                .lazy(
-                    () =>
-                        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeRequestAdditionalCpuDurationMatrix$.inboundSchema
-                )
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
-
-    export type Outbound = {
-        matrix?:
-            | CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeRequestAdditionalCpuDurationMatrix$.Outbound
-            | undefined;
-        tier?: number | undefined;
-        price: number;
-        batch: number;
-        threshold: number;
-        name?: string | undefined;
-        hidden: boolean;
-        disabledAt?: number | null | undefined;
-        enabledAt?: number | null | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<
-        Outbound,
-        z.ZodTypeDef,
-        CreateTeamEdgeRequestAdditionalCpuDuration
-    > = z
-        .object({
-            matrix: z
-                .lazy(
-                    () =>
-                        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeRequestAdditionalCpuDurationMatrix$.outboundSchema
-                )
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+    /** @deprecated use `CreateTeamEdgeRequestAdditionalCpuDuration$inboundSchema` instead. */
+    export const inboundSchema = CreateTeamEdgeRequestAdditionalCpuDuration$inboundSchema;
+    /** @deprecated use `CreateTeamEdgeRequestAdditionalCpuDuration$outboundSchema` instead. */
+    export const outboundSchema = CreateTeamEdgeRequestAdditionalCpuDuration$outboundSchema;
+    /** @deprecated use `CreateTeamEdgeRequestAdditionalCpuDuration$Outbound` instead. */
+    export type Outbound = CreateTeamEdgeRequestAdditionalCpuDuration$Outbound;
 }
 
 /** @internal */
+export const CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFastDataTransferMatrix$inboundSchema: z.ZodType<
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFastDataTransferMatrix,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    defaultUnitPrice: z.string(),
+    dimensionPrices: z.record(z.string()),
+});
+
+/** @internal */
+export type CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFastDataTransferMatrix$Outbound =
+    {
+        defaultUnitPrice: string;
+        dimensionPrices: { [k: string]: string };
+    };
+
+/** @internal */
+export const CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFastDataTransferMatrix$outboundSchema: z.ZodType<
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFastDataTransferMatrix$Outbound,
+    z.ZodTypeDef,
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFastDataTransferMatrix
+> = z.object({
+    defaultUnitPrice: z.string(),
+    dimensionPrices: z.record(z.string()),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFastDataTransferMatrix$ {
-    export const inboundSchema: z.ZodType<
-        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFastDataTransferMatrix,
-        z.ZodTypeDef,
-        unknown
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
-
-    export type Outbound = {
-        defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
-    };
-
-    export const outboundSchema: z.ZodType<
-        Outbound,
-        z.ZodTypeDef,
-        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFastDataTransferMatrix
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFastDataTransferMatrix$inboundSchema` instead. */
+    export const inboundSchema =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFastDataTransferMatrix$inboundSchema;
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFastDataTransferMatrix$outboundSchema` instead. */
+    export const outboundSchema =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFastDataTransferMatrix$outboundSchema;
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFastDataTransferMatrix$Outbound` instead. */
+    export type Outbound =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFastDataTransferMatrix$Outbound;
 }
 
 /** @internal */
+export const CreateTeamFastDataTransfer$inboundSchema: z.ZodType<
+    CreateTeamFastDataTransfer,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    matrix: z
+        .lazy(
+            () =>
+                CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFastDataTransferMatrix$inboundSchema
+        )
+        .optional(),
+    tier: z.number().optional(),
+    price: z.number(),
+    batch: z.number(),
+    threshold: z.number(),
+    name: z.string().optional(),
+    hidden: z.boolean(),
+    disabledAt: z.nullable(z.number()).optional(),
+    enabledAt: z.nullable(z.number()).optional(),
+});
+
+/** @internal */
+export type CreateTeamFastDataTransfer$Outbound = {
+    matrix?:
+        | CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFastDataTransferMatrix$Outbound
+        | undefined;
+    tier?: number | undefined;
+    price: number;
+    batch: number;
+    threshold: number;
+    name?: string | undefined;
+    hidden: boolean;
+    disabledAt?: number | null | undefined;
+    enabledAt?: number | null | undefined;
+};
+
+/** @internal */
+export const CreateTeamFastDataTransfer$outboundSchema: z.ZodType<
+    CreateTeamFastDataTransfer$Outbound,
+    z.ZodTypeDef,
+    CreateTeamFastDataTransfer
+> = z.object({
+    matrix: z
+        .lazy(
+            () =>
+                CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFastDataTransferMatrix$outboundSchema
+        )
+        .optional(),
+    tier: z.number().optional(),
+    price: z.number(),
+    batch: z.number(),
+    threshold: z.number(),
+    name: z.string().optional(),
+    hidden: z.boolean(),
+    disabledAt: z.nullable(z.number()).optional(),
+    enabledAt: z.nullable(z.number()).optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamFastDataTransfer$ {
-    export const inboundSchema: z.ZodType<CreateTeamFastDataTransfer, z.ZodTypeDef, unknown> = z
-        .object({
-            matrix: z
-                .lazy(
-                    () =>
-                        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFastDataTransferMatrix$.inboundSchema
-                )
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
-
-    export type Outbound = {
-        matrix?:
-            | CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFastDataTransferMatrix$.Outbound
-            | undefined;
-        tier?: number | undefined;
-        price: number;
-        batch: number;
-        threshold: number;
-        name?: string | undefined;
-        hidden: boolean;
-        disabledAt?: number | null | undefined;
-        enabledAt?: number | null | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamFastDataTransfer> = z
-        .object({
-            matrix: z
-                .lazy(
-                    () =>
-                        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFastDataTransferMatrix$.outboundSchema
-                )
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+    /** @deprecated use `CreateTeamFastDataTransfer$inboundSchema` instead. */
+    export const inboundSchema = CreateTeamFastDataTransfer$inboundSchema;
+    /** @deprecated use `CreateTeamFastDataTransfer$outboundSchema` instead. */
+    export const outboundSchema = CreateTeamFastDataTransfer$outboundSchema;
+    /** @deprecated use `CreateTeamFastDataTransfer$Outbound` instead. */
+    export type Outbound = CreateTeamFastDataTransfer$Outbound;
 }
 
 /** @internal */
+export const CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFastOriginTransferMatrix$inboundSchema: z.ZodType<
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFastOriginTransferMatrix,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    defaultUnitPrice: z.string(),
+    dimensionPrices: z.record(z.string()),
+});
+
+/** @internal */
+export type CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFastOriginTransferMatrix$Outbound =
+    {
+        defaultUnitPrice: string;
+        dimensionPrices: { [k: string]: string };
+    };
+
+/** @internal */
+export const CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFastOriginTransferMatrix$outboundSchema: z.ZodType<
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFastOriginTransferMatrix$Outbound,
+    z.ZodTypeDef,
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFastOriginTransferMatrix
+> = z.object({
+    defaultUnitPrice: z.string(),
+    dimensionPrices: z.record(z.string()),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFastOriginTransferMatrix$ {
-    export const inboundSchema: z.ZodType<
-        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFastOriginTransferMatrix,
-        z.ZodTypeDef,
-        unknown
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
-
-    export type Outbound = {
-        defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
-    };
-
-    export const outboundSchema: z.ZodType<
-        Outbound,
-        z.ZodTypeDef,
-        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFastOriginTransferMatrix
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFastOriginTransferMatrix$inboundSchema` instead. */
+    export const inboundSchema =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFastOriginTransferMatrix$inboundSchema;
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFastOriginTransferMatrix$outboundSchema` instead. */
+    export const outboundSchema =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFastOriginTransferMatrix$outboundSchema;
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFastOriginTransferMatrix$Outbound` instead. */
+    export type Outbound =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFastOriginTransferMatrix$Outbound;
 }
 
 /** @internal */
+export const CreateTeamFastOriginTransfer$inboundSchema: z.ZodType<
+    CreateTeamFastOriginTransfer,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    matrix: z
+        .lazy(
+            () =>
+                CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFastOriginTransferMatrix$inboundSchema
+        )
+        .optional(),
+    tier: z.number().optional(),
+    price: z.number(),
+    batch: z.number(),
+    threshold: z.number(),
+    name: z.string().optional(),
+    hidden: z.boolean(),
+    disabledAt: z.nullable(z.number()).optional(),
+    enabledAt: z.nullable(z.number()).optional(),
+});
+
+/** @internal */
+export type CreateTeamFastOriginTransfer$Outbound = {
+    matrix?:
+        | CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFastOriginTransferMatrix$Outbound
+        | undefined;
+    tier?: number | undefined;
+    price: number;
+    batch: number;
+    threshold: number;
+    name?: string | undefined;
+    hidden: boolean;
+    disabledAt?: number | null | undefined;
+    enabledAt?: number | null | undefined;
+};
+
+/** @internal */
+export const CreateTeamFastOriginTransfer$outboundSchema: z.ZodType<
+    CreateTeamFastOriginTransfer$Outbound,
+    z.ZodTypeDef,
+    CreateTeamFastOriginTransfer
+> = z.object({
+    matrix: z
+        .lazy(
+            () =>
+                CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFastOriginTransferMatrix$outboundSchema
+        )
+        .optional(),
+    tier: z.number().optional(),
+    price: z.number(),
+    batch: z.number(),
+    threshold: z.number(),
+    name: z.string().optional(),
+    hidden: z.boolean(),
+    disabledAt: z.nullable(z.number()).optional(),
+    enabledAt: z.nullable(z.number()).optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamFastOriginTransfer$ {
-    export const inboundSchema: z.ZodType<CreateTeamFastOriginTransfer, z.ZodTypeDef, unknown> = z
-        .object({
-            matrix: z
-                .lazy(
-                    () =>
-                        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFastOriginTransferMatrix$.inboundSchema
-                )
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
-
-    export type Outbound = {
-        matrix?:
-            | CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFastOriginTransferMatrix$.Outbound
-            | undefined;
-        tier?: number | undefined;
-        price: number;
-        batch: number;
-        threshold: number;
-        name?: string | undefined;
-        hidden: boolean;
-        disabledAt?: number | null | undefined;
-        enabledAt?: number | null | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamFastOriginTransfer> = z
-        .object({
-            matrix: z
-                .lazy(
-                    () =>
-                        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFastOriginTransferMatrix$.outboundSchema
-                )
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+    /** @deprecated use `CreateTeamFastOriginTransfer$inboundSchema` instead. */
+    export const inboundSchema = CreateTeamFastOriginTransfer$inboundSchema;
+    /** @deprecated use `CreateTeamFastOriginTransfer$outboundSchema` instead. */
+    export const outboundSchema = CreateTeamFastOriginTransfer$outboundSchema;
+    /** @deprecated use `CreateTeamFastOriginTransfer$Outbound` instead. */
+    export type Outbound = CreateTeamFastOriginTransfer$Outbound;
 }
 
 /** @internal */
+export const CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFunctionDurationMatrix$inboundSchema: z.ZodType<
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFunctionDurationMatrix,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    defaultUnitPrice: z.string(),
+    dimensionPrices: z.record(z.string()),
+});
+
+/** @internal */
+export type CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFunctionDurationMatrix$Outbound =
+    {
+        defaultUnitPrice: string;
+        dimensionPrices: { [k: string]: string };
+    };
+
+/** @internal */
+export const CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFunctionDurationMatrix$outboundSchema: z.ZodType<
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFunctionDurationMatrix$Outbound,
+    z.ZodTypeDef,
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFunctionDurationMatrix
+> = z.object({
+    defaultUnitPrice: z.string(),
+    dimensionPrices: z.record(z.string()),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFunctionDurationMatrix$ {
-    export const inboundSchema: z.ZodType<
-        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFunctionDurationMatrix,
-        z.ZodTypeDef,
-        unknown
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
-
-    export type Outbound = {
-        defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
-    };
-
-    export const outboundSchema: z.ZodType<
-        Outbound,
-        z.ZodTypeDef,
-        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFunctionDurationMatrix
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFunctionDurationMatrix$inboundSchema` instead. */
+    export const inboundSchema =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFunctionDurationMatrix$inboundSchema;
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFunctionDurationMatrix$outboundSchema` instead. */
+    export const outboundSchema =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFunctionDurationMatrix$outboundSchema;
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFunctionDurationMatrix$Outbound` instead. */
+    export type Outbound =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFunctionDurationMatrix$Outbound;
 }
 
 /** @internal */
+export const CreateTeamFunctionDuration$inboundSchema: z.ZodType<
+    CreateTeamFunctionDuration,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    matrix: z
+        .lazy(
+            () =>
+                CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFunctionDurationMatrix$inboundSchema
+        )
+        .optional(),
+    tier: z.number().optional(),
+    price: z.number(),
+    batch: z.number(),
+    threshold: z.number(),
+    name: z.string().optional(),
+    hidden: z.boolean(),
+    disabledAt: z.nullable(z.number()).optional(),
+    enabledAt: z.nullable(z.number()).optional(),
+});
+
+/** @internal */
+export type CreateTeamFunctionDuration$Outbound = {
+    matrix?:
+        | CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFunctionDurationMatrix$Outbound
+        | undefined;
+    tier?: number | undefined;
+    price: number;
+    batch: number;
+    threshold: number;
+    name?: string | undefined;
+    hidden: boolean;
+    disabledAt?: number | null | undefined;
+    enabledAt?: number | null | undefined;
+};
+
+/** @internal */
+export const CreateTeamFunctionDuration$outboundSchema: z.ZodType<
+    CreateTeamFunctionDuration$Outbound,
+    z.ZodTypeDef,
+    CreateTeamFunctionDuration
+> = z.object({
+    matrix: z
+        .lazy(
+            () =>
+                CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFunctionDurationMatrix$outboundSchema
+        )
+        .optional(),
+    tier: z.number().optional(),
+    price: z.number(),
+    batch: z.number(),
+    threshold: z.number(),
+    name: z.string().optional(),
+    hidden: z.boolean(),
+    disabledAt: z.nullable(z.number()).optional(),
+    enabledAt: z.nullable(z.number()).optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamFunctionDuration$ {
-    export const inboundSchema: z.ZodType<CreateTeamFunctionDuration, z.ZodTypeDef, unknown> = z
-        .object({
-            matrix: z
-                .lazy(
-                    () =>
-                        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFunctionDurationMatrix$.inboundSchema
-                )
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
-
-    export type Outbound = {
-        matrix?:
-            | CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFunctionDurationMatrix$.Outbound
-            | undefined;
-        tier?: number | undefined;
-        price: number;
-        batch: number;
-        threshold: number;
-        name?: string | undefined;
-        hidden: boolean;
-        disabledAt?: number | null | undefined;
-        enabledAt?: number | null | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamFunctionDuration> = z
-        .object({
-            matrix: z
-                .lazy(
-                    () =>
-                        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFunctionDurationMatrix$.outboundSchema
-                )
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+    /** @deprecated use `CreateTeamFunctionDuration$inboundSchema` instead. */
+    export const inboundSchema = CreateTeamFunctionDuration$inboundSchema;
+    /** @deprecated use `CreateTeamFunctionDuration$outboundSchema` instead. */
+    export const outboundSchema = CreateTeamFunctionDuration$outboundSchema;
+    /** @deprecated use `CreateTeamFunctionDuration$Outbound` instead. */
+    export type Outbound = CreateTeamFunctionDuration$Outbound;
 }
 
 /** @internal */
+export const CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFunctionInvocationMatrix$inboundSchema: z.ZodType<
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFunctionInvocationMatrix,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    defaultUnitPrice: z.string(),
+    dimensionPrices: z.record(z.string()),
+});
+
+/** @internal */
+export type CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFunctionInvocationMatrix$Outbound =
+    {
+        defaultUnitPrice: string;
+        dimensionPrices: { [k: string]: string };
+    };
+
+/** @internal */
+export const CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFunctionInvocationMatrix$outboundSchema: z.ZodType<
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFunctionInvocationMatrix$Outbound,
+    z.ZodTypeDef,
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFunctionInvocationMatrix
+> = z.object({
+    defaultUnitPrice: z.string(),
+    dimensionPrices: z.record(z.string()),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFunctionInvocationMatrix$ {
-    export const inboundSchema: z.ZodType<
-        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFunctionInvocationMatrix,
-        z.ZodTypeDef,
-        unknown
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
-
-    export type Outbound = {
-        defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
-    };
-
-    export const outboundSchema: z.ZodType<
-        Outbound,
-        z.ZodTypeDef,
-        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFunctionInvocationMatrix
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFunctionInvocationMatrix$inboundSchema` instead. */
+    export const inboundSchema =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFunctionInvocationMatrix$inboundSchema;
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFunctionInvocationMatrix$outboundSchema` instead. */
+    export const outboundSchema =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFunctionInvocationMatrix$outboundSchema;
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFunctionInvocationMatrix$Outbound` instead. */
+    export type Outbound =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFunctionInvocationMatrix$Outbound;
 }
 
 /** @internal */
+export const CreateTeamFunctionInvocation$inboundSchema: z.ZodType<
+    CreateTeamFunctionInvocation,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    matrix: z
+        .lazy(
+            () =>
+                CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFunctionInvocationMatrix$inboundSchema
+        )
+        .optional(),
+    tier: z.number().optional(),
+    price: z.number(),
+    batch: z.number(),
+    threshold: z.number(),
+    name: z.string().optional(),
+    hidden: z.boolean(),
+    disabledAt: z.nullable(z.number()).optional(),
+    enabledAt: z.nullable(z.number()).optional(),
+});
+
+/** @internal */
+export type CreateTeamFunctionInvocation$Outbound = {
+    matrix?:
+        | CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFunctionInvocationMatrix$Outbound
+        | undefined;
+    tier?: number | undefined;
+    price: number;
+    batch: number;
+    threshold: number;
+    name?: string | undefined;
+    hidden: boolean;
+    disabledAt?: number | null | undefined;
+    enabledAt?: number | null | undefined;
+};
+
+/** @internal */
+export const CreateTeamFunctionInvocation$outboundSchema: z.ZodType<
+    CreateTeamFunctionInvocation$Outbound,
+    z.ZodTypeDef,
+    CreateTeamFunctionInvocation
+> = z.object({
+    matrix: z
+        .lazy(
+            () =>
+                CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFunctionInvocationMatrix$outboundSchema
+        )
+        .optional(),
+    tier: z.number().optional(),
+    price: z.number(),
+    batch: z.number(),
+    threshold: z.number(),
+    name: z.string().optional(),
+    hidden: z.boolean(),
+    disabledAt: z.nullable(z.number()).optional(),
+    enabledAt: z.nullable(z.number()).optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamFunctionInvocation$ {
-    export const inboundSchema: z.ZodType<CreateTeamFunctionInvocation, z.ZodTypeDef, unknown> = z
-        .object({
-            matrix: z
-                .lazy(
-                    () =>
-                        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFunctionInvocationMatrix$.inboundSchema
-                )
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
-
-    export type Outbound = {
-        matrix?:
-            | CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFunctionInvocationMatrix$.Outbound
-            | undefined;
-        tier?: number | undefined;
-        price: number;
-        batch: number;
-        threshold: number;
-        name?: string | undefined;
-        hidden: boolean;
-        disabledAt?: number | null | undefined;
-        enabledAt?: number | null | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamFunctionInvocation> = z
-        .object({
-            matrix: z
-                .lazy(
-                    () =>
-                        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFunctionInvocationMatrix$.outboundSchema
-                )
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+    /** @deprecated use `CreateTeamFunctionInvocation$inboundSchema` instead. */
+    export const inboundSchema = CreateTeamFunctionInvocation$inboundSchema;
+    /** @deprecated use `CreateTeamFunctionInvocation$outboundSchema` instead. */
+    export const outboundSchema = CreateTeamFunctionInvocation$outboundSchema;
+    /** @deprecated use `CreateTeamFunctionInvocation$Outbound` instead. */
+    export type Outbound = CreateTeamFunctionInvocation$Outbound;
 }
 
 /** @internal */
+export const CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsLogDrainsVolumeMatrix$inboundSchema: z.ZodType<
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsLogDrainsVolumeMatrix,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    defaultUnitPrice: z.string(),
+    dimensionPrices: z.record(z.string()),
+});
+
+/** @internal */
+export type CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsLogDrainsVolumeMatrix$Outbound =
+    {
+        defaultUnitPrice: string;
+        dimensionPrices: { [k: string]: string };
+    };
+
+/** @internal */
+export const CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsLogDrainsVolumeMatrix$outboundSchema: z.ZodType<
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsLogDrainsVolumeMatrix$Outbound,
+    z.ZodTypeDef,
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsLogDrainsVolumeMatrix
+> = z.object({
+    defaultUnitPrice: z.string(),
+    dimensionPrices: z.record(z.string()),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsLogDrainsVolumeMatrix$ {
-    export const inboundSchema: z.ZodType<
-        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsLogDrainsVolumeMatrix,
-        z.ZodTypeDef,
-        unknown
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
-
-    export type Outbound = {
-        defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
-    };
-
-    export const outboundSchema: z.ZodType<
-        Outbound,
-        z.ZodTypeDef,
-        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsLogDrainsVolumeMatrix
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsLogDrainsVolumeMatrix$inboundSchema` instead. */
+    export const inboundSchema =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsLogDrainsVolumeMatrix$inboundSchema;
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsLogDrainsVolumeMatrix$outboundSchema` instead. */
+    export const outboundSchema =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsLogDrainsVolumeMatrix$outboundSchema;
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsLogDrainsVolumeMatrix$Outbound` instead. */
+    export type Outbound =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsLogDrainsVolumeMatrix$Outbound;
 }
 
 /** @internal */
+export const CreateTeamLogDrainsVolume$inboundSchema: z.ZodType<
+    CreateTeamLogDrainsVolume,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    matrix: z
+        .lazy(
+            () =>
+                CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsLogDrainsVolumeMatrix$inboundSchema
+        )
+        .optional(),
+    tier: z.number().optional(),
+    price: z.number(),
+    batch: z.number(),
+    threshold: z.number(),
+    name: z.string().optional(),
+    hidden: z.boolean(),
+    disabledAt: z.nullable(z.number()).optional(),
+    enabledAt: z.nullable(z.number()).optional(),
+});
+
+/** @internal */
+export type CreateTeamLogDrainsVolume$Outbound = {
+    matrix?:
+        | CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsLogDrainsVolumeMatrix$Outbound
+        | undefined;
+    tier?: number | undefined;
+    price: number;
+    batch: number;
+    threshold: number;
+    name?: string | undefined;
+    hidden: boolean;
+    disabledAt?: number | null | undefined;
+    enabledAt?: number | null | undefined;
+};
+
+/** @internal */
+export const CreateTeamLogDrainsVolume$outboundSchema: z.ZodType<
+    CreateTeamLogDrainsVolume$Outbound,
+    z.ZodTypeDef,
+    CreateTeamLogDrainsVolume
+> = z.object({
+    matrix: z
+        .lazy(
+            () =>
+                CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsLogDrainsVolumeMatrix$outboundSchema
+        )
+        .optional(),
+    tier: z.number().optional(),
+    price: z.number(),
+    batch: z.number(),
+    threshold: z.number(),
+    name: z.string().optional(),
+    hidden: z.boolean(),
+    disabledAt: z.nullable(z.number()).optional(),
+    enabledAt: z.nullable(z.number()).optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamLogDrainsVolume$ {
-    export const inboundSchema: z.ZodType<CreateTeamLogDrainsVolume, z.ZodTypeDef, unknown> = z
-        .object({
-            matrix: z
-                .lazy(
-                    () =>
-                        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsLogDrainsVolumeMatrix$.inboundSchema
-                )
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
-
-    export type Outbound = {
-        matrix?:
-            | CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsLogDrainsVolumeMatrix$.Outbound
-            | undefined;
-        tier?: number | undefined;
-        price: number;
-        batch: number;
-        threshold: number;
-        name?: string | undefined;
-        hidden: boolean;
-        disabledAt?: number | null | undefined;
-        enabledAt?: number | null | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamLogDrainsVolume> = z
-        .object({
-            matrix: z
-                .lazy(
-                    () =>
-                        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsLogDrainsVolumeMatrix$.outboundSchema
-                )
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+    /** @deprecated use `CreateTeamLogDrainsVolume$inboundSchema` instead. */
+    export const inboundSchema = CreateTeamLogDrainsVolume$inboundSchema;
+    /** @deprecated use `CreateTeamLogDrainsVolume$outboundSchema` instead. */
+    export const outboundSchema = CreateTeamLogDrainsVolume$outboundSchema;
+    /** @deprecated use `CreateTeamLogDrainsVolume$Outbound` instead. */
+    export type Outbound = CreateTeamLogDrainsVolume$Outbound;
 }
 
 /** @internal */
+export const CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsMonitoringMetricMatrix$inboundSchema: z.ZodType<
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsMonitoringMetricMatrix,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    defaultUnitPrice: z.string(),
+    dimensionPrices: z.record(z.string()),
+});
+
+/** @internal */
+export type CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsMonitoringMetricMatrix$Outbound =
+    {
+        defaultUnitPrice: string;
+        dimensionPrices: { [k: string]: string };
+    };
+
+/** @internal */
+export const CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsMonitoringMetricMatrix$outboundSchema: z.ZodType<
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsMonitoringMetricMatrix$Outbound,
+    z.ZodTypeDef,
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsMonitoringMetricMatrix
+> = z.object({
+    defaultUnitPrice: z.string(),
+    dimensionPrices: z.record(z.string()),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsMonitoringMetricMatrix$ {
-    export const inboundSchema: z.ZodType<
-        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsMonitoringMetricMatrix,
-        z.ZodTypeDef,
-        unknown
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
-
-    export type Outbound = {
-        defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
-    };
-
-    export const outboundSchema: z.ZodType<
-        Outbound,
-        z.ZodTypeDef,
-        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsMonitoringMetricMatrix
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsMonitoringMetricMatrix$inboundSchema` instead. */
+    export const inboundSchema =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsMonitoringMetricMatrix$inboundSchema;
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsMonitoringMetricMatrix$outboundSchema` instead. */
+    export const outboundSchema =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsMonitoringMetricMatrix$outboundSchema;
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsMonitoringMetricMatrix$Outbound` instead. */
+    export type Outbound =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsMonitoringMetricMatrix$Outbound;
 }
 
 /** @internal */
+export const CreateTeamMonitoringMetric$inboundSchema: z.ZodType<
+    CreateTeamMonitoringMetric,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    matrix: z
+        .lazy(
+            () =>
+                CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsMonitoringMetricMatrix$inboundSchema
+        )
+        .optional(),
+    tier: z.number().optional(),
+    price: z.number(),
+    batch: z.number(),
+    threshold: z.number(),
+    name: z.string().optional(),
+    hidden: z.boolean(),
+    disabledAt: z.nullable(z.number()).optional(),
+    enabledAt: z.nullable(z.number()).optional(),
+});
+
+/** @internal */
+export type CreateTeamMonitoringMetric$Outbound = {
+    matrix?:
+        | CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsMonitoringMetricMatrix$Outbound
+        | undefined;
+    tier?: number | undefined;
+    price: number;
+    batch: number;
+    threshold: number;
+    name?: string | undefined;
+    hidden: boolean;
+    disabledAt?: number | null | undefined;
+    enabledAt?: number | null | undefined;
+};
+
+/** @internal */
+export const CreateTeamMonitoringMetric$outboundSchema: z.ZodType<
+    CreateTeamMonitoringMetric$Outbound,
+    z.ZodTypeDef,
+    CreateTeamMonitoringMetric
+> = z.object({
+    matrix: z
+        .lazy(
+            () =>
+                CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsMonitoringMetricMatrix$outboundSchema
+        )
+        .optional(),
+    tier: z.number().optional(),
+    price: z.number(),
+    batch: z.number(),
+    threshold: z.number(),
+    name: z.string().optional(),
+    hidden: z.boolean(),
+    disabledAt: z.nullable(z.number()).optional(),
+    enabledAt: z.nullable(z.number()).optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamMonitoringMetric$ {
-    export const inboundSchema: z.ZodType<CreateTeamMonitoringMetric, z.ZodTypeDef, unknown> = z
-        .object({
-            matrix: z
-                .lazy(
-                    () =>
-                        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsMonitoringMetricMatrix$.inboundSchema
-                )
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
-
-    export type Outbound = {
-        matrix?:
-            | CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsMonitoringMetricMatrix$.Outbound
-            | undefined;
-        tier?: number | undefined;
-        price: number;
-        batch: number;
-        threshold: number;
-        name?: string | undefined;
-        hidden: boolean;
-        disabledAt?: number | null | undefined;
-        enabledAt?: number | null | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamMonitoringMetric> = z
-        .object({
-            matrix: z
-                .lazy(
-                    () =>
-                        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsMonitoringMetricMatrix$.outboundSchema
-                )
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+    /** @deprecated use `CreateTeamMonitoringMetric$inboundSchema` instead. */
+    export const inboundSchema = CreateTeamMonitoringMetric$inboundSchema;
+    /** @deprecated use `CreateTeamMonitoringMetric$outboundSchema` instead. */
+    export const outboundSchema = CreateTeamMonitoringMetric$outboundSchema;
+    /** @deprecated use `CreateTeamMonitoringMetric$Outbound` instead. */
+    export type Outbound = CreateTeamMonitoringMetric$Outbound;
 }
 
 /** @internal */
+export const CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresComputeTimeMatrix$inboundSchema: z.ZodType<
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresComputeTimeMatrix,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    defaultUnitPrice: z.string(),
+    dimensionPrices: z.record(z.string()),
+});
+
+/** @internal */
+export type CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresComputeTimeMatrix$Outbound =
+    {
+        defaultUnitPrice: string;
+        dimensionPrices: { [k: string]: string };
+    };
+
+/** @internal */
+export const CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresComputeTimeMatrix$outboundSchema: z.ZodType<
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresComputeTimeMatrix$Outbound,
+    z.ZodTypeDef,
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresComputeTimeMatrix
+> = z.object({
+    defaultUnitPrice: z.string(),
+    dimensionPrices: z.record(z.string()),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresComputeTimeMatrix$ {
-    export const inboundSchema: z.ZodType<
-        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresComputeTimeMatrix,
-        z.ZodTypeDef,
-        unknown
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
-
-    export type Outbound = {
-        defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
-    };
-
-    export const outboundSchema: z.ZodType<
-        Outbound,
-        z.ZodTypeDef,
-        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresComputeTimeMatrix
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresComputeTimeMatrix$inboundSchema` instead. */
+    export const inboundSchema =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresComputeTimeMatrix$inboundSchema;
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresComputeTimeMatrix$outboundSchema` instead. */
+    export const outboundSchema =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresComputeTimeMatrix$outboundSchema;
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresComputeTimeMatrix$Outbound` instead. */
+    export type Outbound =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresComputeTimeMatrix$Outbound;
 }
 
 /** @internal */
+export const CreateTeamPostgresComputeTime$inboundSchema: z.ZodType<
+    CreateTeamPostgresComputeTime,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    matrix: z
+        .lazy(
+            () =>
+                CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresComputeTimeMatrix$inboundSchema
+        )
+        .optional(),
+    tier: z.number().optional(),
+    price: z.number(),
+    batch: z.number(),
+    threshold: z.number(),
+    name: z.string().optional(),
+    hidden: z.boolean(),
+    disabledAt: z.nullable(z.number()).optional(),
+    enabledAt: z.nullable(z.number()).optional(),
+});
+
+/** @internal */
+export type CreateTeamPostgresComputeTime$Outbound = {
+    matrix?:
+        | CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresComputeTimeMatrix$Outbound
+        | undefined;
+    tier?: number | undefined;
+    price: number;
+    batch: number;
+    threshold: number;
+    name?: string | undefined;
+    hidden: boolean;
+    disabledAt?: number | null | undefined;
+    enabledAt?: number | null | undefined;
+};
+
+/** @internal */
+export const CreateTeamPostgresComputeTime$outboundSchema: z.ZodType<
+    CreateTeamPostgresComputeTime$Outbound,
+    z.ZodTypeDef,
+    CreateTeamPostgresComputeTime
+> = z.object({
+    matrix: z
+        .lazy(
+            () =>
+                CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresComputeTimeMatrix$outboundSchema
+        )
+        .optional(),
+    tier: z.number().optional(),
+    price: z.number(),
+    batch: z.number(),
+    threshold: z.number(),
+    name: z.string().optional(),
+    hidden: z.boolean(),
+    disabledAt: z.nullable(z.number()).optional(),
+    enabledAt: z.nullable(z.number()).optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamPostgresComputeTime$ {
-    export const inboundSchema: z.ZodType<CreateTeamPostgresComputeTime, z.ZodTypeDef, unknown> = z
-        .object({
-            matrix: z
-                .lazy(
-                    () =>
-                        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresComputeTimeMatrix$.inboundSchema
-                )
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
-
-    export type Outbound = {
-        matrix?:
-            | CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresComputeTimeMatrix$.Outbound
-            | undefined;
-        tier?: number | undefined;
-        price: number;
-        batch: number;
-        threshold: number;
-        name?: string | undefined;
-        hidden: boolean;
-        disabledAt?: number | null | undefined;
-        enabledAt?: number | null | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamPostgresComputeTime> =
-        z
-            .object({
-                matrix: z
-                    .lazy(
-                        () =>
-                            CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresComputeTimeMatrix$.outboundSchema
-                    )
-                    .optional(),
-                tier: z.number().optional(),
-                price: z.number(),
-                batch: z.number(),
-                threshold: z.number(),
-                name: z.string().optional(),
-                hidden: z.boolean(),
-                disabledAt: z.nullable(z.number()).optional(),
-                enabledAt: z.nullable(z.number()).optional(),
-            })
-            .transform((v) => {
-                return {
-                    ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                    ...(v.tier === undefined ? null : { tier: v.tier }),
-                    price: v.price,
-                    batch: v.batch,
-                    threshold: v.threshold,
-                    ...(v.name === undefined ? null : { name: v.name }),
-                    hidden: v.hidden,
-                    ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                    ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-                };
-            });
+    /** @deprecated use `CreateTeamPostgresComputeTime$inboundSchema` instead. */
+    export const inboundSchema = CreateTeamPostgresComputeTime$inboundSchema;
+    /** @deprecated use `CreateTeamPostgresComputeTime$outboundSchema` instead. */
+    export const outboundSchema = CreateTeamPostgresComputeTime$outboundSchema;
+    /** @deprecated use `CreateTeamPostgresComputeTime$Outbound` instead. */
+    export type Outbound = CreateTeamPostgresComputeTime$Outbound;
 }
 
 /** @internal */
+export const CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresDataStorageMatrix$inboundSchema: z.ZodType<
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresDataStorageMatrix,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    defaultUnitPrice: z.string(),
+    dimensionPrices: z.record(z.string()),
+});
+
+/** @internal */
+export type CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresDataStorageMatrix$Outbound =
+    {
+        defaultUnitPrice: string;
+        dimensionPrices: { [k: string]: string };
+    };
+
+/** @internal */
+export const CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresDataStorageMatrix$outboundSchema: z.ZodType<
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresDataStorageMatrix$Outbound,
+    z.ZodTypeDef,
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresDataStorageMatrix
+> = z.object({
+    defaultUnitPrice: z.string(),
+    dimensionPrices: z.record(z.string()),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresDataStorageMatrix$ {
-    export const inboundSchema: z.ZodType<
-        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresDataStorageMatrix,
-        z.ZodTypeDef,
-        unknown
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
-
-    export type Outbound = {
-        defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
-    };
-
-    export const outboundSchema: z.ZodType<
-        Outbound,
-        z.ZodTypeDef,
-        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresDataStorageMatrix
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresDataStorageMatrix$inboundSchema` instead. */
+    export const inboundSchema =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresDataStorageMatrix$inboundSchema;
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresDataStorageMatrix$outboundSchema` instead. */
+    export const outboundSchema =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresDataStorageMatrix$outboundSchema;
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresDataStorageMatrix$Outbound` instead. */
+    export type Outbound =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresDataStorageMatrix$Outbound;
 }
 
 /** @internal */
+export const CreateTeamPostgresDataStorage$inboundSchema: z.ZodType<
+    CreateTeamPostgresDataStorage,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    matrix: z
+        .lazy(
+            () =>
+                CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresDataStorageMatrix$inboundSchema
+        )
+        .optional(),
+    tier: z.number().optional(),
+    price: z.number(),
+    batch: z.number(),
+    threshold: z.number(),
+    name: z.string().optional(),
+    hidden: z.boolean(),
+    disabledAt: z.nullable(z.number()).optional(),
+    enabledAt: z.nullable(z.number()).optional(),
+});
+
+/** @internal */
+export type CreateTeamPostgresDataStorage$Outbound = {
+    matrix?:
+        | CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresDataStorageMatrix$Outbound
+        | undefined;
+    tier?: number | undefined;
+    price: number;
+    batch: number;
+    threshold: number;
+    name?: string | undefined;
+    hidden: boolean;
+    disabledAt?: number | null | undefined;
+    enabledAt?: number | null | undefined;
+};
+
+/** @internal */
+export const CreateTeamPostgresDataStorage$outboundSchema: z.ZodType<
+    CreateTeamPostgresDataStorage$Outbound,
+    z.ZodTypeDef,
+    CreateTeamPostgresDataStorage
+> = z.object({
+    matrix: z
+        .lazy(
+            () =>
+                CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresDataStorageMatrix$outboundSchema
+        )
+        .optional(),
+    tier: z.number().optional(),
+    price: z.number(),
+    batch: z.number(),
+    threshold: z.number(),
+    name: z.string().optional(),
+    hidden: z.boolean(),
+    disabledAt: z.nullable(z.number()).optional(),
+    enabledAt: z.nullable(z.number()).optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamPostgresDataStorage$ {
-    export const inboundSchema: z.ZodType<CreateTeamPostgresDataStorage, z.ZodTypeDef, unknown> = z
-        .object({
-            matrix: z
-                .lazy(
-                    () =>
-                        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresDataStorageMatrix$.inboundSchema
-                )
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
-
-    export type Outbound = {
-        matrix?:
-            | CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresDataStorageMatrix$.Outbound
-            | undefined;
-        tier?: number | undefined;
-        price: number;
-        batch: number;
-        threshold: number;
-        name?: string | undefined;
-        hidden: boolean;
-        disabledAt?: number | null | undefined;
-        enabledAt?: number | null | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamPostgresDataStorage> =
-        z
-            .object({
-                matrix: z
-                    .lazy(
-                        () =>
-                            CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresDataStorageMatrix$.outboundSchema
-                    )
-                    .optional(),
-                tier: z.number().optional(),
-                price: z.number(),
-                batch: z.number(),
-                threshold: z.number(),
-                name: z.string().optional(),
-                hidden: z.boolean(),
-                disabledAt: z.nullable(z.number()).optional(),
-                enabledAt: z.nullable(z.number()).optional(),
-            })
-            .transform((v) => {
-                return {
-                    ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                    ...(v.tier === undefined ? null : { tier: v.tier }),
-                    price: v.price,
-                    batch: v.batch,
-                    threshold: v.threshold,
-                    ...(v.name === undefined ? null : { name: v.name }),
-                    hidden: v.hidden,
-                    ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                    ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-                };
-            });
+    /** @deprecated use `CreateTeamPostgresDataStorage$inboundSchema` instead. */
+    export const inboundSchema = CreateTeamPostgresDataStorage$inboundSchema;
+    /** @deprecated use `CreateTeamPostgresDataStorage$outboundSchema` instead. */
+    export const outboundSchema = CreateTeamPostgresDataStorage$outboundSchema;
+    /** @deprecated use `CreateTeamPostgresDataStorage$Outbound` instead. */
+    export type Outbound = CreateTeamPostgresDataStorage$Outbound;
 }
 
 /** @internal */
+export const CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresDataTransferMatrix$inboundSchema: z.ZodType<
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresDataTransferMatrix,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    defaultUnitPrice: z.string(),
+    dimensionPrices: z.record(z.string()),
+});
+
+/** @internal */
+export type CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresDataTransferMatrix$Outbound =
+    {
+        defaultUnitPrice: string;
+        dimensionPrices: { [k: string]: string };
+    };
+
+/** @internal */
+export const CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresDataTransferMatrix$outboundSchema: z.ZodType<
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresDataTransferMatrix$Outbound,
+    z.ZodTypeDef,
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresDataTransferMatrix
+> = z.object({
+    defaultUnitPrice: z.string(),
+    dimensionPrices: z.record(z.string()),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresDataTransferMatrix$ {
-    export const inboundSchema: z.ZodType<
-        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresDataTransferMatrix,
-        z.ZodTypeDef,
-        unknown
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
-
-    export type Outbound = {
-        defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
-    };
-
-    export const outboundSchema: z.ZodType<
-        Outbound,
-        z.ZodTypeDef,
-        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresDataTransferMatrix
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresDataTransferMatrix$inboundSchema` instead. */
+    export const inboundSchema =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresDataTransferMatrix$inboundSchema;
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresDataTransferMatrix$outboundSchema` instead. */
+    export const outboundSchema =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresDataTransferMatrix$outboundSchema;
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresDataTransferMatrix$Outbound` instead. */
+    export type Outbound =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresDataTransferMatrix$Outbound;
 }
 
 /** @internal */
+export const CreateTeamPostgresDataTransfer$inboundSchema: z.ZodType<
+    CreateTeamPostgresDataTransfer,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    matrix: z
+        .lazy(
+            () =>
+                CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresDataTransferMatrix$inboundSchema
+        )
+        .optional(),
+    tier: z.number().optional(),
+    price: z.number(),
+    batch: z.number(),
+    threshold: z.number(),
+    name: z.string().optional(),
+    hidden: z.boolean(),
+    disabledAt: z.nullable(z.number()).optional(),
+    enabledAt: z.nullable(z.number()).optional(),
+});
+
+/** @internal */
+export type CreateTeamPostgresDataTransfer$Outbound = {
+    matrix?:
+        | CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresDataTransferMatrix$Outbound
+        | undefined;
+    tier?: number | undefined;
+    price: number;
+    batch: number;
+    threshold: number;
+    name?: string | undefined;
+    hidden: boolean;
+    disabledAt?: number | null | undefined;
+    enabledAt?: number | null | undefined;
+};
+
+/** @internal */
+export const CreateTeamPostgresDataTransfer$outboundSchema: z.ZodType<
+    CreateTeamPostgresDataTransfer$Outbound,
+    z.ZodTypeDef,
+    CreateTeamPostgresDataTransfer
+> = z.object({
+    matrix: z
+        .lazy(
+            () =>
+                CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresDataTransferMatrix$outboundSchema
+        )
+        .optional(),
+    tier: z.number().optional(),
+    price: z.number(),
+    batch: z.number(),
+    threshold: z.number(),
+    name: z.string().optional(),
+    hidden: z.boolean(),
+    disabledAt: z.nullable(z.number()).optional(),
+    enabledAt: z.nullable(z.number()).optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamPostgresDataTransfer$ {
-    export const inboundSchema: z.ZodType<CreateTeamPostgresDataTransfer, z.ZodTypeDef, unknown> = z
-        .object({
-            matrix: z
-                .lazy(
-                    () =>
-                        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresDataTransferMatrix$.inboundSchema
-                )
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
-
-    export type Outbound = {
-        matrix?:
-            | CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresDataTransferMatrix$.Outbound
-            | undefined;
-        tier?: number | undefined;
-        price: number;
-        batch: number;
-        threshold: number;
-        name?: string | undefined;
-        hidden: boolean;
-        disabledAt?: number | null | undefined;
-        enabledAt?: number | null | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamPostgresDataTransfer> =
-        z
-            .object({
-                matrix: z
-                    .lazy(
-                        () =>
-                            CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresDataTransferMatrix$.outboundSchema
-                    )
-                    .optional(),
-                tier: z.number().optional(),
-                price: z.number(),
-                batch: z.number(),
-                threshold: z.number(),
-                name: z.string().optional(),
-                hidden: z.boolean(),
-                disabledAt: z.nullable(z.number()).optional(),
-                enabledAt: z.nullable(z.number()).optional(),
-            })
-            .transform((v) => {
-                return {
-                    ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                    ...(v.tier === undefined ? null : { tier: v.tier }),
-                    price: v.price,
-                    batch: v.batch,
-                    threshold: v.threshold,
-                    ...(v.name === undefined ? null : { name: v.name }),
-                    hidden: v.hidden,
-                    ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                    ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-                };
-            });
+    /** @deprecated use `CreateTeamPostgresDataTransfer$inboundSchema` instead. */
+    export const inboundSchema = CreateTeamPostgresDataTransfer$inboundSchema;
+    /** @deprecated use `CreateTeamPostgresDataTransfer$outboundSchema` instead. */
+    export const outboundSchema = CreateTeamPostgresDataTransfer$outboundSchema;
+    /** @deprecated use `CreateTeamPostgresDataTransfer$Outbound` instead. */
+    export type Outbound = CreateTeamPostgresDataTransfer$Outbound;
 }
 
 /** @internal */
+export const CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresDatabaseMatrix$inboundSchema: z.ZodType<
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresDatabaseMatrix,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    defaultUnitPrice: z.string(),
+    dimensionPrices: z.record(z.string()),
+});
+
+/** @internal */
+export type CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresDatabaseMatrix$Outbound =
+    {
+        defaultUnitPrice: string;
+        dimensionPrices: { [k: string]: string };
+    };
+
+/** @internal */
+export const CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresDatabaseMatrix$outboundSchema: z.ZodType<
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresDatabaseMatrix$Outbound,
+    z.ZodTypeDef,
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresDatabaseMatrix
+> = z.object({
+    defaultUnitPrice: z.string(),
+    dimensionPrices: z.record(z.string()),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresDatabaseMatrix$ {
-    export const inboundSchema: z.ZodType<
-        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresDatabaseMatrix,
-        z.ZodTypeDef,
-        unknown
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
-
-    export type Outbound = {
-        defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
-    };
-
-    export const outboundSchema: z.ZodType<
-        Outbound,
-        z.ZodTypeDef,
-        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresDatabaseMatrix
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresDatabaseMatrix$inboundSchema` instead. */
+    export const inboundSchema =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresDatabaseMatrix$inboundSchema;
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresDatabaseMatrix$outboundSchema` instead. */
+    export const outboundSchema =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresDatabaseMatrix$outboundSchema;
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresDatabaseMatrix$Outbound` instead. */
+    export type Outbound =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresDatabaseMatrix$Outbound;
 }
 
 /** @internal */
+export const CreateTeamPostgresDatabase$inboundSchema: z.ZodType<
+    CreateTeamPostgresDatabase,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    matrix: z
+        .lazy(
+            () =>
+                CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresDatabaseMatrix$inboundSchema
+        )
+        .optional(),
+    tier: z.number().optional(),
+    price: z.number(),
+    batch: z.number(),
+    threshold: z.number(),
+    name: z.string().optional(),
+    hidden: z.boolean(),
+    disabledAt: z.nullable(z.number()).optional(),
+    enabledAt: z.nullable(z.number()).optional(),
+});
+
+/** @internal */
+export type CreateTeamPostgresDatabase$Outbound = {
+    matrix?:
+        | CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresDatabaseMatrix$Outbound
+        | undefined;
+    tier?: number | undefined;
+    price: number;
+    batch: number;
+    threshold: number;
+    name?: string | undefined;
+    hidden: boolean;
+    disabledAt?: number | null | undefined;
+    enabledAt?: number | null | undefined;
+};
+
+/** @internal */
+export const CreateTeamPostgresDatabase$outboundSchema: z.ZodType<
+    CreateTeamPostgresDatabase$Outbound,
+    z.ZodTypeDef,
+    CreateTeamPostgresDatabase
+> = z.object({
+    matrix: z
+        .lazy(
+            () =>
+                CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresDatabaseMatrix$outboundSchema
+        )
+        .optional(),
+    tier: z.number().optional(),
+    price: z.number(),
+    batch: z.number(),
+    threshold: z.number(),
+    name: z.string().optional(),
+    hidden: z.boolean(),
+    disabledAt: z.nullable(z.number()).optional(),
+    enabledAt: z.nullable(z.number()).optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamPostgresDatabase$ {
-    export const inboundSchema: z.ZodType<CreateTeamPostgresDatabase, z.ZodTypeDef, unknown> = z
-        .object({
-            matrix: z
-                .lazy(
-                    () =>
-                        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresDatabaseMatrix$.inboundSchema
-                )
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
-
-    export type Outbound = {
-        matrix?:
-            | CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresDatabaseMatrix$.Outbound
-            | undefined;
-        tier?: number | undefined;
-        price: number;
-        batch: number;
-        threshold: number;
-        name?: string | undefined;
-        hidden: boolean;
-        disabledAt?: number | null | undefined;
-        enabledAt?: number | null | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamPostgresDatabase> = z
-        .object({
-            matrix: z
-                .lazy(
-                    () =>
-                        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresDatabaseMatrix$.outboundSchema
-                )
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+    /** @deprecated use `CreateTeamPostgresDatabase$inboundSchema` instead. */
+    export const inboundSchema = CreateTeamPostgresDatabase$inboundSchema;
+    /** @deprecated use `CreateTeamPostgresDatabase$outboundSchema` instead. */
+    export const outboundSchema = CreateTeamPostgresDatabase$outboundSchema;
+    /** @deprecated use `CreateTeamPostgresDatabase$Outbound` instead. */
+    export type Outbound = CreateTeamPostgresDatabase$Outbound;
 }
 
 /** @internal */
+export const CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresWrittenDataMatrix$inboundSchema: z.ZodType<
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresWrittenDataMatrix,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    defaultUnitPrice: z.string(),
+    dimensionPrices: z.record(z.string()),
+});
+
+/** @internal */
+export type CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresWrittenDataMatrix$Outbound =
+    {
+        defaultUnitPrice: string;
+        dimensionPrices: { [k: string]: string };
+    };
+
+/** @internal */
+export const CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresWrittenDataMatrix$outboundSchema: z.ZodType<
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresWrittenDataMatrix$Outbound,
+    z.ZodTypeDef,
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresWrittenDataMatrix
+> = z.object({
+    defaultUnitPrice: z.string(),
+    dimensionPrices: z.record(z.string()),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresWrittenDataMatrix$ {
-    export const inboundSchema: z.ZodType<
-        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresWrittenDataMatrix,
-        z.ZodTypeDef,
-        unknown
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
-
-    export type Outbound = {
-        defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
-    };
-
-    export const outboundSchema: z.ZodType<
-        Outbound,
-        z.ZodTypeDef,
-        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresWrittenDataMatrix
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresWrittenDataMatrix$inboundSchema` instead. */
+    export const inboundSchema =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresWrittenDataMatrix$inboundSchema;
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresWrittenDataMatrix$outboundSchema` instead. */
+    export const outboundSchema =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresWrittenDataMatrix$outboundSchema;
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresWrittenDataMatrix$Outbound` instead. */
+    export type Outbound =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresWrittenDataMatrix$Outbound;
 }
 
 /** @internal */
+export const CreateTeamPostgresWrittenData$inboundSchema: z.ZodType<
+    CreateTeamPostgresWrittenData,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    matrix: z
+        .lazy(
+            () =>
+                CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresWrittenDataMatrix$inboundSchema
+        )
+        .optional(),
+    tier: z.number().optional(),
+    price: z.number(),
+    batch: z.number(),
+    threshold: z.number(),
+    name: z.string().optional(),
+    hidden: z.boolean(),
+    disabledAt: z.nullable(z.number()).optional(),
+    enabledAt: z.nullable(z.number()).optional(),
+});
+
+/** @internal */
+export type CreateTeamPostgresWrittenData$Outbound = {
+    matrix?:
+        | CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresWrittenDataMatrix$Outbound
+        | undefined;
+    tier?: number | undefined;
+    price: number;
+    batch: number;
+    threshold: number;
+    name?: string | undefined;
+    hidden: boolean;
+    disabledAt?: number | null | undefined;
+    enabledAt?: number | null | undefined;
+};
+
+/** @internal */
+export const CreateTeamPostgresWrittenData$outboundSchema: z.ZodType<
+    CreateTeamPostgresWrittenData$Outbound,
+    z.ZodTypeDef,
+    CreateTeamPostgresWrittenData
+> = z.object({
+    matrix: z
+        .lazy(
+            () =>
+                CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresWrittenDataMatrix$outboundSchema
+        )
+        .optional(),
+    tier: z.number().optional(),
+    price: z.number(),
+    batch: z.number(),
+    threshold: z.number(),
+    name: z.string().optional(),
+    hidden: z.boolean(),
+    disabledAt: z.nullable(z.number()).optional(),
+    enabledAt: z.nullable(z.number()).optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamPostgresWrittenData$ {
-    export const inboundSchema: z.ZodType<CreateTeamPostgresWrittenData, z.ZodTypeDef, unknown> = z
-        .object({
-            matrix: z
-                .lazy(
-                    () =>
-                        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresWrittenDataMatrix$.inboundSchema
-                )
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
-
-    export type Outbound = {
-        matrix?:
-            | CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresWrittenDataMatrix$.Outbound
-            | undefined;
-        tier?: number | undefined;
-        price: number;
-        batch: number;
-        threshold: number;
-        name?: string | undefined;
-        hidden: boolean;
-        disabledAt?: number | null | undefined;
-        enabledAt?: number | null | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamPostgresWrittenData> =
-        z
-            .object({
-                matrix: z
-                    .lazy(
-                        () =>
-                            CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresWrittenDataMatrix$.outboundSchema
-                    )
-                    .optional(),
-                tier: z.number().optional(),
-                price: z.number(),
-                batch: z.number(),
-                threshold: z.number(),
-                name: z.string().optional(),
-                hidden: z.boolean(),
-                disabledAt: z.nullable(z.number()).optional(),
-                enabledAt: z.nullable(z.number()).optional(),
-            })
-            .transform((v) => {
-                return {
-                    ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                    ...(v.tier === undefined ? null : { tier: v.tier }),
-                    price: v.price,
-                    batch: v.batch,
-                    threshold: v.threshold,
-                    ...(v.name === undefined ? null : { name: v.name }),
-                    hidden: v.hidden,
-                    ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                    ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-                };
-            });
+    /** @deprecated use `CreateTeamPostgresWrittenData$inboundSchema` instead. */
+    export const inboundSchema = CreateTeamPostgresWrittenData$inboundSchema;
+    /** @deprecated use `CreateTeamPostgresWrittenData$outboundSchema` instead. */
+    export const outboundSchema = CreateTeamPostgresWrittenData$outboundSchema;
+    /** @deprecated use `CreateTeamPostgresWrittenData$Outbound` instead. */
+    export type Outbound = CreateTeamPostgresWrittenData$Outbound;
 }
 
 /** @internal */
+export const CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsServerlessFunctionExecutionMatrix$inboundSchema: z.ZodType<
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsServerlessFunctionExecutionMatrix,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    defaultUnitPrice: z.string(),
+    dimensionPrices: z.record(z.string()),
+});
+
+/** @internal */
+export type CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsServerlessFunctionExecutionMatrix$Outbound =
+    {
+        defaultUnitPrice: string;
+        dimensionPrices: { [k: string]: string };
+    };
+
+/** @internal */
+export const CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsServerlessFunctionExecutionMatrix$outboundSchema: z.ZodType<
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsServerlessFunctionExecutionMatrix$Outbound,
+    z.ZodTypeDef,
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsServerlessFunctionExecutionMatrix
+> = z.object({
+    defaultUnitPrice: z.string(),
+    dimensionPrices: z.record(z.string()),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsServerlessFunctionExecutionMatrix$ {
-    export const inboundSchema: z.ZodType<
-        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsServerlessFunctionExecutionMatrix,
-        z.ZodTypeDef,
-        unknown
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
-
-    export type Outbound = {
-        defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
-    };
-
-    export const outboundSchema: z.ZodType<
-        Outbound,
-        z.ZodTypeDef,
-        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsServerlessFunctionExecutionMatrix
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsServerlessFunctionExecutionMatrix$inboundSchema` instead. */
+    export const inboundSchema =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsServerlessFunctionExecutionMatrix$inboundSchema;
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsServerlessFunctionExecutionMatrix$outboundSchema` instead. */
+    export const outboundSchema =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsServerlessFunctionExecutionMatrix$outboundSchema;
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsServerlessFunctionExecutionMatrix$Outbound` instead. */
+    export type Outbound =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsServerlessFunctionExecutionMatrix$Outbound;
 }
 
 /** @internal */
+export const CreateTeamServerlessFunctionExecution$inboundSchema: z.ZodType<
+    CreateTeamServerlessFunctionExecution,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    matrix: z
+        .lazy(
+            () =>
+                CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsServerlessFunctionExecutionMatrix$inboundSchema
+        )
+        .optional(),
+    tier: z.number().optional(),
+    price: z.number(),
+    batch: z.number(),
+    threshold: z.number(),
+    name: z.string().optional(),
+    hidden: z.boolean(),
+    disabledAt: z.nullable(z.number()).optional(),
+    enabledAt: z.nullable(z.number()).optional(),
+});
+
+/** @internal */
+export type CreateTeamServerlessFunctionExecution$Outbound = {
+    matrix?:
+        | CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsServerlessFunctionExecutionMatrix$Outbound
+        | undefined;
+    tier?: number | undefined;
+    price: number;
+    batch: number;
+    threshold: number;
+    name?: string | undefined;
+    hidden: boolean;
+    disabledAt?: number | null | undefined;
+    enabledAt?: number | null | undefined;
+};
+
+/** @internal */
+export const CreateTeamServerlessFunctionExecution$outboundSchema: z.ZodType<
+    CreateTeamServerlessFunctionExecution$Outbound,
+    z.ZodTypeDef,
+    CreateTeamServerlessFunctionExecution
+> = z.object({
+    matrix: z
+        .lazy(
+            () =>
+                CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsServerlessFunctionExecutionMatrix$outboundSchema
+        )
+        .optional(),
+    tier: z.number().optional(),
+    price: z.number(),
+    batch: z.number(),
+    threshold: z.number(),
+    name: z.string().optional(),
+    hidden: z.boolean(),
+    disabledAt: z.nullable(z.number()).optional(),
+    enabledAt: z.nullable(z.number()).optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamServerlessFunctionExecution$ {
-    export const inboundSchema: z.ZodType<
-        CreateTeamServerlessFunctionExecution,
-        z.ZodTypeDef,
-        unknown
-    > = z
-        .object({
-            matrix: z
-                .lazy(
-                    () =>
-                        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsServerlessFunctionExecutionMatrix$.inboundSchema
-                )
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
-
-    export type Outbound = {
-        matrix?:
-            | CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsServerlessFunctionExecutionMatrix$.Outbound
-            | undefined;
-        tier?: number | undefined;
-        price: number;
-        batch: number;
-        threshold: number;
-        name?: string | undefined;
-        hidden: boolean;
-        disabledAt?: number | null | undefined;
-        enabledAt?: number | null | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<
-        Outbound,
-        z.ZodTypeDef,
-        CreateTeamServerlessFunctionExecution
-    > = z
-        .object({
-            matrix: z
-                .lazy(
-                    () =>
-                        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsServerlessFunctionExecutionMatrix$.outboundSchema
-                )
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+    /** @deprecated use `CreateTeamServerlessFunctionExecution$inboundSchema` instead. */
+    export const inboundSchema = CreateTeamServerlessFunctionExecution$inboundSchema;
+    /** @deprecated use `CreateTeamServerlessFunctionExecution$outboundSchema` instead. */
+    export const outboundSchema = CreateTeamServerlessFunctionExecution$outboundSchema;
+    /** @deprecated use `CreateTeamServerlessFunctionExecution$Outbound` instead. */
+    export type Outbound = CreateTeamServerlessFunctionExecution$Outbound;
 }
 
 /** @internal */
+export const CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsSourceImagesMatrix$inboundSchema: z.ZodType<
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsSourceImagesMatrix,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    defaultUnitPrice: z.string(),
+    dimensionPrices: z.record(z.string()),
+});
+
+/** @internal */
+export type CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsSourceImagesMatrix$Outbound =
+    {
+        defaultUnitPrice: string;
+        dimensionPrices: { [k: string]: string };
+    };
+
+/** @internal */
+export const CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsSourceImagesMatrix$outboundSchema: z.ZodType<
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsSourceImagesMatrix$Outbound,
+    z.ZodTypeDef,
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsSourceImagesMatrix
+> = z.object({
+    defaultUnitPrice: z.string(),
+    dimensionPrices: z.record(z.string()),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsSourceImagesMatrix$ {
-    export const inboundSchema: z.ZodType<
-        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsSourceImagesMatrix,
-        z.ZodTypeDef,
-        unknown
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
-
-    export type Outbound = {
-        defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
-    };
-
-    export const outboundSchema: z.ZodType<
-        Outbound,
-        z.ZodTypeDef,
-        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsSourceImagesMatrix
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsSourceImagesMatrix$inboundSchema` instead. */
+    export const inboundSchema =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsSourceImagesMatrix$inboundSchema;
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsSourceImagesMatrix$outboundSchema` instead. */
+    export const outboundSchema =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsSourceImagesMatrix$outboundSchema;
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsSourceImagesMatrix$Outbound` instead. */
+    export type Outbound =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsSourceImagesMatrix$Outbound;
 }
 
 /** @internal */
+export const CreateTeamSourceImages$inboundSchema: z.ZodType<
+    CreateTeamSourceImages,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    matrix: z
+        .lazy(
+            () =>
+                CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsSourceImagesMatrix$inboundSchema
+        )
+        .optional(),
+    tier: z.number().optional(),
+    price: z.number(),
+    batch: z.number(),
+    threshold: z.number(),
+    name: z.string().optional(),
+    hidden: z.boolean(),
+    disabledAt: z.nullable(z.number()).optional(),
+    enabledAt: z.nullable(z.number()).optional(),
+});
+
+/** @internal */
+export type CreateTeamSourceImages$Outbound = {
+    matrix?:
+        | CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsSourceImagesMatrix$Outbound
+        | undefined;
+    tier?: number | undefined;
+    price: number;
+    batch: number;
+    threshold: number;
+    name?: string | undefined;
+    hidden: boolean;
+    disabledAt?: number | null | undefined;
+    enabledAt?: number | null | undefined;
+};
+
+/** @internal */
+export const CreateTeamSourceImages$outboundSchema: z.ZodType<
+    CreateTeamSourceImages$Outbound,
+    z.ZodTypeDef,
+    CreateTeamSourceImages
+> = z.object({
+    matrix: z
+        .lazy(
+            () =>
+                CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsSourceImagesMatrix$outboundSchema
+        )
+        .optional(),
+    tier: z.number().optional(),
+    price: z.number(),
+    batch: z.number(),
+    threshold: z.number(),
+    name: z.string().optional(),
+    hidden: z.boolean(),
+    disabledAt: z.nullable(z.number()).optional(),
+    enabledAt: z.nullable(z.number()).optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamSourceImages$ {
-    export const inboundSchema: z.ZodType<CreateTeamSourceImages, z.ZodTypeDef, unknown> = z
-        .object({
-            matrix: z
-                .lazy(
-                    () =>
-                        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsSourceImagesMatrix$.inboundSchema
-                )
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
-
-    export type Outbound = {
-        matrix?:
-            | CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsSourceImagesMatrix$.Outbound
-            | undefined;
-        tier?: number | undefined;
-        price: number;
-        batch: number;
-        threshold: number;
-        name?: string | undefined;
-        hidden: boolean;
-        disabledAt?: number | null | undefined;
-        enabledAt?: number | null | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamSourceImages> = z
-        .object({
-            matrix: z
-                .lazy(
-                    () =>
-                        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsSourceImagesMatrix$.outboundSchema
-                )
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+    /** @deprecated use `CreateTeamSourceImages$inboundSchema` instead. */
+    export const inboundSchema = CreateTeamSourceImages$inboundSchema;
+    /** @deprecated use `CreateTeamSourceImages$outboundSchema` instead. */
+    export const outboundSchema = CreateTeamSourceImages$outboundSchema;
+    /** @deprecated use `CreateTeamSourceImages$Outbound` instead. */
+    export type Outbound = CreateTeamSourceImages$Outbound;
 }
 
 /** @internal */
+export const CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsStorageRedisTotalBandwidthInBytesMatrix$inboundSchema: z.ZodType<
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsStorageRedisTotalBandwidthInBytesMatrix,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    defaultUnitPrice: z.string(),
+    dimensionPrices: z.record(z.string()),
+});
+
+/** @internal */
+export type CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsStorageRedisTotalBandwidthInBytesMatrix$Outbound =
+    {
+        defaultUnitPrice: string;
+        dimensionPrices: { [k: string]: string };
+    };
+
+/** @internal */
+export const CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsStorageRedisTotalBandwidthInBytesMatrix$outboundSchema: z.ZodType<
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsStorageRedisTotalBandwidthInBytesMatrix$Outbound,
+    z.ZodTypeDef,
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsStorageRedisTotalBandwidthInBytesMatrix
+> = z.object({
+    defaultUnitPrice: z.string(),
+    dimensionPrices: z.record(z.string()),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsStorageRedisTotalBandwidthInBytesMatrix$ {
-    export const inboundSchema: z.ZodType<
-        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsStorageRedisTotalBandwidthInBytesMatrix,
-        z.ZodTypeDef,
-        unknown
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
-
-    export type Outbound = {
-        defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
-    };
-
-    export const outboundSchema: z.ZodType<
-        Outbound,
-        z.ZodTypeDef,
-        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsStorageRedisTotalBandwidthInBytesMatrix
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsStorageRedisTotalBandwidthInBytesMatrix$inboundSchema` instead. */
+    export const inboundSchema =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsStorageRedisTotalBandwidthInBytesMatrix$inboundSchema;
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsStorageRedisTotalBandwidthInBytesMatrix$outboundSchema` instead. */
+    export const outboundSchema =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsStorageRedisTotalBandwidthInBytesMatrix$outboundSchema;
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsStorageRedisTotalBandwidthInBytesMatrix$Outbound` instead. */
+    export type Outbound =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsStorageRedisTotalBandwidthInBytesMatrix$Outbound;
 }
 
 /** @internal */
+export const CreateTeamStorageRedisTotalBandwidthInBytes$inboundSchema: z.ZodType<
+    CreateTeamStorageRedisTotalBandwidthInBytes,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    matrix: z
+        .lazy(
+            () =>
+                CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsStorageRedisTotalBandwidthInBytesMatrix$inboundSchema
+        )
+        .optional(),
+    tier: z.number().optional(),
+    price: z.number(),
+    batch: z.number(),
+    threshold: z.number(),
+    name: z.string().optional(),
+    hidden: z.boolean(),
+    disabledAt: z.nullable(z.number()).optional(),
+    enabledAt: z.nullable(z.number()).optional(),
+});
+
+/** @internal */
+export type CreateTeamStorageRedisTotalBandwidthInBytes$Outbound = {
+    matrix?:
+        | CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsStorageRedisTotalBandwidthInBytesMatrix$Outbound
+        | undefined;
+    tier?: number | undefined;
+    price: number;
+    batch: number;
+    threshold: number;
+    name?: string | undefined;
+    hidden: boolean;
+    disabledAt?: number | null | undefined;
+    enabledAt?: number | null | undefined;
+};
+
+/** @internal */
+export const CreateTeamStorageRedisTotalBandwidthInBytes$outboundSchema: z.ZodType<
+    CreateTeamStorageRedisTotalBandwidthInBytes$Outbound,
+    z.ZodTypeDef,
+    CreateTeamStorageRedisTotalBandwidthInBytes
+> = z.object({
+    matrix: z
+        .lazy(
+            () =>
+                CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsStorageRedisTotalBandwidthInBytesMatrix$outboundSchema
+        )
+        .optional(),
+    tier: z.number().optional(),
+    price: z.number(),
+    batch: z.number(),
+    threshold: z.number(),
+    name: z.string().optional(),
+    hidden: z.boolean(),
+    disabledAt: z.nullable(z.number()).optional(),
+    enabledAt: z.nullable(z.number()).optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamStorageRedisTotalBandwidthInBytes$ {
-    export const inboundSchema: z.ZodType<
-        CreateTeamStorageRedisTotalBandwidthInBytes,
-        z.ZodTypeDef,
-        unknown
-    > = z
-        .object({
-            matrix: z
-                .lazy(
-                    () =>
-                        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsStorageRedisTotalBandwidthInBytesMatrix$.inboundSchema
-                )
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
-
-    export type Outbound = {
-        matrix?:
-            | CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsStorageRedisTotalBandwidthInBytesMatrix$.Outbound
-            | undefined;
-        tier?: number | undefined;
-        price: number;
-        batch: number;
-        threshold: number;
-        name?: string | undefined;
-        hidden: boolean;
-        disabledAt?: number | null | undefined;
-        enabledAt?: number | null | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<
-        Outbound,
-        z.ZodTypeDef,
-        CreateTeamStorageRedisTotalBandwidthInBytes
-    > = z
-        .object({
-            matrix: z
-                .lazy(
-                    () =>
-                        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsStorageRedisTotalBandwidthInBytesMatrix$.outboundSchema
-                )
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+    /** @deprecated use `CreateTeamStorageRedisTotalBandwidthInBytes$inboundSchema` instead. */
+    export const inboundSchema = CreateTeamStorageRedisTotalBandwidthInBytes$inboundSchema;
+    /** @deprecated use `CreateTeamStorageRedisTotalBandwidthInBytes$outboundSchema` instead. */
+    export const outboundSchema = CreateTeamStorageRedisTotalBandwidthInBytes$outboundSchema;
+    /** @deprecated use `CreateTeamStorageRedisTotalBandwidthInBytes$Outbound` instead. */
+    export type Outbound = CreateTeamStorageRedisTotalBandwidthInBytes$Outbound;
 }
 
 /** @internal */
+export const CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsStorageRedisTotalCommandsMatrix$inboundSchema: z.ZodType<
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsStorageRedisTotalCommandsMatrix,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    defaultUnitPrice: z.string(),
+    dimensionPrices: z.record(z.string()),
+});
+
+/** @internal */
+export type CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsStorageRedisTotalCommandsMatrix$Outbound =
+    {
+        defaultUnitPrice: string;
+        dimensionPrices: { [k: string]: string };
+    };
+
+/** @internal */
+export const CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsStorageRedisTotalCommandsMatrix$outboundSchema: z.ZodType<
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsStorageRedisTotalCommandsMatrix$Outbound,
+    z.ZodTypeDef,
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsStorageRedisTotalCommandsMatrix
+> = z.object({
+    defaultUnitPrice: z.string(),
+    dimensionPrices: z.record(z.string()),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsStorageRedisTotalCommandsMatrix$ {
-    export const inboundSchema: z.ZodType<
-        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsStorageRedisTotalCommandsMatrix,
-        z.ZodTypeDef,
-        unknown
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
-
-    export type Outbound = {
-        defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
-    };
-
-    export const outboundSchema: z.ZodType<
-        Outbound,
-        z.ZodTypeDef,
-        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsStorageRedisTotalCommandsMatrix
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsStorageRedisTotalCommandsMatrix$inboundSchema` instead. */
+    export const inboundSchema =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsStorageRedisTotalCommandsMatrix$inboundSchema;
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsStorageRedisTotalCommandsMatrix$outboundSchema` instead. */
+    export const outboundSchema =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsStorageRedisTotalCommandsMatrix$outboundSchema;
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsStorageRedisTotalCommandsMatrix$Outbound` instead. */
+    export type Outbound =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsStorageRedisTotalCommandsMatrix$Outbound;
 }
 
 /** @internal */
+export const CreateTeamStorageRedisTotalCommands$inboundSchema: z.ZodType<
+    CreateTeamStorageRedisTotalCommands,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    matrix: z
+        .lazy(
+            () =>
+                CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsStorageRedisTotalCommandsMatrix$inboundSchema
+        )
+        .optional(),
+    tier: z.number().optional(),
+    price: z.number(),
+    batch: z.number(),
+    threshold: z.number(),
+    name: z.string().optional(),
+    hidden: z.boolean(),
+    disabledAt: z.nullable(z.number()).optional(),
+    enabledAt: z.nullable(z.number()).optional(),
+});
+
+/** @internal */
+export type CreateTeamStorageRedisTotalCommands$Outbound = {
+    matrix?:
+        | CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsStorageRedisTotalCommandsMatrix$Outbound
+        | undefined;
+    tier?: number | undefined;
+    price: number;
+    batch: number;
+    threshold: number;
+    name?: string | undefined;
+    hidden: boolean;
+    disabledAt?: number | null | undefined;
+    enabledAt?: number | null | undefined;
+};
+
+/** @internal */
+export const CreateTeamStorageRedisTotalCommands$outboundSchema: z.ZodType<
+    CreateTeamStorageRedisTotalCommands$Outbound,
+    z.ZodTypeDef,
+    CreateTeamStorageRedisTotalCommands
+> = z.object({
+    matrix: z
+        .lazy(
+            () =>
+                CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsStorageRedisTotalCommandsMatrix$outboundSchema
+        )
+        .optional(),
+    tier: z.number().optional(),
+    price: z.number(),
+    batch: z.number(),
+    threshold: z.number(),
+    name: z.string().optional(),
+    hidden: z.boolean(),
+    disabledAt: z.nullable(z.number()).optional(),
+    enabledAt: z.nullable(z.number()).optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamStorageRedisTotalCommands$ {
-    export const inboundSchema: z.ZodType<
-        CreateTeamStorageRedisTotalCommands,
-        z.ZodTypeDef,
-        unknown
-    > = z
-        .object({
-            matrix: z
-                .lazy(
-                    () =>
-                        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsStorageRedisTotalCommandsMatrix$.inboundSchema
-                )
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
-
-    export type Outbound = {
-        matrix?:
-            | CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsStorageRedisTotalCommandsMatrix$.Outbound
-            | undefined;
-        tier?: number | undefined;
-        price: number;
-        batch: number;
-        threshold: number;
-        name?: string | undefined;
-        hidden: boolean;
-        disabledAt?: number | null | undefined;
-        enabledAt?: number | null | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<
-        Outbound,
-        z.ZodTypeDef,
-        CreateTeamStorageRedisTotalCommands
-    > = z
-        .object({
-            matrix: z
-                .lazy(
-                    () =>
-                        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsStorageRedisTotalCommandsMatrix$.outboundSchema
-                )
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+    /** @deprecated use `CreateTeamStorageRedisTotalCommands$inboundSchema` instead. */
+    export const inboundSchema = CreateTeamStorageRedisTotalCommands$inboundSchema;
+    /** @deprecated use `CreateTeamStorageRedisTotalCommands$outboundSchema` instead. */
+    export const outboundSchema = CreateTeamStorageRedisTotalCommands$outboundSchema;
+    /** @deprecated use `CreateTeamStorageRedisTotalCommands$Outbound` instead. */
+    export type Outbound = CreateTeamStorageRedisTotalCommands$Outbound;
 }
 
 /** @internal */
+export const CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsStorageRedisTotalDailyAvgStorageInBytesMatrix$inboundSchema: z.ZodType<
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsStorageRedisTotalDailyAvgStorageInBytesMatrix,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    defaultUnitPrice: z.string(),
+    dimensionPrices: z.record(z.string()),
+});
+
+/** @internal */
+export type CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsStorageRedisTotalDailyAvgStorageInBytesMatrix$Outbound =
+    {
+        defaultUnitPrice: string;
+        dimensionPrices: { [k: string]: string };
+    };
+
+/** @internal */
+export const CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsStorageRedisTotalDailyAvgStorageInBytesMatrix$outboundSchema: z.ZodType<
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsStorageRedisTotalDailyAvgStorageInBytesMatrix$Outbound,
+    z.ZodTypeDef,
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsStorageRedisTotalDailyAvgStorageInBytesMatrix
+> = z.object({
+    defaultUnitPrice: z.string(),
+    dimensionPrices: z.record(z.string()),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsStorageRedisTotalDailyAvgStorageInBytesMatrix$ {
-    export const inboundSchema: z.ZodType<
-        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsStorageRedisTotalDailyAvgStorageInBytesMatrix,
-        z.ZodTypeDef,
-        unknown
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
-
-    export type Outbound = {
-        defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
-    };
-
-    export const outboundSchema: z.ZodType<
-        Outbound,
-        z.ZodTypeDef,
-        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsStorageRedisTotalDailyAvgStorageInBytesMatrix
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsStorageRedisTotalDailyAvgStorageInBytesMatrix$inboundSchema` instead. */
+    export const inboundSchema =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsStorageRedisTotalDailyAvgStorageInBytesMatrix$inboundSchema;
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsStorageRedisTotalDailyAvgStorageInBytesMatrix$outboundSchema` instead. */
+    export const outboundSchema =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsStorageRedisTotalDailyAvgStorageInBytesMatrix$outboundSchema;
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsStorageRedisTotalDailyAvgStorageInBytesMatrix$Outbound` instead. */
+    export type Outbound =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsStorageRedisTotalDailyAvgStorageInBytesMatrix$Outbound;
 }
 
 /** @internal */
+export const CreateTeamStorageRedisTotalDailyAvgStorageInBytes$inboundSchema: z.ZodType<
+    CreateTeamStorageRedisTotalDailyAvgStorageInBytes,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    matrix: z
+        .lazy(
+            () =>
+                CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsStorageRedisTotalDailyAvgStorageInBytesMatrix$inboundSchema
+        )
+        .optional(),
+    tier: z.number().optional(),
+    price: z.number(),
+    batch: z.number(),
+    threshold: z.number(),
+    name: z.string().optional(),
+    hidden: z.boolean(),
+    disabledAt: z.nullable(z.number()).optional(),
+    enabledAt: z.nullable(z.number()).optional(),
+});
+
+/** @internal */
+export type CreateTeamStorageRedisTotalDailyAvgStorageInBytes$Outbound = {
+    matrix?:
+        | CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsStorageRedisTotalDailyAvgStorageInBytesMatrix$Outbound
+        | undefined;
+    tier?: number | undefined;
+    price: number;
+    batch: number;
+    threshold: number;
+    name?: string | undefined;
+    hidden: boolean;
+    disabledAt?: number | null | undefined;
+    enabledAt?: number | null | undefined;
+};
+
+/** @internal */
+export const CreateTeamStorageRedisTotalDailyAvgStorageInBytes$outboundSchema: z.ZodType<
+    CreateTeamStorageRedisTotalDailyAvgStorageInBytes$Outbound,
+    z.ZodTypeDef,
+    CreateTeamStorageRedisTotalDailyAvgStorageInBytes
+> = z.object({
+    matrix: z
+        .lazy(
+            () =>
+                CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsStorageRedisTotalDailyAvgStorageInBytesMatrix$outboundSchema
+        )
+        .optional(),
+    tier: z.number().optional(),
+    price: z.number(),
+    batch: z.number(),
+    threshold: z.number(),
+    name: z.string().optional(),
+    hidden: z.boolean(),
+    disabledAt: z.nullable(z.number()).optional(),
+    enabledAt: z.nullable(z.number()).optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamStorageRedisTotalDailyAvgStorageInBytes$ {
-    export const inboundSchema: z.ZodType<
-        CreateTeamStorageRedisTotalDailyAvgStorageInBytes,
-        z.ZodTypeDef,
-        unknown
-    > = z
-        .object({
-            matrix: z
-                .lazy(
-                    () =>
-                        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsStorageRedisTotalDailyAvgStorageInBytesMatrix$.inboundSchema
-                )
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
-
-    export type Outbound = {
-        matrix?:
-            | CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsStorageRedisTotalDailyAvgStorageInBytesMatrix$.Outbound
-            | undefined;
-        tier?: number | undefined;
-        price: number;
-        batch: number;
-        threshold: number;
-        name?: string | undefined;
-        hidden: boolean;
-        disabledAt?: number | null | undefined;
-        enabledAt?: number | null | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<
-        Outbound,
-        z.ZodTypeDef,
-        CreateTeamStorageRedisTotalDailyAvgStorageInBytes
-    > = z
-        .object({
-            matrix: z
-                .lazy(
-                    () =>
-                        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsStorageRedisTotalDailyAvgStorageInBytesMatrix$.outboundSchema
-                )
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+    /** @deprecated use `CreateTeamStorageRedisTotalDailyAvgStorageInBytes$inboundSchema` instead. */
+    export const inboundSchema = CreateTeamStorageRedisTotalDailyAvgStorageInBytes$inboundSchema;
+    /** @deprecated use `CreateTeamStorageRedisTotalDailyAvgStorageInBytes$outboundSchema` instead. */
+    export const outboundSchema = CreateTeamStorageRedisTotalDailyAvgStorageInBytes$outboundSchema;
+    /** @deprecated use `CreateTeamStorageRedisTotalDailyAvgStorageInBytes$Outbound` instead. */
+    export type Outbound = CreateTeamStorageRedisTotalDailyAvgStorageInBytes$Outbound;
 }
 
 /** @internal */
+export const CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsStorageRedisTotalDatabasesMatrix$inboundSchema: z.ZodType<
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsStorageRedisTotalDatabasesMatrix,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    defaultUnitPrice: z.string(),
+    dimensionPrices: z.record(z.string()),
+});
+
+/** @internal */
+export type CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsStorageRedisTotalDatabasesMatrix$Outbound =
+    {
+        defaultUnitPrice: string;
+        dimensionPrices: { [k: string]: string };
+    };
+
+/** @internal */
+export const CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsStorageRedisTotalDatabasesMatrix$outboundSchema: z.ZodType<
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsStorageRedisTotalDatabasesMatrix$Outbound,
+    z.ZodTypeDef,
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsStorageRedisTotalDatabasesMatrix
+> = z.object({
+    defaultUnitPrice: z.string(),
+    dimensionPrices: z.record(z.string()),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsStorageRedisTotalDatabasesMatrix$ {
-    export const inboundSchema: z.ZodType<
-        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsStorageRedisTotalDatabasesMatrix,
-        z.ZodTypeDef,
-        unknown
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
-
-    export type Outbound = {
-        defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
-    };
-
-    export const outboundSchema: z.ZodType<
-        Outbound,
-        z.ZodTypeDef,
-        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsStorageRedisTotalDatabasesMatrix
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsStorageRedisTotalDatabasesMatrix$inboundSchema` instead. */
+    export const inboundSchema =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsStorageRedisTotalDatabasesMatrix$inboundSchema;
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsStorageRedisTotalDatabasesMatrix$outboundSchema` instead. */
+    export const outboundSchema =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsStorageRedisTotalDatabasesMatrix$outboundSchema;
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsStorageRedisTotalDatabasesMatrix$Outbound` instead. */
+    export type Outbound =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsStorageRedisTotalDatabasesMatrix$Outbound;
 }
 
 /** @internal */
+export const CreateTeamStorageRedisTotalDatabases$inboundSchema: z.ZodType<
+    CreateTeamStorageRedisTotalDatabases,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    matrix: z
+        .lazy(
+            () =>
+                CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsStorageRedisTotalDatabasesMatrix$inboundSchema
+        )
+        .optional(),
+    tier: z.number().optional(),
+    price: z.number(),
+    batch: z.number(),
+    threshold: z.number(),
+    name: z.string().optional(),
+    hidden: z.boolean(),
+    disabledAt: z.nullable(z.number()).optional(),
+    enabledAt: z.nullable(z.number()).optional(),
+});
+
+/** @internal */
+export type CreateTeamStorageRedisTotalDatabases$Outbound = {
+    matrix?:
+        | CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsStorageRedisTotalDatabasesMatrix$Outbound
+        | undefined;
+    tier?: number | undefined;
+    price: number;
+    batch: number;
+    threshold: number;
+    name?: string | undefined;
+    hidden: boolean;
+    disabledAt?: number | null | undefined;
+    enabledAt?: number | null | undefined;
+};
+
+/** @internal */
+export const CreateTeamStorageRedisTotalDatabases$outboundSchema: z.ZodType<
+    CreateTeamStorageRedisTotalDatabases$Outbound,
+    z.ZodTypeDef,
+    CreateTeamStorageRedisTotalDatabases
+> = z.object({
+    matrix: z
+        .lazy(
+            () =>
+                CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsStorageRedisTotalDatabasesMatrix$outboundSchema
+        )
+        .optional(),
+    tier: z.number().optional(),
+    price: z.number(),
+    batch: z.number(),
+    threshold: z.number(),
+    name: z.string().optional(),
+    hidden: z.boolean(),
+    disabledAt: z.nullable(z.number()).optional(),
+    enabledAt: z.nullable(z.number()).optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamStorageRedisTotalDatabases$ {
-    export const inboundSchema: z.ZodType<
-        CreateTeamStorageRedisTotalDatabases,
-        z.ZodTypeDef,
-        unknown
-    > = z
-        .object({
-            matrix: z
-                .lazy(
-                    () =>
-                        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsStorageRedisTotalDatabasesMatrix$.inboundSchema
-                )
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
-
-    export type Outbound = {
-        matrix?:
-            | CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsStorageRedisTotalDatabasesMatrix$.Outbound
-            | undefined;
-        tier?: number | undefined;
-        price: number;
-        batch: number;
-        threshold: number;
-        name?: string | undefined;
-        hidden: boolean;
-        disabledAt?: number | null | undefined;
-        enabledAt?: number | null | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<
-        Outbound,
-        z.ZodTypeDef,
-        CreateTeamStorageRedisTotalDatabases
-    > = z
-        .object({
-            matrix: z
-                .lazy(
-                    () =>
-                        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsStorageRedisTotalDatabasesMatrix$.outboundSchema
-                )
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+    /** @deprecated use `CreateTeamStorageRedisTotalDatabases$inboundSchema` instead. */
+    export const inboundSchema = CreateTeamStorageRedisTotalDatabases$inboundSchema;
+    /** @deprecated use `CreateTeamStorageRedisTotalDatabases$outboundSchema` instead. */
+    export const outboundSchema = CreateTeamStorageRedisTotalDatabases$outboundSchema;
+    /** @deprecated use `CreateTeamStorageRedisTotalDatabases$Outbound` instead. */
+    export type Outbound = CreateTeamStorageRedisTotalDatabases$Outbound;
 }
 
 /** @internal */
+export const CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWafOwaspExcessBytesMatrix$inboundSchema: z.ZodType<
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWafOwaspExcessBytesMatrix,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    defaultUnitPrice: z.string(),
+    dimensionPrices: z.record(z.string()),
+});
+
+/** @internal */
+export type CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWafOwaspExcessBytesMatrix$Outbound =
+    {
+        defaultUnitPrice: string;
+        dimensionPrices: { [k: string]: string };
+    };
+
+/** @internal */
+export const CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWafOwaspExcessBytesMatrix$outboundSchema: z.ZodType<
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWafOwaspExcessBytesMatrix$Outbound,
+    z.ZodTypeDef,
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWafOwaspExcessBytesMatrix
+> = z.object({
+    defaultUnitPrice: z.string(),
+    dimensionPrices: z.record(z.string()),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWafOwaspExcessBytesMatrix$ {
-    export const inboundSchema: z.ZodType<
-        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWafOwaspExcessBytesMatrix,
-        z.ZodTypeDef,
-        unknown
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
-
-    export type Outbound = {
-        defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
-    };
-
-    export const outboundSchema: z.ZodType<
-        Outbound,
-        z.ZodTypeDef,
-        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWafOwaspExcessBytesMatrix
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWafOwaspExcessBytesMatrix$inboundSchema` instead. */
+    export const inboundSchema =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWafOwaspExcessBytesMatrix$inboundSchema;
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWafOwaspExcessBytesMatrix$outboundSchema` instead. */
+    export const outboundSchema =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWafOwaspExcessBytesMatrix$outboundSchema;
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWafOwaspExcessBytesMatrix$Outbound` instead. */
+    export type Outbound =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWafOwaspExcessBytesMatrix$Outbound;
 }
 
 /** @internal */
+export const CreateTeamWafOwaspExcessBytes$inboundSchema: z.ZodType<
+    CreateTeamWafOwaspExcessBytes,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    matrix: z
+        .lazy(
+            () =>
+                CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWafOwaspExcessBytesMatrix$inboundSchema
+        )
+        .optional(),
+    tier: z.number().optional(),
+    price: z.number(),
+    batch: z.number(),
+    threshold: z.number(),
+    name: z.string().optional(),
+    hidden: z.boolean(),
+    disabledAt: z.nullable(z.number()).optional(),
+    enabledAt: z.nullable(z.number()).optional(),
+});
+
+/** @internal */
+export type CreateTeamWafOwaspExcessBytes$Outbound = {
+    matrix?:
+        | CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWafOwaspExcessBytesMatrix$Outbound
+        | undefined;
+    tier?: number | undefined;
+    price: number;
+    batch: number;
+    threshold: number;
+    name?: string | undefined;
+    hidden: boolean;
+    disabledAt?: number | null | undefined;
+    enabledAt?: number | null | undefined;
+};
+
+/** @internal */
+export const CreateTeamWafOwaspExcessBytes$outboundSchema: z.ZodType<
+    CreateTeamWafOwaspExcessBytes$Outbound,
+    z.ZodTypeDef,
+    CreateTeamWafOwaspExcessBytes
+> = z.object({
+    matrix: z
+        .lazy(
+            () =>
+                CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWafOwaspExcessBytesMatrix$outboundSchema
+        )
+        .optional(),
+    tier: z.number().optional(),
+    price: z.number(),
+    batch: z.number(),
+    threshold: z.number(),
+    name: z.string().optional(),
+    hidden: z.boolean(),
+    disabledAt: z.nullable(z.number()).optional(),
+    enabledAt: z.nullable(z.number()).optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamWafOwaspExcessBytes$ {
-    export const inboundSchema: z.ZodType<CreateTeamWafOwaspExcessBytes, z.ZodTypeDef, unknown> = z
-        .object({
-            matrix: z
-                .lazy(
-                    () =>
-                        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWafOwaspExcessBytesMatrix$.inboundSchema
-                )
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
-
-    export type Outbound = {
-        matrix?:
-            | CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWafOwaspExcessBytesMatrix$.Outbound
-            | undefined;
-        tier?: number | undefined;
-        price: number;
-        batch: number;
-        threshold: number;
-        name?: string | undefined;
-        hidden: boolean;
-        disabledAt?: number | null | undefined;
-        enabledAt?: number | null | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamWafOwaspExcessBytes> =
-        z
-            .object({
-                matrix: z
-                    .lazy(
-                        () =>
-                            CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWafOwaspExcessBytesMatrix$.outboundSchema
-                    )
-                    .optional(),
-                tier: z.number().optional(),
-                price: z.number(),
-                batch: z.number(),
-                threshold: z.number(),
-                name: z.string().optional(),
-                hidden: z.boolean(),
-                disabledAt: z.nullable(z.number()).optional(),
-                enabledAt: z.nullable(z.number()).optional(),
-            })
-            .transform((v) => {
-                return {
-                    ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                    ...(v.tier === undefined ? null : { tier: v.tier }),
-                    price: v.price,
-                    batch: v.batch,
-                    threshold: v.threshold,
-                    ...(v.name === undefined ? null : { name: v.name }),
-                    hidden: v.hidden,
-                    ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                    ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-                };
-            });
+    /** @deprecated use `CreateTeamWafOwaspExcessBytes$inboundSchema` instead. */
+    export const inboundSchema = CreateTeamWafOwaspExcessBytes$inboundSchema;
+    /** @deprecated use `CreateTeamWafOwaspExcessBytes$outboundSchema` instead. */
+    export const outboundSchema = CreateTeamWafOwaspExcessBytes$outboundSchema;
+    /** @deprecated use `CreateTeamWafOwaspExcessBytes$Outbound` instead. */
+    export type Outbound = CreateTeamWafOwaspExcessBytes$Outbound;
 }
 
 /** @internal */
+export const CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWafOwaspRequestsMatrix$inboundSchema: z.ZodType<
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWafOwaspRequestsMatrix,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    defaultUnitPrice: z.string(),
+    dimensionPrices: z.record(z.string()),
+});
+
+/** @internal */
+export type CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWafOwaspRequestsMatrix$Outbound =
+    {
+        defaultUnitPrice: string;
+        dimensionPrices: { [k: string]: string };
+    };
+
+/** @internal */
+export const CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWafOwaspRequestsMatrix$outboundSchema: z.ZodType<
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWafOwaspRequestsMatrix$Outbound,
+    z.ZodTypeDef,
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWafOwaspRequestsMatrix
+> = z.object({
+    defaultUnitPrice: z.string(),
+    dimensionPrices: z.record(z.string()),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWafOwaspRequestsMatrix$ {
-    export const inboundSchema: z.ZodType<
-        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWafOwaspRequestsMatrix,
-        z.ZodTypeDef,
-        unknown
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
-
-    export type Outbound = {
-        defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
-    };
-
-    export const outboundSchema: z.ZodType<
-        Outbound,
-        z.ZodTypeDef,
-        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWafOwaspRequestsMatrix
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWafOwaspRequestsMatrix$inboundSchema` instead. */
+    export const inboundSchema =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWafOwaspRequestsMatrix$inboundSchema;
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWafOwaspRequestsMatrix$outboundSchema` instead. */
+    export const outboundSchema =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWafOwaspRequestsMatrix$outboundSchema;
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWafOwaspRequestsMatrix$Outbound` instead. */
+    export type Outbound =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWafOwaspRequestsMatrix$Outbound;
 }
 
 /** @internal */
+export const CreateTeamWafOwaspRequests$inboundSchema: z.ZodType<
+    CreateTeamWafOwaspRequests,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    matrix: z
+        .lazy(
+            () =>
+                CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWafOwaspRequestsMatrix$inboundSchema
+        )
+        .optional(),
+    tier: z.number().optional(),
+    price: z.number(),
+    batch: z.number(),
+    threshold: z.number(),
+    name: z.string().optional(),
+    hidden: z.boolean(),
+    disabledAt: z.nullable(z.number()).optional(),
+    enabledAt: z.nullable(z.number()).optional(),
+});
+
+/** @internal */
+export type CreateTeamWafOwaspRequests$Outbound = {
+    matrix?:
+        | CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWafOwaspRequestsMatrix$Outbound
+        | undefined;
+    tier?: number | undefined;
+    price: number;
+    batch: number;
+    threshold: number;
+    name?: string | undefined;
+    hidden: boolean;
+    disabledAt?: number | null | undefined;
+    enabledAt?: number | null | undefined;
+};
+
+/** @internal */
+export const CreateTeamWafOwaspRequests$outboundSchema: z.ZodType<
+    CreateTeamWafOwaspRequests$Outbound,
+    z.ZodTypeDef,
+    CreateTeamWafOwaspRequests
+> = z.object({
+    matrix: z
+        .lazy(
+            () =>
+                CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWafOwaspRequestsMatrix$outboundSchema
+        )
+        .optional(),
+    tier: z.number().optional(),
+    price: z.number(),
+    batch: z.number(),
+    threshold: z.number(),
+    name: z.string().optional(),
+    hidden: z.boolean(),
+    disabledAt: z.nullable(z.number()).optional(),
+    enabledAt: z.nullable(z.number()).optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamWafOwaspRequests$ {
-    export const inboundSchema: z.ZodType<CreateTeamWafOwaspRequests, z.ZodTypeDef, unknown> = z
-        .object({
-            matrix: z
-                .lazy(
-                    () =>
-                        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWafOwaspRequestsMatrix$.inboundSchema
-                )
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
-
-    export type Outbound = {
-        matrix?:
-            | CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWafOwaspRequestsMatrix$.Outbound
-            | undefined;
-        tier?: number | undefined;
-        price: number;
-        batch: number;
-        threshold: number;
-        name?: string | undefined;
-        hidden: boolean;
-        disabledAt?: number | null | undefined;
-        enabledAt?: number | null | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamWafOwaspRequests> = z
-        .object({
-            matrix: z
-                .lazy(
-                    () =>
-                        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWafOwaspRequestsMatrix$.outboundSchema
-                )
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+    /** @deprecated use `CreateTeamWafOwaspRequests$inboundSchema` instead. */
+    export const inboundSchema = CreateTeamWafOwaspRequests$inboundSchema;
+    /** @deprecated use `CreateTeamWafOwaspRequests$outboundSchema` instead. */
+    export const outboundSchema = CreateTeamWafOwaspRequests$outboundSchema;
+    /** @deprecated use `CreateTeamWafOwaspRequests$Outbound` instead. */
+    export type Outbound = CreateTeamWafOwaspRequests$Outbound;
 }
 
 /** @internal */
-export namespace CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWebAnalyticsEventMatrix$ {
-    export const inboundSchema: z.ZodType<
-        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWebAnalyticsEventMatrix,
-        z.ZodTypeDef,
-        unknown
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+export const CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWebAnalyticsEventMatrix$inboundSchema: z.ZodType<
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWebAnalyticsEventMatrix,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    defaultUnitPrice: z.string(),
+    dimensionPrices: z.record(z.string()),
+});
 
-    export type Outbound = {
+/** @internal */
+export type CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWebAnalyticsEventMatrix$Outbound =
+    {
         defaultUnitPrice: string;
-        dimensionPrices: Record<string, string>;
+        dimensionPrices: { [k: string]: string };
     };
 
-    export const outboundSchema: z.ZodType<
-        Outbound,
-        z.ZodTypeDef,
-        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWebAnalyticsEventMatrix
-    > = z
-        .object({
-            defaultUnitPrice: z.string(),
-            dimensionPrices: z.record(z.string()),
-        })
-        .transform((v) => {
-            return {
-                defaultUnitPrice: v.defaultUnitPrice,
-                dimensionPrices: v.dimensionPrices,
-            };
-        });
+/** @internal */
+export const CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWebAnalyticsEventMatrix$outboundSchema: z.ZodType<
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWebAnalyticsEventMatrix$Outbound,
+    z.ZodTypeDef,
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWebAnalyticsEventMatrix
+> = z.object({
+    defaultUnitPrice: z.string(),
+    dimensionPrices: z.record(z.string()),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWebAnalyticsEventMatrix$ {
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWebAnalyticsEventMatrix$inboundSchema` instead. */
+    export const inboundSchema =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWebAnalyticsEventMatrix$inboundSchema;
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWebAnalyticsEventMatrix$outboundSchema` instead. */
+    export const outboundSchema =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWebAnalyticsEventMatrix$outboundSchema;
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWebAnalyticsEventMatrix$Outbound` instead. */
+    export type Outbound =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWebAnalyticsEventMatrix$Outbound;
 }
 
 /** @internal */
+export const CreateTeamWebAnalyticsEvent$inboundSchema: z.ZodType<
+    CreateTeamWebAnalyticsEvent,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    matrix: z
+        .lazy(
+            () =>
+                CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWebAnalyticsEventMatrix$inboundSchema
+        )
+        .optional(),
+    tier: z.number().optional(),
+    price: z.number(),
+    batch: z.number(),
+    threshold: z.number(),
+    name: z.string().optional(),
+    hidden: z.boolean(),
+    disabledAt: z.nullable(z.number()).optional(),
+    enabledAt: z.nullable(z.number()).optional(),
+});
+
+/** @internal */
+export type CreateTeamWebAnalyticsEvent$Outbound = {
+    matrix?:
+        | CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWebAnalyticsEventMatrix$Outbound
+        | undefined;
+    tier?: number | undefined;
+    price: number;
+    batch: number;
+    threshold: number;
+    name?: string | undefined;
+    hidden: boolean;
+    disabledAt?: number | null | undefined;
+    enabledAt?: number | null | undefined;
+};
+
+/** @internal */
+export const CreateTeamWebAnalyticsEvent$outboundSchema: z.ZodType<
+    CreateTeamWebAnalyticsEvent$Outbound,
+    z.ZodTypeDef,
+    CreateTeamWebAnalyticsEvent
+> = z.object({
+    matrix: z
+        .lazy(
+            () =>
+                CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWebAnalyticsEventMatrix$outboundSchema
+        )
+        .optional(),
+    tier: z.number().optional(),
+    price: z.number(),
+    batch: z.number(),
+    threshold: z.number(),
+    name: z.string().optional(),
+    hidden: z.boolean(),
+    disabledAt: z.nullable(z.number()).optional(),
+    enabledAt: z.nullable(z.number()).optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamWebAnalyticsEvent$ {
-    export const inboundSchema: z.ZodType<CreateTeamWebAnalyticsEvent, z.ZodTypeDef, unknown> = z
-        .object({
-            matrix: z
-                .lazy(
-                    () =>
-                        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWebAnalyticsEventMatrix$.inboundSchema
-                )
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
-
-    export type Outbound = {
-        matrix?:
-            | CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWebAnalyticsEventMatrix$.Outbound
-            | undefined;
-        tier?: number | undefined;
-        price: number;
-        batch: number;
-        threshold: number;
-        name?: string | undefined;
-        hidden: boolean;
-        disabledAt?: number | null | undefined;
-        enabledAt?: number | null | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamWebAnalyticsEvent> = z
-        .object({
-            matrix: z
-                .lazy(
-                    () =>
-                        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWebAnalyticsEventMatrix$.outboundSchema
-                )
-                .optional(),
-            tier: z.number().optional(),
-            price: z.number(),
-            batch: z.number(),
-            threshold: z.number(),
-            name: z.string().optional(),
-            hidden: z.boolean(),
-            disabledAt: z.nullable(z.number()).optional(),
-            enabledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.matrix === undefined ? null : { matrix: v.matrix }),
-                ...(v.tier === undefined ? null : { tier: v.tier }),
-                price: v.price,
-                batch: v.batch,
-                threshold: v.threshold,
-                ...(v.name === undefined ? null : { name: v.name }),
-                hidden: v.hidden,
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.enabledAt === undefined ? null : { enabledAt: v.enabledAt }),
-            };
-        });
+    /** @deprecated use `CreateTeamWebAnalyticsEvent$inboundSchema` instead. */
+    export const inboundSchema = CreateTeamWebAnalyticsEvent$inboundSchema;
+    /** @deprecated use `CreateTeamWebAnalyticsEvent$outboundSchema` instead. */
+    export const outboundSchema = CreateTeamWebAnalyticsEvent$outboundSchema;
+    /** @deprecated use `CreateTeamWebAnalyticsEvent$Outbound` instead. */
+    export type Outbound = CreateTeamWebAnalyticsEvent$Outbound;
 }
 
 /** @internal */
+export const CreateTeamInvoiceItems$inboundSchema: z.ZodType<
+    CreateTeamInvoiceItems,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    pro: z.lazy(() => CreateTeamPro$inboundSchema).optional(),
+    enterprise: z.lazy(() => CreateTeamEnterprise$inboundSchema).optional(),
+    analytics: z.lazy(() => CreateTeamAnalytics$inboundSchema).optional(),
+    concurrentBuilds: z.lazy(() => CreateTeamConcurrentBuilds$inboundSchema).optional(),
+    monitoring: z.lazy(() => CreateTeamMonitoring$inboundSchema).optional(),
+    passwordProtection: z.lazy(() => CreateTeamPasswordProtection$inboundSchema).optional(),
+    previewDeploymentSuffix: z
+        .lazy(() => CreateTeamPreviewDeploymentSuffix$inboundSchema)
+        .optional(),
+    saml: z.lazy(() => CreateTeamSaml$inboundSchema).optional(),
+    teamSeats: z.lazy(() => CreateTeamTeamSeats$inboundSchema).optional(),
+    webAnalytics: z.lazy(() => CreateTeamWebAnalytics$inboundSchema).optional(),
+    analyticsUsage: z.lazy(() => CreateTeamAnalyticsUsage$inboundSchema).optional(),
+    artifacts: z.lazy(() => CreateTeamArtifacts$inboundSchema).optional(),
+    bandwidth: z.lazy(() => CreateTeamBandwidth$inboundSchema).optional(),
+    blobStores: z.lazy(() => CreateTeamBlobStores$inboundSchema).optional(),
+    blobTotalAdvancedRequests: z
+        .lazy(() => CreateTeamBlobTotalAdvancedRequests$inboundSchema)
+        .optional(),
+    blobTotalAvgSizeInBytes: z
+        .lazy(() => CreateTeamBlobTotalAvgSizeInBytes$inboundSchema)
+        .optional(),
+    blobTotalGetResponseObjectSizeInBytes: z
+        .lazy(() => CreateTeamBlobTotalGetResponseObjectSizeInBytes$inboundSchema)
+        .optional(),
+    blobTotalSimpleRequests: z
+        .lazy(() => CreateTeamBlobTotalSimpleRequests$inboundSchema)
+        .optional(),
+    buildMinute: z.lazy(() => CreateTeamBuildMinute$inboundSchema).optional(),
+    dataCacheRead: z.lazy(() => CreateTeamDataCacheRead$inboundSchema).optional(),
+    dataCacheRevalidation: z.lazy(() => CreateTeamDataCacheRevalidation$inboundSchema).optional(),
+    dataCacheWrite: z.lazy(() => CreateTeamDataCacheWrite$inboundSchema).optional(),
+    edgeConfigRead: z.lazy(() => CreateTeamEdgeConfigRead$inboundSchema).optional(),
+    edgeConfigWrite: z.lazy(() => CreateTeamEdgeConfigWrite$inboundSchema).optional(),
+    edgeFunctionExecutionUnits: z
+        .lazy(() => CreateTeamEdgeFunctionExecutionUnits$inboundSchema)
+        .optional(),
+    edgeMiddlewareInvocations: z
+        .lazy(() => CreateTeamEdgeMiddlewareInvocations$inboundSchema)
+        .optional(),
+    edgeRequest: z.lazy(() => CreateTeamEdgeRequest$inboundSchema).optional(),
+    edgeRequestAdditionalCpuDuration: z
+        .lazy(() => CreateTeamEdgeRequestAdditionalCpuDuration$inboundSchema)
+        .optional(),
+    fastDataTransfer: z.lazy(() => CreateTeamFastDataTransfer$inboundSchema).optional(),
+    fastOriginTransfer: z.lazy(() => CreateTeamFastOriginTransfer$inboundSchema).optional(),
+    functionDuration: z.lazy(() => CreateTeamFunctionDuration$inboundSchema).optional(),
+    functionInvocation: z.lazy(() => CreateTeamFunctionInvocation$inboundSchema).optional(),
+    logDrainsVolume: z.lazy(() => CreateTeamLogDrainsVolume$inboundSchema).optional(),
+    monitoringMetric: z.lazy(() => CreateTeamMonitoringMetric$inboundSchema).optional(),
+    postgresComputeTime: z.lazy(() => CreateTeamPostgresComputeTime$inboundSchema).optional(),
+    postgresDataStorage: z.lazy(() => CreateTeamPostgresDataStorage$inboundSchema).optional(),
+    postgresDataTransfer: z.lazy(() => CreateTeamPostgresDataTransfer$inboundSchema).optional(),
+    postgresDatabase: z.lazy(() => CreateTeamPostgresDatabase$inboundSchema).optional(),
+    postgresWrittenData: z.lazy(() => CreateTeamPostgresWrittenData$inboundSchema).optional(),
+    serverlessFunctionExecution: z
+        .lazy(() => CreateTeamServerlessFunctionExecution$inboundSchema)
+        .optional(),
+    sourceImages: z.lazy(() => CreateTeamSourceImages$inboundSchema).optional(),
+    storageRedisTotalBandwidthInBytes: z
+        .lazy(() => CreateTeamStorageRedisTotalBandwidthInBytes$inboundSchema)
+        .optional(),
+    storageRedisTotalCommands: z
+        .lazy(() => CreateTeamStorageRedisTotalCommands$inboundSchema)
+        .optional(),
+    storageRedisTotalDailyAvgStorageInBytes: z
+        .lazy(() => CreateTeamStorageRedisTotalDailyAvgStorageInBytes$inboundSchema)
+        .optional(),
+    storageRedisTotalDatabases: z
+        .lazy(() => CreateTeamStorageRedisTotalDatabases$inboundSchema)
+        .optional(),
+    wafOwaspExcessBytes: z.lazy(() => CreateTeamWafOwaspExcessBytes$inboundSchema).optional(),
+    wafOwaspRequests: z.lazy(() => CreateTeamWafOwaspRequests$inboundSchema).optional(),
+    webAnalyticsEvent: z.lazy(() => CreateTeamWebAnalyticsEvent$inboundSchema).optional(),
+});
+
+/** @internal */
+export type CreateTeamInvoiceItems$Outbound = {
+    pro?: CreateTeamPro$Outbound | undefined;
+    enterprise?: CreateTeamEnterprise$Outbound | undefined;
+    analytics?: CreateTeamAnalytics$Outbound | undefined;
+    concurrentBuilds?: CreateTeamConcurrentBuilds$Outbound | undefined;
+    monitoring?: CreateTeamMonitoring$Outbound | undefined;
+    passwordProtection?: CreateTeamPasswordProtection$Outbound | undefined;
+    previewDeploymentSuffix?: CreateTeamPreviewDeploymentSuffix$Outbound | undefined;
+    saml?: CreateTeamSaml$Outbound | undefined;
+    teamSeats?: CreateTeamTeamSeats$Outbound | undefined;
+    webAnalytics?: CreateTeamWebAnalytics$Outbound | undefined;
+    analyticsUsage?: CreateTeamAnalyticsUsage$Outbound | undefined;
+    artifacts?: CreateTeamArtifacts$Outbound | undefined;
+    bandwidth?: CreateTeamBandwidth$Outbound | undefined;
+    blobStores?: CreateTeamBlobStores$Outbound | undefined;
+    blobTotalAdvancedRequests?: CreateTeamBlobTotalAdvancedRequests$Outbound | undefined;
+    blobTotalAvgSizeInBytes?: CreateTeamBlobTotalAvgSizeInBytes$Outbound | undefined;
+    blobTotalGetResponseObjectSizeInBytes?:
+        | CreateTeamBlobTotalGetResponseObjectSizeInBytes$Outbound
+        | undefined;
+    blobTotalSimpleRequests?: CreateTeamBlobTotalSimpleRequests$Outbound | undefined;
+    buildMinute?: CreateTeamBuildMinute$Outbound | undefined;
+    dataCacheRead?: CreateTeamDataCacheRead$Outbound | undefined;
+    dataCacheRevalidation?: CreateTeamDataCacheRevalidation$Outbound | undefined;
+    dataCacheWrite?: CreateTeamDataCacheWrite$Outbound | undefined;
+    edgeConfigRead?: CreateTeamEdgeConfigRead$Outbound | undefined;
+    edgeConfigWrite?: CreateTeamEdgeConfigWrite$Outbound | undefined;
+    edgeFunctionExecutionUnits?: CreateTeamEdgeFunctionExecutionUnits$Outbound | undefined;
+    edgeMiddlewareInvocations?: CreateTeamEdgeMiddlewareInvocations$Outbound | undefined;
+    edgeRequest?: CreateTeamEdgeRequest$Outbound | undefined;
+    edgeRequestAdditionalCpuDuration?:
+        | CreateTeamEdgeRequestAdditionalCpuDuration$Outbound
+        | undefined;
+    fastDataTransfer?: CreateTeamFastDataTransfer$Outbound | undefined;
+    fastOriginTransfer?: CreateTeamFastOriginTransfer$Outbound | undefined;
+    functionDuration?: CreateTeamFunctionDuration$Outbound | undefined;
+    functionInvocation?: CreateTeamFunctionInvocation$Outbound | undefined;
+    logDrainsVolume?: CreateTeamLogDrainsVolume$Outbound | undefined;
+    monitoringMetric?: CreateTeamMonitoringMetric$Outbound | undefined;
+    postgresComputeTime?: CreateTeamPostgresComputeTime$Outbound | undefined;
+    postgresDataStorage?: CreateTeamPostgresDataStorage$Outbound | undefined;
+    postgresDataTransfer?: CreateTeamPostgresDataTransfer$Outbound | undefined;
+    postgresDatabase?: CreateTeamPostgresDatabase$Outbound | undefined;
+    postgresWrittenData?: CreateTeamPostgresWrittenData$Outbound | undefined;
+    serverlessFunctionExecution?: CreateTeamServerlessFunctionExecution$Outbound | undefined;
+    sourceImages?: CreateTeamSourceImages$Outbound | undefined;
+    storageRedisTotalBandwidthInBytes?:
+        | CreateTeamStorageRedisTotalBandwidthInBytes$Outbound
+        | undefined;
+    storageRedisTotalCommands?: CreateTeamStorageRedisTotalCommands$Outbound | undefined;
+    storageRedisTotalDailyAvgStorageInBytes?:
+        | CreateTeamStorageRedisTotalDailyAvgStorageInBytes$Outbound
+        | undefined;
+    storageRedisTotalDatabases?: CreateTeamStorageRedisTotalDatabases$Outbound | undefined;
+    wafOwaspExcessBytes?: CreateTeamWafOwaspExcessBytes$Outbound | undefined;
+    wafOwaspRequests?: CreateTeamWafOwaspRequests$Outbound | undefined;
+    webAnalyticsEvent?: CreateTeamWebAnalyticsEvent$Outbound | undefined;
+};
+
+/** @internal */
+export const CreateTeamInvoiceItems$outboundSchema: z.ZodType<
+    CreateTeamInvoiceItems$Outbound,
+    z.ZodTypeDef,
+    CreateTeamInvoiceItems
+> = z.object({
+    pro: z.lazy(() => CreateTeamPro$outboundSchema).optional(),
+    enterprise: z.lazy(() => CreateTeamEnterprise$outboundSchema).optional(),
+    analytics: z.lazy(() => CreateTeamAnalytics$outboundSchema).optional(),
+    concurrentBuilds: z.lazy(() => CreateTeamConcurrentBuilds$outboundSchema).optional(),
+    monitoring: z.lazy(() => CreateTeamMonitoring$outboundSchema).optional(),
+    passwordProtection: z.lazy(() => CreateTeamPasswordProtection$outboundSchema).optional(),
+    previewDeploymentSuffix: z
+        .lazy(() => CreateTeamPreviewDeploymentSuffix$outboundSchema)
+        .optional(),
+    saml: z.lazy(() => CreateTeamSaml$outboundSchema).optional(),
+    teamSeats: z.lazy(() => CreateTeamTeamSeats$outboundSchema).optional(),
+    webAnalytics: z.lazy(() => CreateTeamWebAnalytics$outboundSchema).optional(),
+    analyticsUsage: z.lazy(() => CreateTeamAnalyticsUsage$outboundSchema).optional(),
+    artifacts: z.lazy(() => CreateTeamArtifacts$outboundSchema).optional(),
+    bandwidth: z.lazy(() => CreateTeamBandwidth$outboundSchema).optional(),
+    blobStores: z.lazy(() => CreateTeamBlobStores$outboundSchema).optional(),
+    blobTotalAdvancedRequests: z
+        .lazy(() => CreateTeamBlobTotalAdvancedRequests$outboundSchema)
+        .optional(),
+    blobTotalAvgSizeInBytes: z
+        .lazy(() => CreateTeamBlobTotalAvgSizeInBytes$outboundSchema)
+        .optional(),
+    blobTotalGetResponseObjectSizeInBytes: z
+        .lazy(() => CreateTeamBlobTotalGetResponseObjectSizeInBytes$outboundSchema)
+        .optional(),
+    blobTotalSimpleRequests: z
+        .lazy(() => CreateTeamBlobTotalSimpleRequests$outboundSchema)
+        .optional(),
+    buildMinute: z.lazy(() => CreateTeamBuildMinute$outboundSchema).optional(),
+    dataCacheRead: z.lazy(() => CreateTeamDataCacheRead$outboundSchema).optional(),
+    dataCacheRevalidation: z.lazy(() => CreateTeamDataCacheRevalidation$outboundSchema).optional(),
+    dataCacheWrite: z.lazy(() => CreateTeamDataCacheWrite$outboundSchema).optional(),
+    edgeConfigRead: z.lazy(() => CreateTeamEdgeConfigRead$outboundSchema).optional(),
+    edgeConfigWrite: z.lazy(() => CreateTeamEdgeConfigWrite$outboundSchema).optional(),
+    edgeFunctionExecutionUnits: z
+        .lazy(() => CreateTeamEdgeFunctionExecutionUnits$outboundSchema)
+        .optional(),
+    edgeMiddlewareInvocations: z
+        .lazy(() => CreateTeamEdgeMiddlewareInvocations$outboundSchema)
+        .optional(),
+    edgeRequest: z.lazy(() => CreateTeamEdgeRequest$outboundSchema).optional(),
+    edgeRequestAdditionalCpuDuration: z
+        .lazy(() => CreateTeamEdgeRequestAdditionalCpuDuration$outboundSchema)
+        .optional(),
+    fastDataTransfer: z.lazy(() => CreateTeamFastDataTransfer$outboundSchema).optional(),
+    fastOriginTransfer: z.lazy(() => CreateTeamFastOriginTransfer$outboundSchema).optional(),
+    functionDuration: z.lazy(() => CreateTeamFunctionDuration$outboundSchema).optional(),
+    functionInvocation: z.lazy(() => CreateTeamFunctionInvocation$outboundSchema).optional(),
+    logDrainsVolume: z.lazy(() => CreateTeamLogDrainsVolume$outboundSchema).optional(),
+    monitoringMetric: z.lazy(() => CreateTeamMonitoringMetric$outboundSchema).optional(),
+    postgresComputeTime: z.lazy(() => CreateTeamPostgresComputeTime$outboundSchema).optional(),
+    postgresDataStorage: z.lazy(() => CreateTeamPostgresDataStorage$outboundSchema).optional(),
+    postgresDataTransfer: z.lazy(() => CreateTeamPostgresDataTransfer$outboundSchema).optional(),
+    postgresDatabase: z.lazy(() => CreateTeamPostgresDatabase$outboundSchema).optional(),
+    postgresWrittenData: z.lazy(() => CreateTeamPostgresWrittenData$outboundSchema).optional(),
+    serverlessFunctionExecution: z
+        .lazy(() => CreateTeamServerlessFunctionExecution$outboundSchema)
+        .optional(),
+    sourceImages: z.lazy(() => CreateTeamSourceImages$outboundSchema).optional(),
+    storageRedisTotalBandwidthInBytes: z
+        .lazy(() => CreateTeamStorageRedisTotalBandwidthInBytes$outboundSchema)
+        .optional(),
+    storageRedisTotalCommands: z
+        .lazy(() => CreateTeamStorageRedisTotalCommands$outboundSchema)
+        .optional(),
+    storageRedisTotalDailyAvgStorageInBytes: z
+        .lazy(() => CreateTeamStorageRedisTotalDailyAvgStorageInBytes$outboundSchema)
+        .optional(),
+    storageRedisTotalDatabases: z
+        .lazy(() => CreateTeamStorageRedisTotalDatabases$outboundSchema)
+        .optional(),
+    wafOwaspExcessBytes: z.lazy(() => CreateTeamWafOwaspExcessBytes$outboundSchema).optional(),
+    wafOwaspRequests: z.lazy(() => CreateTeamWafOwaspRequests$outboundSchema).optional(),
+    webAnalyticsEvent: z.lazy(() => CreateTeamWebAnalyticsEvent$outboundSchema).optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamInvoiceItems$ {
-    export const inboundSchema: z.ZodType<CreateTeamInvoiceItems, z.ZodTypeDef, unknown> = z
-        .object({
-            pro: z.lazy(() => CreateTeamPro$.inboundSchema).optional(),
-            enterprise: z.lazy(() => CreateTeamEnterprise$.inboundSchema).optional(),
-            analytics: z.lazy(() => CreateTeamAnalytics$.inboundSchema).optional(),
-            concurrentBuilds: z.lazy(() => CreateTeamConcurrentBuilds$.inboundSchema).optional(),
-            monitoring: z.lazy(() => CreateTeamMonitoring$.inboundSchema).optional(),
-            passwordProtection: z
-                .lazy(() => CreateTeamPasswordProtection$.inboundSchema)
-                .optional(),
-            previewDeploymentSuffix: z
-                .lazy(() => CreateTeamPreviewDeploymentSuffix$.inboundSchema)
-                .optional(),
-            saml: z.lazy(() => CreateTeamSaml$.inboundSchema).optional(),
-            teamSeats: z.lazy(() => CreateTeamTeamSeats$.inboundSchema).optional(),
-            webAnalytics: z.lazy(() => CreateTeamWebAnalytics$.inboundSchema).optional(),
-            analyticsUsage: z.lazy(() => CreateTeamAnalyticsUsage$.inboundSchema).optional(),
-            artifacts: z.lazy(() => CreateTeamArtifacts$.inboundSchema).optional(),
-            bandwidth: z.lazy(() => CreateTeamBandwidth$.inboundSchema).optional(),
-            blobStores: z.lazy(() => CreateTeamBlobStores$.inboundSchema).optional(),
-            blobTotalAdvancedRequests: z
-                .lazy(() => CreateTeamBlobTotalAdvancedRequests$.inboundSchema)
-                .optional(),
-            blobTotalAvgSizeInBytes: z
-                .lazy(() => CreateTeamBlobTotalAvgSizeInBytes$.inboundSchema)
-                .optional(),
-            blobTotalGetResponseObjectSizeInBytes: z
-                .lazy(() => CreateTeamBlobTotalGetResponseObjectSizeInBytes$.inboundSchema)
-                .optional(),
-            blobTotalSimpleRequests: z
-                .lazy(() => CreateTeamBlobTotalSimpleRequests$.inboundSchema)
-                .optional(),
-            buildMinute: z.lazy(() => CreateTeamBuildMinute$.inboundSchema).optional(),
-            dataCacheRead: z.lazy(() => CreateTeamDataCacheRead$.inboundSchema).optional(),
-            dataCacheRevalidation: z
-                .lazy(() => CreateTeamDataCacheRevalidation$.inboundSchema)
-                .optional(),
-            dataCacheWrite: z.lazy(() => CreateTeamDataCacheWrite$.inboundSchema).optional(),
-            edgeConfigRead: z.lazy(() => CreateTeamEdgeConfigRead$.inboundSchema).optional(),
-            edgeConfigWrite: z.lazy(() => CreateTeamEdgeConfigWrite$.inboundSchema).optional(),
-            edgeFunctionExecutionUnits: z
-                .lazy(() => CreateTeamEdgeFunctionExecutionUnits$.inboundSchema)
-                .optional(),
-            edgeMiddlewareInvocations: z
-                .lazy(() => CreateTeamEdgeMiddlewareInvocations$.inboundSchema)
-                .optional(),
-            edgeRequest: z.lazy(() => CreateTeamEdgeRequest$.inboundSchema).optional(),
-            edgeRequestAdditionalCpuDuration: z
-                .lazy(() => CreateTeamEdgeRequestAdditionalCpuDuration$.inboundSchema)
-                .optional(),
-            fastDataTransfer: z.lazy(() => CreateTeamFastDataTransfer$.inboundSchema).optional(),
-            fastOriginTransfer: z
-                .lazy(() => CreateTeamFastOriginTransfer$.inboundSchema)
-                .optional(),
-            functionDuration: z.lazy(() => CreateTeamFunctionDuration$.inboundSchema).optional(),
-            functionInvocation: z
-                .lazy(() => CreateTeamFunctionInvocation$.inboundSchema)
-                .optional(),
-            logDrainsVolume: z.lazy(() => CreateTeamLogDrainsVolume$.inboundSchema).optional(),
-            monitoringMetric: z.lazy(() => CreateTeamMonitoringMetric$.inboundSchema).optional(),
-            postgresComputeTime: z
-                .lazy(() => CreateTeamPostgresComputeTime$.inboundSchema)
-                .optional(),
-            postgresDataStorage: z
-                .lazy(() => CreateTeamPostgresDataStorage$.inboundSchema)
-                .optional(),
-            postgresDataTransfer: z
-                .lazy(() => CreateTeamPostgresDataTransfer$.inboundSchema)
-                .optional(),
-            postgresDatabase: z.lazy(() => CreateTeamPostgresDatabase$.inboundSchema).optional(),
-            postgresWrittenData: z
-                .lazy(() => CreateTeamPostgresWrittenData$.inboundSchema)
-                .optional(),
-            serverlessFunctionExecution: z
-                .lazy(() => CreateTeamServerlessFunctionExecution$.inboundSchema)
-                .optional(),
-            sourceImages: z.lazy(() => CreateTeamSourceImages$.inboundSchema).optional(),
-            storageRedisTotalBandwidthInBytes: z
-                .lazy(() => CreateTeamStorageRedisTotalBandwidthInBytes$.inboundSchema)
-                .optional(),
-            storageRedisTotalCommands: z
-                .lazy(() => CreateTeamStorageRedisTotalCommands$.inboundSchema)
-                .optional(),
-            storageRedisTotalDailyAvgStorageInBytes: z
-                .lazy(() => CreateTeamStorageRedisTotalDailyAvgStorageInBytes$.inboundSchema)
-                .optional(),
-            storageRedisTotalDatabases: z
-                .lazy(() => CreateTeamStorageRedisTotalDatabases$.inboundSchema)
-                .optional(),
-            wafOwaspExcessBytes: z
-                .lazy(() => CreateTeamWafOwaspExcessBytes$.inboundSchema)
-                .optional(),
-            wafOwaspRequests: z.lazy(() => CreateTeamWafOwaspRequests$.inboundSchema).optional(),
-            webAnalyticsEvent: z.lazy(() => CreateTeamWebAnalyticsEvent$.inboundSchema).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.pro === undefined ? null : { pro: v.pro }),
-                ...(v.enterprise === undefined ? null : { enterprise: v.enterprise }),
-                ...(v.analytics === undefined ? null : { analytics: v.analytics }),
-                ...(v.concurrentBuilds === undefined
-                    ? null
-                    : { concurrentBuilds: v.concurrentBuilds }),
-                ...(v.monitoring === undefined ? null : { monitoring: v.monitoring }),
-                ...(v.passwordProtection === undefined
-                    ? null
-                    : { passwordProtection: v.passwordProtection }),
-                ...(v.previewDeploymentSuffix === undefined
-                    ? null
-                    : { previewDeploymentSuffix: v.previewDeploymentSuffix }),
-                ...(v.saml === undefined ? null : { saml: v.saml }),
-                ...(v.teamSeats === undefined ? null : { teamSeats: v.teamSeats }),
-                ...(v.webAnalytics === undefined ? null : { webAnalytics: v.webAnalytics }),
-                ...(v.analyticsUsage === undefined ? null : { analyticsUsage: v.analyticsUsage }),
-                ...(v.artifacts === undefined ? null : { artifacts: v.artifacts }),
-                ...(v.bandwidth === undefined ? null : { bandwidth: v.bandwidth }),
-                ...(v.blobStores === undefined ? null : { blobStores: v.blobStores }),
-                ...(v.blobTotalAdvancedRequests === undefined
-                    ? null
-                    : { blobTotalAdvancedRequests: v.blobTotalAdvancedRequests }),
-                ...(v.blobTotalAvgSizeInBytes === undefined
-                    ? null
-                    : { blobTotalAvgSizeInBytes: v.blobTotalAvgSizeInBytes }),
-                ...(v.blobTotalGetResponseObjectSizeInBytes === undefined
-                    ? null
-                    : {
-                          blobTotalGetResponseObjectSizeInBytes:
-                              v.blobTotalGetResponseObjectSizeInBytes,
-                      }),
-                ...(v.blobTotalSimpleRequests === undefined
-                    ? null
-                    : { blobTotalSimpleRequests: v.blobTotalSimpleRequests }),
-                ...(v.buildMinute === undefined ? null : { buildMinute: v.buildMinute }),
-                ...(v.dataCacheRead === undefined ? null : { dataCacheRead: v.dataCacheRead }),
-                ...(v.dataCacheRevalidation === undefined
-                    ? null
-                    : { dataCacheRevalidation: v.dataCacheRevalidation }),
-                ...(v.dataCacheWrite === undefined ? null : { dataCacheWrite: v.dataCacheWrite }),
-                ...(v.edgeConfigRead === undefined ? null : { edgeConfigRead: v.edgeConfigRead }),
-                ...(v.edgeConfigWrite === undefined
-                    ? null
-                    : { edgeConfigWrite: v.edgeConfigWrite }),
-                ...(v.edgeFunctionExecutionUnits === undefined
-                    ? null
-                    : { edgeFunctionExecutionUnits: v.edgeFunctionExecutionUnits }),
-                ...(v.edgeMiddlewareInvocations === undefined
-                    ? null
-                    : { edgeMiddlewareInvocations: v.edgeMiddlewareInvocations }),
-                ...(v.edgeRequest === undefined ? null : { edgeRequest: v.edgeRequest }),
-                ...(v.edgeRequestAdditionalCpuDuration === undefined
-                    ? null
-                    : { edgeRequestAdditionalCpuDuration: v.edgeRequestAdditionalCpuDuration }),
-                ...(v.fastDataTransfer === undefined
-                    ? null
-                    : { fastDataTransfer: v.fastDataTransfer }),
-                ...(v.fastOriginTransfer === undefined
-                    ? null
-                    : { fastOriginTransfer: v.fastOriginTransfer }),
-                ...(v.functionDuration === undefined
-                    ? null
-                    : { functionDuration: v.functionDuration }),
-                ...(v.functionInvocation === undefined
-                    ? null
-                    : { functionInvocation: v.functionInvocation }),
-                ...(v.logDrainsVolume === undefined
-                    ? null
-                    : { logDrainsVolume: v.logDrainsVolume }),
-                ...(v.monitoringMetric === undefined
-                    ? null
-                    : { monitoringMetric: v.monitoringMetric }),
-                ...(v.postgresComputeTime === undefined
-                    ? null
-                    : { postgresComputeTime: v.postgresComputeTime }),
-                ...(v.postgresDataStorage === undefined
-                    ? null
-                    : { postgresDataStorage: v.postgresDataStorage }),
-                ...(v.postgresDataTransfer === undefined
-                    ? null
-                    : { postgresDataTransfer: v.postgresDataTransfer }),
-                ...(v.postgresDatabase === undefined
-                    ? null
-                    : { postgresDatabase: v.postgresDatabase }),
-                ...(v.postgresWrittenData === undefined
-                    ? null
-                    : { postgresWrittenData: v.postgresWrittenData }),
-                ...(v.serverlessFunctionExecution === undefined
-                    ? null
-                    : { serverlessFunctionExecution: v.serverlessFunctionExecution }),
-                ...(v.sourceImages === undefined ? null : { sourceImages: v.sourceImages }),
-                ...(v.storageRedisTotalBandwidthInBytes === undefined
-                    ? null
-                    : { storageRedisTotalBandwidthInBytes: v.storageRedisTotalBandwidthInBytes }),
-                ...(v.storageRedisTotalCommands === undefined
-                    ? null
-                    : { storageRedisTotalCommands: v.storageRedisTotalCommands }),
-                ...(v.storageRedisTotalDailyAvgStorageInBytes === undefined
-                    ? null
-                    : {
-                          storageRedisTotalDailyAvgStorageInBytes:
-                              v.storageRedisTotalDailyAvgStorageInBytes,
-                      }),
-                ...(v.storageRedisTotalDatabases === undefined
-                    ? null
-                    : { storageRedisTotalDatabases: v.storageRedisTotalDatabases }),
-                ...(v.wafOwaspExcessBytes === undefined
-                    ? null
-                    : { wafOwaspExcessBytes: v.wafOwaspExcessBytes }),
-                ...(v.wafOwaspRequests === undefined
-                    ? null
-                    : { wafOwaspRequests: v.wafOwaspRequests }),
-                ...(v.webAnalyticsEvent === undefined
-                    ? null
-                    : { webAnalyticsEvent: v.webAnalyticsEvent }),
-            };
-        });
-
-    export type Outbound = {
-        pro?: CreateTeamPro$.Outbound | undefined;
-        enterprise?: CreateTeamEnterprise$.Outbound | undefined;
-        analytics?: CreateTeamAnalytics$.Outbound | undefined;
-        concurrentBuilds?: CreateTeamConcurrentBuilds$.Outbound | undefined;
-        monitoring?: CreateTeamMonitoring$.Outbound | undefined;
-        passwordProtection?: CreateTeamPasswordProtection$.Outbound | undefined;
-        previewDeploymentSuffix?: CreateTeamPreviewDeploymentSuffix$.Outbound | undefined;
-        saml?: CreateTeamSaml$.Outbound | undefined;
-        teamSeats?: CreateTeamTeamSeats$.Outbound | undefined;
-        webAnalytics?: CreateTeamWebAnalytics$.Outbound | undefined;
-        analyticsUsage?: CreateTeamAnalyticsUsage$.Outbound | undefined;
-        artifacts?: CreateTeamArtifacts$.Outbound | undefined;
-        bandwidth?: CreateTeamBandwidth$.Outbound | undefined;
-        blobStores?: CreateTeamBlobStores$.Outbound | undefined;
-        blobTotalAdvancedRequests?: CreateTeamBlobTotalAdvancedRequests$.Outbound | undefined;
-        blobTotalAvgSizeInBytes?: CreateTeamBlobTotalAvgSizeInBytes$.Outbound | undefined;
-        blobTotalGetResponseObjectSizeInBytes?:
-            | CreateTeamBlobTotalGetResponseObjectSizeInBytes$.Outbound
-            | undefined;
-        blobTotalSimpleRequests?: CreateTeamBlobTotalSimpleRequests$.Outbound | undefined;
-        buildMinute?: CreateTeamBuildMinute$.Outbound | undefined;
-        dataCacheRead?: CreateTeamDataCacheRead$.Outbound | undefined;
-        dataCacheRevalidation?: CreateTeamDataCacheRevalidation$.Outbound | undefined;
-        dataCacheWrite?: CreateTeamDataCacheWrite$.Outbound | undefined;
-        edgeConfigRead?: CreateTeamEdgeConfigRead$.Outbound | undefined;
-        edgeConfigWrite?: CreateTeamEdgeConfigWrite$.Outbound | undefined;
-        edgeFunctionExecutionUnits?: CreateTeamEdgeFunctionExecutionUnits$.Outbound | undefined;
-        edgeMiddlewareInvocations?: CreateTeamEdgeMiddlewareInvocations$.Outbound | undefined;
-        edgeRequest?: CreateTeamEdgeRequest$.Outbound | undefined;
-        edgeRequestAdditionalCpuDuration?:
-            | CreateTeamEdgeRequestAdditionalCpuDuration$.Outbound
-            | undefined;
-        fastDataTransfer?: CreateTeamFastDataTransfer$.Outbound | undefined;
-        fastOriginTransfer?: CreateTeamFastOriginTransfer$.Outbound | undefined;
-        functionDuration?: CreateTeamFunctionDuration$.Outbound | undefined;
-        functionInvocation?: CreateTeamFunctionInvocation$.Outbound | undefined;
-        logDrainsVolume?: CreateTeamLogDrainsVolume$.Outbound | undefined;
-        monitoringMetric?: CreateTeamMonitoringMetric$.Outbound | undefined;
-        postgresComputeTime?: CreateTeamPostgresComputeTime$.Outbound | undefined;
-        postgresDataStorage?: CreateTeamPostgresDataStorage$.Outbound | undefined;
-        postgresDataTransfer?: CreateTeamPostgresDataTransfer$.Outbound | undefined;
-        postgresDatabase?: CreateTeamPostgresDatabase$.Outbound | undefined;
-        postgresWrittenData?: CreateTeamPostgresWrittenData$.Outbound | undefined;
-        serverlessFunctionExecution?: CreateTeamServerlessFunctionExecution$.Outbound | undefined;
-        sourceImages?: CreateTeamSourceImages$.Outbound | undefined;
-        storageRedisTotalBandwidthInBytes?:
-            | CreateTeamStorageRedisTotalBandwidthInBytes$.Outbound
-            | undefined;
-        storageRedisTotalCommands?: CreateTeamStorageRedisTotalCommands$.Outbound | undefined;
-        storageRedisTotalDailyAvgStorageInBytes?:
-            | CreateTeamStorageRedisTotalDailyAvgStorageInBytes$.Outbound
-            | undefined;
-        storageRedisTotalDatabases?: CreateTeamStorageRedisTotalDatabases$.Outbound | undefined;
-        wafOwaspExcessBytes?: CreateTeamWafOwaspExcessBytes$.Outbound | undefined;
-        wafOwaspRequests?: CreateTeamWafOwaspRequests$.Outbound | undefined;
-        webAnalyticsEvent?: CreateTeamWebAnalyticsEvent$.Outbound | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamInvoiceItems> = z
-        .object({
-            pro: z.lazy(() => CreateTeamPro$.outboundSchema).optional(),
-            enterprise: z.lazy(() => CreateTeamEnterprise$.outboundSchema).optional(),
-            analytics: z.lazy(() => CreateTeamAnalytics$.outboundSchema).optional(),
-            concurrentBuilds: z.lazy(() => CreateTeamConcurrentBuilds$.outboundSchema).optional(),
-            monitoring: z.lazy(() => CreateTeamMonitoring$.outboundSchema).optional(),
-            passwordProtection: z
-                .lazy(() => CreateTeamPasswordProtection$.outboundSchema)
-                .optional(),
-            previewDeploymentSuffix: z
-                .lazy(() => CreateTeamPreviewDeploymentSuffix$.outboundSchema)
-                .optional(),
-            saml: z.lazy(() => CreateTeamSaml$.outboundSchema).optional(),
-            teamSeats: z.lazy(() => CreateTeamTeamSeats$.outboundSchema).optional(),
-            webAnalytics: z.lazy(() => CreateTeamWebAnalytics$.outboundSchema).optional(),
-            analyticsUsage: z.lazy(() => CreateTeamAnalyticsUsage$.outboundSchema).optional(),
-            artifacts: z.lazy(() => CreateTeamArtifacts$.outboundSchema).optional(),
-            bandwidth: z.lazy(() => CreateTeamBandwidth$.outboundSchema).optional(),
-            blobStores: z.lazy(() => CreateTeamBlobStores$.outboundSchema).optional(),
-            blobTotalAdvancedRequests: z
-                .lazy(() => CreateTeamBlobTotalAdvancedRequests$.outboundSchema)
-                .optional(),
-            blobTotalAvgSizeInBytes: z
-                .lazy(() => CreateTeamBlobTotalAvgSizeInBytes$.outboundSchema)
-                .optional(),
-            blobTotalGetResponseObjectSizeInBytes: z
-                .lazy(() => CreateTeamBlobTotalGetResponseObjectSizeInBytes$.outboundSchema)
-                .optional(),
-            blobTotalSimpleRequests: z
-                .lazy(() => CreateTeamBlobTotalSimpleRequests$.outboundSchema)
-                .optional(),
-            buildMinute: z.lazy(() => CreateTeamBuildMinute$.outboundSchema).optional(),
-            dataCacheRead: z.lazy(() => CreateTeamDataCacheRead$.outboundSchema).optional(),
-            dataCacheRevalidation: z
-                .lazy(() => CreateTeamDataCacheRevalidation$.outboundSchema)
-                .optional(),
-            dataCacheWrite: z.lazy(() => CreateTeamDataCacheWrite$.outboundSchema).optional(),
-            edgeConfigRead: z.lazy(() => CreateTeamEdgeConfigRead$.outboundSchema).optional(),
-            edgeConfigWrite: z.lazy(() => CreateTeamEdgeConfigWrite$.outboundSchema).optional(),
-            edgeFunctionExecutionUnits: z
-                .lazy(() => CreateTeamEdgeFunctionExecutionUnits$.outboundSchema)
-                .optional(),
-            edgeMiddlewareInvocations: z
-                .lazy(() => CreateTeamEdgeMiddlewareInvocations$.outboundSchema)
-                .optional(),
-            edgeRequest: z.lazy(() => CreateTeamEdgeRequest$.outboundSchema).optional(),
-            edgeRequestAdditionalCpuDuration: z
-                .lazy(() => CreateTeamEdgeRequestAdditionalCpuDuration$.outboundSchema)
-                .optional(),
-            fastDataTransfer: z.lazy(() => CreateTeamFastDataTransfer$.outboundSchema).optional(),
-            fastOriginTransfer: z
-                .lazy(() => CreateTeamFastOriginTransfer$.outboundSchema)
-                .optional(),
-            functionDuration: z.lazy(() => CreateTeamFunctionDuration$.outboundSchema).optional(),
-            functionInvocation: z
-                .lazy(() => CreateTeamFunctionInvocation$.outboundSchema)
-                .optional(),
-            logDrainsVolume: z.lazy(() => CreateTeamLogDrainsVolume$.outboundSchema).optional(),
-            monitoringMetric: z.lazy(() => CreateTeamMonitoringMetric$.outboundSchema).optional(),
-            postgresComputeTime: z
-                .lazy(() => CreateTeamPostgresComputeTime$.outboundSchema)
-                .optional(),
-            postgresDataStorage: z
-                .lazy(() => CreateTeamPostgresDataStorage$.outboundSchema)
-                .optional(),
-            postgresDataTransfer: z
-                .lazy(() => CreateTeamPostgresDataTransfer$.outboundSchema)
-                .optional(),
-            postgresDatabase: z.lazy(() => CreateTeamPostgresDatabase$.outboundSchema).optional(),
-            postgresWrittenData: z
-                .lazy(() => CreateTeamPostgresWrittenData$.outboundSchema)
-                .optional(),
-            serverlessFunctionExecution: z
-                .lazy(() => CreateTeamServerlessFunctionExecution$.outboundSchema)
-                .optional(),
-            sourceImages: z.lazy(() => CreateTeamSourceImages$.outboundSchema).optional(),
-            storageRedisTotalBandwidthInBytes: z
-                .lazy(() => CreateTeamStorageRedisTotalBandwidthInBytes$.outboundSchema)
-                .optional(),
-            storageRedisTotalCommands: z
-                .lazy(() => CreateTeamStorageRedisTotalCommands$.outboundSchema)
-                .optional(),
-            storageRedisTotalDailyAvgStorageInBytes: z
-                .lazy(() => CreateTeamStorageRedisTotalDailyAvgStorageInBytes$.outboundSchema)
-                .optional(),
-            storageRedisTotalDatabases: z
-                .lazy(() => CreateTeamStorageRedisTotalDatabases$.outboundSchema)
-                .optional(),
-            wafOwaspExcessBytes: z
-                .lazy(() => CreateTeamWafOwaspExcessBytes$.outboundSchema)
-                .optional(),
-            wafOwaspRequests: z.lazy(() => CreateTeamWafOwaspRequests$.outboundSchema).optional(),
-            webAnalyticsEvent: z.lazy(() => CreateTeamWebAnalyticsEvent$.outboundSchema).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.pro === undefined ? null : { pro: v.pro }),
-                ...(v.enterprise === undefined ? null : { enterprise: v.enterprise }),
-                ...(v.analytics === undefined ? null : { analytics: v.analytics }),
-                ...(v.concurrentBuilds === undefined
-                    ? null
-                    : { concurrentBuilds: v.concurrentBuilds }),
-                ...(v.monitoring === undefined ? null : { monitoring: v.monitoring }),
-                ...(v.passwordProtection === undefined
-                    ? null
-                    : { passwordProtection: v.passwordProtection }),
-                ...(v.previewDeploymentSuffix === undefined
-                    ? null
-                    : { previewDeploymentSuffix: v.previewDeploymentSuffix }),
-                ...(v.saml === undefined ? null : { saml: v.saml }),
-                ...(v.teamSeats === undefined ? null : { teamSeats: v.teamSeats }),
-                ...(v.webAnalytics === undefined ? null : { webAnalytics: v.webAnalytics }),
-                ...(v.analyticsUsage === undefined ? null : { analyticsUsage: v.analyticsUsage }),
-                ...(v.artifacts === undefined ? null : { artifacts: v.artifacts }),
-                ...(v.bandwidth === undefined ? null : { bandwidth: v.bandwidth }),
-                ...(v.blobStores === undefined ? null : { blobStores: v.blobStores }),
-                ...(v.blobTotalAdvancedRequests === undefined
-                    ? null
-                    : { blobTotalAdvancedRequests: v.blobTotalAdvancedRequests }),
-                ...(v.blobTotalAvgSizeInBytes === undefined
-                    ? null
-                    : { blobTotalAvgSizeInBytes: v.blobTotalAvgSizeInBytes }),
-                ...(v.blobTotalGetResponseObjectSizeInBytes === undefined
-                    ? null
-                    : {
-                          blobTotalGetResponseObjectSizeInBytes:
-                              v.blobTotalGetResponseObjectSizeInBytes,
-                      }),
-                ...(v.blobTotalSimpleRequests === undefined
-                    ? null
-                    : { blobTotalSimpleRequests: v.blobTotalSimpleRequests }),
-                ...(v.buildMinute === undefined ? null : { buildMinute: v.buildMinute }),
-                ...(v.dataCacheRead === undefined ? null : { dataCacheRead: v.dataCacheRead }),
-                ...(v.dataCacheRevalidation === undefined
-                    ? null
-                    : { dataCacheRevalidation: v.dataCacheRevalidation }),
-                ...(v.dataCacheWrite === undefined ? null : { dataCacheWrite: v.dataCacheWrite }),
-                ...(v.edgeConfigRead === undefined ? null : { edgeConfigRead: v.edgeConfigRead }),
-                ...(v.edgeConfigWrite === undefined
-                    ? null
-                    : { edgeConfigWrite: v.edgeConfigWrite }),
-                ...(v.edgeFunctionExecutionUnits === undefined
-                    ? null
-                    : { edgeFunctionExecutionUnits: v.edgeFunctionExecutionUnits }),
-                ...(v.edgeMiddlewareInvocations === undefined
-                    ? null
-                    : { edgeMiddlewareInvocations: v.edgeMiddlewareInvocations }),
-                ...(v.edgeRequest === undefined ? null : { edgeRequest: v.edgeRequest }),
-                ...(v.edgeRequestAdditionalCpuDuration === undefined
-                    ? null
-                    : { edgeRequestAdditionalCpuDuration: v.edgeRequestAdditionalCpuDuration }),
-                ...(v.fastDataTransfer === undefined
-                    ? null
-                    : { fastDataTransfer: v.fastDataTransfer }),
-                ...(v.fastOriginTransfer === undefined
-                    ? null
-                    : { fastOriginTransfer: v.fastOriginTransfer }),
-                ...(v.functionDuration === undefined
-                    ? null
-                    : { functionDuration: v.functionDuration }),
-                ...(v.functionInvocation === undefined
-                    ? null
-                    : { functionInvocation: v.functionInvocation }),
-                ...(v.logDrainsVolume === undefined
-                    ? null
-                    : { logDrainsVolume: v.logDrainsVolume }),
-                ...(v.monitoringMetric === undefined
-                    ? null
-                    : { monitoringMetric: v.monitoringMetric }),
-                ...(v.postgresComputeTime === undefined
-                    ? null
-                    : { postgresComputeTime: v.postgresComputeTime }),
-                ...(v.postgresDataStorage === undefined
-                    ? null
-                    : { postgresDataStorage: v.postgresDataStorage }),
-                ...(v.postgresDataTransfer === undefined
-                    ? null
-                    : { postgresDataTransfer: v.postgresDataTransfer }),
-                ...(v.postgresDatabase === undefined
-                    ? null
-                    : { postgresDatabase: v.postgresDatabase }),
-                ...(v.postgresWrittenData === undefined
-                    ? null
-                    : { postgresWrittenData: v.postgresWrittenData }),
-                ...(v.serverlessFunctionExecution === undefined
-                    ? null
-                    : { serverlessFunctionExecution: v.serverlessFunctionExecution }),
-                ...(v.sourceImages === undefined ? null : { sourceImages: v.sourceImages }),
-                ...(v.storageRedisTotalBandwidthInBytes === undefined
-                    ? null
-                    : { storageRedisTotalBandwidthInBytes: v.storageRedisTotalBandwidthInBytes }),
-                ...(v.storageRedisTotalCommands === undefined
-                    ? null
-                    : { storageRedisTotalCommands: v.storageRedisTotalCommands }),
-                ...(v.storageRedisTotalDailyAvgStorageInBytes === undefined
-                    ? null
-                    : {
-                          storageRedisTotalDailyAvgStorageInBytes:
-                              v.storageRedisTotalDailyAvgStorageInBytes,
-                      }),
-                ...(v.storageRedisTotalDatabases === undefined
-                    ? null
-                    : { storageRedisTotalDatabases: v.storageRedisTotalDatabases }),
-                ...(v.wafOwaspExcessBytes === undefined
-                    ? null
-                    : { wafOwaspExcessBytes: v.wafOwaspExcessBytes }),
-                ...(v.wafOwaspRequests === undefined
-                    ? null
-                    : { wafOwaspRequests: v.wafOwaspRequests }),
-                ...(v.webAnalyticsEvent === undefined
-                    ? null
-                    : { webAnalyticsEvent: v.webAnalyticsEvent }),
-            };
-        });
+    /** @deprecated use `CreateTeamInvoiceItems$inboundSchema` instead. */
+    export const inboundSchema = CreateTeamInvoiceItems$inboundSchema;
+    /** @deprecated use `CreateTeamInvoiceItems$outboundSchema` instead. */
+    export const outboundSchema = CreateTeamInvoiceItems$outboundSchema;
+    /** @deprecated use `CreateTeamInvoiceItems$Outbound` instead. */
+    export type Outbound = CreateTeamInvoiceItems$Outbound;
 }
 
 /** @internal */
+export const CreateTeamInvoiceSettings$inboundSchema: z.ZodType<
+    CreateTeamInvoiceSettings,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    footer: z.string().optional(),
+});
+
+/** @internal */
+export type CreateTeamInvoiceSettings$Outbound = {
+    footer?: string | undefined;
+};
+
+/** @internal */
+export const CreateTeamInvoiceSettings$outboundSchema: z.ZodType<
+    CreateTeamInvoiceSettings$Outbound,
+    z.ZodTypeDef,
+    CreateTeamInvoiceSettings
+> = z.object({
+    footer: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamInvoiceSettings$ {
-    export const inboundSchema: z.ZodType<CreateTeamInvoiceSettings, z.ZodTypeDef, unknown> = z
-        .object({
-            footer: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.footer === undefined ? null : { footer: v.footer }),
-            };
-        });
-
-    export type Outbound = {
-        footer?: string | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamInvoiceSettings> = z
-        .object({
-            footer: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.footer === undefined ? null : { footer: v.footer }),
-            };
-        });
+    /** @deprecated use `CreateTeamInvoiceSettings$inboundSchema` instead. */
+    export const inboundSchema = CreateTeamInvoiceSettings$inboundSchema;
+    /** @deprecated use `CreateTeamInvoiceSettings$outboundSchema` instead. */
+    export const outboundSchema = CreateTeamInvoiceSettings$outboundSchema;
+    /** @deprecated use `CreateTeamInvoiceSettings$Outbound` instead. */
+    export type Outbound = CreateTeamInvoiceSettings$Outbound;
 }
 
 /** @internal */
+export const CreateTeamTeamsTrial$inboundSchema: z.ZodType<
+    CreateTeamTeamsTrial,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    start: z.number(),
+    end: z.number(),
+});
+
+/** @internal */
+export type CreateTeamTeamsTrial$Outbound = {
+    start: number;
+    end: number;
+};
+
+/** @internal */
+export const CreateTeamTeamsTrial$outboundSchema: z.ZodType<
+    CreateTeamTeamsTrial$Outbound,
+    z.ZodTypeDef,
+    CreateTeamTeamsTrial
+> = z.object({
+    start: z.number(),
+    end: z.number(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamTeamsTrial$ {
-    export const inboundSchema: z.ZodType<CreateTeamTeamsTrial, z.ZodTypeDef, unknown> = z
-        .object({
-            start: z.number(),
-            end: z.number(),
-        })
-        .transform((v) => {
-            return {
-                start: v.start,
-                end: v.end,
-            };
-        });
-
-    export type Outbound = {
-        start: number;
-        end: number;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamTeamsTrial> = z
-        .object({
-            start: z.number(),
-            end: z.number(),
-        })
-        .transform((v) => {
-            return {
-                start: v.start,
-                end: v.end,
-            };
-        });
+    /** @deprecated use `CreateTeamTeamsTrial$inboundSchema` instead. */
+    export const inboundSchema = CreateTeamTeamsTrial$inboundSchema;
+    /** @deprecated use `CreateTeamTeamsTrial$outboundSchema` instead. */
+    export const outboundSchema = CreateTeamTeamsTrial$outboundSchema;
+    /** @deprecated use `CreateTeamTeamsTrial$Outbound` instead. */
+    export type Outbound = CreateTeamTeamsTrial$Outbound;
 }
 
 /** @internal */
+export const CreateTeamTeamsPeriod$inboundSchema: z.ZodType<
+    CreateTeamTeamsPeriod,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    start: z.number(),
+    end: z.number(),
+});
+
+/** @internal */
+export type CreateTeamTeamsPeriod$Outbound = {
+    start: number;
+    end: number;
+};
+
+/** @internal */
+export const CreateTeamTeamsPeriod$outboundSchema: z.ZodType<
+    CreateTeamTeamsPeriod$Outbound,
+    z.ZodTypeDef,
+    CreateTeamTeamsPeriod
+> = z.object({
+    start: z.number(),
+    end: z.number(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamTeamsPeriod$ {
-    export const inboundSchema: z.ZodType<CreateTeamTeamsPeriod, z.ZodTypeDef, unknown> = z
-        .object({
-            start: z.number(),
-            end: z.number(),
-        })
-        .transform((v) => {
-            return {
-                start: v.start,
-                end: v.end,
-            };
-        });
-
-    export type Outbound = {
-        start: number;
-        end: number;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamTeamsPeriod> = z
-        .object({
-            start: z.number(),
-            end: z.number(),
-        })
-        .transform((v) => {
-            return {
-                start: v.start,
-                end: v.end,
-            };
-        });
+    /** @deprecated use `CreateTeamTeamsPeriod$inboundSchema` instead. */
+    export const inboundSchema = CreateTeamTeamsPeriod$inboundSchema;
+    /** @deprecated use `CreateTeamTeamsPeriod$outboundSchema` instead. */
+    export const outboundSchema = CreateTeamTeamsPeriod$outboundSchema;
+    /** @deprecated use `CreateTeamTeamsPeriod$Outbound` instead. */
+    export type Outbound = CreateTeamTeamsPeriod$Outbound;
 }
 
 /** @internal */
+export const CreateTeamInterval$inboundSchema: z.ZodNativeEnum<typeof CreateTeamInterval> =
+    z.nativeEnum(CreateTeamInterval);
+
+/** @internal */
+export const CreateTeamInterval$outboundSchema: z.ZodNativeEnum<typeof CreateTeamInterval> =
+    CreateTeamInterval$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamInterval$ {
-    export const inboundSchema = z.nativeEnum(CreateTeamInterval);
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `CreateTeamInterval$inboundSchema` instead. */
+    export const inboundSchema = CreateTeamInterval$inboundSchema;
+    /** @deprecated use `CreateTeamInterval$outboundSchema` instead. */
+    export const outboundSchema = CreateTeamInterval$outboundSchema;
 }
 
 /** @internal */
+export const CreateTeamFrequency$inboundSchema: z.ZodType<
+    CreateTeamFrequency,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    interval: CreateTeamInterval$inboundSchema,
+    intervalCount: z.number(),
+});
+
+/** @internal */
+export type CreateTeamFrequency$Outbound = {
+    interval: string;
+    intervalCount: number;
+};
+
+/** @internal */
+export const CreateTeamFrequency$outboundSchema: z.ZodType<
+    CreateTeamFrequency$Outbound,
+    z.ZodTypeDef,
+    CreateTeamFrequency
+> = z.object({
+    interval: CreateTeamInterval$outboundSchema,
+    intervalCount: z.number(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamFrequency$ {
-    export const inboundSchema: z.ZodType<CreateTeamFrequency, z.ZodTypeDef, unknown> = z
-        .object({
-            interval: CreateTeamInterval$.inboundSchema,
-            intervalCount: z.number(),
-        })
-        .transform((v) => {
-            return {
-                interval: v.interval,
-                intervalCount: v.intervalCount,
-            };
-        });
-
-    export type Outbound = {
-        interval: string;
-        intervalCount: number;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamFrequency> = z
-        .object({
-            interval: CreateTeamInterval$.outboundSchema,
-            intervalCount: z.number(),
-        })
-        .transform((v) => {
-            return {
-                interval: v.interval,
-                intervalCount: v.intervalCount,
-            };
-        });
+    /** @deprecated use `CreateTeamFrequency$inboundSchema` instead. */
+    export const inboundSchema = CreateTeamFrequency$inboundSchema;
+    /** @deprecated use `CreateTeamFrequency$outboundSchema` instead. */
+    export const outboundSchema = CreateTeamFrequency$outboundSchema;
+    /** @deprecated use `CreateTeamFrequency$Outbound` instead. */
+    export type Outbound = CreateTeamFrequency$Outbound;
 }
 
 /** @internal */
+export const CreateTeamDuration$inboundSchema: z.ZodNativeEnum<typeof CreateTeamDuration> =
+    z.nativeEnum(CreateTeamDuration);
+
+/** @internal */
+export const CreateTeamDuration$outboundSchema: z.ZodNativeEnum<typeof CreateTeamDuration> =
+    CreateTeamDuration$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamDuration$ {
-    export const inboundSchema = z.nativeEnum(CreateTeamDuration);
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `CreateTeamDuration$inboundSchema` instead. */
+    export const inboundSchema = CreateTeamDuration$inboundSchema;
+    /** @deprecated use `CreateTeamDuration$outboundSchema` instead. */
+    export const outboundSchema = CreateTeamDuration$outboundSchema;
 }
 
 /** @internal */
+export const CreateTeamCoupon$inboundSchema: z.ZodType<CreateTeamCoupon, z.ZodTypeDef, unknown> =
+    z.object({
+        id: z.string(),
+        name: z.nullable(z.string()),
+        amountOff: z.nullable(z.number()),
+        percentageOff: z.nullable(z.number()),
+        durationInMonths: z.nullable(z.number()),
+        duration: CreateTeamDuration$inboundSchema,
+    });
+
+/** @internal */
+export type CreateTeamCoupon$Outbound = {
+    id: string;
+    name: string | null;
+    amountOff: number | null;
+    percentageOff: number | null;
+    durationInMonths: number | null;
+    duration: string;
+};
+
+/** @internal */
+export const CreateTeamCoupon$outboundSchema: z.ZodType<
+    CreateTeamCoupon$Outbound,
+    z.ZodTypeDef,
+    CreateTeamCoupon
+> = z.object({
+    id: z.string(),
+    name: z.nullable(z.string()),
+    amountOff: z.nullable(z.number()),
+    percentageOff: z.nullable(z.number()),
+    durationInMonths: z.nullable(z.number()),
+    duration: CreateTeamDuration$outboundSchema,
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamCoupon$ {
-    export const inboundSchema: z.ZodType<CreateTeamCoupon, z.ZodTypeDef, unknown> = z
-        .object({
-            id: z.string(),
-            name: z.nullable(z.string()),
-            amountOff: z.nullable(z.number()),
-            percentageOff: z.nullable(z.number()),
-            durationInMonths: z.nullable(z.number()),
-            duration: CreateTeamDuration$.inboundSchema,
-        })
-        .transform((v) => {
-            return {
-                id: v.id,
-                name: v.name,
-                amountOff: v.amountOff,
-                percentageOff: v.percentageOff,
-                durationInMonths: v.durationInMonths,
-                duration: v.duration,
-            };
-        });
-
-    export type Outbound = {
-        id: string;
-        name: string | null;
-        amountOff: number | null;
-        percentageOff: number | null;
-        durationInMonths: number | null;
-        duration: string;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamCoupon> = z
-        .object({
-            id: z.string(),
-            name: z.nullable(z.string()),
-            amountOff: z.nullable(z.number()),
-            percentageOff: z.nullable(z.number()),
-            durationInMonths: z.nullable(z.number()),
-            duration: CreateTeamDuration$.outboundSchema,
-        })
-        .transform((v) => {
-            return {
-                id: v.id,
-                name: v.name,
-                amountOff: v.amountOff,
-                percentageOff: v.percentageOff,
-                durationInMonths: v.durationInMonths,
-                duration: v.duration,
-            };
-        });
+    /** @deprecated use `CreateTeamCoupon$inboundSchema` instead. */
+    export const inboundSchema = CreateTeamCoupon$inboundSchema;
+    /** @deprecated use `CreateTeamCoupon$outboundSchema` instead. */
+    export const outboundSchema = CreateTeamCoupon$outboundSchema;
+    /** @deprecated use `CreateTeamCoupon$Outbound` instead. */
+    export type Outbound = CreateTeamCoupon$Outbound;
 }
 
 /** @internal */
+export const CreateTeamDiscount$inboundSchema: z.ZodType<
+    CreateTeamDiscount,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    id: z.string(),
+    coupon: z.lazy(() => CreateTeamCoupon$inboundSchema),
+});
+
+/** @internal */
+export type CreateTeamDiscount$Outbound = {
+    id: string;
+    coupon: CreateTeamCoupon$Outbound;
+};
+
+/** @internal */
+export const CreateTeamDiscount$outboundSchema: z.ZodType<
+    CreateTeamDiscount$Outbound,
+    z.ZodTypeDef,
+    CreateTeamDiscount
+> = z.object({
+    id: z.string(),
+    coupon: z.lazy(() => CreateTeamCoupon$outboundSchema),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamDiscount$ {
-    export const inboundSchema: z.ZodType<CreateTeamDiscount, z.ZodTypeDef, unknown> = z
-        .object({
-            id: z.string(),
-            coupon: z.lazy(() => CreateTeamCoupon$.inboundSchema),
-        })
-        .transform((v) => {
-            return {
-                id: v.id,
-                coupon: v.coupon,
-            };
-        });
-
-    export type Outbound = {
-        id: string;
-        coupon: CreateTeamCoupon$.Outbound;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamDiscount> = z
-        .object({
-            id: z.string(),
-            coupon: z.lazy(() => CreateTeamCoupon$.outboundSchema),
-        })
-        .transform((v) => {
-            return {
-                id: v.id,
-                coupon: v.coupon,
-            };
-        });
+    /** @deprecated use `CreateTeamDiscount$inboundSchema` instead. */
+    export const inboundSchema = CreateTeamDiscount$inboundSchema;
+    /** @deprecated use `CreateTeamDiscount$outboundSchema` instead. */
+    export const outboundSchema = CreateTeamDiscount$outboundSchema;
+    /** @deprecated use `CreateTeamDiscount$Outbound` instead. */
+    export type Outbound = CreateTeamDiscount$Outbound;
 }
 
 /** @internal */
+export const CreateTeamItems$inboundSchema: z.ZodType<CreateTeamItems, z.ZodTypeDef, unknown> =
+    z.object({
+        id: z.string(),
+        priceId: z.string(),
+        productId: z.string(),
+        amount: z.number(),
+        quantity: z.number(),
+    });
+
+/** @internal */
+export type CreateTeamItems$Outbound = {
+    id: string;
+    priceId: string;
+    productId: string;
+    amount: number;
+    quantity: number;
+};
+
+/** @internal */
+export const CreateTeamItems$outboundSchema: z.ZodType<
+    CreateTeamItems$Outbound,
+    z.ZodTypeDef,
+    CreateTeamItems
+> = z.object({
+    id: z.string(),
+    priceId: z.string(),
+    productId: z.string(),
+    amount: z.number(),
+    quantity: z.number(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamItems$ {
-    export const inboundSchema: z.ZodType<CreateTeamItems, z.ZodTypeDef, unknown> = z
-        .object({
-            id: z.string(),
-            priceId: z.string(),
-            productId: z.string(),
-            amount: z.number(),
-            quantity: z.number(),
-        })
-        .transform((v) => {
-            return {
-                id: v.id,
-                priceId: v.priceId,
-                productId: v.productId,
-                amount: v.amount,
-                quantity: v.quantity,
-            };
-        });
-
-    export type Outbound = {
-        id: string;
-        priceId: string;
-        productId: string;
-        amount: number;
-        quantity: number;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamItems> = z
-        .object({
-            id: z.string(),
-            priceId: z.string(),
-            productId: z.string(),
-            amount: z.number(),
-            quantity: z.number(),
-        })
-        .transform((v) => {
-            return {
-                id: v.id,
-                priceId: v.priceId,
-                productId: v.productId,
-                amount: v.amount,
-                quantity: v.quantity,
-            };
-        });
+    /** @deprecated use `CreateTeamItems$inboundSchema` instead. */
+    export const inboundSchema = CreateTeamItems$inboundSchema;
+    /** @deprecated use `CreateTeamItems$outboundSchema` instead. */
+    export const outboundSchema = CreateTeamItems$outboundSchema;
+    /** @deprecated use `CreateTeamItems$Outbound` instead. */
+    export type Outbound = CreateTeamItems$Outbound;
 }
 
 /** @internal */
+export const CreateTeamSubscriptions$inboundSchema: z.ZodType<
+    CreateTeamSubscriptions,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    id: z.string(),
+    trial: z.nullable(z.lazy(() => CreateTeamTeamsTrial$inboundSchema)),
+    period: z.lazy(() => CreateTeamTeamsPeriod$inboundSchema),
+    frequency: z.lazy(() => CreateTeamFrequency$inboundSchema),
+    discount: z.nullable(z.lazy(() => CreateTeamDiscount$inboundSchema)),
+    items: z.array(z.lazy(() => CreateTeamItems$inboundSchema)),
+});
+
+/** @internal */
+export type CreateTeamSubscriptions$Outbound = {
+    id: string;
+    trial: CreateTeamTeamsTrial$Outbound | null;
+    period: CreateTeamTeamsPeriod$Outbound;
+    frequency: CreateTeamFrequency$Outbound;
+    discount: CreateTeamDiscount$Outbound | null;
+    items: Array<CreateTeamItems$Outbound>;
+};
+
+/** @internal */
+export const CreateTeamSubscriptions$outboundSchema: z.ZodType<
+    CreateTeamSubscriptions$Outbound,
+    z.ZodTypeDef,
+    CreateTeamSubscriptions
+> = z.object({
+    id: z.string(),
+    trial: z.nullable(z.lazy(() => CreateTeamTeamsTrial$outboundSchema)),
+    period: z.lazy(() => CreateTeamTeamsPeriod$outboundSchema),
+    frequency: z.lazy(() => CreateTeamFrequency$outboundSchema),
+    discount: z.nullable(z.lazy(() => CreateTeamDiscount$outboundSchema)),
+    items: z.array(z.lazy(() => CreateTeamItems$outboundSchema)),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamSubscriptions$ {
-    export const inboundSchema: z.ZodType<CreateTeamSubscriptions, z.ZodTypeDef, unknown> = z
-        .object({
-            id: z.string(),
-            trial: z.nullable(z.lazy(() => CreateTeamTeamsTrial$.inboundSchema)),
-            period: z.lazy(() => CreateTeamTeamsPeriod$.inboundSchema),
-            frequency: z.lazy(() => CreateTeamFrequency$.inboundSchema),
-            discount: z.nullable(z.lazy(() => CreateTeamDiscount$.inboundSchema)),
-            items: z.array(z.lazy(() => CreateTeamItems$.inboundSchema)),
-        })
-        .transform((v) => {
-            return {
-                id: v.id,
-                trial: v.trial,
-                period: v.period,
-                frequency: v.frequency,
-                discount: v.discount,
-                items: v.items,
-            };
-        });
-
-    export type Outbound = {
-        id: string;
-        trial: CreateTeamTeamsTrial$.Outbound | null;
-        period: CreateTeamTeamsPeriod$.Outbound;
-        frequency: CreateTeamFrequency$.Outbound;
-        discount: CreateTeamDiscount$.Outbound | null;
-        items: Array<CreateTeamItems$.Outbound>;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamSubscriptions> = z
-        .object({
-            id: z.string(),
-            trial: z.nullable(z.lazy(() => CreateTeamTeamsTrial$.outboundSchema)),
-            period: z.lazy(() => CreateTeamTeamsPeriod$.outboundSchema),
-            frequency: z.lazy(() => CreateTeamFrequency$.outboundSchema),
-            discount: z.nullable(z.lazy(() => CreateTeamDiscount$.outboundSchema)),
-            items: z.array(z.lazy(() => CreateTeamItems$.outboundSchema)),
-        })
-        .transform((v) => {
-            return {
-                id: v.id,
-                trial: v.trial,
-                period: v.period,
-                frequency: v.frequency,
-                discount: v.discount,
-                items: v.items,
-            };
-        });
+    /** @deprecated use `CreateTeamSubscriptions$inboundSchema` instead. */
+    export const inboundSchema = CreateTeamSubscriptions$inboundSchema;
+    /** @deprecated use `CreateTeamSubscriptions$outboundSchema` instead. */
+    export const outboundSchema = CreateTeamSubscriptions$outboundSchema;
+    /** @deprecated use `CreateTeamSubscriptions$Outbound` instead. */
+    export type Outbound = CreateTeamSubscriptions$Outbound;
 }
 
 /** @internal */
+export const CreateTeamControls$inboundSchema: z.ZodType<
+    CreateTeamControls,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    analyticsSampleRateInPercent: z.nullable(z.number()).optional(),
+    analyticsSpendLimitInDollars: z.nullable(z.number()).optional(),
+});
+
+/** @internal */
+export type CreateTeamControls$Outbound = {
+    analyticsSampleRateInPercent?: number | null | undefined;
+    analyticsSpendLimitInDollars?: number | null | undefined;
+};
+
+/** @internal */
+export const CreateTeamControls$outboundSchema: z.ZodType<
+    CreateTeamControls$Outbound,
+    z.ZodTypeDef,
+    CreateTeamControls
+> = z.object({
+    analyticsSampleRateInPercent: z.nullable(z.number()).optional(),
+    analyticsSpendLimitInDollars: z.nullable(z.number()).optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamControls$ {
-    export const inboundSchema: z.ZodType<CreateTeamControls, z.ZodTypeDef, unknown> = z
-        .object({
-            analyticsSampleRateInPercent: z.nullable(z.number()).optional(),
-            analyticsSpendLimitInDollars: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.analyticsSampleRateInPercent === undefined
-                    ? null
-                    : { analyticsSampleRateInPercent: v.analyticsSampleRateInPercent }),
-                ...(v.analyticsSpendLimitInDollars === undefined
-                    ? null
-                    : { analyticsSpendLimitInDollars: v.analyticsSpendLimitInDollars }),
-            };
-        });
-
-    export type Outbound = {
-        analyticsSampleRateInPercent?: number | null | undefined;
-        analyticsSpendLimitInDollars?: number | null | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamControls> = z
-        .object({
-            analyticsSampleRateInPercent: z.nullable(z.number()).optional(),
-            analyticsSpendLimitInDollars: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.analyticsSampleRateInPercent === undefined
-                    ? null
-                    : { analyticsSampleRateInPercent: v.analyticsSampleRateInPercent }),
-                ...(v.analyticsSpendLimitInDollars === undefined
-                    ? null
-                    : { analyticsSpendLimitInDollars: v.analyticsSpendLimitInDollars }),
-            };
-        });
+    /** @deprecated use `CreateTeamControls$inboundSchema` instead. */
+    export const inboundSchema = CreateTeamControls$inboundSchema;
+    /** @deprecated use `CreateTeamControls$outboundSchema` instead. */
+    export const outboundSchema = CreateTeamControls$outboundSchema;
+    /** @deprecated use `CreateTeamControls$Outbound` instead. */
+    export type Outbound = CreateTeamControls$Outbound;
 }
 
 /** @internal */
+export const CreateTeamStatus$inboundSchema: z.ZodNativeEnum<typeof CreateTeamStatus> =
+    z.nativeEnum(CreateTeamStatus);
+
+/** @internal */
+export const CreateTeamStatus$outboundSchema: z.ZodNativeEnum<typeof CreateTeamStatus> =
+    CreateTeamStatus$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamStatus$ {
-    export const inboundSchema = z.nativeEnum(CreateTeamStatus);
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `CreateTeamStatus$inboundSchema` instead. */
+    export const inboundSchema = CreateTeamStatus$inboundSchema;
+    /** @deprecated use `CreateTeamStatus$outboundSchema` instead. */
+    export const outboundSchema = CreateTeamStatus$outboundSchema;
 }
 
 /** @internal */
+export const CreateTeamPricingExperiment$inboundSchema: z.ZodNativeEnum<
+    typeof CreateTeamPricingExperiment
+> = z.nativeEnum(CreateTeamPricingExperiment);
+
+/** @internal */
+export const CreateTeamPricingExperiment$outboundSchema: z.ZodNativeEnum<
+    typeof CreateTeamPricingExperiment
+> = CreateTeamPricingExperiment$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamPricingExperiment$ {
-    export const inboundSchema = z.nativeEnum(CreateTeamPricingExperiment);
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `CreateTeamPricingExperiment$inboundSchema` instead. */
+    export const inboundSchema = CreateTeamPricingExperiment$inboundSchema;
+    /** @deprecated use `CreateTeamPricingExperiment$outboundSchema` instead. */
+    export const outboundSchema = CreateTeamPricingExperiment$outboundSchema;
 }
 
 /** @internal */
+export const CreateTeamBilling$inboundSchema: z.ZodType<CreateTeamBilling, z.ZodTypeDef, unknown> =
+    z.object({
+        currency: CreateTeamCurrency$inboundSchema.optional(),
+        cancelation: z.nullable(z.number()).optional(),
+        period: z.nullable(z.lazy(() => CreateTeamPeriod$inboundSchema)),
+        contract: z.nullable(z.lazy(() => CreateTeamContract$inboundSchema)).optional(),
+        plan: CreateTeamPlan$inboundSchema,
+        planIteration: z.string().optional(),
+        platform: CreateTeamPlatform$inboundSchema.optional(),
+        orbCustomerId: z.string().optional(),
+        syncedAt: z.number().optional(),
+        programType: CreateTeamProgramType$inboundSchema.optional(),
+        trial: z.nullable(z.lazy(() => CreateTeamTrial$inboundSchema)).optional(),
+        email: z.nullable(z.string()).optional(),
+        tax: z.nullable(z.lazy(() => CreateTeamTax$inboundSchema)).optional(),
+        language: z.nullable(z.string()).optional(),
+        address: z.nullable(z.lazy(() => CreateTeamAddress$inboundSchema)).optional(),
+        name: z.nullable(z.string()).optional(),
+        invoiceItems: z.nullable(z.lazy(() => CreateTeamInvoiceItems$inboundSchema)).optional(),
+        invoiceSettings: z.lazy(() => CreateTeamInvoiceSettings$inboundSchema).optional(),
+        subscriptions: z
+            .nullable(z.array(z.lazy(() => CreateTeamSubscriptions$inboundSchema)))
+            .optional(),
+        controls: z.nullable(z.lazy(() => CreateTeamControls$inboundSchema)).optional(),
+        purchaseOrder: z.nullable(z.string()).optional(),
+        status: CreateTeamStatus$inboundSchema.optional(),
+        pricingExperiment: CreateTeamPricingExperiment$inboundSchema.optional(),
+        orbMigrationScheduledAt: z.nullable(z.number()).optional(),
+    });
+
+/** @internal */
+export type CreateTeamBilling$Outbound = {
+    currency?: string | undefined;
+    cancelation?: number | null | undefined;
+    period: CreateTeamPeriod$Outbound | null;
+    contract?: CreateTeamContract$Outbound | null | undefined;
+    plan: string;
+    planIteration?: string | undefined;
+    platform?: string | undefined;
+    orbCustomerId?: string | undefined;
+    syncedAt?: number | undefined;
+    programType?: string | undefined;
+    trial?: CreateTeamTrial$Outbound | null | undefined;
+    email?: string | null | undefined;
+    tax?: CreateTeamTax$Outbound | null | undefined;
+    language?: string | null | undefined;
+    address?: CreateTeamAddress$Outbound | null | undefined;
+    name?: string | null | undefined;
+    invoiceItems?: CreateTeamInvoiceItems$Outbound | null | undefined;
+    invoiceSettings?: CreateTeamInvoiceSettings$Outbound | undefined;
+    subscriptions?: Array<CreateTeamSubscriptions$Outbound> | null | undefined;
+    controls?: CreateTeamControls$Outbound | null | undefined;
+    purchaseOrder?: string | null | undefined;
+    status?: string | undefined;
+    pricingExperiment?: string | undefined;
+    orbMigrationScheduledAt?: number | null | undefined;
+};
+
+/** @internal */
+export const CreateTeamBilling$outboundSchema: z.ZodType<
+    CreateTeamBilling$Outbound,
+    z.ZodTypeDef,
+    CreateTeamBilling
+> = z.object({
+    currency: CreateTeamCurrency$outboundSchema.optional(),
+    cancelation: z.nullable(z.number()).optional(),
+    period: z.nullable(z.lazy(() => CreateTeamPeriod$outboundSchema)),
+    contract: z.nullable(z.lazy(() => CreateTeamContract$outboundSchema)).optional(),
+    plan: CreateTeamPlan$outboundSchema,
+    planIteration: z.string().optional(),
+    platform: CreateTeamPlatform$outboundSchema.optional(),
+    orbCustomerId: z.string().optional(),
+    syncedAt: z.number().optional(),
+    programType: CreateTeamProgramType$outboundSchema.optional(),
+    trial: z.nullable(z.lazy(() => CreateTeamTrial$outboundSchema)).optional(),
+    email: z.nullable(z.string()).optional(),
+    tax: z.nullable(z.lazy(() => CreateTeamTax$outboundSchema)).optional(),
+    language: z.nullable(z.string()).optional(),
+    address: z.nullable(z.lazy(() => CreateTeamAddress$outboundSchema)).optional(),
+    name: z.nullable(z.string()).optional(),
+    invoiceItems: z.nullable(z.lazy(() => CreateTeamInvoiceItems$outboundSchema)).optional(),
+    invoiceSettings: z.lazy(() => CreateTeamInvoiceSettings$outboundSchema).optional(),
+    subscriptions: z
+        .nullable(z.array(z.lazy(() => CreateTeamSubscriptions$outboundSchema)))
+        .optional(),
+    controls: z.nullable(z.lazy(() => CreateTeamControls$outboundSchema)).optional(),
+    purchaseOrder: z.nullable(z.string()).optional(),
+    status: CreateTeamStatus$outboundSchema.optional(),
+    pricingExperiment: CreateTeamPricingExperiment$outboundSchema.optional(),
+    orbMigrationScheduledAt: z.nullable(z.number()).optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamBilling$ {
-    export const inboundSchema: z.ZodType<CreateTeamBilling, z.ZodTypeDef, unknown> = z
-        .object({
-            currency: CreateTeamCurrency$.inboundSchema.optional(),
-            cancelation: z.nullable(z.number()).optional(),
-            period: z.nullable(z.lazy(() => CreateTeamPeriod$.inboundSchema)),
-            contract: z.nullable(z.lazy(() => CreateTeamContract$.inboundSchema)).optional(),
-            plan: CreateTeamPlan$.inboundSchema,
-            planIteration: z.string().optional(),
-            platform: CreateTeamPlatform$.inboundSchema.optional(),
-            orbCustomerId: z.string().optional(),
-            syncedAt: z.number().optional(),
-            programType: CreateTeamProgramType$.inboundSchema.optional(),
-            trial: z.nullable(z.lazy(() => CreateTeamTrial$.inboundSchema)).optional(),
-            email: z.nullable(z.string()).optional(),
-            tax: z.nullable(z.lazy(() => CreateTeamTax$.inboundSchema)).optional(),
-            language: z.nullable(z.string()).optional(),
-            address: z.nullable(z.lazy(() => CreateTeamAddress$.inboundSchema)).optional(),
-            name: z.nullable(z.string()).optional(),
-            invoiceItems: z
-                .nullable(z.lazy(() => CreateTeamInvoiceItems$.inboundSchema))
-                .optional(),
-            invoiceSettings: z.lazy(() => CreateTeamInvoiceSettings$.inboundSchema).optional(),
-            subscriptions: z
-                .nullable(z.array(z.lazy(() => CreateTeamSubscriptions$.inboundSchema)))
-                .optional(),
-            controls: z.nullable(z.lazy(() => CreateTeamControls$.inboundSchema)).optional(),
-            purchaseOrder: z.nullable(z.string()).optional(),
-            status: CreateTeamStatus$.inboundSchema.optional(),
-            pricingExperiment: CreateTeamPricingExperiment$.inboundSchema.optional(),
-            orbMigrationScheduledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.currency === undefined ? null : { currency: v.currency }),
-                ...(v.cancelation === undefined ? null : { cancelation: v.cancelation }),
-                period: v.period,
-                ...(v.contract === undefined ? null : { contract: v.contract }),
-                plan: v.plan,
-                ...(v.planIteration === undefined ? null : { planIteration: v.planIteration }),
-                ...(v.platform === undefined ? null : { platform: v.platform }),
-                ...(v.orbCustomerId === undefined ? null : { orbCustomerId: v.orbCustomerId }),
-                ...(v.syncedAt === undefined ? null : { syncedAt: v.syncedAt }),
-                ...(v.programType === undefined ? null : { programType: v.programType }),
-                ...(v.trial === undefined ? null : { trial: v.trial }),
-                ...(v.email === undefined ? null : { email: v.email }),
-                ...(v.tax === undefined ? null : { tax: v.tax }),
-                ...(v.language === undefined ? null : { language: v.language }),
-                ...(v.address === undefined ? null : { address: v.address }),
-                ...(v.name === undefined ? null : { name: v.name }),
-                ...(v.invoiceItems === undefined ? null : { invoiceItems: v.invoiceItems }),
-                ...(v.invoiceSettings === undefined
-                    ? null
-                    : { invoiceSettings: v.invoiceSettings }),
-                ...(v.subscriptions === undefined ? null : { subscriptions: v.subscriptions }),
-                ...(v.controls === undefined ? null : { controls: v.controls }),
-                ...(v.purchaseOrder === undefined ? null : { purchaseOrder: v.purchaseOrder }),
-                ...(v.status === undefined ? null : { status: v.status }),
-                ...(v.pricingExperiment === undefined
-                    ? null
-                    : { pricingExperiment: v.pricingExperiment }),
-                ...(v.orbMigrationScheduledAt === undefined
-                    ? null
-                    : { orbMigrationScheduledAt: v.orbMigrationScheduledAt }),
-            };
-        });
-
-    export type Outbound = {
-        currency?: string | undefined;
-        cancelation?: number | null | undefined;
-        period: CreateTeamPeriod$.Outbound | null;
-        contract?: CreateTeamContract$.Outbound | null | undefined;
-        plan: string;
-        planIteration?: string | undefined;
-        platform?: string | undefined;
-        orbCustomerId?: string | undefined;
-        syncedAt?: number | undefined;
-        programType?: string | undefined;
-        trial?: CreateTeamTrial$.Outbound | null | undefined;
-        email?: string | null | undefined;
-        tax?: CreateTeamTax$.Outbound | null | undefined;
-        language?: string | null | undefined;
-        address?: CreateTeamAddress$.Outbound | null | undefined;
-        name?: string | null | undefined;
-        invoiceItems?: CreateTeamInvoiceItems$.Outbound | null | undefined;
-        invoiceSettings?: CreateTeamInvoiceSettings$.Outbound | undefined;
-        subscriptions?: Array<CreateTeamSubscriptions$.Outbound> | null | undefined;
-        controls?: CreateTeamControls$.Outbound | null | undefined;
-        purchaseOrder?: string | null | undefined;
-        status?: string | undefined;
-        pricingExperiment?: string | undefined;
-        orbMigrationScheduledAt?: number | null | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamBilling> = z
-        .object({
-            currency: CreateTeamCurrency$.outboundSchema.optional(),
-            cancelation: z.nullable(z.number()).optional(),
-            period: z.nullable(z.lazy(() => CreateTeamPeriod$.outboundSchema)),
-            contract: z.nullable(z.lazy(() => CreateTeamContract$.outboundSchema)).optional(),
-            plan: CreateTeamPlan$.outboundSchema,
-            planIteration: z.string().optional(),
-            platform: CreateTeamPlatform$.outboundSchema.optional(),
-            orbCustomerId: z.string().optional(),
-            syncedAt: z.number().optional(),
-            programType: CreateTeamProgramType$.outboundSchema.optional(),
-            trial: z.nullable(z.lazy(() => CreateTeamTrial$.outboundSchema)).optional(),
-            email: z.nullable(z.string()).optional(),
-            tax: z.nullable(z.lazy(() => CreateTeamTax$.outboundSchema)).optional(),
-            language: z.nullable(z.string()).optional(),
-            address: z.nullable(z.lazy(() => CreateTeamAddress$.outboundSchema)).optional(),
-            name: z.nullable(z.string()).optional(),
-            invoiceItems: z
-                .nullable(z.lazy(() => CreateTeamInvoiceItems$.outboundSchema))
-                .optional(),
-            invoiceSettings: z.lazy(() => CreateTeamInvoiceSettings$.outboundSchema).optional(),
-            subscriptions: z
-                .nullable(z.array(z.lazy(() => CreateTeamSubscriptions$.outboundSchema)))
-                .optional(),
-            controls: z.nullable(z.lazy(() => CreateTeamControls$.outboundSchema)).optional(),
-            purchaseOrder: z.nullable(z.string()).optional(),
-            status: CreateTeamStatus$.outboundSchema.optional(),
-            pricingExperiment: CreateTeamPricingExperiment$.outboundSchema.optional(),
-            orbMigrationScheduledAt: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.currency === undefined ? null : { currency: v.currency }),
-                ...(v.cancelation === undefined ? null : { cancelation: v.cancelation }),
-                period: v.period,
-                ...(v.contract === undefined ? null : { contract: v.contract }),
-                plan: v.plan,
-                ...(v.planIteration === undefined ? null : { planIteration: v.planIteration }),
-                ...(v.platform === undefined ? null : { platform: v.platform }),
-                ...(v.orbCustomerId === undefined ? null : { orbCustomerId: v.orbCustomerId }),
-                ...(v.syncedAt === undefined ? null : { syncedAt: v.syncedAt }),
-                ...(v.programType === undefined ? null : { programType: v.programType }),
-                ...(v.trial === undefined ? null : { trial: v.trial }),
-                ...(v.email === undefined ? null : { email: v.email }),
-                ...(v.tax === undefined ? null : { tax: v.tax }),
-                ...(v.language === undefined ? null : { language: v.language }),
-                ...(v.address === undefined ? null : { address: v.address }),
-                ...(v.name === undefined ? null : { name: v.name }),
-                ...(v.invoiceItems === undefined ? null : { invoiceItems: v.invoiceItems }),
-                ...(v.invoiceSettings === undefined
-                    ? null
-                    : { invoiceSettings: v.invoiceSettings }),
-                ...(v.subscriptions === undefined ? null : { subscriptions: v.subscriptions }),
-                ...(v.controls === undefined ? null : { controls: v.controls }),
-                ...(v.purchaseOrder === undefined ? null : { purchaseOrder: v.purchaseOrder }),
-                ...(v.status === undefined ? null : { status: v.status }),
-                ...(v.pricingExperiment === undefined
-                    ? null
-                    : { pricingExperiment: v.pricingExperiment }),
-                ...(v.orbMigrationScheduledAt === undefined
-                    ? null
-                    : { orbMigrationScheduledAt: v.orbMigrationScheduledAt }),
-            };
-        });
+    /** @deprecated use `CreateTeamBilling$inboundSchema` instead. */
+    export const inboundSchema = CreateTeamBilling$inboundSchema;
+    /** @deprecated use `CreateTeamBilling$outboundSchema` instead. */
+    export const outboundSchema = CreateTeamBilling$outboundSchema;
+    /** @deprecated use `CreateTeamBilling$Outbound` instead. */
+    export type Outbound = CreateTeamBilling$Outbound;
 }
 
 /** @internal */
+export const CreateTeamResponseBody$inboundSchema: z.ZodType<
+    CreateTeamResponseBody,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    id: z.string(),
+    slug: z.string(),
+    billing: z.lazy(() => CreateTeamBilling$inboundSchema),
+});
+
+/** @internal */
+export type CreateTeamResponseBody$Outbound = {
+    id: string;
+    slug: string;
+    billing: CreateTeamBilling$Outbound;
+};
+
+/** @internal */
+export const CreateTeamResponseBody$outboundSchema: z.ZodType<
+    CreateTeamResponseBody$Outbound,
+    z.ZodTypeDef,
+    CreateTeamResponseBody
+> = z.object({
+    id: z.string(),
+    slug: z.string(),
+    billing: z.lazy(() => CreateTeamBilling$outboundSchema),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamResponseBody$ {
-    export const inboundSchema: z.ZodType<CreateTeamResponseBody, z.ZodTypeDef, unknown> = z
-        .object({
-            id: z.string(),
-            slug: z.string(),
-            billing: z.lazy(() => CreateTeamBilling$.inboundSchema),
-        })
-        .transform((v) => {
-            return {
-                id: v.id,
-                slug: v.slug,
-                billing: v.billing,
-            };
-        });
-
-    export type Outbound = {
-        id: string;
-        slug: string;
-        billing: CreateTeamBilling$.Outbound;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CreateTeamResponseBody> = z
-        .object({
-            id: z.string(),
-            slug: z.string(),
-            billing: z.lazy(() => CreateTeamBilling$.outboundSchema),
-        })
-        .transform((v) => {
-            return {
-                id: v.id,
-                slug: v.slug,
-                billing: v.billing,
-            };
-        });
+    /** @deprecated use `CreateTeamResponseBody$inboundSchema` instead. */
+    export const inboundSchema = CreateTeamResponseBody$inboundSchema;
+    /** @deprecated use `CreateTeamResponseBody$outboundSchema` instead. */
+    export const outboundSchema = CreateTeamResponseBody$outboundSchema;
+    /** @deprecated use `CreateTeamResponseBody$Outbound` instead. */
+    export type Outbound = CreateTeamResponseBody$Outbound;
 }

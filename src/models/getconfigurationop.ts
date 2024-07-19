@@ -355,684 +355,746 @@ export type GetConfigurationResponseBody =
     | GetConfigurationResponseBody2;
 
 /** @internal */
+export const GetConfigurationRequest$inboundSchema: z.ZodType<
+    GetConfigurationRequest,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    id: z.string(),
+    teamId: z.string().optional(),
+    slug: z.string().optional(),
+});
+
+/** @internal */
+export type GetConfigurationRequest$Outbound = {
+    id: string;
+    teamId?: string | undefined;
+    slug?: string | undefined;
+};
+
+/** @internal */
+export const GetConfigurationRequest$outboundSchema: z.ZodType<
+    GetConfigurationRequest$Outbound,
+    z.ZodTypeDef,
+    GetConfigurationRequest
+> = z.object({
+    id: z.string(),
+    teamId: z.string().optional(),
+    slug: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetConfigurationRequest$ {
-    export const inboundSchema: z.ZodType<GetConfigurationRequest, z.ZodTypeDef, unknown> = z
-        .object({
-            id: z.string(),
-            teamId: z.string().optional(),
-            slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                id: v.id,
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
-        });
-
-    export type Outbound = {
-        id: string;
-        teamId?: string | undefined;
-        slug?: string | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetConfigurationRequest> = z
-        .object({
-            id: z.string(),
-            teamId: z.string().optional(),
-            slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                id: v.id,
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
-        });
+    /** @deprecated use `GetConfigurationRequest$inboundSchema` instead. */
+    export const inboundSchema = GetConfigurationRequest$inboundSchema;
+    /** @deprecated use `GetConfigurationRequest$outboundSchema` instead. */
+    export const outboundSchema = GetConfigurationRequest$outboundSchema;
+    /** @deprecated use `GetConfigurationRequest$Outbound` instead. */
+    export type Outbound = GetConfigurationRequest$Outbound;
 }
 
 /** @internal */
+export const ProjectSelection$inboundSchema: z.ZodNativeEnum<typeof ProjectSelection> =
+    z.nativeEnum(ProjectSelection);
+
+/** @internal */
+export const ProjectSelection$outboundSchema: z.ZodNativeEnum<typeof ProjectSelection> =
+    ProjectSelection$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace ProjectSelection$ {
-    export const inboundSchema = z.nativeEnum(ProjectSelection);
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `ProjectSelection$inboundSchema` instead. */
+    export const inboundSchema = ProjectSelection$inboundSchema;
+    /** @deprecated use `ProjectSelection$outboundSchema` instead. */
+    export const outboundSchema = ProjectSelection$outboundSchema;
 }
 
 /** @internal */
+export const GetConfigurationResponseBodyIntegrationsSource$inboundSchema: z.ZodNativeEnum<
+    typeof GetConfigurationResponseBodyIntegrationsSource
+> = z.nativeEnum(GetConfigurationResponseBodyIntegrationsSource);
+
+/** @internal */
+export const GetConfigurationResponseBodyIntegrationsSource$outboundSchema: z.ZodNativeEnum<
+    typeof GetConfigurationResponseBodyIntegrationsSource
+> = GetConfigurationResponseBodyIntegrationsSource$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetConfigurationResponseBodyIntegrationsSource$ {
-    export const inboundSchema = z.nativeEnum(GetConfigurationResponseBodyIntegrationsSource);
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `GetConfigurationResponseBodyIntegrationsSource$inboundSchema` instead. */
+    export const inboundSchema = GetConfigurationResponseBodyIntegrationsSource$inboundSchema;
+    /** @deprecated use `GetConfigurationResponseBodyIntegrationsSource$outboundSchema` instead. */
+    export const outboundSchema = GetConfigurationResponseBodyIntegrationsSource$outboundSchema;
 }
 
 /** @internal */
+export const GetConfigurationResponseBodyIntegrationsType$inboundSchema: z.ZodNativeEnum<
+    typeof GetConfigurationResponseBodyIntegrationsType
+> = z.nativeEnum(GetConfigurationResponseBodyIntegrationsType);
+
+/** @internal */
+export const GetConfigurationResponseBodyIntegrationsType$outboundSchema: z.ZodNativeEnum<
+    typeof GetConfigurationResponseBodyIntegrationsType
+> = GetConfigurationResponseBodyIntegrationsType$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetConfigurationResponseBodyIntegrationsType$ {
-    export const inboundSchema = z.nativeEnum(GetConfigurationResponseBodyIntegrationsType);
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `GetConfigurationResponseBodyIntegrationsType$inboundSchema` instead. */
+    export const inboundSchema = GetConfigurationResponseBodyIntegrationsType$inboundSchema;
+    /** @deprecated use `GetConfigurationResponseBodyIntegrationsType$outboundSchema` instead. */
+    export const outboundSchema = GetConfigurationResponseBodyIntegrationsType$outboundSchema;
 }
 
 /** @internal */
+export const GetConfigurationResponseBodyIntegrationsAdded$inboundSchema: z.ZodNativeEnum<
+    typeof GetConfigurationResponseBodyIntegrationsAdded
+> = z.nativeEnum(GetConfigurationResponseBodyIntegrationsAdded);
+
+/** @internal */
+export const GetConfigurationResponseBodyIntegrationsAdded$outboundSchema: z.ZodNativeEnum<
+    typeof GetConfigurationResponseBodyIntegrationsAdded
+> = GetConfigurationResponseBodyIntegrationsAdded$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetConfigurationResponseBodyIntegrationsAdded$ {
-    export const inboundSchema = z.nativeEnum(GetConfigurationResponseBodyIntegrationsAdded);
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `GetConfigurationResponseBodyIntegrationsAdded$inboundSchema` instead. */
+    export const inboundSchema = GetConfigurationResponseBodyIntegrationsAdded$inboundSchema;
+    /** @deprecated use `GetConfigurationResponseBodyIntegrationsAdded$outboundSchema` instead. */
+    export const outboundSchema = GetConfigurationResponseBodyIntegrationsAdded$outboundSchema;
 }
 
 /** @internal */
+export const GetConfigurationResponseBodyIntegrationsUpgraded$inboundSchema: z.ZodNativeEnum<
+    typeof GetConfigurationResponseBodyIntegrationsUpgraded
+> = z.nativeEnum(GetConfigurationResponseBodyIntegrationsUpgraded);
+
+/** @internal */
+export const GetConfigurationResponseBodyIntegrationsUpgraded$outboundSchema: z.ZodNativeEnum<
+    typeof GetConfigurationResponseBodyIntegrationsUpgraded
+> = GetConfigurationResponseBodyIntegrationsUpgraded$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetConfigurationResponseBodyIntegrationsUpgraded$ {
-    export const inboundSchema = z.nativeEnum(GetConfigurationResponseBodyIntegrationsUpgraded);
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `GetConfigurationResponseBodyIntegrationsUpgraded$inboundSchema` instead. */
+    export const inboundSchema = GetConfigurationResponseBodyIntegrationsUpgraded$inboundSchema;
+    /** @deprecated use `GetConfigurationResponseBodyIntegrationsUpgraded$outboundSchema` instead. */
+    export const outboundSchema = GetConfigurationResponseBodyIntegrationsUpgraded$outboundSchema;
 }
 
 /** @internal */
+export const GetConfigurationResponseBodyIntegrationsScopes$inboundSchema: z.ZodType<
+    GetConfigurationResponseBodyIntegrationsScopes,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    added: z.array(GetConfigurationResponseBodyIntegrationsAdded$inboundSchema),
+    upgraded: z.array(GetConfigurationResponseBodyIntegrationsUpgraded$inboundSchema),
+});
+
+/** @internal */
+export type GetConfigurationResponseBodyIntegrationsScopes$Outbound = {
+    added: Array<string>;
+    upgraded: Array<string>;
+};
+
+/** @internal */
+export const GetConfigurationResponseBodyIntegrationsScopes$outboundSchema: z.ZodType<
+    GetConfigurationResponseBodyIntegrationsScopes$Outbound,
+    z.ZodTypeDef,
+    GetConfigurationResponseBodyIntegrationsScopes
+> = z.object({
+    added: z.array(GetConfigurationResponseBodyIntegrationsAdded$outboundSchema),
+    upgraded: z.array(GetConfigurationResponseBodyIntegrationsUpgraded$outboundSchema),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetConfigurationResponseBodyIntegrationsScopes$ {
-    export const inboundSchema: z.ZodType<
-        GetConfigurationResponseBodyIntegrationsScopes,
-        z.ZodTypeDef,
-        unknown
-    > = z
-        .object({
-            added: z.array(GetConfigurationResponseBodyIntegrationsAdded$.inboundSchema),
-            upgraded: z.array(GetConfigurationResponseBodyIntegrationsUpgraded$.inboundSchema),
-        })
-        .transform((v) => {
-            return {
-                added: v.added,
-                upgraded: v.upgraded,
-            };
-        });
-
-    export type Outbound = {
-        added: Array<string>;
-        upgraded: Array<string>;
-    };
-
-    export const outboundSchema: z.ZodType<
-        Outbound,
-        z.ZodTypeDef,
-        GetConfigurationResponseBodyIntegrationsScopes
-    > = z
-        .object({
-            added: z.array(GetConfigurationResponseBodyIntegrationsAdded$.outboundSchema),
-            upgraded: z.array(GetConfigurationResponseBodyIntegrationsUpgraded$.outboundSchema),
-        })
-        .transform((v) => {
-            return {
-                added: v.added,
-                upgraded: v.upgraded,
-            };
-        });
+    /** @deprecated use `GetConfigurationResponseBodyIntegrationsScopes$inboundSchema` instead. */
+    export const inboundSchema = GetConfigurationResponseBodyIntegrationsScopes$inboundSchema;
+    /** @deprecated use `GetConfigurationResponseBodyIntegrationsScopes$outboundSchema` instead. */
+    export const outboundSchema = GetConfigurationResponseBodyIntegrationsScopes$outboundSchema;
+    /** @deprecated use `GetConfigurationResponseBodyIntegrationsScopes$Outbound` instead. */
+    export type Outbound = GetConfigurationResponseBodyIntegrationsScopes$Outbound;
 }
 
 /** @internal */
+export const GetConfigurationResponseBodyIntegrationsScopesQueue$inboundSchema: z.ZodType<
+    GetConfigurationResponseBodyIntegrationsScopesQueue,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    scopes: z.lazy(() => GetConfigurationResponseBodyIntegrationsScopes$inboundSchema),
+    note: z.string(),
+    requestedAt: z.number(),
+    confirmedAt: z.number().optional(),
+});
+
+/** @internal */
+export type GetConfigurationResponseBodyIntegrationsScopesQueue$Outbound = {
+    scopes: GetConfigurationResponseBodyIntegrationsScopes$Outbound;
+    note: string;
+    requestedAt: number;
+    confirmedAt?: number | undefined;
+};
+
+/** @internal */
+export const GetConfigurationResponseBodyIntegrationsScopesQueue$outboundSchema: z.ZodType<
+    GetConfigurationResponseBodyIntegrationsScopesQueue$Outbound,
+    z.ZodTypeDef,
+    GetConfigurationResponseBodyIntegrationsScopesQueue
+> = z.object({
+    scopes: z.lazy(() => GetConfigurationResponseBodyIntegrationsScopes$outboundSchema),
+    note: z.string(),
+    requestedAt: z.number(),
+    confirmedAt: z.number().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetConfigurationResponseBodyIntegrationsScopesQueue$ {
-    export const inboundSchema: z.ZodType<
-        GetConfigurationResponseBodyIntegrationsScopesQueue,
-        z.ZodTypeDef,
-        unknown
-    > = z
-        .object({
-            scopes: z.lazy(() => GetConfigurationResponseBodyIntegrationsScopes$.inboundSchema),
-            note: z.string(),
-            requestedAt: z.number(),
-            confirmedAt: z.number().optional(),
-        })
-        .transform((v) => {
-            return {
-                scopes: v.scopes,
-                note: v.note,
-                requestedAt: v.requestedAt,
-                ...(v.confirmedAt === undefined ? null : { confirmedAt: v.confirmedAt }),
-            };
-        });
-
-    export type Outbound = {
-        scopes: GetConfigurationResponseBodyIntegrationsScopes$.Outbound;
-        note: string;
-        requestedAt: number;
-        confirmedAt?: number | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<
-        Outbound,
-        z.ZodTypeDef,
-        GetConfigurationResponseBodyIntegrationsScopesQueue
-    > = z
-        .object({
-            scopes: z.lazy(() => GetConfigurationResponseBodyIntegrationsScopes$.outboundSchema),
-            note: z.string(),
-            requestedAt: z.number(),
-            confirmedAt: z.number().optional(),
-        })
-        .transform((v) => {
-            return {
-                scopes: v.scopes,
-                note: v.note,
-                requestedAt: v.requestedAt,
-                ...(v.confirmedAt === undefined ? null : { confirmedAt: v.confirmedAt }),
-            };
-        });
+    /** @deprecated use `GetConfigurationResponseBodyIntegrationsScopesQueue$inboundSchema` instead. */
+    export const inboundSchema = GetConfigurationResponseBodyIntegrationsScopesQueue$inboundSchema;
+    /** @deprecated use `GetConfigurationResponseBodyIntegrationsScopesQueue$outboundSchema` instead. */
+    export const outboundSchema =
+        GetConfigurationResponseBodyIntegrationsScopesQueue$outboundSchema;
+    /** @deprecated use `GetConfigurationResponseBodyIntegrationsScopesQueue$Outbound` instead. */
+    export type Outbound = GetConfigurationResponseBodyIntegrationsScopesQueue$Outbound;
 }
 
 /** @internal */
+export const GetConfigurationResponseBodyIntegrationsDisabledReason$inboundSchema: z.ZodNativeEnum<
+    typeof GetConfigurationResponseBodyIntegrationsDisabledReason
+> = z.nativeEnum(GetConfigurationResponseBodyIntegrationsDisabledReason);
+
+/** @internal */
+export const GetConfigurationResponseBodyIntegrationsDisabledReason$outboundSchema: z.ZodNativeEnum<
+    typeof GetConfigurationResponseBodyIntegrationsDisabledReason
+> = GetConfigurationResponseBodyIntegrationsDisabledReason$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetConfigurationResponseBodyIntegrationsDisabledReason$ {
-    export const inboundSchema = z.nativeEnum(
-        GetConfigurationResponseBodyIntegrationsDisabledReason
-    );
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `GetConfigurationResponseBodyIntegrationsDisabledReason$inboundSchema` instead. */
+    export const inboundSchema =
+        GetConfigurationResponseBodyIntegrationsDisabledReason$inboundSchema;
+    /** @deprecated use `GetConfigurationResponseBodyIntegrationsDisabledReason$outboundSchema` instead. */
+    export const outboundSchema =
+        GetConfigurationResponseBodyIntegrationsDisabledReason$outboundSchema;
 }
 
 /** @internal */
+export const GetConfigurationResponseBodyIntegrationsInstallationType$inboundSchema: z.ZodNativeEnum<
+    typeof GetConfigurationResponseBodyIntegrationsInstallationType
+> = z.nativeEnum(GetConfigurationResponseBodyIntegrationsInstallationType);
+
+/** @internal */
+export const GetConfigurationResponseBodyIntegrationsInstallationType$outboundSchema: z.ZodNativeEnum<
+    typeof GetConfigurationResponseBodyIntegrationsInstallationType
+> = GetConfigurationResponseBodyIntegrationsInstallationType$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetConfigurationResponseBodyIntegrationsInstallationType$ {
-    export const inboundSchema = z.nativeEnum(
-        GetConfigurationResponseBodyIntegrationsInstallationType
-    );
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `GetConfigurationResponseBodyIntegrationsInstallationType$inboundSchema` instead. */
+    export const inboundSchema =
+        GetConfigurationResponseBodyIntegrationsInstallationType$inboundSchema;
+    /** @deprecated use `GetConfigurationResponseBodyIntegrationsInstallationType$outboundSchema` instead. */
+    export const outboundSchema =
+        GetConfigurationResponseBodyIntegrationsInstallationType$outboundSchema;
 }
 
 /** @internal */
+export const GetConfigurationResponseBody2$inboundSchema: z.ZodType<
+    GetConfigurationResponseBody2,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    projectSelection: ProjectSelection$inboundSchema,
+    projects: z.array(z.string()).optional(),
+    completedAt: z.number().optional(),
+    createdAt: z.number(),
+    id: z.string(),
+    integrationId: z.string(),
+    ownerId: z.string(),
+    source: GetConfigurationResponseBodyIntegrationsSource$inboundSchema.optional(),
+    removedLogDrainsAt: z.number().optional(),
+    removedProjectEnvsAt: z.number().optional(),
+    removedTokensAt: z.number().optional(),
+    removedWebhooksAt: z.number().optional(),
+    slug: z.string(),
+    teamId: z.nullable(z.string()).optional(),
+    type: GetConfigurationResponseBodyIntegrationsType$inboundSchema,
+    updatedAt: z.number(),
+    userId: z.string(),
+    scopes: z.array(z.string()),
+    scopesQueue: z
+        .array(z.lazy(() => GetConfigurationResponseBodyIntegrationsScopesQueue$inboundSchema))
+        .optional(),
+    disabledAt: z.number().optional(),
+    deletedAt: z.nullable(z.number()).optional(),
+    disabledReason: GetConfigurationResponseBodyIntegrationsDisabledReason$inboundSchema.optional(),
+    northstarMigratedAt: z.number().optional(),
+    installationType:
+        GetConfigurationResponseBodyIntegrationsInstallationType$inboundSchema.optional(),
+    canConfigureOpenTelemetry: z.boolean().optional(),
+});
+
+/** @internal */
+export type GetConfigurationResponseBody2$Outbound = {
+    projectSelection: string;
+    projects?: Array<string> | undefined;
+    completedAt?: number | undefined;
+    createdAt: number;
+    id: string;
+    integrationId: string;
+    ownerId: string;
+    source?: string | undefined;
+    removedLogDrainsAt?: number | undefined;
+    removedProjectEnvsAt?: number | undefined;
+    removedTokensAt?: number | undefined;
+    removedWebhooksAt?: number | undefined;
+    slug: string;
+    teamId?: string | null | undefined;
+    type: string;
+    updatedAt: number;
+    userId: string;
+    scopes: Array<string>;
+    scopesQueue?: Array<GetConfigurationResponseBodyIntegrationsScopesQueue$Outbound> | undefined;
+    disabledAt?: number | undefined;
+    deletedAt?: number | null | undefined;
+    disabledReason?: string | undefined;
+    northstarMigratedAt?: number | undefined;
+    installationType?: string | undefined;
+    canConfigureOpenTelemetry?: boolean | undefined;
+};
+
+/** @internal */
+export const GetConfigurationResponseBody2$outboundSchema: z.ZodType<
+    GetConfigurationResponseBody2$Outbound,
+    z.ZodTypeDef,
+    GetConfigurationResponseBody2
+> = z.object({
+    projectSelection: ProjectSelection$outboundSchema,
+    projects: z.array(z.string()).optional(),
+    completedAt: z.number().optional(),
+    createdAt: z.number(),
+    id: z.string(),
+    integrationId: z.string(),
+    ownerId: z.string(),
+    source: GetConfigurationResponseBodyIntegrationsSource$outboundSchema.optional(),
+    removedLogDrainsAt: z.number().optional(),
+    removedProjectEnvsAt: z.number().optional(),
+    removedTokensAt: z.number().optional(),
+    removedWebhooksAt: z.number().optional(),
+    slug: z.string(),
+    teamId: z.nullable(z.string()).optional(),
+    type: GetConfigurationResponseBodyIntegrationsType$outboundSchema,
+    updatedAt: z.number(),
+    userId: z.string(),
+    scopes: z.array(z.string()),
+    scopesQueue: z
+        .array(z.lazy(() => GetConfigurationResponseBodyIntegrationsScopesQueue$outboundSchema))
+        .optional(),
+    disabledAt: z.number().optional(),
+    deletedAt: z.nullable(z.number()).optional(),
+    disabledReason:
+        GetConfigurationResponseBodyIntegrationsDisabledReason$outboundSchema.optional(),
+    northstarMigratedAt: z.number().optional(),
+    installationType:
+        GetConfigurationResponseBodyIntegrationsInstallationType$outboundSchema.optional(),
+    canConfigureOpenTelemetry: z.boolean().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetConfigurationResponseBody2$ {
-    export const inboundSchema: z.ZodType<GetConfigurationResponseBody2, z.ZodTypeDef, unknown> = z
-        .object({
-            projectSelection: ProjectSelection$.inboundSchema,
-            projects: z.array(z.string()).optional(),
-            completedAt: z.number().optional(),
-            createdAt: z.number(),
-            id: z.string(),
-            integrationId: z.string(),
-            ownerId: z.string(),
-            source: GetConfigurationResponseBodyIntegrationsSource$.inboundSchema.optional(),
-            removedLogDrainsAt: z.number().optional(),
-            removedProjectEnvsAt: z.number().optional(),
-            removedTokensAt: z.number().optional(),
-            removedWebhooksAt: z.number().optional(),
-            slug: z.string(),
-            teamId: z.nullable(z.string()).optional(),
-            type: GetConfigurationResponseBodyIntegrationsType$.inboundSchema,
-            updatedAt: z.number(),
-            userId: z.string(),
-            scopes: z.array(z.string()),
-            scopesQueue: z
-                .array(
-                    z.lazy(() => GetConfigurationResponseBodyIntegrationsScopesQueue$.inboundSchema)
-                )
-                .optional(),
-            disabledAt: z.number().optional(),
-            deletedAt: z.nullable(z.number()).optional(),
-            disabledReason:
-                GetConfigurationResponseBodyIntegrationsDisabledReason$.inboundSchema.optional(),
-            northstarMigratedAt: z.number().optional(),
-            installationType:
-                GetConfigurationResponseBodyIntegrationsInstallationType$.inboundSchema.optional(),
-            canConfigureOpenTelemetry: z.boolean().optional(),
-        })
-        .transform((v) => {
-            return {
-                projectSelection: v.projectSelection,
-                ...(v.projects === undefined ? null : { projects: v.projects }),
-                ...(v.completedAt === undefined ? null : { completedAt: v.completedAt }),
-                createdAt: v.createdAt,
-                id: v.id,
-                integrationId: v.integrationId,
-                ownerId: v.ownerId,
-                ...(v.source === undefined ? null : { source: v.source }),
-                ...(v.removedLogDrainsAt === undefined
-                    ? null
-                    : { removedLogDrainsAt: v.removedLogDrainsAt }),
-                ...(v.removedProjectEnvsAt === undefined
-                    ? null
-                    : { removedProjectEnvsAt: v.removedProjectEnvsAt }),
-                ...(v.removedTokensAt === undefined
-                    ? null
-                    : { removedTokensAt: v.removedTokensAt }),
-                ...(v.removedWebhooksAt === undefined
-                    ? null
-                    : { removedWebhooksAt: v.removedWebhooksAt }),
-                slug: v.slug,
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                type: v.type,
-                updatedAt: v.updatedAt,
-                userId: v.userId,
-                scopes: v.scopes,
-                ...(v.scopesQueue === undefined ? null : { scopesQueue: v.scopesQueue }),
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.deletedAt === undefined ? null : { deletedAt: v.deletedAt }),
-                ...(v.disabledReason === undefined ? null : { disabledReason: v.disabledReason }),
-                ...(v.northstarMigratedAt === undefined
-                    ? null
-                    : { northstarMigratedAt: v.northstarMigratedAt }),
-                ...(v.installationType === undefined
-                    ? null
-                    : { installationType: v.installationType }),
-                ...(v.canConfigureOpenTelemetry === undefined
-                    ? null
-                    : { canConfigureOpenTelemetry: v.canConfigureOpenTelemetry }),
-            };
-        });
-
-    export type Outbound = {
-        projectSelection: string;
-        projects?: Array<string> | undefined;
-        completedAt?: number | undefined;
-        createdAt: number;
-        id: string;
-        integrationId: string;
-        ownerId: string;
-        source?: string | undefined;
-        removedLogDrainsAt?: number | undefined;
-        removedProjectEnvsAt?: number | undefined;
-        removedTokensAt?: number | undefined;
-        removedWebhooksAt?: number | undefined;
-        slug: string;
-        teamId?: string | null | undefined;
-        type: string;
-        updatedAt: number;
-        userId: string;
-        scopes: Array<string>;
-        scopesQueue?:
-            | Array<GetConfigurationResponseBodyIntegrationsScopesQueue$.Outbound>
-            | undefined;
-        disabledAt?: number | undefined;
-        deletedAt?: number | null | undefined;
-        disabledReason?: string | undefined;
-        northstarMigratedAt?: number | undefined;
-        installationType?: string | undefined;
-        canConfigureOpenTelemetry?: boolean | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetConfigurationResponseBody2> =
-        z
-            .object({
-                projectSelection: ProjectSelection$.outboundSchema,
-                projects: z.array(z.string()).optional(),
-                completedAt: z.number().optional(),
-                createdAt: z.number(),
-                id: z.string(),
-                integrationId: z.string(),
-                ownerId: z.string(),
-                source: GetConfigurationResponseBodyIntegrationsSource$.outboundSchema.optional(),
-                removedLogDrainsAt: z.number().optional(),
-                removedProjectEnvsAt: z.number().optional(),
-                removedTokensAt: z.number().optional(),
-                removedWebhooksAt: z.number().optional(),
-                slug: z.string(),
-                teamId: z.nullable(z.string()).optional(),
-                type: GetConfigurationResponseBodyIntegrationsType$.outboundSchema,
-                updatedAt: z.number(),
-                userId: z.string(),
-                scopes: z.array(z.string()),
-                scopesQueue: z
-                    .array(
-                        z.lazy(
-                            () =>
-                                GetConfigurationResponseBodyIntegrationsScopesQueue$.outboundSchema
-                        )
-                    )
-                    .optional(),
-                disabledAt: z.number().optional(),
-                deletedAt: z.nullable(z.number()).optional(),
-                disabledReason:
-                    GetConfigurationResponseBodyIntegrationsDisabledReason$.outboundSchema.optional(),
-                northstarMigratedAt: z.number().optional(),
-                installationType:
-                    GetConfigurationResponseBodyIntegrationsInstallationType$.outboundSchema.optional(),
-                canConfigureOpenTelemetry: z.boolean().optional(),
-            })
-            .transform((v) => {
-                return {
-                    projectSelection: v.projectSelection,
-                    ...(v.projects === undefined ? null : { projects: v.projects }),
-                    ...(v.completedAt === undefined ? null : { completedAt: v.completedAt }),
-                    createdAt: v.createdAt,
-                    id: v.id,
-                    integrationId: v.integrationId,
-                    ownerId: v.ownerId,
-                    ...(v.source === undefined ? null : { source: v.source }),
-                    ...(v.removedLogDrainsAt === undefined
-                        ? null
-                        : { removedLogDrainsAt: v.removedLogDrainsAt }),
-                    ...(v.removedProjectEnvsAt === undefined
-                        ? null
-                        : { removedProjectEnvsAt: v.removedProjectEnvsAt }),
-                    ...(v.removedTokensAt === undefined
-                        ? null
-                        : { removedTokensAt: v.removedTokensAt }),
-                    ...(v.removedWebhooksAt === undefined
-                        ? null
-                        : { removedWebhooksAt: v.removedWebhooksAt }),
-                    slug: v.slug,
-                    ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                    type: v.type,
-                    updatedAt: v.updatedAt,
-                    userId: v.userId,
-                    scopes: v.scopes,
-                    ...(v.scopesQueue === undefined ? null : { scopesQueue: v.scopesQueue }),
-                    ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                    ...(v.deletedAt === undefined ? null : { deletedAt: v.deletedAt }),
-                    ...(v.disabledReason === undefined
-                        ? null
-                        : { disabledReason: v.disabledReason }),
-                    ...(v.northstarMigratedAt === undefined
-                        ? null
-                        : { northstarMigratedAt: v.northstarMigratedAt }),
-                    ...(v.installationType === undefined
-                        ? null
-                        : { installationType: v.installationType }),
-                    ...(v.canConfigureOpenTelemetry === undefined
-                        ? null
-                        : { canConfigureOpenTelemetry: v.canConfigureOpenTelemetry }),
-                };
-            });
+    /** @deprecated use `GetConfigurationResponseBody2$inboundSchema` instead. */
+    export const inboundSchema = GetConfigurationResponseBody2$inboundSchema;
+    /** @deprecated use `GetConfigurationResponseBody2$outboundSchema` instead. */
+    export const outboundSchema = GetConfigurationResponseBody2$outboundSchema;
+    /** @deprecated use `GetConfigurationResponseBody2$Outbound` instead. */
+    export type Outbound = GetConfigurationResponseBody2$Outbound;
 }
 
 /** @internal */
+export const GetConfigurationResponseBodySource$inboundSchema: z.ZodNativeEnum<
+    typeof GetConfigurationResponseBodySource
+> = z.nativeEnum(GetConfigurationResponseBodySource);
+
+/** @internal */
+export const GetConfigurationResponseBodySource$outboundSchema: z.ZodNativeEnum<
+    typeof GetConfigurationResponseBodySource
+> = GetConfigurationResponseBodySource$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetConfigurationResponseBodySource$ {
-    export const inboundSchema = z.nativeEnum(GetConfigurationResponseBodySource);
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `GetConfigurationResponseBodySource$inboundSchema` instead. */
+    export const inboundSchema = GetConfigurationResponseBodySource$inboundSchema;
+    /** @deprecated use `GetConfigurationResponseBodySource$outboundSchema` instead. */
+    export const outboundSchema = GetConfigurationResponseBodySource$outboundSchema;
 }
 
 /** @internal */
+export const GetConfigurationResponseBodyType$inboundSchema: z.ZodNativeEnum<
+    typeof GetConfigurationResponseBodyType
+> = z.nativeEnum(GetConfigurationResponseBodyType);
+
+/** @internal */
+export const GetConfigurationResponseBodyType$outboundSchema: z.ZodNativeEnum<
+    typeof GetConfigurationResponseBodyType
+> = GetConfigurationResponseBodyType$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetConfigurationResponseBodyType$ {
-    export const inboundSchema = z.nativeEnum(GetConfigurationResponseBodyType);
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `GetConfigurationResponseBodyType$inboundSchema` instead. */
+    export const inboundSchema = GetConfigurationResponseBodyType$inboundSchema;
+    /** @deprecated use `GetConfigurationResponseBodyType$outboundSchema` instead. */
+    export const outboundSchema = GetConfigurationResponseBodyType$outboundSchema;
 }
 
 /** @internal */
+export const GetConfigurationResponseBodyAdded$inboundSchema: z.ZodNativeEnum<
+    typeof GetConfigurationResponseBodyAdded
+> = z.nativeEnum(GetConfigurationResponseBodyAdded);
+
+/** @internal */
+export const GetConfigurationResponseBodyAdded$outboundSchema: z.ZodNativeEnum<
+    typeof GetConfigurationResponseBodyAdded
+> = GetConfigurationResponseBodyAdded$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetConfigurationResponseBodyAdded$ {
-    export const inboundSchema = z.nativeEnum(GetConfigurationResponseBodyAdded);
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `GetConfigurationResponseBodyAdded$inboundSchema` instead. */
+    export const inboundSchema = GetConfigurationResponseBodyAdded$inboundSchema;
+    /** @deprecated use `GetConfigurationResponseBodyAdded$outboundSchema` instead. */
+    export const outboundSchema = GetConfigurationResponseBodyAdded$outboundSchema;
 }
 
 /** @internal */
+export const GetConfigurationResponseBodyUpgraded$inboundSchema: z.ZodNativeEnum<
+    typeof GetConfigurationResponseBodyUpgraded
+> = z.nativeEnum(GetConfigurationResponseBodyUpgraded);
+
+/** @internal */
+export const GetConfigurationResponseBodyUpgraded$outboundSchema: z.ZodNativeEnum<
+    typeof GetConfigurationResponseBodyUpgraded
+> = GetConfigurationResponseBodyUpgraded$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetConfigurationResponseBodyUpgraded$ {
-    export const inboundSchema = z.nativeEnum(GetConfigurationResponseBodyUpgraded);
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `GetConfigurationResponseBodyUpgraded$inboundSchema` instead. */
+    export const inboundSchema = GetConfigurationResponseBodyUpgraded$inboundSchema;
+    /** @deprecated use `GetConfigurationResponseBodyUpgraded$outboundSchema` instead. */
+    export const outboundSchema = GetConfigurationResponseBodyUpgraded$outboundSchema;
 }
 
 /** @internal */
+export const GetConfigurationResponseBodyScopes$inboundSchema: z.ZodType<
+    GetConfigurationResponseBodyScopes,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    added: z.array(GetConfigurationResponseBodyAdded$inboundSchema),
+    upgraded: z.array(GetConfigurationResponseBodyUpgraded$inboundSchema),
+});
+
+/** @internal */
+export type GetConfigurationResponseBodyScopes$Outbound = {
+    added: Array<string>;
+    upgraded: Array<string>;
+};
+
+/** @internal */
+export const GetConfigurationResponseBodyScopes$outboundSchema: z.ZodType<
+    GetConfigurationResponseBodyScopes$Outbound,
+    z.ZodTypeDef,
+    GetConfigurationResponseBodyScopes
+> = z.object({
+    added: z.array(GetConfigurationResponseBodyAdded$outboundSchema),
+    upgraded: z.array(GetConfigurationResponseBodyUpgraded$outboundSchema),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetConfigurationResponseBodyScopes$ {
-    export const inboundSchema: z.ZodType<
-        GetConfigurationResponseBodyScopes,
-        z.ZodTypeDef,
-        unknown
-    > = z
-        .object({
-            added: z.array(GetConfigurationResponseBodyAdded$.inboundSchema),
-            upgraded: z.array(GetConfigurationResponseBodyUpgraded$.inboundSchema),
-        })
-        .transform((v) => {
-            return {
-                added: v.added,
-                upgraded: v.upgraded,
-            };
-        });
-
-    export type Outbound = {
-        added: Array<string>;
-        upgraded: Array<string>;
-    };
-
-    export const outboundSchema: z.ZodType<
-        Outbound,
-        z.ZodTypeDef,
-        GetConfigurationResponseBodyScopes
-    > = z
-        .object({
-            added: z.array(GetConfigurationResponseBodyAdded$.outboundSchema),
-            upgraded: z.array(GetConfigurationResponseBodyUpgraded$.outboundSchema),
-        })
-        .transform((v) => {
-            return {
-                added: v.added,
-                upgraded: v.upgraded,
-            };
-        });
+    /** @deprecated use `GetConfigurationResponseBodyScopes$inboundSchema` instead. */
+    export const inboundSchema = GetConfigurationResponseBodyScopes$inboundSchema;
+    /** @deprecated use `GetConfigurationResponseBodyScopes$outboundSchema` instead. */
+    export const outboundSchema = GetConfigurationResponseBodyScopes$outboundSchema;
+    /** @deprecated use `GetConfigurationResponseBodyScopes$Outbound` instead. */
+    export type Outbound = GetConfigurationResponseBodyScopes$Outbound;
 }
 
 /** @internal */
+export const GetConfigurationResponseBodyScopesQueue$inboundSchema: z.ZodType<
+    GetConfigurationResponseBodyScopesQueue,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    scopes: z.lazy(() => GetConfigurationResponseBodyScopes$inboundSchema),
+    note: z.string(),
+    requestedAt: z.number(),
+    confirmedAt: z.number().optional(),
+});
+
+/** @internal */
+export type GetConfigurationResponseBodyScopesQueue$Outbound = {
+    scopes: GetConfigurationResponseBodyScopes$Outbound;
+    note: string;
+    requestedAt: number;
+    confirmedAt?: number | undefined;
+};
+
+/** @internal */
+export const GetConfigurationResponseBodyScopesQueue$outboundSchema: z.ZodType<
+    GetConfigurationResponseBodyScopesQueue$Outbound,
+    z.ZodTypeDef,
+    GetConfigurationResponseBodyScopesQueue
+> = z.object({
+    scopes: z.lazy(() => GetConfigurationResponseBodyScopes$outboundSchema),
+    note: z.string(),
+    requestedAt: z.number(),
+    confirmedAt: z.number().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetConfigurationResponseBodyScopesQueue$ {
-    export const inboundSchema: z.ZodType<
-        GetConfigurationResponseBodyScopesQueue,
-        z.ZodTypeDef,
-        unknown
-    > = z
-        .object({
-            scopes: z.lazy(() => GetConfigurationResponseBodyScopes$.inboundSchema),
-            note: z.string(),
-            requestedAt: z.number(),
-            confirmedAt: z.number().optional(),
-        })
-        .transform((v) => {
-            return {
-                scopes: v.scopes,
-                note: v.note,
-                requestedAt: v.requestedAt,
-                ...(v.confirmedAt === undefined ? null : { confirmedAt: v.confirmedAt }),
-            };
-        });
-
-    export type Outbound = {
-        scopes: GetConfigurationResponseBodyScopes$.Outbound;
-        note: string;
-        requestedAt: number;
-        confirmedAt?: number | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<
-        Outbound,
-        z.ZodTypeDef,
-        GetConfigurationResponseBodyScopesQueue
-    > = z
-        .object({
-            scopes: z.lazy(() => GetConfigurationResponseBodyScopes$.outboundSchema),
-            note: z.string(),
-            requestedAt: z.number(),
-            confirmedAt: z.number().optional(),
-        })
-        .transform((v) => {
-            return {
-                scopes: v.scopes,
-                note: v.note,
-                requestedAt: v.requestedAt,
-                ...(v.confirmedAt === undefined ? null : { confirmedAt: v.confirmedAt }),
-            };
-        });
+    /** @deprecated use `GetConfigurationResponseBodyScopesQueue$inboundSchema` instead. */
+    export const inboundSchema = GetConfigurationResponseBodyScopesQueue$inboundSchema;
+    /** @deprecated use `GetConfigurationResponseBodyScopesQueue$outboundSchema` instead. */
+    export const outboundSchema = GetConfigurationResponseBodyScopesQueue$outboundSchema;
+    /** @deprecated use `GetConfigurationResponseBodyScopesQueue$Outbound` instead. */
+    export type Outbound = GetConfigurationResponseBodyScopesQueue$Outbound;
 }
 
 /** @internal */
+export const GetConfigurationResponseBodyDisabledReason$inboundSchema: z.ZodNativeEnum<
+    typeof GetConfigurationResponseBodyDisabledReason
+> = z.nativeEnum(GetConfigurationResponseBodyDisabledReason);
+
+/** @internal */
+export const GetConfigurationResponseBodyDisabledReason$outboundSchema: z.ZodNativeEnum<
+    typeof GetConfigurationResponseBodyDisabledReason
+> = GetConfigurationResponseBodyDisabledReason$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetConfigurationResponseBodyDisabledReason$ {
-    export const inboundSchema = z.nativeEnum(GetConfigurationResponseBodyDisabledReason);
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `GetConfigurationResponseBodyDisabledReason$inboundSchema` instead. */
+    export const inboundSchema = GetConfigurationResponseBodyDisabledReason$inboundSchema;
+    /** @deprecated use `GetConfigurationResponseBodyDisabledReason$outboundSchema` instead. */
+    export const outboundSchema = GetConfigurationResponseBodyDisabledReason$outboundSchema;
 }
 
 /** @internal */
+export const GetConfigurationResponseBodyInstallationType$inboundSchema: z.ZodNativeEnum<
+    typeof GetConfigurationResponseBodyInstallationType
+> = z.nativeEnum(GetConfigurationResponseBodyInstallationType);
+
+/** @internal */
+export const GetConfigurationResponseBodyInstallationType$outboundSchema: z.ZodNativeEnum<
+    typeof GetConfigurationResponseBodyInstallationType
+> = GetConfigurationResponseBodyInstallationType$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetConfigurationResponseBodyInstallationType$ {
-    export const inboundSchema = z.nativeEnum(GetConfigurationResponseBodyInstallationType);
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `GetConfigurationResponseBodyInstallationType$inboundSchema` instead. */
+    export const inboundSchema = GetConfigurationResponseBodyInstallationType$inboundSchema;
+    /** @deprecated use `GetConfigurationResponseBodyInstallationType$outboundSchema` instead. */
+    export const outboundSchema = GetConfigurationResponseBodyInstallationType$outboundSchema;
 }
 
 /** @internal */
+export const GetConfigurationResponseBody1$inboundSchema: z.ZodType<
+    GetConfigurationResponseBody1,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    completedAt: z.number().optional(),
+    createdAt: z.number(),
+    id: z.string(),
+    integrationId: z.string(),
+    ownerId: z.string(),
+    projects: z.array(z.string()).optional(),
+    source: GetConfigurationResponseBodySource$inboundSchema.optional(),
+    removedLogDrainsAt: z.number().optional(),
+    removedProjectEnvsAt: z.number().optional(),
+    removedTokensAt: z.number().optional(),
+    removedWebhooksAt: z.number().optional(),
+    slug: z.string(),
+    teamId: z.nullable(z.string()).optional(),
+    type: GetConfigurationResponseBodyType$inboundSchema,
+    updatedAt: z.number(),
+    userId: z.string(),
+    scopes: z.array(z.string()),
+    scopesQueue: z
+        .array(z.lazy(() => GetConfigurationResponseBodyScopesQueue$inboundSchema))
+        .optional(),
+    disabledAt: z.number().optional(),
+    deletedAt: z.nullable(z.number()).optional(),
+    disabledReason: GetConfigurationResponseBodyDisabledReason$inboundSchema.optional(),
+    northstarMigratedAt: z.number().optional(),
+    installationType: GetConfigurationResponseBodyInstallationType$inboundSchema.optional(),
+});
+
+/** @internal */
+export type GetConfigurationResponseBody1$Outbound = {
+    completedAt?: number | undefined;
+    createdAt: number;
+    id: string;
+    integrationId: string;
+    ownerId: string;
+    projects?: Array<string> | undefined;
+    source?: string | undefined;
+    removedLogDrainsAt?: number | undefined;
+    removedProjectEnvsAt?: number | undefined;
+    removedTokensAt?: number | undefined;
+    removedWebhooksAt?: number | undefined;
+    slug: string;
+    teamId?: string | null | undefined;
+    type: string;
+    updatedAt: number;
+    userId: string;
+    scopes: Array<string>;
+    scopesQueue?: Array<GetConfigurationResponseBodyScopesQueue$Outbound> | undefined;
+    disabledAt?: number | undefined;
+    deletedAt?: number | null | undefined;
+    disabledReason?: string | undefined;
+    northstarMigratedAt?: number | undefined;
+    installationType?: string | undefined;
+};
+
+/** @internal */
+export const GetConfigurationResponseBody1$outboundSchema: z.ZodType<
+    GetConfigurationResponseBody1$Outbound,
+    z.ZodTypeDef,
+    GetConfigurationResponseBody1
+> = z.object({
+    completedAt: z.number().optional(),
+    createdAt: z.number(),
+    id: z.string(),
+    integrationId: z.string(),
+    ownerId: z.string(),
+    projects: z.array(z.string()).optional(),
+    source: GetConfigurationResponseBodySource$outboundSchema.optional(),
+    removedLogDrainsAt: z.number().optional(),
+    removedProjectEnvsAt: z.number().optional(),
+    removedTokensAt: z.number().optional(),
+    removedWebhooksAt: z.number().optional(),
+    slug: z.string(),
+    teamId: z.nullable(z.string()).optional(),
+    type: GetConfigurationResponseBodyType$outboundSchema,
+    updatedAt: z.number(),
+    userId: z.string(),
+    scopes: z.array(z.string()),
+    scopesQueue: z
+        .array(z.lazy(() => GetConfigurationResponseBodyScopesQueue$outboundSchema))
+        .optional(),
+    disabledAt: z.number().optional(),
+    deletedAt: z.nullable(z.number()).optional(),
+    disabledReason: GetConfigurationResponseBodyDisabledReason$outboundSchema.optional(),
+    northstarMigratedAt: z.number().optional(),
+    installationType: GetConfigurationResponseBodyInstallationType$outboundSchema.optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetConfigurationResponseBody1$ {
-    export const inboundSchema: z.ZodType<GetConfigurationResponseBody1, z.ZodTypeDef, unknown> = z
-        .object({
-            completedAt: z.number().optional(),
-            createdAt: z.number(),
-            id: z.string(),
-            integrationId: z.string(),
-            ownerId: z.string(),
-            projects: z.array(z.string()).optional(),
-            source: GetConfigurationResponseBodySource$.inboundSchema.optional(),
-            removedLogDrainsAt: z.number().optional(),
-            removedProjectEnvsAt: z.number().optional(),
-            removedTokensAt: z.number().optional(),
-            removedWebhooksAt: z.number().optional(),
-            slug: z.string(),
-            teamId: z.nullable(z.string()).optional(),
-            type: GetConfigurationResponseBodyType$.inboundSchema,
-            updatedAt: z.number(),
-            userId: z.string(),
-            scopes: z.array(z.string()),
-            scopesQueue: z
-                .array(z.lazy(() => GetConfigurationResponseBodyScopesQueue$.inboundSchema))
-                .optional(),
-            disabledAt: z.number().optional(),
-            deletedAt: z.nullable(z.number()).optional(),
-            disabledReason: GetConfigurationResponseBodyDisabledReason$.inboundSchema.optional(),
-            northstarMigratedAt: z.number().optional(),
-            installationType:
-                GetConfigurationResponseBodyInstallationType$.inboundSchema.optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.completedAt === undefined ? null : { completedAt: v.completedAt }),
-                createdAt: v.createdAt,
-                id: v.id,
-                integrationId: v.integrationId,
-                ownerId: v.ownerId,
-                ...(v.projects === undefined ? null : { projects: v.projects }),
-                ...(v.source === undefined ? null : { source: v.source }),
-                ...(v.removedLogDrainsAt === undefined
-                    ? null
-                    : { removedLogDrainsAt: v.removedLogDrainsAt }),
-                ...(v.removedProjectEnvsAt === undefined
-                    ? null
-                    : { removedProjectEnvsAt: v.removedProjectEnvsAt }),
-                ...(v.removedTokensAt === undefined
-                    ? null
-                    : { removedTokensAt: v.removedTokensAt }),
-                ...(v.removedWebhooksAt === undefined
-                    ? null
-                    : { removedWebhooksAt: v.removedWebhooksAt }),
-                slug: v.slug,
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                type: v.type,
-                updatedAt: v.updatedAt,
-                userId: v.userId,
-                scopes: v.scopes,
-                ...(v.scopesQueue === undefined ? null : { scopesQueue: v.scopesQueue }),
-                ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                ...(v.deletedAt === undefined ? null : { deletedAt: v.deletedAt }),
-                ...(v.disabledReason === undefined ? null : { disabledReason: v.disabledReason }),
-                ...(v.northstarMigratedAt === undefined
-                    ? null
-                    : { northstarMigratedAt: v.northstarMigratedAt }),
-                ...(v.installationType === undefined
-                    ? null
-                    : { installationType: v.installationType }),
-            };
-        });
-
-    export type Outbound = {
-        completedAt?: number | undefined;
-        createdAt: number;
-        id: string;
-        integrationId: string;
-        ownerId: string;
-        projects?: Array<string> | undefined;
-        source?: string | undefined;
-        removedLogDrainsAt?: number | undefined;
-        removedProjectEnvsAt?: number | undefined;
-        removedTokensAt?: number | undefined;
-        removedWebhooksAt?: number | undefined;
-        slug: string;
-        teamId?: string | null | undefined;
-        type: string;
-        updatedAt: number;
-        userId: string;
-        scopes: Array<string>;
-        scopesQueue?: Array<GetConfigurationResponseBodyScopesQueue$.Outbound> | undefined;
-        disabledAt?: number | undefined;
-        deletedAt?: number | null | undefined;
-        disabledReason?: string | undefined;
-        northstarMigratedAt?: number | undefined;
-        installationType?: string | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetConfigurationResponseBody1> =
-        z
-            .object({
-                completedAt: z.number().optional(),
-                createdAt: z.number(),
-                id: z.string(),
-                integrationId: z.string(),
-                ownerId: z.string(),
-                projects: z.array(z.string()).optional(),
-                source: GetConfigurationResponseBodySource$.outboundSchema.optional(),
-                removedLogDrainsAt: z.number().optional(),
-                removedProjectEnvsAt: z.number().optional(),
-                removedTokensAt: z.number().optional(),
-                removedWebhooksAt: z.number().optional(),
-                slug: z.string(),
-                teamId: z.nullable(z.string()).optional(),
-                type: GetConfigurationResponseBodyType$.outboundSchema,
-                updatedAt: z.number(),
-                userId: z.string(),
-                scopes: z.array(z.string()),
-                scopesQueue: z
-                    .array(z.lazy(() => GetConfigurationResponseBodyScopesQueue$.outboundSchema))
-                    .optional(),
-                disabledAt: z.number().optional(),
-                deletedAt: z.nullable(z.number()).optional(),
-                disabledReason:
-                    GetConfigurationResponseBodyDisabledReason$.outboundSchema.optional(),
-                northstarMigratedAt: z.number().optional(),
-                installationType:
-                    GetConfigurationResponseBodyInstallationType$.outboundSchema.optional(),
-            })
-            .transform((v) => {
-                return {
-                    ...(v.completedAt === undefined ? null : { completedAt: v.completedAt }),
-                    createdAt: v.createdAt,
-                    id: v.id,
-                    integrationId: v.integrationId,
-                    ownerId: v.ownerId,
-                    ...(v.projects === undefined ? null : { projects: v.projects }),
-                    ...(v.source === undefined ? null : { source: v.source }),
-                    ...(v.removedLogDrainsAt === undefined
-                        ? null
-                        : { removedLogDrainsAt: v.removedLogDrainsAt }),
-                    ...(v.removedProjectEnvsAt === undefined
-                        ? null
-                        : { removedProjectEnvsAt: v.removedProjectEnvsAt }),
-                    ...(v.removedTokensAt === undefined
-                        ? null
-                        : { removedTokensAt: v.removedTokensAt }),
-                    ...(v.removedWebhooksAt === undefined
-                        ? null
-                        : { removedWebhooksAt: v.removedWebhooksAt }),
-                    slug: v.slug,
-                    ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                    type: v.type,
-                    updatedAt: v.updatedAt,
-                    userId: v.userId,
-                    scopes: v.scopes,
-                    ...(v.scopesQueue === undefined ? null : { scopesQueue: v.scopesQueue }),
-                    ...(v.disabledAt === undefined ? null : { disabledAt: v.disabledAt }),
-                    ...(v.deletedAt === undefined ? null : { deletedAt: v.deletedAt }),
-                    ...(v.disabledReason === undefined
-                        ? null
-                        : { disabledReason: v.disabledReason }),
-                    ...(v.northstarMigratedAt === undefined
-                        ? null
-                        : { northstarMigratedAt: v.northstarMigratedAt }),
-                    ...(v.installationType === undefined
-                        ? null
-                        : { installationType: v.installationType }),
-                };
-            });
+    /** @deprecated use `GetConfigurationResponseBody1$inboundSchema` instead. */
+    export const inboundSchema = GetConfigurationResponseBody1$inboundSchema;
+    /** @deprecated use `GetConfigurationResponseBody1$outboundSchema` instead. */
+    export const outboundSchema = GetConfigurationResponseBody1$outboundSchema;
+    /** @deprecated use `GetConfigurationResponseBody1$Outbound` instead. */
+    export type Outbound = GetConfigurationResponseBody1$Outbound;
 }
 
 /** @internal */
-export namespace GetConfigurationResponseBody$ {
-    export const inboundSchema: z.ZodType<GetConfigurationResponseBody, z.ZodTypeDef, unknown> =
-        z.union([
-            z.lazy(() => GetConfigurationResponseBody1$.inboundSchema),
-            z.lazy(() => GetConfigurationResponseBody2$.inboundSchema),
-        ]);
+export const GetConfigurationResponseBody$inboundSchema: z.ZodType<
+    GetConfigurationResponseBody,
+    z.ZodTypeDef,
+    unknown
+> = z.union([
+    z.lazy(() => GetConfigurationResponseBody1$inboundSchema),
+    z.lazy(() => GetConfigurationResponseBody2$inboundSchema),
+]);
 
-    export type Outbound =
-        | GetConfigurationResponseBody1$.Outbound
-        | GetConfigurationResponseBody2$.Outbound;
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetConfigurationResponseBody> =
-        z.union([
-            z.lazy(() => GetConfigurationResponseBody1$.outboundSchema),
-            z.lazy(() => GetConfigurationResponseBody2$.outboundSchema),
-        ]);
+/** @internal */
+export type GetConfigurationResponseBody$Outbound =
+    | GetConfigurationResponseBody1$Outbound
+    | GetConfigurationResponseBody2$Outbound;
+
+/** @internal */
+export const GetConfigurationResponseBody$outboundSchema: z.ZodType<
+    GetConfigurationResponseBody$Outbound,
+    z.ZodTypeDef,
+    GetConfigurationResponseBody
+> = z.union([
+    z.lazy(() => GetConfigurationResponseBody1$outboundSchema),
+    z.lazy(() => GetConfigurationResponseBody2$outboundSchema),
+]);
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetConfigurationResponseBody$ {
+    /** @deprecated use `GetConfigurationResponseBody$inboundSchema` instead. */
+    export const inboundSchema = GetConfigurationResponseBody$inboundSchema;
+    /** @deprecated use `GetConfigurationResponseBody$outboundSchema` instead. */
+    export const outboundSchema = GetConfigurationResponseBody$outboundSchema;
+    /** @deprecated use `GetConfigurationResponseBody$Outbound` instead. */
+    export type Outbound = GetConfigurationResponseBody$Outbound;
 }

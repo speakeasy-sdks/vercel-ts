@@ -485,1840 +485,1758 @@ export type GetDeploymentEventsResponse =
     | Three1;
 
 /** @internal */
+export const Direction$inboundSchema: z.ZodNativeEnum<typeof Direction> = z.nativeEnum(Direction);
+
+/** @internal */
+export const Direction$outboundSchema: z.ZodNativeEnum<typeof Direction> = Direction$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace Direction$ {
-    export const inboundSchema = z.nativeEnum(Direction);
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `Direction$inboundSchema` instead. */
+    export const inboundSchema = Direction$inboundSchema;
+    /** @deprecated use `Direction$outboundSchema` instead. */
+    export const outboundSchema = Direction$outboundSchema;
 }
 
 /** @internal */
+export const StatusCode$inboundSchema: z.ZodType<StatusCode, z.ZodTypeDef, unknown> = z.union([
+    z.number(),
+    z.string(),
+]);
+
+/** @internal */
+export type StatusCode$Outbound = number | string;
+
+/** @internal */
+export const StatusCode$outboundSchema: z.ZodType<StatusCode$Outbound, z.ZodTypeDef, StatusCode> =
+    z.union([z.number(), z.string()]);
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace StatusCode$ {
-    export const inboundSchema: z.ZodType<StatusCode, z.ZodTypeDef, unknown> = z.union([
-        z.number(),
-        z.string(),
-    ]);
-
-    export type Outbound = number | string;
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, StatusCode> = z.union([
-        z.number(),
-        z.string(),
-    ]);
+    /** @deprecated use `StatusCode$inboundSchema` instead. */
+    export const inboundSchema = StatusCode$inboundSchema;
+    /** @deprecated use `StatusCode$outboundSchema` instead. */
+    export const outboundSchema = StatusCode$outboundSchema;
+    /** @deprecated use `StatusCode$Outbound` instead. */
+    export type Outbound = StatusCode$Outbound;
 }
 
 /** @internal */
+export const GetDeploymentEventsRequest$inboundSchema: z.ZodType<
+    GetDeploymentEventsRequest,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    idOrUrl: z.string(),
+    direction: Direction$inboundSchema.default(Direction.Forward),
+    follow: z.number().optional(),
+    limit: z.number().optional(),
+    name: z.string().optional(),
+    since: z.number().optional(),
+    until: z.number().optional(),
+    statusCode: z.union([z.number(), z.string()]).optional(),
+    delimiter: z.number().optional(),
+    builds: z.number().optional(),
+    teamId: z.string().optional(),
+    slug: z.string().optional(),
+});
+
+/** @internal */
+export type GetDeploymentEventsRequest$Outbound = {
+    idOrUrl: string;
+    direction: string;
+    follow?: number | undefined;
+    limit?: number | undefined;
+    name?: string | undefined;
+    since?: number | undefined;
+    until?: number | undefined;
+    statusCode?: number | string | undefined;
+    delimiter?: number | undefined;
+    builds?: number | undefined;
+    teamId?: string | undefined;
+    slug?: string | undefined;
+};
+
+/** @internal */
+export const GetDeploymentEventsRequest$outboundSchema: z.ZodType<
+    GetDeploymentEventsRequest$Outbound,
+    z.ZodTypeDef,
+    GetDeploymentEventsRequest
+> = z.object({
+    idOrUrl: z.string(),
+    direction: Direction$outboundSchema.default(Direction.Forward),
+    follow: z.number().optional(),
+    limit: z.number().optional(),
+    name: z.string().optional(),
+    since: z.number().optional(),
+    until: z.number().optional(),
+    statusCode: z.union([z.number(), z.string()]).optional(),
+    delimiter: z.number().optional(),
+    builds: z.number().optional(),
+    teamId: z.string().optional(),
+    slug: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetDeploymentEventsRequest$ {
-    export const inboundSchema: z.ZodType<GetDeploymentEventsRequest, z.ZodTypeDef, unknown> = z
-        .object({
-            idOrUrl: z.string(),
-            direction: Direction$.inboundSchema.default(Direction.Forward),
-            follow: z.number().optional(),
-            limit: z.number().optional(),
-            name: z.string().optional(),
-            since: z.number().optional(),
-            until: z.number().optional(),
-            statusCode: z.union([z.number(), z.string()]).optional(),
-            delimiter: z.number().optional(),
-            builds: z.number().optional(),
-            teamId: z.string().optional(),
-            slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                idOrUrl: v.idOrUrl,
-                direction: v.direction,
-                ...(v.follow === undefined ? null : { follow: v.follow }),
-                ...(v.limit === undefined ? null : { limit: v.limit }),
-                ...(v.name === undefined ? null : { name: v.name }),
-                ...(v.since === undefined ? null : { since: v.since }),
-                ...(v.until === undefined ? null : { until: v.until }),
-                ...(v.statusCode === undefined ? null : { statusCode: v.statusCode }),
-                ...(v.delimiter === undefined ? null : { delimiter: v.delimiter }),
-                ...(v.builds === undefined ? null : { builds: v.builds }),
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
-        });
-
-    export type Outbound = {
-        idOrUrl: string;
-        direction: string;
-        follow?: number | undefined;
-        limit?: number | undefined;
-        name?: string | undefined;
-        since?: number | undefined;
-        until?: number | undefined;
-        statusCode?: number | string | undefined;
-        delimiter?: number | undefined;
-        builds?: number | undefined;
-        teamId?: string | undefined;
-        slug?: string | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetDeploymentEventsRequest> = z
-        .object({
-            idOrUrl: z.string(),
-            direction: Direction$.outboundSchema.default(Direction.Forward),
-            follow: z.number().optional(),
-            limit: z.number().optional(),
-            name: z.string().optional(),
-            since: z.number().optional(),
-            until: z.number().optional(),
-            statusCode: z.union([z.number(), z.string()]).optional(),
-            delimiter: z.number().optional(),
-            builds: z.number().optional(),
-            teamId: z.string().optional(),
-            slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                idOrUrl: v.idOrUrl,
-                direction: v.direction,
-                ...(v.follow === undefined ? null : { follow: v.follow }),
-                ...(v.limit === undefined ? null : { limit: v.limit }),
-                ...(v.name === undefined ? null : { name: v.name }),
-                ...(v.since === undefined ? null : { since: v.since }),
-                ...(v.until === undefined ? null : { until: v.until }),
-                ...(v.statusCode === undefined ? null : { statusCode: v.statusCode }),
-                ...(v.delimiter === undefined ? null : { delimiter: v.delimiter }),
-                ...(v.builds === undefined ? null : { builds: v.builds }),
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
-        });
+    /** @deprecated use `GetDeploymentEventsRequest$inboundSchema` instead. */
+    export const inboundSchema = GetDeploymentEventsRequest$inboundSchema;
+    /** @deprecated use `GetDeploymentEventsRequest$outboundSchema` instead. */
+    export const outboundSchema = GetDeploymentEventsRequest$outboundSchema;
+    /** @deprecated use `GetDeploymentEventsRequest$Outbound` instead. */
+    export type Outbound = GetDeploymentEventsRequest$Outbound;
 }
 
 /** @internal */
+export const GetDeploymentEvents3Type$inboundSchema: z.ZodNativeEnum<
+    typeof GetDeploymentEvents3Type
+> = z.nativeEnum(GetDeploymentEvents3Type);
+
+/** @internal */
+export const GetDeploymentEvents3Type$outboundSchema: z.ZodNativeEnum<
+    typeof GetDeploymentEvents3Type
+> = GetDeploymentEvents3Type$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetDeploymentEvents3Type$ {
-    export const inboundSchema = z.nativeEnum(GetDeploymentEvents3Type);
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `GetDeploymentEvents3Type$inboundSchema` instead. */
+    export const inboundSchema = GetDeploymentEvents3Type$inboundSchema;
+    /** @deprecated use `GetDeploymentEvents3Type$outboundSchema` instead. */
+    export const outboundSchema = GetDeploymentEvents3Type$outboundSchema;
 }
 
 /** @internal */
+export const GetDeploymentEvents3Info$inboundSchema: z.ZodType<
+    GetDeploymentEvents3Info,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    type: z.string(),
+    name: z.string(),
+    entrypoint: z.string().optional(),
+    path: z.string().optional(),
+    step: z.string().optional(),
+    readyState: z.string().optional(),
+});
+
+/** @internal */
+export type GetDeploymentEvents3Info$Outbound = {
+    type: string;
+    name: string;
+    entrypoint?: string | undefined;
+    path?: string | undefined;
+    step?: string | undefined;
+    readyState?: string | undefined;
+};
+
+/** @internal */
+export const GetDeploymentEvents3Info$outboundSchema: z.ZodType<
+    GetDeploymentEvents3Info$Outbound,
+    z.ZodTypeDef,
+    GetDeploymentEvents3Info
+> = z.object({
+    type: z.string(),
+    name: z.string(),
+    entrypoint: z.string().optional(),
+    path: z.string().optional(),
+    step: z.string().optional(),
+    readyState: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetDeploymentEvents3Info$ {
-    export const inboundSchema: z.ZodType<GetDeploymentEvents3Info, z.ZodTypeDef, unknown> = z
-        .object({
-            type: z.string(),
-            name: z.string(),
-            entrypoint: z.string().optional(),
-            path: z.string().optional(),
-            step: z.string().optional(),
-            readyState: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                name: v.name,
-                ...(v.entrypoint === undefined ? null : { entrypoint: v.entrypoint }),
-                ...(v.path === undefined ? null : { path: v.path }),
-                ...(v.step === undefined ? null : { step: v.step }),
-                ...(v.readyState === undefined ? null : { readyState: v.readyState }),
-            };
-        });
-
-    export type Outbound = {
-        type: string;
-        name: string;
-        entrypoint?: string | undefined;
-        path?: string | undefined;
-        step?: string | undefined;
-        readyState?: string | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetDeploymentEvents3Info> = z
-        .object({
-            type: z.string(),
-            name: z.string(),
-            entrypoint: z.string().optional(),
-            path: z.string().optional(),
-            step: z.string().optional(),
-            readyState: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                name: v.name,
-                ...(v.entrypoint === undefined ? null : { entrypoint: v.entrypoint }),
-                ...(v.path === undefined ? null : { path: v.path }),
-                ...(v.step === undefined ? null : { step: v.step }),
-                ...(v.readyState === undefined ? null : { readyState: v.readyState }),
-            };
-        });
+    /** @deprecated use `GetDeploymentEvents3Info$inboundSchema` instead. */
+    export const inboundSchema = GetDeploymentEvents3Info$inboundSchema;
+    /** @deprecated use `GetDeploymentEvents3Info$outboundSchema` instead. */
+    export const outboundSchema = GetDeploymentEvents3Info$outboundSchema;
+    /** @deprecated use `GetDeploymentEvents3Info$Outbound` instead. */
+    export type Outbound = GetDeploymentEvents3Info$Outbound;
 }
 
 /** @internal */
+export const GetDeploymentEvents3VercelCache$inboundSchema: z.ZodNativeEnum<
+    typeof GetDeploymentEvents3VercelCache
+> = z.nativeEnum(GetDeploymentEvents3VercelCache);
+
+/** @internal */
+export const GetDeploymentEvents3VercelCache$outboundSchema: z.ZodNativeEnum<
+    typeof GetDeploymentEvents3VercelCache
+> = GetDeploymentEvents3VercelCache$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetDeploymentEvents3VercelCache$ {
-    export const inboundSchema = z.nativeEnum(GetDeploymentEvents3VercelCache);
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `GetDeploymentEvents3VercelCache$inboundSchema` instead. */
+    export const inboundSchema = GetDeploymentEvents3VercelCache$inboundSchema;
+    /** @deprecated use `GetDeploymentEvents3VercelCache$outboundSchema` instead. */
+    export const outboundSchema = GetDeploymentEvents3VercelCache$outboundSchema;
 }
 
 /** @internal */
+export const GetDeploymentEvents3Proxy$inboundSchema: z.ZodType<
+    GetDeploymentEvents3Proxy,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    timestamp: z.number(),
+    method: z.string(),
+    host: z.string(),
+    path: z.string(),
+    statusCode: z.number().optional(),
+    userAgent: z.array(z.string()),
+    referer: z.string(),
+    clientIp: z.string(),
+    region: z.string(),
+    scheme: z.string().optional(),
+    responseByteSize: z.number().optional(),
+    cacheId: z.string().optional(),
+    pathType: z.string().optional(),
+    vercelId: z.string().optional(),
+    vercelCache: GetDeploymentEvents3VercelCache$inboundSchema.optional(),
+    lambdaRegion: z.string().optional(),
+});
+
+/** @internal */
+export type GetDeploymentEvents3Proxy$Outbound = {
+    timestamp: number;
+    method: string;
+    host: string;
+    path: string;
+    statusCode?: number | undefined;
+    userAgent: Array<string>;
+    referer: string;
+    clientIp: string;
+    region: string;
+    scheme?: string | undefined;
+    responseByteSize?: number | undefined;
+    cacheId?: string | undefined;
+    pathType?: string | undefined;
+    vercelId?: string | undefined;
+    vercelCache?: string | undefined;
+    lambdaRegion?: string | undefined;
+};
+
+/** @internal */
+export const GetDeploymentEvents3Proxy$outboundSchema: z.ZodType<
+    GetDeploymentEvents3Proxy$Outbound,
+    z.ZodTypeDef,
+    GetDeploymentEvents3Proxy
+> = z.object({
+    timestamp: z.number(),
+    method: z.string(),
+    host: z.string(),
+    path: z.string(),
+    statusCode: z.number().optional(),
+    userAgent: z.array(z.string()),
+    referer: z.string(),
+    clientIp: z.string(),
+    region: z.string(),
+    scheme: z.string().optional(),
+    responseByteSize: z.number().optional(),
+    cacheId: z.string().optional(),
+    pathType: z.string().optional(),
+    vercelId: z.string().optional(),
+    vercelCache: GetDeploymentEvents3VercelCache$outboundSchema.optional(),
+    lambdaRegion: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetDeploymentEvents3Proxy$ {
-    export const inboundSchema: z.ZodType<GetDeploymentEvents3Proxy, z.ZodTypeDef, unknown> = z
-        .object({
-            timestamp: z.number(),
-            method: z.string(),
-            host: z.string(),
-            path: z.string(),
-            statusCode: z.number().optional(),
-            userAgent: z.array(z.string()),
-            referer: z.string(),
-            clientIp: z.string(),
-            region: z.string(),
-            scheme: z.string().optional(),
-            responseByteSize: z.number().optional(),
-            cacheId: z.string().optional(),
-            pathType: z.string().optional(),
-            vercelId: z.string().optional(),
-            vercelCache: GetDeploymentEvents3VercelCache$.inboundSchema.optional(),
-            lambdaRegion: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                timestamp: v.timestamp,
-                method: v.method,
-                host: v.host,
-                path: v.path,
-                ...(v.statusCode === undefined ? null : { statusCode: v.statusCode }),
-                userAgent: v.userAgent,
-                referer: v.referer,
-                clientIp: v.clientIp,
-                region: v.region,
-                ...(v.scheme === undefined ? null : { scheme: v.scheme }),
-                ...(v.responseByteSize === undefined
-                    ? null
-                    : { responseByteSize: v.responseByteSize }),
-                ...(v.cacheId === undefined ? null : { cacheId: v.cacheId }),
-                ...(v.pathType === undefined ? null : { pathType: v.pathType }),
-                ...(v.vercelId === undefined ? null : { vercelId: v.vercelId }),
-                ...(v.vercelCache === undefined ? null : { vercelCache: v.vercelCache }),
-                ...(v.lambdaRegion === undefined ? null : { lambdaRegion: v.lambdaRegion }),
-            };
-        });
-
-    export type Outbound = {
-        timestamp: number;
-        method: string;
-        host: string;
-        path: string;
-        statusCode?: number | undefined;
-        userAgent: Array<string>;
-        referer: string;
-        clientIp: string;
-        region: string;
-        scheme?: string | undefined;
-        responseByteSize?: number | undefined;
-        cacheId?: string | undefined;
-        pathType?: string | undefined;
-        vercelId?: string | undefined;
-        vercelCache?: string | undefined;
-        lambdaRegion?: string | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetDeploymentEvents3Proxy> = z
-        .object({
-            timestamp: z.number(),
-            method: z.string(),
-            host: z.string(),
-            path: z.string(),
-            statusCode: z.number().optional(),
-            userAgent: z.array(z.string()),
-            referer: z.string(),
-            clientIp: z.string(),
-            region: z.string(),
-            scheme: z.string().optional(),
-            responseByteSize: z.number().optional(),
-            cacheId: z.string().optional(),
-            pathType: z.string().optional(),
-            vercelId: z.string().optional(),
-            vercelCache: GetDeploymentEvents3VercelCache$.outboundSchema.optional(),
-            lambdaRegion: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                timestamp: v.timestamp,
-                method: v.method,
-                host: v.host,
-                path: v.path,
-                ...(v.statusCode === undefined ? null : { statusCode: v.statusCode }),
-                userAgent: v.userAgent,
-                referer: v.referer,
-                clientIp: v.clientIp,
-                region: v.region,
-                ...(v.scheme === undefined ? null : { scheme: v.scheme }),
-                ...(v.responseByteSize === undefined
-                    ? null
-                    : { responseByteSize: v.responseByteSize }),
-                ...(v.cacheId === undefined ? null : { cacheId: v.cacheId }),
-                ...(v.pathType === undefined ? null : { pathType: v.pathType }),
-                ...(v.vercelId === undefined ? null : { vercelId: v.vercelId }),
-                ...(v.vercelCache === undefined ? null : { vercelCache: v.vercelCache }),
-                ...(v.lambdaRegion === undefined ? null : { lambdaRegion: v.lambdaRegion }),
-            };
-        });
+    /** @deprecated use `GetDeploymentEvents3Proxy$inboundSchema` instead. */
+    export const inboundSchema = GetDeploymentEvents3Proxy$inboundSchema;
+    /** @deprecated use `GetDeploymentEvents3Proxy$outboundSchema` instead. */
+    export const outboundSchema = GetDeploymentEvents3Proxy$outboundSchema;
+    /** @deprecated use `GetDeploymentEvents3Proxy$Outbound` instead. */
+    export type Outbound = GetDeploymentEvents3Proxy$Outbound;
 }
 
 /** @internal */
+export const ThreePayload$inboundSchema: z.ZodType<ThreePayload, z.ZodTypeDef, unknown> = z.object({
+    deploymentId: z.string(),
+    info: z.lazy(() => GetDeploymentEvents3Info$inboundSchema).optional(),
+    text: z.string().optional(),
+    id: z.string(),
+    date: z.number(),
+    serial: z.string(),
+    created: z.number().optional(),
+    statusCode: z.number().optional(),
+    requestId: z.string().optional(),
+    proxy: z.lazy(() => GetDeploymentEvents3Proxy$inboundSchema).optional(),
+});
+
+/** @internal */
+export type ThreePayload$Outbound = {
+    deploymentId: string;
+    info?: GetDeploymentEvents3Info$Outbound | undefined;
+    text?: string | undefined;
+    id: string;
+    date: number;
+    serial: string;
+    created?: number | undefined;
+    statusCode?: number | undefined;
+    requestId?: string | undefined;
+    proxy?: GetDeploymentEvents3Proxy$Outbound | undefined;
+};
+
+/** @internal */
+export const ThreePayload$outboundSchema: z.ZodType<
+    ThreePayload$Outbound,
+    z.ZodTypeDef,
+    ThreePayload
+> = z.object({
+    deploymentId: z.string(),
+    info: z.lazy(() => GetDeploymentEvents3Info$outboundSchema).optional(),
+    text: z.string().optional(),
+    id: z.string(),
+    date: z.number(),
+    serial: z.string(),
+    created: z.number().optional(),
+    statusCode: z.number().optional(),
+    requestId: z.string().optional(),
+    proxy: z.lazy(() => GetDeploymentEvents3Proxy$outboundSchema).optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace ThreePayload$ {
-    export const inboundSchema: z.ZodType<ThreePayload, z.ZodTypeDef, unknown> = z
-        .object({
-            deploymentId: z.string(),
-            info: z.lazy(() => GetDeploymentEvents3Info$.inboundSchema).optional(),
-            text: z.string().optional(),
-            id: z.string(),
-            date: z.number(),
-            serial: z.string(),
-            created: z.number().optional(),
-            statusCode: z.number().optional(),
-            requestId: z.string().optional(),
-            proxy: z.lazy(() => GetDeploymentEvents3Proxy$.inboundSchema).optional(),
-        })
-        .transform((v) => {
-            return {
-                deploymentId: v.deploymentId,
-                ...(v.info === undefined ? null : { info: v.info }),
-                ...(v.text === undefined ? null : { text: v.text }),
-                id: v.id,
-                date: v.date,
-                serial: v.serial,
-                ...(v.created === undefined ? null : { created: v.created }),
-                ...(v.statusCode === undefined ? null : { statusCode: v.statusCode }),
-                ...(v.requestId === undefined ? null : { requestId: v.requestId }),
-                ...(v.proxy === undefined ? null : { proxy: v.proxy }),
-            };
-        });
-
-    export type Outbound = {
-        deploymentId: string;
-        info?: GetDeploymentEvents3Info$.Outbound | undefined;
-        text?: string | undefined;
-        id: string;
-        date: number;
-        serial: string;
-        created?: number | undefined;
-        statusCode?: number | undefined;
-        requestId?: string | undefined;
-        proxy?: GetDeploymentEvents3Proxy$.Outbound | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, ThreePayload> = z
-        .object({
-            deploymentId: z.string(),
-            info: z.lazy(() => GetDeploymentEvents3Info$.outboundSchema).optional(),
-            text: z.string().optional(),
-            id: z.string(),
-            date: z.number(),
-            serial: z.string(),
-            created: z.number().optional(),
-            statusCode: z.number().optional(),
-            requestId: z.string().optional(),
-            proxy: z.lazy(() => GetDeploymentEvents3Proxy$.outboundSchema).optional(),
-        })
-        .transform((v) => {
-            return {
-                deploymentId: v.deploymentId,
-                ...(v.info === undefined ? null : { info: v.info }),
-                ...(v.text === undefined ? null : { text: v.text }),
-                id: v.id,
-                date: v.date,
-                serial: v.serial,
-                ...(v.created === undefined ? null : { created: v.created }),
-                ...(v.statusCode === undefined ? null : { statusCode: v.statusCode }),
-                ...(v.requestId === undefined ? null : { requestId: v.requestId }),
-                ...(v.proxy === undefined ? null : { proxy: v.proxy }),
-            };
-        });
+    /** @deprecated use `ThreePayload$inboundSchema` instead. */
+    export const inboundSchema = ThreePayload$inboundSchema;
+    /** @deprecated use `ThreePayload$outboundSchema` instead. */
+    export const outboundSchema = ThreePayload$outboundSchema;
+    /** @deprecated use `ThreePayload$Outbound` instead. */
+    export type Outbound = ThreePayload$Outbound;
 }
 
 /** @internal */
+export const Three2$inboundSchema: z.ZodType<Three2, z.ZodTypeDef, unknown> = z.object({
+    type: GetDeploymentEvents3Type$inboundSchema,
+    created: z.number(),
+    payload: z.lazy(() => ThreePayload$inboundSchema),
+});
+
+/** @internal */
+export type Three2$Outbound = {
+    type: string;
+    created: number;
+    payload: ThreePayload$Outbound;
+};
+
+/** @internal */
+export const Three2$outboundSchema: z.ZodType<Three2$Outbound, z.ZodTypeDef, Three2> = z.object({
+    type: GetDeploymentEvents3Type$outboundSchema,
+    created: z.number(),
+    payload: z.lazy(() => ThreePayload$outboundSchema),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace Three2$ {
-    export const inboundSchema: z.ZodType<Three2, z.ZodTypeDef, unknown> = z
-        .object({
-            type: GetDeploymentEvents3Type$.inboundSchema,
-            created: z.number(),
-            payload: z.lazy(() => ThreePayload$.inboundSchema),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                created: v.created,
-                payload: v.payload,
-            };
-        });
-
-    export type Outbound = {
-        type: string;
-        created: number;
-        payload: ThreePayload$.Outbound;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, Three2> = z
-        .object({
-            type: GetDeploymentEvents3Type$.outboundSchema,
-            created: z.number(),
-            payload: z.lazy(() => ThreePayload$.outboundSchema),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                created: v.created,
-                payload: v.payload,
-            };
-        });
+    /** @deprecated use `Three2$inboundSchema` instead. */
+    export const inboundSchema = Three2$inboundSchema;
+    /** @deprecated use `Three2$outboundSchema` instead. */
+    export const outboundSchema = Three2$outboundSchema;
+    /** @deprecated use `Three2$Outbound` instead. */
+    export type Outbound = Three2$Outbound;
 }
 
 /** @internal */
+export const ThreeInfo$inboundSchema: z.ZodType<ThreeInfo, z.ZodTypeDef, unknown> = z.object({
+    type: z.string(),
+    name: z.string(),
+    entrypoint: z.string().optional(),
+    path: z.string().optional(),
+    step: z.string().optional(),
+    readyState: z.string().optional(),
+});
+
+/** @internal */
+export type ThreeInfo$Outbound = {
+    type: string;
+    name: string;
+    entrypoint?: string | undefined;
+    path?: string | undefined;
+    step?: string | undefined;
+    readyState?: string | undefined;
+};
+
+/** @internal */
+export const ThreeInfo$outboundSchema: z.ZodType<ThreeInfo$Outbound, z.ZodTypeDef, ThreeInfo> =
+    z.object({
+        type: z.string(),
+        name: z.string(),
+        entrypoint: z.string().optional(),
+        path: z.string().optional(),
+        step: z.string().optional(),
+        readyState: z.string().optional(),
+    });
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace ThreeInfo$ {
-    export const inboundSchema: z.ZodType<ThreeInfo, z.ZodTypeDef, unknown> = z
-        .object({
-            type: z.string(),
-            name: z.string(),
-            entrypoint: z.string().optional(),
-            path: z.string().optional(),
-            step: z.string().optional(),
-            readyState: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                name: v.name,
-                ...(v.entrypoint === undefined ? null : { entrypoint: v.entrypoint }),
-                ...(v.path === undefined ? null : { path: v.path }),
-                ...(v.step === undefined ? null : { step: v.step }),
-                ...(v.readyState === undefined ? null : { readyState: v.readyState }),
-            };
-        });
-
-    export type Outbound = {
-        type: string;
-        name: string;
-        entrypoint?: string | undefined;
-        path?: string | undefined;
-        step?: string | undefined;
-        readyState?: string | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, ThreeInfo> = z
-        .object({
-            type: z.string(),
-            name: z.string(),
-            entrypoint: z.string().optional(),
-            path: z.string().optional(),
-            step: z.string().optional(),
-            readyState: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                name: v.name,
-                ...(v.entrypoint === undefined ? null : { entrypoint: v.entrypoint }),
-                ...(v.path === undefined ? null : { path: v.path }),
-                ...(v.step === undefined ? null : { step: v.step }),
-                ...(v.readyState === undefined ? null : { readyState: v.readyState }),
-            };
-        });
+    /** @deprecated use `ThreeInfo$inboundSchema` instead. */
+    export const inboundSchema = ThreeInfo$inboundSchema;
+    /** @deprecated use `ThreeInfo$outboundSchema` instead. */
+    export const outboundSchema = ThreeInfo$outboundSchema;
+    /** @deprecated use `ThreeInfo$Outbound` instead. */
+    export type Outbound = ThreeInfo$Outbound;
 }
 
 /** @internal */
+export const ThreeVercelCache$inboundSchema: z.ZodNativeEnum<typeof ThreeVercelCache> =
+    z.nativeEnum(ThreeVercelCache);
+
+/** @internal */
+export const ThreeVercelCache$outboundSchema: z.ZodNativeEnum<typeof ThreeVercelCache> =
+    ThreeVercelCache$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace ThreeVercelCache$ {
-    export const inboundSchema = z.nativeEnum(ThreeVercelCache);
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `ThreeVercelCache$inboundSchema` instead. */
+    export const inboundSchema = ThreeVercelCache$inboundSchema;
+    /** @deprecated use `ThreeVercelCache$outboundSchema` instead. */
+    export const outboundSchema = ThreeVercelCache$outboundSchema;
 }
 
 /** @internal */
+export const ThreeProxy$inboundSchema: z.ZodType<ThreeProxy, z.ZodTypeDef, unknown> = z.object({
+    timestamp: z.number(),
+    method: z.string(),
+    host: z.string(),
+    path: z.string(),
+    statusCode: z.number().optional(),
+    userAgent: z.array(z.string()),
+    referer: z.string(),
+    clientIp: z.string(),
+    region: z.string(),
+    scheme: z.string().optional(),
+    responseByteSize: z.number().optional(),
+    cacheId: z.string().optional(),
+    pathType: z.string().optional(),
+    vercelId: z.string().optional(),
+    vercelCache: ThreeVercelCache$inboundSchema.optional(),
+    lambdaRegion: z.string().optional(),
+});
+
+/** @internal */
+export type ThreeProxy$Outbound = {
+    timestamp: number;
+    method: string;
+    host: string;
+    path: string;
+    statusCode?: number | undefined;
+    userAgent: Array<string>;
+    referer: string;
+    clientIp: string;
+    region: string;
+    scheme?: string | undefined;
+    responseByteSize?: number | undefined;
+    cacheId?: string | undefined;
+    pathType?: string | undefined;
+    vercelId?: string | undefined;
+    vercelCache?: string | undefined;
+    lambdaRegion?: string | undefined;
+};
+
+/** @internal */
+export const ThreeProxy$outboundSchema: z.ZodType<ThreeProxy$Outbound, z.ZodTypeDef, ThreeProxy> =
+    z.object({
+        timestamp: z.number(),
+        method: z.string(),
+        host: z.string(),
+        path: z.string(),
+        statusCode: z.number().optional(),
+        userAgent: z.array(z.string()),
+        referer: z.string(),
+        clientIp: z.string(),
+        region: z.string(),
+        scheme: z.string().optional(),
+        responseByteSize: z.number().optional(),
+        cacheId: z.string().optional(),
+        pathType: z.string().optional(),
+        vercelId: z.string().optional(),
+        vercelCache: ThreeVercelCache$outboundSchema.optional(),
+        lambdaRegion: z.string().optional(),
+    });
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace ThreeProxy$ {
-    export const inboundSchema: z.ZodType<ThreeProxy, z.ZodTypeDef, unknown> = z
-        .object({
-            timestamp: z.number(),
-            method: z.string(),
-            host: z.string(),
-            path: z.string(),
-            statusCode: z.number().optional(),
-            userAgent: z.array(z.string()),
-            referer: z.string(),
-            clientIp: z.string(),
-            region: z.string(),
-            scheme: z.string().optional(),
-            responseByteSize: z.number().optional(),
-            cacheId: z.string().optional(),
-            pathType: z.string().optional(),
-            vercelId: z.string().optional(),
-            vercelCache: ThreeVercelCache$.inboundSchema.optional(),
-            lambdaRegion: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                timestamp: v.timestamp,
-                method: v.method,
-                host: v.host,
-                path: v.path,
-                ...(v.statusCode === undefined ? null : { statusCode: v.statusCode }),
-                userAgent: v.userAgent,
-                referer: v.referer,
-                clientIp: v.clientIp,
-                region: v.region,
-                ...(v.scheme === undefined ? null : { scheme: v.scheme }),
-                ...(v.responseByteSize === undefined
-                    ? null
-                    : { responseByteSize: v.responseByteSize }),
-                ...(v.cacheId === undefined ? null : { cacheId: v.cacheId }),
-                ...(v.pathType === undefined ? null : { pathType: v.pathType }),
-                ...(v.vercelId === undefined ? null : { vercelId: v.vercelId }),
-                ...(v.vercelCache === undefined ? null : { vercelCache: v.vercelCache }),
-                ...(v.lambdaRegion === undefined ? null : { lambdaRegion: v.lambdaRegion }),
-            };
-        });
-
-    export type Outbound = {
-        timestamp: number;
-        method: string;
-        host: string;
-        path: string;
-        statusCode?: number | undefined;
-        userAgent: Array<string>;
-        referer: string;
-        clientIp: string;
-        region: string;
-        scheme?: string | undefined;
-        responseByteSize?: number | undefined;
-        cacheId?: string | undefined;
-        pathType?: string | undefined;
-        vercelId?: string | undefined;
-        vercelCache?: string | undefined;
-        lambdaRegion?: string | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, ThreeProxy> = z
-        .object({
-            timestamp: z.number(),
-            method: z.string(),
-            host: z.string(),
-            path: z.string(),
-            statusCode: z.number().optional(),
-            userAgent: z.array(z.string()),
-            referer: z.string(),
-            clientIp: z.string(),
-            region: z.string(),
-            scheme: z.string().optional(),
-            responseByteSize: z.number().optional(),
-            cacheId: z.string().optional(),
-            pathType: z.string().optional(),
-            vercelId: z.string().optional(),
-            vercelCache: ThreeVercelCache$.outboundSchema.optional(),
-            lambdaRegion: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                timestamp: v.timestamp,
-                method: v.method,
-                host: v.host,
-                path: v.path,
-                ...(v.statusCode === undefined ? null : { statusCode: v.statusCode }),
-                userAgent: v.userAgent,
-                referer: v.referer,
-                clientIp: v.clientIp,
-                region: v.region,
-                ...(v.scheme === undefined ? null : { scheme: v.scheme }),
-                ...(v.responseByteSize === undefined
-                    ? null
-                    : { responseByteSize: v.responseByteSize }),
-                ...(v.cacheId === undefined ? null : { cacheId: v.cacheId }),
-                ...(v.pathType === undefined ? null : { pathType: v.pathType }),
-                ...(v.vercelId === undefined ? null : { vercelId: v.vercelId }),
-                ...(v.vercelCache === undefined ? null : { vercelCache: v.vercelCache }),
-                ...(v.lambdaRegion === undefined ? null : { lambdaRegion: v.lambdaRegion }),
-            };
-        });
+    /** @deprecated use `ThreeProxy$inboundSchema` instead. */
+    export const inboundSchema = ThreeProxy$inboundSchema;
+    /** @deprecated use `ThreeProxy$outboundSchema` instead. */
+    export const outboundSchema = ThreeProxy$outboundSchema;
+    /** @deprecated use `ThreeProxy$Outbound` instead. */
+    export type Outbound = ThreeProxy$Outbound;
 }
 
 /** @internal */
+export const ThreeType$inboundSchema: z.ZodNativeEnum<typeof ThreeType> = z.nativeEnum(ThreeType);
+
+/** @internal */
+export const ThreeType$outboundSchema: z.ZodNativeEnum<typeof ThreeType> = ThreeType$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace ThreeType$ {
-    export const inboundSchema = z.nativeEnum(ThreeType);
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `ThreeType$inboundSchema` instead. */
+    export const inboundSchema = ThreeType$inboundSchema;
+    /** @deprecated use `ThreeType$outboundSchema` instead. */
+    export const outboundSchema = ThreeType$outboundSchema;
 }
 
 /** @internal */
+export const Three1$inboundSchema: z.ZodType<Three1, z.ZodTypeDef, unknown> = z.object({
+    created: z.number(),
+    date: z.number(),
+    deploymentId: z.string(),
+    id: z.string(),
+    info: z.lazy(() => ThreeInfo$inboundSchema),
+    proxy: z.lazy(() => ThreeProxy$inboundSchema).optional(),
+    requestId: z.string().optional(),
+    serial: z.string(),
+    statusCode: z.number().optional(),
+    text: z.string().optional(),
+    type: ThreeType$inboundSchema,
+});
+
+/** @internal */
+export type Three1$Outbound = {
+    created: number;
+    date: number;
+    deploymentId: string;
+    id: string;
+    info: ThreeInfo$Outbound;
+    proxy?: ThreeProxy$Outbound | undefined;
+    requestId?: string | undefined;
+    serial: string;
+    statusCode?: number | undefined;
+    text?: string | undefined;
+    type: string;
+};
+
+/** @internal */
+export const Three1$outboundSchema: z.ZodType<Three1$Outbound, z.ZodTypeDef, Three1> = z.object({
+    created: z.number(),
+    date: z.number(),
+    deploymentId: z.string(),
+    id: z.string(),
+    info: z.lazy(() => ThreeInfo$outboundSchema),
+    proxy: z.lazy(() => ThreeProxy$outboundSchema).optional(),
+    requestId: z.string().optional(),
+    serial: z.string(),
+    statusCode: z.number().optional(),
+    text: z.string().optional(),
+    type: ThreeType$outboundSchema,
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace Three1$ {
-    export const inboundSchema: z.ZodType<Three1, z.ZodTypeDef, unknown> = z
-        .object({
-            created: z.number(),
-            date: z.number(),
-            deploymentId: z.string(),
-            id: z.string(),
-            info: z.lazy(() => ThreeInfo$.inboundSchema),
-            proxy: z.lazy(() => ThreeProxy$.inboundSchema).optional(),
-            requestId: z.string().optional(),
-            serial: z.string(),
-            statusCode: z.number().optional(),
-            text: z.string().optional(),
-            type: ThreeType$.inboundSchema,
-        })
-        .transform((v) => {
-            return {
-                created: v.created,
-                date: v.date,
-                deploymentId: v.deploymentId,
-                id: v.id,
-                info: v.info,
-                ...(v.proxy === undefined ? null : { proxy: v.proxy }),
-                ...(v.requestId === undefined ? null : { requestId: v.requestId }),
-                serial: v.serial,
-                ...(v.statusCode === undefined ? null : { statusCode: v.statusCode }),
-                ...(v.text === undefined ? null : { text: v.text }),
-                type: v.type,
-            };
-        });
-
-    export type Outbound = {
-        created: number;
-        date: number;
-        deploymentId: string;
-        id: string;
-        info: ThreeInfo$.Outbound;
-        proxy?: ThreeProxy$.Outbound | undefined;
-        requestId?: string | undefined;
-        serial: string;
-        statusCode?: number | undefined;
-        text?: string | undefined;
-        type: string;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, Three1> = z
-        .object({
-            created: z.number(),
-            date: z.number(),
-            deploymentId: z.string(),
-            id: z.string(),
-            info: z.lazy(() => ThreeInfo$.outboundSchema),
-            proxy: z.lazy(() => ThreeProxy$.outboundSchema).optional(),
-            requestId: z.string().optional(),
-            serial: z.string(),
-            statusCode: z.number().optional(),
-            text: z.string().optional(),
-            type: ThreeType$.outboundSchema,
-        })
-        .transform((v) => {
-            return {
-                created: v.created,
-                date: v.date,
-                deploymentId: v.deploymentId,
-                id: v.id,
-                info: v.info,
-                ...(v.proxy === undefined ? null : { proxy: v.proxy }),
-                ...(v.requestId === undefined ? null : { requestId: v.requestId }),
-                serial: v.serial,
-                ...(v.statusCode === undefined ? null : { statusCode: v.statusCode }),
-                ...(v.text === undefined ? null : { text: v.text }),
-                type: v.type,
-            };
-        });
+    /** @deprecated use `Three1$inboundSchema` instead. */
+    export const inboundSchema = Three1$inboundSchema;
+    /** @deprecated use `Three1$outboundSchema` instead. */
+    export const outboundSchema = Three1$outboundSchema;
+    /** @deprecated use `Three1$Outbound` instead. */
+    export type Outbound = Three1$Outbound;
 }
 
 /** @internal */
+export const ResponseBody3$inboundSchema: z.ZodType<ResponseBody3, z.ZodTypeDef, unknown> = z.union(
+    [z.lazy(() => Three2$inboundSchema), z.lazy(() => Three1$inboundSchema)]
+);
+
+/** @internal */
+export type ResponseBody3$Outbound = Three2$Outbound | Three1$Outbound;
+
+/** @internal */
+export const ResponseBody3$outboundSchema: z.ZodType<
+    ResponseBody3$Outbound,
+    z.ZodTypeDef,
+    ResponseBody3
+> = z.union([z.lazy(() => Three2$outboundSchema), z.lazy(() => Three1$outboundSchema)]);
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace ResponseBody3$ {
-    export const inboundSchema: z.ZodType<ResponseBody3, z.ZodTypeDef, unknown> = z.union([
-        z.lazy(() => Three2$.inboundSchema),
-        z.lazy(() => Three1$.inboundSchema),
-    ]);
-
-    export type Outbound = Three2$.Outbound | Three1$.Outbound;
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, ResponseBody3> = z.union([
-        z.lazy(() => Three2$.outboundSchema),
-        z.lazy(() => Three1$.outboundSchema),
-    ]);
+    /** @deprecated use `ResponseBody3$inboundSchema` instead. */
+    export const inboundSchema = ResponseBody3$inboundSchema;
+    /** @deprecated use `ResponseBody3$outboundSchema` instead. */
+    export const outboundSchema = ResponseBody3$outboundSchema;
+    /** @deprecated use `ResponseBody3$Outbound` instead. */
+    export type Outbound = ResponseBody3$Outbound;
 }
 
 /** @internal */
+export const GetDeploymentEventsResponseBodyDeploymentsResponseType$inboundSchema: z.ZodNativeEnum<
+    typeof GetDeploymentEventsResponseBodyDeploymentsResponseType
+> = z.nativeEnum(GetDeploymentEventsResponseBodyDeploymentsResponseType);
+
+/** @internal */
+export const GetDeploymentEventsResponseBodyDeploymentsResponseType$outboundSchema: z.ZodNativeEnum<
+    typeof GetDeploymentEventsResponseBodyDeploymentsResponseType
+> = GetDeploymentEventsResponseBodyDeploymentsResponseType$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetDeploymentEventsResponseBodyDeploymentsResponseType$ {
-    export const inboundSchema = z.nativeEnum(
-        GetDeploymentEventsResponseBodyDeploymentsResponseType
-    );
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `GetDeploymentEventsResponseBodyDeploymentsResponseType$inboundSchema` instead. */
+    export const inboundSchema =
+        GetDeploymentEventsResponseBodyDeploymentsResponseType$inboundSchema;
+    /** @deprecated use `GetDeploymentEventsResponseBodyDeploymentsResponseType$outboundSchema` instead. */
+    export const outboundSchema =
+        GetDeploymentEventsResponseBodyDeploymentsResponseType$outboundSchema;
 }
 
 /** @internal */
+export const GetDeploymentEventsResponseBodyDeploymentsInfo$inboundSchema: z.ZodType<
+    GetDeploymentEventsResponseBodyDeploymentsInfo,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    type: z.string(),
+    name: z.string(),
+    entrypoint: z.string().optional(),
+    path: z.string().optional(),
+    step: z.string().optional(),
+    readyState: z.string().optional(),
+});
+
+/** @internal */
+export type GetDeploymentEventsResponseBodyDeploymentsInfo$Outbound = {
+    type: string;
+    name: string;
+    entrypoint?: string | undefined;
+    path?: string | undefined;
+    step?: string | undefined;
+    readyState?: string | undefined;
+};
+
+/** @internal */
+export const GetDeploymentEventsResponseBodyDeploymentsInfo$outboundSchema: z.ZodType<
+    GetDeploymentEventsResponseBodyDeploymentsInfo$Outbound,
+    z.ZodTypeDef,
+    GetDeploymentEventsResponseBodyDeploymentsInfo
+> = z.object({
+    type: z.string(),
+    name: z.string(),
+    entrypoint: z.string().optional(),
+    path: z.string().optional(),
+    step: z.string().optional(),
+    readyState: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetDeploymentEventsResponseBodyDeploymentsInfo$ {
-    export const inboundSchema: z.ZodType<
-        GetDeploymentEventsResponseBodyDeploymentsInfo,
-        z.ZodTypeDef,
-        unknown
-    > = z
-        .object({
-            type: z.string(),
-            name: z.string(),
-            entrypoint: z.string().optional(),
-            path: z.string().optional(),
-            step: z.string().optional(),
-            readyState: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                name: v.name,
-                ...(v.entrypoint === undefined ? null : { entrypoint: v.entrypoint }),
-                ...(v.path === undefined ? null : { path: v.path }),
-                ...(v.step === undefined ? null : { step: v.step }),
-                ...(v.readyState === undefined ? null : { readyState: v.readyState }),
-            };
-        });
-
-    export type Outbound = {
-        type: string;
-        name: string;
-        entrypoint?: string | undefined;
-        path?: string | undefined;
-        step?: string | undefined;
-        readyState?: string | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<
-        Outbound,
-        z.ZodTypeDef,
-        GetDeploymentEventsResponseBodyDeploymentsInfo
-    > = z
-        .object({
-            type: z.string(),
-            name: z.string(),
-            entrypoint: z.string().optional(),
-            path: z.string().optional(),
-            step: z.string().optional(),
-            readyState: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                name: v.name,
-                ...(v.entrypoint === undefined ? null : { entrypoint: v.entrypoint }),
-                ...(v.path === undefined ? null : { path: v.path }),
-                ...(v.step === undefined ? null : { step: v.step }),
-                ...(v.readyState === undefined ? null : { readyState: v.readyState }),
-            };
-        });
+    /** @deprecated use `GetDeploymentEventsResponseBodyDeploymentsInfo$inboundSchema` instead. */
+    export const inboundSchema = GetDeploymentEventsResponseBodyDeploymentsInfo$inboundSchema;
+    /** @deprecated use `GetDeploymentEventsResponseBodyDeploymentsInfo$outboundSchema` instead. */
+    export const outboundSchema = GetDeploymentEventsResponseBodyDeploymentsInfo$outboundSchema;
+    /** @deprecated use `GetDeploymentEventsResponseBodyDeploymentsInfo$Outbound` instead. */
+    export type Outbound = GetDeploymentEventsResponseBodyDeploymentsInfo$Outbound;
 }
 
 /** @internal */
+export const GetDeploymentEventsResponseBodyDeploymentsVercelCache$inboundSchema: z.ZodNativeEnum<
+    typeof GetDeploymentEventsResponseBodyDeploymentsVercelCache
+> = z.nativeEnum(GetDeploymentEventsResponseBodyDeploymentsVercelCache);
+
+/** @internal */
+export const GetDeploymentEventsResponseBodyDeploymentsVercelCache$outboundSchema: z.ZodNativeEnum<
+    typeof GetDeploymentEventsResponseBodyDeploymentsVercelCache
+> = GetDeploymentEventsResponseBodyDeploymentsVercelCache$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetDeploymentEventsResponseBodyDeploymentsVercelCache$ {
-    export const inboundSchema = z.nativeEnum(
-        GetDeploymentEventsResponseBodyDeploymentsVercelCache
-    );
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `GetDeploymentEventsResponseBodyDeploymentsVercelCache$inboundSchema` instead. */
+    export const inboundSchema =
+        GetDeploymentEventsResponseBodyDeploymentsVercelCache$inboundSchema;
+    /** @deprecated use `GetDeploymentEventsResponseBodyDeploymentsVercelCache$outboundSchema` instead. */
+    export const outboundSchema =
+        GetDeploymentEventsResponseBodyDeploymentsVercelCache$outboundSchema;
 }
 
 /** @internal */
+export const GetDeploymentEventsResponseBodyDeploymentsProxy$inboundSchema: z.ZodType<
+    GetDeploymentEventsResponseBodyDeploymentsProxy,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    timestamp: z.number(),
+    method: z.string(),
+    host: z.string(),
+    path: z.string(),
+    statusCode: z.number().optional(),
+    userAgent: z.array(z.string()),
+    referer: z.string(),
+    clientIp: z.string(),
+    region: z.string(),
+    scheme: z.string().optional(),
+    responseByteSize: z.number().optional(),
+    cacheId: z.string().optional(),
+    pathType: z.string().optional(),
+    vercelId: z.string().optional(),
+    vercelCache: GetDeploymentEventsResponseBodyDeploymentsVercelCache$inboundSchema.optional(),
+    lambdaRegion: z.string().optional(),
+});
+
+/** @internal */
+export type GetDeploymentEventsResponseBodyDeploymentsProxy$Outbound = {
+    timestamp: number;
+    method: string;
+    host: string;
+    path: string;
+    statusCode?: number | undefined;
+    userAgent: Array<string>;
+    referer: string;
+    clientIp: string;
+    region: string;
+    scheme?: string | undefined;
+    responseByteSize?: number | undefined;
+    cacheId?: string | undefined;
+    pathType?: string | undefined;
+    vercelId?: string | undefined;
+    vercelCache?: string | undefined;
+    lambdaRegion?: string | undefined;
+};
+
+/** @internal */
+export const GetDeploymentEventsResponseBodyDeploymentsProxy$outboundSchema: z.ZodType<
+    GetDeploymentEventsResponseBodyDeploymentsProxy$Outbound,
+    z.ZodTypeDef,
+    GetDeploymentEventsResponseBodyDeploymentsProxy
+> = z.object({
+    timestamp: z.number(),
+    method: z.string(),
+    host: z.string(),
+    path: z.string(),
+    statusCode: z.number().optional(),
+    userAgent: z.array(z.string()),
+    referer: z.string(),
+    clientIp: z.string(),
+    region: z.string(),
+    scheme: z.string().optional(),
+    responseByteSize: z.number().optional(),
+    cacheId: z.string().optional(),
+    pathType: z.string().optional(),
+    vercelId: z.string().optional(),
+    vercelCache: GetDeploymentEventsResponseBodyDeploymentsVercelCache$outboundSchema.optional(),
+    lambdaRegion: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetDeploymentEventsResponseBodyDeploymentsProxy$ {
-    export const inboundSchema: z.ZodType<
-        GetDeploymentEventsResponseBodyDeploymentsProxy,
-        z.ZodTypeDef,
-        unknown
-    > = z
-        .object({
-            timestamp: z.number(),
-            method: z.string(),
-            host: z.string(),
-            path: z.string(),
-            statusCode: z.number().optional(),
-            userAgent: z.array(z.string()),
-            referer: z.string(),
-            clientIp: z.string(),
-            region: z.string(),
-            scheme: z.string().optional(),
-            responseByteSize: z.number().optional(),
-            cacheId: z.string().optional(),
-            pathType: z.string().optional(),
-            vercelId: z.string().optional(),
-            vercelCache:
-                GetDeploymentEventsResponseBodyDeploymentsVercelCache$.inboundSchema.optional(),
-            lambdaRegion: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                timestamp: v.timestamp,
-                method: v.method,
-                host: v.host,
-                path: v.path,
-                ...(v.statusCode === undefined ? null : { statusCode: v.statusCode }),
-                userAgent: v.userAgent,
-                referer: v.referer,
-                clientIp: v.clientIp,
-                region: v.region,
-                ...(v.scheme === undefined ? null : { scheme: v.scheme }),
-                ...(v.responseByteSize === undefined
-                    ? null
-                    : { responseByteSize: v.responseByteSize }),
-                ...(v.cacheId === undefined ? null : { cacheId: v.cacheId }),
-                ...(v.pathType === undefined ? null : { pathType: v.pathType }),
-                ...(v.vercelId === undefined ? null : { vercelId: v.vercelId }),
-                ...(v.vercelCache === undefined ? null : { vercelCache: v.vercelCache }),
-                ...(v.lambdaRegion === undefined ? null : { lambdaRegion: v.lambdaRegion }),
-            };
-        });
-
-    export type Outbound = {
-        timestamp: number;
-        method: string;
-        host: string;
-        path: string;
-        statusCode?: number | undefined;
-        userAgent: Array<string>;
-        referer: string;
-        clientIp: string;
-        region: string;
-        scheme?: string | undefined;
-        responseByteSize?: number | undefined;
-        cacheId?: string | undefined;
-        pathType?: string | undefined;
-        vercelId?: string | undefined;
-        vercelCache?: string | undefined;
-        lambdaRegion?: string | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<
-        Outbound,
-        z.ZodTypeDef,
-        GetDeploymentEventsResponseBodyDeploymentsProxy
-    > = z
-        .object({
-            timestamp: z.number(),
-            method: z.string(),
-            host: z.string(),
-            path: z.string(),
-            statusCode: z.number().optional(),
-            userAgent: z.array(z.string()),
-            referer: z.string(),
-            clientIp: z.string(),
-            region: z.string(),
-            scheme: z.string().optional(),
-            responseByteSize: z.number().optional(),
-            cacheId: z.string().optional(),
-            pathType: z.string().optional(),
-            vercelId: z.string().optional(),
-            vercelCache:
-                GetDeploymentEventsResponseBodyDeploymentsVercelCache$.outboundSchema.optional(),
-            lambdaRegion: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                timestamp: v.timestamp,
-                method: v.method,
-                host: v.host,
-                path: v.path,
-                ...(v.statusCode === undefined ? null : { statusCode: v.statusCode }),
-                userAgent: v.userAgent,
-                referer: v.referer,
-                clientIp: v.clientIp,
-                region: v.region,
-                ...(v.scheme === undefined ? null : { scheme: v.scheme }),
-                ...(v.responseByteSize === undefined
-                    ? null
-                    : { responseByteSize: v.responseByteSize }),
-                ...(v.cacheId === undefined ? null : { cacheId: v.cacheId }),
-                ...(v.pathType === undefined ? null : { pathType: v.pathType }),
-                ...(v.vercelId === undefined ? null : { vercelId: v.vercelId }),
-                ...(v.vercelCache === undefined ? null : { vercelCache: v.vercelCache }),
-                ...(v.lambdaRegion === undefined ? null : { lambdaRegion: v.lambdaRegion }),
-            };
-        });
+    /** @deprecated use `GetDeploymentEventsResponseBodyDeploymentsProxy$inboundSchema` instead. */
+    export const inboundSchema = GetDeploymentEventsResponseBodyDeploymentsProxy$inboundSchema;
+    /** @deprecated use `GetDeploymentEventsResponseBodyDeploymentsProxy$outboundSchema` instead. */
+    export const outboundSchema = GetDeploymentEventsResponseBodyDeploymentsProxy$outboundSchema;
+    /** @deprecated use `GetDeploymentEventsResponseBodyDeploymentsProxy$Outbound` instead. */
+    export type Outbound = GetDeploymentEventsResponseBodyDeploymentsProxy$Outbound;
 }
 
 /** @internal */
+export const ResponseBodyPayload$inboundSchema: z.ZodType<
+    ResponseBodyPayload,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    deploymentId: z.string(),
+    info: z.lazy(() => GetDeploymentEventsResponseBodyDeploymentsInfo$inboundSchema).optional(),
+    text: z.string().optional(),
+    id: z.string(),
+    date: z.number(),
+    serial: z.string(),
+    created: z.number().optional(),
+    statusCode: z.number().optional(),
+    requestId: z.string().optional(),
+    proxy: z.lazy(() => GetDeploymentEventsResponseBodyDeploymentsProxy$inboundSchema).optional(),
+});
+
+/** @internal */
+export type ResponseBodyPayload$Outbound = {
+    deploymentId: string;
+    info?: GetDeploymentEventsResponseBodyDeploymentsInfo$Outbound | undefined;
+    text?: string | undefined;
+    id: string;
+    date: number;
+    serial: string;
+    created?: number | undefined;
+    statusCode?: number | undefined;
+    requestId?: string | undefined;
+    proxy?: GetDeploymentEventsResponseBodyDeploymentsProxy$Outbound | undefined;
+};
+
+/** @internal */
+export const ResponseBodyPayload$outboundSchema: z.ZodType<
+    ResponseBodyPayload$Outbound,
+    z.ZodTypeDef,
+    ResponseBodyPayload
+> = z.object({
+    deploymentId: z.string(),
+    info: z.lazy(() => GetDeploymentEventsResponseBodyDeploymentsInfo$outboundSchema).optional(),
+    text: z.string().optional(),
+    id: z.string(),
+    date: z.number(),
+    serial: z.string(),
+    created: z.number().optional(),
+    statusCode: z.number().optional(),
+    requestId: z.string().optional(),
+    proxy: z.lazy(() => GetDeploymentEventsResponseBodyDeploymentsProxy$outboundSchema).optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace ResponseBodyPayload$ {
-    export const inboundSchema: z.ZodType<ResponseBodyPayload, z.ZodTypeDef, unknown> = z
-        .object({
-            deploymentId: z.string(),
-            info: z
-                .lazy(() => GetDeploymentEventsResponseBodyDeploymentsInfo$.inboundSchema)
-                .optional(),
-            text: z.string().optional(),
-            id: z.string(),
-            date: z.number(),
-            serial: z.string(),
-            created: z.number().optional(),
-            statusCode: z.number().optional(),
-            requestId: z.string().optional(),
-            proxy: z
-                .lazy(() => GetDeploymentEventsResponseBodyDeploymentsProxy$.inboundSchema)
-                .optional(),
-        })
-        .transform((v) => {
-            return {
-                deploymentId: v.deploymentId,
-                ...(v.info === undefined ? null : { info: v.info }),
-                ...(v.text === undefined ? null : { text: v.text }),
-                id: v.id,
-                date: v.date,
-                serial: v.serial,
-                ...(v.created === undefined ? null : { created: v.created }),
-                ...(v.statusCode === undefined ? null : { statusCode: v.statusCode }),
-                ...(v.requestId === undefined ? null : { requestId: v.requestId }),
-                ...(v.proxy === undefined ? null : { proxy: v.proxy }),
-            };
-        });
-
-    export type Outbound = {
-        deploymentId: string;
-        info?: GetDeploymentEventsResponseBodyDeploymentsInfo$.Outbound | undefined;
-        text?: string | undefined;
-        id: string;
-        date: number;
-        serial: string;
-        created?: number | undefined;
-        statusCode?: number | undefined;
-        requestId?: string | undefined;
-        proxy?: GetDeploymentEventsResponseBodyDeploymentsProxy$.Outbound | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, ResponseBodyPayload> = z
-        .object({
-            deploymentId: z.string(),
-            info: z
-                .lazy(() => GetDeploymentEventsResponseBodyDeploymentsInfo$.outboundSchema)
-                .optional(),
-            text: z.string().optional(),
-            id: z.string(),
-            date: z.number(),
-            serial: z.string(),
-            created: z.number().optional(),
-            statusCode: z.number().optional(),
-            requestId: z.string().optional(),
-            proxy: z
-                .lazy(() => GetDeploymentEventsResponseBodyDeploymentsProxy$.outboundSchema)
-                .optional(),
-        })
-        .transform((v) => {
-            return {
-                deploymentId: v.deploymentId,
-                ...(v.info === undefined ? null : { info: v.info }),
-                ...(v.text === undefined ? null : { text: v.text }),
-                id: v.id,
-                date: v.date,
-                serial: v.serial,
-                ...(v.created === undefined ? null : { created: v.created }),
-                ...(v.statusCode === undefined ? null : { statusCode: v.statusCode }),
-                ...(v.requestId === undefined ? null : { requestId: v.requestId }),
-                ...(v.proxy === undefined ? null : { proxy: v.proxy }),
-            };
-        });
+    /** @deprecated use `ResponseBodyPayload$inboundSchema` instead. */
+    export const inboundSchema = ResponseBodyPayload$inboundSchema;
+    /** @deprecated use `ResponseBodyPayload$outboundSchema` instead. */
+    export const outboundSchema = ResponseBodyPayload$outboundSchema;
+    /** @deprecated use `ResponseBodyPayload$Outbound` instead. */
+    export type Outbound = ResponseBodyPayload$Outbound;
 }
 
 /** @internal */
+export const GetDeploymentEventsResponseBody2$inboundSchema: z.ZodType<
+    GetDeploymentEventsResponseBody2,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    type: GetDeploymentEventsResponseBodyDeploymentsResponseType$inboundSchema,
+    created: z.number(),
+    payload: z.lazy(() => ResponseBodyPayload$inboundSchema),
+});
+
+/** @internal */
+export type GetDeploymentEventsResponseBody2$Outbound = {
+    type: string;
+    created: number;
+    payload: ResponseBodyPayload$Outbound;
+};
+
+/** @internal */
+export const GetDeploymentEventsResponseBody2$outboundSchema: z.ZodType<
+    GetDeploymentEventsResponseBody2$Outbound,
+    z.ZodTypeDef,
+    GetDeploymentEventsResponseBody2
+> = z.object({
+    type: GetDeploymentEventsResponseBodyDeploymentsResponseType$outboundSchema,
+    created: z.number(),
+    payload: z.lazy(() => ResponseBodyPayload$outboundSchema),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetDeploymentEventsResponseBody2$ {
-    export const inboundSchema: z.ZodType<GetDeploymentEventsResponseBody2, z.ZodTypeDef, unknown> =
-        z
-            .object({
-                type: GetDeploymentEventsResponseBodyDeploymentsResponseType$.inboundSchema,
-                created: z.number(),
-                payload: z.lazy(() => ResponseBodyPayload$.inboundSchema),
-            })
-            .transform((v) => {
-                return {
-                    type: v.type,
-                    created: v.created,
-                    payload: v.payload,
-                };
-            });
-
-    export type Outbound = {
-        type: string;
-        created: number;
-        payload: ResponseBodyPayload$.Outbound;
-    };
-
-    export const outboundSchema: z.ZodType<
-        Outbound,
-        z.ZodTypeDef,
-        GetDeploymentEventsResponseBody2
-    > = z
-        .object({
-            type: GetDeploymentEventsResponseBodyDeploymentsResponseType$.outboundSchema,
-            created: z.number(),
-            payload: z.lazy(() => ResponseBodyPayload$.outboundSchema),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                created: v.created,
-                payload: v.payload,
-            };
-        });
+    /** @deprecated use `GetDeploymentEventsResponseBody2$inboundSchema` instead. */
+    export const inboundSchema = GetDeploymentEventsResponseBody2$inboundSchema;
+    /** @deprecated use `GetDeploymentEventsResponseBody2$outboundSchema` instead. */
+    export const outboundSchema = GetDeploymentEventsResponseBody2$outboundSchema;
+    /** @deprecated use `GetDeploymentEventsResponseBody2$Outbound` instead. */
+    export type Outbound = GetDeploymentEventsResponseBody2$Outbound;
 }
 
 /** @internal */
+export const ResponseBodyInfo$inboundSchema: z.ZodType<ResponseBodyInfo, z.ZodTypeDef, unknown> =
+    z.object({
+        type: z.string(),
+        name: z.string(),
+        entrypoint: z.string().optional(),
+        path: z.string().optional(),
+        step: z.string().optional(),
+        readyState: z.string().optional(),
+    });
+
+/** @internal */
+export type ResponseBodyInfo$Outbound = {
+    type: string;
+    name: string;
+    entrypoint?: string | undefined;
+    path?: string | undefined;
+    step?: string | undefined;
+    readyState?: string | undefined;
+};
+
+/** @internal */
+export const ResponseBodyInfo$outboundSchema: z.ZodType<
+    ResponseBodyInfo$Outbound,
+    z.ZodTypeDef,
+    ResponseBodyInfo
+> = z.object({
+    type: z.string(),
+    name: z.string(),
+    entrypoint: z.string().optional(),
+    path: z.string().optional(),
+    step: z.string().optional(),
+    readyState: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace ResponseBodyInfo$ {
-    export const inboundSchema: z.ZodType<ResponseBodyInfo, z.ZodTypeDef, unknown> = z
-        .object({
-            type: z.string(),
-            name: z.string(),
-            entrypoint: z.string().optional(),
-            path: z.string().optional(),
-            step: z.string().optional(),
-            readyState: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                name: v.name,
-                ...(v.entrypoint === undefined ? null : { entrypoint: v.entrypoint }),
-                ...(v.path === undefined ? null : { path: v.path }),
-                ...(v.step === undefined ? null : { step: v.step }),
-                ...(v.readyState === undefined ? null : { readyState: v.readyState }),
-            };
-        });
-
-    export type Outbound = {
-        type: string;
-        name: string;
-        entrypoint?: string | undefined;
-        path?: string | undefined;
-        step?: string | undefined;
-        readyState?: string | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, ResponseBodyInfo> = z
-        .object({
-            type: z.string(),
-            name: z.string(),
-            entrypoint: z.string().optional(),
-            path: z.string().optional(),
-            step: z.string().optional(),
-            readyState: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                name: v.name,
-                ...(v.entrypoint === undefined ? null : { entrypoint: v.entrypoint }),
-                ...(v.path === undefined ? null : { path: v.path }),
-                ...(v.step === undefined ? null : { step: v.step }),
-                ...(v.readyState === undefined ? null : { readyState: v.readyState }),
-            };
-        });
+    /** @deprecated use `ResponseBodyInfo$inboundSchema` instead. */
+    export const inboundSchema = ResponseBodyInfo$inboundSchema;
+    /** @deprecated use `ResponseBodyInfo$outboundSchema` instead. */
+    export const outboundSchema = ResponseBodyInfo$outboundSchema;
+    /** @deprecated use `ResponseBodyInfo$Outbound` instead. */
+    export type Outbound = ResponseBodyInfo$Outbound;
 }
 
 /** @internal */
+export const ResponseBodyVercelCache$inboundSchema: z.ZodNativeEnum<
+    typeof ResponseBodyVercelCache
+> = z.nativeEnum(ResponseBodyVercelCache);
+
+/** @internal */
+export const ResponseBodyVercelCache$outboundSchema: z.ZodNativeEnum<
+    typeof ResponseBodyVercelCache
+> = ResponseBodyVercelCache$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace ResponseBodyVercelCache$ {
-    export const inboundSchema = z.nativeEnum(ResponseBodyVercelCache);
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `ResponseBodyVercelCache$inboundSchema` instead. */
+    export const inboundSchema = ResponseBodyVercelCache$inboundSchema;
+    /** @deprecated use `ResponseBodyVercelCache$outboundSchema` instead. */
+    export const outboundSchema = ResponseBodyVercelCache$outboundSchema;
 }
 
 /** @internal */
+export const ResponseBodyProxy$inboundSchema: z.ZodType<ResponseBodyProxy, z.ZodTypeDef, unknown> =
+    z.object({
+        timestamp: z.number(),
+        method: z.string(),
+        host: z.string(),
+        path: z.string(),
+        statusCode: z.number().optional(),
+        userAgent: z.array(z.string()),
+        referer: z.string(),
+        clientIp: z.string(),
+        region: z.string(),
+        scheme: z.string().optional(),
+        responseByteSize: z.number().optional(),
+        cacheId: z.string().optional(),
+        pathType: z.string().optional(),
+        vercelId: z.string().optional(),
+        vercelCache: ResponseBodyVercelCache$inboundSchema.optional(),
+        lambdaRegion: z.string().optional(),
+    });
+
+/** @internal */
+export type ResponseBodyProxy$Outbound = {
+    timestamp: number;
+    method: string;
+    host: string;
+    path: string;
+    statusCode?: number | undefined;
+    userAgent: Array<string>;
+    referer: string;
+    clientIp: string;
+    region: string;
+    scheme?: string | undefined;
+    responseByteSize?: number | undefined;
+    cacheId?: string | undefined;
+    pathType?: string | undefined;
+    vercelId?: string | undefined;
+    vercelCache?: string | undefined;
+    lambdaRegion?: string | undefined;
+};
+
+/** @internal */
+export const ResponseBodyProxy$outboundSchema: z.ZodType<
+    ResponseBodyProxy$Outbound,
+    z.ZodTypeDef,
+    ResponseBodyProxy
+> = z.object({
+    timestamp: z.number(),
+    method: z.string(),
+    host: z.string(),
+    path: z.string(),
+    statusCode: z.number().optional(),
+    userAgent: z.array(z.string()),
+    referer: z.string(),
+    clientIp: z.string(),
+    region: z.string(),
+    scheme: z.string().optional(),
+    responseByteSize: z.number().optional(),
+    cacheId: z.string().optional(),
+    pathType: z.string().optional(),
+    vercelId: z.string().optional(),
+    vercelCache: ResponseBodyVercelCache$outboundSchema.optional(),
+    lambdaRegion: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace ResponseBodyProxy$ {
-    export const inboundSchema: z.ZodType<ResponseBodyProxy, z.ZodTypeDef, unknown> = z
-        .object({
-            timestamp: z.number(),
-            method: z.string(),
-            host: z.string(),
-            path: z.string(),
-            statusCode: z.number().optional(),
-            userAgent: z.array(z.string()),
-            referer: z.string(),
-            clientIp: z.string(),
-            region: z.string(),
-            scheme: z.string().optional(),
-            responseByteSize: z.number().optional(),
-            cacheId: z.string().optional(),
-            pathType: z.string().optional(),
-            vercelId: z.string().optional(),
-            vercelCache: ResponseBodyVercelCache$.inboundSchema.optional(),
-            lambdaRegion: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                timestamp: v.timestamp,
-                method: v.method,
-                host: v.host,
-                path: v.path,
-                ...(v.statusCode === undefined ? null : { statusCode: v.statusCode }),
-                userAgent: v.userAgent,
-                referer: v.referer,
-                clientIp: v.clientIp,
-                region: v.region,
-                ...(v.scheme === undefined ? null : { scheme: v.scheme }),
-                ...(v.responseByteSize === undefined
-                    ? null
-                    : { responseByteSize: v.responseByteSize }),
-                ...(v.cacheId === undefined ? null : { cacheId: v.cacheId }),
-                ...(v.pathType === undefined ? null : { pathType: v.pathType }),
-                ...(v.vercelId === undefined ? null : { vercelId: v.vercelId }),
-                ...(v.vercelCache === undefined ? null : { vercelCache: v.vercelCache }),
-                ...(v.lambdaRegion === undefined ? null : { lambdaRegion: v.lambdaRegion }),
-            };
-        });
-
-    export type Outbound = {
-        timestamp: number;
-        method: string;
-        host: string;
-        path: string;
-        statusCode?: number | undefined;
-        userAgent: Array<string>;
-        referer: string;
-        clientIp: string;
-        region: string;
-        scheme?: string | undefined;
-        responseByteSize?: number | undefined;
-        cacheId?: string | undefined;
-        pathType?: string | undefined;
-        vercelId?: string | undefined;
-        vercelCache?: string | undefined;
-        lambdaRegion?: string | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, ResponseBodyProxy> = z
-        .object({
-            timestamp: z.number(),
-            method: z.string(),
-            host: z.string(),
-            path: z.string(),
-            statusCode: z.number().optional(),
-            userAgent: z.array(z.string()),
-            referer: z.string(),
-            clientIp: z.string(),
-            region: z.string(),
-            scheme: z.string().optional(),
-            responseByteSize: z.number().optional(),
-            cacheId: z.string().optional(),
-            pathType: z.string().optional(),
-            vercelId: z.string().optional(),
-            vercelCache: ResponseBodyVercelCache$.outboundSchema.optional(),
-            lambdaRegion: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                timestamp: v.timestamp,
-                method: v.method,
-                host: v.host,
-                path: v.path,
-                ...(v.statusCode === undefined ? null : { statusCode: v.statusCode }),
-                userAgent: v.userAgent,
-                referer: v.referer,
-                clientIp: v.clientIp,
-                region: v.region,
-                ...(v.scheme === undefined ? null : { scheme: v.scheme }),
-                ...(v.responseByteSize === undefined
-                    ? null
-                    : { responseByteSize: v.responseByteSize }),
-                ...(v.cacheId === undefined ? null : { cacheId: v.cacheId }),
-                ...(v.pathType === undefined ? null : { pathType: v.pathType }),
-                ...(v.vercelId === undefined ? null : { vercelId: v.vercelId }),
-                ...(v.vercelCache === undefined ? null : { vercelCache: v.vercelCache }),
-                ...(v.lambdaRegion === undefined ? null : { lambdaRegion: v.lambdaRegion }),
-            };
-        });
+    /** @deprecated use `ResponseBodyProxy$inboundSchema` instead. */
+    export const inboundSchema = ResponseBodyProxy$inboundSchema;
+    /** @deprecated use `ResponseBodyProxy$outboundSchema` instead. */
+    export const outboundSchema = ResponseBodyProxy$outboundSchema;
+    /** @deprecated use `ResponseBodyProxy$Outbound` instead. */
+    export type Outbound = ResponseBodyProxy$Outbound;
 }
 
 /** @internal */
+export const GetDeploymentEventsResponseBodyDeploymentsType$inboundSchema: z.ZodNativeEnum<
+    typeof GetDeploymentEventsResponseBodyDeploymentsType
+> = z.nativeEnum(GetDeploymentEventsResponseBodyDeploymentsType);
+
+/** @internal */
+export const GetDeploymentEventsResponseBodyDeploymentsType$outboundSchema: z.ZodNativeEnum<
+    typeof GetDeploymentEventsResponseBodyDeploymentsType
+> = GetDeploymentEventsResponseBodyDeploymentsType$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetDeploymentEventsResponseBodyDeploymentsType$ {
-    export const inboundSchema = z.nativeEnum(GetDeploymentEventsResponseBodyDeploymentsType);
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `GetDeploymentEventsResponseBodyDeploymentsType$inboundSchema` instead. */
+    export const inboundSchema = GetDeploymentEventsResponseBodyDeploymentsType$inboundSchema;
+    /** @deprecated use `GetDeploymentEventsResponseBodyDeploymentsType$outboundSchema` instead. */
+    export const outboundSchema = GetDeploymentEventsResponseBodyDeploymentsType$outboundSchema;
 }
 
 /** @internal */
+export const GetDeploymentEventsResponseBody1$inboundSchema: z.ZodType<
+    GetDeploymentEventsResponseBody1,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    created: z.number(),
+    date: z.number(),
+    deploymentId: z.string(),
+    id: z.string(),
+    info: z.lazy(() => ResponseBodyInfo$inboundSchema),
+    proxy: z.lazy(() => ResponseBodyProxy$inboundSchema).optional(),
+    requestId: z.string().optional(),
+    serial: z.string(),
+    statusCode: z.number().optional(),
+    text: z.string().optional(),
+    type: GetDeploymentEventsResponseBodyDeploymentsType$inboundSchema,
+});
+
+/** @internal */
+export type GetDeploymentEventsResponseBody1$Outbound = {
+    created: number;
+    date: number;
+    deploymentId: string;
+    id: string;
+    info: ResponseBodyInfo$Outbound;
+    proxy?: ResponseBodyProxy$Outbound | undefined;
+    requestId?: string | undefined;
+    serial: string;
+    statusCode?: number | undefined;
+    text?: string | undefined;
+    type: string;
+};
+
+/** @internal */
+export const GetDeploymentEventsResponseBody1$outboundSchema: z.ZodType<
+    GetDeploymentEventsResponseBody1$Outbound,
+    z.ZodTypeDef,
+    GetDeploymentEventsResponseBody1
+> = z.object({
+    created: z.number(),
+    date: z.number(),
+    deploymentId: z.string(),
+    id: z.string(),
+    info: z.lazy(() => ResponseBodyInfo$outboundSchema),
+    proxy: z.lazy(() => ResponseBodyProxy$outboundSchema).optional(),
+    requestId: z.string().optional(),
+    serial: z.string(),
+    statusCode: z.number().optional(),
+    text: z.string().optional(),
+    type: GetDeploymentEventsResponseBodyDeploymentsType$outboundSchema,
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetDeploymentEventsResponseBody1$ {
-    export const inboundSchema: z.ZodType<GetDeploymentEventsResponseBody1, z.ZodTypeDef, unknown> =
-        z
-            .object({
-                created: z.number(),
-                date: z.number(),
-                deploymentId: z.string(),
-                id: z.string(),
-                info: z.lazy(() => ResponseBodyInfo$.inboundSchema),
-                proxy: z.lazy(() => ResponseBodyProxy$.inboundSchema).optional(),
-                requestId: z.string().optional(),
-                serial: z.string(),
-                statusCode: z.number().optional(),
-                text: z.string().optional(),
-                type: GetDeploymentEventsResponseBodyDeploymentsType$.inboundSchema,
-            })
-            .transform((v) => {
-                return {
-                    created: v.created,
-                    date: v.date,
-                    deploymentId: v.deploymentId,
-                    id: v.id,
-                    info: v.info,
-                    ...(v.proxy === undefined ? null : { proxy: v.proxy }),
-                    ...(v.requestId === undefined ? null : { requestId: v.requestId }),
-                    serial: v.serial,
-                    ...(v.statusCode === undefined ? null : { statusCode: v.statusCode }),
-                    ...(v.text === undefined ? null : { text: v.text }),
-                    type: v.type,
-                };
-            });
-
-    export type Outbound = {
-        created: number;
-        date: number;
-        deploymentId: string;
-        id: string;
-        info: ResponseBodyInfo$.Outbound;
-        proxy?: ResponseBodyProxy$.Outbound | undefined;
-        requestId?: string | undefined;
-        serial: string;
-        statusCode?: number | undefined;
-        text?: string | undefined;
-        type: string;
-    };
-
-    export const outboundSchema: z.ZodType<
-        Outbound,
-        z.ZodTypeDef,
-        GetDeploymentEventsResponseBody1
-    > = z
-        .object({
-            created: z.number(),
-            date: z.number(),
-            deploymentId: z.string(),
-            id: z.string(),
-            info: z.lazy(() => ResponseBodyInfo$.outboundSchema),
-            proxy: z.lazy(() => ResponseBodyProxy$.outboundSchema).optional(),
-            requestId: z.string().optional(),
-            serial: z.string(),
-            statusCode: z.number().optional(),
-            text: z.string().optional(),
-            type: GetDeploymentEventsResponseBodyDeploymentsType$.outboundSchema,
-        })
-        .transform((v) => {
-            return {
-                created: v.created,
-                date: v.date,
-                deploymentId: v.deploymentId,
-                id: v.id,
-                info: v.info,
-                ...(v.proxy === undefined ? null : { proxy: v.proxy }),
-                ...(v.requestId === undefined ? null : { requestId: v.requestId }),
-                serial: v.serial,
-                ...(v.statusCode === undefined ? null : { statusCode: v.statusCode }),
-                ...(v.text === undefined ? null : { text: v.text }),
-                type: v.type,
-            };
-        });
+    /** @deprecated use `GetDeploymentEventsResponseBody1$inboundSchema` instead. */
+    export const inboundSchema = GetDeploymentEventsResponseBody1$inboundSchema;
+    /** @deprecated use `GetDeploymentEventsResponseBody1$outboundSchema` instead. */
+    export const outboundSchema = GetDeploymentEventsResponseBody1$outboundSchema;
+    /** @deprecated use `GetDeploymentEventsResponseBody1$Outbound` instead. */
+    export type Outbound = GetDeploymentEventsResponseBody1$Outbound;
 }
 
 /** @internal */
+export const GetDeploymentEventsResponseBody$inboundSchema: z.ZodType<
+    GetDeploymentEventsResponseBody,
+    z.ZodTypeDef,
+    unknown
+> = z.union([
+    z.lazy(() => GetDeploymentEventsResponseBody2$inboundSchema),
+    z.lazy(() => GetDeploymentEventsResponseBody1$inboundSchema),
+    z.union([z.lazy(() => Three2$inboundSchema), z.lazy(() => Three1$inboundSchema)]),
+]);
+
+/** @internal */
+export type GetDeploymentEventsResponseBody$Outbound =
+    | GetDeploymentEventsResponseBody2$Outbound
+    | GetDeploymentEventsResponseBody1$Outbound
+    | Three2$Outbound
+    | Three1$Outbound;
+
+/** @internal */
+export const GetDeploymentEventsResponseBody$outboundSchema: z.ZodType<
+    GetDeploymentEventsResponseBody$Outbound,
+    z.ZodTypeDef,
+    GetDeploymentEventsResponseBody
+> = z.union([
+    z.lazy(() => GetDeploymentEventsResponseBody2$outboundSchema),
+    z.lazy(() => GetDeploymentEventsResponseBody1$outboundSchema),
+    z.union([z.lazy(() => Three2$outboundSchema), z.lazy(() => Three1$outboundSchema)]),
+]);
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetDeploymentEventsResponseBody$ {
-    export const inboundSchema: z.ZodType<GetDeploymentEventsResponseBody, z.ZodTypeDef, unknown> =
-        z.union([
-            z.lazy(() => GetDeploymentEventsResponseBody2$.inboundSchema),
-            z.lazy(() => GetDeploymentEventsResponseBody1$.inboundSchema),
-            z.union([z.lazy(() => Three2$.inboundSchema), z.lazy(() => Three1$.inboundSchema)]),
-        ]);
-
-    export type Outbound =
-        | GetDeploymentEventsResponseBody2$.Outbound
-        | GetDeploymentEventsResponseBody1$.Outbound
-        | Three2$.Outbound
-        | Three1$.Outbound;
-    export const outboundSchema: z.ZodType<
-        Outbound,
-        z.ZodTypeDef,
-        GetDeploymentEventsResponseBody
-    > = z.union([
-        z.lazy(() => GetDeploymentEventsResponseBody2$.outboundSchema),
-        z.lazy(() => GetDeploymentEventsResponseBody1$.outboundSchema),
-        z.union([z.lazy(() => Three2$.outboundSchema), z.lazy(() => Three1$.outboundSchema)]),
-    ]);
+    /** @deprecated use `GetDeploymentEventsResponseBody$inboundSchema` instead. */
+    export const inboundSchema = GetDeploymentEventsResponseBody$inboundSchema;
+    /** @deprecated use `GetDeploymentEventsResponseBody$outboundSchema` instead. */
+    export const outboundSchema = GetDeploymentEventsResponseBody$outboundSchema;
+    /** @deprecated use `GetDeploymentEventsResponseBody$Outbound` instead. */
+    export type Outbound = GetDeploymentEventsResponseBody$Outbound;
 }
 
 /** @internal */
+export const GetDeploymentEventsResponseBodyType$inboundSchema: z.ZodNativeEnum<
+    typeof GetDeploymentEventsResponseBodyType
+> = z.nativeEnum(GetDeploymentEventsResponseBodyType);
+
+/** @internal */
+export const GetDeploymentEventsResponseBodyType$outboundSchema: z.ZodNativeEnum<
+    typeof GetDeploymentEventsResponseBodyType
+> = GetDeploymentEventsResponseBodyType$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetDeploymentEventsResponseBodyType$ {
-    export const inboundSchema = z.nativeEnum(GetDeploymentEventsResponseBodyType);
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `GetDeploymentEventsResponseBodyType$inboundSchema` instead. */
+    export const inboundSchema = GetDeploymentEventsResponseBodyType$inboundSchema;
+    /** @deprecated use `GetDeploymentEventsResponseBodyType$outboundSchema` instead. */
+    export const outboundSchema = GetDeploymentEventsResponseBodyType$outboundSchema;
 }
 
 /** @internal */
+export const GetDeploymentEventsResponseBodyInfo$inboundSchema: z.ZodType<
+    GetDeploymentEventsResponseBodyInfo,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    type: z.string(),
+    name: z.string(),
+    entrypoint: z.string().optional(),
+    path: z.string().optional(),
+    step: z.string().optional(),
+    readyState: z.string().optional(),
+});
+
+/** @internal */
+export type GetDeploymentEventsResponseBodyInfo$Outbound = {
+    type: string;
+    name: string;
+    entrypoint?: string | undefined;
+    path?: string | undefined;
+    step?: string | undefined;
+    readyState?: string | undefined;
+};
+
+/** @internal */
+export const GetDeploymentEventsResponseBodyInfo$outboundSchema: z.ZodType<
+    GetDeploymentEventsResponseBodyInfo$Outbound,
+    z.ZodTypeDef,
+    GetDeploymentEventsResponseBodyInfo
+> = z.object({
+    type: z.string(),
+    name: z.string(),
+    entrypoint: z.string().optional(),
+    path: z.string().optional(),
+    step: z.string().optional(),
+    readyState: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetDeploymentEventsResponseBodyInfo$ {
-    export const inboundSchema: z.ZodType<
-        GetDeploymentEventsResponseBodyInfo,
-        z.ZodTypeDef,
-        unknown
-    > = z
-        .object({
-            type: z.string(),
-            name: z.string(),
-            entrypoint: z.string().optional(),
-            path: z.string().optional(),
-            step: z.string().optional(),
-            readyState: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                name: v.name,
-                ...(v.entrypoint === undefined ? null : { entrypoint: v.entrypoint }),
-                ...(v.path === undefined ? null : { path: v.path }),
-                ...(v.step === undefined ? null : { step: v.step }),
-                ...(v.readyState === undefined ? null : { readyState: v.readyState }),
-            };
-        });
-
-    export type Outbound = {
-        type: string;
-        name: string;
-        entrypoint?: string | undefined;
-        path?: string | undefined;
-        step?: string | undefined;
-        readyState?: string | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<
-        Outbound,
-        z.ZodTypeDef,
-        GetDeploymentEventsResponseBodyInfo
-    > = z
-        .object({
-            type: z.string(),
-            name: z.string(),
-            entrypoint: z.string().optional(),
-            path: z.string().optional(),
-            step: z.string().optional(),
-            readyState: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                name: v.name,
-                ...(v.entrypoint === undefined ? null : { entrypoint: v.entrypoint }),
-                ...(v.path === undefined ? null : { path: v.path }),
-                ...(v.step === undefined ? null : { step: v.step }),
-                ...(v.readyState === undefined ? null : { readyState: v.readyState }),
-            };
-        });
+    /** @deprecated use `GetDeploymentEventsResponseBodyInfo$inboundSchema` instead. */
+    export const inboundSchema = GetDeploymentEventsResponseBodyInfo$inboundSchema;
+    /** @deprecated use `GetDeploymentEventsResponseBodyInfo$outboundSchema` instead. */
+    export const outboundSchema = GetDeploymentEventsResponseBodyInfo$outboundSchema;
+    /** @deprecated use `GetDeploymentEventsResponseBodyInfo$Outbound` instead. */
+    export type Outbound = GetDeploymentEventsResponseBodyInfo$Outbound;
 }
 
 /** @internal */
+export const GetDeploymentEventsResponseBodyVercelCache$inboundSchema: z.ZodNativeEnum<
+    typeof GetDeploymentEventsResponseBodyVercelCache
+> = z.nativeEnum(GetDeploymentEventsResponseBodyVercelCache);
+
+/** @internal */
+export const GetDeploymentEventsResponseBodyVercelCache$outboundSchema: z.ZodNativeEnum<
+    typeof GetDeploymentEventsResponseBodyVercelCache
+> = GetDeploymentEventsResponseBodyVercelCache$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetDeploymentEventsResponseBodyVercelCache$ {
-    export const inboundSchema = z.nativeEnum(GetDeploymentEventsResponseBodyVercelCache);
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `GetDeploymentEventsResponseBodyVercelCache$inboundSchema` instead. */
+    export const inboundSchema = GetDeploymentEventsResponseBodyVercelCache$inboundSchema;
+    /** @deprecated use `GetDeploymentEventsResponseBodyVercelCache$outboundSchema` instead. */
+    export const outboundSchema = GetDeploymentEventsResponseBodyVercelCache$outboundSchema;
 }
 
 /** @internal */
+export const GetDeploymentEventsResponseBodyProxy$inboundSchema: z.ZodType<
+    GetDeploymentEventsResponseBodyProxy,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    timestamp: z.number(),
+    method: z.string(),
+    host: z.string(),
+    path: z.string(),
+    statusCode: z.number().optional(),
+    userAgent: z.array(z.string()),
+    referer: z.string(),
+    clientIp: z.string(),
+    region: z.string(),
+    scheme: z.string().optional(),
+    responseByteSize: z.number().optional(),
+    cacheId: z.string().optional(),
+    pathType: z.string().optional(),
+    vercelId: z.string().optional(),
+    vercelCache: GetDeploymentEventsResponseBodyVercelCache$inboundSchema.optional(),
+    lambdaRegion: z.string().optional(),
+});
+
+/** @internal */
+export type GetDeploymentEventsResponseBodyProxy$Outbound = {
+    timestamp: number;
+    method: string;
+    host: string;
+    path: string;
+    statusCode?: number | undefined;
+    userAgent: Array<string>;
+    referer: string;
+    clientIp: string;
+    region: string;
+    scheme?: string | undefined;
+    responseByteSize?: number | undefined;
+    cacheId?: string | undefined;
+    pathType?: string | undefined;
+    vercelId?: string | undefined;
+    vercelCache?: string | undefined;
+    lambdaRegion?: string | undefined;
+};
+
+/** @internal */
+export const GetDeploymentEventsResponseBodyProxy$outboundSchema: z.ZodType<
+    GetDeploymentEventsResponseBodyProxy$Outbound,
+    z.ZodTypeDef,
+    GetDeploymentEventsResponseBodyProxy
+> = z.object({
+    timestamp: z.number(),
+    method: z.string(),
+    host: z.string(),
+    path: z.string(),
+    statusCode: z.number().optional(),
+    userAgent: z.array(z.string()),
+    referer: z.string(),
+    clientIp: z.string(),
+    region: z.string(),
+    scheme: z.string().optional(),
+    responseByteSize: z.number().optional(),
+    cacheId: z.string().optional(),
+    pathType: z.string().optional(),
+    vercelId: z.string().optional(),
+    vercelCache: GetDeploymentEventsResponseBodyVercelCache$outboundSchema.optional(),
+    lambdaRegion: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetDeploymentEventsResponseBodyProxy$ {
-    export const inboundSchema: z.ZodType<
-        GetDeploymentEventsResponseBodyProxy,
-        z.ZodTypeDef,
-        unknown
-    > = z
-        .object({
-            timestamp: z.number(),
-            method: z.string(),
-            host: z.string(),
-            path: z.string(),
-            statusCode: z.number().optional(),
-            userAgent: z.array(z.string()),
-            referer: z.string(),
-            clientIp: z.string(),
-            region: z.string(),
-            scheme: z.string().optional(),
-            responseByteSize: z.number().optional(),
-            cacheId: z.string().optional(),
-            pathType: z.string().optional(),
-            vercelId: z.string().optional(),
-            vercelCache: GetDeploymentEventsResponseBodyVercelCache$.inboundSchema.optional(),
-            lambdaRegion: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                timestamp: v.timestamp,
-                method: v.method,
-                host: v.host,
-                path: v.path,
-                ...(v.statusCode === undefined ? null : { statusCode: v.statusCode }),
-                userAgent: v.userAgent,
-                referer: v.referer,
-                clientIp: v.clientIp,
-                region: v.region,
-                ...(v.scheme === undefined ? null : { scheme: v.scheme }),
-                ...(v.responseByteSize === undefined
-                    ? null
-                    : { responseByteSize: v.responseByteSize }),
-                ...(v.cacheId === undefined ? null : { cacheId: v.cacheId }),
-                ...(v.pathType === undefined ? null : { pathType: v.pathType }),
-                ...(v.vercelId === undefined ? null : { vercelId: v.vercelId }),
-                ...(v.vercelCache === undefined ? null : { vercelCache: v.vercelCache }),
-                ...(v.lambdaRegion === undefined ? null : { lambdaRegion: v.lambdaRegion }),
-            };
-        });
-
-    export type Outbound = {
-        timestamp: number;
-        method: string;
-        host: string;
-        path: string;
-        statusCode?: number | undefined;
-        userAgent: Array<string>;
-        referer: string;
-        clientIp: string;
-        region: string;
-        scheme?: string | undefined;
-        responseByteSize?: number | undefined;
-        cacheId?: string | undefined;
-        pathType?: string | undefined;
-        vercelId?: string | undefined;
-        vercelCache?: string | undefined;
-        lambdaRegion?: string | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<
-        Outbound,
-        z.ZodTypeDef,
-        GetDeploymentEventsResponseBodyProxy
-    > = z
-        .object({
-            timestamp: z.number(),
-            method: z.string(),
-            host: z.string(),
-            path: z.string(),
-            statusCode: z.number().optional(),
-            userAgent: z.array(z.string()),
-            referer: z.string(),
-            clientIp: z.string(),
-            region: z.string(),
-            scheme: z.string().optional(),
-            responseByteSize: z.number().optional(),
-            cacheId: z.string().optional(),
-            pathType: z.string().optional(),
-            vercelId: z.string().optional(),
-            vercelCache: GetDeploymentEventsResponseBodyVercelCache$.outboundSchema.optional(),
-            lambdaRegion: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                timestamp: v.timestamp,
-                method: v.method,
-                host: v.host,
-                path: v.path,
-                ...(v.statusCode === undefined ? null : { statusCode: v.statusCode }),
-                userAgent: v.userAgent,
-                referer: v.referer,
-                clientIp: v.clientIp,
-                region: v.region,
-                ...(v.scheme === undefined ? null : { scheme: v.scheme }),
-                ...(v.responseByteSize === undefined
-                    ? null
-                    : { responseByteSize: v.responseByteSize }),
-                ...(v.cacheId === undefined ? null : { cacheId: v.cacheId }),
-                ...(v.pathType === undefined ? null : { pathType: v.pathType }),
-                ...(v.vercelId === undefined ? null : { vercelId: v.vercelId }),
-                ...(v.vercelCache === undefined ? null : { vercelCache: v.vercelCache }),
-                ...(v.lambdaRegion === undefined ? null : { lambdaRegion: v.lambdaRegion }),
-            };
-        });
+    /** @deprecated use `GetDeploymentEventsResponseBodyProxy$inboundSchema` instead. */
+    export const inboundSchema = GetDeploymentEventsResponseBodyProxy$inboundSchema;
+    /** @deprecated use `GetDeploymentEventsResponseBodyProxy$outboundSchema` instead. */
+    export const outboundSchema = GetDeploymentEventsResponseBodyProxy$outboundSchema;
+    /** @deprecated use `GetDeploymentEventsResponseBodyProxy$Outbound` instead. */
+    export type Outbound = GetDeploymentEventsResponseBodyProxy$Outbound;
 }
 
 /** @internal */
+export const Payload$inboundSchema: z.ZodType<Payload, z.ZodTypeDef, unknown> = z.object({
+    deploymentId: z.string(),
+    info: z.lazy(() => GetDeploymentEventsResponseBodyInfo$inboundSchema).optional(),
+    text: z.string().optional(),
+    id: z.string(),
+    date: z.number(),
+    serial: z.string(),
+    created: z.number().optional(),
+    statusCode: z.number().optional(),
+    requestId: z.string().optional(),
+    proxy: z.lazy(() => GetDeploymentEventsResponseBodyProxy$inboundSchema).optional(),
+});
+
+/** @internal */
+export type Payload$Outbound = {
+    deploymentId: string;
+    info?: GetDeploymentEventsResponseBodyInfo$Outbound | undefined;
+    text?: string | undefined;
+    id: string;
+    date: number;
+    serial: string;
+    created?: number | undefined;
+    statusCode?: number | undefined;
+    requestId?: string | undefined;
+    proxy?: GetDeploymentEventsResponseBodyProxy$Outbound | undefined;
+};
+
+/** @internal */
+export const Payload$outboundSchema: z.ZodType<Payload$Outbound, z.ZodTypeDef, Payload> = z.object({
+    deploymentId: z.string(),
+    info: z.lazy(() => GetDeploymentEventsResponseBodyInfo$outboundSchema).optional(),
+    text: z.string().optional(),
+    id: z.string(),
+    date: z.number(),
+    serial: z.string(),
+    created: z.number().optional(),
+    statusCode: z.number().optional(),
+    requestId: z.string().optional(),
+    proxy: z.lazy(() => GetDeploymentEventsResponseBodyProxy$outboundSchema).optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace Payload$ {
-    export const inboundSchema: z.ZodType<Payload, z.ZodTypeDef, unknown> = z
-        .object({
-            deploymentId: z.string(),
-            info: z.lazy(() => GetDeploymentEventsResponseBodyInfo$.inboundSchema).optional(),
-            text: z.string().optional(),
-            id: z.string(),
-            date: z.number(),
-            serial: z.string(),
-            created: z.number().optional(),
-            statusCode: z.number().optional(),
-            requestId: z.string().optional(),
-            proxy: z.lazy(() => GetDeploymentEventsResponseBodyProxy$.inboundSchema).optional(),
-        })
-        .transform((v) => {
-            return {
-                deploymentId: v.deploymentId,
-                ...(v.info === undefined ? null : { info: v.info }),
-                ...(v.text === undefined ? null : { text: v.text }),
-                id: v.id,
-                date: v.date,
-                serial: v.serial,
-                ...(v.created === undefined ? null : { created: v.created }),
-                ...(v.statusCode === undefined ? null : { statusCode: v.statusCode }),
-                ...(v.requestId === undefined ? null : { requestId: v.requestId }),
-                ...(v.proxy === undefined ? null : { proxy: v.proxy }),
-            };
-        });
-
-    export type Outbound = {
-        deploymentId: string;
-        info?: GetDeploymentEventsResponseBodyInfo$.Outbound | undefined;
-        text?: string | undefined;
-        id: string;
-        date: number;
-        serial: string;
-        created?: number | undefined;
-        statusCode?: number | undefined;
-        requestId?: string | undefined;
-        proxy?: GetDeploymentEventsResponseBodyProxy$.Outbound | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, Payload> = z
-        .object({
-            deploymentId: z.string(),
-            info: z.lazy(() => GetDeploymentEventsResponseBodyInfo$.outboundSchema).optional(),
-            text: z.string().optional(),
-            id: z.string(),
-            date: z.number(),
-            serial: z.string(),
-            created: z.number().optional(),
-            statusCode: z.number().optional(),
-            requestId: z.string().optional(),
-            proxy: z.lazy(() => GetDeploymentEventsResponseBodyProxy$.outboundSchema).optional(),
-        })
-        .transform((v) => {
-            return {
-                deploymentId: v.deploymentId,
-                ...(v.info === undefined ? null : { info: v.info }),
-                ...(v.text === undefined ? null : { text: v.text }),
-                id: v.id,
-                date: v.date,
-                serial: v.serial,
-                ...(v.created === undefined ? null : { created: v.created }),
-                ...(v.statusCode === undefined ? null : { statusCode: v.statusCode }),
-                ...(v.requestId === undefined ? null : { requestId: v.requestId }),
-                ...(v.proxy === undefined ? null : { proxy: v.proxy }),
-            };
-        });
+    /** @deprecated use `Payload$inboundSchema` instead. */
+    export const inboundSchema = Payload$inboundSchema;
+    /** @deprecated use `Payload$outboundSchema` instead. */
+    export const outboundSchema = Payload$outboundSchema;
+    /** @deprecated use `Payload$Outbound` instead. */
+    export type Outbound = Payload$Outbound;
 }
 
 /** @internal */
+export const ResponseBody2$inboundSchema: z.ZodType<ResponseBody2, z.ZodTypeDef, unknown> =
+    z.object({
+        type: GetDeploymentEventsResponseBodyType$inboundSchema,
+        created: z.number(),
+        payload: z.lazy(() => Payload$inboundSchema),
+    });
+
+/** @internal */
+export type ResponseBody2$Outbound = {
+    type: string;
+    created: number;
+    payload: Payload$Outbound;
+};
+
+/** @internal */
+export const ResponseBody2$outboundSchema: z.ZodType<
+    ResponseBody2$Outbound,
+    z.ZodTypeDef,
+    ResponseBody2
+> = z.object({
+    type: GetDeploymentEventsResponseBodyType$outboundSchema,
+    created: z.number(),
+    payload: z.lazy(() => Payload$outboundSchema),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace ResponseBody2$ {
-    export const inboundSchema: z.ZodType<ResponseBody2, z.ZodTypeDef, unknown> = z
-        .object({
-            type: GetDeploymentEventsResponseBodyType$.inboundSchema,
-            created: z.number(),
-            payload: z.lazy(() => Payload$.inboundSchema),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                created: v.created,
-                payload: v.payload,
-            };
-        });
-
-    export type Outbound = {
-        type: string;
-        created: number;
-        payload: Payload$.Outbound;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, ResponseBody2> = z
-        .object({
-            type: GetDeploymentEventsResponseBodyType$.outboundSchema,
-            created: z.number(),
-            payload: z.lazy(() => Payload$.outboundSchema),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                created: v.created,
-                payload: v.payload,
-            };
-        });
+    /** @deprecated use `ResponseBody2$inboundSchema` instead. */
+    export const inboundSchema = ResponseBody2$inboundSchema;
+    /** @deprecated use `ResponseBody2$outboundSchema` instead. */
+    export const outboundSchema = ResponseBody2$outboundSchema;
+    /** @deprecated use `ResponseBody2$Outbound` instead. */
+    export type Outbound = ResponseBody2$Outbound;
 }
 
 /** @internal */
+export const Info$inboundSchema: z.ZodType<Info, z.ZodTypeDef, unknown> = z.object({
+    type: z.string(),
+    name: z.string(),
+    entrypoint: z.string().optional(),
+    path: z.string().optional(),
+    step: z.string().optional(),
+    readyState: z.string().optional(),
+});
+
+/** @internal */
+export type Info$Outbound = {
+    type: string;
+    name: string;
+    entrypoint?: string | undefined;
+    path?: string | undefined;
+    step?: string | undefined;
+    readyState?: string | undefined;
+};
+
+/** @internal */
+export const Info$outboundSchema: z.ZodType<Info$Outbound, z.ZodTypeDef, Info> = z.object({
+    type: z.string(),
+    name: z.string(),
+    entrypoint: z.string().optional(),
+    path: z.string().optional(),
+    step: z.string().optional(),
+    readyState: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace Info$ {
-    export const inboundSchema: z.ZodType<Info, z.ZodTypeDef, unknown> = z
-        .object({
-            type: z.string(),
-            name: z.string(),
-            entrypoint: z.string().optional(),
-            path: z.string().optional(),
-            step: z.string().optional(),
-            readyState: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                name: v.name,
-                ...(v.entrypoint === undefined ? null : { entrypoint: v.entrypoint }),
-                ...(v.path === undefined ? null : { path: v.path }),
-                ...(v.step === undefined ? null : { step: v.step }),
-                ...(v.readyState === undefined ? null : { readyState: v.readyState }),
-            };
-        });
-
-    export type Outbound = {
-        type: string;
-        name: string;
-        entrypoint?: string | undefined;
-        path?: string | undefined;
-        step?: string | undefined;
-        readyState?: string | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, Info> = z
-        .object({
-            type: z.string(),
-            name: z.string(),
-            entrypoint: z.string().optional(),
-            path: z.string().optional(),
-            step: z.string().optional(),
-            readyState: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                name: v.name,
-                ...(v.entrypoint === undefined ? null : { entrypoint: v.entrypoint }),
-                ...(v.path === undefined ? null : { path: v.path }),
-                ...(v.step === undefined ? null : { step: v.step }),
-                ...(v.readyState === undefined ? null : { readyState: v.readyState }),
-            };
-        });
+    /** @deprecated use `Info$inboundSchema` instead. */
+    export const inboundSchema = Info$inboundSchema;
+    /** @deprecated use `Info$outboundSchema` instead. */
+    export const outboundSchema = Info$outboundSchema;
+    /** @deprecated use `Info$Outbound` instead. */
+    export type Outbound = Info$Outbound;
 }
 
 /** @internal */
+export const VercelCache$inboundSchema: z.ZodNativeEnum<typeof VercelCache> =
+    z.nativeEnum(VercelCache);
+
+/** @internal */
+export const VercelCache$outboundSchema: z.ZodNativeEnum<typeof VercelCache> =
+    VercelCache$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace VercelCache$ {
-    export const inboundSchema = z.nativeEnum(VercelCache);
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `VercelCache$inboundSchema` instead. */
+    export const inboundSchema = VercelCache$inboundSchema;
+    /** @deprecated use `VercelCache$outboundSchema` instead. */
+    export const outboundSchema = VercelCache$outboundSchema;
 }
 
 /** @internal */
+export const Proxy$inboundSchema: z.ZodType<Proxy, z.ZodTypeDef, unknown> = z.object({
+    timestamp: z.number(),
+    method: z.string(),
+    host: z.string(),
+    path: z.string(),
+    statusCode: z.number().optional(),
+    userAgent: z.array(z.string()),
+    referer: z.string(),
+    clientIp: z.string(),
+    region: z.string(),
+    scheme: z.string().optional(),
+    responseByteSize: z.number().optional(),
+    cacheId: z.string().optional(),
+    pathType: z.string().optional(),
+    vercelId: z.string().optional(),
+    vercelCache: VercelCache$inboundSchema.optional(),
+    lambdaRegion: z.string().optional(),
+});
+
+/** @internal */
+export type Proxy$Outbound = {
+    timestamp: number;
+    method: string;
+    host: string;
+    path: string;
+    statusCode?: number | undefined;
+    userAgent: Array<string>;
+    referer: string;
+    clientIp: string;
+    region: string;
+    scheme?: string | undefined;
+    responseByteSize?: number | undefined;
+    cacheId?: string | undefined;
+    pathType?: string | undefined;
+    vercelId?: string | undefined;
+    vercelCache?: string | undefined;
+    lambdaRegion?: string | undefined;
+};
+
+/** @internal */
+export const Proxy$outboundSchema: z.ZodType<Proxy$Outbound, z.ZodTypeDef, Proxy> = z.object({
+    timestamp: z.number(),
+    method: z.string(),
+    host: z.string(),
+    path: z.string(),
+    statusCode: z.number().optional(),
+    userAgent: z.array(z.string()),
+    referer: z.string(),
+    clientIp: z.string(),
+    region: z.string(),
+    scheme: z.string().optional(),
+    responseByteSize: z.number().optional(),
+    cacheId: z.string().optional(),
+    pathType: z.string().optional(),
+    vercelId: z.string().optional(),
+    vercelCache: VercelCache$outboundSchema.optional(),
+    lambdaRegion: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace Proxy$ {
-    export const inboundSchema: z.ZodType<Proxy, z.ZodTypeDef, unknown> = z
-        .object({
-            timestamp: z.number(),
-            method: z.string(),
-            host: z.string(),
-            path: z.string(),
-            statusCode: z.number().optional(),
-            userAgent: z.array(z.string()),
-            referer: z.string(),
-            clientIp: z.string(),
-            region: z.string(),
-            scheme: z.string().optional(),
-            responseByteSize: z.number().optional(),
-            cacheId: z.string().optional(),
-            pathType: z.string().optional(),
-            vercelId: z.string().optional(),
-            vercelCache: VercelCache$.inboundSchema.optional(),
-            lambdaRegion: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                timestamp: v.timestamp,
-                method: v.method,
-                host: v.host,
-                path: v.path,
-                ...(v.statusCode === undefined ? null : { statusCode: v.statusCode }),
-                userAgent: v.userAgent,
-                referer: v.referer,
-                clientIp: v.clientIp,
-                region: v.region,
-                ...(v.scheme === undefined ? null : { scheme: v.scheme }),
-                ...(v.responseByteSize === undefined
-                    ? null
-                    : { responseByteSize: v.responseByteSize }),
-                ...(v.cacheId === undefined ? null : { cacheId: v.cacheId }),
-                ...(v.pathType === undefined ? null : { pathType: v.pathType }),
-                ...(v.vercelId === undefined ? null : { vercelId: v.vercelId }),
-                ...(v.vercelCache === undefined ? null : { vercelCache: v.vercelCache }),
-                ...(v.lambdaRegion === undefined ? null : { lambdaRegion: v.lambdaRegion }),
-            };
-        });
-
-    export type Outbound = {
-        timestamp: number;
-        method: string;
-        host: string;
-        path: string;
-        statusCode?: number | undefined;
-        userAgent: Array<string>;
-        referer: string;
-        clientIp: string;
-        region: string;
-        scheme?: string | undefined;
-        responseByteSize?: number | undefined;
-        cacheId?: string | undefined;
-        pathType?: string | undefined;
-        vercelId?: string | undefined;
-        vercelCache?: string | undefined;
-        lambdaRegion?: string | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, Proxy> = z
-        .object({
-            timestamp: z.number(),
-            method: z.string(),
-            host: z.string(),
-            path: z.string(),
-            statusCode: z.number().optional(),
-            userAgent: z.array(z.string()),
-            referer: z.string(),
-            clientIp: z.string(),
-            region: z.string(),
-            scheme: z.string().optional(),
-            responseByteSize: z.number().optional(),
-            cacheId: z.string().optional(),
-            pathType: z.string().optional(),
-            vercelId: z.string().optional(),
-            vercelCache: VercelCache$.outboundSchema.optional(),
-            lambdaRegion: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                timestamp: v.timestamp,
-                method: v.method,
-                host: v.host,
-                path: v.path,
-                ...(v.statusCode === undefined ? null : { statusCode: v.statusCode }),
-                userAgent: v.userAgent,
-                referer: v.referer,
-                clientIp: v.clientIp,
-                region: v.region,
-                ...(v.scheme === undefined ? null : { scheme: v.scheme }),
-                ...(v.responseByteSize === undefined
-                    ? null
-                    : { responseByteSize: v.responseByteSize }),
-                ...(v.cacheId === undefined ? null : { cacheId: v.cacheId }),
-                ...(v.pathType === undefined ? null : { pathType: v.pathType }),
-                ...(v.vercelId === undefined ? null : { vercelId: v.vercelId }),
-                ...(v.vercelCache === undefined ? null : { vercelCache: v.vercelCache }),
-                ...(v.lambdaRegion === undefined ? null : { lambdaRegion: v.lambdaRegion }),
-            };
-        });
+    /** @deprecated use `Proxy$inboundSchema` instead. */
+    export const inboundSchema = Proxy$inboundSchema;
+    /** @deprecated use `Proxy$outboundSchema` instead. */
+    export const outboundSchema = Proxy$outboundSchema;
+    /** @deprecated use `Proxy$Outbound` instead. */
+    export type Outbound = Proxy$Outbound;
 }
 
 /** @internal */
+export const ResponseBodyType$inboundSchema: z.ZodNativeEnum<typeof ResponseBodyType> =
+    z.nativeEnum(ResponseBodyType);
+
+/** @internal */
+export const ResponseBodyType$outboundSchema: z.ZodNativeEnum<typeof ResponseBodyType> =
+    ResponseBodyType$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace ResponseBodyType$ {
-    export const inboundSchema = z.nativeEnum(ResponseBodyType);
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `ResponseBodyType$inboundSchema` instead. */
+    export const inboundSchema = ResponseBodyType$inboundSchema;
+    /** @deprecated use `ResponseBodyType$outboundSchema` instead. */
+    export const outboundSchema = ResponseBodyType$outboundSchema;
 }
 
 /** @internal */
+export const ResponseBody1$inboundSchema: z.ZodType<ResponseBody1, z.ZodTypeDef, unknown> =
+    z.object({
+        created: z.number(),
+        date: z.number(),
+        deploymentId: z.string(),
+        id: z.string(),
+        info: z.lazy(() => Info$inboundSchema),
+        proxy: z.lazy(() => Proxy$inboundSchema).optional(),
+        requestId: z.string().optional(),
+        serial: z.string(),
+        statusCode: z.number().optional(),
+        text: z.string().optional(),
+        type: ResponseBodyType$inboundSchema,
+    });
+
+/** @internal */
+export type ResponseBody1$Outbound = {
+    created: number;
+    date: number;
+    deploymentId: string;
+    id: string;
+    info: Info$Outbound;
+    proxy?: Proxy$Outbound | undefined;
+    requestId?: string | undefined;
+    serial: string;
+    statusCode?: number | undefined;
+    text?: string | undefined;
+    type: string;
+};
+
+/** @internal */
+export const ResponseBody1$outboundSchema: z.ZodType<
+    ResponseBody1$Outbound,
+    z.ZodTypeDef,
+    ResponseBody1
+> = z.object({
+    created: z.number(),
+    date: z.number(),
+    deploymentId: z.string(),
+    id: z.string(),
+    info: z.lazy(() => Info$outboundSchema),
+    proxy: z.lazy(() => Proxy$outboundSchema).optional(),
+    requestId: z.string().optional(),
+    serial: z.string(),
+    statusCode: z.number().optional(),
+    text: z.string().optional(),
+    type: ResponseBodyType$outboundSchema,
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace ResponseBody1$ {
-    export const inboundSchema: z.ZodType<ResponseBody1, z.ZodTypeDef, unknown> = z
-        .object({
-            created: z.number(),
-            date: z.number(),
-            deploymentId: z.string(),
-            id: z.string(),
-            info: z.lazy(() => Info$.inboundSchema),
-            proxy: z.lazy(() => Proxy$.inboundSchema).optional(),
-            requestId: z.string().optional(),
-            serial: z.string(),
-            statusCode: z.number().optional(),
-            text: z.string().optional(),
-            type: ResponseBodyType$.inboundSchema,
-        })
-        .transform((v) => {
-            return {
-                created: v.created,
-                date: v.date,
-                deploymentId: v.deploymentId,
-                id: v.id,
-                info: v.info,
-                ...(v.proxy === undefined ? null : { proxy: v.proxy }),
-                ...(v.requestId === undefined ? null : { requestId: v.requestId }),
-                serial: v.serial,
-                ...(v.statusCode === undefined ? null : { statusCode: v.statusCode }),
-                ...(v.text === undefined ? null : { text: v.text }),
-                type: v.type,
-            };
-        });
-
-    export type Outbound = {
-        created: number;
-        date: number;
-        deploymentId: string;
-        id: string;
-        info: Info$.Outbound;
-        proxy?: Proxy$.Outbound | undefined;
-        requestId?: string | undefined;
-        serial: string;
-        statusCode?: number | undefined;
-        text?: string | undefined;
-        type: string;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, ResponseBody1> = z
-        .object({
-            created: z.number(),
-            date: z.number(),
-            deploymentId: z.string(),
-            id: z.string(),
-            info: z.lazy(() => Info$.outboundSchema),
-            proxy: z.lazy(() => Proxy$.outboundSchema).optional(),
-            requestId: z.string().optional(),
-            serial: z.string(),
-            statusCode: z.number().optional(),
-            text: z.string().optional(),
-            type: ResponseBodyType$.outboundSchema,
-        })
-        .transform((v) => {
-            return {
-                created: v.created,
-                date: v.date,
-                deploymentId: v.deploymentId,
-                id: v.id,
-                info: v.info,
-                ...(v.proxy === undefined ? null : { proxy: v.proxy }),
-                ...(v.requestId === undefined ? null : { requestId: v.requestId }),
-                serial: v.serial,
-                ...(v.statusCode === undefined ? null : { statusCode: v.statusCode }),
-                ...(v.text === undefined ? null : { text: v.text }),
-                type: v.type,
-            };
-        });
+    /** @deprecated use `ResponseBody1$inboundSchema` instead. */
+    export const inboundSchema = ResponseBody1$inboundSchema;
+    /** @deprecated use `ResponseBody1$outboundSchema` instead. */
+    export const outboundSchema = ResponseBody1$outboundSchema;
+    /** @deprecated use `ResponseBody1$Outbound` instead. */
+    export type Outbound = ResponseBody1$Outbound;
 }
 
 /** @internal */
+export const GetDeploymentEventsDeploymentsResponseBody$inboundSchema: z.ZodType<
+    GetDeploymentEventsDeploymentsResponseBody,
+    z.ZodTypeDef,
+    unknown
+> = z.union([z.lazy(() => ResponseBody2$inboundSchema), z.lazy(() => ResponseBody1$inboundSchema)]);
+
+/** @internal */
+export type GetDeploymentEventsDeploymentsResponseBody$Outbound =
+    | ResponseBody2$Outbound
+    | ResponseBody1$Outbound;
+
+/** @internal */
+export const GetDeploymentEventsDeploymentsResponseBody$outboundSchema: z.ZodType<
+    GetDeploymentEventsDeploymentsResponseBody$Outbound,
+    z.ZodTypeDef,
+    GetDeploymentEventsDeploymentsResponseBody
+> = z.union([
+    z.lazy(() => ResponseBody2$outboundSchema),
+    z.lazy(() => ResponseBody1$outboundSchema),
+]);
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetDeploymentEventsDeploymentsResponseBody$ {
-    export const inboundSchema: z.ZodType<
-        GetDeploymentEventsDeploymentsResponseBody,
-        z.ZodTypeDef,
-        unknown
-    > = z.union([
-        z.lazy(() => ResponseBody2$.inboundSchema),
-        z.lazy(() => ResponseBody1$.inboundSchema),
-    ]);
-
-    export type Outbound = ResponseBody2$.Outbound | ResponseBody1$.Outbound;
-    export const outboundSchema: z.ZodType<
-        Outbound,
-        z.ZodTypeDef,
-        GetDeploymentEventsDeploymentsResponseBody
-    > = z.union([
-        z.lazy(() => ResponseBody2$.outboundSchema),
-        z.lazy(() => ResponseBody1$.outboundSchema),
-    ]);
+    /** @deprecated use `GetDeploymentEventsDeploymentsResponseBody$inboundSchema` instead. */
+    export const inboundSchema = GetDeploymentEventsDeploymentsResponseBody$inboundSchema;
+    /** @deprecated use `GetDeploymentEventsDeploymentsResponseBody$outboundSchema` instead. */
+    export const outboundSchema = GetDeploymentEventsDeploymentsResponseBody$outboundSchema;
+    /** @deprecated use `GetDeploymentEventsDeploymentsResponseBody$Outbound` instead. */
+    export type Outbound = GetDeploymentEventsDeploymentsResponseBody$Outbound;
 }
 
 /** @internal */
-export namespace GetDeploymentEventsResponse$ {
-    export const inboundSchema: z.ZodType<GetDeploymentEventsResponse, z.ZodTypeDef, unknown> =
+export const GetDeploymentEventsResponse$inboundSchema: z.ZodType<
+    GetDeploymentEventsResponse,
+    z.ZodTypeDef,
+    unknown
+> = z.union([
+    z.array(
         z.union([
-            z.array(
-                z.union([
-                    z.lazy(() => ResponseBody2$.inboundSchema),
-                    z.lazy(() => ResponseBody1$.inboundSchema),
-                ])
-            ),
-            z.union([
-                z.lazy(() => GetDeploymentEventsResponseBody2$.inboundSchema),
-                z.lazy(() => GetDeploymentEventsResponseBody1$.inboundSchema),
-                z.union([z.lazy(() => Three2$.inboundSchema), z.lazy(() => Three1$.inboundSchema)]),
-            ]),
-        ]);
+            z.lazy(() => ResponseBody2$inboundSchema),
+            z.lazy(() => ResponseBody1$inboundSchema),
+        ])
+    ),
+    z.union([
+        z.lazy(() => GetDeploymentEventsResponseBody2$inboundSchema),
+        z.lazy(() => GetDeploymentEventsResponseBody1$inboundSchema),
+        z.union([z.lazy(() => Three2$inboundSchema), z.lazy(() => Three1$inboundSchema)]),
+    ]),
+]);
 
-    export type Outbound =
-        | Array<ResponseBody2$.Outbound | ResponseBody1$.Outbound>
-        | GetDeploymentEventsResponseBody2$.Outbound
-        | GetDeploymentEventsResponseBody1$.Outbound
-        | Three2$.Outbound
-        | Three1$.Outbound;
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetDeploymentEventsResponse> =
+/** @internal */
+export type GetDeploymentEventsResponse$Outbound =
+    | Array<ResponseBody2$Outbound | ResponseBody1$Outbound>
+    | GetDeploymentEventsResponseBody2$Outbound
+    | GetDeploymentEventsResponseBody1$Outbound
+    | Three2$Outbound
+    | Three1$Outbound;
+
+/** @internal */
+export const GetDeploymentEventsResponse$outboundSchema: z.ZodType<
+    GetDeploymentEventsResponse$Outbound,
+    z.ZodTypeDef,
+    GetDeploymentEventsResponse
+> = z.union([
+    z.array(
         z.union([
-            z.array(
-                z.union([
-                    z.lazy(() => ResponseBody2$.outboundSchema),
-                    z.lazy(() => ResponseBody1$.outboundSchema),
-                ])
-            ),
-            z.union([
-                z.lazy(() => GetDeploymentEventsResponseBody2$.outboundSchema),
-                z.lazy(() => GetDeploymentEventsResponseBody1$.outboundSchema),
-                z.union([
-                    z.lazy(() => Three2$.outboundSchema),
-                    z.lazy(() => Three1$.outboundSchema),
-                ]),
-            ]),
-        ]);
+            z.lazy(() => ResponseBody2$outboundSchema),
+            z.lazy(() => ResponseBody1$outboundSchema),
+        ])
+    ),
+    z.union([
+        z.lazy(() => GetDeploymentEventsResponseBody2$outboundSchema),
+        z.lazy(() => GetDeploymentEventsResponseBody1$outboundSchema),
+        z.union([z.lazy(() => Three2$outboundSchema), z.lazy(() => Three1$outboundSchema)]),
+    ]),
+]);
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetDeploymentEventsResponse$ {
+    /** @deprecated use `GetDeploymentEventsResponse$inboundSchema` instead. */
+    export const inboundSchema = GetDeploymentEventsResponse$inboundSchema;
+    /** @deprecated use `GetDeploymentEventsResponse$outboundSchema` instead. */
+    export const outboundSchema = GetDeploymentEventsResponse$outboundSchema;
+    /** @deprecated use `GetDeploymentEventsResponse$Outbound` instead. */
+    export type Outbound = GetDeploymentEventsResponse$Outbound;
 }

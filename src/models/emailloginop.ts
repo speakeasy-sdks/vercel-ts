@@ -37,112 +37,156 @@ export type EmailLoginResponseBody1 = {
 export type EmailLoginResponseBody = EmailLoginResponseBody1 | EmailLoginResponseBody2;
 
 /** @internal */
+export const EmailLoginRequestBody$inboundSchema: z.ZodType<
+    EmailLoginRequestBody,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    email: z.string(),
+    tokenName: z.string().optional(),
+});
+
+/** @internal */
+export type EmailLoginRequestBody$Outbound = {
+    email: string;
+    tokenName?: string | undefined;
+};
+
+/** @internal */
+export const EmailLoginRequestBody$outboundSchema: z.ZodType<
+    EmailLoginRequestBody$Outbound,
+    z.ZodTypeDef,
+    EmailLoginRequestBody
+> = z.object({
+    email: z.string(),
+    tokenName: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace EmailLoginRequestBody$ {
-    export const inboundSchema: z.ZodType<EmailLoginRequestBody, z.ZodTypeDef, unknown> = z
-        .object({
-            email: z.string(),
-            tokenName: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                email: v.email,
-                ...(v.tokenName === undefined ? null : { tokenName: v.tokenName }),
-            };
-        });
-
-    export type Outbound = {
-        email: string;
-        tokenName?: string | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, EmailLoginRequestBody> = z
-        .object({
-            email: z.string(),
-            tokenName: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                email: v.email,
-                ...(v.tokenName === undefined ? null : { tokenName: v.tokenName }),
-            };
-        });
+    /** @deprecated use `EmailLoginRequestBody$inboundSchema` instead. */
+    export const inboundSchema = EmailLoginRequestBody$inboundSchema;
+    /** @deprecated use `EmailLoginRequestBody$outboundSchema` instead. */
+    export const outboundSchema = EmailLoginRequestBody$outboundSchema;
+    /** @deprecated use `EmailLoginRequestBody$Outbound` instead. */
+    export type Outbound = EmailLoginRequestBody$Outbound;
 }
 
 /** @internal */
+export const EmailLoginResponseBody2$inboundSchema: z.ZodType<
+    EmailLoginResponseBody2,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    token: z.string(),
+    securityCode: z.string(),
+});
+
+/** @internal */
+export type EmailLoginResponseBody2$Outbound = {
+    token: string;
+    securityCode: string;
+};
+
+/** @internal */
+export const EmailLoginResponseBody2$outboundSchema: z.ZodType<
+    EmailLoginResponseBody2$Outbound,
+    z.ZodTypeDef,
+    EmailLoginResponseBody2
+> = z.object({
+    token: z.string(),
+    securityCode: z.string(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace EmailLoginResponseBody2$ {
-    export const inboundSchema: z.ZodType<EmailLoginResponseBody2, z.ZodTypeDef, unknown> = z
-        .object({
-            token: z.string(),
-            securityCode: z.string(),
-        })
-        .transform((v) => {
-            return {
-                token: v.token,
-                securityCode: v.securityCode,
-            };
-        });
-
-    export type Outbound = {
-        token: string;
-        securityCode: string;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, EmailLoginResponseBody2> = z
-        .object({
-            token: z.string(),
-            securityCode: z.string(),
-        })
-        .transform((v) => {
-            return {
-                token: v.token,
-                securityCode: v.securityCode,
-            };
-        });
+    /** @deprecated use `EmailLoginResponseBody2$inboundSchema` instead. */
+    export const inboundSchema = EmailLoginResponseBody2$inboundSchema;
+    /** @deprecated use `EmailLoginResponseBody2$outboundSchema` instead. */
+    export const outboundSchema = EmailLoginResponseBody2$outboundSchema;
+    /** @deprecated use `EmailLoginResponseBody2$Outbound` instead. */
+    export type Outbound = EmailLoginResponseBody2$Outbound;
 }
 
 /** @internal */
+export const EmailLoginResponseBody1$inboundSchema: z.ZodType<
+    EmailLoginResponseBody1,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    token: z.string(),
+    securityCode: z.string(),
+});
+
+/** @internal */
+export type EmailLoginResponseBody1$Outbound = {
+    token: string;
+    securityCode: string;
+};
+
+/** @internal */
+export const EmailLoginResponseBody1$outboundSchema: z.ZodType<
+    EmailLoginResponseBody1$Outbound,
+    z.ZodTypeDef,
+    EmailLoginResponseBody1
+> = z.object({
+    token: z.string(),
+    securityCode: z.string(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace EmailLoginResponseBody1$ {
-    export const inboundSchema: z.ZodType<EmailLoginResponseBody1, z.ZodTypeDef, unknown> = z
-        .object({
-            token: z.string(),
-            securityCode: z.string(),
-        })
-        .transform((v) => {
-            return {
-                token: v.token,
-                securityCode: v.securityCode,
-            };
-        });
-
-    export type Outbound = {
-        token: string;
-        securityCode: string;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, EmailLoginResponseBody1> = z
-        .object({
-            token: z.string(),
-            securityCode: z.string(),
-        })
-        .transform((v) => {
-            return {
-                token: v.token,
-                securityCode: v.securityCode,
-            };
-        });
+    /** @deprecated use `EmailLoginResponseBody1$inboundSchema` instead. */
+    export const inboundSchema = EmailLoginResponseBody1$inboundSchema;
+    /** @deprecated use `EmailLoginResponseBody1$outboundSchema` instead. */
+    export const outboundSchema = EmailLoginResponseBody1$outboundSchema;
+    /** @deprecated use `EmailLoginResponseBody1$Outbound` instead. */
+    export type Outbound = EmailLoginResponseBody1$Outbound;
 }
 
 /** @internal */
-export namespace EmailLoginResponseBody$ {
-    export const inboundSchema: z.ZodType<EmailLoginResponseBody, z.ZodTypeDef, unknown> = z.union([
-        z.lazy(() => EmailLoginResponseBody1$.inboundSchema),
-        z.lazy(() => EmailLoginResponseBody2$.inboundSchema),
-    ]);
+export const EmailLoginResponseBody$inboundSchema: z.ZodType<
+    EmailLoginResponseBody,
+    z.ZodTypeDef,
+    unknown
+> = z.union([
+    z.lazy(() => EmailLoginResponseBody1$inboundSchema),
+    z.lazy(() => EmailLoginResponseBody2$inboundSchema),
+]);
 
-    export type Outbound = EmailLoginResponseBody1$.Outbound | EmailLoginResponseBody2$.Outbound;
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, EmailLoginResponseBody> =
-        z.union([
-            z.lazy(() => EmailLoginResponseBody1$.outboundSchema),
-            z.lazy(() => EmailLoginResponseBody2$.outboundSchema),
-        ]);
+/** @internal */
+export type EmailLoginResponseBody$Outbound =
+    | EmailLoginResponseBody1$Outbound
+    | EmailLoginResponseBody2$Outbound;
+
+/** @internal */
+export const EmailLoginResponseBody$outboundSchema: z.ZodType<
+    EmailLoginResponseBody$Outbound,
+    z.ZodTypeDef,
+    EmailLoginResponseBody
+> = z.union([
+    z.lazy(() => EmailLoginResponseBody1$outboundSchema),
+    z.lazy(() => EmailLoginResponseBody2$outboundSchema),
+]);
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace EmailLoginResponseBody$ {
+    /** @deprecated use `EmailLoginResponseBody$inboundSchema` instead. */
+    export const inboundSchema = EmailLoginResponseBody$inboundSchema;
+    /** @deprecated use `EmailLoginResponseBody$outboundSchema` instead. */
+    export const outboundSchema = EmailLoginResponseBody$outboundSchema;
+    /** @deprecated use `EmailLoginResponseBody$Outbound` instead. */
+    export type Outbound = EmailLoginResponseBody$Outbound;
 }

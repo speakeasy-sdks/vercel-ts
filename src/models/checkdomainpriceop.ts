@@ -46,81 +46,104 @@ export type CheckDomainPriceResponseBody = {
 };
 
 /** @internal */
+export const QueryParamType$inboundSchema: z.ZodNativeEnum<typeof QueryParamType> =
+    z.nativeEnum(QueryParamType);
+
+/** @internal */
+export const QueryParamType$outboundSchema: z.ZodNativeEnum<typeof QueryParamType> =
+    QueryParamType$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace QueryParamType$ {
-    export const inboundSchema = z.nativeEnum(QueryParamType);
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `QueryParamType$inboundSchema` instead. */
+    export const inboundSchema = QueryParamType$inboundSchema;
+    /** @deprecated use `QueryParamType$outboundSchema` instead. */
+    export const outboundSchema = QueryParamType$outboundSchema;
 }
 
 /** @internal */
+export const CheckDomainPriceRequest$inboundSchema: z.ZodType<
+    CheckDomainPriceRequest,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    name: z.string(),
+    type: QueryParamType$inboundSchema.optional(),
+    teamId: z.string().optional(),
+    slug: z.string().optional(),
+});
+
+/** @internal */
+export type CheckDomainPriceRequest$Outbound = {
+    name: string;
+    type?: string | undefined;
+    teamId?: string | undefined;
+    slug?: string | undefined;
+};
+
+/** @internal */
+export const CheckDomainPriceRequest$outboundSchema: z.ZodType<
+    CheckDomainPriceRequest$Outbound,
+    z.ZodTypeDef,
+    CheckDomainPriceRequest
+> = z.object({
+    name: z.string(),
+    type: QueryParamType$outboundSchema.optional(),
+    teamId: z.string().optional(),
+    slug: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CheckDomainPriceRequest$ {
-    export const inboundSchema: z.ZodType<CheckDomainPriceRequest, z.ZodTypeDef, unknown> = z
-        .object({
-            name: z.string(),
-            type: QueryParamType$.inboundSchema.optional(),
-            teamId: z.string().optional(),
-            slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                name: v.name,
-                ...(v.type === undefined ? null : { type: v.type }),
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
-        });
-
-    export type Outbound = {
-        name: string;
-        type?: string | undefined;
-        teamId?: string | undefined;
-        slug?: string | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CheckDomainPriceRequest> = z
-        .object({
-            name: z.string(),
-            type: QueryParamType$.outboundSchema.optional(),
-            teamId: z.string().optional(),
-            slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                name: v.name,
-                ...(v.type === undefined ? null : { type: v.type }),
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
-        });
+    /** @deprecated use `CheckDomainPriceRequest$inboundSchema` instead. */
+    export const inboundSchema = CheckDomainPriceRequest$inboundSchema;
+    /** @deprecated use `CheckDomainPriceRequest$outboundSchema` instead. */
+    export const outboundSchema = CheckDomainPriceRequest$outboundSchema;
+    /** @deprecated use `CheckDomainPriceRequest$Outbound` instead. */
+    export type Outbound = CheckDomainPriceRequest$Outbound;
 }
 
 /** @internal */
+export const CheckDomainPriceResponseBody$inboundSchema: z.ZodType<
+    CheckDomainPriceResponseBody,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    price: z.number(),
+    period: z.number(),
+});
+
+/** @internal */
+export type CheckDomainPriceResponseBody$Outbound = {
+    price: number;
+    period: number;
+};
+
+/** @internal */
+export const CheckDomainPriceResponseBody$outboundSchema: z.ZodType<
+    CheckDomainPriceResponseBody$Outbound,
+    z.ZodTypeDef,
+    CheckDomainPriceResponseBody
+> = z.object({
+    price: z.number(),
+    period: z.number(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CheckDomainPriceResponseBody$ {
-    export const inboundSchema: z.ZodType<CheckDomainPriceResponseBody, z.ZodTypeDef, unknown> = z
-        .object({
-            price: z.number(),
-            period: z.number(),
-        })
-        .transform((v) => {
-            return {
-                price: v.price,
-                period: v.period,
-            };
-        });
-
-    export type Outbound = {
-        price: number;
-        period: number;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CheckDomainPriceResponseBody> = z
-        .object({
-            price: z.number(),
-            period: z.number(),
-        })
-        .transform((v) => {
-            return {
-                price: v.price,
-                period: v.period,
-            };
-        });
+    /** @deprecated use `CheckDomainPriceResponseBody$inboundSchema` instead. */
+    export const inboundSchema = CheckDomainPriceResponseBody$inboundSchema;
+    /** @deprecated use `CheckDomainPriceResponseBody$outboundSchema` instead. */
+    export const outboundSchema = CheckDomainPriceResponseBody$outboundSchema;
+    /** @deprecated use `CheckDomainPriceResponseBody$Outbound` instead. */
+    export type Outbound = CheckDomainPriceResponseBody$Outbound;
 }

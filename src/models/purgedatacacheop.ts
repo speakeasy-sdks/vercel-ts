@@ -8,43 +8,38 @@ export type PurgeDataCacheRequest = {
     projectIdOrName: string;
 };
 
-export type PurgeDataCacheResponse = {};
+/** @internal */
+export const PurgeDataCacheRequest$inboundSchema: z.ZodType<
+    PurgeDataCacheRequest,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    projectIdOrName: z.string(),
+});
 
 /** @internal */
+export type PurgeDataCacheRequest$Outbound = {
+    projectIdOrName: string;
+};
+
+/** @internal */
+export const PurgeDataCacheRequest$outboundSchema: z.ZodType<
+    PurgeDataCacheRequest$Outbound,
+    z.ZodTypeDef,
+    PurgeDataCacheRequest
+> = z.object({
+    projectIdOrName: z.string(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace PurgeDataCacheRequest$ {
-    export const inboundSchema: z.ZodType<PurgeDataCacheRequest, z.ZodTypeDef, unknown> = z
-        .object({
-            projectIdOrName: z.string(),
-        })
-        .transform((v) => {
-            return {
-                projectIdOrName: v.projectIdOrName,
-            };
-        });
-
-    export type Outbound = {
-        projectIdOrName: string;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, PurgeDataCacheRequest> = z
-        .object({
-            projectIdOrName: z.string(),
-        })
-        .transform((v) => {
-            return {
-                projectIdOrName: v.projectIdOrName,
-            };
-        });
-}
-
-/** @internal */
-export namespace PurgeDataCacheResponse$ {
-    export const inboundSchema: z.ZodType<PurgeDataCacheResponse, z.ZodTypeDef, unknown> = z.object(
-        {}
-    );
-
-    export type Outbound = {};
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, PurgeDataCacheResponse> =
-        z.object({});
+    /** @deprecated use `PurgeDataCacheRequest$inboundSchema` instead. */
+    export const inboundSchema = PurgeDataCacheRequest$inboundSchema;
+    /** @deprecated use `PurgeDataCacheRequest$outboundSchema` instead. */
+    export const outboundSchema = PurgeDataCacheRequest$outboundSchema;
+    /** @deprecated use `PurgeDataCacheRequest$Outbound` instead. */
+    export type Outbound = PurgeDataCacheRequest$Outbound;
 }

@@ -35,75 +35,85 @@ export type DeleteSecretResponseBody = {
 };
 
 /** @internal */
+export const DeleteSecretRequest$inboundSchema: z.ZodType<
+    DeleteSecretRequest,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    idOrName: z.string(),
+    teamId: z.string().optional(),
+    slug: z.string().optional(),
+});
+
+/** @internal */
+export type DeleteSecretRequest$Outbound = {
+    idOrName: string;
+    teamId?: string | undefined;
+    slug?: string | undefined;
+};
+
+/** @internal */
+export const DeleteSecretRequest$outboundSchema: z.ZodType<
+    DeleteSecretRequest$Outbound,
+    z.ZodTypeDef,
+    DeleteSecretRequest
+> = z.object({
+    idOrName: z.string(),
+    teamId: z.string().optional(),
+    slug: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace DeleteSecretRequest$ {
-    export const inboundSchema: z.ZodType<DeleteSecretRequest, z.ZodTypeDef, unknown> = z
-        .object({
-            idOrName: z.string(),
-            teamId: z.string().optional(),
-            slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                idOrName: v.idOrName,
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
-        });
-
-    export type Outbound = {
-        idOrName: string;
-        teamId?: string | undefined;
-        slug?: string | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, DeleteSecretRequest> = z
-        .object({
-            idOrName: z.string(),
-            teamId: z.string().optional(),
-            slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                idOrName: v.idOrName,
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
-        });
+    /** @deprecated use `DeleteSecretRequest$inboundSchema` instead. */
+    export const inboundSchema = DeleteSecretRequest$inboundSchema;
+    /** @deprecated use `DeleteSecretRequest$outboundSchema` instead. */
+    export const outboundSchema = DeleteSecretRequest$outboundSchema;
+    /** @deprecated use `DeleteSecretRequest$Outbound` instead. */
+    export type Outbound = DeleteSecretRequest$Outbound;
 }
 
 /** @internal */
+export const DeleteSecretResponseBody$inboundSchema: z.ZodType<
+    DeleteSecretResponseBody,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    uid: z.string(),
+    name: z.string(),
+    created: z.number(),
+});
+
+/** @internal */
+export type DeleteSecretResponseBody$Outbound = {
+    uid: string;
+    name: string;
+    created: number;
+};
+
+/** @internal */
+export const DeleteSecretResponseBody$outboundSchema: z.ZodType<
+    DeleteSecretResponseBody$Outbound,
+    z.ZodTypeDef,
+    DeleteSecretResponseBody
+> = z.object({
+    uid: z.string(),
+    name: z.string(),
+    created: z.number(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace DeleteSecretResponseBody$ {
-    export const inboundSchema: z.ZodType<DeleteSecretResponseBody, z.ZodTypeDef, unknown> = z
-        .object({
-            uid: z.string(),
-            name: z.string(),
-            created: z.number(),
-        })
-        .transform((v) => {
-            return {
-                uid: v.uid,
-                name: v.name,
-                created: v.created,
-            };
-        });
-
-    export type Outbound = {
-        uid: string;
-        name: string;
-        created: number;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, DeleteSecretResponseBody> = z
-        .object({
-            uid: z.string(),
-            name: z.string(),
-            created: z.number(),
-        })
-        .transform((v) => {
-            return {
-                uid: v.uid,
-                name: v.name,
-                created: v.created,
-            };
-        });
+    /** @deprecated use `DeleteSecretResponseBody$inboundSchema` instead. */
+    export const inboundSchema = DeleteSecretResponseBody$inboundSchema;
+    /** @deprecated use `DeleteSecretResponseBody$outboundSchema` instead. */
+    export const outboundSchema = DeleteSecretResponseBody$outboundSchema;
+    /** @deprecated use `DeleteSecretResponseBody$Outbound` instead. */
+    export type Outbound = DeleteSecretResponseBody$Outbound;
 }

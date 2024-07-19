@@ -65,102 +65,143 @@ export type GetDomainConfigResponseBody = {
 };
 
 /** @internal */
+export const Strict$inboundSchema: z.ZodNativeEnum<typeof Strict> = z.nativeEnum(Strict);
+
+/** @internal */
+export const Strict$outboundSchema: z.ZodNativeEnum<typeof Strict> = Strict$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace Strict$ {
-    export const inboundSchema = z.nativeEnum(Strict);
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `Strict$inboundSchema` instead. */
+    export const inboundSchema = Strict$inboundSchema;
+    /** @deprecated use `Strict$outboundSchema` instead. */
+    export const outboundSchema = Strict$outboundSchema;
 }
 
 /** @internal */
+export const GetDomainConfigRequest$inboundSchema: z.ZodType<
+    GetDomainConfigRequest,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    domain: z.string(),
+    strict: Strict$inboundSchema.optional(),
+    teamId: z.string().optional(),
+    slug: z.string().optional(),
+});
+
+/** @internal */
+export type GetDomainConfigRequest$Outbound = {
+    domain: string;
+    strict?: string | undefined;
+    teamId?: string | undefined;
+    slug?: string | undefined;
+};
+
+/** @internal */
+export const GetDomainConfigRequest$outboundSchema: z.ZodType<
+    GetDomainConfigRequest$Outbound,
+    z.ZodTypeDef,
+    GetDomainConfigRequest
+> = z.object({
+    domain: z.string(),
+    strict: Strict$outboundSchema.optional(),
+    teamId: z.string().optional(),
+    slug: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetDomainConfigRequest$ {
-    export const inboundSchema: z.ZodType<GetDomainConfigRequest, z.ZodTypeDef, unknown> = z
-        .object({
-            domain: z.string(),
-            strict: Strict$.inboundSchema.optional(),
-            teamId: z.string().optional(),
-            slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                domain: v.domain,
-                ...(v.strict === undefined ? null : { strict: v.strict }),
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
-        });
-
-    export type Outbound = {
-        domain: string;
-        strict?: string | undefined;
-        teamId?: string | undefined;
-        slug?: string | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetDomainConfigRequest> = z
-        .object({
-            domain: z.string(),
-            strict: Strict$.outboundSchema.optional(),
-            teamId: z.string().optional(),
-            slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                domain: v.domain,
-                ...(v.strict === undefined ? null : { strict: v.strict }),
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
-        });
+    /** @deprecated use `GetDomainConfigRequest$inboundSchema` instead. */
+    export const inboundSchema = GetDomainConfigRequest$inboundSchema;
+    /** @deprecated use `GetDomainConfigRequest$outboundSchema` instead. */
+    export const outboundSchema = GetDomainConfigRequest$outboundSchema;
+    /** @deprecated use `GetDomainConfigRequest$Outbound` instead. */
+    export type Outbound = GetDomainConfigRequest$Outbound;
 }
 
 /** @internal */
+export const ConfiguredBy$inboundSchema: z.ZodNativeEnum<typeof ConfiguredBy> =
+    z.nativeEnum(ConfiguredBy);
+
+/** @internal */
+export const ConfiguredBy$outboundSchema: z.ZodNativeEnum<typeof ConfiguredBy> =
+    ConfiguredBy$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace ConfiguredBy$ {
-    export const inboundSchema = z.nativeEnum(ConfiguredBy);
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `ConfiguredBy$inboundSchema` instead. */
+    export const inboundSchema = ConfiguredBy$inboundSchema;
+    /** @deprecated use `ConfiguredBy$outboundSchema` instead. */
+    export const outboundSchema = ConfiguredBy$outboundSchema;
 }
 
 /** @internal */
+export const AcceptedChallenges$inboundSchema: z.ZodNativeEnum<typeof AcceptedChallenges> =
+    z.nativeEnum(AcceptedChallenges);
+
+/** @internal */
+export const AcceptedChallenges$outboundSchema: z.ZodNativeEnum<typeof AcceptedChallenges> =
+    AcceptedChallenges$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace AcceptedChallenges$ {
-    export const inboundSchema = z.nativeEnum(AcceptedChallenges);
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `AcceptedChallenges$inboundSchema` instead. */
+    export const inboundSchema = AcceptedChallenges$inboundSchema;
+    /** @deprecated use `AcceptedChallenges$outboundSchema` instead. */
+    export const outboundSchema = AcceptedChallenges$outboundSchema;
 }
 
 /** @internal */
+export const GetDomainConfigResponseBody$inboundSchema: z.ZodType<
+    GetDomainConfigResponseBody,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    configuredBy: z.nullable(ConfiguredBy$inboundSchema).optional(),
+    acceptedChallenges: z.array(AcceptedChallenges$inboundSchema).optional(),
+    misconfigured: z.boolean(),
+});
+
+/** @internal */
+export type GetDomainConfigResponseBody$Outbound = {
+    configuredBy?: string | null | undefined;
+    acceptedChallenges?: Array<string> | undefined;
+    misconfigured: boolean;
+};
+
+/** @internal */
+export const GetDomainConfigResponseBody$outboundSchema: z.ZodType<
+    GetDomainConfigResponseBody$Outbound,
+    z.ZodTypeDef,
+    GetDomainConfigResponseBody
+> = z.object({
+    configuredBy: z.nullable(ConfiguredBy$outboundSchema).optional(),
+    acceptedChallenges: z.array(AcceptedChallenges$outboundSchema).optional(),
+    misconfigured: z.boolean(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetDomainConfigResponseBody$ {
-    export const inboundSchema: z.ZodType<GetDomainConfigResponseBody, z.ZodTypeDef, unknown> = z
-        .object({
-            configuredBy: z.nullable(ConfiguredBy$.inboundSchema).optional(),
-            acceptedChallenges: z.array(AcceptedChallenges$.inboundSchema).optional(),
-            misconfigured: z.boolean(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.configuredBy === undefined ? null : { configuredBy: v.configuredBy }),
-                ...(v.acceptedChallenges === undefined
-                    ? null
-                    : { acceptedChallenges: v.acceptedChallenges }),
-                misconfigured: v.misconfigured,
-            };
-        });
-
-    export type Outbound = {
-        configuredBy?: string | null | undefined;
-        acceptedChallenges?: Array<string> | undefined;
-        misconfigured: boolean;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetDomainConfigResponseBody> = z
-        .object({
-            configuredBy: z.nullable(ConfiguredBy$.outboundSchema).optional(),
-            acceptedChallenges: z.array(AcceptedChallenges$.outboundSchema).optional(),
-            misconfigured: z.boolean(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.configuredBy === undefined ? null : { configuredBy: v.configuredBy }),
-                ...(v.acceptedChallenges === undefined
-                    ? null
-                    : { acceptedChallenges: v.acceptedChallenges }),
-                misconfigured: v.misconfigured,
-            };
-        });
+    /** @deprecated use `GetDomainConfigResponseBody$inboundSchema` instead. */
+    export const inboundSchema = GetDomainConfigResponseBody$inboundSchema;
+    /** @deprecated use `GetDomainConfigResponseBody$outboundSchema` instead. */
+    export const outboundSchema = GetDomainConfigResponseBody$outboundSchema;
+    /** @deprecated use `GetDomainConfigResponseBody$Outbound` instead. */
+    export type Outbound = GetDomainConfigResponseBody$Outbound;
 }

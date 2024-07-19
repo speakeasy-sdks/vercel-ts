@@ -19,53 +19,44 @@ export type ArtifactExistsRequest = {
     slug?: string | undefined;
 };
 
-export type ArtifactExistsResponse = {};
+/** @internal */
+export const ArtifactExistsRequest$inboundSchema: z.ZodType<
+    ArtifactExistsRequest,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    hash: z.string(),
+    teamId: z.string().optional(),
+    slug: z.string().optional(),
+});
 
 /** @internal */
+export type ArtifactExistsRequest$Outbound = {
+    hash: string;
+    teamId?: string | undefined;
+    slug?: string | undefined;
+};
+
+/** @internal */
+export const ArtifactExistsRequest$outboundSchema: z.ZodType<
+    ArtifactExistsRequest$Outbound,
+    z.ZodTypeDef,
+    ArtifactExistsRequest
+> = z.object({
+    hash: z.string(),
+    teamId: z.string().optional(),
+    slug: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace ArtifactExistsRequest$ {
-    export const inboundSchema: z.ZodType<ArtifactExistsRequest, z.ZodTypeDef, unknown> = z
-        .object({
-            hash: z.string(),
-            teamId: z.string().optional(),
-            slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                hash: v.hash,
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
-        });
-
-    export type Outbound = {
-        hash: string;
-        teamId?: string | undefined;
-        slug?: string | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, ArtifactExistsRequest> = z
-        .object({
-            hash: z.string(),
-            teamId: z.string().optional(),
-            slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                hash: v.hash,
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
-        });
-}
-
-/** @internal */
-export namespace ArtifactExistsResponse$ {
-    export const inboundSchema: z.ZodType<ArtifactExistsResponse, z.ZodTypeDef, unknown> = z.object(
-        {}
-    );
-
-    export type Outbound = {};
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, ArtifactExistsResponse> =
-        z.object({});
+    /** @deprecated use `ArtifactExistsRequest$inboundSchema` instead. */
+    export const inboundSchema = ArtifactExistsRequest$inboundSchema;
+    /** @deprecated use `ArtifactExistsRequest$outboundSchema` instead. */
+    export const outboundSchema = ArtifactExistsRequest$outboundSchema;
+    /** @deprecated use `ArtifactExistsRequest$Outbound` instead. */
+    export type Outbound = ArtifactExistsRequest$Outbound;
 }

@@ -22,50 +22,70 @@ export type RemoveCertRequest = {
 export type RemoveCertResponseBody = {};
 
 /** @internal */
+export const RemoveCertRequest$inboundSchema: z.ZodType<RemoveCertRequest, z.ZodTypeDef, unknown> =
+    z.object({
+        id: z.string(),
+        teamId: z.string().optional(),
+        slug: z.string().optional(),
+    });
+
+/** @internal */
+export type RemoveCertRequest$Outbound = {
+    id: string;
+    teamId?: string | undefined;
+    slug?: string | undefined;
+};
+
+/** @internal */
+export const RemoveCertRequest$outboundSchema: z.ZodType<
+    RemoveCertRequest$Outbound,
+    z.ZodTypeDef,
+    RemoveCertRequest
+> = z.object({
+    id: z.string(),
+    teamId: z.string().optional(),
+    slug: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace RemoveCertRequest$ {
-    export const inboundSchema: z.ZodType<RemoveCertRequest, z.ZodTypeDef, unknown> = z
-        .object({
-            id: z.string(),
-            teamId: z.string().optional(),
-            slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                id: v.id,
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
-        });
-
-    export type Outbound = {
-        id: string;
-        teamId?: string | undefined;
-        slug?: string | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, RemoveCertRequest> = z
-        .object({
-            id: z.string(),
-            teamId: z.string().optional(),
-            slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                id: v.id,
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
-        });
+    /** @deprecated use `RemoveCertRequest$inboundSchema` instead. */
+    export const inboundSchema = RemoveCertRequest$inboundSchema;
+    /** @deprecated use `RemoveCertRequest$outboundSchema` instead. */
+    export const outboundSchema = RemoveCertRequest$outboundSchema;
+    /** @deprecated use `RemoveCertRequest$Outbound` instead. */
+    export type Outbound = RemoveCertRequest$Outbound;
 }
 
 /** @internal */
+export const RemoveCertResponseBody$inboundSchema: z.ZodType<
+    RemoveCertResponseBody,
+    z.ZodTypeDef,
+    unknown
+> = z.object({});
+
+/** @internal */
+export type RemoveCertResponseBody$Outbound = {};
+
+/** @internal */
+export const RemoveCertResponseBody$outboundSchema: z.ZodType<
+    RemoveCertResponseBody$Outbound,
+    z.ZodTypeDef,
+    RemoveCertResponseBody
+> = z.object({});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace RemoveCertResponseBody$ {
-    export const inboundSchema: z.ZodType<RemoveCertResponseBody, z.ZodTypeDef, unknown> = z.object(
-        {}
-    );
-
-    export type Outbound = {};
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, RemoveCertResponseBody> =
-        z.object({});
+    /** @deprecated use `RemoveCertResponseBody$inboundSchema` instead. */
+    export const inboundSchema = RemoveCertResponseBody$inboundSchema;
+    /** @deprecated use `RemoveCertResponseBody$outboundSchema` instead. */
+    export const outboundSchema = RemoveCertResponseBody$outboundSchema;
+    /** @deprecated use `RemoveCertResponseBody$Outbound` instead. */
+    export type Outbound = RemoveCertResponseBody$Outbound;
 }

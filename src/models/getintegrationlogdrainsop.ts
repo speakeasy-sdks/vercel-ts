@@ -100,7 +100,7 @@ export type GetIntegrationLogDrainsResponseBody = {
     /**
      * The headers to send with the request
      */
-    headers?: Record<string, string> | undefined;
+    headers?: { [k: string]: string } | undefined;
     /**
      * The environment of log drain
      */
@@ -116,172 +116,203 @@ export type GetIntegrationLogDrainsResponseBody = {
 };
 
 /** @internal */
+export const GetIntegrationLogDrainsRequest$inboundSchema: z.ZodType<
+    GetIntegrationLogDrainsRequest,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    teamId: z.string().optional(),
+    slug: z.string().optional(),
+});
+
+/** @internal */
+export type GetIntegrationLogDrainsRequest$Outbound = {
+    teamId?: string | undefined;
+    slug?: string | undefined;
+};
+
+/** @internal */
+export const GetIntegrationLogDrainsRequest$outboundSchema: z.ZodType<
+    GetIntegrationLogDrainsRequest$Outbound,
+    z.ZodTypeDef,
+    GetIntegrationLogDrainsRequest
+> = z.object({
+    teamId: z.string().optional(),
+    slug: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetIntegrationLogDrainsRequest$ {
-    export const inboundSchema: z.ZodType<GetIntegrationLogDrainsRequest, z.ZodTypeDef, unknown> = z
-        .object({
-            teamId: z.string().optional(),
-            slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
-        });
-
-    export type Outbound = {
-        teamId?: string | undefined;
-        slug?: string | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetIntegrationLogDrainsRequest> =
-        z
-            .object({
-                teamId: z.string().optional(),
-                slug: z.string().optional(),
-            })
-            .transform((v) => {
-                return {
-                    ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                    ...(v.slug === undefined ? null : { slug: v.slug }),
-                };
-            });
+    /** @deprecated use `GetIntegrationLogDrainsRequest$inboundSchema` instead. */
+    export const inboundSchema = GetIntegrationLogDrainsRequest$inboundSchema;
+    /** @deprecated use `GetIntegrationLogDrainsRequest$outboundSchema` instead. */
+    export const outboundSchema = GetIntegrationLogDrainsRequest$outboundSchema;
+    /** @deprecated use `GetIntegrationLogDrainsRequest$Outbound` instead. */
+    export type Outbound = GetIntegrationLogDrainsRequest$Outbound;
 }
 
 /** @internal */
+export const GetIntegrationLogDrainsDeliveryFormat$inboundSchema: z.ZodNativeEnum<
+    typeof GetIntegrationLogDrainsDeliveryFormat
+> = z.nativeEnum(GetIntegrationLogDrainsDeliveryFormat);
+
+/** @internal */
+export const GetIntegrationLogDrainsDeliveryFormat$outboundSchema: z.ZodNativeEnum<
+    typeof GetIntegrationLogDrainsDeliveryFormat
+> = GetIntegrationLogDrainsDeliveryFormat$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetIntegrationLogDrainsDeliveryFormat$ {
-    export const inboundSchema = z.nativeEnum(GetIntegrationLogDrainsDeliveryFormat);
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `GetIntegrationLogDrainsDeliveryFormat$inboundSchema` instead. */
+    export const inboundSchema = GetIntegrationLogDrainsDeliveryFormat$inboundSchema;
+    /** @deprecated use `GetIntegrationLogDrainsDeliveryFormat$outboundSchema` instead. */
+    export const outboundSchema = GetIntegrationLogDrainsDeliveryFormat$outboundSchema;
 }
 
 /** @internal */
+export const GetIntegrationLogDrainsSources$inboundSchema: z.ZodNativeEnum<
+    typeof GetIntegrationLogDrainsSources
+> = z.nativeEnum(GetIntegrationLogDrainsSources);
+
+/** @internal */
+export const GetIntegrationLogDrainsSources$outboundSchema: z.ZodNativeEnum<
+    typeof GetIntegrationLogDrainsSources
+> = GetIntegrationLogDrainsSources$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetIntegrationLogDrainsSources$ {
-    export const inboundSchema = z.nativeEnum(GetIntegrationLogDrainsSources);
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `GetIntegrationLogDrainsSources$inboundSchema` instead. */
+    export const inboundSchema = GetIntegrationLogDrainsSources$inboundSchema;
+    /** @deprecated use `GetIntegrationLogDrainsSources$outboundSchema` instead. */
+    export const outboundSchema = GetIntegrationLogDrainsSources$outboundSchema;
 }
 
 /** @internal */
+export const CreatedFrom$inboundSchema: z.ZodNativeEnum<typeof CreatedFrom> =
+    z.nativeEnum(CreatedFrom);
+
+/** @internal */
+export const CreatedFrom$outboundSchema: z.ZodNativeEnum<typeof CreatedFrom> =
+    CreatedFrom$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreatedFrom$ {
-    export const inboundSchema = z.nativeEnum(CreatedFrom);
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `CreatedFrom$inboundSchema` instead. */
+    export const inboundSchema = CreatedFrom$inboundSchema;
+    /** @deprecated use `CreatedFrom$outboundSchema` instead. */
+    export const outboundSchema = CreatedFrom$outboundSchema;
 }
 
 /** @internal */
+export const GetIntegrationLogDrainsEnvironments$inboundSchema: z.ZodNativeEnum<
+    typeof GetIntegrationLogDrainsEnvironments
+> = z.nativeEnum(GetIntegrationLogDrainsEnvironments);
+
+/** @internal */
+export const GetIntegrationLogDrainsEnvironments$outboundSchema: z.ZodNativeEnum<
+    typeof GetIntegrationLogDrainsEnvironments
+> = GetIntegrationLogDrainsEnvironments$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetIntegrationLogDrainsEnvironments$ {
-    export const inboundSchema = z.nativeEnum(GetIntegrationLogDrainsEnvironments);
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `GetIntegrationLogDrainsEnvironments$inboundSchema` instead. */
+    export const inboundSchema = GetIntegrationLogDrainsEnvironments$inboundSchema;
+    /** @deprecated use `GetIntegrationLogDrainsEnvironments$outboundSchema` instead. */
+    export const outboundSchema = GetIntegrationLogDrainsEnvironments$outboundSchema;
 }
 
 /** @internal */
+export const GetIntegrationLogDrainsResponseBody$inboundSchema: z.ZodType<
+    GetIntegrationLogDrainsResponseBody,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    clientId: z.string().optional(),
+    configurationId: z.string().optional(),
+    createdAt: z.number(),
+    id: z.string(),
+    deliveryFormat: GetIntegrationLogDrainsDeliveryFormat$inboundSchema.optional(),
+    name: z.string(),
+    ownerId: z.string(),
+    projectId: z.nullable(z.string()).optional(),
+    projectIds: z.array(z.string()).optional(),
+    url: z.string(),
+    sources: z.array(GetIntegrationLogDrainsSources$inboundSchema).optional(),
+    createdFrom: CreatedFrom$inboundSchema.optional(),
+    headers: z.record(z.string()).optional(),
+    environments: z.array(GetIntegrationLogDrainsEnvironments$inboundSchema),
+    branch: z.string().optional(),
+    samplingRate: z.number().optional(),
+});
+
+/** @internal */
+export type GetIntegrationLogDrainsResponseBody$Outbound = {
+    clientId?: string | undefined;
+    configurationId?: string | undefined;
+    createdAt: number;
+    id: string;
+    deliveryFormat?: string | undefined;
+    name: string;
+    ownerId: string;
+    projectId?: string | null | undefined;
+    projectIds?: Array<string> | undefined;
+    url: string;
+    sources?: Array<string> | undefined;
+    createdFrom?: string | undefined;
+    headers?: { [k: string]: string } | undefined;
+    environments: Array<string>;
+    branch?: string | undefined;
+    samplingRate?: number | undefined;
+};
+
+/** @internal */
+export const GetIntegrationLogDrainsResponseBody$outboundSchema: z.ZodType<
+    GetIntegrationLogDrainsResponseBody$Outbound,
+    z.ZodTypeDef,
+    GetIntegrationLogDrainsResponseBody
+> = z.object({
+    clientId: z.string().optional(),
+    configurationId: z.string().optional(),
+    createdAt: z.number(),
+    id: z.string(),
+    deliveryFormat: GetIntegrationLogDrainsDeliveryFormat$outboundSchema.optional(),
+    name: z.string(),
+    ownerId: z.string(),
+    projectId: z.nullable(z.string()).optional(),
+    projectIds: z.array(z.string()).optional(),
+    url: z.string(),
+    sources: z.array(GetIntegrationLogDrainsSources$outboundSchema).optional(),
+    createdFrom: CreatedFrom$outboundSchema.optional(),
+    headers: z.record(z.string()).optional(),
+    environments: z.array(GetIntegrationLogDrainsEnvironments$outboundSchema),
+    branch: z.string().optional(),
+    samplingRate: z.number().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetIntegrationLogDrainsResponseBody$ {
-    export const inboundSchema: z.ZodType<
-        GetIntegrationLogDrainsResponseBody,
-        z.ZodTypeDef,
-        unknown
-    > = z
-        .object({
-            clientId: z.string().optional(),
-            configurationId: z.string().optional(),
-            createdAt: z.number(),
-            id: z.string(),
-            deliveryFormat: GetIntegrationLogDrainsDeliveryFormat$.inboundSchema.optional(),
-            name: z.string(),
-            ownerId: z.string(),
-            projectId: z.nullable(z.string()).optional(),
-            projectIds: z.array(z.string()).optional(),
-            url: z.string(),
-            sources: z.array(GetIntegrationLogDrainsSources$.inboundSchema).optional(),
-            createdFrom: CreatedFrom$.inboundSchema.optional(),
-            headers: z.record(z.string()).optional(),
-            environments: z.array(GetIntegrationLogDrainsEnvironments$.inboundSchema),
-            branch: z.string().optional(),
-            samplingRate: z.number().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.clientId === undefined ? null : { clientId: v.clientId }),
-                ...(v.configurationId === undefined
-                    ? null
-                    : { configurationId: v.configurationId }),
-                createdAt: v.createdAt,
-                id: v.id,
-                ...(v.deliveryFormat === undefined ? null : { deliveryFormat: v.deliveryFormat }),
-                name: v.name,
-                ownerId: v.ownerId,
-                ...(v.projectId === undefined ? null : { projectId: v.projectId }),
-                ...(v.projectIds === undefined ? null : { projectIds: v.projectIds }),
-                url: v.url,
-                ...(v.sources === undefined ? null : { sources: v.sources }),
-                ...(v.createdFrom === undefined ? null : { createdFrom: v.createdFrom }),
-                ...(v.headers === undefined ? null : { headers: v.headers }),
-                environments: v.environments,
-                ...(v.branch === undefined ? null : { branch: v.branch }),
-                ...(v.samplingRate === undefined ? null : { samplingRate: v.samplingRate }),
-            };
-        });
-
-    export type Outbound = {
-        clientId?: string | undefined;
-        configurationId?: string | undefined;
-        createdAt: number;
-        id: string;
-        deliveryFormat?: string | undefined;
-        name: string;
-        ownerId: string;
-        projectId?: string | null | undefined;
-        projectIds?: Array<string> | undefined;
-        url: string;
-        sources?: Array<string> | undefined;
-        createdFrom?: string | undefined;
-        headers?: Record<string, string> | undefined;
-        environments: Array<string>;
-        branch?: string | undefined;
-        samplingRate?: number | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<
-        Outbound,
-        z.ZodTypeDef,
-        GetIntegrationLogDrainsResponseBody
-    > = z
-        .object({
-            clientId: z.string().optional(),
-            configurationId: z.string().optional(),
-            createdAt: z.number(),
-            id: z.string(),
-            deliveryFormat: GetIntegrationLogDrainsDeliveryFormat$.outboundSchema.optional(),
-            name: z.string(),
-            ownerId: z.string(),
-            projectId: z.nullable(z.string()).optional(),
-            projectIds: z.array(z.string()).optional(),
-            url: z.string(),
-            sources: z.array(GetIntegrationLogDrainsSources$.outboundSchema).optional(),
-            createdFrom: CreatedFrom$.outboundSchema.optional(),
-            headers: z.record(z.string()).optional(),
-            environments: z.array(GetIntegrationLogDrainsEnvironments$.outboundSchema),
-            branch: z.string().optional(),
-            samplingRate: z.number().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.clientId === undefined ? null : { clientId: v.clientId }),
-                ...(v.configurationId === undefined
-                    ? null
-                    : { configurationId: v.configurationId }),
-                createdAt: v.createdAt,
-                id: v.id,
-                ...(v.deliveryFormat === undefined ? null : { deliveryFormat: v.deliveryFormat }),
-                name: v.name,
-                ownerId: v.ownerId,
-                ...(v.projectId === undefined ? null : { projectId: v.projectId }),
-                ...(v.projectIds === undefined ? null : { projectIds: v.projectIds }),
-                url: v.url,
-                ...(v.sources === undefined ? null : { sources: v.sources }),
-                ...(v.createdFrom === undefined ? null : { createdFrom: v.createdFrom }),
-                ...(v.headers === undefined ? null : { headers: v.headers }),
-                environments: v.environments,
-                ...(v.branch === undefined ? null : { branch: v.branch }),
-                ...(v.samplingRate === undefined ? null : { samplingRate: v.samplingRate }),
-            };
-        });
+    /** @deprecated use `GetIntegrationLogDrainsResponseBody$inboundSchema` instead. */
+    export const inboundSchema = GetIntegrationLogDrainsResponseBody$inboundSchema;
+    /** @deprecated use `GetIntegrationLogDrainsResponseBody$outboundSchema` instead. */
+    export const outboundSchema = GetIntegrationLogDrainsResponseBody$outboundSchema;
+    /** @deprecated use `GetIntegrationLogDrainsResponseBody$Outbound` instead. */
+    export type Outbound = GetIntegrationLogDrainsResponseBody$Outbound;
 }

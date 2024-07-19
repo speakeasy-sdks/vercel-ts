@@ -304,7 +304,7 @@ export type GetDeploymentResponseBody2 = {
     /**
      * An object containing the deployment's metadata
      */
-    meta: Record<string, string>;
+    meta: { [k: string]: string };
     /**
      * The public project information associated with the deployment.
      */
@@ -518,7 +518,7 @@ export type GetDeploymentMissing1 = {
 export type GetDeploymentRoutesMissing = GetDeploymentMissing1 | GetDeploymentMissing2;
 
 export type GetDeploymentRoutesLocale = {
-    redirect?: Record<string, string> | undefined;
+    redirect?: { [k: string]: string } | undefined;
     cookie?: string | undefined;
 };
 
@@ -528,7 +528,7 @@ export type GetDeploymentRoutesLocale = {
 export type GetDeploymentRoutes1 = {
     src: string;
     dest?: string | undefined;
-    headers?: Record<string, string> | undefined;
+    headers?: { [k: string]: string } | undefined;
     methods?: Array<string> | undefined;
     continue?: boolean | undefined;
     override?: boolean | undefined;
@@ -925,7 +925,7 @@ export type GetDeploymentResponseBody1 = {
     /**
      * An object used to configure your Serverless Functions
      */
-    functions?: Record<string, ResponseBodyFunctions> | null | undefined;
+    functions?: { [k: string]: ResponseBodyFunctions } | null | undefined;
     /**
      * Vercel URL to inspect the deployment.
      */
@@ -937,7 +937,7 @@ export type GetDeploymentResponseBody1 = {
     /**
      * An object containing the deployment's metadata
      */
-    meta: Record<string, string>;
+    meta: { [k: string]: string };
     /**
      * An monorepo manager that was used for the deployment
      */
@@ -1084,3542 +1084,4176 @@ export type GetDeploymentResponseBody1 = {
 export type GetDeploymentResponseBody = GetDeploymentResponseBody2 | GetDeploymentResponseBody1;
 
 /** @internal */
+export const GetDeploymentRequest$inboundSchema: z.ZodType<
+    GetDeploymentRequest,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    idOrUrl: z.string(),
+    withGitRepoInfo: z.string().optional(),
+    teamId: z.string().optional(),
+    slug: z.string().optional(),
+});
+
+/** @internal */
+export type GetDeploymentRequest$Outbound = {
+    idOrUrl: string;
+    withGitRepoInfo?: string | undefined;
+    teamId?: string | undefined;
+    slug?: string | undefined;
+};
+
+/** @internal */
+export const GetDeploymentRequest$outboundSchema: z.ZodType<
+    GetDeploymentRequest$Outbound,
+    z.ZodTypeDef,
+    GetDeploymentRequest
+> = z.object({
+    idOrUrl: z.string(),
+    withGitRepoInfo: z.string().optional(),
+    teamId: z.string().optional(),
+    slug: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetDeploymentRequest$ {
-    export const inboundSchema: z.ZodType<GetDeploymentRequest, z.ZodTypeDef, unknown> = z
-        .object({
-            idOrUrl: z.string(),
-            withGitRepoInfo: z.string().optional(),
-            teamId: z.string().optional(),
-            slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                idOrUrl: v.idOrUrl,
-                ...(v.withGitRepoInfo === undefined
-                    ? null
-                    : { withGitRepoInfo: v.withGitRepoInfo }),
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
-        });
-
-    export type Outbound = {
-        idOrUrl: string;
-        withGitRepoInfo?: string | undefined;
-        teamId?: string | undefined;
-        slug?: string | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetDeploymentRequest> = z
-        .object({
-            idOrUrl: z.string(),
-            withGitRepoInfo: z.string().optional(),
-            teamId: z.string().optional(),
-            slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                idOrUrl: v.idOrUrl,
-                ...(v.withGitRepoInfo === undefined
-                    ? null
-                    : { withGitRepoInfo: v.withGitRepoInfo }),
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
-        });
+    /** @deprecated use `GetDeploymentRequest$inboundSchema` instead. */
+    export const inboundSchema = GetDeploymentRequest$inboundSchema;
+    /** @deprecated use `GetDeploymentRequest$outboundSchema` instead. */
+    export const outboundSchema = GetDeploymentRequest$outboundSchema;
+    /** @deprecated use `GetDeploymentRequest$Outbound` instead. */
+    export type Outbound = GetDeploymentRequest$Outbound;
 }
 
 /** @internal */
+export const GetDeploymentResponseBodyDeploymentsReadyState$inboundSchema: z.ZodNativeEnum<
+    typeof GetDeploymentResponseBodyDeploymentsReadyState
+> = z.nativeEnum(GetDeploymentResponseBodyDeploymentsReadyState);
+
+/** @internal */
+export const GetDeploymentResponseBodyDeploymentsReadyState$outboundSchema: z.ZodNativeEnum<
+    typeof GetDeploymentResponseBodyDeploymentsReadyState
+> = GetDeploymentResponseBodyDeploymentsReadyState$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetDeploymentResponseBodyDeploymentsReadyState$ {
-    export const inboundSchema = z.nativeEnum(GetDeploymentResponseBodyDeploymentsReadyState);
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `GetDeploymentResponseBodyDeploymentsReadyState$inboundSchema` instead. */
+    export const inboundSchema = GetDeploymentResponseBodyDeploymentsReadyState$inboundSchema;
+    /** @deprecated use `GetDeploymentResponseBodyDeploymentsReadyState$outboundSchema` instead. */
+    export const outboundSchema = GetDeploymentResponseBodyDeploymentsReadyState$outboundSchema;
 }
 
 /** @internal */
+export const GetDeploymentResponseBodyOutput$inboundSchema: z.ZodType<
+    GetDeploymentResponseBodyOutput,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    path: z.string(),
+    functionName: z.string(),
+});
+
+/** @internal */
+export type GetDeploymentResponseBodyOutput$Outbound = {
+    path: string;
+    functionName: string;
+};
+
+/** @internal */
+export const GetDeploymentResponseBodyOutput$outboundSchema: z.ZodType<
+    GetDeploymentResponseBodyOutput$Outbound,
+    z.ZodTypeDef,
+    GetDeploymentResponseBodyOutput
+> = z.object({
+    path: z.string(),
+    functionName: z.string(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetDeploymentResponseBodyOutput$ {
-    export const inboundSchema: z.ZodType<GetDeploymentResponseBodyOutput, z.ZodTypeDef, unknown> =
-        z
-            .object({
-                path: z.string(),
-                functionName: z.string(),
-            })
-            .transform((v) => {
-                return {
-                    path: v.path,
-                    functionName: v.functionName,
-                };
-            });
-
-    export type Outbound = {
-        path: string;
-        functionName: string;
-    };
-
-    export const outboundSchema: z.ZodType<
-        Outbound,
-        z.ZodTypeDef,
-        GetDeploymentResponseBodyOutput
-    > = z
-        .object({
-            path: z.string(),
-            functionName: z.string(),
-        })
-        .transform((v) => {
-            return {
-                path: v.path,
-                functionName: v.functionName,
-            };
-        });
+    /** @deprecated use `GetDeploymentResponseBodyOutput$inboundSchema` instead. */
+    export const inboundSchema = GetDeploymentResponseBodyOutput$inboundSchema;
+    /** @deprecated use `GetDeploymentResponseBodyOutput$outboundSchema` instead. */
+    export const outboundSchema = GetDeploymentResponseBodyOutput$outboundSchema;
+    /** @deprecated use `GetDeploymentResponseBodyOutput$Outbound` instead. */
+    export type Outbound = GetDeploymentResponseBodyOutput$Outbound;
 }
 
 /** @internal */
+export const ResponseBodyLambdas$inboundSchema: z.ZodType<
+    ResponseBodyLambdas,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    id: z.string(),
+    createdAt: z.number().optional(),
+    entrypoint: z.nullable(z.string()).optional(),
+    readyState: GetDeploymentResponseBodyDeploymentsReadyState$inboundSchema.optional(),
+    readyStateAt: z.number().optional(),
+    output: z.array(z.lazy(() => GetDeploymentResponseBodyOutput$inboundSchema)),
+});
+
+/** @internal */
+export type ResponseBodyLambdas$Outbound = {
+    id: string;
+    createdAt?: number | undefined;
+    entrypoint?: string | null | undefined;
+    readyState?: string | undefined;
+    readyStateAt?: number | undefined;
+    output: Array<GetDeploymentResponseBodyOutput$Outbound>;
+};
+
+/** @internal */
+export const ResponseBodyLambdas$outboundSchema: z.ZodType<
+    ResponseBodyLambdas$Outbound,
+    z.ZodTypeDef,
+    ResponseBodyLambdas
+> = z.object({
+    id: z.string(),
+    createdAt: z.number().optional(),
+    entrypoint: z.nullable(z.string()).optional(),
+    readyState: GetDeploymentResponseBodyDeploymentsReadyState$outboundSchema.optional(),
+    readyStateAt: z.number().optional(),
+    output: z.array(z.lazy(() => GetDeploymentResponseBodyOutput$outboundSchema)),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace ResponseBodyLambdas$ {
-    export const inboundSchema: z.ZodType<ResponseBodyLambdas, z.ZodTypeDef, unknown> = z
-        .object({
-            id: z.string(),
-            createdAt: z.number().optional(),
-            entrypoint: z.nullable(z.string()).optional(),
-            readyState: GetDeploymentResponseBodyDeploymentsReadyState$.inboundSchema.optional(),
-            readyStateAt: z.number().optional(),
-            output: z.array(z.lazy(() => GetDeploymentResponseBodyOutput$.inboundSchema)),
-        })
-        .transform((v) => {
-            return {
-                id: v.id,
-                ...(v.createdAt === undefined ? null : { createdAt: v.createdAt }),
-                ...(v.entrypoint === undefined ? null : { entrypoint: v.entrypoint }),
-                ...(v.readyState === undefined ? null : { readyState: v.readyState }),
-                ...(v.readyStateAt === undefined ? null : { readyStateAt: v.readyStateAt }),
-                output: v.output,
-            };
-        });
-
-    export type Outbound = {
-        id: string;
-        createdAt?: number | undefined;
-        entrypoint?: string | null | undefined;
-        readyState?: string | undefined;
-        readyStateAt?: number | undefined;
-        output: Array<GetDeploymentResponseBodyOutput$.Outbound>;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, ResponseBodyLambdas> = z
-        .object({
-            id: z.string(),
-            createdAt: z.number().optional(),
-            entrypoint: z.nullable(z.string()).optional(),
-            readyState: GetDeploymentResponseBodyDeploymentsReadyState$.outboundSchema.optional(),
-            readyStateAt: z.number().optional(),
-            output: z.array(z.lazy(() => GetDeploymentResponseBodyOutput$.outboundSchema)),
-        })
-        .transform((v) => {
-            return {
-                id: v.id,
-                ...(v.createdAt === undefined ? null : { createdAt: v.createdAt }),
-                ...(v.entrypoint === undefined ? null : { entrypoint: v.entrypoint }),
-                ...(v.readyState === undefined ? null : { readyState: v.readyState }),
-                ...(v.readyStateAt === undefined ? null : { readyStateAt: v.readyStateAt }),
-                output: v.output,
-            };
-        });
+    /** @deprecated use `ResponseBodyLambdas$inboundSchema` instead. */
+    export const inboundSchema = ResponseBodyLambdas$inboundSchema;
+    /** @deprecated use `ResponseBodyLambdas$outboundSchema` instead. */
+    export const outboundSchema = ResponseBodyLambdas$outboundSchema;
+    /** @deprecated use `ResponseBodyLambdas$Outbound` instead. */
+    export type Outbound = ResponseBodyLambdas$Outbound;
 }
 
 /** @internal */
+export const ResponseBodyProject$inboundSchema: z.ZodType<
+    ResponseBodyProject,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    id: z.string(),
+    name: z.string(),
+    framework: z.nullable(z.string()).optional(),
+});
+
+/** @internal */
+export type ResponseBodyProject$Outbound = {
+    id: string;
+    name: string;
+    framework?: string | null | undefined;
+};
+
+/** @internal */
+export const ResponseBodyProject$outboundSchema: z.ZodType<
+    ResponseBodyProject$Outbound,
+    z.ZodTypeDef,
+    ResponseBodyProject
+> = z.object({
+    id: z.string(),
+    name: z.string(),
+    framework: z.nullable(z.string()).optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace ResponseBodyProject$ {
-    export const inboundSchema: z.ZodType<ResponseBodyProject, z.ZodTypeDef, unknown> = z
-        .object({
-            id: z.string(),
-            name: z.string(),
-            framework: z.nullable(z.string()).optional(),
-        })
-        .transform((v) => {
-            return {
-                id: v.id,
-                name: v.name,
-                ...(v.framework === undefined ? null : { framework: v.framework }),
-            };
-        });
-
-    export type Outbound = {
-        id: string;
-        name: string;
-        framework?: string | null | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, ResponseBodyProject> = z
-        .object({
-            id: z.string(),
-            name: z.string(),
-            framework: z.nullable(z.string()).optional(),
-        })
-        .transform((v) => {
-            return {
-                id: v.id,
-                name: v.name,
-                ...(v.framework === undefined ? null : { framework: v.framework }),
-            };
-        });
+    /** @deprecated use `ResponseBodyProject$inboundSchema` instead. */
+    export const inboundSchema = ResponseBodyProject$inboundSchema;
+    /** @deprecated use `ResponseBodyProject$outboundSchema` instead. */
+    export const outboundSchema = ResponseBodyProject$outboundSchema;
+    /** @deprecated use `ResponseBodyProject$Outbound` instead. */
+    export type Outbound = ResponseBodyProject$Outbound;
 }
 
 /** @internal */
+export const GetDeploymentResponseBodyReadyState$inboundSchema: z.ZodNativeEnum<
+    typeof GetDeploymentResponseBodyReadyState
+> = z.nativeEnum(GetDeploymentResponseBodyReadyState);
+
+/** @internal */
+export const GetDeploymentResponseBodyReadyState$outboundSchema: z.ZodNativeEnum<
+    typeof GetDeploymentResponseBodyReadyState
+> = GetDeploymentResponseBodyReadyState$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetDeploymentResponseBodyReadyState$ {
-    export const inboundSchema = z.nativeEnum(GetDeploymentResponseBodyReadyState);
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `GetDeploymentResponseBodyReadyState$inboundSchema` instead. */
+    export const inboundSchema = GetDeploymentResponseBodyReadyState$inboundSchema;
+    /** @deprecated use `GetDeploymentResponseBodyReadyState$outboundSchema` instead. */
+    export const outboundSchema = GetDeploymentResponseBodyReadyState$outboundSchema;
 }
 
 /** @internal */
+export const GetDeploymentResponseBodyReadySubstate$inboundSchema: z.ZodNativeEnum<
+    typeof GetDeploymentResponseBodyReadySubstate
+> = z.nativeEnum(GetDeploymentResponseBodyReadySubstate);
+
+/** @internal */
+export const GetDeploymentResponseBodyReadySubstate$outboundSchema: z.ZodNativeEnum<
+    typeof GetDeploymentResponseBodyReadySubstate
+> = GetDeploymentResponseBodyReadySubstate$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetDeploymentResponseBodyReadySubstate$ {
-    export const inboundSchema = z.nativeEnum(GetDeploymentResponseBodyReadySubstate);
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `GetDeploymentResponseBodyReadySubstate$inboundSchema` instead. */
+    export const inboundSchema = GetDeploymentResponseBodyReadySubstate$inboundSchema;
+    /** @deprecated use `GetDeploymentResponseBodyReadySubstate$outboundSchema` instead. */
+    export const outboundSchema = GetDeploymentResponseBodyReadySubstate$outboundSchema;
 }
 
 /** @internal */
+export const GetDeploymentResponseBodySource$inboundSchema: z.ZodNativeEnum<
+    typeof GetDeploymentResponseBodySource
+> = z.nativeEnum(GetDeploymentResponseBodySource);
+
+/** @internal */
+export const GetDeploymentResponseBodySource$outboundSchema: z.ZodNativeEnum<
+    typeof GetDeploymentResponseBodySource
+> = GetDeploymentResponseBodySource$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetDeploymentResponseBodySource$ {
-    export const inboundSchema = z.nativeEnum(GetDeploymentResponseBodySource);
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `GetDeploymentResponseBodySource$inboundSchema` instead. */
+    export const inboundSchema = GetDeploymentResponseBodySource$inboundSchema;
+    /** @deprecated use `GetDeploymentResponseBodySource$outboundSchema` instead. */
+    export const outboundSchema = GetDeploymentResponseBodySource$outboundSchema;
 }
 
 /** @internal */
+export const GetDeploymentResponseBodyTarget$inboundSchema: z.ZodNativeEnum<
+    typeof GetDeploymentResponseBodyTarget
+> = z.nativeEnum(GetDeploymentResponseBodyTarget);
+
+/** @internal */
+export const GetDeploymentResponseBodyTarget$outboundSchema: z.ZodNativeEnum<
+    typeof GetDeploymentResponseBodyTarget
+> = GetDeploymentResponseBodyTarget$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetDeploymentResponseBodyTarget$ {
-    export const inboundSchema = z.nativeEnum(GetDeploymentResponseBodyTarget);
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `GetDeploymentResponseBodyTarget$inboundSchema` instead. */
+    export const inboundSchema = GetDeploymentResponseBodyTarget$inboundSchema;
+    /** @deprecated use `GetDeploymentResponseBodyTarget$outboundSchema` instead. */
+    export const outboundSchema = GetDeploymentResponseBodyTarget$outboundSchema;
 }
 
 /** @internal */
+export const ResponseBodyTeam$inboundSchema: z.ZodType<ResponseBodyTeam, z.ZodTypeDef, unknown> =
+    z.object({
+        id: z.string(),
+        name: z.string(),
+        slug: z.string(),
+        avatar: z.string().optional(),
+    });
+
+/** @internal */
+export type ResponseBodyTeam$Outbound = {
+    id: string;
+    name: string;
+    slug: string;
+    avatar?: string | undefined;
+};
+
+/** @internal */
+export const ResponseBodyTeam$outboundSchema: z.ZodType<
+    ResponseBodyTeam$Outbound,
+    z.ZodTypeDef,
+    ResponseBodyTeam
+> = z.object({
+    id: z.string(),
+    name: z.string(),
+    slug: z.string(),
+    avatar: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace ResponseBodyTeam$ {
-    export const inboundSchema: z.ZodType<ResponseBodyTeam, z.ZodTypeDef, unknown> = z
-        .object({
-            id: z.string(),
-            name: z.string(),
-            slug: z.string(),
-            avatar: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                id: v.id,
-                name: v.name,
-                slug: v.slug,
-                ...(v.avatar === undefined ? null : { avatar: v.avatar }),
-            };
-        });
-
-    export type Outbound = {
-        id: string;
-        name: string;
-        slug: string;
-        avatar?: string | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, ResponseBodyTeam> = z
-        .object({
-            id: z.string(),
-            name: z.string(),
-            slug: z.string(),
-            avatar: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                id: v.id,
-                name: v.name,
-                slug: v.slug,
-                ...(v.avatar === undefined ? null : { avatar: v.avatar }),
-            };
-        });
+    /** @deprecated use `ResponseBodyTeam$inboundSchema` instead. */
+    export const inboundSchema = ResponseBodyTeam$inboundSchema;
+    /** @deprecated use `ResponseBodyTeam$outboundSchema` instead. */
+    export const outboundSchema = ResponseBodyTeam$outboundSchema;
+    /** @deprecated use `ResponseBodyTeam$Outbound` instead. */
+    export type Outbound = ResponseBodyTeam$Outbound;
 }
 
 /** @internal */
+export const GetDeploymentResponseBodyDeploymentsType$inboundSchema: z.ZodNativeEnum<
+    typeof GetDeploymentResponseBodyDeploymentsType
+> = z.nativeEnum(GetDeploymentResponseBodyDeploymentsType);
+
+/** @internal */
+export const GetDeploymentResponseBodyDeploymentsType$outboundSchema: z.ZodNativeEnum<
+    typeof GetDeploymentResponseBodyDeploymentsType
+> = GetDeploymentResponseBodyDeploymentsType$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetDeploymentResponseBodyDeploymentsType$ {
-    export const inboundSchema = z.nativeEnum(GetDeploymentResponseBodyDeploymentsType);
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `GetDeploymentResponseBodyDeploymentsType$inboundSchema` instead. */
+    export const inboundSchema = GetDeploymentResponseBodyDeploymentsType$inboundSchema;
+    /** @deprecated use `GetDeploymentResponseBodyDeploymentsType$outboundSchema` instead. */
+    export const outboundSchema = GetDeploymentResponseBodyDeploymentsType$outboundSchema;
 }
 
 /** @internal */
+export const GetDeploymentResponseBodyAliasError$inboundSchema: z.ZodType<
+    GetDeploymentResponseBodyAliasError,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    code: z.string(),
+    message: z.string(),
+});
+
+/** @internal */
+export type GetDeploymentResponseBodyAliasError$Outbound = {
+    code: string;
+    message: string;
+};
+
+/** @internal */
+export const GetDeploymentResponseBodyAliasError$outboundSchema: z.ZodType<
+    GetDeploymentResponseBodyAliasError$Outbound,
+    z.ZodTypeDef,
+    GetDeploymentResponseBodyAliasError
+> = z.object({
+    code: z.string(),
+    message: z.string(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetDeploymentResponseBodyAliasError$ {
-    export const inboundSchema: z.ZodType<
-        GetDeploymentResponseBodyAliasError,
-        z.ZodTypeDef,
-        unknown
-    > = z
-        .object({
-            code: z.string(),
-            message: z.string(),
-        })
-        .transform((v) => {
-            return {
-                code: v.code,
-                message: v.message,
-            };
-        });
-
-    export type Outbound = {
-        code: string;
-        message: string;
-    };
-
-    export const outboundSchema: z.ZodType<
-        Outbound,
-        z.ZodTypeDef,
-        GetDeploymentResponseBodyAliasError
-    > = z
-        .object({
-            code: z.string(),
-            message: z.string(),
-        })
-        .transform((v) => {
-            return {
-                code: v.code,
-                message: v.message,
-            };
-        });
+    /** @deprecated use `GetDeploymentResponseBodyAliasError$inboundSchema` instead. */
+    export const inboundSchema = GetDeploymentResponseBodyAliasError$inboundSchema;
+    /** @deprecated use `GetDeploymentResponseBodyAliasError$outboundSchema` instead. */
+    export const outboundSchema = GetDeploymentResponseBodyAliasError$outboundSchema;
+    /** @deprecated use `GetDeploymentResponseBodyAliasError$Outbound` instead. */
+    export type Outbound = GetDeploymentResponseBodyAliasError$Outbound;
 }
 
 /** @internal */
+export const ResponseBodyAliasWarning$inboundSchema: z.ZodType<
+    ResponseBodyAliasWarning,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    code: z.string(),
+    message: z.string(),
+    link: z.string().optional(),
+    action: z.string().optional(),
+});
+
+/** @internal */
+export type ResponseBodyAliasWarning$Outbound = {
+    code: string;
+    message: string;
+    link?: string | undefined;
+    action?: string | undefined;
+};
+
+/** @internal */
+export const ResponseBodyAliasWarning$outboundSchema: z.ZodType<
+    ResponseBodyAliasWarning$Outbound,
+    z.ZodTypeDef,
+    ResponseBodyAliasWarning
+> = z.object({
+    code: z.string(),
+    message: z.string(),
+    link: z.string().optional(),
+    action: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace ResponseBodyAliasWarning$ {
-    export const inboundSchema: z.ZodType<ResponseBodyAliasWarning, z.ZodTypeDef, unknown> = z
-        .object({
-            code: z.string(),
-            message: z.string(),
-            link: z.string().optional(),
-            action: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                code: v.code,
-                message: v.message,
-                ...(v.link === undefined ? null : { link: v.link }),
-                ...(v.action === undefined ? null : { action: v.action }),
-            };
-        });
-
-    export type Outbound = {
-        code: string;
-        message: string;
-        link?: string | undefined;
-        action?: string | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, ResponseBodyAliasWarning> = z
-        .object({
-            code: z.string(),
-            message: z.string(),
-            link: z.string().optional(),
-            action: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                code: v.code,
-                message: v.message,
-                ...(v.link === undefined ? null : { link: v.link }),
-                ...(v.action === undefined ? null : { action: v.action }),
-            };
-        });
+    /** @deprecated use `ResponseBodyAliasWarning$inboundSchema` instead. */
+    export const inboundSchema = ResponseBodyAliasWarning$inboundSchema;
+    /** @deprecated use `ResponseBodyAliasWarning$outboundSchema` instead. */
+    export const outboundSchema = ResponseBodyAliasWarning$outboundSchema;
+    /** @deprecated use `ResponseBodyAliasWarning$Outbound` instead. */
+    export type Outbound = ResponseBodyAliasWarning$Outbound;
 }
 
 /** @internal */
+export const GetDeploymentResponseBodyChecksState$inboundSchema: z.ZodNativeEnum<
+    typeof GetDeploymentResponseBodyChecksState
+> = z.nativeEnum(GetDeploymentResponseBodyChecksState);
+
+/** @internal */
+export const GetDeploymentResponseBodyChecksState$outboundSchema: z.ZodNativeEnum<
+    typeof GetDeploymentResponseBodyChecksState
+> = GetDeploymentResponseBodyChecksState$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetDeploymentResponseBodyChecksState$ {
-    export const inboundSchema = z.nativeEnum(GetDeploymentResponseBodyChecksState);
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `GetDeploymentResponseBodyChecksState$inboundSchema` instead. */
+    export const inboundSchema = GetDeploymentResponseBodyChecksState$inboundSchema;
+    /** @deprecated use `GetDeploymentResponseBodyChecksState$outboundSchema` instead. */
+    export const outboundSchema = GetDeploymentResponseBodyChecksState$outboundSchema;
 }
 
 /** @internal */
+export const GetDeploymentResponseBodyChecksConclusion$inboundSchema: z.ZodNativeEnum<
+    typeof GetDeploymentResponseBodyChecksConclusion
+> = z.nativeEnum(GetDeploymentResponseBodyChecksConclusion);
+
+/** @internal */
+export const GetDeploymentResponseBodyChecksConclusion$outboundSchema: z.ZodNativeEnum<
+    typeof GetDeploymentResponseBodyChecksConclusion
+> = GetDeploymentResponseBodyChecksConclusion$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetDeploymentResponseBodyChecksConclusion$ {
-    export const inboundSchema = z.nativeEnum(GetDeploymentResponseBodyChecksConclusion);
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `GetDeploymentResponseBodyChecksConclusion$inboundSchema` instead. */
+    export const inboundSchema = GetDeploymentResponseBodyChecksConclusion$inboundSchema;
+    /** @deprecated use `GetDeploymentResponseBodyChecksConclusion$outboundSchema` instead. */
+    export const outboundSchema = GetDeploymentResponseBodyChecksConclusion$outboundSchema;
 }
 
 /** @internal */
+export const GetDeploymentResponseBodyCreator$inboundSchema: z.ZodType<
+    GetDeploymentResponseBodyCreator,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    uid: z.string(),
+    username: z.string().optional(),
+    avatar: z.string().optional(),
+});
+
+/** @internal */
+export type GetDeploymentResponseBodyCreator$Outbound = {
+    uid: string;
+    username?: string | undefined;
+    avatar?: string | undefined;
+};
+
+/** @internal */
+export const GetDeploymentResponseBodyCreator$outboundSchema: z.ZodType<
+    GetDeploymentResponseBodyCreator$Outbound,
+    z.ZodTypeDef,
+    GetDeploymentResponseBodyCreator
+> = z.object({
+    uid: z.string(),
+    username: z.string().optional(),
+    avatar: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetDeploymentResponseBodyCreator$ {
-    export const inboundSchema: z.ZodType<GetDeploymentResponseBodyCreator, z.ZodTypeDef, unknown> =
-        z
-            .object({
-                uid: z.string(),
-                username: z.string().optional(),
-                avatar: z.string().optional(),
-            })
-            .transform((v) => {
-                return {
-                    uid: v.uid,
-                    ...(v.username === undefined ? null : { username: v.username }),
-                    ...(v.avatar === undefined ? null : { avatar: v.avatar }),
-                };
-            });
-
-    export type Outbound = {
-        uid: string;
-        username?: string | undefined;
-        avatar?: string | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<
-        Outbound,
-        z.ZodTypeDef,
-        GetDeploymentResponseBodyCreator
-    > = z
-        .object({
-            uid: z.string(),
-            username: z.string().optional(),
-            avatar: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                uid: v.uid,
-                ...(v.username === undefined ? null : { username: v.username }),
-                ...(v.avatar === undefined ? null : { avatar: v.avatar }),
-            };
-        });
+    /** @deprecated use `GetDeploymentResponseBodyCreator$inboundSchema` instead. */
+    export const inboundSchema = GetDeploymentResponseBodyCreator$inboundSchema;
+    /** @deprecated use `GetDeploymentResponseBodyCreator$outboundSchema` instead. */
+    export const outboundSchema = GetDeploymentResponseBodyCreator$outboundSchema;
+    /** @deprecated use `GetDeploymentResponseBodyCreator$Outbound` instead. */
+    export type Outbound = GetDeploymentResponseBodyCreator$Outbound;
 }
 
 /** @internal */
+export const GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody29Type$inboundSchema: z.ZodNativeEnum<
+    typeof GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody29Type
+> = z.nativeEnum(GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody29Type);
+
+/** @internal */
+export const GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody29Type$outboundSchema: z.ZodNativeEnum<
+    typeof GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody29Type
+> = GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody29Type$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody29Type$ {
-    export const inboundSchema = z.nativeEnum(
-        GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody29Type
-    );
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody29Type$inboundSchema` instead. */
+    export const inboundSchema =
+        GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody29Type$inboundSchema;
+    /** @deprecated use `GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody29Type$outboundSchema` instead. */
+    export const outboundSchema =
+        GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody29Type$outboundSchema;
 }
 
 /** @internal */
+export const GetDeploymentGitSource9$inboundSchema: z.ZodType<
+    GetDeploymentGitSource9,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    type: GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody29Type$inboundSchema,
+    ref: z.string(),
+    sha: z.string(),
+    owner: z.string().optional(),
+    slug: z.string().optional(),
+    workspaceUuid: z.string(),
+    repoUuid: z.string(),
+});
+
+/** @internal */
+export type GetDeploymentGitSource9$Outbound = {
+    type: string;
+    ref: string;
+    sha: string;
+    owner?: string | undefined;
+    slug?: string | undefined;
+    workspaceUuid: string;
+    repoUuid: string;
+};
+
+/** @internal */
+export const GetDeploymentGitSource9$outboundSchema: z.ZodType<
+    GetDeploymentGitSource9$Outbound,
+    z.ZodTypeDef,
+    GetDeploymentGitSource9
+> = z.object({
+    type: GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody29Type$outboundSchema,
+    ref: z.string(),
+    sha: z.string(),
+    owner: z.string().optional(),
+    slug: z.string().optional(),
+    workspaceUuid: z.string(),
+    repoUuid: z.string(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetDeploymentGitSource9$ {
-    export const inboundSchema: z.ZodType<GetDeploymentGitSource9, z.ZodTypeDef, unknown> = z
-        .object({
-            type: GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody29Type$.inboundSchema,
-            ref: z.string(),
-            sha: z.string(),
-            owner: z.string().optional(),
-            slug: z.string().optional(),
-            workspaceUuid: z.string(),
-            repoUuid: z.string(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                ref: v.ref,
-                sha: v.sha,
-                ...(v.owner === undefined ? null : { owner: v.owner }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-                workspaceUuid: v.workspaceUuid,
-                repoUuid: v.repoUuid,
-            };
-        });
-
-    export type Outbound = {
-        type: string;
-        ref: string;
-        sha: string;
-        owner?: string | undefined;
-        slug?: string | undefined;
-        workspaceUuid: string;
-        repoUuid: string;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetDeploymentGitSource9> = z
-        .object({
-            type: GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody29Type$.outboundSchema,
-            ref: z.string(),
-            sha: z.string(),
-            owner: z.string().optional(),
-            slug: z.string().optional(),
-            workspaceUuid: z.string(),
-            repoUuid: z.string(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                ref: v.ref,
-                sha: v.sha,
-                ...(v.owner === undefined ? null : { owner: v.owner }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-                workspaceUuid: v.workspaceUuid,
-                repoUuid: v.repoUuid,
-            };
-        });
+    /** @deprecated use `GetDeploymentGitSource9$inboundSchema` instead. */
+    export const inboundSchema = GetDeploymentGitSource9$inboundSchema;
+    /** @deprecated use `GetDeploymentGitSource9$outboundSchema` instead. */
+    export const outboundSchema = GetDeploymentGitSource9$outboundSchema;
+    /** @deprecated use `GetDeploymentGitSource9$Outbound` instead. */
+    export type Outbound = GetDeploymentGitSource9$Outbound;
 }
 
 /** @internal */
+export const GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody28Type$inboundSchema: z.ZodNativeEnum<
+    typeof GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody28Type
+> = z.nativeEnum(GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody28Type);
+
+/** @internal */
+export const GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody28Type$outboundSchema: z.ZodNativeEnum<
+    typeof GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody28Type
+> = GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody28Type$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody28Type$ {
-    export const inboundSchema = z.nativeEnum(
-        GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody28Type
-    );
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody28Type$inboundSchema` instead. */
+    export const inboundSchema =
+        GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody28Type$inboundSchema;
+    /** @deprecated use `GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody28Type$outboundSchema` instead. */
+    export const outboundSchema =
+        GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody28Type$outboundSchema;
 }
 
 /** @internal */
+export const GetDeploymentGitSource8$inboundSchema: z.ZodType<
+    GetDeploymentGitSource8,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    type: GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody28Type$inboundSchema,
+    ref: z.string(),
+    sha: z.string(),
+    projectId: z.number(),
+});
+
+/** @internal */
+export type GetDeploymentGitSource8$Outbound = {
+    type: string;
+    ref: string;
+    sha: string;
+    projectId: number;
+};
+
+/** @internal */
+export const GetDeploymentGitSource8$outboundSchema: z.ZodType<
+    GetDeploymentGitSource8$Outbound,
+    z.ZodTypeDef,
+    GetDeploymentGitSource8
+> = z.object({
+    type: GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody28Type$outboundSchema,
+    ref: z.string(),
+    sha: z.string(),
+    projectId: z.number(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetDeploymentGitSource8$ {
-    export const inboundSchema: z.ZodType<GetDeploymentGitSource8, z.ZodTypeDef, unknown> = z
-        .object({
-            type: GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody28Type$.inboundSchema,
-            ref: z.string(),
-            sha: z.string(),
-            projectId: z.number(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                ref: v.ref,
-                sha: v.sha,
-                projectId: v.projectId,
-            };
-        });
-
-    export type Outbound = {
-        type: string;
-        ref: string;
-        sha: string;
-        projectId: number;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetDeploymentGitSource8> = z
-        .object({
-            type: GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody28Type$.outboundSchema,
-            ref: z.string(),
-            sha: z.string(),
-            projectId: z.number(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                ref: v.ref,
-                sha: v.sha,
-                projectId: v.projectId,
-            };
-        });
+    /** @deprecated use `GetDeploymentGitSource8$inboundSchema` instead. */
+    export const inboundSchema = GetDeploymentGitSource8$inboundSchema;
+    /** @deprecated use `GetDeploymentGitSource8$outboundSchema` instead. */
+    export const outboundSchema = GetDeploymentGitSource8$outboundSchema;
+    /** @deprecated use `GetDeploymentGitSource8$Outbound` instead. */
+    export type Outbound = GetDeploymentGitSource8$Outbound;
 }
 
 /** @internal */
+export const GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody27Type$inboundSchema: z.ZodNativeEnum<
+    typeof GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody27Type
+> = z.nativeEnum(GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody27Type);
+
+/** @internal */
+export const GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody27Type$outboundSchema: z.ZodNativeEnum<
+    typeof GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody27Type
+> = GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody27Type$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody27Type$ {
-    export const inboundSchema = z.nativeEnum(
-        GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody27Type
-    );
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody27Type$inboundSchema` instead. */
+    export const inboundSchema =
+        GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody27Type$inboundSchema;
+    /** @deprecated use `GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody27Type$outboundSchema` instead. */
+    export const outboundSchema =
+        GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody27Type$outboundSchema;
 }
 
 /** @internal */
+export const GetDeploymentGitSource7$inboundSchema: z.ZodType<
+    GetDeploymentGitSource7,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    type: GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody27Type$inboundSchema,
+    ref: z.string(),
+    sha: z.string(),
+    repoId: z.number(),
+    org: z.string().optional(),
+    repo: z.string().optional(),
+});
+
+/** @internal */
+export type GetDeploymentGitSource7$Outbound = {
+    type: string;
+    ref: string;
+    sha: string;
+    repoId: number;
+    org?: string | undefined;
+    repo?: string | undefined;
+};
+
+/** @internal */
+export const GetDeploymentGitSource7$outboundSchema: z.ZodType<
+    GetDeploymentGitSource7$Outbound,
+    z.ZodTypeDef,
+    GetDeploymentGitSource7
+> = z.object({
+    type: GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody27Type$outboundSchema,
+    ref: z.string(),
+    sha: z.string(),
+    repoId: z.number(),
+    org: z.string().optional(),
+    repo: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetDeploymentGitSource7$ {
-    export const inboundSchema: z.ZodType<GetDeploymentGitSource7, z.ZodTypeDef, unknown> = z
-        .object({
-            type: GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody27Type$.inboundSchema,
-            ref: z.string(),
-            sha: z.string(),
-            repoId: z.number(),
-            org: z.string().optional(),
-            repo: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                ref: v.ref,
-                sha: v.sha,
-                repoId: v.repoId,
-                ...(v.org === undefined ? null : { org: v.org }),
-                ...(v.repo === undefined ? null : { repo: v.repo }),
-            };
-        });
-
-    export type Outbound = {
-        type: string;
-        ref: string;
-        sha: string;
-        repoId: number;
-        org?: string | undefined;
-        repo?: string | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetDeploymentGitSource7> = z
-        .object({
-            type: GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody27Type$.outboundSchema,
-            ref: z.string(),
-            sha: z.string(),
-            repoId: z.number(),
-            org: z.string().optional(),
-            repo: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                ref: v.ref,
-                sha: v.sha,
-                repoId: v.repoId,
-                ...(v.org === undefined ? null : { org: v.org }),
-                ...(v.repo === undefined ? null : { repo: v.repo }),
-            };
-        });
+    /** @deprecated use `GetDeploymentGitSource7$inboundSchema` instead. */
+    export const inboundSchema = GetDeploymentGitSource7$inboundSchema;
+    /** @deprecated use `GetDeploymentGitSource7$outboundSchema` instead. */
+    export const outboundSchema = GetDeploymentGitSource7$outboundSchema;
+    /** @deprecated use `GetDeploymentGitSource7$Outbound` instead. */
+    export type Outbound = GetDeploymentGitSource7$Outbound;
 }
 
 /** @internal */
+export const GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody26Type$inboundSchema: z.ZodNativeEnum<
+    typeof GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody26Type
+> = z.nativeEnum(GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody26Type);
+
+/** @internal */
+export const GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody26Type$outboundSchema: z.ZodNativeEnum<
+    typeof GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody26Type
+> = GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody26Type$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody26Type$ {
-    export const inboundSchema = z.nativeEnum(
-        GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody26Type
-    );
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody26Type$inboundSchema` instead. */
+    export const inboundSchema =
+        GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody26Type$inboundSchema;
+    /** @deprecated use `GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody26Type$outboundSchema` instead. */
+    export const outboundSchema =
+        GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody26Type$outboundSchema;
 }
 
 /** @internal */
+export const GetDeploymentGitSource6$inboundSchema: z.ZodType<
+    GetDeploymentGitSource6,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    type: GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody26Type$inboundSchema,
+    ref: z.string(),
+    sha: z.string(),
+    gitUrl: z.string(),
+});
+
+/** @internal */
+export type GetDeploymentGitSource6$Outbound = {
+    type: string;
+    ref: string;
+    sha: string;
+    gitUrl: string;
+};
+
+/** @internal */
+export const GetDeploymentGitSource6$outboundSchema: z.ZodType<
+    GetDeploymentGitSource6$Outbound,
+    z.ZodTypeDef,
+    GetDeploymentGitSource6
+> = z.object({
+    type: GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody26Type$outboundSchema,
+    ref: z.string(),
+    sha: z.string(),
+    gitUrl: z.string(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetDeploymentGitSource6$ {
-    export const inboundSchema: z.ZodType<GetDeploymentGitSource6, z.ZodTypeDef, unknown> = z
-        .object({
-            type: GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody26Type$.inboundSchema,
-            ref: z.string(),
-            sha: z.string(),
-            gitUrl: z.string(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                ref: v.ref,
-                sha: v.sha,
-                gitUrl: v.gitUrl,
-            };
-        });
-
-    export type Outbound = {
-        type: string;
-        ref: string;
-        sha: string;
-        gitUrl: string;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetDeploymentGitSource6> = z
-        .object({
-            type: GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody26Type$.outboundSchema,
-            ref: z.string(),
-            sha: z.string(),
-            gitUrl: z.string(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                ref: v.ref,
-                sha: v.sha,
-                gitUrl: v.gitUrl,
-            };
-        });
+    /** @deprecated use `GetDeploymentGitSource6$inboundSchema` instead. */
+    export const inboundSchema = GetDeploymentGitSource6$inboundSchema;
+    /** @deprecated use `GetDeploymentGitSource6$outboundSchema` instead. */
+    export const outboundSchema = GetDeploymentGitSource6$outboundSchema;
+    /** @deprecated use `GetDeploymentGitSource6$Outbound` instead. */
+    export type Outbound = GetDeploymentGitSource6$Outbound;
 }
 
 /** @internal */
+export const GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody25Type$inboundSchema: z.ZodNativeEnum<
+    typeof GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody25Type
+> = z.nativeEnum(GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody25Type);
+
+/** @internal */
+export const GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody25Type$outboundSchema: z.ZodNativeEnum<
+    typeof GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody25Type
+> = GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody25Type$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody25Type$ {
-    export const inboundSchema = z.nativeEnum(
-        GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody25Type
-    );
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody25Type$inboundSchema` instead. */
+    export const inboundSchema =
+        GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody25Type$inboundSchema;
+    /** @deprecated use `GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody25Type$outboundSchema` instead. */
+    export const outboundSchema =
+        GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody25Type$outboundSchema;
 }
 
 /** @internal */
+export const GetDeploymentGitSource5$inboundSchema: z.ZodType<
+    GetDeploymentGitSource5,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    type: GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody25Type$inboundSchema,
+    owner: z.string(),
+    slug: z.string(),
+    ref: z.nullable(z.string()).optional(),
+    sha: z.string().optional(),
+    prId: z.nullable(z.number()).optional(),
+});
+
+/** @internal */
+export type GetDeploymentGitSource5$Outbound = {
+    type: string;
+    owner: string;
+    slug: string;
+    ref?: string | null | undefined;
+    sha?: string | undefined;
+    prId?: number | null | undefined;
+};
+
+/** @internal */
+export const GetDeploymentGitSource5$outboundSchema: z.ZodType<
+    GetDeploymentGitSource5$Outbound,
+    z.ZodTypeDef,
+    GetDeploymentGitSource5
+> = z.object({
+    type: GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody25Type$outboundSchema,
+    owner: z.string(),
+    slug: z.string(),
+    ref: z.nullable(z.string()).optional(),
+    sha: z.string().optional(),
+    prId: z.nullable(z.number()).optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetDeploymentGitSource5$ {
-    export const inboundSchema: z.ZodType<GetDeploymentGitSource5, z.ZodTypeDef, unknown> = z
-        .object({
-            type: GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody25Type$.inboundSchema,
-            owner: z.string(),
-            slug: z.string(),
-            ref: z.nullable(z.string()).optional(),
-            sha: z.string().optional(),
-            prId: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                owner: v.owner,
-                slug: v.slug,
-                ...(v.ref === undefined ? null : { ref: v.ref }),
-                ...(v.sha === undefined ? null : { sha: v.sha }),
-                ...(v.prId === undefined ? null : { prId: v.prId }),
-            };
-        });
-
-    export type Outbound = {
-        type: string;
-        owner: string;
-        slug: string;
-        ref?: string | null | undefined;
-        sha?: string | undefined;
-        prId?: number | null | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetDeploymentGitSource5> = z
-        .object({
-            type: GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody25Type$.outboundSchema,
-            owner: z.string(),
-            slug: z.string(),
-            ref: z.nullable(z.string()).optional(),
-            sha: z.string().optional(),
-            prId: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                owner: v.owner,
-                slug: v.slug,
-                ...(v.ref === undefined ? null : { ref: v.ref }),
-                ...(v.sha === undefined ? null : { sha: v.sha }),
-                ...(v.prId === undefined ? null : { prId: v.prId }),
-            };
-        });
+    /** @deprecated use `GetDeploymentGitSource5$inboundSchema` instead. */
+    export const inboundSchema = GetDeploymentGitSource5$inboundSchema;
+    /** @deprecated use `GetDeploymentGitSource5$outboundSchema` instead. */
+    export const outboundSchema = GetDeploymentGitSource5$outboundSchema;
+    /** @deprecated use `GetDeploymentGitSource5$Outbound` instead. */
+    export type Outbound = GetDeploymentGitSource5$Outbound;
 }
 
 /** @internal */
+export const GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody24Type$inboundSchema: z.ZodNativeEnum<
+    typeof GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody24Type
+> = z.nativeEnum(GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody24Type);
+
+/** @internal */
+export const GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody24Type$outboundSchema: z.ZodNativeEnum<
+    typeof GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody24Type
+> = GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody24Type$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody24Type$ {
-    export const inboundSchema = z.nativeEnum(
-        GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody24Type
-    );
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody24Type$inboundSchema` instead. */
+    export const inboundSchema =
+        GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody24Type$inboundSchema;
+    /** @deprecated use `GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody24Type$outboundSchema` instead. */
+    export const outboundSchema =
+        GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody24Type$outboundSchema;
 }
 
 /** @internal */
+export const GetDeploymentGitSource4$inboundSchema: z.ZodType<
+    GetDeploymentGitSource4,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    type: GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody24Type$inboundSchema,
+    workspaceUuid: z.string().optional(),
+    repoUuid: z.string(),
+    ref: z.nullable(z.string()).optional(),
+    sha: z.string().optional(),
+    prId: z.nullable(z.number()).optional(),
+});
+
+/** @internal */
+export type GetDeploymentGitSource4$Outbound = {
+    type: string;
+    workspaceUuid?: string | undefined;
+    repoUuid: string;
+    ref?: string | null | undefined;
+    sha?: string | undefined;
+    prId?: number | null | undefined;
+};
+
+/** @internal */
+export const GetDeploymentGitSource4$outboundSchema: z.ZodType<
+    GetDeploymentGitSource4$Outbound,
+    z.ZodTypeDef,
+    GetDeploymentGitSource4
+> = z.object({
+    type: GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody24Type$outboundSchema,
+    workspaceUuid: z.string().optional(),
+    repoUuid: z.string(),
+    ref: z.nullable(z.string()).optional(),
+    sha: z.string().optional(),
+    prId: z.nullable(z.number()).optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetDeploymentGitSource4$ {
-    export const inboundSchema: z.ZodType<GetDeploymentGitSource4, z.ZodTypeDef, unknown> = z
-        .object({
-            type: GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody24Type$.inboundSchema,
-            workspaceUuid: z.string().optional(),
-            repoUuid: z.string(),
-            ref: z.nullable(z.string()).optional(),
-            sha: z.string().optional(),
-            prId: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                ...(v.workspaceUuid === undefined ? null : { workspaceUuid: v.workspaceUuid }),
-                repoUuid: v.repoUuid,
-                ...(v.ref === undefined ? null : { ref: v.ref }),
-                ...(v.sha === undefined ? null : { sha: v.sha }),
-                ...(v.prId === undefined ? null : { prId: v.prId }),
-            };
-        });
-
-    export type Outbound = {
-        type: string;
-        workspaceUuid?: string | undefined;
-        repoUuid: string;
-        ref?: string | null | undefined;
-        sha?: string | undefined;
-        prId?: number | null | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetDeploymentGitSource4> = z
-        .object({
-            type: GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody24Type$.outboundSchema,
-            workspaceUuid: z.string().optional(),
-            repoUuid: z.string(),
-            ref: z.nullable(z.string()).optional(),
-            sha: z.string().optional(),
-            prId: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                ...(v.workspaceUuid === undefined ? null : { workspaceUuid: v.workspaceUuid }),
-                repoUuid: v.repoUuid,
-                ...(v.ref === undefined ? null : { ref: v.ref }),
-                ...(v.sha === undefined ? null : { sha: v.sha }),
-                ...(v.prId === undefined ? null : { prId: v.prId }),
-            };
-        });
+    /** @deprecated use `GetDeploymentGitSource4$inboundSchema` instead. */
+    export const inboundSchema = GetDeploymentGitSource4$inboundSchema;
+    /** @deprecated use `GetDeploymentGitSource4$outboundSchema` instead. */
+    export const outboundSchema = GetDeploymentGitSource4$outboundSchema;
+    /** @deprecated use `GetDeploymentGitSource4$Outbound` instead. */
+    export type Outbound = GetDeploymentGitSource4$Outbound;
 }
 
 /** @internal */
+export const GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody23Type$inboundSchema: z.ZodNativeEnum<
+    typeof GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody23Type
+> = z.nativeEnum(GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody23Type);
+
+/** @internal */
+export const GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody23Type$outboundSchema: z.ZodNativeEnum<
+    typeof GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody23Type
+> = GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody23Type$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody23Type$ {
-    export const inboundSchema = z.nativeEnum(
-        GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody23Type
-    );
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody23Type$inboundSchema` instead. */
+    export const inboundSchema =
+        GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody23Type$inboundSchema;
+    /** @deprecated use `GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody23Type$outboundSchema` instead. */
+    export const outboundSchema =
+        GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody23Type$outboundSchema;
 }
 
 /** @internal */
+export const GetDeploymentGitSourceDeploymentsProjectId$inboundSchema: z.ZodType<
+    GetDeploymentGitSourceDeploymentsProjectId,
+    z.ZodTypeDef,
+    unknown
+> = z.union([z.string(), z.number()]);
+
+/** @internal */
+export type GetDeploymentGitSourceDeploymentsProjectId$Outbound = string | number;
+
+/** @internal */
+export const GetDeploymentGitSourceDeploymentsProjectId$outboundSchema: z.ZodType<
+    GetDeploymentGitSourceDeploymentsProjectId$Outbound,
+    z.ZodTypeDef,
+    GetDeploymentGitSourceDeploymentsProjectId
+> = z.union([z.string(), z.number()]);
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetDeploymentGitSourceDeploymentsProjectId$ {
-    export const inboundSchema: z.ZodType<
-        GetDeploymentGitSourceDeploymentsProjectId,
-        z.ZodTypeDef,
-        unknown
-    > = z.union([z.string(), z.number()]);
-
-    export type Outbound = string | number;
-    export const outboundSchema: z.ZodType<
-        Outbound,
-        z.ZodTypeDef,
-        GetDeploymentGitSourceDeploymentsProjectId
-    > = z.union([z.string(), z.number()]);
+    /** @deprecated use `GetDeploymentGitSourceDeploymentsProjectId$inboundSchema` instead. */
+    export const inboundSchema = GetDeploymentGitSourceDeploymentsProjectId$inboundSchema;
+    /** @deprecated use `GetDeploymentGitSourceDeploymentsProjectId$outboundSchema` instead. */
+    export const outboundSchema = GetDeploymentGitSourceDeploymentsProjectId$outboundSchema;
+    /** @deprecated use `GetDeploymentGitSourceDeploymentsProjectId$Outbound` instead. */
+    export type Outbound = GetDeploymentGitSourceDeploymentsProjectId$Outbound;
 }
 
 /** @internal */
+export const GetDeploymentGitSource3$inboundSchema: z.ZodType<
+    GetDeploymentGitSource3,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    type: GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody23Type$inboundSchema,
+    projectId: z.union([z.string(), z.number()]),
+    ref: z.nullable(z.string()).optional(),
+    sha: z.string().optional(),
+    prId: z.nullable(z.number()).optional(),
+});
+
+/** @internal */
+export type GetDeploymentGitSource3$Outbound = {
+    type: string;
+    projectId: string | number;
+    ref?: string | null | undefined;
+    sha?: string | undefined;
+    prId?: number | null | undefined;
+};
+
+/** @internal */
+export const GetDeploymentGitSource3$outboundSchema: z.ZodType<
+    GetDeploymentGitSource3$Outbound,
+    z.ZodTypeDef,
+    GetDeploymentGitSource3
+> = z.object({
+    type: GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody23Type$outboundSchema,
+    projectId: z.union([z.string(), z.number()]),
+    ref: z.nullable(z.string()).optional(),
+    sha: z.string().optional(),
+    prId: z.nullable(z.number()).optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetDeploymentGitSource3$ {
-    export const inboundSchema: z.ZodType<GetDeploymentGitSource3, z.ZodTypeDef, unknown> = z
-        .object({
-            type: GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody23Type$.inboundSchema,
-            projectId: z.union([z.string(), z.number()]),
-            ref: z.nullable(z.string()).optional(),
-            sha: z.string().optional(),
-            prId: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                projectId: v.projectId,
-                ...(v.ref === undefined ? null : { ref: v.ref }),
-                ...(v.sha === undefined ? null : { sha: v.sha }),
-                ...(v.prId === undefined ? null : { prId: v.prId }),
-            };
-        });
-
-    export type Outbound = {
-        type: string;
-        projectId: string | number;
-        ref?: string | null | undefined;
-        sha?: string | undefined;
-        prId?: number | null | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetDeploymentGitSource3> = z
-        .object({
-            type: GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody23Type$.outboundSchema,
-            projectId: z.union([z.string(), z.number()]),
-            ref: z.nullable(z.string()).optional(),
-            sha: z.string().optional(),
-            prId: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                projectId: v.projectId,
-                ...(v.ref === undefined ? null : { ref: v.ref }),
-                ...(v.sha === undefined ? null : { sha: v.sha }),
-                ...(v.prId === undefined ? null : { prId: v.prId }),
-            };
-        });
+    /** @deprecated use `GetDeploymentGitSource3$inboundSchema` instead. */
+    export const inboundSchema = GetDeploymentGitSource3$inboundSchema;
+    /** @deprecated use `GetDeploymentGitSource3$outboundSchema` instead. */
+    export const outboundSchema = GetDeploymentGitSource3$outboundSchema;
+    /** @deprecated use `GetDeploymentGitSource3$Outbound` instead. */
+    export type Outbound = GetDeploymentGitSource3$Outbound;
 }
 
 /** @internal */
+export const GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody22Type$inboundSchema: z.ZodNativeEnum<
+    typeof GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody22Type
+> = z.nativeEnum(GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody22Type);
+
+/** @internal */
+export const GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody22Type$outboundSchema: z.ZodNativeEnum<
+    typeof GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody22Type
+> = GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody22Type$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody22Type$ {
-    export const inboundSchema = z.nativeEnum(
-        GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody22Type
-    );
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody22Type$inboundSchema` instead. */
+    export const inboundSchema =
+        GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody22Type$inboundSchema;
+    /** @deprecated use `GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody22Type$outboundSchema` instead. */
+    export const outboundSchema =
+        GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody22Type$outboundSchema;
 }
 
 /** @internal */
+export const GetDeploymentGitSource2$inboundSchema: z.ZodType<
+    GetDeploymentGitSource2,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    type: GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody22Type$inboundSchema,
+    org: z.string(),
+    repo: z.string(),
+    ref: z.nullable(z.string()).optional(),
+    sha: z.string().optional(),
+    prId: z.nullable(z.number()).optional(),
+});
+
+/** @internal */
+export type GetDeploymentGitSource2$Outbound = {
+    type: string;
+    org: string;
+    repo: string;
+    ref?: string | null | undefined;
+    sha?: string | undefined;
+    prId?: number | null | undefined;
+};
+
+/** @internal */
+export const GetDeploymentGitSource2$outboundSchema: z.ZodType<
+    GetDeploymentGitSource2$Outbound,
+    z.ZodTypeDef,
+    GetDeploymentGitSource2
+> = z.object({
+    type: GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody22Type$outboundSchema,
+    org: z.string(),
+    repo: z.string(),
+    ref: z.nullable(z.string()).optional(),
+    sha: z.string().optional(),
+    prId: z.nullable(z.number()).optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetDeploymentGitSource2$ {
-    export const inboundSchema: z.ZodType<GetDeploymentGitSource2, z.ZodTypeDef, unknown> = z
-        .object({
-            type: GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody22Type$.inboundSchema,
-            org: z.string(),
-            repo: z.string(),
-            ref: z.nullable(z.string()).optional(),
-            sha: z.string().optional(),
-            prId: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                org: v.org,
-                repo: v.repo,
-                ...(v.ref === undefined ? null : { ref: v.ref }),
-                ...(v.sha === undefined ? null : { sha: v.sha }),
-                ...(v.prId === undefined ? null : { prId: v.prId }),
-            };
-        });
-
-    export type Outbound = {
-        type: string;
-        org: string;
-        repo: string;
-        ref?: string | null | undefined;
-        sha?: string | undefined;
-        prId?: number | null | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetDeploymentGitSource2> = z
-        .object({
-            type: GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody22Type$.outboundSchema,
-            org: z.string(),
-            repo: z.string(),
-            ref: z.nullable(z.string()).optional(),
-            sha: z.string().optional(),
-            prId: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                org: v.org,
-                repo: v.repo,
-                ...(v.ref === undefined ? null : { ref: v.ref }),
-                ...(v.sha === undefined ? null : { sha: v.sha }),
-                ...(v.prId === undefined ? null : { prId: v.prId }),
-            };
-        });
+    /** @deprecated use `GetDeploymentGitSource2$inboundSchema` instead. */
+    export const inboundSchema = GetDeploymentGitSource2$inboundSchema;
+    /** @deprecated use `GetDeploymentGitSource2$outboundSchema` instead. */
+    export const outboundSchema = GetDeploymentGitSource2$outboundSchema;
+    /** @deprecated use `GetDeploymentGitSource2$Outbound` instead. */
+    export type Outbound = GetDeploymentGitSource2$Outbound;
 }
 
 /** @internal */
+export const GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody2Type$inboundSchema: z.ZodNativeEnum<
+    typeof GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody2Type
+> = z.nativeEnum(GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody2Type);
+
+/** @internal */
+export const GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody2Type$outboundSchema: z.ZodNativeEnum<
+    typeof GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody2Type
+> = GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody2Type$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody2Type$ {
-    export const inboundSchema = z.nativeEnum(
-        GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody2Type
-    );
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody2Type$inboundSchema` instead. */
+    export const inboundSchema =
+        GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody2Type$inboundSchema;
+    /** @deprecated use `GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody2Type$outboundSchema` instead. */
+    export const outboundSchema =
+        GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody2Type$outboundSchema;
 }
 
 /** @internal */
+export const GetDeploymentGitSourceDeploymentsRepoId$inboundSchema: z.ZodType<
+    GetDeploymentGitSourceDeploymentsRepoId,
+    z.ZodTypeDef,
+    unknown
+> = z.union([z.string(), z.number()]);
+
+/** @internal */
+export type GetDeploymentGitSourceDeploymentsRepoId$Outbound = string | number;
+
+/** @internal */
+export const GetDeploymentGitSourceDeploymentsRepoId$outboundSchema: z.ZodType<
+    GetDeploymentGitSourceDeploymentsRepoId$Outbound,
+    z.ZodTypeDef,
+    GetDeploymentGitSourceDeploymentsRepoId
+> = z.union([z.string(), z.number()]);
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetDeploymentGitSourceDeploymentsRepoId$ {
-    export const inboundSchema: z.ZodType<
-        GetDeploymentGitSourceDeploymentsRepoId,
-        z.ZodTypeDef,
-        unknown
-    > = z.union([z.string(), z.number()]);
-
-    export type Outbound = string | number;
-    export const outboundSchema: z.ZodType<
-        Outbound,
-        z.ZodTypeDef,
-        GetDeploymentGitSourceDeploymentsRepoId
-    > = z.union([z.string(), z.number()]);
+    /** @deprecated use `GetDeploymentGitSourceDeploymentsRepoId$inboundSchema` instead. */
+    export const inboundSchema = GetDeploymentGitSourceDeploymentsRepoId$inboundSchema;
+    /** @deprecated use `GetDeploymentGitSourceDeploymentsRepoId$outboundSchema` instead. */
+    export const outboundSchema = GetDeploymentGitSourceDeploymentsRepoId$outboundSchema;
+    /** @deprecated use `GetDeploymentGitSourceDeploymentsRepoId$Outbound` instead. */
+    export type Outbound = GetDeploymentGitSourceDeploymentsRepoId$Outbound;
 }
 
 /** @internal */
+export const GetDeploymentGitSource1$inboundSchema: z.ZodType<
+    GetDeploymentGitSource1,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    type: GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody2Type$inboundSchema,
+    repoId: z.union([z.string(), z.number()]),
+    ref: z.nullable(z.string()).optional(),
+    sha: z.string().optional(),
+    prId: z.nullable(z.number()).optional(),
+});
+
+/** @internal */
+export type GetDeploymentGitSource1$Outbound = {
+    type: string;
+    repoId: string | number;
+    ref?: string | null | undefined;
+    sha?: string | undefined;
+    prId?: number | null | undefined;
+};
+
+/** @internal */
+export const GetDeploymentGitSource1$outboundSchema: z.ZodType<
+    GetDeploymentGitSource1$Outbound,
+    z.ZodTypeDef,
+    GetDeploymentGitSource1
+> = z.object({
+    type: GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody2Type$outboundSchema,
+    repoId: z.union([z.string(), z.number()]),
+    ref: z.nullable(z.string()).optional(),
+    sha: z.string().optional(),
+    prId: z.nullable(z.number()).optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetDeploymentGitSource1$ {
-    export const inboundSchema: z.ZodType<GetDeploymentGitSource1, z.ZodTypeDef, unknown> = z
-        .object({
-            type: GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody2Type$.inboundSchema,
-            repoId: z.union([z.string(), z.number()]),
-            ref: z.nullable(z.string()).optional(),
-            sha: z.string().optional(),
-            prId: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                repoId: v.repoId,
-                ...(v.ref === undefined ? null : { ref: v.ref }),
-                ...(v.sha === undefined ? null : { sha: v.sha }),
-                ...(v.prId === undefined ? null : { prId: v.prId }),
-            };
-        });
-
-    export type Outbound = {
-        type: string;
-        repoId: string | number;
-        ref?: string | null | undefined;
-        sha?: string | undefined;
-        prId?: number | null | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetDeploymentGitSource1> = z
-        .object({
-            type: GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody2Type$.outboundSchema,
-            repoId: z.union([z.string(), z.number()]),
-            ref: z.nullable(z.string()).optional(),
-            sha: z.string().optional(),
-            prId: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                repoId: v.repoId,
-                ...(v.ref === undefined ? null : { ref: v.ref }),
-                ...(v.sha === undefined ? null : { sha: v.sha }),
-                ...(v.prId === undefined ? null : { prId: v.prId }),
-            };
-        });
+    /** @deprecated use `GetDeploymentGitSource1$inboundSchema` instead. */
+    export const inboundSchema = GetDeploymentGitSource1$inboundSchema;
+    /** @deprecated use `GetDeploymentGitSource1$outboundSchema` instead. */
+    export const outboundSchema = GetDeploymentGitSource1$outboundSchema;
+    /** @deprecated use `GetDeploymentGitSource1$Outbound` instead. */
+    export type Outbound = GetDeploymentGitSource1$Outbound;
 }
 
 /** @internal */
+export const ResponseBodyGitSource$inboundSchema: z.ZodType<
+    ResponseBodyGitSource,
+    z.ZodTypeDef,
+    unknown
+> = z.union([
+    z.lazy(() => GetDeploymentGitSource6$inboundSchema),
+    z.lazy(() => GetDeploymentGitSource8$inboundSchema),
+    z.lazy(() => GetDeploymentGitSource1$inboundSchema),
+    z.lazy(() => GetDeploymentGitSource3$inboundSchema),
+    z.lazy(() => GetDeploymentGitSource2$inboundSchema),
+    z.lazy(() => GetDeploymentGitSource4$inboundSchema),
+    z.lazy(() => GetDeploymentGitSource5$inboundSchema),
+    z.lazy(() => GetDeploymentGitSource7$inboundSchema),
+    z.lazy(() => GetDeploymentGitSource9$inboundSchema),
+]);
+
+/** @internal */
+export type ResponseBodyGitSource$Outbound =
+    | GetDeploymentGitSource6$Outbound
+    | GetDeploymentGitSource8$Outbound
+    | GetDeploymentGitSource1$Outbound
+    | GetDeploymentGitSource3$Outbound
+    | GetDeploymentGitSource2$Outbound
+    | GetDeploymentGitSource4$Outbound
+    | GetDeploymentGitSource5$Outbound
+    | GetDeploymentGitSource7$Outbound
+    | GetDeploymentGitSource9$Outbound;
+
+/** @internal */
+export const ResponseBodyGitSource$outboundSchema: z.ZodType<
+    ResponseBodyGitSource$Outbound,
+    z.ZodTypeDef,
+    ResponseBodyGitSource
+> = z.union([
+    z.lazy(() => GetDeploymentGitSource6$outboundSchema),
+    z.lazy(() => GetDeploymentGitSource8$outboundSchema),
+    z.lazy(() => GetDeploymentGitSource1$outboundSchema),
+    z.lazy(() => GetDeploymentGitSource3$outboundSchema),
+    z.lazy(() => GetDeploymentGitSource2$outboundSchema),
+    z.lazy(() => GetDeploymentGitSource4$outboundSchema),
+    z.lazy(() => GetDeploymentGitSource5$outboundSchema),
+    z.lazy(() => GetDeploymentGitSource7$outboundSchema),
+    z.lazy(() => GetDeploymentGitSource9$outboundSchema),
+]);
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace ResponseBodyGitSource$ {
-    export const inboundSchema: z.ZodType<ResponseBodyGitSource, z.ZodTypeDef, unknown> = z.union([
-        z.lazy(() => GetDeploymentGitSource6$.inboundSchema),
-        z.lazy(() => GetDeploymentGitSource8$.inboundSchema),
-        z.lazy(() => GetDeploymentGitSource1$.inboundSchema),
-        z.lazy(() => GetDeploymentGitSource3$.inboundSchema),
-        z.lazy(() => GetDeploymentGitSource2$.inboundSchema),
-        z.lazy(() => GetDeploymentGitSource4$.inboundSchema),
-        z.lazy(() => GetDeploymentGitSource5$.inboundSchema),
-        z.lazy(() => GetDeploymentGitSource7$.inboundSchema),
-        z.lazy(() => GetDeploymentGitSource9$.inboundSchema),
-    ]);
-
-    export type Outbound =
-        | GetDeploymentGitSource6$.Outbound
-        | GetDeploymentGitSource8$.Outbound
-        | GetDeploymentGitSource1$.Outbound
-        | GetDeploymentGitSource3$.Outbound
-        | GetDeploymentGitSource2$.Outbound
-        | GetDeploymentGitSource4$.Outbound
-        | GetDeploymentGitSource5$.Outbound
-        | GetDeploymentGitSource7$.Outbound
-        | GetDeploymentGitSource9$.Outbound;
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, ResponseBodyGitSource> = z.union(
-        [
-            z.lazy(() => GetDeploymentGitSource6$.outboundSchema),
-            z.lazy(() => GetDeploymentGitSource8$.outboundSchema),
-            z.lazy(() => GetDeploymentGitSource1$.outboundSchema),
-            z.lazy(() => GetDeploymentGitSource3$.outboundSchema),
-            z.lazy(() => GetDeploymentGitSource2$.outboundSchema),
-            z.lazy(() => GetDeploymentGitSource4$.outboundSchema),
-            z.lazy(() => GetDeploymentGitSource5$.outboundSchema),
-            z.lazy(() => GetDeploymentGitSource7$.outboundSchema),
-            z.lazy(() => GetDeploymentGitSource9$.outboundSchema),
-        ]
-    );
+    /** @deprecated use `ResponseBodyGitSource$inboundSchema` instead. */
+    export const inboundSchema = ResponseBodyGitSource$inboundSchema;
+    /** @deprecated use `ResponseBodyGitSource$outboundSchema` instead. */
+    export const outboundSchema = ResponseBodyGitSource$outboundSchema;
+    /** @deprecated use `ResponseBodyGitSource$Outbound` instead. */
+    export type Outbound = ResponseBodyGitSource$Outbound;
 }
 
 /** @internal */
+export const GetDeploymentResponseBody2$inboundSchema: z.ZodType<
+    GetDeploymentResponseBody2,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    lambdas: z.array(z.lazy(() => ResponseBodyLambdas$inboundSchema)).optional(),
+    name: z.string(),
+    meta: z.record(z.string()),
+    project: z.lazy(() => ResponseBodyProject$inboundSchema).optional(),
+    public: z.boolean(),
+    readyState: GetDeploymentResponseBodyReadyState$inboundSchema,
+    readySubstate: GetDeploymentResponseBodyReadySubstate$inboundSchema.optional(),
+    regions: z.array(z.string()),
+    source: GetDeploymentResponseBodySource$inboundSchema.optional(),
+    target: z.nullable(GetDeploymentResponseBodyTarget$inboundSchema).optional(),
+    team: z.lazy(() => ResponseBodyTeam$inboundSchema).optional(),
+    type: GetDeploymentResponseBodyDeploymentsType$inboundSchema,
+    url: z.string(),
+    userAliases: z.array(z.string()).optional(),
+    version: z.number(),
+    previewCommentsEnabled: z.boolean().optional(),
+    alias: z.array(z.string()),
+    aliasAssigned: z.boolean(),
+    aliasError: z
+        .nullable(z.lazy(() => GetDeploymentResponseBodyAliasError$inboundSchema))
+        .optional(),
+    aliasFinal: z.nullable(z.string()).optional(),
+    aliasWarning: z.nullable(z.lazy(() => ResponseBodyAliasWarning$inboundSchema)).optional(),
+    autoAssignCustomDomains: z.boolean().optional(),
+    automaticAliases: z.array(z.string()).optional(),
+    bootedAt: z.number(),
+    buildErrorAt: z.number().optional(),
+    buildingAt: z.number(),
+    canceledAt: z.number().optional(),
+    checksState: GetDeploymentResponseBodyChecksState$inboundSchema.optional(),
+    checksConclusion: GetDeploymentResponseBodyChecksConclusion$inboundSchema.optional(),
+    createdAt: z.number(),
+    creator: z.lazy(() => GetDeploymentResponseBodyCreator$inboundSchema),
+    errorCode: z.string().optional(),
+    errorLink: z.string().optional(),
+    errorMessage: z.nullable(z.string()).optional(),
+    errorStep: z.string().optional(),
+    passiveRegions: z.array(z.string()).optional(),
+    gitSource: z
+        .union([
+            z.lazy(() => GetDeploymentGitSource6$inboundSchema),
+            z.lazy(() => GetDeploymentGitSource8$inboundSchema),
+            z.lazy(() => GetDeploymentGitSource1$inboundSchema),
+            z.lazy(() => GetDeploymentGitSource3$inboundSchema),
+            z.lazy(() => GetDeploymentGitSource2$inboundSchema),
+            z.lazy(() => GetDeploymentGitSource4$inboundSchema),
+            z.lazy(() => GetDeploymentGitSource5$inboundSchema),
+            z.lazy(() => GetDeploymentGitSource7$inboundSchema),
+            z.lazy(() => GetDeploymentGitSource9$inboundSchema),
+        ])
+        .optional(),
+    id: z.string(),
+});
+
+/** @internal */
+export type GetDeploymentResponseBody2$Outbound = {
+    lambdas?: Array<ResponseBodyLambdas$Outbound> | undefined;
+    name: string;
+    meta: { [k: string]: string };
+    project?: ResponseBodyProject$Outbound | undefined;
+    public: boolean;
+    readyState: string;
+    readySubstate?: string | undefined;
+    regions: Array<string>;
+    source?: string | undefined;
+    target?: string | null | undefined;
+    team?: ResponseBodyTeam$Outbound | undefined;
+    type: string;
+    url: string;
+    userAliases?: Array<string> | undefined;
+    version: number;
+    previewCommentsEnabled?: boolean | undefined;
+    alias: Array<string>;
+    aliasAssigned: boolean;
+    aliasError?: GetDeploymentResponseBodyAliasError$Outbound | null | undefined;
+    aliasFinal?: string | null | undefined;
+    aliasWarning?: ResponseBodyAliasWarning$Outbound | null | undefined;
+    autoAssignCustomDomains?: boolean | undefined;
+    automaticAliases?: Array<string> | undefined;
+    bootedAt: number;
+    buildErrorAt?: number | undefined;
+    buildingAt: number;
+    canceledAt?: number | undefined;
+    checksState?: string | undefined;
+    checksConclusion?: string | undefined;
+    createdAt: number;
+    creator: GetDeploymentResponseBodyCreator$Outbound;
+    errorCode?: string | undefined;
+    errorLink?: string | undefined;
+    errorMessage?: string | null | undefined;
+    errorStep?: string | undefined;
+    passiveRegions?: Array<string> | undefined;
+    gitSource?:
+        | GetDeploymentGitSource6$Outbound
+        | GetDeploymentGitSource8$Outbound
+        | GetDeploymentGitSource1$Outbound
+        | GetDeploymentGitSource3$Outbound
+        | GetDeploymentGitSource2$Outbound
+        | GetDeploymentGitSource4$Outbound
+        | GetDeploymentGitSource5$Outbound
+        | GetDeploymentGitSource7$Outbound
+        | GetDeploymentGitSource9$Outbound
+        | undefined;
+    id: string;
+};
+
+/** @internal */
+export const GetDeploymentResponseBody2$outboundSchema: z.ZodType<
+    GetDeploymentResponseBody2$Outbound,
+    z.ZodTypeDef,
+    GetDeploymentResponseBody2
+> = z.object({
+    lambdas: z.array(z.lazy(() => ResponseBodyLambdas$outboundSchema)).optional(),
+    name: z.string(),
+    meta: z.record(z.string()),
+    project: z.lazy(() => ResponseBodyProject$outboundSchema).optional(),
+    public: z.boolean(),
+    readyState: GetDeploymentResponseBodyReadyState$outboundSchema,
+    readySubstate: GetDeploymentResponseBodyReadySubstate$outboundSchema.optional(),
+    regions: z.array(z.string()),
+    source: GetDeploymentResponseBodySource$outboundSchema.optional(),
+    target: z.nullable(GetDeploymentResponseBodyTarget$outboundSchema).optional(),
+    team: z.lazy(() => ResponseBodyTeam$outboundSchema).optional(),
+    type: GetDeploymentResponseBodyDeploymentsType$outboundSchema,
+    url: z.string(),
+    userAliases: z.array(z.string()).optional(),
+    version: z.number(),
+    previewCommentsEnabled: z.boolean().optional(),
+    alias: z.array(z.string()),
+    aliasAssigned: z.boolean(),
+    aliasError: z
+        .nullable(z.lazy(() => GetDeploymentResponseBodyAliasError$outboundSchema))
+        .optional(),
+    aliasFinal: z.nullable(z.string()).optional(),
+    aliasWarning: z.nullable(z.lazy(() => ResponseBodyAliasWarning$outboundSchema)).optional(),
+    autoAssignCustomDomains: z.boolean().optional(),
+    automaticAliases: z.array(z.string()).optional(),
+    bootedAt: z.number(),
+    buildErrorAt: z.number().optional(),
+    buildingAt: z.number(),
+    canceledAt: z.number().optional(),
+    checksState: GetDeploymentResponseBodyChecksState$outboundSchema.optional(),
+    checksConclusion: GetDeploymentResponseBodyChecksConclusion$outboundSchema.optional(),
+    createdAt: z.number(),
+    creator: z.lazy(() => GetDeploymentResponseBodyCreator$outboundSchema),
+    errorCode: z.string().optional(),
+    errorLink: z.string().optional(),
+    errorMessage: z.nullable(z.string()).optional(),
+    errorStep: z.string().optional(),
+    passiveRegions: z.array(z.string()).optional(),
+    gitSource: z
+        .union([
+            z.lazy(() => GetDeploymentGitSource6$outboundSchema),
+            z.lazy(() => GetDeploymentGitSource8$outboundSchema),
+            z.lazy(() => GetDeploymentGitSource1$outboundSchema),
+            z.lazy(() => GetDeploymentGitSource3$outboundSchema),
+            z.lazy(() => GetDeploymentGitSource2$outboundSchema),
+            z.lazy(() => GetDeploymentGitSource4$outboundSchema),
+            z.lazy(() => GetDeploymentGitSource5$outboundSchema),
+            z.lazy(() => GetDeploymentGitSource7$outboundSchema),
+            z.lazy(() => GetDeploymentGitSource9$outboundSchema),
+        ])
+        .optional(),
+    id: z.string(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetDeploymentResponseBody2$ {
-    export const inboundSchema: z.ZodType<GetDeploymentResponseBody2, z.ZodTypeDef, unknown> = z
-        .object({
-            lambdas: z.array(z.lazy(() => ResponseBodyLambdas$.inboundSchema)).optional(),
-            name: z.string(),
-            meta: z.record(z.string()),
-            project: z.lazy(() => ResponseBodyProject$.inboundSchema).optional(),
-            public: z.boolean(),
-            readyState: GetDeploymentResponseBodyReadyState$.inboundSchema,
-            readySubstate: GetDeploymentResponseBodyReadySubstate$.inboundSchema.optional(),
-            regions: z.array(z.string()),
-            source: GetDeploymentResponseBodySource$.inboundSchema.optional(),
-            target: z.nullable(GetDeploymentResponseBodyTarget$.inboundSchema).optional(),
-            team: z.lazy(() => ResponseBodyTeam$.inboundSchema).optional(),
-            type: GetDeploymentResponseBodyDeploymentsType$.inboundSchema,
-            url: z.string(),
-            userAliases: z.array(z.string()).optional(),
-            version: z.number(),
-            previewCommentsEnabled: z.boolean().optional(),
-            alias: z.array(z.string()),
-            aliasAssigned: z.boolean(),
-            aliasError: z
-                .nullable(z.lazy(() => GetDeploymentResponseBodyAliasError$.inboundSchema))
-                .optional(),
-            aliasFinal: z.nullable(z.string()).optional(),
-            aliasWarning: z
-                .nullable(z.lazy(() => ResponseBodyAliasWarning$.inboundSchema))
-                .optional(),
-            autoAssignCustomDomains: z.boolean().optional(),
-            automaticAliases: z.array(z.string()).optional(),
-            bootedAt: z.number(),
-            buildErrorAt: z.number().optional(),
-            buildingAt: z.number(),
-            canceledAt: z.number().optional(),
-            checksState: GetDeploymentResponseBodyChecksState$.inboundSchema.optional(),
-            checksConclusion: GetDeploymentResponseBodyChecksConclusion$.inboundSchema.optional(),
-            createdAt: z.number(),
-            creator: z.lazy(() => GetDeploymentResponseBodyCreator$.inboundSchema),
-            errorCode: z.string().optional(),
-            errorLink: z.string().optional(),
-            errorMessage: z.nullable(z.string()).optional(),
-            errorStep: z.string().optional(),
-            passiveRegions: z.array(z.string()).optional(),
-            gitSource: z
-                .union([
-                    z.lazy(() => GetDeploymentGitSource6$.inboundSchema),
-                    z.lazy(() => GetDeploymentGitSource8$.inboundSchema),
-                    z.lazy(() => GetDeploymentGitSource1$.inboundSchema),
-                    z.lazy(() => GetDeploymentGitSource3$.inboundSchema),
-                    z.lazy(() => GetDeploymentGitSource2$.inboundSchema),
-                    z.lazy(() => GetDeploymentGitSource4$.inboundSchema),
-                    z.lazy(() => GetDeploymentGitSource5$.inboundSchema),
-                    z.lazy(() => GetDeploymentGitSource7$.inboundSchema),
-                    z.lazy(() => GetDeploymentGitSource9$.inboundSchema),
-                ])
-                .optional(),
-            id: z.string(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.lambdas === undefined ? null : { lambdas: v.lambdas }),
-                name: v.name,
-                meta: v.meta,
-                ...(v.project === undefined ? null : { project: v.project }),
-                public: v.public,
-                readyState: v.readyState,
-                ...(v.readySubstate === undefined ? null : { readySubstate: v.readySubstate }),
-                regions: v.regions,
-                ...(v.source === undefined ? null : { source: v.source }),
-                ...(v.target === undefined ? null : { target: v.target }),
-                ...(v.team === undefined ? null : { team: v.team }),
-                type: v.type,
-                url: v.url,
-                ...(v.userAliases === undefined ? null : { userAliases: v.userAliases }),
-                version: v.version,
-                ...(v.previewCommentsEnabled === undefined
-                    ? null
-                    : { previewCommentsEnabled: v.previewCommentsEnabled }),
-                alias: v.alias,
-                aliasAssigned: v.aliasAssigned,
-                ...(v.aliasError === undefined ? null : { aliasError: v.aliasError }),
-                ...(v.aliasFinal === undefined ? null : { aliasFinal: v.aliasFinal }),
-                ...(v.aliasWarning === undefined ? null : { aliasWarning: v.aliasWarning }),
-                ...(v.autoAssignCustomDomains === undefined
-                    ? null
-                    : { autoAssignCustomDomains: v.autoAssignCustomDomains }),
-                ...(v.automaticAliases === undefined
-                    ? null
-                    : { automaticAliases: v.automaticAliases }),
-                bootedAt: v.bootedAt,
-                ...(v.buildErrorAt === undefined ? null : { buildErrorAt: v.buildErrorAt }),
-                buildingAt: v.buildingAt,
-                ...(v.canceledAt === undefined ? null : { canceledAt: v.canceledAt }),
-                ...(v.checksState === undefined ? null : { checksState: v.checksState }),
-                ...(v.checksConclusion === undefined
-                    ? null
-                    : { checksConclusion: v.checksConclusion }),
-                createdAt: v.createdAt,
-                creator: v.creator,
-                ...(v.errorCode === undefined ? null : { errorCode: v.errorCode }),
-                ...(v.errorLink === undefined ? null : { errorLink: v.errorLink }),
-                ...(v.errorMessage === undefined ? null : { errorMessage: v.errorMessage }),
-                ...(v.errorStep === undefined ? null : { errorStep: v.errorStep }),
-                ...(v.passiveRegions === undefined ? null : { passiveRegions: v.passiveRegions }),
-                ...(v.gitSource === undefined ? null : { gitSource: v.gitSource }),
-                id: v.id,
-            };
-        });
-
-    export type Outbound = {
-        lambdas?: Array<ResponseBodyLambdas$.Outbound> | undefined;
-        name: string;
-        meta: Record<string, string>;
-        project?: ResponseBodyProject$.Outbound | undefined;
-        public: boolean;
-        readyState: string;
-        readySubstate?: string | undefined;
-        regions: Array<string>;
-        source?: string | undefined;
-        target?: string | null | undefined;
-        team?: ResponseBodyTeam$.Outbound | undefined;
-        type: string;
-        url: string;
-        userAliases?: Array<string> | undefined;
-        version: number;
-        previewCommentsEnabled?: boolean | undefined;
-        alias: Array<string>;
-        aliasAssigned: boolean;
-        aliasError?: GetDeploymentResponseBodyAliasError$.Outbound | null | undefined;
-        aliasFinal?: string | null | undefined;
-        aliasWarning?: ResponseBodyAliasWarning$.Outbound | null | undefined;
-        autoAssignCustomDomains?: boolean | undefined;
-        automaticAliases?: Array<string> | undefined;
-        bootedAt: number;
-        buildErrorAt?: number | undefined;
-        buildingAt: number;
-        canceledAt?: number | undefined;
-        checksState?: string | undefined;
-        checksConclusion?: string | undefined;
-        createdAt: number;
-        creator: GetDeploymentResponseBodyCreator$.Outbound;
-        errorCode?: string | undefined;
-        errorLink?: string | undefined;
-        errorMessage?: string | null | undefined;
-        errorStep?: string | undefined;
-        passiveRegions?: Array<string> | undefined;
-        gitSource?:
-            | GetDeploymentGitSource6$.Outbound
-            | GetDeploymentGitSource8$.Outbound
-            | GetDeploymentGitSource1$.Outbound
-            | GetDeploymentGitSource3$.Outbound
-            | GetDeploymentGitSource2$.Outbound
-            | GetDeploymentGitSource4$.Outbound
-            | GetDeploymentGitSource5$.Outbound
-            | GetDeploymentGitSource7$.Outbound
-            | GetDeploymentGitSource9$.Outbound
-            | undefined;
-        id: string;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetDeploymentResponseBody2> = z
-        .object({
-            lambdas: z.array(z.lazy(() => ResponseBodyLambdas$.outboundSchema)).optional(),
-            name: z.string(),
-            meta: z.record(z.string()),
-            project: z.lazy(() => ResponseBodyProject$.outboundSchema).optional(),
-            public: z.boolean(),
-            readyState: GetDeploymentResponseBodyReadyState$.outboundSchema,
-            readySubstate: GetDeploymentResponseBodyReadySubstate$.outboundSchema.optional(),
-            regions: z.array(z.string()),
-            source: GetDeploymentResponseBodySource$.outboundSchema.optional(),
-            target: z.nullable(GetDeploymentResponseBodyTarget$.outboundSchema).optional(),
-            team: z.lazy(() => ResponseBodyTeam$.outboundSchema).optional(),
-            type: GetDeploymentResponseBodyDeploymentsType$.outboundSchema,
-            url: z.string(),
-            userAliases: z.array(z.string()).optional(),
-            version: z.number(),
-            previewCommentsEnabled: z.boolean().optional(),
-            alias: z.array(z.string()),
-            aliasAssigned: z.boolean(),
-            aliasError: z
-                .nullable(z.lazy(() => GetDeploymentResponseBodyAliasError$.outboundSchema))
-                .optional(),
-            aliasFinal: z.nullable(z.string()).optional(),
-            aliasWarning: z
-                .nullable(z.lazy(() => ResponseBodyAliasWarning$.outboundSchema))
-                .optional(),
-            autoAssignCustomDomains: z.boolean().optional(),
-            automaticAliases: z.array(z.string()).optional(),
-            bootedAt: z.number(),
-            buildErrorAt: z.number().optional(),
-            buildingAt: z.number(),
-            canceledAt: z.number().optional(),
-            checksState: GetDeploymentResponseBodyChecksState$.outboundSchema.optional(),
-            checksConclusion: GetDeploymentResponseBodyChecksConclusion$.outboundSchema.optional(),
-            createdAt: z.number(),
-            creator: z.lazy(() => GetDeploymentResponseBodyCreator$.outboundSchema),
-            errorCode: z.string().optional(),
-            errorLink: z.string().optional(),
-            errorMessage: z.nullable(z.string()).optional(),
-            errorStep: z.string().optional(),
-            passiveRegions: z.array(z.string()).optional(),
-            gitSource: z
-                .union([
-                    z.lazy(() => GetDeploymentGitSource6$.outboundSchema),
-                    z.lazy(() => GetDeploymentGitSource8$.outboundSchema),
-                    z.lazy(() => GetDeploymentGitSource1$.outboundSchema),
-                    z.lazy(() => GetDeploymentGitSource3$.outboundSchema),
-                    z.lazy(() => GetDeploymentGitSource2$.outboundSchema),
-                    z.lazy(() => GetDeploymentGitSource4$.outboundSchema),
-                    z.lazy(() => GetDeploymentGitSource5$.outboundSchema),
-                    z.lazy(() => GetDeploymentGitSource7$.outboundSchema),
-                    z.lazy(() => GetDeploymentGitSource9$.outboundSchema),
-                ])
-                .optional(),
-            id: z.string(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.lambdas === undefined ? null : { lambdas: v.lambdas }),
-                name: v.name,
-                meta: v.meta,
-                ...(v.project === undefined ? null : { project: v.project }),
-                public: v.public,
-                readyState: v.readyState,
-                ...(v.readySubstate === undefined ? null : { readySubstate: v.readySubstate }),
-                regions: v.regions,
-                ...(v.source === undefined ? null : { source: v.source }),
-                ...(v.target === undefined ? null : { target: v.target }),
-                ...(v.team === undefined ? null : { team: v.team }),
-                type: v.type,
-                url: v.url,
-                ...(v.userAliases === undefined ? null : { userAliases: v.userAliases }),
-                version: v.version,
-                ...(v.previewCommentsEnabled === undefined
-                    ? null
-                    : { previewCommentsEnabled: v.previewCommentsEnabled }),
-                alias: v.alias,
-                aliasAssigned: v.aliasAssigned,
-                ...(v.aliasError === undefined ? null : { aliasError: v.aliasError }),
-                ...(v.aliasFinal === undefined ? null : { aliasFinal: v.aliasFinal }),
-                ...(v.aliasWarning === undefined ? null : { aliasWarning: v.aliasWarning }),
-                ...(v.autoAssignCustomDomains === undefined
-                    ? null
-                    : { autoAssignCustomDomains: v.autoAssignCustomDomains }),
-                ...(v.automaticAliases === undefined
-                    ? null
-                    : { automaticAliases: v.automaticAliases }),
-                bootedAt: v.bootedAt,
-                ...(v.buildErrorAt === undefined ? null : { buildErrorAt: v.buildErrorAt }),
-                buildingAt: v.buildingAt,
-                ...(v.canceledAt === undefined ? null : { canceledAt: v.canceledAt }),
-                ...(v.checksState === undefined ? null : { checksState: v.checksState }),
-                ...(v.checksConclusion === undefined
-                    ? null
-                    : { checksConclusion: v.checksConclusion }),
-                createdAt: v.createdAt,
-                creator: v.creator,
-                ...(v.errorCode === undefined ? null : { errorCode: v.errorCode }),
-                ...(v.errorLink === undefined ? null : { errorLink: v.errorLink }),
-                ...(v.errorMessage === undefined ? null : { errorMessage: v.errorMessage }),
-                ...(v.errorStep === undefined ? null : { errorStep: v.errorStep }),
-                ...(v.passiveRegions === undefined ? null : { passiveRegions: v.passiveRegions }),
-                ...(v.gitSource === undefined ? null : { gitSource: v.gitSource }),
-                id: v.id,
-            };
-        });
+    /** @deprecated use `GetDeploymentResponseBody2$inboundSchema` instead. */
+    export const inboundSchema = GetDeploymentResponseBody2$inboundSchema;
+    /** @deprecated use `GetDeploymentResponseBody2$outboundSchema` instead. */
+    export const outboundSchema = GetDeploymentResponseBody2$outboundSchema;
+    /** @deprecated use `GetDeploymentResponseBody2$Outbound` instead. */
+    export type Outbound = GetDeploymentResponseBody2$Outbound;
 }
 
 /** @internal */
+export const ResponseBodyBuild$inboundSchema: z.ZodType<ResponseBodyBuild, z.ZodTypeDef, unknown> =
+    z.object({
+        env: z.array(z.string()),
+    });
+
+/** @internal */
+export type ResponseBodyBuild$Outbound = {
+    env: Array<string>;
+};
+
+/** @internal */
+export const ResponseBodyBuild$outboundSchema: z.ZodType<
+    ResponseBodyBuild$Outbound,
+    z.ZodTypeDef,
+    ResponseBodyBuild
+> = z.object({
+    env: z.array(z.string()),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace ResponseBodyBuild$ {
-    export const inboundSchema: z.ZodType<ResponseBodyBuild, z.ZodTypeDef, unknown> = z
-        .object({
-            env: z.array(z.string()),
-        })
-        .transform((v) => {
-            return {
-                env: v.env,
-            };
-        });
-
-    export type Outbound = {
-        env: Array<string>;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, ResponseBodyBuild> = z
-        .object({
-            env: z.array(z.string()),
-        })
-        .transform((v) => {
-            return {
-                env: v.env,
-            };
-        });
+    /** @deprecated use `ResponseBodyBuild$inboundSchema` instead. */
+    export const inboundSchema = ResponseBodyBuild$inboundSchema;
+    /** @deprecated use `ResponseBodyBuild$outboundSchema` instead. */
+    export const outboundSchema = ResponseBodyBuild$outboundSchema;
+    /** @deprecated use `ResponseBodyBuild$Outbound` instead. */
+    export type Outbound = ResponseBodyBuild$Outbound;
 }
 
 /** @internal */
+export const ResponseBodyBuilds$inboundSchema: z.ZodType<
+    ResponseBodyBuilds,
+    z.ZodTypeDef,
+    unknown
+> = z.object({});
+
+/** @internal */
+export type ResponseBodyBuilds$Outbound = {};
+
+/** @internal */
+export const ResponseBodyBuilds$outboundSchema: z.ZodType<
+    ResponseBodyBuilds$Outbound,
+    z.ZodTypeDef,
+    ResponseBodyBuilds
+> = z.object({});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace ResponseBodyBuilds$ {
-    export const inboundSchema: z.ZodType<ResponseBodyBuilds, z.ZodTypeDef, unknown> = z.object({});
-
-    export type Outbound = {};
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, ResponseBodyBuilds> = z.object(
-        {}
-    );
+    /** @deprecated use `ResponseBodyBuilds$inboundSchema` instead. */
+    export const inboundSchema = ResponseBodyBuilds$inboundSchema;
+    /** @deprecated use `ResponseBodyBuilds$outboundSchema` instead. */
+    export const outboundSchema = ResponseBodyBuilds$outboundSchema;
+    /** @deprecated use `ResponseBodyBuilds$Outbound` instead. */
+    export type Outbound = ResponseBodyBuilds$Outbound;
 }
 
 /** @internal */
+export const ResponseBodyCrons$inboundSchema: z.ZodType<ResponseBodyCrons, z.ZodTypeDef, unknown> =
+    z.object({
+        schedule: z.string(),
+        path: z.string(),
+    });
+
+/** @internal */
+export type ResponseBodyCrons$Outbound = {
+    schedule: string;
+    path: string;
+};
+
+/** @internal */
+export const ResponseBodyCrons$outboundSchema: z.ZodType<
+    ResponseBodyCrons$Outbound,
+    z.ZodTypeDef,
+    ResponseBodyCrons
+> = z.object({
+    schedule: z.string(),
+    path: z.string(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace ResponseBodyCrons$ {
-    export const inboundSchema: z.ZodType<ResponseBodyCrons, z.ZodTypeDef, unknown> = z
-        .object({
-            schedule: z.string(),
-            path: z.string(),
-        })
-        .transform((v) => {
-            return {
-                schedule: v.schedule,
-                path: v.path,
-            };
-        });
-
-    export type Outbound = {
-        schedule: string;
-        path: string;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, ResponseBodyCrons> = z
-        .object({
-            schedule: z.string(),
-            path: z.string(),
-        })
-        .transform((v) => {
-            return {
-                schedule: v.schedule,
-                path: v.path,
-            };
-        });
+    /** @deprecated use `ResponseBodyCrons$inboundSchema` instead. */
+    export const inboundSchema = ResponseBodyCrons$inboundSchema;
+    /** @deprecated use `ResponseBodyCrons$outboundSchema` instead. */
+    export const outboundSchema = ResponseBodyCrons$outboundSchema;
+    /** @deprecated use `ResponseBodyCrons$Outbound` instead. */
+    export type Outbound = ResponseBodyCrons$Outbound;
 }
 
 /** @internal */
+export const ResponseBodyFunctions$inboundSchema: z.ZodType<
+    ResponseBodyFunctions,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    memory: z.number().optional(),
+    maxDuration: z.number().optional(),
+    runtime: z.string().optional(),
+    includeFiles: z.string().optional(),
+    excludeFiles: z.string().optional(),
+});
+
+/** @internal */
+export type ResponseBodyFunctions$Outbound = {
+    memory?: number | undefined;
+    maxDuration?: number | undefined;
+    runtime?: string | undefined;
+    includeFiles?: string | undefined;
+    excludeFiles?: string | undefined;
+};
+
+/** @internal */
+export const ResponseBodyFunctions$outboundSchema: z.ZodType<
+    ResponseBodyFunctions$Outbound,
+    z.ZodTypeDef,
+    ResponseBodyFunctions
+> = z.object({
+    memory: z.number().optional(),
+    maxDuration: z.number().optional(),
+    runtime: z.string().optional(),
+    includeFiles: z.string().optional(),
+    excludeFiles: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace ResponseBodyFunctions$ {
-    export const inboundSchema: z.ZodType<ResponseBodyFunctions, z.ZodTypeDef, unknown> = z
-        .object({
-            memory: z.number().optional(),
-            maxDuration: z.number().optional(),
-            runtime: z.string().optional(),
-            includeFiles: z.string().optional(),
-            excludeFiles: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.memory === undefined ? null : { memory: v.memory }),
-                ...(v.maxDuration === undefined ? null : { maxDuration: v.maxDuration }),
-                ...(v.runtime === undefined ? null : { runtime: v.runtime }),
-                ...(v.includeFiles === undefined ? null : { includeFiles: v.includeFiles }),
-                ...(v.excludeFiles === undefined ? null : { excludeFiles: v.excludeFiles }),
-            };
-        });
-
-    export type Outbound = {
-        memory?: number | undefined;
-        maxDuration?: number | undefined;
-        runtime?: string | undefined;
-        includeFiles?: string | undefined;
-        excludeFiles?: string | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, ResponseBodyFunctions> = z
-        .object({
-            memory: z.number().optional(),
-            maxDuration: z.number().optional(),
-            runtime: z.string().optional(),
-            includeFiles: z.string().optional(),
-            excludeFiles: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.memory === undefined ? null : { memory: v.memory }),
-                ...(v.maxDuration === undefined ? null : { maxDuration: v.maxDuration }),
-                ...(v.runtime === undefined ? null : { runtime: v.runtime }),
-                ...(v.includeFiles === undefined ? null : { includeFiles: v.includeFiles }),
-                ...(v.excludeFiles === undefined ? null : { excludeFiles: v.excludeFiles }),
-            };
-        });
+    /** @deprecated use `ResponseBodyFunctions$inboundSchema` instead. */
+    export const inboundSchema = ResponseBodyFunctions$inboundSchema;
+    /** @deprecated use `ResponseBodyFunctions$outboundSchema` instead. */
+    export const outboundSchema = ResponseBodyFunctions$outboundSchema;
+    /** @deprecated use `ResponseBodyFunctions$Outbound` instead. */
+    export type Outbound = ResponseBodyFunctions$Outbound;
 }
 
 /** @internal */
+export const ResponseBodyPlan$inboundSchema: z.ZodNativeEnum<typeof ResponseBodyPlan> =
+    z.nativeEnum(ResponseBodyPlan);
+
+/** @internal */
+export const ResponseBodyPlan$outboundSchema: z.ZodNativeEnum<typeof ResponseBodyPlan> =
+    ResponseBodyPlan$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace ResponseBodyPlan$ {
-    export const inboundSchema = z.nativeEnum(ResponseBodyPlan);
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `ResponseBodyPlan$inboundSchema` instead. */
+    export const inboundSchema = ResponseBodyPlan$inboundSchema;
+    /** @deprecated use `ResponseBodyPlan$outboundSchema` instead. */
+    export const outboundSchema = ResponseBodyPlan$outboundSchema;
 }
 
 /** @internal */
+export const GetDeploymentRoutes3$inboundSchema: z.ZodType<
+    GetDeploymentRoutes3,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    src: z.string(),
+    continue: z.boolean(),
+    middleware: z.number(),
+});
+
+/** @internal */
+export type GetDeploymentRoutes3$Outbound = {
+    src: string;
+    continue: boolean;
+    middleware: number;
+};
+
+/** @internal */
+export const GetDeploymentRoutes3$outboundSchema: z.ZodType<
+    GetDeploymentRoutes3$Outbound,
+    z.ZodTypeDef,
+    GetDeploymentRoutes3
+> = z.object({
+    src: z.string(),
+    continue: z.boolean(),
+    middleware: z.number(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetDeploymentRoutes3$ {
-    export const inboundSchema: z.ZodType<GetDeploymentRoutes3, z.ZodTypeDef, unknown> = z
-        .object({
-            src: z.string(),
-            continue: z.boolean(),
-            middleware: z.number(),
-        })
-        .transform((v) => {
-            return {
-                src: v.src,
-                continue: v.continue,
-                middleware: v.middleware,
-            };
-        });
-
-    export type Outbound = {
-        src: string;
-        continue: boolean;
-        middleware: number;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetDeploymentRoutes3> = z
-        .object({
-            src: z.string(),
-            continue: z.boolean(),
-            middleware: z.number(),
-        })
-        .transform((v) => {
-            return {
-                src: v.src,
-                continue: v.continue,
-                middleware: v.middleware,
-            };
-        });
+    /** @deprecated use `GetDeploymentRoutes3$inboundSchema` instead. */
+    export const inboundSchema = GetDeploymentRoutes3$inboundSchema;
+    /** @deprecated use `GetDeploymentRoutes3$outboundSchema` instead. */
+    export const outboundSchema = GetDeploymentRoutes3$outboundSchema;
+    /** @deprecated use `GetDeploymentRoutes3$Outbound` instead. */
+    export type Outbound = GetDeploymentRoutes3$Outbound;
 }
 
 /** @internal */
+export const GetDeploymentRoutesHandle$inboundSchema: z.ZodNativeEnum<
+    typeof GetDeploymentRoutesHandle
+> = z.nativeEnum(GetDeploymentRoutesHandle);
+
+/** @internal */
+export const GetDeploymentRoutesHandle$outboundSchema: z.ZodNativeEnum<
+    typeof GetDeploymentRoutesHandle
+> = GetDeploymentRoutesHandle$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetDeploymentRoutesHandle$ {
-    export const inboundSchema = z.nativeEnum(GetDeploymentRoutesHandle);
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `GetDeploymentRoutesHandle$inboundSchema` instead. */
+    export const inboundSchema = GetDeploymentRoutesHandle$inboundSchema;
+    /** @deprecated use `GetDeploymentRoutesHandle$outboundSchema` instead. */
+    export const outboundSchema = GetDeploymentRoutesHandle$outboundSchema;
 }
 
 /** @internal */
+export const GetDeploymentRoutes2$inboundSchema: z.ZodType<
+    GetDeploymentRoutes2,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    handle: GetDeploymentRoutesHandle$inboundSchema,
+    src: z.string().optional(),
+    dest: z.string().optional(),
+    status: z.number().optional(),
+});
+
+/** @internal */
+export type GetDeploymentRoutes2$Outbound = {
+    handle: string;
+    src?: string | undefined;
+    dest?: string | undefined;
+    status?: number | undefined;
+};
+
+/** @internal */
+export const GetDeploymentRoutes2$outboundSchema: z.ZodType<
+    GetDeploymentRoutes2$Outbound,
+    z.ZodTypeDef,
+    GetDeploymentRoutes2
+> = z.object({
+    handle: GetDeploymentRoutesHandle$outboundSchema,
+    src: z.string().optional(),
+    dest: z.string().optional(),
+    status: z.number().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetDeploymentRoutes2$ {
-    export const inboundSchema: z.ZodType<GetDeploymentRoutes2, z.ZodTypeDef, unknown> = z
-        .object({
-            handle: GetDeploymentRoutesHandle$.inboundSchema,
-            src: z.string().optional(),
-            dest: z.string().optional(),
-            status: z.number().optional(),
-        })
-        .transform((v) => {
-            return {
-                handle: v.handle,
-                ...(v.src === undefined ? null : { src: v.src }),
-                ...(v.dest === undefined ? null : { dest: v.dest }),
-                ...(v.status === undefined ? null : { status: v.status }),
-            };
-        });
-
-    export type Outbound = {
-        handle: string;
-        src?: string | undefined;
-        dest?: string | undefined;
-        status?: number | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetDeploymentRoutes2> = z
-        .object({
-            handle: GetDeploymentRoutesHandle$.outboundSchema,
-            src: z.string().optional(),
-            dest: z.string().optional(),
-            status: z.number().optional(),
-        })
-        .transform((v) => {
-            return {
-                handle: v.handle,
-                ...(v.src === undefined ? null : { src: v.src }),
-                ...(v.dest === undefined ? null : { dest: v.dest }),
-                ...(v.status === undefined ? null : { status: v.status }),
-            };
-        });
+    /** @deprecated use `GetDeploymentRoutes2$inboundSchema` instead. */
+    export const inboundSchema = GetDeploymentRoutes2$inboundSchema;
+    /** @deprecated use `GetDeploymentRoutes2$outboundSchema` instead. */
+    export const outboundSchema = GetDeploymentRoutes2$outboundSchema;
+    /** @deprecated use `GetDeploymentRoutes2$Outbound` instead. */
+    export type Outbound = GetDeploymentRoutes2$Outbound;
 }
 
 /** @internal */
+export const GetDeploymentHasType$inboundSchema: z.ZodNativeEnum<typeof GetDeploymentHasType> =
+    z.nativeEnum(GetDeploymentHasType);
+
+/** @internal */
+export const GetDeploymentHasType$outboundSchema: z.ZodNativeEnum<typeof GetDeploymentHasType> =
+    GetDeploymentHasType$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetDeploymentHasType$ {
-    export const inboundSchema = z.nativeEnum(GetDeploymentHasType);
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `GetDeploymentHasType$inboundSchema` instead. */
+    export const inboundSchema = GetDeploymentHasType$inboundSchema;
+    /** @deprecated use `GetDeploymentHasType$outboundSchema` instead. */
+    export const outboundSchema = GetDeploymentHasType$outboundSchema;
 }
 
 /** @internal */
+export const GetDeploymentHas2$inboundSchema: z.ZodType<GetDeploymentHas2, z.ZodTypeDef, unknown> =
+    z.object({
+        type: GetDeploymentHasType$inboundSchema,
+        key: z.string(),
+        value: z.string().optional(),
+    });
+
+/** @internal */
+export type GetDeploymentHas2$Outbound = {
+    type: string;
+    key: string;
+    value?: string | undefined;
+};
+
+/** @internal */
+export const GetDeploymentHas2$outboundSchema: z.ZodType<
+    GetDeploymentHas2$Outbound,
+    z.ZodTypeDef,
+    GetDeploymentHas2
+> = z.object({
+    type: GetDeploymentHasType$outboundSchema,
+    key: z.string(),
+    value: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetDeploymentHas2$ {
-    export const inboundSchema: z.ZodType<GetDeploymentHas2, z.ZodTypeDef, unknown> = z
-        .object({
-            type: GetDeploymentHasType$.inboundSchema,
-            key: z.string(),
-            value: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                key: v.key,
-                ...(v.value === undefined ? null : { value: v.value }),
-            };
-        });
-
-    export type Outbound = {
-        type: string;
-        key: string;
-        value?: string | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetDeploymentHas2> = z
-        .object({
-            type: GetDeploymentHasType$.outboundSchema,
-            key: z.string(),
-            value: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                key: v.key,
-                ...(v.value === undefined ? null : { value: v.value }),
-            };
-        });
+    /** @deprecated use `GetDeploymentHas2$inboundSchema` instead. */
+    export const inboundSchema = GetDeploymentHas2$inboundSchema;
+    /** @deprecated use `GetDeploymentHas2$outboundSchema` instead. */
+    export const outboundSchema = GetDeploymentHas2$outboundSchema;
+    /** @deprecated use `GetDeploymentHas2$Outbound` instead. */
+    export type Outbound = GetDeploymentHas2$Outbound;
 }
 
 /** @internal */
+export const GetDeploymentHasDeploymentsType$inboundSchema: z.ZodNativeEnum<
+    typeof GetDeploymentHasDeploymentsType
+> = z.nativeEnum(GetDeploymentHasDeploymentsType);
+
+/** @internal */
+export const GetDeploymentHasDeploymentsType$outboundSchema: z.ZodNativeEnum<
+    typeof GetDeploymentHasDeploymentsType
+> = GetDeploymentHasDeploymentsType$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetDeploymentHasDeploymentsType$ {
-    export const inboundSchema = z.nativeEnum(GetDeploymentHasDeploymentsType);
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `GetDeploymentHasDeploymentsType$inboundSchema` instead. */
+    export const inboundSchema = GetDeploymentHasDeploymentsType$inboundSchema;
+    /** @deprecated use `GetDeploymentHasDeploymentsType$outboundSchema` instead. */
+    export const outboundSchema = GetDeploymentHasDeploymentsType$outboundSchema;
 }
 
 /** @internal */
+export const GetDeploymentHas1$inboundSchema: z.ZodType<GetDeploymentHas1, z.ZodTypeDef, unknown> =
+    z.object({
+        type: GetDeploymentHasDeploymentsType$inboundSchema,
+        value: z.string(),
+    });
+
+/** @internal */
+export type GetDeploymentHas1$Outbound = {
+    type: string;
+    value: string;
+};
+
+/** @internal */
+export const GetDeploymentHas1$outboundSchema: z.ZodType<
+    GetDeploymentHas1$Outbound,
+    z.ZodTypeDef,
+    GetDeploymentHas1
+> = z.object({
+    type: GetDeploymentHasDeploymentsType$outboundSchema,
+    value: z.string(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetDeploymentHas1$ {
-    export const inboundSchema: z.ZodType<GetDeploymentHas1, z.ZodTypeDef, unknown> = z
-        .object({
-            type: GetDeploymentHasDeploymentsType$.inboundSchema,
-            value: z.string(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                value: v.value,
-            };
-        });
-
-    export type Outbound = {
-        type: string;
-        value: string;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetDeploymentHas1> = z
-        .object({
-            type: GetDeploymentHasDeploymentsType$.outboundSchema,
-            value: z.string(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                value: v.value,
-            };
-        });
+    /** @deprecated use `GetDeploymentHas1$inboundSchema` instead. */
+    export const inboundSchema = GetDeploymentHas1$inboundSchema;
+    /** @deprecated use `GetDeploymentHas1$outboundSchema` instead. */
+    export const outboundSchema = GetDeploymentHas1$outboundSchema;
+    /** @deprecated use `GetDeploymentHas1$Outbound` instead. */
+    export type Outbound = GetDeploymentHas1$Outbound;
 }
 
 /** @internal */
+export const GetDeploymentRoutesHas$inboundSchema: z.ZodType<
+    GetDeploymentRoutesHas,
+    z.ZodTypeDef,
+    unknown
+> = z.union([
+    z.lazy(() => GetDeploymentHas1$inboundSchema),
+    z.lazy(() => GetDeploymentHas2$inboundSchema),
+]);
+
+/** @internal */
+export type GetDeploymentRoutesHas$Outbound =
+    | GetDeploymentHas1$Outbound
+    | GetDeploymentHas2$Outbound;
+
+/** @internal */
+export const GetDeploymentRoutesHas$outboundSchema: z.ZodType<
+    GetDeploymentRoutesHas$Outbound,
+    z.ZodTypeDef,
+    GetDeploymentRoutesHas
+> = z.union([
+    z.lazy(() => GetDeploymentHas1$outboundSchema),
+    z.lazy(() => GetDeploymentHas2$outboundSchema),
+]);
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetDeploymentRoutesHas$ {
-    export const inboundSchema: z.ZodType<GetDeploymentRoutesHas, z.ZodTypeDef, unknown> = z.union([
-        z.lazy(() => GetDeploymentHas1$.inboundSchema),
-        z.lazy(() => GetDeploymentHas2$.inboundSchema),
-    ]);
-
-    export type Outbound = GetDeploymentHas1$.Outbound | GetDeploymentHas2$.Outbound;
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetDeploymentRoutesHas> =
-        z.union([
-            z.lazy(() => GetDeploymentHas1$.outboundSchema),
-            z.lazy(() => GetDeploymentHas2$.outboundSchema),
-        ]);
+    /** @deprecated use `GetDeploymentRoutesHas$inboundSchema` instead. */
+    export const inboundSchema = GetDeploymentRoutesHas$inboundSchema;
+    /** @deprecated use `GetDeploymentRoutesHas$outboundSchema` instead. */
+    export const outboundSchema = GetDeploymentRoutesHas$outboundSchema;
+    /** @deprecated use `GetDeploymentRoutesHas$Outbound` instead. */
+    export type Outbound = GetDeploymentRoutesHas$Outbound;
 }
 
 /** @internal */
+export const GetDeploymentMissingType$inboundSchema: z.ZodNativeEnum<
+    typeof GetDeploymentMissingType
+> = z.nativeEnum(GetDeploymentMissingType);
+
+/** @internal */
+export const GetDeploymentMissingType$outboundSchema: z.ZodNativeEnum<
+    typeof GetDeploymentMissingType
+> = GetDeploymentMissingType$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetDeploymentMissingType$ {
-    export const inboundSchema = z.nativeEnum(GetDeploymentMissingType);
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `GetDeploymentMissingType$inboundSchema` instead. */
+    export const inboundSchema = GetDeploymentMissingType$inboundSchema;
+    /** @deprecated use `GetDeploymentMissingType$outboundSchema` instead. */
+    export const outboundSchema = GetDeploymentMissingType$outboundSchema;
 }
 
 /** @internal */
+export const GetDeploymentMissing2$inboundSchema: z.ZodType<
+    GetDeploymentMissing2,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    type: GetDeploymentMissingType$inboundSchema,
+    key: z.string(),
+    value: z.string().optional(),
+});
+
+/** @internal */
+export type GetDeploymentMissing2$Outbound = {
+    type: string;
+    key: string;
+    value?: string | undefined;
+};
+
+/** @internal */
+export const GetDeploymentMissing2$outboundSchema: z.ZodType<
+    GetDeploymentMissing2$Outbound,
+    z.ZodTypeDef,
+    GetDeploymentMissing2
+> = z.object({
+    type: GetDeploymentMissingType$outboundSchema,
+    key: z.string(),
+    value: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetDeploymentMissing2$ {
-    export const inboundSchema: z.ZodType<GetDeploymentMissing2, z.ZodTypeDef, unknown> = z
-        .object({
-            type: GetDeploymentMissingType$.inboundSchema,
-            key: z.string(),
-            value: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                key: v.key,
-                ...(v.value === undefined ? null : { value: v.value }),
-            };
-        });
-
-    export type Outbound = {
-        type: string;
-        key: string;
-        value?: string | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetDeploymentMissing2> = z
-        .object({
-            type: GetDeploymentMissingType$.outboundSchema,
-            key: z.string(),
-            value: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                key: v.key,
-                ...(v.value === undefined ? null : { value: v.value }),
-            };
-        });
+    /** @deprecated use `GetDeploymentMissing2$inboundSchema` instead. */
+    export const inboundSchema = GetDeploymentMissing2$inboundSchema;
+    /** @deprecated use `GetDeploymentMissing2$outboundSchema` instead. */
+    export const outboundSchema = GetDeploymentMissing2$outboundSchema;
+    /** @deprecated use `GetDeploymentMissing2$Outbound` instead. */
+    export type Outbound = GetDeploymentMissing2$Outbound;
 }
 
 /** @internal */
+export const GetDeploymentMissingDeploymentsType$inboundSchema: z.ZodNativeEnum<
+    typeof GetDeploymentMissingDeploymentsType
+> = z.nativeEnum(GetDeploymentMissingDeploymentsType);
+
+/** @internal */
+export const GetDeploymentMissingDeploymentsType$outboundSchema: z.ZodNativeEnum<
+    typeof GetDeploymentMissingDeploymentsType
+> = GetDeploymentMissingDeploymentsType$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetDeploymentMissingDeploymentsType$ {
-    export const inboundSchema = z.nativeEnum(GetDeploymentMissingDeploymentsType);
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `GetDeploymentMissingDeploymentsType$inboundSchema` instead. */
+    export const inboundSchema = GetDeploymentMissingDeploymentsType$inboundSchema;
+    /** @deprecated use `GetDeploymentMissingDeploymentsType$outboundSchema` instead. */
+    export const outboundSchema = GetDeploymentMissingDeploymentsType$outboundSchema;
 }
 
 /** @internal */
+export const GetDeploymentMissing1$inboundSchema: z.ZodType<
+    GetDeploymentMissing1,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    type: GetDeploymentMissingDeploymentsType$inboundSchema,
+    value: z.string(),
+});
+
+/** @internal */
+export type GetDeploymentMissing1$Outbound = {
+    type: string;
+    value: string;
+};
+
+/** @internal */
+export const GetDeploymentMissing1$outboundSchema: z.ZodType<
+    GetDeploymentMissing1$Outbound,
+    z.ZodTypeDef,
+    GetDeploymentMissing1
+> = z.object({
+    type: GetDeploymentMissingDeploymentsType$outboundSchema,
+    value: z.string(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetDeploymentMissing1$ {
-    export const inboundSchema: z.ZodType<GetDeploymentMissing1, z.ZodTypeDef, unknown> = z
-        .object({
-            type: GetDeploymentMissingDeploymentsType$.inboundSchema,
-            value: z.string(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                value: v.value,
-            };
-        });
-
-    export type Outbound = {
-        type: string;
-        value: string;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetDeploymentMissing1> = z
-        .object({
-            type: GetDeploymentMissingDeploymentsType$.outboundSchema,
-            value: z.string(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                value: v.value,
-            };
-        });
+    /** @deprecated use `GetDeploymentMissing1$inboundSchema` instead. */
+    export const inboundSchema = GetDeploymentMissing1$inboundSchema;
+    /** @deprecated use `GetDeploymentMissing1$outboundSchema` instead. */
+    export const outboundSchema = GetDeploymentMissing1$outboundSchema;
+    /** @deprecated use `GetDeploymentMissing1$Outbound` instead. */
+    export type Outbound = GetDeploymentMissing1$Outbound;
 }
 
 /** @internal */
+export const GetDeploymentRoutesMissing$inboundSchema: z.ZodType<
+    GetDeploymentRoutesMissing,
+    z.ZodTypeDef,
+    unknown
+> = z.union([
+    z.lazy(() => GetDeploymentMissing1$inboundSchema),
+    z.lazy(() => GetDeploymentMissing2$inboundSchema),
+]);
+
+/** @internal */
+export type GetDeploymentRoutesMissing$Outbound =
+    | GetDeploymentMissing1$Outbound
+    | GetDeploymentMissing2$Outbound;
+
+/** @internal */
+export const GetDeploymentRoutesMissing$outboundSchema: z.ZodType<
+    GetDeploymentRoutesMissing$Outbound,
+    z.ZodTypeDef,
+    GetDeploymentRoutesMissing
+> = z.union([
+    z.lazy(() => GetDeploymentMissing1$outboundSchema),
+    z.lazy(() => GetDeploymentMissing2$outboundSchema),
+]);
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetDeploymentRoutesMissing$ {
-    export const inboundSchema: z.ZodType<GetDeploymentRoutesMissing, z.ZodTypeDef, unknown> =
-        z.union([
-            z.lazy(() => GetDeploymentMissing1$.inboundSchema),
-            z.lazy(() => GetDeploymentMissing2$.inboundSchema),
-        ]);
-
-    export type Outbound = GetDeploymentMissing1$.Outbound | GetDeploymentMissing2$.Outbound;
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetDeploymentRoutesMissing> =
-        z.union([
-            z.lazy(() => GetDeploymentMissing1$.outboundSchema),
-            z.lazy(() => GetDeploymentMissing2$.outboundSchema),
-        ]);
+    /** @deprecated use `GetDeploymentRoutesMissing$inboundSchema` instead. */
+    export const inboundSchema = GetDeploymentRoutesMissing$inboundSchema;
+    /** @deprecated use `GetDeploymentRoutesMissing$outboundSchema` instead. */
+    export const outboundSchema = GetDeploymentRoutesMissing$outboundSchema;
+    /** @deprecated use `GetDeploymentRoutesMissing$Outbound` instead. */
+    export type Outbound = GetDeploymentRoutesMissing$Outbound;
 }
 
 /** @internal */
+export const GetDeploymentRoutesLocale$inboundSchema: z.ZodType<
+    GetDeploymentRoutesLocale,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    redirect: z.record(z.string()).optional(),
+    cookie: z.string().optional(),
+});
+
+/** @internal */
+export type GetDeploymentRoutesLocale$Outbound = {
+    redirect?: { [k: string]: string } | undefined;
+    cookie?: string | undefined;
+};
+
+/** @internal */
+export const GetDeploymentRoutesLocale$outboundSchema: z.ZodType<
+    GetDeploymentRoutesLocale$Outbound,
+    z.ZodTypeDef,
+    GetDeploymentRoutesLocale
+> = z.object({
+    redirect: z.record(z.string()).optional(),
+    cookie: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetDeploymentRoutesLocale$ {
-    export const inboundSchema: z.ZodType<GetDeploymentRoutesLocale, z.ZodTypeDef, unknown> = z
-        .object({
-            redirect: z.record(z.string()).optional(),
-            cookie: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.redirect === undefined ? null : { redirect: v.redirect }),
-                ...(v.cookie === undefined ? null : { cookie: v.cookie }),
-            };
-        });
-
-    export type Outbound = {
-        redirect?: Record<string, string> | undefined;
-        cookie?: string | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetDeploymentRoutesLocale> = z
-        .object({
-            redirect: z.record(z.string()).optional(),
-            cookie: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.redirect === undefined ? null : { redirect: v.redirect }),
-                ...(v.cookie === undefined ? null : { cookie: v.cookie }),
-            };
-        });
+    /** @deprecated use `GetDeploymentRoutesLocale$inboundSchema` instead. */
+    export const inboundSchema = GetDeploymentRoutesLocale$inboundSchema;
+    /** @deprecated use `GetDeploymentRoutesLocale$outboundSchema` instead. */
+    export const outboundSchema = GetDeploymentRoutesLocale$outboundSchema;
+    /** @deprecated use `GetDeploymentRoutesLocale$Outbound` instead. */
+    export type Outbound = GetDeploymentRoutesLocale$Outbound;
 }
 
 /** @internal */
+export const GetDeploymentRoutes1$inboundSchema: z.ZodType<
+    GetDeploymentRoutes1,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    src: z.string(),
+    dest: z.string().optional(),
+    headers: z.record(z.string()).optional(),
+    methods: z.array(z.string()).optional(),
+    continue: z.boolean().optional(),
+    override: z.boolean().optional(),
+    caseSensitive: z.boolean().optional(),
+    check: z.boolean().optional(),
+    important: z.boolean().optional(),
+    status: z.number().optional(),
+    has: z
+        .array(
+            z.union([
+                z.lazy(() => GetDeploymentHas1$inboundSchema),
+                z.lazy(() => GetDeploymentHas2$inboundSchema),
+            ])
+        )
+        .optional(),
+    missing: z
+        .array(
+            z.union([
+                z.lazy(() => GetDeploymentMissing1$inboundSchema),
+                z.lazy(() => GetDeploymentMissing2$inboundSchema),
+            ])
+        )
+        .optional(),
+    locale: z.lazy(() => GetDeploymentRoutesLocale$inboundSchema).optional(),
+    middlewarePath: z.string().optional(),
+    middlewareRawSrc: z.array(z.string()).optional(),
+    middleware: z.number().optional(),
+});
+
+/** @internal */
+export type GetDeploymentRoutes1$Outbound = {
+    src: string;
+    dest?: string | undefined;
+    headers?: { [k: string]: string } | undefined;
+    methods?: Array<string> | undefined;
+    continue?: boolean | undefined;
+    override?: boolean | undefined;
+    caseSensitive?: boolean | undefined;
+    check?: boolean | undefined;
+    important?: boolean | undefined;
+    status?: number | undefined;
+    has?: Array<GetDeploymentHas1$Outbound | GetDeploymentHas2$Outbound> | undefined;
+    missing?: Array<GetDeploymentMissing1$Outbound | GetDeploymentMissing2$Outbound> | undefined;
+    locale?: GetDeploymentRoutesLocale$Outbound | undefined;
+    middlewarePath?: string | undefined;
+    middlewareRawSrc?: Array<string> | undefined;
+    middleware?: number | undefined;
+};
+
+/** @internal */
+export const GetDeploymentRoutes1$outboundSchema: z.ZodType<
+    GetDeploymentRoutes1$Outbound,
+    z.ZodTypeDef,
+    GetDeploymentRoutes1
+> = z.object({
+    src: z.string(),
+    dest: z.string().optional(),
+    headers: z.record(z.string()).optional(),
+    methods: z.array(z.string()).optional(),
+    continue: z.boolean().optional(),
+    override: z.boolean().optional(),
+    caseSensitive: z.boolean().optional(),
+    check: z.boolean().optional(),
+    important: z.boolean().optional(),
+    status: z.number().optional(),
+    has: z
+        .array(
+            z.union([
+                z.lazy(() => GetDeploymentHas1$outboundSchema),
+                z.lazy(() => GetDeploymentHas2$outboundSchema),
+            ])
+        )
+        .optional(),
+    missing: z
+        .array(
+            z.union([
+                z.lazy(() => GetDeploymentMissing1$outboundSchema),
+                z.lazy(() => GetDeploymentMissing2$outboundSchema),
+            ])
+        )
+        .optional(),
+    locale: z.lazy(() => GetDeploymentRoutesLocale$outboundSchema).optional(),
+    middlewarePath: z.string().optional(),
+    middlewareRawSrc: z.array(z.string()).optional(),
+    middleware: z.number().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetDeploymentRoutes1$ {
-    export const inboundSchema: z.ZodType<GetDeploymentRoutes1, z.ZodTypeDef, unknown> = z
-        .object({
-            src: z.string(),
-            dest: z.string().optional(),
-            headers: z.record(z.string()).optional(),
-            methods: z.array(z.string()).optional(),
-            continue: z.boolean().optional(),
-            override: z.boolean().optional(),
-            caseSensitive: z.boolean().optional(),
-            check: z.boolean().optional(),
-            important: z.boolean().optional(),
-            status: z.number().optional(),
-            has: z
-                .array(
-                    z.union([
-                        z.lazy(() => GetDeploymentHas1$.inboundSchema),
-                        z.lazy(() => GetDeploymentHas2$.inboundSchema),
-                    ])
-                )
-                .optional(),
-            missing: z
-                .array(
-                    z.union([
-                        z.lazy(() => GetDeploymentMissing1$.inboundSchema),
-                        z.lazy(() => GetDeploymentMissing2$.inboundSchema),
-                    ])
-                )
-                .optional(),
-            locale: z.lazy(() => GetDeploymentRoutesLocale$.inboundSchema).optional(),
-            middlewarePath: z.string().optional(),
-            middlewareRawSrc: z.array(z.string()).optional(),
-            middleware: z.number().optional(),
-        })
-        .transform((v) => {
-            return {
-                src: v.src,
-                ...(v.dest === undefined ? null : { dest: v.dest }),
-                ...(v.headers === undefined ? null : { headers: v.headers }),
-                ...(v.methods === undefined ? null : { methods: v.methods }),
-                ...(v.continue === undefined ? null : { continue: v.continue }),
-                ...(v.override === undefined ? null : { override: v.override }),
-                ...(v.caseSensitive === undefined ? null : { caseSensitive: v.caseSensitive }),
-                ...(v.check === undefined ? null : { check: v.check }),
-                ...(v.important === undefined ? null : { important: v.important }),
-                ...(v.status === undefined ? null : { status: v.status }),
-                ...(v.has === undefined ? null : { has: v.has }),
-                ...(v.missing === undefined ? null : { missing: v.missing }),
-                ...(v.locale === undefined ? null : { locale: v.locale }),
-                ...(v.middlewarePath === undefined ? null : { middlewarePath: v.middlewarePath }),
-                ...(v.middlewareRawSrc === undefined
-                    ? null
-                    : { middlewareRawSrc: v.middlewareRawSrc }),
-                ...(v.middleware === undefined ? null : { middleware: v.middleware }),
-            };
-        });
-
-    export type Outbound = {
-        src: string;
-        dest?: string | undefined;
-        headers?: Record<string, string> | undefined;
-        methods?: Array<string> | undefined;
-        continue?: boolean | undefined;
-        override?: boolean | undefined;
-        caseSensitive?: boolean | undefined;
-        check?: boolean | undefined;
-        important?: boolean | undefined;
-        status?: number | undefined;
-        has?: Array<GetDeploymentHas1$.Outbound | GetDeploymentHas2$.Outbound> | undefined;
-        missing?:
-            | Array<GetDeploymentMissing1$.Outbound | GetDeploymentMissing2$.Outbound>
-            | undefined;
-        locale?: GetDeploymentRoutesLocale$.Outbound | undefined;
-        middlewarePath?: string | undefined;
-        middlewareRawSrc?: Array<string> | undefined;
-        middleware?: number | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetDeploymentRoutes1> = z
-        .object({
-            src: z.string(),
-            dest: z.string().optional(),
-            headers: z.record(z.string()).optional(),
-            methods: z.array(z.string()).optional(),
-            continue: z.boolean().optional(),
-            override: z.boolean().optional(),
-            caseSensitive: z.boolean().optional(),
-            check: z.boolean().optional(),
-            important: z.boolean().optional(),
-            status: z.number().optional(),
-            has: z
-                .array(
-                    z.union([
-                        z.lazy(() => GetDeploymentHas1$.outboundSchema),
-                        z.lazy(() => GetDeploymentHas2$.outboundSchema),
-                    ])
-                )
-                .optional(),
-            missing: z
-                .array(
-                    z.union([
-                        z.lazy(() => GetDeploymentMissing1$.outboundSchema),
-                        z.lazy(() => GetDeploymentMissing2$.outboundSchema),
-                    ])
-                )
-                .optional(),
-            locale: z.lazy(() => GetDeploymentRoutesLocale$.outboundSchema).optional(),
-            middlewarePath: z.string().optional(),
-            middlewareRawSrc: z.array(z.string()).optional(),
-            middleware: z.number().optional(),
-        })
-        .transform((v) => {
-            return {
-                src: v.src,
-                ...(v.dest === undefined ? null : { dest: v.dest }),
-                ...(v.headers === undefined ? null : { headers: v.headers }),
-                ...(v.methods === undefined ? null : { methods: v.methods }),
-                ...(v.continue === undefined ? null : { continue: v.continue }),
-                ...(v.override === undefined ? null : { override: v.override }),
-                ...(v.caseSensitive === undefined ? null : { caseSensitive: v.caseSensitive }),
-                ...(v.check === undefined ? null : { check: v.check }),
-                ...(v.important === undefined ? null : { important: v.important }),
-                ...(v.status === undefined ? null : { status: v.status }),
-                ...(v.has === undefined ? null : { has: v.has }),
-                ...(v.missing === undefined ? null : { missing: v.missing }),
-                ...(v.locale === undefined ? null : { locale: v.locale }),
-                ...(v.middlewarePath === undefined ? null : { middlewarePath: v.middlewarePath }),
-                ...(v.middlewareRawSrc === undefined
-                    ? null
-                    : { middlewareRawSrc: v.middlewareRawSrc }),
-                ...(v.middleware === undefined ? null : { middleware: v.middleware }),
-            };
-        });
+    /** @deprecated use `GetDeploymentRoutes1$inboundSchema` instead. */
+    export const inboundSchema = GetDeploymentRoutes1$inboundSchema;
+    /** @deprecated use `GetDeploymentRoutes1$outboundSchema` instead. */
+    export const outboundSchema = GetDeploymentRoutes1$outboundSchema;
+    /** @deprecated use `GetDeploymentRoutes1$Outbound` instead. */
+    export type Outbound = GetDeploymentRoutes1$Outbound;
 }
 
 /** @internal */
+export const ResponseBodyRoutes$inboundSchema: z.ZodType<
+    ResponseBodyRoutes,
+    z.ZodTypeDef,
+    unknown
+> = z.union([
+    z.lazy(() => GetDeploymentRoutes3$inboundSchema),
+    z.lazy(() => GetDeploymentRoutes2$inboundSchema),
+    z.lazy(() => GetDeploymentRoutes1$inboundSchema),
+]);
+
+/** @internal */
+export type ResponseBodyRoutes$Outbound =
+    | GetDeploymentRoutes3$Outbound
+    | GetDeploymentRoutes2$Outbound
+    | GetDeploymentRoutes1$Outbound;
+
+/** @internal */
+export const ResponseBodyRoutes$outboundSchema: z.ZodType<
+    ResponseBodyRoutes$Outbound,
+    z.ZodTypeDef,
+    ResponseBodyRoutes
+> = z.union([
+    z.lazy(() => GetDeploymentRoutes3$outboundSchema),
+    z.lazy(() => GetDeploymentRoutes2$outboundSchema),
+    z.lazy(() => GetDeploymentRoutes1$outboundSchema),
+]);
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace ResponseBodyRoutes$ {
-    export const inboundSchema: z.ZodType<ResponseBodyRoutes, z.ZodTypeDef, unknown> = z.union([
-        z.lazy(() => GetDeploymentRoutes3$.inboundSchema),
-        z.lazy(() => GetDeploymentRoutes2$.inboundSchema),
-        z.lazy(() => GetDeploymentRoutes1$.inboundSchema),
-    ]);
-
-    export type Outbound =
-        | GetDeploymentRoutes3$.Outbound
-        | GetDeploymentRoutes2$.Outbound
-        | GetDeploymentRoutes1$.Outbound;
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, ResponseBodyRoutes> = z.union([
-        z.lazy(() => GetDeploymentRoutes3$.outboundSchema),
-        z.lazy(() => GetDeploymentRoutes2$.outboundSchema),
-        z.lazy(() => GetDeploymentRoutes1$.outboundSchema),
-    ]);
+    /** @deprecated use `ResponseBodyRoutes$inboundSchema` instead. */
+    export const inboundSchema = ResponseBodyRoutes$inboundSchema;
+    /** @deprecated use `ResponseBodyRoutes$outboundSchema` instead. */
+    export const outboundSchema = ResponseBodyRoutes$outboundSchema;
+    /** @deprecated use `ResponseBodyRoutes$Outbound` instead. */
+    export type Outbound = ResponseBodyRoutes$Outbound;
 }
 
 /** @internal */
+export const GetDeploymentGitRepoDeploymentsType$inboundSchema: z.ZodNativeEnum<
+    typeof GetDeploymentGitRepoDeploymentsType
+> = z.nativeEnum(GetDeploymentGitRepoDeploymentsType);
+
+/** @internal */
+export const GetDeploymentGitRepoDeploymentsType$outboundSchema: z.ZodNativeEnum<
+    typeof GetDeploymentGitRepoDeploymentsType
+> = GetDeploymentGitRepoDeploymentsType$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetDeploymentGitRepoDeploymentsType$ {
-    export const inboundSchema = z.nativeEnum(GetDeploymentGitRepoDeploymentsType);
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `GetDeploymentGitRepoDeploymentsType$inboundSchema` instead. */
+    export const inboundSchema = GetDeploymentGitRepoDeploymentsType$inboundSchema;
+    /** @deprecated use `GetDeploymentGitRepoDeploymentsType$outboundSchema` instead. */
+    export const outboundSchema = GetDeploymentGitRepoDeploymentsType$outboundSchema;
 }
 
 /** @internal */
+export const GetDeploymentGitRepoOwnerType$inboundSchema: z.ZodNativeEnum<
+    typeof GetDeploymentGitRepoOwnerType
+> = z.nativeEnum(GetDeploymentGitRepoOwnerType);
+
+/** @internal */
+export const GetDeploymentGitRepoOwnerType$outboundSchema: z.ZodNativeEnum<
+    typeof GetDeploymentGitRepoOwnerType
+> = GetDeploymentGitRepoOwnerType$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetDeploymentGitRepoOwnerType$ {
-    export const inboundSchema = z.nativeEnum(GetDeploymentGitRepoOwnerType);
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `GetDeploymentGitRepoOwnerType$inboundSchema` instead. */
+    export const inboundSchema = GetDeploymentGitRepoOwnerType$inboundSchema;
+    /** @deprecated use `GetDeploymentGitRepoOwnerType$outboundSchema` instead. */
+    export const outboundSchema = GetDeploymentGitRepoOwnerType$outboundSchema;
 }
 
 /** @internal */
+export const GetDeploymentGitRepo3$inboundSchema: z.ZodType<
+    GetDeploymentGitRepo3,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    owner: z.string(),
+    repoUuid: z.string(),
+    slug: z.string(),
+    type: GetDeploymentGitRepoDeploymentsType$inboundSchema,
+    workspaceUuid: z.string(),
+    path: z.string(),
+    defaultBranch: z.string(),
+    name: z.string(),
+    private: z.boolean(),
+    ownerType: GetDeploymentGitRepoOwnerType$inboundSchema,
+});
+
+/** @internal */
+export type GetDeploymentGitRepo3$Outbound = {
+    owner: string;
+    repoUuid: string;
+    slug: string;
+    type: string;
+    workspaceUuid: string;
+    path: string;
+    defaultBranch: string;
+    name: string;
+    private: boolean;
+    ownerType: string;
+};
+
+/** @internal */
+export const GetDeploymentGitRepo3$outboundSchema: z.ZodType<
+    GetDeploymentGitRepo3$Outbound,
+    z.ZodTypeDef,
+    GetDeploymentGitRepo3
+> = z.object({
+    owner: z.string(),
+    repoUuid: z.string(),
+    slug: z.string(),
+    type: GetDeploymentGitRepoDeploymentsType$outboundSchema,
+    workspaceUuid: z.string(),
+    path: z.string(),
+    defaultBranch: z.string(),
+    name: z.string(),
+    private: z.boolean(),
+    ownerType: GetDeploymentGitRepoOwnerType$outboundSchema,
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetDeploymentGitRepo3$ {
-    export const inboundSchema: z.ZodType<GetDeploymentGitRepo3, z.ZodTypeDef, unknown> = z
-        .object({
-            owner: z.string(),
-            repoUuid: z.string(),
-            slug: z.string(),
-            type: GetDeploymentGitRepoDeploymentsType$.inboundSchema,
-            workspaceUuid: z.string(),
-            path: z.string(),
-            defaultBranch: z.string(),
-            name: z.string(),
-            private: z.boolean(),
-            ownerType: GetDeploymentGitRepoOwnerType$.inboundSchema,
-        })
-        .transform((v) => {
-            return {
-                owner: v.owner,
-                repoUuid: v.repoUuid,
-                slug: v.slug,
-                type: v.type,
-                workspaceUuid: v.workspaceUuid,
-                path: v.path,
-                defaultBranch: v.defaultBranch,
-                name: v.name,
-                private: v.private,
-                ownerType: v.ownerType,
-            };
-        });
-
-    export type Outbound = {
-        owner: string;
-        repoUuid: string;
-        slug: string;
-        type: string;
-        workspaceUuid: string;
-        path: string;
-        defaultBranch: string;
-        name: string;
-        private: boolean;
-        ownerType: string;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetDeploymentGitRepo3> = z
-        .object({
-            owner: z.string(),
-            repoUuid: z.string(),
-            slug: z.string(),
-            type: GetDeploymentGitRepoDeploymentsType$.outboundSchema,
-            workspaceUuid: z.string(),
-            path: z.string(),
-            defaultBranch: z.string(),
-            name: z.string(),
-            private: z.boolean(),
-            ownerType: GetDeploymentGitRepoOwnerType$.outboundSchema,
-        })
-        .transform((v) => {
-            return {
-                owner: v.owner,
-                repoUuid: v.repoUuid,
-                slug: v.slug,
-                type: v.type,
-                workspaceUuid: v.workspaceUuid,
-                path: v.path,
-                defaultBranch: v.defaultBranch,
-                name: v.name,
-                private: v.private,
-                ownerType: v.ownerType,
-            };
-        });
+    /** @deprecated use `GetDeploymentGitRepo3$inboundSchema` instead. */
+    export const inboundSchema = GetDeploymentGitRepo3$inboundSchema;
+    /** @deprecated use `GetDeploymentGitRepo3$outboundSchema` instead. */
+    export const outboundSchema = GetDeploymentGitRepo3$outboundSchema;
+    /** @deprecated use `GetDeploymentGitRepo3$Outbound` instead. */
+    export type Outbound = GetDeploymentGitRepo3$Outbound;
 }
 
 /** @internal */
+export const GetDeploymentGitRepoType$inboundSchema: z.ZodNativeEnum<
+    typeof GetDeploymentGitRepoType
+> = z.nativeEnum(GetDeploymentGitRepoType);
+
+/** @internal */
+export const GetDeploymentGitRepoType$outboundSchema: z.ZodNativeEnum<
+    typeof GetDeploymentGitRepoType
+> = GetDeploymentGitRepoType$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetDeploymentGitRepoType$ {
-    export const inboundSchema = z.nativeEnum(GetDeploymentGitRepoType);
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `GetDeploymentGitRepoType$inboundSchema` instead. */
+    export const inboundSchema = GetDeploymentGitRepoType$inboundSchema;
+    /** @deprecated use `GetDeploymentGitRepoType$outboundSchema` instead. */
+    export const outboundSchema = GetDeploymentGitRepoType$outboundSchema;
 }
 
 /** @internal */
+export const GetDeploymentGitRepoDeploymentsResponseOwnerType$inboundSchema: z.ZodNativeEnum<
+    typeof GetDeploymentGitRepoDeploymentsResponseOwnerType
+> = z.nativeEnum(GetDeploymentGitRepoDeploymentsResponseOwnerType);
+
+/** @internal */
+export const GetDeploymentGitRepoDeploymentsResponseOwnerType$outboundSchema: z.ZodNativeEnum<
+    typeof GetDeploymentGitRepoDeploymentsResponseOwnerType
+> = GetDeploymentGitRepoDeploymentsResponseOwnerType$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetDeploymentGitRepoDeploymentsResponseOwnerType$ {
-    export const inboundSchema = z.nativeEnum(GetDeploymentGitRepoDeploymentsResponseOwnerType);
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `GetDeploymentGitRepoDeploymentsResponseOwnerType$inboundSchema` instead. */
+    export const inboundSchema = GetDeploymentGitRepoDeploymentsResponseOwnerType$inboundSchema;
+    /** @deprecated use `GetDeploymentGitRepoDeploymentsResponseOwnerType$outboundSchema` instead. */
+    export const outboundSchema = GetDeploymentGitRepoDeploymentsResponseOwnerType$outboundSchema;
 }
 
 /** @internal */
+export const GetDeploymentGitRepo2$inboundSchema: z.ZodType<
+    GetDeploymentGitRepo2,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    org: z.string(),
+    repo: z.string(),
+    repoId: z.number(),
+    type: GetDeploymentGitRepoType$inboundSchema,
+    repoOwnerId: z.string(),
+    path: z.string(),
+    defaultBranch: z.string(),
+    name: z.string(),
+    private: z.boolean(),
+    ownerType: GetDeploymentGitRepoDeploymentsResponseOwnerType$inboundSchema,
+});
+
+/** @internal */
+export type GetDeploymentGitRepo2$Outbound = {
+    org: string;
+    repo: string;
+    repoId: number;
+    type: string;
+    repoOwnerId: string;
+    path: string;
+    defaultBranch: string;
+    name: string;
+    private: boolean;
+    ownerType: string;
+};
+
+/** @internal */
+export const GetDeploymentGitRepo2$outboundSchema: z.ZodType<
+    GetDeploymentGitRepo2$Outbound,
+    z.ZodTypeDef,
+    GetDeploymentGitRepo2
+> = z.object({
+    org: z.string(),
+    repo: z.string(),
+    repoId: z.number(),
+    type: GetDeploymentGitRepoType$outboundSchema,
+    repoOwnerId: z.string(),
+    path: z.string(),
+    defaultBranch: z.string(),
+    name: z.string(),
+    private: z.boolean(),
+    ownerType: GetDeploymentGitRepoDeploymentsResponseOwnerType$outboundSchema,
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetDeploymentGitRepo2$ {
-    export const inboundSchema: z.ZodType<GetDeploymentGitRepo2, z.ZodTypeDef, unknown> = z
-        .object({
-            org: z.string(),
-            repo: z.string(),
-            repoId: z.number(),
-            type: GetDeploymentGitRepoType$.inboundSchema,
-            repoOwnerId: z.string(),
-            path: z.string(),
-            defaultBranch: z.string(),
-            name: z.string(),
-            private: z.boolean(),
-            ownerType: GetDeploymentGitRepoDeploymentsResponseOwnerType$.inboundSchema,
-        })
-        .transform((v) => {
-            return {
-                org: v.org,
-                repo: v.repo,
-                repoId: v.repoId,
-                type: v.type,
-                repoOwnerId: v.repoOwnerId,
-                path: v.path,
-                defaultBranch: v.defaultBranch,
-                name: v.name,
-                private: v.private,
-                ownerType: v.ownerType,
-            };
-        });
-
-    export type Outbound = {
-        org: string;
-        repo: string;
-        repoId: number;
-        type: string;
-        repoOwnerId: string;
-        path: string;
-        defaultBranch: string;
-        name: string;
-        private: boolean;
-        ownerType: string;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetDeploymentGitRepo2> = z
-        .object({
-            org: z.string(),
-            repo: z.string(),
-            repoId: z.number(),
-            type: GetDeploymentGitRepoType$.outboundSchema,
-            repoOwnerId: z.string(),
-            path: z.string(),
-            defaultBranch: z.string(),
-            name: z.string(),
-            private: z.boolean(),
-            ownerType: GetDeploymentGitRepoDeploymentsResponseOwnerType$.outboundSchema,
-        })
-        .transform((v) => {
-            return {
-                org: v.org,
-                repo: v.repo,
-                repoId: v.repoId,
-                type: v.type,
-                repoOwnerId: v.repoOwnerId,
-                path: v.path,
-                defaultBranch: v.defaultBranch,
-                name: v.name,
-                private: v.private,
-                ownerType: v.ownerType,
-            };
-        });
+    /** @deprecated use `GetDeploymentGitRepo2$inboundSchema` instead. */
+    export const inboundSchema = GetDeploymentGitRepo2$inboundSchema;
+    /** @deprecated use `GetDeploymentGitRepo2$outboundSchema` instead. */
+    export const outboundSchema = GetDeploymentGitRepo2$outboundSchema;
+    /** @deprecated use `GetDeploymentGitRepo2$Outbound` instead. */
+    export type Outbound = GetDeploymentGitRepo2$Outbound;
 }
 
 /** @internal */
+export const GetDeploymentGitRepoDeploymentsResponseType$inboundSchema: z.ZodNativeEnum<
+    typeof GetDeploymentGitRepoDeploymentsResponseType
+> = z.nativeEnum(GetDeploymentGitRepoDeploymentsResponseType);
+
+/** @internal */
+export const GetDeploymentGitRepoDeploymentsResponseType$outboundSchema: z.ZodNativeEnum<
+    typeof GetDeploymentGitRepoDeploymentsResponseType
+> = GetDeploymentGitRepoDeploymentsResponseType$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetDeploymentGitRepoDeploymentsResponseType$ {
-    export const inboundSchema = z.nativeEnum(GetDeploymentGitRepoDeploymentsResponseType);
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `GetDeploymentGitRepoDeploymentsResponseType$inboundSchema` instead. */
+    export const inboundSchema = GetDeploymentGitRepoDeploymentsResponseType$inboundSchema;
+    /** @deprecated use `GetDeploymentGitRepoDeploymentsResponseType$outboundSchema` instead. */
+    export const outboundSchema = GetDeploymentGitRepoDeploymentsResponseType$outboundSchema;
 }
 
 /** @internal */
+export const GetDeploymentGitRepoDeploymentsOwnerType$inboundSchema: z.ZodNativeEnum<
+    typeof GetDeploymentGitRepoDeploymentsOwnerType
+> = z.nativeEnum(GetDeploymentGitRepoDeploymentsOwnerType);
+
+/** @internal */
+export const GetDeploymentGitRepoDeploymentsOwnerType$outboundSchema: z.ZodNativeEnum<
+    typeof GetDeploymentGitRepoDeploymentsOwnerType
+> = GetDeploymentGitRepoDeploymentsOwnerType$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetDeploymentGitRepoDeploymentsOwnerType$ {
-    export const inboundSchema = z.nativeEnum(GetDeploymentGitRepoDeploymentsOwnerType);
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `GetDeploymentGitRepoDeploymentsOwnerType$inboundSchema` instead. */
+    export const inboundSchema = GetDeploymentGitRepoDeploymentsOwnerType$inboundSchema;
+    /** @deprecated use `GetDeploymentGitRepoDeploymentsOwnerType$outboundSchema` instead. */
+    export const outboundSchema = GetDeploymentGitRepoDeploymentsOwnerType$outboundSchema;
 }
 
 /** @internal */
+export const GetDeploymentGitRepo1$inboundSchema: z.ZodType<
+    GetDeploymentGitRepo1,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    namespace: z.string(),
+    projectId: z.number(),
+    type: GetDeploymentGitRepoDeploymentsResponseType$inboundSchema,
+    url: z.string(),
+    path: z.string(),
+    defaultBranch: z.string(),
+    name: z.string(),
+    private: z.boolean(),
+    ownerType: GetDeploymentGitRepoDeploymentsOwnerType$inboundSchema,
+});
+
+/** @internal */
+export type GetDeploymentGitRepo1$Outbound = {
+    namespace: string;
+    projectId: number;
+    type: string;
+    url: string;
+    path: string;
+    defaultBranch: string;
+    name: string;
+    private: boolean;
+    ownerType: string;
+};
+
+/** @internal */
+export const GetDeploymentGitRepo1$outboundSchema: z.ZodType<
+    GetDeploymentGitRepo1$Outbound,
+    z.ZodTypeDef,
+    GetDeploymentGitRepo1
+> = z.object({
+    namespace: z.string(),
+    projectId: z.number(),
+    type: GetDeploymentGitRepoDeploymentsResponseType$outboundSchema,
+    url: z.string(),
+    path: z.string(),
+    defaultBranch: z.string(),
+    name: z.string(),
+    private: z.boolean(),
+    ownerType: GetDeploymentGitRepoDeploymentsOwnerType$outboundSchema,
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetDeploymentGitRepo1$ {
-    export const inboundSchema: z.ZodType<GetDeploymentGitRepo1, z.ZodTypeDef, unknown> = z
-        .object({
-            namespace: z.string(),
-            projectId: z.number(),
-            type: GetDeploymentGitRepoDeploymentsResponseType$.inboundSchema,
-            url: z.string(),
-            path: z.string(),
-            defaultBranch: z.string(),
-            name: z.string(),
-            private: z.boolean(),
-            ownerType: GetDeploymentGitRepoDeploymentsOwnerType$.inboundSchema,
-        })
-        .transform((v) => {
-            return {
-                namespace: v.namespace,
-                projectId: v.projectId,
-                type: v.type,
-                url: v.url,
-                path: v.path,
-                defaultBranch: v.defaultBranch,
-                name: v.name,
-                private: v.private,
-                ownerType: v.ownerType,
-            };
-        });
-
-    export type Outbound = {
-        namespace: string;
-        projectId: number;
-        type: string;
-        url: string;
-        path: string;
-        defaultBranch: string;
-        name: string;
-        private: boolean;
-        ownerType: string;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetDeploymentGitRepo1> = z
-        .object({
-            namespace: z.string(),
-            projectId: z.number(),
-            type: GetDeploymentGitRepoDeploymentsResponseType$.outboundSchema,
-            url: z.string(),
-            path: z.string(),
-            defaultBranch: z.string(),
-            name: z.string(),
-            private: z.boolean(),
-            ownerType: GetDeploymentGitRepoDeploymentsOwnerType$.outboundSchema,
-        })
-        .transform((v) => {
-            return {
-                namespace: v.namespace,
-                projectId: v.projectId,
-                type: v.type,
-                url: v.url,
-                path: v.path,
-                defaultBranch: v.defaultBranch,
-                name: v.name,
-                private: v.private,
-                ownerType: v.ownerType,
-            };
-        });
+    /** @deprecated use `GetDeploymentGitRepo1$inboundSchema` instead. */
+    export const inboundSchema = GetDeploymentGitRepo1$inboundSchema;
+    /** @deprecated use `GetDeploymentGitRepo1$outboundSchema` instead. */
+    export const outboundSchema = GetDeploymentGitRepo1$outboundSchema;
+    /** @deprecated use `GetDeploymentGitRepo1$Outbound` instead. */
+    export type Outbound = GetDeploymentGitRepo1$Outbound;
 }
 
 /** @internal */
+export const ResponseBodyGitRepo$inboundSchema: z.ZodType<
+    ResponseBodyGitRepo,
+    z.ZodTypeDef,
+    unknown
+> = z.union([
+    z.lazy(() => GetDeploymentGitRepo1$inboundSchema),
+    z.lazy(() => GetDeploymentGitRepo2$inboundSchema),
+    z.lazy(() => GetDeploymentGitRepo3$inboundSchema),
+]);
+
+/** @internal */
+export type ResponseBodyGitRepo$Outbound =
+    | GetDeploymentGitRepo1$Outbound
+    | GetDeploymentGitRepo2$Outbound
+    | GetDeploymentGitRepo3$Outbound;
+
+/** @internal */
+export const ResponseBodyGitRepo$outboundSchema: z.ZodType<
+    ResponseBodyGitRepo$Outbound,
+    z.ZodTypeDef,
+    ResponseBodyGitRepo
+> = z.union([
+    z.lazy(() => GetDeploymentGitRepo1$outboundSchema),
+    z.lazy(() => GetDeploymentGitRepo2$outboundSchema),
+    z.lazy(() => GetDeploymentGitRepo3$outboundSchema),
+]);
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace ResponseBodyGitRepo$ {
-    export const inboundSchema: z.ZodType<ResponseBodyGitRepo, z.ZodTypeDef, unknown> = z.union([
-        z.lazy(() => GetDeploymentGitRepo1$.inboundSchema),
-        z.lazy(() => GetDeploymentGitRepo2$.inboundSchema),
-        z.lazy(() => GetDeploymentGitRepo3$.inboundSchema),
-    ]);
-
-    export type Outbound =
-        | GetDeploymentGitRepo1$.Outbound
-        | GetDeploymentGitRepo2$.Outbound
-        | GetDeploymentGitRepo3$.Outbound;
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, ResponseBodyGitRepo> = z.union([
-        z.lazy(() => GetDeploymentGitRepo1$.outboundSchema),
-        z.lazy(() => GetDeploymentGitRepo2$.outboundSchema),
-        z.lazy(() => GetDeploymentGitRepo3$.outboundSchema),
-    ]);
+    /** @deprecated use `ResponseBodyGitRepo$inboundSchema` instead. */
+    export const inboundSchema = ResponseBodyGitRepo$inboundSchema;
+    /** @deprecated use `ResponseBodyGitRepo$outboundSchema` instead. */
+    export const outboundSchema = ResponseBodyGitRepo$outboundSchema;
+    /** @deprecated use `ResponseBodyGitRepo$Outbound` instead. */
+    export type Outbound = ResponseBodyGitRepo$Outbound;
 }
 
 /** @internal */
+export const ResponseBodyAliasAssignedAt$inboundSchema: z.ZodType<
+    ResponseBodyAliasAssignedAt,
+    z.ZodTypeDef,
+    unknown
+> = z.union([z.number(), z.boolean()]);
+
+/** @internal */
+export type ResponseBodyAliasAssignedAt$Outbound = number | boolean;
+
+/** @internal */
+export const ResponseBodyAliasAssignedAt$outboundSchema: z.ZodType<
+    ResponseBodyAliasAssignedAt$Outbound,
+    z.ZodTypeDef,
+    ResponseBodyAliasAssignedAt
+> = z.union([z.number(), z.boolean()]);
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace ResponseBodyAliasAssignedAt$ {
-    export const inboundSchema: z.ZodType<ResponseBodyAliasAssignedAt, z.ZodTypeDef, unknown> =
-        z.union([z.number(), z.boolean()]);
-
-    export type Outbound = number | boolean;
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, ResponseBodyAliasAssignedAt> =
-        z.union([z.number(), z.boolean()]);
+    /** @deprecated use `ResponseBodyAliasAssignedAt$inboundSchema` instead. */
+    export const inboundSchema = ResponseBodyAliasAssignedAt$inboundSchema;
+    /** @deprecated use `ResponseBodyAliasAssignedAt$outboundSchema` instead. */
+    export const outboundSchema = ResponseBodyAliasAssignedAt$outboundSchema;
+    /** @deprecated use `ResponseBodyAliasAssignedAt$Outbound` instead. */
+    export type Outbound = ResponseBodyAliasAssignedAt$Outbound;
 }
 
 /** @internal */
+export const GetDeploymentResponseBodyDeploymentsResponseReadyState$inboundSchema: z.ZodNativeEnum<
+    typeof GetDeploymentResponseBodyDeploymentsResponseReadyState
+> = z.nativeEnum(GetDeploymentResponseBodyDeploymentsResponseReadyState);
+
+/** @internal */
+export const GetDeploymentResponseBodyDeploymentsResponseReadyState$outboundSchema: z.ZodNativeEnum<
+    typeof GetDeploymentResponseBodyDeploymentsResponseReadyState
+> = GetDeploymentResponseBodyDeploymentsResponseReadyState$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetDeploymentResponseBodyDeploymentsResponseReadyState$ {
-    export const inboundSchema = z.nativeEnum(
-        GetDeploymentResponseBodyDeploymentsResponseReadyState
-    );
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `GetDeploymentResponseBodyDeploymentsResponseReadyState$inboundSchema` instead. */
+    export const inboundSchema =
+        GetDeploymentResponseBodyDeploymentsResponseReadyState$inboundSchema;
+    /** @deprecated use `GetDeploymentResponseBodyDeploymentsResponseReadyState$outboundSchema` instead. */
+    export const outboundSchema =
+        GetDeploymentResponseBodyDeploymentsResponseReadyState$outboundSchema;
 }
 
 /** @internal */
+export const ResponseBodyOutput$inboundSchema: z.ZodType<
+    ResponseBodyOutput,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    path: z.string(),
+    functionName: z.string(),
+});
+
+/** @internal */
+export type ResponseBodyOutput$Outbound = {
+    path: string;
+    functionName: string;
+};
+
+/** @internal */
+export const ResponseBodyOutput$outboundSchema: z.ZodType<
+    ResponseBodyOutput$Outbound,
+    z.ZodTypeDef,
+    ResponseBodyOutput
+> = z.object({
+    path: z.string(),
+    functionName: z.string(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace ResponseBodyOutput$ {
-    export const inboundSchema: z.ZodType<ResponseBodyOutput, z.ZodTypeDef, unknown> = z
-        .object({
-            path: z.string(),
-            functionName: z.string(),
-        })
-        .transform((v) => {
-            return {
-                path: v.path,
-                functionName: v.functionName,
-            };
-        });
-
-    export type Outbound = {
-        path: string;
-        functionName: string;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, ResponseBodyOutput> = z
-        .object({
-            path: z.string(),
-            functionName: z.string(),
-        })
-        .transform((v) => {
-            return {
-                path: v.path,
-                functionName: v.functionName,
-            };
-        });
+    /** @deprecated use `ResponseBodyOutput$inboundSchema` instead. */
+    export const inboundSchema = ResponseBodyOutput$inboundSchema;
+    /** @deprecated use `ResponseBodyOutput$outboundSchema` instead. */
+    export const outboundSchema = ResponseBodyOutput$outboundSchema;
+    /** @deprecated use `ResponseBodyOutput$Outbound` instead. */
+    export type Outbound = ResponseBodyOutput$Outbound;
 }
 
 /** @internal */
+export const GetDeploymentResponseBodyLambdas$inboundSchema: z.ZodType<
+    GetDeploymentResponseBodyLambdas,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    id: z.string(),
+    createdAt: z.number().optional(),
+    entrypoint: z.nullable(z.string()).optional(),
+    readyState: GetDeploymentResponseBodyDeploymentsResponseReadyState$inboundSchema.optional(),
+    readyStateAt: z.number().optional(),
+    output: z.array(z.lazy(() => ResponseBodyOutput$inboundSchema)),
+});
+
+/** @internal */
+export type GetDeploymentResponseBodyLambdas$Outbound = {
+    id: string;
+    createdAt?: number | undefined;
+    entrypoint?: string | null | undefined;
+    readyState?: string | undefined;
+    readyStateAt?: number | undefined;
+    output: Array<ResponseBodyOutput$Outbound>;
+};
+
+/** @internal */
+export const GetDeploymentResponseBodyLambdas$outboundSchema: z.ZodType<
+    GetDeploymentResponseBodyLambdas$Outbound,
+    z.ZodTypeDef,
+    GetDeploymentResponseBodyLambdas
+> = z.object({
+    id: z.string(),
+    createdAt: z.number().optional(),
+    entrypoint: z.nullable(z.string()).optional(),
+    readyState: GetDeploymentResponseBodyDeploymentsResponseReadyState$outboundSchema.optional(),
+    readyStateAt: z.number().optional(),
+    output: z.array(z.lazy(() => ResponseBodyOutput$outboundSchema)),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetDeploymentResponseBodyLambdas$ {
-    export const inboundSchema: z.ZodType<GetDeploymentResponseBodyLambdas, z.ZodTypeDef, unknown> =
-        z
-            .object({
-                id: z.string(),
-                createdAt: z.number().optional(),
-                entrypoint: z.nullable(z.string()).optional(),
-                readyState:
-                    GetDeploymentResponseBodyDeploymentsResponseReadyState$.inboundSchema.optional(),
-                readyStateAt: z.number().optional(),
-                output: z.array(z.lazy(() => ResponseBodyOutput$.inboundSchema)),
-            })
-            .transform((v) => {
-                return {
-                    id: v.id,
-                    ...(v.createdAt === undefined ? null : { createdAt: v.createdAt }),
-                    ...(v.entrypoint === undefined ? null : { entrypoint: v.entrypoint }),
-                    ...(v.readyState === undefined ? null : { readyState: v.readyState }),
-                    ...(v.readyStateAt === undefined ? null : { readyStateAt: v.readyStateAt }),
-                    output: v.output,
-                };
-            });
-
-    export type Outbound = {
-        id: string;
-        createdAt?: number | undefined;
-        entrypoint?: string | null | undefined;
-        readyState?: string | undefined;
-        readyStateAt?: number | undefined;
-        output: Array<ResponseBodyOutput$.Outbound>;
-    };
-
-    export const outboundSchema: z.ZodType<
-        Outbound,
-        z.ZodTypeDef,
-        GetDeploymentResponseBodyLambdas
-    > = z
-        .object({
-            id: z.string(),
-            createdAt: z.number().optional(),
-            entrypoint: z.nullable(z.string()).optional(),
-            readyState:
-                GetDeploymentResponseBodyDeploymentsResponseReadyState$.outboundSchema.optional(),
-            readyStateAt: z.number().optional(),
-            output: z.array(z.lazy(() => ResponseBodyOutput$.outboundSchema)),
-        })
-        .transform((v) => {
-            return {
-                id: v.id,
-                ...(v.createdAt === undefined ? null : { createdAt: v.createdAt }),
-                ...(v.entrypoint === undefined ? null : { entrypoint: v.entrypoint }),
-                ...(v.readyState === undefined ? null : { readyState: v.readyState }),
-                ...(v.readyStateAt === undefined ? null : { readyStateAt: v.readyStateAt }),
-                output: v.output,
-            };
-        });
+    /** @deprecated use `GetDeploymentResponseBodyLambdas$inboundSchema` instead. */
+    export const inboundSchema = GetDeploymentResponseBodyLambdas$inboundSchema;
+    /** @deprecated use `GetDeploymentResponseBodyLambdas$outboundSchema` instead. */
+    export const outboundSchema = GetDeploymentResponseBodyLambdas$outboundSchema;
+    /** @deprecated use `GetDeploymentResponseBodyLambdas$Outbound` instead. */
+    export type Outbound = GetDeploymentResponseBodyLambdas$Outbound;
 }
 
 /** @internal */
+export const GetDeploymentResponseBodyProject$inboundSchema: z.ZodType<
+    GetDeploymentResponseBodyProject,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    id: z.string(),
+    name: z.string(),
+    framework: z.nullable(z.string()).optional(),
+});
+
+/** @internal */
+export type GetDeploymentResponseBodyProject$Outbound = {
+    id: string;
+    name: string;
+    framework?: string | null | undefined;
+};
+
+/** @internal */
+export const GetDeploymentResponseBodyProject$outboundSchema: z.ZodType<
+    GetDeploymentResponseBodyProject$Outbound,
+    z.ZodTypeDef,
+    GetDeploymentResponseBodyProject
+> = z.object({
+    id: z.string(),
+    name: z.string(),
+    framework: z.nullable(z.string()).optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetDeploymentResponseBodyProject$ {
-    export const inboundSchema: z.ZodType<GetDeploymentResponseBodyProject, z.ZodTypeDef, unknown> =
-        z
-            .object({
-                id: z.string(),
-                name: z.string(),
-                framework: z.nullable(z.string()).optional(),
-            })
-            .transform((v) => {
-                return {
-                    id: v.id,
-                    name: v.name,
-                    ...(v.framework === undefined ? null : { framework: v.framework }),
-                };
-            });
-
-    export type Outbound = {
-        id: string;
-        name: string;
-        framework?: string | null | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<
-        Outbound,
-        z.ZodTypeDef,
-        GetDeploymentResponseBodyProject
-    > = z
-        .object({
-            id: z.string(),
-            name: z.string(),
-            framework: z.nullable(z.string()).optional(),
-        })
-        .transform((v) => {
-            return {
-                id: v.id,
-                name: v.name,
-                ...(v.framework === undefined ? null : { framework: v.framework }),
-            };
-        });
+    /** @deprecated use `GetDeploymentResponseBodyProject$inboundSchema` instead. */
+    export const inboundSchema = GetDeploymentResponseBodyProject$inboundSchema;
+    /** @deprecated use `GetDeploymentResponseBodyProject$outboundSchema` instead. */
+    export const outboundSchema = GetDeploymentResponseBodyProject$outboundSchema;
+    /** @deprecated use `GetDeploymentResponseBodyProject$Outbound` instead. */
+    export type Outbound = GetDeploymentResponseBodyProject$Outbound;
 }
 
 /** @internal */
+export const ResponseBodyReadyState$inboundSchema: z.ZodNativeEnum<typeof ResponseBodyReadyState> =
+    z.nativeEnum(ResponseBodyReadyState);
+
+/** @internal */
+export const ResponseBodyReadyState$outboundSchema: z.ZodNativeEnum<typeof ResponseBodyReadyState> =
+    ResponseBodyReadyState$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace ResponseBodyReadyState$ {
-    export const inboundSchema = z.nativeEnum(ResponseBodyReadyState);
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `ResponseBodyReadyState$inboundSchema` instead. */
+    export const inboundSchema = ResponseBodyReadyState$inboundSchema;
+    /** @deprecated use `ResponseBodyReadyState$outboundSchema` instead. */
+    export const outboundSchema = ResponseBodyReadyState$outboundSchema;
 }
 
 /** @internal */
+export const ResponseBodyReadySubstate$inboundSchema: z.ZodNativeEnum<
+    typeof ResponseBodyReadySubstate
+> = z.nativeEnum(ResponseBodyReadySubstate);
+
+/** @internal */
+export const ResponseBodyReadySubstate$outboundSchema: z.ZodNativeEnum<
+    typeof ResponseBodyReadySubstate
+> = ResponseBodyReadySubstate$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace ResponseBodyReadySubstate$ {
-    export const inboundSchema = z.nativeEnum(ResponseBodyReadySubstate);
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `ResponseBodyReadySubstate$inboundSchema` instead. */
+    export const inboundSchema = ResponseBodyReadySubstate$inboundSchema;
+    /** @deprecated use `ResponseBodyReadySubstate$outboundSchema` instead. */
+    export const outboundSchema = ResponseBodyReadySubstate$outboundSchema;
 }
 
 /** @internal */
+export const ResponseBodySource$inboundSchema: z.ZodNativeEnum<typeof ResponseBodySource> =
+    z.nativeEnum(ResponseBodySource);
+
+/** @internal */
+export const ResponseBodySource$outboundSchema: z.ZodNativeEnum<typeof ResponseBodySource> =
+    ResponseBodySource$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace ResponseBodySource$ {
-    export const inboundSchema = z.nativeEnum(ResponseBodySource);
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `ResponseBodySource$inboundSchema` instead. */
+    export const inboundSchema = ResponseBodySource$inboundSchema;
+    /** @deprecated use `ResponseBodySource$outboundSchema` instead. */
+    export const outboundSchema = ResponseBodySource$outboundSchema;
 }
 
 /** @internal */
+export const ResponseBodyTarget$inboundSchema: z.ZodNativeEnum<typeof ResponseBodyTarget> =
+    z.nativeEnum(ResponseBodyTarget);
+
+/** @internal */
+export const ResponseBodyTarget$outboundSchema: z.ZodNativeEnum<typeof ResponseBodyTarget> =
+    ResponseBodyTarget$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace ResponseBodyTarget$ {
-    export const inboundSchema = z.nativeEnum(ResponseBodyTarget);
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `ResponseBodyTarget$inboundSchema` instead. */
+    export const inboundSchema = ResponseBodyTarget$inboundSchema;
+    /** @deprecated use `ResponseBodyTarget$outboundSchema` instead. */
+    export const outboundSchema = ResponseBodyTarget$outboundSchema;
 }
 
 /** @internal */
+export const GetDeploymentResponseBodyTeam$inboundSchema: z.ZodType<
+    GetDeploymentResponseBodyTeam,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    id: z.string(),
+    name: z.string(),
+    slug: z.string(),
+    avatar: z.string().optional(),
+});
+
+/** @internal */
+export type GetDeploymentResponseBodyTeam$Outbound = {
+    id: string;
+    name: string;
+    slug: string;
+    avatar?: string | undefined;
+};
+
+/** @internal */
+export const GetDeploymentResponseBodyTeam$outboundSchema: z.ZodType<
+    GetDeploymentResponseBodyTeam$Outbound,
+    z.ZodTypeDef,
+    GetDeploymentResponseBodyTeam
+> = z.object({
+    id: z.string(),
+    name: z.string(),
+    slug: z.string(),
+    avatar: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetDeploymentResponseBodyTeam$ {
-    export const inboundSchema: z.ZodType<GetDeploymentResponseBodyTeam, z.ZodTypeDef, unknown> = z
-        .object({
-            id: z.string(),
-            name: z.string(),
-            slug: z.string(),
-            avatar: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                id: v.id,
-                name: v.name,
-                slug: v.slug,
-                ...(v.avatar === undefined ? null : { avatar: v.avatar }),
-            };
-        });
-
-    export type Outbound = {
-        id: string;
-        name: string;
-        slug: string;
-        avatar?: string | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetDeploymentResponseBodyTeam> =
-        z
-            .object({
-                id: z.string(),
-                name: z.string(),
-                slug: z.string(),
-                avatar: z.string().optional(),
-            })
-            .transform((v) => {
-                return {
-                    id: v.id,
-                    name: v.name,
-                    slug: v.slug,
-                    ...(v.avatar === undefined ? null : { avatar: v.avatar }),
-                };
-            });
+    /** @deprecated use `GetDeploymentResponseBodyTeam$inboundSchema` instead. */
+    export const inboundSchema = GetDeploymentResponseBodyTeam$inboundSchema;
+    /** @deprecated use `GetDeploymentResponseBodyTeam$outboundSchema` instead. */
+    export const outboundSchema = GetDeploymentResponseBodyTeam$outboundSchema;
+    /** @deprecated use `GetDeploymentResponseBodyTeam$Outbound` instead. */
+    export type Outbound = GetDeploymentResponseBodyTeam$Outbound;
 }
 
 /** @internal */
+export const GetDeploymentResponseBodyType$inboundSchema: z.ZodNativeEnum<
+    typeof GetDeploymentResponseBodyType
+> = z.nativeEnum(GetDeploymentResponseBodyType);
+
+/** @internal */
+export const GetDeploymentResponseBodyType$outboundSchema: z.ZodNativeEnum<
+    typeof GetDeploymentResponseBodyType
+> = GetDeploymentResponseBodyType$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetDeploymentResponseBodyType$ {
-    export const inboundSchema = z.nativeEnum(GetDeploymentResponseBodyType);
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `GetDeploymentResponseBodyType$inboundSchema` instead. */
+    export const inboundSchema = GetDeploymentResponseBodyType$inboundSchema;
+    /** @deprecated use `GetDeploymentResponseBodyType$outboundSchema` instead. */
+    export const outboundSchema = GetDeploymentResponseBodyType$outboundSchema;
 }
 
 /** @internal */
+export const ResponseBodyAliasError$inboundSchema: z.ZodType<
+    ResponseBodyAliasError,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    code: z.string(),
+    message: z.string(),
+});
+
+/** @internal */
+export type ResponseBodyAliasError$Outbound = {
+    code: string;
+    message: string;
+};
+
+/** @internal */
+export const ResponseBodyAliasError$outboundSchema: z.ZodType<
+    ResponseBodyAliasError$Outbound,
+    z.ZodTypeDef,
+    ResponseBodyAliasError
+> = z.object({
+    code: z.string(),
+    message: z.string(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace ResponseBodyAliasError$ {
-    export const inboundSchema: z.ZodType<ResponseBodyAliasError, z.ZodTypeDef, unknown> = z
-        .object({
-            code: z.string(),
-            message: z.string(),
-        })
-        .transform((v) => {
-            return {
-                code: v.code,
-                message: v.message,
-            };
-        });
-
-    export type Outbound = {
-        code: string;
-        message: string;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, ResponseBodyAliasError> = z
-        .object({
-            code: z.string(),
-            message: z.string(),
-        })
-        .transform((v) => {
-            return {
-                code: v.code,
-                message: v.message,
-            };
-        });
+    /** @deprecated use `ResponseBodyAliasError$inboundSchema` instead. */
+    export const inboundSchema = ResponseBodyAliasError$inboundSchema;
+    /** @deprecated use `ResponseBodyAliasError$outboundSchema` instead. */
+    export const outboundSchema = ResponseBodyAliasError$outboundSchema;
+    /** @deprecated use `ResponseBodyAliasError$Outbound` instead. */
+    export type Outbound = ResponseBodyAliasError$Outbound;
 }
 
 /** @internal */
+export const GetDeploymentResponseBodyAliasWarning$inboundSchema: z.ZodType<
+    GetDeploymentResponseBodyAliasWarning,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    code: z.string(),
+    message: z.string(),
+    link: z.string().optional(),
+    action: z.string().optional(),
+});
+
+/** @internal */
+export type GetDeploymentResponseBodyAliasWarning$Outbound = {
+    code: string;
+    message: string;
+    link?: string | undefined;
+    action?: string | undefined;
+};
+
+/** @internal */
+export const GetDeploymentResponseBodyAliasWarning$outboundSchema: z.ZodType<
+    GetDeploymentResponseBodyAliasWarning$Outbound,
+    z.ZodTypeDef,
+    GetDeploymentResponseBodyAliasWarning
+> = z.object({
+    code: z.string(),
+    message: z.string(),
+    link: z.string().optional(),
+    action: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetDeploymentResponseBodyAliasWarning$ {
-    export const inboundSchema: z.ZodType<
-        GetDeploymentResponseBodyAliasWarning,
-        z.ZodTypeDef,
-        unknown
-    > = z
-        .object({
-            code: z.string(),
-            message: z.string(),
-            link: z.string().optional(),
-            action: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                code: v.code,
-                message: v.message,
-                ...(v.link === undefined ? null : { link: v.link }),
-                ...(v.action === undefined ? null : { action: v.action }),
-            };
-        });
-
-    export type Outbound = {
-        code: string;
-        message: string;
-        link?: string | undefined;
-        action?: string | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<
-        Outbound,
-        z.ZodTypeDef,
-        GetDeploymentResponseBodyAliasWarning
-    > = z
-        .object({
-            code: z.string(),
-            message: z.string(),
-            link: z.string().optional(),
-            action: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                code: v.code,
-                message: v.message,
-                ...(v.link === undefined ? null : { link: v.link }),
-                ...(v.action === undefined ? null : { action: v.action }),
-            };
-        });
+    /** @deprecated use `GetDeploymentResponseBodyAliasWarning$inboundSchema` instead. */
+    export const inboundSchema = GetDeploymentResponseBodyAliasWarning$inboundSchema;
+    /** @deprecated use `GetDeploymentResponseBodyAliasWarning$outboundSchema` instead. */
+    export const outboundSchema = GetDeploymentResponseBodyAliasWarning$outboundSchema;
+    /** @deprecated use `GetDeploymentResponseBodyAliasWarning$Outbound` instead. */
+    export type Outbound = GetDeploymentResponseBodyAliasWarning$Outbound;
 }
 
 /** @internal */
+export const ResponseBodyChecksState$inboundSchema: z.ZodNativeEnum<
+    typeof ResponseBodyChecksState
+> = z.nativeEnum(ResponseBodyChecksState);
+
+/** @internal */
+export const ResponseBodyChecksState$outboundSchema: z.ZodNativeEnum<
+    typeof ResponseBodyChecksState
+> = ResponseBodyChecksState$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace ResponseBodyChecksState$ {
-    export const inboundSchema = z.nativeEnum(ResponseBodyChecksState);
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `ResponseBodyChecksState$inboundSchema` instead. */
+    export const inboundSchema = ResponseBodyChecksState$inboundSchema;
+    /** @deprecated use `ResponseBodyChecksState$outboundSchema` instead. */
+    export const outboundSchema = ResponseBodyChecksState$outboundSchema;
 }
 
 /** @internal */
+export const ResponseBodyChecksConclusion$inboundSchema: z.ZodNativeEnum<
+    typeof ResponseBodyChecksConclusion
+> = z.nativeEnum(ResponseBodyChecksConclusion);
+
+/** @internal */
+export const ResponseBodyChecksConclusion$outboundSchema: z.ZodNativeEnum<
+    typeof ResponseBodyChecksConclusion
+> = ResponseBodyChecksConclusion$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace ResponseBodyChecksConclusion$ {
-    export const inboundSchema = z.nativeEnum(ResponseBodyChecksConclusion);
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `ResponseBodyChecksConclusion$inboundSchema` instead. */
+    export const inboundSchema = ResponseBodyChecksConclusion$inboundSchema;
+    /** @deprecated use `ResponseBodyChecksConclusion$outboundSchema` instead. */
+    export const outboundSchema = ResponseBodyChecksConclusion$outboundSchema;
 }
 
 /** @internal */
+export const ResponseBodyCreator$inboundSchema: z.ZodType<
+    ResponseBodyCreator,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    uid: z.string(),
+    username: z.string().optional(),
+    avatar: z.string().optional(),
+});
+
+/** @internal */
+export type ResponseBodyCreator$Outbound = {
+    uid: string;
+    username?: string | undefined;
+    avatar?: string | undefined;
+};
+
+/** @internal */
+export const ResponseBodyCreator$outboundSchema: z.ZodType<
+    ResponseBodyCreator$Outbound,
+    z.ZodTypeDef,
+    ResponseBodyCreator
+> = z.object({
+    uid: z.string(),
+    username: z.string().optional(),
+    avatar: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace ResponseBodyCreator$ {
-    export const inboundSchema: z.ZodType<ResponseBodyCreator, z.ZodTypeDef, unknown> = z
-        .object({
-            uid: z.string(),
-            username: z.string().optional(),
-            avatar: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                uid: v.uid,
-                ...(v.username === undefined ? null : { username: v.username }),
-                ...(v.avatar === undefined ? null : { avatar: v.avatar }),
-            };
-        });
-
-    export type Outbound = {
-        uid: string;
-        username?: string | undefined;
-        avatar?: string | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, ResponseBodyCreator> = z
-        .object({
-            uid: z.string(),
-            username: z.string().optional(),
-            avatar: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                uid: v.uid,
-                ...(v.username === undefined ? null : { username: v.username }),
-                ...(v.avatar === undefined ? null : { avatar: v.avatar }),
-            };
-        });
+    /** @deprecated use `ResponseBodyCreator$inboundSchema` instead. */
+    export const inboundSchema = ResponseBodyCreator$inboundSchema;
+    /** @deprecated use `ResponseBodyCreator$outboundSchema` instead. */
+    export const outboundSchema = ResponseBodyCreator$outboundSchema;
+    /** @deprecated use `ResponseBodyCreator$Outbound` instead. */
+    export type Outbound = ResponseBodyCreator$Outbound;
 }
 
 /** @internal */
+export const GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody19Type$inboundSchema: z.ZodNativeEnum<
+    typeof GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody19Type
+> = z.nativeEnum(GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody19Type);
+
+/** @internal */
+export const GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody19Type$outboundSchema: z.ZodNativeEnum<
+    typeof GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody19Type
+> = GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody19Type$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody19Type$ {
-    export const inboundSchema = z.nativeEnum(
-        GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody19Type
-    );
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody19Type$inboundSchema` instead. */
+    export const inboundSchema =
+        GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody19Type$inboundSchema;
+    /** @deprecated use `GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody19Type$outboundSchema` instead. */
+    export const outboundSchema =
+        GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody19Type$outboundSchema;
 }
 
 /** @internal */
+export const GetDeploymentGitSourceDeployments9$inboundSchema: z.ZodType<
+    GetDeploymentGitSourceDeployments9,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    type: GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody19Type$inboundSchema,
+    ref: z.string(),
+    sha: z.string(),
+    owner: z.string().optional(),
+    slug: z.string().optional(),
+    workspaceUuid: z.string(),
+    repoUuid: z.string(),
+});
+
+/** @internal */
+export type GetDeploymentGitSourceDeployments9$Outbound = {
+    type: string;
+    ref: string;
+    sha: string;
+    owner?: string | undefined;
+    slug?: string | undefined;
+    workspaceUuid: string;
+    repoUuid: string;
+};
+
+/** @internal */
+export const GetDeploymentGitSourceDeployments9$outboundSchema: z.ZodType<
+    GetDeploymentGitSourceDeployments9$Outbound,
+    z.ZodTypeDef,
+    GetDeploymentGitSourceDeployments9
+> = z.object({
+    type: GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody19Type$outboundSchema,
+    ref: z.string(),
+    sha: z.string(),
+    owner: z.string().optional(),
+    slug: z.string().optional(),
+    workspaceUuid: z.string(),
+    repoUuid: z.string(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetDeploymentGitSourceDeployments9$ {
-    export const inboundSchema: z.ZodType<
-        GetDeploymentGitSourceDeployments9,
-        z.ZodTypeDef,
-        unknown
-    > = z
-        .object({
-            type: GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody19Type$.inboundSchema,
-            ref: z.string(),
-            sha: z.string(),
-            owner: z.string().optional(),
-            slug: z.string().optional(),
-            workspaceUuid: z.string(),
-            repoUuid: z.string(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                ref: v.ref,
-                sha: v.sha,
-                ...(v.owner === undefined ? null : { owner: v.owner }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-                workspaceUuid: v.workspaceUuid,
-                repoUuid: v.repoUuid,
-            };
-        });
-
-    export type Outbound = {
-        type: string;
-        ref: string;
-        sha: string;
-        owner?: string | undefined;
-        slug?: string | undefined;
-        workspaceUuid: string;
-        repoUuid: string;
-    };
-
-    export const outboundSchema: z.ZodType<
-        Outbound,
-        z.ZodTypeDef,
-        GetDeploymentGitSourceDeployments9
-    > = z
-        .object({
-            type: GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody19Type$.outboundSchema,
-            ref: z.string(),
-            sha: z.string(),
-            owner: z.string().optional(),
-            slug: z.string().optional(),
-            workspaceUuid: z.string(),
-            repoUuid: z.string(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                ref: v.ref,
-                sha: v.sha,
-                ...(v.owner === undefined ? null : { owner: v.owner }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-                workspaceUuid: v.workspaceUuid,
-                repoUuid: v.repoUuid,
-            };
-        });
+    /** @deprecated use `GetDeploymentGitSourceDeployments9$inboundSchema` instead. */
+    export const inboundSchema = GetDeploymentGitSourceDeployments9$inboundSchema;
+    /** @deprecated use `GetDeploymentGitSourceDeployments9$outboundSchema` instead. */
+    export const outboundSchema = GetDeploymentGitSourceDeployments9$outboundSchema;
+    /** @deprecated use `GetDeploymentGitSourceDeployments9$Outbound` instead. */
+    export type Outbound = GetDeploymentGitSourceDeployments9$Outbound;
 }
 
 /** @internal */
+export const GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody1Type$inboundSchema: z.ZodNativeEnum<
+    typeof GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody1Type
+> = z.nativeEnum(GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody1Type);
+
+/** @internal */
+export const GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody1Type$outboundSchema: z.ZodNativeEnum<
+    typeof GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody1Type
+> = GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody1Type$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody1Type$ {
-    export const inboundSchema = z.nativeEnum(
-        GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody1Type
-    );
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody1Type$inboundSchema` instead. */
+    export const inboundSchema =
+        GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody1Type$inboundSchema;
+    /** @deprecated use `GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody1Type$outboundSchema` instead. */
+    export const outboundSchema =
+        GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody1Type$outboundSchema;
 }
 
 /** @internal */
+export const GetDeploymentGitSourceDeployments8$inboundSchema: z.ZodType<
+    GetDeploymentGitSourceDeployments8,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    type: GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody1Type$inboundSchema,
+    ref: z.string(),
+    sha: z.string(),
+    projectId: z.number(),
+});
+
+/** @internal */
+export type GetDeploymentGitSourceDeployments8$Outbound = {
+    type: string;
+    ref: string;
+    sha: string;
+    projectId: number;
+};
+
+/** @internal */
+export const GetDeploymentGitSourceDeployments8$outboundSchema: z.ZodType<
+    GetDeploymentGitSourceDeployments8$Outbound,
+    z.ZodTypeDef,
+    GetDeploymentGitSourceDeployments8
+> = z.object({
+    type: GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody1Type$outboundSchema,
+    ref: z.string(),
+    sha: z.string(),
+    projectId: z.number(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetDeploymentGitSourceDeployments8$ {
-    export const inboundSchema: z.ZodType<
-        GetDeploymentGitSourceDeployments8,
-        z.ZodTypeDef,
-        unknown
-    > = z
-        .object({
-            type: GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody1Type$.inboundSchema,
-            ref: z.string(),
-            sha: z.string(),
-            projectId: z.number(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                ref: v.ref,
-                sha: v.sha,
-                projectId: v.projectId,
-            };
-        });
-
-    export type Outbound = {
-        type: string;
-        ref: string;
-        sha: string;
-        projectId: number;
-    };
-
-    export const outboundSchema: z.ZodType<
-        Outbound,
-        z.ZodTypeDef,
-        GetDeploymentGitSourceDeployments8
-    > = z
-        .object({
-            type: GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody1Type$.outboundSchema,
-            ref: z.string(),
-            sha: z.string(),
-            projectId: z.number(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                ref: v.ref,
-                sha: v.sha,
-                projectId: v.projectId,
-            };
-        });
+    /** @deprecated use `GetDeploymentGitSourceDeployments8$inboundSchema` instead. */
+    export const inboundSchema = GetDeploymentGitSourceDeployments8$inboundSchema;
+    /** @deprecated use `GetDeploymentGitSourceDeployments8$outboundSchema` instead. */
+    export const outboundSchema = GetDeploymentGitSourceDeployments8$outboundSchema;
+    /** @deprecated use `GetDeploymentGitSourceDeployments8$Outbound` instead. */
+    export type Outbound = GetDeploymentGitSourceDeployments8$Outbound;
 }
 
 /** @internal */
+export const GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBodyType$inboundSchema: z.ZodNativeEnum<
+    typeof GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBodyType
+> = z.nativeEnum(GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBodyType);
+
+/** @internal */
+export const GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBodyType$outboundSchema: z.ZodNativeEnum<
+    typeof GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBodyType
+> = GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBodyType$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBodyType$ {
-    export const inboundSchema = z.nativeEnum(
-        GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBodyType
-    );
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBodyType$inboundSchema` instead. */
+    export const inboundSchema =
+        GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBodyType$inboundSchema;
+    /** @deprecated use `GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBodyType$outboundSchema` instead. */
+    export const outboundSchema =
+        GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBodyType$outboundSchema;
 }
 
 /** @internal */
+export const GetDeploymentGitSourceDeployments7$inboundSchema: z.ZodType<
+    GetDeploymentGitSourceDeployments7,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    type: GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBodyType$inboundSchema,
+    ref: z.string(),
+    sha: z.string(),
+    repoId: z.number(),
+    org: z.string().optional(),
+    repo: z.string().optional(),
+});
+
+/** @internal */
+export type GetDeploymentGitSourceDeployments7$Outbound = {
+    type: string;
+    ref: string;
+    sha: string;
+    repoId: number;
+    org?: string | undefined;
+    repo?: string | undefined;
+};
+
+/** @internal */
+export const GetDeploymentGitSourceDeployments7$outboundSchema: z.ZodType<
+    GetDeploymentGitSourceDeployments7$Outbound,
+    z.ZodTypeDef,
+    GetDeploymentGitSourceDeployments7
+> = z.object({
+    type: GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBodyType$outboundSchema,
+    ref: z.string(),
+    sha: z.string(),
+    repoId: z.number(),
+    org: z.string().optional(),
+    repo: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetDeploymentGitSourceDeployments7$ {
-    export const inboundSchema: z.ZodType<
-        GetDeploymentGitSourceDeployments7,
-        z.ZodTypeDef,
-        unknown
-    > = z
-        .object({
-            type: GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBodyType$.inboundSchema,
-            ref: z.string(),
-            sha: z.string(),
-            repoId: z.number(),
-            org: z.string().optional(),
-            repo: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                ref: v.ref,
-                sha: v.sha,
-                repoId: v.repoId,
-                ...(v.org === undefined ? null : { org: v.org }),
-                ...(v.repo === undefined ? null : { repo: v.repo }),
-            };
-        });
-
-    export type Outbound = {
-        type: string;
-        ref: string;
-        sha: string;
-        repoId: number;
-        org?: string | undefined;
-        repo?: string | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<
-        Outbound,
-        z.ZodTypeDef,
-        GetDeploymentGitSourceDeployments7
-    > = z
-        .object({
-            type: GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBodyType$.outboundSchema,
-            ref: z.string(),
-            sha: z.string(),
-            repoId: z.number(),
-            org: z.string().optional(),
-            repo: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                ref: v.ref,
-                sha: v.sha,
-                repoId: v.repoId,
-                ...(v.org === undefined ? null : { org: v.org }),
-                ...(v.repo === undefined ? null : { repo: v.repo }),
-            };
-        });
+    /** @deprecated use `GetDeploymentGitSourceDeployments7$inboundSchema` instead. */
+    export const inboundSchema = GetDeploymentGitSourceDeployments7$inboundSchema;
+    /** @deprecated use `GetDeploymentGitSourceDeployments7$outboundSchema` instead. */
+    export const outboundSchema = GetDeploymentGitSourceDeployments7$outboundSchema;
+    /** @deprecated use `GetDeploymentGitSourceDeployments7$Outbound` instead. */
+    export type Outbound = GetDeploymentGitSourceDeployments7$Outbound;
 }
 
 /** @internal */
+export const GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONType$inboundSchema: z.ZodNativeEnum<
+    typeof GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONType
+> = z.nativeEnum(GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONType);
+
+/** @internal */
+export const GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONType$outboundSchema: z.ZodNativeEnum<
+    typeof GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONType
+> = GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONType$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONType$ {
-    export const inboundSchema = z.nativeEnum(
-        GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONType
-    );
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONType$inboundSchema` instead. */
+    export const inboundSchema =
+        GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONType$inboundSchema;
+    /** @deprecated use `GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONType$outboundSchema` instead. */
+    export const outboundSchema =
+        GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONType$outboundSchema;
 }
 
 /** @internal */
+export const GetDeploymentGitSourceDeployments6$inboundSchema: z.ZodType<
+    GetDeploymentGitSourceDeployments6,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    type: GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONType$inboundSchema,
+    ref: z.string(),
+    sha: z.string(),
+    gitUrl: z.string(),
+});
+
+/** @internal */
+export type GetDeploymentGitSourceDeployments6$Outbound = {
+    type: string;
+    ref: string;
+    sha: string;
+    gitUrl: string;
+};
+
+/** @internal */
+export const GetDeploymentGitSourceDeployments6$outboundSchema: z.ZodType<
+    GetDeploymentGitSourceDeployments6$Outbound,
+    z.ZodTypeDef,
+    GetDeploymentGitSourceDeployments6
+> = z.object({
+    type: GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONType$outboundSchema,
+    ref: z.string(),
+    sha: z.string(),
+    gitUrl: z.string(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetDeploymentGitSourceDeployments6$ {
-    export const inboundSchema: z.ZodType<
-        GetDeploymentGitSourceDeployments6,
-        z.ZodTypeDef,
-        unknown
-    > = z
-        .object({
-            type: GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONType$.inboundSchema,
-            ref: z.string(),
-            sha: z.string(),
-            gitUrl: z.string(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                ref: v.ref,
-                sha: v.sha,
-                gitUrl: v.gitUrl,
-            };
-        });
-
-    export type Outbound = {
-        type: string;
-        ref: string;
-        sha: string;
-        gitUrl: string;
-    };
-
-    export const outboundSchema: z.ZodType<
-        Outbound,
-        z.ZodTypeDef,
-        GetDeploymentGitSourceDeployments6
-    > = z
-        .object({
-            type: GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONType$.outboundSchema,
-            ref: z.string(),
-            sha: z.string(),
-            gitUrl: z.string(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                ref: v.ref,
-                sha: v.sha,
-                gitUrl: v.gitUrl,
-            };
-        });
+    /** @deprecated use `GetDeploymentGitSourceDeployments6$inboundSchema` instead. */
+    export const inboundSchema = GetDeploymentGitSourceDeployments6$inboundSchema;
+    /** @deprecated use `GetDeploymentGitSourceDeployments6$outboundSchema` instead. */
+    export const outboundSchema = GetDeploymentGitSourceDeployments6$outboundSchema;
+    /** @deprecated use `GetDeploymentGitSourceDeployments6$Outbound` instead. */
+    export type Outbound = GetDeploymentGitSourceDeployments6$Outbound;
 }
 
 /** @internal */
+export const GetDeploymentGitSourceDeploymentsResponse200Type$inboundSchema: z.ZodNativeEnum<
+    typeof GetDeploymentGitSourceDeploymentsResponse200Type
+> = z.nativeEnum(GetDeploymentGitSourceDeploymentsResponse200Type);
+
+/** @internal */
+export const GetDeploymentGitSourceDeploymentsResponse200Type$outboundSchema: z.ZodNativeEnum<
+    typeof GetDeploymentGitSourceDeploymentsResponse200Type
+> = GetDeploymentGitSourceDeploymentsResponse200Type$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetDeploymentGitSourceDeploymentsResponse200Type$ {
-    export const inboundSchema = z.nativeEnum(GetDeploymentGitSourceDeploymentsResponse200Type);
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `GetDeploymentGitSourceDeploymentsResponse200Type$inboundSchema` instead. */
+    export const inboundSchema = GetDeploymentGitSourceDeploymentsResponse200Type$inboundSchema;
+    /** @deprecated use `GetDeploymentGitSourceDeploymentsResponse200Type$outboundSchema` instead. */
+    export const outboundSchema = GetDeploymentGitSourceDeploymentsResponse200Type$outboundSchema;
 }
 
 /** @internal */
+export const GetDeploymentGitSourceDeployments5$inboundSchema: z.ZodType<
+    GetDeploymentGitSourceDeployments5,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    type: GetDeploymentGitSourceDeploymentsResponse200Type$inboundSchema,
+    owner: z.string(),
+    slug: z.string(),
+    ref: z.nullable(z.string()).optional(),
+    sha: z.string().optional(),
+    prId: z.nullable(z.number()).optional(),
+});
+
+/** @internal */
+export type GetDeploymentGitSourceDeployments5$Outbound = {
+    type: string;
+    owner: string;
+    slug: string;
+    ref?: string | null | undefined;
+    sha?: string | undefined;
+    prId?: number | null | undefined;
+};
+
+/** @internal */
+export const GetDeploymentGitSourceDeployments5$outboundSchema: z.ZodType<
+    GetDeploymentGitSourceDeployments5$Outbound,
+    z.ZodTypeDef,
+    GetDeploymentGitSourceDeployments5
+> = z.object({
+    type: GetDeploymentGitSourceDeploymentsResponse200Type$outboundSchema,
+    owner: z.string(),
+    slug: z.string(),
+    ref: z.nullable(z.string()).optional(),
+    sha: z.string().optional(),
+    prId: z.nullable(z.number()).optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetDeploymentGitSourceDeployments5$ {
-    export const inboundSchema: z.ZodType<
-        GetDeploymentGitSourceDeployments5,
-        z.ZodTypeDef,
-        unknown
-    > = z
-        .object({
-            type: GetDeploymentGitSourceDeploymentsResponse200Type$.inboundSchema,
-            owner: z.string(),
-            slug: z.string(),
-            ref: z.nullable(z.string()).optional(),
-            sha: z.string().optional(),
-            prId: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                owner: v.owner,
-                slug: v.slug,
-                ...(v.ref === undefined ? null : { ref: v.ref }),
-                ...(v.sha === undefined ? null : { sha: v.sha }),
-                ...(v.prId === undefined ? null : { prId: v.prId }),
-            };
-        });
-
-    export type Outbound = {
-        type: string;
-        owner: string;
-        slug: string;
-        ref?: string | null | undefined;
-        sha?: string | undefined;
-        prId?: number | null | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<
-        Outbound,
-        z.ZodTypeDef,
-        GetDeploymentGitSourceDeployments5
-    > = z
-        .object({
-            type: GetDeploymentGitSourceDeploymentsResponse200Type$.outboundSchema,
-            owner: z.string(),
-            slug: z.string(),
-            ref: z.nullable(z.string()).optional(),
-            sha: z.string().optional(),
-            prId: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                owner: v.owner,
-                slug: v.slug,
-                ...(v.ref === undefined ? null : { ref: v.ref }),
-                ...(v.sha === undefined ? null : { sha: v.sha }),
-                ...(v.prId === undefined ? null : { prId: v.prId }),
-            };
-        });
+    /** @deprecated use `GetDeploymentGitSourceDeployments5$inboundSchema` instead. */
+    export const inboundSchema = GetDeploymentGitSourceDeployments5$inboundSchema;
+    /** @deprecated use `GetDeploymentGitSourceDeployments5$outboundSchema` instead. */
+    export const outboundSchema = GetDeploymentGitSourceDeployments5$outboundSchema;
+    /** @deprecated use `GetDeploymentGitSourceDeployments5$Outbound` instead. */
+    export type Outbound = GetDeploymentGitSourceDeployments5$Outbound;
 }
 
 /** @internal */
+export const GetDeploymentGitSourceDeploymentsResponseType$inboundSchema: z.ZodNativeEnum<
+    typeof GetDeploymentGitSourceDeploymentsResponseType
+> = z.nativeEnum(GetDeploymentGitSourceDeploymentsResponseType);
+
+/** @internal */
+export const GetDeploymentGitSourceDeploymentsResponseType$outboundSchema: z.ZodNativeEnum<
+    typeof GetDeploymentGitSourceDeploymentsResponseType
+> = GetDeploymentGitSourceDeploymentsResponseType$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetDeploymentGitSourceDeploymentsResponseType$ {
-    export const inboundSchema = z.nativeEnum(GetDeploymentGitSourceDeploymentsResponseType);
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `GetDeploymentGitSourceDeploymentsResponseType$inboundSchema` instead. */
+    export const inboundSchema = GetDeploymentGitSourceDeploymentsResponseType$inboundSchema;
+    /** @deprecated use `GetDeploymentGitSourceDeploymentsResponseType$outboundSchema` instead. */
+    export const outboundSchema = GetDeploymentGitSourceDeploymentsResponseType$outboundSchema;
 }
 
 /** @internal */
+export const GetDeploymentGitSourceDeployments4$inboundSchema: z.ZodType<
+    GetDeploymentGitSourceDeployments4,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    type: GetDeploymentGitSourceDeploymentsResponseType$inboundSchema,
+    workspaceUuid: z.string().optional(),
+    repoUuid: z.string(),
+    ref: z.nullable(z.string()).optional(),
+    sha: z.string().optional(),
+    prId: z.nullable(z.number()).optional(),
+});
+
+/** @internal */
+export type GetDeploymentGitSourceDeployments4$Outbound = {
+    type: string;
+    workspaceUuid?: string | undefined;
+    repoUuid: string;
+    ref?: string | null | undefined;
+    sha?: string | undefined;
+    prId?: number | null | undefined;
+};
+
+/** @internal */
+export const GetDeploymentGitSourceDeployments4$outboundSchema: z.ZodType<
+    GetDeploymentGitSourceDeployments4$Outbound,
+    z.ZodTypeDef,
+    GetDeploymentGitSourceDeployments4
+> = z.object({
+    type: GetDeploymentGitSourceDeploymentsResponseType$outboundSchema,
+    workspaceUuid: z.string().optional(),
+    repoUuid: z.string(),
+    ref: z.nullable(z.string()).optional(),
+    sha: z.string().optional(),
+    prId: z.nullable(z.number()).optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetDeploymentGitSourceDeployments4$ {
-    export const inboundSchema: z.ZodType<
-        GetDeploymentGitSourceDeployments4,
-        z.ZodTypeDef,
-        unknown
-    > = z
-        .object({
-            type: GetDeploymentGitSourceDeploymentsResponseType$.inboundSchema,
-            workspaceUuid: z.string().optional(),
-            repoUuid: z.string(),
-            ref: z.nullable(z.string()).optional(),
-            sha: z.string().optional(),
-            prId: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                ...(v.workspaceUuid === undefined ? null : { workspaceUuid: v.workspaceUuid }),
-                repoUuid: v.repoUuid,
-                ...(v.ref === undefined ? null : { ref: v.ref }),
-                ...(v.sha === undefined ? null : { sha: v.sha }),
-                ...(v.prId === undefined ? null : { prId: v.prId }),
-            };
-        });
-
-    export type Outbound = {
-        type: string;
-        workspaceUuid?: string | undefined;
-        repoUuid: string;
-        ref?: string | null | undefined;
-        sha?: string | undefined;
-        prId?: number | null | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<
-        Outbound,
-        z.ZodTypeDef,
-        GetDeploymentGitSourceDeployments4
-    > = z
-        .object({
-            type: GetDeploymentGitSourceDeploymentsResponseType$.outboundSchema,
-            workspaceUuid: z.string().optional(),
-            repoUuid: z.string(),
-            ref: z.nullable(z.string()).optional(),
-            sha: z.string().optional(),
-            prId: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                ...(v.workspaceUuid === undefined ? null : { workspaceUuid: v.workspaceUuid }),
-                repoUuid: v.repoUuid,
-                ...(v.ref === undefined ? null : { ref: v.ref }),
-                ...(v.sha === undefined ? null : { sha: v.sha }),
-                ...(v.prId === undefined ? null : { prId: v.prId }),
-            };
-        });
+    /** @deprecated use `GetDeploymentGitSourceDeployments4$inboundSchema` instead. */
+    export const inboundSchema = GetDeploymentGitSourceDeployments4$inboundSchema;
+    /** @deprecated use `GetDeploymentGitSourceDeployments4$outboundSchema` instead. */
+    export const outboundSchema = GetDeploymentGitSourceDeployments4$outboundSchema;
+    /** @deprecated use `GetDeploymentGitSourceDeployments4$Outbound` instead. */
+    export type Outbound = GetDeploymentGitSourceDeployments4$Outbound;
 }
 
 /** @internal */
+export const GetDeploymentGitSourceDeploymentsType$inboundSchema: z.ZodNativeEnum<
+    typeof GetDeploymentGitSourceDeploymentsType
+> = z.nativeEnum(GetDeploymentGitSourceDeploymentsType);
+
+/** @internal */
+export const GetDeploymentGitSourceDeploymentsType$outboundSchema: z.ZodNativeEnum<
+    typeof GetDeploymentGitSourceDeploymentsType
+> = GetDeploymentGitSourceDeploymentsType$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetDeploymentGitSourceDeploymentsType$ {
-    export const inboundSchema = z.nativeEnum(GetDeploymentGitSourceDeploymentsType);
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `GetDeploymentGitSourceDeploymentsType$inboundSchema` instead. */
+    export const inboundSchema = GetDeploymentGitSourceDeploymentsType$inboundSchema;
+    /** @deprecated use `GetDeploymentGitSourceDeploymentsType$outboundSchema` instead. */
+    export const outboundSchema = GetDeploymentGitSourceDeploymentsType$outboundSchema;
 }
 
 /** @internal */
+export const GetDeploymentGitSourceProjectId$inboundSchema: z.ZodType<
+    GetDeploymentGitSourceProjectId,
+    z.ZodTypeDef,
+    unknown
+> = z.union([z.string(), z.number()]);
+
+/** @internal */
+export type GetDeploymentGitSourceProjectId$Outbound = string | number;
+
+/** @internal */
+export const GetDeploymentGitSourceProjectId$outboundSchema: z.ZodType<
+    GetDeploymentGitSourceProjectId$Outbound,
+    z.ZodTypeDef,
+    GetDeploymentGitSourceProjectId
+> = z.union([z.string(), z.number()]);
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetDeploymentGitSourceProjectId$ {
-    export const inboundSchema: z.ZodType<GetDeploymentGitSourceProjectId, z.ZodTypeDef, unknown> =
-        z.union([z.string(), z.number()]);
-
-    export type Outbound = string | number;
-    export const outboundSchema: z.ZodType<
-        Outbound,
-        z.ZodTypeDef,
-        GetDeploymentGitSourceProjectId
-    > = z.union([z.string(), z.number()]);
+    /** @deprecated use `GetDeploymentGitSourceProjectId$inboundSchema` instead. */
+    export const inboundSchema = GetDeploymentGitSourceProjectId$inboundSchema;
+    /** @deprecated use `GetDeploymentGitSourceProjectId$outboundSchema` instead. */
+    export const outboundSchema = GetDeploymentGitSourceProjectId$outboundSchema;
+    /** @deprecated use `GetDeploymentGitSourceProjectId$Outbound` instead. */
+    export type Outbound = GetDeploymentGitSourceProjectId$Outbound;
 }
 
 /** @internal */
+export const GetDeploymentGitSourceDeployments3$inboundSchema: z.ZodType<
+    GetDeploymentGitSourceDeployments3,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    type: GetDeploymentGitSourceDeploymentsType$inboundSchema,
+    projectId: z.union([z.string(), z.number()]),
+    ref: z.nullable(z.string()).optional(),
+    sha: z.string().optional(),
+    prId: z.nullable(z.number()).optional(),
+});
+
+/** @internal */
+export type GetDeploymentGitSourceDeployments3$Outbound = {
+    type: string;
+    projectId: string | number;
+    ref?: string | null | undefined;
+    sha?: string | undefined;
+    prId?: number | null | undefined;
+};
+
+/** @internal */
+export const GetDeploymentGitSourceDeployments3$outboundSchema: z.ZodType<
+    GetDeploymentGitSourceDeployments3$Outbound,
+    z.ZodTypeDef,
+    GetDeploymentGitSourceDeployments3
+> = z.object({
+    type: GetDeploymentGitSourceDeploymentsType$outboundSchema,
+    projectId: z.union([z.string(), z.number()]),
+    ref: z.nullable(z.string()).optional(),
+    sha: z.string().optional(),
+    prId: z.nullable(z.number()).optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetDeploymentGitSourceDeployments3$ {
-    export const inboundSchema: z.ZodType<
-        GetDeploymentGitSourceDeployments3,
-        z.ZodTypeDef,
-        unknown
-    > = z
-        .object({
-            type: GetDeploymentGitSourceDeploymentsType$.inboundSchema,
-            projectId: z.union([z.string(), z.number()]),
-            ref: z.nullable(z.string()).optional(),
-            sha: z.string().optional(),
-            prId: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                projectId: v.projectId,
-                ...(v.ref === undefined ? null : { ref: v.ref }),
-                ...(v.sha === undefined ? null : { sha: v.sha }),
-                ...(v.prId === undefined ? null : { prId: v.prId }),
-            };
-        });
-
-    export type Outbound = {
-        type: string;
-        projectId: string | number;
-        ref?: string | null | undefined;
-        sha?: string | undefined;
-        prId?: number | null | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<
-        Outbound,
-        z.ZodTypeDef,
-        GetDeploymentGitSourceDeployments3
-    > = z
-        .object({
-            type: GetDeploymentGitSourceDeploymentsType$.outboundSchema,
-            projectId: z.union([z.string(), z.number()]),
-            ref: z.nullable(z.string()).optional(),
-            sha: z.string().optional(),
-            prId: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                projectId: v.projectId,
-                ...(v.ref === undefined ? null : { ref: v.ref }),
-                ...(v.sha === undefined ? null : { sha: v.sha }),
-                ...(v.prId === undefined ? null : { prId: v.prId }),
-            };
-        });
+    /** @deprecated use `GetDeploymentGitSourceDeployments3$inboundSchema` instead. */
+    export const inboundSchema = GetDeploymentGitSourceDeployments3$inboundSchema;
+    /** @deprecated use `GetDeploymentGitSourceDeployments3$outboundSchema` instead. */
+    export const outboundSchema = GetDeploymentGitSourceDeployments3$outboundSchema;
+    /** @deprecated use `GetDeploymentGitSourceDeployments3$Outbound` instead. */
+    export type Outbound = GetDeploymentGitSourceDeployments3$Outbound;
 }
 
 /** @internal */
+export const GetDeploymentGitSourceType$inboundSchema: z.ZodNativeEnum<
+    typeof GetDeploymentGitSourceType
+> = z.nativeEnum(GetDeploymentGitSourceType);
+
+/** @internal */
+export const GetDeploymentGitSourceType$outboundSchema: z.ZodNativeEnum<
+    typeof GetDeploymentGitSourceType
+> = GetDeploymentGitSourceType$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetDeploymentGitSourceType$ {
-    export const inboundSchema = z.nativeEnum(GetDeploymentGitSourceType);
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `GetDeploymentGitSourceType$inboundSchema` instead. */
+    export const inboundSchema = GetDeploymentGitSourceType$inboundSchema;
+    /** @deprecated use `GetDeploymentGitSourceType$outboundSchema` instead. */
+    export const outboundSchema = GetDeploymentGitSourceType$outboundSchema;
 }
 
 /** @internal */
+export const GetDeploymentGitSourceDeployments2$inboundSchema: z.ZodType<
+    GetDeploymentGitSourceDeployments2,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    type: GetDeploymentGitSourceType$inboundSchema,
+    org: z.string(),
+    repo: z.string(),
+    ref: z.nullable(z.string()).optional(),
+    sha: z.string().optional(),
+    prId: z.nullable(z.number()).optional(),
+});
+
+/** @internal */
+export type GetDeploymentGitSourceDeployments2$Outbound = {
+    type: string;
+    org: string;
+    repo: string;
+    ref?: string | null | undefined;
+    sha?: string | undefined;
+    prId?: number | null | undefined;
+};
+
+/** @internal */
+export const GetDeploymentGitSourceDeployments2$outboundSchema: z.ZodType<
+    GetDeploymentGitSourceDeployments2$Outbound,
+    z.ZodTypeDef,
+    GetDeploymentGitSourceDeployments2
+> = z.object({
+    type: GetDeploymentGitSourceType$outboundSchema,
+    org: z.string(),
+    repo: z.string(),
+    ref: z.nullable(z.string()).optional(),
+    sha: z.string().optional(),
+    prId: z.nullable(z.number()).optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetDeploymentGitSourceDeployments2$ {
-    export const inboundSchema: z.ZodType<
-        GetDeploymentGitSourceDeployments2,
-        z.ZodTypeDef,
-        unknown
-    > = z
-        .object({
-            type: GetDeploymentGitSourceType$.inboundSchema,
-            org: z.string(),
-            repo: z.string(),
-            ref: z.nullable(z.string()).optional(),
-            sha: z.string().optional(),
-            prId: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                org: v.org,
-                repo: v.repo,
-                ...(v.ref === undefined ? null : { ref: v.ref }),
-                ...(v.sha === undefined ? null : { sha: v.sha }),
-                ...(v.prId === undefined ? null : { prId: v.prId }),
-            };
-        });
-
-    export type Outbound = {
-        type: string;
-        org: string;
-        repo: string;
-        ref?: string | null | undefined;
-        sha?: string | undefined;
-        prId?: number | null | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<
-        Outbound,
-        z.ZodTypeDef,
-        GetDeploymentGitSourceDeployments2
-    > = z
-        .object({
-            type: GetDeploymentGitSourceType$.outboundSchema,
-            org: z.string(),
-            repo: z.string(),
-            ref: z.nullable(z.string()).optional(),
-            sha: z.string().optional(),
-            prId: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                org: v.org,
-                repo: v.repo,
-                ...(v.ref === undefined ? null : { ref: v.ref }),
-                ...(v.sha === undefined ? null : { sha: v.sha }),
-                ...(v.prId === undefined ? null : { prId: v.prId }),
-            };
-        });
+    /** @deprecated use `GetDeploymentGitSourceDeployments2$inboundSchema` instead. */
+    export const inboundSchema = GetDeploymentGitSourceDeployments2$inboundSchema;
+    /** @deprecated use `GetDeploymentGitSourceDeployments2$outboundSchema` instead. */
+    export const outboundSchema = GetDeploymentGitSourceDeployments2$outboundSchema;
+    /** @deprecated use `GetDeploymentGitSourceDeployments2$Outbound` instead. */
+    export type Outbound = GetDeploymentGitSourceDeployments2$Outbound;
 }
 
 /** @internal */
+export const GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody11Type$inboundSchema: z.ZodNativeEnum<
+    typeof GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody11Type
+> = z.nativeEnum(GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody11Type);
+
+/** @internal */
+export const GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody11Type$outboundSchema: z.ZodNativeEnum<
+    typeof GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody11Type
+> = GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody11Type$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody11Type$ {
-    export const inboundSchema = z.nativeEnum(
-        GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody11Type
-    );
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody11Type$inboundSchema` instead. */
+    export const inboundSchema =
+        GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody11Type$inboundSchema;
+    /** @deprecated use `GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody11Type$outboundSchema` instead. */
+    export const outboundSchema =
+        GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody11Type$outboundSchema;
 }
 
 /** @internal */
+export const GetDeploymentGitSourceRepoId$inboundSchema: z.ZodType<
+    GetDeploymentGitSourceRepoId,
+    z.ZodTypeDef,
+    unknown
+> = z.union([z.string(), z.number()]);
+
+/** @internal */
+export type GetDeploymentGitSourceRepoId$Outbound = string | number;
+
+/** @internal */
+export const GetDeploymentGitSourceRepoId$outboundSchema: z.ZodType<
+    GetDeploymentGitSourceRepoId$Outbound,
+    z.ZodTypeDef,
+    GetDeploymentGitSourceRepoId
+> = z.union([z.string(), z.number()]);
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetDeploymentGitSourceRepoId$ {
-    export const inboundSchema: z.ZodType<GetDeploymentGitSourceRepoId, z.ZodTypeDef, unknown> =
-        z.union([z.string(), z.number()]);
-
-    export type Outbound = string | number;
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetDeploymentGitSourceRepoId> =
-        z.union([z.string(), z.number()]);
+    /** @deprecated use `GetDeploymentGitSourceRepoId$inboundSchema` instead. */
+    export const inboundSchema = GetDeploymentGitSourceRepoId$inboundSchema;
+    /** @deprecated use `GetDeploymentGitSourceRepoId$outboundSchema` instead. */
+    export const outboundSchema = GetDeploymentGitSourceRepoId$outboundSchema;
+    /** @deprecated use `GetDeploymentGitSourceRepoId$Outbound` instead. */
+    export type Outbound = GetDeploymentGitSourceRepoId$Outbound;
 }
 
 /** @internal */
+export const GetDeploymentGitSourceDeployments1$inboundSchema: z.ZodType<
+    GetDeploymentGitSourceDeployments1,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    type: GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody11Type$inboundSchema,
+    repoId: z.union([z.string(), z.number()]),
+    ref: z.nullable(z.string()).optional(),
+    sha: z.string().optional(),
+    prId: z.nullable(z.number()).optional(),
+});
+
+/** @internal */
+export type GetDeploymentGitSourceDeployments1$Outbound = {
+    type: string;
+    repoId: string | number;
+    ref?: string | null | undefined;
+    sha?: string | undefined;
+    prId?: number | null | undefined;
+};
+
+/** @internal */
+export const GetDeploymentGitSourceDeployments1$outboundSchema: z.ZodType<
+    GetDeploymentGitSourceDeployments1$Outbound,
+    z.ZodTypeDef,
+    GetDeploymentGitSourceDeployments1
+> = z.object({
+    type: GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody11Type$outboundSchema,
+    repoId: z.union([z.string(), z.number()]),
+    ref: z.nullable(z.string()).optional(),
+    sha: z.string().optional(),
+    prId: z.nullable(z.number()).optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetDeploymentGitSourceDeployments1$ {
-    export const inboundSchema: z.ZodType<
-        GetDeploymentGitSourceDeployments1,
-        z.ZodTypeDef,
-        unknown
-    > = z
-        .object({
-            type: GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody11Type$.inboundSchema,
-            repoId: z.union([z.string(), z.number()]),
-            ref: z.nullable(z.string()).optional(),
-            sha: z.string().optional(),
-            prId: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                repoId: v.repoId,
-                ...(v.ref === undefined ? null : { ref: v.ref }),
-                ...(v.sha === undefined ? null : { sha: v.sha }),
-                ...(v.prId === undefined ? null : { prId: v.prId }),
-            };
-        });
-
-    export type Outbound = {
-        type: string;
-        repoId: string | number;
-        ref?: string | null | undefined;
-        sha?: string | undefined;
-        prId?: number | null | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<
-        Outbound,
-        z.ZodTypeDef,
-        GetDeploymentGitSourceDeployments1
-    > = z
-        .object({
-            type: GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody11Type$.outboundSchema,
-            repoId: z.union([z.string(), z.number()]),
-            ref: z.nullable(z.string()).optional(),
-            sha: z.string().optional(),
-            prId: z.nullable(z.number()).optional(),
-        })
-        .transform((v) => {
-            return {
-                type: v.type,
-                repoId: v.repoId,
-                ...(v.ref === undefined ? null : { ref: v.ref }),
-                ...(v.sha === undefined ? null : { sha: v.sha }),
-                ...(v.prId === undefined ? null : { prId: v.prId }),
-            };
-        });
+    /** @deprecated use `GetDeploymentGitSourceDeployments1$inboundSchema` instead. */
+    export const inboundSchema = GetDeploymentGitSourceDeployments1$inboundSchema;
+    /** @deprecated use `GetDeploymentGitSourceDeployments1$outboundSchema` instead. */
+    export const outboundSchema = GetDeploymentGitSourceDeployments1$outboundSchema;
+    /** @deprecated use `GetDeploymentGitSourceDeployments1$Outbound` instead. */
+    export type Outbound = GetDeploymentGitSourceDeployments1$Outbound;
 }
 
 /** @internal */
+export const GetDeploymentResponseBodyGitSource$inboundSchema: z.ZodType<
+    GetDeploymentResponseBodyGitSource,
+    z.ZodTypeDef,
+    unknown
+> = z.union([
+    z.lazy(() => GetDeploymentGitSourceDeployments6$inboundSchema),
+    z.lazy(() => GetDeploymentGitSourceDeployments8$inboundSchema),
+    z.lazy(() => GetDeploymentGitSourceDeployments1$inboundSchema),
+    z.lazy(() => GetDeploymentGitSourceDeployments3$inboundSchema),
+    z.lazy(() => GetDeploymentGitSourceDeployments2$inboundSchema),
+    z.lazy(() => GetDeploymentGitSourceDeployments4$inboundSchema),
+    z.lazy(() => GetDeploymentGitSourceDeployments5$inboundSchema),
+    z.lazy(() => GetDeploymentGitSourceDeployments7$inboundSchema),
+    z.lazy(() => GetDeploymentGitSourceDeployments9$inboundSchema),
+]);
+
+/** @internal */
+export type GetDeploymentResponseBodyGitSource$Outbound =
+    | GetDeploymentGitSourceDeployments6$Outbound
+    | GetDeploymentGitSourceDeployments8$Outbound
+    | GetDeploymentGitSourceDeployments1$Outbound
+    | GetDeploymentGitSourceDeployments3$Outbound
+    | GetDeploymentGitSourceDeployments2$Outbound
+    | GetDeploymentGitSourceDeployments4$Outbound
+    | GetDeploymentGitSourceDeployments5$Outbound
+    | GetDeploymentGitSourceDeployments7$Outbound
+    | GetDeploymentGitSourceDeployments9$Outbound;
+
+/** @internal */
+export const GetDeploymentResponseBodyGitSource$outboundSchema: z.ZodType<
+    GetDeploymentResponseBodyGitSource$Outbound,
+    z.ZodTypeDef,
+    GetDeploymentResponseBodyGitSource
+> = z.union([
+    z.lazy(() => GetDeploymentGitSourceDeployments6$outboundSchema),
+    z.lazy(() => GetDeploymentGitSourceDeployments8$outboundSchema),
+    z.lazy(() => GetDeploymentGitSourceDeployments1$outboundSchema),
+    z.lazy(() => GetDeploymentGitSourceDeployments3$outboundSchema),
+    z.lazy(() => GetDeploymentGitSourceDeployments2$outboundSchema),
+    z.lazy(() => GetDeploymentGitSourceDeployments4$outboundSchema),
+    z.lazy(() => GetDeploymentGitSourceDeployments5$outboundSchema),
+    z.lazy(() => GetDeploymentGitSourceDeployments7$outboundSchema),
+    z.lazy(() => GetDeploymentGitSourceDeployments9$outboundSchema),
+]);
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetDeploymentResponseBodyGitSource$ {
-    export const inboundSchema: z.ZodType<
-        GetDeploymentResponseBodyGitSource,
-        z.ZodTypeDef,
-        unknown
-    > = z.union([
-        z.lazy(() => GetDeploymentGitSourceDeployments6$.inboundSchema),
-        z.lazy(() => GetDeploymentGitSourceDeployments8$.inboundSchema),
-        z.lazy(() => GetDeploymentGitSourceDeployments1$.inboundSchema),
-        z.lazy(() => GetDeploymentGitSourceDeployments3$.inboundSchema),
-        z.lazy(() => GetDeploymentGitSourceDeployments2$.inboundSchema),
-        z.lazy(() => GetDeploymentGitSourceDeployments4$.inboundSchema),
-        z.lazy(() => GetDeploymentGitSourceDeployments5$.inboundSchema),
-        z.lazy(() => GetDeploymentGitSourceDeployments7$.inboundSchema),
-        z.lazy(() => GetDeploymentGitSourceDeployments9$.inboundSchema),
-    ]);
-
-    export type Outbound =
-        | GetDeploymentGitSourceDeployments6$.Outbound
-        | GetDeploymentGitSourceDeployments8$.Outbound
-        | GetDeploymentGitSourceDeployments1$.Outbound
-        | GetDeploymentGitSourceDeployments3$.Outbound
-        | GetDeploymentGitSourceDeployments2$.Outbound
-        | GetDeploymentGitSourceDeployments4$.Outbound
-        | GetDeploymentGitSourceDeployments5$.Outbound
-        | GetDeploymentGitSourceDeployments7$.Outbound
-        | GetDeploymentGitSourceDeployments9$.Outbound;
-    export const outboundSchema: z.ZodType<
-        Outbound,
-        z.ZodTypeDef,
-        GetDeploymentResponseBodyGitSource
-    > = z.union([
-        z.lazy(() => GetDeploymentGitSourceDeployments6$.outboundSchema),
-        z.lazy(() => GetDeploymentGitSourceDeployments8$.outboundSchema),
-        z.lazy(() => GetDeploymentGitSourceDeployments1$.outboundSchema),
-        z.lazy(() => GetDeploymentGitSourceDeployments3$.outboundSchema),
-        z.lazy(() => GetDeploymentGitSourceDeployments2$.outboundSchema),
-        z.lazy(() => GetDeploymentGitSourceDeployments4$.outboundSchema),
-        z.lazy(() => GetDeploymentGitSourceDeployments5$.outboundSchema),
-        z.lazy(() => GetDeploymentGitSourceDeployments7$.outboundSchema),
-        z.lazy(() => GetDeploymentGitSourceDeployments9$.outboundSchema),
-    ]);
+    /** @deprecated use `GetDeploymentResponseBodyGitSource$inboundSchema` instead. */
+    export const inboundSchema = GetDeploymentResponseBodyGitSource$inboundSchema;
+    /** @deprecated use `GetDeploymentResponseBodyGitSource$outboundSchema` instead. */
+    export const outboundSchema = GetDeploymentResponseBodyGitSource$outboundSchema;
+    /** @deprecated use `GetDeploymentResponseBodyGitSource$Outbound` instead. */
+    export type Outbound = GetDeploymentResponseBodyGitSource$Outbound;
 }
 
 /** @internal */
+export const GetDeploymentResponseBody1$inboundSchema: z.ZodType<
+    GetDeploymentResponseBody1,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    build: z.lazy(() => ResponseBodyBuild$inboundSchema),
+    builds: z.array(z.lazy(() => ResponseBodyBuilds$inboundSchema)).optional(),
+    connectBuildsEnabled: z.boolean().optional(),
+    connectConfigurationId: z.string().optional(),
+    createdIn: z.string(),
+    crons: z.array(z.lazy(() => ResponseBodyCrons$inboundSchema)).optional(),
+    env: z.array(z.string()),
+    functions: z.nullable(z.record(z.lazy(() => ResponseBodyFunctions$inboundSchema))).optional(),
+    inspectorUrl: z.nullable(z.string()),
+    isInConcurrentBuildsQueue: z.boolean(),
+    meta: z.record(z.string()),
+    monorepoManager: z.nullable(z.string()).optional(),
+    name: z.string(),
+    ownerId: z.string(),
+    passiveConnectConfigurationId: z.string().optional(),
+    plan: ResponseBodyPlan$inboundSchema,
+    projectId: z.string(),
+    routes: z.nullable(
+        z.array(
+            z.union([
+                z.lazy(() => GetDeploymentRoutes3$inboundSchema),
+                z.lazy(() => GetDeploymentRoutes2$inboundSchema),
+                z.lazy(() => GetDeploymentRoutes1$inboundSchema),
+            ])
+        )
+    ),
+    gitRepo: z
+        .nullable(
+            z.union([
+                z.lazy(() => GetDeploymentGitRepo1$inboundSchema),
+                z.lazy(() => GetDeploymentGitRepo2$inboundSchema),
+                z.lazy(() => GetDeploymentGitRepo3$inboundSchema),
+            ])
+        )
+        .optional(),
+    aliasAssignedAt: z.nullable(z.union([z.number(), z.boolean()])).optional(),
+    lambdas: z.array(z.lazy(() => GetDeploymentResponseBodyLambdas$inboundSchema)).optional(),
+    project: z.lazy(() => GetDeploymentResponseBodyProject$inboundSchema).optional(),
+    public: z.boolean(),
+    readyState: ResponseBodyReadyState$inboundSchema,
+    readySubstate: ResponseBodyReadySubstate$inboundSchema.optional(),
+    regions: z.array(z.string()),
+    source: ResponseBodySource$inboundSchema.optional(),
+    target: z.nullable(ResponseBodyTarget$inboundSchema).optional(),
+    team: z.lazy(() => GetDeploymentResponseBodyTeam$inboundSchema).optional(),
+    type: GetDeploymentResponseBodyType$inboundSchema,
+    url: z.string(),
+    userAliases: z.array(z.string()).optional(),
+    version: z.number(),
+    previewCommentsEnabled: z.boolean().optional(),
+    alias: z.array(z.string()),
+    aliasAssigned: z.boolean(),
+    aliasError: z.nullable(z.lazy(() => ResponseBodyAliasError$inboundSchema)).optional(),
+    aliasFinal: z.nullable(z.string()).optional(),
+    aliasWarning: z
+        .nullable(z.lazy(() => GetDeploymentResponseBodyAliasWarning$inboundSchema))
+        .optional(),
+    autoAssignCustomDomains: z.boolean().optional(),
+    automaticAliases: z.array(z.string()).optional(),
+    bootedAt: z.number(),
+    buildErrorAt: z.number().optional(),
+    buildingAt: z.number(),
+    canceledAt: z.number().optional(),
+    checksState: ResponseBodyChecksState$inboundSchema.optional(),
+    checksConclusion: ResponseBodyChecksConclusion$inboundSchema.optional(),
+    createdAt: z.number(),
+    creator: z.lazy(() => ResponseBodyCreator$inboundSchema),
+    errorCode: z.string().optional(),
+    errorLink: z.string().optional(),
+    errorMessage: z.nullable(z.string()).optional(),
+    errorStep: z.string().optional(),
+    passiveRegions: z.array(z.string()).optional(),
+    gitSource: z
+        .union([
+            z.lazy(() => GetDeploymentGitSourceDeployments6$inboundSchema),
+            z.lazy(() => GetDeploymentGitSourceDeployments8$inboundSchema),
+            z.lazy(() => GetDeploymentGitSourceDeployments1$inboundSchema),
+            z.lazy(() => GetDeploymentGitSourceDeployments3$inboundSchema),
+            z.lazy(() => GetDeploymentGitSourceDeployments2$inboundSchema),
+            z.lazy(() => GetDeploymentGitSourceDeployments4$inboundSchema),
+            z.lazy(() => GetDeploymentGitSourceDeployments5$inboundSchema),
+            z.lazy(() => GetDeploymentGitSourceDeployments7$inboundSchema),
+            z.lazy(() => GetDeploymentGitSourceDeployments9$inboundSchema),
+        ])
+        .optional(),
+    id: z.string(),
+});
+
+/** @internal */
+export type GetDeploymentResponseBody1$Outbound = {
+    build: ResponseBodyBuild$Outbound;
+    builds?: Array<ResponseBodyBuilds$Outbound> | undefined;
+    connectBuildsEnabled?: boolean | undefined;
+    connectConfigurationId?: string | undefined;
+    createdIn: string;
+    crons?: Array<ResponseBodyCrons$Outbound> | undefined;
+    env: Array<string>;
+    functions?: { [k: string]: ResponseBodyFunctions$Outbound } | null | undefined;
+    inspectorUrl: string | null;
+    isInConcurrentBuildsQueue: boolean;
+    meta: { [k: string]: string };
+    monorepoManager?: string | null | undefined;
+    name: string;
+    ownerId: string;
+    passiveConnectConfigurationId?: string | undefined;
+    plan: string;
+    projectId: string;
+    routes: Array<
+        | GetDeploymentRoutes3$Outbound
+        | GetDeploymentRoutes2$Outbound
+        | GetDeploymentRoutes1$Outbound
+    > | null;
+    gitRepo?:
+        | GetDeploymentGitRepo1$Outbound
+        | GetDeploymentGitRepo2$Outbound
+        | GetDeploymentGitRepo3$Outbound
+        | null
+        | undefined;
+    aliasAssignedAt?: number | boolean | null | undefined;
+    lambdas?: Array<GetDeploymentResponseBodyLambdas$Outbound> | undefined;
+    project?: GetDeploymentResponseBodyProject$Outbound | undefined;
+    public: boolean;
+    readyState: string;
+    readySubstate?: string | undefined;
+    regions: Array<string>;
+    source?: string | undefined;
+    target?: string | null | undefined;
+    team?: GetDeploymentResponseBodyTeam$Outbound | undefined;
+    type: string;
+    url: string;
+    userAliases?: Array<string> | undefined;
+    version: number;
+    previewCommentsEnabled?: boolean | undefined;
+    alias: Array<string>;
+    aliasAssigned: boolean;
+    aliasError?: ResponseBodyAliasError$Outbound | null | undefined;
+    aliasFinal?: string | null | undefined;
+    aliasWarning?: GetDeploymentResponseBodyAliasWarning$Outbound | null | undefined;
+    autoAssignCustomDomains?: boolean | undefined;
+    automaticAliases?: Array<string> | undefined;
+    bootedAt: number;
+    buildErrorAt?: number | undefined;
+    buildingAt: number;
+    canceledAt?: number | undefined;
+    checksState?: string | undefined;
+    checksConclusion?: string | undefined;
+    createdAt: number;
+    creator: ResponseBodyCreator$Outbound;
+    errorCode?: string | undefined;
+    errorLink?: string | undefined;
+    errorMessage?: string | null | undefined;
+    errorStep?: string | undefined;
+    passiveRegions?: Array<string> | undefined;
+    gitSource?:
+        | GetDeploymentGitSourceDeployments6$Outbound
+        | GetDeploymentGitSourceDeployments8$Outbound
+        | GetDeploymentGitSourceDeployments1$Outbound
+        | GetDeploymentGitSourceDeployments3$Outbound
+        | GetDeploymentGitSourceDeployments2$Outbound
+        | GetDeploymentGitSourceDeployments4$Outbound
+        | GetDeploymentGitSourceDeployments5$Outbound
+        | GetDeploymentGitSourceDeployments7$Outbound
+        | GetDeploymentGitSourceDeployments9$Outbound
+        | undefined;
+    id: string;
+};
+
+/** @internal */
+export const GetDeploymentResponseBody1$outboundSchema: z.ZodType<
+    GetDeploymentResponseBody1$Outbound,
+    z.ZodTypeDef,
+    GetDeploymentResponseBody1
+> = z.object({
+    build: z.lazy(() => ResponseBodyBuild$outboundSchema),
+    builds: z.array(z.lazy(() => ResponseBodyBuilds$outboundSchema)).optional(),
+    connectBuildsEnabled: z.boolean().optional(),
+    connectConfigurationId: z.string().optional(),
+    createdIn: z.string(),
+    crons: z.array(z.lazy(() => ResponseBodyCrons$outboundSchema)).optional(),
+    env: z.array(z.string()),
+    functions: z.nullable(z.record(z.lazy(() => ResponseBodyFunctions$outboundSchema))).optional(),
+    inspectorUrl: z.nullable(z.string()),
+    isInConcurrentBuildsQueue: z.boolean(),
+    meta: z.record(z.string()),
+    monorepoManager: z.nullable(z.string()).optional(),
+    name: z.string(),
+    ownerId: z.string(),
+    passiveConnectConfigurationId: z.string().optional(),
+    plan: ResponseBodyPlan$outboundSchema,
+    projectId: z.string(),
+    routes: z.nullable(
+        z.array(
+            z.union([
+                z.lazy(() => GetDeploymentRoutes3$outboundSchema),
+                z.lazy(() => GetDeploymentRoutes2$outboundSchema),
+                z.lazy(() => GetDeploymentRoutes1$outboundSchema),
+            ])
+        )
+    ),
+    gitRepo: z
+        .nullable(
+            z.union([
+                z.lazy(() => GetDeploymentGitRepo1$outboundSchema),
+                z.lazy(() => GetDeploymentGitRepo2$outboundSchema),
+                z.lazy(() => GetDeploymentGitRepo3$outboundSchema),
+            ])
+        )
+        .optional(),
+    aliasAssignedAt: z.nullable(z.union([z.number(), z.boolean()])).optional(),
+    lambdas: z.array(z.lazy(() => GetDeploymentResponseBodyLambdas$outboundSchema)).optional(),
+    project: z.lazy(() => GetDeploymentResponseBodyProject$outboundSchema).optional(),
+    public: z.boolean(),
+    readyState: ResponseBodyReadyState$outboundSchema,
+    readySubstate: ResponseBodyReadySubstate$outboundSchema.optional(),
+    regions: z.array(z.string()),
+    source: ResponseBodySource$outboundSchema.optional(),
+    target: z.nullable(ResponseBodyTarget$outboundSchema).optional(),
+    team: z.lazy(() => GetDeploymentResponseBodyTeam$outboundSchema).optional(),
+    type: GetDeploymentResponseBodyType$outboundSchema,
+    url: z.string(),
+    userAliases: z.array(z.string()).optional(),
+    version: z.number(),
+    previewCommentsEnabled: z.boolean().optional(),
+    alias: z.array(z.string()),
+    aliasAssigned: z.boolean(),
+    aliasError: z.nullable(z.lazy(() => ResponseBodyAliasError$outboundSchema)).optional(),
+    aliasFinal: z.nullable(z.string()).optional(),
+    aliasWarning: z
+        .nullable(z.lazy(() => GetDeploymentResponseBodyAliasWarning$outboundSchema))
+        .optional(),
+    autoAssignCustomDomains: z.boolean().optional(),
+    automaticAliases: z.array(z.string()).optional(),
+    bootedAt: z.number(),
+    buildErrorAt: z.number().optional(),
+    buildingAt: z.number(),
+    canceledAt: z.number().optional(),
+    checksState: ResponseBodyChecksState$outboundSchema.optional(),
+    checksConclusion: ResponseBodyChecksConclusion$outboundSchema.optional(),
+    createdAt: z.number(),
+    creator: z.lazy(() => ResponseBodyCreator$outboundSchema),
+    errorCode: z.string().optional(),
+    errorLink: z.string().optional(),
+    errorMessage: z.nullable(z.string()).optional(),
+    errorStep: z.string().optional(),
+    passiveRegions: z.array(z.string()).optional(),
+    gitSource: z
+        .union([
+            z.lazy(() => GetDeploymentGitSourceDeployments6$outboundSchema),
+            z.lazy(() => GetDeploymentGitSourceDeployments8$outboundSchema),
+            z.lazy(() => GetDeploymentGitSourceDeployments1$outboundSchema),
+            z.lazy(() => GetDeploymentGitSourceDeployments3$outboundSchema),
+            z.lazy(() => GetDeploymentGitSourceDeployments2$outboundSchema),
+            z.lazy(() => GetDeploymentGitSourceDeployments4$outboundSchema),
+            z.lazy(() => GetDeploymentGitSourceDeployments5$outboundSchema),
+            z.lazy(() => GetDeploymentGitSourceDeployments7$outboundSchema),
+            z.lazy(() => GetDeploymentGitSourceDeployments9$outboundSchema),
+        ])
+        .optional(),
+    id: z.string(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace GetDeploymentResponseBody1$ {
-    export const inboundSchema: z.ZodType<GetDeploymentResponseBody1, z.ZodTypeDef, unknown> = z
-        .object({
-            build: z.lazy(() => ResponseBodyBuild$.inboundSchema),
-            builds: z.array(z.lazy(() => ResponseBodyBuilds$.inboundSchema)).optional(),
-            connectBuildsEnabled: z.boolean().optional(),
-            connectConfigurationId: z.string().optional(),
-            createdIn: z.string(),
-            crons: z.array(z.lazy(() => ResponseBodyCrons$.inboundSchema)).optional(),
-            env: z.array(z.string()),
-            functions: z
-                .nullable(z.record(z.lazy(() => ResponseBodyFunctions$.inboundSchema)))
-                .optional(),
-            inspectorUrl: z.nullable(z.string()),
-            isInConcurrentBuildsQueue: z.boolean(),
-            meta: z.record(z.string()),
-            monorepoManager: z.nullable(z.string()).optional(),
-            name: z.string(),
-            ownerId: z.string(),
-            passiveConnectConfigurationId: z.string().optional(),
-            plan: ResponseBodyPlan$.inboundSchema,
-            projectId: z.string(),
-            routes: z.nullable(
-                z.array(
-                    z.union([
-                        z.lazy(() => GetDeploymentRoutes3$.inboundSchema),
-                        z.lazy(() => GetDeploymentRoutes2$.inboundSchema),
-                        z.lazy(() => GetDeploymentRoutes1$.inboundSchema),
-                    ])
-                )
-            ),
-            gitRepo: z
-                .nullable(
-                    z.union([
-                        z.lazy(() => GetDeploymentGitRepo1$.inboundSchema),
-                        z.lazy(() => GetDeploymentGitRepo2$.inboundSchema),
-                        z.lazy(() => GetDeploymentGitRepo3$.inboundSchema),
-                    ])
-                )
-                .optional(),
-            aliasAssignedAt: z.nullable(z.union([z.number(), z.boolean()])).optional(),
-            lambdas: z
-                .array(z.lazy(() => GetDeploymentResponseBodyLambdas$.inboundSchema))
-                .optional(),
-            project: z.lazy(() => GetDeploymentResponseBodyProject$.inboundSchema).optional(),
-            public: z.boolean(),
-            readyState: ResponseBodyReadyState$.inboundSchema,
-            readySubstate: ResponseBodyReadySubstate$.inboundSchema.optional(),
-            regions: z.array(z.string()),
-            source: ResponseBodySource$.inboundSchema.optional(),
-            target: z.nullable(ResponseBodyTarget$.inboundSchema).optional(),
-            team: z.lazy(() => GetDeploymentResponseBodyTeam$.inboundSchema).optional(),
-            type: GetDeploymentResponseBodyType$.inboundSchema,
-            url: z.string(),
-            userAliases: z.array(z.string()).optional(),
-            version: z.number(),
-            previewCommentsEnabled: z.boolean().optional(),
-            alias: z.array(z.string()),
-            aliasAssigned: z.boolean(),
-            aliasError: z.nullable(z.lazy(() => ResponseBodyAliasError$.inboundSchema)).optional(),
-            aliasFinal: z.nullable(z.string()).optional(),
-            aliasWarning: z
-                .nullable(z.lazy(() => GetDeploymentResponseBodyAliasWarning$.inboundSchema))
-                .optional(),
-            autoAssignCustomDomains: z.boolean().optional(),
-            automaticAliases: z.array(z.string()).optional(),
-            bootedAt: z.number(),
-            buildErrorAt: z.number().optional(),
-            buildingAt: z.number(),
-            canceledAt: z.number().optional(),
-            checksState: ResponseBodyChecksState$.inboundSchema.optional(),
-            checksConclusion: ResponseBodyChecksConclusion$.inboundSchema.optional(),
-            createdAt: z.number(),
-            creator: z.lazy(() => ResponseBodyCreator$.inboundSchema),
-            errorCode: z.string().optional(),
-            errorLink: z.string().optional(),
-            errorMessage: z.nullable(z.string()).optional(),
-            errorStep: z.string().optional(),
-            passiveRegions: z.array(z.string()).optional(),
-            gitSource: z
-                .union([
-                    z.lazy(() => GetDeploymentGitSourceDeployments6$.inboundSchema),
-                    z.lazy(() => GetDeploymentGitSourceDeployments8$.inboundSchema),
-                    z.lazy(() => GetDeploymentGitSourceDeployments1$.inboundSchema),
-                    z.lazy(() => GetDeploymentGitSourceDeployments3$.inboundSchema),
-                    z.lazy(() => GetDeploymentGitSourceDeployments2$.inboundSchema),
-                    z.lazy(() => GetDeploymentGitSourceDeployments4$.inboundSchema),
-                    z.lazy(() => GetDeploymentGitSourceDeployments5$.inboundSchema),
-                    z.lazy(() => GetDeploymentGitSourceDeployments7$.inboundSchema),
-                    z.lazy(() => GetDeploymentGitSourceDeployments9$.inboundSchema),
-                ])
-                .optional(),
-            id: z.string(),
-        })
-        .transform((v) => {
-            return {
-                build: v.build,
-                ...(v.builds === undefined ? null : { builds: v.builds }),
-                ...(v.connectBuildsEnabled === undefined
-                    ? null
-                    : { connectBuildsEnabled: v.connectBuildsEnabled }),
-                ...(v.connectConfigurationId === undefined
-                    ? null
-                    : { connectConfigurationId: v.connectConfigurationId }),
-                createdIn: v.createdIn,
-                ...(v.crons === undefined ? null : { crons: v.crons }),
-                env: v.env,
-                ...(v.functions === undefined ? null : { functions: v.functions }),
-                inspectorUrl: v.inspectorUrl,
-                isInConcurrentBuildsQueue: v.isInConcurrentBuildsQueue,
-                meta: v.meta,
-                ...(v.monorepoManager === undefined
-                    ? null
-                    : { monorepoManager: v.monorepoManager }),
-                name: v.name,
-                ownerId: v.ownerId,
-                ...(v.passiveConnectConfigurationId === undefined
-                    ? null
-                    : { passiveConnectConfigurationId: v.passiveConnectConfigurationId }),
-                plan: v.plan,
-                projectId: v.projectId,
-                routes: v.routes,
-                ...(v.gitRepo === undefined ? null : { gitRepo: v.gitRepo }),
-                ...(v.aliasAssignedAt === undefined
-                    ? null
-                    : { aliasAssignedAt: v.aliasAssignedAt }),
-                ...(v.lambdas === undefined ? null : { lambdas: v.lambdas }),
-                ...(v.project === undefined ? null : { project: v.project }),
-                public: v.public,
-                readyState: v.readyState,
-                ...(v.readySubstate === undefined ? null : { readySubstate: v.readySubstate }),
-                regions: v.regions,
-                ...(v.source === undefined ? null : { source: v.source }),
-                ...(v.target === undefined ? null : { target: v.target }),
-                ...(v.team === undefined ? null : { team: v.team }),
-                type: v.type,
-                url: v.url,
-                ...(v.userAliases === undefined ? null : { userAliases: v.userAliases }),
-                version: v.version,
-                ...(v.previewCommentsEnabled === undefined
-                    ? null
-                    : { previewCommentsEnabled: v.previewCommentsEnabled }),
-                alias: v.alias,
-                aliasAssigned: v.aliasAssigned,
-                ...(v.aliasError === undefined ? null : { aliasError: v.aliasError }),
-                ...(v.aliasFinal === undefined ? null : { aliasFinal: v.aliasFinal }),
-                ...(v.aliasWarning === undefined ? null : { aliasWarning: v.aliasWarning }),
-                ...(v.autoAssignCustomDomains === undefined
-                    ? null
-                    : { autoAssignCustomDomains: v.autoAssignCustomDomains }),
-                ...(v.automaticAliases === undefined
-                    ? null
-                    : { automaticAliases: v.automaticAliases }),
-                bootedAt: v.bootedAt,
-                ...(v.buildErrorAt === undefined ? null : { buildErrorAt: v.buildErrorAt }),
-                buildingAt: v.buildingAt,
-                ...(v.canceledAt === undefined ? null : { canceledAt: v.canceledAt }),
-                ...(v.checksState === undefined ? null : { checksState: v.checksState }),
-                ...(v.checksConclusion === undefined
-                    ? null
-                    : { checksConclusion: v.checksConclusion }),
-                createdAt: v.createdAt,
-                creator: v.creator,
-                ...(v.errorCode === undefined ? null : { errorCode: v.errorCode }),
-                ...(v.errorLink === undefined ? null : { errorLink: v.errorLink }),
-                ...(v.errorMessage === undefined ? null : { errorMessage: v.errorMessage }),
-                ...(v.errorStep === undefined ? null : { errorStep: v.errorStep }),
-                ...(v.passiveRegions === undefined ? null : { passiveRegions: v.passiveRegions }),
-                ...(v.gitSource === undefined ? null : { gitSource: v.gitSource }),
-                id: v.id,
-            };
-        });
-
-    export type Outbound = {
-        build: ResponseBodyBuild$.Outbound;
-        builds?: Array<ResponseBodyBuilds$.Outbound> | undefined;
-        connectBuildsEnabled?: boolean | undefined;
-        connectConfigurationId?: string | undefined;
-        createdIn: string;
-        crons?: Array<ResponseBodyCrons$.Outbound> | undefined;
-        env: Array<string>;
-        functions?: Record<string, ResponseBodyFunctions$.Outbound> | null | undefined;
-        inspectorUrl: string | null;
-        isInConcurrentBuildsQueue: boolean;
-        meta: Record<string, string>;
-        monorepoManager?: string | null | undefined;
-        name: string;
-        ownerId: string;
-        passiveConnectConfigurationId?: string | undefined;
-        plan: string;
-        projectId: string;
-        routes: Array<
-            | GetDeploymentRoutes3$.Outbound
-            | GetDeploymentRoutes2$.Outbound
-            | GetDeploymentRoutes1$.Outbound
-        > | null;
-        gitRepo?:
-            | GetDeploymentGitRepo1$.Outbound
-            | GetDeploymentGitRepo2$.Outbound
-            | GetDeploymentGitRepo3$.Outbound
-            | null
-            | undefined;
-        aliasAssignedAt?: number | boolean | null | undefined;
-        lambdas?: Array<GetDeploymentResponseBodyLambdas$.Outbound> | undefined;
-        project?: GetDeploymentResponseBodyProject$.Outbound | undefined;
-        public: boolean;
-        readyState: string;
-        readySubstate?: string | undefined;
-        regions: Array<string>;
-        source?: string | undefined;
-        target?: string | null | undefined;
-        team?: GetDeploymentResponseBodyTeam$.Outbound | undefined;
-        type: string;
-        url: string;
-        userAliases?: Array<string> | undefined;
-        version: number;
-        previewCommentsEnabled?: boolean | undefined;
-        alias: Array<string>;
-        aliasAssigned: boolean;
-        aliasError?: ResponseBodyAliasError$.Outbound | null | undefined;
-        aliasFinal?: string | null | undefined;
-        aliasWarning?: GetDeploymentResponseBodyAliasWarning$.Outbound | null | undefined;
-        autoAssignCustomDomains?: boolean | undefined;
-        automaticAliases?: Array<string> | undefined;
-        bootedAt: number;
-        buildErrorAt?: number | undefined;
-        buildingAt: number;
-        canceledAt?: number | undefined;
-        checksState?: string | undefined;
-        checksConclusion?: string | undefined;
-        createdAt: number;
-        creator: ResponseBodyCreator$.Outbound;
-        errorCode?: string | undefined;
-        errorLink?: string | undefined;
-        errorMessage?: string | null | undefined;
-        errorStep?: string | undefined;
-        passiveRegions?: Array<string> | undefined;
-        gitSource?:
-            | GetDeploymentGitSourceDeployments6$.Outbound
-            | GetDeploymentGitSourceDeployments8$.Outbound
-            | GetDeploymentGitSourceDeployments1$.Outbound
-            | GetDeploymentGitSourceDeployments3$.Outbound
-            | GetDeploymentGitSourceDeployments2$.Outbound
-            | GetDeploymentGitSourceDeployments4$.Outbound
-            | GetDeploymentGitSourceDeployments5$.Outbound
-            | GetDeploymentGitSourceDeployments7$.Outbound
-            | GetDeploymentGitSourceDeployments9$.Outbound
-            | undefined;
-        id: string;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetDeploymentResponseBody1> = z
-        .object({
-            build: z.lazy(() => ResponseBodyBuild$.outboundSchema),
-            builds: z.array(z.lazy(() => ResponseBodyBuilds$.outboundSchema)).optional(),
-            connectBuildsEnabled: z.boolean().optional(),
-            connectConfigurationId: z.string().optional(),
-            createdIn: z.string(),
-            crons: z.array(z.lazy(() => ResponseBodyCrons$.outboundSchema)).optional(),
-            env: z.array(z.string()),
-            functions: z
-                .nullable(z.record(z.lazy(() => ResponseBodyFunctions$.outboundSchema)))
-                .optional(),
-            inspectorUrl: z.nullable(z.string()),
-            isInConcurrentBuildsQueue: z.boolean(),
-            meta: z.record(z.string()),
-            monorepoManager: z.nullable(z.string()).optional(),
-            name: z.string(),
-            ownerId: z.string(),
-            passiveConnectConfigurationId: z.string().optional(),
-            plan: ResponseBodyPlan$.outboundSchema,
-            projectId: z.string(),
-            routes: z.nullable(
-                z.array(
-                    z.union([
-                        z.lazy(() => GetDeploymentRoutes3$.outboundSchema),
-                        z.lazy(() => GetDeploymentRoutes2$.outboundSchema),
-                        z.lazy(() => GetDeploymentRoutes1$.outboundSchema),
-                    ])
-                )
-            ),
-            gitRepo: z
-                .nullable(
-                    z.union([
-                        z.lazy(() => GetDeploymentGitRepo1$.outboundSchema),
-                        z.lazy(() => GetDeploymentGitRepo2$.outboundSchema),
-                        z.lazy(() => GetDeploymentGitRepo3$.outboundSchema),
-                    ])
-                )
-                .optional(),
-            aliasAssignedAt: z.nullable(z.union([z.number(), z.boolean()])).optional(),
-            lambdas: z
-                .array(z.lazy(() => GetDeploymentResponseBodyLambdas$.outboundSchema))
-                .optional(),
-            project: z.lazy(() => GetDeploymentResponseBodyProject$.outboundSchema).optional(),
-            public: z.boolean(),
-            readyState: ResponseBodyReadyState$.outboundSchema,
-            readySubstate: ResponseBodyReadySubstate$.outboundSchema.optional(),
-            regions: z.array(z.string()),
-            source: ResponseBodySource$.outboundSchema.optional(),
-            target: z.nullable(ResponseBodyTarget$.outboundSchema).optional(),
-            team: z.lazy(() => GetDeploymentResponseBodyTeam$.outboundSchema).optional(),
-            type: GetDeploymentResponseBodyType$.outboundSchema,
-            url: z.string(),
-            userAliases: z.array(z.string()).optional(),
-            version: z.number(),
-            previewCommentsEnabled: z.boolean().optional(),
-            alias: z.array(z.string()),
-            aliasAssigned: z.boolean(),
-            aliasError: z.nullable(z.lazy(() => ResponseBodyAliasError$.outboundSchema)).optional(),
-            aliasFinal: z.nullable(z.string()).optional(),
-            aliasWarning: z
-                .nullable(z.lazy(() => GetDeploymentResponseBodyAliasWarning$.outboundSchema))
-                .optional(),
-            autoAssignCustomDomains: z.boolean().optional(),
-            automaticAliases: z.array(z.string()).optional(),
-            bootedAt: z.number(),
-            buildErrorAt: z.number().optional(),
-            buildingAt: z.number(),
-            canceledAt: z.number().optional(),
-            checksState: ResponseBodyChecksState$.outboundSchema.optional(),
-            checksConclusion: ResponseBodyChecksConclusion$.outboundSchema.optional(),
-            createdAt: z.number(),
-            creator: z.lazy(() => ResponseBodyCreator$.outboundSchema),
-            errorCode: z.string().optional(),
-            errorLink: z.string().optional(),
-            errorMessage: z.nullable(z.string()).optional(),
-            errorStep: z.string().optional(),
-            passiveRegions: z.array(z.string()).optional(),
-            gitSource: z
-                .union([
-                    z.lazy(() => GetDeploymentGitSourceDeployments6$.outboundSchema),
-                    z.lazy(() => GetDeploymentGitSourceDeployments8$.outboundSchema),
-                    z.lazy(() => GetDeploymentGitSourceDeployments1$.outboundSchema),
-                    z.lazy(() => GetDeploymentGitSourceDeployments3$.outboundSchema),
-                    z.lazy(() => GetDeploymentGitSourceDeployments2$.outboundSchema),
-                    z.lazy(() => GetDeploymentGitSourceDeployments4$.outboundSchema),
-                    z.lazy(() => GetDeploymentGitSourceDeployments5$.outboundSchema),
-                    z.lazy(() => GetDeploymentGitSourceDeployments7$.outboundSchema),
-                    z.lazy(() => GetDeploymentGitSourceDeployments9$.outboundSchema),
-                ])
-                .optional(),
-            id: z.string(),
-        })
-        .transform((v) => {
-            return {
-                build: v.build,
-                ...(v.builds === undefined ? null : { builds: v.builds }),
-                ...(v.connectBuildsEnabled === undefined
-                    ? null
-                    : { connectBuildsEnabled: v.connectBuildsEnabled }),
-                ...(v.connectConfigurationId === undefined
-                    ? null
-                    : { connectConfigurationId: v.connectConfigurationId }),
-                createdIn: v.createdIn,
-                ...(v.crons === undefined ? null : { crons: v.crons }),
-                env: v.env,
-                ...(v.functions === undefined ? null : { functions: v.functions }),
-                inspectorUrl: v.inspectorUrl,
-                isInConcurrentBuildsQueue: v.isInConcurrentBuildsQueue,
-                meta: v.meta,
-                ...(v.monorepoManager === undefined
-                    ? null
-                    : { monorepoManager: v.monorepoManager }),
-                name: v.name,
-                ownerId: v.ownerId,
-                ...(v.passiveConnectConfigurationId === undefined
-                    ? null
-                    : { passiveConnectConfigurationId: v.passiveConnectConfigurationId }),
-                plan: v.plan,
-                projectId: v.projectId,
-                routes: v.routes,
-                ...(v.gitRepo === undefined ? null : { gitRepo: v.gitRepo }),
-                ...(v.aliasAssignedAt === undefined
-                    ? null
-                    : { aliasAssignedAt: v.aliasAssignedAt }),
-                ...(v.lambdas === undefined ? null : { lambdas: v.lambdas }),
-                ...(v.project === undefined ? null : { project: v.project }),
-                public: v.public,
-                readyState: v.readyState,
-                ...(v.readySubstate === undefined ? null : { readySubstate: v.readySubstate }),
-                regions: v.regions,
-                ...(v.source === undefined ? null : { source: v.source }),
-                ...(v.target === undefined ? null : { target: v.target }),
-                ...(v.team === undefined ? null : { team: v.team }),
-                type: v.type,
-                url: v.url,
-                ...(v.userAliases === undefined ? null : { userAliases: v.userAliases }),
-                version: v.version,
-                ...(v.previewCommentsEnabled === undefined
-                    ? null
-                    : { previewCommentsEnabled: v.previewCommentsEnabled }),
-                alias: v.alias,
-                aliasAssigned: v.aliasAssigned,
-                ...(v.aliasError === undefined ? null : { aliasError: v.aliasError }),
-                ...(v.aliasFinal === undefined ? null : { aliasFinal: v.aliasFinal }),
-                ...(v.aliasWarning === undefined ? null : { aliasWarning: v.aliasWarning }),
-                ...(v.autoAssignCustomDomains === undefined
-                    ? null
-                    : { autoAssignCustomDomains: v.autoAssignCustomDomains }),
-                ...(v.automaticAliases === undefined
-                    ? null
-                    : { automaticAliases: v.automaticAliases }),
-                bootedAt: v.bootedAt,
-                ...(v.buildErrorAt === undefined ? null : { buildErrorAt: v.buildErrorAt }),
-                buildingAt: v.buildingAt,
-                ...(v.canceledAt === undefined ? null : { canceledAt: v.canceledAt }),
-                ...(v.checksState === undefined ? null : { checksState: v.checksState }),
-                ...(v.checksConclusion === undefined
-                    ? null
-                    : { checksConclusion: v.checksConclusion }),
-                createdAt: v.createdAt,
-                creator: v.creator,
-                ...(v.errorCode === undefined ? null : { errorCode: v.errorCode }),
-                ...(v.errorLink === undefined ? null : { errorLink: v.errorLink }),
-                ...(v.errorMessage === undefined ? null : { errorMessage: v.errorMessage }),
-                ...(v.errorStep === undefined ? null : { errorStep: v.errorStep }),
-                ...(v.passiveRegions === undefined ? null : { passiveRegions: v.passiveRegions }),
-                ...(v.gitSource === undefined ? null : { gitSource: v.gitSource }),
-                id: v.id,
-            };
-        });
+    /** @deprecated use `GetDeploymentResponseBody1$inboundSchema` instead. */
+    export const inboundSchema = GetDeploymentResponseBody1$inboundSchema;
+    /** @deprecated use `GetDeploymentResponseBody1$outboundSchema` instead. */
+    export const outboundSchema = GetDeploymentResponseBody1$outboundSchema;
+    /** @deprecated use `GetDeploymentResponseBody1$Outbound` instead. */
+    export type Outbound = GetDeploymentResponseBody1$Outbound;
 }
 
 /** @internal */
-export namespace GetDeploymentResponseBody$ {
-    export const inboundSchema: z.ZodType<GetDeploymentResponseBody, z.ZodTypeDef, unknown> =
-        z.union([
-            z.lazy(() => GetDeploymentResponseBody2$.inboundSchema),
-            z.lazy(() => GetDeploymentResponseBody1$.inboundSchema),
-        ]);
+export const GetDeploymentResponseBody$inboundSchema: z.ZodType<
+    GetDeploymentResponseBody,
+    z.ZodTypeDef,
+    unknown
+> = z.union([
+    z.lazy(() => GetDeploymentResponseBody2$inboundSchema),
+    z.lazy(() => GetDeploymentResponseBody1$inboundSchema),
+]);
 
-    export type Outbound =
-        | GetDeploymentResponseBody2$.Outbound
-        | GetDeploymentResponseBody1$.Outbound;
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetDeploymentResponseBody> =
-        z.union([
-            z.lazy(() => GetDeploymentResponseBody2$.outboundSchema),
-            z.lazy(() => GetDeploymentResponseBody1$.outboundSchema),
-        ]);
+/** @internal */
+export type GetDeploymentResponseBody$Outbound =
+    | GetDeploymentResponseBody2$Outbound
+    | GetDeploymentResponseBody1$Outbound;
+
+/** @internal */
+export const GetDeploymentResponseBody$outboundSchema: z.ZodType<
+    GetDeploymentResponseBody$Outbound,
+    z.ZodTypeDef,
+    GetDeploymentResponseBody
+> = z.union([
+    z.lazy(() => GetDeploymentResponseBody2$outboundSchema),
+    z.lazy(() => GetDeploymentResponseBody1$outboundSchema),
+]);
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetDeploymentResponseBody$ {
+    /** @deprecated use `GetDeploymentResponseBody$inboundSchema` instead. */
+    export const inboundSchema = GetDeploymentResponseBody$inboundSchema;
+    /** @deprecated use `GetDeploymentResponseBody$outboundSchema` instead. */
+    export const outboundSchema = GetDeploymentResponseBody$outboundSchema;
+    /** @deprecated use `GetDeploymentResponseBody$Outbound` instead. */
+    export type Outbound = GetDeploymentResponseBody$Outbound;
 }

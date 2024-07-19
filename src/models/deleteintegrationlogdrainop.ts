@@ -19,63 +19,44 @@ export type DeleteIntegrationLogDrainRequest = {
     slug?: string | undefined;
 };
 
-export type DeleteIntegrationLogDrainResponse = {};
+/** @internal */
+export const DeleteIntegrationLogDrainRequest$inboundSchema: z.ZodType<
+    DeleteIntegrationLogDrainRequest,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    id: z.string(),
+    teamId: z.string().optional(),
+    slug: z.string().optional(),
+});
 
 /** @internal */
+export type DeleteIntegrationLogDrainRequest$Outbound = {
+    id: string;
+    teamId?: string | undefined;
+    slug?: string | undefined;
+};
+
+/** @internal */
+export const DeleteIntegrationLogDrainRequest$outboundSchema: z.ZodType<
+    DeleteIntegrationLogDrainRequest$Outbound,
+    z.ZodTypeDef,
+    DeleteIntegrationLogDrainRequest
+> = z.object({
+    id: z.string(),
+    teamId: z.string().optional(),
+    slug: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace DeleteIntegrationLogDrainRequest$ {
-    export const inboundSchema: z.ZodType<DeleteIntegrationLogDrainRequest, z.ZodTypeDef, unknown> =
-        z
-            .object({
-                id: z.string(),
-                teamId: z.string().optional(),
-                slug: z.string().optional(),
-            })
-            .transform((v) => {
-                return {
-                    id: v.id,
-                    ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                    ...(v.slug === undefined ? null : { slug: v.slug }),
-                };
-            });
-
-    export type Outbound = {
-        id: string;
-        teamId?: string | undefined;
-        slug?: string | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<
-        Outbound,
-        z.ZodTypeDef,
-        DeleteIntegrationLogDrainRequest
-    > = z
-        .object({
-            id: z.string(),
-            teamId: z.string().optional(),
-            slug: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                id: v.id,
-                ...(v.teamId === undefined ? null : { teamId: v.teamId }),
-                ...(v.slug === undefined ? null : { slug: v.slug }),
-            };
-        });
-}
-
-/** @internal */
-export namespace DeleteIntegrationLogDrainResponse$ {
-    export const inboundSchema: z.ZodType<
-        DeleteIntegrationLogDrainResponse,
-        z.ZodTypeDef,
-        unknown
-    > = z.object({});
-
-    export type Outbound = {};
-
-    export const outboundSchema: z.ZodType<
-        Outbound,
-        z.ZodTypeDef,
-        DeleteIntegrationLogDrainResponse
-    > = z.object({});
+    /** @deprecated use `DeleteIntegrationLogDrainRequest$inboundSchema` instead. */
+    export const inboundSchema = DeleteIntegrationLogDrainRequest$inboundSchema;
+    /** @deprecated use `DeleteIntegrationLogDrainRequest$outboundSchema` instead. */
+    export const outboundSchema = DeleteIntegrationLogDrainRequest$outboundSchema;
+    /** @deprecated use `DeleteIntegrationLogDrainRequest$Outbound` instead. */
+    export type Outbound = DeleteIntegrationLogDrainRequest$Outbound;
 }
