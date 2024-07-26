@@ -2,7 +2,7 @@
 
 {
   "name": "vercel",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "exports": {
     ".": "./src/index.ts",    
     "./models": "./src/models/index.ts",
