@@ -23,13 +23,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.user.listEvent({
-    limit: 20,
-    since: "2019-12-08T10:00:38.976Z",
-    until: "2019-12-09T23:00:38.976Z",
-    types: "login,team-member-join,domain-buy",
-    userId: "aeIInYVk59zbFF2SxfyxxmuO",
-  });
+  const result = await vercel.user.listEvent({});
 
   // Handle the result
   console.log(result)

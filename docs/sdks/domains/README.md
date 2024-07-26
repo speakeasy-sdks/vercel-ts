@@ -32,8 +32,6 @@ const vercel = new Vercel({
 async function run() {
   const result = await vercel.domains.buy("<value>", "<value>", {
     name: "example.com",
-    expectedPrice: 10,
-    renew: true,
   });
 
   // Handle the result
@@ -71,7 +69,7 @@ Check the price to purchase a domain and how long a single purchase period is.
 ### Example Usage
 
 ```typescript
-import { QueryParamType, Vercel } from "vercel";
+import { Vercel } from "vercel";
 
 const vercel = new Vercel({
   security: {
@@ -80,7 +78,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.domains.checkPrice("example.com", QueryParamType.New, "<value>", "<value>");
+  const result = await vercel.domains.checkPrice("example.com", "new", "<value>", "<value>");
 
   // Handle the result
   console.log(result)
@@ -210,7 +208,7 @@ Get a Domain's configuration.
 ### Example Usage
 
 ```typescript
-import { Strict, Vercel } from "vercel";
+import { Vercel } from "vercel";
 
 const vercel = new Vercel({
   security: {
@@ -219,7 +217,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.domains.getConfig("example.com", Strict.True, "<value>", "<value>");
+  const result = await vercel.domains.getConfig("example.com", "true", "<value>", "<value>");
 
   // Handle the result
   console.log(result)
@@ -312,11 +310,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.domains.list({
-    limit: 20,
-    since: 1609499532000,
-    until: 1612264332000,
-  });
+  const result = await vercel.domains.list({});
 
   // Handle the result
   console.log(result)
@@ -363,8 +357,6 @@ async function run() {
   const result = await vercel.domains.createOrTransferDomain("<value>", "<value>", {
       name: "example.com",
       method: "transfer-in",
-      authCode: "fdhfr820ad#@FAdlj$$",
-      expectedPrice: 8,
     });
 
   // Handle the result
@@ -411,9 +403,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.domains.update("<value>", "<value>", "<value>", {
-      op: "move-out",
-    });
+  const result = await vercel.domains.update("<value>", "<value>", "<value>", {});
 
   // Handle the result
   console.log(result)

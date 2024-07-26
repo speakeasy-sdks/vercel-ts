@@ -91,6 +91,8 @@ paths:
           name: slug
           schema:
             type: string
+      x-speakeasy-group: accessGroups
+      x-speakeasy-name-override: read
     post:
       description: Allows to update an access group metadata
       operationId: updateAccessGroup
@@ -179,6 +181,8 @@ paths:
                   type: array
                   items:
                     type: string
+      x-speakeasy-group: accessGroups
+      x-speakeasy-name-override: update
     delete:
       description: Allows to delete an access group
       operationId: deleteAccessGroup
@@ -214,6 +218,8 @@ paths:
           name: slug
           schema:
             type: string
+      x-speakeasy-group: accessGroups
+      x-speakeasy-name-override: delete
   /v1/access-groups/{idOrName}/members:
     get:
       description: List members of an access group
@@ -327,6 +333,8 @@ paths:
           name: slug
           schema:
             type: string
+      x-speakeasy-group: accessGroups
+      x-speakeasy-name-override: listMembers
   /v1/access-groups:
     get:
       description: List access groups
@@ -478,6 +486,8 @@ paths:
           name: slug
           schema:
             type: string
+      x-speakeasy-group: accessGroups
+      x-speakeasy-name-override: list
     post:
       description: Allows to create an access group
       operationId: createAccessGroup
@@ -588,6 +598,8 @@ paths:
                   type: array
                   items:
                     type: string
+      x-speakeasy-group: accessGroups
+      x-speakeasy-name-override: create
   /v1/access-groups/{idOrName}/projects:
     get:
       description: List projects of an access group
@@ -696,6 +708,8 @@ paths:
           name: slug
           schema:
             type: string
+      x-speakeasy-group: accessGroups
+      x-speakeasy-name-override: listProjects
   /v8/artifacts/events:
     post:
       description: Records an artifacts cache usage event. The body of this request is an array of cache usage events. The supported event types are `HIT` and `MISS`. The source is either `LOCAL` the cache event was on the users filesystem cache or `REMOTE` if the cache event is for a remote cache. When the event is a `HIT` the request also accepts a number `duration` which is the time taken to generate the artifact in the cache.
@@ -947,6 +961,7 @@ paths:
             schema:
               type: string
               format: binary
+      x-speakeasy-name-override: upload
     get:
       description: Downloads a cache artifact indentified by its `hash` specified on the request path. The artifact is downloaded as an octet-stream. The client should verify the content-length header and response body.
       operationId: downloadArtifact
@@ -1018,6 +1033,7 @@ paths:
           name: slug
           schema:
             type: string
+      x-speakeasy-name-override: download
     head:
       description: Check that a cache artifact with the given `hash` exists. This request returns response headers only and is equivalent to a `GET` request to this endpoint where the response contains no body.
       operationId: artifactExists
@@ -1064,6 +1080,7 @@ paths:
           name: slug
           schema:
             type: string
+      x-speakeasy-name-override: exists
   /v8/artifacts:
     post:
       description: Query information about an array of artifacts.
@@ -1143,6 +1160,7 @@ paths:
                     type: string
                   description: artifact hashes
                   type: array
+      x-speakeasy-name-override: query
   /deployments/{deploymentId}/builds:
     get:
       description: Retrieves the list of builds given their deployment's unique identifier. No longer listed as public API as of May 2023.
@@ -1529,6 +1547,7 @@ paths:
                 - name
                 - blocking
               type: object
+      x-speakeasy-name-override: create
     get:
       description: List all of the checks created for a deployment.
       operationId: getAllChecks
@@ -1708,6 +1727,7 @@ paths:
           name: slug
           schema:
             type: string
+      x-speakeasy-name-override: getAll
   /v1/deployments/{deploymentId}/checks/{checkId}:
     get:
       description: Return a detailed response for a single check.
@@ -1900,6 +1920,7 @@ paths:
           name: slug
           schema:
             type: string
+      x-speakeasy-name-override: get
     patch:
       description: Update an existing check. This endpoint must be called with an OAuth2 or it will produce a 400 error.
       operationId: updateCheck
@@ -2242,6 +2263,7 @@ paths:
                   type: string
                   example: 1234abc
               type: object
+      x-speakeasy-name-override: update
   /v1/deployments/{deploymentId}/checks/{checkId}/rerequest:
     post:
       description: Rerequest a selected check that has failed.
@@ -2295,6 +2317,7 @@ paths:
           name: slug
           schema:
             type: string
+      x-speakeasy-name-override: rerequest
   /data-cache/purge-all:
     delete:
       description: ''
@@ -4489,6 +4512,7 @@ paths:
                   type: boolean
                   example: true
                   description: 'Enable or disable data cache for the project - default: false'
+      x-speakeasy-name-override: updateDataCache
   /v3/deployments/{idOrUrl}/events:
     get:
       description: Get the build logs of a deployment by deployment ID and build ID. It can work as an infinite stream of logs or as a JSON endpoint depending on the input parameters.
@@ -5114,6 +5138,7 @@ paths:
           name: slug
           schema:
             type: string
+      x-speakeasy-name-override: getEvents
   /v13/deployments/{idOrUrl}:
     get:
       description: Retrieves information for a deployment either by supplying its ID (`id` property) or Hostname (`url` property). Additional details will be included when the authenticated user or team is an owner of the deployment.
@@ -6778,6 +6803,7 @@ paths:
           name: slug
           schema:
             type: string
+      x-speakeasy-name-override: get
   /v13/deployments:
     post:
       description: Create a new deployment with all the required and intended data. If the deployment is not a git deployment, all files must be provided with the request, either referenced or inlined. Additionally, a deployment id can be specified to redeploy a previous deployment.
@@ -8214,6 +8240,7 @@ paths:
               required:
                 - name
               type: object
+      x-speakeasy-name-override: create
   /v12/deployments/{id}/cancel:
     patch:
       description: This endpoint allows you to cancel a deployment which is currently building, by supplying its `id` in the URL.
@@ -9303,6 +9330,7 @@ paths:
           name: slug
           schema:
             type: string
+      x-speakeasy-name-override: cancel
   /v5/domains/buy:
     post:
       description: Allows to purchase the specified domain.
@@ -9464,6 +9492,7 @@ paths:
                   description: The email of the domain registrant
                   type: string
                   example: jane.doe@someplace.com
+      x-speakeasy-name-override: buy
   /v4/domains/price:
     get:
       description: Check the price to purchase a domain and how long a single purchase period is.
@@ -9529,6 +9558,7 @@ paths:
           name: slug
           schema:
             type: string
+      x-speakeasy-name-override: checkPrice
   /v4/domains/{domain}/records:
     get:
       description: Retrieves a list of DNS records created for a domain name. By default it returns 20 records if no limit is provided. The rest can be retrieved using the pagination options.
@@ -10363,6 +10393,7 @@ paths:
                   example: used to verify ownership of domain
                   maxLength: 500
               type: object
+      x-speakeasy-name-override: update
   /v2/domains/{domain}/records/{recordId}:
     delete:
       description: Removes an existing DNS record from a domain name.
@@ -10410,6 +10441,7 @@ paths:
           name: slug
           schema:
             type: string
+      x-speakeasy-name-override: delete
   /v4/domains/status:
     get:
       description: Check if a domain name is available for purchase.
@@ -10456,6 +10488,7 @@ paths:
           name: slug
           schema:
             type: string
+      x-speakeasy-name-override: checkStatus
   /v1/domains/{domain}/registry:
     get:
       description: Fetch domain transfer availability or transfer status if a transfer is in progress.
@@ -10522,6 +10555,7 @@ paths:
           name: slug
           schema:
             type: string
+      x-speakeasy-name-override: getTransferInfo
   /v6/domains/{domain}/config:
     get:
       description: Get a Domain's configuration.
@@ -10596,6 +10630,7 @@ paths:
           name: slug
           schema:
             type: string
+      x-speakeasy-name-override: getConfig
   /v5/domains/{domain}:
     get:
       description: Get information for a single domain in an account or team.
@@ -10764,6 +10799,7 @@ paths:
           name: slug
           schema:
             type: string
+      x-speakeasy-name-override: get
   /v5/domains:
     get:
       description: Retrieves a list of domains registered for the authenticated user or team. By default it returns the last 20 domains if no limit is provided.
@@ -10947,6 +10983,7 @@ paths:
           name: slug
           schema:
             type: string
+      x-speakeasy-name-override: list
     post:
       description: This endpoint is used for adding a new apex domain name with Vercel for the authenticating user. Can also be used for initiating a domain transfer request from an external Registrar to Vercel.
       operationId: createOrTransferDomain
@@ -11181,6 +11218,7 @@ paths:
                       description: The price you expect to be charged for the required 1 year renewal.
                       type: number
                       example: 8
+      x-speakeasy-name-override: createOrTransfer
   /v3/domains/{domain}:
     patch:
       description: Update or move apex domain.
@@ -11285,6 +11323,7 @@ paths:
                     destination:
                       description: User or team to move domain to
                       type: string
+      x-speakeasy-name-override: update
   /v6/domains/{domain}:
     delete:
       description: Delete a previously registered domain name from Vercel. Deleting a domain will automatically remove any associated aliases.
@@ -11337,6 +11376,7 @@ paths:
           name: slug
           schema:
             type: string
+      x-speakeasy-name-override: delete
   /v1/edge-config:
     get:
       description: Returns all Edge Configs.
@@ -11409,6 +11449,8 @@ paths:
           name: slug
           schema:
             type: string
+      x-speakeasy-group: edgeConfigs
+      x-speakeasy-name-override: getAll
     post:
       description: Creates an Edge Config.
       operationId: createEdgeConfig
@@ -11518,6 +11560,8 @@ paths:
                             - type: boolean
                             - type: 'null'
                             - type: object
+      x-speakeasy-group: edgeConfigs
+      x-speakeasy-name-override: create
   /v1/edge-config/{edgeConfigId}:
     get:
       description: Returns an Edge Config.
@@ -11597,6 +11641,8 @@ paths:
           name: slug
           schema:
             type: string
+      x-speakeasy-group: edgeConfigs
+      x-speakeasy-name-override: get
     put:
       description: Updates an Edge Config.
       operationId: updateEdgeConfig
@@ -11693,6 +11739,8 @@ paths:
                   maxLength: 32
                   pattern: ^[\\w-]+$
                   type: string
+      x-speakeasy-group: edgeConfigs
+      x-speakeasy-name-override: update
     delete:
       description: Delete an Edge Config by id.
       operationId: deleteEdgeConfig
@@ -11728,6 +11776,8 @@ paths:
           name: slug
           schema:
             type: string
+      x-speakeasy-group: edgeConfigs
+      x-speakeasy-name-override: delete
   /v1/edge-config/{edgeConfigId}/items:
     get:
       description: Returns all items of an Edge Config.
@@ -11769,6 +11819,8 @@ paths:
           name: slug
           schema:
             type: string
+      x-speakeasy-group: edgeConfigs
+      x-speakeasy-name-override: getItems
     patch:
       description: Update multiple Edge Config Items in batch.
       operationId: patchEdgeConfigItems
@@ -11916,6 +11968,8 @@ paths:
                                 - value
                                 - description
                 definition: {}
+      x-speakeasy-group: edgeConfigs
+      x-speakeasy-name-override: updateItems
   /v1/edge-config/{edgeConfigId}/schema:
     get:
       description: Returns the schema of an Edge Config.
@@ -11958,6 +12012,8 @@ paths:
           name: slug
           schema:
             type: string
+      x-speakeasy-group: edgeConfigs
+      x-speakeasy-name-override: getSchema
     post:
       description: Update an Edge Config's schema.
       operationId: patchEdgeConfigSchema
@@ -12020,6 +12076,8 @@ paths:
                 - definition
               properties:
                 definition: {}
+      x-speakeasy-group: edgeConfigs
+      x-speakeasy-name-override: updateSchema
     delete:
       description: Deletes the schema of existing Edge Config.
       operationId: deleteEdgeConfigSchema
@@ -12059,6 +12117,8 @@ paths:
           name: slug
           schema:
             type: string
+      x-speakeasy-group: edgeConfigs
+      x-speakeasy-name-override: deleteSchema
   /v1/edge-config/{edgeConfigId}/item/{edgeConfigItemKey}:
     get:
       description: Returns a specific Edge Config Item.
@@ -12105,6 +12165,8 @@ paths:
           name: slug
           schema:
             type: string
+      x-speakeasy-group: edgeConfigs
+      x-speakeasy-name-override: getItem
   /v1/edge-config/{edgeConfigId}/tokens:
     get:
       description: Returns all tokens of an Edge Config.
@@ -12145,6 +12207,8 @@ paths:
           name: slug
           schema:
             type: string
+      x-speakeasy-group: edgeConfigs
+      x-speakeasy-name-override: getTokens
     delete:
       description: Deletes one or more tokens of an existing Edge Config.
       operationId: deleteEdgeConfigTokens
@@ -12199,6 +12263,8 @@ paths:
                   type: array
                   items:
                     type: string
+      x-speakeasy-group: edgeConfigs
+      x-speakeasy-name-override: deleteTokens
   /v1/edge-config/{edgeConfigId}/token/{token}:
     get:
       description: Return meta data about an Edge Config token.
@@ -12244,6 +12310,8 @@ paths:
           name: slug
           schema:
             type: string
+      x-speakeasy-group: edgeConfigs
+      x-speakeasy-name-override: getToken
   /v1/edge-config/{edgeConfigId}/token:
     post:
       description: Adds a token to an existing Edge Config.
@@ -12310,6 +12378,8 @@ paths:
                 label:
                   maxLength: 52
                   type: string
+      x-speakeasy-group: edgeConfigs
+      x-speakeasy-name-override: createToken
   /v3/events:
     get:
       description: Retrieves a list of "events" generated by the User on Vercel. Events are generated when the User performs a particular action, such as logging in, creating a deployment, and joining a Team (just to name a few). When the `teamId` parameter is supplied, then the events that are returned will be in relation to the Team that was specified.
@@ -12394,6 +12464,8 @@ paths:
           name: slug
           schema:
             type: string
+      x-speakeasy-group: users
+      x-speakeasy-name-override: listEvents
   /v1/integrations/configurations:
     get:
       description: Allows to retrieve all configurations for an authenticated integration. When the `project` view is used, configurations generated for the authorization flow will be filtered out of the results.
@@ -13588,6 +13660,8 @@ paths:
           name: slug
           schema:
             type: string
+      x-speakeasy-group: integrations
+      x-speakeasy-name-override: getLogDrains
     post:
       description: Creates an Integration log drain. This endpoint must be called with an OAuth2 client (integration), since log drains are tied to integrations. If it is called with a different token type it will produce a 400 error.
       operationId: createLogDrain
@@ -13797,6 +13871,7 @@ paths:
                 - name
                 - url
               type: object
+      x-speakeasy-name-override: create
   /v1/integrations/log-drains/{id}:
     delete:
       description: Deletes the Integration log drain with the provided `id`. When using an OAuth2 Token, the log drain can be deleted only if the integration owns it.
@@ -13835,6 +13910,7 @@ paths:
           name: slug
           schema:
             type: string
+      x-speakeasy-name-override: deleteIntegration
   /v1/integrations/git-namespaces:
     get:
       description: Lists git namespaces for a supported provider. Supported providers are `github`, `gitlab` and `bitbucket`. If the provider is not provided, it will try to obtain it from the user that authenticated the request.
@@ -13907,6 +13983,7 @@ paths:
           name: slug
           schema:
             type: string
+      x-speakeasy-name-override: listGitNamespaces
   /v1/integrations/search-repo:
     get:
       description: Lists git repositories linked to a namespace `id` for a supported provider. A specific namespace `id` can be obtained via the `git-namespaces`  endpoint. Supported providers are `github`, `gitlab` and `bitbucket`. If the provider or namespace is not provided, it will try to obtain it from the user that authenticated the request.
@@ -14049,6 +14126,7 @@ paths:
           name: slug
           schema:
             type: string
+      x-speakeasy-name-override: listRepos
   /v1/log-drains/{id}:
     get:
       description: Retrieves a Configurable Log Drain. This endpoint must be called with a team AccessToken (integration OAuth2 clients are not allowed). Only log drains owned by the authenticated team can be accessed.
@@ -14188,6 +14266,7 @@ paths:
           name: slug
           schema:
             type: string
+      x-speakeasy-name-override: getConfigurable
     delete:
       description: Deletes a Configurable Log Drain. This endpoint must be called with a team AccessToken (integration OAuth2 clients are not allowed). Only log drains owned by the authenticated team can be deleted.
       operationId: deleteConfigurableLogDrain
@@ -14223,6 +14302,7 @@ paths:
           name: slug
           schema:
             type: string
+      x-speakeasy-name-override: deleteConfigurable
   /v1/log-drains:
     get:
       description: Retrieves a list of all the Log Drains owned by the account. This endpoint must be called with an account AccessToken (integration OAuth2 clients are not allowed). Only log drains owned by the authenticated account can be accessed.
@@ -14362,6 +14442,7 @@ paths:
           name: slug
           schema:
             type: string
+      x-speakeasy-name-override: list
     post:
       description: Creates a configurable log drain. This endpoint must be called with a team AccessToken (integration OAuth2 clients are not allowed)
       operationId: createConfigurableLogDrain
@@ -14561,6 +14642,7 @@ paths:
                 name:
                   type: string
                   description: The custom name of this log drain.
+      x-speakeasy-name-override: createConfigurable
   /v1/projects/{idOrName}/members:
     get:
       description: Lists all members of a project.
@@ -14730,6 +14812,7 @@ paths:
           name: slug
           schema:
             type: string
+      x-speakeasy-name-override: list
     post:
       description: Adds a new member to the project.
       operationId: addProjectMember
@@ -14819,6 +14902,7 @@ paths:
                     - PROJECT_VIEWER
                   example: ADMIN
                   description: The project role of the member that will be added.
+      x-speakeasy-name-override: add
   /v1/projects/{idOrName}/members/{uid}:
     delete:
       description: Remove a member from a specific project
@@ -14873,6 +14957,7 @@ paths:
           name: slug
           schema:
             type: string
+      x-speakeasy-name-override: remove
   /v9/projects:
     get:
       description: Allows to retrieve the list of projects of the authenticated user or team. The list will be paginated and the provided query parameters allow filtering the returned projects.
@@ -17071,6 +17156,7 @@ paths:
           name: slug
           schema:
             type: string
+      x-speakeasy-name-override: list
   /v10/projects:
     post:
       description: Allows to create a new project with the provided configuration. It only requires the project `name` but more configuration can be provided to override the defaults.
@@ -19379,6 +19465,7 @@ paths:
               required:
                 - name
               type: object
+      x-speakeasy-name-override: create
   /v9/projects/{idOrName}:
     get:
       description: Get the information for a specific project by passing either the project `id` or `name` in the URL.
@@ -21506,6 +21593,7 @@ paths:
           name: slug
           schema:
             type: string
+      x-speakeasy-name-override: get
     patch:
       description: Update the fields of a project using either its `name` or `id`.
       operationId: updateProject
@@ -23909,6 +23997,7 @@ paths:
                   type: object
                   nullable: true
               type: object
+      x-speakeasy-name-override: update
     delete:
       description: Delete a specific project by passing either the project `id` or `name` in the URL.
       operationId: deleteProject
@@ -23947,6 +24036,7 @@ paths:
           name: slug
           schema:
             type: string
+      x-speakeasy-name-override: delete
   /v9/projects/{idOrName}/domains:
     get:
       description: Retrieve the domains associated with a given project by passing either the project `id` or `name` in the URL.
@@ -24133,6 +24223,8 @@ paths:
           name: slug
           schema:
             type: string
+      x-speakeasy-group: projectDomains
+      x-speakeasy-name-override: list
   /v9/projects/{idOrName}/domains/{domain}:
     get:
       description: Get project domain by project id/name and domain name.
@@ -24237,6 +24329,8 @@ paths:
           name: slug
           schema:
             type: string
+      x-speakeasy-group: projectDomains
+      x-speakeasy-name-override: get
     patch:
       description: Update a project domain's configuration, including the name, git branch and redirect of the domain.
       operationId: updateProjectDomain
@@ -24376,6 +24470,8 @@ paths:
                     - 308
                   nullable: true
               type: object
+      x-speakeasy-group: projectDomains
+      x-speakeasy-name-override: update
     delete:
       description: Remove a domain from a project by passing the domain name and by specifying the project by either passing the project `id` or `name` in the URL.
       operationId: removeProjectDomain
@@ -24427,6 +24523,8 @@ paths:
           name: slug
           schema:
             type: string
+      x-speakeasy-group: projectDomains
+      x-speakeasy-name-override: delete
   /v10/projects/{idOrName}/domains:
     post:
       description: Add a domain to the project by passing its domain name and by specifying the project by either passing the project `id` or `name` in the URL. If the domain is not yet verified to be used on this project, the request will return `verified = false`, and the domain will need to be verified according to the `verification` challenge via `POST /projects/:idOrName/domains/:domain/verify`. If the domain already exists on the project, the request will fail with a `400` status code.
@@ -24578,6 +24676,7 @@ paths:
               required:
                 - name
               type: object
+      x-speakeasy-name-override: addDomain
   /v9/projects/{idOrName}/domains/{domain}/verify:
     post:
       description: Attempts to verify a project domain with `verified = false` by checking the correctness of the project domain's `verification` challenge.
@@ -24690,6 +24789,7 @@ paths:
           name: slug
           schema:
             type: string
+      x-speakeasy-name-override: verifyDomain
   /v9/projects/{idOrName}/env:
     get:
       description: Retrieve the environment variables for a given project by passing either the project `id` or `name` in the URL.
@@ -25534,6 +25634,7 @@ paths:
           name: slug
           schema:
             type: string
+      x-speakeasy-name-override: listEnvironments
   /v1/projects/{idOrName}/env/{id}:
     get:
       description: Retrieve the environment variable for a given project.
@@ -26339,6 +26440,7 @@ paths:
           name: slug
           schema:
             type: string
+      x-speakeasy-name-override: getEnvironment
   /v10/projects/{idOrName}/env:
     post:
       description: Create one ore more environment variables for a project by passing its `key`, `value`, `type` and `target` and by specifying the project by either passing the project `id` or `name` in the URL.
@@ -27079,6 +27181,7 @@ paths:
                         description: A comment to add context on what this environment variable is for
                         example: database connection string for production
                         maxLength: 500
+      x-speakeasy-name-override: createEnvironment
   /v9/projects/{idOrName}/env/{id}:
     delete:
       description: Delete a specific environment variable for a given project by passing the environment variable identifier and either passing the project `id` or `name` in the URL.
@@ -27898,6 +28001,7 @@ paths:
           name: slug
           schema:
             type: string
+      x-speakeasy-name-override: deleteEnvironment
     patch:
       description: Edit a specific environment variable for a given project by passing the environment variable identifier and either passing the project `id` or `name` in the URL.
       operationId: editProjectEnv
@@ -28254,6 +28358,7 @@ paths:
                   description: A comment to add context on what this env var is for
                   example: database connection string for production
                   maxLength: 500
+      x-speakeasy-name-override: updateEnvironment
   /v1/projects/{idOrName}/protection-bypass:
     patch:
       description: Update the deployment protection automation bypass for a project
@@ -28338,6 +28443,7 @@ paths:
                     - secret
                     - regenerate
               additionalProperties: false
+      x-speakeasy-name-override: updateProtectionBypass
   /v10/projects/{projectId}/promote/{deploymentId}:
     post:
       description: 'Allows users to promote a deployment to production. Note: This does NOT rebuild the deployment. If you need that, then call create-deployments endpoint.'
@@ -28379,6 +28485,7 @@ paths:
           name: slug
           schema:
             type: string
+      x-speakeasy-name-override: promoteDeployment
   /v1/projects/{projectId}/promote/aliases:
     get:
       description: Get a list of aliases related to the last promote request with their mapping status
@@ -28516,6 +28623,7 @@ paths:
           name: slug
           schema:
             type: string
+      x-speakeasy-name-override: pause
   /v1/projects/{projectId}/unpause:
     post:
       description: Unpause a project by passing its project `id` in the URL. If the project does not exist given the id then the request will fail with 400 status code. If the project enables auto assigning custom production domains and unblocks the active Production Deployment then the request will return with 200 status code.
@@ -28554,6 +28662,7 @@ paths:
           name: slug
           schema:
             type: string
+      x-speakeasy-name-override: unpause
   /v2/teams/{teamId}/members:
     get:
       description: Get a paginated list of team members for the provided team.
@@ -28839,6 +28948,7 @@ paths:
           schema:
             description: Include team members who are eligible to be members of the specified project.
             type: string
+      x-speakeasy-name-override: getMembers
   /v1/teams/{teamId}/members:
     post:
       description: Invite a user to join the team specified in the URL. The authenticated user needs to be an `OWNER` in order to successfully invoke this endpoint. The user can be specified with an email or an ID. If both email and ID are provided, ID will take priority.
@@ -28975,6 +29085,7 @@ paths:
                           - PROJECT_DEVELOPER
                         example: ADMIN
                         description: Sets the project roles for the invited user
+      x-speakeasy-name-override: inviteUser
   /v1/teams/{teamId}/request:
     post:
       description: Request access to a team as a member. An owner has to approve the request. Only 10 users can request access to a team at the same time.
@@ -29127,6 +29238,7 @@ paths:
                       type: string
                       description: The login name for the Git account of the user who requests access.
                       example: jane-doe
+      x-speakeasy-name-override: requestAccess
   /v1/teams/{teamId}/request/{userId}:
     get:
       description: Check the status of a join request. It'll respond with a 404 if the request has been declined. If no `userId` path segment was provided, this endpoint will instead return the status of the authenticated user.
@@ -29248,6 +29360,7 @@ paths:
           required: false
           schema:
             type: string
+      x-speakeasy-name-override: getAccessRequest
   /v1/teams/{teamId}/members/teams/join:
     post:
       description: Join a team with a provided invite code or team ID.
@@ -29306,6 +29419,7 @@ paths:
                   type: string
                   description: The invite code to join the team.
                   example: fisdh38aejkeivn34nslfore9vjtn4ls
+      x-speakeasy-name-override: join
   /v1/teams/{teamId}/members/{uid}:
     patch:
       description: Update the membership of a Team Member on the Team specified by `teamId`, such as changing the _role_ of the member, or confirming a request to join the Team for an unconfirmed member. The authenticated user must be an `OWNER` of the Team.
@@ -29408,6 +29522,7 @@ paths:
                   properties:
                     ssoUserId:
                       type: 'null'
+      x-speakeasy-name-override: updateMember
     delete:
       description: Remove a Team Member from the Team, or dismiss a user that requested access, or leave a team.
       operationId: removeTeamMember
@@ -29462,6 +29577,7 @@ paths:
             type: string
             description: The ID of the team to set as the new default team for the Northstar user.
             example: team_nllPyCtREAqxxdyFKbbMDlxd
+      x-speakeasy-name-override: removeMember
   /v2/teams/{teamId}:
     get:
       description: Get information for the Team specified by the `teamId` parameter.
@@ -29504,6 +29620,7 @@ paths:
           name: slug
           schema:
             type: string
+      x-speakeasy-name-override: get
     patch:
       description: Update the information of a Team specified by the `teamId` parameter. The request body should contain the information that will be updated on the Team.
       operationId: patchTeam
@@ -29639,6 +29756,7 @@ paths:
                   type: boolean
                   example: false
                   description: Display or hide IP addresses in Monitoring queries.
+      x-speakeasy-name-override: patch
   /v2/teams:
     get:
       description: Get a paginated list of all the Teams the authenticated User is a member of.
@@ -29694,6 +29812,7 @@ paths:
             description: Timestamp (in milliseconds) to only include Teams created until then.
             example: 1540095775951
             type: number
+      x-speakeasy-name-override: list
   /v1/teams:
     post:
       description: Create a new Team under your account. You need to send a POST request with the desired Team slug, and optionally the Team name.
@@ -32087,6 +32206,7 @@ paths:
                         utmTerm:
                           type: string
                           description: UTM term
+      x-speakeasy-name-override: create
   /v1/teams/{teamId}:
     delete:
       description: Delete a team under your account. You need to send a `DELETE` request with the desired team `id`. An optional array of reasons for deletion may also be sent.
@@ -32175,6 +32295,7 @@ paths:
                       description:
                         type: string
                         description: Description of the reason why the team is being deleted.
+      x-speakeasy-name-override: delete
   /v1/teams/{teamId}/invites/{inviteId}:
     delete:
       description: Delete an active Team invite code.
@@ -32219,6 +32340,7 @@ paths:
             type: string
             description: The Team invite code ID.
             example: 2wn2hudbr4chb1ecywo9dvzo7g9sscs6mzcz8htdde0txyom4l
+      x-speakeasy-name-override: deleteInviteCode
   /v2/files:
     post:
       description: Before you create a deployment you need to upload the required files for that deployment. To do it, you need to first upload each file to this endpoint. Once that's completed, you can create a new deployment with the uploaded files. The file content must be placed inside the body of the request. In the case of a successful response you'll receive a status code 200 with an empty body.
@@ -32332,6 +32454,7 @@ paths:
         '409':
           description: ''
       parameters: []
+      x-speakeasy-name-override: get
   /v1/user:
     delete:
       description: Initiates the deletion process for the currently authenticated User, by sending a deletion confirmation email. The email contains a link that the user needs to visit in order to proceed with the deletion process.
@@ -32427,6 +32550,7 @@ paths:
         '403':
           description: You do not have permission to access this resource.
       parameters: []
+      x-speakeasy-name-override: listTokens
   /v3/user/tokens:
     post:
       description: Creates and returns a new authentication token for the currently authenticated User. The `bearerToken` property is only provided once, in the response body, so be sure to save it on the client for use with API requests.
@@ -32504,6 +32628,7 @@ paths:
                       type: string
                     expiresAt:
                       type: number
+      x-speakeasy-name-override: createToken
   /v5/user/tokens/{tokenId}:
     get:
       description: Retrieve metadata about an authentication token belonging to the currently authenticated User.
@@ -32754,6 +32879,7 @@ paths:
                   items:
                     pattern: ^[a-zA-z0-9_]+$
                     type: string
+      x-speakeasy-name-override: create
     get:
       description: Get a list of webhooks
       operationId: getWebhooks
@@ -33013,6 +33139,7 @@ paths:
           name: slug
           schema:
             type: string
+      x-speakeasy-name-override: list
   /v1/webhooks/{id}:
     get:
       description: Get a webhook
@@ -33127,6 +33254,7 @@ paths:
           name: slug
           schema:
             type: string
+      x-speakeasy-name-override: get
     delete:
       description: Deletes a webhook
       operationId: deleteWebhook
@@ -33160,6 +33288,7 @@ paths:
           name: slug
           schema:
             type: string
+      x-speakeasy-name-override: delete
   /v4/aliases:
     get:
       description: Retrieves a list of aliases for the authenticated User or Team. When `domain` is provided, only aliases for that domain will be returned. When `projectId` is provided, it will only return the given project aliases.
@@ -33430,6 +33559,7 @@ paths:
           name: slug
           schema:
             type: string
+      x-speakeasy-name-override: list
   /v4/aliases/{idOrAlias}:
     get:
       description: Retrieves an Alias for the given host name or alias ID.
@@ -33678,6 +33808,7 @@ paths:
           name: slug
           schema:
             type: string
+      x-speakeasy-name-override: get
   /v2/aliases/{aliasId}:
     delete:
       description: Delete an Alias with the specified ID.
@@ -33729,6 +33860,7 @@ paths:
           name: slug
           schema:
             type: string
+      x-speakeasy-name-override: delete
   /v2/deployments/{id}/aliases:
     get:
       description: Retrieves all Aliases for the Deployment with the given ID. The authenticated user or team must own the deployment.
@@ -33880,6 +34012,8 @@ paths:
           name: slug
           schema:
             type: string
+      x-speakeasy-group: deployments
+      x-speakeasy-name-override: listAliases
     post:
       description: Creates a new alias for the deployment with the given deployment ID. The authenticated user or team must own this deployment. If the desired alias is already assigned to another deployment, then it will be removed from the old deployment and assigned to the new one.
       operationId: assignAlias
@@ -33978,6 +34112,7 @@ paths:
                   type: string
                   nullable: true
               type: object
+      x-speakeasy-name-override: assign
   /v7/certs/{id}:
     get:
       description: Get cert by id
@@ -34039,6 +34174,7 @@ paths:
           name: slug
           schema:
             type: string
+      x-speakeasy-name-override: getById
     delete:
       description: Remove cert
       operationId: removeCert
@@ -34080,6 +34216,7 @@ paths:
           name: slug
           schema:
             type: string
+      x-speakeasy-name-override: remove
   /v7/certs:
     post:
       description: Issue a new cert
@@ -34153,6 +34290,7 @@ paths:
                   type: array
                   items:
                     type: string
+      x-speakeasy-name-override: issue
     put:
       description: Upload a cert
       operationId: uploadCert
@@ -34229,6 +34367,7 @@ paths:
                 skipValidation:
                   type: boolean
                   description: Skip validation of the certificate
+      x-speakeasy-name-override: upload
   /v6/deployments/{id}/files:
     get:
       description: Allows to retrieve the file structure of a deployment by supplying the deployment unique identifier.
@@ -34275,6 +34414,7 @@ paths:
           name: slug
           schema:
             type: string
+      x-speakeasy-name-override: listFiles
   /v7/deployments/{id}/files/{fileId}:
     get:
       description: Allows to retrieve the content of a file by supplying the file identifier and the deployment unique identifier. The response body will contain a JSON response containing the contents of the file encoded as base64.
@@ -34329,6 +34469,7 @@ paths:
           name: slug
           schema:
             type: string
+      x-speakeasy-name-override: getFileContents
   /v6/deployments:
     get:
       description: List deployments under the authenticated user or team. If a deployment hasn't finished uploading (is incomplete), the `url` property will have a value of `null`.
@@ -34800,6 +34941,7 @@ paths:
           name: slug
           schema:
             type: string
+      x-speakeasy-name-override: list
   /registration/verify:
     get:
       description: Verify the user accepted the login request and get a authentication token. The user email address and the token received after requesting the login must be added to the URL as a query string with the names `email` and `token`.
@@ -35060,6 +35202,7 @@ paths:
           name: slug
           schema:
             type: string
+      x-speakeasy-name-override: delete
   /v3/secrets:
     get:
       description: Retrieves the active Vercel secrets for the authenticated user or team. By default it returns 20 secrets. The rest can be retrieved using the pagination options. The body will contain an entry for each secret.
@@ -35164,6 +35307,7 @@ paths:
           name: slug
           schema:
             type: string
+      x-speakeasy-name-override: list
   /v2/secrets/{name}:
     post:
       description: Allows to create a new secret.
@@ -35282,6 +35426,7 @@ paths:
                   type: string
                   example: prj_2WjyKQmM8ZnGcJsPWMrHRHrE
                   deprecated: true
+      x-speakeasy-name-override: create
     patch:
       description: Enables to edit the name of a secret. The name has to be unique to the user or team’s secrets.
       operationId: renameSecret
@@ -35355,6 +35500,7 @@ paths:
                   type: string
                   example: my-api-key
                   maximum: 100
+      x-speakeasy-name-override: rename
   /v3/secrets/{idOrName}:
     get:
       description: Retrieves the information for a specific secret by passing either the secret id or name in the URL.
@@ -35454,6 +35600,7 @@ paths:
           name: slug
           schema:
             type: string
+      x-speakeasy-name-override: get
   /v2/secrets/{idOrName}:
     delete:
       description: This deletes the user or team’s secret defined in the URL.
@@ -35514,6 +35661,7 @@ paths:
           name: slug
           schema:
             type: string
+      x-speakeasy-name-override: delete
 components:
   schemas:
     AccessGroup:

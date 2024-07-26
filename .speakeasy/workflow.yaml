@@ -3,13 +3,16 @@ speakeasyVersion: latest
 sources:
     Vercel-API:
         inputs:
-            - location: ./vercel-api-modified.yaml
+            - location: ./vercel-api-suggest.yaml
         registry:
             location: registry.speakeasyapi.dev/vercel/vercel/vercel-api
+    vercel-openapi:
+        inputs:
+            - location: vercel-api-modified.yaml
+        registry:
+            location: registry.speakeasyapi.dev/vercel/vercel/vercel-openapi
 targets:
     typescript:
         target: typescript
-        source: Vercel-API
-        publish:
-            npm:
-                token: $npm_token
+        source: vercel-openapi
+        output: .

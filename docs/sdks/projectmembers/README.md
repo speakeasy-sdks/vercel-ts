@@ -25,9 +25,6 @@ const vercel = new Vercel({
 async function run() {
   const result = await vercel.projectMembers.list({
     idOrName: "prj_pavWOn1iLObbXLRiwVvzmPrTWyTf",
-    limit: 20,
-    since: 1540095775951,
-    until: 1540095775951,
   });
 
   // Handle the result
@@ -63,7 +60,7 @@ Adds a new member to the project.
 ### Example Usage
 
 ```typescript
-import { RequestBodyRole, Vercel } from "vercel";
+import { Vercel } from "vercel";
 
 const vercel = new Vercel({
   security: {
@@ -73,10 +70,8 @@ const vercel = new Vercel({
 
 async function run() {
   const result = await vercel.projectMembers.create("prj_pavWOn1iLObbXLRiwVvzmPrTWyTf", "<value>", "<value>", {
-      uid: "ndlgr43fadlPyCtREAqxxdyFK",
       username: "example",
-      email: "entity@example.com",
-      role: RequestBodyRole.Admin,
+      role: "ADMIN",
     });
 
   // Handle the result

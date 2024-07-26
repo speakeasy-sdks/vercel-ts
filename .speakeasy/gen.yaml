@@ -3,7 +3,7 @@ generation:
   sdkClassName: vercel
   maintainOpenAPIOrder: true
   usageSnippets:
-    optionalPropertyRendering: withExample
+    optionalPropertyRendering: never
   useClassNamesForArrayFields: true
   fixes:
     nameResolutionDec2023: true
@@ -12,7 +12,7 @@ generation:
   auth:
     oAuth2ClientCredentialsEnabled: true
 typescript:
-  version: 0.3.0
+  version: 0.3.2
   additionalDependencies:
     dependencies: {}
     devDependencies: {}
@@ -20,7 +20,7 @@ typescript:
   additionalPackageJSON: {}
   author: Speakeasy
   clientServerStatusCodesAsErrors: true
-  enumFormat: enum
+  enumFormat: union
   flattenGlobalSecurity: true
   imports:
     option: openapi
@@ -32,7 +32,7 @@ typescript:
       webhooks: ""
   inputModelSuffix: input
   maxMethodParams: 4
-  methodArguments: require-security-and-request
+  methodArguments: infer-optional-args
   moduleFormat: commonjs
   outputModelSuffix: output
   packageName: vercel

@@ -17,7 +17,7 @@ Records an artifacts cache usage event. The body of this request is an array of 
 ### Example Usage
 
 ```typescript
-import { Event, Source, Vercel } from "vercel";
+import { Vercel } from "vercel";
 
 const vercel = new Vercel({
   security: {
@@ -26,19 +26,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  await vercel.artifacts.recordEvents({
-    xArtifactClientCi: "VERCEL",
-    xArtifactClientInteractive: 0,
-    requestBody: [
-      {
-        sessionId: "<value>",
-        source: Source.Local,
-        event: Event.Miss,
-        hash: "12HKQaOmR5t5Uy6vdcQsNIiZgHGB",
-        duration: 400,
-      },
-    ],
-  });
+  await vercel.artifacts.recordEvents({});
 
   
 }
@@ -128,10 +116,6 @@ const vercel = new Vercel({
 async function run() {
   const result = await vercel.artifacts.upload({
     contentLength: 4036.54,
-    xArtifactDuration: 400,
-    xArtifactClientCi: "VERCEL",
-    xArtifactClientInteractive: 0,
-    xArtifactTag: "Tc0BmHvJYMIYJ62/zx87YqO0Flxk+5Ovip25NY825CQ=",
     hash: "12HKQaOmR5t5Uy6vdcQsNIiZgHGB",
   });
 
@@ -178,8 +162,6 @@ const vercel = new Vercel({
 
 async function run() {
   const result = await vercel.artifacts.download({
-    xArtifactClientCi: "VERCEL",
-    xArtifactClientInteractive: 0,
     hash: "12HKQaOmR5t5Uy6vdcQsNIiZgHGB",
   });
 

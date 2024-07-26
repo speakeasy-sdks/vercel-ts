@@ -16,7 +16,7 @@ Allows to retrieve all configurations for an authenticated integration. When the
 ### Example Usage
 
 ```typescript
-import { Vercel, View } from "vercel";
+import { Vercel } from "vercel";
 
 const vercel = new Vercel({
   security: {
@@ -25,7 +25,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.integrations.list(View.Project, "<value>", "<value>");
+  const result = await vercel.integrations.list("project", "<value>", "<value>");
 
   // Handle the result
   console.log(result)
@@ -153,7 +153,7 @@ Lists git namespaces for a supported provider. Supported providers are `github`,
 ### Example Usage
 
 ```typescript
-import { Provider, Vercel } from "vercel";
+import { Vercel } from "vercel";
 
 const vercel = new Vercel({
   security: {
@@ -162,7 +162,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.integrations.listGitNamespaces("ghes-test.now.systems", Provider.Gitlab, "<value>", "<value>");
+  const result = await vercel.integrations.listGitNamespaces("ghes-test.now.systems", "gitlab", "<value>", "<value>");
 
   // Handle the result
   console.log(result)
@@ -209,9 +209,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.integrations.listGitRepos({
-    host: "ghes-test.now.systems",
-  });
+  const result = await vercel.integrations.listGitRepos({});
 
   // Handle the result
   console.log(result)

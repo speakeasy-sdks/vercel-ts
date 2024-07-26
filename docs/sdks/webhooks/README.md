@@ -15,7 +15,7 @@ Creates a webhook
 ### Example Usage
 
 ```typescript
-import { Events, Vercel } from "vercel";
+import { Vercel } from "vercel";
 
 const vercel = new Vercel({
   security: {
@@ -27,7 +27,7 @@ async function run() {
   const result = await vercel.webhooks.create("<value>", "<value>", {
     url: "http://limp-pastry.org",
     events: [
-      Events.IntegrationConfigurationScopeChangeConfirmed,
+      "integration-configuration.scope-change-confirmed",
     ],
   });
 

@@ -26,9 +26,6 @@ const vercel = new Vercel({
 async function run() {
   const result = await vercel.dns.get({
     domain: "example.com",
-    limit: "20",
-    since: "1609499532000",
-    until: "1612264332000",
   });
 
   // Handle the result
@@ -64,7 +61,7 @@ Creates a DNS record for a domain.
 ### Example Usage
 
 ```typescript
-import { CreateRecordRequestBodyDnsRequest5Type, Vercel } from "vercel";
+import { Vercel } from "vercel";
 
 const vercel = new Vercel({
   security: {
@@ -75,10 +72,7 @@ const vercel = new Vercel({
 async function run() {
   const result = await vercel.dns.create("example.com", "<value>", "<value>", {
       name: "subdomain",
-      type: CreateRecordRequestBodyDnsRequest5Type.Cname,
-      ttl: 60,
-      value: "cname.vercel-dns.com",
-      comment: "used to verify ownership of domain",
+      type: "CNAME",
     });
 
   // Handle the result
@@ -117,7 +111,7 @@ Updates an existing DNS record for a domain name.
 ### Example Usage
 
 ```typescript
-import { UpdateRecordType, Vercel } from "vercel";
+import { Vercel } from "vercel";
 
 const vercel = new Vercel({
   security: {
@@ -126,23 +120,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.dns.update("rec_2qn7pzrx89yxy34vezpd31y9", "<value>", "<value>", {
-    name: "example-1",
-    value: "google.com",
-    type: UpdateRecordType.A,
-    ttl: 60,
-    srv: {
-      target: "example2.com.",
-      weight: 857478,
-      port: 24555,
-      priority: 597129,
-    },
-    https: {
-      priority: 15652,
-      target: "example2.com.",
-    },
-    comment: "used to verify ownership of domain",
-  });
+  const result = await vercel.dns.update("rec_2qn7pzrx89yxy34vezpd31y9", "<value>", "<value>", {});
 
   // Handle the result
   console.log(result)

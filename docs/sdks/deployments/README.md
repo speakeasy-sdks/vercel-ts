@@ -20,7 +20,7 @@ Get the build logs of a deployment by deployment ID and build ID. It can work as
 ### Example Usage
 
 ```typescript
-import { Direction, Vercel } from "vercel";
+import { Vercel } from "vercel";
 
 const vercel = new Vercel({
   security: {
@@ -31,15 +31,6 @@ const vercel = new Vercel({
 async function run() {
   const result = await vercel.deployments.getDeploymentEvents({
     idOrUrl: "dpl_5WJWYSyB7BpgTj3EuwF37WMRBXBtPQ2iTMJHJBJyRfd",
-    direction: Direction.Backward,
-    follow: 1,
-    limit: 100,
-    name: "bld_cotnkcr76",
-    since: 1540095775941,
-    until: 1540106318643,
-  statusCode: "5xx",
-    delimiter: 1,
-    builds: 1,
   });
 
   // Handle the result
@@ -131,29 +122,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.deployments.create({
-    requestBody: {
-      files: [
-          {
-            data: "<value>",
-            file: "folder/file.js",
-          },
-      ],
-      gitMetadata: {
-        remoteUrl: "https://github.com/vercel/next.js",
-        commitAuthorName: "kyliau",
-        commitMessage: "add method to measure Interaction to Next Paint (INP) (#36490)",
-        commitRef: "main",
-        commitSha: "dc36199b2234c6586ebe05ec94078a895c707e29",
-        dirty: true,
-      },
-      meta: {
-        "foo": "bar",
-      },
-      name: "my-instant-deployment",
-      project: "my-deployment-project",
-    },
-  });
+  const result = await vercel.deployments.create({});
 
   // Handle the result
   console.log(result)
@@ -370,7 +339,7 @@ List deployments under the authenticated user or team. If a deployment hasn't fi
 ### Example Usage
 
 ```typescript
-import { QueryParamTarget, Vercel } from "vercel";
+import { Vercel } from "vercel";
 
 const vercel = new Vercel({
   security: {
@@ -379,18 +348,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.deployments.list({
-    app: "docs",
-    from: 1612948664566,
-    limit: 10,
-    projectId: "QmXGTs7mvAMMC7WW5ebrM33qKG32QK3h4vmQMjmY",
-    target: QueryParamTarget.Production,
-    to: 1612948664566,
-    users: "kr1PsOIzqEL5Xg6M4VZcZosf,K4amb7K9dAt5R2vBJWF32bmY",
-    since: 1540095775941,
-    until: 1540095775951,
-    state: "BUILDING,READY",
-  });
+  const result = await vercel.deployments.list({});
 
   // Handle the result
   console.log(result)

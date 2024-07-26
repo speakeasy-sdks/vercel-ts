@@ -27,11 +27,7 @@ const vercel = new Vercel({
 async function run() {
   const result = await vercel.checks.create("dpl_2qn7PZrx89yxY34vEZPD31Y9XVj6", "<value>", "<value>", {
     name: "Performance Check",
-    path: "/",
     blocking: true,
-    detailsUrl: "http://example.com",
-    externalId: "1234abc",
-    rerequestable: true,
   });
 
   // Handle the result
@@ -163,14 +159,7 @@ Update an existing check. This endpoint must be called with an OAuth2 or it will
 ### Example Usage
 
 ```typescript
-import {
-  UpdateCheckChecksRequestRequestBodyOutputSource,
-  UpdateCheckChecksRequestRequestBodySource,
-  UpdateCheckChecksRequestSource,
-  UpdateCheckChecksSource,
-  UpdateCheckSource,
-  Vercel,
-} from "vercel";
+import { Vercel } from "vercel";
 
 const vercel = new Vercel({
   security: {
@@ -182,41 +171,6 @@ async function run() {
   const result = await vercel.checks.update({
     deploymentId: "dpl_2qn7PZrx89yxY34vEZPD31Y9XVj6",
     checkId: "check_2qn7PZrx89yxY34vEZPD31Y9XVj6",
-    requestBody: {
-      name: "Performance Check",
-      path: "/",
-      detailsUrl: "https://example.com/check/run/1234abc",
-      output: {
-        metrics: {
-          fcp: {
-            value: 1200,
-            previousValue: 900,
-            source: UpdateCheckSource.WebVitals,
-          },
-          lcp: {
-            value: 1200,
-            previousValue: 1000,
-            source: UpdateCheckChecksSource.WebVitals,
-          },
-          cls: {
-            value: 4,
-            previousValue: 2,
-            source: UpdateCheckChecksRequestSource.WebVitals,
-          },
-          tbt: {
-            value: 3000,
-            previousValue: 3500,
-            source: UpdateCheckChecksRequestRequestBodySource.WebVitals,
-          },
-          virtualExperienceScore: {
-            value: 30,
-            previousValue: 35,
-            source: UpdateCheckChecksRequestRequestBodyOutputSource.WebVitals,
-          },
-        },
-      },
-      externalId: "1234abc",
-    },
   });
 
   // Handle the result

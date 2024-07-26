@@ -63,7 +63,7 @@ Creates an Integration log drain. This endpoint must be called with an OAuth2 cl
 ### Example Usage
 
 ```typescript
-import { DeliveryFormat, Vercel } from "vercel";
+import { Vercel } from "vercel";
 
 const vercel = new Vercel({
   security: {
@@ -74,8 +74,6 @@ const vercel = new Vercel({
 async function run() {
   const result = await vercel.logDrains.create("<value>", "<value>", {
     name: "My first log drain",
-    secret: "a1Xsfd325fXcs",
-    deliveryFormat: DeliveryFormat.Json,
     url: "https://example.com/log-drain",
   });
 
@@ -296,11 +294,7 @@ Creates a configurable log drain. This endpoint must be called with a team Acces
 ### Example Usage
 
 ```typescript
-import {
-  CreateConfigurableLogDrainDeliveryFormat,
-  CreateConfigurableLogDrainSources,
-  Vercel,
-} from "vercel";
+import { Vercel } from "vercel";
 
 const vercel = new Vercel({
   security: {
@@ -310,10 +304,10 @@ const vercel = new Vercel({
 
 async function run() {
   const result = await vercel.logDrains.createConfigurable("<value>", "<value>", {
-    deliveryFormat: CreateConfigurableLogDrainDeliveryFormat.Json,
+    deliveryFormat: "json",
     url: "https://equal-hedgehog.com",
     sources: [
-      CreateConfigurableLogDrainSources.Lambda,
+      "lambda",
     ],
   });
 

@@ -25,15 +25,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.aliases.list({
-  domain: "my-test-domain.com",
-    from: 1540095775951,
-    limit: 10,
-    projectId: "prj_12HKQaOmR5t5Uy6vdcQsNIiZgHGB",
-    since: 1540095775941,
-    until: 1540095775951,
-    rollbackDeploymentId: "dpl_XXX",
-  });
+  const result = await vercel.aliases.list({});
 
   // Handle the result
   console.log(result)
@@ -78,11 +70,7 @@ const vercel = new Vercel({
 
 async function run() {
   const result = await vercel.aliases.getAlias({
-    from: 1540095775951,
     idOrAlias: "example.vercel.app",
-    projectId: "prj_12HKQaOmR5t5Uy6vdcQsNIiZgHGB",
-    since: 1540095775941,
-    until: 1540095775951,
   });
 
   // Handle the result
@@ -219,10 +207,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.aliases.assign("<value>", "<value>", "<value>", {
-    alias: "my-alias.vercel.app",
-    redirect: null,
-  });
+  const result = await vercel.aliases.assign("<value>", "<value>", "<value>", {});
 
   // Handle the result
   console.log(result)

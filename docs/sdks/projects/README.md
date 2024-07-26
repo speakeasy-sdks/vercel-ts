@@ -39,9 +39,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.projects.updateProjectDataCache("prj_12HKQaOmR5t5Uy6vdcQsNIiZgHGB", "<value>", "<value>", {
-    disabled: true,
-  });
+  const result = await vercel.projects.updateProjectDataCache("prj_12HKQaOmR5t5Uy6vdcQsNIiZgHGB", "<value>", "<value>", {});
 
   // Handle the result
   console.log(result)
@@ -79,7 +77,7 @@ Allows to retrieve the list of projects of the authenticated user or team. The l
 ### Example Usage
 
 ```typescript
-import { GitForkProtection, Vercel } from "vercel";
+import { Vercel } from "vercel";
 
 const vercel = new Vercel({
   security: {
@@ -88,10 +86,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.projects.get({
-    gitForkProtection: GitForkProtection.One,
-    repoUrl: "https://github.com/vercel/next.js",
-  });
+  const result = await vercel.projects.get({});
 
   // Handle the result
   console.log(result)
@@ -183,9 +178,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.projects.update("prj_12HKQaOmR5t5Uy6vdcQsNIiZgHGB", "<value>", "<value>", {
-    name: "a-project-name",
-  });
+  const result = await vercel.projects.update("prj_12HKQaOmR5t5Uy6vdcQsNIiZgHGB", "<value>", "<value>", {});
 
   // Handle the result
   console.log(result)
@@ -315,7 +308,7 @@ Update a project domain's configuration, including the name, git branch and redi
 ### Example Usage
 
 ```typescript
-import { RedirectStatusCode, Vercel } from "vercel";
+import { Vercel } from "vercel";
 
 const vercel = new Vercel({
   security: {
@@ -327,11 +320,6 @@ async function run() {
   const result = await vercel.projects.updateDomain({
     idOrName: "<value>",
     domain: "www.example.com",
-    requestBody: {
-      gitBranch: null,
-      redirect: "foobar.com",
-      redirectStatusCode: RedirectStatusCode.ThreeHundredAndSeven,
-    },
   });
 
   // Handle the result
@@ -414,7 +402,7 @@ Add a domain to the project by passing its domain name and by specifying the pro
 ### Example Usage
 
 ```typescript
-import { AddProjectDomainRedirectStatusCode, Vercel } from "vercel";
+import { Vercel } from "vercel";
 
 const vercel = new Vercel({
   security: {
@@ -425,9 +413,6 @@ const vercel = new Vercel({
 async function run() {
   const result = await vercel.projects.addDomain("<value>", "<value>", "<value>", {
     name: "www.example.com",
-    gitBranch: null,
-    redirect: "foobar.com",
-    redirectStatusCode: AddProjectDomainRedirectStatusCode.ThreeHundredAndSeven,
   });
 
   // Handle the result
@@ -524,9 +509,6 @@ const vercel = new Vercel({
 async function run() {
   const result = await vercel.projects.filterEnvs({
     idOrName: "prj_XLKmu1DyR1eY7zq8UgeRKbA7yVLA",
-    gitBranch: "feature-1",
-    source: "vercel-cli:pull",
-    customEnvironmentId: "env_1234567890",
   });
 
   // Handle the result
@@ -609,11 +591,7 @@ Create one ore more environment variables for a project by passing its `key`, `v
 ### Example Usage
 
 ```typescript
-import {
-  CreateProjectEnvRequestBodyProjectsType,
-  CreateProjectEnvRequestBodyTarget,
-  Vercel,
-} from "vercel";
+import { Vercel } from "vercel";
 
 const vercel = new Vercel({
   security: {
@@ -624,20 +602,6 @@ const vercel = new Vercel({
 async function run() {
   const result = await vercel.projects.createEnv({
     idOrName: "prj_XLKmu1DyR1eY7zq8UgeRKbA7yVLA",
-    upsert: "true",
-  requestBody:     [
-        {
-          key: "API_URL",
-          value: "https://api.vercel.com",
-          type: CreateProjectEnvRequestBodyProjectsType.Plain,
-          target: [
-            CreateProjectEnvRequestBodyTarget.Preview,
-          ],
-          gitBranch: "feature-1",
-          comment: "database connection string for production",
-          customEnvironmentId: "env_1234567890",
-        },
-      ],
   });
 
   // Handle the result
@@ -685,7 +649,6 @@ async function run() {
   const result = await vercel.projects.removeEnv({
     idOrName: "prj_XLKmu1DyR1eY7zq8UgeRKbA7yVLA",
     id: "XMbOEya1gUUO1ir4",
-    customEnvironmentId: "env_1234567890",
   });
 
   // Handle the result
@@ -721,7 +684,7 @@ Edit a specific environment variable for a given project by passing the environm
 ### Example Usage
 
 ```typescript
-import { EditProjectEnvTarget, EditProjectEnvType, Vercel } from "vercel";
+import { Vercel } from "vercel";
 
 const vercel = new Vercel({
   security: {
@@ -733,17 +696,6 @@ async function run() {
   const result = await vercel.projects.editEnv({
     idOrName: "prj_XLKmu1DyR1eY7zq8UgeRKbA7yVLA",
     id: "XMbOEya1gUUO1ir4",
-    requestBody: {
-      key: "GITHUB_APP_ID",
-      target: [
-        EditProjectEnvTarget.Preview,
-      ],
-      gitBranch: "feature-1",
-      type: EditProjectEnvType.Plain,
-      value: "bkWIjbnxcvo78",
-      customEnvironmentId: "env_1234567890",
-      comment: "database connection string for production",
-    },
   });
 
   // Handle the result
@@ -836,9 +788,6 @@ const vercel = new Vercel({
 async function run() {
   const result = await vercel.projects.getRequestPromoteAliases({
     projectId: "<value>",
-    limit: 20,
-    since: 1609499532000,
-    until: 1612264332000,
   });
 
   // Handle the result

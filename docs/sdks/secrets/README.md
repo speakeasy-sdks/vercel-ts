@@ -75,7 +75,6 @@ async function run() {
   const result = await vercel.secrets.create("my-api-key", "<value>", "<value>", {
     name: "my-api-key",
     value: "some secret value",
-    decryptable: true,
   });
 
   // Handle the result
@@ -163,7 +162,7 @@ Retrieves the information for a specific secret by passing either the secret id 
 ### Example Usage
 
 ```typescript
-import { QueryParamDecrypt, Vercel } from "vercel";
+import { Vercel } from "vercel";
 
 const vercel = new Vercel({
   security: {
@@ -172,7 +171,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.secrets.get("sec_RKc5iV0rV3ZSrFrHiruRno7k", QueryParamDecrypt.True, "<value>", "<value>");
+  const result = await vercel.secrets.get("sec_RKc5iV0rV3ZSrFrHiruRno7k", "true", "<value>", "<value>");
 
   // Handle the result
   console.log(result)

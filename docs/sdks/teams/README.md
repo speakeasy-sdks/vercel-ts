@@ -24,7 +24,7 @@ Get a paginated list of team members for the provided team.
 ### Example Usage
 
 ```typescript
-import { QueryParamRole, Vercel } from "vercel";
+import { Vercel } from "vercel";
 
 const vercel = new Vercel({
   security: {
@@ -34,10 +34,6 @@ const vercel = new Vercel({
 
 async function run() {
   const result = await vercel.teams.listMembers({
-    limit: 20,
-    since: 1540095775951,
-    until: 1540095775951,
-    role: QueryParamRole.Owner,
     teamId: "<value>",
   });
 
@@ -74,7 +70,7 @@ Invite a user to join the team specified in the URL. The authenticated user need
 ### Example Usage
 
 ```typescript
-import { InviteUserToTeamRole, InviteUserToTeamTeamsRole, Vercel } from "vercel";
+import { Vercel } from "vercel";
 
 const vercel = new Vercel({
   security: {
@@ -83,17 +79,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.teams.inviteUser("<value>", {
-    uid: "kr1PsOIzqEL5Xg6M4VZcZosf",
-    email: "john@example.com",
-    role: InviteUserToTeamTeamsRole.Member,
-    projects: [
-      {
-        projectId: "prj_ndlgr43fadlPyCtREAqxxdyFK",
-        role: InviteUserToTeamRole.Admin,
-      },
-    ],
-  });
+  const result = await vercel.teams.inviteUser("<value>", {});
 
   // Handle the result
   console.log(result)
@@ -129,7 +115,7 @@ Request access to a team as a member. An owner has to approve the request. Only 
 ### Example Usage
 
 ```typescript
-import { RequestAccessToTeamOrigin, Vercel } from "vercel";
+import { Vercel } from "vercel";
 
 const vercel = new Vercel({
   security: {
@@ -140,12 +126,7 @@ const vercel = new Vercel({
 async function run() {
   const result = await vercel.teams.requestAccess("<value>", {
     joinedFrom: {
-      origin: RequestAccessToTeamOrigin.Github,
-      commitId: "f498d25d8bd654b578716203be73084b31130cd7",
-      repoId: "67753070",
-      repoPath: "jane-doe/example",
-    gitUserId: 103053343,
-      gitUserLogin: "jane-doe",
+      origin: "github",
     },
   });
 
@@ -237,9 +218,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.teams.joinTeam("<value>", {
-    inviteCode: "fisdh38aejkeivn34nslfore9vjtn4ls",
-  });
+  const result = await vercel.teams.joinTeam("<value>", {});
 
   // Handle the result
   console.log(result)
@@ -275,7 +254,7 @@ Update the membership of a Team Member on the Team specified by `teamId`, such a
 ### Example Usage
 
 ```typescript
-import { UpdateTeamMemberRole, Vercel } from "vercel";
+import { Vercel } from "vercel";
 
 const vercel = new Vercel({
   security: {
@@ -284,16 +263,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.teams.updateMember("<value>", "ndfasllgPyCtREAqxxdyFKb", {
-    confirmed: true,
-    role: "[\"MEMBER\",\"VIEWER\"]",
-    projects: [
-      {
-        projectId: "prj_ndlgr43fadlPyCtREAqxxdyFK",
-        role: UpdateTeamMemberRole.Admin,
-      },
-    ],
-  });
+  const result = await vercel.teams.updateMember("<value>", "ndfasllgPyCtREAqxxdyFKb", {});
 
   // Handle the result
   console.log(result)
@@ -430,23 +400,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.teams.update("<value>", "<value>", {
-    description: "Our mission is to make cloud computing accessible to everyone",
-    emailDomain: "example.com",
-    name: "My Team",
-    previewDeploymentSuffix: "example.dev",
-    regenerateInviteCode: true,
-    saml: {
-      enforced: true,
-    },
-    slug: "my-team",
-    enablePreviewFeedback: "on",
-    sensitiveEnvironmentVariablePolicy: "on",
-    remoteCaching: {
-      enabled: true,
-    },
-    hideIpAddresses: false,
-  });
+  const result = await vercel.teams.update("<value>", "<value>", {});
 
   // Handle the result
   console.log(result)
@@ -540,7 +494,6 @@ const vercel = new Vercel({
 async function run() {
   const result = await vercel.teams.create({
     slug: "a-random-team",
-    name: "A Random Team",
   });
 
   // Handle the result

@@ -203,7 +203,6 @@ const vercel = new Vercel();
 async function run() {
   const result = await vercel.authentication.verifyToken({
     token: "<value>",
-    tokenName: "Your Client App Name",
   });
 
   // Handle the result
@@ -246,7 +245,6 @@ const vercel = new Vercel();
 async function run() {
   const result = await vercel.authentication.emailLogin({
     email: "user@mail.com",
-    tokenName: "Your Client App Name",
   });
 
   // Handle the result
