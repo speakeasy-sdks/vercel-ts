@@ -8,16 +8,17 @@ sources:
             - latest
     vercel-openapi:
         sourceNamespace: vercel-openapi
-        sourceRevisionDigest: sha256:617c460d3dc733143ee1aa4134c9f84de2e891b125402d77baef202e966d3ded
-        sourceBlobDigest: sha256:1fa44ad5f0180e8b7733f54fb5744af6cd581fd72e5c09299dfe7c02049fb2d6
+        sourceRevisionDigest: sha256:632be61439b91b9fe017fde5b5531858e802defa44d0f999a4738a7de63bfbb8
+        sourceBlobDigest: sha256:250fbddbbfbdb14fa7368f8342ea591b1840878a9efce373ebe9065953776d89
         tags:
             - latest
+            - main
 targets:
     typescript:
         source: vercel-openapi
         sourceNamespace: vercel-openapi
-        sourceRevisionDigest: sha256:617c460d3dc733143ee1aa4134c9f84de2e891b125402d77baef202e966d3ded
-        sourceBlobDigest: sha256:1fa44ad5f0180e8b7733f54fb5744af6cd581fd72e5c09299dfe7c02049fb2d6
+        sourceRevisionDigest: sha256:632be61439b91b9fe017fde5b5531858e802defa44d0f999a4738a7de63bfbb8
+        sourceBlobDigest: sha256:250fbddbbfbdb14fa7368f8342ea591b1840878a9efce373ebe9065953776d89
         outLocation: .
 workflow:
     workflowVersion: 1.0.0
