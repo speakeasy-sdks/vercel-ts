@@ -8,7 +8,7 @@ sources:
             - latest
     vercel-openapi:
         sourceNamespace: vercel-openapi
-        sourceRevisionDigest: sha256:632be61439b91b9fe017fde5b5531858e802defa44d0f999a4738a7de63bfbb8
+        sourceRevisionDigest: sha256:ada806b5b4a11ccb867a20b5803a20f0ec39a409843707e341690506b45b5b03
         sourceBlobDigest: sha256:250fbddbbfbdb14fa7368f8342ea591b1840878a9efce373ebe9065953776d89
         tags:
             - latest
@@ -17,7 +17,7 @@ targets:
     typescript:
         source: vercel-openapi
         sourceNamespace: vercel-openapi
-        sourceRevisionDigest: sha256:632be61439b91b9fe017fde5b5531858e802defa44d0f999a4738a7de63bfbb8
+        sourceRevisionDigest: sha256:ada806b5b4a11ccb867a20b5803a20f0ec39a409843707e341690506b45b5b03
         sourceBlobDigest: sha256:250fbddbbfbdb14fa7368f8342ea591b1840878a9efce373ebe9065953776d89
         outLocation: .
 workflow:
