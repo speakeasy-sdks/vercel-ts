@@ -23,7 +23,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.user.listEvent({});
+  const result = await vercel.user.listEvent();
 
   // Handle the result
   console.log(result)
@@ -110,7 +110,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.user.requestDelete({});
+  const result = await vercel.user.requestDelete();
 
   // Handle the result
   console.log(result)

@@ -24,12 +24,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.webhooks.create("<value>", "<value>", {
-    url: "http://limp-pastry.org",
-    events: [
-      "integration-configuration.scope-change-confirmed",
-    ],
-  });
+  const result = await vercel.webhooks.create();
 
   // Handle the result
   console.log(result)
@@ -75,7 +70,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.webhooks.list("<value>", "<value>", "<value>");
+  const result = await vercel.webhooks.list();
 
   // Handle the result
   console.log(result)
@@ -121,7 +116,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.webhooks.get("<value>", "<value>", "<value>");
+  const result = await vercel.webhooks.get("<value>");
 
   // Handle the result
   console.log(result)
@@ -167,7 +162,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  await vercel.webhooks.delete("<value>", "<value>", "<value>");
+  await vercel.webhooks.delete("<value>");
 
   
 }

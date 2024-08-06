@@ -69,10 +69,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.projectMembers.create("prj_pavWOn1iLObbXLRiwVvzmPrTWyTf", "<value>", "<value>", {
-      username: "example",
-      role: "ADMIN",
-    });
+  const result = await vercel.projectMembers.create("prj_pavWOn1iLObbXLRiwVvzmPrTWyTf");
 
   // Handle the result
   console.log(result)
@@ -119,7 +116,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.projectMembers.delete("prj_pavWOn1iLObbXLRiwVvzmPrTWyTf", "ndlgr43fadlPyCtREAqxxdyFK", "<value>", "<value>");
+  const result = await vercel.projectMembers.delete("prj_pavWOn1iLObbXLRiwVvzmPrTWyTf", "ndlgr43fadlPyCtREAqxxdyFK");
 
   // Handle the result
   console.log(result)

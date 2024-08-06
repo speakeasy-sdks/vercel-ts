@@ -12,7 +12,7 @@ generation:
   auth:
     oAuth2ClientCredentialsEnabled: true
 typescript:
-  version: 0.3.3
+  version: 0.4.0
   additionalDependencies:
     dependencies: {}
     devDependencies: {}
@@ -33,9 +33,9 @@ typescript:
   inputModelSuffix: input
   maxMethodParams: 4
   methodArguments: infer-optional-args
-  moduleFormat: commonjs
+  moduleFormat: esm
   outputModelSuffix: output
   packageName: vercel
   responseFormat: flat
   templateVersion: v2
-  useIndexModules: true
+  useIndexModules: false

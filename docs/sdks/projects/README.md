@@ -39,7 +39,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.projects.updateProjectDataCache("prj_12HKQaOmR5t5Uy6vdcQsNIiZgHGB", "<value>", "<value>", {});
+  const result = await vercel.projects.updateProjectDataCache("prj_12HKQaOmR5t5Uy6vdcQsNIiZgHGB");
 
   // Handle the result
   console.log(result)
@@ -86,7 +86,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.projects.get({});
+  const result = await vercel.projects.get();
 
   // Handle the result
   console.log(result)
@@ -130,9 +130,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.projects.create("<value>", "<value>", {
-    name: "a-project-name",
-  });
+  const result = await vercel.projects.create();
 
   // Handle the result
   console.log(result)
@@ -178,7 +176,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.projects.update("prj_12HKQaOmR5t5Uy6vdcQsNIiZgHGB", "<value>", "<value>", {});
+  const result = await vercel.projects.update("prj_12HKQaOmR5t5Uy6vdcQsNIiZgHGB");
 
   // Handle the result
   console.log(result)
@@ -225,7 +223,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  await vercel.projects.delete("prj_12HKQaOmR5t5Uy6vdcQsNIiZgHGB", "<value>", "<value>");
+  await vercel.projects.delete("prj_12HKQaOmR5t5Uy6vdcQsNIiZgHGB");
 
   
 }
@@ -270,7 +268,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.projects.getDomain("<value>", "www.example.com", "<value>", "<value>");
+  const result = await vercel.projects.getDomain("<value>", "www.example.com");
 
   // Handle the result
   console.log(result)
@@ -364,7 +362,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.projects.removeDomain("<value>", "www.example.com", "<value>", "<value>");
+  const result = await vercel.projects.removeDomain("<value>", "www.example.com");
 
   // Handle the result
   console.log(result)
@@ -411,9 +409,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.projects.addDomain("<value>", "<value>", "<value>", {
-    name: "www.example.com",
-  });
+  const result = await vercel.projects.addDomain("<value>");
 
   // Handle the result
   console.log(result)
@@ -460,7 +456,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.projects.verifyDomain("prj_12HKQaOmR5t5Uy6vdcQsNIiZgHGB", "example.com", "<value>", "<value>");
+  const result = await vercel.projects.verifyDomain("prj_12HKQaOmR5t5Uy6vdcQsNIiZgHGB", "example.com");
 
   // Handle the result
   console.log(result)
@@ -553,7 +549,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.projects.getEnv("prj_XLKmu1DyR1eY7zq8UgeRKbA7yVLA", "<value>", "<value>", "<value>");
+  const result = await vercel.projects.getEnv("prj_XLKmu1DyR1eY7zq8UgeRKbA7yVLA", "<value>");
 
   // Handle the result
   console.log(result)
@@ -740,7 +736,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  await vercel.projects.requestPromote("<value>", "<value>", "<value>", "<value>");
+  await vercel.projects.requestPromote("<value>", "<value>");
 
   
 }
@@ -832,7 +828,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  await vercel.projects.pause("<value>", "<value>", "<value>");
+  await vercel.projects.pause("<value>");
 
   
 }
@@ -877,7 +873,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  await vercel.projects.unpause("<value>", "<value>", "<value>");
+  await vercel.projects.unpause("<value>");
 
   
 }

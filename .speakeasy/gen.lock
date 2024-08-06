@@ -3,10 +3,10 @@ id: 08d4af4d-7f06-4aa7-83b0-4bcfdb3dadd5
 management:
   docChecksum: b77c0d972dc7b8018f9afd7d2a29e8df
   docVersion: 0.0.1
-  speakeasyVersion: 1.346.0
-  generationVersion: 2.379.3
-  releaseVersion: 0.3.3
-  configChecksum: 14ed3394bc17507a3b224be047386b9b
+  speakeasyVersion: 1.353.0
+  generationVersion: 2.386.0
+  releaseVersion: 0.4.0
+  configChecksum: 833f7cd02b0210327bd1d5647133497e
   repoURL: https://github.com/speakeasy-sdks/vercel-ts.git
   installationURL: https://github.com/speakeasy-sdks/vercel-ts
   published: true
@@ -15,13 +15,14 @@ features:
     acceptHeaders: 2.81.2
     additionalDependencies: 0.1.0
     constsAndDefaults: 0.1.5
-    core: 3.11.10
+    core: 3.12.0
     defaultEnabledRetries: 0.1.0
     deprecations: 2.81.1
     downloadStreams: 0.1.1
     enums: 2.82.1
+    envVarSecurityUsage: 0.1.1
     flattening: 2.81.1
-    globalSecurity: 2.82.9
+    globalSecurity: 2.82.10
     globalSecurityCallbacks: 0.1.0
     globalServerURLs: 2.82.4
     nameOverrides: 2.81.2
@@ -33,6 +34,131 @@ features:
     typeOverrides: 2.81.1
     unions: 2.85.6
 generatedFiles:
+  - src/funcs/getDeploymentBuilds.ts
+  - src/funcs/purgeDataCache.ts
+  - src/funcs/updateBillingSettings.ts
+  - src/funcs/artifactsRecordEvents.ts
+  - src/funcs/artifactsStatus.ts
+  - src/funcs/artifactsUpload.ts
+  - src/funcs/artifactsDownload.ts
+  - src/funcs/artifactsExists.ts
+  - src/funcs/artifactsQuery.ts
+  - src/funcs/checksCreate.ts
+  - src/funcs/checksGetAll.ts
+  - src/funcs/checksGet.ts
+  - src/funcs/checksUpdate.ts
+  - src/funcs/checksRerequest.ts
+  - src/funcs/projectsUpdateProjectDataCache.ts
+  - src/funcs/projectsGet.ts
+  - src/funcs/projectsCreate.ts
+  - src/funcs/projectsUpdate.ts
+  - src/funcs/projectsDelete.ts
+  - src/funcs/projectsGetDomain.ts
+  - src/funcs/projectsUpdateDomain.ts
+  - src/funcs/projectsRemoveDomain.ts
+  - src/funcs/projectsAddDomain.ts
+  - src/funcs/projectsVerifyDomain.ts
+  - src/funcs/projectsFilterEnvs.ts
+  - src/funcs/projectsGetEnv.ts
+  - src/funcs/projectsCreateEnv.ts
+  - src/funcs/projectsRemoveEnv.ts
+  - src/funcs/projectsEditEnv.ts
+  - src/funcs/projectsRequestPromote.ts
+  - src/funcs/projectsGetRequestPromoteAliases.ts
+  - src/funcs/projectsPause.ts
+  - src/funcs/projectsUnpause.ts
+  - src/funcs/deploymentsGetDeploymentEvents.ts
+  - src/funcs/deploymentsGetDeployment.ts
+  - src/funcs/deploymentsCreate.ts
+  - src/funcs/deploymentsCancel.ts
+  - src/funcs/deploymentsUploadFile.ts
+  - src/funcs/deploymentsListDeploymentFiles.ts
+  - src/funcs/deploymentsGetDeploymentFileContents.ts
+  - src/funcs/deploymentsList.ts
+  - src/funcs/deploymentsDelete.ts
+  - src/funcs/domainsBuy.ts
+  - src/funcs/domainsCheckPrice.ts
+  - src/funcs/domainsCheckStatus.ts
+  - src/funcs/domainsGetTransfer.ts
+  - src/funcs/domainsGetConfig.ts
+  - src/funcs/domainsGetDomain.ts
+  - src/funcs/domainsList.ts
+  - src/funcs/domainsCreateOrTransferDomain.ts
+  - src/funcs/domainsUpdate.ts
+  - src/funcs/domainsDelete.ts
+  - src/funcs/dnsGet.ts
+  - src/funcs/dnsCreate.ts
+  - src/funcs/dnsUpdate.ts
+  - src/funcs/dnsRemove.ts
+  - src/funcs/edgeConfigList.ts
+  - src/funcs/edgeConfigCreate.ts
+  - src/funcs/edgeConfigGet.ts
+  - src/funcs/edgeConfigUpdate.ts
+  - src/funcs/edgeConfigDelete.ts
+  - src/funcs/edgeConfigListItems.ts
+  - src/funcs/edgeConfigGetSchema.ts
+  - src/funcs/edgeConfigUpdateSchema.ts
+  - src/funcs/edgeConfigDeleteSchema.ts
+  - src/funcs/edgeConfigGetItem.ts
+  - src/funcs/edgeConfigListTokens.ts
+  - src/funcs/edgeConfigDeleteTokens.ts
+  - src/funcs/edgeConfigGetTokenMetaData.ts
+  - src/funcs/edgeConfigCreateTokenMetaData.ts
+  - src/funcs/userListEvent.ts
+  - src/funcs/userGetAuthUser.ts
+  - src/funcs/userRequestDelete.ts
+  - src/funcs/integrationsList.ts
+  - src/funcs/integrationsGet.ts
+  - src/funcs/integrationsDeleteConfiguration.ts
+  - src/funcs/integrationsListGitNamespaces.ts
+  - src/funcs/integrationsListGitRepos.ts
+  - src/funcs/logDrainsGetIntegrationLogDrains.ts
+  - src/funcs/logDrainsCreate.ts
+  - src/funcs/logDrainsDelete.ts
+  - src/funcs/logDrainsGet.ts
+  - src/funcs/logDrainsDeleteConfigurableLogDrain.ts
+  - src/funcs/logDrainsList.ts
+  - src/funcs/logDrainsCreateConfigurable.ts
+  - src/funcs/projectMembersList.ts
+  - src/funcs/projectMembersCreate.ts
+  - src/funcs/projectMembersDelete.ts
+  - src/funcs/teamsListMembers.ts
+  - src/funcs/teamsInviteUser.ts
+  - src/funcs/teamsRequestAccess.ts
+  - src/funcs/teamsGetAccess.ts
+  - src/funcs/teamsJoinTeam.ts
+  - src/funcs/teamsUpdateMember.ts
+  - src/funcs/teamsRemoveMember.ts
+  - src/funcs/teamsGet.ts
+  - src/funcs/teamsUpdate.ts
+  - src/funcs/teamsList.ts
+  - src/funcs/teamsCreate.ts
+  - src/funcs/teamsDelete.ts
+  - src/funcs/teamsDeleteInviteCode.ts
+  - src/funcs/authenticationListTokens.ts
+  - src/funcs/authenticationCreateToken.ts
+  - src/funcs/authenticationGetAuthToken.ts
+  - src/funcs/authenticationDeleteToken.ts
+  - src/funcs/authenticationVerifyToken.ts
+  - src/funcs/authenticationEmailLogin.ts
+  - src/funcs/webhooksCreate.ts
+  - src/funcs/webhooksList.ts
+  - src/funcs/webhooksGet.ts
+  - src/funcs/webhooksDelete.ts
+  - src/funcs/aliasesList.ts
+  - src/funcs/aliasesGetAlias.ts
+  - src/funcs/aliasesDelete.ts
+  - src/funcs/aliasesListDeploymentAliases.ts
+  - src/funcs/aliasesAssign.ts
+  - src/funcs/certsGet.ts
+  - src/funcs/certsRemove.ts
+  - src/funcs/certsIssue.ts
+  - src/funcs/certsUpload.ts
+  - src/funcs/secretsList.ts
+  - src/funcs/secretsCreate.ts
+  - src/funcs/secretsRename.ts
+  - src/funcs/secretsGet.ts
+  - src/funcs/secretsDelete.ts
   - src/sdk/artifacts.ts
   - src/sdk/checks.ts
   - src/sdk/projects.ts
@@ -56,24 +182,27 @@ generatedFiles:
   - RUNTIMES.md
   - jsr.json
   - package.json
+  - src/core.ts
   - src/index.ts
   - src/lib/base64.ts
   - src/lib/config.ts
+  - src/lib/dlv.ts
   - src/lib/encodings.ts
   - src/lib/http.ts
   - src/lib/is-plain-object.ts
+  - src/lib/matchers.ts
   - src/lib/primitives.ts
   - src/lib/retries.ts
   - src/lib/schemas.ts
   - src/lib/sdks.ts
   - src/lib/security.ts
   - src/lib/url.ts
-  - src/sdk/index.ts
+  - src/models/httpclienterrors.ts
   - src/models/sdkerror.ts
   - src/models/sdkvalidationerror.ts
   - src/types/blobs.ts
   - src/types/enums.ts
-  - src/types/index.ts
+  - src/types/fp.ts
   - src/types/operations.ts
   - src/types/rfcdate.ts
   - tsconfig.json
@@ -213,7 +342,6 @@ generatedFiles:
   - src/models/getsecretop.ts
   - src/models/deletesecretop.ts
   - src/models/security.ts
-  - src/models/index.ts
   - docs/models/getdeploymentbuildsrequest.md
   - docs/models/readystate.md
   - docs/models/config.md
@@ -2375,5 +2503,4 @@ generatedFiles:
   - .gitattributes
   - src/hooks/hooks.ts
   - src/hooks/types.ts
-  - src/hooks/index.ts
   - CONTRIBUTING.md

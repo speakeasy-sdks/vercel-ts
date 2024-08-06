@@ -34,6 +34,10 @@ yarn add vercel zod
 # Note that Yarn does not install peer dependencies automatically. You will need
 # to install zod as shown above.
 ```
+
+> [!NOTE]
+> This package is published as an ES Module (ESM) only. For applications using
+> CommonJS, use `await import("vercel")` to import and use this package.
 <!-- End SDK Installation [installation] -->
 
 <!-- Start Requirements [requirements] -->
@@ -299,7 +303,7 @@ Validation errors can also occur when either method arguments or data returned f
 
 ```typescript
 import { Vercel } from "vercel";
-import { SDKValidationError } from "vercel/models";
+import { SDKValidationError } from "vercel/models/sdkvalidationerror.js";
 
 const vercel = new Vercel();
 

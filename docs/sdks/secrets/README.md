@@ -25,7 +25,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.secrets.list("sec_RKc5iV0rV3ZSrFrHiruRno7k,sec_fGc5iV0rV3ZSrFrHiruRnouQ", "prj_2WjyKQmM8ZnGcJsPWMrHRHrE", "<value>", "<value>");
+  const result = await vercel.secrets.list();
 
   // Handle the result
   console.log(result)
@@ -72,10 +72,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.secrets.create("my-api-key", "<value>", "<value>", {
-    name: "my-api-key",
-    value: "some secret value",
-  });
+  const result = await vercel.secrets.create("my-api-key");
 
   // Handle the result
   console.log(result)
@@ -122,9 +119,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.secrets.rename("my-api-key", "<value>", "<value>", {
-    name: "my-api-key",
-  });
+  const result = await vercel.secrets.rename("my-api-key");
 
   // Handle the result
   console.log(result)
@@ -171,7 +166,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.secrets.get("sec_RKc5iV0rV3ZSrFrHiruRno7k", "true", "<value>", "<value>");
+  const result = await vercel.secrets.get("sec_RKc5iV0rV3ZSrFrHiruRno7k");
 
   // Handle the result
   console.log(result)
@@ -218,7 +213,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.secrets.delete("sec_RKc5iV0rV3ZSrFrHiruRno7k", "<value>", "<value>");
+  const result = await vercel.secrets.delete("sec_RKc5iV0rV3ZSrFrHiruRno7k");
 
   // Handle the result
   console.log(result)

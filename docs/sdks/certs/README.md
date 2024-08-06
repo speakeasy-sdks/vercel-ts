@@ -24,7 +24,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.certs.get("<value>", "<value>", "<value>");
+  const result = await vercel.certs.get("<value>");
 
   // Handle the result
   console.log(result)
@@ -70,7 +70,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.certs.remove("<value>", "<value>", "<value>");
+  const result = await vercel.certs.remove("<value>");
 
   // Handle the result
   console.log(result)
@@ -116,7 +116,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.certs.issue("<value>", "<value>", {});
+  const result = await vercel.certs.issue();
 
   // Handle the result
   console.log(result)
@@ -162,11 +162,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.certs.upload("<value>", "<value>", {
-    ca: "<value>",
-    key: "<key>",
-    cert: "<value>",
-  });
+  const result = await vercel.certs.upload();
 
   // Handle the result
   console.log(result)

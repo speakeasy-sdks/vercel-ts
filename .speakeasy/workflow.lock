@@ -1,4 +1,4 @@
-speakeasyVersion: 1.346.0
+speakeasyVersion: 1.353.0
 sources:
     Vercel-API:
         sourceNamespace: vercel-api

@@ -30,9 +30,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.domains.buy("<value>", "<value>", {
-    name: "example.com",
-  });
+  const result = await vercel.domains.buy();
 
   // Handle the result
   console.log(result)
@@ -78,7 +76,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.domains.checkPrice("example.com", "new", "<value>", "<value>");
+  const result = await vercel.domains.checkPrice("example.com");
 
   // Handle the result
   console.log(result)
@@ -125,7 +123,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.domains.checkStatus("example.com", "<value>", "<value>");
+  const result = await vercel.domains.checkStatus("example.com");
 
   // Handle the result
   console.log(result)
@@ -171,7 +169,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.domains.getTransfer("example.com", "<value>", "<value>");
+  const result = await vercel.domains.getTransfer("example.com");
 
   // Handle the result
   console.log(result)
@@ -217,7 +215,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.domains.getConfig("example.com", "true", "<value>", "<value>");
+  const result = await vercel.domains.getConfig("example.com");
 
   // Handle the result
   console.log(result)
@@ -264,7 +262,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.domains.getDomain("example.com", "<value>", "<value>");
+  const result = await vercel.domains.getDomain("example.com");
 
   // Handle the result
   console.log(result)
@@ -310,7 +308,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.domains.list({});
+  const result = await vercel.domains.list();
 
   // Handle the result
   console.log(result)
@@ -354,10 +352,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.domains.createOrTransferDomain("<value>", "<value>", {
-      name: "example.com",
-      method: "transfer-in",
-    });
+  const result = await vercel.domains.createOrTransferDomain();
 
   // Handle the result
   console.log(result)
@@ -403,7 +398,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.domains.update("<value>", "<value>", "<value>", {});
+  const result = await vercel.domains.update("<value>");
 
   // Handle the result
   console.log(result)
@@ -450,7 +445,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.domains.delete("example.com", "<value>", "<value>");
+  const result = await vercel.domains.delete("example.com");
 
   // Handle the result
   console.log(result)

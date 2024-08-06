@@ -34,7 +34,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.edgeConfig.list("<value>", "<value>");
+  const result = await vercel.edgeConfig.list();
 
   // Handle the result
   console.log(result)
@@ -79,9 +79,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.edgeConfig.create("<value>", "<value>", {
-    slug: "<value>",
-  });
+  const result = await vercel.edgeConfig.create();
 
   // Handle the result
   console.log(result)
@@ -127,7 +125,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.edgeConfig.get("<value>", "<value>", "<value>");
+  const result = await vercel.edgeConfig.get("<value>");
 
   // Handle the result
   console.log(result)
@@ -173,9 +171,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.edgeConfig.update("<value>", "<value>", "<value>", {
-    slug: "<value>",
-  });
+  const result = await vercel.edgeConfig.update("<value>");
 
   // Handle the result
   console.log(result)
@@ -222,7 +218,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  await vercel.edgeConfig.delete("<value>", "<value>", "<value>");
+  await vercel.edgeConfig.delete("<value>");
 
   
 }
@@ -267,7 +263,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  await vercel.edgeConfig.listItems("<value>", "<value>", "<value>");
+  await vercel.edgeConfig.listItems("<value>");
 
   
 }
@@ -312,7 +308,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.edgeConfig.getSchema("<value>", "<value>", "<value>");
+  const result = await vercel.edgeConfig.getSchema("<value>");
 
   // Handle the result
   console.log(result)
@@ -404,7 +400,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  await vercel.edgeConfig.deleteSchema("<value>", "<value>", "<value>");
+  await vercel.edgeConfig.deleteSchema("<value>");
 
   
 }
@@ -449,7 +445,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  await vercel.edgeConfig.getItem("<value>", "<value>", "<value>", "<value>");
+  await vercel.edgeConfig.getItem("<value>", "<value>");
 
   
 }
@@ -495,7 +491,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.edgeConfig.listTokens("<value>", "<value>", "<value>");
+  const result = await vercel.edgeConfig.listTokens("<value>");
 
   // Handle the result
   console.log(result)
@@ -541,11 +537,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  await vercel.edgeConfig.deleteTokens("<value>", "<value>", "<value>", {
-    tokens: [
-      "<value>",
-    ],
-  });
+  await vercel.edgeConfig.deleteTokens("<value>");
 
   
 }
@@ -591,7 +583,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.edgeConfig.getTokenMetaData("<value>", "<value>", "<value>", "<value>");
+  const result = await vercel.edgeConfig.getTokenMetaData("<value>", "<value>");
 
   // Handle the result
   console.log(result)
@@ -638,9 +630,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.edgeConfig.createTokenMetaData("<value>", "<value>", "<value>", {
-    label: "<value>",
-  });
+  const result = await vercel.edgeConfig.createTokenMetaData("<value>");
 
   // Handle the result
   console.log(result)

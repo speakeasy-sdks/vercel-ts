@@ -75,7 +75,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.deployments.getDeployment("dpl_89qyp1cskzkLrVicDaZoDbjyHuDJ", "true", "<value>", "<value>");
+  const result = await vercel.deployments.getDeployment("dpl_89qyp1cskzkLrVicDaZoDbjyHuDJ");
 
   // Handle the result
   console.log(result)
@@ -122,7 +122,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.deployments.create({});
+  const result = await vercel.deployments.create();
 
   // Handle the result
   console.log(result)
@@ -166,7 +166,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.deployments.cancel("dpl_5WJWYSyB7BpgTj3EuwF37WMRBXBtPQ2iTMJHJBJyRfd", "<value>", "<value>");
+  const result = await vercel.deployments.cancel("dpl_5WJWYSyB7BpgTj3EuwF37WMRBXBtPQ2iTMJHJBJyRfd");
 
   // Handle the result
   console.log(result)
@@ -212,7 +212,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.deployments.uploadFile({});
+  const result = await vercel.deployments.uploadFile();
 
   // Handle the result
   console.log(result)
@@ -256,7 +256,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.deployments.listDeploymentFiles("<value>", "<value>", "<value>");
+  const result = await vercel.deployments.listDeploymentFiles("<value>");
 
   // Handle the result
   console.log(result)
@@ -348,7 +348,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.deployments.list({});
+  const result = await vercel.deployments.list();
 
   // Handle the result
   console.log(result)
@@ -392,7 +392,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.deployments.delete("dpl_5WJWYSyB7BpgTj3EuwF37WMRBXBtPQ2iTMJHJBJyRfd", "https://files-orcin-xi.vercel.app/", "<value>", "<value>");
+  const result = await vercel.deployments.delete("dpl_5WJWYSyB7BpgTj3EuwF37WMRBXBtPQ2iTMJHJBJyRfd");
 
   // Handle the result
   console.log(result)

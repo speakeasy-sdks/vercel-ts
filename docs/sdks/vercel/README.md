@@ -98,7 +98,7 @@ import { Vercel } from "vercel";
 const vercel = new Vercel();
 
 async function run() {
-  const result = await vercel.updateBillingSettings({});
+  const result = await vercel.updateBillingSettings();
 
   // Handle the result
   console.log(result)

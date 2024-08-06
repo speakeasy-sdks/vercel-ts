@@ -25,7 +25,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.integrations.list("project", "<value>", "<value>");
+  const result = await vercel.integrations.list("project");
 
   // Handle the result
   console.log(result)
@@ -71,7 +71,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.integrations.get("icfg_cuwj0AdCdH3BwWT4LPijCC7t", "<value>", "<value>");
+  const result = await vercel.integrations.get("icfg_cuwj0AdCdH3BwWT4LPijCC7t");
 
   // Handle the result
   console.log(result)
@@ -117,7 +117,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  await vercel.integrations.deleteConfiguration("<value>", "<value>", "<value>");
+  await vercel.integrations.deleteConfiguration("<value>");
 
   
 }
@@ -162,7 +162,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.integrations.listGitNamespaces("ghes-test.now.systems", "gitlab", "<value>", "<value>");
+  const result = await vercel.integrations.listGitNamespaces();
 
   // Handle the result
   console.log(result)
@@ -209,7 +209,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.integrations.listGitRepos({});
+  const result = await vercel.integrations.listGitRepos();
 
   // Handle the result
   console.log(result)

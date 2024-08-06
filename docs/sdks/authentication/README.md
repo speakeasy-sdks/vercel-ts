@@ -69,9 +69,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.authentication.createToken("<value>", "<value>", {
-      name: "<value>",
-    });
+  const result = await vercel.authentication.createToken();
 
   // Handle the result
   console.log(result)
@@ -243,9 +241,7 @@ import { Vercel } from "vercel";
 const vercel = new Vercel();
 
 async function run() {
-  const result = await vercel.authentication.emailLogin({
-    email: "user@mail.com",
-  });
+  const result = await vercel.authentication.emailLogin();
 
   // Handle the result
   console.log(result)

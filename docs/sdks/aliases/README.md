@@ -25,7 +25,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.aliases.list({});
+  const result = await vercel.aliases.list();
 
   // Handle the result
   console.log(result)
@@ -115,7 +115,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.aliases.delete("<value>", "<value>", "<value>");
+  const result = await vercel.aliases.delete("<value>");
 
   // Handle the result
   console.log(result)
@@ -161,7 +161,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.aliases.listDeploymentAliases("dpl_FjvFJncQHQcZMznrUm9EoB8sFuPa", "<value>", "<value>");
+  const result = await vercel.aliases.listDeploymentAliases("dpl_FjvFJncQHQcZMznrUm9EoB8sFuPa");
 
   // Handle the result
   console.log(result)
@@ -207,7 +207,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.aliases.assign("<value>", "<value>", "<value>", {});
+  const result = await vercel.aliases.assign("<value>");
 
   // Handle the result
   console.log(result)

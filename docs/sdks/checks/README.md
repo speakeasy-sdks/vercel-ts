@@ -25,10 +25,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.checks.create("dpl_2qn7PZrx89yxY34vEZPD31Y9XVj6", "<value>", "<value>", {
-    name: "Performance Check",
-    blocking: true,
-  });
+  const result = await vercel.checks.create("dpl_2qn7PZrx89yxY34vEZPD31Y9XVj6");
 
   // Handle the result
   console.log(result)
@@ -75,7 +72,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.checks.getAll("dpl_2qn7PZrx89yxY34vEZPD31Y9XVj6", "<value>", "<value>");
+  const result = await vercel.checks.getAll("dpl_2qn7PZrx89yxY34vEZPD31Y9XVj6");
 
   // Handle the result
   console.log(result)
@@ -121,7 +118,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.checks.get("dpl_2qn7PZrx89yxY34vEZPD31Y9XVj6", "check_2qn7PZrx89yxY34vEZPD31Y9XVj6", "<value>", "<value>");
+  const result = await vercel.checks.get("dpl_2qn7PZrx89yxY34vEZPD31Y9XVj6", "check_2qn7PZrx89yxY34vEZPD31Y9XVj6");
 
   // Handle the result
   console.log(result)
@@ -215,7 +212,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.checks.rerequest("dpl_2qn7PZrx89yxY34vEZPD31Y9XVj6", "check_2qn7PZrx89yxY34vEZPD31Y9XVj6", "<value>", "<value>");
+  const result = await vercel.checks.rerequest("dpl_2qn7PZrx89yxY34vEZPD31Y9XVj6", "check_2qn7PZrx89yxY34vEZPD31Y9XVj6");
 
   // Handle the result
   console.log(result)

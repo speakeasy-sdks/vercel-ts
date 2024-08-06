@@ -27,7 +27,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.logDrains.getIntegrationLogDrains("<value>", "<value>");
+  const result = await vercel.logDrains.getIntegrationLogDrains();
 
   // Handle the result
   console.log(result)
@@ -72,10 +72,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.logDrains.create("<value>", "<value>", {
-    name: "My first log drain",
-    url: "https://example.com/log-drain",
-  });
+  const result = await vercel.logDrains.create();
 
   // Handle the result
   console.log(result)
@@ -121,7 +118,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  await vercel.logDrains.delete("<value>", "<value>", "<value>");
+  await vercel.logDrains.delete("<value>");
 
   
 }
@@ -166,7 +163,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.logDrains.get("<value>", "<value>", "<value>");
+  const result = await vercel.logDrains.get("<value>");
 
   // Handle the result
   console.log(result)
@@ -212,7 +209,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  await vercel.logDrains.deleteConfigurableLogDrain("<value>", "<value>", "<value>");
+  await vercel.logDrains.deleteConfigurableLogDrain("<value>");
 
   
 }
@@ -257,7 +254,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.logDrains.list("<value>", "<value>", "<value>");
+  const result = await vercel.logDrains.list();
 
   // Handle the result
   console.log(result)
@@ -303,13 +300,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.logDrains.createConfigurable("<value>", "<value>", {
-    deliveryFormat: "json",
-    url: "https://equal-hedgehog.com",
-    sources: [
-      "lambda",
-    ],
-  });
+  const result = await vercel.logDrains.createConfigurable();
 
   // Handle the result
   console.log(result)

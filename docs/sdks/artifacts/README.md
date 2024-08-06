@@ -26,7 +26,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  await vercel.artifacts.recordEvents({});
+  await vercel.artifacts.recordEvents();
 
   
 }
@@ -69,7 +69,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.artifacts.status("<value>", "<value>");
+  const result = await vercel.artifacts.status();
 
   // Handle the result
   console.log(result)
@@ -207,7 +207,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  await vercel.artifacts.exists("12HKQaOmR5t5Uy6vdcQsNIiZgHGB", "<value>", "<value>");
+  await vercel.artifacts.exists("12HKQaOmR5t5Uy6vdcQsNIiZgHGB");
 
   
 }
@@ -252,11 +252,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.artifacts.query("<value>", "<value>", {
-    hashes: [
-      "<value>",
-    ],
-  });
+  const result = await vercel.artifacts.query();
 
   // Handle the result
   console.log(result)

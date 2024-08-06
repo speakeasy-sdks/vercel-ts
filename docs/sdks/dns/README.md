@@ -70,10 +70,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.dns.create("example.com", "<value>", "<value>", {
-      name: "subdomain",
-      type: "CNAME",
-    });
+  const result = await vercel.dns.create("example.com");
 
   // Handle the result
   console.log(result)
@@ -120,7 +117,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.dns.update("rec_2qn7pzrx89yxy34vezpd31y9", "<value>", "<value>", {});
+  const result = await vercel.dns.update("rec_2qn7pzrx89yxy34vezpd31y9");
 
   // Handle the result
   console.log(result)
@@ -167,7 +164,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.dns.remove("example.com", "rec_V0fra8eEgQwEpFhYG2vTzC3K", "<value>", "<value>");
+  const result = await vercel.dns.remove("example.com", "rec_V0fra8eEgQwEpFhYG2vTzC3K");
 
   // Handle the result
   console.log(result)
