@@ -5,8 +5,8 @@ management:
   docVersion: 0.0.1
   speakeasyVersion: 1.353.0
   generationVersion: 2.386.0
-  releaseVersion: 0.4.0
-  configChecksum: 833f7cd02b0210327bd1d5647133497e
+  releaseVersion: 0.4.1
+  configChecksum: 0541d348b898a69c55b22d85f2cd6bad
   repoURL: https://github.com/speakeasy-sdks/vercel-ts.git
   installationURL: https://github.com/speakeasy-sdks/vercel-ts
   published: true
