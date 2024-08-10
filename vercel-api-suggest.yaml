@@ -11809,15 +11809,14 @@ paths:
                           - type: string
                           - type: number
                           - type: boolean
-                          - type: 'null'
                           - type: object
                       - type: array
                         items:
+                          nullable: true
                           oneOf:
                             - type: string
                             - type: number
                             - type: boolean
-                            - type: 'null'
                             - type: object
       x-speakeasy-group: edgeConfigs
       x-speakeasy-name-override: create
@@ -12179,25 +12178,25 @@ paths:
                                   - type: string
                                   - type: number
                                   - type: boolean
-                                  - type: 'null'
                                   - type: object
                               - type: array
                                 items:
+                                  nullable: true
                                   oneOf:
                                     - type: string
                                     - type: number
                                     - type: boolean
-                                    - type: 'null'
                                     - type: object
                           description:
+                            nullable: true
                             oneOf:
                               - type: string
                                 maxLength: 512
-                              - type: 'null'
                         anyOf:
                           - properties:
                               operation:
-                                const: create
+                                type: string
+                                # const: create
                             required:
                               - operation
                               - key
@@ -12222,6 +12221,7 @@ paths:
                               - description
                           - properties:
                               operation:
+                                type: string
                                 const: delete
                             required:
                               - operation
@@ -14457,11 +14457,9 @@ paths:
             type: string
         - name: namespaceId
           in: query
+          required: false
           schema:
-            type:
-              - string
-              - number
-            nullable: true
+            type: string
         - name: provider
           in: query
           schema:
@@ -15008,7 +15006,7 @@ paths:
                   type: number
                   description: >-
                     The sampling rate for this log drain. It should be a percentage rate between 0 and 100. With max 2 decimal points
-                  multiplesOf: 0.01
+                  multipleOf: 0.01
                   minimum: 0.01
                   maximum: 1
                 name:
@@ -29406,6 +29404,7 @@ paths:
           description: No team was found.
       parameters:
         - description: The Team identifier to perform the request on behalf of.
+          required: true
           in: path
           name: teamId
           schema:
@@ -29567,6 +29566,7 @@ paths:
           description: The team was not found
         '503':
           description: ''
+      parameters: []
       requestBody:
         content:
           application/json:
@@ -29731,7 +29731,6 @@ paths:
           description: The team was not found.
         '503':
           description: ''
-      parameters: []
       requestBody:
         content:
           application/json:
@@ -30234,7 +30233,7 @@ paths:
                 avatar:
                   type: string
                   format: regex
-                  regex: ^[0-9a-f]{40}$
+                  pattern: ^[0-9a-f]{40}$
                   description: The hash value of an uploaded image.
                 description:
                   type: string
@@ -30245,7 +30244,7 @@ paths:
                 emailDomain:
                   type: string
                   format: regex
-                  regex: >-
+                  pattern: >-
                     \\b((?=[a-z0-9-]{1,63}\\.)(xn--)?[a-z0-9]+(-[a-z0-9]+)*\\.)+[a-z]{2,63}\\b
                   example: example.com
                   nullable: true
