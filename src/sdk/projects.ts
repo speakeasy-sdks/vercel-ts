@@ -11,13 +11,14 @@ import { projectsUpdate } from "../funcs/projectsUpdate.js";
 import { projectsUpdateDataCache } from "../funcs/projectsUpdateDataCache.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import { CreateProjectRequestBody, CreateProjectResponseBody } from "../models/createprojectop.js";
-import { GetProjectsRequest, GetProjectsResponseBody } from "../models/getprojectsop.js";
+import { GetProjectsRequest, GetProjectsResponse } from "../models/getprojectsop.js";
 import {
     UpdateProjectDataCacheRequestBody,
     UpdateProjectDataCacheResponseBody,
 } from "../models/updateprojectdatacacheop.js";
 import { UpdateProjectRequestBody, UpdateProjectResponseBody } from "../models/updateprojectop.js";
 import { unwrapAsync } from "../types/fp.js";
+import { PageIterator, unwrapResultIterator } from "../types/operations.js";
 
 export class Projects extends ClientSDK {
     /**
@@ -47,8 +48,8 @@ export class Projects extends ClientSDK {
     async getAll(
         request?: GetProjectsRequest | undefined,
         options?: RequestOptions
-    ): Promise<GetProjectsResponseBody> {
-        return unwrapAsync(projectsGetAll(this, request, options));
+    ): Promise<PageIterator<GetProjectsResponse>> {
+        return unwrapResultIterator(projectsGetAll(this, request, options));
     }
 
     /**

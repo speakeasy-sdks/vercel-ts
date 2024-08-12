@@ -107,8 +107,9 @@ const vercel = new Vercel({
 async function run() {
   const result = await vercel.projects.getAll();
 
-  // Handle the result
-  console.log(result)
+  for await (const page of result) {
+    // handle page
+  }
 }
 
 run();
@@ -138,8 +139,9 @@ async function run() {
 
   const { value: result } = res;
 
-  // Handle the result
-  console.log(result)
+  for await (const page of result) {
+    // handle page
+  }
 }
 
 run();
@@ -157,7 +159,7 @@ run();
 
 ### Response
 
-**Promise\<[models.GetProjectsResponseBody](../../models/getprojectsresponsebody.md)\>**
+**Promise\<[models.GetProjectsResponse](../../models/getprojectsresponse.md)\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

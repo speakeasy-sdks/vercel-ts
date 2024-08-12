@@ -15342,6 +15342,14 @@ paths:
       summary: Retrieve a list of projects
       tags:
         - projects
+      x-speakeasy-pagination:
+        type: cursor
+        inputs:
+          - name: from
+            in: parameters
+            type: cursor
+        outputs:
+          nextCursor: $.pagination.since
       responses:
         '200':
           description: The paginated list of projects

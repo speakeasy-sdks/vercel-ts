@@ -1,0 +1,15 @@
+{
+  "type": "module",
+  "name": "examples",
+  "scripts": {
+    "list-projects": "tsx ./src/list-projects.ts"
+  },
+  "dependencies": {
+    "vercel": "file:../"
+  },
+  "devDependencies": {
+    "@types/node": "^22.2.0",
+    "tsx": "^4.17.0",
+    "typescript": "^5.5.4"
+  }
+}

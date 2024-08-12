@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 08d4af4d-7f06-4aa7-83b0-4bcfdb3dadd5
 management:
-  docChecksum: 581932e1bd93a56b54c800ed1bb889c4
+  docChecksum: 3a2248c592784887ed86a09e9eb60d94
   docVersion: 0.0.1
   speakeasyVersion: 1.363.0
   generationVersion: 2.396.0
-  releaseVersion: 0.5.2
-  configChecksum: 15185677108d3de6a40990f0b252c2bf
+  releaseVersion: 0.6.0
+  configChecksum: 7c75fbb0009237e2bb49cbda6279e6ea
   repoURL: https://github.com/speakeasy-sdks/vercel-ts.git
   installationURL: https://github.com/speakeasy-sdks/vercel-ts
   published: true
@@ -28,6 +28,7 @@ features:
     groups: 2.81.2
     nameOverrides: 2.81.2
     nullables: 0.1.0
+    pagination: 2.82.6
     responseFormat: 0.2.3
     retries: 2.83.0
     sdkHooks: 0.1.0
@@ -757,6 +758,7 @@ generatedFiles:
   - docs/models/getprojectstier.md
   - docs/models/getprojectsprojects.md
   - docs/models/getprojectsresponsebody.md
+  - docs/models/getprojectsresponse.md
   - docs/models/pagination.md
   - docs/models/target2.md
   - docs/models/target1.md

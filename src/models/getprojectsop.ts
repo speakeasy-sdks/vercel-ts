@@ -1337,6 +1337,10 @@ export type GetProjectsResponseBody = {
     pagination: Pagination;
 };
 
+export type GetProjectsResponse = {
+    result: GetProjectsResponseBody;
+};
+
 /** @internal */
 export const GitForkProtection$inboundSchema: z.ZodNativeEnum<typeof GitForkProtection> =
     z.nativeEnum(GitForkProtection);
@@ -6608,4 +6612,52 @@ export namespace GetProjectsResponseBody$ {
     export const outboundSchema = GetProjectsResponseBody$outboundSchema;
     /** @deprecated use `GetProjectsResponseBody$Outbound` instead. */
     export type Outbound = GetProjectsResponseBody$Outbound;
+}
+
+/** @internal */
+export const GetProjectsResponse$inboundSchema: z.ZodType<
+    GetProjectsResponse,
+    z.ZodTypeDef,
+    unknown
+> = z
+    .object({
+        Result: z.lazy(() => GetProjectsResponseBody$inboundSchema),
+    })
+    .transform((v) => {
+        return remap$(v, {
+            Result: "result",
+        });
+    });
+
+/** @internal */
+export type GetProjectsResponse$Outbound = {
+    Result: GetProjectsResponseBody$Outbound;
+};
+
+/** @internal */
+export const GetProjectsResponse$outboundSchema: z.ZodType<
+    GetProjectsResponse$Outbound,
+    z.ZodTypeDef,
+    GetProjectsResponse
+> = z
+    .object({
+        result: z.lazy(() => GetProjectsResponseBody$outboundSchema),
+    })
+    .transform((v) => {
+        return remap$(v, {
+            result: "Result",
+        });
+    });
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetProjectsResponse$ {
+    /** @deprecated use `GetProjectsResponse$inboundSchema` instead. */
+    export const inboundSchema = GetProjectsResponse$inboundSchema;
+    /** @deprecated use `GetProjectsResponse$outboundSchema` instead. */
+    export const outboundSchema = GetProjectsResponse$outboundSchema;
+    /** @deprecated use `GetProjectsResponse$Outbound` instead. */
+    export type Outbound = GetProjectsResponse$Outbound;
 }

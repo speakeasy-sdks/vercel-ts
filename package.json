@@ -1,6 +1,6 @@
 {
   "name": "vercel",
-  "version": "0.5.2",
+  "version": "0.6.0",
   "author": "Speakeasy",
   "type": "module",
   "main": "./esm/index.js",
