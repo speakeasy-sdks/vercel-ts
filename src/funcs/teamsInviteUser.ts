@@ -80,11 +80,12 @@ export async function teamsInviteUser(
         Accept: "application/json",
     });
 
-    const security$ = await extractSecurity(client$.options$.security);
+    const bearerToken$ = await extractSecurity(client$.options$.bearerToken);
+    const security$ = bearerToken$ == null ? {} : { bearerToken: bearerToken$ };
     const context = {
         operationID: "inviteUserToTeam",
         oAuth2Scopes: [],
-        securitySource: client$.options$.security,
+        securitySource: client$.options$.bearerToken,
     };
     const securitySettings$ = resolveGlobalSecurity(security$);
 
@@ -107,7 +108,7 @@ export async function teamsInviteUser(
 
     const doResult = await client$.do$(request$, {
         context,
-        errorCodes: ["400", "401", "403", "404", "4XX", "5XX"],
+        errorCodes: ["400", "401", "403", "404", "4XX", "503", "5XX"],
         retryConfig: options?.retries || client$.options$.retryConfig,
         retryCodes: options?.retryCodes || ["429", "500", "502", "503", "504"],
     });
@@ -127,7 +128,7 @@ export async function teamsInviteUser(
         | ConnectionError
     >(
         m$.json(200, InviteUserToTeamResponseBody$inboundSchema),
-        m$.fail([400, 401, 403, 404, "4XX", "5XX"])
+        m$.fail([400, 401, 403, 404, "4XX", 503, "5XX"])
     )(response);
     if (!result$.ok) {
         return result$;

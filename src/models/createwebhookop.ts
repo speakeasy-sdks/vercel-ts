@@ -6,7 +6,7 @@ import { remap as remap$ } from "../lib/primitives.js";
 import { ClosedEnum } from "../types/enums.js";
 import * as z from "zod";
 
-export const Events = {
+export const CreateWebhookEvents = {
     BudgetReached: "budget.reached",
     BudgetReset: "budget.reset",
     DomainCreated: "domain.created",
@@ -16,6 +16,10 @@ export const Events = {
     DeploymentSucceeded: "deployment.succeeded",
     DeploymentReady: "deployment.ready",
     DeploymentCheckRerequested: "deployment.check-rerequested",
+    DeploymentPromoted: "deployment.promoted",
+    EdgeConfigCreated: "edge-config.created",
+    EdgeConfigDeleted: "edge-config.deleted",
+    EdgeConfigUpdated: "edge-config.updated",
     IntegrationConfigurationPermissionUpgraded: "integration-configuration.permission-upgraded",
     IntegrationConfigurationRemoved: "integration-configuration.removed",
     IntegrationConfigurationScopeChangeConfirmed:
@@ -23,26 +27,19 @@ export const Events = {
     ProjectCreated: "project.created",
     ProjectRemoved: "project.removed",
     DeploymentChecksCompleted: "deployment-checks-completed",
-    DeploymentDashReady: "deployment-ready",
-    DeploymentDashPrepared: "deployment-prepared",
-    DeploymentDashError: "deployment-error",
-    DeploymentDashCheckRerequested: "deployment-check-rerequested",
-    DeploymentDashCanceled: "deployment-canceled",
-    ProjectDashCreated: "project-created",
-    ProjectDashRemoved: "project-removed",
-    DomainDashCreated: "domain-created",
+    DeploymentPrepared: "deployment-prepared",
     Deployment: "deployment",
-    IntegrationConfigurationDashPermissionUpdated: "integration-configuration-permission-updated",
-    IntegrationConfigurationDashRemoved: "integration-configuration-removed",
-    IntegrationConfigurationDashScopeChangeConfirmed:
-        "integration-configuration-scope-change-confirmed",
+    IntegrationConfigurationPermissionUpdated: "integration-configuration-permission-updated",
+    MarketplaceInvoiceCreated: "marketplace.invoice.created",
+    MarketplaceInvoicePaid: "marketplace.invoice.paid",
+    MarketplaceInvoiceNotpaid: "marketplace.invoice.notpaid",
     TestWebhook: "test-webhook",
 } as const;
-export type Events = ClosedEnum<typeof Events>;
+export type CreateWebhookEvents = ClosedEnum<typeof CreateWebhookEvents>;
 
 export type CreateWebhookRequestBody = {
     url: string;
-    events: Array<Events>;
+    events: Array<CreateWebhookEvents>;
     projectIds?: Array<string> | undefined;
 };
 
@@ -61,40 +58,38 @@ export type CreateWebhookRequest = {
 /**
  * The webhooks events
  */
-export const CreateWebhookEvents = {
+export const CreateWebhookWebhooksEvents = {
     BudgetReached: "budget.reached",
     BudgetReset: "budget.reset",
-    BudgetCreated: "domain.created",
-    DomainCreated: "deployment.created",
-    DeploymentCreated: "deployment.error",
-    DeploymentError: "deployment.canceled",
-    DeploymentCanceled: "deployment.succeeded",
-    DeploymentSucceeded: "deployment.ready",
-    DeploymentReady: "deployment.check-rerequested",
-    DeploymentCheckRerequested: "integration-configuration.permission-upgraded",
-    IntegrationConfigurationPermissionUpgraded: "integration-configuration.removed",
-    IntegrationConfigurationRemoved: "integration-configuration.scope-change-confirmed",
-    IntegrationConfigurationScopeChangeConfirmed: "project.created",
-    ProjectCreated: "project.removed",
-    ProjectRemoved: "deployment-checks-completed",
-    DeploymentChecksCompleted: "deployment-ready",
-    DeploymentDashReady: "deployment-prepared",
-    DeploymentDashPrepared: "deployment-error",
-    DeploymentDashError: "deployment-check-rerequested",
-    DeploymentDashCheckRerequested: "deployment-canceled",
-    DeploymentDashCanceled: "project-created",
-    ProjectDashCreated: "project-removed",
-    ProjectDashRemoved: "domain-created",
-    DomainDashCreated: "deployment",
-    Deployment: "integration-configuration-permission-updated",
-    IntegrationConfigurationDashPermissionUpdated: "integration-configuration-removed",
-    IntegrationConfigurationDashRemoved: "integration-configuration-scope-change-confirmed",
-    IntegrationConfigurationDashScopeChangeConfirmed: "test-webhook",
+    DomainCreated: "domain.created",
+    DeploymentCreated: "deployment.created",
+    DeploymentError: "deployment.error",
+    DeploymentCanceled: "deployment.canceled",
+    DeploymentSucceeded: "deployment.succeeded",
+    DeploymentReady: "deployment.ready",
+    DeploymentCheckRerequested: "deployment.check-rerequested",
+    DeploymentPromoted: "deployment.promoted",
+    EdgeConfigCreated: "edge-config.created",
+    EdgeConfigDeleted: "edge-config.deleted",
+    EdgeConfigUpdated: "edge-config.updated",
+    IntegrationConfigurationPermissionUpgraded: "integration-configuration.permission-upgraded",
+    IntegrationConfigurationRemoved: "integration-configuration.removed",
+    IntegrationConfigurationScopeChangeConfirmed:
+        "integration-configuration.scope-change-confirmed",
+    ProjectCreated: "project.created",
+    ProjectRemoved: "project.removed",
+    DeploymentChecksCompleted: "deployment-checks-completed",
+    DeploymentPrepared: "deployment-prepared",
+    Deployment: "deployment",
+    MarketplaceInvoiceCreated: "marketplace.invoice.created",
+    MarketplaceInvoicePaid: "marketplace.invoice.paid",
+    MarketplaceInvoiceNotpaid: "marketplace.invoice.notpaid",
+    TestWebhook: "test-webhook",
 } as const;
 /**
  * The webhooks events
  */
-export type CreateWebhookEvents = ClosedEnum<typeof CreateWebhookEvents>;
+export type CreateWebhookWebhooksEvents = ClosedEnum<typeof CreateWebhookWebhooksEvents>;
 
 export type CreateWebhookResponseBody = {
     /**
@@ -104,7 +99,7 @@ export type CreateWebhookResponseBody = {
     /**
      * The webhooks events
      */
-    events: Array<CreateWebhookEvents>;
+    events: Array<CreateWebhookWebhooksEvents>;
     /**
      * The webhook id
      */
@@ -132,20 +127,22 @@ export type CreateWebhookResponseBody = {
 };
 
 /** @internal */
-export const Events$inboundSchema: z.ZodNativeEnum<typeof Events> = z.nativeEnum(Events);
+export const CreateWebhookEvents$inboundSchema: z.ZodNativeEnum<typeof CreateWebhookEvents> =
+    z.nativeEnum(CreateWebhookEvents);
 
 /** @internal */
-export const Events$outboundSchema: z.ZodNativeEnum<typeof Events> = Events$inboundSchema;
+export const CreateWebhookEvents$outboundSchema: z.ZodNativeEnum<typeof CreateWebhookEvents> =
+    CreateWebhookEvents$inboundSchema;
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace Events$ {
-    /** @deprecated use `Events$inboundSchema` instead. */
-    export const inboundSchema = Events$inboundSchema;
-    /** @deprecated use `Events$outboundSchema` instead. */
-    export const outboundSchema = Events$outboundSchema;
+export namespace CreateWebhookEvents$ {
+    /** @deprecated use `CreateWebhookEvents$inboundSchema` instead. */
+    export const inboundSchema = CreateWebhookEvents$inboundSchema;
+    /** @deprecated use `CreateWebhookEvents$outboundSchema` instead. */
+    export const outboundSchema = CreateWebhookEvents$outboundSchema;
 }
 
 /** @internal */
@@ -155,7 +152,7 @@ export const CreateWebhookRequestBody$inboundSchema: z.ZodType<
     unknown
 > = z.object({
     url: z.string(),
-    events: z.array(Events$inboundSchema),
+    events: z.array(CreateWebhookEvents$inboundSchema),
     projectIds: z.array(z.string()).optional(),
 });
 
@@ -173,7 +170,7 @@ export const CreateWebhookRequestBody$outboundSchema: z.ZodType<
     CreateWebhookRequestBody
 > = z.object({
     url: z.string(),
-    events: z.array(Events$outboundSchema),
+    events: z.array(CreateWebhookEvents$outboundSchema),
     projectIds: z.array(z.string()).optional(),
 });
 
@@ -245,22 +242,24 @@ export namespace CreateWebhookRequest$ {
 }
 
 /** @internal */
-export const CreateWebhookEvents$inboundSchema: z.ZodNativeEnum<typeof CreateWebhookEvents> =
-    z.nativeEnum(CreateWebhookEvents);
+export const CreateWebhookWebhooksEvents$inboundSchema: z.ZodNativeEnum<
+    typeof CreateWebhookWebhooksEvents
+> = z.nativeEnum(CreateWebhookWebhooksEvents);
 
 /** @internal */
-export const CreateWebhookEvents$outboundSchema: z.ZodNativeEnum<typeof CreateWebhookEvents> =
-    CreateWebhookEvents$inboundSchema;
+export const CreateWebhookWebhooksEvents$outboundSchema: z.ZodNativeEnum<
+    typeof CreateWebhookWebhooksEvents
+> = CreateWebhookWebhooksEvents$inboundSchema;
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace CreateWebhookEvents$ {
-    /** @deprecated use `CreateWebhookEvents$inboundSchema` instead. */
-    export const inboundSchema = CreateWebhookEvents$inboundSchema;
-    /** @deprecated use `CreateWebhookEvents$outboundSchema` instead. */
-    export const outboundSchema = CreateWebhookEvents$outboundSchema;
+export namespace CreateWebhookWebhooksEvents$ {
+    /** @deprecated use `CreateWebhookWebhooksEvents$inboundSchema` instead. */
+    export const inboundSchema = CreateWebhookWebhooksEvents$inboundSchema;
+    /** @deprecated use `CreateWebhookWebhooksEvents$outboundSchema` instead. */
+    export const outboundSchema = CreateWebhookWebhooksEvents$outboundSchema;
 }
 
 /** @internal */
@@ -270,7 +269,7 @@ export const CreateWebhookResponseBody$inboundSchema: z.ZodType<
     unknown
 > = z.object({
     secret: z.string(),
-    events: z.array(CreateWebhookEvents$inboundSchema),
+    events: z.array(CreateWebhookWebhooksEvents$inboundSchema),
     id: z.string(),
     url: z.string(),
     ownerId: z.string(),
@@ -298,7 +297,7 @@ export const CreateWebhookResponseBody$outboundSchema: z.ZodType<
     CreateWebhookResponseBody
 > = z.object({
     secret: z.string(),
-    events: z.array(CreateWebhookEvents$outboundSchema),
+    events: z.array(CreateWebhookWebhooksEvents$outboundSchema),
     id: z.string(),
     url: z.string(),
     ownerId: z.string(),

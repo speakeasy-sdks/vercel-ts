@@ -59,6 +59,7 @@ export const ResponseBodyFramework = {
     Vitepress: "vitepress",
     Vuepress: "vuepress",
     Parcel: "parcel",
+    Fasthtml: "fasthtml",
     Sanity: "sanity",
     Storybook: "storybook",
 } as const;
@@ -84,6 +85,10 @@ export const ResponseBodyEvents = {
     DeploymentSucceeded: "deployment.succeeded",
     DeploymentReady: "deployment.ready",
     DeploymentCheckRerequested: "deployment.check-rerequested",
+    DeploymentPromoted: "deployment.promoted",
+    EdgeConfigCreated: "edge-config.created",
+    EdgeConfigDeleted: "edge-config.deleted",
+    EdgeConfigUpdated: "edge-config.updated",
     IntegrationConfigurationPermissionUpgraded: "integration-configuration.permission-upgraded",
     IntegrationConfigurationRemoved: "integration-configuration.removed",
     IntegrationConfigurationScopeChangeConfirmed:
@@ -91,19 +96,11 @@ export const ResponseBodyEvents = {
     ProjectCreated: "project.created",
     ProjectRemoved: "project.removed",
     DeploymentChecksCompleted: "deployment-checks-completed",
-    DeploymentDashReady: "deployment-ready",
-    DeploymentDashPrepared: "deployment-prepared",
-    DeploymentDashError: "deployment-error",
-    DeploymentDashCheckRerequested: "deployment-check-rerequested",
-    DeploymentDashCanceled: "deployment-canceled",
-    ProjectDashCreated: "project-created",
-    ProjectDashRemoved: "project-removed",
-    DomainDashCreated: "domain-created",
+    DeploymentPrepared: "deployment-prepared",
     Deployment: "deployment",
-    IntegrationConfigurationDashPermissionUpdated: "integration-configuration-permission-updated",
-    IntegrationConfigurationDashRemoved: "integration-configuration-removed",
-    IntegrationConfigurationDashScopeChangeConfirmed:
-        "integration-configuration-scope-change-confirmed",
+    MarketplaceInvoiceCreated: "marketplace.invoice.created",
+    MarketplaceInvoicePaid: "marketplace.invoice.paid",
+    MarketplaceInvoiceNotpaid: "marketplace.invoice.notpaid",
     TestWebhook: "test-webhook",
 } as const;
 /**

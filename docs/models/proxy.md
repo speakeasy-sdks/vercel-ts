@@ -21,3 +21,5 @@
 | `vercelId`                                     | *string*                                       | :heavy_minus_sign:                             | N/A                                            |
 | `vercelCache`                                  | [models.VercelCache](../models/vercelcache.md) | :heavy_minus_sign:                             | N/A                                            |
 | `lambdaRegion`                                 | *string*                                       | :heavy_minus_sign:                             | N/A                                            |
+| `wafAction`                                    | [models.WafAction](../models/wafaction.md)     | :heavy_minus_sign:                             | N/A                                            |
+| `wafRuleId`                                    | *string*                                       | :heavy_minus_sign:                             | N/A                                            |

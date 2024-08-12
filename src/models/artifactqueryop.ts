@@ -28,17 +28,17 @@ export type ErrorT = {
     message: string;
 };
 
-export type ArtifactQueryResponseBody2 = {
+export type ResponseBody2 = {
     error: ErrorT;
 };
 
-export type ArtifactQueryResponseBody1 = {
+export type ResponseBody1 = {
     size: number;
     taskDurationMs: number;
     tag?: string | undefined;
 };
 
-export type ResponseBody = ArtifactQueryResponseBody2 | ArtifactQueryResponseBody1;
+export type ResponseBody = ResponseBody2 | ResponseBody1;
 
 /** @internal */
 export const ArtifactQueryRequestBody$inboundSchema: z.ZodType<
@@ -159,24 +159,21 @@ export namespace ErrorT$ {
 }
 
 /** @internal */
-export const ArtifactQueryResponseBody2$inboundSchema: z.ZodType<
-    ArtifactQueryResponseBody2,
-    z.ZodTypeDef,
-    unknown
-> = z.object({
-    error: z.lazy(() => ErrorT$inboundSchema),
-});
+export const ResponseBody2$inboundSchema: z.ZodType<ResponseBody2, z.ZodTypeDef, unknown> =
+    z.object({
+        error: z.lazy(() => ErrorT$inboundSchema),
+    });
 
 /** @internal */
-export type ArtifactQueryResponseBody2$Outbound = {
+export type ResponseBody2$Outbound = {
     error: ErrorT$Outbound;
 };
 
 /** @internal */
-export const ArtifactQueryResponseBody2$outboundSchema: z.ZodType<
-    ArtifactQueryResponseBody2$Outbound,
+export const ResponseBody2$outboundSchema: z.ZodType<
+    ResponseBody2$Outbound,
     z.ZodTypeDef,
-    ArtifactQueryResponseBody2
+    ResponseBody2
 > = z.object({
     error: z.lazy(() => ErrorT$outboundSchema),
 });
@@ -185,38 +182,35 @@ export const ArtifactQueryResponseBody2$outboundSchema: z.ZodType<
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ArtifactQueryResponseBody2$ {
-    /** @deprecated use `ArtifactQueryResponseBody2$inboundSchema` instead. */
-    export const inboundSchema = ArtifactQueryResponseBody2$inboundSchema;
-    /** @deprecated use `ArtifactQueryResponseBody2$outboundSchema` instead. */
-    export const outboundSchema = ArtifactQueryResponseBody2$outboundSchema;
-    /** @deprecated use `ArtifactQueryResponseBody2$Outbound` instead. */
-    export type Outbound = ArtifactQueryResponseBody2$Outbound;
+export namespace ResponseBody2$ {
+    /** @deprecated use `ResponseBody2$inboundSchema` instead. */
+    export const inboundSchema = ResponseBody2$inboundSchema;
+    /** @deprecated use `ResponseBody2$outboundSchema` instead. */
+    export const outboundSchema = ResponseBody2$outboundSchema;
+    /** @deprecated use `ResponseBody2$Outbound` instead. */
+    export type Outbound = ResponseBody2$Outbound;
 }
 
 /** @internal */
-export const ArtifactQueryResponseBody1$inboundSchema: z.ZodType<
-    ArtifactQueryResponseBody1,
-    z.ZodTypeDef,
-    unknown
-> = z.object({
-    size: z.number(),
-    taskDurationMs: z.number(),
-    tag: z.string().optional(),
-});
+export const ResponseBody1$inboundSchema: z.ZodType<ResponseBody1, z.ZodTypeDef, unknown> =
+    z.object({
+        size: z.number(),
+        taskDurationMs: z.number(),
+        tag: z.string().optional(),
+    });
 
 /** @internal */
-export type ArtifactQueryResponseBody1$Outbound = {
+export type ResponseBody1$Outbound = {
     size: number;
     taskDurationMs: number;
     tag?: string | undefined;
 };
 
 /** @internal */
-export const ArtifactQueryResponseBody1$outboundSchema: z.ZodType<
-    ArtifactQueryResponseBody1$Outbound,
+export const ResponseBody1$outboundSchema: z.ZodType<
+    ResponseBody1$Outbound,
     z.ZodTypeDef,
-    ArtifactQueryResponseBody1
+    ResponseBody1
 > = z.object({
     size: z.number(),
     taskDurationMs: z.number(),
@@ -227,25 +221,23 @@ export const ArtifactQueryResponseBody1$outboundSchema: z.ZodType<
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ArtifactQueryResponseBody1$ {
-    /** @deprecated use `ArtifactQueryResponseBody1$inboundSchema` instead. */
-    export const inboundSchema = ArtifactQueryResponseBody1$inboundSchema;
-    /** @deprecated use `ArtifactQueryResponseBody1$outboundSchema` instead. */
-    export const outboundSchema = ArtifactQueryResponseBody1$outboundSchema;
-    /** @deprecated use `ArtifactQueryResponseBody1$Outbound` instead. */
-    export type Outbound = ArtifactQueryResponseBody1$Outbound;
+export namespace ResponseBody1$ {
+    /** @deprecated use `ResponseBody1$inboundSchema` instead. */
+    export const inboundSchema = ResponseBody1$inboundSchema;
+    /** @deprecated use `ResponseBody1$outboundSchema` instead. */
+    export const outboundSchema = ResponseBody1$outboundSchema;
+    /** @deprecated use `ResponseBody1$Outbound` instead. */
+    export type Outbound = ResponseBody1$Outbound;
 }
 
 /** @internal */
 export const ResponseBody$inboundSchema: z.ZodType<ResponseBody, z.ZodTypeDef, unknown> = z.union([
-    z.lazy(() => ArtifactQueryResponseBody2$inboundSchema),
-    z.lazy(() => ArtifactQueryResponseBody1$inboundSchema),
+    z.lazy(() => ResponseBody2$inboundSchema),
+    z.lazy(() => ResponseBody1$inboundSchema),
 ]);
 
 /** @internal */
-export type ResponseBody$Outbound =
-    | ArtifactQueryResponseBody2$Outbound
-    | ArtifactQueryResponseBody1$Outbound;
+export type ResponseBody$Outbound = ResponseBody2$Outbound | ResponseBody1$Outbound;
 
 /** @internal */
 export const ResponseBody$outboundSchema: z.ZodType<
@@ -253,8 +245,8 @@ export const ResponseBody$outboundSchema: z.ZodType<
     z.ZodTypeDef,
     ResponseBody
 > = z.union([
-    z.lazy(() => ArtifactQueryResponseBody2$outboundSchema),
-    z.lazy(() => ArtifactQueryResponseBody1$outboundSchema),
+    z.lazy(() => ResponseBody2$outboundSchema),
+    z.lazy(() => ResponseBody1$outboundSchema),
 ]);
 
 /**

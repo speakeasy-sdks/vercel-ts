@@ -3,10 +3,7 @@
  */
 
 import { VercelCore } from "../core.js";
-import {
-    encodeFormQuery as encodeFormQuery$,
-    encodeSimple as encodeSimple$,
-} from "../lib/encodings.js";
+import { encodeSimple as encodeSimple$ } from "../lib/encodings.js";
 import * as m$ from "../lib/matchers.js";
 import * as schemas$ from "../lib/schemas.js";
 import { RequestOptions } from "../lib/sdks.js";
@@ -39,7 +36,6 @@ export async function teamsRemoveMember(
     client$: VercelCore,
     teamId: string,
     uid: string,
-    newDefaultTeamId?: string | undefined,
     options?: RequestOptions
 ): Promise<
     Result<
@@ -56,7 +52,6 @@ export async function teamsRemoveMember(
     const input$: RemoveTeamMemberRequest = {
         teamId: teamId,
         uid: uid,
-        newDefaultTeamId: newDefaultTeamId,
     };
 
     const parsed$ = schemas$.safeParse(
@@ -80,19 +75,16 @@ export async function teamsRemoveMember(
 
     const path$ = pathToFunc("/v1/teams/{teamId}/members/{uid}")(pathParams$);
 
-    const query$ = encodeFormQuery$({
-        newDefaultTeamId: payload$.newDefaultTeamId,
-    });
-
     const headers$ = new Headers({
         Accept: "application/json",
     });
 
-    const security$ = await extractSecurity(client$.options$.security);
+    const bearerToken$ = await extractSecurity(client$.options$.bearerToken);
+    const security$ = bearerToken$ == null ? {} : { bearerToken: bearerToken$ };
     const context = {
         operationID: "removeTeamMember",
         oAuth2Scopes: [],
-        securitySource: client$.options$.security,
+        securitySource: client$.options$.bearerToken,
     };
     const securitySettings$ = resolveGlobalSecurity(security$);
 
@@ -103,7 +95,6 @@ export async function teamsRemoveMember(
             method: "DELETE",
             path: path$,
             headers: headers$,
-            query: query$,
             body: body$,
             timeoutMs: options?.timeoutMs || client$.options$.timeoutMs || -1,
         },
@@ -116,7 +107,7 @@ export async function teamsRemoveMember(
 
     const doResult = await client$.do$(request$, {
         context,
-        errorCodes: ["400", "401", "403", "404", "4XX", "5XX"],
+        errorCodes: ["400", "401", "403", "404", "4XX", "503", "5XX"],
         retryConfig: options?.retries || client$.options$.retryConfig,
         retryCodes: options?.retryCodes || ["429", "500", "502", "503", "504"],
     });
@@ -136,7 +127,7 @@ export async function teamsRemoveMember(
         | ConnectionError
     >(
         m$.json(200, RemoveTeamMemberResponseBody$inboundSchema),
-        m$.fail([400, 401, 403, 404, "4XX", "5XX"])
+        m$.fail([400, 401, 403, 404, "4XX", 503, "5XX"])
     )(response);
     if (!result$.ok) {
         return result$;

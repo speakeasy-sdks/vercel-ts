@@ -40,12 +40,10 @@ export class Secrets extends ClientSDK {
      */
     async create(
         name: string,
-        teamId?: string | undefined,
-        slug?: string | undefined,
         requestBody?: CreateSecretRequestBody | undefined,
         options?: RequestOptions
     ): Promise<CreateSecretResponseBody> {
-        return unwrapAsync(secretsCreate(this, name, teamId, slug, requestBody, options));
+        return unwrapAsync(secretsCreate(this, name, requestBody, options));
     }
 
     /**

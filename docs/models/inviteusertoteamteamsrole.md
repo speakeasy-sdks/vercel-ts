@@ -1,15 +1,12 @@
 # InviteUserToTeamTeamsRole
 
-The role of the user to invite
+Sets the project roles for the invited user
 
 
 ## Values
 
-| Name          | Value         |
-| ------------- | ------------- |
-| `Owner`       | OWNER         |
-| `Member`      | MEMBER        |
-| `Developer`   | DEVELOPER     |
-| `Billing`     | BILLING       |
-| `Viewer`      | VIEWER        |
-| `Contributor` | CONTRIBUTOR   |
+| Name               | Value              |
+| ------------------ | ------------------ |
+| `Admin`            | ADMIN              |
+| `ProjectViewer`    | PROJECT_VIEWER     |
+| `ProjectDeveloper` | PROJECT_DEVELOPER  |

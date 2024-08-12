@@ -10,3 +10,4 @@
 | `Log`       | log         |
 | `Bypass`    | bypass      |
 | `RateLimit` | rate_limit  |
+| `Redirect`  | redirect    |

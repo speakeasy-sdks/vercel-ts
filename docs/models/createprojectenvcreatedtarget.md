@@ -3,15 +3,15 @@
 
 ## Supported Types
 
-### `models.CreateProjectEnvTargetProjects1[]`
+### `models.CreateProjectEnvTargetEnvs1[]`
 
 ```typescript
-const value: models.CreateProjectEnvTargetProjects1[] = /* values here */
+const value: models.CreateProjectEnvTargetEnvs1[] = /* values here */
 ```
 
-### `models.CreateProjectEnvTargetProjects2`
+### `models.CreateProjectEnvTargetEnvs2`
 
 ```typescript
-const value: models.CreateProjectEnvTargetProjects2 = /* values here */
+const value: models.CreateProjectEnvTargetEnvs2 = /* values here */
 ```
 

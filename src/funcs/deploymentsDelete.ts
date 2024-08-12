@@ -76,7 +76,7 @@ export async function deploymentsDelete(
         id: encodeSimple$("id", payload$.id, { explode: false, charEncoding: "percent" }),
     };
 
-    const path$ = pathToFunc("/v13/deployments/{id}#id")(pathParams$);
+    const path$ = pathToFunc("/v13/deployments/{id}")(pathParams$);
 
     const query$ = encodeFormQuery$({
         slug: payload$.slug,
@@ -88,11 +88,12 @@ export async function deploymentsDelete(
         Accept: "application/json",
     });
 
-    const security$ = await extractSecurity(client$.options$.security);
+    const bearerToken$ = await extractSecurity(client$.options$.bearerToken);
+    const security$ = bearerToken$ == null ? {} : { bearerToken: bearerToken$ };
     const context = {
         operationID: "deleteDeployment",
         oAuth2Scopes: [],
-        securitySource: client$.options$.security,
+        securitySource: client$.options$.bearerToken,
     };
     const securitySettings$ = resolveGlobalSecurity(security$);
 

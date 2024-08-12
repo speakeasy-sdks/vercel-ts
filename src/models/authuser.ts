@@ -139,6 +139,9 @@ export type ConcurrentBuilds = {
     tier?: number | undefined;
     price: number;
     quantity: number;
+    /**
+     * The highest quantity in the current period. Used to render the correct enable/disable UI for add-ons.
+     */
     highestQuantity?: number | undefined;
     name?: string | undefined;
     hidden: boolean;
@@ -165,6 +168,9 @@ export type AuthUserWebAnalytics = {
     tier?: number | undefined;
     price: number;
     quantity: number;
+    /**
+     * The highest quantity in the current period. Used to render the correct enable/disable UI for add-ons.
+     */
     highestQuantity?: number | undefined;
     name?: string | undefined;
     hidden: boolean;
@@ -191,6 +197,9 @@ export type Pro = {
     tier?: number | undefined;
     price: number;
     quantity: number;
+    /**
+     * The highest quantity in the current period. Used to render the correct enable/disable UI for add-ons.
+     */
     highestQuantity?: number | undefined;
     name?: string | undefined;
     hidden: boolean;
@@ -219,6 +228,9 @@ export type Enterprise = {
     tier?: number | undefined;
     price: number;
     quantity: number;
+    /**
+     * The highest quantity in the current period. Used to render the correct enable/disable UI for add-ons.
+     */
     highestQuantity?: number | undefined;
     name?: string | undefined;
     hidden: boolean;
@@ -247,12 +259,108 @@ export type Analytics = {
     tier?: number | undefined;
     price: number;
     quantity: number;
+    /**
+     * The highest quantity in the current period. Used to render the correct enable/disable UI for add-ons.
+     */
     highestQuantity?: number | undefined;
     name?: string | undefined;
     hidden: boolean;
     createdAt?: number | undefined;
     disabledAt?: number | null | undefined;
     frequency?: AuthUserBillingInvoiceItemsAnalyticsFrequency | undefined;
+    maxQuantity?: number | undefined;
+};
+
+export const AuthUserBillingInvoiceItemsDeveloperExperiencePlatformInterval = {
+    Month: "month",
+} as const;
+export type AuthUserBillingInvoiceItemsDeveloperExperiencePlatformInterval = ClosedEnum<
+    typeof AuthUserBillingInvoiceItemsDeveloperExperiencePlatformInterval
+>;
+
+export type AuthUserBillingInvoiceItemsDeveloperExperiencePlatformFrequency = {
+    interval: AuthUserBillingInvoiceItemsDeveloperExperiencePlatformInterval;
+    intervalCount: number;
+};
+
+/**
+ * Will be used to create an invoice item. The price must be in cents: 2000 for $20.
+ */
+export type DeveloperExperiencePlatform = {
+    tier?: number | undefined;
+    price: number;
+    quantity: number;
+    /**
+     * The highest quantity in the current period. Used to render the correct enable/disable UI for add-ons.
+     */
+    highestQuantity?: number | undefined;
+    name?: string | undefined;
+    hidden: boolean;
+    createdAt?: number | undefined;
+    disabledAt?: number | null | undefined;
+    frequency?: AuthUserBillingInvoiceItemsDeveloperExperiencePlatformFrequency | undefined;
+    maxQuantity?: number | undefined;
+};
+
+export const AuthUserBillingInvoiceItemsIncludedAllocationMiuInterval = {
+    Month: "month",
+} as const;
+export type AuthUserBillingInvoiceItemsIncludedAllocationMiuInterval = ClosedEnum<
+    typeof AuthUserBillingInvoiceItemsIncludedAllocationMiuInterval
+>;
+
+export type AuthUserBillingInvoiceItemsIncludedAllocationMiuFrequency = {
+    interval: AuthUserBillingInvoiceItemsIncludedAllocationMiuInterval;
+    intervalCount: number;
+};
+
+/**
+ * Will be used to create an invoice item. The price must be in cents: 2000 for $20.
+ */
+export type IncludedAllocationMiu = {
+    tier?: number | undefined;
+    price: number;
+    quantity: number;
+    /**
+     * The highest quantity in the current period. Used to render the correct enable/disable UI for add-ons.
+     */
+    highestQuantity?: number | undefined;
+    name?: string | undefined;
+    hidden: boolean;
+    createdAt?: number | undefined;
+    disabledAt?: number | null | undefined;
+    frequency?: AuthUserBillingInvoiceItemsIncludedAllocationMiuFrequency | undefined;
+    maxQuantity?: number | undefined;
+};
+
+export const AuthUserBillingInvoiceItemsManagedInfrastructureCommitmentInterval = {
+    Month: "month",
+} as const;
+export type AuthUserBillingInvoiceItemsManagedInfrastructureCommitmentInterval = ClosedEnum<
+    typeof AuthUserBillingInvoiceItemsManagedInfrastructureCommitmentInterval
+>;
+
+export type AuthUserBillingInvoiceItemsManagedInfrastructureCommitmentFrequency = {
+    interval: AuthUserBillingInvoiceItemsManagedInfrastructureCommitmentInterval;
+    intervalCount: number;
+};
+
+/**
+ * Will be used to create an invoice item. The price must be in cents: 2000 for $20.
+ */
+export type ManagedInfrastructureCommitment = {
+    tier?: number | undefined;
+    price: number;
+    quantity: number;
+    /**
+     * The highest quantity in the current period. Used to render the correct enable/disable UI for add-ons.
+     */
+    highestQuantity?: number | undefined;
+    name?: string | undefined;
+    hidden: boolean;
+    createdAt?: number | undefined;
+    disabledAt?: number | null | undefined;
+    frequency?: AuthUserBillingInvoiceItemsManagedInfrastructureCommitmentFrequency | undefined;
     maxQuantity?: number | undefined;
 };
 
@@ -275,6 +383,9 @@ export type Monitoring = {
     tier?: number | undefined;
     price: number;
     quantity: number;
+    /**
+     * The highest quantity in the current period. Used to render the correct enable/disable UI for add-ons.
+     */
     highestQuantity?: number | undefined;
     name?: string | undefined;
     hidden: boolean;
@@ -303,6 +414,9 @@ export type PasswordProtection = {
     tier?: number | undefined;
     price: number;
     quantity: number;
+    /**
+     * The highest quantity in the current period. Used to render the correct enable/disable UI for add-ons.
+     */
     highestQuantity?: number | undefined;
     name?: string | undefined;
     hidden: boolean;
@@ -331,6 +445,9 @@ export type PreviewDeploymentSuffix = {
     tier?: number | undefined;
     price: number;
     quantity: number;
+    /**
+     * The highest quantity in the current period. Used to render the correct enable/disable UI for add-ons.
+     */
     highestQuantity?: number | undefined;
     name?: string | undefined;
     hidden: boolean;
@@ -359,6 +476,9 @@ export type AuthUserSaml = {
     tier?: number | undefined;
     price: number;
     quantity: number;
+    /**
+     * The highest quantity in the current period. Used to render the correct enable/disable UI for add-ons.
+     */
     highestQuantity?: number | undefined;
     name?: string | undefined;
     hidden: boolean;
@@ -387,12 +507,46 @@ export type TeamSeats = {
     tier?: number | undefined;
     price: number;
     quantity: number;
+    /**
+     * The highest quantity in the current period. Used to render the correct enable/disable UI for add-ons.
+     */
     highestQuantity?: number | undefined;
     name?: string | undefined;
     hidden: boolean;
     createdAt?: number | undefined;
     disabledAt?: number | null | undefined;
     frequency?: AuthUserBillingInvoiceItemsTeamSeatsFrequency | undefined;
+    maxQuantity?: number | undefined;
+};
+
+export const AuthUserBillingInvoiceItemsVercelMarketplaceInterval = {
+    Month: "month",
+} as const;
+export type AuthUserBillingInvoiceItemsVercelMarketplaceInterval = ClosedEnum<
+    typeof AuthUserBillingInvoiceItemsVercelMarketplaceInterval
+>;
+
+export type AuthUserBillingInvoiceItemsVercelMarketplaceFrequency = {
+    interval: AuthUserBillingInvoiceItemsVercelMarketplaceInterval;
+    intervalCount: number;
+};
+
+/**
+ * Will be used to create an invoice item. The price must be in cents: 2000 for $20.
+ */
+export type VercelMarketplace = {
+    tier?: number | undefined;
+    price: number;
+    quantity: number;
+    /**
+     * The highest quantity in the current period. Used to render the correct enable/disable UI for add-ons.
+     */
+    highestQuantity?: number | undefined;
+    name?: string | undefined;
+    hidden: boolean;
+    createdAt?: number | undefined;
+    disabledAt?: number | null | undefined;
+    frequency?: AuthUserBillingInvoiceItemsVercelMarketplaceFrequency | undefined;
     maxQuantity?: number | undefined;
 };
 
@@ -1066,6 +1220,18 @@ export type InvoiceItems = {
     /**
      * Will be used to create an invoice item. The price must be in cents: 2000 for $20.
      */
+    developerExperiencePlatform?: DeveloperExperiencePlatform | undefined;
+    /**
+     * Will be used to create an invoice item. The price must be in cents: 2000 for $20.
+     */
+    includedAllocationMiu?: IncludedAllocationMiu | undefined;
+    /**
+     * Will be used to create an invoice item. The price must be in cents: 2000 for $20.
+     */
+    managedInfrastructureCommitment?: ManagedInfrastructureCommitment | undefined;
+    /**
+     * Will be used to create an invoice item. The price must be in cents: 2000 for $20.
+     */
     monitoring?: Monitoring | undefined;
     /**
      * Will be used to create an invoice item. The price must be in cents: 2000 for $20.
@@ -1083,6 +1249,10 @@ export type InvoiceItems = {
      * Will be used to create an invoice item. The price must be in cents: 2000 for $20.
      */
     teamSeats?: TeamSeats | undefined;
+    /**
+     * Will be used to create an invoice item. The price must be in cents: 2000 for $20.
+     */
+    vercelMarketplace?: VercelMarketplace | undefined;
     analyticsUsage?: AnalyticsUsage | undefined;
     artifacts?: ArtifactsModel | undefined;
     bandwidth?: Bandwidth | undefined;
@@ -1207,6 +1377,12 @@ export const PricingExperiment = {
 } as const;
 export type PricingExperiment = ClosedEnum<typeof PricingExperiment>;
 
+export type AwsMarketplace = {
+    productCode: string;
+    offerId?: string | undefined;
+    customerId: string;
+};
+
 /**
  * An object containing billing infomation associated with the User account.
  */
@@ -1235,6 +1411,9 @@ export type Billing = {
     status?: Status | undefined;
     pricingExperiment?: PricingExperiment | undefined;
     orbMigrationScheduledAt?: number | null | undefined;
+    forceOrbMigration?: boolean | null | undefined;
+    awsMarketplace?: AwsMarketplace | null | undefined;
+    reseller?: string | undefined;
 };
 
 /**
@@ -1265,6 +1444,10 @@ export type ResourceConfig = {
      * An object containing infomation related to the amount of platform resources may be allocated to the User account.
      */
     cfZoneName?: string | undefined;
+    /**
+     * An object containing infomation related to the amount of platform resources may be allocated to the User account.
+     */
+    imageOptimizationType?: string | undefined;
     /**
      * An object containing infomation related to the amount of platform resources may be allocated to the User account.
      */
@@ -1369,7 +1552,7 @@ export type DismissedToasts = {
 /**
  * A list of projects and spaces across teams that a user has marked as a favorite.
  */
-export type FavoriteProjectsAndSpaces2 = {
+export type Two = {
     spaceId: string;
     scopeSlug: string;
     scopeId: string;
@@ -1378,13 +1561,13 @@ export type FavoriteProjectsAndSpaces2 = {
 /**
  * A list of projects and spaces across teams that a user has marked as a favorite.
  */
-export type FavoriteProjectsAndSpaces1 = {
+export type One = {
     projectId: string;
     scopeSlug: string;
     scopeId: string;
 };
 
-export type FavoriteProjectsAndSpaces = FavoriteProjectsAndSpaces1 | FavoriteProjectsAndSpaces2;
+export type FavoriteProjectsAndSpaces = One | Two;
 
 /**
  * remote caching settings
@@ -1411,35 +1594,6 @@ export type WebAnalytics = {
  */
 export type FeatureBlocks = {
     webAnalytics?: WebAnalytics | undefined;
-};
-
-/**
- * - `will-migrate`: Show dashboard toast saying "your account will be migrated soon" - `migrating`: Show dashboard toast saying "your account is currently migrating to `teamId`" - `completed`: Show dashboard toast saying "your account has been migrated to `teamId`" - `failed`: Show dashboard toast saying "your account migration has failed `teamId`"
- */
-export const AuthUserStatus = {
-    Migrating: "migrating",
-    Completed: "completed",
-    Failed: "failed",
-    WillMigrate: "will-migrate",
-} as const;
-/**
- * - `will-migrate`: Show dashboard toast saying "your account will be migrated soon" - `migrating`: Show dashboard toast saying "your account is currently migrating to `teamId`" - `completed`: Show dashboard toast saying "your account has been migrated to `teamId`" - `failed`: Show dashboard toast saying "your account migration has failed `teamId`"
- */
-export type AuthUserStatus = ClosedEnum<typeof AuthUserStatus>;
-
-export type Migration = {
-    teamId?: string | undefined;
-    /**
-     * - `will-migrate`: Show dashboard toast saying "your account will be migrated soon" - `migrating`: Show dashboard toast saying "your account is currently migrating to `teamId`" - `completed`: Show dashboard toast saying "your account has been migrated to `teamId`" - `failed`: Show dashboard toast saying "your account migration has failed `teamId`"
-     */
-    status: AuthUserStatus;
-};
-
-/**
- * Northstar migration specific data
- */
-export type Northstar = {
-    migration?: Migration | undefined;
 };
 
 export type NorthstarMigration = {
@@ -1523,9 +1677,7 @@ export type AuthUser = {
     /**
      * A list of projects and spaces across teams that a user has marked as a favorite.
      */
-    favoriteProjectsAndSpaces?:
-        | Array<FavoriteProjectsAndSpaces1 | FavoriteProjectsAndSpaces2>
-        | undefined;
+    favoriteProjectsAndSpaces?: Array<One | Two> | undefined;
     /**
      * Whether the user has a trial available for a paid plan subscription.
      */
@@ -1542,10 +1694,6 @@ export type AuthUser = {
      * Feature blocks for the user
      */
     featureBlocks?: FeatureBlocks | undefined;
-    /**
-     * Northstar migration specific data
-     */
-    northstar?: Northstar | undefined;
     northstarMigration?: NorthstarMigration | undefined;
     /**
      * The User's unique identifier.
@@ -2482,6 +2630,408 @@ export namespace Analytics$ {
 }
 
 /** @internal */
+export const AuthUserBillingInvoiceItemsDeveloperExperiencePlatformInterval$inboundSchema: z.ZodNativeEnum<
+    typeof AuthUserBillingInvoiceItemsDeveloperExperiencePlatformInterval
+> = z.nativeEnum(AuthUserBillingInvoiceItemsDeveloperExperiencePlatformInterval);
+
+/** @internal */
+export const AuthUserBillingInvoiceItemsDeveloperExperiencePlatformInterval$outboundSchema: z.ZodNativeEnum<
+    typeof AuthUserBillingInvoiceItemsDeveloperExperiencePlatformInterval
+> = AuthUserBillingInvoiceItemsDeveloperExperiencePlatformInterval$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace AuthUserBillingInvoiceItemsDeveloperExperiencePlatformInterval$ {
+    /** @deprecated use `AuthUserBillingInvoiceItemsDeveloperExperiencePlatformInterval$inboundSchema` instead. */
+    export const inboundSchema =
+        AuthUserBillingInvoiceItemsDeveloperExperiencePlatformInterval$inboundSchema;
+    /** @deprecated use `AuthUserBillingInvoiceItemsDeveloperExperiencePlatformInterval$outboundSchema` instead. */
+    export const outboundSchema =
+        AuthUserBillingInvoiceItemsDeveloperExperiencePlatformInterval$outboundSchema;
+}
+
+/** @internal */
+export const AuthUserBillingInvoiceItemsDeveloperExperiencePlatformFrequency$inboundSchema: z.ZodType<
+    AuthUserBillingInvoiceItemsDeveloperExperiencePlatformFrequency,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    interval: AuthUserBillingInvoiceItemsDeveloperExperiencePlatformInterval$inboundSchema,
+    intervalCount: z.number(),
+});
+
+/** @internal */
+export type AuthUserBillingInvoiceItemsDeveloperExperiencePlatformFrequency$Outbound = {
+    interval: string;
+    intervalCount: number;
+};
+
+/** @internal */
+export const AuthUserBillingInvoiceItemsDeveloperExperiencePlatformFrequency$outboundSchema: z.ZodType<
+    AuthUserBillingInvoiceItemsDeveloperExperiencePlatformFrequency$Outbound,
+    z.ZodTypeDef,
+    AuthUserBillingInvoiceItemsDeveloperExperiencePlatformFrequency
+> = z.object({
+    interval: AuthUserBillingInvoiceItemsDeveloperExperiencePlatformInterval$outboundSchema,
+    intervalCount: z.number(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace AuthUserBillingInvoiceItemsDeveloperExperiencePlatformFrequency$ {
+    /** @deprecated use `AuthUserBillingInvoiceItemsDeveloperExperiencePlatformFrequency$inboundSchema` instead. */
+    export const inboundSchema =
+        AuthUserBillingInvoiceItemsDeveloperExperiencePlatformFrequency$inboundSchema;
+    /** @deprecated use `AuthUserBillingInvoiceItemsDeveloperExperiencePlatformFrequency$outboundSchema` instead. */
+    export const outboundSchema =
+        AuthUserBillingInvoiceItemsDeveloperExperiencePlatformFrequency$outboundSchema;
+    /** @deprecated use `AuthUserBillingInvoiceItemsDeveloperExperiencePlatformFrequency$Outbound` instead. */
+    export type Outbound = AuthUserBillingInvoiceItemsDeveloperExperiencePlatformFrequency$Outbound;
+}
+
+/** @internal */
+export const DeveloperExperiencePlatform$inboundSchema: z.ZodType<
+    DeveloperExperiencePlatform,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    tier: z.number().optional(),
+    price: z.number(),
+    quantity: z.number(),
+    highestQuantity: z.number().optional(),
+    name: z.string().optional(),
+    hidden: z.boolean(),
+    createdAt: z.number().optional(),
+    disabledAt: z.nullable(z.number()).optional(),
+    frequency: z
+        .lazy(() => AuthUserBillingInvoiceItemsDeveloperExperiencePlatformFrequency$inboundSchema)
+        .optional(),
+    maxQuantity: z.number().optional(),
+});
+
+/** @internal */
+export type DeveloperExperiencePlatform$Outbound = {
+    tier?: number | undefined;
+    price: number;
+    quantity: number;
+    highestQuantity?: number | undefined;
+    name?: string | undefined;
+    hidden: boolean;
+    createdAt?: number | undefined;
+    disabledAt?: number | null | undefined;
+    frequency?:
+        | AuthUserBillingInvoiceItemsDeveloperExperiencePlatformFrequency$Outbound
+        | undefined;
+    maxQuantity?: number | undefined;
+};
+
+/** @internal */
+export const DeveloperExperiencePlatform$outboundSchema: z.ZodType<
+    DeveloperExperiencePlatform$Outbound,
+    z.ZodTypeDef,
+    DeveloperExperiencePlatform
+> = z.object({
+    tier: z.number().optional(),
+    price: z.number(),
+    quantity: z.number(),
+    highestQuantity: z.number().optional(),
+    name: z.string().optional(),
+    hidden: z.boolean(),
+    createdAt: z.number().optional(),
+    disabledAt: z.nullable(z.number()).optional(),
+    frequency: z
+        .lazy(() => AuthUserBillingInvoiceItemsDeveloperExperiencePlatformFrequency$outboundSchema)
+        .optional(),
+    maxQuantity: z.number().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace DeveloperExperiencePlatform$ {
+    /** @deprecated use `DeveloperExperiencePlatform$inboundSchema` instead. */
+    export const inboundSchema = DeveloperExperiencePlatform$inboundSchema;
+    /** @deprecated use `DeveloperExperiencePlatform$outboundSchema` instead. */
+    export const outboundSchema = DeveloperExperiencePlatform$outboundSchema;
+    /** @deprecated use `DeveloperExperiencePlatform$Outbound` instead. */
+    export type Outbound = DeveloperExperiencePlatform$Outbound;
+}
+
+/** @internal */
+export const AuthUserBillingInvoiceItemsIncludedAllocationMiuInterval$inboundSchema: z.ZodNativeEnum<
+    typeof AuthUserBillingInvoiceItemsIncludedAllocationMiuInterval
+> = z.nativeEnum(AuthUserBillingInvoiceItemsIncludedAllocationMiuInterval);
+
+/** @internal */
+export const AuthUserBillingInvoiceItemsIncludedAllocationMiuInterval$outboundSchema: z.ZodNativeEnum<
+    typeof AuthUserBillingInvoiceItemsIncludedAllocationMiuInterval
+> = AuthUserBillingInvoiceItemsIncludedAllocationMiuInterval$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace AuthUserBillingInvoiceItemsIncludedAllocationMiuInterval$ {
+    /** @deprecated use `AuthUserBillingInvoiceItemsIncludedAllocationMiuInterval$inboundSchema` instead. */
+    export const inboundSchema =
+        AuthUserBillingInvoiceItemsIncludedAllocationMiuInterval$inboundSchema;
+    /** @deprecated use `AuthUserBillingInvoiceItemsIncludedAllocationMiuInterval$outboundSchema` instead. */
+    export const outboundSchema =
+        AuthUserBillingInvoiceItemsIncludedAllocationMiuInterval$outboundSchema;
+}
+
+/** @internal */
+export const AuthUserBillingInvoiceItemsIncludedAllocationMiuFrequency$inboundSchema: z.ZodType<
+    AuthUserBillingInvoiceItemsIncludedAllocationMiuFrequency,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    interval: AuthUserBillingInvoiceItemsIncludedAllocationMiuInterval$inboundSchema,
+    intervalCount: z.number(),
+});
+
+/** @internal */
+export type AuthUserBillingInvoiceItemsIncludedAllocationMiuFrequency$Outbound = {
+    interval: string;
+    intervalCount: number;
+};
+
+/** @internal */
+export const AuthUserBillingInvoiceItemsIncludedAllocationMiuFrequency$outboundSchema: z.ZodType<
+    AuthUserBillingInvoiceItemsIncludedAllocationMiuFrequency$Outbound,
+    z.ZodTypeDef,
+    AuthUserBillingInvoiceItemsIncludedAllocationMiuFrequency
+> = z.object({
+    interval: AuthUserBillingInvoiceItemsIncludedAllocationMiuInterval$outboundSchema,
+    intervalCount: z.number(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace AuthUserBillingInvoiceItemsIncludedAllocationMiuFrequency$ {
+    /** @deprecated use `AuthUserBillingInvoiceItemsIncludedAllocationMiuFrequency$inboundSchema` instead. */
+    export const inboundSchema =
+        AuthUserBillingInvoiceItemsIncludedAllocationMiuFrequency$inboundSchema;
+    /** @deprecated use `AuthUserBillingInvoiceItemsIncludedAllocationMiuFrequency$outboundSchema` instead. */
+    export const outboundSchema =
+        AuthUserBillingInvoiceItemsIncludedAllocationMiuFrequency$outboundSchema;
+    /** @deprecated use `AuthUserBillingInvoiceItemsIncludedAllocationMiuFrequency$Outbound` instead. */
+    export type Outbound = AuthUserBillingInvoiceItemsIncludedAllocationMiuFrequency$Outbound;
+}
+
+/** @internal */
+export const IncludedAllocationMiu$inboundSchema: z.ZodType<
+    IncludedAllocationMiu,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    tier: z.number().optional(),
+    price: z.number(),
+    quantity: z.number(),
+    highestQuantity: z.number().optional(),
+    name: z.string().optional(),
+    hidden: z.boolean(),
+    createdAt: z.number().optional(),
+    disabledAt: z.nullable(z.number()).optional(),
+    frequency: z
+        .lazy(() => AuthUserBillingInvoiceItemsIncludedAllocationMiuFrequency$inboundSchema)
+        .optional(),
+    maxQuantity: z.number().optional(),
+});
+
+/** @internal */
+export type IncludedAllocationMiu$Outbound = {
+    tier?: number | undefined;
+    price: number;
+    quantity: number;
+    highestQuantity?: number | undefined;
+    name?: string | undefined;
+    hidden: boolean;
+    createdAt?: number | undefined;
+    disabledAt?: number | null | undefined;
+    frequency?: AuthUserBillingInvoiceItemsIncludedAllocationMiuFrequency$Outbound | undefined;
+    maxQuantity?: number | undefined;
+};
+
+/** @internal */
+export const IncludedAllocationMiu$outboundSchema: z.ZodType<
+    IncludedAllocationMiu$Outbound,
+    z.ZodTypeDef,
+    IncludedAllocationMiu
+> = z.object({
+    tier: z.number().optional(),
+    price: z.number(),
+    quantity: z.number(),
+    highestQuantity: z.number().optional(),
+    name: z.string().optional(),
+    hidden: z.boolean(),
+    createdAt: z.number().optional(),
+    disabledAt: z.nullable(z.number()).optional(),
+    frequency: z
+        .lazy(() => AuthUserBillingInvoiceItemsIncludedAllocationMiuFrequency$outboundSchema)
+        .optional(),
+    maxQuantity: z.number().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace IncludedAllocationMiu$ {
+    /** @deprecated use `IncludedAllocationMiu$inboundSchema` instead. */
+    export const inboundSchema = IncludedAllocationMiu$inboundSchema;
+    /** @deprecated use `IncludedAllocationMiu$outboundSchema` instead. */
+    export const outboundSchema = IncludedAllocationMiu$outboundSchema;
+    /** @deprecated use `IncludedAllocationMiu$Outbound` instead. */
+    export type Outbound = IncludedAllocationMiu$Outbound;
+}
+
+/** @internal */
+export const AuthUserBillingInvoiceItemsManagedInfrastructureCommitmentInterval$inboundSchema: z.ZodNativeEnum<
+    typeof AuthUserBillingInvoiceItemsManagedInfrastructureCommitmentInterval
+> = z.nativeEnum(AuthUserBillingInvoiceItemsManagedInfrastructureCommitmentInterval);
+
+/** @internal */
+export const AuthUserBillingInvoiceItemsManagedInfrastructureCommitmentInterval$outboundSchema: z.ZodNativeEnum<
+    typeof AuthUserBillingInvoiceItemsManagedInfrastructureCommitmentInterval
+> = AuthUserBillingInvoiceItemsManagedInfrastructureCommitmentInterval$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace AuthUserBillingInvoiceItemsManagedInfrastructureCommitmentInterval$ {
+    /** @deprecated use `AuthUserBillingInvoiceItemsManagedInfrastructureCommitmentInterval$inboundSchema` instead. */
+    export const inboundSchema =
+        AuthUserBillingInvoiceItemsManagedInfrastructureCommitmentInterval$inboundSchema;
+    /** @deprecated use `AuthUserBillingInvoiceItemsManagedInfrastructureCommitmentInterval$outboundSchema` instead. */
+    export const outboundSchema =
+        AuthUserBillingInvoiceItemsManagedInfrastructureCommitmentInterval$outboundSchema;
+}
+
+/** @internal */
+export const AuthUserBillingInvoiceItemsManagedInfrastructureCommitmentFrequency$inboundSchema: z.ZodType<
+    AuthUserBillingInvoiceItemsManagedInfrastructureCommitmentFrequency,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    interval: AuthUserBillingInvoiceItemsManagedInfrastructureCommitmentInterval$inboundSchema,
+    intervalCount: z.number(),
+});
+
+/** @internal */
+export type AuthUserBillingInvoiceItemsManagedInfrastructureCommitmentFrequency$Outbound = {
+    interval: string;
+    intervalCount: number;
+};
+
+/** @internal */
+export const AuthUserBillingInvoiceItemsManagedInfrastructureCommitmentFrequency$outboundSchema: z.ZodType<
+    AuthUserBillingInvoiceItemsManagedInfrastructureCommitmentFrequency$Outbound,
+    z.ZodTypeDef,
+    AuthUserBillingInvoiceItemsManagedInfrastructureCommitmentFrequency
+> = z.object({
+    interval: AuthUserBillingInvoiceItemsManagedInfrastructureCommitmentInterval$outboundSchema,
+    intervalCount: z.number(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace AuthUserBillingInvoiceItemsManagedInfrastructureCommitmentFrequency$ {
+    /** @deprecated use `AuthUserBillingInvoiceItemsManagedInfrastructureCommitmentFrequency$inboundSchema` instead. */
+    export const inboundSchema =
+        AuthUserBillingInvoiceItemsManagedInfrastructureCommitmentFrequency$inboundSchema;
+    /** @deprecated use `AuthUserBillingInvoiceItemsManagedInfrastructureCommitmentFrequency$outboundSchema` instead. */
+    export const outboundSchema =
+        AuthUserBillingInvoiceItemsManagedInfrastructureCommitmentFrequency$outboundSchema;
+    /** @deprecated use `AuthUserBillingInvoiceItemsManagedInfrastructureCommitmentFrequency$Outbound` instead. */
+    export type Outbound =
+        AuthUserBillingInvoiceItemsManagedInfrastructureCommitmentFrequency$Outbound;
+}
+
+/** @internal */
+export const ManagedInfrastructureCommitment$inboundSchema: z.ZodType<
+    ManagedInfrastructureCommitment,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    tier: z.number().optional(),
+    price: z.number(),
+    quantity: z.number(),
+    highestQuantity: z.number().optional(),
+    name: z.string().optional(),
+    hidden: z.boolean(),
+    createdAt: z.number().optional(),
+    disabledAt: z.nullable(z.number()).optional(),
+    frequency: z
+        .lazy(
+            () => AuthUserBillingInvoiceItemsManagedInfrastructureCommitmentFrequency$inboundSchema
+        )
+        .optional(),
+    maxQuantity: z.number().optional(),
+});
+
+/** @internal */
+export type ManagedInfrastructureCommitment$Outbound = {
+    tier?: number | undefined;
+    price: number;
+    quantity: number;
+    highestQuantity?: number | undefined;
+    name?: string | undefined;
+    hidden: boolean;
+    createdAt?: number | undefined;
+    disabledAt?: number | null | undefined;
+    frequency?:
+        | AuthUserBillingInvoiceItemsManagedInfrastructureCommitmentFrequency$Outbound
+        | undefined;
+    maxQuantity?: number | undefined;
+};
+
+/** @internal */
+export const ManagedInfrastructureCommitment$outboundSchema: z.ZodType<
+    ManagedInfrastructureCommitment$Outbound,
+    z.ZodTypeDef,
+    ManagedInfrastructureCommitment
+> = z.object({
+    tier: z.number().optional(),
+    price: z.number(),
+    quantity: z.number(),
+    highestQuantity: z.number().optional(),
+    name: z.string().optional(),
+    hidden: z.boolean(),
+    createdAt: z.number().optional(),
+    disabledAt: z.nullable(z.number()).optional(),
+    frequency: z
+        .lazy(
+            () => AuthUserBillingInvoiceItemsManagedInfrastructureCommitmentFrequency$outboundSchema
+        )
+        .optional(),
+    maxQuantity: z.number().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace ManagedInfrastructureCommitment$ {
+    /** @deprecated use `ManagedInfrastructureCommitment$inboundSchema` instead. */
+    export const inboundSchema = ManagedInfrastructureCommitment$inboundSchema;
+    /** @deprecated use `ManagedInfrastructureCommitment$outboundSchema` instead. */
+    export const outboundSchema = ManagedInfrastructureCommitment$outboundSchema;
+    /** @deprecated use `ManagedInfrastructureCommitment$Outbound` instead. */
+    export type Outbound = ManagedInfrastructureCommitment$Outbound;
+}
+
+/** @internal */
 export const AuthUserBillingInvoiceItemsMonitoringInterval$inboundSchema: z.ZodNativeEnum<
     typeof AuthUserBillingInvoiceItemsMonitoringInterval
 > = z.nativeEnum(AuthUserBillingInvoiceItemsMonitoringInterval);
@@ -3098,6 +3648,133 @@ export namespace TeamSeats$ {
     export const outboundSchema = TeamSeats$outboundSchema;
     /** @deprecated use `TeamSeats$Outbound` instead. */
     export type Outbound = TeamSeats$Outbound;
+}
+
+/** @internal */
+export const AuthUserBillingInvoiceItemsVercelMarketplaceInterval$inboundSchema: z.ZodNativeEnum<
+    typeof AuthUserBillingInvoiceItemsVercelMarketplaceInterval
+> = z.nativeEnum(AuthUserBillingInvoiceItemsVercelMarketplaceInterval);
+
+/** @internal */
+export const AuthUserBillingInvoiceItemsVercelMarketplaceInterval$outboundSchema: z.ZodNativeEnum<
+    typeof AuthUserBillingInvoiceItemsVercelMarketplaceInterval
+> = AuthUserBillingInvoiceItemsVercelMarketplaceInterval$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace AuthUserBillingInvoiceItemsVercelMarketplaceInterval$ {
+    /** @deprecated use `AuthUserBillingInvoiceItemsVercelMarketplaceInterval$inboundSchema` instead. */
+    export const inboundSchema = AuthUserBillingInvoiceItemsVercelMarketplaceInterval$inboundSchema;
+    /** @deprecated use `AuthUserBillingInvoiceItemsVercelMarketplaceInterval$outboundSchema` instead. */
+    export const outboundSchema =
+        AuthUserBillingInvoiceItemsVercelMarketplaceInterval$outboundSchema;
+}
+
+/** @internal */
+export const AuthUserBillingInvoiceItemsVercelMarketplaceFrequency$inboundSchema: z.ZodType<
+    AuthUserBillingInvoiceItemsVercelMarketplaceFrequency,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    interval: AuthUserBillingInvoiceItemsVercelMarketplaceInterval$inboundSchema,
+    intervalCount: z.number(),
+});
+
+/** @internal */
+export type AuthUserBillingInvoiceItemsVercelMarketplaceFrequency$Outbound = {
+    interval: string;
+    intervalCount: number;
+};
+
+/** @internal */
+export const AuthUserBillingInvoiceItemsVercelMarketplaceFrequency$outboundSchema: z.ZodType<
+    AuthUserBillingInvoiceItemsVercelMarketplaceFrequency$Outbound,
+    z.ZodTypeDef,
+    AuthUserBillingInvoiceItemsVercelMarketplaceFrequency
+> = z.object({
+    interval: AuthUserBillingInvoiceItemsVercelMarketplaceInterval$outboundSchema,
+    intervalCount: z.number(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace AuthUserBillingInvoiceItemsVercelMarketplaceFrequency$ {
+    /** @deprecated use `AuthUserBillingInvoiceItemsVercelMarketplaceFrequency$inboundSchema` instead. */
+    export const inboundSchema =
+        AuthUserBillingInvoiceItemsVercelMarketplaceFrequency$inboundSchema;
+    /** @deprecated use `AuthUserBillingInvoiceItemsVercelMarketplaceFrequency$outboundSchema` instead. */
+    export const outboundSchema =
+        AuthUserBillingInvoiceItemsVercelMarketplaceFrequency$outboundSchema;
+    /** @deprecated use `AuthUserBillingInvoiceItemsVercelMarketplaceFrequency$Outbound` instead. */
+    export type Outbound = AuthUserBillingInvoiceItemsVercelMarketplaceFrequency$Outbound;
+}
+
+/** @internal */
+export const VercelMarketplace$inboundSchema: z.ZodType<VercelMarketplace, z.ZodTypeDef, unknown> =
+    z.object({
+        tier: z.number().optional(),
+        price: z.number(),
+        quantity: z.number(),
+        highestQuantity: z.number().optional(),
+        name: z.string().optional(),
+        hidden: z.boolean(),
+        createdAt: z.number().optional(),
+        disabledAt: z.nullable(z.number()).optional(),
+        frequency: z
+            .lazy(() => AuthUserBillingInvoiceItemsVercelMarketplaceFrequency$inboundSchema)
+            .optional(),
+        maxQuantity: z.number().optional(),
+    });
+
+/** @internal */
+export type VercelMarketplace$Outbound = {
+    tier?: number | undefined;
+    price: number;
+    quantity: number;
+    highestQuantity?: number | undefined;
+    name?: string | undefined;
+    hidden: boolean;
+    createdAt?: number | undefined;
+    disabledAt?: number | null | undefined;
+    frequency?: AuthUserBillingInvoiceItemsVercelMarketplaceFrequency$Outbound | undefined;
+    maxQuantity?: number | undefined;
+};
+
+/** @internal */
+export const VercelMarketplace$outboundSchema: z.ZodType<
+    VercelMarketplace$Outbound,
+    z.ZodTypeDef,
+    VercelMarketplace
+> = z.object({
+    tier: z.number().optional(),
+    price: z.number(),
+    quantity: z.number(),
+    highestQuantity: z.number().optional(),
+    name: z.string().optional(),
+    hidden: z.boolean(),
+    createdAt: z.number().optional(),
+    disabledAt: z.nullable(z.number()).optional(),
+    frequency: z
+        .lazy(() => AuthUserBillingInvoiceItemsVercelMarketplaceFrequency$outboundSchema)
+        .optional(),
+    maxQuantity: z.number().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace VercelMarketplace$ {
+    /** @deprecated use `VercelMarketplace$inboundSchema` instead. */
+    export const inboundSchema = VercelMarketplace$inboundSchema;
+    /** @deprecated use `VercelMarketplace$outboundSchema` instead. */
+    export const outboundSchema = VercelMarketplace$outboundSchema;
+    /** @deprecated use `VercelMarketplace$Outbound` instead. */
+    export type Outbound = VercelMarketplace$Outbound;
 }
 
 /** @internal */
@@ -6973,11 +7650,17 @@ export const InvoiceItems$inboundSchema: z.ZodType<InvoiceItems, z.ZodTypeDef, u
     pro: z.lazy(() => Pro$inboundSchema).optional(),
     enterprise: z.lazy(() => Enterprise$inboundSchema).optional(),
     analytics: z.lazy(() => Analytics$inboundSchema).optional(),
+    developerExperiencePlatform: z.lazy(() => DeveloperExperiencePlatform$inboundSchema).optional(),
+    includedAllocationMiu: z.lazy(() => IncludedAllocationMiu$inboundSchema).optional(),
+    managedInfrastructureCommitment: z
+        .lazy(() => ManagedInfrastructureCommitment$inboundSchema)
+        .optional(),
     monitoring: z.lazy(() => Monitoring$inboundSchema).optional(),
     passwordProtection: z.lazy(() => PasswordProtection$inboundSchema).optional(),
     previewDeploymentSuffix: z.lazy(() => PreviewDeploymentSuffix$inboundSchema).optional(),
     saml: z.lazy(() => AuthUserSaml$inboundSchema).optional(),
     teamSeats: z.lazy(() => TeamSeats$inboundSchema).optional(),
+    vercelMarketplace: z.lazy(() => VercelMarketplace$inboundSchema).optional(),
     analyticsUsage: z.lazy(() => AnalyticsUsage$inboundSchema).optional(),
     artifacts: z.lazy(() => ArtifactsModel$inboundSchema).optional(),
     bandwidth: z.lazy(() => Bandwidth$inboundSchema).optional(),
@@ -7033,11 +7716,15 @@ export type InvoiceItems$Outbound = {
     pro?: Pro$Outbound | undefined;
     enterprise?: Enterprise$Outbound | undefined;
     analytics?: Analytics$Outbound | undefined;
+    developerExperiencePlatform?: DeveloperExperiencePlatform$Outbound | undefined;
+    includedAllocationMiu?: IncludedAllocationMiu$Outbound | undefined;
+    managedInfrastructureCommitment?: ManagedInfrastructureCommitment$Outbound | undefined;
     monitoring?: Monitoring$Outbound | undefined;
     passwordProtection?: PasswordProtection$Outbound | undefined;
     previewDeploymentSuffix?: PreviewDeploymentSuffix$Outbound | undefined;
     saml?: AuthUserSaml$Outbound | undefined;
     teamSeats?: TeamSeats$Outbound | undefined;
+    vercelMarketplace?: VercelMarketplace$Outbound | undefined;
     analyticsUsage?: AnalyticsUsage$Outbound | undefined;
     artifacts?: ArtifactsModel$Outbound | undefined;
     bandwidth?: Bandwidth$Outbound | undefined;
@@ -7093,11 +7780,19 @@ export const InvoiceItems$outboundSchema: z.ZodType<
     pro: z.lazy(() => Pro$outboundSchema).optional(),
     enterprise: z.lazy(() => Enterprise$outboundSchema).optional(),
     analytics: z.lazy(() => Analytics$outboundSchema).optional(),
+    developerExperiencePlatform: z
+        .lazy(() => DeveloperExperiencePlatform$outboundSchema)
+        .optional(),
+    includedAllocationMiu: z.lazy(() => IncludedAllocationMiu$outboundSchema).optional(),
+    managedInfrastructureCommitment: z
+        .lazy(() => ManagedInfrastructureCommitment$outboundSchema)
+        .optional(),
     monitoring: z.lazy(() => Monitoring$outboundSchema).optional(),
     passwordProtection: z.lazy(() => PasswordProtection$outboundSchema).optional(),
     previewDeploymentSuffix: z.lazy(() => PreviewDeploymentSuffix$outboundSchema).optional(),
     saml: z.lazy(() => AuthUserSaml$outboundSchema).optional(),
     teamSeats: z.lazy(() => TeamSeats$outboundSchema).optional(),
+    vercelMarketplace: z.lazy(() => VercelMarketplace$outboundSchema).optional(),
     analyticsUsage: z.lazy(() => AnalyticsUsage$outboundSchema).optional(),
     artifacts: z.lazy(() => ArtifactsModel$outboundSchema).optional(),
     bandwidth: z.lazy(() => Bandwidth$outboundSchema).optional(),
@@ -7564,6 +8259,45 @@ export namespace PricingExperiment$ {
 }
 
 /** @internal */
+export const AwsMarketplace$inboundSchema: z.ZodType<AwsMarketplace, z.ZodTypeDef, unknown> =
+    z.object({
+        productCode: z.string(),
+        offerId: z.string().optional(),
+        customerId: z.string(),
+    });
+
+/** @internal */
+export type AwsMarketplace$Outbound = {
+    productCode: string;
+    offerId?: string | undefined;
+    customerId: string;
+};
+
+/** @internal */
+export const AwsMarketplace$outboundSchema: z.ZodType<
+    AwsMarketplace$Outbound,
+    z.ZodTypeDef,
+    AwsMarketplace
+> = z.object({
+    productCode: z.string(),
+    offerId: z.string().optional(),
+    customerId: z.string(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace AwsMarketplace$ {
+    /** @deprecated use `AwsMarketplace$inboundSchema` instead. */
+    export const inboundSchema = AwsMarketplace$inboundSchema;
+    /** @deprecated use `AwsMarketplace$outboundSchema` instead. */
+    export const outboundSchema = AwsMarketplace$outboundSchema;
+    /** @deprecated use `AwsMarketplace$Outbound` instead. */
+    export type Outbound = AwsMarketplace$Outbound;
+}
+
+/** @internal */
 export const Billing$inboundSchema: z.ZodType<Billing, z.ZodTypeDef, unknown> = z.object({
     currency: Currency$inboundSchema.optional(),
     cancelation: z.nullable(z.number()).optional(),
@@ -7589,6 +8323,9 @@ export const Billing$inboundSchema: z.ZodType<Billing, z.ZodTypeDef, unknown> = 
     status: Status$inboundSchema.optional(),
     pricingExperiment: PricingExperiment$inboundSchema.optional(),
     orbMigrationScheduledAt: z.nullable(z.number()).optional(),
+    forceOrbMigration: z.nullable(z.boolean()).optional(),
+    awsMarketplace: z.nullable(z.lazy(() => AwsMarketplace$inboundSchema)).optional(),
+    reseller: z.string().optional(),
 });
 
 /** @internal */
@@ -7617,6 +8354,9 @@ export type Billing$Outbound = {
     status?: string | undefined;
     pricingExperiment?: string | undefined;
     orbMigrationScheduledAt?: number | null | undefined;
+    forceOrbMigration?: boolean | null | undefined;
+    awsMarketplace?: AwsMarketplace$Outbound | null | undefined;
+    reseller?: string | undefined;
 };
 
 /** @internal */
@@ -7645,6 +8385,9 @@ export const Billing$outboundSchema: z.ZodType<Billing$Outbound, z.ZodTypeDef, B
     status: Status$outboundSchema.optional(),
     pricingExperiment: PricingExperiment$outboundSchema.optional(),
     orbMigrationScheduledAt: z.nullable(z.number()).optional(),
+    forceOrbMigration: z.nullable(z.boolean()).optional(),
+    awsMarketplace: z.nullable(z.lazy(() => AwsMarketplace$outboundSchema)).optional(),
+    reseller: z.string().optional(),
 });
 
 /**
@@ -7669,6 +8412,7 @@ export const ResourceConfig$inboundSchema: z.ZodType<ResourceConfig, z.ZodTypeDe
         awsAccountType: z.string().optional(),
         awsAccountIds: z.array(z.string()).optional(),
         cfZoneName: z.string().optional(),
+        imageOptimizationType: z.string().optional(),
         edgeConfigs: z.number().optional(),
         edgeConfigSize: z.number().optional(),
         edgeFunctionMaxSizeBytes: z.number().optional(),
@@ -7689,6 +8433,7 @@ export type ResourceConfig$Outbound = {
     awsAccountType?: string | undefined;
     awsAccountIds?: Array<string> | undefined;
     cfZoneName?: string | undefined;
+    imageOptimizationType?: string | undefined;
     edgeConfigs?: number | undefined;
     edgeConfigSize?: number | undefined;
     edgeFunctionMaxSizeBytes?: number | undefined;
@@ -7713,6 +8458,7 @@ export const ResourceConfig$outboundSchema: z.ZodType<
     awsAccountType: z.string().optional(),
     awsAccountIds: z.array(z.string()).optional(),
     cfZoneName: z.string().optional(),
+    imageOptimizationType: z.string().optional(),
     edgeConfigs: z.number().optional(),
     edgeConfigSize: z.number().optional(),
     edgeFunctionMaxSizeBytes: z.number().optional(),
@@ -8056,29 +8802,21 @@ export namespace DismissedToasts$ {
 }
 
 /** @internal */
-export const FavoriteProjectsAndSpaces2$inboundSchema: z.ZodType<
-    FavoriteProjectsAndSpaces2,
-    z.ZodTypeDef,
-    unknown
-> = z.object({
+export const Two$inboundSchema: z.ZodType<Two, z.ZodTypeDef, unknown> = z.object({
     spaceId: z.string(),
     scopeSlug: z.string(),
     scopeId: z.string(),
 });
 
 /** @internal */
-export type FavoriteProjectsAndSpaces2$Outbound = {
+export type Two$Outbound = {
     spaceId: string;
     scopeSlug: string;
     scopeId: string;
 };
 
 /** @internal */
-export const FavoriteProjectsAndSpaces2$outboundSchema: z.ZodType<
-    FavoriteProjectsAndSpaces2$Outbound,
-    z.ZodTypeDef,
-    FavoriteProjectsAndSpaces2
-> = z.object({
+export const Two$outboundSchema: z.ZodType<Two$Outbound, z.ZodTypeDef, Two> = z.object({
     spaceId: z.string(),
     scopeSlug: z.string(),
     scopeId: z.string(),
@@ -8088,39 +8826,31 @@ export const FavoriteProjectsAndSpaces2$outboundSchema: z.ZodType<
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace FavoriteProjectsAndSpaces2$ {
-    /** @deprecated use `FavoriteProjectsAndSpaces2$inboundSchema` instead. */
-    export const inboundSchema = FavoriteProjectsAndSpaces2$inboundSchema;
-    /** @deprecated use `FavoriteProjectsAndSpaces2$outboundSchema` instead. */
-    export const outboundSchema = FavoriteProjectsAndSpaces2$outboundSchema;
-    /** @deprecated use `FavoriteProjectsAndSpaces2$Outbound` instead. */
-    export type Outbound = FavoriteProjectsAndSpaces2$Outbound;
+export namespace Two$ {
+    /** @deprecated use `Two$inboundSchema` instead. */
+    export const inboundSchema = Two$inboundSchema;
+    /** @deprecated use `Two$outboundSchema` instead. */
+    export const outboundSchema = Two$outboundSchema;
+    /** @deprecated use `Two$Outbound` instead. */
+    export type Outbound = Two$Outbound;
 }
 
 /** @internal */
-export const FavoriteProjectsAndSpaces1$inboundSchema: z.ZodType<
-    FavoriteProjectsAndSpaces1,
-    z.ZodTypeDef,
-    unknown
-> = z.object({
+export const One$inboundSchema: z.ZodType<One, z.ZodTypeDef, unknown> = z.object({
     projectId: z.string(),
     scopeSlug: z.string(),
     scopeId: z.string(),
 });
 
 /** @internal */
-export type FavoriteProjectsAndSpaces1$Outbound = {
+export type One$Outbound = {
     projectId: string;
     scopeSlug: string;
     scopeId: string;
 };
 
 /** @internal */
-export const FavoriteProjectsAndSpaces1$outboundSchema: z.ZodType<
-    FavoriteProjectsAndSpaces1$Outbound,
-    z.ZodTypeDef,
-    FavoriteProjectsAndSpaces1
-> = z.object({
+export const One$outboundSchema: z.ZodType<One$Outbound, z.ZodTypeDef, One> = z.object({
     projectId: z.string(),
     scopeSlug: z.string(),
     scopeId: z.string(),
@@ -8130,13 +8860,13 @@ export const FavoriteProjectsAndSpaces1$outboundSchema: z.ZodType<
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace FavoriteProjectsAndSpaces1$ {
-    /** @deprecated use `FavoriteProjectsAndSpaces1$inboundSchema` instead. */
-    export const inboundSchema = FavoriteProjectsAndSpaces1$inboundSchema;
-    /** @deprecated use `FavoriteProjectsAndSpaces1$outboundSchema` instead. */
-    export const outboundSchema = FavoriteProjectsAndSpaces1$outboundSchema;
-    /** @deprecated use `FavoriteProjectsAndSpaces1$Outbound` instead. */
-    export type Outbound = FavoriteProjectsAndSpaces1$Outbound;
+export namespace One$ {
+    /** @deprecated use `One$inboundSchema` instead. */
+    export const inboundSchema = One$inboundSchema;
+    /** @deprecated use `One$outboundSchema` instead. */
+    export const outboundSchema = One$outboundSchema;
+    /** @deprecated use `One$Outbound` instead. */
+    export type Outbound = One$Outbound;
 }
 
 /** @internal */
@@ -8144,25 +8874,17 @@ export const FavoriteProjectsAndSpaces$inboundSchema: z.ZodType<
     FavoriteProjectsAndSpaces,
     z.ZodTypeDef,
     unknown
-> = z.union([
-    z.lazy(() => FavoriteProjectsAndSpaces1$inboundSchema),
-    z.lazy(() => FavoriteProjectsAndSpaces2$inboundSchema),
-]);
+> = z.union([z.lazy(() => One$inboundSchema), z.lazy(() => Two$inboundSchema)]);
 
 /** @internal */
-export type FavoriteProjectsAndSpaces$Outbound =
-    | FavoriteProjectsAndSpaces1$Outbound
-    | FavoriteProjectsAndSpaces2$Outbound;
+export type FavoriteProjectsAndSpaces$Outbound = One$Outbound | Two$Outbound;
 
 /** @internal */
 export const FavoriteProjectsAndSpaces$outboundSchema: z.ZodType<
     FavoriteProjectsAndSpaces$Outbound,
     z.ZodTypeDef,
     FavoriteProjectsAndSpaces
-> = z.union([
-    z.lazy(() => FavoriteProjectsAndSpaces1$outboundSchema),
-    z.lazy(() => FavoriteProjectsAndSpaces2$outboundSchema),
-]);
+> = z.union([z.lazy(() => One$outboundSchema), z.lazy(() => Two$outboundSchema)]);
 
 /**
  * @internal
@@ -8311,86 +9033,6 @@ export namespace FeatureBlocks$ {
 }
 
 /** @internal */
-export const AuthUserStatus$inboundSchema: z.ZodNativeEnum<typeof AuthUserStatus> =
-    z.nativeEnum(AuthUserStatus);
-
-/** @internal */
-export const AuthUserStatus$outboundSchema: z.ZodNativeEnum<typeof AuthUserStatus> =
-    AuthUserStatus$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AuthUserStatus$ {
-    /** @deprecated use `AuthUserStatus$inboundSchema` instead. */
-    export const inboundSchema = AuthUserStatus$inboundSchema;
-    /** @deprecated use `AuthUserStatus$outboundSchema` instead. */
-    export const outboundSchema = AuthUserStatus$outboundSchema;
-}
-
-/** @internal */
-export const Migration$inboundSchema: z.ZodType<Migration, z.ZodTypeDef, unknown> = z.object({
-    teamId: z.string().optional(),
-    status: AuthUserStatus$inboundSchema,
-});
-
-/** @internal */
-export type Migration$Outbound = {
-    teamId?: string | undefined;
-    status: string;
-};
-
-/** @internal */
-export const Migration$outboundSchema: z.ZodType<Migration$Outbound, z.ZodTypeDef, Migration> =
-    z.object({
-        teamId: z.string().optional(),
-        status: AuthUserStatus$outboundSchema,
-    });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace Migration$ {
-    /** @deprecated use `Migration$inboundSchema` instead. */
-    export const inboundSchema = Migration$inboundSchema;
-    /** @deprecated use `Migration$outboundSchema` instead. */
-    export const outboundSchema = Migration$outboundSchema;
-    /** @deprecated use `Migration$Outbound` instead. */
-    export type Outbound = Migration$Outbound;
-}
-
-/** @internal */
-export const Northstar$inboundSchema: z.ZodType<Northstar, z.ZodTypeDef, unknown> = z.object({
-    migration: z.lazy(() => Migration$inboundSchema).optional(),
-});
-
-/** @internal */
-export type Northstar$Outbound = {
-    migration?: Migration$Outbound | undefined;
-};
-
-/** @internal */
-export const Northstar$outboundSchema: z.ZodType<Northstar$Outbound, z.ZodTypeDef, Northstar> =
-    z.object({
-        migration: z.lazy(() => Migration$outboundSchema).optional(),
-    });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace Northstar$ {
-    /** @deprecated use `Northstar$inboundSchema` instead. */
-    export const inboundSchema = Northstar$inboundSchema;
-    /** @deprecated use `Northstar$outboundSchema` instead. */
-    export const outboundSchema = Northstar$outboundSchema;
-    /** @deprecated use `Northstar$Outbound` instead. */
-    export type Outbound = Northstar$Outbound;
-}
-
-/** @internal */
 export const NorthstarMigration$inboundSchema: z.ZodType<
     NorthstarMigration,
     z.ZodTypeDef,
@@ -8477,18 +9119,12 @@ export const AuthUser$inboundSchema: z.ZodType<AuthUser, z.ZodTypeDef, unknown> 
         .optional(),
     dismissedToasts: z.array(z.lazy(() => DismissedToasts$inboundSchema)).optional(),
     favoriteProjectsAndSpaces: z
-        .array(
-            z.union([
-                z.lazy(() => FavoriteProjectsAndSpaces1$inboundSchema),
-                z.lazy(() => FavoriteProjectsAndSpaces2$inboundSchema),
-            ])
-        )
+        .array(z.union([z.lazy(() => One$inboundSchema), z.lazy(() => Two$inboundSchema)]))
         .optional(),
     hasTrialAvailable: z.boolean(),
     remoteCaching: z.lazy(() => RemoteCaching$inboundSchema).optional(),
     dataCache: z.lazy(() => DataCache$inboundSchema).optional(),
     featureBlocks: z.lazy(() => FeatureBlocks$inboundSchema).optional(),
-    northstar: z.lazy(() => Northstar$inboundSchema).optional(),
     northstarMigration: z.lazy(() => NorthstarMigration$inboundSchema).optional(),
     id: z.string(),
     email: z.string(),
@@ -8512,14 +9148,11 @@ export type AuthUser$Outbound = {
     importFlowGitProvider?: string | undefined;
     preferredScopesAndGitNamespaces?: Array<PreferredScopesAndGitNamespaces$Outbound> | undefined;
     dismissedToasts?: Array<DismissedToasts$Outbound> | undefined;
-    favoriteProjectsAndSpaces?:
-        | Array<FavoriteProjectsAndSpaces1$Outbound | FavoriteProjectsAndSpaces2$Outbound>
-        | undefined;
+    favoriteProjectsAndSpaces?: Array<One$Outbound | Two$Outbound> | undefined;
     hasTrialAvailable: boolean;
     remoteCaching?: RemoteCaching$Outbound | undefined;
     dataCache?: DataCache$Outbound | undefined;
     featureBlocks?: FeatureBlocks$Outbound | undefined;
-    northstar?: Northstar$Outbound | undefined;
     northstarMigration?: NorthstarMigration$Outbound | undefined;
     id: string;
     email: string;
@@ -8547,18 +9180,12 @@ export const AuthUser$outboundSchema: z.ZodType<AuthUser$Outbound, z.ZodTypeDef,
             .optional(),
         dismissedToasts: z.array(z.lazy(() => DismissedToasts$outboundSchema)).optional(),
         favoriteProjectsAndSpaces: z
-            .array(
-                z.union([
-                    z.lazy(() => FavoriteProjectsAndSpaces1$outboundSchema),
-                    z.lazy(() => FavoriteProjectsAndSpaces2$outboundSchema),
-                ])
-            )
+            .array(z.union([z.lazy(() => One$outboundSchema), z.lazy(() => Two$outboundSchema)]))
             .optional(),
         hasTrialAvailable: z.boolean(),
         remoteCaching: z.lazy(() => RemoteCaching$outboundSchema).optional(),
         dataCache: z.lazy(() => DataCache$outboundSchema).optional(),
         featureBlocks: z.lazy(() => FeatureBlocks$outboundSchema).optional(),
-        northstar: z.lazy(() => Northstar$outboundSchema).optional(),
         northstarMigration: z.lazy(() => NorthstarMigration$outboundSchema).optional(),
         id: z.string(),
         email: z.string(),

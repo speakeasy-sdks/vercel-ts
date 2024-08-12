@@ -4,7 +4,7 @@
 
 import { checksCreate } from "../funcs/checksCreate.js";
 import { checksGet } from "../funcs/checksGet.js";
-import { checksGetAll } from "../funcs/checksGetAll.js";
+import { checksList } from "../funcs/checksList.js";
 import { checksRerequest } from "../funcs/checksRerequest.js";
 import { checksUpdate } from "../funcs/checksUpdate.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
@@ -38,13 +38,13 @@ export class Checks extends ClientSDK {
      * @remarks
      * List all of the checks created for a deployment.
      */
-    async getAll(
+    async list(
         deploymentId: string,
         teamId?: string | undefined,
         slug?: string | undefined,
         options?: RequestOptions
     ): Promise<GetAllChecksResponseBody> {
-        return unwrapAsync(checksGetAll(this, deploymentId, teamId, slug, options));
+        return unwrapAsync(checksList(this, deploymentId, teamId, slug, options));
     }
 
     /**

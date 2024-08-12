@@ -1,7 +1,5 @@
 # CancelDeploymentProject
 
-The public project information associated with the deployment.
-
 
 ## Fields
 

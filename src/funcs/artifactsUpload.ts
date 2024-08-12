@@ -103,11 +103,12 @@ export async function artifactsUpload(
         }),
     });
 
-    const security$ = await extractSecurity(client$.options$.security);
+    const bearerToken$ = await extractSecurity(client$.options$.bearerToken);
+    const security$ = bearerToken$ == null ? {} : { bearerToken: bearerToken$ };
     const context = {
         operationID: "uploadArtifact",
         oAuth2Scopes: [],
-        securitySource: client$.options$.security,
+        securitySource: client$.options$.bearerToken,
     };
     const securitySettings$ = resolveGlobalSecurity(security$);
 

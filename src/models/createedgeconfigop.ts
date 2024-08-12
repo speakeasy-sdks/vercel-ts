@@ -5,9 +5,33 @@
 import { remap as remap$ } from "../lib/primitives.js";
 import * as z from "zod";
 
+export type Two4 = {};
+
+export type Items2 = Two4 | string | number | boolean;
+
+export type One4 = {};
+
+export type Items1 = One4 | string | number | boolean;
+
+export type CreateEdgeConfigItems =
+    | One4
+    | string
+    | number
+    | boolean
+    | Array<Two4 | string | number | boolean>;
+
 export type CreateEdgeConfigRequestBody = {
     slug: string;
-    items?: any | undefined;
+    items?:
+        | {
+              [k: string]:
+                  | One4
+                  | string
+                  | number
+                  | boolean
+                  | Array<Two4 | string | number | boolean>;
+          }
+        | undefined;
 };
 
 export type CreateEdgeConfigRequest = {
@@ -56,19 +80,186 @@ export type CreateEdgeConfigResponseBody = {
 };
 
 /** @internal */
+export const Two4$inboundSchema: z.ZodType<Two4, z.ZodTypeDef, unknown> = z.object({});
+
+/** @internal */
+export type Two4$Outbound = {};
+
+/** @internal */
+export const Two4$outboundSchema: z.ZodType<Two4$Outbound, z.ZodTypeDef, Two4> = z.object({});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace Two4$ {
+    /** @deprecated use `Two4$inboundSchema` instead. */
+    export const inboundSchema = Two4$inboundSchema;
+    /** @deprecated use `Two4$outboundSchema` instead. */
+    export const outboundSchema = Two4$outboundSchema;
+    /** @deprecated use `Two4$Outbound` instead. */
+    export type Outbound = Two4$Outbound;
+}
+
+/** @internal */
+export const Items2$inboundSchema: z.ZodType<Items2, z.ZodTypeDef, unknown> = z.union([
+    z.lazy(() => Two4$inboundSchema),
+    z.string(),
+    z.number(),
+    z.boolean(),
+]);
+
+/** @internal */
+export type Items2$Outbound = Two4$Outbound | string | number | boolean;
+
+/** @internal */
+export const Items2$outboundSchema: z.ZodType<Items2$Outbound, z.ZodTypeDef, Items2> = z.union([
+    z.lazy(() => Two4$outboundSchema),
+    z.string(),
+    z.number(),
+    z.boolean(),
+]);
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace Items2$ {
+    /** @deprecated use `Items2$inboundSchema` instead. */
+    export const inboundSchema = Items2$inboundSchema;
+    /** @deprecated use `Items2$outboundSchema` instead. */
+    export const outboundSchema = Items2$outboundSchema;
+    /** @deprecated use `Items2$Outbound` instead. */
+    export type Outbound = Items2$Outbound;
+}
+
+/** @internal */
+export const One4$inboundSchema: z.ZodType<One4, z.ZodTypeDef, unknown> = z.object({});
+
+/** @internal */
+export type One4$Outbound = {};
+
+/** @internal */
+export const One4$outboundSchema: z.ZodType<One4$Outbound, z.ZodTypeDef, One4> = z.object({});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace One4$ {
+    /** @deprecated use `One4$inboundSchema` instead. */
+    export const inboundSchema = One4$inboundSchema;
+    /** @deprecated use `One4$outboundSchema` instead. */
+    export const outboundSchema = One4$outboundSchema;
+    /** @deprecated use `One4$Outbound` instead. */
+    export type Outbound = One4$Outbound;
+}
+
+/** @internal */
+export const Items1$inboundSchema: z.ZodType<Items1, z.ZodTypeDef, unknown> = z.union([
+    z.lazy(() => One4$inboundSchema),
+    z.string(),
+    z.number(),
+    z.boolean(),
+]);
+
+/** @internal */
+export type Items1$Outbound = One4$Outbound | string | number | boolean;
+
+/** @internal */
+export const Items1$outboundSchema: z.ZodType<Items1$Outbound, z.ZodTypeDef, Items1> = z.union([
+    z.lazy(() => One4$outboundSchema),
+    z.string(),
+    z.number(),
+    z.boolean(),
+]);
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace Items1$ {
+    /** @deprecated use `Items1$inboundSchema` instead. */
+    export const inboundSchema = Items1$inboundSchema;
+    /** @deprecated use `Items1$outboundSchema` instead. */
+    export const outboundSchema = Items1$outboundSchema;
+    /** @deprecated use `Items1$Outbound` instead. */
+    export type Outbound = Items1$Outbound;
+}
+
+/** @internal */
+export const CreateEdgeConfigItems$inboundSchema: z.ZodType<
+    CreateEdgeConfigItems,
+    z.ZodTypeDef,
+    unknown
+> = z.union([
+    z.union([z.lazy(() => One4$inboundSchema), z.string(), z.number(), z.boolean()]),
+    z.array(z.union([z.lazy(() => Two4$inboundSchema), z.string(), z.number(), z.boolean()])),
+]);
+
+/** @internal */
+export type CreateEdgeConfigItems$Outbound =
+    | One4$Outbound
+    | string
+    | number
+    | boolean
+    | Array<Two4$Outbound | string | number | boolean>;
+
+/** @internal */
+export const CreateEdgeConfigItems$outboundSchema: z.ZodType<
+    CreateEdgeConfigItems$Outbound,
+    z.ZodTypeDef,
+    CreateEdgeConfigItems
+> = z.union([
+    z.union([z.lazy(() => One4$outboundSchema), z.string(), z.number(), z.boolean()]),
+    z.array(z.union([z.lazy(() => Two4$outboundSchema), z.string(), z.number(), z.boolean()])),
+]);
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace CreateEdgeConfigItems$ {
+    /** @deprecated use `CreateEdgeConfigItems$inboundSchema` instead. */
+    export const inboundSchema = CreateEdgeConfigItems$inboundSchema;
+    /** @deprecated use `CreateEdgeConfigItems$outboundSchema` instead. */
+    export const outboundSchema = CreateEdgeConfigItems$outboundSchema;
+    /** @deprecated use `CreateEdgeConfigItems$Outbound` instead. */
+    export type Outbound = CreateEdgeConfigItems$Outbound;
+}
+
+/** @internal */
 export const CreateEdgeConfigRequestBody$inboundSchema: z.ZodType<
     CreateEdgeConfigRequestBody,
     z.ZodTypeDef,
     unknown
 > = z.object({
     slug: z.string(),
-    items: z.any().optional(),
+    items: z
+        .record(
+            z.union([
+                z.union([z.lazy(() => One4$inboundSchema), z.string(), z.number(), z.boolean()]),
+                z.array(
+                    z.union([z.lazy(() => Two4$inboundSchema), z.string(), z.number(), z.boolean()])
+                ),
+            ])
+        )
+        .optional(),
 });
 
 /** @internal */
 export type CreateEdgeConfigRequestBody$Outbound = {
     slug: string;
-    items?: any | undefined;
+    items?:
+        | {
+              [k: string]:
+                  | One4$Outbound
+                  | string
+                  | number
+                  | boolean
+                  | Array<Two4$Outbound | string | number | boolean>;
+          }
+        | undefined;
 };
 
 /** @internal */
@@ -78,7 +269,21 @@ export const CreateEdgeConfigRequestBody$outboundSchema: z.ZodType<
     CreateEdgeConfigRequestBody
 > = z.object({
     slug: z.string(),
-    items: z.any().optional(),
+    items: z
+        .record(
+            z.union([
+                z.union([z.lazy(() => One4$outboundSchema), z.string(), z.number(), z.boolean()]),
+                z.array(
+                    z.union([
+                        z.lazy(() => Two4$outboundSchema),
+                        z.string(),
+                        z.number(),
+                        z.boolean(),
+                    ])
+                ),
+            ])
+        )
+        .optional(),
 });
 
 /**

@@ -4,7 +4,7 @@
 ### Available Operations
 
 * [create](#create) - Creates a new Check
-* [getAll](#getall) - Retrieve a list of all checks
+* [list](#list) - Retrieve a list of all checks
 * [get](#get) - Get a single check
 * [update](#update) - Update a check
 * [rerequest](#rerequest) - Rerequest a check
@@ -19,13 +19,42 @@ Creates a new check. This endpoint must be called with an OAuth2 or it will prod
 import { Vercel } from "vercel";
 
 const vercel = new Vercel({
-  security: {
-    bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
-  },
+  bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
 async function run() {
   const result = await vercel.checks.create("dpl_2qn7PZrx89yxY34vEZPD31Y9XVj6");
+
+  // Handle the result
+  console.log(result)
+}
+
+run();
+```
+
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { VercelCore } from "vercel/core.js";
+import { checksCreate } from "vercel/funcs/checksCreate.js";
+
+// Use `VercelCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const vercel = new VercelCore({
+  bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const res = await checksCreate(vercel, "dpl_2qn7PZrx89yxY34vEZPD31Y9XVj6");
+
+  if (!res.ok) {
+    throw res.error;
+  }
+
+  const { value: result } = res;
 
   // Handle the result
   console.log(result)
@@ -56,7 +85,7 @@ run();
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
 
-## getAll
+## list
 
 List all of the checks created for a deployment.
 
@@ -66,13 +95,42 @@ List all of the checks created for a deployment.
 import { Vercel } from "vercel";
 
 const vercel = new Vercel({
-  security: {
-    bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
-  },
+  bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
 async function run() {
-  const result = await vercel.checks.getAll("dpl_2qn7PZrx89yxY34vEZPD31Y9XVj6");
+  const result = await vercel.checks.list("dpl_2qn7PZrx89yxY34vEZPD31Y9XVj6");
+
+  // Handle the result
+  console.log(result)
+}
+
+run();
+```
+
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { VercelCore } from "vercel/core.js";
+import { checksList } from "vercel/funcs/checksList.js";
+
+// Use `VercelCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const vercel = new VercelCore({
+  bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const res = await checksList(vercel, "dpl_2qn7PZrx89yxY34vEZPD31Y9XVj6");
+
+  if (!res.ok) {
+    throw res.error;
+  }
+
+  const { value: result } = res;
 
   // Handle the result
   console.log(result)
@@ -112,13 +170,42 @@ Return a detailed response for a single check.
 import { Vercel } from "vercel";
 
 const vercel = new Vercel({
-  security: {
-    bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
-  },
+  bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
 async function run() {
   const result = await vercel.checks.get("dpl_2qn7PZrx89yxY34vEZPD31Y9XVj6", "check_2qn7PZrx89yxY34vEZPD31Y9XVj6");
+
+  // Handle the result
+  console.log(result)
+}
+
+run();
+```
+
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { VercelCore } from "vercel/core.js";
+import { checksGet } from "vercel/funcs/checksGet.js";
+
+// Use `VercelCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const vercel = new VercelCore({
+  bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const res = await checksGet(vercel, "dpl_2qn7PZrx89yxY34vEZPD31Y9XVj6", "check_2qn7PZrx89yxY34vEZPD31Y9XVj6");
+
+  if (!res.ok) {
+    throw res.error;
+  }
+
+  const { value: result } = res;
 
   // Handle the result
   console.log(result)
@@ -159,9 +246,7 @@ Update an existing check. This endpoint must be called with an OAuth2 or it will
 import { Vercel } from "vercel";
 
 const vercel = new Vercel({
-  security: {
-    bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
-  },
+  bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
 async function run() {
@@ -169,6 +254,40 @@ async function run() {
     deploymentId: "dpl_2qn7PZrx89yxY34vEZPD31Y9XVj6",
     checkId: "check_2qn7PZrx89yxY34vEZPD31Y9XVj6",
   });
+
+  // Handle the result
+  console.log(result)
+}
+
+run();
+```
+
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { VercelCore } from "vercel/core.js";
+import { checksUpdate } from "vercel/funcs/checksUpdate.js";
+
+// Use `VercelCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const vercel = new VercelCore({
+  bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const res = await checksUpdate(vercel, {
+    deploymentId: "dpl_2qn7PZrx89yxY34vEZPD31Y9XVj6",
+    checkId: "check_2qn7PZrx89yxY34vEZPD31Y9XVj6",
+  });
+
+  if (!res.ok) {
+    throw res.error;
+  }
+
+  const { value: result } = res;
 
   // Handle the result
   console.log(result)
@@ -206,13 +325,42 @@ Rerequest a selected check that has failed.
 import { Vercel } from "vercel";
 
 const vercel = new Vercel({
-  security: {
-    bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
-  },
+  bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
 async function run() {
   const result = await vercel.checks.rerequest("dpl_2qn7PZrx89yxY34vEZPD31Y9XVj6", "check_2qn7PZrx89yxY34vEZPD31Y9XVj6");
+
+  // Handle the result
+  console.log(result)
+}
+
+run();
+```
+
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { VercelCore } from "vercel/core.js";
+import { checksRerequest } from "vercel/funcs/checksRerequest.js";
+
+// Use `VercelCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const vercel = new VercelCore({
+  bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const res = await checksRerequest(vercel, "dpl_2qn7PZrx89yxY34vEZPD31Y9XVj6", "check_2qn7PZrx89yxY34vEZPD31Y9XVj6");
+
+  if (!res.ok) {
+    throw res.error;
+  }
+
+  const { value: result } = res;
 
   // Handle the result
   console.log(result)

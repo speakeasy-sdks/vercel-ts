@@ -1,15 +1,12 @@
 # ResponseBodySource
 
-Where was the deployment created from
+Source defines where the configuration was installed from. It is used to analyze user engagement for integration installations in product metrics.
 
 
 ## Values
 
-| Name                   | Value                  |
-| ---------------------- | ---------------------- |
-| `ApiTriggerGitDeploy`  | api-trigger-git-deploy |
-| `Cli`                  | cli                    |
-| `CloneRepo`            | clone/repo             |
-| `Git`                  | git                    |
-| `Import`               | import                 |
-| `ImportRepo`           | import/repo            |
+| Name           | Value          |
+| -------------- | -------------- |
+| `Marketplace`  | marketplace    |
+| `DeployButton` | deploy-button  |
+| `External`     | external       |

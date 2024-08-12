@@ -9,5 +9,5 @@
 | `Filesystem` | filesystem   |
 | `Hit`        | hit          |
 | `Miss`       | miss         |
-| `Resource`   | resource     |
 | `Rewrite`    | rewrite      |
+| `Resource`   | resource     |

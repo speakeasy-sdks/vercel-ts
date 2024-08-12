@@ -4,15 +4,13 @@
 
 import { aliasesAssign } from "../funcs/aliasesAssign.js";
 import { aliasesDelete } from "../funcs/aliasesDelete.js";
-import { aliasesGetAlias } from "../funcs/aliasesGetAlias.js";
+import { aliasesGet } from "../funcs/aliasesGet.js";
 import { aliasesList } from "../funcs/aliasesList.js";
-import { aliasesListDeploymentAliases } from "../funcs/aliasesListDeploymentAliases.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import { AssignAliasRequestBody, AssignAliasResponseBody } from "../models/assignaliasop.js";
 import { DeleteAliasResponseBody } from "../models/deletealiasop.js";
 import { GetAliasRequest, GetAliasResponseBody } from "../models/getaliasop.js";
 import { ListAliasesRequest, ListAliasesResponseBody } from "../models/listaliasesop.js";
-import { ListDeploymentAliasesResponseBody } from "../models/listdeploymentaliasesop.js";
 import { unwrapAsync } from "../types/fp.js";
 
 export class Aliases extends ClientSDK {
@@ -35,11 +33,11 @@ export class Aliases extends ClientSDK {
      * @remarks
      * Retrieves an Alias for the given host name or alias ID.
      */
-    async getAlias(
+    async get(
         request: GetAliasRequest,
         options?: RequestOptions
-    ): Promise<GetAliasResponseBody> {
-        return unwrapAsync(aliasesGetAlias(this, request, options));
+    ): Promise<Array<GetAliasResponseBody>> {
+        return unwrapAsync(aliasesGet(this, request, options));
     }
 
     /**
@@ -55,21 +53,6 @@ export class Aliases extends ClientSDK {
         options?: RequestOptions
     ): Promise<DeleteAliasResponseBody> {
         return unwrapAsync(aliasesDelete(this, aliasId, teamId, slug, options));
-    }
-
-    /**
-     * List Deployment Aliases
-     *
-     * @remarks
-     * Retrieves all Aliases for the Deployment with the given ID. The authenticated user or team must own the deployment.
-     */
-    async listDeploymentAliases(
-        id: string,
-        teamId?: string | undefined,
-        slug?: string | undefined,
-        options?: RequestOptions
-    ): Promise<ListDeploymentAliasesResponseBody> {
-        return unwrapAsync(aliasesListDeploymentAliases(this, id, teamId, slug, options));
     }
 
     /**

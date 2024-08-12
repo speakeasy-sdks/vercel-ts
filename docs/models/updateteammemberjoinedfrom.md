@@ -5,4 +5,4 @@
 
 | Field              | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
-| `ssoUserId`        | *any*              | :heavy_minus_sign: | N/A                |
+| `ssoUserId`        | *string*           | :heavy_minus_sign: | N/A                |

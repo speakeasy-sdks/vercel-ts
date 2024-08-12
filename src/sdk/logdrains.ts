@@ -4,10 +4,10 @@
 
 import { logDrainsCreate } from "../funcs/logDrainsCreate.js";
 import { logDrainsCreateConfigurable } from "../funcs/logDrainsCreateConfigurable.js";
-import { logDrainsDelete } from "../funcs/logDrainsDelete.js";
-import { logDrainsDeleteConfigurableLogDrain } from "../funcs/logDrainsDeleteConfigurableLogDrain.js";
-import { logDrainsGet } from "../funcs/logDrainsGet.js";
-import { logDrainsGetIntegrationLogDrains } from "../funcs/logDrainsGetIntegrationLogDrains.js";
+import { logDrainsDeleteConfigurable } from "../funcs/logDrainsDeleteConfigurable.js";
+import { logDrainsDeleteIntegration } from "../funcs/logDrainsDeleteIntegration.js";
+import { logDrainsGetAll } from "../funcs/logDrainsGetAll.js";
+import { logDrainsGetConfigurable } from "../funcs/logDrainsGetConfigurable.js";
 import { logDrainsList } from "../funcs/logDrainsList.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import {
@@ -30,12 +30,12 @@ export class LogDrains extends ClientSDK {
      * @remarks
      * Retrieves a list of all Integration log drains that are defined for the authenticated user or team. When using an OAuth2 token, the list is limited to log drains created by the authenticated integration.
      */
-    async getIntegrationLogDrains(
+    async list(
         teamId?: string | undefined,
         slug?: string | undefined,
         options?: RequestOptions
     ): Promise<Array<GetIntegrationLogDrainsResponseBody>> {
-        return unwrapAsync(logDrainsGetIntegrationLogDrains(this, teamId, slug, options));
+        return unwrapAsync(logDrainsList(this, teamId, slug, options));
     }
 
     /**
@@ -59,13 +59,13 @@ export class LogDrains extends ClientSDK {
      * @remarks
      * Deletes the Integration log drain with the provided `id`. When using an OAuth2 Token, the log drain can be deleted only if the integration owns it.
      */
-    async delete(
+    async deleteIntegration(
         id: string,
         teamId?: string | undefined,
         slug?: string | undefined,
         options?: RequestOptions
     ): Promise<void> {
-        return unwrapAsync(logDrainsDelete(this, id, teamId, slug, options));
+        return unwrapAsync(logDrainsDeleteIntegration(this, id, teamId, slug, options));
     }
 
     /**
@@ -74,13 +74,13 @@ export class LogDrains extends ClientSDK {
      * @remarks
      * Retrieves a Configurable Log Drain. This endpoint must be called with a team AccessToken (integration OAuth2 clients are not allowed). Only log drains owned by the authenticated team can be accessed.
      */
-    async get(
+    async getConfigurable(
         id: string,
         teamId?: string | undefined,
         slug?: string | undefined,
         options?: RequestOptions
     ): Promise<GetConfigurableLogDrainResponseBody> {
-        return unwrapAsync(logDrainsGet(this, id, teamId, slug, options));
+        return unwrapAsync(logDrainsGetConfigurable(this, id, teamId, slug, options));
     }
 
     /**
@@ -89,13 +89,13 @@ export class LogDrains extends ClientSDK {
      * @remarks
      * Deletes a Configurable Log Drain. This endpoint must be called with a team AccessToken (integration OAuth2 clients are not allowed). Only log drains owned by the authenticated team can be deleted.
      */
-    async deleteConfigurableLogDrain(
+    async deleteConfigurable(
         id: string,
         teamId?: string | undefined,
         slug?: string | undefined,
         options?: RequestOptions
     ): Promise<void> {
-        return unwrapAsync(logDrainsDeleteConfigurableLogDrain(this, id, teamId, slug, options));
+        return unwrapAsync(logDrainsDeleteConfigurable(this, id, teamId, slug, options));
     }
 
     /**
@@ -104,13 +104,13 @@ export class LogDrains extends ClientSDK {
      * @remarks
      * Retrieves a list of all the Log Drains owned by the account. This endpoint must be called with an account AccessToken (integration OAuth2 clients are not allowed). Only log drains owned by the authenticated account can be accessed.
      */
-    async list(
+    async getAll(
         projectId?: string | undefined,
         teamId?: string | undefined,
         slug?: string | undefined,
         options?: RequestOptions
     ): Promise<Array<GetAllLogDrainsResponseBody>> {
-        return unwrapAsync(logDrainsList(this, projectId, teamId, slug, options));
+        return unwrapAsync(logDrainsGetAll(this, projectId, teamId, slug, options));
     }
 
     /**

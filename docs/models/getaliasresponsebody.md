@@ -1,7 +1,5 @@
 # GetAliasResponseBody
 
-The alias information
-
 
 ## Fields
 

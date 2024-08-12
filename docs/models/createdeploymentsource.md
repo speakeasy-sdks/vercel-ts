@@ -1,7 +1,5 @@
 # CreateDeploymentSource
 
-Where was the deployment created from
-
 
 ## Values
 
@@ -13,3 +11,4 @@ Where was the deployment created from
 | `ImportRepo`           | import/repo            |
 | `CloneRepo`            | clone/repo             |
 | `ApiTriggerGitDeploy`  | api-trigger-git-deploy |
+| `Redeploy`             | redeploy               |

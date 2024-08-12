@@ -67,7 +67,7 @@ export type ComputedProjectRole = ClosedEnum<typeof ComputedProjectRole>;
 /**
  * The role of this user in the team.
  */
-export const TeamRole = {
+export const ResponseBodyTeamRole = {
     Owner: "OWNER",
     Member: "MEMBER",
     Developer: "DEVELOPER",
@@ -78,7 +78,7 @@ export const TeamRole = {
 /**
  * The role of this user in the team.
  */
-export type TeamRole = ClosedEnum<typeof TeamRole>;
+export type ResponseBodyTeamRole = ClosedEnum<typeof ResponseBodyTeamRole>;
 
 export type ResponseBodyMembers = {
     /**
@@ -116,10 +116,10 @@ export type ResponseBodyMembers = {
     /**
      * The role of this user in the team.
      */
-    teamRole: TeamRole;
+    teamRole: ResponseBodyTeamRole;
 };
 
-export type ResponseBodyPagination = {
+export type GetProjectMembersResponseBodyPagination = {
     hasNext: boolean;
     /**
      * Amount of items in the current page.
@@ -140,7 +140,7 @@ export type ResponseBodyPagination = {
  */
 export type GetProjectMembersResponseBody2 = {
     members: Array<ResponseBodyMembers>;
-    pagination: ResponseBodyPagination;
+    pagination: GetProjectMembersResponseBodyPagination;
 };
 
 export type GetProjectMembersResponseBody1 = {};
@@ -247,20 +247,22 @@ export namespace ComputedProjectRole$ {
 }
 
 /** @internal */
-export const TeamRole$inboundSchema: z.ZodNativeEnum<typeof TeamRole> = z.nativeEnum(TeamRole);
+export const ResponseBodyTeamRole$inboundSchema: z.ZodNativeEnum<typeof ResponseBodyTeamRole> =
+    z.nativeEnum(ResponseBodyTeamRole);
 
 /** @internal */
-export const TeamRole$outboundSchema: z.ZodNativeEnum<typeof TeamRole> = TeamRole$inboundSchema;
+export const ResponseBodyTeamRole$outboundSchema: z.ZodNativeEnum<typeof ResponseBodyTeamRole> =
+    ResponseBodyTeamRole$inboundSchema;
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace TeamRole$ {
-    /** @deprecated use `TeamRole$inboundSchema` instead. */
-    export const inboundSchema = TeamRole$inboundSchema;
-    /** @deprecated use `TeamRole$outboundSchema` instead. */
-    export const outboundSchema = TeamRole$outboundSchema;
+export namespace ResponseBodyTeamRole$ {
+    /** @deprecated use `ResponseBodyTeamRole$inboundSchema` instead. */
+    export const inboundSchema = ResponseBodyTeamRole$inboundSchema;
+    /** @deprecated use `ResponseBodyTeamRole$outboundSchema` instead. */
+    export const outboundSchema = ResponseBodyTeamRole$outboundSchema;
 }
 
 /** @internal */
@@ -277,7 +279,7 @@ export const ResponseBodyMembers$inboundSchema: z.ZodType<
     username: z.string(),
     name: z.string().optional(),
     createdAt: z.number(),
-    teamRole: TeamRole$inboundSchema,
+    teamRole: ResponseBodyTeamRole$inboundSchema,
 });
 
 /** @internal */
@@ -307,7 +309,7 @@ export const ResponseBodyMembers$outboundSchema: z.ZodType<
     username: z.string(),
     name: z.string().optional(),
     createdAt: z.number(),
-    teamRole: TeamRole$outboundSchema,
+    teamRole: ResponseBodyTeamRole$outboundSchema,
 });
 
 /**
@@ -324,8 +326,8 @@ export namespace ResponseBodyMembers$ {
 }
 
 /** @internal */
-export const ResponseBodyPagination$inboundSchema: z.ZodType<
-    ResponseBodyPagination,
+export const GetProjectMembersResponseBodyPagination$inboundSchema: z.ZodType<
+    GetProjectMembersResponseBodyPagination,
     z.ZodTypeDef,
     unknown
 > = z.object({
@@ -336,7 +338,7 @@ export const ResponseBodyPagination$inboundSchema: z.ZodType<
 });
 
 /** @internal */
-export type ResponseBodyPagination$Outbound = {
+export type GetProjectMembersResponseBodyPagination$Outbound = {
     hasNext: boolean;
     count: number;
     next: number | null;
@@ -344,10 +346,10 @@ export type ResponseBodyPagination$Outbound = {
 };
 
 /** @internal */
-export const ResponseBodyPagination$outboundSchema: z.ZodType<
-    ResponseBodyPagination$Outbound,
+export const GetProjectMembersResponseBodyPagination$outboundSchema: z.ZodType<
+    GetProjectMembersResponseBodyPagination$Outbound,
     z.ZodTypeDef,
-    ResponseBodyPagination
+    GetProjectMembersResponseBodyPagination
 > = z.object({
     hasNext: z.boolean(),
     count: z.number(),
@@ -359,13 +361,13 @@ export const ResponseBodyPagination$outboundSchema: z.ZodType<
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ResponseBodyPagination$ {
-    /** @deprecated use `ResponseBodyPagination$inboundSchema` instead. */
-    export const inboundSchema = ResponseBodyPagination$inboundSchema;
-    /** @deprecated use `ResponseBodyPagination$outboundSchema` instead. */
-    export const outboundSchema = ResponseBodyPagination$outboundSchema;
-    /** @deprecated use `ResponseBodyPagination$Outbound` instead. */
-    export type Outbound = ResponseBodyPagination$Outbound;
+export namespace GetProjectMembersResponseBodyPagination$ {
+    /** @deprecated use `GetProjectMembersResponseBodyPagination$inboundSchema` instead. */
+    export const inboundSchema = GetProjectMembersResponseBodyPagination$inboundSchema;
+    /** @deprecated use `GetProjectMembersResponseBodyPagination$outboundSchema` instead. */
+    export const outboundSchema = GetProjectMembersResponseBodyPagination$outboundSchema;
+    /** @deprecated use `GetProjectMembersResponseBodyPagination$Outbound` instead. */
+    export type Outbound = GetProjectMembersResponseBodyPagination$Outbound;
 }
 
 /** @internal */
@@ -375,13 +377,13 @@ export const GetProjectMembersResponseBody2$inboundSchema: z.ZodType<
     unknown
 > = z.object({
     members: z.array(z.lazy(() => ResponseBodyMembers$inboundSchema)),
-    pagination: z.lazy(() => ResponseBodyPagination$inboundSchema),
+    pagination: z.lazy(() => GetProjectMembersResponseBodyPagination$inboundSchema),
 });
 
 /** @internal */
 export type GetProjectMembersResponseBody2$Outbound = {
     members: Array<ResponseBodyMembers$Outbound>;
-    pagination: ResponseBodyPagination$Outbound;
+    pagination: GetProjectMembersResponseBodyPagination$Outbound;
 };
 
 /** @internal */
@@ -391,7 +393,7 @@ export const GetProjectMembersResponseBody2$outboundSchema: z.ZodType<
     GetProjectMembersResponseBody2
 > = z.object({
     members: z.array(z.lazy(() => ResponseBodyMembers$outboundSchema)),
-    pagination: z.lazy(() => ResponseBodyPagination$outboundSchema),
+    pagination: z.lazy(() => GetProjectMembersResponseBodyPagination$outboundSchema),
 });
 
 /**

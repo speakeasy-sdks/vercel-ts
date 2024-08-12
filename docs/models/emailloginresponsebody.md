@@ -3,17 +3,9 @@
 The request was successful and an email was sent
 
 
-## Supported Types
+## Fields
 
-### `models.EmailLoginResponseBody1`
-
-```typescript
-const value: models.EmailLoginResponseBody1 = /* values here */
-```
-
-### `models.EmailLoginResponseBody2`
-
-```typescript
-const value: models.EmailLoginResponseBody2 = /* values here */
-```
-
+| Field              | Type               | Required           | Description        |
+| ------------------ | ------------------ | ------------------ | ------------------ |
+| `token`            | *string*           | :heavy_check_mark: | N/A                |
+| `securityCode`     | *string*           | :heavy_check_mark: | N/A                |

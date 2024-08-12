@@ -46,5 +46,6 @@
 | `Vitepress`      | vitepress        |
 | `Vuepress`       | vuepress         |
 | `Parcel`         | parcel           |
+| `Fasthtml`       | fasthtml         |
 | `Sanity`         | sanity           |
 | `Storybook`      | storybook        |

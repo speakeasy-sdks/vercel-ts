@@ -1,7 +1,5 @@
 # CancelDeploymentFunctions
 
-An object used to configure your Serverless Functions
-
 
 ## Fields
 

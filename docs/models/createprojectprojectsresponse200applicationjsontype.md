@@ -3,7 +3,6 @@
 
 ## Values
 
-| Name       | Value      |
-| ---------- | ---------- |
-| `Promote`  | promote    |
-| `Rollback` | rollback   |
+| Name      | Value     |
+| --------- | --------- |
+| `Lambdas` | LAMBDAS   |

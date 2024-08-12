@@ -3,12 +3,12 @@
 
 ### Available Operations
 
-* [get](#get) - Get cert by id
+* [getById](#getbyid) - Get cert by id
 * [remove](#remove) - Remove cert
 * [issue](#issue) - Issue a new cert
 * [upload](#upload) - Upload a cert
 
-## get
+## getById
 
 Get cert by id
 
@@ -18,13 +18,42 @@ Get cert by id
 import { Vercel } from "vercel";
 
 const vercel = new Vercel({
-  security: {
-    bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
-  },
+  bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
 async function run() {
-  const result = await vercel.certs.get("<value>");
+  const result = await vercel.certs.getById("<value>");
+
+  // Handle the result
+  console.log(result)
+}
+
+run();
+```
+
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { VercelCore } from "vercel/core.js";
+import { certsGetById } from "vercel/funcs/certsGetById.js";
+
+// Use `VercelCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const vercel = new VercelCore({
+  bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const res = await certsGetById(vercel, "<value>");
+
+  if (!res.ok) {
+    throw res.error;
+  }
+
+  const { value: result } = res;
 
   // Handle the result
   console.log(result)
@@ -64,13 +93,42 @@ Remove cert
 import { Vercel } from "vercel";
 
 const vercel = new Vercel({
-  security: {
-    bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
-  },
+  bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
 async function run() {
   const result = await vercel.certs.remove("<value>");
+
+  // Handle the result
+  console.log(result)
+}
+
+run();
+```
+
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { VercelCore } from "vercel/core.js";
+import { certsRemove } from "vercel/funcs/certsRemove.js";
+
+// Use `VercelCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const vercel = new VercelCore({
+  bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const res = await certsRemove(vercel, "<value>");
+
+  if (!res.ok) {
+    throw res.error;
+  }
+
+  const { value: result } = res;
 
   // Handle the result
   console.log(result)
@@ -110,13 +168,42 @@ Issue a new cert
 import { Vercel } from "vercel";
 
 const vercel = new Vercel({
-  security: {
-    bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
-  },
+  bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
 async function run() {
   const result = await vercel.certs.issue();
+
+  // Handle the result
+  console.log(result)
+}
+
+run();
+```
+
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { VercelCore } from "vercel/core.js";
+import { certsIssue } from "vercel/funcs/certsIssue.js";
+
+// Use `VercelCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const vercel = new VercelCore({
+  bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const res = await certsIssue(vercel);
+
+  if (!res.ok) {
+    throw res.error;
+  }
+
+  const { value: result } = res;
 
   // Handle the result
   console.log(result)
@@ -156,13 +243,42 @@ Upload a cert
 import { Vercel } from "vercel";
 
 const vercel = new Vercel({
-  security: {
-    bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
-  },
+  bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
 async function run() {
   const result = await vercel.certs.upload();
+
+  // Handle the result
+  console.log(result)
+}
+
+run();
+```
+
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { VercelCore } from "vercel/core.js";
+import { certsUpload } from "vercel/funcs/certsUpload.js";
+
+// Use `VercelCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const vercel = new VercelCore({
+  bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const res = await certsUpload(vercel);
+
+  if (!res.ok) {
+    throw res.error;
+  }
+
+  const { value: result } = res;
 
   // Handle the result
   console.log(result)

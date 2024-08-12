@@ -66,6 +66,8 @@ export type GetDomainDomain = {
      * An object containing information of the domain creator, including the user's id, username, and email.
      */
     creator: GetDomainCreator;
+    teamId: string | null;
+    userId: string;
     /**
      * If it was purchased through Vercel, the timestamp in milliseconds when it was purchased.
      */
@@ -227,6 +229,8 @@ export const GetDomainDomain$inboundSchema: z.ZodType<GetDomainDomain, z.ZodType
         intendedNameservers: z.array(z.string()),
         customNameservers: z.array(z.string()).optional(),
         creator: z.lazy(() => GetDomainCreator$inboundSchema),
+        teamId: z.nullable(z.string()),
+        userId: z.string(),
         boughtAt: z.nullable(z.number()),
         createdAt: z.number(),
         expiresAt: z.nullable(z.number()),
@@ -247,6 +251,8 @@ export type GetDomainDomain$Outbound = {
     intendedNameservers: Array<string>;
     customNameservers?: Array<string> | undefined;
     creator: GetDomainCreator$Outbound;
+    teamId: string | null;
+    userId: string;
     boughtAt: number | null;
     createdAt: number;
     expiresAt: number | null;
@@ -271,6 +277,8 @@ export const GetDomainDomain$outboundSchema: z.ZodType<
     intendedNameservers: z.array(z.string()),
     customNameservers: z.array(z.string()).optional(),
     creator: z.lazy(() => GetDomainCreator$outboundSchema),
+    teamId: z.nullable(z.string()),
+    userId: z.string(),
     boughtAt: z.nullable(z.number()),
     createdAt: z.number(),
     expiresAt: z.nullable(z.number()),

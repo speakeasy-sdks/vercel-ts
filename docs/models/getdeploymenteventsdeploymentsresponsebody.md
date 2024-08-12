@@ -3,15 +3,15 @@
 
 ## Supported Types
 
-### `models.ResponseBody1`
+### `models.GetDeploymentEventsResponseBody1`
 
 ```typescript
-const value: models.ResponseBody1 = /* values here */
+const value: models.GetDeploymentEventsResponseBody1 = /* values here */
 ```
 
-### `models.ResponseBody2`
+### `models.GetDeploymentEventsResponseBody2`
 
 ```typescript
-const value: models.ResponseBody2 = /* values here */
+const value: models.GetDeploymentEventsResponseBody2 = /* values here */
 ```
 

@@ -132,6 +132,9 @@ export type CreateTeamPro = {
     tier?: number | undefined;
     price: number;
     quantity: number;
+    /**
+     * The highest quantity in the current period. Used to render the correct enable/disable UI for add-ons.
+     */
     highestQuantity?: number | undefined;
     name?: string | undefined;
     hidden: boolean;
@@ -165,6 +168,9 @@ export type CreateTeamEnterprise = {
     tier?: number | undefined;
     price: number;
     quantity: number;
+    /**
+     * The highest quantity in the current period. Used to render the correct enable/disable UI for add-ons.
+     */
     highestQuantity?: number | undefined;
     name?: string | undefined;
     hidden: boolean;
@@ -193,6 +199,9 @@ export type CreateTeamAnalytics = {
     tier?: number | undefined;
     price: number;
     quantity: number;
+    /**
+     * The highest quantity in the current period. Used to render the correct enable/disable UI for add-ons.
+     */
     highestQuantity?: number | undefined;
     name?: string | undefined;
     hidden: boolean;
@@ -219,6 +228,9 @@ export type CreateTeamConcurrentBuilds = {
     tier?: number | undefined;
     price: number;
     quantity: number;
+    /**
+     * The highest quantity in the current period. Used to render the correct enable/disable UI for add-ons.
+     */
     highestQuantity?: number | undefined;
     name?: string | undefined;
     hidden: boolean;
@@ -243,10 +255,13 @@ export type CreateTeamTeamsResponse200Frequency = {
 /**
  * Will be used to create an invoice item. The price must be in cents: 2000 for $20.
  */
-export type CreateTeamMonitoring = {
+export type CreateTeamDeveloperExperiencePlatform = {
     tier?: number | undefined;
     price: number;
     quantity: number;
+    /**
+     * The highest quantity in the current period. Used to render the correct enable/disable UI for add-ons.
+     */
     highestQuantity?: number | undefined;
     name?: string | undefined;
     hidden: boolean;
@@ -271,10 +286,13 @@ export type CreateTeamTeamsResponse200ApplicationJSONFrequency = {
 /**
  * Will be used to create an invoice item. The price must be in cents: 2000 for $20.
  */
-export type CreateTeamPasswordProtection = {
+export type CreateTeamIncludedAllocationMiu = {
     tier?: number | undefined;
     price: number;
     quantity: number;
+    /**
+     * The highest quantity in the current period. Used to render the correct enable/disable UI for add-ons.
+     */
     highestQuantity?: number | undefined;
     name?: string | undefined;
     hidden: boolean;
@@ -299,10 +317,13 @@ export type CreateTeamTeamsResponse200ApplicationJSONResponseBodyFrequency = {
 /**
  * Will be used to create an invoice item. The price must be in cents: 2000 for $20.
  */
-export type CreateTeamPreviewDeploymentSuffix = {
+export type CreateTeamManagedInfrastructureCommitment = {
     tier?: number | undefined;
     price: number;
     quantity: number;
+    /**
+     * The highest quantity in the current period. Used to render the correct enable/disable UI for add-ons.
+     */
     highestQuantity?: number | undefined;
     name?: string | undefined;
     hidden: boolean;
@@ -327,10 +348,13 @@ export type CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingFrequenc
 /**
  * Will be used to create an invoice item. The price must be in cents: 2000 for $20.
  */
-export type CreateTeamSaml = {
+export type CreateTeamMonitoring = {
     tier?: number | undefined;
     price: number;
     quantity: number;
+    /**
+     * The highest quantity in the current period. Used to render the correct enable/disable UI for add-ons.
+     */
     highestQuantity?: number | undefined;
     name?: string | undefined;
     hidden: boolean;
@@ -356,10 +380,13 @@ export type CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceI
 /**
  * Will be used to create an invoice item. The price must be in cents: 2000 for $20.
  */
-export type CreateTeamTeamSeats = {
+export type CreateTeamPasswordProtection = {
     tier?: number | undefined;
     price: number;
     quantity: number;
+    /**
+     * The highest quantity in the current period. Used to render the correct enable/disable UI for add-ons.
+     */
     highestQuantity?: number | undefined;
     name?: string | undefined;
     hidden: boolean;
@@ -367,6 +394,150 @@ export type CreateTeamTeamSeats = {
     disabledAt?: number | null | undefined;
     frequency?:
         | CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsFrequency
+        | undefined;
+    maxQuantity?: number | undefined;
+};
+
+export const CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPreviewDeploymentSuffixInterval =
+    {
+        Month: "month",
+    } as const;
+export type CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPreviewDeploymentSuffixInterval =
+    ClosedEnum<
+        typeof CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPreviewDeploymentSuffixInterval
+    >;
+
+export type CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPreviewDeploymentSuffixFrequency =
+    {
+        interval: CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPreviewDeploymentSuffixInterval;
+        intervalCount: number;
+    };
+
+/**
+ * Will be used to create an invoice item. The price must be in cents: 2000 for $20.
+ */
+export type CreateTeamPreviewDeploymentSuffix = {
+    tier?: number | undefined;
+    price: number;
+    quantity: number;
+    /**
+     * The highest quantity in the current period. Used to render the correct enable/disable UI for add-ons.
+     */
+    highestQuantity?: number | undefined;
+    name?: string | undefined;
+    hidden: boolean;
+    createdAt?: number | undefined;
+    disabledAt?: number | null | undefined;
+    frequency?:
+        | CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPreviewDeploymentSuffixFrequency
+        | undefined;
+    maxQuantity?: number | undefined;
+};
+
+export const CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsSamlInterval =
+    {
+        Month: "month",
+    } as const;
+export type CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsSamlInterval =
+    ClosedEnum<
+        typeof CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsSamlInterval
+    >;
+
+export type CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsSamlFrequency =
+    {
+        interval: CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsSamlInterval;
+        intervalCount: number;
+    };
+
+/**
+ * Will be used to create an invoice item. The price must be in cents: 2000 for $20.
+ */
+export type CreateTeamSaml = {
+    tier?: number | undefined;
+    price: number;
+    quantity: number;
+    /**
+     * The highest quantity in the current period. Used to render the correct enable/disable UI for add-ons.
+     */
+    highestQuantity?: number | undefined;
+    name?: string | undefined;
+    hidden: boolean;
+    createdAt?: number | undefined;
+    disabledAt?: number | null | undefined;
+    frequency?:
+        | CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsSamlFrequency
+        | undefined;
+    maxQuantity?: number | undefined;
+};
+
+export const CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsTeamSeatsInterval =
+    {
+        Month: "month",
+    } as const;
+export type CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsTeamSeatsInterval =
+    ClosedEnum<
+        typeof CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsTeamSeatsInterval
+    >;
+
+export type CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsTeamSeatsFrequency =
+    {
+        interval: CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsTeamSeatsInterval;
+        intervalCount: number;
+    };
+
+/**
+ * Will be used to create an invoice item. The price must be in cents: 2000 for $20.
+ */
+export type CreateTeamTeamSeats = {
+    tier?: number | undefined;
+    price: number;
+    quantity: number;
+    /**
+     * The highest quantity in the current period. Used to render the correct enable/disable UI for add-ons.
+     */
+    highestQuantity?: number | undefined;
+    name?: string | undefined;
+    hidden: boolean;
+    createdAt?: number | undefined;
+    disabledAt?: number | null | undefined;
+    frequency?:
+        | CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsTeamSeatsFrequency
+        | undefined;
+    maxQuantity?: number | undefined;
+};
+
+export const CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsVercelMarketplaceInterval =
+    {
+        Month: "month",
+    } as const;
+export type CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsVercelMarketplaceInterval =
+    ClosedEnum<
+        typeof CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsVercelMarketplaceInterval
+    >;
+
+export type CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsVercelMarketplaceFrequency =
+    {
+        interval: CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsVercelMarketplaceInterval;
+        intervalCount: number;
+    };
+
+/**
+ * Will be used to create an invoice item. The price must be in cents: 2000 for $20.
+ */
+export type CreateTeamVercelMarketplace = {
+    tier?: number | undefined;
+    price: number;
+    quantity: number;
+    /**
+     * The highest quantity in the current period. Used to render the correct enable/disable UI for add-ons.
+     */
+    highestQuantity?: number | undefined;
+    name?: string | undefined;
+    hidden: boolean;
+    createdAt?: number | undefined;
+    disabledAt?: number | null | undefined;
+    frequency?:
+        | CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsVercelMarketplaceFrequency
         | undefined;
     maxQuantity?: number | undefined;
 };
@@ -393,6 +564,9 @@ export type CreateTeamWebAnalytics = {
     tier?: number | undefined;
     price: number;
     quantity: number;
+    /**
+     * The highest quantity in the current period. Used to render the correct enable/disable UI for add-ons.
+     */
     highestQuantity?: number | undefined;
     name?: string | undefined;
     hidden: boolean;
@@ -1162,6 +1336,18 @@ export type CreateTeamInvoiceItems = {
     /**
      * Will be used to create an invoice item. The price must be in cents: 2000 for $20.
      */
+    developerExperiencePlatform?: CreateTeamDeveloperExperiencePlatform | undefined;
+    /**
+     * Will be used to create an invoice item. The price must be in cents: 2000 for $20.
+     */
+    includedAllocationMiu?: CreateTeamIncludedAllocationMiu | undefined;
+    /**
+     * Will be used to create an invoice item. The price must be in cents: 2000 for $20.
+     */
+    managedInfrastructureCommitment?: CreateTeamManagedInfrastructureCommitment | undefined;
+    /**
+     * Will be used to create an invoice item. The price must be in cents: 2000 for $20.
+     */
     monitoring?: CreateTeamMonitoring | undefined;
     /**
      * Will be used to create an invoice item. The price must be in cents: 2000 for $20.
@@ -1179,6 +1365,10 @@ export type CreateTeamInvoiceItems = {
      * Will be used to create an invoice item. The price must be in cents: 2000 for $20.
      */
     teamSeats?: CreateTeamTeamSeats | undefined;
+    /**
+     * Will be used to create an invoice item. The price must be in cents: 2000 for $20.
+     */
+    vercelMarketplace?: CreateTeamVercelMarketplace | undefined;
     /**
      * Will be used to create an invoice item. The price must be in cents: 2000 for $20.
      */
@@ -1311,6 +1501,15 @@ export const CreateTeamPricingExperiment = {
 } as const;
 export type CreateTeamPricingExperiment = ClosedEnum<typeof CreateTeamPricingExperiment>;
 
+export type CreateTeamAwsMarketplace = {
+    productCode: string;
+    offerId?: string | undefined;
+    customerId: string;
+};
+
+/**
+ * IMPORTANT: If extending Billing, particularly with optional fields, make sure you also update `sync-orb-subscription-to-owner.ts` to handle the items when the object is recreated.
+ */
 export type CreateTeamBilling = {
     currency?: CreateTeamCurrency | undefined;
     cancelation?: number | null | undefined;
@@ -1336,6 +1535,9 @@ export type CreateTeamBilling = {
     status?: CreateTeamStatus | undefined;
     pricingExperiment?: CreateTeamPricingExperiment | undefined;
     orbMigrationScheduledAt?: number | null | undefined;
+    forceOrbMigration?: boolean | null | undefined;
+    awsMarketplace?: CreateTeamAwsMarketplace | null | undefined;
+    reseller?: string | undefined;
 };
 
 /**
@@ -1347,6 +1549,9 @@ export type CreateTeamResponseBody = {
      */
     id: string;
     slug: string;
+    /**
+     * IMPORTANT: If extending Billing, particularly with optional fields, make sure you also update `sync-orb-subscription-to-owner.ts` to handle the items when the object is recreated.
+     */
     billing: CreateTeamBilling;
 };
 
@@ -2337,8 +2542,8 @@ export namespace CreateTeamTeamsResponse200Frequency$ {
 }
 
 /** @internal */
-export const CreateTeamMonitoring$inboundSchema: z.ZodType<
-    CreateTeamMonitoring,
+export const CreateTeamDeveloperExperiencePlatform$inboundSchema: z.ZodType<
+    CreateTeamDeveloperExperiencePlatform,
     z.ZodTypeDef,
     unknown
 > = z.object({
@@ -2355,7 +2560,7 @@ export const CreateTeamMonitoring$inboundSchema: z.ZodType<
 });
 
 /** @internal */
-export type CreateTeamMonitoring$Outbound = {
+export type CreateTeamDeveloperExperiencePlatform$Outbound = {
     tier?: number | undefined;
     price: number;
     quantity: number;
@@ -2369,10 +2574,10 @@ export type CreateTeamMonitoring$Outbound = {
 };
 
 /** @internal */
-export const CreateTeamMonitoring$outboundSchema: z.ZodType<
-    CreateTeamMonitoring$Outbound,
+export const CreateTeamDeveloperExperiencePlatform$outboundSchema: z.ZodType<
+    CreateTeamDeveloperExperiencePlatform$Outbound,
     z.ZodTypeDef,
-    CreateTeamMonitoring
+    CreateTeamDeveloperExperiencePlatform
 > = z.object({
     tier: z.number().optional(),
     price: z.number(),
@@ -2390,13 +2595,13 @@ export const CreateTeamMonitoring$outboundSchema: z.ZodType<
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace CreateTeamMonitoring$ {
-    /** @deprecated use `CreateTeamMonitoring$inboundSchema` instead. */
-    export const inboundSchema = CreateTeamMonitoring$inboundSchema;
-    /** @deprecated use `CreateTeamMonitoring$outboundSchema` instead. */
-    export const outboundSchema = CreateTeamMonitoring$outboundSchema;
-    /** @deprecated use `CreateTeamMonitoring$Outbound` instead. */
-    export type Outbound = CreateTeamMonitoring$Outbound;
+export namespace CreateTeamDeveloperExperiencePlatform$ {
+    /** @deprecated use `CreateTeamDeveloperExperiencePlatform$inboundSchema` instead. */
+    export const inboundSchema = CreateTeamDeveloperExperiencePlatform$inboundSchema;
+    /** @deprecated use `CreateTeamDeveloperExperiencePlatform$outboundSchema` instead. */
+    export const outboundSchema = CreateTeamDeveloperExperiencePlatform$outboundSchema;
+    /** @deprecated use `CreateTeamDeveloperExperiencePlatform$Outbound` instead. */
+    export type Outbound = CreateTeamDeveloperExperiencePlatform$Outbound;
 }
 
 /** @internal */
@@ -2460,8 +2665,8 @@ export namespace CreateTeamTeamsResponse200ApplicationJSONFrequency$ {
 }
 
 /** @internal */
-export const CreateTeamPasswordProtection$inboundSchema: z.ZodType<
-    CreateTeamPasswordProtection,
+export const CreateTeamIncludedAllocationMiu$inboundSchema: z.ZodType<
+    CreateTeamIncludedAllocationMiu,
     z.ZodTypeDef,
     unknown
 > = z.object({
@@ -2480,7 +2685,7 @@ export const CreateTeamPasswordProtection$inboundSchema: z.ZodType<
 });
 
 /** @internal */
-export type CreateTeamPasswordProtection$Outbound = {
+export type CreateTeamIncludedAllocationMiu$Outbound = {
     tier?: number | undefined;
     price: number;
     quantity: number;
@@ -2494,10 +2699,10 @@ export type CreateTeamPasswordProtection$Outbound = {
 };
 
 /** @internal */
-export const CreateTeamPasswordProtection$outboundSchema: z.ZodType<
-    CreateTeamPasswordProtection$Outbound,
+export const CreateTeamIncludedAllocationMiu$outboundSchema: z.ZodType<
+    CreateTeamIncludedAllocationMiu$Outbound,
     z.ZodTypeDef,
-    CreateTeamPasswordProtection
+    CreateTeamIncludedAllocationMiu
 > = z.object({
     tier: z.number().optional(),
     price: z.number(),
@@ -2517,13 +2722,13 @@ export const CreateTeamPasswordProtection$outboundSchema: z.ZodType<
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace CreateTeamPasswordProtection$ {
-    /** @deprecated use `CreateTeamPasswordProtection$inboundSchema` instead. */
-    export const inboundSchema = CreateTeamPasswordProtection$inboundSchema;
-    /** @deprecated use `CreateTeamPasswordProtection$outboundSchema` instead. */
-    export const outboundSchema = CreateTeamPasswordProtection$outboundSchema;
-    /** @deprecated use `CreateTeamPasswordProtection$Outbound` instead. */
-    export type Outbound = CreateTeamPasswordProtection$Outbound;
+export namespace CreateTeamIncludedAllocationMiu$ {
+    /** @deprecated use `CreateTeamIncludedAllocationMiu$inboundSchema` instead. */
+    export const inboundSchema = CreateTeamIncludedAllocationMiu$inboundSchema;
+    /** @deprecated use `CreateTeamIncludedAllocationMiu$outboundSchema` instead. */
+    export const outboundSchema = CreateTeamIncludedAllocationMiu$outboundSchema;
+    /** @deprecated use `CreateTeamIncludedAllocationMiu$Outbound` instead. */
+    export type Outbound = CreateTeamIncludedAllocationMiu$Outbound;
 }
 
 /** @internal */
@@ -2591,8 +2796,8 @@ export namespace CreateTeamTeamsResponse200ApplicationJSONResponseBodyFrequency$
 }
 
 /** @internal */
-export const CreateTeamPreviewDeploymentSuffix$inboundSchema: z.ZodType<
-    CreateTeamPreviewDeploymentSuffix,
+export const CreateTeamManagedInfrastructureCommitment$inboundSchema: z.ZodType<
+    CreateTeamManagedInfrastructureCommitment,
     z.ZodTypeDef,
     unknown
 > = z.object({
@@ -2611,7 +2816,7 @@ export const CreateTeamPreviewDeploymentSuffix$inboundSchema: z.ZodType<
 });
 
 /** @internal */
-export type CreateTeamPreviewDeploymentSuffix$Outbound = {
+export type CreateTeamManagedInfrastructureCommitment$Outbound = {
     tier?: number | undefined;
     price: number;
     quantity: number;
@@ -2625,10 +2830,10 @@ export type CreateTeamPreviewDeploymentSuffix$Outbound = {
 };
 
 /** @internal */
-export const CreateTeamPreviewDeploymentSuffix$outboundSchema: z.ZodType<
-    CreateTeamPreviewDeploymentSuffix$Outbound,
+export const CreateTeamManagedInfrastructureCommitment$outboundSchema: z.ZodType<
+    CreateTeamManagedInfrastructureCommitment$Outbound,
     z.ZodTypeDef,
-    CreateTeamPreviewDeploymentSuffix
+    CreateTeamManagedInfrastructureCommitment
 > = z.object({
     tier: z.number().optional(),
     price: z.number(),
@@ -2648,13 +2853,13 @@ export const CreateTeamPreviewDeploymentSuffix$outboundSchema: z.ZodType<
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace CreateTeamPreviewDeploymentSuffix$ {
-    /** @deprecated use `CreateTeamPreviewDeploymentSuffix$inboundSchema` instead. */
-    export const inboundSchema = CreateTeamPreviewDeploymentSuffix$inboundSchema;
-    /** @deprecated use `CreateTeamPreviewDeploymentSuffix$outboundSchema` instead. */
-    export const outboundSchema = CreateTeamPreviewDeploymentSuffix$outboundSchema;
-    /** @deprecated use `CreateTeamPreviewDeploymentSuffix$Outbound` instead. */
-    export type Outbound = CreateTeamPreviewDeploymentSuffix$Outbound;
+export namespace CreateTeamManagedInfrastructureCommitment$ {
+    /** @deprecated use `CreateTeamManagedInfrastructureCommitment$inboundSchema` instead. */
+    export const inboundSchema = CreateTeamManagedInfrastructureCommitment$inboundSchema;
+    /** @deprecated use `CreateTeamManagedInfrastructureCommitment$outboundSchema` instead. */
+    export const outboundSchema = CreateTeamManagedInfrastructureCommitment$outboundSchema;
+    /** @deprecated use `CreateTeamManagedInfrastructureCommitment$Outbound` instead. */
+    export type Outbound = CreateTeamManagedInfrastructureCommitment$Outbound;
 }
 
 /** @internal */
@@ -2723,27 +2928,30 @@ export namespace CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingFre
 }
 
 /** @internal */
-export const CreateTeamSaml$inboundSchema: z.ZodType<CreateTeamSaml, z.ZodTypeDef, unknown> =
-    z.object({
-        tier: z.number().optional(),
-        price: z.number(),
-        quantity: z.number(),
-        highestQuantity: z.number().optional(),
-        name: z.string().optional(),
-        hidden: z.boolean(),
-        createdAt: z.number().optional(),
-        disabledAt: z.nullable(z.number()).optional(),
-        frequency: z
-            .lazy(
-                () =>
-                    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingFrequency$inboundSchema
-            )
-            .optional(),
-        maxQuantity: z.number().optional(),
-    });
+export const CreateTeamMonitoring$inboundSchema: z.ZodType<
+    CreateTeamMonitoring,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    tier: z.number().optional(),
+    price: z.number(),
+    quantity: z.number(),
+    highestQuantity: z.number().optional(),
+    name: z.string().optional(),
+    hidden: z.boolean(),
+    createdAt: z.number().optional(),
+    disabledAt: z.nullable(z.number()).optional(),
+    frequency: z
+        .lazy(
+            () =>
+                CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingFrequency$inboundSchema
+        )
+        .optional(),
+    maxQuantity: z.number().optional(),
+});
 
 /** @internal */
-export type CreateTeamSaml$Outbound = {
+export type CreateTeamMonitoring$Outbound = {
     tier?: number | undefined;
     price: number;
     quantity: number;
@@ -2759,10 +2967,10 @@ export type CreateTeamSaml$Outbound = {
 };
 
 /** @internal */
-export const CreateTeamSaml$outboundSchema: z.ZodType<
-    CreateTeamSaml$Outbound,
+export const CreateTeamMonitoring$outboundSchema: z.ZodType<
+    CreateTeamMonitoring$Outbound,
     z.ZodTypeDef,
-    CreateTeamSaml
+    CreateTeamMonitoring
 > = z.object({
     tier: z.number().optional(),
     price: z.number(),
@@ -2785,13 +2993,13 @@ export const CreateTeamSaml$outboundSchema: z.ZodType<
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace CreateTeamSaml$ {
-    /** @deprecated use `CreateTeamSaml$inboundSchema` instead. */
-    export const inboundSchema = CreateTeamSaml$inboundSchema;
-    /** @deprecated use `CreateTeamSaml$outboundSchema` instead. */
-    export const outboundSchema = CreateTeamSaml$outboundSchema;
-    /** @deprecated use `CreateTeamSaml$Outbound` instead. */
-    export type Outbound = CreateTeamSaml$Outbound;
+export namespace CreateTeamMonitoring$ {
+    /** @deprecated use `CreateTeamMonitoring$inboundSchema` instead. */
+    export const inboundSchema = CreateTeamMonitoring$inboundSchema;
+    /** @deprecated use `CreateTeamMonitoring$outboundSchema` instead. */
+    export const outboundSchema = CreateTeamMonitoring$outboundSchema;
+    /** @deprecated use `CreateTeamMonitoring$Outbound` instead. */
+    export type Outbound = CreateTeamMonitoring$Outbound;
 }
 
 /** @internal */
@@ -2863,8 +3071,8 @@ export namespace CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInv
 }
 
 /** @internal */
-export const CreateTeamTeamSeats$inboundSchema: z.ZodType<
-    CreateTeamTeamSeats,
+export const CreateTeamPasswordProtection$inboundSchema: z.ZodType<
+    CreateTeamPasswordProtection,
     z.ZodTypeDef,
     unknown
 > = z.object({
@@ -2886,7 +3094,7 @@ export const CreateTeamTeamSeats$inboundSchema: z.ZodType<
 });
 
 /** @internal */
-export type CreateTeamTeamSeats$Outbound = {
+export type CreateTeamPasswordProtection$Outbound = {
     tier?: number | undefined;
     price: number;
     quantity: number;
@@ -2902,10 +3110,10 @@ export type CreateTeamTeamSeats$Outbound = {
 };
 
 /** @internal */
-export const CreateTeamTeamSeats$outboundSchema: z.ZodType<
-    CreateTeamTeamSeats$Outbound,
+export const CreateTeamPasswordProtection$outboundSchema: z.ZodType<
+    CreateTeamPasswordProtection$Outbound,
     z.ZodTypeDef,
-    CreateTeamTeamSeats
+    CreateTeamPasswordProtection
 > = z.object({
     tier: z.number().optional(),
     price: z.number(),
@@ -2928,6 +3136,441 @@ export const CreateTeamTeamSeats$outboundSchema: z.ZodType<
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
+export namespace CreateTeamPasswordProtection$ {
+    /** @deprecated use `CreateTeamPasswordProtection$inboundSchema` instead. */
+    export const inboundSchema = CreateTeamPasswordProtection$inboundSchema;
+    /** @deprecated use `CreateTeamPasswordProtection$outboundSchema` instead. */
+    export const outboundSchema = CreateTeamPasswordProtection$outboundSchema;
+    /** @deprecated use `CreateTeamPasswordProtection$Outbound` instead. */
+    export type Outbound = CreateTeamPasswordProtection$Outbound;
+}
+
+/** @internal */
+export const CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPreviewDeploymentSuffixInterval$inboundSchema: z.ZodNativeEnum<
+    typeof CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPreviewDeploymentSuffixInterval
+> = z.nativeEnum(
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPreviewDeploymentSuffixInterval
+);
+
+/** @internal */
+export const CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPreviewDeploymentSuffixInterval$outboundSchema: z.ZodNativeEnum<
+    typeof CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPreviewDeploymentSuffixInterval
+> =
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPreviewDeploymentSuffixInterval$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPreviewDeploymentSuffixInterval$ {
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPreviewDeploymentSuffixInterval$inboundSchema` instead. */
+    export const inboundSchema =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPreviewDeploymentSuffixInterval$inboundSchema;
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPreviewDeploymentSuffixInterval$outboundSchema` instead. */
+    export const outboundSchema =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPreviewDeploymentSuffixInterval$outboundSchema;
+}
+
+/** @internal */
+export const CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPreviewDeploymentSuffixFrequency$inboundSchema: z.ZodType<
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPreviewDeploymentSuffixFrequency,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    interval:
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPreviewDeploymentSuffixInterval$inboundSchema,
+    intervalCount: z.number(),
+});
+
+/** @internal */
+export type CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPreviewDeploymentSuffixFrequency$Outbound =
+    {
+        interval: string;
+        intervalCount: number;
+    };
+
+/** @internal */
+export const CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPreviewDeploymentSuffixFrequency$outboundSchema: z.ZodType<
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPreviewDeploymentSuffixFrequency$Outbound,
+    z.ZodTypeDef,
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPreviewDeploymentSuffixFrequency
+> = z.object({
+    interval:
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPreviewDeploymentSuffixInterval$outboundSchema,
+    intervalCount: z.number(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPreviewDeploymentSuffixFrequency$ {
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPreviewDeploymentSuffixFrequency$inboundSchema` instead. */
+    export const inboundSchema =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPreviewDeploymentSuffixFrequency$inboundSchema;
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPreviewDeploymentSuffixFrequency$outboundSchema` instead. */
+    export const outboundSchema =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPreviewDeploymentSuffixFrequency$outboundSchema;
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPreviewDeploymentSuffixFrequency$Outbound` instead. */
+    export type Outbound =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPreviewDeploymentSuffixFrequency$Outbound;
+}
+
+/** @internal */
+export const CreateTeamPreviewDeploymentSuffix$inboundSchema: z.ZodType<
+    CreateTeamPreviewDeploymentSuffix,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    tier: z.number().optional(),
+    price: z.number(),
+    quantity: z.number(),
+    highestQuantity: z.number().optional(),
+    name: z.string().optional(),
+    hidden: z.boolean(),
+    createdAt: z.number().optional(),
+    disabledAt: z.nullable(z.number()).optional(),
+    frequency: z
+        .lazy(
+            () =>
+                CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPreviewDeploymentSuffixFrequency$inboundSchema
+        )
+        .optional(),
+    maxQuantity: z.number().optional(),
+});
+
+/** @internal */
+export type CreateTeamPreviewDeploymentSuffix$Outbound = {
+    tier?: number | undefined;
+    price: number;
+    quantity: number;
+    highestQuantity?: number | undefined;
+    name?: string | undefined;
+    hidden: boolean;
+    createdAt?: number | undefined;
+    disabledAt?: number | null | undefined;
+    frequency?:
+        | CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPreviewDeploymentSuffixFrequency$Outbound
+        | undefined;
+    maxQuantity?: number | undefined;
+};
+
+/** @internal */
+export const CreateTeamPreviewDeploymentSuffix$outboundSchema: z.ZodType<
+    CreateTeamPreviewDeploymentSuffix$Outbound,
+    z.ZodTypeDef,
+    CreateTeamPreviewDeploymentSuffix
+> = z.object({
+    tier: z.number().optional(),
+    price: z.number(),
+    quantity: z.number(),
+    highestQuantity: z.number().optional(),
+    name: z.string().optional(),
+    hidden: z.boolean(),
+    createdAt: z.number().optional(),
+    disabledAt: z.nullable(z.number()).optional(),
+    frequency: z
+        .lazy(
+            () =>
+                CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPreviewDeploymentSuffixFrequency$outboundSchema
+        )
+        .optional(),
+    maxQuantity: z.number().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace CreateTeamPreviewDeploymentSuffix$ {
+    /** @deprecated use `CreateTeamPreviewDeploymentSuffix$inboundSchema` instead. */
+    export const inboundSchema = CreateTeamPreviewDeploymentSuffix$inboundSchema;
+    /** @deprecated use `CreateTeamPreviewDeploymentSuffix$outboundSchema` instead. */
+    export const outboundSchema = CreateTeamPreviewDeploymentSuffix$outboundSchema;
+    /** @deprecated use `CreateTeamPreviewDeploymentSuffix$Outbound` instead. */
+    export type Outbound = CreateTeamPreviewDeploymentSuffix$Outbound;
+}
+
+/** @internal */
+export const CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsSamlInterval$inboundSchema: z.ZodNativeEnum<
+    typeof CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsSamlInterval
+> = z.nativeEnum(
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsSamlInterval
+);
+
+/** @internal */
+export const CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsSamlInterval$outboundSchema: z.ZodNativeEnum<
+    typeof CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsSamlInterval
+> =
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsSamlInterval$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsSamlInterval$ {
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsSamlInterval$inboundSchema` instead. */
+    export const inboundSchema =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsSamlInterval$inboundSchema;
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsSamlInterval$outboundSchema` instead. */
+    export const outboundSchema =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsSamlInterval$outboundSchema;
+}
+
+/** @internal */
+export const CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsSamlFrequency$inboundSchema: z.ZodType<
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsSamlFrequency,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    interval:
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsSamlInterval$inboundSchema,
+    intervalCount: z.number(),
+});
+
+/** @internal */
+export type CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsSamlFrequency$Outbound =
+    {
+        interval: string;
+        intervalCount: number;
+    };
+
+/** @internal */
+export const CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsSamlFrequency$outboundSchema: z.ZodType<
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsSamlFrequency$Outbound,
+    z.ZodTypeDef,
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsSamlFrequency
+> = z.object({
+    interval:
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsSamlInterval$outboundSchema,
+    intervalCount: z.number(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsSamlFrequency$ {
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsSamlFrequency$inboundSchema` instead. */
+    export const inboundSchema =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsSamlFrequency$inboundSchema;
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsSamlFrequency$outboundSchema` instead. */
+    export const outboundSchema =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsSamlFrequency$outboundSchema;
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsSamlFrequency$Outbound` instead. */
+    export type Outbound =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsSamlFrequency$Outbound;
+}
+
+/** @internal */
+export const CreateTeamSaml$inboundSchema: z.ZodType<CreateTeamSaml, z.ZodTypeDef, unknown> =
+    z.object({
+        tier: z.number().optional(),
+        price: z.number(),
+        quantity: z.number(),
+        highestQuantity: z.number().optional(),
+        name: z.string().optional(),
+        hidden: z.boolean(),
+        createdAt: z.number().optional(),
+        disabledAt: z.nullable(z.number()).optional(),
+        frequency: z
+            .lazy(
+                () =>
+                    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsSamlFrequency$inboundSchema
+            )
+            .optional(),
+        maxQuantity: z.number().optional(),
+    });
+
+/** @internal */
+export type CreateTeamSaml$Outbound = {
+    tier?: number | undefined;
+    price: number;
+    quantity: number;
+    highestQuantity?: number | undefined;
+    name?: string | undefined;
+    hidden: boolean;
+    createdAt?: number | undefined;
+    disabledAt?: number | null | undefined;
+    frequency?:
+        | CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsSamlFrequency$Outbound
+        | undefined;
+    maxQuantity?: number | undefined;
+};
+
+/** @internal */
+export const CreateTeamSaml$outboundSchema: z.ZodType<
+    CreateTeamSaml$Outbound,
+    z.ZodTypeDef,
+    CreateTeamSaml
+> = z.object({
+    tier: z.number().optional(),
+    price: z.number(),
+    quantity: z.number(),
+    highestQuantity: z.number().optional(),
+    name: z.string().optional(),
+    hidden: z.boolean(),
+    createdAt: z.number().optional(),
+    disabledAt: z.nullable(z.number()).optional(),
+    frequency: z
+        .lazy(
+            () =>
+                CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsSamlFrequency$outboundSchema
+        )
+        .optional(),
+    maxQuantity: z.number().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace CreateTeamSaml$ {
+    /** @deprecated use `CreateTeamSaml$inboundSchema` instead. */
+    export const inboundSchema = CreateTeamSaml$inboundSchema;
+    /** @deprecated use `CreateTeamSaml$outboundSchema` instead. */
+    export const outboundSchema = CreateTeamSaml$outboundSchema;
+    /** @deprecated use `CreateTeamSaml$Outbound` instead. */
+    export type Outbound = CreateTeamSaml$Outbound;
+}
+
+/** @internal */
+export const CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsTeamSeatsInterval$inboundSchema: z.ZodNativeEnum<
+    typeof CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsTeamSeatsInterval
+> = z.nativeEnum(
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsTeamSeatsInterval
+);
+
+/** @internal */
+export const CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsTeamSeatsInterval$outboundSchema: z.ZodNativeEnum<
+    typeof CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsTeamSeatsInterval
+> =
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsTeamSeatsInterval$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsTeamSeatsInterval$ {
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsTeamSeatsInterval$inboundSchema` instead. */
+    export const inboundSchema =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsTeamSeatsInterval$inboundSchema;
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsTeamSeatsInterval$outboundSchema` instead. */
+    export const outboundSchema =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsTeamSeatsInterval$outboundSchema;
+}
+
+/** @internal */
+export const CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsTeamSeatsFrequency$inboundSchema: z.ZodType<
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsTeamSeatsFrequency,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    interval:
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsTeamSeatsInterval$inboundSchema,
+    intervalCount: z.number(),
+});
+
+/** @internal */
+export type CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsTeamSeatsFrequency$Outbound =
+    {
+        interval: string;
+        intervalCount: number;
+    };
+
+/** @internal */
+export const CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsTeamSeatsFrequency$outboundSchema: z.ZodType<
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsTeamSeatsFrequency$Outbound,
+    z.ZodTypeDef,
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsTeamSeatsFrequency
+> = z.object({
+    interval:
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsTeamSeatsInterval$outboundSchema,
+    intervalCount: z.number(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsTeamSeatsFrequency$ {
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsTeamSeatsFrequency$inboundSchema` instead. */
+    export const inboundSchema =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsTeamSeatsFrequency$inboundSchema;
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsTeamSeatsFrequency$outboundSchema` instead. */
+    export const outboundSchema =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsTeamSeatsFrequency$outboundSchema;
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsTeamSeatsFrequency$Outbound` instead. */
+    export type Outbound =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsTeamSeatsFrequency$Outbound;
+}
+
+/** @internal */
+export const CreateTeamTeamSeats$inboundSchema: z.ZodType<
+    CreateTeamTeamSeats,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    tier: z.number().optional(),
+    price: z.number(),
+    quantity: z.number(),
+    highestQuantity: z.number().optional(),
+    name: z.string().optional(),
+    hidden: z.boolean(),
+    createdAt: z.number().optional(),
+    disabledAt: z.nullable(z.number()).optional(),
+    frequency: z
+        .lazy(
+            () =>
+                CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsTeamSeatsFrequency$inboundSchema
+        )
+        .optional(),
+    maxQuantity: z.number().optional(),
+});
+
+/** @internal */
+export type CreateTeamTeamSeats$Outbound = {
+    tier?: number | undefined;
+    price: number;
+    quantity: number;
+    highestQuantity?: number | undefined;
+    name?: string | undefined;
+    hidden: boolean;
+    createdAt?: number | undefined;
+    disabledAt?: number | null | undefined;
+    frequency?:
+        | CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsTeamSeatsFrequency$Outbound
+        | undefined;
+    maxQuantity?: number | undefined;
+};
+
+/** @internal */
+export const CreateTeamTeamSeats$outboundSchema: z.ZodType<
+    CreateTeamTeamSeats$Outbound,
+    z.ZodTypeDef,
+    CreateTeamTeamSeats
+> = z.object({
+    tier: z.number().optional(),
+    price: z.number(),
+    quantity: z.number(),
+    highestQuantity: z.number().optional(),
+    name: z.string().optional(),
+    hidden: z.boolean(),
+    createdAt: z.number().optional(),
+    disabledAt: z.nullable(z.number()).optional(),
+    frequency: z
+        .lazy(
+            () =>
+                CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsTeamSeatsFrequency$outboundSchema
+        )
+        .optional(),
+    maxQuantity: z.number().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace CreateTeamTeamSeats$ {
     /** @deprecated use `CreateTeamTeamSeats$inboundSchema` instead. */
     export const inboundSchema = CreateTeamTeamSeats$inboundSchema;
@@ -2935,6 +3578,152 @@ export namespace CreateTeamTeamSeats$ {
     export const outboundSchema = CreateTeamTeamSeats$outboundSchema;
     /** @deprecated use `CreateTeamTeamSeats$Outbound` instead. */
     export type Outbound = CreateTeamTeamSeats$Outbound;
+}
+
+/** @internal */
+export const CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsVercelMarketplaceInterval$inboundSchema: z.ZodNativeEnum<
+    typeof CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsVercelMarketplaceInterval
+> = z.nativeEnum(
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsVercelMarketplaceInterval
+);
+
+/** @internal */
+export const CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsVercelMarketplaceInterval$outboundSchema: z.ZodNativeEnum<
+    typeof CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsVercelMarketplaceInterval
+> =
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsVercelMarketplaceInterval$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsVercelMarketplaceInterval$ {
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsVercelMarketplaceInterval$inboundSchema` instead. */
+    export const inboundSchema =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsVercelMarketplaceInterval$inboundSchema;
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsVercelMarketplaceInterval$outboundSchema` instead. */
+    export const outboundSchema =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsVercelMarketplaceInterval$outboundSchema;
+}
+
+/** @internal */
+export const CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsVercelMarketplaceFrequency$inboundSchema: z.ZodType<
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsVercelMarketplaceFrequency,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    interval:
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsVercelMarketplaceInterval$inboundSchema,
+    intervalCount: z.number(),
+});
+
+/** @internal */
+export type CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsVercelMarketplaceFrequency$Outbound =
+    {
+        interval: string;
+        intervalCount: number;
+    };
+
+/** @internal */
+export const CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsVercelMarketplaceFrequency$outboundSchema: z.ZodType<
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsVercelMarketplaceFrequency$Outbound,
+    z.ZodTypeDef,
+    CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsVercelMarketplaceFrequency
+> = z.object({
+    interval:
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsVercelMarketplaceInterval$outboundSchema,
+    intervalCount: z.number(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsVercelMarketplaceFrequency$ {
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsVercelMarketplaceFrequency$inboundSchema` instead. */
+    export const inboundSchema =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsVercelMarketplaceFrequency$inboundSchema;
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsVercelMarketplaceFrequency$outboundSchema` instead. */
+    export const outboundSchema =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsVercelMarketplaceFrequency$outboundSchema;
+    /** @deprecated use `CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsVercelMarketplaceFrequency$Outbound` instead. */
+    export type Outbound =
+        CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsVercelMarketplaceFrequency$Outbound;
+}
+
+/** @internal */
+export const CreateTeamVercelMarketplace$inboundSchema: z.ZodType<
+    CreateTeamVercelMarketplace,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    tier: z.number().optional(),
+    price: z.number(),
+    quantity: z.number(),
+    highestQuantity: z.number().optional(),
+    name: z.string().optional(),
+    hidden: z.boolean(),
+    createdAt: z.number().optional(),
+    disabledAt: z.nullable(z.number()).optional(),
+    frequency: z
+        .lazy(
+            () =>
+                CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsVercelMarketplaceFrequency$inboundSchema
+        )
+        .optional(),
+    maxQuantity: z.number().optional(),
+});
+
+/** @internal */
+export type CreateTeamVercelMarketplace$Outbound = {
+    tier?: number | undefined;
+    price: number;
+    quantity: number;
+    highestQuantity?: number | undefined;
+    name?: string | undefined;
+    hidden: boolean;
+    createdAt?: number | undefined;
+    disabledAt?: number | null | undefined;
+    frequency?:
+        | CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsVercelMarketplaceFrequency$Outbound
+        | undefined;
+    maxQuantity?: number | undefined;
+};
+
+/** @internal */
+export const CreateTeamVercelMarketplace$outboundSchema: z.ZodType<
+    CreateTeamVercelMarketplace$Outbound,
+    z.ZodTypeDef,
+    CreateTeamVercelMarketplace
+> = z.object({
+    tier: z.number().optional(),
+    price: z.number(),
+    quantity: z.number(),
+    highestQuantity: z.number().optional(),
+    name: z.string().optional(),
+    hidden: z.boolean(),
+    createdAt: z.number().optional(),
+    disabledAt: z.nullable(z.number()).optional(),
+    frequency: z
+        .lazy(
+            () =>
+                CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsVercelMarketplaceFrequency$outboundSchema
+        )
+        .optional(),
+    maxQuantity: z.number().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace CreateTeamVercelMarketplace$ {
+    /** @deprecated use `CreateTeamVercelMarketplace$inboundSchema` instead. */
+    export const inboundSchema = CreateTeamVercelMarketplace$inboundSchema;
+    /** @deprecated use `CreateTeamVercelMarketplace$outboundSchema` instead. */
+    export const outboundSchema = CreateTeamVercelMarketplace$outboundSchema;
+    /** @deprecated use `CreateTeamVercelMarketplace$Outbound` instead. */
+    export type Outbound = CreateTeamVercelMarketplace$Outbound;
 }
 
 /** @internal */
@@ -7367,6 +8156,13 @@ export const CreateTeamInvoiceItems$inboundSchema: z.ZodType<
     enterprise: z.lazy(() => CreateTeamEnterprise$inboundSchema).optional(),
     analytics: z.lazy(() => CreateTeamAnalytics$inboundSchema).optional(),
     concurrentBuilds: z.lazy(() => CreateTeamConcurrentBuilds$inboundSchema).optional(),
+    developerExperiencePlatform: z
+        .lazy(() => CreateTeamDeveloperExperiencePlatform$inboundSchema)
+        .optional(),
+    includedAllocationMiu: z.lazy(() => CreateTeamIncludedAllocationMiu$inboundSchema).optional(),
+    managedInfrastructureCommitment: z
+        .lazy(() => CreateTeamManagedInfrastructureCommitment$inboundSchema)
+        .optional(),
     monitoring: z.lazy(() => CreateTeamMonitoring$inboundSchema).optional(),
     passwordProtection: z.lazy(() => CreateTeamPasswordProtection$inboundSchema).optional(),
     previewDeploymentSuffix: z
@@ -7374,6 +8170,7 @@ export const CreateTeamInvoiceItems$inboundSchema: z.ZodType<
         .optional(),
     saml: z.lazy(() => CreateTeamSaml$inboundSchema).optional(),
     teamSeats: z.lazy(() => CreateTeamTeamSeats$inboundSchema).optional(),
+    vercelMarketplace: z.lazy(() => CreateTeamVercelMarketplace$inboundSchema).optional(),
     webAnalytics: z.lazy(() => CreateTeamWebAnalytics$inboundSchema).optional(),
     analyticsUsage: z.lazy(() => CreateTeamAnalyticsUsage$inboundSchema).optional(),
     artifacts: z.lazy(() => CreateTeamArtifacts$inboundSchema).optional(),
@@ -7445,11 +8242,17 @@ export type CreateTeamInvoiceItems$Outbound = {
     enterprise?: CreateTeamEnterprise$Outbound | undefined;
     analytics?: CreateTeamAnalytics$Outbound | undefined;
     concurrentBuilds?: CreateTeamConcurrentBuilds$Outbound | undefined;
+    developerExperiencePlatform?: CreateTeamDeveloperExperiencePlatform$Outbound | undefined;
+    includedAllocationMiu?: CreateTeamIncludedAllocationMiu$Outbound | undefined;
+    managedInfrastructureCommitment?:
+        | CreateTeamManagedInfrastructureCommitment$Outbound
+        | undefined;
     monitoring?: CreateTeamMonitoring$Outbound | undefined;
     passwordProtection?: CreateTeamPasswordProtection$Outbound | undefined;
     previewDeploymentSuffix?: CreateTeamPreviewDeploymentSuffix$Outbound | undefined;
     saml?: CreateTeamSaml$Outbound | undefined;
     teamSeats?: CreateTeamTeamSeats$Outbound | undefined;
+    vercelMarketplace?: CreateTeamVercelMarketplace$Outbound | undefined;
     webAnalytics?: CreateTeamWebAnalytics$Outbound | undefined;
     analyticsUsage?: CreateTeamAnalyticsUsage$Outbound | undefined;
     artifacts?: CreateTeamArtifacts$Outbound | undefined;
@@ -7509,6 +8312,13 @@ export const CreateTeamInvoiceItems$outboundSchema: z.ZodType<
     enterprise: z.lazy(() => CreateTeamEnterprise$outboundSchema).optional(),
     analytics: z.lazy(() => CreateTeamAnalytics$outboundSchema).optional(),
     concurrentBuilds: z.lazy(() => CreateTeamConcurrentBuilds$outboundSchema).optional(),
+    developerExperiencePlatform: z
+        .lazy(() => CreateTeamDeveloperExperiencePlatform$outboundSchema)
+        .optional(),
+    includedAllocationMiu: z.lazy(() => CreateTeamIncludedAllocationMiu$outboundSchema).optional(),
+    managedInfrastructureCommitment: z
+        .lazy(() => CreateTeamManagedInfrastructureCommitment$outboundSchema)
+        .optional(),
     monitoring: z.lazy(() => CreateTeamMonitoring$outboundSchema).optional(),
     passwordProtection: z.lazy(() => CreateTeamPasswordProtection$outboundSchema).optional(),
     previewDeploymentSuffix: z
@@ -7516,6 +8326,7 @@ export const CreateTeamInvoiceItems$outboundSchema: z.ZodType<
         .optional(),
     saml: z.lazy(() => CreateTeamSaml$outboundSchema).optional(),
     teamSeats: z.lazy(() => CreateTeamTeamSeats$outboundSchema).optional(),
+    vercelMarketplace: z.lazy(() => CreateTeamVercelMarketplace$outboundSchema).optional(),
     webAnalytics: z.lazy(() => CreateTeamWebAnalytics$outboundSchema).optional(),
     analyticsUsage: z.lazy(() => CreateTeamAnalyticsUsage$outboundSchema).optional(),
     artifacts: z.lazy(() => CreateTeamArtifacts$outboundSchema).optional(),
@@ -8048,6 +8859,48 @@ export namespace CreateTeamPricingExperiment$ {
 }
 
 /** @internal */
+export const CreateTeamAwsMarketplace$inboundSchema: z.ZodType<
+    CreateTeamAwsMarketplace,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    productCode: z.string(),
+    offerId: z.string().optional(),
+    customerId: z.string(),
+});
+
+/** @internal */
+export type CreateTeamAwsMarketplace$Outbound = {
+    productCode: string;
+    offerId?: string | undefined;
+    customerId: string;
+};
+
+/** @internal */
+export const CreateTeamAwsMarketplace$outboundSchema: z.ZodType<
+    CreateTeamAwsMarketplace$Outbound,
+    z.ZodTypeDef,
+    CreateTeamAwsMarketplace
+> = z.object({
+    productCode: z.string(),
+    offerId: z.string().optional(),
+    customerId: z.string(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace CreateTeamAwsMarketplace$ {
+    /** @deprecated use `CreateTeamAwsMarketplace$inboundSchema` instead. */
+    export const inboundSchema = CreateTeamAwsMarketplace$inboundSchema;
+    /** @deprecated use `CreateTeamAwsMarketplace$outboundSchema` instead. */
+    export const outboundSchema = CreateTeamAwsMarketplace$outboundSchema;
+    /** @deprecated use `CreateTeamAwsMarketplace$Outbound` instead. */
+    export type Outbound = CreateTeamAwsMarketplace$Outbound;
+}
+
+/** @internal */
 export const CreateTeamBilling$inboundSchema: z.ZodType<CreateTeamBilling, z.ZodTypeDef, unknown> =
     z.object({
         currency: CreateTeamCurrency$inboundSchema.optional(),
@@ -8076,6 +8929,9 @@ export const CreateTeamBilling$inboundSchema: z.ZodType<CreateTeamBilling, z.Zod
         status: CreateTeamStatus$inboundSchema.optional(),
         pricingExperiment: CreateTeamPricingExperiment$inboundSchema.optional(),
         orbMigrationScheduledAt: z.nullable(z.number()).optional(),
+        forceOrbMigration: z.nullable(z.boolean()).optional(),
+        awsMarketplace: z.nullable(z.lazy(() => CreateTeamAwsMarketplace$inboundSchema)).optional(),
+        reseller: z.string().optional(),
     });
 
 /** @internal */
@@ -8104,6 +8960,9 @@ export type CreateTeamBilling$Outbound = {
     status?: string | undefined;
     pricingExperiment?: string | undefined;
     orbMigrationScheduledAt?: number | null | undefined;
+    forceOrbMigration?: boolean | null | undefined;
+    awsMarketplace?: CreateTeamAwsMarketplace$Outbound | null | undefined;
+    reseller?: string | undefined;
 };
 
 /** @internal */
@@ -8138,6 +8997,9 @@ export const CreateTeamBilling$outboundSchema: z.ZodType<
     status: CreateTeamStatus$outboundSchema.optional(),
     pricingExperiment: CreateTeamPricingExperiment$outboundSchema.optional(),
     orbMigrationScheduledAt: z.nullable(z.number()).optional(),
+    forceOrbMigration: z.nullable(z.boolean()).optional(),
+    awsMarketplace: z.nullable(z.lazy(() => CreateTeamAwsMarketplace$outboundSchema)).optional(),
+    reseller: z.string().optional(),
 });
 
 /**

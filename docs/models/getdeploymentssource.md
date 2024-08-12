@@ -13,3 +13,4 @@ The source of the deployment.
 | `Git`                  | git                    |
 | `Import`               | import                 |
 | `ImportRepo`           | import/repo            |
+| `Redeploy`             | redeploy               |

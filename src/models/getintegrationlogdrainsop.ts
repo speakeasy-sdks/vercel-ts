@@ -40,6 +40,7 @@ export const GetIntegrationLogDrainsSources = {
     Lambda: "lambda",
     Static: "static",
     External: "external",
+    Firewall: "firewall",
 } as const;
 /**
  * The sources from which logs are currently being delivered to this log drain.

@@ -1,7 +1,5 @@
 # CancelDeploymentSource
 
-Where was the deployment created from
-
 
 ## Values
 
@@ -13,3 +11,4 @@ Where was the deployment created from
 | `Git`                  | git                    |
 | `Import`               | import                 |
 | `ImportRepo`           | import/repo            |
+| `Redeploy`             | redeploy               |

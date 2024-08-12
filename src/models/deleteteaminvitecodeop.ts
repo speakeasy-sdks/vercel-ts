@@ -6,13 +6,13 @@ import * as z from "zod";
 
 export type DeleteTeamInviteCodeRequest = {
     /**
-     * the team id related to the invite code
-     */
-    teamId: string;
-    /**
      * The Team invite code ID.
      */
     inviteId: string;
+    /**
+     * The Team identifier to perform the request on behalf of.
+     */
+    teamId: string;
 };
 
 /**
@@ -31,14 +31,14 @@ export const DeleteTeamInviteCodeRequest$inboundSchema: z.ZodType<
     z.ZodTypeDef,
     unknown
 > = z.object({
-    teamId: z.string(),
     inviteId: z.string(),
+    teamId: z.string(),
 });
 
 /** @internal */
 export type DeleteTeamInviteCodeRequest$Outbound = {
-    teamId: string;
     inviteId: string;
+    teamId: string;
 };
 
 /** @internal */
@@ -47,8 +47,8 @@ export const DeleteTeamInviteCodeRequest$outboundSchema: z.ZodType<
     z.ZodTypeDef,
     DeleteTeamInviteCodeRequest
 > = z.object({
-    teamId: z.string(),
     inviteId: z.string(),
+    teamId: z.string(),
 });
 
 /**

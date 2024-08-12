@@ -84,11 +84,12 @@ export async function integrationsDeleteConfiguration(
         Accept: "*/*",
     });
 
-    const security$ = await extractSecurity(client$.options$.security);
+    const bearerToken$ = await extractSecurity(client$.options$.bearerToken);
+    const security$ = bearerToken$ == null ? {} : { bearerToken: bearerToken$ };
     const context = {
         operationID: "deleteConfiguration",
         oAuth2Scopes: [],
-        securitySource: client$.options$.security,
+        securitySource: client$.options$.bearerToken,
     };
     const securitySettings$ = resolveGlobalSecurity(security$);
 

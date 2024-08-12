@@ -6,11 +6,11 @@ import { teamsCreate } from "../funcs/teamsCreate.js";
 import { teamsDelete } from "../funcs/teamsDelete.js";
 import { teamsDeleteInviteCode } from "../funcs/teamsDeleteInviteCode.js";
 import { teamsGet } from "../funcs/teamsGet.js";
-import { teamsGetAccess } from "../funcs/teamsGetAccess.js";
+import { teamsGetAccessRequest } from "../funcs/teamsGetAccessRequest.js";
+import { teamsGetMembers } from "../funcs/teamsGetMembers.js";
 import { teamsInviteUser } from "../funcs/teamsInviteUser.js";
-import { teamsJoinTeam } from "../funcs/teamsJoinTeam.js";
+import { teamsJoin } from "../funcs/teamsJoin.js";
 import { teamsList } from "../funcs/teamsList.js";
-import { teamsListMembers } from "../funcs/teamsListMembers.js";
 import { teamsRemoveMember } from "../funcs/teamsRemoveMember.js";
 import { teamsRequestAccess } from "../funcs/teamsRequestAccess.js";
 import { teamsUpdate } from "../funcs/teamsUpdate.js";
@@ -47,11 +47,11 @@ export class Teams extends ClientSDK {
      * @remarks
      * Get a paginated list of team members for the provided team.
      */
-    async listMembers(
+    async getMembers(
         request: GetTeamMembersRequest,
         options?: RequestOptions
     ): Promise<GetTeamMembersResponseBody> {
-        return unwrapAsync(teamsListMembers(this, request, options));
+        return unwrapAsync(teamsGetMembers(this, request, options));
     }
 
     /**
@@ -88,12 +88,12 @@ export class Teams extends ClientSDK {
      * @remarks
      * Check the status of a join request. It'll respond with a 404 if the request has been declined. If no `userId` path segment was provided, this endpoint will instead return the status of the authenticated user.
      */
-    async getAccess(
+    async getAccessRequest(
         teamId: string,
         userId: string,
         options?: RequestOptions
     ): Promise<GetTeamAccessRequestResponseBody> {
-        return unwrapAsync(teamsGetAccess(this, teamId, userId, options));
+        return unwrapAsync(teamsGetAccessRequest(this, teamId, userId, options));
     }
 
     /**
@@ -102,12 +102,12 @@ export class Teams extends ClientSDK {
      * @remarks
      * Join a team with a provided invite code or team ID.
      */
-    async joinTeam(
+    async join(
         teamId: string,
         requestBody?: JoinTeamRequestBody | undefined,
         options?: RequestOptions
     ): Promise<JoinTeamResponseBody> {
-        return unwrapAsync(teamsJoinTeam(this, teamId, requestBody, options));
+        return unwrapAsync(teamsJoin(this, teamId, requestBody, options));
     }
 
     /**
@@ -134,10 +134,9 @@ export class Teams extends ClientSDK {
     async removeMember(
         teamId: string,
         uid: string,
-        newDefaultTeamId?: string | undefined,
         options?: RequestOptions
     ): Promise<RemoveTeamMemberResponseBody> {
-        return unwrapAsync(teamsRemoveMember(this, teamId, uid, newDefaultTeamId, options));
+        return unwrapAsync(teamsRemoveMember(this, teamId, uid, options));
     }
 
     /**
@@ -146,8 +145,8 @@ export class Teams extends ClientSDK {
      * @remarks
      * Get information for the Team specified by the `teamId` parameter.
      */
-    async get(teamId: string, slug?: string | undefined, options?: RequestOptions): Promise<Team> {
-        return unwrapAsync(teamsGet(this, teamId, slug, options));
+    async get(teamId: string, options?: RequestOptions): Promise<Team> {
+        return unwrapAsync(teamsGet(this, teamId, options));
     }
 
     /**
@@ -216,10 +215,10 @@ export class Teams extends ClientSDK {
      * Delete an active Team invite code.
      */
     async deleteInviteCode(
-        teamId: string,
         inviteId: string,
+        teamId: string,
         options?: RequestOptions
     ): Promise<DeleteTeamInviteCodeResponseBody> {
-        return unwrapAsync(teamsDeleteInviteCode(this, teamId, inviteId, options));
+        return unwrapAsync(teamsDeleteInviteCode(this, inviteId, teamId, options));
     }
 }

@@ -5,5 +5,5 @@
 
 | Name         | Value        |
 | ------------ | ------------ |
-| `Exclusive`  | exclusive    |
 | `Additional` | additional   |
+| `Exclusive`  | exclusive    |

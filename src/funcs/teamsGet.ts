@@ -3,10 +3,7 @@
  */
 
 import { VercelCore } from "../core.js";
-import {
-    encodeFormQuery as encodeFormQuery$,
-    encodeSimple as encodeSimple$,
-} from "../lib/encodings.js";
+import { encodeSimple as encodeSimple$ } from "../lib/encodings.js";
 import * as m$ from "../lib/matchers.js";
 import * as schemas$ from "../lib/schemas.js";
 import { RequestOptions } from "../lib/sdks.js";
@@ -34,7 +31,6 @@ import { Result } from "../types/fp.js";
 export async function teamsGet(
     client$: VercelCore,
     teamId: string,
-    slug?: string | undefined,
     options?: RequestOptions
 ): Promise<
     Result<
@@ -50,7 +46,6 @@ export async function teamsGet(
 > {
     const input$: GetTeamRequest = {
         teamId: teamId,
-        slug: slug,
     };
 
     const parsed$ = schemas$.safeParse(
@@ -73,19 +68,16 @@ export async function teamsGet(
 
     const path$ = pathToFunc("/v2/teams/{teamId}")(pathParams$);
 
-    const query$ = encodeFormQuery$({
-        slug: payload$.slug,
-    });
-
     const headers$ = new Headers({
         Accept: "application/json",
     });
 
-    const security$ = await extractSecurity(client$.options$.security);
+    const bearerToken$ = await extractSecurity(client$.options$.bearerToken);
+    const security$ = bearerToken$ == null ? {} : { bearerToken: bearerToken$ };
     const context = {
         operationID: "getTeam",
         oAuth2Scopes: [],
-        securitySource: client$.options$.security,
+        securitySource: client$.options$.bearerToken,
     };
     const securitySettings$ = resolveGlobalSecurity(security$);
 
@@ -96,7 +88,6 @@ export async function teamsGet(
             method: "GET",
             path: path$,
             headers: headers$,
-            query: query$,
             body: body$,
             timeoutMs: options?.timeoutMs || client$.options$.timeoutMs || -1,
         },

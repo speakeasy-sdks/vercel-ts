@@ -1,5 +1,7 @@
 # CreateTeamBilling
 
+IMPORTANT: If extending Billing, particularly with optional fields, make sure you also update `sync-orb-subscription-to-owner.ts` to handle the items when the object is recreated.
+
 
 ## Fields
 
@@ -29,3 +31,6 @@
 | `status`                                                                       | [models.CreateTeamStatus](../models/createteamstatus.md)                       | :heavy_minus_sign:                                                             | N/A                                                                            |
 | `pricingExperiment`                                                            | [models.CreateTeamPricingExperiment](../models/createteampricingexperiment.md) | :heavy_minus_sign:                                                             | N/A                                                                            |
 | `orbMigrationScheduledAt`                                                      | *number*                                                                       | :heavy_minus_sign:                                                             | N/A                                                                            |
+| `forceOrbMigration`                                                            | *boolean*                                                                      | :heavy_minus_sign:                                                             | N/A                                                                            |
+| `awsMarketplace`                                                               | [models.CreateTeamAwsMarketplace](../models/createteamawsmarketplace.md)       | :heavy_minus_sign:                                                             | N/A                                                                            |
+| `reseller`                                                                     | *string*                                                                       | :heavy_minus_sign:                                                             | N/A                                                                            |

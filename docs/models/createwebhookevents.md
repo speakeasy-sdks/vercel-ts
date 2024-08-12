@@ -1,37 +1,33 @@
 # CreateWebhookEvents
 
-The webhooks events
-
 
 ## Values
 
-| Name                                               | Value                                              |
-| -------------------------------------------------- | -------------------------------------------------- |
-| `BudgetReached`                                    | budget.reached                                     |
-| `BudgetReset`                                      | budget.reset                                       |
-| `BudgetCreated`                                    | domain.created                                     |
-| `DomainCreated`                                    | deployment.created                                 |
-| `DeploymentCreated`                                | deployment.error                                   |
-| `DeploymentError`                                  | deployment.canceled                                |
-| `DeploymentCanceled`                               | deployment.succeeded                               |
-| `DeploymentSucceeded`                              | deployment.ready                                   |
-| `DeploymentReady`                                  | deployment.check-rerequested                       |
-| `DeploymentCheckRerequested`                       | integration-configuration.permission-upgraded      |
-| `IntegrationConfigurationPermissionUpgraded`       | integration-configuration.removed                  |
-| `IntegrationConfigurationRemoved`                  | integration-configuration.scope-change-confirmed   |
-| `IntegrationConfigurationScopeChangeConfirmed`     | project.created                                    |
-| `ProjectCreated`                                   | project.removed                                    |
-| `ProjectRemoved`                                   | deployment-checks-completed                        |
-| `DeploymentChecksCompleted`                        | deployment-ready                                   |
-| `DeploymentDashReady`                              | deployment-prepared                                |
-| `DeploymentDashPrepared`                           | deployment-error                                   |
-| `DeploymentDashError`                              | deployment-check-rerequested                       |
-| `DeploymentDashCheckRerequested`                   | deployment-canceled                                |
-| `DeploymentDashCanceled`                           | project-created                                    |
-| `ProjectDashCreated`                               | project-removed                                    |
-| `ProjectDashRemoved`                               | domain-created                                     |
-| `DomainDashCreated`                                | deployment                                         |
-| `Deployment`                                       | integration-configuration-permission-updated       |
-| `IntegrationConfigurationDashPermissionUpdated`    | integration-configuration-removed                  |
-| `IntegrationConfigurationDashRemoved`              | integration-configuration-scope-change-confirmed   |
-| `IntegrationConfigurationDashScopeChangeConfirmed` | test-webhook                                       |
+| Name                                             | Value                                            |
+| ------------------------------------------------ | ------------------------------------------------ |
+| `BudgetReached`                                  | budget.reached                                   |
+| `BudgetReset`                                    | budget.reset                                     |
+| `DomainCreated`                                  | domain.created                                   |
+| `DeploymentCreated`                              | deployment.created                               |
+| `DeploymentError`                                | deployment.error                                 |
+| `DeploymentCanceled`                             | deployment.canceled                              |
+| `DeploymentSucceeded`                            | deployment.succeeded                             |
+| `DeploymentReady`                                | deployment.ready                                 |
+| `DeploymentCheckRerequested`                     | deployment.check-rerequested                     |
+| `DeploymentPromoted`                             | deployment.promoted                              |
+| `EdgeConfigCreated`                              | edge-config.created                              |
+| `EdgeConfigDeleted`                              | edge-config.deleted                              |
+| `EdgeConfigUpdated`                              | edge-config.updated                              |
+| `IntegrationConfigurationPermissionUpgraded`     | integration-configuration.permission-upgraded    |
+| `IntegrationConfigurationRemoved`                | integration-configuration.removed                |
+| `IntegrationConfigurationScopeChangeConfirmed`   | integration-configuration.scope-change-confirmed |
+| `ProjectCreated`                                 | project.created                                  |
+| `ProjectRemoved`                                 | project.removed                                  |
+| `DeploymentChecksCompleted`                      | deployment-checks-completed                      |
+| `DeploymentPrepared`                             | deployment-prepared                              |
+| `Deployment`                                     | deployment                                       |
+| `IntegrationConfigurationPermissionUpdated`      | integration-configuration-permission-updated     |
+| `MarketplaceInvoiceCreated`                      | marketplace.invoice.created                      |
+| `MarketplaceInvoicePaid`                         | marketplace.invoice.paid                         |
+| `MarketplaceInvoiceNotpaid`                      | marketplace.invoice.notpaid                      |
+| `TestWebhook`                                    | test-webhook                                     |

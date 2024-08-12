@@ -10,3 +10,4 @@
 | `Lambda`   | lambda     |
 | `Static`   | static     |
 | `External` | external   |
+| `Firewall` | firewall   |

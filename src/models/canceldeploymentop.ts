@@ -3,6 +3,12 @@
  */
 
 import { ClosedEnum } from "../types/enums.js";
+import {
+    FlagJSONValue,
+    FlagJSONValue$inboundSchema,
+    FlagJSONValue$Outbound,
+    FlagJSONValue$outboundSchema,
+} from "./flagjsonvalue.js";
 import * as z from "zod";
 
 export type CancelDeploymentRequest = {
@@ -20,262 +26,101 @@ export type CancelDeploymentRequest = {
     slug?: string | undefined;
 };
 
+export type CancelDeploymentAliasAssignedAt = number | boolean;
+
 export type CancelDeploymentBuild = {
-    /**
-     * The keys of the environment variables that were assigned during the build phase.
-     */
     env: Array<string>;
 };
 
 export type CancelDeploymentBuilds = {};
 
-/**
- * The cron jobs associated with this deployment. Note that preview deployments are also allowed to have this property, but only production deployments create cron jobs. If a preview deployment is promoted to production, only then they'll take effect.
- */
-export type CancelDeploymentCrons = {
-    schedule: string;
-    path: string;
-};
-
-/**
- * An object used to configure your Serverless Functions
- */
-export type CancelDeploymentFunctions = {
-    memory?: number | undefined;
-    maxDuration?: number | undefined;
-    runtime?: string | undefined;
-    includeFiles?: string | undefined;
-    excludeFiles?: string | undefined;
-};
-
-/**
- * The pricing plan the deployment was made under
- */
-export const CancelDeploymentPlan = {
-    Pro: "pro",
-    Enterprise: "enterprise",
-    Hobby: "hobby",
+export const CancelDeploymentFramework = {
+    Blitzjs: "blitzjs",
+    Nextjs: "nextjs",
+    Gatsby: "gatsby",
+    Remix: "remix",
+    Astro: "astro",
+    Hexo: "hexo",
+    Eleventy: "eleventy",
+    Docusaurus2: "docusaurus-2",
+    Docusaurus: "docusaurus",
+    Preact: "preact",
+    Solidstart1: "solidstart-1",
+    Solidstart: "solidstart",
+    Dojo: "dojo",
+    Ember: "ember",
+    Vue: "vue",
+    Scully: "scully",
+    IonicAngular: "ionic-angular",
+    Angular: "angular",
+    Polymer: "polymer",
+    Svelte: "svelte",
+    Sveltekit: "sveltekit",
+    Sveltekit1: "sveltekit-1",
+    IonicReact: "ionic-react",
+    CreateReactApp: "create-react-app",
+    Gridsome: "gridsome",
+    Umijs: "umijs",
+    Sapper: "sapper",
+    Saber: "saber",
+    Stencil: "stencil",
+    Nuxtjs: "nuxtjs",
+    Redwoodjs: "redwoodjs",
+    Hugo: "hugo",
+    Jekyll: "jekyll",
+    Brunch: "brunch",
+    Middleman: "middleman",
+    Zola: "zola",
+    Hydrogen: "hydrogen",
+    Vite: "vite",
+    Vitepress: "vitepress",
+    Vuepress: "vuepress",
+    Parcel: "parcel",
+    Fasthtml: "fasthtml",
+    Sanity: "sanity",
+    Storybook: "storybook",
 } as const;
-/**
- * The pricing plan the deployment was made under
- */
-export type CancelDeploymentPlan = ClosedEnum<typeof CancelDeploymentPlan>;
+export type CancelDeploymentFramework = ClosedEnum<typeof CancelDeploymentFramework>;
 
-/**
- * A list of routes objects used to rewrite paths to point towards other internal or external paths
- */
-export type CancelDeploymentRoutes3 = {
-    src: string;
-    continue: boolean;
-    middleware: number;
+export type CancelDeploymentSpeedInsights = {
+    id: string;
+    enabledAt?: number | undefined;
+    disabledAt?: number | undefined;
+    canceledAt?: number | undefined;
+    hasData?: boolean | undefined;
+    paidAt?: number | undefined;
 };
 
-export const CancelDeploymentRoutesHandle = {
-    Error: "error",
-    Filesystem: "filesystem",
-    Hit: "hit",
-    Miss: "miss",
-    Rewrite: "rewrite",
-    Resource: "resource",
-} as const;
-export type CancelDeploymentRoutesHandle = ClosedEnum<typeof CancelDeploymentRoutesHandle>;
-
-/**
- * A list of routes objects used to rewrite paths to point towards other internal or external paths
- */
-export type CancelDeploymentRoutes2 = {
-    handle: CancelDeploymentRoutesHandle;
-    src?: string | undefined;
-    dest?: string | undefined;
-    status?: number | undefined;
+export type CancelDeploymentWebAnalytics = {
+    id: string;
+    disabledAt?: number | undefined;
+    canceledAt?: number | undefined;
+    enabledAt?: number | undefined;
+    hasData?: boolean | undefined;
 };
 
-export const CancelDeploymentHasDeploymentsType = {
-    Header: "header",
-    Cookie: "cookie",
-    Query: "query",
-} as const;
-export type CancelDeploymentHasDeploymentsType = ClosedEnum<
-    typeof CancelDeploymentHasDeploymentsType
->;
-
-export type CancelDeploymentHas2 = {
-    type: CancelDeploymentHasDeploymentsType;
-    key: string;
-    value?: string | undefined;
+export type CancelDeploymentProjectSettings = {
+    buildCommand?: string | null | undefined;
+    devCommand?: string | null | undefined;
+    framework?: CancelDeploymentFramework | null | undefined;
+    commandForIgnoringBuildStep?: string | null | undefined;
+    installCommand?: string | null | undefined;
+    outputDirectory?: string | null | undefined;
+    speedInsights?: CancelDeploymentSpeedInsights | undefined;
+    webAnalytics?: CancelDeploymentWebAnalytics | undefined;
 };
 
-export const CancelDeploymentHasType = {
-    Host: "host",
-} as const;
-export type CancelDeploymentHasType = ClosedEnum<typeof CancelDeploymentHasType>;
-
-export type CancelDeploymentHas1 = {
-    type: CancelDeploymentHasType;
-    value: string;
+export type CancelDeploymentCreator = {
+    uid: string;
+    username?: string | undefined;
+    avatar?: string | undefined;
 };
-
-export type CancelDeploymentRoutesHas = CancelDeploymentHas1 | CancelDeploymentHas2;
-
-export const CancelDeploymentMissingDeploymentsType = {
-    Header: "header",
-    Cookie: "cookie",
-    Query: "query",
-} as const;
-export type CancelDeploymentMissingDeploymentsType = ClosedEnum<
-    typeof CancelDeploymentMissingDeploymentsType
->;
-
-export type CancelDeploymentMissing2 = {
-    type: CancelDeploymentMissingDeploymentsType;
-    key: string;
-    value?: string | undefined;
-};
-
-export const CancelDeploymentMissingType = {
-    Host: "host",
-} as const;
-export type CancelDeploymentMissingType = ClosedEnum<typeof CancelDeploymentMissingType>;
-
-export type CancelDeploymentMissing1 = {
-    type: CancelDeploymentMissingType;
-    value: string;
-};
-
-export type CancelDeploymentRoutesMissing = CancelDeploymentMissing1 | CancelDeploymentMissing2;
-
-export type RoutesLocale = {
-    redirect?: { [k: string]: string } | undefined;
-    cookie?: string | undefined;
-};
-
-/**
- * A list of routes objects used to rewrite paths to point towards other internal or external paths
- */
-export type CancelDeploymentRoutes1 = {
-    src: string;
-    dest?: string | undefined;
-    headers?: { [k: string]: string } | undefined;
-    methods?: Array<string> | undefined;
-    continue?: boolean | undefined;
-    override?: boolean | undefined;
-    caseSensitive?: boolean | undefined;
-    check?: boolean | undefined;
-    important?: boolean | undefined;
-    status?: number | undefined;
-    has?: Array<CancelDeploymentHas1 | CancelDeploymentHas2> | undefined;
-    missing?: Array<CancelDeploymentMissing1 | CancelDeploymentMissing2> | undefined;
-    locale?: RoutesLocale | undefined;
-    /**
-     * A middleware key within the `output` key under the build result. Overrides a `middleware` definition.
-     */
-    middlewarePath?: string | undefined;
-    /**
-     * The original middleware matchers.
-     */
-    middlewareRawSrc?: Array<string> | undefined;
-    /**
-     * A middleware index in the `middleware` key under the build result
-     */
-    middleware?: number | undefined;
-};
-
-export type CancelDeploymentRoutes =
-    | CancelDeploymentRoutes3
-    | CancelDeploymentRoutes2
-    | CancelDeploymentRoutes1;
-
-export const CancelDeploymentGitRepoDeploymentsResponseType = {
-    Bitbucket: "bitbucket",
-} as const;
-export type CancelDeploymentGitRepoDeploymentsResponseType = ClosedEnum<
-    typeof CancelDeploymentGitRepoDeploymentsResponseType
->;
-
-export const CancelDeploymentGitRepoDeploymentsResponseOwnerType = {
-    User: "user",
-    Team: "team",
-} as const;
-export type CancelDeploymentGitRepoDeploymentsResponseOwnerType = ClosedEnum<
-    typeof CancelDeploymentGitRepoDeploymentsResponseOwnerType
->;
-
-export type CancelDeploymentGitRepo3 = {
-    owner: string;
-    repoUuid: string;
-    slug: string;
-    type: CancelDeploymentGitRepoDeploymentsResponseType;
-    workspaceUuid: string;
-    path: string;
-    defaultBranch: string;
-    name: string;
-    private: boolean;
-    ownerType: CancelDeploymentGitRepoDeploymentsResponseOwnerType;
-};
-
-export const CancelDeploymentGitRepoDeploymentsType = {
-    Github: "github",
-} as const;
-export type CancelDeploymentGitRepoDeploymentsType = ClosedEnum<
-    typeof CancelDeploymentGitRepoDeploymentsType
->;
-
-export const CancelDeploymentGitRepoDeploymentsOwnerType = {
-    User: "user",
-    Team: "team",
-} as const;
-export type CancelDeploymentGitRepoDeploymentsOwnerType = ClosedEnum<
-    typeof CancelDeploymentGitRepoDeploymentsOwnerType
->;
-
-export type CancelDeploymentGitRepo2 = {
-    org: string;
-    repo: string;
-    repoId: number;
-    type: CancelDeploymentGitRepoDeploymentsType;
-    repoOwnerId: string;
-    path: string;
-    defaultBranch: string;
-    name: string;
-    private: boolean;
-    ownerType: CancelDeploymentGitRepoDeploymentsOwnerType;
-};
-
-export const CancelDeploymentGitRepoType = {
-    Gitlab: "gitlab",
-} as const;
-export type CancelDeploymentGitRepoType = ClosedEnum<typeof CancelDeploymentGitRepoType>;
-
-export const CancelDeploymentGitRepoOwnerType = {
-    User: "user",
-    Team: "team",
-} as const;
-export type CancelDeploymentGitRepoOwnerType = ClosedEnum<typeof CancelDeploymentGitRepoOwnerType>;
-
-export type CancelDeploymentGitRepo1 = {
-    namespace: string;
-    projectId: number;
-    type: CancelDeploymentGitRepoType;
-    url: string;
-    path: string;
-    defaultBranch: string;
-    name: string;
-    private: boolean;
-    ownerType: CancelDeploymentGitRepoOwnerType;
-};
-
-export type CancelDeploymentGitRepo =
-    | CancelDeploymentGitRepo1
-    | CancelDeploymentGitRepo2
-    | CancelDeploymentGitRepo3;
-
-export type CancelDeploymentAliasAssignedAt = number | boolean;
 
 export const CancelDeploymentDeploymentsReadyState = {
-    Initializing: "INITIALIZING",
     Building: "BUILDING",
-    Ready: "READY",
     Error: "ERROR",
+    Initializing: "INITIALIZING",
+    Ready: "READY",
 } as const;
 export type CancelDeploymentDeploymentsReadyState = ClosedEnum<
     typeof CancelDeploymentDeploymentsReadyState
@@ -286,8 +131,11 @@ export type CancelDeploymentOutput = {
     functionName: string;
 };
 
+/**
+ * A partial representation of a Build used by the deployment endpoint.
+ */
 export type CancelDeploymentLambdas = {
-    id: string;
+    id?: string | undefined;
     createdAt?: number | undefined;
     entrypoint?: string | null | undefined;
     readyState?: CancelDeploymentDeploymentsReadyState | undefined;
@@ -295,101 +143,96 @@ export type CancelDeploymentLambdas = {
     output: Array<CancelDeploymentOutput>;
 };
 
-/**
- * The public project information associated with the deployment.
- */
-export type CancelDeploymentProject = {
-    id: string;
-    name: string;
-    framework?: string | null | undefined;
-};
-
-/**
- * The state of the deployment depending on the process of deploying, or if it is ready or in an error state
- */
-export const CancelDeploymentReadyState = {
-    Initializing: "INITIALIZING",
+export const CancelDeploymentStatus = {
     Building: "BUILDING",
-    Ready: "READY",
     Error: "ERROR",
+    Initializing: "INITIALIZING",
     Queued: "QUEUED",
+    Ready: "READY",
     Canceled: "CANCELED",
 } as const;
-/**
- * The state of the deployment depending on the process of deploying, or if it is ready or in an error state
- */
-export type CancelDeploymentReadyState = ClosedEnum<typeof CancelDeploymentReadyState>;
+export type CancelDeploymentStatus = ClosedEnum<typeof CancelDeploymentStatus>;
 
-/**
- * The substate of the deployment when the state is "READY"
- */
-export const CancelDeploymentReadySubstate = {
-    Staged: "STAGED",
-    Promoted: "PROMOTED",
-} as const;
-/**
- * The substate of the deployment when the state is "READY"
- */
-export type CancelDeploymentReadySubstate = ClosedEnum<typeof CancelDeploymentReadySubstate>;
-
-/**
- * Where was the deployment created from
- */
-export const CancelDeploymentSource = {
-    ApiTriggerGitDeploy: "api-trigger-git-deploy",
-    Cli: "cli",
-    CloneRepo: "clone/repo",
-    Git: "git",
-    Import: "import",
-    ImportRepo: "import/repo",
-} as const;
-/**
- * Where was the deployment created from
- */
-export type CancelDeploymentSource = ClosedEnum<typeof CancelDeploymentSource>;
-
-/**
- * If defined, either `staging` if a staging alias in the format `<project>.<team>.now.sh` was assigned upon creation, or `production` if the aliases from `alias` were assigned
- */
-export const CancelDeploymentTarget = {
-    Staging: "staging",
-    Production: "production",
-} as const;
-/**
- * If defined, either `staging` if a staging alias in the format `<project>.<team>.now.sh` was assigned upon creation, or `production` if the aliases from `alias` were assigned
- */
-export type CancelDeploymentTarget = ClosedEnum<typeof CancelDeploymentTarget>;
-
-/**
- * The team that owns the deployment if any
- */
 export type CancelDeploymentTeam = {
-    /**
-     * The ID of the team owner
-     */
     id: string;
-    /**
-     * The name of the team owner
-     */
     name: string;
-    /**
-     * The slug of the team owner
-     */
-    slug: string;
-    /**
-     * The avatar of the team owner
-     */
     avatar?: string | undefined;
+    slug: string;
 };
 
-export const CancelDeploymentType = {
-    Lambdas: "LAMBDAS",
+export type CancelDeploymentCustomEnvironment2 = {
+    id: string;
+};
+
+export const CancelDeploymentCustomEnvironmentType = {
+    Production: "production",
+    Preview: "preview",
+    Development: "development",
 } as const;
-export type CancelDeploymentType = ClosedEnum<typeof CancelDeploymentType>;
+export type CancelDeploymentCustomEnvironmentType = ClosedEnum<
+    typeof CancelDeploymentCustomEnvironmentType
+>;
+
+export const CancelDeploymentCustomEnvironmentDeploymentsType = {
+    StartsWith: "startsWith",
+    Equals: "equals",
+    EndsWith: "endsWith",
+} as const;
+export type CancelDeploymentCustomEnvironmentDeploymentsType = ClosedEnum<
+    typeof CancelDeploymentCustomEnvironmentDeploymentsType
+>;
+
+export type CustomEnvironmentBranchMatcher = {
+    type: CancelDeploymentCustomEnvironmentDeploymentsType;
+    pattern: string;
+};
 
 /**
- * An object that will contain a `code` and a `message` when the aliasing fails, otherwise the value will be `null`
+ * A list of verification challenges, one of which must be completed to verify the domain for use on the project. After the challenge is complete `POST /projects/:idOrName/domains/:domain/verify` to verify the domain. Possible challenges: - If `verification.type = TXT` the `verification.domain` will be checked for a TXT record matching `verification.value`.
  */
+export type CustomEnvironmentVerification = {
+    type: string;
+    domain: string;
+    value: string;
+    reason: string;
+};
+
+export type CustomEnvironmentDomains = {
+    name: string;
+    apexName: string;
+    projectId: string;
+    redirect?: string | null | undefined;
+    redirectStatusCode?: number | null | undefined;
+    gitBranch?: string | null | undefined;
+    customEnvironmentId?: string | null | undefined;
+    updatedAt?: number | undefined;
+    createdAt?: number | undefined;
+    /**
+     * `true` if the domain is verified for use with the project. If `false` it will not be used as an alias on this project until the challenge in `verification` is completed.
+     */
+    verified: boolean;
+    /**
+     * A list of verification challenges, one of which must be completed to verify the domain for use on the project. After the challenge is complete `POST /projects/:idOrName/domains/:domain/verify` to verify the domain. Possible challenges: - If `verification.type = TXT` the `verification.domain` will be checked for a TXT record matching `verification.value`.
+     */
+    verification?: Array<CustomEnvironmentVerification> | undefined;
+};
+
+export type CancelDeploymentCustomEnvironment1 = {
+    id: string;
+    name: string;
+    slug: string;
+    type: CancelDeploymentCustomEnvironmentType;
+    description?: string | undefined;
+    branchMatcher?: CustomEnvironmentBranchMatcher | undefined;
+    createdAt: number;
+    updatedAt: number;
+    domains?: Array<CustomEnvironmentDomains> | undefined;
+};
+
+export type CancelDeploymentCustomEnvironment =
+    | CancelDeploymentCustomEnvironment2
+    | CancelDeploymentCustomEnvironment1;
+
 export type CancelDeploymentAliasError = {
     code: string;
     message: string;
@@ -416,24 +259,6 @@ export const CancelDeploymentChecksConclusion = {
     Canceled: "canceled",
 } as const;
 export type CancelDeploymentChecksConclusion = ClosedEnum<typeof CancelDeploymentChecksConclusion>;
-
-/**
- * Information about the deployment creator
- */
-export type CancelDeploymentCreator = {
-    /**
-     * The ID of the user that created the deployment
-     */
-    uid: string;
-    /**
-     * The username of the user that created the deployment
-     */
-    username?: string | undefined;
-    /**
-     * The avatar of the user that created the deployment
-     */
-    avatar?: string | undefined;
-};
 
 export const CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody9Type = {
     Bitbucket: "bitbucket",
@@ -591,166 +416,358 @@ export type CancelDeploymentGitSource =
     | GitSource7
     | GitSource9;
 
-export type CancelDeploymentResponseBody = {
-    build: CancelDeploymentBuild;
-    builds?: Array<CancelDeploymentBuilds> | undefined;
-    /**
-     * The flag saying if Vercel Connect configuration is used for builds
-     */
-    connectBuildsEnabled?: boolean | undefined;
-    /**
-     * The ID of Vercel Connect configuration used for this deployment
-     */
-    connectConfigurationId?: string | undefined;
-    /**
-     * The region where the deployment was first created
-     */
-    createdIn: string;
-    /**
-     * The cron jobs associated with this deployment. Note that preview deployments are also allowed to have this property, but only production deployments create cron jobs. If a preview deployment is promoted to production, only then they'll take effect.
-     */
-    crons?: Array<CancelDeploymentCrons> | undefined;
-    /**
-     * The keys of the environment variables that were assigned during runtime
-     */
-    env: Array<string>;
-    /**
-     * An object used to configure your Serverless Functions
-     */
-    functions?: { [k: string]: CancelDeploymentFunctions } | null | undefined;
-    /**
-     * Vercel URL to inspect the deployment.
-     */
-    inspectorUrl: string | null;
-    /**
-     * Is the deployment currently queued waiting for a Concurrent Build Slot to be available
-     */
-    isInConcurrentBuildsQueue: boolean;
-    /**
-     * An object containing the deployment's metadata
-     */
-    meta: { [k: string]: string };
-    /**
-     * An monorepo manager that was used for the deployment
-     */
-    monorepoManager?: string | null | undefined;
-    /**
-     * The name of the project associated with the deployment at the time that the deployment was created
-     */
+export type CancelDeploymentProject = {
+    id: string;
     name: string;
+    framework?: string | null | undefined;
+};
+
+export const CancelDeploymentReadyState = {
+    Building: "BUILDING",
+    Error: "ERROR",
+    Initializing: "INITIALIZING",
+    Queued: "QUEUED",
+    Ready: "READY",
+    Canceled: "CANCELED",
+} as const;
+export type CancelDeploymentReadyState = ClosedEnum<typeof CancelDeploymentReadyState>;
+
+/**
+ * Since June 2023 Substate of deployment when readyState is 'READY' Tracks whether or not deployment has seen production traffic: - STAGED: never seen production traffic - PROMOTED: has seen production traffic
+ */
+export const CancelDeploymentReadySubstate = {
+    Staged: "STAGED",
+    Promoted: "PROMOTED",
+} as const;
+/**
+ * Since June 2023 Substate of deployment when readyState is 'READY' Tracks whether or not deployment has seen production traffic: - STAGED: never seen production traffic - PROMOTED: has seen production traffic
+ */
+export type CancelDeploymentReadySubstate = ClosedEnum<typeof CancelDeploymentReadySubstate>;
+
+export const CancelDeploymentSource = {
+    ApiTriggerGitDeploy: "api-trigger-git-deploy",
+    Cli: "cli",
+    CloneRepo: "clone/repo",
+    Git: "git",
+    Import: "import",
+    ImportRepo: "import/repo",
+    Redeploy: "redeploy",
+} as const;
+export type CancelDeploymentSource = ClosedEnum<typeof CancelDeploymentSource>;
+
+export const CancelDeploymentTarget = {
+    Staging: "staging",
+    Production: "production",
+} as const;
+export type CancelDeploymentTarget = ClosedEnum<typeof CancelDeploymentTarget>;
+
+export const CancelDeploymentType = {
+    Lambdas: "LAMBDAS",
+} as const;
+export type CancelDeploymentType = ClosedEnum<typeof CancelDeploymentType>;
+
+export type CancelDeploymentOidcTokenClaims = string | Array<string>;
+
+export type CancelDeploymentCrons = {
+    schedule: string;
+    path: string;
+};
+
+export type CancelDeploymentFunctions = {
+    memory?: number | undefined;
+    maxDuration?: number | undefined;
+    runtime?: string | undefined;
+    includeFiles?: string | undefined;
+    excludeFiles?: string | undefined;
+};
+
+export const CancelDeploymentPlan = {
+    Pro: "pro",
+    Enterprise: "enterprise",
+    Hobby: "hobby",
+} as const;
+export type CancelDeploymentPlan = ClosedEnum<typeof CancelDeploymentPlan>;
+
+export type CancelDeploymentRoutes3 = {
+    src: string;
+    continue: boolean;
+    middleware: number;
+};
+
+export const CancelDeploymentRoutesHandle = {
+    Error: "error",
+    Filesystem: "filesystem",
+    Hit: "hit",
+    Miss: "miss",
+    Rewrite: "rewrite",
+    Resource: "resource",
+} as const;
+export type CancelDeploymentRoutesHandle = ClosedEnum<typeof CancelDeploymentRoutesHandle>;
+
+export type CancelDeploymentRoutes2 = {
+    handle: CancelDeploymentRoutesHandle;
+    src?: string | undefined;
+    dest?: string | undefined;
+    status?: number | undefined;
+};
+
+export const CancelDeploymentHasDeploymentsType = {
+    Header: "header",
+    Cookie: "cookie",
+    Query: "query",
+} as const;
+export type CancelDeploymentHasDeploymentsType = ClosedEnum<
+    typeof CancelDeploymentHasDeploymentsType
+>;
+
+export type CancelDeploymentHas2 = {
+    type: CancelDeploymentHasDeploymentsType;
+    key: string;
+    value?: string | undefined;
+};
+
+export const CancelDeploymentHasType = {
+    Host: "host",
+} as const;
+export type CancelDeploymentHasType = ClosedEnum<typeof CancelDeploymentHasType>;
+
+export type CancelDeploymentHas1 = {
+    type: CancelDeploymentHasType;
+    value: string;
+};
+
+export type CancelDeploymentRoutesHas = CancelDeploymentHas1 | CancelDeploymentHas2;
+
+export const CancelDeploymentMissingDeploymentsType = {
+    Header: "header",
+    Cookie: "cookie",
+    Query: "query",
+} as const;
+export type CancelDeploymentMissingDeploymentsType = ClosedEnum<
+    typeof CancelDeploymentMissingDeploymentsType
+>;
+
+export type CancelDeploymentMissing2 = {
+    type: CancelDeploymentMissingDeploymentsType;
+    key: string;
+    value?: string | undefined;
+};
+
+export const CancelDeploymentMissingType = {
+    Host: "host",
+} as const;
+export type CancelDeploymentMissingType = ClosedEnum<typeof CancelDeploymentMissingType>;
+
+export type CancelDeploymentMissing1 = {
+    type: CancelDeploymentMissingType;
+    value: string;
+};
+
+export type CancelDeploymentRoutesMissing = CancelDeploymentMissing1 | CancelDeploymentMissing2;
+
+export type RoutesLocale = {
+    redirect?: { [k: string]: string } | undefined;
+    cookie?: string | undefined;
+};
+
+export type CancelDeploymentRoutes1 = {
+    src: string;
+    dest?: string | undefined;
+    headers?: { [k: string]: string } | undefined;
+    methods?: Array<string> | undefined;
+    continue?: boolean | undefined;
+    override?: boolean | undefined;
+    caseSensitive?: boolean | undefined;
+    check?: boolean | undefined;
+    important?: boolean | undefined;
+    status?: number | undefined;
+    has?: Array<CancelDeploymentHas1 | CancelDeploymentHas2> | undefined;
+    missing?: Array<CancelDeploymentMissing1 | CancelDeploymentMissing2> | undefined;
+    locale?: RoutesLocale | undefined;
     /**
-     * The unique ID of the user or team the deployment belongs to
+     * A middleware key within the `output` key under the build result. Overrides a `middleware` definition.
      */
-    ownerId: string;
+    middlewarePath?: string | undefined;
     /**
-     * The connect configuration ID used to deploy passive lambdas into for secure compute enabled deployments.
+     * The original middleware matchers.
      */
-    passiveConnectConfigurationId?: string | undefined;
+    middlewareRawSrc?: Array<string> | undefined;
     /**
-     * The pricing plan the deployment was made under
+     * A middleware index in the `middleware` key under the build result
      */
-    plan: CancelDeploymentPlan;
-    /**
-     * The ID of the project the deployment is associated with
-     */
-    projectId: string;
-    /**
-     * A list of routes objects used to rewrite paths to point towards other internal or external paths
-     */
-    routes: Array<
-        CancelDeploymentRoutes3 | CancelDeploymentRoutes2 | CancelDeploymentRoutes1
-    > | null;
-    gitRepo?:
-        | CancelDeploymentGitRepo1
-        | CancelDeploymentGitRepo2
-        | CancelDeploymentGitRepo3
-        | null
-        | undefined;
-    aliasAssignedAt?: number | boolean | null | undefined;
-    lambdas?: Array<CancelDeploymentLambdas> | undefined;
-    /**
-     * The public project information associated with the deployment.
-     */
-    project?: CancelDeploymentProject | undefined;
-    /**
-     * A boolean representing if the deployment is public or not. By default this is `false`
-     */
-    public: boolean;
-    /**
-     * The state of the deployment depending on the process of deploying, or if it is ready or in an error state
-     */
-    readyState: CancelDeploymentReadyState;
-    /**
-     * The substate of the deployment when the state is "READY"
-     */
-    readySubstate?: CancelDeploymentReadySubstate | undefined;
-    /**
-     * The regions the deployment exists in
-     */
-    regions: Array<string>;
-    /**
-     * Where was the deployment created from
-     */
-    source?: CancelDeploymentSource | undefined;
-    /**
-     * If defined, either `staging` if a staging alias in the format `<project>.<team>.now.sh` was assigned upon creation, or `production` if the aliases from `alias` were assigned
-     */
-    target?: CancelDeploymentTarget | null | undefined;
-    /**
-     * The team that owns the deployment if any
-     */
-    team?: CancelDeploymentTeam | undefined;
-    type: CancelDeploymentType;
-    /**
-     * A string with the unique URL of the deployment
-     */
+    middleware?: number | undefined;
+};
+
+export type CancelDeploymentRoutes =
+    | CancelDeploymentRoutes3
+    | CancelDeploymentRoutes2
+    | CancelDeploymentRoutes1;
+
+export const CancelDeploymentGitRepoDeploymentsResponseType = {
+    Bitbucket: "bitbucket",
+} as const;
+export type CancelDeploymentGitRepoDeploymentsResponseType = ClosedEnum<
+    typeof CancelDeploymentGitRepoDeploymentsResponseType
+>;
+
+export const CancelDeploymentGitRepoDeploymentsResponseOwnerType = {
+    Team: "team",
+    User: "user",
+} as const;
+export type CancelDeploymentGitRepoDeploymentsResponseOwnerType = ClosedEnum<
+    typeof CancelDeploymentGitRepoDeploymentsResponseOwnerType
+>;
+
+export type CancelDeploymentGitRepo3 = {
+    owner: string;
+    repoUuid: string;
+    slug: string;
+    type: CancelDeploymentGitRepoDeploymentsResponseType;
+    workspaceUuid: string;
+    path: string;
+    defaultBranch: string;
+    name: string;
+    private: boolean;
+    ownerType: CancelDeploymentGitRepoDeploymentsResponseOwnerType;
+};
+
+export const CancelDeploymentGitRepoDeploymentsType = {
+    Github: "github",
+} as const;
+export type CancelDeploymentGitRepoDeploymentsType = ClosedEnum<
+    typeof CancelDeploymentGitRepoDeploymentsType
+>;
+
+export const CancelDeploymentGitRepoDeploymentsOwnerType = {
+    Team: "team",
+    User: "user",
+} as const;
+export type CancelDeploymentGitRepoDeploymentsOwnerType = ClosedEnum<
+    typeof CancelDeploymentGitRepoDeploymentsOwnerType
+>;
+
+export type CancelDeploymentGitRepo2 = {
+    org: string;
+    repo: string;
+    repoId: number;
+    type: CancelDeploymentGitRepoDeploymentsType;
+    repoOwnerId: string;
+    path: string;
+    defaultBranch: string;
+    name: string;
+    private: boolean;
+    ownerType: CancelDeploymentGitRepoDeploymentsOwnerType;
+};
+
+export const CancelDeploymentGitRepoType = {
+    Gitlab: "gitlab",
+} as const;
+export type CancelDeploymentGitRepoType = ClosedEnum<typeof CancelDeploymentGitRepoType>;
+
+export const CancelDeploymentGitRepoOwnerType = {
+    Team: "team",
+    User: "user",
+} as const;
+export type CancelDeploymentGitRepoOwnerType = ClosedEnum<typeof CancelDeploymentGitRepoOwnerType>;
+
+export type CancelDeploymentGitRepo1 = {
+    namespace: string;
+    projectId: number;
+    type: CancelDeploymentGitRepoType;
     url: string;
-    /**
-     * An array of domains that were provided by the user when creating the Deployment.
-     */
-    userAliases?: Array<string> | undefined;
-    /**
-     * The platform version that was used to create the deployment.
-     */
-    version: number;
-    /**
-     * Whether or not preview comments are enabled for the deployment
-     */
-    previewCommentsEnabled?: boolean | undefined;
-    /**
-     * A list of all the aliases (default aliases, staging aliases and production aliases) that were assigned upon deployment creation
-     */
-    alias: Array<string>;
-    /**
-     * A boolean that will be true when the aliases from the alias property were assigned successfully
-     */
+    path: string;
+    defaultBranch: string;
+    name: string;
+    private: boolean;
+    ownerType: CancelDeploymentGitRepoOwnerType;
+};
+
+export type CancelDeploymentGitRepo =
+    | CancelDeploymentGitRepo1
+    | CancelDeploymentGitRepo2
+    | CancelDeploymentGitRepo3;
+
+/**
+ * Flags defined in the Build Output API, used by this deployment. Primarily used by the Toolbar to know about the used flags.
+ */
+export type CancelDeploymentFlags2 = {};
+
+export type FlagsOptions = {
+    value: FlagJSONValue | null;
+    label?: string | undefined;
+};
+
+export type CancelDeploymentFlagsDefinitions = {
+    options?: Array<FlagsOptions> | undefined;
+    url?: string | undefined;
+    description?: string | undefined;
+};
+
+/**
+ * Flags defined in the Build Output API, used by this deployment. Primarily used by the Toolbar to know about the used flags.
+ */
+export type CancelDeploymentFlags1 = {
+    definitions: { [k: string]: CancelDeploymentFlagsDefinitions };
+};
+
+export type CancelDeploymentFlags = CancelDeploymentFlags1 | Array<CancelDeploymentFlags2>;
+
+/**
+ * The private deployment representation of a Deployment.
+ */
+export type CancelDeploymentResponseBody = {
+    aliasAssignedAt?: number | boolean | null | undefined;
+    alwaysRefuseToBuild?: boolean | undefined;
+    build: CancelDeploymentBuild;
+    buildArtifactUrls?: Array<string> | undefined;
+    builds?: Array<CancelDeploymentBuilds> | undefined;
+    env: Array<string>;
+    inspectorUrl: string | null;
+    isInConcurrentBuildsQueue: boolean;
+    projectSettings: CancelDeploymentProjectSettings;
+    readyStateReason?: string | undefined;
+    alias?: Array<string> | undefined;
     aliasAssigned: boolean;
-    /**
-     * An object that will contain a `code` and a `message` when the aliasing fails, otherwise the value will be `null`
-     */
+    bootedAt: number;
+    buildingAt: number;
+    buildSkipped: boolean;
+    creator: CancelDeploymentCreator;
+    initReadyAt?: number | undefined;
+    isFirstBranchDeployment?: boolean | undefined;
+    lambdas?: Array<CancelDeploymentLambdas> | undefined;
+    public: boolean;
+    ready?: number | undefined;
+    status: CancelDeploymentStatus;
+    team?: CancelDeploymentTeam | undefined;
+    userAliases?: Array<string> | undefined;
+    previewCommentsEnabled?: boolean | undefined;
+    ttyBuildLogs?: boolean | undefined;
+    customEnvironment?:
+        | CancelDeploymentCustomEnvironment2
+        | CancelDeploymentCustomEnvironment1
+        | undefined;
+    id: string;
     aliasError?: CancelDeploymentAliasError | null | undefined;
     aliasFinal?: string | null | undefined;
     aliasWarning?: CancelDeploymentAliasWarning | null | undefined;
+    /**
+     * applies to custom domains only, defaults to `true`
+     */
     autoAssignCustomDomains?: boolean | undefined;
     automaticAliases?: Array<string> | undefined;
-    bootedAt: number;
     buildErrorAt?: number | undefined;
-    buildingAt: number;
-    canceledAt?: number | undefined;
     checksState?: CancelDeploymentChecksState | undefined;
     checksConclusion?: CancelDeploymentChecksConclusion | undefined;
-    /**
-     * A number containing the date when the deployment was created in milliseconds
-     */
     createdAt: number;
-    /**
-     * Information about the deployment creator
-     */
-    creator: CancelDeploymentCreator;
+    deletedAt?: number | null | undefined;
+    canceledAt?: number | undefined;
     errorCode?: string | undefined;
     errorLink?: string | undefined;
     errorMessage?: string | null | undefined;
     errorStep?: string | undefined;
+    /**
+     * Since November 2023 this field defines a set of regions that we will deploy the lambda to passively Lambdas will be deployed to these regions but only invoked if all of the primary `regions` are marked as out of service
+     */
     passiveRegions?: Array<string> | undefined;
     gitSource?:
         | GitSource6
@@ -763,10 +780,46 @@ export type CancelDeploymentResponseBody = {
         | GitSource7
         | GitSource9
         | undefined;
+    name: string;
+    meta: { [k: string]: string };
+    project?: CancelDeploymentProject | undefined;
+    readyState: CancelDeploymentReadyState;
     /**
-     * A string holding the unique ID of the deployment
+     * Since June 2023 Substate of deployment when readyState is 'READY' Tracks whether or not deployment has seen production traffic: - STAGED: never seen production traffic - PROMOTED: has seen production traffic
      */
-    id: string;
+    readySubstate?: CancelDeploymentReadySubstate | undefined;
+    regions: Array<string>;
+    softDeletedByRetention?: boolean | undefined;
+    source?: CancelDeploymentSource | undefined;
+    target?: CancelDeploymentTarget | null | undefined;
+    type: CancelDeploymentType;
+    undeletedAt?: number | undefined;
+    url: string;
+    version: number;
+    oidcTokenClaims?: { [k: string]: string | Array<string> } | undefined;
+    connectBuildsEnabled?: boolean | undefined;
+    connectConfigurationId?: string | undefined;
+    createdIn: string;
+    crons?: Array<CancelDeploymentCrons> | undefined;
+    functions?: { [k: string]: CancelDeploymentFunctions } | null | undefined;
+    monorepoManager?: string | null | undefined;
+    ownerId: string;
+    /**
+     * Since November 2023 this field defines a connect configuration that will only be used to deploy passive lambdas to (as in passiveRegions)
+     */
+    passiveConnectConfigurationId?: string | undefined;
+    plan: CancelDeploymentPlan;
+    projectId: string;
+    routes: Array<
+        CancelDeploymentRoutes3 | CancelDeploymentRoutes2 | CancelDeploymentRoutes1
+    > | null;
+    gitRepo?:
+        | CancelDeploymentGitRepo1
+        | CancelDeploymentGitRepo2
+        | CancelDeploymentGitRepo3
+        | null
+        | undefined;
+    flags?: CancelDeploymentFlags1 | Array<CancelDeploymentFlags2> | undefined;
 };
 
 /** @internal */
@@ -809,6 +862,36 @@ export namespace CancelDeploymentRequest$ {
     export const outboundSchema = CancelDeploymentRequest$outboundSchema;
     /** @deprecated use `CancelDeploymentRequest$Outbound` instead. */
     export type Outbound = CancelDeploymentRequest$Outbound;
+}
+
+/** @internal */
+export const CancelDeploymentAliasAssignedAt$inboundSchema: z.ZodType<
+    CancelDeploymentAliasAssignedAt,
+    z.ZodTypeDef,
+    unknown
+> = z.union([z.number(), z.boolean()]);
+
+/** @internal */
+export type CancelDeploymentAliasAssignedAt$Outbound = number | boolean;
+
+/** @internal */
+export const CancelDeploymentAliasAssignedAt$outboundSchema: z.ZodType<
+    CancelDeploymentAliasAssignedAt$Outbound,
+    z.ZodTypeDef,
+    CancelDeploymentAliasAssignedAt
+> = z.union([z.number(), z.boolean()]);
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace CancelDeploymentAliasAssignedAt$ {
+    /** @deprecated use `CancelDeploymentAliasAssignedAt$inboundSchema` instead. */
+    export const inboundSchema = CancelDeploymentAliasAssignedAt$inboundSchema;
+    /** @deprecated use `CancelDeploymentAliasAssignedAt$outboundSchema` instead. */
+    export const outboundSchema = CancelDeploymentAliasAssignedAt$outboundSchema;
+    /** @deprecated use `CancelDeploymentAliasAssignedAt$Outbound` instead. */
+    export type Outbound = CancelDeploymentAliasAssignedAt$Outbound;
 }
 
 /** @internal */
@@ -875,6 +958,1758 @@ export namespace CancelDeploymentBuilds$ {
     export const outboundSchema = CancelDeploymentBuilds$outboundSchema;
     /** @deprecated use `CancelDeploymentBuilds$Outbound` instead. */
     export type Outbound = CancelDeploymentBuilds$Outbound;
+}
+
+/** @internal */
+export const CancelDeploymentFramework$inboundSchema: z.ZodNativeEnum<
+    typeof CancelDeploymentFramework
+> = z.nativeEnum(CancelDeploymentFramework);
+
+/** @internal */
+export const CancelDeploymentFramework$outboundSchema: z.ZodNativeEnum<
+    typeof CancelDeploymentFramework
+> = CancelDeploymentFramework$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace CancelDeploymentFramework$ {
+    /** @deprecated use `CancelDeploymentFramework$inboundSchema` instead. */
+    export const inboundSchema = CancelDeploymentFramework$inboundSchema;
+    /** @deprecated use `CancelDeploymentFramework$outboundSchema` instead. */
+    export const outboundSchema = CancelDeploymentFramework$outboundSchema;
+}
+
+/** @internal */
+export const CancelDeploymentSpeedInsights$inboundSchema: z.ZodType<
+    CancelDeploymentSpeedInsights,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    id: z.string(),
+    enabledAt: z.number().optional(),
+    disabledAt: z.number().optional(),
+    canceledAt: z.number().optional(),
+    hasData: z.boolean().optional(),
+    paidAt: z.number().optional(),
+});
+
+/** @internal */
+export type CancelDeploymentSpeedInsights$Outbound = {
+    id: string;
+    enabledAt?: number | undefined;
+    disabledAt?: number | undefined;
+    canceledAt?: number | undefined;
+    hasData?: boolean | undefined;
+    paidAt?: number | undefined;
+};
+
+/** @internal */
+export const CancelDeploymentSpeedInsights$outboundSchema: z.ZodType<
+    CancelDeploymentSpeedInsights$Outbound,
+    z.ZodTypeDef,
+    CancelDeploymentSpeedInsights
+> = z.object({
+    id: z.string(),
+    enabledAt: z.number().optional(),
+    disabledAt: z.number().optional(),
+    canceledAt: z.number().optional(),
+    hasData: z.boolean().optional(),
+    paidAt: z.number().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace CancelDeploymentSpeedInsights$ {
+    /** @deprecated use `CancelDeploymentSpeedInsights$inboundSchema` instead. */
+    export const inboundSchema = CancelDeploymentSpeedInsights$inboundSchema;
+    /** @deprecated use `CancelDeploymentSpeedInsights$outboundSchema` instead. */
+    export const outboundSchema = CancelDeploymentSpeedInsights$outboundSchema;
+    /** @deprecated use `CancelDeploymentSpeedInsights$Outbound` instead. */
+    export type Outbound = CancelDeploymentSpeedInsights$Outbound;
+}
+
+/** @internal */
+export const CancelDeploymentWebAnalytics$inboundSchema: z.ZodType<
+    CancelDeploymentWebAnalytics,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    id: z.string(),
+    disabledAt: z.number().optional(),
+    canceledAt: z.number().optional(),
+    enabledAt: z.number().optional(),
+    hasData: z.boolean().optional(),
+});
+
+/** @internal */
+export type CancelDeploymentWebAnalytics$Outbound = {
+    id: string;
+    disabledAt?: number | undefined;
+    canceledAt?: number | undefined;
+    enabledAt?: number | undefined;
+    hasData?: boolean | undefined;
+};
+
+/** @internal */
+export const CancelDeploymentWebAnalytics$outboundSchema: z.ZodType<
+    CancelDeploymentWebAnalytics$Outbound,
+    z.ZodTypeDef,
+    CancelDeploymentWebAnalytics
+> = z.object({
+    id: z.string(),
+    disabledAt: z.number().optional(),
+    canceledAt: z.number().optional(),
+    enabledAt: z.number().optional(),
+    hasData: z.boolean().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace CancelDeploymentWebAnalytics$ {
+    /** @deprecated use `CancelDeploymentWebAnalytics$inboundSchema` instead. */
+    export const inboundSchema = CancelDeploymentWebAnalytics$inboundSchema;
+    /** @deprecated use `CancelDeploymentWebAnalytics$outboundSchema` instead. */
+    export const outboundSchema = CancelDeploymentWebAnalytics$outboundSchema;
+    /** @deprecated use `CancelDeploymentWebAnalytics$Outbound` instead. */
+    export type Outbound = CancelDeploymentWebAnalytics$Outbound;
+}
+
+/** @internal */
+export const CancelDeploymentProjectSettings$inboundSchema: z.ZodType<
+    CancelDeploymentProjectSettings,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    buildCommand: z.nullable(z.string()).optional(),
+    devCommand: z.nullable(z.string()).optional(),
+    framework: z.nullable(CancelDeploymentFramework$inboundSchema).optional(),
+    commandForIgnoringBuildStep: z.nullable(z.string()).optional(),
+    installCommand: z.nullable(z.string()).optional(),
+    outputDirectory: z.nullable(z.string()).optional(),
+    speedInsights: z.lazy(() => CancelDeploymentSpeedInsights$inboundSchema).optional(),
+    webAnalytics: z.lazy(() => CancelDeploymentWebAnalytics$inboundSchema).optional(),
+});
+
+/** @internal */
+export type CancelDeploymentProjectSettings$Outbound = {
+    buildCommand?: string | null | undefined;
+    devCommand?: string | null | undefined;
+    framework?: string | null | undefined;
+    commandForIgnoringBuildStep?: string | null | undefined;
+    installCommand?: string | null | undefined;
+    outputDirectory?: string | null | undefined;
+    speedInsights?: CancelDeploymentSpeedInsights$Outbound | undefined;
+    webAnalytics?: CancelDeploymentWebAnalytics$Outbound | undefined;
+};
+
+/** @internal */
+export const CancelDeploymentProjectSettings$outboundSchema: z.ZodType<
+    CancelDeploymentProjectSettings$Outbound,
+    z.ZodTypeDef,
+    CancelDeploymentProjectSettings
+> = z.object({
+    buildCommand: z.nullable(z.string()).optional(),
+    devCommand: z.nullable(z.string()).optional(),
+    framework: z.nullable(CancelDeploymentFramework$outboundSchema).optional(),
+    commandForIgnoringBuildStep: z.nullable(z.string()).optional(),
+    installCommand: z.nullable(z.string()).optional(),
+    outputDirectory: z.nullable(z.string()).optional(),
+    speedInsights: z.lazy(() => CancelDeploymentSpeedInsights$outboundSchema).optional(),
+    webAnalytics: z.lazy(() => CancelDeploymentWebAnalytics$outboundSchema).optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace CancelDeploymentProjectSettings$ {
+    /** @deprecated use `CancelDeploymentProjectSettings$inboundSchema` instead. */
+    export const inboundSchema = CancelDeploymentProjectSettings$inboundSchema;
+    /** @deprecated use `CancelDeploymentProjectSettings$outboundSchema` instead. */
+    export const outboundSchema = CancelDeploymentProjectSettings$outboundSchema;
+    /** @deprecated use `CancelDeploymentProjectSettings$Outbound` instead. */
+    export type Outbound = CancelDeploymentProjectSettings$Outbound;
+}
+
+/** @internal */
+export const CancelDeploymentCreator$inboundSchema: z.ZodType<
+    CancelDeploymentCreator,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    uid: z.string(),
+    username: z.string().optional(),
+    avatar: z.string().optional(),
+});
+
+/** @internal */
+export type CancelDeploymentCreator$Outbound = {
+    uid: string;
+    username?: string | undefined;
+    avatar?: string | undefined;
+};
+
+/** @internal */
+export const CancelDeploymentCreator$outboundSchema: z.ZodType<
+    CancelDeploymentCreator$Outbound,
+    z.ZodTypeDef,
+    CancelDeploymentCreator
+> = z.object({
+    uid: z.string(),
+    username: z.string().optional(),
+    avatar: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace CancelDeploymentCreator$ {
+    /** @deprecated use `CancelDeploymentCreator$inboundSchema` instead. */
+    export const inboundSchema = CancelDeploymentCreator$inboundSchema;
+    /** @deprecated use `CancelDeploymentCreator$outboundSchema` instead. */
+    export const outboundSchema = CancelDeploymentCreator$outboundSchema;
+    /** @deprecated use `CancelDeploymentCreator$Outbound` instead. */
+    export type Outbound = CancelDeploymentCreator$Outbound;
+}
+
+/** @internal */
+export const CancelDeploymentDeploymentsReadyState$inboundSchema: z.ZodNativeEnum<
+    typeof CancelDeploymentDeploymentsReadyState
+> = z.nativeEnum(CancelDeploymentDeploymentsReadyState);
+
+/** @internal */
+export const CancelDeploymentDeploymentsReadyState$outboundSchema: z.ZodNativeEnum<
+    typeof CancelDeploymentDeploymentsReadyState
+> = CancelDeploymentDeploymentsReadyState$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace CancelDeploymentDeploymentsReadyState$ {
+    /** @deprecated use `CancelDeploymentDeploymentsReadyState$inboundSchema` instead. */
+    export const inboundSchema = CancelDeploymentDeploymentsReadyState$inboundSchema;
+    /** @deprecated use `CancelDeploymentDeploymentsReadyState$outboundSchema` instead. */
+    export const outboundSchema = CancelDeploymentDeploymentsReadyState$outboundSchema;
+}
+
+/** @internal */
+export const CancelDeploymentOutput$inboundSchema: z.ZodType<
+    CancelDeploymentOutput,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    path: z.string(),
+    functionName: z.string(),
+});
+
+/** @internal */
+export type CancelDeploymentOutput$Outbound = {
+    path: string;
+    functionName: string;
+};
+
+/** @internal */
+export const CancelDeploymentOutput$outboundSchema: z.ZodType<
+    CancelDeploymentOutput$Outbound,
+    z.ZodTypeDef,
+    CancelDeploymentOutput
+> = z.object({
+    path: z.string(),
+    functionName: z.string(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace CancelDeploymentOutput$ {
+    /** @deprecated use `CancelDeploymentOutput$inboundSchema` instead. */
+    export const inboundSchema = CancelDeploymentOutput$inboundSchema;
+    /** @deprecated use `CancelDeploymentOutput$outboundSchema` instead. */
+    export const outboundSchema = CancelDeploymentOutput$outboundSchema;
+    /** @deprecated use `CancelDeploymentOutput$Outbound` instead. */
+    export type Outbound = CancelDeploymentOutput$Outbound;
+}
+
+/** @internal */
+export const CancelDeploymentLambdas$inboundSchema: z.ZodType<
+    CancelDeploymentLambdas,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    id: z.string().optional(),
+    createdAt: z.number().optional(),
+    entrypoint: z.nullable(z.string()).optional(),
+    readyState: CancelDeploymentDeploymentsReadyState$inboundSchema.optional(),
+    readyStateAt: z.number().optional(),
+    output: z.array(z.lazy(() => CancelDeploymentOutput$inboundSchema)),
+});
+
+/** @internal */
+export type CancelDeploymentLambdas$Outbound = {
+    id?: string | undefined;
+    createdAt?: number | undefined;
+    entrypoint?: string | null | undefined;
+    readyState?: string | undefined;
+    readyStateAt?: number | undefined;
+    output: Array<CancelDeploymentOutput$Outbound>;
+};
+
+/** @internal */
+export const CancelDeploymentLambdas$outboundSchema: z.ZodType<
+    CancelDeploymentLambdas$Outbound,
+    z.ZodTypeDef,
+    CancelDeploymentLambdas
+> = z.object({
+    id: z.string().optional(),
+    createdAt: z.number().optional(),
+    entrypoint: z.nullable(z.string()).optional(),
+    readyState: CancelDeploymentDeploymentsReadyState$outboundSchema.optional(),
+    readyStateAt: z.number().optional(),
+    output: z.array(z.lazy(() => CancelDeploymentOutput$outboundSchema)),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace CancelDeploymentLambdas$ {
+    /** @deprecated use `CancelDeploymentLambdas$inboundSchema` instead. */
+    export const inboundSchema = CancelDeploymentLambdas$inboundSchema;
+    /** @deprecated use `CancelDeploymentLambdas$outboundSchema` instead. */
+    export const outboundSchema = CancelDeploymentLambdas$outboundSchema;
+    /** @deprecated use `CancelDeploymentLambdas$Outbound` instead. */
+    export type Outbound = CancelDeploymentLambdas$Outbound;
+}
+
+/** @internal */
+export const CancelDeploymentStatus$inboundSchema: z.ZodNativeEnum<typeof CancelDeploymentStatus> =
+    z.nativeEnum(CancelDeploymentStatus);
+
+/** @internal */
+export const CancelDeploymentStatus$outboundSchema: z.ZodNativeEnum<typeof CancelDeploymentStatus> =
+    CancelDeploymentStatus$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace CancelDeploymentStatus$ {
+    /** @deprecated use `CancelDeploymentStatus$inboundSchema` instead. */
+    export const inboundSchema = CancelDeploymentStatus$inboundSchema;
+    /** @deprecated use `CancelDeploymentStatus$outboundSchema` instead. */
+    export const outboundSchema = CancelDeploymentStatus$outboundSchema;
+}
+
+/** @internal */
+export const CancelDeploymentTeam$inboundSchema: z.ZodType<
+    CancelDeploymentTeam,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    id: z.string(),
+    name: z.string(),
+    avatar: z.string().optional(),
+    slug: z.string(),
+});
+
+/** @internal */
+export type CancelDeploymentTeam$Outbound = {
+    id: string;
+    name: string;
+    avatar?: string | undefined;
+    slug: string;
+};
+
+/** @internal */
+export const CancelDeploymentTeam$outboundSchema: z.ZodType<
+    CancelDeploymentTeam$Outbound,
+    z.ZodTypeDef,
+    CancelDeploymentTeam
+> = z.object({
+    id: z.string(),
+    name: z.string(),
+    avatar: z.string().optional(),
+    slug: z.string(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace CancelDeploymentTeam$ {
+    /** @deprecated use `CancelDeploymentTeam$inboundSchema` instead. */
+    export const inboundSchema = CancelDeploymentTeam$inboundSchema;
+    /** @deprecated use `CancelDeploymentTeam$outboundSchema` instead. */
+    export const outboundSchema = CancelDeploymentTeam$outboundSchema;
+    /** @deprecated use `CancelDeploymentTeam$Outbound` instead. */
+    export type Outbound = CancelDeploymentTeam$Outbound;
+}
+
+/** @internal */
+export const CancelDeploymentCustomEnvironment2$inboundSchema: z.ZodType<
+    CancelDeploymentCustomEnvironment2,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    id: z.string(),
+});
+
+/** @internal */
+export type CancelDeploymentCustomEnvironment2$Outbound = {
+    id: string;
+};
+
+/** @internal */
+export const CancelDeploymentCustomEnvironment2$outboundSchema: z.ZodType<
+    CancelDeploymentCustomEnvironment2$Outbound,
+    z.ZodTypeDef,
+    CancelDeploymentCustomEnvironment2
+> = z.object({
+    id: z.string(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace CancelDeploymentCustomEnvironment2$ {
+    /** @deprecated use `CancelDeploymentCustomEnvironment2$inboundSchema` instead. */
+    export const inboundSchema = CancelDeploymentCustomEnvironment2$inboundSchema;
+    /** @deprecated use `CancelDeploymentCustomEnvironment2$outboundSchema` instead. */
+    export const outboundSchema = CancelDeploymentCustomEnvironment2$outboundSchema;
+    /** @deprecated use `CancelDeploymentCustomEnvironment2$Outbound` instead. */
+    export type Outbound = CancelDeploymentCustomEnvironment2$Outbound;
+}
+
+/** @internal */
+export const CancelDeploymentCustomEnvironmentType$inboundSchema: z.ZodNativeEnum<
+    typeof CancelDeploymentCustomEnvironmentType
+> = z.nativeEnum(CancelDeploymentCustomEnvironmentType);
+
+/** @internal */
+export const CancelDeploymentCustomEnvironmentType$outboundSchema: z.ZodNativeEnum<
+    typeof CancelDeploymentCustomEnvironmentType
+> = CancelDeploymentCustomEnvironmentType$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace CancelDeploymentCustomEnvironmentType$ {
+    /** @deprecated use `CancelDeploymentCustomEnvironmentType$inboundSchema` instead. */
+    export const inboundSchema = CancelDeploymentCustomEnvironmentType$inboundSchema;
+    /** @deprecated use `CancelDeploymentCustomEnvironmentType$outboundSchema` instead. */
+    export const outboundSchema = CancelDeploymentCustomEnvironmentType$outboundSchema;
+}
+
+/** @internal */
+export const CancelDeploymentCustomEnvironmentDeploymentsType$inboundSchema: z.ZodNativeEnum<
+    typeof CancelDeploymentCustomEnvironmentDeploymentsType
+> = z.nativeEnum(CancelDeploymentCustomEnvironmentDeploymentsType);
+
+/** @internal */
+export const CancelDeploymentCustomEnvironmentDeploymentsType$outboundSchema: z.ZodNativeEnum<
+    typeof CancelDeploymentCustomEnvironmentDeploymentsType
+> = CancelDeploymentCustomEnvironmentDeploymentsType$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace CancelDeploymentCustomEnvironmentDeploymentsType$ {
+    /** @deprecated use `CancelDeploymentCustomEnvironmentDeploymentsType$inboundSchema` instead. */
+    export const inboundSchema = CancelDeploymentCustomEnvironmentDeploymentsType$inboundSchema;
+    /** @deprecated use `CancelDeploymentCustomEnvironmentDeploymentsType$outboundSchema` instead. */
+    export const outboundSchema = CancelDeploymentCustomEnvironmentDeploymentsType$outboundSchema;
+}
+
+/** @internal */
+export const CustomEnvironmentBranchMatcher$inboundSchema: z.ZodType<
+    CustomEnvironmentBranchMatcher,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    type: CancelDeploymentCustomEnvironmentDeploymentsType$inboundSchema,
+    pattern: z.string(),
+});
+
+/** @internal */
+export type CustomEnvironmentBranchMatcher$Outbound = {
+    type: string;
+    pattern: string;
+};
+
+/** @internal */
+export const CustomEnvironmentBranchMatcher$outboundSchema: z.ZodType<
+    CustomEnvironmentBranchMatcher$Outbound,
+    z.ZodTypeDef,
+    CustomEnvironmentBranchMatcher
+> = z.object({
+    type: CancelDeploymentCustomEnvironmentDeploymentsType$outboundSchema,
+    pattern: z.string(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace CustomEnvironmentBranchMatcher$ {
+    /** @deprecated use `CustomEnvironmentBranchMatcher$inboundSchema` instead. */
+    export const inboundSchema = CustomEnvironmentBranchMatcher$inboundSchema;
+    /** @deprecated use `CustomEnvironmentBranchMatcher$outboundSchema` instead. */
+    export const outboundSchema = CustomEnvironmentBranchMatcher$outboundSchema;
+    /** @deprecated use `CustomEnvironmentBranchMatcher$Outbound` instead. */
+    export type Outbound = CustomEnvironmentBranchMatcher$Outbound;
+}
+
+/** @internal */
+export const CustomEnvironmentVerification$inboundSchema: z.ZodType<
+    CustomEnvironmentVerification,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    type: z.string(),
+    domain: z.string(),
+    value: z.string(),
+    reason: z.string(),
+});
+
+/** @internal */
+export type CustomEnvironmentVerification$Outbound = {
+    type: string;
+    domain: string;
+    value: string;
+    reason: string;
+};
+
+/** @internal */
+export const CustomEnvironmentVerification$outboundSchema: z.ZodType<
+    CustomEnvironmentVerification$Outbound,
+    z.ZodTypeDef,
+    CustomEnvironmentVerification
+> = z.object({
+    type: z.string(),
+    domain: z.string(),
+    value: z.string(),
+    reason: z.string(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace CustomEnvironmentVerification$ {
+    /** @deprecated use `CustomEnvironmentVerification$inboundSchema` instead. */
+    export const inboundSchema = CustomEnvironmentVerification$inboundSchema;
+    /** @deprecated use `CustomEnvironmentVerification$outboundSchema` instead. */
+    export const outboundSchema = CustomEnvironmentVerification$outboundSchema;
+    /** @deprecated use `CustomEnvironmentVerification$Outbound` instead. */
+    export type Outbound = CustomEnvironmentVerification$Outbound;
+}
+
+/** @internal */
+export const CustomEnvironmentDomains$inboundSchema: z.ZodType<
+    CustomEnvironmentDomains,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    name: z.string(),
+    apexName: z.string(),
+    projectId: z.string(),
+    redirect: z.nullable(z.string()).optional(),
+    redirectStatusCode: z.nullable(z.number()).optional(),
+    gitBranch: z.nullable(z.string()).optional(),
+    customEnvironmentId: z.nullable(z.string()).optional(),
+    updatedAt: z.number().optional(),
+    createdAt: z.number().optional(),
+    verified: z.boolean(),
+    verification: z.array(z.lazy(() => CustomEnvironmentVerification$inboundSchema)).optional(),
+});
+
+/** @internal */
+export type CustomEnvironmentDomains$Outbound = {
+    name: string;
+    apexName: string;
+    projectId: string;
+    redirect?: string | null | undefined;
+    redirectStatusCode?: number | null | undefined;
+    gitBranch?: string | null | undefined;
+    customEnvironmentId?: string | null | undefined;
+    updatedAt?: number | undefined;
+    createdAt?: number | undefined;
+    verified: boolean;
+    verification?: Array<CustomEnvironmentVerification$Outbound> | undefined;
+};
+
+/** @internal */
+export const CustomEnvironmentDomains$outboundSchema: z.ZodType<
+    CustomEnvironmentDomains$Outbound,
+    z.ZodTypeDef,
+    CustomEnvironmentDomains
+> = z.object({
+    name: z.string(),
+    apexName: z.string(),
+    projectId: z.string(),
+    redirect: z.nullable(z.string()).optional(),
+    redirectStatusCode: z.nullable(z.number()).optional(),
+    gitBranch: z.nullable(z.string()).optional(),
+    customEnvironmentId: z.nullable(z.string()).optional(),
+    updatedAt: z.number().optional(),
+    createdAt: z.number().optional(),
+    verified: z.boolean(),
+    verification: z.array(z.lazy(() => CustomEnvironmentVerification$outboundSchema)).optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace CustomEnvironmentDomains$ {
+    /** @deprecated use `CustomEnvironmentDomains$inboundSchema` instead. */
+    export const inboundSchema = CustomEnvironmentDomains$inboundSchema;
+    /** @deprecated use `CustomEnvironmentDomains$outboundSchema` instead. */
+    export const outboundSchema = CustomEnvironmentDomains$outboundSchema;
+    /** @deprecated use `CustomEnvironmentDomains$Outbound` instead. */
+    export type Outbound = CustomEnvironmentDomains$Outbound;
+}
+
+/** @internal */
+export const CancelDeploymentCustomEnvironment1$inboundSchema: z.ZodType<
+    CancelDeploymentCustomEnvironment1,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    id: z.string(),
+    name: z.string(),
+    slug: z.string(),
+    type: CancelDeploymentCustomEnvironmentType$inboundSchema,
+    description: z.string().optional(),
+    branchMatcher: z.lazy(() => CustomEnvironmentBranchMatcher$inboundSchema).optional(),
+    createdAt: z.number(),
+    updatedAt: z.number(),
+    domains: z.array(z.lazy(() => CustomEnvironmentDomains$inboundSchema)).optional(),
+});
+
+/** @internal */
+export type CancelDeploymentCustomEnvironment1$Outbound = {
+    id: string;
+    name: string;
+    slug: string;
+    type: string;
+    description?: string | undefined;
+    branchMatcher?: CustomEnvironmentBranchMatcher$Outbound | undefined;
+    createdAt: number;
+    updatedAt: number;
+    domains?: Array<CustomEnvironmentDomains$Outbound> | undefined;
+};
+
+/** @internal */
+export const CancelDeploymentCustomEnvironment1$outboundSchema: z.ZodType<
+    CancelDeploymentCustomEnvironment1$Outbound,
+    z.ZodTypeDef,
+    CancelDeploymentCustomEnvironment1
+> = z.object({
+    id: z.string(),
+    name: z.string(),
+    slug: z.string(),
+    type: CancelDeploymentCustomEnvironmentType$outboundSchema,
+    description: z.string().optional(),
+    branchMatcher: z.lazy(() => CustomEnvironmentBranchMatcher$outboundSchema).optional(),
+    createdAt: z.number(),
+    updatedAt: z.number(),
+    domains: z.array(z.lazy(() => CustomEnvironmentDomains$outboundSchema)).optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace CancelDeploymentCustomEnvironment1$ {
+    /** @deprecated use `CancelDeploymentCustomEnvironment1$inboundSchema` instead. */
+    export const inboundSchema = CancelDeploymentCustomEnvironment1$inboundSchema;
+    /** @deprecated use `CancelDeploymentCustomEnvironment1$outboundSchema` instead. */
+    export const outboundSchema = CancelDeploymentCustomEnvironment1$outboundSchema;
+    /** @deprecated use `CancelDeploymentCustomEnvironment1$Outbound` instead. */
+    export type Outbound = CancelDeploymentCustomEnvironment1$Outbound;
+}
+
+/** @internal */
+export const CancelDeploymentCustomEnvironment$inboundSchema: z.ZodType<
+    CancelDeploymentCustomEnvironment,
+    z.ZodTypeDef,
+    unknown
+> = z.union([
+    z.lazy(() => CancelDeploymentCustomEnvironment2$inboundSchema),
+    z.lazy(() => CancelDeploymentCustomEnvironment1$inboundSchema),
+]);
+
+/** @internal */
+export type CancelDeploymentCustomEnvironment$Outbound =
+    | CancelDeploymentCustomEnvironment2$Outbound
+    | CancelDeploymentCustomEnvironment1$Outbound;
+
+/** @internal */
+export const CancelDeploymentCustomEnvironment$outboundSchema: z.ZodType<
+    CancelDeploymentCustomEnvironment$Outbound,
+    z.ZodTypeDef,
+    CancelDeploymentCustomEnvironment
+> = z.union([
+    z.lazy(() => CancelDeploymentCustomEnvironment2$outboundSchema),
+    z.lazy(() => CancelDeploymentCustomEnvironment1$outboundSchema),
+]);
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace CancelDeploymentCustomEnvironment$ {
+    /** @deprecated use `CancelDeploymentCustomEnvironment$inboundSchema` instead. */
+    export const inboundSchema = CancelDeploymentCustomEnvironment$inboundSchema;
+    /** @deprecated use `CancelDeploymentCustomEnvironment$outboundSchema` instead. */
+    export const outboundSchema = CancelDeploymentCustomEnvironment$outboundSchema;
+    /** @deprecated use `CancelDeploymentCustomEnvironment$Outbound` instead. */
+    export type Outbound = CancelDeploymentCustomEnvironment$Outbound;
+}
+
+/** @internal */
+export const CancelDeploymentAliasError$inboundSchema: z.ZodType<
+    CancelDeploymentAliasError,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    code: z.string(),
+    message: z.string(),
+});
+
+/** @internal */
+export type CancelDeploymentAliasError$Outbound = {
+    code: string;
+    message: string;
+};
+
+/** @internal */
+export const CancelDeploymentAliasError$outboundSchema: z.ZodType<
+    CancelDeploymentAliasError$Outbound,
+    z.ZodTypeDef,
+    CancelDeploymentAliasError
+> = z.object({
+    code: z.string(),
+    message: z.string(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace CancelDeploymentAliasError$ {
+    /** @deprecated use `CancelDeploymentAliasError$inboundSchema` instead. */
+    export const inboundSchema = CancelDeploymentAliasError$inboundSchema;
+    /** @deprecated use `CancelDeploymentAliasError$outboundSchema` instead. */
+    export const outboundSchema = CancelDeploymentAliasError$outboundSchema;
+    /** @deprecated use `CancelDeploymentAliasError$Outbound` instead. */
+    export type Outbound = CancelDeploymentAliasError$Outbound;
+}
+
+/** @internal */
+export const CancelDeploymentAliasWarning$inboundSchema: z.ZodType<
+    CancelDeploymentAliasWarning,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    code: z.string(),
+    message: z.string(),
+    link: z.string().optional(),
+    action: z.string().optional(),
+});
+
+/** @internal */
+export type CancelDeploymentAliasWarning$Outbound = {
+    code: string;
+    message: string;
+    link?: string | undefined;
+    action?: string | undefined;
+};
+
+/** @internal */
+export const CancelDeploymentAliasWarning$outboundSchema: z.ZodType<
+    CancelDeploymentAliasWarning$Outbound,
+    z.ZodTypeDef,
+    CancelDeploymentAliasWarning
+> = z.object({
+    code: z.string(),
+    message: z.string(),
+    link: z.string().optional(),
+    action: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace CancelDeploymentAliasWarning$ {
+    /** @deprecated use `CancelDeploymentAliasWarning$inboundSchema` instead. */
+    export const inboundSchema = CancelDeploymentAliasWarning$inboundSchema;
+    /** @deprecated use `CancelDeploymentAliasWarning$outboundSchema` instead. */
+    export const outboundSchema = CancelDeploymentAliasWarning$outboundSchema;
+    /** @deprecated use `CancelDeploymentAliasWarning$Outbound` instead. */
+    export type Outbound = CancelDeploymentAliasWarning$Outbound;
+}
+
+/** @internal */
+export const CancelDeploymentChecksState$inboundSchema: z.ZodNativeEnum<
+    typeof CancelDeploymentChecksState
+> = z.nativeEnum(CancelDeploymentChecksState);
+
+/** @internal */
+export const CancelDeploymentChecksState$outboundSchema: z.ZodNativeEnum<
+    typeof CancelDeploymentChecksState
+> = CancelDeploymentChecksState$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace CancelDeploymentChecksState$ {
+    /** @deprecated use `CancelDeploymentChecksState$inboundSchema` instead. */
+    export const inboundSchema = CancelDeploymentChecksState$inboundSchema;
+    /** @deprecated use `CancelDeploymentChecksState$outboundSchema` instead. */
+    export const outboundSchema = CancelDeploymentChecksState$outboundSchema;
+}
+
+/** @internal */
+export const CancelDeploymentChecksConclusion$inboundSchema: z.ZodNativeEnum<
+    typeof CancelDeploymentChecksConclusion
+> = z.nativeEnum(CancelDeploymentChecksConclusion);
+
+/** @internal */
+export const CancelDeploymentChecksConclusion$outboundSchema: z.ZodNativeEnum<
+    typeof CancelDeploymentChecksConclusion
+> = CancelDeploymentChecksConclusion$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace CancelDeploymentChecksConclusion$ {
+    /** @deprecated use `CancelDeploymentChecksConclusion$inboundSchema` instead. */
+    export const inboundSchema = CancelDeploymentChecksConclusion$inboundSchema;
+    /** @deprecated use `CancelDeploymentChecksConclusion$outboundSchema` instead. */
+    export const outboundSchema = CancelDeploymentChecksConclusion$outboundSchema;
+}
+
+/** @internal */
+export const CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody9Type$inboundSchema: z.ZodNativeEnum<
+    typeof CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody9Type
+> = z.nativeEnum(CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody9Type);
+
+/** @internal */
+export const CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody9Type$outboundSchema: z.ZodNativeEnum<
+    typeof CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody9Type
+> = CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody9Type$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody9Type$ {
+    /** @deprecated use `CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody9Type$inboundSchema` instead. */
+    export const inboundSchema =
+        CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody9Type$inboundSchema;
+    /** @deprecated use `CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody9Type$outboundSchema` instead. */
+    export const outboundSchema =
+        CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody9Type$outboundSchema;
+}
+
+/** @internal */
+export const GitSource9$inboundSchema: z.ZodType<GitSource9, z.ZodTypeDef, unknown> = z.object({
+    type: CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody9Type$inboundSchema,
+    ref: z.string(),
+    sha: z.string(),
+    owner: z.string().optional(),
+    slug: z.string().optional(),
+    workspaceUuid: z.string(),
+    repoUuid: z.string(),
+});
+
+/** @internal */
+export type GitSource9$Outbound = {
+    type: string;
+    ref: string;
+    sha: string;
+    owner?: string | undefined;
+    slug?: string | undefined;
+    workspaceUuid: string;
+    repoUuid: string;
+};
+
+/** @internal */
+export const GitSource9$outboundSchema: z.ZodType<GitSource9$Outbound, z.ZodTypeDef, GitSource9> =
+    z.object({
+        type: CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody9Type$outboundSchema,
+        ref: z.string(),
+        sha: z.string(),
+        owner: z.string().optional(),
+        slug: z.string().optional(),
+        workspaceUuid: z.string(),
+        repoUuid: z.string(),
+    });
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GitSource9$ {
+    /** @deprecated use `GitSource9$inboundSchema` instead. */
+    export const inboundSchema = GitSource9$inboundSchema;
+    /** @deprecated use `GitSource9$outboundSchema` instead. */
+    export const outboundSchema = GitSource9$outboundSchema;
+    /** @deprecated use `GitSource9$Outbound` instead. */
+    export type Outbound = GitSource9$Outbound;
+}
+
+/** @internal */
+export const CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody8Type$inboundSchema: z.ZodNativeEnum<
+    typeof CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody8Type
+> = z.nativeEnum(CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody8Type);
+
+/** @internal */
+export const CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody8Type$outboundSchema: z.ZodNativeEnum<
+    typeof CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody8Type
+> = CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody8Type$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody8Type$ {
+    /** @deprecated use `CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody8Type$inboundSchema` instead. */
+    export const inboundSchema =
+        CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody8Type$inboundSchema;
+    /** @deprecated use `CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody8Type$outboundSchema` instead. */
+    export const outboundSchema =
+        CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody8Type$outboundSchema;
+}
+
+/** @internal */
+export const GitSource8$inboundSchema: z.ZodType<GitSource8, z.ZodTypeDef, unknown> = z.object({
+    type: CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody8Type$inboundSchema,
+    ref: z.string(),
+    sha: z.string(),
+    projectId: z.number(),
+});
+
+/** @internal */
+export type GitSource8$Outbound = {
+    type: string;
+    ref: string;
+    sha: string;
+    projectId: number;
+};
+
+/** @internal */
+export const GitSource8$outboundSchema: z.ZodType<GitSource8$Outbound, z.ZodTypeDef, GitSource8> =
+    z.object({
+        type: CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody8Type$outboundSchema,
+        ref: z.string(),
+        sha: z.string(),
+        projectId: z.number(),
+    });
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GitSource8$ {
+    /** @deprecated use `GitSource8$inboundSchema` instead. */
+    export const inboundSchema = GitSource8$inboundSchema;
+    /** @deprecated use `GitSource8$outboundSchema` instead. */
+    export const outboundSchema = GitSource8$outboundSchema;
+    /** @deprecated use `GitSource8$Outbound` instead. */
+    export type Outbound = GitSource8$Outbound;
+}
+
+/** @internal */
+export const CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody7Type$inboundSchema: z.ZodNativeEnum<
+    typeof CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody7Type
+> = z.nativeEnum(CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody7Type);
+
+/** @internal */
+export const CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody7Type$outboundSchema: z.ZodNativeEnum<
+    typeof CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody7Type
+> = CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody7Type$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody7Type$ {
+    /** @deprecated use `CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody7Type$inboundSchema` instead. */
+    export const inboundSchema =
+        CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody7Type$inboundSchema;
+    /** @deprecated use `CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody7Type$outboundSchema` instead. */
+    export const outboundSchema =
+        CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody7Type$outboundSchema;
+}
+
+/** @internal */
+export const GitSource7$inboundSchema: z.ZodType<GitSource7, z.ZodTypeDef, unknown> = z.object({
+    type: CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody7Type$inboundSchema,
+    ref: z.string(),
+    sha: z.string(),
+    repoId: z.number(),
+    org: z.string().optional(),
+    repo: z.string().optional(),
+});
+
+/** @internal */
+export type GitSource7$Outbound = {
+    type: string;
+    ref: string;
+    sha: string;
+    repoId: number;
+    org?: string | undefined;
+    repo?: string | undefined;
+};
+
+/** @internal */
+export const GitSource7$outboundSchema: z.ZodType<GitSource7$Outbound, z.ZodTypeDef, GitSource7> =
+    z.object({
+        type: CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody7Type$outboundSchema,
+        ref: z.string(),
+        sha: z.string(),
+        repoId: z.number(),
+        org: z.string().optional(),
+        repo: z.string().optional(),
+    });
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GitSource7$ {
+    /** @deprecated use `GitSource7$inboundSchema` instead. */
+    export const inboundSchema = GitSource7$inboundSchema;
+    /** @deprecated use `GitSource7$outboundSchema` instead. */
+    export const outboundSchema = GitSource7$outboundSchema;
+    /** @deprecated use `GitSource7$Outbound` instead. */
+    export type Outbound = GitSource7$Outbound;
+}
+
+/** @internal */
+export const CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBodyType$inboundSchema: z.ZodNativeEnum<
+    typeof CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBodyType
+> = z.nativeEnum(CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBodyType);
+
+/** @internal */
+export const CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBodyType$outboundSchema: z.ZodNativeEnum<
+    typeof CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBodyType
+> = CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBodyType$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBodyType$ {
+    /** @deprecated use `CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBodyType$inboundSchema` instead. */
+    export const inboundSchema =
+        CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBodyType$inboundSchema;
+    /** @deprecated use `CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBodyType$outboundSchema` instead. */
+    export const outboundSchema =
+        CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBodyType$outboundSchema;
+}
+
+/** @internal */
+export const GitSource6$inboundSchema: z.ZodType<GitSource6, z.ZodTypeDef, unknown> = z.object({
+    type: CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBodyType$inboundSchema,
+    ref: z.string(),
+    sha: z.string(),
+    gitUrl: z.string(),
+});
+
+/** @internal */
+export type GitSource6$Outbound = {
+    type: string;
+    ref: string;
+    sha: string;
+    gitUrl: string;
+};
+
+/** @internal */
+export const GitSource6$outboundSchema: z.ZodType<GitSource6$Outbound, z.ZodTypeDef, GitSource6> =
+    z.object({
+        type: CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBodyType$outboundSchema,
+        ref: z.string(),
+        sha: z.string(),
+        gitUrl: z.string(),
+    });
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GitSource6$ {
+    /** @deprecated use `GitSource6$inboundSchema` instead. */
+    export const inboundSchema = GitSource6$inboundSchema;
+    /** @deprecated use `GitSource6$outboundSchema` instead. */
+    export const outboundSchema = GitSource6$outboundSchema;
+    /** @deprecated use `GitSource6$Outbound` instead. */
+    export type Outbound = GitSource6$Outbound;
+}
+
+/** @internal */
+export const CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONType$inboundSchema: z.ZodNativeEnum<
+    typeof CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONType
+> = z.nativeEnum(CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONType);
+
+/** @internal */
+export const CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONType$outboundSchema: z.ZodNativeEnum<
+    typeof CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONType
+> = CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONType$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONType$ {
+    /** @deprecated use `CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONType$inboundSchema` instead. */
+    export const inboundSchema =
+        CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONType$inboundSchema;
+    /** @deprecated use `CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONType$outboundSchema` instead. */
+    export const outboundSchema =
+        CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONType$outboundSchema;
+}
+
+/** @internal */
+export const CancelDeploymentGitSource5$inboundSchema: z.ZodType<
+    CancelDeploymentGitSource5,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    type: CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONType$inboundSchema,
+    owner: z.string(),
+    slug: z.string(),
+    ref: z.nullable(z.string()).optional(),
+    sha: z.string().optional(),
+    prId: z.nullable(z.number()).optional(),
+});
+
+/** @internal */
+export type CancelDeploymentGitSource5$Outbound = {
+    type: string;
+    owner: string;
+    slug: string;
+    ref?: string | null | undefined;
+    sha?: string | undefined;
+    prId?: number | null | undefined;
+};
+
+/** @internal */
+export const CancelDeploymentGitSource5$outboundSchema: z.ZodType<
+    CancelDeploymentGitSource5$Outbound,
+    z.ZodTypeDef,
+    CancelDeploymentGitSource5
+> = z.object({
+    type: CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONType$outboundSchema,
+    owner: z.string(),
+    slug: z.string(),
+    ref: z.nullable(z.string()).optional(),
+    sha: z.string().optional(),
+    prId: z.nullable(z.number()).optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace CancelDeploymentGitSource5$ {
+    /** @deprecated use `CancelDeploymentGitSource5$inboundSchema` instead. */
+    export const inboundSchema = CancelDeploymentGitSource5$inboundSchema;
+    /** @deprecated use `CancelDeploymentGitSource5$outboundSchema` instead. */
+    export const outboundSchema = CancelDeploymentGitSource5$outboundSchema;
+    /** @deprecated use `CancelDeploymentGitSource5$Outbound` instead. */
+    export type Outbound = CancelDeploymentGitSource5$Outbound;
+}
+
+/** @internal */
+export const CancelDeploymentGitSourceDeploymentsResponse200Type$inboundSchema: z.ZodNativeEnum<
+    typeof CancelDeploymentGitSourceDeploymentsResponse200Type
+> = z.nativeEnum(CancelDeploymentGitSourceDeploymentsResponse200Type);
+
+/** @internal */
+export const CancelDeploymentGitSourceDeploymentsResponse200Type$outboundSchema: z.ZodNativeEnum<
+    typeof CancelDeploymentGitSourceDeploymentsResponse200Type
+> = CancelDeploymentGitSourceDeploymentsResponse200Type$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace CancelDeploymentGitSourceDeploymentsResponse200Type$ {
+    /** @deprecated use `CancelDeploymentGitSourceDeploymentsResponse200Type$inboundSchema` instead. */
+    export const inboundSchema = CancelDeploymentGitSourceDeploymentsResponse200Type$inboundSchema;
+    /** @deprecated use `CancelDeploymentGitSourceDeploymentsResponse200Type$outboundSchema` instead. */
+    export const outboundSchema =
+        CancelDeploymentGitSourceDeploymentsResponse200Type$outboundSchema;
+}
+
+/** @internal */
+export const CancelDeploymentGitSource4$inboundSchema: z.ZodType<
+    CancelDeploymentGitSource4,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    type: CancelDeploymentGitSourceDeploymentsResponse200Type$inboundSchema,
+    workspaceUuid: z.string().optional(),
+    repoUuid: z.string(),
+    ref: z.nullable(z.string()).optional(),
+    sha: z.string().optional(),
+    prId: z.nullable(z.number()).optional(),
+});
+
+/** @internal */
+export type CancelDeploymentGitSource4$Outbound = {
+    type: string;
+    workspaceUuid?: string | undefined;
+    repoUuid: string;
+    ref?: string | null | undefined;
+    sha?: string | undefined;
+    prId?: number | null | undefined;
+};
+
+/** @internal */
+export const CancelDeploymentGitSource4$outboundSchema: z.ZodType<
+    CancelDeploymentGitSource4$Outbound,
+    z.ZodTypeDef,
+    CancelDeploymentGitSource4
+> = z.object({
+    type: CancelDeploymentGitSourceDeploymentsResponse200Type$outboundSchema,
+    workspaceUuid: z.string().optional(),
+    repoUuid: z.string(),
+    ref: z.nullable(z.string()).optional(),
+    sha: z.string().optional(),
+    prId: z.nullable(z.number()).optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace CancelDeploymentGitSource4$ {
+    /** @deprecated use `CancelDeploymentGitSource4$inboundSchema` instead. */
+    export const inboundSchema = CancelDeploymentGitSource4$inboundSchema;
+    /** @deprecated use `CancelDeploymentGitSource4$outboundSchema` instead. */
+    export const outboundSchema = CancelDeploymentGitSource4$outboundSchema;
+    /** @deprecated use `CancelDeploymentGitSource4$Outbound` instead. */
+    export type Outbound = CancelDeploymentGitSource4$Outbound;
+}
+
+/** @internal */
+export const CancelDeploymentGitSourceDeploymentsResponseType$inboundSchema: z.ZodNativeEnum<
+    typeof CancelDeploymentGitSourceDeploymentsResponseType
+> = z.nativeEnum(CancelDeploymentGitSourceDeploymentsResponseType);
+
+/** @internal */
+export const CancelDeploymentGitSourceDeploymentsResponseType$outboundSchema: z.ZodNativeEnum<
+    typeof CancelDeploymentGitSourceDeploymentsResponseType
+> = CancelDeploymentGitSourceDeploymentsResponseType$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace CancelDeploymentGitSourceDeploymentsResponseType$ {
+    /** @deprecated use `CancelDeploymentGitSourceDeploymentsResponseType$inboundSchema` instead. */
+    export const inboundSchema = CancelDeploymentGitSourceDeploymentsResponseType$inboundSchema;
+    /** @deprecated use `CancelDeploymentGitSourceDeploymentsResponseType$outboundSchema` instead. */
+    export const outboundSchema = CancelDeploymentGitSourceDeploymentsResponseType$outboundSchema;
+}
+
+/** @internal */
+export const CancelDeploymentGitSourceProjectId$inboundSchema: z.ZodType<
+    CancelDeploymentGitSourceProjectId,
+    z.ZodTypeDef,
+    unknown
+> = z.union([z.string(), z.number()]);
+
+/** @internal */
+export type CancelDeploymentGitSourceProjectId$Outbound = string | number;
+
+/** @internal */
+export const CancelDeploymentGitSourceProjectId$outboundSchema: z.ZodType<
+    CancelDeploymentGitSourceProjectId$Outbound,
+    z.ZodTypeDef,
+    CancelDeploymentGitSourceProjectId
+> = z.union([z.string(), z.number()]);
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace CancelDeploymentGitSourceProjectId$ {
+    /** @deprecated use `CancelDeploymentGitSourceProjectId$inboundSchema` instead. */
+    export const inboundSchema = CancelDeploymentGitSourceProjectId$inboundSchema;
+    /** @deprecated use `CancelDeploymentGitSourceProjectId$outboundSchema` instead. */
+    export const outboundSchema = CancelDeploymentGitSourceProjectId$outboundSchema;
+    /** @deprecated use `CancelDeploymentGitSourceProjectId$Outbound` instead. */
+    export type Outbound = CancelDeploymentGitSourceProjectId$Outbound;
+}
+
+/** @internal */
+export const CancelDeploymentGitSource3$inboundSchema: z.ZodType<
+    CancelDeploymentGitSource3,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    type: CancelDeploymentGitSourceDeploymentsResponseType$inboundSchema,
+    projectId: z.union([z.string(), z.number()]),
+    ref: z.nullable(z.string()).optional(),
+    sha: z.string().optional(),
+    prId: z.nullable(z.number()).optional(),
+});
+
+/** @internal */
+export type CancelDeploymentGitSource3$Outbound = {
+    type: string;
+    projectId: string | number;
+    ref?: string | null | undefined;
+    sha?: string | undefined;
+    prId?: number | null | undefined;
+};
+
+/** @internal */
+export const CancelDeploymentGitSource3$outboundSchema: z.ZodType<
+    CancelDeploymentGitSource3$Outbound,
+    z.ZodTypeDef,
+    CancelDeploymentGitSource3
+> = z.object({
+    type: CancelDeploymentGitSourceDeploymentsResponseType$outboundSchema,
+    projectId: z.union([z.string(), z.number()]),
+    ref: z.nullable(z.string()).optional(),
+    sha: z.string().optional(),
+    prId: z.nullable(z.number()).optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace CancelDeploymentGitSource3$ {
+    /** @deprecated use `CancelDeploymentGitSource3$inboundSchema` instead. */
+    export const inboundSchema = CancelDeploymentGitSource3$inboundSchema;
+    /** @deprecated use `CancelDeploymentGitSource3$outboundSchema` instead. */
+    export const outboundSchema = CancelDeploymentGitSource3$outboundSchema;
+    /** @deprecated use `CancelDeploymentGitSource3$Outbound` instead. */
+    export type Outbound = CancelDeploymentGitSource3$Outbound;
+}
+
+/** @internal */
+export const CancelDeploymentGitSourceDeploymentsType$inboundSchema: z.ZodNativeEnum<
+    typeof CancelDeploymentGitSourceDeploymentsType
+> = z.nativeEnum(CancelDeploymentGitSourceDeploymentsType);
+
+/** @internal */
+export const CancelDeploymentGitSourceDeploymentsType$outboundSchema: z.ZodNativeEnum<
+    typeof CancelDeploymentGitSourceDeploymentsType
+> = CancelDeploymentGitSourceDeploymentsType$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace CancelDeploymentGitSourceDeploymentsType$ {
+    /** @deprecated use `CancelDeploymentGitSourceDeploymentsType$inboundSchema` instead. */
+    export const inboundSchema = CancelDeploymentGitSourceDeploymentsType$inboundSchema;
+    /** @deprecated use `CancelDeploymentGitSourceDeploymentsType$outboundSchema` instead. */
+    export const outboundSchema = CancelDeploymentGitSourceDeploymentsType$outboundSchema;
+}
+
+/** @internal */
+export const CancelDeploymentGitSource2$inboundSchema: z.ZodType<
+    CancelDeploymentGitSource2,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    type: CancelDeploymentGitSourceDeploymentsType$inboundSchema,
+    org: z.string(),
+    repo: z.string(),
+    ref: z.nullable(z.string()).optional(),
+    sha: z.string().optional(),
+    prId: z.nullable(z.number()).optional(),
+});
+
+/** @internal */
+export type CancelDeploymentGitSource2$Outbound = {
+    type: string;
+    org: string;
+    repo: string;
+    ref?: string | null | undefined;
+    sha?: string | undefined;
+    prId?: number | null | undefined;
+};
+
+/** @internal */
+export const CancelDeploymentGitSource2$outboundSchema: z.ZodType<
+    CancelDeploymentGitSource2$Outbound,
+    z.ZodTypeDef,
+    CancelDeploymentGitSource2
+> = z.object({
+    type: CancelDeploymentGitSourceDeploymentsType$outboundSchema,
+    org: z.string(),
+    repo: z.string(),
+    ref: z.nullable(z.string()).optional(),
+    sha: z.string().optional(),
+    prId: z.nullable(z.number()).optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace CancelDeploymentGitSource2$ {
+    /** @deprecated use `CancelDeploymentGitSource2$inboundSchema` instead. */
+    export const inboundSchema = CancelDeploymentGitSource2$inboundSchema;
+    /** @deprecated use `CancelDeploymentGitSource2$outboundSchema` instead. */
+    export const outboundSchema = CancelDeploymentGitSource2$outboundSchema;
+    /** @deprecated use `CancelDeploymentGitSource2$Outbound` instead. */
+    export type Outbound = CancelDeploymentGitSource2$Outbound;
+}
+
+/** @internal */
+export const CancelDeploymentGitSourceType$inboundSchema: z.ZodNativeEnum<
+    typeof CancelDeploymentGitSourceType
+> = z.nativeEnum(CancelDeploymentGitSourceType);
+
+/** @internal */
+export const CancelDeploymentGitSourceType$outboundSchema: z.ZodNativeEnum<
+    typeof CancelDeploymentGitSourceType
+> = CancelDeploymentGitSourceType$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace CancelDeploymentGitSourceType$ {
+    /** @deprecated use `CancelDeploymentGitSourceType$inboundSchema` instead. */
+    export const inboundSchema = CancelDeploymentGitSourceType$inboundSchema;
+    /** @deprecated use `CancelDeploymentGitSourceType$outboundSchema` instead. */
+    export const outboundSchema = CancelDeploymentGitSourceType$outboundSchema;
+}
+
+/** @internal */
+export const CancelDeploymentGitSourceRepoId$inboundSchema: z.ZodType<
+    CancelDeploymentGitSourceRepoId,
+    z.ZodTypeDef,
+    unknown
+> = z.union([z.string(), z.number()]);
+
+/** @internal */
+export type CancelDeploymentGitSourceRepoId$Outbound = string | number;
+
+/** @internal */
+export const CancelDeploymentGitSourceRepoId$outboundSchema: z.ZodType<
+    CancelDeploymentGitSourceRepoId$Outbound,
+    z.ZodTypeDef,
+    CancelDeploymentGitSourceRepoId
+> = z.union([z.string(), z.number()]);
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace CancelDeploymentGitSourceRepoId$ {
+    /** @deprecated use `CancelDeploymentGitSourceRepoId$inboundSchema` instead. */
+    export const inboundSchema = CancelDeploymentGitSourceRepoId$inboundSchema;
+    /** @deprecated use `CancelDeploymentGitSourceRepoId$outboundSchema` instead. */
+    export const outboundSchema = CancelDeploymentGitSourceRepoId$outboundSchema;
+    /** @deprecated use `CancelDeploymentGitSourceRepoId$Outbound` instead. */
+    export type Outbound = CancelDeploymentGitSourceRepoId$Outbound;
+}
+
+/** @internal */
+export const CancelDeploymentGitSource1$inboundSchema: z.ZodType<
+    CancelDeploymentGitSource1,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    type: CancelDeploymentGitSourceType$inboundSchema,
+    repoId: z.union([z.string(), z.number()]),
+    ref: z.nullable(z.string()).optional(),
+    sha: z.string().optional(),
+    prId: z.nullable(z.number()).optional(),
+});
+
+/** @internal */
+export type CancelDeploymentGitSource1$Outbound = {
+    type: string;
+    repoId: string | number;
+    ref?: string | null | undefined;
+    sha?: string | undefined;
+    prId?: number | null | undefined;
+};
+
+/** @internal */
+export const CancelDeploymentGitSource1$outboundSchema: z.ZodType<
+    CancelDeploymentGitSource1$Outbound,
+    z.ZodTypeDef,
+    CancelDeploymentGitSource1
+> = z.object({
+    type: CancelDeploymentGitSourceType$outboundSchema,
+    repoId: z.union([z.string(), z.number()]),
+    ref: z.nullable(z.string()).optional(),
+    sha: z.string().optional(),
+    prId: z.nullable(z.number()).optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace CancelDeploymentGitSource1$ {
+    /** @deprecated use `CancelDeploymentGitSource1$inboundSchema` instead. */
+    export const inboundSchema = CancelDeploymentGitSource1$inboundSchema;
+    /** @deprecated use `CancelDeploymentGitSource1$outboundSchema` instead. */
+    export const outboundSchema = CancelDeploymentGitSource1$outboundSchema;
+    /** @deprecated use `CancelDeploymentGitSource1$Outbound` instead. */
+    export type Outbound = CancelDeploymentGitSource1$Outbound;
+}
+
+/** @internal */
+export const CancelDeploymentGitSource$inboundSchema: z.ZodType<
+    CancelDeploymentGitSource,
+    z.ZodTypeDef,
+    unknown
+> = z.union([
+    z.lazy(() => GitSource6$inboundSchema),
+    z.lazy(() => GitSource8$inboundSchema),
+    z.lazy(() => CancelDeploymentGitSource1$inboundSchema),
+    z.lazy(() => CancelDeploymentGitSource3$inboundSchema),
+    z.lazy(() => CancelDeploymentGitSource2$inboundSchema),
+    z.lazy(() => CancelDeploymentGitSource4$inboundSchema),
+    z.lazy(() => CancelDeploymentGitSource5$inboundSchema),
+    z.lazy(() => GitSource7$inboundSchema),
+    z.lazy(() => GitSource9$inboundSchema),
+]);
+
+/** @internal */
+export type CancelDeploymentGitSource$Outbound =
+    | GitSource6$Outbound
+    | GitSource8$Outbound
+    | CancelDeploymentGitSource1$Outbound
+    | CancelDeploymentGitSource3$Outbound
+    | CancelDeploymentGitSource2$Outbound
+    | CancelDeploymentGitSource4$Outbound
+    | CancelDeploymentGitSource5$Outbound
+    | GitSource7$Outbound
+    | GitSource9$Outbound;
+
+/** @internal */
+export const CancelDeploymentGitSource$outboundSchema: z.ZodType<
+    CancelDeploymentGitSource$Outbound,
+    z.ZodTypeDef,
+    CancelDeploymentGitSource
+> = z.union([
+    z.lazy(() => GitSource6$outboundSchema),
+    z.lazy(() => GitSource8$outboundSchema),
+    z.lazy(() => CancelDeploymentGitSource1$outboundSchema),
+    z.lazy(() => CancelDeploymentGitSource3$outboundSchema),
+    z.lazy(() => CancelDeploymentGitSource2$outboundSchema),
+    z.lazy(() => CancelDeploymentGitSource4$outboundSchema),
+    z.lazy(() => CancelDeploymentGitSource5$outboundSchema),
+    z.lazy(() => GitSource7$outboundSchema),
+    z.lazy(() => GitSource9$outboundSchema),
+]);
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace CancelDeploymentGitSource$ {
+    /** @deprecated use `CancelDeploymentGitSource$inboundSchema` instead. */
+    export const inboundSchema = CancelDeploymentGitSource$inboundSchema;
+    /** @deprecated use `CancelDeploymentGitSource$outboundSchema` instead. */
+    export const outboundSchema = CancelDeploymentGitSource$outboundSchema;
+    /** @deprecated use `CancelDeploymentGitSource$Outbound` instead. */
+    export type Outbound = CancelDeploymentGitSource$Outbound;
+}
+
+/** @internal */
+export const CancelDeploymentProject$inboundSchema: z.ZodType<
+    CancelDeploymentProject,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    id: z.string(),
+    name: z.string(),
+    framework: z.nullable(z.string()).optional(),
+});
+
+/** @internal */
+export type CancelDeploymentProject$Outbound = {
+    id: string;
+    name: string;
+    framework?: string | null | undefined;
+};
+
+/** @internal */
+export const CancelDeploymentProject$outboundSchema: z.ZodType<
+    CancelDeploymentProject$Outbound,
+    z.ZodTypeDef,
+    CancelDeploymentProject
+> = z.object({
+    id: z.string(),
+    name: z.string(),
+    framework: z.nullable(z.string()).optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace CancelDeploymentProject$ {
+    /** @deprecated use `CancelDeploymentProject$inboundSchema` instead. */
+    export const inboundSchema = CancelDeploymentProject$inboundSchema;
+    /** @deprecated use `CancelDeploymentProject$outboundSchema` instead. */
+    export const outboundSchema = CancelDeploymentProject$outboundSchema;
+    /** @deprecated use `CancelDeploymentProject$Outbound` instead. */
+    export type Outbound = CancelDeploymentProject$Outbound;
+}
+
+/** @internal */
+export const CancelDeploymentReadyState$inboundSchema: z.ZodNativeEnum<
+    typeof CancelDeploymentReadyState
+> = z.nativeEnum(CancelDeploymentReadyState);
+
+/** @internal */
+export const CancelDeploymentReadyState$outboundSchema: z.ZodNativeEnum<
+    typeof CancelDeploymentReadyState
+> = CancelDeploymentReadyState$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace CancelDeploymentReadyState$ {
+    /** @deprecated use `CancelDeploymentReadyState$inboundSchema` instead. */
+    export const inboundSchema = CancelDeploymentReadyState$inboundSchema;
+    /** @deprecated use `CancelDeploymentReadyState$outboundSchema` instead. */
+    export const outboundSchema = CancelDeploymentReadyState$outboundSchema;
+}
+
+/** @internal */
+export const CancelDeploymentReadySubstate$inboundSchema: z.ZodNativeEnum<
+    typeof CancelDeploymentReadySubstate
+> = z.nativeEnum(CancelDeploymentReadySubstate);
+
+/** @internal */
+export const CancelDeploymentReadySubstate$outboundSchema: z.ZodNativeEnum<
+    typeof CancelDeploymentReadySubstate
+> = CancelDeploymentReadySubstate$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace CancelDeploymentReadySubstate$ {
+    /** @deprecated use `CancelDeploymentReadySubstate$inboundSchema` instead. */
+    export const inboundSchema = CancelDeploymentReadySubstate$inboundSchema;
+    /** @deprecated use `CancelDeploymentReadySubstate$outboundSchema` instead. */
+    export const outboundSchema = CancelDeploymentReadySubstate$outboundSchema;
+}
+
+/** @internal */
+export const CancelDeploymentSource$inboundSchema: z.ZodNativeEnum<typeof CancelDeploymentSource> =
+    z.nativeEnum(CancelDeploymentSource);
+
+/** @internal */
+export const CancelDeploymentSource$outboundSchema: z.ZodNativeEnum<typeof CancelDeploymentSource> =
+    CancelDeploymentSource$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace CancelDeploymentSource$ {
+    /** @deprecated use `CancelDeploymentSource$inboundSchema` instead. */
+    export const inboundSchema = CancelDeploymentSource$inboundSchema;
+    /** @deprecated use `CancelDeploymentSource$outboundSchema` instead. */
+    export const outboundSchema = CancelDeploymentSource$outboundSchema;
+}
+
+/** @internal */
+export const CancelDeploymentTarget$inboundSchema: z.ZodNativeEnum<typeof CancelDeploymentTarget> =
+    z.nativeEnum(CancelDeploymentTarget);
+
+/** @internal */
+export const CancelDeploymentTarget$outboundSchema: z.ZodNativeEnum<typeof CancelDeploymentTarget> =
+    CancelDeploymentTarget$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace CancelDeploymentTarget$ {
+    /** @deprecated use `CancelDeploymentTarget$inboundSchema` instead. */
+    export const inboundSchema = CancelDeploymentTarget$inboundSchema;
+    /** @deprecated use `CancelDeploymentTarget$outboundSchema` instead. */
+    export const outboundSchema = CancelDeploymentTarget$outboundSchema;
+}
+
+/** @internal */
+export const CancelDeploymentType$inboundSchema: z.ZodNativeEnum<typeof CancelDeploymentType> =
+    z.nativeEnum(CancelDeploymentType);
+
+/** @internal */
+export const CancelDeploymentType$outboundSchema: z.ZodNativeEnum<typeof CancelDeploymentType> =
+    CancelDeploymentType$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace CancelDeploymentType$ {
+    /** @deprecated use `CancelDeploymentType$inboundSchema` instead. */
+    export const inboundSchema = CancelDeploymentType$inboundSchema;
+    /** @deprecated use `CancelDeploymentType$outboundSchema` instead. */
+    export const outboundSchema = CancelDeploymentType$outboundSchema;
+}
+
+/** @internal */
+export const CancelDeploymentOidcTokenClaims$inboundSchema: z.ZodType<
+    CancelDeploymentOidcTokenClaims,
+    z.ZodTypeDef,
+    unknown
+> = z.union([z.string(), z.array(z.string())]);
+
+/** @internal */
+export type CancelDeploymentOidcTokenClaims$Outbound = string | Array<string>;
+
+/** @internal */
+export const CancelDeploymentOidcTokenClaims$outboundSchema: z.ZodType<
+    CancelDeploymentOidcTokenClaims$Outbound,
+    z.ZodTypeDef,
+    CancelDeploymentOidcTokenClaims
+> = z.union([z.string(), z.array(z.string())]);
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace CancelDeploymentOidcTokenClaims$ {
+    /** @deprecated use `CancelDeploymentOidcTokenClaims$inboundSchema` instead. */
+    export const inboundSchema = CancelDeploymentOidcTokenClaims$inboundSchema;
+    /** @deprecated use `CancelDeploymentOidcTokenClaims$outboundSchema` instead. */
+    export const outboundSchema = CancelDeploymentOidcTokenClaims$outboundSchema;
+    /** @deprecated use `CancelDeploymentOidcTokenClaims$Outbound` instead. */
+    export type Outbound = CancelDeploymentOidcTokenClaims$Outbound;
 }
 
 /** @internal */
@@ -1955,1233 +3790,184 @@ export namespace CancelDeploymentGitRepo$ {
 }
 
 /** @internal */
-export const CancelDeploymentAliasAssignedAt$inboundSchema: z.ZodType<
-    CancelDeploymentAliasAssignedAt,
+export const CancelDeploymentFlags2$inboundSchema: z.ZodType<
+    CancelDeploymentFlags2,
     z.ZodTypeDef,
     unknown
-> = z.union([z.number(), z.boolean()]);
+> = z.object({});
 
 /** @internal */
-export type CancelDeploymentAliasAssignedAt$Outbound = number | boolean;
+export type CancelDeploymentFlags2$Outbound = {};
 
 /** @internal */
-export const CancelDeploymentAliasAssignedAt$outboundSchema: z.ZodType<
-    CancelDeploymentAliasAssignedAt$Outbound,
+export const CancelDeploymentFlags2$outboundSchema: z.ZodType<
+    CancelDeploymentFlags2$Outbound,
     z.ZodTypeDef,
-    CancelDeploymentAliasAssignedAt
-> = z.union([z.number(), z.boolean()]);
+    CancelDeploymentFlags2
+> = z.object({});
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace CancelDeploymentAliasAssignedAt$ {
-    /** @deprecated use `CancelDeploymentAliasAssignedAt$inboundSchema` instead. */
-    export const inboundSchema = CancelDeploymentAliasAssignedAt$inboundSchema;
-    /** @deprecated use `CancelDeploymentAliasAssignedAt$outboundSchema` instead. */
-    export const outboundSchema = CancelDeploymentAliasAssignedAt$outboundSchema;
-    /** @deprecated use `CancelDeploymentAliasAssignedAt$Outbound` instead. */
-    export type Outbound = CancelDeploymentAliasAssignedAt$Outbound;
+export namespace CancelDeploymentFlags2$ {
+    /** @deprecated use `CancelDeploymentFlags2$inboundSchema` instead. */
+    export const inboundSchema = CancelDeploymentFlags2$inboundSchema;
+    /** @deprecated use `CancelDeploymentFlags2$outboundSchema` instead. */
+    export const outboundSchema = CancelDeploymentFlags2$outboundSchema;
+    /** @deprecated use `CancelDeploymentFlags2$Outbound` instead. */
+    export type Outbound = CancelDeploymentFlags2$Outbound;
 }
 
 /** @internal */
-export const CancelDeploymentDeploymentsReadyState$inboundSchema: z.ZodNativeEnum<
-    typeof CancelDeploymentDeploymentsReadyState
-> = z.nativeEnum(CancelDeploymentDeploymentsReadyState);
-
-/** @internal */
-export const CancelDeploymentDeploymentsReadyState$outboundSchema: z.ZodNativeEnum<
-    typeof CancelDeploymentDeploymentsReadyState
-> = CancelDeploymentDeploymentsReadyState$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CancelDeploymentDeploymentsReadyState$ {
-    /** @deprecated use `CancelDeploymentDeploymentsReadyState$inboundSchema` instead. */
-    export const inboundSchema = CancelDeploymentDeploymentsReadyState$inboundSchema;
-    /** @deprecated use `CancelDeploymentDeploymentsReadyState$outboundSchema` instead. */
-    export const outboundSchema = CancelDeploymentDeploymentsReadyState$outboundSchema;
-}
-
-/** @internal */
-export const CancelDeploymentOutput$inboundSchema: z.ZodType<
-    CancelDeploymentOutput,
-    z.ZodTypeDef,
-    unknown
-> = z.object({
-    path: z.string(),
-    functionName: z.string(),
+export const FlagsOptions$inboundSchema: z.ZodType<FlagsOptions, z.ZodTypeDef, unknown> = z.object({
+    value: z.nullable(FlagJSONValue$inboundSchema),
+    label: z.string().optional(),
 });
 
 /** @internal */
-export type CancelDeploymentOutput$Outbound = {
-    path: string;
-    functionName: string;
+export type FlagsOptions$Outbound = {
+    value: FlagJSONValue$Outbound | null;
+    label?: string | undefined;
 };
 
 /** @internal */
-export const CancelDeploymentOutput$outboundSchema: z.ZodType<
-    CancelDeploymentOutput$Outbound,
+export const FlagsOptions$outboundSchema: z.ZodType<
+    FlagsOptions$Outbound,
     z.ZodTypeDef,
-    CancelDeploymentOutput
+    FlagsOptions
 > = z.object({
-    path: z.string(),
-    functionName: z.string(),
+    value: z.nullable(FlagJSONValue$outboundSchema),
+    label: z.string().optional(),
 });
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace CancelDeploymentOutput$ {
-    /** @deprecated use `CancelDeploymentOutput$inboundSchema` instead. */
-    export const inboundSchema = CancelDeploymentOutput$inboundSchema;
-    /** @deprecated use `CancelDeploymentOutput$outboundSchema` instead. */
-    export const outboundSchema = CancelDeploymentOutput$outboundSchema;
-    /** @deprecated use `CancelDeploymentOutput$Outbound` instead. */
-    export type Outbound = CancelDeploymentOutput$Outbound;
+export namespace FlagsOptions$ {
+    /** @deprecated use `FlagsOptions$inboundSchema` instead. */
+    export const inboundSchema = FlagsOptions$inboundSchema;
+    /** @deprecated use `FlagsOptions$outboundSchema` instead. */
+    export const outboundSchema = FlagsOptions$outboundSchema;
+    /** @deprecated use `FlagsOptions$Outbound` instead. */
+    export type Outbound = FlagsOptions$Outbound;
 }
 
 /** @internal */
-export const CancelDeploymentLambdas$inboundSchema: z.ZodType<
-    CancelDeploymentLambdas,
+export const CancelDeploymentFlagsDefinitions$inboundSchema: z.ZodType<
+    CancelDeploymentFlagsDefinitions,
     z.ZodTypeDef,
     unknown
 > = z.object({
-    id: z.string(),
-    createdAt: z.number().optional(),
-    entrypoint: z.nullable(z.string()).optional(),
-    readyState: CancelDeploymentDeploymentsReadyState$inboundSchema.optional(),
-    readyStateAt: z.number().optional(),
-    output: z.array(z.lazy(() => CancelDeploymentOutput$inboundSchema)),
+    options: z.array(z.lazy(() => FlagsOptions$inboundSchema)).optional(),
+    url: z.string().optional(),
+    description: z.string().optional(),
 });
 
 /** @internal */
-export type CancelDeploymentLambdas$Outbound = {
-    id: string;
-    createdAt?: number | undefined;
-    entrypoint?: string | null | undefined;
-    readyState?: string | undefined;
-    readyStateAt?: number | undefined;
-    output: Array<CancelDeploymentOutput$Outbound>;
+export type CancelDeploymentFlagsDefinitions$Outbound = {
+    options?: Array<FlagsOptions$Outbound> | undefined;
+    url?: string | undefined;
+    description?: string | undefined;
 };
 
 /** @internal */
-export const CancelDeploymentLambdas$outboundSchema: z.ZodType<
-    CancelDeploymentLambdas$Outbound,
+export const CancelDeploymentFlagsDefinitions$outboundSchema: z.ZodType<
+    CancelDeploymentFlagsDefinitions$Outbound,
     z.ZodTypeDef,
-    CancelDeploymentLambdas
+    CancelDeploymentFlagsDefinitions
 > = z.object({
-    id: z.string(),
-    createdAt: z.number().optional(),
-    entrypoint: z.nullable(z.string()).optional(),
-    readyState: CancelDeploymentDeploymentsReadyState$outboundSchema.optional(),
-    readyStateAt: z.number().optional(),
-    output: z.array(z.lazy(() => CancelDeploymentOutput$outboundSchema)),
+    options: z.array(z.lazy(() => FlagsOptions$outboundSchema)).optional(),
+    url: z.string().optional(),
+    description: z.string().optional(),
 });
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace CancelDeploymentLambdas$ {
-    /** @deprecated use `CancelDeploymentLambdas$inboundSchema` instead. */
-    export const inboundSchema = CancelDeploymentLambdas$inboundSchema;
-    /** @deprecated use `CancelDeploymentLambdas$outboundSchema` instead. */
-    export const outboundSchema = CancelDeploymentLambdas$outboundSchema;
-    /** @deprecated use `CancelDeploymentLambdas$Outbound` instead. */
-    export type Outbound = CancelDeploymentLambdas$Outbound;
+export namespace CancelDeploymentFlagsDefinitions$ {
+    /** @deprecated use `CancelDeploymentFlagsDefinitions$inboundSchema` instead. */
+    export const inboundSchema = CancelDeploymentFlagsDefinitions$inboundSchema;
+    /** @deprecated use `CancelDeploymentFlagsDefinitions$outboundSchema` instead. */
+    export const outboundSchema = CancelDeploymentFlagsDefinitions$outboundSchema;
+    /** @deprecated use `CancelDeploymentFlagsDefinitions$Outbound` instead. */
+    export type Outbound = CancelDeploymentFlagsDefinitions$Outbound;
 }
 
 /** @internal */
-export const CancelDeploymentProject$inboundSchema: z.ZodType<
-    CancelDeploymentProject,
+export const CancelDeploymentFlags1$inboundSchema: z.ZodType<
+    CancelDeploymentFlags1,
     z.ZodTypeDef,
     unknown
 > = z.object({
-    id: z.string(),
-    name: z.string(),
-    framework: z.nullable(z.string()).optional(),
+    definitions: z.record(z.lazy(() => CancelDeploymentFlagsDefinitions$inboundSchema)),
 });
 
 /** @internal */
-export type CancelDeploymentProject$Outbound = {
-    id: string;
-    name: string;
-    framework?: string | null | undefined;
+export type CancelDeploymentFlags1$Outbound = {
+    definitions: { [k: string]: CancelDeploymentFlagsDefinitions$Outbound };
 };
 
 /** @internal */
-export const CancelDeploymentProject$outboundSchema: z.ZodType<
-    CancelDeploymentProject$Outbound,
+export const CancelDeploymentFlags1$outboundSchema: z.ZodType<
+    CancelDeploymentFlags1$Outbound,
     z.ZodTypeDef,
-    CancelDeploymentProject
+    CancelDeploymentFlags1
 > = z.object({
-    id: z.string(),
-    name: z.string(),
-    framework: z.nullable(z.string()).optional(),
+    definitions: z.record(z.lazy(() => CancelDeploymentFlagsDefinitions$outboundSchema)),
 });
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace CancelDeploymentProject$ {
-    /** @deprecated use `CancelDeploymentProject$inboundSchema` instead. */
-    export const inboundSchema = CancelDeploymentProject$inboundSchema;
-    /** @deprecated use `CancelDeploymentProject$outboundSchema` instead. */
-    export const outboundSchema = CancelDeploymentProject$outboundSchema;
-    /** @deprecated use `CancelDeploymentProject$Outbound` instead. */
-    export type Outbound = CancelDeploymentProject$Outbound;
+export namespace CancelDeploymentFlags1$ {
+    /** @deprecated use `CancelDeploymentFlags1$inboundSchema` instead. */
+    export const inboundSchema = CancelDeploymentFlags1$inboundSchema;
+    /** @deprecated use `CancelDeploymentFlags1$outboundSchema` instead. */
+    export const outboundSchema = CancelDeploymentFlags1$outboundSchema;
+    /** @deprecated use `CancelDeploymentFlags1$Outbound` instead. */
+    export type Outbound = CancelDeploymentFlags1$Outbound;
 }
 
 /** @internal */
-export const CancelDeploymentReadyState$inboundSchema: z.ZodNativeEnum<
-    typeof CancelDeploymentReadyState
-> = z.nativeEnum(CancelDeploymentReadyState);
-
-/** @internal */
-export const CancelDeploymentReadyState$outboundSchema: z.ZodNativeEnum<
-    typeof CancelDeploymentReadyState
-> = CancelDeploymentReadyState$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CancelDeploymentReadyState$ {
-    /** @deprecated use `CancelDeploymentReadyState$inboundSchema` instead. */
-    export const inboundSchema = CancelDeploymentReadyState$inboundSchema;
-    /** @deprecated use `CancelDeploymentReadyState$outboundSchema` instead. */
-    export const outboundSchema = CancelDeploymentReadyState$outboundSchema;
-}
-
-/** @internal */
-export const CancelDeploymentReadySubstate$inboundSchema: z.ZodNativeEnum<
-    typeof CancelDeploymentReadySubstate
-> = z.nativeEnum(CancelDeploymentReadySubstate);
-
-/** @internal */
-export const CancelDeploymentReadySubstate$outboundSchema: z.ZodNativeEnum<
-    typeof CancelDeploymentReadySubstate
-> = CancelDeploymentReadySubstate$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CancelDeploymentReadySubstate$ {
-    /** @deprecated use `CancelDeploymentReadySubstate$inboundSchema` instead. */
-    export const inboundSchema = CancelDeploymentReadySubstate$inboundSchema;
-    /** @deprecated use `CancelDeploymentReadySubstate$outboundSchema` instead. */
-    export const outboundSchema = CancelDeploymentReadySubstate$outboundSchema;
-}
-
-/** @internal */
-export const CancelDeploymentSource$inboundSchema: z.ZodNativeEnum<typeof CancelDeploymentSource> =
-    z.nativeEnum(CancelDeploymentSource);
-
-/** @internal */
-export const CancelDeploymentSource$outboundSchema: z.ZodNativeEnum<typeof CancelDeploymentSource> =
-    CancelDeploymentSource$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CancelDeploymentSource$ {
-    /** @deprecated use `CancelDeploymentSource$inboundSchema` instead. */
-    export const inboundSchema = CancelDeploymentSource$inboundSchema;
-    /** @deprecated use `CancelDeploymentSource$outboundSchema` instead. */
-    export const outboundSchema = CancelDeploymentSource$outboundSchema;
-}
-
-/** @internal */
-export const CancelDeploymentTarget$inboundSchema: z.ZodNativeEnum<typeof CancelDeploymentTarget> =
-    z.nativeEnum(CancelDeploymentTarget);
-
-/** @internal */
-export const CancelDeploymentTarget$outboundSchema: z.ZodNativeEnum<typeof CancelDeploymentTarget> =
-    CancelDeploymentTarget$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CancelDeploymentTarget$ {
-    /** @deprecated use `CancelDeploymentTarget$inboundSchema` instead. */
-    export const inboundSchema = CancelDeploymentTarget$inboundSchema;
-    /** @deprecated use `CancelDeploymentTarget$outboundSchema` instead. */
-    export const outboundSchema = CancelDeploymentTarget$outboundSchema;
-}
-
-/** @internal */
-export const CancelDeploymentTeam$inboundSchema: z.ZodType<
-    CancelDeploymentTeam,
-    z.ZodTypeDef,
-    unknown
-> = z.object({
-    id: z.string(),
-    name: z.string(),
-    slug: z.string(),
-    avatar: z.string().optional(),
-});
-
-/** @internal */
-export type CancelDeploymentTeam$Outbound = {
-    id: string;
-    name: string;
-    slug: string;
-    avatar?: string | undefined;
-};
-
-/** @internal */
-export const CancelDeploymentTeam$outboundSchema: z.ZodType<
-    CancelDeploymentTeam$Outbound,
-    z.ZodTypeDef,
-    CancelDeploymentTeam
-> = z.object({
-    id: z.string(),
-    name: z.string(),
-    slug: z.string(),
-    avatar: z.string().optional(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CancelDeploymentTeam$ {
-    /** @deprecated use `CancelDeploymentTeam$inboundSchema` instead. */
-    export const inboundSchema = CancelDeploymentTeam$inboundSchema;
-    /** @deprecated use `CancelDeploymentTeam$outboundSchema` instead. */
-    export const outboundSchema = CancelDeploymentTeam$outboundSchema;
-    /** @deprecated use `CancelDeploymentTeam$Outbound` instead. */
-    export type Outbound = CancelDeploymentTeam$Outbound;
-}
-
-/** @internal */
-export const CancelDeploymentType$inboundSchema: z.ZodNativeEnum<typeof CancelDeploymentType> =
-    z.nativeEnum(CancelDeploymentType);
-
-/** @internal */
-export const CancelDeploymentType$outboundSchema: z.ZodNativeEnum<typeof CancelDeploymentType> =
-    CancelDeploymentType$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CancelDeploymentType$ {
-    /** @deprecated use `CancelDeploymentType$inboundSchema` instead. */
-    export const inboundSchema = CancelDeploymentType$inboundSchema;
-    /** @deprecated use `CancelDeploymentType$outboundSchema` instead. */
-    export const outboundSchema = CancelDeploymentType$outboundSchema;
-}
-
-/** @internal */
-export const CancelDeploymentAliasError$inboundSchema: z.ZodType<
-    CancelDeploymentAliasError,
-    z.ZodTypeDef,
-    unknown
-> = z.object({
-    code: z.string(),
-    message: z.string(),
-});
-
-/** @internal */
-export type CancelDeploymentAliasError$Outbound = {
-    code: string;
-    message: string;
-};
-
-/** @internal */
-export const CancelDeploymentAliasError$outboundSchema: z.ZodType<
-    CancelDeploymentAliasError$Outbound,
-    z.ZodTypeDef,
-    CancelDeploymentAliasError
-> = z.object({
-    code: z.string(),
-    message: z.string(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CancelDeploymentAliasError$ {
-    /** @deprecated use `CancelDeploymentAliasError$inboundSchema` instead. */
-    export const inboundSchema = CancelDeploymentAliasError$inboundSchema;
-    /** @deprecated use `CancelDeploymentAliasError$outboundSchema` instead. */
-    export const outboundSchema = CancelDeploymentAliasError$outboundSchema;
-    /** @deprecated use `CancelDeploymentAliasError$Outbound` instead. */
-    export type Outbound = CancelDeploymentAliasError$Outbound;
-}
-
-/** @internal */
-export const CancelDeploymentAliasWarning$inboundSchema: z.ZodType<
-    CancelDeploymentAliasWarning,
-    z.ZodTypeDef,
-    unknown
-> = z.object({
-    code: z.string(),
-    message: z.string(),
-    link: z.string().optional(),
-    action: z.string().optional(),
-});
-
-/** @internal */
-export type CancelDeploymentAliasWarning$Outbound = {
-    code: string;
-    message: string;
-    link?: string | undefined;
-    action?: string | undefined;
-};
-
-/** @internal */
-export const CancelDeploymentAliasWarning$outboundSchema: z.ZodType<
-    CancelDeploymentAliasWarning$Outbound,
-    z.ZodTypeDef,
-    CancelDeploymentAliasWarning
-> = z.object({
-    code: z.string(),
-    message: z.string(),
-    link: z.string().optional(),
-    action: z.string().optional(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CancelDeploymentAliasWarning$ {
-    /** @deprecated use `CancelDeploymentAliasWarning$inboundSchema` instead. */
-    export const inboundSchema = CancelDeploymentAliasWarning$inboundSchema;
-    /** @deprecated use `CancelDeploymentAliasWarning$outboundSchema` instead. */
-    export const outboundSchema = CancelDeploymentAliasWarning$outboundSchema;
-    /** @deprecated use `CancelDeploymentAliasWarning$Outbound` instead. */
-    export type Outbound = CancelDeploymentAliasWarning$Outbound;
-}
-
-/** @internal */
-export const CancelDeploymentChecksState$inboundSchema: z.ZodNativeEnum<
-    typeof CancelDeploymentChecksState
-> = z.nativeEnum(CancelDeploymentChecksState);
-
-/** @internal */
-export const CancelDeploymentChecksState$outboundSchema: z.ZodNativeEnum<
-    typeof CancelDeploymentChecksState
-> = CancelDeploymentChecksState$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CancelDeploymentChecksState$ {
-    /** @deprecated use `CancelDeploymentChecksState$inboundSchema` instead. */
-    export const inboundSchema = CancelDeploymentChecksState$inboundSchema;
-    /** @deprecated use `CancelDeploymentChecksState$outboundSchema` instead. */
-    export const outboundSchema = CancelDeploymentChecksState$outboundSchema;
-}
-
-/** @internal */
-export const CancelDeploymentChecksConclusion$inboundSchema: z.ZodNativeEnum<
-    typeof CancelDeploymentChecksConclusion
-> = z.nativeEnum(CancelDeploymentChecksConclusion);
-
-/** @internal */
-export const CancelDeploymentChecksConclusion$outboundSchema: z.ZodNativeEnum<
-    typeof CancelDeploymentChecksConclusion
-> = CancelDeploymentChecksConclusion$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CancelDeploymentChecksConclusion$ {
-    /** @deprecated use `CancelDeploymentChecksConclusion$inboundSchema` instead. */
-    export const inboundSchema = CancelDeploymentChecksConclusion$inboundSchema;
-    /** @deprecated use `CancelDeploymentChecksConclusion$outboundSchema` instead. */
-    export const outboundSchema = CancelDeploymentChecksConclusion$outboundSchema;
-}
-
-/** @internal */
-export const CancelDeploymentCreator$inboundSchema: z.ZodType<
-    CancelDeploymentCreator,
-    z.ZodTypeDef,
-    unknown
-> = z.object({
-    uid: z.string(),
-    username: z.string().optional(),
-    avatar: z.string().optional(),
-});
-
-/** @internal */
-export type CancelDeploymentCreator$Outbound = {
-    uid: string;
-    username?: string | undefined;
-    avatar?: string | undefined;
-};
-
-/** @internal */
-export const CancelDeploymentCreator$outboundSchema: z.ZodType<
-    CancelDeploymentCreator$Outbound,
-    z.ZodTypeDef,
-    CancelDeploymentCreator
-> = z.object({
-    uid: z.string(),
-    username: z.string().optional(),
-    avatar: z.string().optional(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CancelDeploymentCreator$ {
-    /** @deprecated use `CancelDeploymentCreator$inboundSchema` instead. */
-    export const inboundSchema = CancelDeploymentCreator$inboundSchema;
-    /** @deprecated use `CancelDeploymentCreator$outboundSchema` instead. */
-    export const outboundSchema = CancelDeploymentCreator$outboundSchema;
-    /** @deprecated use `CancelDeploymentCreator$Outbound` instead. */
-    export type Outbound = CancelDeploymentCreator$Outbound;
-}
-
-/** @internal */
-export const CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody9Type$inboundSchema: z.ZodNativeEnum<
-    typeof CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody9Type
-> = z.nativeEnum(CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody9Type);
-
-/** @internal */
-export const CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody9Type$outboundSchema: z.ZodNativeEnum<
-    typeof CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody9Type
-> = CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody9Type$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody9Type$ {
-    /** @deprecated use `CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody9Type$inboundSchema` instead. */
-    export const inboundSchema =
-        CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody9Type$inboundSchema;
-    /** @deprecated use `CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody9Type$outboundSchema` instead. */
-    export const outboundSchema =
-        CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody9Type$outboundSchema;
-}
-
-/** @internal */
-export const GitSource9$inboundSchema: z.ZodType<GitSource9, z.ZodTypeDef, unknown> = z.object({
-    type: CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody9Type$inboundSchema,
-    ref: z.string(),
-    sha: z.string(),
-    owner: z.string().optional(),
-    slug: z.string().optional(),
-    workspaceUuid: z.string(),
-    repoUuid: z.string(),
-});
-
-/** @internal */
-export type GitSource9$Outbound = {
-    type: string;
-    ref: string;
-    sha: string;
-    owner?: string | undefined;
-    slug?: string | undefined;
-    workspaceUuid: string;
-    repoUuid: string;
-};
-
-/** @internal */
-export const GitSource9$outboundSchema: z.ZodType<GitSource9$Outbound, z.ZodTypeDef, GitSource9> =
-    z.object({
-        type: CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody9Type$outboundSchema,
-        ref: z.string(),
-        sha: z.string(),
-        owner: z.string().optional(),
-        slug: z.string().optional(),
-        workspaceUuid: z.string(),
-        repoUuid: z.string(),
-    });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GitSource9$ {
-    /** @deprecated use `GitSource9$inboundSchema` instead. */
-    export const inboundSchema = GitSource9$inboundSchema;
-    /** @deprecated use `GitSource9$outboundSchema` instead. */
-    export const outboundSchema = GitSource9$outboundSchema;
-    /** @deprecated use `GitSource9$Outbound` instead. */
-    export type Outbound = GitSource9$Outbound;
-}
-
-/** @internal */
-export const CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody8Type$inboundSchema: z.ZodNativeEnum<
-    typeof CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody8Type
-> = z.nativeEnum(CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody8Type);
-
-/** @internal */
-export const CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody8Type$outboundSchema: z.ZodNativeEnum<
-    typeof CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody8Type
-> = CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody8Type$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody8Type$ {
-    /** @deprecated use `CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody8Type$inboundSchema` instead. */
-    export const inboundSchema =
-        CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody8Type$inboundSchema;
-    /** @deprecated use `CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody8Type$outboundSchema` instead. */
-    export const outboundSchema =
-        CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody8Type$outboundSchema;
-}
-
-/** @internal */
-export const GitSource8$inboundSchema: z.ZodType<GitSource8, z.ZodTypeDef, unknown> = z.object({
-    type: CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody8Type$inboundSchema,
-    ref: z.string(),
-    sha: z.string(),
-    projectId: z.number(),
-});
-
-/** @internal */
-export type GitSource8$Outbound = {
-    type: string;
-    ref: string;
-    sha: string;
-    projectId: number;
-};
-
-/** @internal */
-export const GitSource8$outboundSchema: z.ZodType<GitSource8$Outbound, z.ZodTypeDef, GitSource8> =
-    z.object({
-        type: CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody8Type$outboundSchema,
-        ref: z.string(),
-        sha: z.string(),
-        projectId: z.number(),
-    });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GitSource8$ {
-    /** @deprecated use `GitSource8$inboundSchema` instead. */
-    export const inboundSchema = GitSource8$inboundSchema;
-    /** @deprecated use `GitSource8$outboundSchema` instead. */
-    export const outboundSchema = GitSource8$outboundSchema;
-    /** @deprecated use `GitSource8$Outbound` instead. */
-    export type Outbound = GitSource8$Outbound;
-}
-
-/** @internal */
-export const CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody7Type$inboundSchema: z.ZodNativeEnum<
-    typeof CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody7Type
-> = z.nativeEnum(CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody7Type);
-
-/** @internal */
-export const CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody7Type$outboundSchema: z.ZodNativeEnum<
-    typeof CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody7Type
-> = CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody7Type$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody7Type$ {
-    /** @deprecated use `CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody7Type$inboundSchema` instead. */
-    export const inboundSchema =
-        CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody7Type$inboundSchema;
-    /** @deprecated use `CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody7Type$outboundSchema` instead. */
-    export const outboundSchema =
-        CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody7Type$outboundSchema;
-}
-
-/** @internal */
-export const GitSource7$inboundSchema: z.ZodType<GitSource7, z.ZodTypeDef, unknown> = z.object({
-    type: CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody7Type$inboundSchema,
-    ref: z.string(),
-    sha: z.string(),
-    repoId: z.number(),
-    org: z.string().optional(),
-    repo: z.string().optional(),
-});
-
-/** @internal */
-export type GitSource7$Outbound = {
-    type: string;
-    ref: string;
-    sha: string;
-    repoId: number;
-    org?: string | undefined;
-    repo?: string | undefined;
-};
-
-/** @internal */
-export const GitSource7$outboundSchema: z.ZodType<GitSource7$Outbound, z.ZodTypeDef, GitSource7> =
-    z.object({
-        type: CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody7Type$outboundSchema,
-        ref: z.string(),
-        sha: z.string(),
-        repoId: z.number(),
-        org: z.string().optional(),
-        repo: z.string().optional(),
-    });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GitSource7$ {
-    /** @deprecated use `GitSource7$inboundSchema` instead. */
-    export const inboundSchema = GitSource7$inboundSchema;
-    /** @deprecated use `GitSource7$outboundSchema` instead. */
-    export const outboundSchema = GitSource7$outboundSchema;
-    /** @deprecated use `GitSource7$Outbound` instead. */
-    export type Outbound = GitSource7$Outbound;
-}
-
-/** @internal */
-export const CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBodyType$inboundSchema: z.ZodNativeEnum<
-    typeof CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBodyType
-> = z.nativeEnum(CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBodyType);
-
-/** @internal */
-export const CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBodyType$outboundSchema: z.ZodNativeEnum<
-    typeof CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBodyType
-> = CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBodyType$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBodyType$ {
-    /** @deprecated use `CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBodyType$inboundSchema` instead. */
-    export const inboundSchema =
-        CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBodyType$inboundSchema;
-    /** @deprecated use `CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBodyType$outboundSchema` instead. */
-    export const outboundSchema =
-        CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBodyType$outboundSchema;
-}
-
-/** @internal */
-export const GitSource6$inboundSchema: z.ZodType<GitSource6, z.ZodTypeDef, unknown> = z.object({
-    type: CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBodyType$inboundSchema,
-    ref: z.string(),
-    sha: z.string(),
-    gitUrl: z.string(),
-});
-
-/** @internal */
-export type GitSource6$Outbound = {
-    type: string;
-    ref: string;
-    sha: string;
-    gitUrl: string;
-};
-
-/** @internal */
-export const GitSource6$outboundSchema: z.ZodType<GitSource6$Outbound, z.ZodTypeDef, GitSource6> =
-    z.object({
-        type: CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBodyType$outboundSchema,
-        ref: z.string(),
-        sha: z.string(),
-        gitUrl: z.string(),
-    });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GitSource6$ {
-    /** @deprecated use `GitSource6$inboundSchema` instead. */
-    export const inboundSchema = GitSource6$inboundSchema;
-    /** @deprecated use `GitSource6$outboundSchema` instead. */
-    export const outboundSchema = GitSource6$outboundSchema;
-    /** @deprecated use `GitSource6$Outbound` instead. */
-    export type Outbound = GitSource6$Outbound;
-}
-
-/** @internal */
-export const CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONType$inboundSchema: z.ZodNativeEnum<
-    typeof CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONType
-> = z.nativeEnum(CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONType);
-
-/** @internal */
-export const CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONType$outboundSchema: z.ZodNativeEnum<
-    typeof CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONType
-> = CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONType$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONType$ {
-    /** @deprecated use `CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONType$inboundSchema` instead. */
-    export const inboundSchema =
-        CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONType$inboundSchema;
-    /** @deprecated use `CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONType$outboundSchema` instead. */
-    export const outboundSchema =
-        CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONType$outboundSchema;
-}
-
-/** @internal */
-export const CancelDeploymentGitSource5$inboundSchema: z.ZodType<
-    CancelDeploymentGitSource5,
-    z.ZodTypeDef,
-    unknown
-> = z.object({
-    type: CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONType$inboundSchema,
-    owner: z.string(),
-    slug: z.string(),
-    ref: z.nullable(z.string()).optional(),
-    sha: z.string().optional(),
-    prId: z.nullable(z.number()).optional(),
-});
-
-/** @internal */
-export type CancelDeploymentGitSource5$Outbound = {
-    type: string;
-    owner: string;
-    slug: string;
-    ref?: string | null | undefined;
-    sha?: string | undefined;
-    prId?: number | null | undefined;
-};
-
-/** @internal */
-export const CancelDeploymentGitSource5$outboundSchema: z.ZodType<
-    CancelDeploymentGitSource5$Outbound,
-    z.ZodTypeDef,
-    CancelDeploymentGitSource5
-> = z.object({
-    type: CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONType$outboundSchema,
-    owner: z.string(),
-    slug: z.string(),
-    ref: z.nullable(z.string()).optional(),
-    sha: z.string().optional(),
-    prId: z.nullable(z.number()).optional(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CancelDeploymentGitSource5$ {
-    /** @deprecated use `CancelDeploymentGitSource5$inboundSchema` instead. */
-    export const inboundSchema = CancelDeploymentGitSource5$inboundSchema;
-    /** @deprecated use `CancelDeploymentGitSource5$outboundSchema` instead. */
-    export const outboundSchema = CancelDeploymentGitSource5$outboundSchema;
-    /** @deprecated use `CancelDeploymentGitSource5$Outbound` instead. */
-    export type Outbound = CancelDeploymentGitSource5$Outbound;
-}
-
-/** @internal */
-export const CancelDeploymentGitSourceDeploymentsResponse200Type$inboundSchema: z.ZodNativeEnum<
-    typeof CancelDeploymentGitSourceDeploymentsResponse200Type
-> = z.nativeEnum(CancelDeploymentGitSourceDeploymentsResponse200Type);
-
-/** @internal */
-export const CancelDeploymentGitSourceDeploymentsResponse200Type$outboundSchema: z.ZodNativeEnum<
-    typeof CancelDeploymentGitSourceDeploymentsResponse200Type
-> = CancelDeploymentGitSourceDeploymentsResponse200Type$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CancelDeploymentGitSourceDeploymentsResponse200Type$ {
-    /** @deprecated use `CancelDeploymentGitSourceDeploymentsResponse200Type$inboundSchema` instead. */
-    export const inboundSchema = CancelDeploymentGitSourceDeploymentsResponse200Type$inboundSchema;
-    /** @deprecated use `CancelDeploymentGitSourceDeploymentsResponse200Type$outboundSchema` instead. */
-    export const outboundSchema =
-        CancelDeploymentGitSourceDeploymentsResponse200Type$outboundSchema;
-}
-
-/** @internal */
-export const CancelDeploymentGitSource4$inboundSchema: z.ZodType<
-    CancelDeploymentGitSource4,
-    z.ZodTypeDef,
-    unknown
-> = z.object({
-    type: CancelDeploymentGitSourceDeploymentsResponse200Type$inboundSchema,
-    workspaceUuid: z.string().optional(),
-    repoUuid: z.string(),
-    ref: z.nullable(z.string()).optional(),
-    sha: z.string().optional(),
-    prId: z.nullable(z.number()).optional(),
-});
-
-/** @internal */
-export type CancelDeploymentGitSource4$Outbound = {
-    type: string;
-    workspaceUuid?: string | undefined;
-    repoUuid: string;
-    ref?: string | null | undefined;
-    sha?: string | undefined;
-    prId?: number | null | undefined;
-};
-
-/** @internal */
-export const CancelDeploymentGitSource4$outboundSchema: z.ZodType<
-    CancelDeploymentGitSource4$Outbound,
-    z.ZodTypeDef,
-    CancelDeploymentGitSource4
-> = z.object({
-    type: CancelDeploymentGitSourceDeploymentsResponse200Type$outboundSchema,
-    workspaceUuid: z.string().optional(),
-    repoUuid: z.string(),
-    ref: z.nullable(z.string()).optional(),
-    sha: z.string().optional(),
-    prId: z.nullable(z.number()).optional(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CancelDeploymentGitSource4$ {
-    /** @deprecated use `CancelDeploymentGitSource4$inboundSchema` instead. */
-    export const inboundSchema = CancelDeploymentGitSource4$inboundSchema;
-    /** @deprecated use `CancelDeploymentGitSource4$outboundSchema` instead. */
-    export const outboundSchema = CancelDeploymentGitSource4$outboundSchema;
-    /** @deprecated use `CancelDeploymentGitSource4$Outbound` instead. */
-    export type Outbound = CancelDeploymentGitSource4$Outbound;
-}
-
-/** @internal */
-export const CancelDeploymentGitSourceDeploymentsResponseType$inboundSchema: z.ZodNativeEnum<
-    typeof CancelDeploymentGitSourceDeploymentsResponseType
-> = z.nativeEnum(CancelDeploymentGitSourceDeploymentsResponseType);
-
-/** @internal */
-export const CancelDeploymentGitSourceDeploymentsResponseType$outboundSchema: z.ZodNativeEnum<
-    typeof CancelDeploymentGitSourceDeploymentsResponseType
-> = CancelDeploymentGitSourceDeploymentsResponseType$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CancelDeploymentGitSourceDeploymentsResponseType$ {
-    /** @deprecated use `CancelDeploymentGitSourceDeploymentsResponseType$inboundSchema` instead. */
-    export const inboundSchema = CancelDeploymentGitSourceDeploymentsResponseType$inboundSchema;
-    /** @deprecated use `CancelDeploymentGitSourceDeploymentsResponseType$outboundSchema` instead. */
-    export const outboundSchema = CancelDeploymentGitSourceDeploymentsResponseType$outboundSchema;
-}
-
-/** @internal */
-export const CancelDeploymentGitSourceProjectId$inboundSchema: z.ZodType<
-    CancelDeploymentGitSourceProjectId,
-    z.ZodTypeDef,
-    unknown
-> = z.union([z.string(), z.number()]);
-
-/** @internal */
-export type CancelDeploymentGitSourceProjectId$Outbound = string | number;
-
-/** @internal */
-export const CancelDeploymentGitSourceProjectId$outboundSchema: z.ZodType<
-    CancelDeploymentGitSourceProjectId$Outbound,
-    z.ZodTypeDef,
-    CancelDeploymentGitSourceProjectId
-> = z.union([z.string(), z.number()]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CancelDeploymentGitSourceProjectId$ {
-    /** @deprecated use `CancelDeploymentGitSourceProjectId$inboundSchema` instead. */
-    export const inboundSchema = CancelDeploymentGitSourceProjectId$inboundSchema;
-    /** @deprecated use `CancelDeploymentGitSourceProjectId$outboundSchema` instead. */
-    export const outboundSchema = CancelDeploymentGitSourceProjectId$outboundSchema;
-    /** @deprecated use `CancelDeploymentGitSourceProjectId$Outbound` instead. */
-    export type Outbound = CancelDeploymentGitSourceProjectId$Outbound;
-}
-
-/** @internal */
-export const CancelDeploymentGitSource3$inboundSchema: z.ZodType<
-    CancelDeploymentGitSource3,
-    z.ZodTypeDef,
-    unknown
-> = z.object({
-    type: CancelDeploymentGitSourceDeploymentsResponseType$inboundSchema,
-    projectId: z.union([z.string(), z.number()]),
-    ref: z.nullable(z.string()).optional(),
-    sha: z.string().optional(),
-    prId: z.nullable(z.number()).optional(),
-});
-
-/** @internal */
-export type CancelDeploymentGitSource3$Outbound = {
-    type: string;
-    projectId: string | number;
-    ref?: string | null | undefined;
-    sha?: string | undefined;
-    prId?: number | null | undefined;
-};
-
-/** @internal */
-export const CancelDeploymentGitSource3$outboundSchema: z.ZodType<
-    CancelDeploymentGitSource3$Outbound,
-    z.ZodTypeDef,
-    CancelDeploymentGitSource3
-> = z.object({
-    type: CancelDeploymentGitSourceDeploymentsResponseType$outboundSchema,
-    projectId: z.union([z.string(), z.number()]),
-    ref: z.nullable(z.string()).optional(),
-    sha: z.string().optional(),
-    prId: z.nullable(z.number()).optional(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CancelDeploymentGitSource3$ {
-    /** @deprecated use `CancelDeploymentGitSource3$inboundSchema` instead. */
-    export const inboundSchema = CancelDeploymentGitSource3$inboundSchema;
-    /** @deprecated use `CancelDeploymentGitSource3$outboundSchema` instead. */
-    export const outboundSchema = CancelDeploymentGitSource3$outboundSchema;
-    /** @deprecated use `CancelDeploymentGitSource3$Outbound` instead. */
-    export type Outbound = CancelDeploymentGitSource3$Outbound;
-}
-
-/** @internal */
-export const CancelDeploymentGitSourceDeploymentsType$inboundSchema: z.ZodNativeEnum<
-    typeof CancelDeploymentGitSourceDeploymentsType
-> = z.nativeEnum(CancelDeploymentGitSourceDeploymentsType);
-
-/** @internal */
-export const CancelDeploymentGitSourceDeploymentsType$outboundSchema: z.ZodNativeEnum<
-    typeof CancelDeploymentGitSourceDeploymentsType
-> = CancelDeploymentGitSourceDeploymentsType$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CancelDeploymentGitSourceDeploymentsType$ {
-    /** @deprecated use `CancelDeploymentGitSourceDeploymentsType$inboundSchema` instead. */
-    export const inboundSchema = CancelDeploymentGitSourceDeploymentsType$inboundSchema;
-    /** @deprecated use `CancelDeploymentGitSourceDeploymentsType$outboundSchema` instead. */
-    export const outboundSchema = CancelDeploymentGitSourceDeploymentsType$outboundSchema;
-}
-
-/** @internal */
-export const CancelDeploymentGitSource2$inboundSchema: z.ZodType<
-    CancelDeploymentGitSource2,
-    z.ZodTypeDef,
-    unknown
-> = z.object({
-    type: CancelDeploymentGitSourceDeploymentsType$inboundSchema,
-    org: z.string(),
-    repo: z.string(),
-    ref: z.nullable(z.string()).optional(),
-    sha: z.string().optional(),
-    prId: z.nullable(z.number()).optional(),
-});
-
-/** @internal */
-export type CancelDeploymentGitSource2$Outbound = {
-    type: string;
-    org: string;
-    repo: string;
-    ref?: string | null | undefined;
-    sha?: string | undefined;
-    prId?: number | null | undefined;
-};
-
-/** @internal */
-export const CancelDeploymentGitSource2$outboundSchema: z.ZodType<
-    CancelDeploymentGitSource2$Outbound,
-    z.ZodTypeDef,
-    CancelDeploymentGitSource2
-> = z.object({
-    type: CancelDeploymentGitSourceDeploymentsType$outboundSchema,
-    org: z.string(),
-    repo: z.string(),
-    ref: z.nullable(z.string()).optional(),
-    sha: z.string().optional(),
-    prId: z.nullable(z.number()).optional(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CancelDeploymentGitSource2$ {
-    /** @deprecated use `CancelDeploymentGitSource2$inboundSchema` instead. */
-    export const inboundSchema = CancelDeploymentGitSource2$inboundSchema;
-    /** @deprecated use `CancelDeploymentGitSource2$outboundSchema` instead. */
-    export const outboundSchema = CancelDeploymentGitSource2$outboundSchema;
-    /** @deprecated use `CancelDeploymentGitSource2$Outbound` instead. */
-    export type Outbound = CancelDeploymentGitSource2$Outbound;
-}
-
-/** @internal */
-export const CancelDeploymentGitSourceType$inboundSchema: z.ZodNativeEnum<
-    typeof CancelDeploymentGitSourceType
-> = z.nativeEnum(CancelDeploymentGitSourceType);
-
-/** @internal */
-export const CancelDeploymentGitSourceType$outboundSchema: z.ZodNativeEnum<
-    typeof CancelDeploymentGitSourceType
-> = CancelDeploymentGitSourceType$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CancelDeploymentGitSourceType$ {
-    /** @deprecated use `CancelDeploymentGitSourceType$inboundSchema` instead. */
-    export const inboundSchema = CancelDeploymentGitSourceType$inboundSchema;
-    /** @deprecated use `CancelDeploymentGitSourceType$outboundSchema` instead. */
-    export const outboundSchema = CancelDeploymentGitSourceType$outboundSchema;
-}
-
-/** @internal */
-export const CancelDeploymentGitSourceRepoId$inboundSchema: z.ZodType<
-    CancelDeploymentGitSourceRepoId,
-    z.ZodTypeDef,
-    unknown
-> = z.union([z.string(), z.number()]);
-
-/** @internal */
-export type CancelDeploymentGitSourceRepoId$Outbound = string | number;
-
-/** @internal */
-export const CancelDeploymentGitSourceRepoId$outboundSchema: z.ZodType<
-    CancelDeploymentGitSourceRepoId$Outbound,
-    z.ZodTypeDef,
-    CancelDeploymentGitSourceRepoId
-> = z.union([z.string(), z.number()]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CancelDeploymentGitSourceRepoId$ {
-    /** @deprecated use `CancelDeploymentGitSourceRepoId$inboundSchema` instead. */
-    export const inboundSchema = CancelDeploymentGitSourceRepoId$inboundSchema;
-    /** @deprecated use `CancelDeploymentGitSourceRepoId$outboundSchema` instead. */
-    export const outboundSchema = CancelDeploymentGitSourceRepoId$outboundSchema;
-    /** @deprecated use `CancelDeploymentGitSourceRepoId$Outbound` instead. */
-    export type Outbound = CancelDeploymentGitSourceRepoId$Outbound;
-}
-
-/** @internal */
-export const CancelDeploymentGitSource1$inboundSchema: z.ZodType<
-    CancelDeploymentGitSource1,
-    z.ZodTypeDef,
-    unknown
-> = z.object({
-    type: CancelDeploymentGitSourceType$inboundSchema,
-    repoId: z.union([z.string(), z.number()]),
-    ref: z.nullable(z.string()).optional(),
-    sha: z.string().optional(),
-    prId: z.nullable(z.number()).optional(),
-});
-
-/** @internal */
-export type CancelDeploymentGitSource1$Outbound = {
-    type: string;
-    repoId: string | number;
-    ref?: string | null | undefined;
-    sha?: string | undefined;
-    prId?: number | null | undefined;
-};
-
-/** @internal */
-export const CancelDeploymentGitSource1$outboundSchema: z.ZodType<
-    CancelDeploymentGitSource1$Outbound,
-    z.ZodTypeDef,
-    CancelDeploymentGitSource1
-> = z.object({
-    type: CancelDeploymentGitSourceType$outboundSchema,
-    repoId: z.union([z.string(), z.number()]),
-    ref: z.nullable(z.string()).optional(),
-    sha: z.string().optional(),
-    prId: z.nullable(z.number()).optional(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CancelDeploymentGitSource1$ {
-    /** @deprecated use `CancelDeploymentGitSource1$inboundSchema` instead. */
-    export const inboundSchema = CancelDeploymentGitSource1$inboundSchema;
-    /** @deprecated use `CancelDeploymentGitSource1$outboundSchema` instead. */
-    export const outboundSchema = CancelDeploymentGitSource1$outboundSchema;
-    /** @deprecated use `CancelDeploymentGitSource1$Outbound` instead. */
-    export type Outbound = CancelDeploymentGitSource1$Outbound;
-}
-
-/** @internal */
-export const CancelDeploymentGitSource$inboundSchema: z.ZodType<
-    CancelDeploymentGitSource,
+export const CancelDeploymentFlags$inboundSchema: z.ZodType<
+    CancelDeploymentFlags,
     z.ZodTypeDef,
     unknown
 > = z.union([
-    z.lazy(() => GitSource6$inboundSchema),
-    z.lazy(() => GitSource8$inboundSchema),
-    z.lazy(() => CancelDeploymentGitSource1$inboundSchema),
-    z.lazy(() => CancelDeploymentGitSource3$inboundSchema),
-    z.lazy(() => CancelDeploymentGitSource2$inboundSchema),
-    z.lazy(() => CancelDeploymentGitSource4$inboundSchema),
-    z.lazy(() => CancelDeploymentGitSource5$inboundSchema),
-    z.lazy(() => GitSource7$inboundSchema),
-    z.lazy(() => GitSource9$inboundSchema),
+    z.lazy(() => CancelDeploymentFlags1$inboundSchema),
+    z.array(z.lazy(() => CancelDeploymentFlags2$inboundSchema)),
 ]);
 
 /** @internal */
-export type CancelDeploymentGitSource$Outbound =
-    | GitSource6$Outbound
-    | GitSource8$Outbound
-    | CancelDeploymentGitSource1$Outbound
-    | CancelDeploymentGitSource3$Outbound
-    | CancelDeploymentGitSource2$Outbound
-    | CancelDeploymentGitSource4$Outbound
-    | CancelDeploymentGitSource5$Outbound
-    | GitSource7$Outbound
-    | GitSource9$Outbound;
+export type CancelDeploymentFlags$Outbound =
+    | CancelDeploymentFlags1$Outbound
+    | Array<CancelDeploymentFlags2$Outbound>;
 
 /** @internal */
-export const CancelDeploymentGitSource$outboundSchema: z.ZodType<
-    CancelDeploymentGitSource$Outbound,
+export const CancelDeploymentFlags$outboundSchema: z.ZodType<
+    CancelDeploymentFlags$Outbound,
     z.ZodTypeDef,
-    CancelDeploymentGitSource
+    CancelDeploymentFlags
 > = z.union([
-    z.lazy(() => GitSource6$outboundSchema),
-    z.lazy(() => GitSource8$outboundSchema),
-    z.lazy(() => CancelDeploymentGitSource1$outboundSchema),
-    z.lazy(() => CancelDeploymentGitSource3$outboundSchema),
-    z.lazy(() => CancelDeploymentGitSource2$outboundSchema),
-    z.lazy(() => CancelDeploymentGitSource4$outboundSchema),
-    z.lazy(() => CancelDeploymentGitSource5$outboundSchema),
-    z.lazy(() => GitSource7$outboundSchema),
-    z.lazy(() => GitSource9$outboundSchema),
+    z.lazy(() => CancelDeploymentFlags1$outboundSchema),
+    z.array(z.lazy(() => CancelDeploymentFlags2$outboundSchema)),
 ]);
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace CancelDeploymentGitSource$ {
-    /** @deprecated use `CancelDeploymentGitSource$inboundSchema` instead. */
-    export const inboundSchema = CancelDeploymentGitSource$inboundSchema;
-    /** @deprecated use `CancelDeploymentGitSource$outboundSchema` instead. */
-    export const outboundSchema = CancelDeploymentGitSource$outboundSchema;
-    /** @deprecated use `CancelDeploymentGitSource$Outbound` instead. */
-    export type Outbound = CancelDeploymentGitSource$Outbound;
+export namespace CancelDeploymentFlags$ {
+    /** @deprecated use `CancelDeploymentFlags$inboundSchema` instead. */
+    export const inboundSchema = CancelDeploymentFlags$inboundSchema;
+    /** @deprecated use `CancelDeploymentFlags$outboundSchema` instead. */
+    export const outboundSchema = CancelDeploymentFlags$outboundSchema;
+    /** @deprecated use `CancelDeploymentFlags$Outbound` instead. */
+    export type Outbound = CancelDeploymentFlags$Outbound;
 }
 
 /** @internal */
@@ -3190,21 +3976,90 @@ export const CancelDeploymentResponseBody$inboundSchema: z.ZodType<
     z.ZodTypeDef,
     unknown
 > = z.object({
+    aliasAssignedAt: z.nullable(z.union([z.number(), z.boolean()])).optional(),
+    alwaysRefuseToBuild: z.boolean().optional(),
     build: z.lazy(() => CancelDeploymentBuild$inboundSchema),
+    buildArtifactUrls: z.array(z.string()).optional(),
     builds: z.array(z.lazy(() => CancelDeploymentBuilds$inboundSchema)).optional(),
+    env: z.array(z.string()),
+    inspectorUrl: z.nullable(z.string()),
+    isInConcurrentBuildsQueue: z.boolean(),
+    projectSettings: z.lazy(() => CancelDeploymentProjectSettings$inboundSchema),
+    readyStateReason: z.string().optional(),
+    alias: z.array(z.string()).optional(),
+    aliasAssigned: z.boolean(),
+    bootedAt: z.number(),
+    buildingAt: z.number(),
+    buildSkipped: z.boolean(),
+    creator: z.lazy(() => CancelDeploymentCreator$inboundSchema),
+    initReadyAt: z.number().optional(),
+    isFirstBranchDeployment: z.boolean().optional(),
+    lambdas: z.array(z.lazy(() => CancelDeploymentLambdas$inboundSchema)).optional(),
+    public: z.boolean(),
+    ready: z.number().optional(),
+    status: CancelDeploymentStatus$inboundSchema,
+    team: z.lazy(() => CancelDeploymentTeam$inboundSchema).optional(),
+    userAliases: z.array(z.string()).optional(),
+    previewCommentsEnabled: z.boolean().optional(),
+    ttyBuildLogs: z.boolean().optional(),
+    customEnvironment: z
+        .union([
+            z.lazy(() => CancelDeploymentCustomEnvironment2$inboundSchema),
+            z.lazy(() => CancelDeploymentCustomEnvironment1$inboundSchema),
+        ])
+        .optional(),
+    id: z.string(),
+    aliasError: z.nullable(z.lazy(() => CancelDeploymentAliasError$inboundSchema)).optional(),
+    aliasFinal: z.nullable(z.string()).optional(),
+    aliasWarning: z.nullable(z.lazy(() => CancelDeploymentAliasWarning$inboundSchema)).optional(),
+    autoAssignCustomDomains: z.boolean().optional(),
+    automaticAliases: z.array(z.string()).optional(),
+    buildErrorAt: z.number().optional(),
+    checksState: CancelDeploymentChecksState$inboundSchema.optional(),
+    checksConclusion: CancelDeploymentChecksConclusion$inboundSchema.optional(),
+    createdAt: z.number(),
+    deletedAt: z.nullable(z.number()).optional(),
+    canceledAt: z.number().optional(),
+    errorCode: z.string().optional(),
+    errorLink: z.string().optional(),
+    errorMessage: z.nullable(z.string()).optional(),
+    errorStep: z.string().optional(),
+    passiveRegions: z.array(z.string()).optional(),
+    gitSource: z
+        .union([
+            z.lazy(() => GitSource6$inboundSchema),
+            z.lazy(() => GitSource8$inboundSchema),
+            z.lazy(() => CancelDeploymentGitSource1$inboundSchema),
+            z.lazy(() => CancelDeploymentGitSource3$inboundSchema),
+            z.lazy(() => CancelDeploymentGitSource2$inboundSchema),
+            z.lazy(() => CancelDeploymentGitSource4$inboundSchema),
+            z.lazy(() => CancelDeploymentGitSource5$inboundSchema),
+            z.lazy(() => GitSource7$inboundSchema),
+            z.lazy(() => GitSource9$inboundSchema),
+        ])
+        .optional(),
+    name: z.string(),
+    meta: z.record(z.string()),
+    project: z.lazy(() => CancelDeploymentProject$inboundSchema).optional(),
+    readyState: CancelDeploymentReadyState$inboundSchema,
+    readySubstate: CancelDeploymentReadySubstate$inboundSchema.optional(),
+    regions: z.array(z.string()),
+    softDeletedByRetention: z.boolean().optional(),
+    source: CancelDeploymentSource$inboundSchema.optional(),
+    target: z.nullable(CancelDeploymentTarget$inboundSchema).optional(),
+    type: CancelDeploymentType$inboundSchema,
+    undeletedAt: z.number().optional(),
+    url: z.string(),
+    version: z.number(),
+    oidcTokenClaims: z.record(z.union([z.string(), z.array(z.string())])).optional(),
     connectBuildsEnabled: z.boolean().optional(),
     connectConfigurationId: z.string().optional(),
     createdIn: z.string(),
     crons: z.array(z.lazy(() => CancelDeploymentCrons$inboundSchema)).optional(),
-    env: z.array(z.string()),
     functions: z
         .nullable(z.record(z.lazy(() => CancelDeploymentFunctions$inboundSchema)))
         .optional(),
-    inspectorUrl: z.nullable(z.string()),
-    isInConcurrentBuildsQueue: z.boolean(),
-    meta: z.record(z.string()),
     monorepoManager: z.nullable(z.string()).optional(),
-    name: z.string(),
     ownerId: z.string(),
     passiveConnectConfigurationId: z.string().optional(),
     plan: CancelDeploymentPlan$inboundSchema,
@@ -3227,117 +4082,58 @@ export const CancelDeploymentResponseBody$inboundSchema: z.ZodType<
             ])
         )
         .optional(),
-    aliasAssignedAt: z.nullable(z.union([z.number(), z.boolean()])).optional(),
-    lambdas: z.array(z.lazy(() => CancelDeploymentLambdas$inboundSchema)).optional(),
-    project: z.lazy(() => CancelDeploymentProject$inboundSchema).optional(),
-    public: z.boolean(),
-    readyState: CancelDeploymentReadyState$inboundSchema,
-    readySubstate: CancelDeploymentReadySubstate$inboundSchema.optional(),
-    regions: z.array(z.string()),
-    source: CancelDeploymentSource$inboundSchema.optional(),
-    target: z.nullable(CancelDeploymentTarget$inboundSchema).optional(),
-    team: z.lazy(() => CancelDeploymentTeam$inboundSchema).optional(),
-    type: CancelDeploymentType$inboundSchema,
-    url: z.string(),
-    userAliases: z.array(z.string()).optional(),
-    version: z.number(),
-    previewCommentsEnabled: z.boolean().optional(),
-    alias: z.array(z.string()),
-    aliasAssigned: z.boolean(),
-    aliasError: z.nullable(z.lazy(() => CancelDeploymentAliasError$inboundSchema)).optional(),
-    aliasFinal: z.nullable(z.string()).optional(),
-    aliasWarning: z.nullable(z.lazy(() => CancelDeploymentAliasWarning$inboundSchema)).optional(),
-    autoAssignCustomDomains: z.boolean().optional(),
-    automaticAliases: z.array(z.string()).optional(),
-    bootedAt: z.number(),
-    buildErrorAt: z.number().optional(),
-    buildingAt: z.number(),
-    canceledAt: z.number().optional(),
-    checksState: CancelDeploymentChecksState$inboundSchema.optional(),
-    checksConclusion: CancelDeploymentChecksConclusion$inboundSchema.optional(),
-    createdAt: z.number(),
-    creator: z.lazy(() => CancelDeploymentCreator$inboundSchema),
-    errorCode: z.string().optional(),
-    errorLink: z.string().optional(),
-    errorMessage: z.nullable(z.string()).optional(),
-    errorStep: z.string().optional(),
-    passiveRegions: z.array(z.string()).optional(),
-    gitSource: z
+    flags: z
         .union([
-            z.lazy(() => GitSource6$inboundSchema),
-            z.lazy(() => GitSource8$inboundSchema),
-            z.lazy(() => CancelDeploymentGitSource1$inboundSchema),
-            z.lazy(() => CancelDeploymentGitSource3$inboundSchema),
-            z.lazy(() => CancelDeploymentGitSource2$inboundSchema),
-            z.lazy(() => CancelDeploymentGitSource4$inboundSchema),
-            z.lazy(() => CancelDeploymentGitSource5$inboundSchema),
-            z.lazy(() => GitSource7$inboundSchema),
-            z.lazy(() => GitSource9$inboundSchema),
+            z.lazy(() => CancelDeploymentFlags1$inboundSchema),
+            z.array(z.lazy(() => CancelDeploymentFlags2$inboundSchema)),
         ])
         .optional(),
-    id: z.string(),
 });
 
 /** @internal */
 export type CancelDeploymentResponseBody$Outbound = {
+    aliasAssignedAt?: number | boolean | null | undefined;
+    alwaysRefuseToBuild?: boolean | undefined;
     build: CancelDeploymentBuild$Outbound;
+    buildArtifactUrls?: Array<string> | undefined;
     builds?: Array<CancelDeploymentBuilds$Outbound> | undefined;
-    connectBuildsEnabled?: boolean | undefined;
-    connectConfigurationId?: string | undefined;
-    createdIn: string;
-    crons?: Array<CancelDeploymentCrons$Outbound> | undefined;
     env: Array<string>;
-    functions?: { [k: string]: CancelDeploymentFunctions$Outbound } | null | undefined;
     inspectorUrl: string | null;
     isInConcurrentBuildsQueue: boolean;
-    meta: { [k: string]: string };
-    monorepoManager?: string | null | undefined;
-    name: string;
-    ownerId: string;
-    passiveConnectConfigurationId?: string | undefined;
-    plan: string;
-    projectId: string;
-    routes: Array<
-        | CancelDeploymentRoutes3$Outbound
-        | CancelDeploymentRoutes2$Outbound
-        | CancelDeploymentRoutes1$Outbound
-    > | null;
-    gitRepo?:
-        | CancelDeploymentGitRepo1$Outbound
-        | CancelDeploymentGitRepo2$Outbound
-        | CancelDeploymentGitRepo3$Outbound
-        | null
-        | undefined;
-    aliasAssignedAt?: number | boolean | null | undefined;
-    lambdas?: Array<CancelDeploymentLambdas$Outbound> | undefined;
-    project?: CancelDeploymentProject$Outbound | undefined;
-    public: boolean;
-    readyState: string;
-    readySubstate?: string | undefined;
-    regions: Array<string>;
-    source?: string | undefined;
-    target?: string | null | undefined;
-    team?: CancelDeploymentTeam$Outbound | undefined;
-    type: string;
-    url: string;
-    userAliases?: Array<string> | undefined;
-    version: number;
-    previewCommentsEnabled?: boolean | undefined;
-    alias: Array<string>;
+    projectSettings: CancelDeploymentProjectSettings$Outbound;
+    readyStateReason?: string | undefined;
+    alias?: Array<string> | undefined;
     aliasAssigned: boolean;
+    bootedAt: number;
+    buildingAt: number;
+    buildSkipped: boolean;
+    creator: CancelDeploymentCreator$Outbound;
+    initReadyAt?: number | undefined;
+    isFirstBranchDeployment?: boolean | undefined;
+    lambdas?: Array<CancelDeploymentLambdas$Outbound> | undefined;
+    public: boolean;
+    ready?: number | undefined;
+    status: string;
+    team?: CancelDeploymentTeam$Outbound | undefined;
+    userAliases?: Array<string> | undefined;
+    previewCommentsEnabled?: boolean | undefined;
+    ttyBuildLogs?: boolean | undefined;
+    customEnvironment?:
+        | CancelDeploymentCustomEnvironment2$Outbound
+        | CancelDeploymentCustomEnvironment1$Outbound
+        | undefined;
+    id: string;
     aliasError?: CancelDeploymentAliasError$Outbound | null | undefined;
     aliasFinal?: string | null | undefined;
     aliasWarning?: CancelDeploymentAliasWarning$Outbound | null | undefined;
     autoAssignCustomDomains?: boolean | undefined;
     automaticAliases?: Array<string> | undefined;
-    bootedAt: number;
     buildErrorAt?: number | undefined;
-    buildingAt: number;
-    canceledAt?: number | undefined;
     checksState?: string | undefined;
     checksConclusion?: string | undefined;
     createdAt: number;
-    creator: CancelDeploymentCreator$Outbound;
+    deletedAt?: number | null | undefined;
+    canceledAt?: number | undefined;
     errorCode?: string | undefined;
     errorLink?: string | undefined;
     errorMessage?: string | null | undefined;
@@ -3354,7 +4150,42 @@ export type CancelDeploymentResponseBody$Outbound = {
         | GitSource7$Outbound
         | GitSource9$Outbound
         | undefined;
-    id: string;
+    name: string;
+    meta: { [k: string]: string };
+    project?: CancelDeploymentProject$Outbound | undefined;
+    readyState: string;
+    readySubstate?: string | undefined;
+    regions: Array<string>;
+    softDeletedByRetention?: boolean | undefined;
+    source?: string | undefined;
+    target?: string | null | undefined;
+    type: string;
+    undeletedAt?: number | undefined;
+    url: string;
+    version: number;
+    oidcTokenClaims?: { [k: string]: string | Array<string> } | undefined;
+    connectBuildsEnabled?: boolean | undefined;
+    connectConfigurationId?: string | undefined;
+    createdIn: string;
+    crons?: Array<CancelDeploymentCrons$Outbound> | undefined;
+    functions?: { [k: string]: CancelDeploymentFunctions$Outbound } | null | undefined;
+    monorepoManager?: string | null | undefined;
+    ownerId: string;
+    passiveConnectConfigurationId?: string | undefined;
+    plan: string;
+    projectId: string;
+    routes: Array<
+        | CancelDeploymentRoutes3$Outbound
+        | CancelDeploymentRoutes2$Outbound
+        | CancelDeploymentRoutes1$Outbound
+    > | null;
+    gitRepo?:
+        | CancelDeploymentGitRepo1$Outbound
+        | CancelDeploymentGitRepo2$Outbound
+        | CancelDeploymentGitRepo3$Outbound
+        | null
+        | undefined;
+    flags?: CancelDeploymentFlags1$Outbound | Array<CancelDeploymentFlags2$Outbound> | undefined;
 };
 
 /** @internal */
@@ -3363,21 +4194,90 @@ export const CancelDeploymentResponseBody$outboundSchema: z.ZodType<
     z.ZodTypeDef,
     CancelDeploymentResponseBody
 > = z.object({
+    aliasAssignedAt: z.nullable(z.union([z.number(), z.boolean()])).optional(),
+    alwaysRefuseToBuild: z.boolean().optional(),
     build: z.lazy(() => CancelDeploymentBuild$outboundSchema),
+    buildArtifactUrls: z.array(z.string()).optional(),
     builds: z.array(z.lazy(() => CancelDeploymentBuilds$outboundSchema)).optional(),
+    env: z.array(z.string()),
+    inspectorUrl: z.nullable(z.string()),
+    isInConcurrentBuildsQueue: z.boolean(),
+    projectSettings: z.lazy(() => CancelDeploymentProjectSettings$outboundSchema),
+    readyStateReason: z.string().optional(),
+    alias: z.array(z.string()).optional(),
+    aliasAssigned: z.boolean(),
+    bootedAt: z.number(),
+    buildingAt: z.number(),
+    buildSkipped: z.boolean(),
+    creator: z.lazy(() => CancelDeploymentCreator$outboundSchema),
+    initReadyAt: z.number().optional(),
+    isFirstBranchDeployment: z.boolean().optional(),
+    lambdas: z.array(z.lazy(() => CancelDeploymentLambdas$outboundSchema)).optional(),
+    public: z.boolean(),
+    ready: z.number().optional(),
+    status: CancelDeploymentStatus$outboundSchema,
+    team: z.lazy(() => CancelDeploymentTeam$outboundSchema).optional(),
+    userAliases: z.array(z.string()).optional(),
+    previewCommentsEnabled: z.boolean().optional(),
+    ttyBuildLogs: z.boolean().optional(),
+    customEnvironment: z
+        .union([
+            z.lazy(() => CancelDeploymentCustomEnvironment2$outboundSchema),
+            z.lazy(() => CancelDeploymentCustomEnvironment1$outboundSchema),
+        ])
+        .optional(),
+    id: z.string(),
+    aliasError: z.nullable(z.lazy(() => CancelDeploymentAliasError$outboundSchema)).optional(),
+    aliasFinal: z.nullable(z.string()).optional(),
+    aliasWarning: z.nullable(z.lazy(() => CancelDeploymentAliasWarning$outboundSchema)).optional(),
+    autoAssignCustomDomains: z.boolean().optional(),
+    automaticAliases: z.array(z.string()).optional(),
+    buildErrorAt: z.number().optional(),
+    checksState: CancelDeploymentChecksState$outboundSchema.optional(),
+    checksConclusion: CancelDeploymentChecksConclusion$outboundSchema.optional(),
+    createdAt: z.number(),
+    deletedAt: z.nullable(z.number()).optional(),
+    canceledAt: z.number().optional(),
+    errorCode: z.string().optional(),
+    errorLink: z.string().optional(),
+    errorMessage: z.nullable(z.string()).optional(),
+    errorStep: z.string().optional(),
+    passiveRegions: z.array(z.string()).optional(),
+    gitSource: z
+        .union([
+            z.lazy(() => GitSource6$outboundSchema),
+            z.lazy(() => GitSource8$outboundSchema),
+            z.lazy(() => CancelDeploymentGitSource1$outboundSchema),
+            z.lazy(() => CancelDeploymentGitSource3$outboundSchema),
+            z.lazy(() => CancelDeploymentGitSource2$outboundSchema),
+            z.lazy(() => CancelDeploymentGitSource4$outboundSchema),
+            z.lazy(() => CancelDeploymentGitSource5$outboundSchema),
+            z.lazy(() => GitSource7$outboundSchema),
+            z.lazy(() => GitSource9$outboundSchema),
+        ])
+        .optional(),
+    name: z.string(),
+    meta: z.record(z.string()),
+    project: z.lazy(() => CancelDeploymentProject$outboundSchema).optional(),
+    readyState: CancelDeploymentReadyState$outboundSchema,
+    readySubstate: CancelDeploymentReadySubstate$outboundSchema.optional(),
+    regions: z.array(z.string()),
+    softDeletedByRetention: z.boolean().optional(),
+    source: CancelDeploymentSource$outboundSchema.optional(),
+    target: z.nullable(CancelDeploymentTarget$outboundSchema).optional(),
+    type: CancelDeploymentType$outboundSchema,
+    undeletedAt: z.number().optional(),
+    url: z.string(),
+    version: z.number(),
+    oidcTokenClaims: z.record(z.union([z.string(), z.array(z.string())])).optional(),
     connectBuildsEnabled: z.boolean().optional(),
     connectConfigurationId: z.string().optional(),
     createdIn: z.string(),
     crons: z.array(z.lazy(() => CancelDeploymentCrons$outboundSchema)).optional(),
-    env: z.array(z.string()),
     functions: z
         .nullable(z.record(z.lazy(() => CancelDeploymentFunctions$outboundSchema)))
         .optional(),
-    inspectorUrl: z.nullable(z.string()),
-    isInConcurrentBuildsQueue: z.boolean(),
-    meta: z.record(z.string()),
     monorepoManager: z.nullable(z.string()).optional(),
-    name: z.string(),
     ownerId: z.string(),
     passiveConnectConfigurationId: z.string().optional(),
     plan: CancelDeploymentPlan$outboundSchema,
@@ -3400,55 +4300,12 @@ export const CancelDeploymentResponseBody$outboundSchema: z.ZodType<
             ])
         )
         .optional(),
-    aliasAssignedAt: z.nullable(z.union([z.number(), z.boolean()])).optional(),
-    lambdas: z.array(z.lazy(() => CancelDeploymentLambdas$outboundSchema)).optional(),
-    project: z.lazy(() => CancelDeploymentProject$outboundSchema).optional(),
-    public: z.boolean(),
-    readyState: CancelDeploymentReadyState$outboundSchema,
-    readySubstate: CancelDeploymentReadySubstate$outboundSchema.optional(),
-    regions: z.array(z.string()),
-    source: CancelDeploymentSource$outboundSchema.optional(),
-    target: z.nullable(CancelDeploymentTarget$outboundSchema).optional(),
-    team: z.lazy(() => CancelDeploymentTeam$outboundSchema).optional(),
-    type: CancelDeploymentType$outboundSchema,
-    url: z.string(),
-    userAliases: z.array(z.string()).optional(),
-    version: z.number(),
-    previewCommentsEnabled: z.boolean().optional(),
-    alias: z.array(z.string()),
-    aliasAssigned: z.boolean(),
-    aliasError: z.nullable(z.lazy(() => CancelDeploymentAliasError$outboundSchema)).optional(),
-    aliasFinal: z.nullable(z.string()).optional(),
-    aliasWarning: z.nullable(z.lazy(() => CancelDeploymentAliasWarning$outboundSchema)).optional(),
-    autoAssignCustomDomains: z.boolean().optional(),
-    automaticAliases: z.array(z.string()).optional(),
-    bootedAt: z.number(),
-    buildErrorAt: z.number().optional(),
-    buildingAt: z.number(),
-    canceledAt: z.number().optional(),
-    checksState: CancelDeploymentChecksState$outboundSchema.optional(),
-    checksConclusion: CancelDeploymentChecksConclusion$outboundSchema.optional(),
-    createdAt: z.number(),
-    creator: z.lazy(() => CancelDeploymentCreator$outboundSchema),
-    errorCode: z.string().optional(),
-    errorLink: z.string().optional(),
-    errorMessage: z.nullable(z.string()).optional(),
-    errorStep: z.string().optional(),
-    passiveRegions: z.array(z.string()).optional(),
-    gitSource: z
+    flags: z
         .union([
-            z.lazy(() => GitSource6$outboundSchema),
-            z.lazy(() => GitSource8$outboundSchema),
-            z.lazy(() => CancelDeploymentGitSource1$outboundSchema),
-            z.lazy(() => CancelDeploymentGitSource3$outboundSchema),
-            z.lazy(() => CancelDeploymentGitSource2$outboundSchema),
-            z.lazy(() => CancelDeploymentGitSource4$outboundSchema),
-            z.lazy(() => CancelDeploymentGitSource5$outboundSchema),
-            z.lazy(() => GitSource7$outboundSchema),
-            z.lazy(() => GitSource9$outboundSchema),
+            z.lazy(() => CancelDeploymentFlags1$outboundSchema),
+            z.array(z.lazy(() => CancelDeploymentFlags2$outboundSchema)),
         ])
         .optional(),
-    id: z.string(),
 });
 
 /**

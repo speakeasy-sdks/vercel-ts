@@ -10,3 +10,4 @@
 | `Build`    | build      |
 | `Edge`     | edge       |
 | `External` | external   |
+| `Firewall` | firewall   |

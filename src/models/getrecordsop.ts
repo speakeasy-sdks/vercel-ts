@@ -67,7 +67,7 @@ export type ResponseBodyRecords = {
 /**
  * Successful response retrieving a list of paginated DNS records.
  */
-export type GetRecordsResponseBody3 = {
+export type ResponseBody3 = {
     records: Array<ResponseBodyRecords>;
     /**
      * This object contains information related to the pagination of the current request, including the necessary parameters to get the next or previous page of data.
@@ -111,7 +111,7 @@ export type GetRecordsResponseBody2 = {
 /**
  * Successful response retrieving a list of paginated DNS records.
  */
-export type GetRecordsResponseBody = GetRecordsResponseBody2 | GetRecordsResponseBody3 | string;
+export type GetRecordsResponseBody = GetRecordsResponseBody2 | ResponseBody3 | string;
 
 /** @internal */
 export const GetRecordsRequest$inboundSchema: z.ZodType<GetRecordsRequest, z.ZodTypeDef, unknown> =
@@ -252,26 +252,23 @@ export namespace ResponseBodyRecords$ {
 }
 
 /** @internal */
-export const GetRecordsResponseBody3$inboundSchema: z.ZodType<
-    GetRecordsResponseBody3,
-    z.ZodTypeDef,
-    unknown
-> = z.object({
-    records: z.array(z.lazy(() => ResponseBodyRecords$inboundSchema)),
-    pagination: Pagination$inboundSchema,
-});
+export const ResponseBody3$inboundSchema: z.ZodType<ResponseBody3, z.ZodTypeDef, unknown> =
+    z.object({
+        records: z.array(z.lazy(() => ResponseBodyRecords$inboundSchema)),
+        pagination: Pagination$inboundSchema,
+    });
 
 /** @internal */
-export type GetRecordsResponseBody3$Outbound = {
+export type ResponseBody3$Outbound = {
     records: Array<ResponseBodyRecords$Outbound>;
     pagination: Pagination$Outbound;
 };
 
 /** @internal */
-export const GetRecordsResponseBody3$outboundSchema: z.ZodType<
-    GetRecordsResponseBody3$Outbound,
+export const ResponseBody3$outboundSchema: z.ZodType<
+    ResponseBody3$Outbound,
     z.ZodTypeDef,
-    GetRecordsResponseBody3
+    ResponseBody3
 > = z.object({
     records: z.array(z.lazy(() => ResponseBodyRecords$outboundSchema)),
     pagination: Pagination$outboundSchema,
@@ -281,13 +278,13 @@ export const GetRecordsResponseBody3$outboundSchema: z.ZodType<
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace GetRecordsResponseBody3$ {
-    /** @deprecated use `GetRecordsResponseBody3$inboundSchema` instead. */
-    export const inboundSchema = GetRecordsResponseBody3$inboundSchema;
-    /** @deprecated use `GetRecordsResponseBody3$outboundSchema` instead. */
-    export const outboundSchema = GetRecordsResponseBody3$outboundSchema;
-    /** @deprecated use `GetRecordsResponseBody3$Outbound` instead. */
-    export type Outbound = GetRecordsResponseBody3$Outbound;
+export namespace ResponseBody3$ {
+    /** @deprecated use `ResponseBody3$inboundSchema` instead. */
+    export const inboundSchema = ResponseBody3$inboundSchema;
+    /** @deprecated use `ResponseBody3$outboundSchema` instead. */
+    export const outboundSchema = ResponseBody3$outboundSchema;
+    /** @deprecated use `ResponseBody3$Outbound` instead. */
+    export type Outbound = ResponseBody3$Outbound;
 }
 
 /** @internal */
@@ -415,14 +412,14 @@ export const GetRecordsResponseBody$inboundSchema: z.ZodType<
     unknown
 > = z.union([
     z.lazy(() => GetRecordsResponseBody2$inboundSchema),
-    z.lazy(() => GetRecordsResponseBody3$inboundSchema),
+    z.lazy(() => ResponseBody3$inboundSchema),
     z.string(),
 ]);
 
 /** @internal */
 export type GetRecordsResponseBody$Outbound =
     | GetRecordsResponseBody2$Outbound
-    | GetRecordsResponseBody3$Outbound
+    | ResponseBody3$Outbound
     | string;
 
 /** @internal */
@@ -432,7 +429,7 @@ export const GetRecordsResponseBody$outboundSchema: z.ZodType<
     GetRecordsResponseBody
 > = z.union([
     z.lazy(() => GetRecordsResponseBody2$outboundSchema),
-    z.lazy(() => GetRecordsResponseBody3$outboundSchema),
+    z.lazy(() => ResponseBody3$outboundSchema),
     z.string(),
 ]);
 

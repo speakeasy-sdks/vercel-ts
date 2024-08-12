@@ -3,15 +3,15 @@
 
 ## Supported Types
 
-### `models.FavoriteProjectsAndSpaces1`
+### `models.One`
 
 ```typescript
-const value: models.FavoriteProjectsAndSpaces1 = /* values here */
+const value: models.One = /* values here */
 ```
 
-### `models.FavoriteProjectsAndSpaces2`
+### `models.Two`
 
 ```typescript
-const value: models.FavoriteProjectsAndSpaces2 = /* values here */
+const value: models.Two = /* values here */
 ```
 

@@ -9,7 +9,7 @@ import * as z from "zod";
 /**
  * The project role of the member that will be added.
  */
-export const AddProjectMemberRequestBodyRole = {
+export const AddProjectMemberRequestBodyProjectMembersRole = {
     Admin: "ADMIN",
     ProjectDeveloper: "PROJECT_DEVELOPER",
     ProjectViewer: "PROJECT_VIEWER",
@@ -17,7 +17,9 @@ export const AddProjectMemberRequestBodyRole = {
 /**
  * The project role of the member that will be added.
  */
-export type AddProjectMemberRequestBodyRole = ClosedEnum<typeof AddProjectMemberRequestBodyRole>;
+export type AddProjectMemberRequestBodyProjectMembersRole = ClosedEnum<
+    typeof AddProjectMemberRequestBodyProjectMembersRole
+>;
 
 export type AddProjectMemberRequestBody3 = {
     /**
@@ -32,6 +34,38 @@ export type AddProjectMemberRequestBody3 = {
      * The email of the team member that should be added to this project.
      */
     email: string;
+    /**
+     * The project role of the member that will be added.
+     */
+    role: AddProjectMemberRequestBodyProjectMembersRole;
+};
+
+/**
+ * The project role of the member that will be added.
+ */
+export const AddProjectMemberRequestBodyRole = {
+    Admin: "ADMIN",
+    ProjectDeveloper: "PROJECT_DEVELOPER",
+    ProjectViewer: "PROJECT_VIEWER",
+} as const;
+/**
+ * The project role of the member that will be added.
+ */
+export type AddProjectMemberRequestBodyRole = ClosedEnum<typeof AddProjectMemberRequestBodyRole>;
+
+export type AddProjectMemberRequestBody2 = {
+    /**
+     * The ID of the team member that should be added to this project.
+     */
+    uid?: string | undefined;
+    /**
+     * The username of the team member that should be added to this project.
+     */
+    username: string;
+    /**
+     * The email of the team member that should be added to this project.
+     */
+    email?: string | undefined;
     /**
      * The project role of the member that will be added.
      */
@@ -51,40 +85,6 @@ export const RequestBodyRole = {
  */
 export type RequestBodyRole = ClosedEnum<typeof RequestBodyRole>;
 
-export type AddProjectMemberRequestBody2 = {
-    /**
-     * The ID of the team member that should be added to this project.
-     */
-    uid?: string | undefined;
-    /**
-     * The username of the team member that should be added to this project.
-     */
-    username: string;
-    /**
-     * The email of the team member that should be added to this project.
-     */
-    email?: string | undefined;
-    /**
-     * The project role of the member that will be added.
-     */
-    role: RequestBodyRole;
-};
-
-/**
- * The project role of the member that will be added.
- */
-export const AddProjectMemberRequestBodyProjectMembersRole = {
-    Admin: "ADMIN",
-    ProjectDeveloper: "PROJECT_DEVELOPER",
-    ProjectViewer: "PROJECT_VIEWER",
-} as const;
-/**
- * The project role of the member that will be added.
- */
-export type AddProjectMemberRequestBodyProjectMembersRole = ClosedEnum<
-    typeof AddProjectMemberRequestBodyProjectMembersRole
->;
-
 export type AddProjectMemberRequestBody1 = {
     /**
      * The ID of the team member that should be added to this project.
@@ -101,7 +101,7 @@ export type AddProjectMemberRequestBody1 = {
     /**
      * The project role of the member that will be added.
      */
-    role: AddProjectMemberRequestBodyProjectMembersRole;
+    role: RequestBodyRole;
 };
 
 export type AddProjectMemberRequestBody =
@@ -137,6 +137,72 @@ export type AddProjectMemberResponseBody = {
 };
 
 /** @internal */
+export const AddProjectMemberRequestBodyProjectMembersRole$inboundSchema: z.ZodNativeEnum<
+    typeof AddProjectMemberRequestBodyProjectMembersRole
+> = z.nativeEnum(AddProjectMemberRequestBodyProjectMembersRole);
+
+/** @internal */
+export const AddProjectMemberRequestBodyProjectMembersRole$outboundSchema: z.ZodNativeEnum<
+    typeof AddProjectMemberRequestBodyProjectMembersRole
+> = AddProjectMemberRequestBodyProjectMembersRole$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace AddProjectMemberRequestBodyProjectMembersRole$ {
+    /** @deprecated use `AddProjectMemberRequestBodyProjectMembersRole$inboundSchema` instead. */
+    export const inboundSchema = AddProjectMemberRequestBodyProjectMembersRole$inboundSchema;
+    /** @deprecated use `AddProjectMemberRequestBodyProjectMembersRole$outboundSchema` instead. */
+    export const outboundSchema = AddProjectMemberRequestBodyProjectMembersRole$outboundSchema;
+}
+
+/** @internal */
+export const AddProjectMemberRequestBody3$inboundSchema: z.ZodType<
+    AddProjectMemberRequestBody3,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    uid: z.string().optional(),
+    username: z.string().optional(),
+    email: z.string(),
+    role: AddProjectMemberRequestBodyProjectMembersRole$inboundSchema,
+});
+
+/** @internal */
+export type AddProjectMemberRequestBody3$Outbound = {
+    uid?: string | undefined;
+    username?: string | undefined;
+    email: string;
+    role: string;
+};
+
+/** @internal */
+export const AddProjectMemberRequestBody3$outboundSchema: z.ZodType<
+    AddProjectMemberRequestBody3$Outbound,
+    z.ZodTypeDef,
+    AddProjectMemberRequestBody3
+> = z.object({
+    uid: z.string().optional(),
+    username: z.string().optional(),
+    email: z.string(),
+    role: AddProjectMemberRequestBodyProjectMembersRole$outboundSchema,
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace AddProjectMemberRequestBody3$ {
+    /** @deprecated use `AddProjectMemberRequestBody3$inboundSchema` instead. */
+    export const inboundSchema = AddProjectMemberRequestBody3$inboundSchema;
+    /** @deprecated use `AddProjectMemberRequestBody3$outboundSchema` instead. */
+    export const outboundSchema = AddProjectMemberRequestBody3$outboundSchema;
+    /** @deprecated use `AddProjectMemberRequestBody3$Outbound` instead. */
+    export type Outbound = AddProjectMemberRequestBody3$Outbound;
+}
+
+/** @internal */
 export const AddProjectMemberRequestBodyRole$inboundSchema: z.ZodNativeEnum<
     typeof AddProjectMemberRequestBodyRole
 > = z.nativeEnum(AddProjectMemberRequestBodyRole);
@@ -158,34 +224,34 @@ export namespace AddProjectMemberRequestBodyRole$ {
 }
 
 /** @internal */
-export const AddProjectMemberRequestBody3$inboundSchema: z.ZodType<
-    AddProjectMemberRequestBody3,
+export const AddProjectMemberRequestBody2$inboundSchema: z.ZodType<
+    AddProjectMemberRequestBody2,
     z.ZodTypeDef,
     unknown
 > = z.object({
     uid: z.string().optional(),
-    username: z.string().optional(),
-    email: z.string(),
+    username: z.string(),
+    email: z.string().optional(),
     role: AddProjectMemberRequestBodyRole$inboundSchema,
 });
 
 /** @internal */
-export type AddProjectMemberRequestBody3$Outbound = {
+export type AddProjectMemberRequestBody2$Outbound = {
     uid?: string | undefined;
-    username?: string | undefined;
-    email: string;
+    username: string;
+    email?: string | undefined;
     role: string;
 };
 
 /** @internal */
-export const AddProjectMemberRequestBody3$outboundSchema: z.ZodType<
-    AddProjectMemberRequestBody3$Outbound,
+export const AddProjectMemberRequestBody2$outboundSchema: z.ZodType<
+    AddProjectMemberRequestBody2$Outbound,
     z.ZodTypeDef,
-    AddProjectMemberRequestBody3
+    AddProjectMemberRequestBody2
 > = z.object({
     uid: z.string().optional(),
-    username: z.string().optional(),
-    email: z.string(),
+    username: z.string(),
+    email: z.string().optional(),
     role: AddProjectMemberRequestBodyRole$outboundSchema,
 });
 
@@ -193,13 +259,13 @@ export const AddProjectMemberRequestBody3$outboundSchema: z.ZodType<
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace AddProjectMemberRequestBody3$ {
-    /** @deprecated use `AddProjectMemberRequestBody3$inboundSchema` instead. */
-    export const inboundSchema = AddProjectMemberRequestBody3$inboundSchema;
-    /** @deprecated use `AddProjectMemberRequestBody3$outboundSchema` instead. */
-    export const outboundSchema = AddProjectMemberRequestBody3$outboundSchema;
-    /** @deprecated use `AddProjectMemberRequestBody3$Outbound` instead. */
-    export type Outbound = AddProjectMemberRequestBody3$Outbound;
+export namespace AddProjectMemberRequestBody2$ {
+    /** @deprecated use `AddProjectMemberRequestBody2$inboundSchema` instead. */
+    export const inboundSchema = AddProjectMemberRequestBody2$inboundSchema;
+    /** @deprecated use `AddProjectMemberRequestBody2$outboundSchema` instead. */
+    export const outboundSchema = AddProjectMemberRequestBody2$outboundSchema;
+    /** @deprecated use `AddProjectMemberRequestBody2$Outbound` instead. */
+    export type Outbound = AddProjectMemberRequestBody2$Outbound;
 }
 
 /** @internal */
@@ -222,72 +288,6 @@ export namespace RequestBodyRole$ {
 }
 
 /** @internal */
-export const AddProjectMemberRequestBody2$inboundSchema: z.ZodType<
-    AddProjectMemberRequestBody2,
-    z.ZodTypeDef,
-    unknown
-> = z.object({
-    uid: z.string().optional(),
-    username: z.string(),
-    email: z.string().optional(),
-    role: RequestBodyRole$inboundSchema,
-});
-
-/** @internal */
-export type AddProjectMemberRequestBody2$Outbound = {
-    uid?: string | undefined;
-    username: string;
-    email?: string | undefined;
-    role: string;
-};
-
-/** @internal */
-export const AddProjectMemberRequestBody2$outboundSchema: z.ZodType<
-    AddProjectMemberRequestBody2$Outbound,
-    z.ZodTypeDef,
-    AddProjectMemberRequestBody2
-> = z.object({
-    uid: z.string().optional(),
-    username: z.string(),
-    email: z.string().optional(),
-    role: RequestBodyRole$outboundSchema,
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AddProjectMemberRequestBody2$ {
-    /** @deprecated use `AddProjectMemberRequestBody2$inboundSchema` instead. */
-    export const inboundSchema = AddProjectMemberRequestBody2$inboundSchema;
-    /** @deprecated use `AddProjectMemberRequestBody2$outboundSchema` instead. */
-    export const outboundSchema = AddProjectMemberRequestBody2$outboundSchema;
-    /** @deprecated use `AddProjectMemberRequestBody2$Outbound` instead. */
-    export type Outbound = AddProjectMemberRequestBody2$Outbound;
-}
-
-/** @internal */
-export const AddProjectMemberRequestBodyProjectMembersRole$inboundSchema: z.ZodNativeEnum<
-    typeof AddProjectMemberRequestBodyProjectMembersRole
-> = z.nativeEnum(AddProjectMemberRequestBodyProjectMembersRole);
-
-/** @internal */
-export const AddProjectMemberRequestBodyProjectMembersRole$outboundSchema: z.ZodNativeEnum<
-    typeof AddProjectMemberRequestBodyProjectMembersRole
-> = AddProjectMemberRequestBodyProjectMembersRole$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AddProjectMemberRequestBodyProjectMembersRole$ {
-    /** @deprecated use `AddProjectMemberRequestBodyProjectMembersRole$inboundSchema` instead. */
-    export const inboundSchema = AddProjectMemberRequestBodyProjectMembersRole$inboundSchema;
-    /** @deprecated use `AddProjectMemberRequestBodyProjectMembersRole$outboundSchema` instead. */
-    export const outboundSchema = AddProjectMemberRequestBodyProjectMembersRole$outboundSchema;
-}
-
-/** @internal */
 export const AddProjectMemberRequestBody1$inboundSchema: z.ZodType<
     AddProjectMemberRequestBody1,
     z.ZodTypeDef,
@@ -296,7 +296,7 @@ export const AddProjectMemberRequestBody1$inboundSchema: z.ZodType<
     uid: z.string(),
     username: z.string().optional(),
     email: z.string().optional(),
-    role: AddProjectMemberRequestBodyProjectMembersRole$inboundSchema,
+    role: RequestBodyRole$inboundSchema,
 });
 
 /** @internal */
@@ -316,7 +316,7 @@ export const AddProjectMemberRequestBody1$outboundSchema: z.ZodType<
     uid: z.string(),
     username: z.string().optional(),
     email: z.string().optional(),
-    role: AddProjectMemberRequestBodyProjectMembersRole$outboundSchema,
+    role: RequestBodyRole$outboundSchema,
 });
 
 /**

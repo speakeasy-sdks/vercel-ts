@@ -6,7 +6,11 @@ import { remap as remap$ } from "../lib/primitives.js";
 import { ClosedEnum } from "../types/enums.js";
 import * as z from "zod";
 
-export const Roles = {
+export type Roles2 = {
+    accessGroupId: string;
+};
+
+export const Roles1 = {
     Owner: "OWNER",
     Member: "MEMBER",
     Developer: "DEVELOPER",
@@ -14,14 +18,19 @@ export const Roles = {
     Viewer: "VIEWER",
     Contributor: "CONTRIBUTOR",
 } as const;
-export type Roles = ClosedEnum<typeof Roles>;
+export type Roles1 = ClosedEnum<typeof Roles1>;
+
+export type Roles = Roles2 | Roles1;
 
 export type PatchTeamSaml = {
     /**
      * Require that members of the team use SAML Single Sign-On.
      */
     enforced?: boolean | undefined;
-    roles?: { [k: string]: Roles } | undefined;
+    /**
+     * Directory groups to role or access group mappings.
+     */
+    roles?: { [k: string]: Roles2 | Roles1 } | undefined;
 };
 
 /**
@@ -62,9 +71,13 @@ export type PatchTeamRequestBody = {
      */
     slug?: string | undefined;
     /**
-     * Enable preview comments: one of on, off or default.
+     * Enable preview toolbar: one of on, off or default.
      */
     enablePreviewFeedback?: string | undefined;
+    /**
+     * Enable production toolbar: one of on, off or default.
+     */
+    enableProductionFeedback?: string | undefined;
     /**
      * Sensitive environment variable policy: one of on, off or default.
      */
@@ -92,10 +105,64 @@ export type PatchTeamRequest = {
 };
 
 /** @internal */
-export const Roles$inboundSchema: z.ZodNativeEnum<typeof Roles> = z.nativeEnum(Roles);
+export const Roles2$inboundSchema: z.ZodType<Roles2, z.ZodTypeDef, unknown> = z.object({
+    accessGroupId: z.string(),
+});
 
 /** @internal */
-export const Roles$outboundSchema: z.ZodNativeEnum<typeof Roles> = Roles$inboundSchema;
+export type Roles2$Outbound = {
+    accessGroupId: string;
+};
+
+/** @internal */
+export const Roles2$outboundSchema: z.ZodType<Roles2$Outbound, z.ZodTypeDef, Roles2> = z.object({
+    accessGroupId: z.string(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace Roles2$ {
+    /** @deprecated use `Roles2$inboundSchema` instead. */
+    export const inboundSchema = Roles2$inboundSchema;
+    /** @deprecated use `Roles2$outboundSchema` instead. */
+    export const outboundSchema = Roles2$outboundSchema;
+    /** @deprecated use `Roles2$Outbound` instead. */
+    export type Outbound = Roles2$Outbound;
+}
+
+/** @internal */
+export const Roles1$inboundSchema: z.ZodNativeEnum<typeof Roles1> = z.nativeEnum(Roles1);
+
+/** @internal */
+export const Roles1$outboundSchema: z.ZodNativeEnum<typeof Roles1> = Roles1$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace Roles1$ {
+    /** @deprecated use `Roles1$inboundSchema` instead. */
+    export const inboundSchema = Roles1$inboundSchema;
+    /** @deprecated use `Roles1$outboundSchema` instead. */
+    export const outboundSchema = Roles1$outboundSchema;
+}
+
+/** @internal */
+export const Roles$inboundSchema: z.ZodType<Roles, z.ZodTypeDef, unknown> = z.union([
+    z.lazy(() => Roles2$inboundSchema),
+    Roles1$inboundSchema,
+]);
+
+/** @internal */
+export type Roles$Outbound = Roles2$Outbound | string;
+
+/** @internal */
+export const Roles$outboundSchema: z.ZodType<Roles$Outbound, z.ZodTypeDef, Roles> = z.union([
+    z.lazy(() => Roles2$outboundSchema),
+    Roles1$outboundSchema,
+]);
 
 /**
  * @internal
@@ -106,19 +173,23 @@ export namespace Roles$ {
     export const inboundSchema = Roles$inboundSchema;
     /** @deprecated use `Roles$outboundSchema` instead. */
     export const outboundSchema = Roles$outboundSchema;
+    /** @deprecated use `Roles$Outbound` instead. */
+    export type Outbound = Roles$Outbound;
 }
 
 /** @internal */
 export const PatchTeamSaml$inboundSchema: z.ZodType<PatchTeamSaml, z.ZodTypeDef, unknown> =
     z.object({
         enforced: z.boolean().optional(),
-        roles: z.record(Roles$inboundSchema).optional(),
+        roles: z
+            .record(z.union([z.lazy(() => Roles2$inboundSchema), Roles1$inboundSchema]))
+            .optional(),
     });
 
 /** @internal */
 export type PatchTeamSaml$Outbound = {
     enforced?: boolean | undefined;
-    roles?: { [k: string]: string } | undefined;
+    roles?: { [k: string]: Roles2$Outbound | string } | undefined;
 };
 
 /** @internal */
@@ -128,7 +199,9 @@ export const PatchTeamSaml$outboundSchema: z.ZodType<
     PatchTeamSaml
 > = z.object({
     enforced: z.boolean().optional(),
-    roles: z.record(Roles$outboundSchema).optional(),
+    roles: z
+        .record(z.union([z.lazy(() => Roles2$outboundSchema), Roles1$outboundSchema]))
+        .optional(),
 });
 
 /**
@@ -195,6 +268,7 @@ export const PatchTeamRequestBody$inboundSchema: z.ZodType<
     saml: z.lazy(() => PatchTeamSaml$inboundSchema).optional(),
     slug: z.string().optional(),
     enablePreviewFeedback: z.string().optional(),
+    enableProductionFeedback: z.string().optional(),
     sensitiveEnvironmentVariablePolicy: z.string().optional(),
     remoteCaching: z.lazy(() => PatchTeamRemoteCaching$inboundSchema).optional(),
     hideIpAddresses: z.boolean().optional(),
@@ -211,6 +285,7 @@ export type PatchTeamRequestBody$Outbound = {
     saml?: PatchTeamSaml$Outbound | undefined;
     slug?: string | undefined;
     enablePreviewFeedback?: string | undefined;
+    enableProductionFeedback?: string | undefined;
     sensitiveEnvironmentVariablePolicy?: string | undefined;
     remoteCaching?: PatchTeamRemoteCaching$Outbound | undefined;
     hideIpAddresses?: boolean | undefined;
@@ -231,6 +306,7 @@ export const PatchTeamRequestBody$outboundSchema: z.ZodType<
     saml: z.lazy(() => PatchTeamSaml$outboundSchema).optional(),
     slug: z.string().optional(),
     enablePreviewFeedback: z.string().optional(),
+    enableProductionFeedback: z.string().optional(),
     sensitiveEnvironmentVariablePolicy: z.string().optional(),
     remoteCaching: z.lazy(() => PatchTeamRemoteCaching$outboundSchema).optional(),
     hideIpAddresses: z.boolean().optional(),

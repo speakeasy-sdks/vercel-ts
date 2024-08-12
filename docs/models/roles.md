@@ -1,13 +1,17 @@
 # Roles
 
 
-## Values
+## Supported Types
 
-| Name          | Value         |
-| ------------- | ------------- |
-| `Owner`       | OWNER         |
-| `Member`      | MEMBER        |
-| `Developer`   | DEVELOPER     |
-| `Billing`     | BILLING       |
-| `Viewer`      | VIEWER        |
-| `Contributor` | CONTRIBUTOR   |
+### `models.Roles1`
+
+```typescript
+const value: models.Roles1 = /* values here */
+```
+
+### `models.Roles2`
+
+```typescript
+const value: models.Roles2 = /* values here */
+```
+

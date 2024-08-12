@@ -31,7 +31,7 @@ export type UpdateTeamMemberProjects = {
 };
 
 export type UpdateTeamMemberJoinedFrom = {
-    ssoUserId?: any | null | undefined;
+    ssoUserId?: string | undefined;
 };
 
 export type UpdateTeamMemberRequestBody = {
@@ -49,9 +49,6 @@ export type UpdateTeamMemberRequestBody = {
 
 export type UpdateTeamMemberRequest = {
     teamId: string;
-    /**
-     * The ID of the member.
-     */
     uid: string;
     requestBody?: UpdateTeamMemberRequestBody | undefined;
 };
@@ -130,12 +127,12 @@ export const UpdateTeamMemberJoinedFrom$inboundSchema: z.ZodType<
     z.ZodTypeDef,
     unknown
 > = z.object({
-    ssoUserId: z.nullable(z.any()).optional(),
+    ssoUserId: z.string().optional(),
 });
 
 /** @internal */
 export type UpdateTeamMemberJoinedFrom$Outbound = {
-    ssoUserId?: any | null | undefined;
+    ssoUserId?: string | undefined;
 };
 
 /** @internal */
@@ -144,7 +141,7 @@ export const UpdateTeamMemberJoinedFrom$outboundSchema: z.ZodType<
     z.ZodTypeDef,
     UpdateTeamMemberJoinedFrom
 > = z.object({
-    ssoUserId: z.nullable(z.any()).optional(),
+    ssoUserId: z.string().optional(),
 });
 
 /**
@@ -167,7 +164,7 @@ export const UpdateTeamMemberRequestBody$inboundSchema: z.ZodType<
     unknown
 > = z.object({
     confirmed: z.boolean().optional(),
-    role: z.string().default("[MEMBER VIEWER]"),
+    role: z.string().default("VIEWER"),
     projects: z.array(z.lazy(() => UpdateTeamMemberProjects$inboundSchema)).optional(),
     joinedFrom: z.lazy(() => UpdateTeamMemberJoinedFrom$inboundSchema).optional(),
 });
@@ -187,7 +184,7 @@ export const UpdateTeamMemberRequestBody$outboundSchema: z.ZodType<
     UpdateTeamMemberRequestBody
 > = z.object({
     confirmed: z.boolean().optional(),
-    role: z.string().default("[MEMBER VIEWER]"),
+    role: z.string().default("VIEWER"),
     projects: z.array(z.lazy(() => UpdateTeamMemberProjects$outboundSchema)).optional(),
     joinedFrom: z.lazy(() => UpdateTeamMemberJoinedFrom$outboundSchema).optional(),
 });

@@ -3,8 +3,7 @@
 
 ## Fields
 
-| Field                                                                     | Type                                                                      | Required                                                                  | Description                                                               | Example                                                                   |
-| ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
-| `teamId`                                                                  | *string*                                                                  | :heavy_check_mark:                                                        | N/A                                                                       |                                                                           |
-| `uid`                                                                     | *string*                                                                  | :heavy_check_mark:                                                        | The user ID of the member.                                                | ndlgr43fadlPyCtREAqxxdyFK                                                 |
-| `newDefaultTeamId`                                                        | *string*                                                                  | :heavy_minus_sign:                                                        | The ID of the team to set as the new default team for the Northstar user. | team_nllPyCtREAqxxdyFKbbMDlxd                                             |
+| Field              | Type               | Required           | Description        |
+| ------------------ | ------------------ | ------------------ | ------------------ |
+| `teamId`           | *string*           | :heavy_check_mark: | N/A                |
+| `uid`              | *string*           | :heavy_check_mark: | N/A                |

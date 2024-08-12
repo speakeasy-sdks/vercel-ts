@@ -11498,10 +11498,6 @@ paths:
                   type: string
                 items:
                   type: object
-                  propertyNames:
-                    maxLength: 256
-                    pattern: ^[\\w-]+$
-                    type: string
                   additionalProperties:
                     oneOf:
                       - oneOf:
@@ -11882,7 +11878,8 @@ paths:
                         anyOf:
                           - properties:
                               operation:
-                                const: create
+                                type: string
+                                const: [create]
                             required:
                               - operation
                               - key
@@ -11907,7 +11904,8 @@ paths:
                               - description
                           - properties:
                               operation:
-                                const: delete
+                                type: string
+                                const: [delete]
                             required:
                               - operation
                               - key
@@ -28946,9 +28944,7 @@ paths:
                     - BILLING
                     - VIEWER
                     - CONTRIBUTOR
-                  default:
-                    - MEMBER
-                    - VIEWER
+                  default: VIEWER
                   description: The role of the user to invite
                   example:
                     - MEMBER
@@ -29372,9 +29368,7 @@ paths:
                 role:
                   type: string
                   description: The role in the team of the member.
-                  default:
-                    - MEMBER
-                    - VIEWER
+                  default: VIEWER
                   example:
                     - MEMBER
                     - VIEWER

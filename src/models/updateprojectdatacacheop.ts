@@ -87,6 +87,14 @@ export type UpdateProjectDataCacheDataCache = {
     unlimited?: boolean | undefined;
 };
 
+export type DeploymentExpiration = {
+    expirationDays?: number | undefined;
+    expirationDaysProduction?: number | undefined;
+    expirationDaysCanceled?: number | undefined;
+    expirationDaysErrored?: number | undefined;
+    deploymentsToKeep?: number | undefined;
+};
+
 export const UpdateProjectDataCacheTarget2 = {
     Production: "production",
     Preview: "preview",
@@ -123,9 +131,12 @@ export type UpdateProjectDataCacheContentHintProjectsResponse200ApplicationJSONR
         typeof UpdateProjectDataCacheContentHintProjectsResponse200ApplicationJSONResponseBodyEnv14Type
     >;
 
-export type UpdateProjectDataCacheContentHint14 = {
+export type Fourteen = {
     type: UpdateProjectDataCacheContentHintProjectsResponse200ApplicationJSONResponseBodyEnv14Type;
     storeId: string;
+    integrationId: string;
+    integrationProductId: string;
+    integrationConfigurationId: string;
 };
 
 export const UpdateProjectDataCacheContentHintProjectsResponse200ApplicationJSONResponseBodyEnv13Type =
@@ -137,7 +148,7 @@ export type UpdateProjectDataCacheContentHintProjectsResponse200ApplicationJSONR
         typeof UpdateProjectDataCacheContentHintProjectsResponse200ApplicationJSONResponseBodyEnv13Type
     >;
 
-export type UpdateProjectDataCacheContentHint13 = {
+export type Thirteen = {
     type: UpdateProjectDataCacheContentHintProjectsResponse200ApplicationJSONResponseBodyEnv13Type;
     storeId: string;
 };
@@ -151,7 +162,7 @@ export type UpdateProjectDataCacheContentHintProjectsResponse200ApplicationJSONR
         typeof UpdateProjectDataCacheContentHintProjectsResponse200ApplicationJSONResponseBodyEnv12Type
     >;
 
-export type UpdateProjectDataCacheContentHint12 = {
+export type Twelve = {
     type: UpdateProjectDataCacheContentHintProjectsResponse200ApplicationJSONResponseBodyEnv12Type;
     storeId: string;
 };
@@ -165,7 +176,7 @@ export type UpdateProjectDataCacheContentHintProjectsResponse200ApplicationJSONR
         typeof UpdateProjectDataCacheContentHintProjectsResponse200ApplicationJSONResponseBodyEnv11Type
     >;
 
-export type UpdateProjectDataCacheContentHint11 = {
+export type Eleven = {
     type: UpdateProjectDataCacheContentHintProjectsResponse200ApplicationJSONResponseBodyEnv11Type;
     storeId: string;
 };
@@ -179,7 +190,7 @@ export type UpdateProjectDataCacheContentHintProjectsResponse200ApplicationJSONR
         typeof UpdateProjectDataCacheContentHintProjectsResponse200ApplicationJSONResponseBodyEnv10Type
     >;
 
-export type UpdateProjectDataCacheContentHint10 = {
+export type ContentHint10 = {
     type: UpdateProjectDataCacheContentHintProjectsResponse200ApplicationJSONResponseBodyEnv10Type;
     storeId: string;
 };
@@ -193,7 +204,7 @@ export type UpdateProjectDataCacheContentHintProjectsResponse200ApplicationJSONR
         typeof UpdateProjectDataCacheContentHintProjectsResponse200ApplicationJSONResponseBodyEnv9Type
     >;
 
-export type UpdateProjectDataCacheContentHint9 = {
+export type ContentHint9 = {
     type: UpdateProjectDataCacheContentHintProjectsResponse200ApplicationJSONResponseBodyEnv9Type;
     storeId: string;
 };
@@ -207,7 +218,7 @@ export type UpdateProjectDataCacheContentHintProjectsResponse200ApplicationJSONR
         typeof UpdateProjectDataCacheContentHintProjectsResponse200ApplicationJSONResponseBodyEnvType
     >;
 
-export type UpdateProjectDataCacheContentHint8 = {
+export type ContentHint8 = {
     type: UpdateProjectDataCacheContentHintProjectsResponse200ApplicationJSONResponseBodyEnvType;
     storeId: string;
 };
@@ -220,7 +231,7 @@ export type UpdateProjectDataCacheContentHintProjectsResponse200ApplicationJSONR
         typeof UpdateProjectDataCacheContentHintProjectsResponse200ApplicationJSONResponseBodyType
     >;
 
-export type UpdateProjectDataCacheContentHint7 = {
+export type ContentHint7 = {
     type: UpdateProjectDataCacheContentHintProjectsResponse200ApplicationJSONResponseBodyType;
     storeId: string;
 };
@@ -232,7 +243,7 @@ export type UpdateProjectDataCacheContentHintProjectsResponse200ApplicationJSONT
     typeof UpdateProjectDataCacheContentHintProjectsResponse200ApplicationJSONType
 >;
 
-export type UpdateProjectDataCacheContentHint6 = {
+export type ContentHint6 = {
     type: UpdateProjectDataCacheContentHintProjectsResponse200ApplicationJSONType;
     storeId: string;
 };
@@ -244,7 +255,7 @@ export type UpdateProjectDataCacheContentHintProjectsResponse200Type = ClosedEnu
     typeof UpdateProjectDataCacheContentHintProjectsResponse200Type
 >;
 
-export type UpdateProjectDataCacheContentHint5 = {
+export type ContentHint5 = {
     type: UpdateProjectDataCacheContentHintProjectsResponse200Type;
     storeId: string;
 };
@@ -256,7 +267,7 @@ export type UpdateProjectDataCacheContentHintProjectsResponseType = ClosedEnum<
     typeof UpdateProjectDataCacheContentHintProjectsResponseType
 >;
 
-export type UpdateProjectDataCacheContentHint4 = {
+export type ContentHint4 = {
     type: UpdateProjectDataCacheContentHintProjectsResponseType;
     storeId: string;
 };
@@ -268,7 +279,7 @@ export type UpdateProjectDataCacheContentHintProjectsType = ClosedEnum<
     typeof UpdateProjectDataCacheContentHintProjectsType
 >;
 
-export type UpdateProjectDataCacheContentHint3 = {
+export type ContentHint3 = {
     type: UpdateProjectDataCacheContentHintProjectsType;
     storeId: string;
 };
@@ -280,53 +291,49 @@ export type UpdateProjectDataCacheContentHintType = ClosedEnum<
     typeof UpdateProjectDataCacheContentHintType
 >;
 
-export type UpdateProjectDataCacheContentHint2 = {
+export type ContentHint2 = {
     type: UpdateProjectDataCacheContentHintType;
     storeId: string;
 };
 
-export const UpdateProjectDataCacheContentHintProjectsResponse200ApplicationJSONResponseBodyEnv1Type =
-    {
-        RedisUrl: "redis-url",
-    } as const;
-export type UpdateProjectDataCacheContentHintProjectsResponse200ApplicationJSONResponseBodyEnv1Type =
-    ClosedEnum<
-        typeof UpdateProjectDataCacheContentHintProjectsResponse200ApplicationJSONResponseBodyEnv1Type
-    >;
+export const ContentHintType = {
+    RedisUrl: "redis-url",
+} as const;
+export type ContentHintType = ClosedEnum<typeof ContentHintType>;
 
-export type UpdateProjectDataCacheContentHint1 = {
-    type: UpdateProjectDataCacheContentHintProjectsResponse200ApplicationJSONResponseBodyEnv1Type;
+export type ContentHint1 = {
+    type: ContentHintType;
     storeId: string;
 };
 
-export type UpdateProjectDataCacheContentHint =
-    | UpdateProjectDataCacheContentHint1
-    | UpdateProjectDataCacheContentHint2
-    | UpdateProjectDataCacheContentHint3
-    | UpdateProjectDataCacheContentHint4
-    | UpdateProjectDataCacheContentHint5
-    | UpdateProjectDataCacheContentHint6
-    | UpdateProjectDataCacheContentHint7
-    | UpdateProjectDataCacheContentHint8
-    | UpdateProjectDataCacheContentHint9
-    | UpdateProjectDataCacheContentHint10
-    | UpdateProjectDataCacheContentHint11
-    | UpdateProjectDataCacheContentHint12
-    | UpdateProjectDataCacheContentHint13
-    | UpdateProjectDataCacheContentHint14;
+export type ContentHint =
+    | ContentHint1
+    | ContentHint2
+    | ContentHint3
+    | ContentHint4
+    | ContentHint5
+    | ContentHint6
+    | ContentHint7
+    | ContentHint8
+    | ContentHint9
+    | ContentHint10
+    | Eleven
+    | Twelve
+    | Thirteen
+    | Fourteen;
 
-export const UpdateProjectDataCacheProjectsResponse200Type = {
+export const UpdateProjectDataCacheProjectsResponse200ApplicationJSONType = {
     FlagsSecret: "flags-secret",
 } as const;
-export type UpdateProjectDataCacheProjectsResponse200Type = ClosedEnum<
-    typeof UpdateProjectDataCacheProjectsResponse200Type
+export type UpdateProjectDataCacheProjectsResponse200ApplicationJSONType = ClosedEnum<
+    typeof UpdateProjectDataCacheProjectsResponse200ApplicationJSONType
 >;
 
 /**
  * Similar to `contentHints`, but should not be exposed to the user.
  */
-export type UpdateProjectDataCacheInternalContentHint = {
-    type: UpdateProjectDataCacheProjectsResponse200Type;
+export type InternalContentHint = {
+    type: UpdateProjectDataCacheProjectsResponse200ApplicationJSONType;
     /**
      * Contains the `value` of the env variable, encrypted with a special key to make decryption possible in the subscriber Lambda.
      */
@@ -336,6 +343,10 @@ export type UpdateProjectDataCacheInternalContentHint = {
 export type Env = {
     target?: Array<UpdateProjectDataCacheTarget1> | UpdateProjectDataCacheTarget2 | undefined;
     type: UpdateProjectDataCacheType;
+    /**
+     * This is used to identiy variables that have been migrated from type secret to sensitive.
+     */
+    sunsetSecretId?: string | undefined;
     id?: string | undefined;
     key: string;
     value: string;
@@ -348,32 +359,33 @@ export type Env = {
     edgeConfigId?: string | null | undefined;
     edgeConfigTokenId?: string | null | undefined;
     contentHint?:
-        | UpdateProjectDataCacheContentHint1
-        | UpdateProjectDataCacheContentHint2
-        | UpdateProjectDataCacheContentHint3
-        | UpdateProjectDataCacheContentHint4
-        | UpdateProjectDataCacheContentHint5
-        | UpdateProjectDataCacheContentHint6
-        | UpdateProjectDataCacheContentHint7
-        | UpdateProjectDataCacheContentHint8
-        | UpdateProjectDataCacheContentHint9
-        | UpdateProjectDataCacheContentHint10
-        | UpdateProjectDataCacheContentHint11
-        | UpdateProjectDataCacheContentHint12
-        | UpdateProjectDataCacheContentHint13
-        | UpdateProjectDataCacheContentHint14
+        | ContentHint1
+        | ContentHint2
+        | ContentHint3
+        | ContentHint4
+        | ContentHint5
+        | ContentHint6
+        | ContentHint7
+        | ContentHint8
+        | ContentHint9
+        | ContentHint10
+        | Eleven
+        | Twelve
+        | Thirteen
+        | Fourteen
         | null
         | undefined;
     /**
      * Similar to `contentHints`, but should not be exposed to the user.
      */
-    internalContentHint?: UpdateProjectDataCacheInternalContentHint | null | undefined;
+    internalContentHint?: InternalContentHint | null | undefined;
     /**
-     * Whether `value` is decrypted.
+     * Whether `value` and `vsmValue` are decrypted.
      */
     decrypted?: boolean | undefined;
     comment?: string | undefined;
-    customEnvironmentId?: string | undefined;
+    customEnvironmentIds?: Array<string> | undefined;
+    vsmValue?: string | undefined;
 };
 
 export const UpdateProjectDataCacheFramework = {
@@ -418,6 +430,7 @@ export const UpdateProjectDataCacheFramework = {
     Vitepress: "vitepress",
     Vuepress: "vuepress",
     Parcel: "parcel",
+    Fasthtml: "fasthtml",
     Sanity: "sanity",
     Storybook: "storybook",
 } as const;
@@ -425,7 +438,7 @@ export type UpdateProjectDataCacheFramework = ClosedEnum<typeof UpdateProjectDat
 
 export type AliasAssigned = number | boolean;
 
-export type UpdateProjectDataCacheAliasError = {
+export type UpdateProjectDataCacheProjectsAliasError = {
     code: string;
     message: string;
 };
@@ -436,7 +449,7 @@ export type UpdateProjectDataCacheBuilds = {
     dest?: string | undefined;
 };
 
-export type UpdateProjectDataCacheCreator = {
+export type UpdateProjectDataCacheProjectsCreator = {
     email: string;
     githubLogin?: string | undefined;
     gitlabLogin?: string | undefined;
@@ -444,12 +457,14 @@ export type UpdateProjectDataCacheCreator = {
     username: string;
 };
 
-export const UpdateProjectDataCachePlan = {
+export const UpdateProjectDataCacheProjectsPlan = {
     Pro: "pro",
     Enterprise: "enterprise",
     Hobby: "hobby",
 } as const;
-export type UpdateProjectDataCachePlan = ClosedEnum<typeof UpdateProjectDataCachePlan>;
+export type UpdateProjectDataCacheProjectsPlan = ClosedEnum<
+    typeof UpdateProjectDataCacheProjectsPlan
+>;
 
 export const UpdateProjectDataCacheReadyState = {
     Building: "BUILDING",
@@ -461,12 +476,12 @@ export const UpdateProjectDataCacheReadyState = {
 } as const;
 export type UpdateProjectDataCacheReadyState = ClosedEnum<typeof UpdateProjectDataCacheReadyState>;
 
-export const UpdateProjectDataCacheReadySubstate = {
+export const UpdateProjectDataCacheProjectsReadySubstate = {
     Staged: "STAGED",
     Promoted: "PROMOTED",
 } as const;
-export type UpdateProjectDataCacheReadySubstate = ClosedEnum<
-    typeof UpdateProjectDataCacheReadySubstate
+export type UpdateProjectDataCacheProjectsReadySubstate = ClosedEnum<
+    typeof UpdateProjectDataCacheProjectsReadySubstate
 >;
 
 export const UpdateProjectDataCacheProjectsType = {
@@ -476,31 +491,31 @@ export type UpdateProjectDataCacheProjectsType = ClosedEnum<
     typeof UpdateProjectDataCacheProjectsType
 >;
 
-export const UpdateProjectDataCacheChecksConclusion = {
+export const UpdateProjectDataCacheProjectsChecksConclusion = {
     Succeeded: "succeeded",
     Failed: "failed",
     Skipped: "skipped",
     Canceled: "canceled",
 } as const;
-export type UpdateProjectDataCacheChecksConclusion = ClosedEnum<
-    typeof UpdateProjectDataCacheChecksConclusion
+export type UpdateProjectDataCacheProjectsChecksConclusion = ClosedEnum<
+    typeof UpdateProjectDataCacheProjectsChecksConclusion
 >;
 
-export const UpdateProjectDataCacheChecksState = {
+export const UpdateProjectDataCacheProjectsChecksState = {
     Registered: "registered",
     Running: "running",
     Completed: "completed",
 } as const;
-export type UpdateProjectDataCacheChecksState = ClosedEnum<
-    typeof UpdateProjectDataCacheChecksState
+export type UpdateProjectDataCacheProjectsChecksState = ClosedEnum<
+    typeof UpdateProjectDataCacheProjectsChecksState
 >;
 
-export type OidcTokenClaims = string | Array<string>;
+export type UpdateProjectDataCacheProjectsOidcTokenClaims = string | Array<string>;
 
 export type LatestDeployments = {
     alias?: Array<string> | undefined;
     aliasAssigned?: number | boolean | null | undefined;
-    aliasError?: UpdateProjectDataCacheAliasError | null | undefined;
+    aliasError?: UpdateProjectDataCacheProjectsAliasError | null | undefined;
     aliasFinal?: string | null | undefined;
     automaticAliases?: Array<string> | undefined;
     builds?: Array<UpdateProjectDataCacheBuilds> | undefined;
@@ -508,17 +523,18 @@ export type LatestDeployments = {
     connectConfigurationId?: string | undefined;
     createdAt: number;
     createdIn: string;
-    creator: UpdateProjectDataCacheCreator | null;
+    creator: UpdateProjectDataCacheProjectsCreator | null;
+    deletedAt?: number | undefined;
     deploymentHostname: string;
     name: string;
     forced?: boolean | undefined;
     id: string;
     meta?: { [k: string]: string } | undefined;
     monorepoManager?: string | null | undefined;
-    plan: UpdateProjectDataCachePlan;
+    plan: UpdateProjectDataCacheProjectsPlan;
     private: boolean;
     readyState: UpdateProjectDataCacheReadyState;
-    readySubstate?: UpdateProjectDataCacheReadySubstate | undefined;
+    readySubstate?: UpdateProjectDataCacheProjectsReadySubstate | undefined;
     requestedAt?: number | undefined;
     target?: string | null | undefined;
     teamId?: string | null | undefined;
@@ -526,8 +542,8 @@ export type LatestDeployments = {
     url: string;
     userId: string;
     withCache?: boolean | undefined;
-    checksConclusion?: UpdateProjectDataCacheChecksConclusion | undefined;
-    checksState?: UpdateProjectDataCacheChecksState | undefined;
+    checksConclusion?: UpdateProjectDataCacheProjectsChecksConclusion | undefined;
+    checksState?: UpdateProjectDataCacheProjectsChecksState | undefined;
     readyAt?: number | undefined;
     buildingAt?: number | undefined;
     /**
@@ -659,7 +675,122 @@ export type UpdateProjectDataCacheSsoProtection = {
     deploymentType: UpdateProjectDataCacheDeploymentType;
 };
 
-export type Targets = string | Array<string>;
+export type UpdateProjectDataCacheAliasAssigned = number | boolean;
+
+export type UpdateProjectDataCacheAliasError = {
+    code: string;
+    message: string;
+};
+
+export type UpdateProjectDataCacheProjectsBuilds = {
+    use: string;
+    src?: string | undefined;
+    dest?: string | undefined;
+};
+
+export type UpdateProjectDataCacheCreator = {
+    email: string;
+    githubLogin?: string | undefined;
+    gitlabLogin?: string | undefined;
+    uid: string;
+    username: string;
+};
+
+export const UpdateProjectDataCachePlan = {
+    Pro: "pro",
+    Enterprise: "enterprise",
+    Hobby: "hobby",
+} as const;
+export type UpdateProjectDataCachePlan = ClosedEnum<typeof UpdateProjectDataCachePlan>;
+
+export const UpdateProjectDataCacheProjectsReadyState = {
+    Building: "BUILDING",
+    Error: "ERROR",
+    Initializing: "INITIALIZING",
+    Queued: "QUEUED",
+    Ready: "READY",
+    Canceled: "CANCELED",
+} as const;
+export type UpdateProjectDataCacheProjectsReadyState = ClosedEnum<
+    typeof UpdateProjectDataCacheProjectsReadyState
+>;
+
+export const UpdateProjectDataCacheReadySubstate = {
+    Staged: "STAGED",
+    Promoted: "PROMOTED",
+} as const;
+export type UpdateProjectDataCacheReadySubstate = ClosedEnum<
+    typeof UpdateProjectDataCacheReadySubstate
+>;
+
+export const UpdateProjectDataCacheProjectsResponseType = {
+    Lambdas: "LAMBDAS",
+} as const;
+export type UpdateProjectDataCacheProjectsResponseType = ClosedEnum<
+    typeof UpdateProjectDataCacheProjectsResponseType
+>;
+
+export const UpdateProjectDataCacheChecksConclusion = {
+    Succeeded: "succeeded",
+    Failed: "failed",
+    Skipped: "skipped",
+    Canceled: "canceled",
+} as const;
+export type UpdateProjectDataCacheChecksConclusion = ClosedEnum<
+    typeof UpdateProjectDataCacheChecksConclusion
+>;
+
+export const UpdateProjectDataCacheChecksState = {
+    Registered: "registered",
+    Running: "running",
+    Completed: "completed",
+} as const;
+export type UpdateProjectDataCacheChecksState = ClosedEnum<
+    typeof UpdateProjectDataCacheChecksState
+>;
+
+export type UpdateProjectDataCacheOidcTokenClaims = string | Array<string>;
+
+export type Targets = {
+    alias?: Array<string> | undefined;
+    aliasAssigned?: number | boolean | null | undefined;
+    aliasError?: UpdateProjectDataCacheAliasError | null | undefined;
+    aliasFinal?: string | null | undefined;
+    automaticAliases?: Array<string> | undefined;
+    builds?: Array<UpdateProjectDataCacheProjectsBuilds> | undefined;
+    connectBuildsEnabled?: boolean | undefined;
+    connectConfigurationId?: string | undefined;
+    createdAt: number;
+    createdIn: string;
+    creator: UpdateProjectDataCacheCreator | null;
+    deletedAt?: number | undefined;
+    deploymentHostname: string;
+    name: string;
+    forced?: boolean | undefined;
+    id: string;
+    meta?: { [k: string]: string } | undefined;
+    monorepoManager?: string | null | undefined;
+    plan: UpdateProjectDataCachePlan;
+    private: boolean;
+    readyState: UpdateProjectDataCacheProjectsReadyState;
+    readySubstate?: UpdateProjectDataCacheReadySubstate | undefined;
+    requestedAt?: number | undefined;
+    target?: string | null | undefined;
+    teamId?: string | null | undefined;
+    type: UpdateProjectDataCacheProjectsResponseType;
+    url: string;
+    userId: string;
+    withCache?: boolean | undefined;
+    checksConclusion?: UpdateProjectDataCacheChecksConclusion | undefined;
+    checksState?: UpdateProjectDataCacheChecksState | undefined;
+    readyAt?: number | undefined;
+    buildingAt?: number | undefined;
+    /**
+     * Whether or not preview comments are enabled for the deployment
+     */
+    previewCommentsEnabled?: boolean | undefined;
+    oidcTokenClaims?: { [k: string]: string | Array<string> } | undefined;
+};
 
 export type Permissions = {
     accessGroup?: Array<ACLAction> | undefined;
@@ -699,14 +830,17 @@ export type Permissions = {
     gitRepository?: Array<ACLAction> | undefined;
     ipBlocking?: Array<ACLAction> | undefined;
     integration?: Array<ACLAction> | undefined;
+    integrationAccount?: Array<ACLAction> | undefined;
     integrationConfiguration?: Array<ACLAction> | undefined;
     integrationConfigurationTransfer?: Array<ACLAction> | undefined;
     integrationConfigurationProjects?: Array<ACLAction> | undefined;
     integrationVercelConfigurationOverride?: Array<ACLAction> | undefined;
-    integrationStore?: Array<ACLAction> | undefined;
+    integrationResource?: Array<ACLAction> | undefined;
     integrationEvent?: Array<ACLAction> | undefined;
     integrationResourceSecrets?: Array<ACLAction> | undefined;
+    marketplaceInstallationMember?: Array<ACLAction> | undefined;
     marketplaceBillingData?: Array<ACLAction> | undefined;
+    marketplaceInvoice?: Array<ACLAction> | undefined;
     jobGlobal?: Array<ACLAction> | undefined;
     logDrain?: Array<ACLAction> | undefined;
     monitoring?: Array<ACLAction> | undefined;
@@ -734,7 +868,6 @@ export type Permissions = {
     postgres?: Array<ACLAction> | undefined;
     previewDeploymentSuffix?: Array<ACLAction> | undefined;
     proTrialOnboarding?: Array<ACLAction> | undefined;
-    seawallConfig?: Array<ACLAction> | undefined;
     sharedEnvVars?: Array<ACLAction> | undefined;
     sharedEnvVarsProduction?: Array<ACLAction> | undefined;
     space?: Array<ACLAction> | undefined;
@@ -750,12 +883,15 @@ export type Permissions = {
     blobStoreTokenSet?: Array<ACLAction> | undefined;
     postgresStoreTokenSet?: Array<ACLAction> | undefined;
     integrationStoreTokenSet?: Array<ACLAction> | undefined;
+    integrationResourceReplCommand?: Array<ACLAction> | undefined;
+    storeTransfer?: Array<ACLAction> | undefined;
     supportCase?: Array<ACLAction> | undefined;
     supportCaseComment?: Array<ACLAction> | undefined;
     dataCacheBillingSettings?: Array<ACLAction> | undefined;
     team?: Array<ACLAction> | undefined;
     teamAccessRequest?: Array<ACLAction> | undefined;
     teamFellowMembership?: Array<ACLAction> | undefined;
+    teamGitExclusivity?: Array<ACLAction> | undefined;
     teamInvite?: Array<ACLAction> | undefined;
     teamInviteCode?: Array<ACLAction> | undefined;
     teamJoin?: Array<ACLAction> | undefined;
@@ -766,6 +902,7 @@ export type Permissions = {
     usageCycle?: Array<ACLAction> | undefined;
     user?: Array<ACLAction> | undefined;
     userConnection?: Array<ACLAction> | undefined;
+    vpcPeeringConnection?: Array<ACLAction> | undefined;
     webAnalyticsPlan?: Array<ACLAction> | undefined;
     webAuthn?: Array<ACLAction> | undefined;
     edgeConfig?: Array<ACLAction> | undefined;
@@ -807,6 +944,7 @@ export type Permissions = {
     projectEnvVars?: Array<ACLAction> | undefined;
     projectEnvVarsProduction?: Array<ACLAction> | undefined;
     projectEnvVarsUnownedByIntegration?: Array<ACLAction> | undefined;
+    projectFlags?: Array<ACLAction> | undefined;
     projectId?: Array<ACLAction> | undefined;
     projectIntegrationConfiguration?: Array<ACLAction> | undefined;
     projectLink?: Array<ACLAction> | undefined;
@@ -822,11 +960,14 @@ export type Permissions = {
     projectSupportCase?: Array<ACLAction> | undefined;
     projectSupportCaseComment?: Array<ACLAction> | undefined;
     projectDeploymentExpiration?: Array<ACLAction> | undefined;
+    projectTier?: Array<ACLAction> | undefined;
+    seawallConfig?: Array<ACLAction> | undefined;
     skewProtection?: Array<ACLAction> | undefined;
     analytics?: Array<ACLAction> | undefined;
     trustedIps?: Array<ACLAction> | undefined;
     webAnalytics?: Array<ACLAction> | undefined;
     sharedEnvVarConnection?: Array<ACLAction> | undefined;
+    sonar?: Array<ACLAction> | undefined;
 };
 
 export type LastRollbackTarget = {};
@@ -840,12 +981,12 @@ export const JobStatus = {
 } as const;
 export type JobStatus = ClosedEnum<typeof JobStatus>;
 
-export const UpdateProjectDataCacheProjectsResponseType = {
+export const UpdateProjectDataCacheProjectsResponse200Type = {
     Promote: "promote",
     Rollback: "rollback",
 } as const;
-export type UpdateProjectDataCacheProjectsResponseType = ClosedEnum<
-    typeof UpdateProjectDataCacheProjectsResponseType
+export type UpdateProjectDataCacheProjectsResponse200Type = ClosedEnum<
+    typeof UpdateProjectDataCacheProjectsResponse200Type
 >;
 
 export type LastAliasRequest = {
@@ -853,7 +994,7 @@ export type LastAliasRequest = {
     toDeploymentId: string;
     jobStatus: JobStatus;
     requestedAt: number;
-    type: UpdateProjectDataCacheProjectsResponseType;
+    type: UpdateProjectDataCacheProjectsResponse200Type;
 };
 
 export const Scope = {
@@ -861,7 +1002,7 @@ export const Scope = {
 } as const;
 export type Scope = ClosedEnum<typeof Scope>;
 
-export type ProtectionBypass = {
+export type UpdateProjectDataCacheProtectionBypass = {
     createdAt: number;
     createdBy: string;
     scope: Scope;
@@ -945,7 +1086,7 @@ export type Src2 = {
 
 export type Src = Src2 | string;
 
-export const UpdateProjectDataCacheProjectsResponse200ApplicationJSONType = {
+export const UpdateProjectDataCacheProjectsResponse200ApplicationJSONResponseBodyType = {
     Host: "host",
     Method: "method",
     Path: "path",
@@ -955,10 +1096,11 @@ export const UpdateProjectDataCacheProjectsResponse200ApplicationJSONType = {
     IpAddress: "ip_address",
     Protocol: "protocol",
     Scheme: "scheme",
+    Environment: "environment",
     Region: "region",
 } as const;
-export type UpdateProjectDataCacheProjectsResponse200ApplicationJSONType = ClosedEnum<
-    typeof UpdateProjectDataCacheProjectsResponse200ApplicationJSONType
+export type UpdateProjectDataCacheProjectsResponse200ApplicationJSONResponseBodyType = ClosedEnum<
+    typeof UpdateProjectDataCacheProjectsResponse200ApplicationJSONResponseBodyType
 >;
 
 export type UpdateProjectDataCacheValueProjects2 = {
@@ -978,12 +1120,12 @@ export type UpdateProjectDataCacheValueProjects2 = {
 export type UpdateProjectDataCacheProjectsValue = UpdateProjectDataCacheValueProjects2 | string;
 
 export type Has = {
-    type: UpdateProjectDataCacheProjectsResponse200ApplicationJSONType;
+    type: UpdateProjectDataCacheProjectsResponse200ApplicationJSONResponseBodyType;
     key?: string | undefined;
     value?: UpdateProjectDataCacheValueProjects2 | string | undefined;
 };
 
-export const UpdateProjectDataCacheProjectsResponse200ApplicationJSONResponseBodyType = {
+export const UpdateProjectDataCacheProjectsResponse200ApplicationJSONResponseBodySecurityType = {
     Host: "host",
     Method: "method",
     Path: "path",
@@ -993,11 +1135,13 @@ export const UpdateProjectDataCacheProjectsResponse200ApplicationJSONResponseBod
     IpAddress: "ip_address",
     Protocol: "protocol",
     Scheme: "scheme",
+    Environment: "environment",
     Region: "region",
 } as const;
-export type UpdateProjectDataCacheProjectsResponse200ApplicationJSONResponseBodyType = ClosedEnum<
-    typeof UpdateProjectDataCacheProjectsResponse200ApplicationJSONResponseBodyType
->;
+export type UpdateProjectDataCacheProjectsResponse200ApplicationJSONResponseBodySecurityType =
+    ClosedEnum<
+        typeof UpdateProjectDataCacheProjectsResponse200ApplicationJSONResponseBodySecurityType
+    >;
 
 export type UpdateProjectDataCacheValue2 = {
     re?: string | undefined;
@@ -1016,7 +1160,7 @@ export type UpdateProjectDataCacheValue2 = {
 export type UpdateProjectDataCacheValue = UpdateProjectDataCacheValue2 | string;
 
 export type Missing = {
-    type: UpdateProjectDataCacheProjectsResponse200ApplicationJSONResponseBodyType;
+    type: UpdateProjectDataCacheProjectsResponse200ApplicationJSONResponseBodySecurityType;
     key?: string | undefined;
     value?: UpdateProjectDataCacheValue2 | string | undefined;
 };
@@ -1033,6 +1177,7 @@ export const Action = {
     Log: "log",
     Bypass: "bypass",
     RateLimit: "rate_limit",
+    Redirect: "redirect",
 } as const;
 export type Action = ClosedEnum<typeof Action>;
 
@@ -1052,6 +1197,7 @@ export type Erl = {
 export type Mitigate = {
     action: Action;
     ruleId: string;
+    ttl?: number | undefined;
     erl?: Erl | undefined;
 };
 
@@ -1078,9 +1224,16 @@ export type UpdateProjectDataCacheSecurity = {
     ja4Enabled?: boolean | undefined;
 };
 
-export type OidcTokenConfig = {
+export type UpdateProjectDataCacheOidcTokenConfig = {
     enabled: boolean;
 };
+
+export const Tier = {
+    Standard: "standard",
+    Advanced: "advanced",
+    Critical: "critical",
+} as const;
+export type Tier = ClosedEnum<typeof Tier>;
 
 export type UpdateProjectDataCacheResponseBody = {
     accountId: string;
@@ -1097,6 +1250,7 @@ export type UpdateProjectDataCacheResponseBody = {
     customerSupportCodeVisibility?: boolean | undefined;
     crons?: Crons | undefined;
     dataCache?: UpdateProjectDataCacheDataCache | undefined;
+    deploymentExpiration?: DeploymentExpiration | null | undefined;
     devCommand?: string | null | undefined;
     directoryListing: boolean;
     installCommand?: string | null | undefined;
@@ -1122,8 +1276,9 @@ export type UpdateProjectDataCacheResponseBody = {
     skewProtectionMaxAge?: number | undefined;
     skipGitConnectDuringLink?: boolean | undefined;
     sourceFilesOutsideRootDirectory?: boolean | undefined;
+    enableAffectedProjectsDeployments?: boolean | undefined;
     ssoProtection?: UpdateProjectDataCacheSsoProtection | null | undefined;
-    targets?: { [k: string]: string | Array<string> } | undefined;
+    targets?: { [k: string]: Targets } | undefined;
     transferCompletedAt?: number | undefined;
     transferStartedAt?: number | undefined;
     transferToAccountId?: string | undefined;
@@ -1131,11 +1286,12 @@ export type UpdateProjectDataCacheResponseBody = {
     updatedAt?: number | undefined;
     live?: boolean | undefined;
     enablePreviewFeedback?: boolean | null | undefined;
+    enableProductionFeedback?: boolean | null | undefined;
     permissions?: Permissions | undefined;
     lastRollbackTarget?: LastRollbackTarget | null | undefined;
     lastAliasRequest?: LastAliasRequest | null | undefined;
     hasFloatingAliases?: boolean | undefined;
-    protectionBypass?: { [k: string]: ProtectionBypass } | undefined;
+    protectionBypass?: { [k: string]: UpdateProjectDataCacheProtectionBypass } | undefined;
     hasActiveBranches?: boolean | undefined;
     trustedIps?: TrustedIps2 | TrustedIps1 | null | undefined;
     gitComments?: GitComments | undefined;
@@ -1143,7 +1299,8 @@ export type UpdateProjectDataCacheResponseBody = {
     concurrencyBucketName?: string | undefined;
     webAnalytics?: UpdateProjectDataCacheWebAnalytics | undefined;
     security?: UpdateProjectDataCacheSecurity | undefined;
-    oidcTokenConfig?: OidcTokenConfig | undefined;
+    oidcTokenConfig?: UpdateProjectDataCacheOidcTokenConfig | undefined;
+    tier?: Tier | undefined;
 };
 
 /** @internal */
@@ -1462,6 +1619,54 @@ export namespace UpdateProjectDataCacheDataCache$ {
 }
 
 /** @internal */
+export const DeploymentExpiration$inboundSchema: z.ZodType<
+    DeploymentExpiration,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    expirationDays: z.number().optional(),
+    expirationDaysProduction: z.number().optional(),
+    expirationDaysCanceled: z.number().optional(),
+    expirationDaysErrored: z.number().optional(),
+    deploymentsToKeep: z.number().optional(),
+});
+
+/** @internal */
+export type DeploymentExpiration$Outbound = {
+    expirationDays?: number | undefined;
+    expirationDaysProduction?: number | undefined;
+    expirationDaysCanceled?: number | undefined;
+    expirationDaysErrored?: number | undefined;
+    deploymentsToKeep?: number | undefined;
+};
+
+/** @internal */
+export const DeploymentExpiration$outboundSchema: z.ZodType<
+    DeploymentExpiration$Outbound,
+    z.ZodTypeDef,
+    DeploymentExpiration
+> = z.object({
+    expirationDays: z.number().optional(),
+    expirationDaysProduction: z.number().optional(),
+    expirationDaysCanceled: z.number().optional(),
+    expirationDaysErrored: z.number().optional(),
+    deploymentsToKeep: z.number().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace DeploymentExpiration$ {
+    /** @deprecated use `DeploymentExpiration$inboundSchema` instead. */
+    export const inboundSchema = DeploymentExpiration$inboundSchema;
+    /** @deprecated use `DeploymentExpiration$outboundSchema` instead. */
+    export const outboundSchema = DeploymentExpiration$outboundSchema;
+    /** @deprecated use `DeploymentExpiration$Outbound` instead. */
+    export type Outbound = DeploymentExpiration$Outbound;
+}
+
+/** @internal */
 export const UpdateProjectDataCacheTarget2$inboundSchema: z.ZodNativeEnum<
     typeof UpdateProjectDataCacheTarget2
 > = z.nativeEnum(UpdateProjectDataCacheTarget2);
@@ -1587,42 +1792,44 @@ export namespace UpdateProjectDataCacheContentHintProjectsResponse200Application
 }
 
 /** @internal */
-export const UpdateProjectDataCacheContentHint14$inboundSchema: z.ZodType<
-    UpdateProjectDataCacheContentHint14,
-    z.ZodTypeDef,
-    unknown
-> = z.object({
+export const Fourteen$inboundSchema: z.ZodType<Fourteen, z.ZodTypeDef, unknown> = z.object({
     type: UpdateProjectDataCacheContentHintProjectsResponse200ApplicationJSONResponseBodyEnv14Type$inboundSchema,
     storeId: z.string(),
+    integrationId: z.string(),
+    integrationProductId: z.string(),
+    integrationConfigurationId: z.string(),
 });
 
 /** @internal */
-export type UpdateProjectDataCacheContentHint14$Outbound = {
+export type Fourteen$Outbound = {
     type: string;
     storeId: string;
+    integrationId: string;
+    integrationProductId: string;
+    integrationConfigurationId: string;
 };
 
 /** @internal */
-export const UpdateProjectDataCacheContentHint14$outboundSchema: z.ZodType<
-    UpdateProjectDataCacheContentHint14$Outbound,
-    z.ZodTypeDef,
-    UpdateProjectDataCacheContentHint14
-> = z.object({
-    type: UpdateProjectDataCacheContentHintProjectsResponse200ApplicationJSONResponseBodyEnv14Type$outboundSchema,
-    storeId: z.string(),
-});
+export const Fourteen$outboundSchema: z.ZodType<Fourteen$Outbound, z.ZodTypeDef, Fourteen> =
+    z.object({
+        type: UpdateProjectDataCacheContentHintProjectsResponse200ApplicationJSONResponseBodyEnv14Type$outboundSchema,
+        storeId: z.string(),
+        integrationId: z.string(),
+        integrationProductId: z.string(),
+        integrationConfigurationId: z.string(),
+    });
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace UpdateProjectDataCacheContentHint14$ {
-    /** @deprecated use `UpdateProjectDataCacheContentHint14$inboundSchema` instead. */
-    export const inboundSchema = UpdateProjectDataCacheContentHint14$inboundSchema;
-    /** @deprecated use `UpdateProjectDataCacheContentHint14$outboundSchema` instead. */
-    export const outboundSchema = UpdateProjectDataCacheContentHint14$outboundSchema;
-    /** @deprecated use `UpdateProjectDataCacheContentHint14$Outbound` instead. */
-    export type Outbound = UpdateProjectDataCacheContentHint14$Outbound;
+export namespace Fourteen$ {
+    /** @deprecated use `Fourteen$inboundSchema` instead. */
+    export const inboundSchema = Fourteen$inboundSchema;
+    /** @deprecated use `Fourteen$outboundSchema` instead. */
+    export const outboundSchema = Fourteen$outboundSchema;
+    /** @deprecated use `Fourteen$Outbound` instead. */
+    export type Outbound = Fourteen$Outbound;
 }
 
 /** @internal */
@@ -1652,42 +1859,35 @@ export namespace UpdateProjectDataCacheContentHintProjectsResponse200Application
 }
 
 /** @internal */
-export const UpdateProjectDataCacheContentHint13$inboundSchema: z.ZodType<
-    UpdateProjectDataCacheContentHint13,
-    z.ZodTypeDef,
-    unknown
-> = z.object({
+export const Thirteen$inboundSchema: z.ZodType<Thirteen, z.ZodTypeDef, unknown> = z.object({
     type: UpdateProjectDataCacheContentHintProjectsResponse200ApplicationJSONResponseBodyEnv13Type$inboundSchema,
     storeId: z.string(),
 });
 
 /** @internal */
-export type UpdateProjectDataCacheContentHint13$Outbound = {
+export type Thirteen$Outbound = {
     type: string;
     storeId: string;
 };
 
 /** @internal */
-export const UpdateProjectDataCacheContentHint13$outboundSchema: z.ZodType<
-    UpdateProjectDataCacheContentHint13$Outbound,
-    z.ZodTypeDef,
-    UpdateProjectDataCacheContentHint13
-> = z.object({
-    type: UpdateProjectDataCacheContentHintProjectsResponse200ApplicationJSONResponseBodyEnv13Type$outboundSchema,
-    storeId: z.string(),
-});
+export const Thirteen$outboundSchema: z.ZodType<Thirteen$Outbound, z.ZodTypeDef, Thirteen> =
+    z.object({
+        type: UpdateProjectDataCacheContentHintProjectsResponse200ApplicationJSONResponseBodyEnv13Type$outboundSchema,
+        storeId: z.string(),
+    });
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace UpdateProjectDataCacheContentHint13$ {
-    /** @deprecated use `UpdateProjectDataCacheContentHint13$inboundSchema` instead. */
-    export const inboundSchema = UpdateProjectDataCacheContentHint13$inboundSchema;
-    /** @deprecated use `UpdateProjectDataCacheContentHint13$outboundSchema` instead. */
-    export const outboundSchema = UpdateProjectDataCacheContentHint13$outboundSchema;
-    /** @deprecated use `UpdateProjectDataCacheContentHint13$Outbound` instead. */
-    export type Outbound = UpdateProjectDataCacheContentHint13$Outbound;
+export namespace Thirteen$ {
+    /** @deprecated use `Thirteen$inboundSchema` instead. */
+    export const inboundSchema = Thirteen$inboundSchema;
+    /** @deprecated use `Thirteen$outboundSchema` instead. */
+    export const outboundSchema = Thirteen$outboundSchema;
+    /** @deprecated use `Thirteen$Outbound` instead. */
+    export type Outbound = Thirteen$Outbound;
 }
 
 /** @internal */
@@ -1717,27 +1917,19 @@ export namespace UpdateProjectDataCacheContentHintProjectsResponse200Application
 }
 
 /** @internal */
-export const UpdateProjectDataCacheContentHint12$inboundSchema: z.ZodType<
-    UpdateProjectDataCacheContentHint12,
-    z.ZodTypeDef,
-    unknown
-> = z.object({
+export const Twelve$inboundSchema: z.ZodType<Twelve, z.ZodTypeDef, unknown> = z.object({
     type: UpdateProjectDataCacheContentHintProjectsResponse200ApplicationJSONResponseBodyEnv12Type$inboundSchema,
     storeId: z.string(),
 });
 
 /** @internal */
-export type UpdateProjectDataCacheContentHint12$Outbound = {
+export type Twelve$Outbound = {
     type: string;
     storeId: string;
 };
 
 /** @internal */
-export const UpdateProjectDataCacheContentHint12$outboundSchema: z.ZodType<
-    UpdateProjectDataCacheContentHint12$Outbound,
-    z.ZodTypeDef,
-    UpdateProjectDataCacheContentHint12
-> = z.object({
+export const Twelve$outboundSchema: z.ZodType<Twelve$Outbound, z.ZodTypeDef, Twelve> = z.object({
     type: UpdateProjectDataCacheContentHintProjectsResponse200ApplicationJSONResponseBodyEnv12Type$outboundSchema,
     storeId: z.string(),
 });
@@ -1746,13 +1938,13 @@ export const UpdateProjectDataCacheContentHint12$outboundSchema: z.ZodType<
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace UpdateProjectDataCacheContentHint12$ {
-    /** @deprecated use `UpdateProjectDataCacheContentHint12$inboundSchema` instead. */
-    export const inboundSchema = UpdateProjectDataCacheContentHint12$inboundSchema;
-    /** @deprecated use `UpdateProjectDataCacheContentHint12$outboundSchema` instead. */
-    export const outboundSchema = UpdateProjectDataCacheContentHint12$outboundSchema;
-    /** @deprecated use `UpdateProjectDataCacheContentHint12$Outbound` instead. */
-    export type Outbound = UpdateProjectDataCacheContentHint12$Outbound;
+export namespace Twelve$ {
+    /** @deprecated use `Twelve$inboundSchema` instead. */
+    export const inboundSchema = Twelve$inboundSchema;
+    /** @deprecated use `Twelve$outboundSchema` instead. */
+    export const outboundSchema = Twelve$outboundSchema;
+    /** @deprecated use `Twelve$Outbound` instead. */
+    export type Outbound = Twelve$Outbound;
 }
 
 /** @internal */
@@ -1782,27 +1974,19 @@ export namespace UpdateProjectDataCacheContentHintProjectsResponse200Application
 }
 
 /** @internal */
-export const UpdateProjectDataCacheContentHint11$inboundSchema: z.ZodType<
-    UpdateProjectDataCacheContentHint11,
-    z.ZodTypeDef,
-    unknown
-> = z.object({
+export const Eleven$inboundSchema: z.ZodType<Eleven, z.ZodTypeDef, unknown> = z.object({
     type: UpdateProjectDataCacheContentHintProjectsResponse200ApplicationJSONResponseBodyEnv11Type$inboundSchema,
     storeId: z.string(),
 });
 
 /** @internal */
-export type UpdateProjectDataCacheContentHint11$Outbound = {
+export type Eleven$Outbound = {
     type: string;
     storeId: string;
 };
 
 /** @internal */
-export const UpdateProjectDataCacheContentHint11$outboundSchema: z.ZodType<
-    UpdateProjectDataCacheContentHint11$Outbound,
-    z.ZodTypeDef,
-    UpdateProjectDataCacheContentHint11
-> = z.object({
+export const Eleven$outboundSchema: z.ZodType<Eleven$Outbound, z.ZodTypeDef, Eleven> = z.object({
     type: UpdateProjectDataCacheContentHintProjectsResponse200ApplicationJSONResponseBodyEnv11Type$outboundSchema,
     storeId: z.string(),
 });
@@ -1811,13 +1995,13 @@ export const UpdateProjectDataCacheContentHint11$outboundSchema: z.ZodType<
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace UpdateProjectDataCacheContentHint11$ {
-    /** @deprecated use `UpdateProjectDataCacheContentHint11$inboundSchema` instead. */
-    export const inboundSchema = UpdateProjectDataCacheContentHint11$inboundSchema;
-    /** @deprecated use `UpdateProjectDataCacheContentHint11$outboundSchema` instead. */
-    export const outboundSchema = UpdateProjectDataCacheContentHint11$outboundSchema;
-    /** @deprecated use `UpdateProjectDataCacheContentHint11$Outbound` instead. */
-    export type Outbound = UpdateProjectDataCacheContentHint11$Outbound;
+export namespace Eleven$ {
+    /** @deprecated use `Eleven$inboundSchema` instead. */
+    export const inboundSchema = Eleven$inboundSchema;
+    /** @deprecated use `Eleven$outboundSchema` instead. */
+    export const outboundSchema = Eleven$outboundSchema;
+    /** @deprecated use `Eleven$Outbound` instead. */
+    export type Outbound = Eleven$Outbound;
 }
 
 /** @internal */
@@ -1847,26 +2031,23 @@ export namespace UpdateProjectDataCacheContentHintProjectsResponse200Application
 }
 
 /** @internal */
-export const UpdateProjectDataCacheContentHint10$inboundSchema: z.ZodType<
-    UpdateProjectDataCacheContentHint10,
-    z.ZodTypeDef,
-    unknown
-> = z.object({
-    type: UpdateProjectDataCacheContentHintProjectsResponse200ApplicationJSONResponseBodyEnv10Type$inboundSchema,
-    storeId: z.string(),
-});
+export const ContentHint10$inboundSchema: z.ZodType<ContentHint10, z.ZodTypeDef, unknown> =
+    z.object({
+        type: UpdateProjectDataCacheContentHintProjectsResponse200ApplicationJSONResponseBodyEnv10Type$inboundSchema,
+        storeId: z.string(),
+    });
 
 /** @internal */
-export type UpdateProjectDataCacheContentHint10$Outbound = {
+export type ContentHint10$Outbound = {
     type: string;
     storeId: string;
 };
 
 /** @internal */
-export const UpdateProjectDataCacheContentHint10$outboundSchema: z.ZodType<
-    UpdateProjectDataCacheContentHint10$Outbound,
+export const ContentHint10$outboundSchema: z.ZodType<
+    ContentHint10$Outbound,
     z.ZodTypeDef,
-    UpdateProjectDataCacheContentHint10
+    ContentHint10
 > = z.object({
     type: UpdateProjectDataCacheContentHintProjectsResponse200ApplicationJSONResponseBodyEnv10Type$outboundSchema,
     storeId: z.string(),
@@ -1876,13 +2057,13 @@ export const UpdateProjectDataCacheContentHint10$outboundSchema: z.ZodType<
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace UpdateProjectDataCacheContentHint10$ {
-    /** @deprecated use `UpdateProjectDataCacheContentHint10$inboundSchema` instead. */
-    export const inboundSchema = UpdateProjectDataCacheContentHint10$inboundSchema;
-    /** @deprecated use `UpdateProjectDataCacheContentHint10$outboundSchema` instead. */
-    export const outboundSchema = UpdateProjectDataCacheContentHint10$outboundSchema;
-    /** @deprecated use `UpdateProjectDataCacheContentHint10$Outbound` instead. */
-    export type Outbound = UpdateProjectDataCacheContentHint10$Outbound;
+export namespace ContentHint10$ {
+    /** @deprecated use `ContentHint10$inboundSchema` instead. */
+    export const inboundSchema = ContentHint10$inboundSchema;
+    /** @deprecated use `ContentHint10$outboundSchema` instead. */
+    export const outboundSchema = ContentHint10$outboundSchema;
+    /** @deprecated use `ContentHint10$Outbound` instead. */
+    export type Outbound = ContentHint10$Outbound;
 }
 
 /** @internal */
@@ -1912,26 +2093,22 @@ export namespace UpdateProjectDataCacheContentHintProjectsResponse200Application
 }
 
 /** @internal */
-export const UpdateProjectDataCacheContentHint9$inboundSchema: z.ZodType<
-    UpdateProjectDataCacheContentHint9,
-    z.ZodTypeDef,
-    unknown
-> = z.object({
+export const ContentHint9$inboundSchema: z.ZodType<ContentHint9, z.ZodTypeDef, unknown> = z.object({
     type: UpdateProjectDataCacheContentHintProjectsResponse200ApplicationJSONResponseBodyEnv9Type$inboundSchema,
     storeId: z.string(),
 });
 
 /** @internal */
-export type UpdateProjectDataCacheContentHint9$Outbound = {
+export type ContentHint9$Outbound = {
     type: string;
     storeId: string;
 };
 
 /** @internal */
-export const UpdateProjectDataCacheContentHint9$outboundSchema: z.ZodType<
-    UpdateProjectDataCacheContentHint9$Outbound,
+export const ContentHint9$outboundSchema: z.ZodType<
+    ContentHint9$Outbound,
     z.ZodTypeDef,
-    UpdateProjectDataCacheContentHint9
+    ContentHint9
 > = z.object({
     type: UpdateProjectDataCacheContentHintProjectsResponse200ApplicationJSONResponseBodyEnv9Type$outboundSchema,
     storeId: z.string(),
@@ -1941,13 +2118,13 @@ export const UpdateProjectDataCacheContentHint9$outboundSchema: z.ZodType<
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace UpdateProjectDataCacheContentHint9$ {
-    /** @deprecated use `UpdateProjectDataCacheContentHint9$inboundSchema` instead. */
-    export const inboundSchema = UpdateProjectDataCacheContentHint9$inboundSchema;
-    /** @deprecated use `UpdateProjectDataCacheContentHint9$outboundSchema` instead. */
-    export const outboundSchema = UpdateProjectDataCacheContentHint9$outboundSchema;
-    /** @deprecated use `UpdateProjectDataCacheContentHint9$Outbound` instead. */
-    export type Outbound = UpdateProjectDataCacheContentHint9$Outbound;
+export namespace ContentHint9$ {
+    /** @deprecated use `ContentHint9$inboundSchema` instead. */
+    export const inboundSchema = ContentHint9$inboundSchema;
+    /** @deprecated use `ContentHint9$outboundSchema` instead. */
+    export const outboundSchema = ContentHint9$outboundSchema;
+    /** @deprecated use `ContentHint9$Outbound` instead. */
+    export type Outbound = ContentHint9$Outbound;
 }
 
 /** @internal */
@@ -1977,26 +2154,22 @@ export namespace UpdateProjectDataCacheContentHintProjectsResponse200Application
 }
 
 /** @internal */
-export const UpdateProjectDataCacheContentHint8$inboundSchema: z.ZodType<
-    UpdateProjectDataCacheContentHint8,
-    z.ZodTypeDef,
-    unknown
-> = z.object({
+export const ContentHint8$inboundSchema: z.ZodType<ContentHint8, z.ZodTypeDef, unknown> = z.object({
     type: UpdateProjectDataCacheContentHintProjectsResponse200ApplicationJSONResponseBodyEnvType$inboundSchema,
     storeId: z.string(),
 });
 
 /** @internal */
-export type UpdateProjectDataCacheContentHint8$Outbound = {
+export type ContentHint8$Outbound = {
     type: string;
     storeId: string;
 };
 
 /** @internal */
-export const UpdateProjectDataCacheContentHint8$outboundSchema: z.ZodType<
-    UpdateProjectDataCacheContentHint8$Outbound,
+export const ContentHint8$outboundSchema: z.ZodType<
+    ContentHint8$Outbound,
     z.ZodTypeDef,
-    UpdateProjectDataCacheContentHint8
+    ContentHint8
 > = z.object({
     type: UpdateProjectDataCacheContentHintProjectsResponse200ApplicationJSONResponseBodyEnvType$outboundSchema,
     storeId: z.string(),
@@ -2006,13 +2179,13 @@ export const UpdateProjectDataCacheContentHint8$outboundSchema: z.ZodType<
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace UpdateProjectDataCacheContentHint8$ {
-    /** @deprecated use `UpdateProjectDataCacheContentHint8$inboundSchema` instead. */
-    export const inboundSchema = UpdateProjectDataCacheContentHint8$inboundSchema;
-    /** @deprecated use `UpdateProjectDataCacheContentHint8$outboundSchema` instead. */
-    export const outboundSchema = UpdateProjectDataCacheContentHint8$outboundSchema;
-    /** @deprecated use `UpdateProjectDataCacheContentHint8$Outbound` instead. */
-    export type Outbound = UpdateProjectDataCacheContentHint8$Outbound;
+export namespace ContentHint8$ {
+    /** @deprecated use `ContentHint8$inboundSchema` instead. */
+    export const inboundSchema = ContentHint8$inboundSchema;
+    /** @deprecated use `ContentHint8$outboundSchema` instead. */
+    export const outboundSchema = ContentHint8$outboundSchema;
+    /** @deprecated use `ContentHint8$Outbound` instead. */
+    export type Outbound = ContentHint8$Outbound;
 }
 
 /** @internal */
@@ -2042,26 +2215,22 @@ export namespace UpdateProjectDataCacheContentHintProjectsResponse200Application
 }
 
 /** @internal */
-export const UpdateProjectDataCacheContentHint7$inboundSchema: z.ZodType<
-    UpdateProjectDataCacheContentHint7,
-    z.ZodTypeDef,
-    unknown
-> = z.object({
+export const ContentHint7$inboundSchema: z.ZodType<ContentHint7, z.ZodTypeDef, unknown> = z.object({
     type: UpdateProjectDataCacheContentHintProjectsResponse200ApplicationJSONResponseBodyType$inboundSchema,
     storeId: z.string(),
 });
 
 /** @internal */
-export type UpdateProjectDataCacheContentHint7$Outbound = {
+export type ContentHint7$Outbound = {
     type: string;
     storeId: string;
 };
 
 /** @internal */
-export const UpdateProjectDataCacheContentHint7$outboundSchema: z.ZodType<
-    UpdateProjectDataCacheContentHint7$Outbound,
+export const ContentHint7$outboundSchema: z.ZodType<
+    ContentHint7$Outbound,
     z.ZodTypeDef,
-    UpdateProjectDataCacheContentHint7
+    ContentHint7
 > = z.object({
     type: UpdateProjectDataCacheContentHintProjectsResponse200ApplicationJSONResponseBodyType$outboundSchema,
     storeId: z.string(),
@@ -2071,13 +2240,13 @@ export const UpdateProjectDataCacheContentHint7$outboundSchema: z.ZodType<
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace UpdateProjectDataCacheContentHint7$ {
-    /** @deprecated use `UpdateProjectDataCacheContentHint7$inboundSchema` instead. */
-    export const inboundSchema = UpdateProjectDataCacheContentHint7$inboundSchema;
-    /** @deprecated use `UpdateProjectDataCacheContentHint7$outboundSchema` instead. */
-    export const outboundSchema = UpdateProjectDataCacheContentHint7$outboundSchema;
-    /** @deprecated use `UpdateProjectDataCacheContentHint7$Outbound` instead. */
-    export type Outbound = UpdateProjectDataCacheContentHint7$Outbound;
+export namespace ContentHint7$ {
+    /** @deprecated use `ContentHint7$inboundSchema` instead. */
+    export const inboundSchema = ContentHint7$inboundSchema;
+    /** @deprecated use `ContentHint7$outboundSchema` instead. */
+    export const outboundSchema = ContentHint7$outboundSchema;
+    /** @deprecated use `ContentHint7$Outbound` instead. */
+    export type Outbound = ContentHint7$Outbound;
 }
 
 /** @internal */
@@ -2104,26 +2273,22 @@ export namespace UpdateProjectDataCacheContentHintProjectsResponse200Application
 }
 
 /** @internal */
-export const UpdateProjectDataCacheContentHint6$inboundSchema: z.ZodType<
-    UpdateProjectDataCacheContentHint6,
-    z.ZodTypeDef,
-    unknown
-> = z.object({
+export const ContentHint6$inboundSchema: z.ZodType<ContentHint6, z.ZodTypeDef, unknown> = z.object({
     type: UpdateProjectDataCacheContentHintProjectsResponse200ApplicationJSONType$inboundSchema,
     storeId: z.string(),
 });
 
 /** @internal */
-export type UpdateProjectDataCacheContentHint6$Outbound = {
+export type ContentHint6$Outbound = {
     type: string;
     storeId: string;
 };
 
 /** @internal */
-export const UpdateProjectDataCacheContentHint6$outboundSchema: z.ZodType<
-    UpdateProjectDataCacheContentHint6$Outbound,
+export const ContentHint6$outboundSchema: z.ZodType<
+    ContentHint6$Outbound,
     z.ZodTypeDef,
-    UpdateProjectDataCacheContentHint6
+    ContentHint6
 > = z.object({
     type: UpdateProjectDataCacheContentHintProjectsResponse200ApplicationJSONType$outboundSchema,
     storeId: z.string(),
@@ -2133,13 +2298,13 @@ export const UpdateProjectDataCacheContentHint6$outboundSchema: z.ZodType<
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace UpdateProjectDataCacheContentHint6$ {
-    /** @deprecated use `UpdateProjectDataCacheContentHint6$inboundSchema` instead. */
-    export const inboundSchema = UpdateProjectDataCacheContentHint6$inboundSchema;
-    /** @deprecated use `UpdateProjectDataCacheContentHint6$outboundSchema` instead. */
-    export const outboundSchema = UpdateProjectDataCacheContentHint6$outboundSchema;
-    /** @deprecated use `UpdateProjectDataCacheContentHint6$Outbound` instead. */
-    export type Outbound = UpdateProjectDataCacheContentHint6$Outbound;
+export namespace ContentHint6$ {
+    /** @deprecated use `ContentHint6$inboundSchema` instead. */
+    export const inboundSchema = ContentHint6$inboundSchema;
+    /** @deprecated use `ContentHint6$outboundSchema` instead. */
+    export const outboundSchema = ContentHint6$outboundSchema;
+    /** @deprecated use `ContentHint6$Outbound` instead. */
+    export type Outbound = ContentHint6$Outbound;
 }
 
 /** @internal */
@@ -2166,26 +2331,22 @@ export namespace UpdateProjectDataCacheContentHintProjectsResponse200Type$ {
 }
 
 /** @internal */
-export const UpdateProjectDataCacheContentHint5$inboundSchema: z.ZodType<
-    UpdateProjectDataCacheContentHint5,
-    z.ZodTypeDef,
-    unknown
-> = z.object({
+export const ContentHint5$inboundSchema: z.ZodType<ContentHint5, z.ZodTypeDef, unknown> = z.object({
     type: UpdateProjectDataCacheContentHintProjectsResponse200Type$inboundSchema,
     storeId: z.string(),
 });
 
 /** @internal */
-export type UpdateProjectDataCacheContentHint5$Outbound = {
+export type ContentHint5$Outbound = {
     type: string;
     storeId: string;
 };
 
 /** @internal */
-export const UpdateProjectDataCacheContentHint5$outboundSchema: z.ZodType<
-    UpdateProjectDataCacheContentHint5$Outbound,
+export const ContentHint5$outboundSchema: z.ZodType<
+    ContentHint5$Outbound,
     z.ZodTypeDef,
-    UpdateProjectDataCacheContentHint5
+    ContentHint5
 > = z.object({
     type: UpdateProjectDataCacheContentHintProjectsResponse200Type$outboundSchema,
     storeId: z.string(),
@@ -2195,13 +2356,13 @@ export const UpdateProjectDataCacheContentHint5$outboundSchema: z.ZodType<
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace UpdateProjectDataCacheContentHint5$ {
-    /** @deprecated use `UpdateProjectDataCacheContentHint5$inboundSchema` instead. */
-    export const inboundSchema = UpdateProjectDataCacheContentHint5$inboundSchema;
-    /** @deprecated use `UpdateProjectDataCacheContentHint5$outboundSchema` instead. */
-    export const outboundSchema = UpdateProjectDataCacheContentHint5$outboundSchema;
-    /** @deprecated use `UpdateProjectDataCacheContentHint5$Outbound` instead. */
-    export type Outbound = UpdateProjectDataCacheContentHint5$Outbound;
+export namespace ContentHint5$ {
+    /** @deprecated use `ContentHint5$inboundSchema` instead. */
+    export const inboundSchema = ContentHint5$inboundSchema;
+    /** @deprecated use `ContentHint5$outboundSchema` instead. */
+    export const outboundSchema = ContentHint5$outboundSchema;
+    /** @deprecated use `ContentHint5$Outbound` instead. */
+    export type Outbound = ContentHint5$Outbound;
 }
 
 /** @internal */
@@ -2228,26 +2389,22 @@ export namespace UpdateProjectDataCacheContentHintProjectsResponseType$ {
 }
 
 /** @internal */
-export const UpdateProjectDataCacheContentHint4$inboundSchema: z.ZodType<
-    UpdateProjectDataCacheContentHint4,
-    z.ZodTypeDef,
-    unknown
-> = z.object({
+export const ContentHint4$inboundSchema: z.ZodType<ContentHint4, z.ZodTypeDef, unknown> = z.object({
     type: UpdateProjectDataCacheContentHintProjectsResponseType$inboundSchema,
     storeId: z.string(),
 });
 
 /** @internal */
-export type UpdateProjectDataCacheContentHint4$Outbound = {
+export type ContentHint4$Outbound = {
     type: string;
     storeId: string;
 };
 
 /** @internal */
-export const UpdateProjectDataCacheContentHint4$outboundSchema: z.ZodType<
-    UpdateProjectDataCacheContentHint4$Outbound,
+export const ContentHint4$outboundSchema: z.ZodType<
+    ContentHint4$Outbound,
     z.ZodTypeDef,
-    UpdateProjectDataCacheContentHint4
+    ContentHint4
 > = z.object({
     type: UpdateProjectDataCacheContentHintProjectsResponseType$outboundSchema,
     storeId: z.string(),
@@ -2257,13 +2414,13 @@ export const UpdateProjectDataCacheContentHint4$outboundSchema: z.ZodType<
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace UpdateProjectDataCacheContentHint4$ {
-    /** @deprecated use `UpdateProjectDataCacheContentHint4$inboundSchema` instead. */
-    export const inboundSchema = UpdateProjectDataCacheContentHint4$inboundSchema;
-    /** @deprecated use `UpdateProjectDataCacheContentHint4$outboundSchema` instead. */
-    export const outboundSchema = UpdateProjectDataCacheContentHint4$outboundSchema;
-    /** @deprecated use `UpdateProjectDataCacheContentHint4$Outbound` instead. */
-    export type Outbound = UpdateProjectDataCacheContentHint4$Outbound;
+export namespace ContentHint4$ {
+    /** @deprecated use `ContentHint4$inboundSchema` instead. */
+    export const inboundSchema = ContentHint4$inboundSchema;
+    /** @deprecated use `ContentHint4$outboundSchema` instead. */
+    export const outboundSchema = ContentHint4$outboundSchema;
+    /** @deprecated use `ContentHint4$Outbound` instead. */
+    export type Outbound = ContentHint4$Outbound;
 }
 
 /** @internal */
@@ -2288,26 +2445,22 @@ export namespace UpdateProjectDataCacheContentHintProjectsType$ {
 }
 
 /** @internal */
-export const UpdateProjectDataCacheContentHint3$inboundSchema: z.ZodType<
-    UpdateProjectDataCacheContentHint3,
-    z.ZodTypeDef,
-    unknown
-> = z.object({
+export const ContentHint3$inboundSchema: z.ZodType<ContentHint3, z.ZodTypeDef, unknown> = z.object({
     type: UpdateProjectDataCacheContentHintProjectsType$inboundSchema,
     storeId: z.string(),
 });
 
 /** @internal */
-export type UpdateProjectDataCacheContentHint3$Outbound = {
+export type ContentHint3$Outbound = {
     type: string;
     storeId: string;
 };
 
 /** @internal */
-export const UpdateProjectDataCacheContentHint3$outboundSchema: z.ZodType<
-    UpdateProjectDataCacheContentHint3$Outbound,
+export const ContentHint3$outboundSchema: z.ZodType<
+    ContentHint3$Outbound,
     z.ZodTypeDef,
-    UpdateProjectDataCacheContentHint3
+    ContentHint3
 > = z.object({
     type: UpdateProjectDataCacheContentHintProjectsType$outboundSchema,
     storeId: z.string(),
@@ -2317,13 +2470,13 @@ export const UpdateProjectDataCacheContentHint3$outboundSchema: z.ZodType<
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace UpdateProjectDataCacheContentHint3$ {
-    /** @deprecated use `UpdateProjectDataCacheContentHint3$inboundSchema` instead. */
-    export const inboundSchema = UpdateProjectDataCacheContentHint3$inboundSchema;
-    /** @deprecated use `UpdateProjectDataCacheContentHint3$outboundSchema` instead. */
-    export const outboundSchema = UpdateProjectDataCacheContentHint3$outboundSchema;
-    /** @deprecated use `UpdateProjectDataCacheContentHint3$Outbound` instead. */
-    export type Outbound = UpdateProjectDataCacheContentHint3$Outbound;
+export namespace ContentHint3$ {
+    /** @deprecated use `ContentHint3$inboundSchema` instead. */
+    export const inboundSchema = ContentHint3$inboundSchema;
+    /** @deprecated use `ContentHint3$outboundSchema` instead. */
+    export const outboundSchema = ContentHint3$outboundSchema;
+    /** @deprecated use `ContentHint3$Outbound` instead. */
+    export type Outbound = ContentHint3$Outbound;
 }
 
 /** @internal */
@@ -2348,26 +2501,22 @@ export namespace UpdateProjectDataCacheContentHintType$ {
 }
 
 /** @internal */
-export const UpdateProjectDataCacheContentHint2$inboundSchema: z.ZodType<
-    UpdateProjectDataCacheContentHint2,
-    z.ZodTypeDef,
-    unknown
-> = z.object({
+export const ContentHint2$inboundSchema: z.ZodType<ContentHint2, z.ZodTypeDef, unknown> = z.object({
     type: UpdateProjectDataCacheContentHintType$inboundSchema,
     storeId: z.string(),
 });
 
 /** @internal */
-export type UpdateProjectDataCacheContentHint2$Outbound = {
+export type ContentHint2$Outbound = {
     type: string;
     storeId: string;
 };
 
 /** @internal */
-export const UpdateProjectDataCacheContentHint2$outboundSchema: z.ZodType<
-    UpdateProjectDataCacheContentHint2$Outbound,
+export const ContentHint2$outboundSchema: z.ZodType<
+    ContentHint2$Outbound,
     z.ZodTypeDef,
-    UpdateProjectDataCacheContentHint2
+    ContentHint2
 > = z.object({
     type: UpdateProjectDataCacheContentHintType$outboundSchema,
     storeId: z.string(),
@@ -2377,64 +2526,53 @@ export const UpdateProjectDataCacheContentHint2$outboundSchema: z.ZodType<
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace UpdateProjectDataCacheContentHint2$ {
-    /** @deprecated use `UpdateProjectDataCacheContentHint2$inboundSchema` instead. */
-    export const inboundSchema = UpdateProjectDataCacheContentHint2$inboundSchema;
-    /** @deprecated use `UpdateProjectDataCacheContentHint2$outboundSchema` instead. */
-    export const outboundSchema = UpdateProjectDataCacheContentHint2$outboundSchema;
-    /** @deprecated use `UpdateProjectDataCacheContentHint2$Outbound` instead. */
-    export type Outbound = UpdateProjectDataCacheContentHint2$Outbound;
+export namespace ContentHint2$ {
+    /** @deprecated use `ContentHint2$inboundSchema` instead. */
+    export const inboundSchema = ContentHint2$inboundSchema;
+    /** @deprecated use `ContentHint2$outboundSchema` instead. */
+    export const outboundSchema = ContentHint2$outboundSchema;
+    /** @deprecated use `ContentHint2$Outbound` instead. */
+    export type Outbound = ContentHint2$Outbound;
 }
 
 /** @internal */
-export const UpdateProjectDataCacheContentHintProjectsResponse200ApplicationJSONResponseBodyEnv1Type$inboundSchema: z.ZodNativeEnum<
-    typeof UpdateProjectDataCacheContentHintProjectsResponse200ApplicationJSONResponseBodyEnv1Type
-> = z.nativeEnum(
-    UpdateProjectDataCacheContentHintProjectsResponse200ApplicationJSONResponseBodyEnv1Type
-);
+export const ContentHintType$inboundSchema: z.ZodNativeEnum<typeof ContentHintType> =
+    z.nativeEnum(ContentHintType);
 
 /** @internal */
-export const UpdateProjectDataCacheContentHintProjectsResponse200ApplicationJSONResponseBodyEnv1Type$outboundSchema: z.ZodNativeEnum<
-    typeof UpdateProjectDataCacheContentHintProjectsResponse200ApplicationJSONResponseBodyEnv1Type
-> =
-    UpdateProjectDataCacheContentHintProjectsResponse200ApplicationJSONResponseBodyEnv1Type$inboundSchema;
+export const ContentHintType$outboundSchema: z.ZodNativeEnum<typeof ContentHintType> =
+    ContentHintType$inboundSchema;
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace UpdateProjectDataCacheContentHintProjectsResponse200ApplicationJSONResponseBodyEnv1Type$ {
-    /** @deprecated use `UpdateProjectDataCacheContentHintProjectsResponse200ApplicationJSONResponseBodyEnv1Type$inboundSchema` instead. */
-    export const inboundSchema =
-        UpdateProjectDataCacheContentHintProjectsResponse200ApplicationJSONResponseBodyEnv1Type$inboundSchema;
-    /** @deprecated use `UpdateProjectDataCacheContentHintProjectsResponse200ApplicationJSONResponseBodyEnv1Type$outboundSchema` instead. */
-    export const outboundSchema =
-        UpdateProjectDataCacheContentHintProjectsResponse200ApplicationJSONResponseBodyEnv1Type$outboundSchema;
+export namespace ContentHintType$ {
+    /** @deprecated use `ContentHintType$inboundSchema` instead. */
+    export const inboundSchema = ContentHintType$inboundSchema;
+    /** @deprecated use `ContentHintType$outboundSchema` instead. */
+    export const outboundSchema = ContentHintType$outboundSchema;
 }
 
 /** @internal */
-export const UpdateProjectDataCacheContentHint1$inboundSchema: z.ZodType<
-    UpdateProjectDataCacheContentHint1,
-    z.ZodTypeDef,
-    unknown
-> = z.object({
-    type: UpdateProjectDataCacheContentHintProjectsResponse200ApplicationJSONResponseBodyEnv1Type$inboundSchema,
+export const ContentHint1$inboundSchema: z.ZodType<ContentHint1, z.ZodTypeDef, unknown> = z.object({
+    type: ContentHintType$inboundSchema,
     storeId: z.string(),
 });
 
 /** @internal */
-export type UpdateProjectDataCacheContentHint1$Outbound = {
+export type ContentHint1$Outbound = {
     type: string;
     storeId: string;
 };
 
 /** @internal */
-export const UpdateProjectDataCacheContentHint1$outboundSchema: z.ZodType<
-    UpdateProjectDataCacheContentHint1$Outbound,
+export const ContentHint1$outboundSchema: z.ZodType<
+    ContentHint1$Outbound,
     z.ZodTypeDef,
-    UpdateProjectDataCacheContentHint1
+    ContentHint1
 > = z.object({
-    type: UpdateProjectDataCacheContentHintProjectsResponse200ApplicationJSONResponseBodyEnv1Type$outboundSchema,
+    type: ContentHintType$outboundSchema,
     storeId: z.string(),
 });
 
@@ -2442,133 +2580,131 @@ export const UpdateProjectDataCacheContentHint1$outboundSchema: z.ZodType<
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace UpdateProjectDataCacheContentHint1$ {
-    /** @deprecated use `UpdateProjectDataCacheContentHint1$inboundSchema` instead. */
-    export const inboundSchema = UpdateProjectDataCacheContentHint1$inboundSchema;
-    /** @deprecated use `UpdateProjectDataCacheContentHint1$outboundSchema` instead. */
-    export const outboundSchema = UpdateProjectDataCacheContentHint1$outboundSchema;
-    /** @deprecated use `UpdateProjectDataCacheContentHint1$Outbound` instead. */
-    export type Outbound = UpdateProjectDataCacheContentHint1$Outbound;
+export namespace ContentHint1$ {
+    /** @deprecated use `ContentHint1$inboundSchema` instead. */
+    export const inboundSchema = ContentHint1$inboundSchema;
+    /** @deprecated use `ContentHint1$outboundSchema` instead. */
+    export const outboundSchema = ContentHint1$outboundSchema;
+    /** @deprecated use `ContentHint1$Outbound` instead. */
+    export type Outbound = ContentHint1$Outbound;
 }
 
 /** @internal */
-export const UpdateProjectDataCacheContentHint$inboundSchema: z.ZodType<
-    UpdateProjectDataCacheContentHint,
-    z.ZodTypeDef,
-    unknown
-> = z.union([
-    z.lazy(() => UpdateProjectDataCacheContentHint1$inboundSchema),
-    z.lazy(() => UpdateProjectDataCacheContentHint2$inboundSchema),
-    z.lazy(() => UpdateProjectDataCacheContentHint3$inboundSchema),
-    z.lazy(() => UpdateProjectDataCacheContentHint4$inboundSchema),
-    z.lazy(() => UpdateProjectDataCacheContentHint5$inboundSchema),
-    z.lazy(() => UpdateProjectDataCacheContentHint6$inboundSchema),
-    z.lazy(() => UpdateProjectDataCacheContentHint7$inboundSchema),
-    z.lazy(() => UpdateProjectDataCacheContentHint8$inboundSchema),
-    z.lazy(() => UpdateProjectDataCacheContentHint9$inboundSchema),
-    z.lazy(() => UpdateProjectDataCacheContentHint10$inboundSchema),
-    z.lazy(() => UpdateProjectDataCacheContentHint11$inboundSchema),
-    z.lazy(() => UpdateProjectDataCacheContentHint12$inboundSchema),
-    z.lazy(() => UpdateProjectDataCacheContentHint13$inboundSchema),
-    z.lazy(() => UpdateProjectDataCacheContentHint14$inboundSchema),
+export const ContentHint$inboundSchema: z.ZodType<ContentHint, z.ZodTypeDef, unknown> = z.union([
+    z.lazy(() => ContentHint1$inboundSchema),
+    z.lazy(() => ContentHint2$inboundSchema),
+    z.lazy(() => ContentHint3$inboundSchema),
+    z.lazy(() => ContentHint4$inboundSchema),
+    z.lazy(() => ContentHint5$inboundSchema),
+    z.lazy(() => ContentHint6$inboundSchema),
+    z.lazy(() => ContentHint7$inboundSchema),
+    z.lazy(() => ContentHint8$inboundSchema),
+    z.lazy(() => ContentHint9$inboundSchema),
+    z.lazy(() => ContentHint10$inboundSchema),
+    z.lazy(() => Eleven$inboundSchema),
+    z.lazy(() => Twelve$inboundSchema),
+    z.lazy(() => Thirteen$inboundSchema),
+    z.lazy(() => Fourteen$inboundSchema),
 ]);
 
 /** @internal */
-export type UpdateProjectDataCacheContentHint$Outbound =
-    | UpdateProjectDataCacheContentHint1$Outbound
-    | UpdateProjectDataCacheContentHint2$Outbound
-    | UpdateProjectDataCacheContentHint3$Outbound
-    | UpdateProjectDataCacheContentHint4$Outbound
-    | UpdateProjectDataCacheContentHint5$Outbound
-    | UpdateProjectDataCacheContentHint6$Outbound
-    | UpdateProjectDataCacheContentHint7$Outbound
-    | UpdateProjectDataCacheContentHint8$Outbound
-    | UpdateProjectDataCacheContentHint9$Outbound
-    | UpdateProjectDataCacheContentHint10$Outbound
-    | UpdateProjectDataCacheContentHint11$Outbound
-    | UpdateProjectDataCacheContentHint12$Outbound
-    | UpdateProjectDataCacheContentHint13$Outbound
-    | UpdateProjectDataCacheContentHint14$Outbound;
+export type ContentHint$Outbound =
+    | ContentHint1$Outbound
+    | ContentHint2$Outbound
+    | ContentHint3$Outbound
+    | ContentHint4$Outbound
+    | ContentHint5$Outbound
+    | ContentHint6$Outbound
+    | ContentHint7$Outbound
+    | ContentHint8$Outbound
+    | ContentHint9$Outbound
+    | ContentHint10$Outbound
+    | Eleven$Outbound
+    | Twelve$Outbound
+    | Thirteen$Outbound
+    | Fourteen$Outbound;
 
 /** @internal */
-export const UpdateProjectDataCacheContentHint$outboundSchema: z.ZodType<
-    UpdateProjectDataCacheContentHint$Outbound,
+export const ContentHint$outboundSchema: z.ZodType<
+    ContentHint$Outbound,
     z.ZodTypeDef,
-    UpdateProjectDataCacheContentHint
+    ContentHint
 > = z.union([
-    z.lazy(() => UpdateProjectDataCacheContentHint1$outboundSchema),
-    z.lazy(() => UpdateProjectDataCacheContentHint2$outboundSchema),
-    z.lazy(() => UpdateProjectDataCacheContentHint3$outboundSchema),
-    z.lazy(() => UpdateProjectDataCacheContentHint4$outboundSchema),
-    z.lazy(() => UpdateProjectDataCacheContentHint5$outboundSchema),
-    z.lazy(() => UpdateProjectDataCacheContentHint6$outboundSchema),
-    z.lazy(() => UpdateProjectDataCacheContentHint7$outboundSchema),
-    z.lazy(() => UpdateProjectDataCacheContentHint8$outboundSchema),
-    z.lazy(() => UpdateProjectDataCacheContentHint9$outboundSchema),
-    z.lazy(() => UpdateProjectDataCacheContentHint10$outboundSchema),
-    z.lazy(() => UpdateProjectDataCacheContentHint11$outboundSchema),
-    z.lazy(() => UpdateProjectDataCacheContentHint12$outboundSchema),
-    z.lazy(() => UpdateProjectDataCacheContentHint13$outboundSchema),
-    z.lazy(() => UpdateProjectDataCacheContentHint14$outboundSchema),
+    z.lazy(() => ContentHint1$outboundSchema),
+    z.lazy(() => ContentHint2$outboundSchema),
+    z.lazy(() => ContentHint3$outboundSchema),
+    z.lazy(() => ContentHint4$outboundSchema),
+    z.lazy(() => ContentHint5$outboundSchema),
+    z.lazy(() => ContentHint6$outboundSchema),
+    z.lazy(() => ContentHint7$outboundSchema),
+    z.lazy(() => ContentHint8$outboundSchema),
+    z.lazy(() => ContentHint9$outboundSchema),
+    z.lazy(() => ContentHint10$outboundSchema),
+    z.lazy(() => Eleven$outboundSchema),
+    z.lazy(() => Twelve$outboundSchema),
+    z.lazy(() => Thirteen$outboundSchema),
+    z.lazy(() => Fourteen$outboundSchema),
 ]);
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace UpdateProjectDataCacheContentHint$ {
-    /** @deprecated use `UpdateProjectDataCacheContentHint$inboundSchema` instead. */
-    export const inboundSchema = UpdateProjectDataCacheContentHint$inboundSchema;
-    /** @deprecated use `UpdateProjectDataCacheContentHint$outboundSchema` instead. */
-    export const outboundSchema = UpdateProjectDataCacheContentHint$outboundSchema;
-    /** @deprecated use `UpdateProjectDataCacheContentHint$Outbound` instead. */
-    export type Outbound = UpdateProjectDataCacheContentHint$Outbound;
+export namespace ContentHint$ {
+    /** @deprecated use `ContentHint$inboundSchema` instead. */
+    export const inboundSchema = ContentHint$inboundSchema;
+    /** @deprecated use `ContentHint$outboundSchema` instead. */
+    export const outboundSchema = ContentHint$outboundSchema;
+    /** @deprecated use `ContentHint$Outbound` instead. */
+    export type Outbound = ContentHint$Outbound;
 }
 
 /** @internal */
-export const UpdateProjectDataCacheProjectsResponse200Type$inboundSchema: z.ZodNativeEnum<
-    typeof UpdateProjectDataCacheProjectsResponse200Type
-> = z.nativeEnum(UpdateProjectDataCacheProjectsResponse200Type);
+export const UpdateProjectDataCacheProjectsResponse200ApplicationJSONType$inboundSchema: z.ZodNativeEnum<
+    typeof UpdateProjectDataCacheProjectsResponse200ApplicationJSONType
+> = z.nativeEnum(UpdateProjectDataCacheProjectsResponse200ApplicationJSONType);
 
 /** @internal */
-export const UpdateProjectDataCacheProjectsResponse200Type$outboundSchema: z.ZodNativeEnum<
-    typeof UpdateProjectDataCacheProjectsResponse200Type
-> = UpdateProjectDataCacheProjectsResponse200Type$inboundSchema;
+export const UpdateProjectDataCacheProjectsResponse200ApplicationJSONType$outboundSchema: z.ZodNativeEnum<
+    typeof UpdateProjectDataCacheProjectsResponse200ApplicationJSONType
+> = UpdateProjectDataCacheProjectsResponse200ApplicationJSONType$inboundSchema;
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace UpdateProjectDataCacheProjectsResponse200Type$ {
-    /** @deprecated use `UpdateProjectDataCacheProjectsResponse200Type$inboundSchema` instead. */
-    export const inboundSchema = UpdateProjectDataCacheProjectsResponse200Type$inboundSchema;
-    /** @deprecated use `UpdateProjectDataCacheProjectsResponse200Type$outboundSchema` instead. */
-    export const outboundSchema = UpdateProjectDataCacheProjectsResponse200Type$outboundSchema;
+export namespace UpdateProjectDataCacheProjectsResponse200ApplicationJSONType$ {
+    /** @deprecated use `UpdateProjectDataCacheProjectsResponse200ApplicationJSONType$inboundSchema` instead. */
+    export const inboundSchema =
+        UpdateProjectDataCacheProjectsResponse200ApplicationJSONType$inboundSchema;
+    /** @deprecated use `UpdateProjectDataCacheProjectsResponse200ApplicationJSONType$outboundSchema` instead. */
+    export const outboundSchema =
+        UpdateProjectDataCacheProjectsResponse200ApplicationJSONType$outboundSchema;
 }
 
 /** @internal */
-export const UpdateProjectDataCacheInternalContentHint$inboundSchema: z.ZodType<
-    UpdateProjectDataCacheInternalContentHint,
+export const InternalContentHint$inboundSchema: z.ZodType<
+    InternalContentHint,
     z.ZodTypeDef,
     unknown
 > = z.object({
-    type: UpdateProjectDataCacheProjectsResponse200Type$inboundSchema,
+    type: UpdateProjectDataCacheProjectsResponse200ApplicationJSONType$inboundSchema,
     encryptedValue: z.string(),
 });
 
 /** @internal */
-export type UpdateProjectDataCacheInternalContentHint$Outbound = {
+export type InternalContentHint$Outbound = {
     type: string;
     encryptedValue: string;
 };
 
 /** @internal */
-export const UpdateProjectDataCacheInternalContentHint$outboundSchema: z.ZodType<
-    UpdateProjectDataCacheInternalContentHint$Outbound,
+export const InternalContentHint$outboundSchema: z.ZodType<
+    InternalContentHint$Outbound,
     z.ZodTypeDef,
-    UpdateProjectDataCacheInternalContentHint
+    InternalContentHint
 > = z.object({
-    type: UpdateProjectDataCacheProjectsResponse200Type$outboundSchema,
+    type: UpdateProjectDataCacheProjectsResponse200ApplicationJSONType$outboundSchema,
     encryptedValue: z.string(),
 });
 
@@ -2576,13 +2712,13 @@ export const UpdateProjectDataCacheInternalContentHint$outboundSchema: z.ZodType
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace UpdateProjectDataCacheInternalContentHint$ {
-    /** @deprecated use `UpdateProjectDataCacheInternalContentHint$inboundSchema` instead. */
-    export const inboundSchema = UpdateProjectDataCacheInternalContentHint$inboundSchema;
-    /** @deprecated use `UpdateProjectDataCacheInternalContentHint$outboundSchema` instead. */
-    export const outboundSchema = UpdateProjectDataCacheInternalContentHint$outboundSchema;
-    /** @deprecated use `UpdateProjectDataCacheInternalContentHint$Outbound` instead. */
-    export type Outbound = UpdateProjectDataCacheInternalContentHint$Outbound;
+export namespace InternalContentHint$ {
+    /** @deprecated use `InternalContentHint$inboundSchema` instead. */
+    export const inboundSchema = InternalContentHint$inboundSchema;
+    /** @deprecated use `InternalContentHint$outboundSchema` instead. */
+    export const outboundSchema = InternalContentHint$outboundSchema;
+    /** @deprecated use `InternalContentHint$Outbound` instead. */
+    export type Outbound = InternalContentHint$Outbound;
 }
 
 /** @internal */
@@ -2594,6 +2730,7 @@ export const Env$inboundSchema: z.ZodType<Env, z.ZodTypeDef, unknown> = z.object
         ])
         .optional(),
     type: UpdateProjectDataCacheType$inboundSchema,
+    sunsetSecretId: z.string().optional(),
     id: z.string().optional(),
     key: z.string(),
     value: z.string(),
@@ -2608,35 +2745,35 @@ export const Env$inboundSchema: z.ZodType<Env, z.ZodTypeDef, unknown> = z.object
     contentHint: z
         .nullable(
             z.union([
-                z.lazy(() => UpdateProjectDataCacheContentHint1$inboundSchema),
-                z.lazy(() => UpdateProjectDataCacheContentHint2$inboundSchema),
-                z.lazy(() => UpdateProjectDataCacheContentHint3$inboundSchema),
-                z.lazy(() => UpdateProjectDataCacheContentHint4$inboundSchema),
-                z.lazy(() => UpdateProjectDataCacheContentHint5$inboundSchema),
-                z.lazy(() => UpdateProjectDataCacheContentHint6$inboundSchema),
-                z.lazy(() => UpdateProjectDataCacheContentHint7$inboundSchema),
-                z.lazy(() => UpdateProjectDataCacheContentHint8$inboundSchema),
-                z.lazy(() => UpdateProjectDataCacheContentHint9$inboundSchema),
-                z.lazy(() => UpdateProjectDataCacheContentHint10$inboundSchema),
-                z.lazy(() => UpdateProjectDataCacheContentHint11$inboundSchema),
-                z.lazy(() => UpdateProjectDataCacheContentHint12$inboundSchema),
-                z.lazy(() => UpdateProjectDataCacheContentHint13$inboundSchema),
-                z.lazy(() => UpdateProjectDataCacheContentHint14$inboundSchema),
+                z.lazy(() => ContentHint1$inboundSchema),
+                z.lazy(() => ContentHint2$inboundSchema),
+                z.lazy(() => ContentHint3$inboundSchema),
+                z.lazy(() => ContentHint4$inboundSchema),
+                z.lazy(() => ContentHint5$inboundSchema),
+                z.lazy(() => ContentHint6$inboundSchema),
+                z.lazy(() => ContentHint7$inboundSchema),
+                z.lazy(() => ContentHint8$inboundSchema),
+                z.lazy(() => ContentHint9$inboundSchema),
+                z.lazy(() => ContentHint10$inboundSchema),
+                z.lazy(() => Eleven$inboundSchema),
+                z.lazy(() => Twelve$inboundSchema),
+                z.lazy(() => Thirteen$inboundSchema),
+                z.lazy(() => Fourteen$inboundSchema),
             ])
         )
         .optional(),
-    internalContentHint: z
-        .nullable(z.lazy(() => UpdateProjectDataCacheInternalContentHint$inboundSchema))
-        .optional(),
+    internalContentHint: z.nullable(z.lazy(() => InternalContentHint$inboundSchema)).optional(),
     decrypted: z.boolean().optional(),
     comment: z.string().optional(),
-    customEnvironmentId: z.string().optional(),
+    customEnvironmentIds: z.array(z.string()).optional(),
+    vsmValue: z.string().optional(),
 });
 
 /** @internal */
 export type Env$Outbound = {
     target?: Array<string> | string | undefined;
     type: string;
+    sunsetSecretId?: string | undefined;
     id?: string | undefined;
     key: string;
     value: string;
@@ -2649,26 +2786,27 @@ export type Env$Outbound = {
     edgeConfigId?: string | null | undefined;
     edgeConfigTokenId?: string | null | undefined;
     contentHint?:
-        | UpdateProjectDataCacheContentHint1$Outbound
-        | UpdateProjectDataCacheContentHint2$Outbound
-        | UpdateProjectDataCacheContentHint3$Outbound
-        | UpdateProjectDataCacheContentHint4$Outbound
-        | UpdateProjectDataCacheContentHint5$Outbound
-        | UpdateProjectDataCacheContentHint6$Outbound
-        | UpdateProjectDataCacheContentHint7$Outbound
-        | UpdateProjectDataCacheContentHint8$Outbound
-        | UpdateProjectDataCacheContentHint9$Outbound
-        | UpdateProjectDataCacheContentHint10$Outbound
-        | UpdateProjectDataCacheContentHint11$Outbound
-        | UpdateProjectDataCacheContentHint12$Outbound
-        | UpdateProjectDataCacheContentHint13$Outbound
-        | UpdateProjectDataCacheContentHint14$Outbound
+        | ContentHint1$Outbound
+        | ContentHint2$Outbound
+        | ContentHint3$Outbound
+        | ContentHint4$Outbound
+        | ContentHint5$Outbound
+        | ContentHint6$Outbound
+        | ContentHint7$Outbound
+        | ContentHint8$Outbound
+        | ContentHint9$Outbound
+        | ContentHint10$Outbound
+        | Eleven$Outbound
+        | Twelve$Outbound
+        | Thirteen$Outbound
+        | Fourteen$Outbound
         | null
         | undefined;
-    internalContentHint?: UpdateProjectDataCacheInternalContentHint$Outbound | null | undefined;
+    internalContentHint?: InternalContentHint$Outbound | null | undefined;
     decrypted?: boolean | undefined;
     comment?: string | undefined;
-    customEnvironmentId?: string | undefined;
+    customEnvironmentIds?: Array<string> | undefined;
+    vsmValue?: string | undefined;
 };
 
 /** @internal */
@@ -2680,6 +2818,7 @@ export const Env$outboundSchema: z.ZodType<Env$Outbound, z.ZodTypeDef, Env> = z.
         ])
         .optional(),
     type: UpdateProjectDataCacheType$outboundSchema,
+    sunsetSecretId: z.string().optional(),
     id: z.string().optional(),
     key: z.string(),
     value: z.string(),
@@ -2694,29 +2833,28 @@ export const Env$outboundSchema: z.ZodType<Env$Outbound, z.ZodTypeDef, Env> = z.
     contentHint: z
         .nullable(
             z.union([
-                z.lazy(() => UpdateProjectDataCacheContentHint1$outboundSchema),
-                z.lazy(() => UpdateProjectDataCacheContentHint2$outboundSchema),
-                z.lazy(() => UpdateProjectDataCacheContentHint3$outboundSchema),
-                z.lazy(() => UpdateProjectDataCacheContentHint4$outboundSchema),
-                z.lazy(() => UpdateProjectDataCacheContentHint5$outboundSchema),
-                z.lazy(() => UpdateProjectDataCacheContentHint6$outboundSchema),
-                z.lazy(() => UpdateProjectDataCacheContentHint7$outboundSchema),
-                z.lazy(() => UpdateProjectDataCacheContentHint8$outboundSchema),
-                z.lazy(() => UpdateProjectDataCacheContentHint9$outboundSchema),
-                z.lazy(() => UpdateProjectDataCacheContentHint10$outboundSchema),
-                z.lazy(() => UpdateProjectDataCacheContentHint11$outboundSchema),
-                z.lazy(() => UpdateProjectDataCacheContentHint12$outboundSchema),
-                z.lazy(() => UpdateProjectDataCacheContentHint13$outboundSchema),
-                z.lazy(() => UpdateProjectDataCacheContentHint14$outboundSchema),
+                z.lazy(() => ContentHint1$outboundSchema),
+                z.lazy(() => ContentHint2$outboundSchema),
+                z.lazy(() => ContentHint3$outboundSchema),
+                z.lazy(() => ContentHint4$outboundSchema),
+                z.lazy(() => ContentHint5$outboundSchema),
+                z.lazy(() => ContentHint6$outboundSchema),
+                z.lazy(() => ContentHint7$outboundSchema),
+                z.lazy(() => ContentHint8$outboundSchema),
+                z.lazy(() => ContentHint9$outboundSchema),
+                z.lazy(() => ContentHint10$outboundSchema),
+                z.lazy(() => Eleven$outboundSchema),
+                z.lazy(() => Twelve$outboundSchema),
+                z.lazy(() => Thirteen$outboundSchema),
+                z.lazy(() => Fourteen$outboundSchema),
             ])
         )
         .optional(),
-    internalContentHint: z
-        .nullable(z.lazy(() => UpdateProjectDataCacheInternalContentHint$outboundSchema))
-        .optional(),
+    internalContentHint: z.nullable(z.lazy(() => InternalContentHint$outboundSchema)).optional(),
     decrypted: z.boolean().optional(),
     comment: z.string().optional(),
-    customEnvironmentId: z.string().optional(),
+    customEnvironmentIds: z.array(z.string()).optional(),
+    vsmValue: z.string().optional(),
 });
 
 /**
@@ -2782,8 +2920,8 @@ export namespace AliasAssigned$ {
 }
 
 /** @internal */
-export const UpdateProjectDataCacheAliasError$inboundSchema: z.ZodType<
-    UpdateProjectDataCacheAliasError,
+export const UpdateProjectDataCacheProjectsAliasError$inboundSchema: z.ZodType<
+    UpdateProjectDataCacheProjectsAliasError,
     z.ZodTypeDef,
     unknown
 > = z.object({
@@ -2792,16 +2930,16 @@ export const UpdateProjectDataCacheAliasError$inboundSchema: z.ZodType<
 });
 
 /** @internal */
-export type UpdateProjectDataCacheAliasError$Outbound = {
+export type UpdateProjectDataCacheProjectsAliasError$Outbound = {
     code: string;
     message: string;
 };
 
 /** @internal */
-export const UpdateProjectDataCacheAliasError$outboundSchema: z.ZodType<
-    UpdateProjectDataCacheAliasError$Outbound,
+export const UpdateProjectDataCacheProjectsAliasError$outboundSchema: z.ZodType<
+    UpdateProjectDataCacheProjectsAliasError$Outbound,
     z.ZodTypeDef,
-    UpdateProjectDataCacheAliasError
+    UpdateProjectDataCacheProjectsAliasError
 > = z.object({
     code: z.string(),
     message: z.string(),
@@ -2811,13 +2949,13 @@ export const UpdateProjectDataCacheAliasError$outboundSchema: z.ZodType<
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace UpdateProjectDataCacheAliasError$ {
-    /** @deprecated use `UpdateProjectDataCacheAliasError$inboundSchema` instead. */
-    export const inboundSchema = UpdateProjectDataCacheAliasError$inboundSchema;
-    /** @deprecated use `UpdateProjectDataCacheAliasError$outboundSchema` instead. */
-    export const outboundSchema = UpdateProjectDataCacheAliasError$outboundSchema;
-    /** @deprecated use `UpdateProjectDataCacheAliasError$Outbound` instead. */
-    export type Outbound = UpdateProjectDataCacheAliasError$Outbound;
+export namespace UpdateProjectDataCacheProjectsAliasError$ {
+    /** @deprecated use `UpdateProjectDataCacheProjectsAliasError$inboundSchema` instead. */
+    export const inboundSchema = UpdateProjectDataCacheProjectsAliasError$inboundSchema;
+    /** @deprecated use `UpdateProjectDataCacheProjectsAliasError$outboundSchema` instead. */
+    export const outboundSchema = UpdateProjectDataCacheProjectsAliasError$outboundSchema;
+    /** @deprecated use `UpdateProjectDataCacheProjectsAliasError$Outbound` instead. */
+    export type Outbound = UpdateProjectDataCacheProjectsAliasError$Outbound;
 }
 
 /** @internal */
@@ -2863,8 +3001,8 @@ export namespace UpdateProjectDataCacheBuilds$ {
 }
 
 /** @internal */
-export const UpdateProjectDataCacheCreator$inboundSchema: z.ZodType<
-    UpdateProjectDataCacheCreator,
+export const UpdateProjectDataCacheProjectsCreator$inboundSchema: z.ZodType<
+    UpdateProjectDataCacheProjectsCreator,
     z.ZodTypeDef,
     unknown
 > = z.object({
@@ -2876,7 +3014,7 @@ export const UpdateProjectDataCacheCreator$inboundSchema: z.ZodType<
 });
 
 /** @internal */
-export type UpdateProjectDataCacheCreator$Outbound = {
+export type UpdateProjectDataCacheProjectsCreator$Outbound = {
     email: string;
     githubLogin?: string | undefined;
     gitlabLogin?: string | undefined;
@@ -2885,10 +3023,10 @@ export type UpdateProjectDataCacheCreator$Outbound = {
 };
 
 /** @internal */
-export const UpdateProjectDataCacheCreator$outboundSchema: z.ZodType<
-    UpdateProjectDataCacheCreator$Outbound,
+export const UpdateProjectDataCacheProjectsCreator$outboundSchema: z.ZodType<
+    UpdateProjectDataCacheProjectsCreator$Outbound,
     z.ZodTypeDef,
-    UpdateProjectDataCacheCreator
+    UpdateProjectDataCacheProjectsCreator
 > = z.object({
     email: z.string(),
     githubLogin: z.string().optional(),
@@ -2901,34 +3039,34 @@ export const UpdateProjectDataCacheCreator$outboundSchema: z.ZodType<
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace UpdateProjectDataCacheCreator$ {
-    /** @deprecated use `UpdateProjectDataCacheCreator$inboundSchema` instead. */
-    export const inboundSchema = UpdateProjectDataCacheCreator$inboundSchema;
-    /** @deprecated use `UpdateProjectDataCacheCreator$outboundSchema` instead. */
-    export const outboundSchema = UpdateProjectDataCacheCreator$outboundSchema;
-    /** @deprecated use `UpdateProjectDataCacheCreator$Outbound` instead. */
-    export type Outbound = UpdateProjectDataCacheCreator$Outbound;
+export namespace UpdateProjectDataCacheProjectsCreator$ {
+    /** @deprecated use `UpdateProjectDataCacheProjectsCreator$inboundSchema` instead. */
+    export const inboundSchema = UpdateProjectDataCacheProjectsCreator$inboundSchema;
+    /** @deprecated use `UpdateProjectDataCacheProjectsCreator$outboundSchema` instead. */
+    export const outboundSchema = UpdateProjectDataCacheProjectsCreator$outboundSchema;
+    /** @deprecated use `UpdateProjectDataCacheProjectsCreator$Outbound` instead. */
+    export type Outbound = UpdateProjectDataCacheProjectsCreator$Outbound;
 }
 
 /** @internal */
-export const UpdateProjectDataCachePlan$inboundSchema: z.ZodNativeEnum<
-    typeof UpdateProjectDataCachePlan
-> = z.nativeEnum(UpdateProjectDataCachePlan);
+export const UpdateProjectDataCacheProjectsPlan$inboundSchema: z.ZodNativeEnum<
+    typeof UpdateProjectDataCacheProjectsPlan
+> = z.nativeEnum(UpdateProjectDataCacheProjectsPlan);
 
 /** @internal */
-export const UpdateProjectDataCachePlan$outboundSchema: z.ZodNativeEnum<
-    typeof UpdateProjectDataCachePlan
-> = UpdateProjectDataCachePlan$inboundSchema;
+export const UpdateProjectDataCacheProjectsPlan$outboundSchema: z.ZodNativeEnum<
+    typeof UpdateProjectDataCacheProjectsPlan
+> = UpdateProjectDataCacheProjectsPlan$inboundSchema;
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace UpdateProjectDataCachePlan$ {
-    /** @deprecated use `UpdateProjectDataCachePlan$inboundSchema` instead. */
-    export const inboundSchema = UpdateProjectDataCachePlan$inboundSchema;
-    /** @deprecated use `UpdateProjectDataCachePlan$outboundSchema` instead. */
-    export const outboundSchema = UpdateProjectDataCachePlan$outboundSchema;
+export namespace UpdateProjectDataCacheProjectsPlan$ {
+    /** @deprecated use `UpdateProjectDataCacheProjectsPlan$inboundSchema` instead. */
+    export const inboundSchema = UpdateProjectDataCacheProjectsPlan$inboundSchema;
+    /** @deprecated use `UpdateProjectDataCacheProjectsPlan$outboundSchema` instead. */
+    export const outboundSchema = UpdateProjectDataCacheProjectsPlan$outboundSchema;
 }
 
 /** @internal */
@@ -2953,24 +3091,24 @@ export namespace UpdateProjectDataCacheReadyState$ {
 }
 
 /** @internal */
-export const UpdateProjectDataCacheReadySubstate$inboundSchema: z.ZodNativeEnum<
-    typeof UpdateProjectDataCacheReadySubstate
-> = z.nativeEnum(UpdateProjectDataCacheReadySubstate);
+export const UpdateProjectDataCacheProjectsReadySubstate$inboundSchema: z.ZodNativeEnum<
+    typeof UpdateProjectDataCacheProjectsReadySubstate
+> = z.nativeEnum(UpdateProjectDataCacheProjectsReadySubstate);
 
 /** @internal */
-export const UpdateProjectDataCacheReadySubstate$outboundSchema: z.ZodNativeEnum<
-    typeof UpdateProjectDataCacheReadySubstate
-> = UpdateProjectDataCacheReadySubstate$inboundSchema;
+export const UpdateProjectDataCacheProjectsReadySubstate$outboundSchema: z.ZodNativeEnum<
+    typeof UpdateProjectDataCacheProjectsReadySubstate
+> = UpdateProjectDataCacheProjectsReadySubstate$inboundSchema;
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace UpdateProjectDataCacheReadySubstate$ {
-    /** @deprecated use `UpdateProjectDataCacheReadySubstate$inboundSchema` instead. */
-    export const inboundSchema = UpdateProjectDataCacheReadySubstate$inboundSchema;
-    /** @deprecated use `UpdateProjectDataCacheReadySubstate$outboundSchema` instead. */
-    export const outboundSchema = UpdateProjectDataCacheReadySubstate$outboundSchema;
+export namespace UpdateProjectDataCacheProjectsReadySubstate$ {
+    /** @deprecated use `UpdateProjectDataCacheProjectsReadySubstate$inboundSchema` instead. */
+    export const inboundSchema = UpdateProjectDataCacheProjectsReadySubstate$inboundSchema;
+    /** @deprecated use `UpdateProjectDataCacheProjectsReadySubstate$outboundSchema` instead. */
+    export const outboundSchema = UpdateProjectDataCacheProjectsReadySubstate$outboundSchema;
 }
 
 /** @internal */
@@ -2995,72 +3133,75 @@ export namespace UpdateProjectDataCacheProjectsType$ {
 }
 
 /** @internal */
-export const UpdateProjectDataCacheChecksConclusion$inboundSchema: z.ZodNativeEnum<
-    typeof UpdateProjectDataCacheChecksConclusion
-> = z.nativeEnum(UpdateProjectDataCacheChecksConclusion);
+export const UpdateProjectDataCacheProjectsChecksConclusion$inboundSchema: z.ZodNativeEnum<
+    typeof UpdateProjectDataCacheProjectsChecksConclusion
+> = z.nativeEnum(UpdateProjectDataCacheProjectsChecksConclusion);
 
 /** @internal */
-export const UpdateProjectDataCacheChecksConclusion$outboundSchema: z.ZodNativeEnum<
-    typeof UpdateProjectDataCacheChecksConclusion
-> = UpdateProjectDataCacheChecksConclusion$inboundSchema;
+export const UpdateProjectDataCacheProjectsChecksConclusion$outboundSchema: z.ZodNativeEnum<
+    typeof UpdateProjectDataCacheProjectsChecksConclusion
+> = UpdateProjectDataCacheProjectsChecksConclusion$inboundSchema;
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace UpdateProjectDataCacheChecksConclusion$ {
-    /** @deprecated use `UpdateProjectDataCacheChecksConclusion$inboundSchema` instead. */
-    export const inboundSchema = UpdateProjectDataCacheChecksConclusion$inboundSchema;
-    /** @deprecated use `UpdateProjectDataCacheChecksConclusion$outboundSchema` instead. */
-    export const outboundSchema = UpdateProjectDataCacheChecksConclusion$outboundSchema;
+export namespace UpdateProjectDataCacheProjectsChecksConclusion$ {
+    /** @deprecated use `UpdateProjectDataCacheProjectsChecksConclusion$inboundSchema` instead. */
+    export const inboundSchema = UpdateProjectDataCacheProjectsChecksConclusion$inboundSchema;
+    /** @deprecated use `UpdateProjectDataCacheProjectsChecksConclusion$outboundSchema` instead. */
+    export const outboundSchema = UpdateProjectDataCacheProjectsChecksConclusion$outboundSchema;
 }
 
 /** @internal */
-export const UpdateProjectDataCacheChecksState$inboundSchema: z.ZodNativeEnum<
-    typeof UpdateProjectDataCacheChecksState
-> = z.nativeEnum(UpdateProjectDataCacheChecksState);
+export const UpdateProjectDataCacheProjectsChecksState$inboundSchema: z.ZodNativeEnum<
+    typeof UpdateProjectDataCacheProjectsChecksState
+> = z.nativeEnum(UpdateProjectDataCacheProjectsChecksState);
 
 /** @internal */
-export const UpdateProjectDataCacheChecksState$outboundSchema: z.ZodNativeEnum<
-    typeof UpdateProjectDataCacheChecksState
-> = UpdateProjectDataCacheChecksState$inboundSchema;
+export const UpdateProjectDataCacheProjectsChecksState$outboundSchema: z.ZodNativeEnum<
+    typeof UpdateProjectDataCacheProjectsChecksState
+> = UpdateProjectDataCacheProjectsChecksState$inboundSchema;
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace UpdateProjectDataCacheChecksState$ {
-    /** @deprecated use `UpdateProjectDataCacheChecksState$inboundSchema` instead. */
-    export const inboundSchema = UpdateProjectDataCacheChecksState$inboundSchema;
-    /** @deprecated use `UpdateProjectDataCacheChecksState$outboundSchema` instead. */
-    export const outboundSchema = UpdateProjectDataCacheChecksState$outboundSchema;
+export namespace UpdateProjectDataCacheProjectsChecksState$ {
+    /** @deprecated use `UpdateProjectDataCacheProjectsChecksState$inboundSchema` instead. */
+    export const inboundSchema = UpdateProjectDataCacheProjectsChecksState$inboundSchema;
+    /** @deprecated use `UpdateProjectDataCacheProjectsChecksState$outboundSchema` instead. */
+    export const outboundSchema = UpdateProjectDataCacheProjectsChecksState$outboundSchema;
 }
 
 /** @internal */
-export const OidcTokenClaims$inboundSchema: z.ZodType<OidcTokenClaims, z.ZodTypeDef, unknown> =
-    z.union([z.string(), z.array(z.string())]);
-
-/** @internal */
-export type OidcTokenClaims$Outbound = string | Array<string>;
-
-/** @internal */
-export const OidcTokenClaims$outboundSchema: z.ZodType<
-    OidcTokenClaims$Outbound,
+export const UpdateProjectDataCacheProjectsOidcTokenClaims$inboundSchema: z.ZodType<
+    UpdateProjectDataCacheProjectsOidcTokenClaims,
     z.ZodTypeDef,
-    OidcTokenClaims
+    unknown
+> = z.union([z.string(), z.array(z.string())]);
+
+/** @internal */
+export type UpdateProjectDataCacheProjectsOidcTokenClaims$Outbound = string | Array<string>;
+
+/** @internal */
+export const UpdateProjectDataCacheProjectsOidcTokenClaims$outboundSchema: z.ZodType<
+    UpdateProjectDataCacheProjectsOidcTokenClaims$Outbound,
+    z.ZodTypeDef,
+    UpdateProjectDataCacheProjectsOidcTokenClaims
 > = z.union([z.string(), z.array(z.string())]);
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace OidcTokenClaims$ {
-    /** @deprecated use `OidcTokenClaims$inboundSchema` instead. */
-    export const inboundSchema = OidcTokenClaims$inboundSchema;
-    /** @deprecated use `OidcTokenClaims$outboundSchema` instead. */
-    export const outboundSchema = OidcTokenClaims$outboundSchema;
-    /** @deprecated use `OidcTokenClaims$Outbound` instead. */
-    export type Outbound = OidcTokenClaims$Outbound;
+export namespace UpdateProjectDataCacheProjectsOidcTokenClaims$ {
+    /** @deprecated use `UpdateProjectDataCacheProjectsOidcTokenClaims$inboundSchema` instead. */
+    export const inboundSchema = UpdateProjectDataCacheProjectsOidcTokenClaims$inboundSchema;
+    /** @deprecated use `UpdateProjectDataCacheProjectsOidcTokenClaims$outboundSchema` instead. */
+    export const outboundSchema = UpdateProjectDataCacheProjectsOidcTokenClaims$outboundSchema;
+    /** @deprecated use `UpdateProjectDataCacheProjectsOidcTokenClaims$Outbound` instead. */
+    export type Outbound = UpdateProjectDataCacheProjectsOidcTokenClaims$Outbound;
 }
 
 /** @internal */
@@ -3069,7 +3210,7 @@ export const LatestDeployments$inboundSchema: z.ZodType<LatestDeployments, z.Zod
         alias: z.array(z.string()).optional(),
         aliasAssigned: z.nullable(z.union([z.number(), z.boolean()])).optional(),
         aliasError: z
-            .nullable(z.lazy(() => UpdateProjectDataCacheAliasError$inboundSchema))
+            .nullable(z.lazy(() => UpdateProjectDataCacheProjectsAliasError$inboundSchema))
             .optional(),
         aliasFinal: z.nullable(z.string()).optional(),
         automaticAliases: z.array(z.string()).optional(),
@@ -3078,17 +3219,18 @@ export const LatestDeployments$inboundSchema: z.ZodType<LatestDeployments, z.Zod
         connectConfigurationId: z.string().optional(),
         createdAt: z.number(),
         createdIn: z.string(),
-        creator: z.nullable(z.lazy(() => UpdateProjectDataCacheCreator$inboundSchema)),
+        creator: z.nullable(z.lazy(() => UpdateProjectDataCacheProjectsCreator$inboundSchema)),
+        deletedAt: z.number().optional(),
         deploymentHostname: z.string(),
         name: z.string(),
         forced: z.boolean().optional(),
         id: z.string(),
         meta: z.record(z.string()).optional(),
         monorepoManager: z.nullable(z.string()).optional(),
-        plan: UpdateProjectDataCachePlan$inboundSchema,
+        plan: UpdateProjectDataCacheProjectsPlan$inboundSchema,
         private: z.boolean(),
         readyState: UpdateProjectDataCacheReadyState$inboundSchema,
-        readySubstate: UpdateProjectDataCacheReadySubstate$inboundSchema.optional(),
+        readySubstate: UpdateProjectDataCacheProjectsReadySubstate$inboundSchema.optional(),
         requestedAt: z.number().optional(),
         target: z.nullable(z.string()).optional(),
         teamId: z.nullable(z.string()).optional(),
@@ -3096,8 +3238,8 @@ export const LatestDeployments$inboundSchema: z.ZodType<LatestDeployments, z.Zod
         url: z.string(),
         userId: z.string(),
         withCache: z.boolean().optional(),
-        checksConclusion: UpdateProjectDataCacheChecksConclusion$inboundSchema.optional(),
-        checksState: UpdateProjectDataCacheChecksState$inboundSchema.optional(),
+        checksConclusion: UpdateProjectDataCacheProjectsChecksConclusion$inboundSchema.optional(),
+        checksState: UpdateProjectDataCacheProjectsChecksState$inboundSchema.optional(),
         readyAt: z.number().optional(),
         buildingAt: z.number().optional(),
         previewCommentsEnabled: z.boolean().optional(),
@@ -3108,7 +3250,7 @@ export const LatestDeployments$inboundSchema: z.ZodType<LatestDeployments, z.Zod
 export type LatestDeployments$Outbound = {
     alias?: Array<string> | undefined;
     aliasAssigned?: number | boolean | null | undefined;
-    aliasError?: UpdateProjectDataCacheAliasError$Outbound | null | undefined;
+    aliasError?: UpdateProjectDataCacheProjectsAliasError$Outbound | null | undefined;
     aliasFinal?: string | null | undefined;
     automaticAliases?: Array<string> | undefined;
     builds?: Array<UpdateProjectDataCacheBuilds$Outbound> | undefined;
@@ -3116,7 +3258,8 @@ export type LatestDeployments$Outbound = {
     connectConfigurationId?: string | undefined;
     createdAt: number;
     createdIn: string;
-    creator: UpdateProjectDataCacheCreator$Outbound | null;
+    creator: UpdateProjectDataCacheProjectsCreator$Outbound | null;
+    deletedAt?: number | undefined;
     deploymentHostname: string;
     name: string;
     forced?: boolean | undefined;
@@ -3151,7 +3294,7 @@ export const LatestDeployments$outboundSchema: z.ZodType<
     alias: z.array(z.string()).optional(),
     aliasAssigned: z.nullable(z.union([z.number(), z.boolean()])).optional(),
     aliasError: z
-        .nullable(z.lazy(() => UpdateProjectDataCacheAliasError$outboundSchema))
+        .nullable(z.lazy(() => UpdateProjectDataCacheProjectsAliasError$outboundSchema))
         .optional(),
     aliasFinal: z.nullable(z.string()).optional(),
     automaticAliases: z.array(z.string()).optional(),
@@ -3160,17 +3303,18 @@ export const LatestDeployments$outboundSchema: z.ZodType<
     connectConfigurationId: z.string().optional(),
     createdAt: z.number(),
     createdIn: z.string(),
-    creator: z.nullable(z.lazy(() => UpdateProjectDataCacheCreator$outboundSchema)),
+    creator: z.nullable(z.lazy(() => UpdateProjectDataCacheProjectsCreator$outboundSchema)),
+    deletedAt: z.number().optional(),
     deploymentHostname: z.string(),
     name: z.string(),
     forced: z.boolean().optional(),
     id: z.string(),
     meta: z.record(z.string()).optional(),
     monorepoManager: z.nullable(z.string()).optional(),
-    plan: UpdateProjectDataCachePlan$outboundSchema,
+    plan: UpdateProjectDataCacheProjectsPlan$outboundSchema,
     private: z.boolean(),
     readyState: UpdateProjectDataCacheReadyState$outboundSchema,
-    readySubstate: UpdateProjectDataCacheReadySubstate$outboundSchema.optional(),
+    readySubstate: UpdateProjectDataCacheProjectsReadySubstate$outboundSchema.optional(),
     requestedAt: z.number().optional(),
     target: z.nullable(z.string()).optional(),
     teamId: z.nullable(z.string()).optional(),
@@ -3178,8 +3322,8 @@ export const LatestDeployments$outboundSchema: z.ZodType<
     url: z.string(),
     userId: z.string(),
     withCache: z.boolean().optional(),
-    checksConclusion: UpdateProjectDataCacheChecksConclusion$outboundSchema.optional(),
-    checksState: UpdateProjectDataCacheChecksState$outboundSchema.optional(),
+    checksConclusion: UpdateProjectDataCacheProjectsChecksConclusion$outboundSchema.optional(),
+    checksState: UpdateProjectDataCacheProjectsChecksState$outboundSchema.optional(),
     readyAt: z.number().optional(),
     buildingAt: z.number().optional(),
     previewCommentsEnabled: z.boolean().optional(),
@@ -3783,19 +3927,438 @@ export namespace UpdateProjectDataCacheSsoProtection$ {
 }
 
 /** @internal */
-export const Targets$inboundSchema: z.ZodType<Targets, z.ZodTypeDef, unknown> = z.union([
-    z.string(),
-    z.array(z.string()),
-]);
+export const UpdateProjectDataCacheAliasAssigned$inboundSchema: z.ZodType<
+    UpdateProjectDataCacheAliasAssigned,
+    z.ZodTypeDef,
+    unknown
+> = z.union([z.number(), z.boolean()]);
 
 /** @internal */
-export type Targets$Outbound = string | Array<string>;
+export type UpdateProjectDataCacheAliasAssigned$Outbound = number | boolean;
 
 /** @internal */
-export const Targets$outboundSchema: z.ZodType<Targets$Outbound, z.ZodTypeDef, Targets> = z.union([
-    z.string(),
-    z.array(z.string()),
-]);
+export const UpdateProjectDataCacheAliasAssigned$outboundSchema: z.ZodType<
+    UpdateProjectDataCacheAliasAssigned$Outbound,
+    z.ZodTypeDef,
+    UpdateProjectDataCacheAliasAssigned
+> = z.union([z.number(), z.boolean()]);
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace UpdateProjectDataCacheAliasAssigned$ {
+    /** @deprecated use `UpdateProjectDataCacheAliasAssigned$inboundSchema` instead. */
+    export const inboundSchema = UpdateProjectDataCacheAliasAssigned$inboundSchema;
+    /** @deprecated use `UpdateProjectDataCacheAliasAssigned$outboundSchema` instead. */
+    export const outboundSchema = UpdateProjectDataCacheAliasAssigned$outboundSchema;
+    /** @deprecated use `UpdateProjectDataCacheAliasAssigned$Outbound` instead. */
+    export type Outbound = UpdateProjectDataCacheAliasAssigned$Outbound;
+}
+
+/** @internal */
+export const UpdateProjectDataCacheAliasError$inboundSchema: z.ZodType<
+    UpdateProjectDataCacheAliasError,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    code: z.string(),
+    message: z.string(),
+});
+
+/** @internal */
+export type UpdateProjectDataCacheAliasError$Outbound = {
+    code: string;
+    message: string;
+};
+
+/** @internal */
+export const UpdateProjectDataCacheAliasError$outboundSchema: z.ZodType<
+    UpdateProjectDataCacheAliasError$Outbound,
+    z.ZodTypeDef,
+    UpdateProjectDataCacheAliasError
+> = z.object({
+    code: z.string(),
+    message: z.string(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace UpdateProjectDataCacheAliasError$ {
+    /** @deprecated use `UpdateProjectDataCacheAliasError$inboundSchema` instead. */
+    export const inboundSchema = UpdateProjectDataCacheAliasError$inboundSchema;
+    /** @deprecated use `UpdateProjectDataCacheAliasError$outboundSchema` instead. */
+    export const outboundSchema = UpdateProjectDataCacheAliasError$outboundSchema;
+    /** @deprecated use `UpdateProjectDataCacheAliasError$Outbound` instead. */
+    export type Outbound = UpdateProjectDataCacheAliasError$Outbound;
+}
+
+/** @internal */
+export const UpdateProjectDataCacheProjectsBuilds$inboundSchema: z.ZodType<
+    UpdateProjectDataCacheProjectsBuilds,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    use: z.string(),
+    src: z.string().optional(),
+    dest: z.string().optional(),
+});
+
+/** @internal */
+export type UpdateProjectDataCacheProjectsBuilds$Outbound = {
+    use: string;
+    src?: string | undefined;
+    dest?: string | undefined;
+};
+
+/** @internal */
+export const UpdateProjectDataCacheProjectsBuilds$outboundSchema: z.ZodType<
+    UpdateProjectDataCacheProjectsBuilds$Outbound,
+    z.ZodTypeDef,
+    UpdateProjectDataCacheProjectsBuilds
+> = z.object({
+    use: z.string(),
+    src: z.string().optional(),
+    dest: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace UpdateProjectDataCacheProjectsBuilds$ {
+    /** @deprecated use `UpdateProjectDataCacheProjectsBuilds$inboundSchema` instead. */
+    export const inboundSchema = UpdateProjectDataCacheProjectsBuilds$inboundSchema;
+    /** @deprecated use `UpdateProjectDataCacheProjectsBuilds$outboundSchema` instead. */
+    export const outboundSchema = UpdateProjectDataCacheProjectsBuilds$outboundSchema;
+    /** @deprecated use `UpdateProjectDataCacheProjectsBuilds$Outbound` instead. */
+    export type Outbound = UpdateProjectDataCacheProjectsBuilds$Outbound;
+}
+
+/** @internal */
+export const UpdateProjectDataCacheCreator$inboundSchema: z.ZodType<
+    UpdateProjectDataCacheCreator,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    email: z.string(),
+    githubLogin: z.string().optional(),
+    gitlabLogin: z.string().optional(),
+    uid: z.string(),
+    username: z.string(),
+});
+
+/** @internal */
+export type UpdateProjectDataCacheCreator$Outbound = {
+    email: string;
+    githubLogin?: string | undefined;
+    gitlabLogin?: string | undefined;
+    uid: string;
+    username: string;
+};
+
+/** @internal */
+export const UpdateProjectDataCacheCreator$outboundSchema: z.ZodType<
+    UpdateProjectDataCacheCreator$Outbound,
+    z.ZodTypeDef,
+    UpdateProjectDataCacheCreator
+> = z.object({
+    email: z.string(),
+    githubLogin: z.string().optional(),
+    gitlabLogin: z.string().optional(),
+    uid: z.string(),
+    username: z.string(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace UpdateProjectDataCacheCreator$ {
+    /** @deprecated use `UpdateProjectDataCacheCreator$inboundSchema` instead. */
+    export const inboundSchema = UpdateProjectDataCacheCreator$inboundSchema;
+    /** @deprecated use `UpdateProjectDataCacheCreator$outboundSchema` instead. */
+    export const outboundSchema = UpdateProjectDataCacheCreator$outboundSchema;
+    /** @deprecated use `UpdateProjectDataCacheCreator$Outbound` instead. */
+    export type Outbound = UpdateProjectDataCacheCreator$Outbound;
+}
+
+/** @internal */
+export const UpdateProjectDataCachePlan$inboundSchema: z.ZodNativeEnum<
+    typeof UpdateProjectDataCachePlan
+> = z.nativeEnum(UpdateProjectDataCachePlan);
+
+/** @internal */
+export const UpdateProjectDataCachePlan$outboundSchema: z.ZodNativeEnum<
+    typeof UpdateProjectDataCachePlan
+> = UpdateProjectDataCachePlan$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace UpdateProjectDataCachePlan$ {
+    /** @deprecated use `UpdateProjectDataCachePlan$inboundSchema` instead. */
+    export const inboundSchema = UpdateProjectDataCachePlan$inboundSchema;
+    /** @deprecated use `UpdateProjectDataCachePlan$outboundSchema` instead. */
+    export const outboundSchema = UpdateProjectDataCachePlan$outboundSchema;
+}
+
+/** @internal */
+export const UpdateProjectDataCacheProjectsReadyState$inboundSchema: z.ZodNativeEnum<
+    typeof UpdateProjectDataCacheProjectsReadyState
+> = z.nativeEnum(UpdateProjectDataCacheProjectsReadyState);
+
+/** @internal */
+export const UpdateProjectDataCacheProjectsReadyState$outboundSchema: z.ZodNativeEnum<
+    typeof UpdateProjectDataCacheProjectsReadyState
+> = UpdateProjectDataCacheProjectsReadyState$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace UpdateProjectDataCacheProjectsReadyState$ {
+    /** @deprecated use `UpdateProjectDataCacheProjectsReadyState$inboundSchema` instead. */
+    export const inboundSchema = UpdateProjectDataCacheProjectsReadyState$inboundSchema;
+    /** @deprecated use `UpdateProjectDataCacheProjectsReadyState$outboundSchema` instead. */
+    export const outboundSchema = UpdateProjectDataCacheProjectsReadyState$outboundSchema;
+}
+
+/** @internal */
+export const UpdateProjectDataCacheReadySubstate$inboundSchema: z.ZodNativeEnum<
+    typeof UpdateProjectDataCacheReadySubstate
+> = z.nativeEnum(UpdateProjectDataCacheReadySubstate);
+
+/** @internal */
+export const UpdateProjectDataCacheReadySubstate$outboundSchema: z.ZodNativeEnum<
+    typeof UpdateProjectDataCacheReadySubstate
+> = UpdateProjectDataCacheReadySubstate$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace UpdateProjectDataCacheReadySubstate$ {
+    /** @deprecated use `UpdateProjectDataCacheReadySubstate$inboundSchema` instead. */
+    export const inboundSchema = UpdateProjectDataCacheReadySubstate$inboundSchema;
+    /** @deprecated use `UpdateProjectDataCacheReadySubstate$outboundSchema` instead. */
+    export const outboundSchema = UpdateProjectDataCacheReadySubstate$outboundSchema;
+}
+
+/** @internal */
+export const UpdateProjectDataCacheProjectsResponseType$inboundSchema: z.ZodNativeEnum<
+    typeof UpdateProjectDataCacheProjectsResponseType
+> = z.nativeEnum(UpdateProjectDataCacheProjectsResponseType);
+
+/** @internal */
+export const UpdateProjectDataCacheProjectsResponseType$outboundSchema: z.ZodNativeEnum<
+    typeof UpdateProjectDataCacheProjectsResponseType
+> = UpdateProjectDataCacheProjectsResponseType$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace UpdateProjectDataCacheProjectsResponseType$ {
+    /** @deprecated use `UpdateProjectDataCacheProjectsResponseType$inboundSchema` instead. */
+    export const inboundSchema = UpdateProjectDataCacheProjectsResponseType$inboundSchema;
+    /** @deprecated use `UpdateProjectDataCacheProjectsResponseType$outboundSchema` instead. */
+    export const outboundSchema = UpdateProjectDataCacheProjectsResponseType$outboundSchema;
+}
+
+/** @internal */
+export const UpdateProjectDataCacheChecksConclusion$inboundSchema: z.ZodNativeEnum<
+    typeof UpdateProjectDataCacheChecksConclusion
+> = z.nativeEnum(UpdateProjectDataCacheChecksConclusion);
+
+/** @internal */
+export const UpdateProjectDataCacheChecksConclusion$outboundSchema: z.ZodNativeEnum<
+    typeof UpdateProjectDataCacheChecksConclusion
+> = UpdateProjectDataCacheChecksConclusion$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace UpdateProjectDataCacheChecksConclusion$ {
+    /** @deprecated use `UpdateProjectDataCacheChecksConclusion$inboundSchema` instead. */
+    export const inboundSchema = UpdateProjectDataCacheChecksConclusion$inboundSchema;
+    /** @deprecated use `UpdateProjectDataCacheChecksConclusion$outboundSchema` instead. */
+    export const outboundSchema = UpdateProjectDataCacheChecksConclusion$outboundSchema;
+}
+
+/** @internal */
+export const UpdateProjectDataCacheChecksState$inboundSchema: z.ZodNativeEnum<
+    typeof UpdateProjectDataCacheChecksState
+> = z.nativeEnum(UpdateProjectDataCacheChecksState);
+
+/** @internal */
+export const UpdateProjectDataCacheChecksState$outboundSchema: z.ZodNativeEnum<
+    typeof UpdateProjectDataCacheChecksState
+> = UpdateProjectDataCacheChecksState$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace UpdateProjectDataCacheChecksState$ {
+    /** @deprecated use `UpdateProjectDataCacheChecksState$inboundSchema` instead. */
+    export const inboundSchema = UpdateProjectDataCacheChecksState$inboundSchema;
+    /** @deprecated use `UpdateProjectDataCacheChecksState$outboundSchema` instead. */
+    export const outboundSchema = UpdateProjectDataCacheChecksState$outboundSchema;
+}
+
+/** @internal */
+export const UpdateProjectDataCacheOidcTokenClaims$inboundSchema: z.ZodType<
+    UpdateProjectDataCacheOidcTokenClaims,
+    z.ZodTypeDef,
+    unknown
+> = z.union([z.string(), z.array(z.string())]);
+
+/** @internal */
+export type UpdateProjectDataCacheOidcTokenClaims$Outbound = string | Array<string>;
+
+/** @internal */
+export const UpdateProjectDataCacheOidcTokenClaims$outboundSchema: z.ZodType<
+    UpdateProjectDataCacheOidcTokenClaims$Outbound,
+    z.ZodTypeDef,
+    UpdateProjectDataCacheOidcTokenClaims
+> = z.union([z.string(), z.array(z.string())]);
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace UpdateProjectDataCacheOidcTokenClaims$ {
+    /** @deprecated use `UpdateProjectDataCacheOidcTokenClaims$inboundSchema` instead. */
+    export const inboundSchema = UpdateProjectDataCacheOidcTokenClaims$inboundSchema;
+    /** @deprecated use `UpdateProjectDataCacheOidcTokenClaims$outboundSchema` instead. */
+    export const outboundSchema = UpdateProjectDataCacheOidcTokenClaims$outboundSchema;
+    /** @deprecated use `UpdateProjectDataCacheOidcTokenClaims$Outbound` instead. */
+    export type Outbound = UpdateProjectDataCacheOidcTokenClaims$Outbound;
+}
+
+/** @internal */
+export const Targets$inboundSchema: z.ZodType<Targets, z.ZodTypeDef, unknown> = z.object({
+    alias: z.array(z.string()).optional(),
+    aliasAssigned: z.nullable(z.union([z.number(), z.boolean()])).optional(),
+    aliasError: z.nullable(z.lazy(() => UpdateProjectDataCacheAliasError$inboundSchema)).optional(),
+    aliasFinal: z.nullable(z.string()).optional(),
+    automaticAliases: z.array(z.string()).optional(),
+    builds: z.array(z.lazy(() => UpdateProjectDataCacheProjectsBuilds$inboundSchema)).optional(),
+    connectBuildsEnabled: z.boolean().optional(),
+    connectConfigurationId: z.string().optional(),
+    createdAt: z.number(),
+    createdIn: z.string(),
+    creator: z.nullable(z.lazy(() => UpdateProjectDataCacheCreator$inboundSchema)),
+    deletedAt: z.number().optional(),
+    deploymentHostname: z.string(),
+    name: z.string(),
+    forced: z.boolean().optional(),
+    id: z.string(),
+    meta: z.record(z.string()).optional(),
+    monorepoManager: z.nullable(z.string()).optional(),
+    plan: UpdateProjectDataCachePlan$inboundSchema,
+    private: z.boolean(),
+    readyState: UpdateProjectDataCacheProjectsReadyState$inboundSchema,
+    readySubstate: UpdateProjectDataCacheReadySubstate$inboundSchema.optional(),
+    requestedAt: z.number().optional(),
+    target: z.nullable(z.string()).optional(),
+    teamId: z.nullable(z.string()).optional(),
+    type: UpdateProjectDataCacheProjectsResponseType$inboundSchema,
+    url: z.string(),
+    userId: z.string(),
+    withCache: z.boolean().optional(),
+    checksConclusion: UpdateProjectDataCacheChecksConclusion$inboundSchema.optional(),
+    checksState: UpdateProjectDataCacheChecksState$inboundSchema.optional(),
+    readyAt: z.number().optional(),
+    buildingAt: z.number().optional(),
+    previewCommentsEnabled: z.boolean().optional(),
+    oidcTokenClaims: z.record(z.union([z.string(), z.array(z.string())])).optional(),
+});
+
+/** @internal */
+export type Targets$Outbound = {
+    alias?: Array<string> | undefined;
+    aliasAssigned?: number | boolean | null | undefined;
+    aliasError?: UpdateProjectDataCacheAliasError$Outbound | null | undefined;
+    aliasFinal?: string | null | undefined;
+    automaticAliases?: Array<string> | undefined;
+    builds?: Array<UpdateProjectDataCacheProjectsBuilds$Outbound> | undefined;
+    connectBuildsEnabled?: boolean | undefined;
+    connectConfigurationId?: string | undefined;
+    createdAt: number;
+    createdIn: string;
+    creator: UpdateProjectDataCacheCreator$Outbound | null;
+    deletedAt?: number | undefined;
+    deploymentHostname: string;
+    name: string;
+    forced?: boolean | undefined;
+    id: string;
+    meta?: { [k: string]: string } | undefined;
+    monorepoManager?: string | null | undefined;
+    plan: string;
+    private: boolean;
+    readyState: string;
+    readySubstate?: string | undefined;
+    requestedAt?: number | undefined;
+    target?: string | null | undefined;
+    teamId?: string | null | undefined;
+    type: string;
+    url: string;
+    userId: string;
+    withCache?: boolean | undefined;
+    checksConclusion?: string | undefined;
+    checksState?: string | undefined;
+    readyAt?: number | undefined;
+    buildingAt?: number | undefined;
+    previewCommentsEnabled?: boolean | undefined;
+    oidcTokenClaims?: { [k: string]: string | Array<string> } | undefined;
+};
+
+/** @internal */
+export const Targets$outboundSchema: z.ZodType<Targets$Outbound, z.ZodTypeDef, Targets> = z.object({
+    alias: z.array(z.string()).optional(),
+    aliasAssigned: z.nullable(z.union([z.number(), z.boolean()])).optional(),
+    aliasError: z
+        .nullable(z.lazy(() => UpdateProjectDataCacheAliasError$outboundSchema))
+        .optional(),
+    aliasFinal: z.nullable(z.string()).optional(),
+    automaticAliases: z.array(z.string()).optional(),
+    builds: z.array(z.lazy(() => UpdateProjectDataCacheProjectsBuilds$outboundSchema)).optional(),
+    connectBuildsEnabled: z.boolean().optional(),
+    connectConfigurationId: z.string().optional(),
+    createdAt: z.number(),
+    createdIn: z.string(),
+    creator: z.nullable(z.lazy(() => UpdateProjectDataCacheCreator$outboundSchema)),
+    deletedAt: z.number().optional(),
+    deploymentHostname: z.string(),
+    name: z.string(),
+    forced: z.boolean().optional(),
+    id: z.string(),
+    meta: z.record(z.string()).optional(),
+    monorepoManager: z.nullable(z.string()).optional(),
+    plan: UpdateProjectDataCachePlan$outboundSchema,
+    private: z.boolean(),
+    readyState: UpdateProjectDataCacheProjectsReadyState$outboundSchema,
+    readySubstate: UpdateProjectDataCacheReadySubstate$outboundSchema.optional(),
+    requestedAt: z.number().optional(),
+    target: z.nullable(z.string()).optional(),
+    teamId: z.nullable(z.string()).optional(),
+    type: UpdateProjectDataCacheProjectsResponseType$outboundSchema,
+    url: z.string(),
+    userId: z.string(),
+    withCache: z.boolean().optional(),
+    checksConclusion: UpdateProjectDataCacheChecksConclusion$outboundSchema.optional(),
+    checksState: UpdateProjectDataCacheChecksState$outboundSchema.optional(),
+    readyAt: z.number().optional(),
+    buildingAt: z.number().optional(),
+    previewCommentsEnabled: z.boolean().optional(),
+    oidcTokenClaims: z.record(z.union([z.string(), z.array(z.string())])).optional(),
+});
 
 /**
  * @internal
@@ -3850,14 +4413,17 @@ export const Permissions$inboundSchema: z.ZodType<Permissions, z.ZodTypeDef, unk
         gitRepository: z.array(ACLAction$inboundSchema).optional(),
         ipBlocking: z.array(ACLAction$inboundSchema).optional(),
         integration: z.array(ACLAction$inboundSchema).optional(),
+        integrationAccount: z.array(ACLAction$inboundSchema).optional(),
         integrationConfiguration: z.array(ACLAction$inboundSchema).optional(),
         integrationConfigurationTransfer: z.array(ACLAction$inboundSchema).optional(),
         integrationConfigurationProjects: z.array(ACLAction$inboundSchema).optional(),
         integrationVercelConfigurationOverride: z.array(ACLAction$inboundSchema).optional(),
-        integrationStore: z.array(ACLAction$inboundSchema).optional(),
+        integrationResource: z.array(ACLAction$inboundSchema).optional(),
         integrationEvent: z.array(ACLAction$inboundSchema).optional(),
         integrationResourceSecrets: z.array(ACLAction$inboundSchema).optional(),
+        marketplaceInstallationMember: z.array(ACLAction$inboundSchema).optional(),
         marketplaceBillingData: z.array(ACLAction$inboundSchema).optional(),
+        marketplaceInvoice: z.array(ACLAction$inboundSchema).optional(),
         jobGlobal: z.array(ACLAction$inboundSchema).optional(),
         logDrain: z.array(ACLAction$inboundSchema).optional(),
         Monitoring: z.array(ACLAction$inboundSchema).optional(),
@@ -3885,7 +4451,6 @@ export const Permissions$inboundSchema: z.ZodType<Permissions, z.ZodTypeDef, unk
         postgres: z.array(ACLAction$inboundSchema).optional(),
         previewDeploymentSuffix: z.array(ACLAction$inboundSchema).optional(),
         proTrialOnboarding: z.array(ACLAction$inboundSchema).optional(),
-        seawallConfig: z.array(ACLAction$inboundSchema).optional(),
         sharedEnvVars: z.array(ACLAction$inboundSchema).optional(),
         sharedEnvVarsProduction: z.array(ACLAction$inboundSchema).optional(),
         space: z.array(ACLAction$inboundSchema).optional(),
@@ -3901,12 +4466,15 @@ export const Permissions$inboundSchema: z.ZodType<Permissions, z.ZodTypeDef, unk
         blobStoreTokenSet: z.array(ACLAction$inboundSchema).optional(),
         postgresStoreTokenSet: z.array(ACLAction$inboundSchema).optional(),
         integrationStoreTokenSet: z.array(ACLAction$inboundSchema).optional(),
+        integrationResourceReplCommand: z.array(ACLAction$inboundSchema).optional(),
+        storeTransfer: z.array(ACLAction$inboundSchema).optional(),
         supportCase: z.array(ACLAction$inboundSchema).optional(),
         supportCaseComment: z.array(ACLAction$inboundSchema).optional(),
         dataCacheBillingSettings: z.array(ACLAction$inboundSchema).optional(),
         team: z.array(ACLAction$inboundSchema).optional(),
         teamAccessRequest: z.array(ACLAction$inboundSchema).optional(),
         teamFellowMembership: z.array(ACLAction$inboundSchema).optional(),
+        teamGitExclusivity: z.array(ACLAction$inboundSchema).optional(),
         teamInvite: z.array(ACLAction$inboundSchema).optional(),
         teamInviteCode: z.array(ACLAction$inboundSchema).optional(),
         teamJoin: z.array(ACLAction$inboundSchema).optional(),
@@ -3917,6 +4485,7 @@ export const Permissions$inboundSchema: z.ZodType<Permissions, z.ZodTypeDef, unk
         usageCycle: z.array(ACLAction$inboundSchema).optional(),
         user: z.array(ACLAction$inboundSchema).optional(),
         userConnection: z.array(ACLAction$inboundSchema).optional(),
+        vpcPeeringConnection: z.array(ACLAction$inboundSchema).optional(),
         webAnalyticsPlan: z.array(ACLAction$inboundSchema).optional(),
         webAuthn: z.array(ACLAction$inboundSchema).optional(),
         edgeConfig: z.array(ACLAction$inboundSchema).optional(),
@@ -3958,6 +4527,7 @@ export const Permissions$inboundSchema: z.ZodType<Permissions, z.ZodTypeDef, unk
         projectEnvVars: z.array(ACLAction$inboundSchema).optional(),
         projectEnvVarsProduction: z.array(ACLAction$inboundSchema).optional(),
         projectEnvVarsUnownedByIntegration: z.array(ACLAction$inboundSchema).optional(),
+        projectFlags: z.array(ACLAction$inboundSchema).optional(),
         projectId: z.array(ACLAction$inboundSchema).optional(),
         projectIntegrationConfiguration: z.array(ACLAction$inboundSchema).optional(),
         projectLink: z.array(ACLAction$inboundSchema).optional(),
@@ -3973,11 +4543,14 @@ export const Permissions$inboundSchema: z.ZodType<Permissions, z.ZodTypeDef, unk
         projectSupportCase: z.array(ACLAction$inboundSchema).optional(),
         projectSupportCaseComment: z.array(ACLAction$inboundSchema).optional(),
         projectDeploymentExpiration: z.array(ACLAction$inboundSchema).optional(),
+        projectTier: z.array(ACLAction$inboundSchema).optional(),
+        seawallConfig: z.array(ACLAction$inboundSchema).optional(),
         skewProtection: z.array(ACLAction$inboundSchema).optional(),
         analytics: z.array(ACLAction$inboundSchema).optional(),
         trustedIps: z.array(ACLAction$inboundSchema).optional(),
         webAnalytics: z.array(ACLAction$inboundSchema).optional(),
         sharedEnvVarConnection: z.array(ACLAction$inboundSchema).optional(),
+        sonar: z.array(ACLAction$inboundSchema).optional(),
     })
     .transform((v) => {
         return remap$(v, {
@@ -4026,14 +4599,17 @@ export type Permissions$Outbound = {
     gitRepository?: Array<string> | undefined;
     ipBlocking?: Array<string> | undefined;
     integration?: Array<string> | undefined;
+    integrationAccount?: Array<string> | undefined;
     integrationConfiguration?: Array<string> | undefined;
     integrationConfigurationTransfer?: Array<string> | undefined;
     integrationConfigurationProjects?: Array<string> | undefined;
     integrationVercelConfigurationOverride?: Array<string> | undefined;
-    integrationStore?: Array<string> | undefined;
+    integrationResource?: Array<string> | undefined;
     integrationEvent?: Array<string> | undefined;
     integrationResourceSecrets?: Array<string> | undefined;
+    marketplaceInstallationMember?: Array<string> | undefined;
     marketplaceBillingData?: Array<string> | undefined;
+    marketplaceInvoice?: Array<string> | undefined;
     jobGlobal?: Array<string> | undefined;
     logDrain?: Array<string> | undefined;
     Monitoring?: Array<string> | undefined;
@@ -4061,7 +4637,6 @@ export type Permissions$Outbound = {
     postgres?: Array<string> | undefined;
     previewDeploymentSuffix?: Array<string> | undefined;
     proTrialOnboarding?: Array<string> | undefined;
-    seawallConfig?: Array<string> | undefined;
     sharedEnvVars?: Array<string> | undefined;
     sharedEnvVarsProduction?: Array<string> | undefined;
     space?: Array<string> | undefined;
@@ -4077,12 +4652,15 @@ export type Permissions$Outbound = {
     blobStoreTokenSet?: Array<string> | undefined;
     postgresStoreTokenSet?: Array<string> | undefined;
     integrationStoreTokenSet?: Array<string> | undefined;
+    integrationResourceReplCommand?: Array<string> | undefined;
+    storeTransfer?: Array<string> | undefined;
     supportCase?: Array<string> | undefined;
     supportCaseComment?: Array<string> | undefined;
     dataCacheBillingSettings?: Array<string> | undefined;
     team?: Array<string> | undefined;
     teamAccessRequest?: Array<string> | undefined;
     teamFellowMembership?: Array<string> | undefined;
+    teamGitExclusivity?: Array<string> | undefined;
     teamInvite?: Array<string> | undefined;
     teamInviteCode?: Array<string> | undefined;
     teamJoin?: Array<string> | undefined;
@@ -4093,6 +4671,7 @@ export type Permissions$Outbound = {
     usageCycle?: Array<string> | undefined;
     user?: Array<string> | undefined;
     userConnection?: Array<string> | undefined;
+    vpcPeeringConnection?: Array<string> | undefined;
     webAnalyticsPlan?: Array<string> | undefined;
     webAuthn?: Array<string> | undefined;
     edgeConfig?: Array<string> | undefined;
@@ -4134,6 +4713,7 @@ export type Permissions$Outbound = {
     projectEnvVars?: Array<string> | undefined;
     projectEnvVarsProduction?: Array<string> | undefined;
     projectEnvVarsUnownedByIntegration?: Array<string> | undefined;
+    projectFlags?: Array<string> | undefined;
     projectId?: Array<string> | undefined;
     projectIntegrationConfiguration?: Array<string> | undefined;
     projectLink?: Array<string> | undefined;
@@ -4149,11 +4729,14 @@ export type Permissions$Outbound = {
     projectSupportCase?: Array<string> | undefined;
     projectSupportCaseComment?: Array<string> | undefined;
     projectDeploymentExpiration?: Array<string> | undefined;
+    projectTier?: Array<string> | undefined;
+    seawallConfig?: Array<string> | undefined;
     skewProtection?: Array<string> | undefined;
     analytics?: Array<string> | undefined;
     trustedIps?: Array<string> | undefined;
     webAnalytics?: Array<string> | undefined;
     sharedEnvVarConnection?: Array<string> | undefined;
+    sonar?: Array<string> | undefined;
 };
 
 /** @internal */
@@ -4200,14 +4783,17 @@ export const Permissions$outboundSchema: z.ZodType<
         gitRepository: z.array(ACLAction$outboundSchema).optional(),
         ipBlocking: z.array(ACLAction$outboundSchema).optional(),
         integration: z.array(ACLAction$outboundSchema).optional(),
+        integrationAccount: z.array(ACLAction$outboundSchema).optional(),
         integrationConfiguration: z.array(ACLAction$outboundSchema).optional(),
         integrationConfigurationTransfer: z.array(ACLAction$outboundSchema).optional(),
         integrationConfigurationProjects: z.array(ACLAction$outboundSchema).optional(),
         integrationVercelConfigurationOverride: z.array(ACLAction$outboundSchema).optional(),
-        integrationStore: z.array(ACLAction$outboundSchema).optional(),
+        integrationResource: z.array(ACLAction$outboundSchema).optional(),
         integrationEvent: z.array(ACLAction$outboundSchema).optional(),
         integrationResourceSecrets: z.array(ACLAction$outboundSchema).optional(),
+        marketplaceInstallationMember: z.array(ACLAction$outboundSchema).optional(),
         marketplaceBillingData: z.array(ACLAction$outboundSchema).optional(),
+        marketplaceInvoice: z.array(ACLAction$outboundSchema).optional(),
         jobGlobal: z.array(ACLAction$outboundSchema).optional(),
         logDrain: z.array(ACLAction$outboundSchema).optional(),
         monitoring: z.array(ACLAction$outboundSchema).optional(),
@@ -4235,7 +4821,6 @@ export const Permissions$outboundSchema: z.ZodType<
         postgres: z.array(ACLAction$outboundSchema).optional(),
         previewDeploymentSuffix: z.array(ACLAction$outboundSchema).optional(),
         proTrialOnboarding: z.array(ACLAction$outboundSchema).optional(),
-        seawallConfig: z.array(ACLAction$outboundSchema).optional(),
         sharedEnvVars: z.array(ACLAction$outboundSchema).optional(),
         sharedEnvVarsProduction: z.array(ACLAction$outboundSchema).optional(),
         space: z.array(ACLAction$outboundSchema).optional(),
@@ -4251,12 +4836,15 @@ export const Permissions$outboundSchema: z.ZodType<
         blobStoreTokenSet: z.array(ACLAction$outboundSchema).optional(),
         postgresStoreTokenSet: z.array(ACLAction$outboundSchema).optional(),
         integrationStoreTokenSet: z.array(ACLAction$outboundSchema).optional(),
+        integrationResourceReplCommand: z.array(ACLAction$outboundSchema).optional(),
+        storeTransfer: z.array(ACLAction$outboundSchema).optional(),
         supportCase: z.array(ACLAction$outboundSchema).optional(),
         supportCaseComment: z.array(ACLAction$outboundSchema).optional(),
         dataCacheBillingSettings: z.array(ACLAction$outboundSchema).optional(),
         team: z.array(ACLAction$outboundSchema).optional(),
         teamAccessRequest: z.array(ACLAction$outboundSchema).optional(),
         teamFellowMembership: z.array(ACLAction$outboundSchema).optional(),
+        teamGitExclusivity: z.array(ACLAction$outboundSchema).optional(),
         teamInvite: z.array(ACLAction$outboundSchema).optional(),
         teamInviteCode: z.array(ACLAction$outboundSchema).optional(),
         teamJoin: z.array(ACLAction$outboundSchema).optional(),
@@ -4267,6 +4855,7 @@ export const Permissions$outboundSchema: z.ZodType<
         usageCycle: z.array(ACLAction$outboundSchema).optional(),
         user: z.array(ACLAction$outboundSchema).optional(),
         userConnection: z.array(ACLAction$outboundSchema).optional(),
+        vpcPeeringConnection: z.array(ACLAction$outboundSchema).optional(),
         webAnalyticsPlan: z.array(ACLAction$outboundSchema).optional(),
         webAuthn: z.array(ACLAction$outboundSchema).optional(),
         edgeConfig: z.array(ACLAction$outboundSchema).optional(),
@@ -4308,6 +4897,7 @@ export const Permissions$outboundSchema: z.ZodType<
         projectEnvVars: z.array(ACLAction$outboundSchema).optional(),
         projectEnvVarsProduction: z.array(ACLAction$outboundSchema).optional(),
         projectEnvVarsUnownedByIntegration: z.array(ACLAction$outboundSchema).optional(),
+        projectFlags: z.array(ACLAction$outboundSchema).optional(),
         projectId: z.array(ACLAction$outboundSchema).optional(),
         projectIntegrationConfiguration: z.array(ACLAction$outboundSchema).optional(),
         projectLink: z.array(ACLAction$outboundSchema).optional(),
@@ -4323,11 +4913,14 @@ export const Permissions$outboundSchema: z.ZodType<
         projectSupportCase: z.array(ACLAction$outboundSchema).optional(),
         projectSupportCaseComment: z.array(ACLAction$outboundSchema).optional(),
         projectDeploymentExpiration: z.array(ACLAction$outboundSchema).optional(),
+        projectTier: z.array(ACLAction$outboundSchema).optional(),
+        seawallConfig: z.array(ACLAction$outboundSchema).optional(),
         skewProtection: z.array(ACLAction$outboundSchema).optional(),
         analytics: z.array(ACLAction$outboundSchema).optional(),
         trustedIps: z.array(ACLAction$outboundSchema).optional(),
         webAnalytics: z.array(ACLAction$outboundSchema).optional(),
         sharedEnvVarConnection: z.array(ACLAction$outboundSchema).optional(),
+        sonar: z.array(ACLAction$outboundSchema).optional(),
     })
     .transform((v) => {
         return remap$(v, {
@@ -4398,24 +4991,24 @@ export namespace JobStatus$ {
 }
 
 /** @internal */
-export const UpdateProjectDataCacheProjectsResponseType$inboundSchema: z.ZodNativeEnum<
-    typeof UpdateProjectDataCacheProjectsResponseType
-> = z.nativeEnum(UpdateProjectDataCacheProjectsResponseType);
+export const UpdateProjectDataCacheProjectsResponse200Type$inboundSchema: z.ZodNativeEnum<
+    typeof UpdateProjectDataCacheProjectsResponse200Type
+> = z.nativeEnum(UpdateProjectDataCacheProjectsResponse200Type);
 
 /** @internal */
-export const UpdateProjectDataCacheProjectsResponseType$outboundSchema: z.ZodNativeEnum<
-    typeof UpdateProjectDataCacheProjectsResponseType
-> = UpdateProjectDataCacheProjectsResponseType$inboundSchema;
+export const UpdateProjectDataCacheProjectsResponse200Type$outboundSchema: z.ZodNativeEnum<
+    typeof UpdateProjectDataCacheProjectsResponse200Type
+> = UpdateProjectDataCacheProjectsResponse200Type$inboundSchema;
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace UpdateProjectDataCacheProjectsResponseType$ {
-    /** @deprecated use `UpdateProjectDataCacheProjectsResponseType$inboundSchema` instead. */
-    export const inboundSchema = UpdateProjectDataCacheProjectsResponseType$inboundSchema;
-    /** @deprecated use `UpdateProjectDataCacheProjectsResponseType$outboundSchema` instead. */
-    export const outboundSchema = UpdateProjectDataCacheProjectsResponseType$outboundSchema;
+export namespace UpdateProjectDataCacheProjectsResponse200Type$ {
+    /** @deprecated use `UpdateProjectDataCacheProjectsResponse200Type$inboundSchema` instead. */
+    export const inboundSchema = UpdateProjectDataCacheProjectsResponse200Type$inboundSchema;
+    /** @deprecated use `UpdateProjectDataCacheProjectsResponse200Type$outboundSchema` instead. */
+    export const outboundSchema = UpdateProjectDataCacheProjectsResponse200Type$outboundSchema;
 }
 
 /** @internal */
@@ -4425,7 +5018,7 @@ export const LastAliasRequest$inboundSchema: z.ZodType<LastAliasRequest, z.ZodTy
         toDeploymentId: z.string(),
         jobStatus: JobStatus$inboundSchema,
         requestedAt: z.number(),
-        type: UpdateProjectDataCacheProjectsResponseType$inboundSchema,
+        type: UpdateProjectDataCacheProjectsResponse200Type$inboundSchema,
     });
 
 /** @internal */
@@ -4447,7 +5040,7 @@ export const LastAliasRequest$outboundSchema: z.ZodType<
     toDeploymentId: z.string(),
     jobStatus: JobStatus$outboundSchema,
     requestedAt: z.number(),
-    type: UpdateProjectDataCacheProjectsResponseType$outboundSchema,
+    type: UpdateProjectDataCacheProjectsResponse200Type$outboundSchema,
 });
 
 /**
@@ -4481,25 +5074,28 @@ export namespace Scope$ {
 }
 
 /** @internal */
-export const ProtectionBypass$inboundSchema: z.ZodType<ProtectionBypass, z.ZodTypeDef, unknown> =
-    z.object({
-        createdAt: z.number(),
-        createdBy: z.string(),
-        scope: Scope$inboundSchema,
-    });
+export const UpdateProjectDataCacheProtectionBypass$inboundSchema: z.ZodType<
+    UpdateProjectDataCacheProtectionBypass,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    createdAt: z.number(),
+    createdBy: z.string(),
+    scope: Scope$inboundSchema,
+});
 
 /** @internal */
-export type ProtectionBypass$Outbound = {
+export type UpdateProjectDataCacheProtectionBypass$Outbound = {
     createdAt: number;
     createdBy: string;
     scope: string;
 };
 
 /** @internal */
-export const ProtectionBypass$outboundSchema: z.ZodType<
-    ProtectionBypass$Outbound,
+export const UpdateProjectDataCacheProtectionBypass$outboundSchema: z.ZodType<
+    UpdateProjectDataCacheProtectionBypass$Outbound,
     z.ZodTypeDef,
-    ProtectionBypass
+    UpdateProjectDataCacheProtectionBypass
 > = z.object({
     createdAt: z.number(),
     createdBy: z.string(),
@@ -4510,13 +5106,13 @@ export const ProtectionBypass$outboundSchema: z.ZodType<
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ProtectionBypass$ {
-    /** @deprecated use `ProtectionBypass$inboundSchema` instead. */
-    export const inboundSchema = ProtectionBypass$inboundSchema;
-    /** @deprecated use `ProtectionBypass$outboundSchema` instead. */
-    export const outboundSchema = ProtectionBypass$outboundSchema;
-    /** @deprecated use `ProtectionBypass$Outbound` instead. */
-    export type Outbound = ProtectionBypass$Outbound;
+export namespace UpdateProjectDataCacheProtectionBypass$ {
+    /** @deprecated use `UpdateProjectDataCacheProtectionBypass$inboundSchema` instead. */
+    export const inboundSchema = UpdateProjectDataCacheProtectionBypass$inboundSchema;
+    /** @deprecated use `UpdateProjectDataCacheProtectionBypass$outboundSchema` instead. */
+    export const outboundSchema = UpdateProjectDataCacheProtectionBypass$outboundSchema;
+    /** @deprecated use `UpdateProjectDataCacheProtectionBypass$Outbound` instead. */
+    export type Outbound = UpdateProjectDataCacheProtectionBypass$Outbound;
 }
 
 /** @internal */
@@ -4891,26 +5487,26 @@ export namespace Src$ {
 }
 
 /** @internal */
-export const UpdateProjectDataCacheProjectsResponse200ApplicationJSONType$inboundSchema: z.ZodNativeEnum<
-    typeof UpdateProjectDataCacheProjectsResponse200ApplicationJSONType
-> = z.nativeEnum(UpdateProjectDataCacheProjectsResponse200ApplicationJSONType);
+export const UpdateProjectDataCacheProjectsResponse200ApplicationJSONResponseBodyType$inboundSchema: z.ZodNativeEnum<
+    typeof UpdateProjectDataCacheProjectsResponse200ApplicationJSONResponseBodyType
+> = z.nativeEnum(UpdateProjectDataCacheProjectsResponse200ApplicationJSONResponseBodyType);
 
 /** @internal */
-export const UpdateProjectDataCacheProjectsResponse200ApplicationJSONType$outboundSchema: z.ZodNativeEnum<
-    typeof UpdateProjectDataCacheProjectsResponse200ApplicationJSONType
-> = UpdateProjectDataCacheProjectsResponse200ApplicationJSONType$inboundSchema;
+export const UpdateProjectDataCacheProjectsResponse200ApplicationJSONResponseBodyType$outboundSchema: z.ZodNativeEnum<
+    typeof UpdateProjectDataCacheProjectsResponse200ApplicationJSONResponseBodyType
+> = UpdateProjectDataCacheProjectsResponse200ApplicationJSONResponseBodyType$inboundSchema;
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace UpdateProjectDataCacheProjectsResponse200ApplicationJSONType$ {
-    /** @deprecated use `UpdateProjectDataCacheProjectsResponse200ApplicationJSONType$inboundSchema` instead. */
+export namespace UpdateProjectDataCacheProjectsResponse200ApplicationJSONResponseBodyType$ {
+    /** @deprecated use `UpdateProjectDataCacheProjectsResponse200ApplicationJSONResponseBodyType$inboundSchema` instead. */
     export const inboundSchema =
-        UpdateProjectDataCacheProjectsResponse200ApplicationJSONType$inboundSchema;
-    /** @deprecated use `UpdateProjectDataCacheProjectsResponse200ApplicationJSONType$outboundSchema` instead. */
+        UpdateProjectDataCacheProjectsResponse200ApplicationJSONResponseBodyType$inboundSchema;
+    /** @deprecated use `UpdateProjectDataCacheProjectsResponse200ApplicationJSONResponseBodyType$outboundSchema` instead. */
     export const outboundSchema =
-        UpdateProjectDataCacheProjectsResponse200ApplicationJSONType$outboundSchema;
+        UpdateProjectDataCacheProjectsResponse200ApplicationJSONResponseBodyType$outboundSchema;
 }
 
 /** @internal */
@@ -5013,7 +5609,7 @@ export namespace UpdateProjectDataCacheProjectsValue$ {
 
 /** @internal */
 export const Has$inboundSchema: z.ZodType<Has, z.ZodTypeDef, unknown> = z.object({
-    type: UpdateProjectDataCacheProjectsResponse200ApplicationJSONType$inboundSchema,
+    type: UpdateProjectDataCacheProjectsResponse200ApplicationJSONResponseBodyType$inboundSchema,
     key: z.string().optional(),
     value: z
         .union([z.lazy(() => UpdateProjectDataCacheValueProjects2$inboundSchema), z.string()])
@@ -5029,7 +5625,7 @@ export type Has$Outbound = {
 
 /** @internal */
 export const Has$outboundSchema: z.ZodType<Has$Outbound, z.ZodTypeDef, Has> = z.object({
-    type: UpdateProjectDataCacheProjectsResponse200ApplicationJSONType$outboundSchema,
+    type: UpdateProjectDataCacheProjectsResponse200ApplicationJSONResponseBodyType$outboundSchema,
     key: z.string().optional(),
     value: z
         .union([z.lazy(() => UpdateProjectDataCacheValueProjects2$outboundSchema), z.string()])
@@ -5050,26 +5646,26 @@ export namespace Has$ {
 }
 
 /** @internal */
-export const UpdateProjectDataCacheProjectsResponse200ApplicationJSONResponseBodyType$inboundSchema: z.ZodNativeEnum<
-    typeof UpdateProjectDataCacheProjectsResponse200ApplicationJSONResponseBodyType
-> = z.nativeEnum(UpdateProjectDataCacheProjectsResponse200ApplicationJSONResponseBodyType);
+export const UpdateProjectDataCacheProjectsResponse200ApplicationJSONResponseBodySecurityType$inboundSchema: z.ZodNativeEnum<
+    typeof UpdateProjectDataCacheProjectsResponse200ApplicationJSONResponseBodySecurityType
+> = z.nativeEnum(UpdateProjectDataCacheProjectsResponse200ApplicationJSONResponseBodySecurityType);
 
 /** @internal */
-export const UpdateProjectDataCacheProjectsResponse200ApplicationJSONResponseBodyType$outboundSchema: z.ZodNativeEnum<
-    typeof UpdateProjectDataCacheProjectsResponse200ApplicationJSONResponseBodyType
-> = UpdateProjectDataCacheProjectsResponse200ApplicationJSONResponseBodyType$inboundSchema;
+export const UpdateProjectDataCacheProjectsResponse200ApplicationJSONResponseBodySecurityType$outboundSchema: z.ZodNativeEnum<
+    typeof UpdateProjectDataCacheProjectsResponse200ApplicationJSONResponseBodySecurityType
+> = UpdateProjectDataCacheProjectsResponse200ApplicationJSONResponseBodySecurityType$inboundSchema;
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace UpdateProjectDataCacheProjectsResponse200ApplicationJSONResponseBodyType$ {
-    /** @deprecated use `UpdateProjectDataCacheProjectsResponse200ApplicationJSONResponseBodyType$inboundSchema` instead. */
+export namespace UpdateProjectDataCacheProjectsResponse200ApplicationJSONResponseBodySecurityType$ {
+    /** @deprecated use `UpdateProjectDataCacheProjectsResponse200ApplicationJSONResponseBodySecurityType$inboundSchema` instead. */
     export const inboundSchema =
-        UpdateProjectDataCacheProjectsResponse200ApplicationJSONResponseBodyType$inboundSchema;
-    /** @deprecated use `UpdateProjectDataCacheProjectsResponse200ApplicationJSONResponseBodyType$outboundSchema` instead. */
+        UpdateProjectDataCacheProjectsResponse200ApplicationJSONResponseBodySecurityType$inboundSchema;
+    /** @deprecated use `UpdateProjectDataCacheProjectsResponse200ApplicationJSONResponseBodySecurityType$outboundSchema` instead. */
     export const outboundSchema =
-        UpdateProjectDataCacheProjectsResponse200ApplicationJSONResponseBodyType$outboundSchema;
+        UpdateProjectDataCacheProjectsResponse200ApplicationJSONResponseBodySecurityType$outboundSchema;
 }
 
 /** @internal */
@@ -5170,7 +5766,7 @@ export namespace UpdateProjectDataCacheValue$ {
 
 /** @internal */
 export const Missing$inboundSchema: z.ZodType<Missing, z.ZodTypeDef, unknown> = z.object({
-    type: UpdateProjectDataCacheProjectsResponse200ApplicationJSONResponseBodyType$inboundSchema,
+    type: UpdateProjectDataCacheProjectsResponse200ApplicationJSONResponseBodySecurityType$inboundSchema,
     key: z.string().optional(),
     value: z
         .union([z.lazy(() => UpdateProjectDataCacheValue2$inboundSchema), z.string()])
@@ -5186,7 +5782,7 @@ export type Missing$Outbound = {
 
 /** @internal */
 export const Missing$outboundSchema: z.ZodType<Missing$Outbound, z.ZodTypeDef, Missing> = z.object({
-    type: UpdateProjectDataCacheProjectsResponse200ApplicationJSONResponseBodyType$outboundSchema,
+    type: UpdateProjectDataCacheProjectsResponse200ApplicationJSONResponseBodySecurityType$outboundSchema,
     key: z.string().optional(),
     value: z
         .union([z.lazy(() => UpdateProjectDataCacheValue2$outboundSchema), z.string()])
@@ -5299,6 +5895,7 @@ export const Mitigate$inboundSchema: z.ZodType<Mitigate, z.ZodTypeDef, unknown> 
     .object({
         action: Action$inboundSchema,
         rule_id: z.string(),
+        ttl: z.number().optional(),
         erl: z.lazy(() => Erl$inboundSchema).optional(),
     })
     .transform((v) => {
@@ -5311,6 +5908,7 @@ export const Mitigate$inboundSchema: z.ZodType<Mitigate, z.ZodTypeDef, unknown> 
 export type Mitigate$Outbound = {
     action: string;
     rule_id: string;
+    ttl?: number | undefined;
     erl?: Erl$Outbound | undefined;
 };
 
@@ -5319,6 +5917,7 @@ export const Mitigate$outboundSchema: z.ZodType<Mitigate$Outbound, z.ZodTypeDef,
     .object({
         action: Action$outboundSchema,
         ruleId: z.string(),
+        ttl: z.number().optional(),
         erl: z.lazy(() => Erl$outboundSchema).optional(),
     })
     .transform((v) => {
@@ -5455,21 +6054,24 @@ export namespace UpdateProjectDataCacheSecurity$ {
 }
 
 /** @internal */
-export const OidcTokenConfig$inboundSchema: z.ZodType<OidcTokenConfig, z.ZodTypeDef, unknown> =
-    z.object({
-        enabled: z.boolean(),
-    });
+export const UpdateProjectDataCacheOidcTokenConfig$inboundSchema: z.ZodType<
+    UpdateProjectDataCacheOidcTokenConfig,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    enabled: z.boolean(),
+});
 
 /** @internal */
-export type OidcTokenConfig$Outbound = {
+export type UpdateProjectDataCacheOidcTokenConfig$Outbound = {
     enabled: boolean;
 };
 
 /** @internal */
-export const OidcTokenConfig$outboundSchema: z.ZodType<
-    OidcTokenConfig$Outbound,
+export const UpdateProjectDataCacheOidcTokenConfig$outboundSchema: z.ZodType<
+    UpdateProjectDataCacheOidcTokenConfig$Outbound,
     z.ZodTypeDef,
-    OidcTokenConfig
+    UpdateProjectDataCacheOidcTokenConfig
 > = z.object({
     enabled: z.boolean(),
 });
@@ -5478,13 +6080,30 @@ export const OidcTokenConfig$outboundSchema: z.ZodType<
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace OidcTokenConfig$ {
-    /** @deprecated use `OidcTokenConfig$inboundSchema` instead. */
-    export const inboundSchema = OidcTokenConfig$inboundSchema;
-    /** @deprecated use `OidcTokenConfig$outboundSchema` instead. */
-    export const outboundSchema = OidcTokenConfig$outboundSchema;
-    /** @deprecated use `OidcTokenConfig$Outbound` instead. */
-    export type Outbound = OidcTokenConfig$Outbound;
+export namespace UpdateProjectDataCacheOidcTokenConfig$ {
+    /** @deprecated use `UpdateProjectDataCacheOidcTokenConfig$inboundSchema` instead. */
+    export const inboundSchema = UpdateProjectDataCacheOidcTokenConfig$inboundSchema;
+    /** @deprecated use `UpdateProjectDataCacheOidcTokenConfig$outboundSchema` instead. */
+    export const outboundSchema = UpdateProjectDataCacheOidcTokenConfig$outboundSchema;
+    /** @deprecated use `UpdateProjectDataCacheOidcTokenConfig$Outbound` instead. */
+    export type Outbound = UpdateProjectDataCacheOidcTokenConfig$Outbound;
+}
+
+/** @internal */
+export const Tier$inboundSchema: z.ZodNativeEnum<typeof Tier> = z.nativeEnum(Tier);
+
+/** @internal */
+export const Tier$outboundSchema: z.ZodNativeEnum<typeof Tier> = Tier$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace Tier$ {
+    /** @deprecated use `Tier$inboundSchema` instead. */
+    export const inboundSchema = Tier$inboundSchema;
+    /** @deprecated use `Tier$outboundSchema` instead. */
+    export const outboundSchema = Tier$outboundSchema;
 }
 
 /** @internal */
@@ -5507,6 +6126,7 @@ export const UpdateProjectDataCacheResponseBody$inboundSchema: z.ZodType<
     customerSupportCodeVisibility: z.boolean().optional(),
     crons: z.lazy(() => Crons$inboundSchema).optional(),
     dataCache: z.lazy(() => UpdateProjectDataCacheDataCache$inboundSchema).optional(),
+    deploymentExpiration: z.nullable(z.lazy(() => DeploymentExpiration$inboundSchema)).optional(),
     devCommand: z.nullable(z.string()).optional(),
     directoryListing: z.boolean(),
     installCommand: z.nullable(z.string()).optional(),
@@ -5542,10 +6162,11 @@ export const UpdateProjectDataCacheResponseBody$inboundSchema: z.ZodType<
     skewProtectionMaxAge: z.number().optional(),
     skipGitConnectDuringLink: z.boolean().optional(),
     sourceFilesOutsideRootDirectory: z.boolean().optional(),
+    enableAffectedProjectsDeployments: z.boolean().optional(),
     ssoProtection: z
         .nullable(z.lazy(() => UpdateProjectDataCacheSsoProtection$inboundSchema))
         .optional(),
-    targets: z.record(z.union([z.string(), z.array(z.string())])).optional(),
+    targets: z.record(z.lazy(() => Targets$inboundSchema)).optional(),
     transferCompletedAt: z.number().optional(),
     transferStartedAt: z.number().optional(),
     transferToAccountId: z.string().optional(),
@@ -5553,11 +6174,14 @@ export const UpdateProjectDataCacheResponseBody$inboundSchema: z.ZodType<
     updatedAt: z.number().optional(),
     live: z.boolean().optional(),
     enablePreviewFeedback: z.nullable(z.boolean()).optional(),
+    enableProductionFeedback: z.nullable(z.boolean()).optional(),
     permissions: z.lazy(() => Permissions$inboundSchema).optional(),
     lastRollbackTarget: z.nullable(z.lazy(() => LastRollbackTarget$inboundSchema)).optional(),
     lastAliasRequest: z.nullable(z.lazy(() => LastAliasRequest$inboundSchema)).optional(),
     hasFloatingAliases: z.boolean().optional(),
-    protectionBypass: z.record(z.lazy(() => ProtectionBypass$inboundSchema)).optional(),
+    protectionBypass: z
+        .record(z.lazy(() => UpdateProjectDataCacheProtectionBypass$inboundSchema))
+        .optional(),
     hasActiveBranches: z.boolean().optional(),
     trustedIps: z
         .nullable(
@@ -5572,7 +6196,8 @@ export const UpdateProjectDataCacheResponseBody$inboundSchema: z.ZodType<
     concurrencyBucketName: z.string().optional(),
     webAnalytics: z.lazy(() => UpdateProjectDataCacheWebAnalytics$inboundSchema).optional(),
     security: z.lazy(() => UpdateProjectDataCacheSecurity$inboundSchema).optional(),
-    oidcTokenConfig: z.lazy(() => OidcTokenConfig$inboundSchema).optional(),
+    oidcTokenConfig: z.lazy(() => UpdateProjectDataCacheOidcTokenConfig$inboundSchema).optional(),
+    tier: Tier$inboundSchema.optional(),
 });
 
 /** @internal */
@@ -5591,6 +6216,7 @@ export type UpdateProjectDataCacheResponseBody$Outbound = {
     customerSupportCodeVisibility?: boolean | undefined;
     crons?: Crons$Outbound | undefined;
     dataCache?: UpdateProjectDataCacheDataCache$Outbound | undefined;
+    deploymentExpiration?: DeploymentExpiration$Outbound | null | undefined;
     devCommand?: string | null | undefined;
     directoryListing: boolean;
     installCommand?: string | null | undefined;
@@ -5616,8 +6242,9 @@ export type UpdateProjectDataCacheResponseBody$Outbound = {
     skewProtectionMaxAge?: number | undefined;
     skipGitConnectDuringLink?: boolean | undefined;
     sourceFilesOutsideRootDirectory?: boolean | undefined;
+    enableAffectedProjectsDeployments?: boolean | undefined;
     ssoProtection?: UpdateProjectDataCacheSsoProtection$Outbound | null | undefined;
-    targets?: { [k: string]: string | Array<string> } | undefined;
+    targets?: { [k: string]: Targets$Outbound } | undefined;
     transferCompletedAt?: number | undefined;
     transferStartedAt?: number | undefined;
     transferToAccountId?: string | undefined;
@@ -5625,11 +6252,12 @@ export type UpdateProjectDataCacheResponseBody$Outbound = {
     updatedAt?: number | undefined;
     live?: boolean | undefined;
     enablePreviewFeedback?: boolean | null | undefined;
+    enableProductionFeedback?: boolean | null | undefined;
     permissions?: Permissions$Outbound | undefined;
     lastRollbackTarget?: LastRollbackTarget$Outbound | null | undefined;
     lastAliasRequest?: LastAliasRequest$Outbound | null | undefined;
     hasFloatingAliases?: boolean | undefined;
-    protectionBypass?: { [k: string]: ProtectionBypass$Outbound } | undefined;
+    protectionBypass?: { [k: string]: UpdateProjectDataCacheProtectionBypass$Outbound } | undefined;
     hasActiveBranches?: boolean | undefined;
     trustedIps?: TrustedIps2$Outbound | TrustedIps1$Outbound | null | undefined;
     gitComments?: GitComments$Outbound | undefined;
@@ -5637,7 +6265,8 @@ export type UpdateProjectDataCacheResponseBody$Outbound = {
     concurrencyBucketName?: string | undefined;
     webAnalytics?: UpdateProjectDataCacheWebAnalytics$Outbound | undefined;
     security?: UpdateProjectDataCacheSecurity$Outbound | undefined;
-    oidcTokenConfig?: OidcTokenConfig$Outbound | undefined;
+    oidcTokenConfig?: UpdateProjectDataCacheOidcTokenConfig$Outbound | undefined;
+    tier?: string | undefined;
 };
 
 /** @internal */
@@ -5660,6 +6289,7 @@ export const UpdateProjectDataCacheResponseBody$outboundSchema: z.ZodType<
     customerSupportCodeVisibility: z.boolean().optional(),
     crons: z.lazy(() => Crons$outboundSchema).optional(),
     dataCache: z.lazy(() => UpdateProjectDataCacheDataCache$outboundSchema).optional(),
+    deploymentExpiration: z.nullable(z.lazy(() => DeploymentExpiration$outboundSchema)).optional(),
     devCommand: z.nullable(z.string()).optional(),
     directoryListing: z.boolean(),
     installCommand: z.nullable(z.string()).optional(),
@@ -5695,10 +6325,11 @@ export const UpdateProjectDataCacheResponseBody$outboundSchema: z.ZodType<
     skewProtectionMaxAge: z.number().optional(),
     skipGitConnectDuringLink: z.boolean().optional(),
     sourceFilesOutsideRootDirectory: z.boolean().optional(),
+    enableAffectedProjectsDeployments: z.boolean().optional(),
     ssoProtection: z
         .nullable(z.lazy(() => UpdateProjectDataCacheSsoProtection$outboundSchema))
         .optional(),
-    targets: z.record(z.union([z.string(), z.array(z.string())])).optional(),
+    targets: z.record(z.lazy(() => Targets$outboundSchema)).optional(),
     transferCompletedAt: z.number().optional(),
     transferStartedAt: z.number().optional(),
     transferToAccountId: z.string().optional(),
@@ -5706,11 +6337,14 @@ export const UpdateProjectDataCacheResponseBody$outboundSchema: z.ZodType<
     updatedAt: z.number().optional(),
     live: z.boolean().optional(),
     enablePreviewFeedback: z.nullable(z.boolean()).optional(),
+    enableProductionFeedback: z.nullable(z.boolean()).optional(),
     permissions: z.lazy(() => Permissions$outboundSchema).optional(),
     lastRollbackTarget: z.nullable(z.lazy(() => LastRollbackTarget$outboundSchema)).optional(),
     lastAliasRequest: z.nullable(z.lazy(() => LastAliasRequest$outboundSchema)).optional(),
     hasFloatingAliases: z.boolean().optional(),
-    protectionBypass: z.record(z.lazy(() => ProtectionBypass$outboundSchema)).optional(),
+    protectionBypass: z
+        .record(z.lazy(() => UpdateProjectDataCacheProtectionBypass$outboundSchema))
+        .optional(),
     hasActiveBranches: z.boolean().optional(),
     trustedIps: z
         .nullable(
@@ -5725,7 +6359,8 @@ export const UpdateProjectDataCacheResponseBody$outboundSchema: z.ZodType<
     concurrencyBucketName: z.string().optional(),
     webAnalytics: z.lazy(() => UpdateProjectDataCacheWebAnalytics$outboundSchema).optional(),
     security: z.lazy(() => UpdateProjectDataCacheSecurity$outboundSchema).optional(),
-    oidcTokenConfig: z.lazy(() => OidcTokenConfig$outboundSchema).optional(),
+    oidcTokenConfig: z.lazy(() => UpdateProjectDataCacheOidcTokenConfig$outboundSchema).optional(),
+    tier: Tier$outboundSchema.optional(),
 });
 
 /**

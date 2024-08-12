@@ -5,27 +5,18 @@
 import * as z from "zod";
 
 export type GetTeamRequest = {
-    /**
-     * The Team identifier to perform the request on behalf of.
-     */
     teamId: string;
-    /**
-     * The Team slug to perform the request on behalf of.
-     */
-    slug?: string | undefined;
 };
 
 /** @internal */
 export const GetTeamRequest$inboundSchema: z.ZodType<GetTeamRequest, z.ZodTypeDef, unknown> =
     z.object({
         teamId: z.string(),
-        slug: z.string().optional(),
     });
 
 /** @internal */
 export type GetTeamRequest$Outbound = {
     teamId: string;
-    slug?: string | undefined;
 };
 
 /** @internal */
@@ -35,7 +26,6 @@ export const GetTeamRequest$outboundSchema: z.ZodType<
     GetTeamRequest
 > = z.object({
     teamId: z.string(),
-    slug: z.string().optional(),
 });
 
 /**

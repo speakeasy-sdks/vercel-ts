@@ -4,9 +4,8 @@
 ### Available Operations
 
 * [list](#list) - List aliases
-* [getAlias](#getalias) - Get an Alias
+* [get](#get) - Get an Alias
 * [delete](#delete) - Delete an Alias
-* [listDeploymentAliases](#listdeploymentaliases) - List Deployment Aliases
 * [assign](#assign) - Assign an Alias
 
 ## list
@@ -19,13 +18,42 @@ Retrieves a list of aliases for the authenticated User or Team. When `domain` is
 import { Vercel } from "vercel";
 
 const vercel = new Vercel({
-  security: {
-    bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
-  },
+  bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
 async function run() {
   const result = await vercel.aliases.list();
+
+  // Handle the result
+  console.log(result)
+}
+
+run();
+```
+
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { VercelCore } from "vercel/core.js";
+import { aliasesList } from "vercel/funcs/aliasesList.js";
+
+// Use `VercelCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const vercel = new VercelCore({
+  bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const res = await aliasesList(vercel);
+
+  if (!res.ok) {
+    throw res.error;
+  }
+
+  const { value: result } = res;
 
   // Handle the result
   console.log(result)
@@ -53,7 +81,7 @@ run();
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
 
-## getAlias
+## get
 
 Retrieves an Alias for the given host name or alias ID.
 
@@ -63,15 +91,46 @@ Retrieves an Alias for the given host name or alias ID.
 import { Vercel } from "vercel";
 
 const vercel = new Vercel({
-  security: {
-    bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
-  },
+  bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
 async function run() {
-  const result = await vercel.aliases.getAlias({
+  const result = await vercel.aliases.get({
     idOrAlias: "example.vercel.app",
   });
+
+  // Handle the result
+  console.log(result)
+}
+
+run();
+```
+
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { VercelCore } from "vercel/core.js";
+import { aliasesGet } from "vercel/funcs/aliasesGet.js";
+
+// Use `VercelCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const vercel = new VercelCore({
+  bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const res = await aliasesGet(vercel, {
+    idOrAlias: "example.vercel.app",
+  });
+
+  if (!res.ok) {
+    throw res.error;
+  }
+
+  const { value: result } = res;
 
   // Handle the result
   console.log(result)
@@ -92,7 +151,7 @@ run();
 
 ### Response
 
-**Promise\<[models.GetAliasResponseBody](../../models/getaliasresponsebody.md)\>**
+**Promise\<[models.GetAliasResponseBody[]](../../models/.md)\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -109,13 +168,42 @@ Delete an Alias with the specified ID.
 import { Vercel } from "vercel";
 
 const vercel = new Vercel({
-  security: {
-    bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
-  },
+  bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
 async function run() {
   const result = await vercel.aliases.delete("<value>");
+
+  // Handle the result
+  console.log(result)
+}
+
+run();
+```
+
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { VercelCore } from "vercel/core.js";
+import { aliasesDelete } from "vercel/funcs/aliasesDelete.js";
+
+// Use `VercelCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const vercel = new VercelCore({
+  bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const res = await aliasesDelete(vercel, "<value>");
+
+  if (!res.ok) {
+    throw res.error;
+  }
+
+  const { value: result } = res;
 
   // Handle the result
   console.log(result)
@@ -145,52 +233,6 @@ run();
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
 
-## listDeploymentAliases
-
-Retrieves all Aliases for the Deployment with the given ID. The authenticated user or team must own the deployment.
-
-### Example Usage
-
-```typescript
-import { Vercel } from "vercel";
-
-const vercel = new Vercel({
-  security: {
-    bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
-  },
-});
-
-async function run() {
-  const result = await vercel.aliases.listDeploymentAliases("dpl_FjvFJncQHQcZMznrUm9EoB8sFuPa");
-
-  // Handle the result
-  console.log(result)
-}
-
-run();
-```
-
-### Parameters
-
-| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    | Example                                                                                                                                                                        |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `id`                                                                                                                                                                           | *string*                                                                                                                                                                       | :heavy_check_mark:                                                                                                                                                             | The ID of the deployment the aliases should be listed for                                                                                                                      | [object Object]                                                                                                                                                                |
-| `teamId`                                                                                                                                                                       | *string*                                                                                                                                                                       | :heavy_minus_sign:                                                                                                                                                             | The Team identifier to perform the request on behalf of.                                                                                                                       |                                                                                                                                                                                |
-| `slug`                                                                                                                                                                         | *string*                                                                                                                                                                       | :heavy_minus_sign:                                                                                                                                                             | The Team slug to perform the request on behalf of.                                                                                                                             |                                                                                                                                                                                |
-| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |                                                                                                                                                                                |
-| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |                                                                                                                                                                                |
-| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |                                                                                                                                                                                |
-
-
-### Response
-
-**Promise\<[models.ListDeploymentAliasesResponseBody](../../models/listdeploymentaliasesresponsebody.md)\>**
-### Errors
-
-| Error Object    | Status Code     | Content Type    |
-| --------------- | --------------- | --------------- |
-| models.SDKError | 4xx-5xx         | */*             |
-
 ## assign
 
 Creates a new alias for the deployment with the given deployment ID. The authenticated user or team must own this deployment. If the desired alias is already assigned to another deployment, then it will be removed from the old deployment and assigned to the new one.
@@ -201,13 +243,42 @@ Creates a new alias for the deployment with the given deployment ID. The authent
 import { Vercel } from "vercel";
 
 const vercel = new Vercel({
-  security: {
-    bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
-  },
+  bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
 async function run() {
   const result = await vercel.aliases.assign("<value>");
+
+  // Handle the result
+  console.log(result)
+}
+
+run();
+```
+
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { VercelCore } from "vercel/core.js";
+import { aliasesAssign } from "vercel/funcs/aliasesAssign.js";
+
+// Use `VercelCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const vercel = new VercelCore({
+  bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const res = await aliasesAssign(vercel, "<value>");
+
+  if (!res.ok) {
+    throw res.error;
+  }
+
+  const { value: result } = res;
 
   // Handle the result
   console.log(result)

@@ -5,5 +5,5 @@
 
 | Name   | Value  |
 | ------ | ------ |
-| `User` | user   |
 | `Team` | team   |
+| `User` | user   |

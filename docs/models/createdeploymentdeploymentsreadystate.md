@@ -5,7 +5,7 @@
 
 | Name           | Value          |
 | -------------- | -------------- |
-| `Error`        | ERROR          |
 | `Building`     | BUILDING       |
+| `Error`        | ERROR          |
 | `Initializing` | INITIALIZING   |
 | `Ready`        | READY          |

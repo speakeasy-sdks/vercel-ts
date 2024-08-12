@@ -5,6 +5,6 @@ Successful response removing a domain.
 
 ## Fields
 
-| Field              | Type               | Required           | Description        |
-| ------------------ | ------------------ | ------------------ | ------------------ |
-| `uid`              | *string*           | :heavy_check_mark: | N/A                |
+| Field                                  | Type                                   | Required                               | Description                            | Example                                |
+| -------------------------------------- | -------------------------------------- | -------------------------------------- | -------------------------------------- | -------------------------------------- |
+| `uid`                                  | *string*                               | :heavy_check_mark:                     | The id of the newly created DNS record | rec_V0fra8eEgQwEpFhYG2vTzC3K           |

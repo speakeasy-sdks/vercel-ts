@@ -26,10 +26,6 @@ export type UpdateProjectDomainRequestBody = {
      */
     gitBranch?: string | null | undefined;
     /**
-     * The unique custom environment identifier within the project
-     */
-    customEnvironmentId?: string | undefined;
-    /**
      * Target destination domain for redirect
      */
     redirect?: string | null | undefined;
@@ -118,7 +114,6 @@ export const UpdateProjectDomainRequestBody$inboundSchema: z.ZodType<
     unknown
 > = z.object({
     gitBranch: z.nullable(z.string()).optional(),
-    customEnvironmentId: z.string().optional(),
     redirect: z.nullable(z.string()).optional(),
     redirectStatusCode: z.nullable(RedirectStatusCode$inboundSchema).optional(),
 });
@@ -126,7 +121,6 @@ export const UpdateProjectDomainRequestBody$inboundSchema: z.ZodType<
 /** @internal */
 export type UpdateProjectDomainRequestBody$Outbound = {
     gitBranch?: string | null | undefined;
-    customEnvironmentId?: string | undefined;
     redirect?: string | null | undefined;
     redirectStatusCode?: number | null | undefined;
 };
@@ -138,7 +132,6 @@ export const UpdateProjectDomainRequestBody$outboundSchema: z.ZodType<
     UpdateProjectDomainRequestBody
 > = z.object({
     gitBranch: z.nullable(z.string()).optional(),
-    customEnvironmentId: z.string().optional(),
     redirect: z.nullable(z.string()).optional(),
     redirectStatusCode: z.nullable(RedirectStatusCode$outboundSchema).optional(),
 });

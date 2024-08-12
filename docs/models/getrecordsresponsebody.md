@@ -17,9 +17,9 @@ const value: string = /* values here */
 const value: models.GetRecordsResponseBody2 = /* values here */
 ```
 
-### `models.GetRecordsResponseBody3`
+### `models.ResponseBody3`
 
 ```typescript
-const value: models.GetRecordsResponseBody3 = /* values here */
+const value: models.ResponseBody3 = /* values here */
 ```
 

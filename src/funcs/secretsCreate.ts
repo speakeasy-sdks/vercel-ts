@@ -3,11 +3,7 @@
  */
 
 import { VercelCore } from "../core.js";
-import {
-    encodeFormQuery as encodeFormQuery$,
-    encodeJSON as encodeJSON$,
-    encodeSimple as encodeSimple$,
-} from "../lib/encodings.js";
+import { encodeJSON as encodeJSON$, encodeSimple as encodeSimple$ } from "../lib/encodings.js";
 import * as m$ from "../lib/matchers.js";
 import * as schemas$ from "../lib/schemas.js";
 import { RequestOptions } from "../lib/sdks.js";
@@ -40,8 +36,6 @@ import { Result } from "../types/fp.js";
 export async function secretsCreate(
     client$: VercelCore,
     name: string,
-    teamId?: string | undefined,
-    slug?: string | undefined,
     requestBody?: CreateSecretRequestBody | undefined,
     options?: RequestOptions
 ): Promise<
@@ -58,8 +52,6 @@ export async function secretsCreate(
 > {
     const input$: CreateSecretRequest = {
         name: name,
-        teamId: teamId,
-        slug: slug,
         requestBody: requestBody,
     };
 
@@ -80,21 +72,17 @@ export async function secretsCreate(
 
     const path$ = pathToFunc("/v2/secrets/{name}")(pathParams$);
 
-    const query$ = encodeFormQuery$({
-        slug: payload$.slug,
-        teamId: payload$.teamId,
-    });
-
     const headers$ = new Headers({
         "Content-Type": "application/json",
         Accept: "application/json",
     });
 
-    const security$ = await extractSecurity(client$.options$.security);
+    const bearerToken$ = await extractSecurity(client$.options$.bearerToken);
+    const security$ = bearerToken$ == null ? {} : { bearerToken: bearerToken$ };
     const context = {
         operationID: "createSecret",
         oAuth2Scopes: [],
-        securitySource: client$.options$.security,
+        securitySource: client$.options$.bearerToken,
     };
     const securitySettings$ = resolveGlobalSecurity(security$);
 
@@ -105,7 +93,6 @@ export async function secretsCreate(
             method: "POST",
             path: path$,
             headers: headers$,
-            query: query$,
             body: body$,
             timeoutMs: options?.timeoutMs || client$.options$.timeoutMs || -1,
         },

@@ -147,9 +147,6 @@ export type GetAliasProtectionBypass =
     | ProtectionBypass4
     | ProtectionBypass2;
 
-/**
- * The alias information
- */
 export type GetAliasResponseBody = {
     /**
      * The alias name, it could be a `.vercel.app` subdomain or a custom domain

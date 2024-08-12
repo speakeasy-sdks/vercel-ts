@@ -5,14 +5,20 @@
 import { domainsBuy } from "../funcs/domainsBuy.js";
 import { domainsCheckPrice } from "../funcs/domainsCheckPrice.js";
 import { domainsCheckStatus } from "../funcs/domainsCheckStatus.js";
-import { domainsCreateOrTransferDomain } from "../funcs/domainsCreateOrTransferDomain.js";
+import { domainsCreate } from "../funcs/domainsCreate.js";
+import { domainsCreateOrTransfer } from "../funcs/domainsCreateOrTransfer.js";
 import { domainsDelete } from "../funcs/domainsDelete.js";
+import { domainsGet } from "../funcs/domainsGet.js";
 import { domainsGetConfig } from "../funcs/domainsGetConfig.js";
-import { domainsGetDomain } from "../funcs/domainsGetDomain.js";
 import { domainsGetTransfer } from "../funcs/domainsGetTransfer.js";
 import { domainsList } from "../funcs/domainsList.js";
 import { domainsUpdate } from "../funcs/domainsUpdate.js";
+import { domainsVerify } from "../funcs/domainsVerify.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
+import {
+    AddProjectDomainRequestBody,
+    AddProjectDomainResponseBody,
+} from "../models/addprojectdomainop.js";
 import { BuyDomainRequestBody, BuyDomainResponse } from "../models/buydomainop.js";
 import { CheckDomainPriceResponseBody, QueryParamType } from "../models/checkdomainpriceop.js";
 import { CheckDomainStatusResponseBody } from "../models/checkdomainstatusop.js";
@@ -26,6 +32,7 @@ import { GetDomainResponseBody } from "../models/getdomainop.js";
 import { GetDomainsRequest, GetDomainsResponseBody } from "../models/getdomainsop.js";
 import { GetDomainTransferResponseBody } from "../models/getdomaintransferop.js";
 import { PatchDomainRequestBody, PatchDomainResponseBody } from "../models/patchdomainop.js";
+import { VerifyProjectDomainResponseBody } from "../models/verifyprojectdomainop.js";
 import { unwrapAsync } from "../types/fp.js";
 
 export class Domains extends ClientSDK {
@@ -112,13 +119,13 @@ export class Domains extends ClientSDK {
      * @remarks
      * Get information for a single domain in an account or team.
      */
-    async getDomain(
+    async get(
         domain: string,
         teamId?: string | undefined,
         slug?: string | undefined,
         options?: RequestOptions
     ): Promise<GetDomainResponseBody> {
-        return unwrapAsync(domainsGetDomain(this, domain, teamId, slug, options));
+        return unwrapAsync(domainsGet(this, domain, teamId, slug, options));
     }
 
     /**
@@ -140,13 +147,13 @@ export class Domains extends ClientSDK {
      * @remarks
      * This endpoint is used for adding a new apex domain name with Vercel for the authenticating user. Can also be used for initiating a domain transfer request from an external Registrar to Vercel.
      */
-    async createOrTransferDomain(
+    async createOrTransfer(
         teamId?: string | undefined,
         slug?: string | undefined,
         requestBody?: CreateOrTransferDomainRequestBody | undefined,
         options?: RequestOptions
     ): Promise<CreateOrTransferDomainResponseBody> {
-        return unwrapAsync(domainsCreateOrTransferDomain(this, teamId, slug, requestBody, options));
+        return unwrapAsync(domainsCreateOrTransfer(this, teamId, slug, requestBody, options));
     }
 
     /**
@@ -178,5 +185,37 @@ export class Domains extends ClientSDK {
         options?: RequestOptions
     ): Promise<DeleteDomainResponseBody> {
         return unwrapAsync(domainsDelete(this, domain, teamId, slug, options));
+    }
+
+    /**
+     * Add a domain to a project
+     *
+     * @remarks
+     * Add a domain to the project by passing its domain name and by specifying the project by either passing the project `id` or `name` in the URL. If the domain is not yet verified to be used on this project, the request will return `verified = false`, and the domain will need to be verified according to the `verification` challenge via `POST /projects/:idOrName/domains/:domain/verify`. If the domain already exists on the project, the request will fail with a `400` status code.
+     */
+    async create(
+        idOrName: string,
+        teamId?: string | undefined,
+        slug?: string | undefined,
+        requestBody?: AddProjectDomainRequestBody | undefined,
+        options?: RequestOptions
+    ): Promise<AddProjectDomainResponseBody> {
+        return unwrapAsync(domainsCreate(this, idOrName, teamId, slug, requestBody, options));
+    }
+
+    /**
+     * Verify project domain
+     *
+     * @remarks
+     * Attempts to verify a project domain with `verified = false` by checking the correctness of the project domain's `verification` challenge.
+     */
+    async verify(
+        idOrName: string,
+        domain: string,
+        teamId?: string | undefined,
+        slug?: string | undefined,
+        options?: RequestOptions
+    ): Promise<VerifyProjectDomainResponseBody> {
+        return unwrapAsync(domainsVerify(this, idOrName, domain, teamId, slug, options));
     }
 }

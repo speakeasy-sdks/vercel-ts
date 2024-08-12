@@ -1,6 +1,10 @@
 # Webhooks
 (*webhooks*)
 
+## Overview
+
+Webhooks
+
 ### Available Operations
 
 * [create](#create) - Creates a webhook
@@ -18,13 +22,42 @@ Creates a webhook
 import { Vercel } from "vercel";
 
 const vercel = new Vercel({
-  security: {
-    bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
-  },
+  bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
 async function run() {
   const result = await vercel.webhooks.create();
+
+  // Handle the result
+  console.log(result)
+}
+
+run();
+```
+
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { VercelCore } from "vercel/core.js";
+import { webhooksCreate } from "vercel/funcs/webhooksCreate.js";
+
+// Use `VercelCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const vercel = new VercelCore({
+  bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const res = await webhooksCreate(vercel);
+
+  if (!res.ok) {
+    throw res.error;
+  }
+
+  const { value: result } = res;
 
   // Handle the result
   console.log(result)
@@ -64,13 +97,42 @@ Get a list of webhooks
 import { Vercel } from "vercel";
 
 const vercel = new Vercel({
-  security: {
-    bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
-  },
+  bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
 async function run() {
   const result = await vercel.webhooks.list();
+
+  // Handle the result
+  console.log(result)
+}
+
+run();
+```
+
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { VercelCore } from "vercel/core.js";
+import { webhooksList } from "vercel/funcs/webhooksList.js";
+
+// Use `VercelCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const vercel = new VercelCore({
+  bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const res = await webhooksList(vercel);
+
+  if (!res.ok) {
+    throw res.error;
+  }
+
+  const { value: result } = res;
 
   // Handle the result
   console.log(result)
@@ -110,13 +172,42 @@ Get a webhook
 import { Vercel } from "vercel";
 
 const vercel = new Vercel({
-  security: {
-    bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
-  },
+  bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
 async function run() {
   const result = await vercel.webhooks.get("<value>");
+
+  // Handle the result
+  console.log(result)
+}
+
+run();
+```
+
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { VercelCore } from "vercel/core.js";
+import { webhooksGet } from "vercel/funcs/webhooksGet.js";
+
+// Use `VercelCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const vercel = new VercelCore({
+  bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const res = await webhooksGet(vercel, "<value>");
+
+  if (!res.ok) {
+    throw res.error;
+  }
+
+  const { value: result } = res;
 
   // Handle the result
   console.log(result)
@@ -156,13 +247,41 @@ Deletes a webhook
 import { Vercel } from "vercel";
 
 const vercel = new Vercel({
-  security: {
-    bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
-  },
+  bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
 async function run() {
   await vercel.webhooks.delete("<value>");
+
+  
+}
+
+run();
+```
+
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { VercelCore } from "vercel/core.js";
+import { webhooksDelete } from "vercel/funcs/webhooksDelete.js";
+
+// Use `VercelCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const vercel = new VercelCore({
+  bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const res = await webhooksDelete(vercel, "<value>");
+
+  if (!res.ok) {
+    throw res.error;
+  }
+
+  const { value: result } = res;
 
   
 }

@@ -5,14 +5,12 @@
 import { deploymentsCancel } from "../funcs/deploymentsCancel.js";
 import { deploymentsCreate } from "../funcs/deploymentsCreate.js";
 import { deploymentsDelete } from "../funcs/deploymentsDelete.js";
-import { deploymentsGetDeployment } from "../funcs/deploymentsGetDeployment.js";
-import {
-    deploymentsGetDeploymentEvents,
-    GetDeploymentEventsAcceptEnum,
-} from "../funcs/deploymentsGetDeploymentEvents.js";
-import { deploymentsGetDeploymentFileContents } from "../funcs/deploymentsGetDeploymentFileContents.js";
+import { deploymentsGet } from "../funcs/deploymentsGet.js";
+import { deploymentsGetEvents, GetEventsAcceptEnum } from "../funcs/deploymentsGetEvents.js";
+import { deploymentsGetFileContents } from "../funcs/deploymentsGetFileContents.js";
 import { deploymentsList } from "../funcs/deploymentsList.js";
-import { deploymentsListDeploymentFiles } from "../funcs/deploymentsListDeploymentFiles.js";
+import { deploymentsListAliases } from "../funcs/deploymentsListAliases.js";
+import { deploymentsListFiles } from "../funcs/deploymentsListFiles.js";
 import { deploymentsUploadFile } from "../funcs/deploymentsUploadFile.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import { CancelDeploymentResponseBody } from "../models/canceldeploymentop.js";
@@ -29,10 +27,11 @@ import {
 import { GetDeploymentFileContentsRequest } from "../models/getdeploymentfilecontentsop.js";
 import { GetDeploymentResponseBody } from "../models/getdeploymentop.js";
 import { GetDeploymentsRequest, GetDeploymentsResponseBody } from "../models/getdeploymentsop.js";
+import { ListDeploymentAliasesResponseBody } from "../models/listdeploymentaliasesop.js";
 import { UploadFileRequest, UploadFileResponseBody } from "../models/uploadfileop.js";
 import { unwrapAsync } from "../types/fp.js";
 
-export { GetDeploymentEventsAcceptEnum } from "../funcs/deploymentsGetDeploymentEvents.js";
+export { GetEventsAcceptEnum } from "../funcs/deploymentsGetEvents.js";
 
 export class Deployments extends ClientSDK {
     /**
@@ -41,11 +40,11 @@ export class Deployments extends ClientSDK {
      * @remarks
      * Get the build logs of a deployment by deployment ID and build ID. It can work as an infinite stream of logs or as a JSON endpoint depending on the input parameters.
      */
-    async getDeploymentEvents(
+    async getEvents(
         request: GetDeploymentEventsRequest,
-        options?: RequestOptions & { acceptHeaderOverride?: GetDeploymentEventsAcceptEnum }
+        options?: RequestOptions & { acceptHeaderOverride?: GetEventsAcceptEnum }
     ): Promise<GetDeploymentEventsResponse> {
-        return unwrapAsync(deploymentsGetDeploymentEvents(this, request, options));
+        return unwrapAsync(deploymentsGetEvents(this, request, options));
     }
 
     /**
@@ -54,16 +53,14 @@ export class Deployments extends ClientSDK {
      * @remarks
      * Retrieves information for a deployment either by supplying its ID (`id` property) or Hostname (`url` property). Additional details will be included when the authenticated user or team is an owner of the deployment.
      */
-    async getDeployment(
+    async get(
         idOrUrl: string,
         withGitRepoInfo?: string | undefined,
         teamId?: string | undefined,
         slug?: string | undefined,
         options?: RequestOptions
     ): Promise<GetDeploymentResponseBody> {
-        return unwrapAsync(
-            deploymentsGetDeployment(this, idOrUrl, withGitRepoInfo, teamId, slug, options)
-        );
+        return unwrapAsync(deploymentsGet(this, idOrUrl, withGitRepoInfo, teamId, slug, options));
     }
 
     /**
@@ -108,18 +105,33 @@ export class Deployments extends ClientSDK {
     }
 
     /**
+     * List Deployment Aliases
+     *
+     * @remarks
+     * Retrieves all Aliases for the Deployment with the given ID. The authenticated user or team must own the deployment.
+     */
+    async listAliases(
+        id: string,
+        teamId?: string | undefined,
+        slug?: string | undefined,
+        options?: RequestOptions
+    ): Promise<ListDeploymentAliasesResponseBody> {
+        return unwrapAsync(deploymentsListAliases(this, id, teamId, slug, options));
+    }
+
+    /**
      * List Deployment Files
      *
      * @remarks
      * Allows to retrieve the file structure of a deployment by supplying the deployment unique identifier.
      */
-    async listDeploymentFiles(
+    async listFiles(
         id: string,
         teamId?: string | undefined,
         slug?: string | undefined,
         options?: RequestOptions
     ): Promise<Array<FileTree>> {
-        return unwrapAsync(deploymentsListDeploymentFiles(this, id, teamId, slug, options));
+        return unwrapAsync(deploymentsListFiles(this, id, teamId, slug, options));
     }
 
     /**
@@ -128,11 +140,11 @@ export class Deployments extends ClientSDK {
      * @remarks
      * Allows to retrieve the content of a file by supplying the file identifier and the deployment unique identifier. The response body will contain a JSON response containing the contents of the file encoded as base64.
      */
-    async getDeploymentFileContents(
+    async getFileContents(
         request: GetDeploymentFileContentsRequest,
         options?: RequestOptions
     ): Promise<void> {
-        return unwrapAsync(deploymentsGetDeploymentFileContents(this, request, options));
+        return unwrapAsync(deploymentsGetFileContents(this, request, options));
     }
 
     /**

@@ -3,25 +3,17 @@
 The environment variable was successfully edited
 
 
-## Fields
+## Supported Types
 
-| Field                                                                        | Type                                                                         | Required                                                                     | Description                                                                  |
-| ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
-| `target`                                                                     | *models.EditProjectEnvProjectsTarget*                                        | :heavy_minus_sign:                                                           | N/A                                                                          |
-| `type`                                                                       | [models.EditProjectEnvProjectsType](../models/editprojectenvprojectstype.md) | :heavy_check_mark:                                                           | N/A                                                                          |
-| `id`                                                                         | *string*                                                                     | :heavy_minus_sign:                                                           | N/A                                                                          |
-| `key`                                                                        | *string*                                                                     | :heavy_check_mark:                                                           | N/A                                                                          |
-| `value`                                                                      | *string*                                                                     | :heavy_check_mark:                                                           | N/A                                                                          |
-| `configurationId`                                                            | *string*                                                                     | :heavy_minus_sign:                                                           | N/A                                                                          |
-| `createdAt`                                                                  | *number*                                                                     | :heavy_minus_sign:                                                           | N/A                                                                          |
-| `updatedAt`                                                                  | *number*                                                                     | :heavy_minus_sign:                                                           | N/A                                                                          |
-| `createdBy`                                                                  | *string*                                                                     | :heavy_minus_sign:                                                           | N/A                                                                          |
-| `updatedBy`                                                                  | *string*                                                                     | :heavy_minus_sign:                                                           | N/A                                                                          |
-| `gitBranch`                                                                  | *string*                                                                     | :heavy_minus_sign:                                                           | N/A                                                                          |
-| `edgeConfigId`                                                               | *string*                                                                     | :heavy_minus_sign:                                                           | N/A                                                                          |
-| `edgeConfigTokenId`                                                          | *string*                                                                     | :heavy_minus_sign:                                                           | N/A                                                                          |
-| `contentHint`                                                                | *models.ContentHint*                                                         | :heavy_minus_sign:                                                           | N/A                                                                          |
-| `internalContentHint`                                                        | [models.InternalContentHint](../models/internalcontenthint.md)               | :heavy_minus_sign:                                                           | Similar to `contentHints`, but should not be exposed to the user.            |
-| `decrypted`                                                                  | *boolean*                                                                    | :heavy_minus_sign:                                                           | Whether `value` is decrypted.                                                |
-| `comment`                                                                    | *string*                                                                     | :heavy_minus_sign:                                                           | N/A                                                                          |
-| `customEnvironmentId`                                                        | *string*                                                                     | :heavy_minus_sign:                                                           | N/A                                                                          |
+### `models.EditProjectEnvResponseBody1`
+
+```typescript
+const value: models.EditProjectEnvResponseBody1 = /* values here */
+```
+
+### `models.EditProjectEnvResponseBody2`
+
+```typescript
+const value: models.EditProjectEnvResponseBody2 = /* values here */
+```
+

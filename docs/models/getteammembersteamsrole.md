@@ -3,8 +3,11 @@
 
 ## Values
 
-| Name               | Value              |
-| ------------------ | ------------------ |
-| `Admin`            | ADMIN              |
-| `ProjectDeveloper` | PROJECT_DEVELOPER  |
-| `ProjectViewer`    | PROJECT_VIEWER     |
+| Name          | Value         |
+| ------------- | ------------- |
+| `Owner`       | OWNER         |
+| `Member`      | MEMBER        |
+| `Developer`   | DEVELOPER     |
+| `Billing`     | BILLING       |
+| `Viewer`      | VIEWER        |
+| `Contributor` | CONTRIBUTOR   |

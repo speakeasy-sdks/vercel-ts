@@ -3,6 +3,7 @@
 
 ## Values
 
-| Name          | Value         |
-| ------------- | ------------- |
-| `FlagsSecret` | flags-secret  |
+| Name       | Value      |
+| ---------- | ---------- |
+| `Promote`  | promote    |
+| `Rollback` | rollback   |

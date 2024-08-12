@@ -1,7 +1,5 @@
 # Routes3
 
-A list of routes objects used to rewrite paths to point towards other internal or external paths
-
 
 ## Fields
 

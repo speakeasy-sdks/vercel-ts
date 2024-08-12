@@ -12,3 +12,4 @@ The sources from which logs are currently being delivered to this log drain.
 | `Lambda`   | lambda     |
 | `Static`   | static     |
 | `External` | external   |
+| `Firewall` | firewall   |

@@ -71,7 +71,7 @@ export async function domainsBuy(
     const payload$ = parsed$.value;
     const body$ = encodeJSON$("body", payload$.RequestBody, { explode: true });
 
-    const path$ = pathToFunc("/v4/domains/buy")();
+    const path$ = pathToFunc("/v5/domains/buy")();
 
     const query$ = encodeFormQuery$({
         slug: payload$.slug,
@@ -83,11 +83,12 @@ export async function domainsBuy(
         Accept: "application/json",
     });
 
-    const security$ = await extractSecurity(client$.options$.security);
+    const bearerToken$ = await extractSecurity(client$.options$.bearerToken);
+    const security$ = bearerToken$ == null ? {} : { bearerToken: bearerToken$ };
     const context = {
         operationID: "buyDomain",
         oAuth2Scopes: [],
-        securitySource: client$.options$.security,
+        securitySource: client$.options$.bearerToken,
     };
     const securitySettings$ = resolveGlobalSecurity(security$);
 

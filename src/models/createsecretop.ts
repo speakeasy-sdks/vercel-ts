@@ -32,14 +32,6 @@ export type CreateSecretRequest = {
      * The name of the secret.
      */
     name: string;
-    /**
-     * The Team identifier to perform the request on behalf of.
-     */
-    teamId?: string | undefined;
-    /**
-     * The Team slug to perform the request on behalf of.
-     */
-    slug?: string | undefined;
     requestBody?: CreateSecretRequestBody | undefined;
 };
 
@@ -48,7 +40,7 @@ export const CreateSecretType = {
 } as const;
 export type CreateSecretType = ClosedEnum<typeof CreateSecretType>;
 
-export type Value = {
+export type CreateSecretValue = {
     type?: CreateSecretType | undefined;
     data?: Array<number> | undefined;
 };
@@ -57,7 +49,7 @@ export type Value = {
  * Successful response showing the created secret.
  */
 export type CreateSecretResponseBody = {
-    value: Value;
+    value: CreateSecretValue;
     /**
      * The date when the secret was created.
      */
@@ -145,8 +137,6 @@ export const CreateSecretRequest$inboundSchema: z.ZodType<
 > = z
     .object({
         name: z.string(),
-        teamId: z.string().optional(),
-        slug: z.string().optional(),
         RequestBody: z.lazy(() => CreateSecretRequestBody$inboundSchema).optional(),
     })
     .transform((v) => {
@@ -158,8 +148,6 @@ export const CreateSecretRequest$inboundSchema: z.ZodType<
 /** @internal */
 export type CreateSecretRequest$Outbound = {
     name: string;
-    teamId?: string | undefined;
-    slug?: string | undefined;
     RequestBody?: CreateSecretRequestBody$Outbound | undefined;
 };
 
@@ -171,8 +159,6 @@ export const CreateSecretRequest$outboundSchema: z.ZodType<
 > = z
     .object({
         name: z.string(),
-        teamId: z.string().optional(),
-        slug: z.string().optional(),
         requestBody: z.lazy(() => CreateSecretRequestBody$outboundSchema).optional(),
     })
     .transform((v) => {
@@ -214,19 +200,24 @@ export namespace CreateSecretType$ {
 }
 
 /** @internal */
-export const Value$inboundSchema: z.ZodType<Value, z.ZodTypeDef, unknown> = z.object({
-    type: CreateSecretType$inboundSchema.optional(),
-    data: z.array(z.number()).optional(),
-});
+export const CreateSecretValue$inboundSchema: z.ZodType<CreateSecretValue, z.ZodTypeDef, unknown> =
+    z.object({
+        type: CreateSecretType$inboundSchema.optional(),
+        data: z.array(z.number()).optional(),
+    });
 
 /** @internal */
-export type Value$Outbound = {
+export type CreateSecretValue$Outbound = {
     type?: string | undefined;
     data?: Array<number> | undefined;
 };
 
 /** @internal */
-export const Value$outboundSchema: z.ZodType<Value$Outbound, z.ZodTypeDef, Value> = z.object({
+export const CreateSecretValue$outboundSchema: z.ZodType<
+    CreateSecretValue$Outbound,
+    z.ZodTypeDef,
+    CreateSecretValue
+> = z.object({
     type: CreateSecretType$outboundSchema.optional(),
     data: z.array(z.number()).optional(),
 });
@@ -235,13 +226,13 @@ export const Value$outboundSchema: z.ZodType<Value$Outbound, z.ZodTypeDef, Value
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace Value$ {
-    /** @deprecated use `Value$inboundSchema` instead. */
-    export const inboundSchema = Value$inboundSchema;
-    /** @deprecated use `Value$outboundSchema` instead. */
-    export const outboundSchema = Value$outboundSchema;
-    /** @deprecated use `Value$Outbound` instead. */
-    export type Outbound = Value$Outbound;
+export namespace CreateSecretValue$ {
+    /** @deprecated use `CreateSecretValue$inboundSchema` instead. */
+    export const inboundSchema = CreateSecretValue$inboundSchema;
+    /** @deprecated use `CreateSecretValue$outboundSchema` instead. */
+    export const outboundSchema = CreateSecretValue$outboundSchema;
+    /** @deprecated use `CreateSecretValue$Outbound` instead. */
+    export type Outbound = CreateSecretValue$Outbound;
 }
 
 /** @internal */
@@ -250,7 +241,7 @@ export const CreateSecretResponseBody$inboundSchema: z.ZodType<
     z.ZodTypeDef,
     unknown
 > = z.object({
-    value: z.lazy(() => Value$inboundSchema),
+    value: z.lazy(() => CreateSecretValue$inboundSchema),
     created: z
         .string()
         .datetime({ offset: true })
@@ -266,7 +257,7 @@ export const CreateSecretResponseBody$inboundSchema: z.ZodType<
 
 /** @internal */
 export type CreateSecretResponseBody$Outbound = {
-    value: Value$Outbound;
+    value: CreateSecretValue$Outbound;
     created: string;
     name: string;
     teamId?: string | null | undefined;
@@ -283,7 +274,7 @@ export const CreateSecretResponseBody$outboundSchema: z.ZodType<
     z.ZodTypeDef,
     CreateSecretResponseBody
 > = z.object({
-    value: z.lazy(() => Value$outboundSchema),
+    value: z.lazy(() => CreateSecretValue$outboundSchema),
     created: z.date().transform((v) => v.toISOString()),
     name: z.string(),
     teamId: z.nullable(z.string()).optional(),

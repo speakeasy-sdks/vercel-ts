@@ -30,6 +30,7 @@ export const GetAllLogDrainsSources = {
     Lambda: "lambda",
     Static: "static",
     External: "external",
+    Firewall: "firewall",
 } as const;
 export type GetAllLogDrainsSources = ClosedEnum<typeof GetAllLogDrainsSources>;
 
@@ -49,6 +50,7 @@ export type GetAllLogDrainsStatus = ClosedEnum<typeof GetAllLogDrainsStatus>;
 export const GetAllLogDrainsDisabledReason = {
     DisabledByOwner: "disabled-by-owner",
     FeatureNotAvailable: "feature-not-available",
+    AccountPlanDowngrade: "account-plan-downgrade",
     DisabledByAdmin: "disabled-by-admin",
 } as const;
 export type GetAllLogDrainsDisabledReason = ClosedEnum<typeof GetAllLogDrainsDisabledReason>;
@@ -76,6 +78,8 @@ export type GetAllLogDrainsResponseBody = {
     ownerId: string;
     projectIds?: Array<string> | undefined;
     createdAt: number;
+    deletedAt: number | null;
+    updatedAt: number;
     sources?: Array<GetAllLogDrainsSources> | undefined;
     headers?: { [k: string]: string } | undefined;
     environments: Array<GetAllLogDrainsEnvironments>;
@@ -291,6 +295,8 @@ export const GetAllLogDrainsResponseBody$inboundSchema: z.ZodType<
     ownerId: z.string(),
     projectIds: z.array(z.string()).optional(),
     createdAt: z.number(),
+    deletedAt: z.nullable(z.number()),
+    updatedAt: z.number(),
     sources: z.array(GetAllLogDrainsSources$inboundSchema).optional(),
     headers: z.record(z.string()).optional(),
     environments: z.array(GetAllLogDrainsEnvironments$inboundSchema),
@@ -317,6 +323,8 @@ export type GetAllLogDrainsResponseBody$Outbound = {
     ownerId: string;
     projectIds?: Array<string> | undefined;
     createdAt: number;
+    deletedAt: number | null;
+    updatedAt: number;
     sources?: Array<string> | undefined;
     headers?: { [k: string]: string } | undefined;
     environments: Array<string>;
@@ -347,6 +355,8 @@ export const GetAllLogDrainsResponseBody$outboundSchema: z.ZodType<
     ownerId: z.string(),
     projectIds: z.array(z.string()).optional(),
     createdAt: z.number(),
+    deletedAt: z.nullable(z.number()),
+    updatedAt: z.number(),
     sources: z.array(GetAllLogDrainsSources$outboundSchema).optional(),
     headers: z.record(z.string()).optional(),
     environments: z.array(GetAllLogDrainsEnvironments$outboundSchema),

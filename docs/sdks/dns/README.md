@@ -3,12 +3,12 @@
 
 ### Available Operations
 
-* [get](#get) - List existing DNS records
-* [create](#create) - Create a DNS record
-* [update](#update) - Update an existing DNS record
-* [remove](#remove) - Delete a DNS record
+* [listRecords](#listrecords) - List existing DNS records
+* [createRecord](#createrecord) - Create a DNS record
+* [updateRecord](#updaterecord) - Update an existing DNS record
+* [removeRecord](#removerecord) - Delete a DNS record
 
-## get
+## listRecords
 
 Retrieves a list of DNS records created for a domain name. By default it returns 20 records if no limit is provided. The rest can be retrieved using the pagination options.
 
@@ -18,15 +18,46 @@ Retrieves a list of DNS records created for a domain name. By default it returns
 import { Vercel } from "vercel";
 
 const vercel = new Vercel({
-  security: {
-    bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
-  },
+  bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
 async function run() {
-  const result = await vercel.dns.get({
+  const result = await vercel.dns.listRecords({
     domain: "example.com",
   });
+
+  // Handle the result
+  console.log(result)
+}
+
+run();
+```
+
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { VercelCore } from "vercel/core.js";
+import { dnsListRecords } from "vercel/funcs/dnsListRecords.js";
+
+// Use `VercelCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const vercel = new VercelCore({
+  bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const res = await dnsListRecords(vercel, {
+    domain: "example.com",
+  });
+
+  if (!res.ok) {
+    throw res.error;
+  }
+
+  const { value: result } = res;
 
   // Handle the result
   console.log(result)
@@ -54,7 +85,7 @@ run();
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
 
-## create
+## createRecord
 
 Creates a DNS record for a domain.
 
@@ -64,13 +95,42 @@ Creates a DNS record for a domain.
 import { Vercel } from "vercel";
 
 const vercel = new Vercel({
-  security: {
-    bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
-  },
+  bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
 async function run() {
-  const result = await vercel.dns.create("example.com");
+  const result = await vercel.dns.createRecord("example.com");
+
+  // Handle the result
+  console.log(result)
+}
+
+run();
+```
+
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { VercelCore } from "vercel/core.js";
+import { dnsCreateRecord } from "vercel/funcs/dnsCreateRecord.js";
+
+// Use `VercelCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const vercel = new VercelCore({
+  bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const res = await dnsCreateRecord(vercel, "example.com");
+
+  if (!res.ok) {
+    throw res.error;
+  }
+
+  const { value: result } = res;
 
   // Handle the result
   console.log(result)
@@ -101,7 +161,7 @@ run();
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
 
-## update
+## updateRecord
 
 Updates an existing DNS record for a domain name.
 
@@ -111,13 +171,42 @@ Updates an existing DNS record for a domain name.
 import { Vercel } from "vercel";
 
 const vercel = new Vercel({
-  security: {
-    bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
-  },
+  bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
 async function run() {
-  const result = await vercel.dns.update("rec_2qn7pzrx89yxy34vezpd31y9");
+  const result = await vercel.dns.updateRecord("rec_2qn7pzrx89yxy34vezpd31y9");
+
+  // Handle the result
+  console.log(result)
+}
+
+run();
+```
+
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { VercelCore } from "vercel/core.js";
+import { dnsUpdateRecord } from "vercel/funcs/dnsUpdateRecord.js";
+
+// Use `VercelCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const vercel = new VercelCore({
+  bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const res = await dnsUpdateRecord(vercel, "rec_2qn7pzrx89yxy34vezpd31y9");
+
+  if (!res.ok) {
+    throw res.error;
+  }
+
+  const { value: result } = res;
 
   // Handle the result
   console.log(result)
@@ -148,7 +237,7 @@ run();
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
 
-## remove
+## removeRecord
 
 Removes an existing DNS record from a domain name.
 
@@ -158,13 +247,42 @@ Removes an existing DNS record from a domain name.
 import { Vercel } from "vercel";
 
 const vercel = new Vercel({
-  security: {
-    bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
-  },
+  bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
 async function run() {
-  const result = await vercel.dns.remove("example.com", "rec_V0fra8eEgQwEpFhYG2vTzC3K");
+  const result = await vercel.dns.removeRecord("example.com", "rec_V0fra8eEgQwEpFhYG2vTzC3K");
+
+  // Handle the result
+  console.log(result)
+}
+
+run();
+```
+
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { VercelCore } from "vercel/core.js";
+import { dnsRemoveRecord } from "vercel/funcs/dnsRemoveRecord.js";
+
+// Use `VercelCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const vercel = new VercelCore({
+  bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const res = await dnsRemoveRecord(vercel, "example.com", "rec_V0fra8eEgQwEpFhYG2vTzC3K");
+
+  if (!res.ok) {
+    throw res.error;
+  }
+
+  const { value: result } = res;
 
   // Handle the result
   console.log(result)

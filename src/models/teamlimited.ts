@@ -32,17 +32,13 @@ export type Connection = {
 };
 
 /**
- * Information for the SAML Single Sign-On configuration.
+ * Information for the Directory Sync configuration.
  */
 export type Directory = {
     /**
      * The Identity Provider "type", for example Okta.
      */
     type: string;
-    /**
-     * Current status of the connection.
-     */
-    status: string;
     /**
      * Current state of the connection.
      */
@@ -66,69 +62,13 @@ export type Saml = {
      */
     connection?: Connection | undefined;
     /**
-     * Information for the SAML Single Sign-On configuration.
+     * Information for the Directory Sync configuration.
      */
     directory?: Directory | undefined;
     /**
      * When `true`, interactions with the Team **must** be done with an authentication token that has been authenticated with the Team's SAML Single Sign-On provider.
      */
     enforced: boolean;
-};
-
-export const MembershipRole = {
-    Owner: "OWNER",
-    Member: "MEMBER",
-    Developer: "DEVELOPER",
-    Billing: "BILLING",
-    Viewer: "VIEWER",
-    Contributor: "CONTRIBUTOR",
-} as const;
-export type MembershipRole = ClosedEnum<typeof MembershipRole>;
-
-export const MembershipOrigin = {
-    Link: "link",
-    Saml: "saml",
-    Mail: "mail",
-    Import: "import",
-    Teams: "teams",
-    Github: "github",
-    Gitlab: "gitlab",
-    Bitbucket: "bitbucket",
-    Dsync: "dsync",
-    Feedback: "feedback",
-    OrganizationTeams: "organization-teams",
-} as const;
-export type MembershipOrigin = ClosedEnum<typeof MembershipOrigin>;
-
-export type MembershipGitUserId = string | number;
-
-export type MembershipJoinedFrom = {
-    origin: MembershipOrigin;
-    commitId?: string | undefined;
-    repoId?: string | undefined;
-    repoPath?: string | undefined;
-    gitUserId?: string | number | undefined;
-    gitUserLogin?: string | undefined;
-    ssoUserId?: string | undefined;
-    ssoConnectedAt?: number | undefined;
-    idpUserId?: string | undefined;
-    dsyncUserId?: string | undefined;
-    dsyncConnectedAt?: number | undefined;
-};
-
-/**
- * The membership of the authenticated User in relation to the Team.
- */
-export type Two = {
-    confirmed: boolean;
-    confirmedAt?: number | undefined;
-    accessRequestedAt: number;
-    role: MembershipRole;
-    teamId?: string | undefined;
-    uid: string;
-    createdAt: number;
-    created: number;
-    joinedFrom?: MembershipJoinedFrom | undefined;
 };
 
 export const Role = {
@@ -141,7 +81,7 @@ export const Role = {
 } as const;
 export type Role = ClosedEnum<typeof Role>;
 
-export const TeamLimitedMembershipOrigin = {
+export const Origin = {
     Link: "link",
     Saml: "saml",
     Mail: "mail",
@@ -154,12 +94,12 @@ export const TeamLimitedMembershipOrigin = {
     Feedback: "feedback",
     OrganizationTeams: "organization-teams",
 } as const;
-export type TeamLimitedMembershipOrigin = ClosedEnum<typeof TeamLimitedMembershipOrigin>;
+export type Origin = ClosedEnum<typeof Origin>;
 
 export type GitUserId = string | number;
 
 export type JoinedFrom = {
-    origin: TeamLimitedMembershipOrigin;
+    origin: Origin;
     commitId?: string | undefined;
     repoId?: string | undefined;
     repoPath?: string | undefined;
@@ -175,19 +115,17 @@ export type JoinedFrom = {
 /**
  * The membership of the authenticated User in relation to the Team.
  */
-export type One = {
-    confirmed: boolean;
-    confirmedAt: number;
+export type Membership = {
+    confirmed?: boolean | undefined;
+    confirmedAt?: number | undefined;
     accessRequestedAt?: number | undefined;
-    role: Role;
+    role?: Role | undefined;
     teamId?: string | undefined;
-    uid: string;
-    createdAt: number;
-    created: number;
+    createdAt?: number | undefined;
+    created?: number | undefined;
     joinedFrom?: JoinedFrom | undefined;
+    uid?: string | undefined;
 };
-
-export type Membership = One | Two;
 
 /**
  * A limited form of data representing a Team, due to the authentication token missing privileges to read the full Team data.
@@ -217,7 +155,10 @@ export type TeamLimited = {
      * The ID of the file used as avatar for this Team.
      */
     avatar: string | null;
-    membership: One | Two;
+    /**
+     * The membership of the authenticated User in relation to the Team.
+     */
+    membership: Membership;
     /**
      * Will remain undocumented. Remove in v3 API.
      */
@@ -272,7 +213,6 @@ export namespace Connection$ {
 /** @internal */
 export const Directory$inboundSchema: z.ZodType<Directory, z.ZodTypeDef, unknown> = z.object({
     type: z.string(),
-    status: z.string(),
     state: z.string(),
     connectedAt: z.number(),
     lastReceivedWebhookEvent: z.number().optional(),
@@ -281,7 +221,6 @@ export const Directory$inboundSchema: z.ZodType<Directory, z.ZodTypeDef, unknown
 /** @internal */
 export type Directory$Outbound = {
     type: string;
-    status: string;
     state: string;
     connectedAt: number;
     lastReceivedWebhookEvent?: number | undefined;
@@ -291,7 +230,6 @@ export type Directory$Outbound = {
 export const Directory$outboundSchema: z.ZodType<Directory$Outbound, z.ZodTypeDef, Directory> =
     z.object({
         type: z.string(),
-        status: z.string(),
         state: z.string(),
         connectedAt: z.number(),
         lastReceivedWebhookEvent: z.number().optional(),
@@ -345,192 +283,6 @@ export namespace Saml$ {
 }
 
 /** @internal */
-export const MembershipRole$inboundSchema: z.ZodNativeEnum<typeof MembershipRole> =
-    z.nativeEnum(MembershipRole);
-
-/** @internal */
-export const MembershipRole$outboundSchema: z.ZodNativeEnum<typeof MembershipRole> =
-    MembershipRole$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace MembershipRole$ {
-    /** @deprecated use `MembershipRole$inboundSchema` instead. */
-    export const inboundSchema = MembershipRole$inboundSchema;
-    /** @deprecated use `MembershipRole$outboundSchema` instead. */
-    export const outboundSchema = MembershipRole$outboundSchema;
-}
-
-/** @internal */
-export const MembershipOrigin$inboundSchema: z.ZodNativeEnum<typeof MembershipOrigin> =
-    z.nativeEnum(MembershipOrigin);
-
-/** @internal */
-export const MembershipOrigin$outboundSchema: z.ZodNativeEnum<typeof MembershipOrigin> =
-    MembershipOrigin$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace MembershipOrigin$ {
-    /** @deprecated use `MembershipOrigin$inboundSchema` instead. */
-    export const inboundSchema = MembershipOrigin$inboundSchema;
-    /** @deprecated use `MembershipOrigin$outboundSchema` instead. */
-    export const outboundSchema = MembershipOrigin$outboundSchema;
-}
-
-/** @internal */
-export const MembershipGitUserId$inboundSchema: z.ZodType<
-    MembershipGitUserId,
-    z.ZodTypeDef,
-    unknown
-> = z.union([z.string(), z.number()]);
-
-/** @internal */
-export type MembershipGitUserId$Outbound = string | number;
-
-/** @internal */
-export const MembershipGitUserId$outboundSchema: z.ZodType<
-    MembershipGitUserId$Outbound,
-    z.ZodTypeDef,
-    MembershipGitUserId
-> = z.union([z.string(), z.number()]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace MembershipGitUserId$ {
-    /** @deprecated use `MembershipGitUserId$inboundSchema` instead. */
-    export const inboundSchema = MembershipGitUserId$inboundSchema;
-    /** @deprecated use `MembershipGitUserId$outboundSchema` instead. */
-    export const outboundSchema = MembershipGitUserId$outboundSchema;
-    /** @deprecated use `MembershipGitUserId$Outbound` instead. */
-    export type Outbound = MembershipGitUserId$Outbound;
-}
-
-/** @internal */
-export const MembershipJoinedFrom$inboundSchema: z.ZodType<
-    MembershipJoinedFrom,
-    z.ZodTypeDef,
-    unknown
-> = z.object({
-    origin: MembershipOrigin$inboundSchema,
-    commitId: z.string().optional(),
-    repoId: z.string().optional(),
-    repoPath: z.string().optional(),
-    gitUserId: z.union([z.string(), z.number()]).optional(),
-    gitUserLogin: z.string().optional(),
-    ssoUserId: z.string().optional(),
-    ssoConnectedAt: z.number().optional(),
-    idpUserId: z.string().optional(),
-    dsyncUserId: z.string().optional(),
-    dsyncConnectedAt: z.number().optional(),
-});
-
-/** @internal */
-export type MembershipJoinedFrom$Outbound = {
-    origin: string;
-    commitId?: string | undefined;
-    repoId?: string | undefined;
-    repoPath?: string | undefined;
-    gitUserId?: string | number | undefined;
-    gitUserLogin?: string | undefined;
-    ssoUserId?: string | undefined;
-    ssoConnectedAt?: number | undefined;
-    idpUserId?: string | undefined;
-    dsyncUserId?: string | undefined;
-    dsyncConnectedAt?: number | undefined;
-};
-
-/** @internal */
-export const MembershipJoinedFrom$outboundSchema: z.ZodType<
-    MembershipJoinedFrom$Outbound,
-    z.ZodTypeDef,
-    MembershipJoinedFrom
-> = z.object({
-    origin: MembershipOrigin$outboundSchema,
-    commitId: z.string().optional(),
-    repoId: z.string().optional(),
-    repoPath: z.string().optional(),
-    gitUserId: z.union([z.string(), z.number()]).optional(),
-    gitUserLogin: z.string().optional(),
-    ssoUserId: z.string().optional(),
-    ssoConnectedAt: z.number().optional(),
-    idpUserId: z.string().optional(),
-    dsyncUserId: z.string().optional(),
-    dsyncConnectedAt: z.number().optional(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace MembershipJoinedFrom$ {
-    /** @deprecated use `MembershipJoinedFrom$inboundSchema` instead. */
-    export const inboundSchema = MembershipJoinedFrom$inboundSchema;
-    /** @deprecated use `MembershipJoinedFrom$outboundSchema` instead. */
-    export const outboundSchema = MembershipJoinedFrom$outboundSchema;
-    /** @deprecated use `MembershipJoinedFrom$Outbound` instead. */
-    export type Outbound = MembershipJoinedFrom$Outbound;
-}
-
-/** @internal */
-export const Two$inboundSchema: z.ZodType<Two, z.ZodTypeDef, unknown> = z.object({
-    confirmed: z.boolean(),
-    confirmedAt: z.number().optional(),
-    accessRequestedAt: z.number(),
-    role: MembershipRole$inboundSchema,
-    teamId: z.string().optional(),
-    uid: z.string(),
-    createdAt: z.number(),
-    created: z.number(),
-    joinedFrom: z.lazy(() => MembershipJoinedFrom$inboundSchema).optional(),
-});
-
-/** @internal */
-export type Two$Outbound = {
-    confirmed: boolean;
-    confirmedAt?: number | undefined;
-    accessRequestedAt: number;
-    role: string;
-    teamId?: string | undefined;
-    uid: string;
-    createdAt: number;
-    created: number;
-    joinedFrom?: MembershipJoinedFrom$Outbound | undefined;
-};
-
-/** @internal */
-export const Two$outboundSchema: z.ZodType<Two$Outbound, z.ZodTypeDef, Two> = z.object({
-    confirmed: z.boolean(),
-    confirmedAt: z.number().optional(),
-    accessRequestedAt: z.number(),
-    role: MembershipRole$outboundSchema,
-    teamId: z.string().optional(),
-    uid: z.string(),
-    createdAt: z.number(),
-    created: z.number(),
-    joinedFrom: z.lazy(() => MembershipJoinedFrom$outboundSchema).optional(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace Two$ {
-    /** @deprecated use `Two$inboundSchema` instead. */
-    export const inboundSchema = Two$inboundSchema;
-    /** @deprecated use `Two$outboundSchema` instead. */
-    export const outboundSchema = Two$outboundSchema;
-    /** @deprecated use `Two$Outbound` instead. */
-    export type Outbound = Two$Outbound;
-}
-
-/** @internal */
 export const Role$inboundSchema: z.ZodNativeEnum<typeof Role> = z.nativeEnum(Role);
 
 /** @internal */
@@ -548,24 +300,20 @@ export namespace Role$ {
 }
 
 /** @internal */
-export const TeamLimitedMembershipOrigin$inboundSchema: z.ZodNativeEnum<
-    typeof TeamLimitedMembershipOrigin
-> = z.nativeEnum(TeamLimitedMembershipOrigin);
+export const Origin$inboundSchema: z.ZodNativeEnum<typeof Origin> = z.nativeEnum(Origin);
 
 /** @internal */
-export const TeamLimitedMembershipOrigin$outboundSchema: z.ZodNativeEnum<
-    typeof TeamLimitedMembershipOrigin
-> = TeamLimitedMembershipOrigin$inboundSchema;
+export const Origin$outboundSchema: z.ZodNativeEnum<typeof Origin> = Origin$inboundSchema;
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace TeamLimitedMembershipOrigin$ {
-    /** @deprecated use `TeamLimitedMembershipOrigin$inboundSchema` instead. */
-    export const inboundSchema = TeamLimitedMembershipOrigin$inboundSchema;
-    /** @deprecated use `TeamLimitedMembershipOrigin$outboundSchema` instead. */
-    export const outboundSchema = TeamLimitedMembershipOrigin$outboundSchema;
+export namespace Origin$ {
+    /** @deprecated use `Origin$inboundSchema` instead. */
+    export const inboundSchema = Origin$inboundSchema;
+    /** @deprecated use `Origin$outboundSchema` instead. */
+    export const outboundSchema = Origin$outboundSchema;
 }
 
 /** @internal */
@@ -596,7 +344,7 @@ export namespace GitUserId$ {
 
 /** @internal */
 export const JoinedFrom$inboundSchema: z.ZodType<JoinedFrom, z.ZodTypeDef, unknown> = z.object({
-    origin: TeamLimitedMembershipOrigin$inboundSchema,
+    origin: Origin$inboundSchema,
     commitId: z.string().optional(),
     repoId: z.string().optional(),
     repoPath: z.string().optional(),
@@ -627,7 +375,7 @@ export type JoinedFrom$Outbound = {
 /** @internal */
 export const JoinedFrom$outboundSchema: z.ZodType<JoinedFrom$Outbound, z.ZodTypeDef, JoinedFrom> =
     z.object({
-        origin: TeamLimitedMembershipOrigin$outboundSchema,
+        origin: Origin$outboundSchema,
         commitId: z.string().optional(),
         repoId: z.string().optional(),
         repoPath: z.string().optional(),
@@ -654,69 +402,44 @@ export namespace JoinedFrom$ {
 }
 
 /** @internal */
-export const One$inboundSchema: z.ZodType<One, z.ZodTypeDef, unknown> = z.object({
-    confirmed: z.boolean(),
-    confirmedAt: z.number(),
+export const Membership$inboundSchema: z.ZodType<Membership, z.ZodTypeDef, unknown> = z.object({
+    confirmed: z.boolean().optional(),
+    confirmedAt: z.number().optional(),
     accessRequestedAt: z.number().optional(),
-    role: Role$inboundSchema,
+    role: Role$inboundSchema.optional(),
     teamId: z.string().optional(),
-    uid: z.string(),
-    createdAt: z.number(),
-    created: z.number(),
+    createdAt: z.number().optional(),
+    created: z.number().optional(),
     joinedFrom: z.lazy(() => JoinedFrom$inboundSchema).optional(),
+    uid: z.string().optional(),
 });
 
 /** @internal */
-export type One$Outbound = {
-    confirmed: boolean;
-    confirmedAt: number;
+export type Membership$Outbound = {
+    confirmed?: boolean | undefined;
+    confirmedAt?: number | undefined;
     accessRequestedAt?: number | undefined;
-    role: string;
+    role?: string | undefined;
     teamId?: string | undefined;
-    uid: string;
-    createdAt: number;
-    created: number;
+    createdAt?: number | undefined;
+    created?: number | undefined;
     joinedFrom?: JoinedFrom$Outbound | undefined;
+    uid?: string | undefined;
 };
 
 /** @internal */
-export const One$outboundSchema: z.ZodType<One$Outbound, z.ZodTypeDef, One> = z.object({
-    confirmed: z.boolean(),
-    confirmedAt: z.number(),
-    accessRequestedAt: z.number().optional(),
-    role: Role$outboundSchema,
-    teamId: z.string().optional(),
-    uid: z.string(),
-    createdAt: z.number(),
-    created: z.number(),
-    joinedFrom: z.lazy(() => JoinedFrom$outboundSchema).optional(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace One$ {
-    /** @deprecated use `One$inboundSchema` instead. */
-    export const inboundSchema = One$inboundSchema;
-    /** @deprecated use `One$outboundSchema` instead. */
-    export const outboundSchema = One$outboundSchema;
-    /** @deprecated use `One$Outbound` instead. */
-    export type Outbound = One$Outbound;
-}
-
-/** @internal */
-export const Membership$inboundSchema: z.ZodType<Membership, z.ZodTypeDef, unknown> = z.union([
-    z.lazy(() => One$inboundSchema),
-    z.lazy(() => Two$inboundSchema),
-]);
-
-/** @internal */
-export type Membership$Outbound = One$Outbound | Two$Outbound;
-
-/** @internal */
 export const Membership$outboundSchema: z.ZodType<Membership$Outbound, z.ZodTypeDef, Membership> =
-    z.union([z.lazy(() => One$outboundSchema), z.lazy(() => Two$outboundSchema)]);
+    z.object({
+        confirmed: z.boolean().optional(),
+        confirmedAt: z.number().optional(),
+        accessRequestedAt: z.number().optional(),
+        role: Role$outboundSchema.optional(),
+        teamId: z.string().optional(),
+        createdAt: z.number().optional(),
+        created: z.number().optional(),
+        joinedFrom: z.lazy(() => JoinedFrom$outboundSchema).optional(),
+        uid: z.string().optional(),
+    });
 
 /**
  * @internal
@@ -739,7 +462,7 @@ export const TeamLimited$inboundSchema: z.ZodType<TeamLimited, z.ZodTypeDef, unk
     slug: z.string(),
     name: z.nullable(z.string()),
     avatar: z.nullable(z.string()),
-    membership: z.union([z.lazy(() => One$inboundSchema), z.lazy(() => Two$inboundSchema)]),
+    membership: z.lazy(() => Membership$inboundSchema),
     created: z.string(),
     createdAt: z.number(),
 });
@@ -752,7 +475,7 @@ export type TeamLimited$Outbound = {
     slug: string;
     name: string | null;
     avatar: string | null;
-    membership: One$Outbound | Two$Outbound;
+    membership: Membership$Outbound;
     created: string;
     createdAt: number;
 };
@@ -769,7 +492,7 @@ export const TeamLimited$outboundSchema: z.ZodType<
     slug: z.string(),
     name: z.nullable(z.string()),
     avatar: z.nullable(z.string()),
-    membership: z.union([z.lazy(() => One$outboundSchema), z.lazy(() => Two$outboundSchema)]),
+    membership: z.lazy(() => Membership$outboundSchema),
     created: z.string(),
     createdAt: z.number(),
 });

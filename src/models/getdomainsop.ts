@@ -79,14 +79,15 @@ export type GetDomainsDomains = {
      * An object containing information of the domain creator, including the user's id, username, and email.
      */
     creator: GetDomainsCreator;
-    /**
-     * If it was purchased through Vercel, the timestamp in milliseconds when it was purchased.
-     */
-    boughtAt: number | null;
+    teamId: string | null;
     /**
      * Timestamp in milliseconds when the domain was created in the registry.
      */
     createdAt: number;
+    /**
+     * If it was purchased through Vercel, the timestamp in milliseconds when it was purchased.
+     */
+    boughtAt: number | null;
     /**
      * Timestamp in milliseconds at which the domain is set to expire. `null` if not bought with Vercel.
      */
@@ -119,6 +120,7 @@ export type GetDomainsDomains = {
      * If transferred into Vercel, timestamp in milliseconds when the domain transfer was initiated.
      */
     transferStartedAt?: number | undefined;
+    userId: string;
 };
 
 /**
@@ -249,8 +251,9 @@ export const GetDomainsDomains$inboundSchema: z.ZodType<GetDomainsDomains, z.Zod
         intendedNameservers: z.array(z.string()),
         customNameservers: z.array(z.string()).optional(),
         creator: z.lazy(() => GetDomainsCreator$inboundSchema),
-        boughtAt: z.nullable(z.number()),
+        teamId: z.nullable(z.string()),
         createdAt: z.number(),
+        boughtAt: z.nullable(z.number()),
         expiresAt: z.nullable(z.number()),
         id: z.string(),
         name: z.string(),
@@ -259,6 +262,7 @@ export const GetDomainsDomains$inboundSchema: z.ZodType<GetDomainsDomains, z.Zod
         serviceType: GetDomainsServiceType$inboundSchema,
         transferredAt: z.nullable(z.number()).optional(),
         transferStartedAt: z.number().optional(),
+        userId: z.string(),
     });
 
 /** @internal */
@@ -268,8 +272,9 @@ export type GetDomainsDomains$Outbound = {
     intendedNameservers: Array<string>;
     customNameservers?: Array<string> | undefined;
     creator: GetDomainsCreator$Outbound;
-    boughtAt: number | null;
+    teamId: string | null;
     createdAt: number;
+    boughtAt: number | null;
     expiresAt: number | null;
     id: string;
     name: string;
@@ -278,6 +283,7 @@ export type GetDomainsDomains$Outbound = {
     serviceType: string;
     transferredAt?: number | null | undefined;
     transferStartedAt?: number | undefined;
+    userId: string;
 };
 
 /** @internal */
@@ -291,8 +297,9 @@ export const GetDomainsDomains$outboundSchema: z.ZodType<
     intendedNameservers: z.array(z.string()),
     customNameservers: z.array(z.string()).optional(),
     creator: z.lazy(() => GetDomainsCreator$outboundSchema),
-    boughtAt: z.nullable(z.number()),
+    teamId: z.nullable(z.string()),
     createdAt: z.number(),
+    boughtAt: z.nullable(z.number()),
     expiresAt: z.nullable(z.number()),
     id: z.string(),
     name: z.string(),
@@ -301,6 +308,7 @@ export const GetDomainsDomains$outboundSchema: z.ZodType<
     serviceType: GetDomainsServiceType$outboundSchema,
     transferredAt: z.nullable(z.number()).optional(),
     transferStartedAt: z.number().optional(),
+    userId: z.string(),
 });
 
 /**

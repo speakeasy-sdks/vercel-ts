@@ -3,15 +3,15 @@
 
 ## Supported Types
 
-### `models.ArtifactQueryResponseBody1`
+### `models.ResponseBody1`
 
 ```typescript
-const value: models.ArtifactQueryResponseBody1 = /* values here */
+const value: models.ResponseBody1 = /* values here */
 ```
 
-### `models.ArtifactQueryResponseBody2`
+### `models.ResponseBody2`
 
 ```typescript
-const value: models.ArtifactQueryResponseBody2 = /* values here */
+const value: models.ResponseBody2 = /* values here */
 ```
 

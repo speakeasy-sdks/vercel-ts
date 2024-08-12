@@ -34,8 +34,8 @@ import { Result } from "../types/fp.js";
  */
 export async function teamsDeleteInviteCode(
     client$: VercelCore,
-    teamId: string,
     inviteId: string,
+    teamId: string,
     options?: RequestOptions
 ): Promise<
     Result<
@@ -50,8 +50,8 @@ export async function teamsDeleteInviteCode(
     >
 > {
     const input$: DeleteTeamInviteCodeRequest = {
-        teamId: teamId,
         inviteId: inviteId,
+        teamId: teamId,
     };
 
     const parsed$ = schemas$.safeParse(
@@ -82,11 +82,12 @@ export async function teamsDeleteInviteCode(
         Accept: "application/json",
     });
 
-    const security$ = await extractSecurity(client$.options$.security);
+    const bearerToken$ = await extractSecurity(client$.options$.bearerToken);
+    const security$ = bearerToken$ == null ? {} : { bearerToken: bearerToken$ };
     const context = {
         operationID: "deleteTeamInviteCode",
         oAuth2Scopes: [],
-        securitySource: client$.options$.security,
+        securitySource: client$.options$.bearerToken,
     };
     const securitySettings$ = resolveGlobalSecurity(security$);
 

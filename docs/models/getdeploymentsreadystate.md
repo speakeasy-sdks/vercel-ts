@@ -13,3 +13,4 @@ In which state is the deployment.
 | `Queued`       | QUEUED         |
 | `Ready`        | READY          |
 | `Canceled`     | CANCELED       |
+| `Deleted`      | DELETED        |

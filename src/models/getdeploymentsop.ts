@@ -11,18 +11,6 @@ import {
 } from "./pagination.js";
 import * as z from "zod";
 
-/**
- * Filter deployments based on the environment.
- */
-export const QueryParamTarget = {
-    Production: "production",
-    Preview: "preview",
-} as const;
-/**
- * Filter deployments based on the environment.
- */
-export type QueryParamTarget = ClosedEnum<typeof QueryParamTarget>;
-
 export type GetDeploymentsRequest = {
     /**
      * Name of the deployment.
@@ -37,13 +25,13 @@ export type GetDeploymentsRequest = {
      */
     limit?: number | undefined;
     /**
-     * Filter deployments from the given `projectId`.
+     * Filter deployments from the given ID or name.
      */
     projectId?: string | undefined;
     /**
      * Filter deployments based on the environment.
      */
-    target?: QueryParamTarget | undefined;
+    target?: string | undefined;
     /**
      * Gets the deployment created before this Date timestamp. (default: current time)
      */
@@ -88,6 +76,7 @@ export const GetDeploymentsSource = {
     Git: "git",
     Import: "import",
     ImportRepo: "import/repo",
+    Redeploy: "redeploy",
 } as const;
 /**
  * The source of the deployment.
@@ -104,6 +93,7 @@ export const GetDeploymentsState = {
     Queued: "QUEUED",
     Ready: "READY",
     Canceled: "CANCELED",
+    Deleted: "DELETED",
 } as const;
 /**
  * In which state is the deployment.
@@ -120,6 +110,7 @@ export const GetDeploymentsReadyState = {
     Queued: "QUEUED",
     Ready: "READY",
     Canceled: "CANCELED",
+    Deleted: "DELETED",
 } as const;
 /**
  * In which state is the deployment.
@@ -266,6 +257,7 @@ export const GetDeploymentsFramework = {
     Vitepress: "vitepress",
     Vuepress: "vuepress",
     Parcel: "parcel",
+    Fasthtml: "fasthtml",
     Sanity: "sanity",
     Storybook: "storybook",
 } as const;
@@ -341,6 +333,14 @@ export type GetDeploymentsProjectSettings = {
     gitComments?: GetDeploymentsGitComments | undefined;
 };
 
+/**
+ * The custom environment used for this deployment, if any
+ */
+export type GetDeploymentsCustomEnvironment = {
+    id: string;
+    name?: string | undefined;
+};
+
 export type GetDeploymentsDeployments = {
     /**
      * The unique identifier of the deployment.
@@ -358,6 +358,18 @@ export type GetDeploymentsDeployments = {
      * Timestamp of when the deployment got created.
      */
     created: number;
+    /**
+     * Timestamp of when the deployment got deleted.
+     */
+    deleted?: number | undefined;
+    /**
+     * Timestamp of when the deployment was undeleted.
+     */
+    undeleted?: number | undefined;
+    /**
+     * Optional flag to indicate if the deployment was soft deleted by retention policy.
+     */
+    softDeletedByRetention?: boolean | undefined;
     /**
      * The source of the deployment.
      */
@@ -439,6 +451,18 @@ export type GetDeploymentsDeployments = {
      * The ID of Vercel Connect configuration used for this deployment's passive functions
      */
     passiveConnectConfigurationId?: string | undefined;
+    /**
+     * The expiration configured by the project retention policy
+     */
+    expiration?: number | undefined;
+    /**
+     * The expiration proposed to replace the existing expiration
+     */
+    proposedExpiration?: number | undefined;
+    /**
+     * The custom environment used for this deployment, if any
+     */
+    customEnvironment?: GetDeploymentsCustomEnvironment | undefined;
 };
 
 export type GetDeploymentsResponseBody = {
@@ -450,25 +474,6 @@ export type GetDeploymentsResponseBody = {
 };
 
 /** @internal */
-export const QueryParamTarget$inboundSchema: z.ZodNativeEnum<typeof QueryParamTarget> =
-    z.nativeEnum(QueryParamTarget);
-
-/** @internal */
-export const QueryParamTarget$outboundSchema: z.ZodNativeEnum<typeof QueryParamTarget> =
-    QueryParamTarget$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace QueryParamTarget$ {
-    /** @deprecated use `QueryParamTarget$inboundSchema` instead. */
-    export const inboundSchema = QueryParamTarget$inboundSchema;
-    /** @deprecated use `QueryParamTarget$outboundSchema` instead. */
-    export const outboundSchema = QueryParamTarget$outboundSchema;
-}
-
-/** @internal */
 export const GetDeploymentsRequest$inboundSchema: z.ZodType<
     GetDeploymentsRequest,
     z.ZodTypeDef,
@@ -478,7 +483,7 @@ export const GetDeploymentsRequest$inboundSchema: z.ZodType<
     from: z.number().optional(),
     limit: z.number().optional(),
     projectId: z.string().optional(),
-    target: QueryParamTarget$inboundSchema.optional(),
+    target: z.string().optional(),
     to: z.number().optional(),
     users: z.string().optional(),
     since: z.number().optional(),
@@ -516,7 +521,7 @@ export const GetDeploymentsRequest$outboundSchema: z.ZodType<
     from: z.number().optional(),
     limit: z.number().optional(),
     projectId: z.string().optional(),
-    target: QueryParamTarget$outboundSchema.optional(),
+    target: z.string().optional(),
     to: z.number().optional(),
     users: z.string().optional(),
     since: z.number().optional(),
@@ -1088,6 +1093,45 @@ export namespace GetDeploymentsProjectSettings$ {
 }
 
 /** @internal */
+export const GetDeploymentsCustomEnvironment$inboundSchema: z.ZodType<
+    GetDeploymentsCustomEnvironment,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    id: z.string(),
+    name: z.string().optional(),
+});
+
+/** @internal */
+export type GetDeploymentsCustomEnvironment$Outbound = {
+    id: string;
+    name?: string | undefined;
+};
+
+/** @internal */
+export const GetDeploymentsCustomEnvironment$outboundSchema: z.ZodType<
+    GetDeploymentsCustomEnvironment$Outbound,
+    z.ZodTypeDef,
+    GetDeploymentsCustomEnvironment
+> = z.object({
+    id: z.string(),
+    name: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetDeploymentsCustomEnvironment$ {
+    /** @deprecated use `GetDeploymentsCustomEnvironment$inboundSchema` instead. */
+    export const inboundSchema = GetDeploymentsCustomEnvironment$inboundSchema;
+    /** @deprecated use `GetDeploymentsCustomEnvironment$outboundSchema` instead. */
+    export const outboundSchema = GetDeploymentsCustomEnvironment$outboundSchema;
+    /** @deprecated use `GetDeploymentsCustomEnvironment$Outbound` instead. */
+    export type Outbound = GetDeploymentsCustomEnvironment$Outbound;
+}
+
+/** @internal */
 export const GetDeploymentsDeployments$inboundSchema: z.ZodType<
     GetDeploymentsDeployments,
     z.ZodTypeDef,
@@ -1097,6 +1141,9 @@ export const GetDeploymentsDeployments$inboundSchema: z.ZodType<
     name: z.string(),
     url: z.string(),
     created: z.number(),
+    deleted: z.number().optional(),
+    undeleted: z.number().optional(),
+    softDeletedByRetention: z.boolean().optional(),
     source: GetDeploymentsSource$inboundSchema.optional(),
     state: GetDeploymentsState$inboundSchema.optional(),
     readyState: GetDeploymentsReadyState$inboundSchema.optional(),
@@ -1118,6 +1165,9 @@ export const GetDeploymentsDeployments$inboundSchema: z.ZodType<
     connectBuildsEnabled: z.boolean().optional(),
     connectConfigurationId: z.string().optional(),
     passiveConnectConfigurationId: z.string().optional(),
+    expiration: z.number().optional(),
+    proposedExpiration: z.number().optional(),
+    customEnvironment: z.lazy(() => GetDeploymentsCustomEnvironment$inboundSchema).optional(),
 });
 
 /** @internal */
@@ -1126,6 +1176,9 @@ export type GetDeploymentsDeployments$Outbound = {
     name: string;
     url: string;
     created: number;
+    deleted?: number | undefined;
+    undeleted?: number | undefined;
+    softDeletedByRetention?: boolean | undefined;
     source?: string | undefined;
     state?: string | undefined;
     readyState?: string | undefined;
@@ -1147,6 +1200,9 @@ export type GetDeploymentsDeployments$Outbound = {
     connectBuildsEnabled?: boolean | undefined;
     connectConfigurationId?: string | undefined;
     passiveConnectConfigurationId?: string | undefined;
+    expiration?: number | undefined;
+    proposedExpiration?: number | undefined;
+    customEnvironment?: GetDeploymentsCustomEnvironment$Outbound | undefined;
 };
 
 /** @internal */
@@ -1159,6 +1215,9 @@ export const GetDeploymentsDeployments$outboundSchema: z.ZodType<
     name: z.string(),
     url: z.string(),
     created: z.number(),
+    deleted: z.number().optional(),
+    undeleted: z.number().optional(),
+    softDeletedByRetention: z.boolean().optional(),
     source: GetDeploymentsSource$outboundSchema.optional(),
     state: GetDeploymentsState$outboundSchema.optional(),
     readyState: GetDeploymentsReadyState$outboundSchema.optional(),
@@ -1180,6 +1239,9 @@ export const GetDeploymentsDeployments$outboundSchema: z.ZodType<
     connectBuildsEnabled: z.boolean().optional(),
     connectConfigurationId: z.string().optional(),
     passiveConnectConfigurationId: z.string().optional(),
+    expiration: z.number().optional(),
+    proposedExpiration: z.number().optional(),
+    customEnvironment: z.lazy(() => GetDeploymentsCustomEnvironment$outboundSchema).optional(),
 });
 
 /**

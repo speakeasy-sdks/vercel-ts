@@ -1,11 +1,13 @@
 # CancelDeploymentLambdas
 
+A partial representation of a Build used by the deployment endpoint.
+
 
 ## Fields
 
 | Field                                                                                              | Type                                                                                               | Required                                                                                           | Description                                                                                        |
 | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
-| `id`                                                                                               | *string*                                                                                           | :heavy_check_mark:                                                                                 | N/A                                                                                                |
+| `id`                                                                                               | *string*                                                                                           | :heavy_minus_sign:                                                                                 | N/A                                                                                                |
 | `createdAt`                                                                                        | *number*                                                                                           | :heavy_minus_sign:                                                                                 | N/A                                                                                                |
 | `entrypoint`                                                                                       | *string*                                                                                           | :heavy_minus_sign:                                                                                 | N/A                                                                                                |
 | `readyState`                                                                                       | [models.CancelDeploymentDeploymentsReadyState](../models/canceldeploymentdeploymentsreadystate.md) | :heavy_minus_sign:                                                                                 | N/A                                                                                                |

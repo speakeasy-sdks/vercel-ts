@@ -1,7 +1,5 @@
 # TeamRole
 
-The role of this user in the team.
-
 
 ## Values
 

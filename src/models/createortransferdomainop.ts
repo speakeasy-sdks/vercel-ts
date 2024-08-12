@@ -173,6 +173,8 @@ export type CreateOrTransferDomainDomain = {
      * If transferred into Vercel, timestamp in milliseconds when the domain transfer was initiated.
      */
     transferStartedAt?: number | undefined;
+    userId: string;
+    teamId: string | null;
 };
 
 export type CreateOrTransferDomainResponseBody = {
@@ -512,6 +514,8 @@ export const CreateOrTransferDomainDomain$inboundSchema: z.ZodType<
     serviceType: CreateOrTransferDomainServiceType$inboundSchema,
     transferredAt: z.nullable(z.number()).optional(),
     transferStartedAt: z.number().optional(),
+    userId: z.string(),
+    teamId: z.nullable(z.string()),
 });
 
 /** @internal */
@@ -531,6 +535,8 @@ export type CreateOrTransferDomainDomain$Outbound = {
     serviceType: string;
     transferredAt?: number | null | undefined;
     transferStartedAt?: number | undefined;
+    userId: string;
+    teamId: string | null;
 };
 
 /** @internal */
@@ -554,6 +560,8 @@ export const CreateOrTransferDomainDomain$outboundSchema: z.ZodType<
     serviceType: CreateOrTransferDomainServiceType$outboundSchema,
     transferredAt: z.nullable(z.number()).optional(),
     transferStartedAt: z.number().optional(),
+    userId: z.string(),
+    teamId: z.nullable(z.string()),
 });
 
 /**

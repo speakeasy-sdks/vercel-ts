@@ -6,21 +6,15 @@ Array of deployment logs for the provided query.
 
 ## Supported Types
 
-### `models.GetDeploymentEventsResponseBody1`
+### `models.GetDeploymentEventsResponseBodyDeployments1`
 
 ```typescript
-const value: models.GetDeploymentEventsResponseBody1 = /* values here */
+const value: models.GetDeploymentEventsResponseBodyDeployments1 = /* values here */
 ```
 
-### `models.GetDeploymentEventsResponseBody2`
+### `models.GetDeploymentEventsResponseBodyDeployments2`
 
 ```typescript
-const value: models.GetDeploymentEventsResponseBody2 = /* values here */
-```
-
-### `models.ResponseBody3`
-
-```typescript
-const value: models.ResponseBody3 = /* values here */
+const value: models.GetDeploymentEventsResponseBodyDeployments2 = /* values here */
 ```
 

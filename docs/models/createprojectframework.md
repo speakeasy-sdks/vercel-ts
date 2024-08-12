@@ -48,5 +48,6 @@ The framework that is being used for this project. When `null` is used no framew
 | `Vitepress`      | vitepress        |
 | `Vuepress`       | vuepress         |
 | `Parcel`         | parcel           |
+| `Fasthtml`       | fasthtml         |
 | `Sanity`         | sanity           |
 | `Storybook`      | storybook        |

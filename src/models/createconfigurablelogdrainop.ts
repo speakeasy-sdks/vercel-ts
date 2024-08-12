@@ -26,6 +26,7 @@ export const CreateConfigurableLogDrainSources = {
     Build: "build",
     Edge: "edge",
     External: "external",
+    Firewall: "firewall",
 } as const;
 export type CreateConfigurableLogDrainSources = ClosedEnum<
     typeof CreateConfigurableLogDrainSources
@@ -63,6 +64,10 @@ export type CreateConfigurableLogDrainRequestBody = {
      * The sampling rate for this log drain. It should be a percentage rate between 0 and 100. With max 2 decimal points
      */
     samplingRate?: number | undefined;
+    /**
+     * The custom name of this log drain.
+     */
+    name?: string | undefined;
 };
 
 export type CreateConfigurableLogDrainRequest = {
@@ -92,6 +97,7 @@ export const CreateConfigurableLogDrainLogDrainsSources = {
     Lambda: "lambda",
     Static: "static",
     External: "external",
+    Firewall: "firewall",
 } as const;
 export type CreateConfigurableLogDrainLogDrainsSources = ClosedEnum<
     typeof CreateConfigurableLogDrainLogDrainsSources
@@ -115,6 +121,7 @@ export type CreateConfigurableLogDrainStatus = ClosedEnum<typeof CreateConfigura
 export const CreateConfigurableLogDrainDisabledReason = {
     DisabledByOwner: "disabled-by-owner",
     FeatureNotAvailable: "feature-not-available",
+    AccountPlanDowngrade: "account-plan-downgrade",
     DisabledByAdmin: "disabled-by-admin",
 } as const;
 export type CreateConfigurableLogDrainDisabledReason = ClosedEnum<
@@ -152,6 +159,8 @@ export type CreateConfigurableLogDrainResponseBody = {
     ownerId: string;
     projectIds?: Array<string> | undefined;
     createdAt: number;
+    deletedAt: number | null;
+    updatedAt: number;
     sources?: Array<CreateConfigurableLogDrainLogDrainsSources> | undefined;
     headers?: { [k: string]: string } | undefined;
     environments: Array<CreateConfigurableLogDrainLogDrainsEnvironments>;
@@ -242,6 +251,7 @@ export const CreateConfigurableLogDrainRequestBody$inboundSchema: z.ZodType<
     environments: z.array(CreateConfigurableLogDrainEnvironments$inboundSchema).optional(),
     secret: z.string().optional(),
     samplingRate: z.number().optional(),
+    name: z.string().optional(),
 });
 
 /** @internal */
@@ -254,6 +264,7 @@ export type CreateConfigurableLogDrainRequestBody$Outbound = {
     environments?: Array<string> | undefined;
     secret?: string | undefined;
     samplingRate?: number | undefined;
+    name?: string | undefined;
 };
 
 /** @internal */
@@ -270,6 +281,7 @@ export const CreateConfigurableLogDrainRequestBody$outboundSchema: z.ZodType<
     environments: z.array(CreateConfigurableLogDrainEnvironments$outboundSchema).optional(),
     secret: z.string().optional(),
     samplingRate: z.number().optional(),
+    name: z.string().optional(),
 });
 
 /**
@@ -503,6 +515,8 @@ export const CreateConfigurableLogDrainResponseBody$inboundSchema: z.ZodType<
     ownerId: z.string(),
     projectIds: z.array(z.string()).optional(),
     createdAt: z.number(),
+    deletedAt: z.nullable(z.number()),
+    updatedAt: z.number(),
     sources: z.array(CreateConfigurableLogDrainLogDrainsSources$inboundSchema).optional(),
     headers: z.record(z.string()).optional(),
     environments: z.array(CreateConfigurableLogDrainLogDrainsEnvironments$inboundSchema),
@@ -529,6 +543,8 @@ export type CreateConfigurableLogDrainResponseBody$Outbound = {
     ownerId: string;
     projectIds?: Array<string> | undefined;
     createdAt: number;
+    deletedAt: number | null;
+    updatedAt: number;
     sources?: Array<string> | undefined;
     headers?: { [k: string]: string } | undefined;
     environments: Array<string>;
@@ -559,6 +575,8 @@ export const CreateConfigurableLogDrainResponseBody$outboundSchema: z.ZodType<
     ownerId: z.string(),
     projectIds: z.array(z.string()).optional(),
     createdAt: z.number(),
+    deletedAt: z.nullable(z.number()),
+    updatedAt: z.number(),
     sources: z.array(CreateConfigurableLogDrainLogDrainsSources$outboundSchema).optional(),
     headers: z.record(z.string()).optional(),
     environments: z.array(CreateConfigurableLogDrainLogDrainsEnvironments$outboundSchema),

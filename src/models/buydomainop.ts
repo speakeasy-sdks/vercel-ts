@@ -18,6 +18,46 @@ export type BuyDomainRequestBody = {
      * Indicates whether the domain should be automatically renewed.
      */
     renew?: boolean | undefined;
+    /**
+     * The country of the domain registrant
+     */
+    country: string;
+    /**
+     * The company name of the domain registrant
+     */
+    orgName?: string | undefined;
+    /**
+     * The first name of the domain registrant
+     */
+    firstName: string;
+    /**
+     * The last name of the domain registrant
+     */
+    lastName: string;
+    /**
+     * The street address of the domain registrant
+     */
+    address1: string;
+    /**
+     * The city of the domain registrant
+     */
+    city: string;
+    /**
+     * The state of the domain registrant
+     */
+    state: string;
+    /**
+     * The postal code of the domain registrant
+     */
+    postalCode: string;
+    /**
+     * The phone number of the domain registrant
+     */
+    phone: string;
+    /**
+     * The email of the domain registrant
+     */
+    email: string;
 };
 
 export type BuyDomainRequest = {
@@ -73,6 +113,16 @@ export const BuyDomainRequestBody$inboundSchema: z.ZodType<
     name: z.string(),
     expectedPrice: z.number().optional(),
     renew: z.boolean().optional(),
+    country: z.string(),
+    orgName: z.string().optional(),
+    firstName: z.string(),
+    lastName: z.string(),
+    address1: z.string(),
+    city: z.string(),
+    state: z.string(),
+    postalCode: z.string(),
+    phone: z.string(),
+    email: z.string(),
 });
 
 /** @internal */
@@ -80,6 +130,16 @@ export type BuyDomainRequestBody$Outbound = {
     name: string;
     expectedPrice?: number | undefined;
     renew?: boolean | undefined;
+    country: string;
+    orgName?: string | undefined;
+    firstName: string;
+    lastName: string;
+    address1: string;
+    city: string;
+    state: string;
+    postalCode: string;
+    phone: string;
+    email: string;
 };
 
 /** @internal */
@@ -91,6 +151,16 @@ export const BuyDomainRequestBody$outboundSchema: z.ZodType<
     name: z.string(),
     expectedPrice: z.number().optional(),
     renew: z.boolean().optional(),
+    country: z.string(),
+    orgName: z.string().optional(),
+    firstName: z.string(),
+    lastName: z.string(),
+    address1: z.string(),
+    city: z.string(),
+    state: z.string(),
+    postalCode: z.string(),
+    phone: z.string(),
+    email: z.string(),
 });
 
 /**

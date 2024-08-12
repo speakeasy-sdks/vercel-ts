@@ -24,236 +24,247 @@ export type GetProjectEnvRequest = {
     slug?: string | undefined;
 };
 
-export const GetProjectEnvTargetProjects2 = {
+export const GetProjectEnvTargetEnvsResponse2 = {
     Production: "production",
     Preview: "preview",
     Development: "development",
 } as const;
-export type GetProjectEnvTargetProjects2 = ClosedEnum<typeof GetProjectEnvTargetProjects2>;
+export type GetProjectEnvTargetEnvsResponse2 = ClosedEnum<typeof GetProjectEnvTargetEnvsResponse2>;
 
-export const GetProjectEnvTargetProjects1 = {
+export const GetProjectEnvTargetEnvsResponse1 = {
     Production: "production",
     Preview: "preview",
     Development: "development",
 } as const;
-export type GetProjectEnvTargetProjects1 = ClosedEnum<typeof GetProjectEnvTargetProjects1>;
+export type GetProjectEnvTargetEnvsResponse1 = ClosedEnum<typeof GetProjectEnvTargetEnvsResponse1>;
 
-export type GetProjectEnvResponseBodyProjectsTarget =
-    | Array<GetProjectEnvTargetProjects1>
-    | GetProjectEnvTargetProjects2;
+export type GetProjectEnvResponseBodyEnvsResponseTarget =
+    | Array<GetProjectEnvTargetEnvsResponse1>
+    | GetProjectEnvTargetEnvsResponse2;
 
-export const GetProjectEnvResponseBodyProjectsType = {
-    Secret: "secret",
+export const GetProjectEnvResponseBodyEnvsResponseType = {
     System: "system",
     Encrypted: "encrypted",
     Plain: "plain",
     Sensitive: "sensitive",
+    Secret: "secret",
 } as const;
-export type GetProjectEnvResponseBodyProjectsType = ClosedEnum<
-    typeof GetProjectEnvResponseBodyProjectsType
+export type GetProjectEnvResponseBodyEnvsResponseType = ClosedEnum<
+    typeof GetProjectEnvResponseBodyEnvsResponseType
 >;
 
-export const GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody214Type = {
+export const GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody314Type = {
     IntegrationStoreSecret: "integration-store-secret",
 } as const;
-export type GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody214Type =
-    ClosedEnum<
-        typeof GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody214Type
-    >;
+export type GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody314Type = ClosedEnum<
+    typeof GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody314Type
+>;
 
-export type GetProjectEnvContentHintProjects14 = {
-    type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody214Type;
+export type GetProjectEnvContentHintEnvsResponse14 = {
+    type: GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody314Type;
     storeId: string;
+    integrationId: string;
+    integrationProductId: string;
+    integrationConfigurationId: string;
 };
 
-export const GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody213Type = {
+export const GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody313Type = {
     PostgresUrlNoSsl: "postgres-url-no-ssl",
 } as const;
-export type GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody213Type =
-    ClosedEnum<
-        typeof GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody213Type
-    >;
+export type GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody313Type = ClosedEnum<
+    typeof GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody313Type
+>;
 
-export type GetProjectEnvContentHintProjects13 = {
-    type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody213Type;
+export type GetProjectEnvContentHintEnvsResponse13 = {
+    type: GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody313Type;
     storeId: string;
 };
 
-export const GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody212Type = {
+export const GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody312Type = {
     PostgresDatabase: "postgres-database",
 } as const;
-export type GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody212Type =
-    ClosedEnum<
-        typeof GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody212Type
-    >;
+export type GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody312Type = ClosedEnum<
+    typeof GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody312Type
+>;
 
-export type GetProjectEnvContentHintProjects12 = {
-    type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody212Type;
+export type GetProjectEnvContentHintEnvsResponse12 = {
+    type: GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody312Type;
     storeId: string;
 };
 
-export const GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody211Type = {
+export const GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody311Type = {
     PostgresPassword: "postgres-password",
 } as const;
-export type GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody211Type =
-    ClosedEnum<
-        typeof GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody211Type
-    >;
+export type GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody311Type = ClosedEnum<
+    typeof GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody311Type
+>;
 
-export type GetProjectEnvContentHintProjects11 = {
-    type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody211Type;
+export type GetProjectEnvContentHintEnvsResponse11 = {
+    type: GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody311Type;
     storeId: string;
 };
 
-export const GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody210Type = {
+export const GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody310Type = {
     PostgresHost: "postgres-host",
 } as const;
-export type GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody210Type =
-    ClosedEnum<
-        typeof GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody210Type
-    >;
+export type GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody310Type = ClosedEnum<
+    typeof GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody310Type
+>;
 
-export type GetProjectEnvContentHintProjects10 = {
-    type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody210Type;
+export type GetProjectEnvContentHintEnvsResponse10 = {
+    type: GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody310Type;
     storeId: string;
 };
 
-export const GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody29Type = {
+export const GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody39Type = {
     PostgresUser: "postgres-user",
 } as const;
-export type GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody29Type =
-    ClosedEnum<typeof GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody29Type>;
+export type GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody39Type = ClosedEnum<
+    typeof GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody39Type
+>;
 
-export type GetProjectEnvContentHintProjects9 = {
-    type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody29Type;
+export type GetProjectEnvContentHintEnvsResponse9 = {
+    type: GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody39Type;
     storeId: string;
 };
 
-export const GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody28Type = {
+export const GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody38Type = {
     PostgresPrismaUrl: "postgres-prisma-url",
 } as const;
-export type GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody28Type =
-    ClosedEnum<typeof GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody28Type>;
+export type GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody38Type = ClosedEnum<
+    typeof GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody38Type
+>;
 
-export type GetProjectEnvContentHintProjects8 = {
-    type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody28Type;
+export type GetProjectEnvContentHintEnvsResponse8 = {
+    type: GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody38Type;
     storeId: string;
 };
 
-export const GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody27Type = {
+export const GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody37Type = {
     PostgresUrlNonPooling: "postgres-url-non-pooling",
 } as const;
-export type GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody27Type =
-    ClosedEnum<typeof GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody27Type>;
+export type GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody37Type = ClosedEnum<
+    typeof GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody37Type
+>;
 
-export type GetProjectEnvContentHintProjects7 = {
-    type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody27Type;
+export type GetProjectEnvContentHintEnvsResponse7 = {
+    type: GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody37Type;
     storeId: string;
 };
 
-export const GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody26Type = {
+export const GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody36Type = {
     PostgresUrl: "postgres-url",
 } as const;
-export type GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody26Type =
-    ClosedEnum<typeof GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody26Type>;
+export type GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody36Type = ClosedEnum<
+    typeof GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody36Type
+>;
 
-export type GetProjectEnvContentHintProjects6 = {
-    type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody26Type;
+export type GetProjectEnvContentHintEnvsResponse6 = {
+    type: GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody36Type;
     storeId: string;
 };
 
-export const GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody25Type = {
+export const GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody35Type = {
     BlobReadWriteToken: "blob-read-write-token",
 } as const;
-export type GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody25Type =
-    ClosedEnum<typeof GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody25Type>;
+export type GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody35Type = ClosedEnum<
+    typeof GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody35Type
+>;
 
-export type GetProjectEnvContentHintProjects5 = {
-    type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody25Type;
+export type GetProjectEnvContentHintEnvsResponse5 = {
+    type: GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody35Type;
     storeId: string;
 };
 
-export const GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody24Type = {
+export const GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody34Type = {
     RedisRestApiReadOnlyToken: "redis-rest-api-read-only-token",
 } as const;
-export type GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody24Type =
-    ClosedEnum<typeof GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody24Type>;
+export type GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody34Type = ClosedEnum<
+    typeof GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody34Type
+>;
 
-export type GetProjectEnvContentHintProjects4 = {
-    type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody24Type;
+export type GetProjectEnvContentHintEnvsResponse4 = {
+    type: GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody34Type;
     storeId: string;
 };
 
-export const GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody23Type = {
+export const GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody33Type = {
     RedisRestApiToken: "redis-rest-api-token",
 } as const;
-export type GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody23Type =
-    ClosedEnum<typeof GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody23Type>;
+export type GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody33Type = ClosedEnum<
+    typeof GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody33Type
+>;
 
-export type GetProjectEnvContentHintProjects3 = {
-    type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody23Type;
+export type GetProjectEnvContentHintEnvsResponse3 = {
+    type: GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody33Type;
     storeId: string;
 };
 
-export const GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody22Type = {
+export const GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody32Type = {
     RedisRestApiUrl: "redis-rest-api-url",
 } as const;
-export type GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody22Type =
-    ClosedEnum<typeof GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody22Type>;
+export type GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody32Type = ClosedEnum<
+    typeof GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody32Type
+>;
 
-export type GetProjectEnvContentHintProjects2 = {
-    type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody22Type;
+export type GetProjectEnvContentHintEnvsResponse2 = {
+    type: GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody32Type;
     storeId: string;
 };
 
-export const GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody2Type = {
+export const GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody3Type = {
     RedisUrl: "redis-url",
 } as const;
-export type GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody2Type =
-    ClosedEnum<typeof GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody2Type>;
+export type GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody3Type = ClosedEnum<
+    typeof GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody3Type
+>;
 
-export type GetProjectEnvContentHintProjects1 = {
-    type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody2Type;
+export type GetProjectEnvContentHintEnvsResponse1 = {
+    type: GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody3Type;
     storeId: string;
 };
 
-export type GetProjectEnvResponseBodyProjectsContentHint =
-    | GetProjectEnvContentHintProjects1
-    | GetProjectEnvContentHintProjects2
-    | GetProjectEnvContentHintProjects3
-    | GetProjectEnvContentHintProjects4
-    | GetProjectEnvContentHintProjects5
-    | GetProjectEnvContentHintProjects6
-    | GetProjectEnvContentHintProjects7
-    | GetProjectEnvContentHintProjects8
-    | GetProjectEnvContentHintProjects9
-    | GetProjectEnvContentHintProjects10
-    | GetProjectEnvContentHintProjects11
-    | GetProjectEnvContentHintProjects12
-    | GetProjectEnvContentHintProjects13
-    | GetProjectEnvContentHintProjects14;
+export type GetProjectEnvResponseBodyEnvsResponseContentHint =
+    | GetProjectEnvContentHintEnvsResponse1
+    | GetProjectEnvContentHintEnvsResponse2
+    | GetProjectEnvContentHintEnvsResponse3
+    | GetProjectEnvContentHintEnvsResponse4
+    | GetProjectEnvContentHintEnvsResponse5
+    | GetProjectEnvContentHintEnvsResponse6
+    | GetProjectEnvContentHintEnvsResponse7
+    | GetProjectEnvContentHintEnvsResponse8
+    | GetProjectEnvContentHintEnvsResponse9
+    | GetProjectEnvContentHintEnvsResponse10
+    | GetProjectEnvContentHintEnvsResponse11
+    | GetProjectEnvContentHintEnvsResponse12
+    | GetProjectEnvContentHintEnvsResponse13
+    | GetProjectEnvContentHintEnvsResponse14;
 
-export const GetProjectEnvResponseBodyProjectsResponse200Type = {
+export const GetProjectEnvResponseBodyEnvsResponse200ApplicationJson3Type = {
     FlagsSecret: "flags-secret",
 } as const;
-export type GetProjectEnvResponseBodyProjectsResponse200Type = ClosedEnum<
-    typeof GetProjectEnvResponseBodyProjectsResponse200Type
+export type GetProjectEnvResponseBodyEnvsResponse200ApplicationJson3Type = ClosedEnum<
+    typeof GetProjectEnvResponseBodyEnvsResponse200ApplicationJson3Type
 >;
 
 /**
  * Similar to `contentHints`, but should not be exposed to the user.
  */
-export type GetProjectEnvResponseBodyProjectsInternalContentHint = {
-    type: GetProjectEnvResponseBodyProjectsResponse200Type;
+export type GetProjectEnvResponseBodyEnvsResponseInternalContentHint = {
+    type: GetProjectEnvResponseBodyEnvsResponse200ApplicationJson3Type;
     /**
      * Contains the `value` of the env variable, encrypted with a special key to make decryption possible in the subscriber Lambda.
      */
     encryptedValue: string;
 };
 
-export type GetProjectEnvResponseBody2 = {
-    target?: Array<GetProjectEnvTargetProjects1> | GetProjectEnvTargetProjects2 | undefined;
-    type: GetProjectEnvResponseBodyProjectsType;
+export type GetProjectEnvResponseBody3 = {
+    target?: Array<GetProjectEnvTargetEnvsResponse1> | GetProjectEnvTargetEnvsResponse2 | undefined;
+    type: GetProjectEnvResponseBodyEnvsResponseType;
+    /**
+     * This is used to identiy variables that have been migrated from type secret to sensitive.
+     */
+    sunsetSecretId?: string | undefined;
     id?: string | undefined;
     key: string;
     value: string;
@@ -266,32 +277,317 @@ export type GetProjectEnvResponseBody2 = {
     edgeConfigId?: string | null | undefined;
     edgeConfigTokenId?: string | null | undefined;
     contentHint?:
-        | GetProjectEnvContentHintProjects1
-        | GetProjectEnvContentHintProjects2
-        | GetProjectEnvContentHintProjects3
-        | GetProjectEnvContentHintProjects4
-        | GetProjectEnvContentHintProjects5
-        | GetProjectEnvContentHintProjects6
-        | GetProjectEnvContentHintProjects7
-        | GetProjectEnvContentHintProjects8
-        | GetProjectEnvContentHintProjects9
-        | GetProjectEnvContentHintProjects10
-        | GetProjectEnvContentHintProjects11
-        | GetProjectEnvContentHintProjects12
-        | GetProjectEnvContentHintProjects13
-        | GetProjectEnvContentHintProjects14
+        | GetProjectEnvContentHintEnvsResponse1
+        | GetProjectEnvContentHintEnvsResponse2
+        | GetProjectEnvContentHintEnvsResponse3
+        | GetProjectEnvContentHintEnvsResponse4
+        | GetProjectEnvContentHintEnvsResponse5
+        | GetProjectEnvContentHintEnvsResponse6
+        | GetProjectEnvContentHintEnvsResponse7
+        | GetProjectEnvContentHintEnvsResponse8
+        | GetProjectEnvContentHintEnvsResponse9
+        | GetProjectEnvContentHintEnvsResponse10
+        | GetProjectEnvContentHintEnvsResponse11
+        | GetProjectEnvContentHintEnvsResponse12
+        | GetProjectEnvContentHintEnvsResponse13
+        | GetProjectEnvContentHintEnvsResponse14
         | null
         | undefined;
     /**
      * Similar to `contentHints`, but should not be exposed to the user.
      */
-    internalContentHint?: GetProjectEnvResponseBodyProjectsInternalContentHint | null | undefined;
+    internalContentHint?:
+        | GetProjectEnvResponseBodyEnvsResponseInternalContentHint
+        | null
+        | undefined;
     /**
-     * Whether `value` is decrypted.
+     * Whether `value` and `vsmValue` are decrypted.
      */
     decrypted?: boolean | undefined;
     comment?: string | undefined;
-    customEnvironmentId?: string | undefined;
+    customEnvironmentIds?: Array<string> | undefined;
+};
+
+export const GetProjectEnvTargetEnvs2 = {
+    Production: "production",
+    Preview: "preview",
+    Development: "development",
+} as const;
+export type GetProjectEnvTargetEnvs2 = ClosedEnum<typeof GetProjectEnvTargetEnvs2>;
+
+export const GetProjectEnvTargetEnvs1 = {
+    Production: "production",
+    Preview: "preview",
+    Development: "development",
+} as const;
+export type GetProjectEnvTargetEnvs1 = ClosedEnum<typeof GetProjectEnvTargetEnvs1>;
+
+export type GetProjectEnvResponseBodyEnvsTarget =
+    | Array<GetProjectEnvTargetEnvs1>
+    | GetProjectEnvTargetEnvs2;
+
+export const GetProjectEnvResponseBodyEnvsType = {
+    System: "system",
+    Encrypted: "encrypted",
+    Plain: "plain",
+    Sensitive: "sensitive",
+    Secret: "secret",
+} as const;
+export type GetProjectEnvResponseBodyEnvsType = ClosedEnum<
+    typeof GetProjectEnvResponseBodyEnvsType
+>;
+
+export const GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody214Type = {
+    IntegrationStoreSecret: "integration-store-secret",
+} as const;
+export type GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody214Type = ClosedEnum<
+    typeof GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody214Type
+>;
+
+export type GetProjectEnvContentHintEnvs14 = {
+    type: GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody214Type;
+    storeId: string;
+    integrationId: string;
+    integrationProductId: string;
+    integrationConfigurationId: string;
+};
+
+export const GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody213Type = {
+    PostgresUrlNoSsl: "postgres-url-no-ssl",
+} as const;
+export type GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody213Type = ClosedEnum<
+    typeof GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody213Type
+>;
+
+export type GetProjectEnvContentHintEnvs13 = {
+    type: GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody213Type;
+    storeId: string;
+};
+
+export const GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody212Type = {
+    PostgresDatabase: "postgres-database",
+} as const;
+export type GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody212Type = ClosedEnum<
+    typeof GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody212Type
+>;
+
+export type GetProjectEnvContentHintEnvs12 = {
+    type: GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody212Type;
+    storeId: string;
+};
+
+export const GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody211Type = {
+    PostgresPassword: "postgres-password",
+} as const;
+export type GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody211Type = ClosedEnum<
+    typeof GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody211Type
+>;
+
+export type GetProjectEnvContentHintEnvs11 = {
+    type: GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody211Type;
+    storeId: string;
+};
+
+export const GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody210Type = {
+    PostgresHost: "postgres-host",
+} as const;
+export type GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody210Type = ClosedEnum<
+    typeof GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody210Type
+>;
+
+export type GetProjectEnvContentHintEnvs10 = {
+    type: GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody210Type;
+    storeId: string;
+};
+
+export const GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody29Type = {
+    PostgresUser: "postgres-user",
+} as const;
+export type GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody29Type = ClosedEnum<
+    typeof GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody29Type
+>;
+
+export type GetProjectEnvContentHintEnvs9 = {
+    type: GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody29Type;
+    storeId: string;
+};
+
+export const GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody28Type = {
+    PostgresPrismaUrl: "postgres-prisma-url",
+} as const;
+export type GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody28Type = ClosedEnum<
+    typeof GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody28Type
+>;
+
+export type GetProjectEnvContentHintEnvs8 = {
+    type: GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody28Type;
+    storeId: string;
+};
+
+export const GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody27Type = {
+    PostgresUrlNonPooling: "postgres-url-non-pooling",
+} as const;
+export type GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody27Type = ClosedEnum<
+    typeof GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody27Type
+>;
+
+export type GetProjectEnvContentHintEnvs7 = {
+    type: GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody27Type;
+    storeId: string;
+};
+
+export const GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody26Type = {
+    PostgresUrl: "postgres-url",
+} as const;
+export type GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody26Type = ClosedEnum<
+    typeof GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody26Type
+>;
+
+export type GetProjectEnvContentHintEnvs6 = {
+    type: GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody26Type;
+    storeId: string;
+};
+
+export const GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody25Type = {
+    BlobReadWriteToken: "blob-read-write-token",
+} as const;
+export type GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody25Type = ClosedEnum<
+    typeof GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody25Type
+>;
+
+export type GetProjectEnvContentHintEnvs5 = {
+    type: GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody25Type;
+    storeId: string;
+};
+
+export const GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody24Type = {
+    RedisRestApiReadOnlyToken: "redis-rest-api-read-only-token",
+} as const;
+export type GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody24Type = ClosedEnum<
+    typeof GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody24Type
+>;
+
+export type GetProjectEnvContentHintEnvs4 = {
+    type: GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody24Type;
+    storeId: string;
+};
+
+export const GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody23Type = {
+    RedisRestApiToken: "redis-rest-api-token",
+} as const;
+export type GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody23Type = ClosedEnum<
+    typeof GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody23Type
+>;
+
+export type GetProjectEnvContentHintEnvs3 = {
+    type: GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody23Type;
+    storeId: string;
+};
+
+export const GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody22Type = {
+    RedisRestApiUrl: "redis-rest-api-url",
+} as const;
+export type GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody22Type = ClosedEnum<
+    typeof GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody22Type
+>;
+
+export type GetProjectEnvContentHintEnvs2 = {
+    type: GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody22Type;
+    storeId: string;
+};
+
+export const GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody2Type = {
+    RedisUrl: "redis-url",
+} as const;
+export type GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody2Type = ClosedEnum<
+    typeof GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody2Type
+>;
+
+export type GetProjectEnvContentHintEnvs1 = {
+    type: GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody2Type;
+    storeId: string;
+};
+
+export type GetProjectEnvResponseBodyEnvsContentHint =
+    | GetProjectEnvContentHintEnvs1
+    | GetProjectEnvContentHintEnvs2
+    | GetProjectEnvContentHintEnvs3
+    | GetProjectEnvContentHintEnvs4
+    | GetProjectEnvContentHintEnvs5
+    | GetProjectEnvContentHintEnvs6
+    | GetProjectEnvContentHintEnvs7
+    | GetProjectEnvContentHintEnvs8
+    | GetProjectEnvContentHintEnvs9
+    | GetProjectEnvContentHintEnvs10
+    | GetProjectEnvContentHintEnvs11
+    | GetProjectEnvContentHintEnvs12
+    | GetProjectEnvContentHintEnvs13
+    | GetProjectEnvContentHintEnvs14;
+
+export const GetProjectEnvResponseBodyEnvsResponse200Type = {
+    FlagsSecret: "flags-secret",
+} as const;
+export type GetProjectEnvResponseBodyEnvsResponse200Type = ClosedEnum<
+    typeof GetProjectEnvResponseBodyEnvsResponse200Type
+>;
+
+/**
+ * Similar to `contentHints`, but should not be exposed to the user.
+ */
+export type GetProjectEnvResponseBodyEnvsInternalContentHint = {
+    type: GetProjectEnvResponseBodyEnvsResponse200Type;
+    /**
+     * Contains the `value` of the env variable, encrypted with a special key to make decryption possible in the subscriber Lambda.
+     */
+    encryptedValue: string;
+};
+
+export type GetProjectEnvResponseBody2 = {
+    target?: Array<GetProjectEnvTargetEnvs1> | GetProjectEnvTargetEnvs2 | undefined;
+    type: GetProjectEnvResponseBodyEnvsType;
+    /**
+     * This is used to identiy variables that have been migrated from type secret to sensitive.
+     */
+    sunsetSecretId?: string | undefined;
+    id?: string | undefined;
+    key: string;
+    value: string;
+    configurationId?: string | null | undefined;
+    createdAt?: number | undefined;
+    updatedAt?: number | undefined;
+    createdBy?: string | null | undefined;
+    updatedBy?: string | null | undefined;
+    gitBranch?: string | undefined;
+    edgeConfigId?: string | null | undefined;
+    edgeConfigTokenId?: string | null | undefined;
+    contentHint?:
+        | GetProjectEnvContentHintEnvs1
+        | GetProjectEnvContentHintEnvs2
+        | GetProjectEnvContentHintEnvs3
+        | GetProjectEnvContentHintEnvs4
+        | GetProjectEnvContentHintEnvs5
+        | GetProjectEnvContentHintEnvs6
+        | GetProjectEnvContentHintEnvs7
+        | GetProjectEnvContentHintEnvs8
+        | GetProjectEnvContentHintEnvs9
+        | GetProjectEnvContentHintEnvs10
+        | GetProjectEnvContentHintEnvs11
+        | GetProjectEnvContentHintEnvs12
+        | GetProjectEnvContentHintEnvs13
+        | GetProjectEnvContentHintEnvs14
+        | null
+        | undefined;
+    /**
+     * Similar to `contentHints`, but should not be exposed to the user.
+     */
+    internalContentHint?: GetProjectEnvResponseBodyEnvsInternalContentHint | null | undefined;
+    /**
+     * Whether `value` and `vsmValue` are decrypted.
+     */
+    decrypted?: boolean | undefined;
+    comment?: string | undefined;
+    customEnvironmentIds?: Array<string> | undefined;
+    vsmValue?: string | undefined;
 };
 
 export const GetProjectEnvTarget2 = {
@@ -311,169 +607,168 @@ export type GetProjectEnvTarget1 = ClosedEnum<typeof GetProjectEnvTarget1>;
 export type GetProjectEnvResponseBodyTarget = Array<GetProjectEnvTarget1> | GetProjectEnvTarget2;
 
 export const GetProjectEnvResponseBodyType = {
-    Secret: "secret",
     System: "system",
     Encrypted: "encrypted",
     Plain: "plain",
     Sensitive: "sensitive",
+    Secret: "secret",
 } as const;
 export type GetProjectEnvResponseBodyType = ClosedEnum<typeof GetProjectEnvResponseBodyType>;
 
-export const GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody114Type = {
+export const GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody114Type = {
     IntegrationStoreSecret: "integration-store-secret",
 } as const;
-export type GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody114Type =
-    ClosedEnum<
-        typeof GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody114Type
-    >;
+export type GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody114Type = ClosedEnum<
+    typeof GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody114Type
+>;
 
 export type GetProjectEnvContentHint14 = {
-    type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody114Type;
+    type: GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody114Type;
     storeId: string;
+    integrationId: string;
+    integrationProductId: string;
+    integrationConfigurationId: string;
 };
 
-export const GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody113Type = {
+export const GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody113Type = {
     PostgresUrlNoSsl: "postgres-url-no-ssl",
 } as const;
-export type GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody113Type =
-    ClosedEnum<
-        typeof GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody113Type
-    >;
+export type GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody113Type = ClosedEnum<
+    typeof GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody113Type
+>;
 
 export type GetProjectEnvContentHint13 = {
-    type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody113Type;
+    type: GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody113Type;
     storeId: string;
 };
 
-export const GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody112Type = {
+export const GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody112Type = {
     PostgresDatabase: "postgres-database",
 } as const;
-export type GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody112Type =
-    ClosedEnum<
-        typeof GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody112Type
-    >;
+export type GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody112Type = ClosedEnum<
+    typeof GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody112Type
+>;
 
 export type GetProjectEnvContentHint12 = {
-    type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody112Type;
+    type: GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody112Type;
     storeId: string;
 };
 
-export const GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody111Type = {
+export const GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody111Type = {
     PostgresPassword: "postgres-password",
 } as const;
-export type GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody111Type =
-    ClosedEnum<
-        typeof GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody111Type
-    >;
+export type GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody111Type = ClosedEnum<
+    typeof GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody111Type
+>;
 
 export type GetProjectEnvContentHint11 = {
-    type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody111Type;
+    type: GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody111Type;
     storeId: string;
 };
 
-export const GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody110Type = {
+export const GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody110Type = {
     PostgresHost: "postgres-host",
 } as const;
-export type GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody110Type =
-    ClosedEnum<
-        typeof GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody110Type
-    >;
+export type GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody110Type = ClosedEnum<
+    typeof GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody110Type
+>;
 
 export type GetProjectEnvContentHint10 = {
-    type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody110Type;
+    type: GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody110Type;
     storeId: string;
 };
 
-export const GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody19Type = {
+export const GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody19Type = {
     PostgresUser: "postgres-user",
 } as const;
-export type GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody19Type =
-    ClosedEnum<typeof GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody19Type>;
+export type GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody19Type = ClosedEnum<
+    typeof GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody19Type
+>;
 
 export type GetProjectEnvContentHint9 = {
-    type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody19Type;
+    type: GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody19Type;
     storeId: string;
 };
 
-export const GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody18Type = {
+export const GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody18Type = {
     PostgresPrismaUrl: "postgres-prisma-url",
 } as const;
-export type GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody18Type =
-    ClosedEnum<typeof GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody18Type>;
+export type GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody18Type = ClosedEnum<
+    typeof GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody18Type
+>;
 
 export type GetProjectEnvContentHint8 = {
-    type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody18Type;
+    type: GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody18Type;
     storeId: string;
 };
 
-export const GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody1Type = {
+export const GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody1Type = {
     PostgresUrlNonPooling: "postgres-url-non-pooling",
 } as const;
-export type GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody1Type =
-    ClosedEnum<typeof GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody1Type>;
+export type GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody1Type = ClosedEnum<
+    typeof GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody1Type
+>;
 
 export type GetProjectEnvContentHint7 = {
-    type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody1Type;
+    type: GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody1Type;
     storeId: string;
 };
 
-export const GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBodyType = {
+export const GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBodyType = {
     PostgresUrl: "postgres-url",
 } as const;
-export type GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBodyType = ClosedEnum<
-    typeof GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBodyType
+export type GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBodyType = ClosedEnum<
+    typeof GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBodyType
 >;
 
 export type GetProjectEnvContentHint6 = {
-    type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBodyType;
+    type: GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBodyType;
     storeId: string;
 };
 
-export const GetProjectEnvContentHintProjectsResponse200ApplicationJSONType = {
+export const GetProjectEnvContentHintEnvsResponse200ApplicationJSONType = {
     BlobReadWriteToken: "blob-read-write-token",
 } as const;
-export type GetProjectEnvContentHintProjectsResponse200ApplicationJSONType = ClosedEnum<
-    typeof GetProjectEnvContentHintProjectsResponse200ApplicationJSONType
+export type GetProjectEnvContentHintEnvsResponse200ApplicationJSONType = ClosedEnum<
+    typeof GetProjectEnvContentHintEnvsResponse200ApplicationJSONType
 >;
 
 export type GetProjectEnvContentHint5 = {
-    type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONType;
+    type: GetProjectEnvContentHintEnvsResponse200ApplicationJSONType;
     storeId: string;
 };
 
-export const GetProjectEnvContentHintProjectsResponse200Type = {
+export const GetProjectEnvContentHintEnvsResponse200Type = {
     RedisRestApiReadOnlyToken: "redis-rest-api-read-only-token",
 } as const;
-export type GetProjectEnvContentHintProjectsResponse200Type = ClosedEnum<
-    typeof GetProjectEnvContentHintProjectsResponse200Type
+export type GetProjectEnvContentHintEnvsResponse200Type = ClosedEnum<
+    typeof GetProjectEnvContentHintEnvsResponse200Type
 >;
 
 export type GetProjectEnvContentHint4 = {
-    type: GetProjectEnvContentHintProjectsResponse200Type;
+    type: GetProjectEnvContentHintEnvsResponse200Type;
     storeId: string;
 };
 
-export const GetProjectEnvContentHintProjectsResponseType = {
+export const GetProjectEnvContentHintEnvsResponseType = {
     RedisRestApiToken: "redis-rest-api-token",
 } as const;
-export type GetProjectEnvContentHintProjectsResponseType = ClosedEnum<
-    typeof GetProjectEnvContentHintProjectsResponseType
+export type GetProjectEnvContentHintEnvsResponseType = ClosedEnum<
+    typeof GetProjectEnvContentHintEnvsResponseType
 >;
 
 export type GetProjectEnvContentHint3 = {
-    type: GetProjectEnvContentHintProjectsResponseType;
+    type: GetProjectEnvContentHintEnvsResponseType;
     storeId: string;
 };
 
-export const GetProjectEnvContentHintProjectsType = {
+export const GetProjectEnvContentHintEnvsType = {
     RedisRestApiUrl: "redis-rest-api-url",
 } as const;
-export type GetProjectEnvContentHintProjectsType = ClosedEnum<
-    typeof GetProjectEnvContentHintProjectsType
->;
+export type GetProjectEnvContentHintEnvsType = ClosedEnum<typeof GetProjectEnvContentHintEnvsType>;
 
 export type GetProjectEnvContentHint2 = {
-    type: GetProjectEnvContentHintProjectsType;
+    type: GetProjectEnvContentHintEnvsType;
     storeId: string;
 };
 
@@ -503,18 +798,18 @@ export type GetProjectEnvResponseBodyContentHint =
     | GetProjectEnvContentHint13
     | GetProjectEnvContentHint14;
 
-export const GetProjectEnvResponseBodyProjectsResponseType = {
+export const GetProjectEnvResponseBodyEnvsResponse200ApplicationJSONType = {
     FlagsSecret: "flags-secret",
 } as const;
-export type GetProjectEnvResponseBodyProjectsResponseType = ClosedEnum<
-    typeof GetProjectEnvResponseBodyProjectsResponseType
+export type GetProjectEnvResponseBodyEnvsResponse200ApplicationJSONType = ClosedEnum<
+    typeof GetProjectEnvResponseBodyEnvsResponse200ApplicationJSONType
 >;
 
 /**
  * Similar to `contentHints`, but should not be exposed to the user.
  */
 export type GetProjectEnvResponseBodyInternalContentHint = {
-    type: GetProjectEnvResponseBodyProjectsResponseType;
+    type: GetProjectEnvResponseBodyEnvsResponse200ApplicationJSONType;
     /**
      * Contains the `value` of the env variable, encrypted with a special key to make decryption possible in the subscriber Lambda.
      */
@@ -525,6 +820,10 @@ export type GetProjectEnvResponseBody1 = {
     decrypted: boolean;
     target?: Array<GetProjectEnvTarget1> | GetProjectEnvTarget2 | undefined;
     type: GetProjectEnvResponseBodyType;
+    /**
+     * This is used to identiy variables that have been migrated from type secret to sensitive.
+     */
+    sunsetSecretId?: string | undefined;
     id?: string | undefined;
     key: string;
     configurationId?: string | null | undefined;
@@ -557,10 +856,14 @@ export type GetProjectEnvResponseBody1 = {
      */
     internalContentHint?: GetProjectEnvResponseBodyInternalContentHint | null | undefined;
     comment?: string | undefined;
-    customEnvironmentId?: string | undefined;
+    customEnvironmentIds?: Array<string> | undefined;
+    vsmValue?: string | undefined;
 };
 
-export type GetProjectEnvResponseBody = GetProjectEnvResponseBody1 | GetProjectEnvResponseBody2;
+export type GetProjectEnvResponseBody =
+    | GetProjectEnvResponseBody1
+    | GetProjectEnvResponseBody3
+    | GetProjectEnvResponseBody2;
 
 /** @internal */
 export const GetProjectEnvRequest$inboundSchema: z.ZodType<
@@ -608,1090 +911,1101 @@ export namespace GetProjectEnvRequest$ {
 }
 
 /** @internal */
-export const GetProjectEnvTargetProjects2$inboundSchema: z.ZodNativeEnum<
-    typeof GetProjectEnvTargetProjects2
-> = z.nativeEnum(GetProjectEnvTargetProjects2);
+export const GetProjectEnvTargetEnvsResponse2$inboundSchema: z.ZodNativeEnum<
+    typeof GetProjectEnvTargetEnvsResponse2
+> = z.nativeEnum(GetProjectEnvTargetEnvsResponse2);
 
 /** @internal */
-export const GetProjectEnvTargetProjects2$outboundSchema: z.ZodNativeEnum<
-    typeof GetProjectEnvTargetProjects2
-> = GetProjectEnvTargetProjects2$inboundSchema;
+export const GetProjectEnvTargetEnvsResponse2$outboundSchema: z.ZodNativeEnum<
+    typeof GetProjectEnvTargetEnvsResponse2
+> = GetProjectEnvTargetEnvsResponse2$inboundSchema;
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace GetProjectEnvTargetProjects2$ {
-    /** @deprecated use `GetProjectEnvTargetProjects2$inboundSchema` instead. */
-    export const inboundSchema = GetProjectEnvTargetProjects2$inboundSchema;
-    /** @deprecated use `GetProjectEnvTargetProjects2$outboundSchema` instead. */
-    export const outboundSchema = GetProjectEnvTargetProjects2$outboundSchema;
+export namespace GetProjectEnvTargetEnvsResponse2$ {
+    /** @deprecated use `GetProjectEnvTargetEnvsResponse2$inboundSchema` instead. */
+    export const inboundSchema = GetProjectEnvTargetEnvsResponse2$inboundSchema;
+    /** @deprecated use `GetProjectEnvTargetEnvsResponse2$outboundSchema` instead. */
+    export const outboundSchema = GetProjectEnvTargetEnvsResponse2$outboundSchema;
 }
 
 /** @internal */
-export const GetProjectEnvTargetProjects1$inboundSchema: z.ZodNativeEnum<
-    typeof GetProjectEnvTargetProjects1
-> = z.nativeEnum(GetProjectEnvTargetProjects1);
+export const GetProjectEnvTargetEnvsResponse1$inboundSchema: z.ZodNativeEnum<
+    typeof GetProjectEnvTargetEnvsResponse1
+> = z.nativeEnum(GetProjectEnvTargetEnvsResponse1);
 
 /** @internal */
-export const GetProjectEnvTargetProjects1$outboundSchema: z.ZodNativeEnum<
-    typeof GetProjectEnvTargetProjects1
-> = GetProjectEnvTargetProjects1$inboundSchema;
+export const GetProjectEnvTargetEnvsResponse1$outboundSchema: z.ZodNativeEnum<
+    typeof GetProjectEnvTargetEnvsResponse1
+> = GetProjectEnvTargetEnvsResponse1$inboundSchema;
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace GetProjectEnvTargetProjects1$ {
-    /** @deprecated use `GetProjectEnvTargetProjects1$inboundSchema` instead. */
-    export const inboundSchema = GetProjectEnvTargetProjects1$inboundSchema;
-    /** @deprecated use `GetProjectEnvTargetProjects1$outboundSchema` instead. */
-    export const outboundSchema = GetProjectEnvTargetProjects1$outboundSchema;
+export namespace GetProjectEnvTargetEnvsResponse1$ {
+    /** @deprecated use `GetProjectEnvTargetEnvsResponse1$inboundSchema` instead. */
+    export const inboundSchema = GetProjectEnvTargetEnvsResponse1$inboundSchema;
+    /** @deprecated use `GetProjectEnvTargetEnvsResponse1$outboundSchema` instead. */
+    export const outboundSchema = GetProjectEnvTargetEnvsResponse1$outboundSchema;
 }
 
 /** @internal */
-export const GetProjectEnvResponseBodyProjectsTarget$inboundSchema: z.ZodType<
-    GetProjectEnvResponseBodyProjectsTarget,
+export const GetProjectEnvResponseBodyEnvsResponseTarget$inboundSchema: z.ZodType<
+    GetProjectEnvResponseBodyEnvsResponseTarget,
     z.ZodTypeDef,
     unknown
 > = z.union([
-    z.array(GetProjectEnvTargetProjects1$inboundSchema),
-    GetProjectEnvTargetProjects2$inboundSchema,
+    z.array(GetProjectEnvTargetEnvsResponse1$inboundSchema),
+    GetProjectEnvTargetEnvsResponse2$inboundSchema,
 ]);
 
 /** @internal */
-export type GetProjectEnvResponseBodyProjectsTarget$Outbound = Array<string> | string;
+export type GetProjectEnvResponseBodyEnvsResponseTarget$Outbound = Array<string> | string;
 
 /** @internal */
-export const GetProjectEnvResponseBodyProjectsTarget$outboundSchema: z.ZodType<
-    GetProjectEnvResponseBodyProjectsTarget$Outbound,
+export const GetProjectEnvResponseBodyEnvsResponseTarget$outboundSchema: z.ZodType<
+    GetProjectEnvResponseBodyEnvsResponseTarget$Outbound,
     z.ZodTypeDef,
-    GetProjectEnvResponseBodyProjectsTarget
+    GetProjectEnvResponseBodyEnvsResponseTarget
 > = z.union([
-    z.array(GetProjectEnvTargetProjects1$outboundSchema),
-    GetProjectEnvTargetProjects2$outboundSchema,
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GetProjectEnvResponseBodyProjectsTarget$ {
-    /** @deprecated use `GetProjectEnvResponseBodyProjectsTarget$inboundSchema` instead. */
-    export const inboundSchema = GetProjectEnvResponseBodyProjectsTarget$inboundSchema;
-    /** @deprecated use `GetProjectEnvResponseBodyProjectsTarget$outboundSchema` instead. */
-    export const outboundSchema = GetProjectEnvResponseBodyProjectsTarget$outboundSchema;
-    /** @deprecated use `GetProjectEnvResponseBodyProjectsTarget$Outbound` instead. */
-    export type Outbound = GetProjectEnvResponseBodyProjectsTarget$Outbound;
-}
-
-/** @internal */
-export const GetProjectEnvResponseBodyProjectsType$inboundSchema: z.ZodNativeEnum<
-    typeof GetProjectEnvResponseBodyProjectsType
-> = z.nativeEnum(GetProjectEnvResponseBodyProjectsType);
-
-/** @internal */
-export const GetProjectEnvResponseBodyProjectsType$outboundSchema: z.ZodNativeEnum<
-    typeof GetProjectEnvResponseBodyProjectsType
-> = GetProjectEnvResponseBodyProjectsType$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GetProjectEnvResponseBodyProjectsType$ {
-    /** @deprecated use `GetProjectEnvResponseBodyProjectsType$inboundSchema` instead. */
-    export const inboundSchema = GetProjectEnvResponseBodyProjectsType$inboundSchema;
-    /** @deprecated use `GetProjectEnvResponseBodyProjectsType$outboundSchema` instead. */
-    export const outboundSchema = GetProjectEnvResponseBodyProjectsType$outboundSchema;
-}
-
-/** @internal */
-export const GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody214Type$inboundSchema: z.ZodNativeEnum<
-    typeof GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody214Type
-> = z.nativeEnum(GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody214Type);
-
-/** @internal */
-export const GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody214Type$outboundSchema: z.ZodNativeEnum<
-    typeof GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody214Type
-> = GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody214Type$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody214Type$ {
-    /** @deprecated use `GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody214Type$inboundSchema` instead. */
-    export const inboundSchema =
-        GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody214Type$inboundSchema;
-    /** @deprecated use `GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody214Type$outboundSchema` instead. */
-    export const outboundSchema =
-        GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody214Type$outboundSchema;
-}
-
-/** @internal */
-export const GetProjectEnvContentHintProjects14$inboundSchema: z.ZodType<
-    GetProjectEnvContentHintProjects14,
-    z.ZodTypeDef,
-    unknown
-> = z.object({
-    type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody214Type$inboundSchema,
-    storeId: z.string(),
-});
-
-/** @internal */
-export type GetProjectEnvContentHintProjects14$Outbound = {
-    type: string;
-    storeId: string;
-};
-
-/** @internal */
-export const GetProjectEnvContentHintProjects14$outboundSchema: z.ZodType<
-    GetProjectEnvContentHintProjects14$Outbound,
-    z.ZodTypeDef,
-    GetProjectEnvContentHintProjects14
-> = z.object({
-    type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody214Type$outboundSchema,
-    storeId: z.string(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GetProjectEnvContentHintProjects14$ {
-    /** @deprecated use `GetProjectEnvContentHintProjects14$inboundSchema` instead. */
-    export const inboundSchema = GetProjectEnvContentHintProjects14$inboundSchema;
-    /** @deprecated use `GetProjectEnvContentHintProjects14$outboundSchema` instead. */
-    export const outboundSchema = GetProjectEnvContentHintProjects14$outboundSchema;
-    /** @deprecated use `GetProjectEnvContentHintProjects14$Outbound` instead. */
-    export type Outbound = GetProjectEnvContentHintProjects14$Outbound;
-}
-
-/** @internal */
-export const GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody213Type$inboundSchema: z.ZodNativeEnum<
-    typeof GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody213Type
-> = z.nativeEnum(GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody213Type);
-
-/** @internal */
-export const GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody213Type$outboundSchema: z.ZodNativeEnum<
-    typeof GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody213Type
-> = GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody213Type$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody213Type$ {
-    /** @deprecated use `GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody213Type$inboundSchema` instead. */
-    export const inboundSchema =
-        GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody213Type$inboundSchema;
-    /** @deprecated use `GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody213Type$outboundSchema` instead. */
-    export const outboundSchema =
-        GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody213Type$outboundSchema;
-}
-
-/** @internal */
-export const GetProjectEnvContentHintProjects13$inboundSchema: z.ZodType<
-    GetProjectEnvContentHintProjects13,
-    z.ZodTypeDef,
-    unknown
-> = z.object({
-    type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody213Type$inboundSchema,
-    storeId: z.string(),
-});
-
-/** @internal */
-export type GetProjectEnvContentHintProjects13$Outbound = {
-    type: string;
-    storeId: string;
-};
-
-/** @internal */
-export const GetProjectEnvContentHintProjects13$outboundSchema: z.ZodType<
-    GetProjectEnvContentHintProjects13$Outbound,
-    z.ZodTypeDef,
-    GetProjectEnvContentHintProjects13
-> = z.object({
-    type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody213Type$outboundSchema,
-    storeId: z.string(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GetProjectEnvContentHintProjects13$ {
-    /** @deprecated use `GetProjectEnvContentHintProjects13$inboundSchema` instead. */
-    export const inboundSchema = GetProjectEnvContentHintProjects13$inboundSchema;
-    /** @deprecated use `GetProjectEnvContentHintProjects13$outboundSchema` instead. */
-    export const outboundSchema = GetProjectEnvContentHintProjects13$outboundSchema;
-    /** @deprecated use `GetProjectEnvContentHintProjects13$Outbound` instead. */
-    export type Outbound = GetProjectEnvContentHintProjects13$Outbound;
-}
-
-/** @internal */
-export const GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody212Type$inboundSchema: z.ZodNativeEnum<
-    typeof GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody212Type
-> = z.nativeEnum(GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody212Type);
-
-/** @internal */
-export const GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody212Type$outboundSchema: z.ZodNativeEnum<
-    typeof GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody212Type
-> = GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody212Type$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody212Type$ {
-    /** @deprecated use `GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody212Type$inboundSchema` instead. */
-    export const inboundSchema =
-        GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody212Type$inboundSchema;
-    /** @deprecated use `GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody212Type$outboundSchema` instead. */
-    export const outboundSchema =
-        GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody212Type$outboundSchema;
-}
-
-/** @internal */
-export const GetProjectEnvContentHintProjects12$inboundSchema: z.ZodType<
-    GetProjectEnvContentHintProjects12,
-    z.ZodTypeDef,
-    unknown
-> = z.object({
-    type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody212Type$inboundSchema,
-    storeId: z.string(),
-});
-
-/** @internal */
-export type GetProjectEnvContentHintProjects12$Outbound = {
-    type: string;
-    storeId: string;
-};
-
-/** @internal */
-export const GetProjectEnvContentHintProjects12$outboundSchema: z.ZodType<
-    GetProjectEnvContentHintProjects12$Outbound,
-    z.ZodTypeDef,
-    GetProjectEnvContentHintProjects12
-> = z.object({
-    type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody212Type$outboundSchema,
-    storeId: z.string(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GetProjectEnvContentHintProjects12$ {
-    /** @deprecated use `GetProjectEnvContentHintProjects12$inboundSchema` instead. */
-    export const inboundSchema = GetProjectEnvContentHintProjects12$inboundSchema;
-    /** @deprecated use `GetProjectEnvContentHintProjects12$outboundSchema` instead. */
-    export const outboundSchema = GetProjectEnvContentHintProjects12$outboundSchema;
-    /** @deprecated use `GetProjectEnvContentHintProjects12$Outbound` instead. */
-    export type Outbound = GetProjectEnvContentHintProjects12$Outbound;
-}
-
-/** @internal */
-export const GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody211Type$inboundSchema: z.ZodNativeEnum<
-    typeof GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody211Type
-> = z.nativeEnum(GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody211Type);
-
-/** @internal */
-export const GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody211Type$outboundSchema: z.ZodNativeEnum<
-    typeof GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody211Type
-> = GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody211Type$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody211Type$ {
-    /** @deprecated use `GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody211Type$inboundSchema` instead. */
-    export const inboundSchema =
-        GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody211Type$inboundSchema;
-    /** @deprecated use `GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody211Type$outboundSchema` instead. */
-    export const outboundSchema =
-        GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody211Type$outboundSchema;
-}
-
-/** @internal */
-export const GetProjectEnvContentHintProjects11$inboundSchema: z.ZodType<
-    GetProjectEnvContentHintProjects11,
-    z.ZodTypeDef,
-    unknown
-> = z.object({
-    type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody211Type$inboundSchema,
-    storeId: z.string(),
-});
-
-/** @internal */
-export type GetProjectEnvContentHintProjects11$Outbound = {
-    type: string;
-    storeId: string;
-};
-
-/** @internal */
-export const GetProjectEnvContentHintProjects11$outboundSchema: z.ZodType<
-    GetProjectEnvContentHintProjects11$Outbound,
-    z.ZodTypeDef,
-    GetProjectEnvContentHintProjects11
-> = z.object({
-    type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody211Type$outboundSchema,
-    storeId: z.string(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GetProjectEnvContentHintProjects11$ {
-    /** @deprecated use `GetProjectEnvContentHintProjects11$inboundSchema` instead. */
-    export const inboundSchema = GetProjectEnvContentHintProjects11$inboundSchema;
-    /** @deprecated use `GetProjectEnvContentHintProjects11$outboundSchema` instead. */
-    export const outboundSchema = GetProjectEnvContentHintProjects11$outboundSchema;
-    /** @deprecated use `GetProjectEnvContentHintProjects11$Outbound` instead. */
-    export type Outbound = GetProjectEnvContentHintProjects11$Outbound;
-}
-
-/** @internal */
-export const GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody210Type$inboundSchema: z.ZodNativeEnum<
-    typeof GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody210Type
-> = z.nativeEnum(GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody210Type);
-
-/** @internal */
-export const GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody210Type$outboundSchema: z.ZodNativeEnum<
-    typeof GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody210Type
-> = GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody210Type$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody210Type$ {
-    /** @deprecated use `GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody210Type$inboundSchema` instead. */
-    export const inboundSchema =
-        GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody210Type$inboundSchema;
-    /** @deprecated use `GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody210Type$outboundSchema` instead. */
-    export const outboundSchema =
-        GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody210Type$outboundSchema;
-}
-
-/** @internal */
-export const GetProjectEnvContentHintProjects10$inboundSchema: z.ZodType<
-    GetProjectEnvContentHintProjects10,
-    z.ZodTypeDef,
-    unknown
-> = z.object({
-    type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody210Type$inboundSchema,
-    storeId: z.string(),
-});
-
-/** @internal */
-export type GetProjectEnvContentHintProjects10$Outbound = {
-    type: string;
-    storeId: string;
-};
-
-/** @internal */
-export const GetProjectEnvContentHintProjects10$outboundSchema: z.ZodType<
-    GetProjectEnvContentHintProjects10$Outbound,
-    z.ZodTypeDef,
-    GetProjectEnvContentHintProjects10
-> = z.object({
-    type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody210Type$outboundSchema,
-    storeId: z.string(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GetProjectEnvContentHintProjects10$ {
-    /** @deprecated use `GetProjectEnvContentHintProjects10$inboundSchema` instead. */
-    export const inboundSchema = GetProjectEnvContentHintProjects10$inboundSchema;
-    /** @deprecated use `GetProjectEnvContentHintProjects10$outboundSchema` instead. */
-    export const outboundSchema = GetProjectEnvContentHintProjects10$outboundSchema;
-    /** @deprecated use `GetProjectEnvContentHintProjects10$Outbound` instead. */
-    export type Outbound = GetProjectEnvContentHintProjects10$Outbound;
-}
-
-/** @internal */
-export const GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody29Type$inboundSchema: z.ZodNativeEnum<
-    typeof GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody29Type
-> = z.nativeEnum(GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody29Type);
-
-/** @internal */
-export const GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody29Type$outboundSchema: z.ZodNativeEnum<
-    typeof GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody29Type
-> = GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody29Type$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody29Type$ {
-    /** @deprecated use `GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody29Type$inboundSchema` instead. */
-    export const inboundSchema =
-        GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody29Type$inboundSchema;
-    /** @deprecated use `GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody29Type$outboundSchema` instead. */
-    export const outboundSchema =
-        GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody29Type$outboundSchema;
-}
-
-/** @internal */
-export const GetProjectEnvContentHintProjects9$inboundSchema: z.ZodType<
-    GetProjectEnvContentHintProjects9,
-    z.ZodTypeDef,
-    unknown
-> = z.object({
-    type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody29Type$inboundSchema,
-    storeId: z.string(),
-});
-
-/** @internal */
-export type GetProjectEnvContentHintProjects9$Outbound = {
-    type: string;
-    storeId: string;
-};
-
-/** @internal */
-export const GetProjectEnvContentHintProjects9$outboundSchema: z.ZodType<
-    GetProjectEnvContentHintProjects9$Outbound,
-    z.ZodTypeDef,
-    GetProjectEnvContentHintProjects9
-> = z.object({
-    type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody29Type$outboundSchema,
-    storeId: z.string(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GetProjectEnvContentHintProjects9$ {
-    /** @deprecated use `GetProjectEnvContentHintProjects9$inboundSchema` instead. */
-    export const inboundSchema = GetProjectEnvContentHintProjects9$inboundSchema;
-    /** @deprecated use `GetProjectEnvContentHintProjects9$outboundSchema` instead. */
-    export const outboundSchema = GetProjectEnvContentHintProjects9$outboundSchema;
-    /** @deprecated use `GetProjectEnvContentHintProjects9$Outbound` instead. */
-    export type Outbound = GetProjectEnvContentHintProjects9$Outbound;
-}
-
-/** @internal */
-export const GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody28Type$inboundSchema: z.ZodNativeEnum<
-    typeof GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody28Type
-> = z.nativeEnum(GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody28Type);
-
-/** @internal */
-export const GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody28Type$outboundSchema: z.ZodNativeEnum<
-    typeof GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody28Type
-> = GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody28Type$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody28Type$ {
-    /** @deprecated use `GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody28Type$inboundSchema` instead. */
-    export const inboundSchema =
-        GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody28Type$inboundSchema;
-    /** @deprecated use `GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody28Type$outboundSchema` instead. */
-    export const outboundSchema =
-        GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody28Type$outboundSchema;
-}
-
-/** @internal */
-export const GetProjectEnvContentHintProjects8$inboundSchema: z.ZodType<
-    GetProjectEnvContentHintProjects8,
-    z.ZodTypeDef,
-    unknown
-> = z.object({
-    type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody28Type$inboundSchema,
-    storeId: z.string(),
-});
-
-/** @internal */
-export type GetProjectEnvContentHintProjects8$Outbound = {
-    type: string;
-    storeId: string;
-};
-
-/** @internal */
-export const GetProjectEnvContentHintProjects8$outboundSchema: z.ZodType<
-    GetProjectEnvContentHintProjects8$Outbound,
-    z.ZodTypeDef,
-    GetProjectEnvContentHintProjects8
-> = z.object({
-    type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody28Type$outboundSchema,
-    storeId: z.string(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GetProjectEnvContentHintProjects8$ {
-    /** @deprecated use `GetProjectEnvContentHintProjects8$inboundSchema` instead. */
-    export const inboundSchema = GetProjectEnvContentHintProjects8$inboundSchema;
-    /** @deprecated use `GetProjectEnvContentHintProjects8$outboundSchema` instead. */
-    export const outboundSchema = GetProjectEnvContentHintProjects8$outboundSchema;
-    /** @deprecated use `GetProjectEnvContentHintProjects8$Outbound` instead. */
-    export type Outbound = GetProjectEnvContentHintProjects8$Outbound;
-}
-
-/** @internal */
-export const GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody27Type$inboundSchema: z.ZodNativeEnum<
-    typeof GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody27Type
-> = z.nativeEnum(GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody27Type);
-
-/** @internal */
-export const GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody27Type$outboundSchema: z.ZodNativeEnum<
-    typeof GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody27Type
-> = GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody27Type$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody27Type$ {
-    /** @deprecated use `GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody27Type$inboundSchema` instead. */
-    export const inboundSchema =
-        GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody27Type$inboundSchema;
-    /** @deprecated use `GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody27Type$outboundSchema` instead. */
-    export const outboundSchema =
-        GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody27Type$outboundSchema;
-}
-
-/** @internal */
-export const GetProjectEnvContentHintProjects7$inboundSchema: z.ZodType<
-    GetProjectEnvContentHintProjects7,
-    z.ZodTypeDef,
-    unknown
-> = z.object({
-    type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody27Type$inboundSchema,
-    storeId: z.string(),
-});
-
-/** @internal */
-export type GetProjectEnvContentHintProjects7$Outbound = {
-    type: string;
-    storeId: string;
-};
-
-/** @internal */
-export const GetProjectEnvContentHintProjects7$outboundSchema: z.ZodType<
-    GetProjectEnvContentHintProjects7$Outbound,
-    z.ZodTypeDef,
-    GetProjectEnvContentHintProjects7
-> = z.object({
-    type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody27Type$outboundSchema,
-    storeId: z.string(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GetProjectEnvContentHintProjects7$ {
-    /** @deprecated use `GetProjectEnvContentHintProjects7$inboundSchema` instead. */
-    export const inboundSchema = GetProjectEnvContentHintProjects7$inboundSchema;
-    /** @deprecated use `GetProjectEnvContentHintProjects7$outboundSchema` instead. */
-    export const outboundSchema = GetProjectEnvContentHintProjects7$outboundSchema;
-    /** @deprecated use `GetProjectEnvContentHintProjects7$Outbound` instead. */
-    export type Outbound = GetProjectEnvContentHintProjects7$Outbound;
-}
-
-/** @internal */
-export const GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody26Type$inboundSchema: z.ZodNativeEnum<
-    typeof GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody26Type
-> = z.nativeEnum(GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody26Type);
-
-/** @internal */
-export const GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody26Type$outboundSchema: z.ZodNativeEnum<
-    typeof GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody26Type
-> = GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody26Type$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody26Type$ {
-    /** @deprecated use `GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody26Type$inboundSchema` instead. */
-    export const inboundSchema =
-        GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody26Type$inboundSchema;
-    /** @deprecated use `GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody26Type$outboundSchema` instead. */
-    export const outboundSchema =
-        GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody26Type$outboundSchema;
-}
-
-/** @internal */
-export const GetProjectEnvContentHintProjects6$inboundSchema: z.ZodType<
-    GetProjectEnvContentHintProjects6,
-    z.ZodTypeDef,
-    unknown
-> = z.object({
-    type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody26Type$inboundSchema,
-    storeId: z.string(),
-});
-
-/** @internal */
-export type GetProjectEnvContentHintProjects6$Outbound = {
-    type: string;
-    storeId: string;
-};
-
-/** @internal */
-export const GetProjectEnvContentHintProjects6$outboundSchema: z.ZodType<
-    GetProjectEnvContentHintProjects6$Outbound,
-    z.ZodTypeDef,
-    GetProjectEnvContentHintProjects6
-> = z.object({
-    type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody26Type$outboundSchema,
-    storeId: z.string(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GetProjectEnvContentHintProjects6$ {
-    /** @deprecated use `GetProjectEnvContentHintProjects6$inboundSchema` instead. */
-    export const inboundSchema = GetProjectEnvContentHintProjects6$inboundSchema;
-    /** @deprecated use `GetProjectEnvContentHintProjects6$outboundSchema` instead. */
-    export const outboundSchema = GetProjectEnvContentHintProjects6$outboundSchema;
-    /** @deprecated use `GetProjectEnvContentHintProjects6$Outbound` instead. */
-    export type Outbound = GetProjectEnvContentHintProjects6$Outbound;
-}
-
-/** @internal */
-export const GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody25Type$inboundSchema: z.ZodNativeEnum<
-    typeof GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody25Type
-> = z.nativeEnum(GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody25Type);
-
-/** @internal */
-export const GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody25Type$outboundSchema: z.ZodNativeEnum<
-    typeof GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody25Type
-> = GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody25Type$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody25Type$ {
-    /** @deprecated use `GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody25Type$inboundSchema` instead. */
-    export const inboundSchema =
-        GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody25Type$inboundSchema;
-    /** @deprecated use `GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody25Type$outboundSchema` instead. */
-    export const outboundSchema =
-        GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody25Type$outboundSchema;
-}
-
-/** @internal */
-export const GetProjectEnvContentHintProjects5$inboundSchema: z.ZodType<
-    GetProjectEnvContentHintProjects5,
-    z.ZodTypeDef,
-    unknown
-> = z.object({
-    type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody25Type$inboundSchema,
-    storeId: z.string(),
-});
-
-/** @internal */
-export type GetProjectEnvContentHintProjects5$Outbound = {
-    type: string;
-    storeId: string;
-};
-
-/** @internal */
-export const GetProjectEnvContentHintProjects5$outboundSchema: z.ZodType<
-    GetProjectEnvContentHintProjects5$Outbound,
-    z.ZodTypeDef,
-    GetProjectEnvContentHintProjects5
-> = z.object({
-    type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody25Type$outboundSchema,
-    storeId: z.string(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GetProjectEnvContentHintProjects5$ {
-    /** @deprecated use `GetProjectEnvContentHintProjects5$inboundSchema` instead. */
-    export const inboundSchema = GetProjectEnvContentHintProjects5$inboundSchema;
-    /** @deprecated use `GetProjectEnvContentHintProjects5$outboundSchema` instead. */
-    export const outboundSchema = GetProjectEnvContentHintProjects5$outboundSchema;
-    /** @deprecated use `GetProjectEnvContentHintProjects5$Outbound` instead. */
-    export type Outbound = GetProjectEnvContentHintProjects5$Outbound;
-}
-
-/** @internal */
-export const GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody24Type$inboundSchema: z.ZodNativeEnum<
-    typeof GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody24Type
-> = z.nativeEnum(GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody24Type);
-
-/** @internal */
-export const GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody24Type$outboundSchema: z.ZodNativeEnum<
-    typeof GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody24Type
-> = GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody24Type$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody24Type$ {
-    /** @deprecated use `GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody24Type$inboundSchema` instead. */
-    export const inboundSchema =
-        GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody24Type$inboundSchema;
-    /** @deprecated use `GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody24Type$outboundSchema` instead. */
-    export const outboundSchema =
-        GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody24Type$outboundSchema;
-}
-
-/** @internal */
-export const GetProjectEnvContentHintProjects4$inboundSchema: z.ZodType<
-    GetProjectEnvContentHintProjects4,
-    z.ZodTypeDef,
-    unknown
-> = z.object({
-    type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody24Type$inboundSchema,
-    storeId: z.string(),
-});
-
-/** @internal */
-export type GetProjectEnvContentHintProjects4$Outbound = {
-    type: string;
-    storeId: string;
-};
-
-/** @internal */
-export const GetProjectEnvContentHintProjects4$outboundSchema: z.ZodType<
-    GetProjectEnvContentHintProjects4$Outbound,
-    z.ZodTypeDef,
-    GetProjectEnvContentHintProjects4
-> = z.object({
-    type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody24Type$outboundSchema,
-    storeId: z.string(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GetProjectEnvContentHintProjects4$ {
-    /** @deprecated use `GetProjectEnvContentHintProjects4$inboundSchema` instead. */
-    export const inboundSchema = GetProjectEnvContentHintProjects4$inboundSchema;
-    /** @deprecated use `GetProjectEnvContentHintProjects4$outboundSchema` instead. */
-    export const outboundSchema = GetProjectEnvContentHintProjects4$outboundSchema;
-    /** @deprecated use `GetProjectEnvContentHintProjects4$Outbound` instead. */
-    export type Outbound = GetProjectEnvContentHintProjects4$Outbound;
-}
-
-/** @internal */
-export const GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody23Type$inboundSchema: z.ZodNativeEnum<
-    typeof GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody23Type
-> = z.nativeEnum(GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody23Type);
-
-/** @internal */
-export const GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody23Type$outboundSchema: z.ZodNativeEnum<
-    typeof GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody23Type
-> = GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody23Type$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody23Type$ {
-    /** @deprecated use `GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody23Type$inboundSchema` instead. */
-    export const inboundSchema =
-        GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody23Type$inboundSchema;
-    /** @deprecated use `GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody23Type$outboundSchema` instead. */
-    export const outboundSchema =
-        GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody23Type$outboundSchema;
-}
-
-/** @internal */
-export const GetProjectEnvContentHintProjects3$inboundSchema: z.ZodType<
-    GetProjectEnvContentHintProjects3,
-    z.ZodTypeDef,
-    unknown
-> = z.object({
-    type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody23Type$inboundSchema,
-    storeId: z.string(),
-});
-
-/** @internal */
-export type GetProjectEnvContentHintProjects3$Outbound = {
-    type: string;
-    storeId: string;
-};
-
-/** @internal */
-export const GetProjectEnvContentHintProjects3$outboundSchema: z.ZodType<
-    GetProjectEnvContentHintProjects3$Outbound,
-    z.ZodTypeDef,
-    GetProjectEnvContentHintProjects3
-> = z.object({
-    type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody23Type$outboundSchema,
-    storeId: z.string(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GetProjectEnvContentHintProjects3$ {
-    /** @deprecated use `GetProjectEnvContentHintProjects3$inboundSchema` instead. */
-    export const inboundSchema = GetProjectEnvContentHintProjects3$inboundSchema;
-    /** @deprecated use `GetProjectEnvContentHintProjects3$outboundSchema` instead. */
-    export const outboundSchema = GetProjectEnvContentHintProjects3$outboundSchema;
-    /** @deprecated use `GetProjectEnvContentHintProjects3$Outbound` instead. */
-    export type Outbound = GetProjectEnvContentHintProjects3$Outbound;
-}
-
-/** @internal */
-export const GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody22Type$inboundSchema: z.ZodNativeEnum<
-    typeof GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody22Type
-> = z.nativeEnum(GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody22Type);
-
-/** @internal */
-export const GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody22Type$outboundSchema: z.ZodNativeEnum<
-    typeof GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody22Type
-> = GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody22Type$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody22Type$ {
-    /** @deprecated use `GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody22Type$inboundSchema` instead. */
-    export const inboundSchema =
-        GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody22Type$inboundSchema;
-    /** @deprecated use `GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody22Type$outboundSchema` instead. */
-    export const outboundSchema =
-        GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody22Type$outboundSchema;
-}
-
-/** @internal */
-export const GetProjectEnvContentHintProjects2$inboundSchema: z.ZodType<
-    GetProjectEnvContentHintProjects2,
-    z.ZodTypeDef,
-    unknown
-> = z.object({
-    type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody22Type$inboundSchema,
-    storeId: z.string(),
-});
-
-/** @internal */
-export type GetProjectEnvContentHintProjects2$Outbound = {
-    type: string;
-    storeId: string;
-};
-
-/** @internal */
-export const GetProjectEnvContentHintProjects2$outboundSchema: z.ZodType<
-    GetProjectEnvContentHintProjects2$Outbound,
-    z.ZodTypeDef,
-    GetProjectEnvContentHintProjects2
-> = z.object({
-    type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody22Type$outboundSchema,
-    storeId: z.string(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GetProjectEnvContentHintProjects2$ {
-    /** @deprecated use `GetProjectEnvContentHintProjects2$inboundSchema` instead. */
-    export const inboundSchema = GetProjectEnvContentHintProjects2$inboundSchema;
-    /** @deprecated use `GetProjectEnvContentHintProjects2$outboundSchema` instead. */
-    export const outboundSchema = GetProjectEnvContentHintProjects2$outboundSchema;
-    /** @deprecated use `GetProjectEnvContentHintProjects2$Outbound` instead. */
-    export type Outbound = GetProjectEnvContentHintProjects2$Outbound;
-}
-
-/** @internal */
-export const GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody2Type$inboundSchema: z.ZodNativeEnum<
-    typeof GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody2Type
-> = z.nativeEnum(GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody2Type);
-
-/** @internal */
-export const GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody2Type$outboundSchema: z.ZodNativeEnum<
-    typeof GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody2Type
-> = GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody2Type$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody2Type$ {
-    /** @deprecated use `GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody2Type$inboundSchema` instead. */
-    export const inboundSchema =
-        GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody2Type$inboundSchema;
-    /** @deprecated use `GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody2Type$outboundSchema` instead. */
-    export const outboundSchema =
-        GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody2Type$outboundSchema;
-}
-
-/** @internal */
-export const GetProjectEnvContentHintProjects1$inboundSchema: z.ZodType<
-    GetProjectEnvContentHintProjects1,
-    z.ZodTypeDef,
-    unknown
-> = z.object({
-    type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody2Type$inboundSchema,
-    storeId: z.string(),
-});
-
-/** @internal */
-export type GetProjectEnvContentHintProjects1$Outbound = {
-    type: string;
-    storeId: string;
-};
-
-/** @internal */
-export const GetProjectEnvContentHintProjects1$outboundSchema: z.ZodType<
-    GetProjectEnvContentHintProjects1$Outbound,
-    z.ZodTypeDef,
-    GetProjectEnvContentHintProjects1
-> = z.object({
-    type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody2Type$outboundSchema,
-    storeId: z.string(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GetProjectEnvContentHintProjects1$ {
-    /** @deprecated use `GetProjectEnvContentHintProjects1$inboundSchema` instead. */
-    export const inboundSchema = GetProjectEnvContentHintProjects1$inboundSchema;
-    /** @deprecated use `GetProjectEnvContentHintProjects1$outboundSchema` instead. */
-    export const outboundSchema = GetProjectEnvContentHintProjects1$outboundSchema;
-    /** @deprecated use `GetProjectEnvContentHintProjects1$Outbound` instead. */
-    export type Outbound = GetProjectEnvContentHintProjects1$Outbound;
-}
-
-/** @internal */
-export const GetProjectEnvResponseBodyProjectsContentHint$inboundSchema: z.ZodType<
-    GetProjectEnvResponseBodyProjectsContentHint,
-    z.ZodTypeDef,
-    unknown
-> = z.union([
-    z.lazy(() => GetProjectEnvContentHintProjects1$inboundSchema),
-    z.lazy(() => GetProjectEnvContentHintProjects2$inboundSchema),
-    z.lazy(() => GetProjectEnvContentHintProjects3$inboundSchema),
-    z.lazy(() => GetProjectEnvContentHintProjects4$inboundSchema),
-    z.lazy(() => GetProjectEnvContentHintProjects5$inboundSchema),
-    z.lazy(() => GetProjectEnvContentHintProjects6$inboundSchema),
-    z.lazy(() => GetProjectEnvContentHintProjects7$inboundSchema),
-    z.lazy(() => GetProjectEnvContentHintProjects8$inboundSchema),
-    z.lazy(() => GetProjectEnvContentHintProjects9$inboundSchema),
-    z.lazy(() => GetProjectEnvContentHintProjects10$inboundSchema),
-    z.lazy(() => GetProjectEnvContentHintProjects11$inboundSchema),
-    z.lazy(() => GetProjectEnvContentHintProjects12$inboundSchema),
-    z.lazy(() => GetProjectEnvContentHintProjects13$inboundSchema),
-    z.lazy(() => GetProjectEnvContentHintProjects14$inboundSchema),
-]);
-
-/** @internal */
-export type GetProjectEnvResponseBodyProjectsContentHint$Outbound =
-    | GetProjectEnvContentHintProjects1$Outbound
-    | GetProjectEnvContentHintProjects2$Outbound
-    | GetProjectEnvContentHintProjects3$Outbound
-    | GetProjectEnvContentHintProjects4$Outbound
-    | GetProjectEnvContentHintProjects5$Outbound
-    | GetProjectEnvContentHintProjects6$Outbound
-    | GetProjectEnvContentHintProjects7$Outbound
-    | GetProjectEnvContentHintProjects8$Outbound
-    | GetProjectEnvContentHintProjects9$Outbound
-    | GetProjectEnvContentHintProjects10$Outbound
-    | GetProjectEnvContentHintProjects11$Outbound
-    | GetProjectEnvContentHintProjects12$Outbound
-    | GetProjectEnvContentHintProjects13$Outbound
-    | GetProjectEnvContentHintProjects14$Outbound;
-
-/** @internal */
-export const GetProjectEnvResponseBodyProjectsContentHint$outboundSchema: z.ZodType<
-    GetProjectEnvResponseBodyProjectsContentHint$Outbound,
-    z.ZodTypeDef,
-    GetProjectEnvResponseBodyProjectsContentHint
-> = z.union([
-    z.lazy(() => GetProjectEnvContentHintProjects1$outboundSchema),
-    z.lazy(() => GetProjectEnvContentHintProjects2$outboundSchema),
-    z.lazy(() => GetProjectEnvContentHintProjects3$outboundSchema),
-    z.lazy(() => GetProjectEnvContentHintProjects4$outboundSchema),
-    z.lazy(() => GetProjectEnvContentHintProjects5$outboundSchema),
-    z.lazy(() => GetProjectEnvContentHintProjects6$outboundSchema),
-    z.lazy(() => GetProjectEnvContentHintProjects7$outboundSchema),
-    z.lazy(() => GetProjectEnvContentHintProjects8$outboundSchema),
-    z.lazy(() => GetProjectEnvContentHintProjects9$outboundSchema),
-    z.lazy(() => GetProjectEnvContentHintProjects10$outboundSchema),
-    z.lazy(() => GetProjectEnvContentHintProjects11$outboundSchema),
-    z.lazy(() => GetProjectEnvContentHintProjects12$outboundSchema),
-    z.lazy(() => GetProjectEnvContentHintProjects13$outboundSchema),
-    z.lazy(() => GetProjectEnvContentHintProjects14$outboundSchema),
+    z.array(GetProjectEnvTargetEnvsResponse1$outboundSchema),
+    GetProjectEnvTargetEnvsResponse2$outboundSchema,
 ]);
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace GetProjectEnvResponseBodyProjectsContentHint$ {
-    /** @deprecated use `GetProjectEnvResponseBodyProjectsContentHint$inboundSchema` instead. */
-    export const inboundSchema = GetProjectEnvResponseBodyProjectsContentHint$inboundSchema;
-    /** @deprecated use `GetProjectEnvResponseBodyProjectsContentHint$outboundSchema` instead. */
-    export const outboundSchema = GetProjectEnvResponseBodyProjectsContentHint$outboundSchema;
-    /** @deprecated use `GetProjectEnvResponseBodyProjectsContentHint$Outbound` instead. */
-    export type Outbound = GetProjectEnvResponseBodyProjectsContentHint$Outbound;
+export namespace GetProjectEnvResponseBodyEnvsResponseTarget$ {
+    /** @deprecated use `GetProjectEnvResponseBodyEnvsResponseTarget$inboundSchema` instead. */
+    export const inboundSchema = GetProjectEnvResponseBodyEnvsResponseTarget$inboundSchema;
+    /** @deprecated use `GetProjectEnvResponseBodyEnvsResponseTarget$outboundSchema` instead. */
+    export const outboundSchema = GetProjectEnvResponseBodyEnvsResponseTarget$outboundSchema;
+    /** @deprecated use `GetProjectEnvResponseBodyEnvsResponseTarget$Outbound` instead. */
+    export type Outbound = GetProjectEnvResponseBodyEnvsResponseTarget$Outbound;
 }
 
 /** @internal */
-export const GetProjectEnvResponseBodyProjectsResponse200Type$inboundSchema: z.ZodNativeEnum<
-    typeof GetProjectEnvResponseBodyProjectsResponse200Type
-> = z.nativeEnum(GetProjectEnvResponseBodyProjectsResponse200Type);
+export const GetProjectEnvResponseBodyEnvsResponseType$inboundSchema: z.ZodNativeEnum<
+    typeof GetProjectEnvResponseBodyEnvsResponseType
+> = z.nativeEnum(GetProjectEnvResponseBodyEnvsResponseType);
 
 /** @internal */
-export const GetProjectEnvResponseBodyProjectsResponse200Type$outboundSchema: z.ZodNativeEnum<
-    typeof GetProjectEnvResponseBodyProjectsResponse200Type
-> = GetProjectEnvResponseBodyProjectsResponse200Type$inboundSchema;
+export const GetProjectEnvResponseBodyEnvsResponseType$outboundSchema: z.ZodNativeEnum<
+    typeof GetProjectEnvResponseBodyEnvsResponseType
+> = GetProjectEnvResponseBodyEnvsResponseType$inboundSchema;
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace GetProjectEnvResponseBodyProjectsResponse200Type$ {
-    /** @deprecated use `GetProjectEnvResponseBodyProjectsResponse200Type$inboundSchema` instead. */
-    export const inboundSchema = GetProjectEnvResponseBodyProjectsResponse200Type$inboundSchema;
-    /** @deprecated use `GetProjectEnvResponseBodyProjectsResponse200Type$outboundSchema` instead. */
-    export const outboundSchema = GetProjectEnvResponseBodyProjectsResponse200Type$outboundSchema;
+export namespace GetProjectEnvResponseBodyEnvsResponseType$ {
+    /** @deprecated use `GetProjectEnvResponseBodyEnvsResponseType$inboundSchema` instead. */
+    export const inboundSchema = GetProjectEnvResponseBodyEnvsResponseType$inboundSchema;
+    /** @deprecated use `GetProjectEnvResponseBodyEnvsResponseType$outboundSchema` instead. */
+    export const outboundSchema = GetProjectEnvResponseBodyEnvsResponseType$outboundSchema;
 }
 
 /** @internal */
-export const GetProjectEnvResponseBodyProjectsInternalContentHint$inboundSchema: z.ZodType<
-    GetProjectEnvResponseBodyProjectsInternalContentHint,
+export const GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody314Type$inboundSchema: z.ZodNativeEnum<
+    typeof GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody314Type
+> = z.nativeEnum(GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody314Type);
+
+/** @internal */
+export const GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody314Type$outboundSchema: z.ZodNativeEnum<
+    typeof GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody314Type
+> = GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody314Type$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody314Type$ {
+    /** @deprecated use `GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody314Type$inboundSchema` instead. */
+    export const inboundSchema =
+        GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody314Type$inboundSchema;
+    /** @deprecated use `GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody314Type$outboundSchema` instead. */
+    export const outboundSchema =
+        GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody314Type$outboundSchema;
+}
+
+/** @internal */
+export const GetProjectEnvContentHintEnvsResponse14$inboundSchema: z.ZodType<
+    GetProjectEnvContentHintEnvsResponse14,
     z.ZodTypeDef,
     unknown
 > = z.object({
-    type: GetProjectEnvResponseBodyProjectsResponse200Type$inboundSchema,
+    type: GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody314Type$inboundSchema,
+    storeId: z.string(),
+    integrationId: z.string(),
+    integrationProductId: z.string(),
+    integrationConfigurationId: z.string(),
+});
+
+/** @internal */
+export type GetProjectEnvContentHintEnvsResponse14$Outbound = {
+    type: string;
+    storeId: string;
+    integrationId: string;
+    integrationProductId: string;
+    integrationConfigurationId: string;
+};
+
+/** @internal */
+export const GetProjectEnvContentHintEnvsResponse14$outboundSchema: z.ZodType<
+    GetProjectEnvContentHintEnvsResponse14$Outbound,
+    z.ZodTypeDef,
+    GetProjectEnvContentHintEnvsResponse14
+> = z.object({
+    type: GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody314Type$outboundSchema,
+    storeId: z.string(),
+    integrationId: z.string(),
+    integrationProductId: z.string(),
+    integrationConfigurationId: z.string(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetProjectEnvContentHintEnvsResponse14$ {
+    /** @deprecated use `GetProjectEnvContentHintEnvsResponse14$inboundSchema` instead. */
+    export const inboundSchema = GetProjectEnvContentHintEnvsResponse14$inboundSchema;
+    /** @deprecated use `GetProjectEnvContentHintEnvsResponse14$outboundSchema` instead. */
+    export const outboundSchema = GetProjectEnvContentHintEnvsResponse14$outboundSchema;
+    /** @deprecated use `GetProjectEnvContentHintEnvsResponse14$Outbound` instead. */
+    export type Outbound = GetProjectEnvContentHintEnvsResponse14$Outbound;
+}
+
+/** @internal */
+export const GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody313Type$inboundSchema: z.ZodNativeEnum<
+    typeof GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody313Type
+> = z.nativeEnum(GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody313Type);
+
+/** @internal */
+export const GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody313Type$outboundSchema: z.ZodNativeEnum<
+    typeof GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody313Type
+> = GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody313Type$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody313Type$ {
+    /** @deprecated use `GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody313Type$inboundSchema` instead. */
+    export const inboundSchema =
+        GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody313Type$inboundSchema;
+    /** @deprecated use `GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody313Type$outboundSchema` instead. */
+    export const outboundSchema =
+        GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody313Type$outboundSchema;
+}
+
+/** @internal */
+export const GetProjectEnvContentHintEnvsResponse13$inboundSchema: z.ZodType<
+    GetProjectEnvContentHintEnvsResponse13,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    type: GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody313Type$inboundSchema,
+    storeId: z.string(),
+});
+
+/** @internal */
+export type GetProjectEnvContentHintEnvsResponse13$Outbound = {
+    type: string;
+    storeId: string;
+};
+
+/** @internal */
+export const GetProjectEnvContentHintEnvsResponse13$outboundSchema: z.ZodType<
+    GetProjectEnvContentHintEnvsResponse13$Outbound,
+    z.ZodTypeDef,
+    GetProjectEnvContentHintEnvsResponse13
+> = z.object({
+    type: GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody313Type$outboundSchema,
+    storeId: z.string(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetProjectEnvContentHintEnvsResponse13$ {
+    /** @deprecated use `GetProjectEnvContentHintEnvsResponse13$inboundSchema` instead. */
+    export const inboundSchema = GetProjectEnvContentHintEnvsResponse13$inboundSchema;
+    /** @deprecated use `GetProjectEnvContentHintEnvsResponse13$outboundSchema` instead. */
+    export const outboundSchema = GetProjectEnvContentHintEnvsResponse13$outboundSchema;
+    /** @deprecated use `GetProjectEnvContentHintEnvsResponse13$Outbound` instead. */
+    export type Outbound = GetProjectEnvContentHintEnvsResponse13$Outbound;
+}
+
+/** @internal */
+export const GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody312Type$inboundSchema: z.ZodNativeEnum<
+    typeof GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody312Type
+> = z.nativeEnum(GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody312Type);
+
+/** @internal */
+export const GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody312Type$outboundSchema: z.ZodNativeEnum<
+    typeof GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody312Type
+> = GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody312Type$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody312Type$ {
+    /** @deprecated use `GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody312Type$inboundSchema` instead. */
+    export const inboundSchema =
+        GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody312Type$inboundSchema;
+    /** @deprecated use `GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody312Type$outboundSchema` instead. */
+    export const outboundSchema =
+        GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody312Type$outboundSchema;
+}
+
+/** @internal */
+export const GetProjectEnvContentHintEnvsResponse12$inboundSchema: z.ZodType<
+    GetProjectEnvContentHintEnvsResponse12,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    type: GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody312Type$inboundSchema,
+    storeId: z.string(),
+});
+
+/** @internal */
+export type GetProjectEnvContentHintEnvsResponse12$Outbound = {
+    type: string;
+    storeId: string;
+};
+
+/** @internal */
+export const GetProjectEnvContentHintEnvsResponse12$outboundSchema: z.ZodType<
+    GetProjectEnvContentHintEnvsResponse12$Outbound,
+    z.ZodTypeDef,
+    GetProjectEnvContentHintEnvsResponse12
+> = z.object({
+    type: GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody312Type$outboundSchema,
+    storeId: z.string(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetProjectEnvContentHintEnvsResponse12$ {
+    /** @deprecated use `GetProjectEnvContentHintEnvsResponse12$inboundSchema` instead. */
+    export const inboundSchema = GetProjectEnvContentHintEnvsResponse12$inboundSchema;
+    /** @deprecated use `GetProjectEnvContentHintEnvsResponse12$outboundSchema` instead. */
+    export const outboundSchema = GetProjectEnvContentHintEnvsResponse12$outboundSchema;
+    /** @deprecated use `GetProjectEnvContentHintEnvsResponse12$Outbound` instead. */
+    export type Outbound = GetProjectEnvContentHintEnvsResponse12$Outbound;
+}
+
+/** @internal */
+export const GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody311Type$inboundSchema: z.ZodNativeEnum<
+    typeof GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody311Type
+> = z.nativeEnum(GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody311Type);
+
+/** @internal */
+export const GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody311Type$outboundSchema: z.ZodNativeEnum<
+    typeof GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody311Type
+> = GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody311Type$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody311Type$ {
+    /** @deprecated use `GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody311Type$inboundSchema` instead. */
+    export const inboundSchema =
+        GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody311Type$inboundSchema;
+    /** @deprecated use `GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody311Type$outboundSchema` instead. */
+    export const outboundSchema =
+        GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody311Type$outboundSchema;
+}
+
+/** @internal */
+export const GetProjectEnvContentHintEnvsResponse11$inboundSchema: z.ZodType<
+    GetProjectEnvContentHintEnvsResponse11,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    type: GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody311Type$inboundSchema,
+    storeId: z.string(),
+});
+
+/** @internal */
+export type GetProjectEnvContentHintEnvsResponse11$Outbound = {
+    type: string;
+    storeId: string;
+};
+
+/** @internal */
+export const GetProjectEnvContentHintEnvsResponse11$outboundSchema: z.ZodType<
+    GetProjectEnvContentHintEnvsResponse11$Outbound,
+    z.ZodTypeDef,
+    GetProjectEnvContentHintEnvsResponse11
+> = z.object({
+    type: GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody311Type$outboundSchema,
+    storeId: z.string(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetProjectEnvContentHintEnvsResponse11$ {
+    /** @deprecated use `GetProjectEnvContentHintEnvsResponse11$inboundSchema` instead. */
+    export const inboundSchema = GetProjectEnvContentHintEnvsResponse11$inboundSchema;
+    /** @deprecated use `GetProjectEnvContentHintEnvsResponse11$outboundSchema` instead. */
+    export const outboundSchema = GetProjectEnvContentHintEnvsResponse11$outboundSchema;
+    /** @deprecated use `GetProjectEnvContentHintEnvsResponse11$Outbound` instead. */
+    export type Outbound = GetProjectEnvContentHintEnvsResponse11$Outbound;
+}
+
+/** @internal */
+export const GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody310Type$inboundSchema: z.ZodNativeEnum<
+    typeof GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody310Type
+> = z.nativeEnum(GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody310Type);
+
+/** @internal */
+export const GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody310Type$outboundSchema: z.ZodNativeEnum<
+    typeof GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody310Type
+> = GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody310Type$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody310Type$ {
+    /** @deprecated use `GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody310Type$inboundSchema` instead. */
+    export const inboundSchema =
+        GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody310Type$inboundSchema;
+    /** @deprecated use `GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody310Type$outboundSchema` instead. */
+    export const outboundSchema =
+        GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody310Type$outboundSchema;
+}
+
+/** @internal */
+export const GetProjectEnvContentHintEnvsResponse10$inboundSchema: z.ZodType<
+    GetProjectEnvContentHintEnvsResponse10,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    type: GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody310Type$inboundSchema,
+    storeId: z.string(),
+});
+
+/** @internal */
+export type GetProjectEnvContentHintEnvsResponse10$Outbound = {
+    type: string;
+    storeId: string;
+};
+
+/** @internal */
+export const GetProjectEnvContentHintEnvsResponse10$outboundSchema: z.ZodType<
+    GetProjectEnvContentHintEnvsResponse10$Outbound,
+    z.ZodTypeDef,
+    GetProjectEnvContentHintEnvsResponse10
+> = z.object({
+    type: GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody310Type$outboundSchema,
+    storeId: z.string(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetProjectEnvContentHintEnvsResponse10$ {
+    /** @deprecated use `GetProjectEnvContentHintEnvsResponse10$inboundSchema` instead. */
+    export const inboundSchema = GetProjectEnvContentHintEnvsResponse10$inboundSchema;
+    /** @deprecated use `GetProjectEnvContentHintEnvsResponse10$outboundSchema` instead. */
+    export const outboundSchema = GetProjectEnvContentHintEnvsResponse10$outboundSchema;
+    /** @deprecated use `GetProjectEnvContentHintEnvsResponse10$Outbound` instead. */
+    export type Outbound = GetProjectEnvContentHintEnvsResponse10$Outbound;
+}
+
+/** @internal */
+export const GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody39Type$inboundSchema: z.ZodNativeEnum<
+    typeof GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody39Type
+> = z.nativeEnum(GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody39Type);
+
+/** @internal */
+export const GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody39Type$outboundSchema: z.ZodNativeEnum<
+    typeof GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody39Type
+> = GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody39Type$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody39Type$ {
+    /** @deprecated use `GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody39Type$inboundSchema` instead. */
+    export const inboundSchema =
+        GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody39Type$inboundSchema;
+    /** @deprecated use `GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody39Type$outboundSchema` instead. */
+    export const outboundSchema =
+        GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody39Type$outboundSchema;
+}
+
+/** @internal */
+export const GetProjectEnvContentHintEnvsResponse9$inboundSchema: z.ZodType<
+    GetProjectEnvContentHintEnvsResponse9,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    type: GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody39Type$inboundSchema,
+    storeId: z.string(),
+});
+
+/** @internal */
+export type GetProjectEnvContentHintEnvsResponse9$Outbound = {
+    type: string;
+    storeId: string;
+};
+
+/** @internal */
+export const GetProjectEnvContentHintEnvsResponse9$outboundSchema: z.ZodType<
+    GetProjectEnvContentHintEnvsResponse9$Outbound,
+    z.ZodTypeDef,
+    GetProjectEnvContentHintEnvsResponse9
+> = z.object({
+    type: GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody39Type$outboundSchema,
+    storeId: z.string(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetProjectEnvContentHintEnvsResponse9$ {
+    /** @deprecated use `GetProjectEnvContentHintEnvsResponse9$inboundSchema` instead. */
+    export const inboundSchema = GetProjectEnvContentHintEnvsResponse9$inboundSchema;
+    /** @deprecated use `GetProjectEnvContentHintEnvsResponse9$outboundSchema` instead. */
+    export const outboundSchema = GetProjectEnvContentHintEnvsResponse9$outboundSchema;
+    /** @deprecated use `GetProjectEnvContentHintEnvsResponse9$Outbound` instead. */
+    export type Outbound = GetProjectEnvContentHintEnvsResponse9$Outbound;
+}
+
+/** @internal */
+export const GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody38Type$inboundSchema: z.ZodNativeEnum<
+    typeof GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody38Type
+> = z.nativeEnum(GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody38Type);
+
+/** @internal */
+export const GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody38Type$outboundSchema: z.ZodNativeEnum<
+    typeof GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody38Type
+> = GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody38Type$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody38Type$ {
+    /** @deprecated use `GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody38Type$inboundSchema` instead. */
+    export const inboundSchema =
+        GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody38Type$inboundSchema;
+    /** @deprecated use `GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody38Type$outboundSchema` instead. */
+    export const outboundSchema =
+        GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody38Type$outboundSchema;
+}
+
+/** @internal */
+export const GetProjectEnvContentHintEnvsResponse8$inboundSchema: z.ZodType<
+    GetProjectEnvContentHintEnvsResponse8,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    type: GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody38Type$inboundSchema,
+    storeId: z.string(),
+});
+
+/** @internal */
+export type GetProjectEnvContentHintEnvsResponse8$Outbound = {
+    type: string;
+    storeId: string;
+};
+
+/** @internal */
+export const GetProjectEnvContentHintEnvsResponse8$outboundSchema: z.ZodType<
+    GetProjectEnvContentHintEnvsResponse8$Outbound,
+    z.ZodTypeDef,
+    GetProjectEnvContentHintEnvsResponse8
+> = z.object({
+    type: GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody38Type$outboundSchema,
+    storeId: z.string(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetProjectEnvContentHintEnvsResponse8$ {
+    /** @deprecated use `GetProjectEnvContentHintEnvsResponse8$inboundSchema` instead. */
+    export const inboundSchema = GetProjectEnvContentHintEnvsResponse8$inboundSchema;
+    /** @deprecated use `GetProjectEnvContentHintEnvsResponse8$outboundSchema` instead. */
+    export const outboundSchema = GetProjectEnvContentHintEnvsResponse8$outboundSchema;
+    /** @deprecated use `GetProjectEnvContentHintEnvsResponse8$Outbound` instead. */
+    export type Outbound = GetProjectEnvContentHintEnvsResponse8$Outbound;
+}
+
+/** @internal */
+export const GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody37Type$inboundSchema: z.ZodNativeEnum<
+    typeof GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody37Type
+> = z.nativeEnum(GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody37Type);
+
+/** @internal */
+export const GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody37Type$outboundSchema: z.ZodNativeEnum<
+    typeof GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody37Type
+> = GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody37Type$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody37Type$ {
+    /** @deprecated use `GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody37Type$inboundSchema` instead. */
+    export const inboundSchema =
+        GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody37Type$inboundSchema;
+    /** @deprecated use `GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody37Type$outboundSchema` instead. */
+    export const outboundSchema =
+        GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody37Type$outboundSchema;
+}
+
+/** @internal */
+export const GetProjectEnvContentHintEnvsResponse7$inboundSchema: z.ZodType<
+    GetProjectEnvContentHintEnvsResponse7,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    type: GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody37Type$inboundSchema,
+    storeId: z.string(),
+});
+
+/** @internal */
+export type GetProjectEnvContentHintEnvsResponse7$Outbound = {
+    type: string;
+    storeId: string;
+};
+
+/** @internal */
+export const GetProjectEnvContentHintEnvsResponse7$outboundSchema: z.ZodType<
+    GetProjectEnvContentHintEnvsResponse7$Outbound,
+    z.ZodTypeDef,
+    GetProjectEnvContentHintEnvsResponse7
+> = z.object({
+    type: GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody37Type$outboundSchema,
+    storeId: z.string(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetProjectEnvContentHintEnvsResponse7$ {
+    /** @deprecated use `GetProjectEnvContentHintEnvsResponse7$inboundSchema` instead. */
+    export const inboundSchema = GetProjectEnvContentHintEnvsResponse7$inboundSchema;
+    /** @deprecated use `GetProjectEnvContentHintEnvsResponse7$outboundSchema` instead. */
+    export const outboundSchema = GetProjectEnvContentHintEnvsResponse7$outboundSchema;
+    /** @deprecated use `GetProjectEnvContentHintEnvsResponse7$Outbound` instead. */
+    export type Outbound = GetProjectEnvContentHintEnvsResponse7$Outbound;
+}
+
+/** @internal */
+export const GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody36Type$inboundSchema: z.ZodNativeEnum<
+    typeof GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody36Type
+> = z.nativeEnum(GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody36Type);
+
+/** @internal */
+export const GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody36Type$outboundSchema: z.ZodNativeEnum<
+    typeof GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody36Type
+> = GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody36Type$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody36Type$ {
+    /** @deprecated use `GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody36Type$inboundSchema` instead. */
+    export const inboundSchema =
+        GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody36Type$inboundSchema;
+    /** @deprecated use `GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody36Type$outboundSchema` instead. */
+    export const outboundSchema =
+        GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody36Type$outboundSchema;
+}
+
+/** @internal */
+export const GetProjectEnvContentHintEnvsResponse6$inboundSchema: z.ZodType<
+    GetProjectEnvContentHintEnvsResponse6,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    type: GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody36Type$inboundSchema,
+    storeId: z.string(),
+});
+
+/** @internal */
+export type GetProjectEnvContentHintEnvsResponse6$Outbound = {
+    type: string;
+    storeId: string;
+};
+
+/** @internal */
+export const GetProjectEnvContentHintEnvsResponse6$outboundSchema: z.ZodType<
+    GetProjectEnvContentHintEnvsResponse6$Outbound,
+    z.ZodTypeDef,
+    GetProjectEnvContentHintEnvsResponse6
+> = z.object({
+    type: GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody36Type$outboundSchema,
+    storeId: z.string(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetProjectEnvContentHintEnvsResponse6$ {
+    /** @deprecated use `GetProjectEnvContentHintEnvsResponse6$inboundSchema` instead. */
+    export const inboundSchema = GetProjectEnvContentHintEnvsResponse6$inboundSchema;
+    /** @deprecated use `GetProjectEnvContentHintEnvsResponse6$outboundSchema` instead. */
+    export const outboundSchema = GetProjectEnvContentHintEnvsResponse6$outboundSchema;
+    /** @deprecated use `GetProjectEnvContentHintEnvsResponse6$Outbound` instead. */
+    export type Outbound = GetProjectEnvContentHintEnvsResponse6$Outbound;
+}
+
+/** @internal */
+export const GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody35Type$inboundSchema: z.ZodNativeEnum<
+    typeof GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody35Type
+> = z.nativeEnum(GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody35Type);
+
+/** @internal */
+export const GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody35Type$outboundSchema: z.ZodNativeEnum<
+    typeof GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody35Type
+> = GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody35Type$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody35Type$ {
+    /** @deprecated use `GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody35Type$inboundSchema` instead. */
+    export const inboundSchema =
+        GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody35Type$inboundSchema;
+    /** @deprecated use `GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody35Type$outboundSchema` instead. */
+    export const outboundSchema =
+        GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody35Type$outboundSchema;
+}
+
+/** @internal */
+export const GetProjectEnvContentHintEnvsResponse5$inboundSchema: z.ZodType<
+    GetProjectEnvContentHintEnvsResponse5,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    type: GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody35Type$inboundSchema,
+    storeId: z.string(),
+});
+
+/** @internal */
+export type GetProjectEnvContentHintEnvsResponse5$Outbound = {
+    type: string;
+    storeId: string;
+};
+
+/** @internal */
+export const GetProjectEnvContentHintEnvsResponse5$outboundSchema: z.ZodType<
+    GetProjectEnvContentHintEnvsResponse5$Outbound,
+    z.ZodTypeDef,
+    GetProjectEnvContentHintEnvsResponse5
+> = z.object({
+    type: GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody35Type$outboundSchema,
+    storeId: z.string(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetProjectEnvContentHintEnvsResponse5$ {
+    /** @deprecated use `GetProjectEnvContentHintEnvsResponse5$inboundSchema` instead. */
+    export const inboundSchema = GetProjectEnvContentHintEnvsResponse5$inboundSchema;
+    /** @deprecated use `GetProjectEnvContentHintEnvsResponse5$outboundSchema` instead. */
+    export const outboundSchema = GetProjectEnvContentHintEnvsResponse5$outboundSchema;
+    /** @deprecated use `GetProjectEnvContentHintEnvsResponse5$Outbound` instead. */
+    export type Outbound = GetProjectEnvContentHintEnvsResponse5$Outbound;
+}
+
+/** @internal */
+export const GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody34Type$inboundSchema: z.ZodNativeEnum<
+    typeof GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody34Type
+> = z.nativeEnum(GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody34Type);
+
+/** @internal */
+export const GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody34Type$outboundSchema: z.ZodNativeEnum<
+    typeof GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody34Type
+> = GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody34Type$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody34Type$ {
+    /** @deprecated use `GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody34Type$inboundSchema` instead. */
+    export const inboundSchema =
+        GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody34Type$inboundSchema;
+    /** @deprecated use `GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody34Type$outboundSchema` instead. */
+    export const outboundSchema =
+        GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody34Type$outboundSchema;
+}
+
+/** @internal */
+export const GetProjectEnvContentHintEnvsResponse4$inboundSchema: z.ZodType<
+    GetProjectEnvContentHintEnvsResponse4,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    type: GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody34Type$inboundSchema,
+    storeId: z.string(),
+});
+
+/** @internal */
+export type GetProjectEnvContentHintEnvsResponse4$Outbound = {
+    type: string;
+    storeId: string;
+};
+
+/** @internal */
+export const GetProjectEnvContentHintEnvsResponse4$outboundSchema: z.ZodType<
+    GetProjectEnvContentHintEnvsResponse4$Outbound,
+    z.ZodTypeDef,
+    GetProjectEnvContentHintEnvsResponse4
+> = z.object({
+    type: GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody34Type$outboundSchema,
+    storeId: z.string(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetProjectEnvContentHintEnvsResponse4$ {
+    /** @deprecated use `GetProjectEnvContentHintEnvsResponse4$inboundSchema` instead. */
+    export const inboundSchema = GetProjectEnvContentHintEnvsResponse4$inboundSchema;
+    /** @deprecated use `GetProjectEnvContentHintEnvsResponse4$outboundSchema` instead. */
+    export const outboundSchema = GetProjectEnvContentHintEnvsResponse4$outboundSchema;
+    /** @deprecated use `GetProjectEnvContentHintEnvsResponse4$Outbound` instead. */
+    export type Outbound = GetProjectEnvContentHintEnvsResponse4$Outbound;
+}
+
+/** @internal */
+export const GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody33Type$inboundSchema: z.ZodNativeEnum<
+    typeof GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody33Type
+> = z.nativeEnum(GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody33Type);
+
+/** @internal */
+export const GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody33Type$outboundSchema: z.ZodNativeEnum<
+    typeof GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody33Type
+> = GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody33Type$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody33Type$ {
+    /** @deprecated use `GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody33Type$inboundSchema` instead. */
+    export const inboundSchema =
+        GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody33Type$inboundSchema;
+    /** @deprecated use `GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody33Type$outboundSchema` instead. */
+    export const outboundSchema =
+        GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody33Type$outboundSchema;
+}
+
+/** @internal */
+export const GetProjectEnvContentHintEnvsResponse3$inboundSchema: z.ZodType<
+    GetProjectEnvContentHintEnvsResponse3,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    type: GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody33Type$inboundSchema,
+    storeId: z.string(),
+});
+
+/** @internal */
+export type GetProjectEnvContentHintEnvsResponse3$Outbound = {
+    type: string;
+    storeId: string;
+};
+
+/** @internal */
+export const GetProjectEnvContentHintEnvsResponse3$outboundSchema: z.ZodType<
+    GetProjectEnvContentHintEnvsResponse3$Outbound,
+    z.ZodTypeDef,
+    GetProjectEnvContentHintEnvsResponse3
+> = z.object({
+    type: GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody33Type$outboundSchema,
+    storeId: z.string(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetProjectEnvContentHintEnvsResponse3$ {
+    /** @deprecated use `GetProjectEnvContentHintEnvsResponse3$inboundSchema` instead. */
+    export const inboundSchema = GetProjectEnvContentHintEnvsResponse3$inboundSchema;
+    /** @deprecated use `GetProjectEnvContentHintEnvsResponse3$outboundSchema` instead. */
+    export const outboundSchema = GetProjectEnvContentHintEnvsResponse3$outboundSchema;
+    /** @deprecated use `GetProjectEnvContentHintEnvsResponse3$Outbound` instead. */
+    export type Outbound = GetProjectEnvContentHintEnvsResponse3$Outbound;
+}
+
+/** @internal */
+export const GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody32Type$inboundSchema: z.ZodNativeEnum<
+    typeof GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody32Type
+> = z.nativeEnum(GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody32Type);
+
+/** @internal */
+export const GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody32Type$outboundSchema: z.ZodNativeEnum<
+    typeof GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody32Type
+> = GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody32Type$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody32Type$ {
+    /** @deprecated use `GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody32Type$inboundSchema` instead. */
+    export const inboundSchema =
+        GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody32Type$inboundSchema;
+    /** @deprecated use `GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody32Type$outboundSchema` instead. */
+    export const outboundSchema =
+        GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody32Type$outboundSchema;
+}
+
+/** @internal */
+export const GetProjectEnvContentHintEnvsResponse2$inboundSchema: z.ZodType<
+    GetProjectEnvContentHintEnvsResponse2,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    type: GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody32Type$inboundSchema,
+    storeId: z.string(),
+});
+
+/** @internal */
+export type GetProjectEnvContentHintEnvsResponse2$Outbound = {
+    type: string;
+    storeId: string;
+};
+
+/** @internal */
+export const GetProjectEnvContentHintEnvsResponse2$outboundSchema: z.ZodType<
+    GetProjectEnvContentHintEnvsResponse2$Outbound,
+    z.ZodTypeDef,
+    GetProjectEnvContentHintEnvsResponse2
+> = z.object({
+    type: GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody32Type$outboundSchema,
+    storeId: z.string(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetProjectEnvContentHintEnvsResponse2$ {
+    /** @deprecated use `GetProjectEnvContentHintEnvsResponse2$inboundSchema` instead. */
+    export const inboundSchema = GetProjectEnvContentHintEnvsResponse2$inboundSchema;
+    /** @deprecated use `GetProjectEnvContentHintEnvsResponse2$outboundSchema` instead. */
+    export const outboundSchema = GetProjectEnvContentHintEnvsResponse2$outboundSchema;
+    /** @deprecated use `GetProjectEnvContentHintEnvsResponse2$Outbound` instead. */
+    export type Outbound = GetProjectEnvContentHintEnvsResponse2$Outbound;
+}
+
+/** @internal */
+export const GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody3Type$inboundSchema: z.ZodNativeEnum<
+    typeof GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody3Type
+> = z.nativeEnum(GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody3Type);
+
+/** @internal */
+export const GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody3Type$outboundSchema: z.ZodNativeEnum<
+    typeof GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody3Type
+> = GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody3Type$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody3Type$ {
+    /** @deprecated use `GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody3Type$inboundSchema` instead. */
+    export const inboundSchema =
+        GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody3Type$inboundSchema;
+    /** @deprecated use `GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody3Type$outboundSchema` instead. */
+    export const outboundSchema =
+        GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody3Type$outboundSchema;
+}
+
+/** @internal */
+export const GetProjectEnvContentHintEnvsResponse1$inboundSchema: z.ZodType<
+    GetProjectEnvContentHintEnvsResponse1,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    type: GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody3Type$inboundSchema,
+    storeId: z.string(),
+});
+
+/** @internal */
+export type GetProjectEnvContentHintEnvsResponse1$Outbound = {
+    type: string;
+    storeId: string;
+};
+
+/** @internal */
+export const GetProjectEnvContentHintEnvsResponse1$outboundSchema: z.ZodType<
+    GetProjectEnvContentHintEnvsResponse1$Outbound,
+    z.ZodTypeDef,
+    GetProjectEnvContentHintEnvsResponse1
+> = z.object({
+    type: GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody3Type$outboundSchema,
+    storeId: z.string(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetProjectEnvContentHintEnvsResponse1$ {
+    /** @deprecated use `GetProjectEnvContentHintEnvsResponse1$inboundSchema` instead. */
+    export const inboundSchema = GetProjectEnvContentHintEnvsResponse1$inboundSchema;
+    /** @deprecated use `GetProjectEnvContentHintEnvsResponse1$outboundSchema` instead. */
+    export const outboundSchema = GetProjectEnvContentHintEnvsResponse1$outboundSchema;
+    /** @deprecated use `GetProjectEnvContentHintEnvsResponse1$Outbound` instead. */
+    export type Outbound = GetProjectEnvContentHintEnvsResponse1$Outbound;
+}
+
+/** @internal */
+export const GetProjectEnvResponseBodyEnvsResponseContentHint$inboundSchema: z.ZodType<
+    GetProjectEnvResponseBodyEnvsResponseContentHint,
+    z.ZodTypeDef,
+    unknown
+> = z.union([
+    z.lazy(() => GetProjectEnvContentHintEnvsResponse1$inboundSchema),
+    z.lazy(() => GetProjectEnvContentHintEnvsResponse2$inboundSchema),
+    z.lazy(() => GetProjectEnvContentHintEnvsResponse3$inboundSchema),
+    z.lazy(() => GetProjectEnvContentHintEnvsResponse4$inboundSchema),
+    z.lazy(() => GetProjectEnvContentHintEnvsResponse5$inboundSchema),
+    z.lazy(() => GetProjectEnvContentHintEnvsResponse6$inboundSchema),
+    z.lazy(() => GetProjectEnvContentHintEnvsResponse7$inboundSchema),
+    z.lazy(() => GetProjectEnvContentHintEnvsResponse8$inboundSchema),
+    z.lazy(() => GetProjectEnvContentHintEnvsResponse9$inboundSchema),
+    z.lazy(() => GetProjectEnvContentHintEnvsResponse10$inboundSchema),
+    z.lazy(() => GetProjectEnvContentHintEnvsResponse11$inboundSchema),
+    z.lazy(() => GetProjectEnvContentHintEnvsResponse12$inboundSchema),
+    z.lazy(() => GetProjectEnvContentHintEnvsResponse13$inboundSchema),
+    z.lazy(() => GetProjectEnvContentHintEnvsResponse14$inboundSchema),
+]);
+
+/** @internal */
+export type GetProjectEnvResponseBodyEnvsResponseContentHint$Outbound =
+    | GetProjectEnvContentHintEnvsResponse1$Outbound
+    | GetProjectEnvContentHintEnvsResponse2$Outbound
+    | GetProjectEnvContentHintEnvsResponse3$Outbound
+    | GetProjectEnvContentHintEnvsResponse4$Outbound
+    | GetProjectEnvContentHintEnvsResponse5$Outbound
+    | GetProjectEnvContentHintEnvsResponse6$Outbound
+    | GetProjectEnvContentHintEnvsResponse7$Outbound
+    | GetProjectEnvContentHintEnvsResponse8$Outbound
+    | GetProjectEnvContentHintEnvsResponse9$Outbound
+    | GetProjectEnvContentHintEnvsResponse10$Outbound
+    | GetProjectEnvContentHintEnvsResponse11$Outbound
+    | GetProjectEnvContentHintEnvsResponse12$Outbound
+    | GetProjectEnvContentHintEnvsResponse13$Outbound
+    | GetProjectEnvContentHintEnvsResponse14$Outbound;
+
+/** @internal */
+export const GetProjectEnvResponseBodyEnvsResponseContentHint$outboundSchema: z.ZodType<
+    GetProjectEnvResponseBodyEnvsResponseContentHint$Outbound,
+    z.ZodTypeDef,
+    GetProjectEnvResponseBodyEnvsResponseContentHint
+> = z.union([
+    z.lazy(() => GetProjectEnvContentHintEnvsResponse1$outboundSchema),
+    z.lazy(() => GetProjectEnvContentHintEnvsResponse2$outboundSchema),
+    z.lazy(() => GetProjectEnvContentHintEnvsResponse3$outboundSchema),
+    z.lazy(() => GetProjectEnvContentHintEnvsResponse4$outboundSchema),
+    z.lazy(() => GetProjectEnvContentHintEnvsResponse5$outboundSchema),
+    z.lazy(() => GetProjectEnvContentHintEnvsResponse6$outboundSchema),
+    z.lazy(() => GetProjectEnvContentHintEnvsResponse7$outboundSchema),
+    z.lazy(() => GetProjectEnvContentHintEnvsResponse8$outboundSchema),
+    z.lazy(() => GetProjectEnvContentHintEnvsResponse9$outboundSchema),
+    z.lazy(() => GetProjectEnvContentHintEnvsResponse10$outboundSchema),
+    z.lazy(() => GetProjectEnvContentHintEnvsResponse11$outboundSchema),
+    z.lazy(() => GetProjectEnvContentHintEnvsResponse12$outboundSchema),
+    z.lazy(() => GetProjectEnvContentHintEnvsResponse13$outboundSchema),
+    z.lazy(() => GetProjectEnvContentHintEnvsResponse14$outboundSchema),
+]);
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetProjectEnvResponseBodyEnvsResponseContentHint$ {
+    /** @deprecated use `GetProjectEnvResponseBodyEnvsResponseContentHint$inboundSchema` instead. */
+    export const inboundSchema = GetProjectEnvResponseBodyEnvsResponseContentHint$inboundSchema;
+    /** @deprecated use `GetProjectEnvResponseBodyEnvsResponseContentHint$outboundSchema` instead. */
+    export const outboundSchema = GetProjectEnvResponseBodyEnvsResponseContentHint$outboundSchema;
+    /** @deprecated use `GetProjectEnvResponseBodyEnvsResponseContentHint$Outbound` instead. */
+    export type Outbound = GetProjectEnvResponseBodyEnvsResponseContentHint$Outbound;
+}
+
+/** @internal */
+export const GetProjectEnvResponseBodyEnvsResponse200ApplicationJson3Type$inboundSchema: z.ZodNativeEnum<
+    typeof GetProjectEnvResponseBodyEnvsResponse200ApplicationJson3Type
+> = z.nativeEnum(GetProjectEnvResponseBodyEnvsResponse200ApplicationJson3Type);
+
+/** @internal */
+export const GetProjectEnvResponseBodyEnvsResponse200ApplicationJson3Type$outboundSchema: z.ZodNativeEnum<
+    typeof GetProjectEnvResponseBodyEnvsResponse200ApplicationJson3Type
+> = GetProjectEnvResponseBodyEnvsResponse200ApplicationJson3Type$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetProjectEnvResponseBodyEnvsResponse200ApplicationJson3Type$ {
+    /** @deprecated use `GetProjectEnvResponseBodyEnvsResponse200ApplicationJson3Type$inboundSchema` instead. */
+    export const inboundSchema =
+        GetProjectEnvResponseBodyEnvsResponse200ApplicationJson3Type$inboundSchema;
+    /** @deprecated use `GetProjectEnvResponseBodyEnvsResponse200ApplicationJson3Type$outboundSchema` instead. */
+    export const outboundSchema =
+        GetProjectEnvResponseBodyEnvsResponse200ApplicationJson3Type$outboundSchema;
+}
+
+/** @internal */
+export const GetProjectEnvResponseBodyEnvsResponseInternalContentHint$inboundSchema: z.ZodType<
+    GetProjectEnvResponseBodyEnvsResponseInternalContentHint,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    type: GetProjectEnvResponseBodyEnvsResponse200ApplicationJson3Type$inboundSchema,
     encryptedValue: z.string(),
 });
 
 /** @internal */
-export type GetProjectEnvResponseBodyProjectsInternalContentHint$Outbound = {
+export type GetProjectEnvResponseBodyEnvsResponseInternalContentHint$Outbound = {
     type: string;
     encryptedValue: string;
 };
 
 /** @internal */
-export const GetProjectEnvResponseBodyProjectsInternalContentHint$outboundSchema: z.ZodType<
-    GetProjectEnvResponseBodyProjectsInternalContentHint$Outbound,
+export const GetProjectEnvResponseBodyEnvsResponseInternalContentHint$outboundSchema: z.ZodType<
+    GetProjectEnvResponseBodyEnvsResponseInternalContentHint$Outbound,
     z.ZodTypeDef,
-    GetProjectEnvResponseBodyProjectsInternalContentHint
+    GetProjectEnvResponseBodyEnvsResponseInternalContentHint
 > = z.object({
-    type: GetProjectEnvResponseBodyProjectsResponse200Type$outboundSchema,
+    type: GetProjectEnvResponseBodyEnvsResponse200ApplicationJson3Type$outboundSchema,
     encryptedValue: z.string(),
 });
 
@@ -1699,29 +2013,31 @@ export const GetProjectEnvResponseBodyProjectsInternalContentHint$outboundSchema
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace GetProjectEnvResponseBodyProjectsInternalContentHint$ {
-    /** @deprecated use `GetProjectEnvResponseBodyProjectsInternalContentHint$inboundSchema` instead. */
-    export const inboundSchema = GetProjectEnvResponseBodyProjectsInternalContentHint$inboundSchema;
-    /** @deprecated use `GetProjectEnvResponseBodyProjectsInternalContentHint$outboundSchema` instead. */
+export namespace GetProjectEnvResponseBodyEnvsResponseInternalContentHint$ {
+    /** @deprecated use `GetProjectEnvResponseBodyEnvsResponseInternalContentHint$inboundSchema` instead. */
+    export const inboundSchema =
+        GetProjectEnvResponseBodyEnvsResponseInternalContentHint$inboundSchema;
+    /** @deprecated use `GetProjectEnvResponseBodyEnvsResponseInternalContentHint$outboundSchema` instead. */
     export const outboundSchema =
-        GetProjectEnvResponseBodyProjectsInternalContentHint$outboundSchema;
-    /** @deprecated use `GetProjectEnvResponseBodyProjectsInternalContentHint$Outbound` instead. */
-    export type Outbound = GetProjectEnvResponseBodyProjectsInternalContentHint$Outbound;
+        GetProjectEnvResponseBodyEnvsResponseInternalContentHint$outboundSchema;
+    /** @deprecated use `GetProjectEnvResponseBodyEnvsResponseInternalContentHint$Outbound` instead. */
+    export type Outbound = GetProjectEnvResponseBodyEnvsResponseInternalContentHint$Outbound;
 }
 
 /** @internal */
-export const GetProjectEnvResponseBody2$inboundSchema: z.ZodType<
-    GetProjectEnvResponseBody2,
+export const GetProjectEnvResponseBody3$inboundSchema: z.ZodType<
+    GetProjectEnvResponseBody3,
     z.ZodTypeDef,
     unknown
 > = z.object({
     target: z
         .union([
-            z.array(GetProjectEnvTargetProjects1$inboundSchema),
-            GetProjectEnvTargetProjects2$inboundSchema,
+            z.array(GetProjectEnvTargetEnvsResponse1$inboundSchema),
+            GetProjectEnvTargetEnvsResponse2$inboundSchema,
         ])
         .optional(),
-    type: GetProjectEnvResponseBodyProjectsType$inboundSchema,
+    type: GetProjectEnvResponseBodyEnvsResponseType$inboundSchema,
+    sunsetSecretId: z.string().optional(),
     id: z.string().optional(),
     key: z.string(),
     value: z.string(),
@@ -1736,35 +2052,38 @@ export const GetProjectEnvResponseBody2$inboundSchema: z.ZodType<
     contentHint: z
         .nullable(
             z.union([
-                z.lazy(() => GetProjectEnvContentHintProjects1$inboundSchema),
-                z.lazy(() => GetProjectEnvContentHintProjects2$inboundSchema),
-                z.lazy(() => GetProjectEnvContentHintProjects3$inboundSchema),
-                z.lazy(() => GetProjectEnvContentHintProjects4$inboundSchema),
-                z.lazy(() => GetProjectEnvContentHintProjects5$inboundSchema),
-                z.lazy(() => GetProjectEnvContentHintProjects6$inboundSchema),
-                z.lazy(() => GetProjectEnvContentHintProjects7$inboundSchema),
-                z.lazy(() => GetProjectEnvContentHintProjects8$inboundSchema),
-                z.lazy(() => GetProjectEnvContentHintProjects9$inboundSchema),
-                z.lazy(() => GetProjectEnvContentHintProjects10$inboundSchema),
-                z.lazy(() => GetProjectEnvContentHintProjects11$inboundSchema),
-                z.lazy(() => GetProjectEnvContentHintProjects12$inboundSchema),
-                z.lazy(() => GetProjectEnvContentHintProjects13$inboundSchema),
-                z.lazy(() => GetProjectEnvContentHintProjects14$inboundSchema),
+                z.lazy(() => GetProjectEnvContentHintEnvsResponse1$inboundSchema),
+                z.lazy(() => GetProjectEnvContentHintEnvsResponse2$inboundSchema),
+                z.lazy(() => GetProjectEnvContentHintEnvsResponse3$inboundSchema),
+                z.lazy(() => GetProjectEnvContentHintEnvsResponse4$inboundSchema),
+                z.lazy(() => GetProjectEnvContentHintEnvsResponse5$inboundSchema),
+                z.lazy(() => GetProjectEnvContentHintEnvsResponse6$inboundSchema),
+                z.lazy(() => GetProjectEnvContentHintEnvsResponse7$inboundSchema),
+                z.lazy(() => GetProjectEnvContentHintEnvsResponse8$inboundSchema),
+                z.lazy(() => GetProjectEnvContentHintEnvsResponse9$inboundSchema),
+                z.lazy(() => GetProjectEnvContentHintEnvsResponse10$inboundSchema),
+                z.lazy(() => GetProjectEnvContentHintEnvsResponse11$inboundSchema),
+                z.lazy(() => GetProjectEnvContentHintEnvsResponse12$inboundSchema),
+                z.lazy(() => GetProjectEnvContentHintEnvsResponse13$inboundSchema),
+                z.lazy(() => GetProjectEnvContentHintEnvsResponse14$inboundSchema),
             ])
         )
         .optional(),
     internalContentHint: z
-        .nullable(z.lazy(() => GetProjectEnvResponseBodyProjectsInternalContentHint$inboundSchema))
+        .nullable(
+            z.lazy(() => GetProjectEnvResponseBodyEnvsResponseInternalContentHint$inboundSchema)
+        )
         .optional(),
     decrypted: z.boolean().optional(),
     comment: z.string().optional(),
-    customEnvironmentId: z.string().optional(),
+    customEnvironmentIds: z.array(z.string()).optional(),
 });
 
 /** @internal */
-export type GetProjectEnvResponseBody2$Outbound = {
+export type GetProjectEnvResponseBody3$Outbound = {
     target?: Array<string> | string | undefined;
     type: string;
+    sunsetSecretId?: string | undefined;
     id?: string | undefined;
     key: string;
     value: string;
@@ -1777,44 +2096,45 @@ export type GetProjectEnvResponseBody2$Outbound = {
     edgeConfigId?: string | null | undefined;
     edgeConfigTokenId?: string | null | undefined;
     contentHint?:
-        | GetProjectEnvContentHintProjects1$Outbound
-        | GetProjectEnvContentHintProjects2$Outbound
-        | GetProjectEnvContentHintProjects3$Outbound
-        | GetProjectEnvContentHintProjects4$Outbound
-        | GetProjectEnvContentHintProjects5$Outbound
-        | GetProjectEnvContentHintProjects6$Outbound
-        | GetProjectEnvContentHintProjects7$Outbound
-        | GetProjectEnvContentHintProjects8$Outbound
-        | GetProjectEnvContentHintProjects9$Outbound
-        | GetProjectEnvContentHintProjects10$Outbound
-        | GetProjectEnvContentHintProjects11$Outbound
-        | GetProjectEnvContentHintProjects12$Outbound
-        | GetProjectEnvContentHintProjects13$Outbound
-        | GetProjectEnvContentHintProjects14$Outbound
+        | GetProjectEnvContentHintEnvsResponse1$Outbound
+        | GetProjectEnvContentHintEnvsResponse2$Outbound
+        | GetProjectEnvContentHintEnvsResponse3$Outbound
+        | GetProjectEnvContentHintEnvsResponse4$Outbound
+        | GetProjectEnvContentHintEnvsResponse5$Outbound
+        | GetProjectEnvContentHintEnvsResponse6$Outbound
+        | GetProjectEnvContentHintEnvsResponse7$Outbound
+        | GetProjectEnvContentHintEnvsResponse8$Outbound
+        | GetProjectEnvContentHintEnvsResponse9$Outbound
+        | GetProjectEnvContentHintEnvsResponse10$Outbound
+        | GetProjectEnvContentHintEnvsResponse11$Outbound
+        | GetProjectEnvContentHintEnvsResponse12$Outbound
+        | GetProjectEnvContentHintEnvsResponse13$Outbound
+        | GetProjectEnvContentHintEnvsResponse14$Outbound
         | null
         | undefined;
     internalContentHint?:
-        | GetProjectEnvResponseBodyProjectsInternalContentHint$Outbound
+        | GetProjectEnvResponseBodyEnvsResponseInternalContentHint$Outbound
         | null
         | undefined;
     decrypted?: boolean | undefined;
     comment?: string | undefined;
-    customEnvironmentId?: string | undefined;
+    customEnvironmentIds?: Array<string> | undefined;
 };
 
 /** @internal */
-export const GetProjectEnvResponseBody2$outboundSchema: z.ZodType<
-    GetProjectEnvResponseBody2$Outbound,
+export const GetProjectEnvResponseBody3$outboundSchema: z.ZodType<
+    GetProjectEnvResponseBody3$Outbound,
     z.ZodTypeDef,
-    GetProjectEnvResponseBody2
+    GetProjectEnvResponseBody3
 > = z.object({
     target: z
         .union([
-            z.array(GetProjectEnvTargetProjects1$outboundSchema),
-            GetProjectEnvTargetProjects2$outboundSchema,
+            z.array(GetProjectEnvTargetEnvsResponse1$outboundSchema),
+            GetProjectEnvTargetEnvsResponse2$outboundSchema,
         ])
         .optional(),
-    type: GetProjectEnvResponseBodyProjectsType$outboundSchema,
+    type: GetProjectEnvResponseBodyEnvsResponseType$outboundSchema,
+    sunsetSecretId: z.string().optional(),
     id: z.string().optional(),
     key: z.string(),
     value: z.string(),
@@ -1829,29 +2149,1305 @@ export const GetProjectEnvResponseBody2$outboundSchema: z.ZodType<
     contentHint: z
         .nullable(
             z.union([
-                z.lazy(() => GetProjectEnvContentHintProjects1$outboundSchema),
-                z.lazy(() => GetProjectEnvContentHintProjects2$outboundSchema),
-                z.lazy(() => GetProjectEnvContentHintProjects3$outboundSchema),
-                z.lazy(() => GetProjectEnvContentHintProjects4$outboundSchema),
-                z.lazy(() => GetProjectEnvContentHintProjects5$outboundSchema),
-                z.lazy(() => GetProjectEnvContentHintProjects6$outboundSchema),
-                z.lazy(() => GetProjectEnvContentHintProjects7$outboundSchema),
-                z.lazy(() => GetProjectEnvContentHintProjects8$outboundSchema),
-                z.lazy(() => GetProjectEnvContentHintProjects9$outboundSchema),
-                z.lazy(() => GetProjectEnvContentHintProjects10$outboundSchema),
-                z.lazy(() => GetProjectEnvContentHintProjects11$outboundSchema),
-                z.lazy(() => GetProjectEnvContentHintProjects12$outboundSchema),
-                z.lazy(() => GetProjectEnvContentHintProjects13$outboundSchema),
-                z.lazy(() => GetProjectEnvContentHintProjects14$outboundSchema),
+                z.lazy(() => GetProjectEnvContentHintEnvsResponse1$outboundSchema),
+                z.lazy(() => GetProjectEnvContentHintEnvsResponse2$outboundSchema),
+                z.lazy(() => GetProjectEnvContentHintEnvsResponse3$outboundSchema),
+                z.lazy(() => GetProjectEnvContentHintEnvsResponse4$outboundSchema),
+                z.lazy(() => GetProjectEnvContentHintEnvsResponse5$outboundSchema),
+                z.lazy(() => GetProjectEnvContentHintEnvsResponse6$outboundSchema),
+                z.lazy(() => GetProjectEnvContentHintEnvsResponse7$outboundSchema),
+                z.lazy(() => GetProjectEnvContentHintEnvsResponse8$outboundSchema),
+                z.lazy(() => GetProjectEnvContentHintEnvsResponse9$outboundSchema),
+                z.lazy(() => GetProjectEnvContentHintEnvsResponse10$outboundSchema),
+                z.lazy(() => GetProjectEnvContentHintEnvsResponse11$outboundSchema),
+                z.lazy(() => GetProjectEnvContentHintEnvsResponse12$outboundSchema),
+                z.lazy(() => GetProjectEnvContentHintEnvsResponse13$outboundSchema),
+                z.lazy(() => GetProjectEnvContentHintEnvsResponse14$outboundSchema),
             ])
         )
         .optional(),
     internalContentHint: z
-        .nullable(z.lazy(() => GetProjectEnvResponseBodyProjectsInternalContentHint$outboundSchema))
+        .nullable(
+            z.lazy(() => GetProjectEnvResponseBodyEnvsResponseInternalContentHint$outboundSchema)
+        )
         .optional(),
     decrypted: z.boolean().optional(),
     comment: z.string().optional(),
-    customEnvironmentId: z.string().optional(),
+    customEnvironmentIds: z.array(z.string()).optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetProjectEnvResponseBody3$ {
+    /** @deprecated use `GetProjectEnvResponseBody3$inboundSchema` instead. */
+    export const inboundSchema = GetProjectEnvResponseBody3$inboundSchema;
+    /** @deprecated use `GetProjectEnvResponseBody3$outboundSchema` instead. */
+    export const outboundSchema = GetProjectEnvResponseBody3$outboundSchema;
+    /** @deprecated use `GetProjectEnvResponseBody3$Outbound` instead. */
+    export type Outbound = GetProjectEnvResponseBody3$Outbound;
+}
+
+/** @internal */
+export const GetProjectEnvTargetEnvs2$inboundSchema: z.ZodNativeEnum<
+    typeof GetProjectEnvTargetEnvs2
+> = z.nativeEnum(GetProjectEnvTargetEnvs2);
+
+/** @internal */
+export const GetProjectEnvTargetEnvs2$outboundSchema: z.ZodNativeEnum<
+    typeof GetProjectEnvTargetEnvs2
+> = GetProjectEnvTargetEnvs2$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetProjectEnvTargetEnvs2$ {
+    /** @deprecated use `GetProjectEnvTargetEnvs2$inboundSchema` instead. */
+    export const inboundSchema = GetProjectEnvTargetEnvs2$inboundSchema;
+    /** @deprecated use `GetProjectEnvTargetEnvs2$outboundSchema` instead. */
+    export const outboundSchema = GetProjectEnvTargetEnvs2$outboundSchema;
+}
+
+/** @internal */
+export const GetProjectEnvTargetEnvs1$inboundSchema: z.ZodNativeEnum<
+    typeof GetProjectEnvTargetEnvs1
+> = z.nativeEnum(GetProjectEnvTargetEnvs1);
+
+/** @internal */
+export const GetProjectEnvTargetEnvs1$outboundSchema: z.ZodNativeEnum<
+    typeof GetProjectEnvTargetEnvs1
+> = GetProjectEnvTargetEnvs1$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetProjectEnvTargetEnvs1$ {
+    /** @deprecated use `GetProjectEnvTargetEnvs1$inboundSchema` instead. */
+    export const inboundSchema = GetProjectEnvTargetEnvs1$inboundSchema;
+    /** @deprecated use `GetProjectEnvTargetEnvs1$outboundSchema` instead. */
+    export const outboundSchema = GetProjectEnvTargetEnvs1$outboundSchema;
+}
+
+/** @internal */
+export const GetProjectEnvResponseBodyEnvsTarget$inboundSchema: z.ZodType<
+    GetProjectEnvResponseBodyEnvsTarget,
+    z.ZodTypeDef,
+    unknown
+> = z.union([
+    z.array(GetProjectEnvTargetEnvs1$inboundSchema),
+    GetProjectEnvTargetEnvs2$inboundSchema,
+]);
+
+/** @internal */
+export type GetProjectEnvResponseBodyEnvsTarget$Outbound = Array<string> | string;
+
+/** @internal */
+export const GetProjectEnvResponseBodyEnvsTarget$outboundSchema: z.ZodType<
+    GetProjectEnvResponseBodyEnvsTarget$Outbound,
+    z.ZodTypeDef,
+    GetProjectEnvResponseBodyEnvsTarget
+> = z.union([
+    z.array(GetProjectEnvTargetEnvs1$outboundSchema),
+    GetProjectEnvTargetEnvs2$outboundSchema,
+]);
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetProjectEnvResponseBodyEnvsTarget$ {
+    /** @deprecated use `GetProjectEnvResponseBodyEnvsTarget$inboundSchema` instead. */
+    export const inboundSchema = GetProjectEnvResponseBodyEnvsTarget$inboundSchema;
+    /** @deprecated use `GetProjectEnvResponseBodyEnvsTarget$outboundSchema` instead. */
+    export const outboundSchema = GetProjectEnvResponseBodyEnvsTarget$outboundSchema;
+    /** @deprecated use `GetProjectEnvResponseBodyEnvsTarget$Outbound` instead. */
+    export type Outbound = GetProjectEnvResponseBodyEnvsTarget$Outbound;
+}
+
+/** @internal */
+export const GetProjectEnvResponseBodyEnvsType$inboundSchema: z.ZodNativeEnum<
+    typeof GetProjectEnvResponseBodyEnvsType
+> = z.nativeEnum(GetProjectEnvResponseBodyEnvsType);
+
+/** @internal */
+export const GetProjectEnvResponseBodyEnvsType$outboundSchema: z.ZodNativeEnum<
+    typeof GetProjectEnvResponseBodyEnvsType
+> = GetProjectEnvResponseBodyEnvsType$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetProjectEnvResponseBodyEnvsType$ {
+    /** @deprecated use `GetProjectEnvResponseBodyEnvsType$inboundSchema` instead. */
+    export const inboundSchema = GetProjectEnvResponseBodyEnvsType$inboundSchema;
+    /** @deprecated use `GetProjectEnvResponseBodyEnvsType$outboundSchema` instead. */
+    export const outboundSchema = GetProjectEnvResponseBodyEnvsType$outboundSchema;
+}
+
+/** @internal */
+export const GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody214Type$inboundSchema: z.ZodNativeEnum<
+    typeof GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody214Type
+> = z.nativeEnum(GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody214Type);
+
+/** @internal */
+export const GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody214Type$outboundSchema: z.ZodNativeEnum<
+    typeof GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody214Type
+> = GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody214Type$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody214Type$ {
+    /** @deprecated use `GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody214Type$inboundSchema` instead. */
+    export const inboundSchema =
+        GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody214Type$inboundSchema;
+    /** @deprecated use `GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody214Type$outboundSchema` instead. */
+    export const outboundSchema =
+        GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody214Type$outboundSchema;
+}
+
+/** @internal */
+export const GetProjectEnvContentHintEnvs14$inboundSchema: z.ZodType<
+    GetProjectEnvContentHintEnvs14,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    type: GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody214Type$inboundSchema,
+    storeId: z.string(),
+    integrationId: z.string(),
+    integrationProductId: z.string(),
+    integrationConfigurationId: z.string(),
+});
+
+/** @internal */
+export type GetProjectEnvContentHintEnvs14$Outbound = {
+    type: string;
+    storeId: string;
+    integrationId: string;
+    integrationProductId: string;
+    integrationConfigurationId: string;
+};
+
+/** @internal */
+export const GetProjectEnvContentHintEnvs14$outboundSchema: z.ZodType<
+    GetProjectEnvContentHintEnvs14$Outbound,
+    z.ZodTypeDef,
+    GetProjectEnvContentHintEnvs14
+> = z.object({
+    type: GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody214Type$outboundSchema,
+    storeId: z.string(),
+    integrationId: z.string(),
+    integrationProductId: z.string(),
+    integrationConfigurationId: z.string(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetProjectEnvContentHintEnvs14$ {
+    /** @deprecated use `GetProjectEnvContentHintEnvs14$inboundSchema` instead. */
+    export const inboundSchema = GetProjectEnvContentHintEnvs14$inboundSchema;
+    /** @deprecated use `GetProjectEnvContentHintEnvs14$outboundSchema` instead. */
+    export const outboundSchema = GetProjectEnvContentHintEnvs14$outboundSchema;
+    /** @deprecated use `GetProjectEnvContentHintEnvs14$Outbound` instead. */
+    export type Outbound = GetProjectEnvContentHintEnvs14$Outbound;
+}
+
+/** @internal */
+export const GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody213Type$inboundSchema: z.ZodNativeEnum<
+    typeof GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody213Type
+> = z.nativeEnum(GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody213Type);
+
+/** @internal */
+export const GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody213Type$outboundSchema: z.ZodNativeEnum<
+    typeof GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody213Type
+> = GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody213Type$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody213Type$ {
+    /** @deprecated use `GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody213Type$inboundSchema` instead. */
+    export const inboundSchema =
+        GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody213Type$inboundSchema;
+    /** @deprecated use `GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody213Type$outboundSchema` instead. */
+    export const outboundSchema =
+        GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody213Type$outboundSchema;
+}
+
+/** @internal */
+export const GetProjectEnvContentHintEnvs13$inboundSchema: z.ZodType<
+    GetProjectEnvContentHintEnvs13,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    type: GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody213Type$inboundSchema,
+    storeId: z.string(),
+});
+
+/** @internal */
+export type GetProjectEnvContentHintEnvs13$Outbound = {
+    type: string;
+    storeId: string;
+};
+
+/** @internal */
+export const GetProjectEnvContentHintEnvs13$outboundSchema: z.ZodType<
+    GetProjectEnvContentHintEnvs13$Outbound,
+    z.ZodTypeDef,
+    GetProjectEnvContentHintEnvs13
+> = z.object({
+    type: GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody213Type$outboundSchema,
+    storeId: z.string(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetProjectEnvContentHintEnvs13$ {
+    /** @deprecated use `GetProjectEnvContentHintEnvs13$inboundSchema` instead. */
+    export const inboundSchema = GetProjectEnvContentHintEnvs13$inboundSchema;
+    /** @deprecated use `GetProjectEnvContentHintEnvs13$outboundSchema` instead. */
+    export const outboundSchema = GetProjectEnvContentHintEnvs13$outboundSchema;
+    /** @deprecated use `GetProjectEnvContentHintEnvs13$Outbound` instead. */
+    export type Outbound = GetProjectEnvContentHintEnvs13$Outbound;
+}
+
+/** @internal */
+export const GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody212Type$inboundSchema: z.ZodNativeEnum<
+    typeof GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody212Type
+> = z.nativeEnum(GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody212Type);
+
+/** @internal */
+export const GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody212Type$outboundSchema: z.ZodNativeEnum<
+    typeof GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody212Type
+> = GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody212Type$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody212Type$ {
+    /** @deprecated use `GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody212Type$inboundSchema` instead. */
+    export const inboundSchema =
+        GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody212Type$inboundSchema;
+    /** @deprecated use `GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody212Type$outboundSchema` instead. */
+    export const outboundSchema =
+        GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody212Type$outboundSchema;
+}
+
+/** @internal */
+export const GetProjectEnvContentHintEnvs12$inboundSchema: z.ZodType<
+    GetProjectEnvContentHintEnvs12,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    type: GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody212Type$inboundSchema,
+    storeId: z.string(),
+});
+
+/** @internal */
+export type GetProjectEnvContentHintEnvs12$Outbound = {
+    type: string;
+    storeId: string;
+};
+
+/** @internal */
+export const GetProjectEnvContentHintEnvs12$outboundSchema: z.ZodType<
+    GetProjectEnvContentHintEnvs12$Outbound,
+    z.ZodTypeDef,
+    GetProjectEnvContentHintEnvs12
+> = z.object({
+    type: GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody212Type$outboundSchema,
+    storeId: z.string(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetProjectEnvContentHintEnvs12$ {
+    /** @deprecated use `GetProjectEnvContentHintEnvs12$inboundSchema` instead. */
+    export const inboundSchema = GetProjectEnvContentHintEnvs12$inboundSchema;
+    /** @deprecated use `GetProjectEnvContentHintEnvs12$outboundSchema` instead. */
+    export const outboundSchema = GetProjectEnvContentHintEnvs12$outboundSchema;
+    /** @deprecated use `GetProjectEnvContentHintEnvs12$Outbound` instead. */
+    export type Outbound = GetProjectEnvContentHintEnvs12$Outbound;
+}
+
+/** @internal */
+export const GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody211Type$inboundSchema: z.ZodNativeEnum<
+    typeof GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody211Type
+> = z.nativeEnum(GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody211Type);
+
+/** @internal */
+export const GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody211Type$outboundSchema: z.ZodNativeEnum<
+    typeof GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody211Type
+> = GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody211Type$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody211Type$ {
+    /** @deprecated use `GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody211Type$inboundSchema` instead. */
+    export const inboundSchema =
+        GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody211Type$inboundSchema;
+    /** @deprecated use `GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody211Type$outboundSchema` instead. */
+    export const outboundSchema =
+        GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody211Type$outboundSchema;
+}
+
+/** @internal */
+export const GetProjectEnvContentHintEnvs11$inboundSchema: z.ZodType<
+    GetProjectEnvContentHintEnvs11,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    type: GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody211Type$inboundSchema,
+    storeId: z.string(),
+});
+
+/** @internal */
+export type GetProjectEnvContentHintEnvs11$Outbound = {
+    type: string;
+    storeId: string;
+};
+
+/** @internal */
+export const GetProjectEnvContentHintEnvs11$outboundSchema: z.ZodType<
+    GetProjectEnvContentHintEnvs11$Outbound,
+    z.ZodTypeDef,
+    GetProjectEnvContentHintEnvs11
+> = z.object({
+    type: GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody211Type$outboundSchema,
+    storeId: z.string(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetProjectEnvContentHintEnvs11$ {
+    /** @deprecated use `GetProjectEnvContentHintEnvs11$inboundSchema` instead. */
+    export const inboundSchema = GetProjectEnvContentHintEnvs11$inboundSchema;
+    /** @deprecated use `GetProjectEnvContentHintEnvs11$outboundSchema` instead. */
+    export const outboundSchema = GetProjectEnvContentHintEnvs11$outboundSchema;
+    /** @deprecated use `GetProjectEnvContentHintEnvs11$Outbound` instead. */
+    export type Outbound = GetProjectEnvContentHintEnvs11$Outbound;
+}
+
+/** @internal */
+export const GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody210Type$inboundSchema: z.ZodNativeEnum<
+    typeof GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody210Type
+> = z.nativeEnum(GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody210Type);
+
+/** @internal */
+export const GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody210Type$outboundSchema: z.ZodNativeEnum<
+    typeof GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody210Type
+> = GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody210Type$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody210Type$ {
+    /** @deprecated use `GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody210Type$inboundSchema` instead. */
+    export const inboundSchema =
+        GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody210Type$inboundSchema;
+    /** @deprecated use `GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody210Type$outboundSchema` instead. */
+    export const outboundSchema =
+        GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody210Type$outboundSchema;
+}
+
+/** @internal */
+export const GetProjectEnvContentHintEnvs10$inboundSchema: z.ZodType<
+    GetProjectEnvContentHintEnvs10,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    type: GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody210Type$inboundSchema,
+    storeId: z.string(),
+});
+
+/** @internal */
+export type GetProjectEnvContentHintEnvs10$Outbound = {
+    type: string;
+    storeId: string;
+};
+
+/** @internal */
+export const GetProjectEnvContentHintEnvs10$outboundSchema: z.ZodType<
+    GetProjectEnvContentHintEnvs10$Outbound,
+    z.ZodTypeDef,
+    GetProjectEnvContentHintEnvs10
+> = z.object({
+    type: GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody210Type$outboundSchema,
+    storeId: z.string(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetProjectEnvContentHintEnvs10$ {
+    /** @deprecated use `GetProjectEnvContentHintEnvs10$inboundSchema` instead. */
+    export const inboundSchema = GetProjectEnvContentHintEnvs10$inboundSchema;
+    /** @deprecated use `GetProjectEnvContentHintEnvs10$outboundSchema` instead. */
+    export const outboundSchema = GetProjectEnvContentHintEnvs10$outboundSchema;
+    /** @deprecated use `GetProjectEnvContentHintEnvs10$Outbound` instead. */
+    export type Outbound = GetProjectEnvContentHintEnvs10$Outbound;
+}
+
+/** @internal */
+export const GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody29Type$inboundSchema: z.ZodNativeEnum<
+    typeof GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody29Type
+> = z.nativeEnum(GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody29Type);
+
+/** @internal */
+export const GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody29Type$outboundSchema: z.ZodNativeEnum<
+    typeof GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody29Type
+> = GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody29Type$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody29Type$ {
+    /** @deprecated use `GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody29Type$inboundSchema` instead. */
+    export const inboundSchema =
+        GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody29Type$inboundSchema;
+    /** @deprecated use `GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody29Type$outboundSchema` instead. */
+    export const outboundSchema =
+        GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody29Type$outboundSchema;
+}
+
+/** @internal */
+export const GetProjectEnvContentHintEnvs9$inboundSchema: z.ZodType<
+    GetProjectEnvContentHintEnvs9,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    type: GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody29Type$inboundSchema,
+    storeId: z.string(),
+});
+
+/** @internal */
+export type GetProjectEnvContentHintEnvs9$Outbound = {
+    type: string;
+    storeId: string;
+};
+
+/** @internal */
+export const GetProjectEnvContentHintEnvs9$outboundSchema: z.ZodType<
+    GetProjectEnvContentHintEnvs9$Outbound,
+    z.ZodTypeDef,
+    GetProjectEnvContentHintEnvs9
+> = z.object({
+    type: GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody29Type$outboundSchema,
+    storeId: z.string(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetProjectEnvContentHintEnvs9$ {
+    /** @deprecated use `GetProjectEnvContentHintEnvs9$inboundSchema` instead. */
+    export const inboundSchema = GetProjectEnvContentHintEnvs9$inboundSchema;
+    /** @deprecated use `GetProjectEnvContentHintEnvs9$outboundSchema` instead. */
+    export const outboundSchema = GetProjectEnvContentHintEnvs9$outboundSchema;
+    /** @deprecated use `GetProjectEnvContentHintEnvs9$Outbound` instead. */
+    export type Outbound = GetProjectEnvContentHintEnvs9$Outbound;
+}
+
+/** @internal */
+export const GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody28Type$inboundSchema: z.ZodNativeEnum<
+    typeof GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody28Type
+> = z.nativeEnum(GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody28Type);
+
+/** @internal */
+export const GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody28Type$outboundSchema: z.ZodNativeEnum<
+    typeof GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody28Type
+> = GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody28Type$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody28Type$ {
+    /** @deprecated use `GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody28Type$inboundSchema` instead. */
+    export const inboundSchema =
+        GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody28Type$inboundSchema;
+    /** @deprecated use `GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody28Type$outboundSchema` instead. */
+    export const outboundSchema =
+        GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody28Type$outboundSchema;
+}
+
+/** @internal */
+export const GetProjectEnvContentHintEnvs8$inboundSchema: z.ZodType<
+    GetProjectEnvContentHintEnvs8,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    type: GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody28Type$inboundSchema,
+    storeId: z.string(),
+});
+
+/** @internal */
+export type GetProjectEnvContentHintEnvs8$Outbound = {
+    type: string;
+    storeId: string;
+};
+
+/** @internal */
+export const GetProjectEnvContentHintEnvs8$outboundSchema: z.ZodType<
+    GetProjectEnvContentHintEnvs8$Outbound,
+    z.ZodTypeDef,
+    GetProjectEnvContentHintEnvs8
+> = z.object({
+    type: GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody28Type$outboundSchema,
+    storeId: z.string(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetProjectEnvContentHintEnvs8$ {
+    /** @deprecated use `GetProjectEnvContentHintEnvs8$inboundSchema` instead. */
+    export const inboundSchema = GetProjectEnvContentHintEnvs8$inboundSchema;
+    /** @deprecated use `GetProjectEnvContentHintEnvs8$outboundSchema` instead. */
+    export const outboundSchema = GetProjectEnvContentHintEnvs8$outboundSchema;
+    /** @deprecated use `GetProjectEnvContentHintEnvs8$Outbound` instead. */
+    export type Outbound = GetProjectEnvContentHintEnvs8$Outbound;
+}
+
+/** @internal */
+export const GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody27Type$inboundSchema: z.ZodNativeEnum<
+    typeof GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody27Type
+> = z.nativeEnum(GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody27Type);
+
+/** @internal */
+export const GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody27Type$outboundSchema: z.ZodNativeEnum<
+    typeof GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody27Type
+> = GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody27Type$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody27Type$ {
+    /** @deprecated use `GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody27Type$inboundSchema` instead. */
+    export const inboundSchema =
+        GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody27Type$inboundSchema;
+    /** @deprecated use `GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody27Type$outboundSchema` instead. */
+    export const outboundSchema =
+        GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody27Type$outboundSchema;
+}
+
+/** @internal */
+export const GetProjectEnvContentHintEnvs7$inboundSchema: z.ZodType<
+    GetProjectEnvContentHintEnvs7,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    type: GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody27Type$inboundSchema,
+    storeId: z.string(),
+});
+
+/** @internal */
+export type GetProjectEnvContentHintEnvs7$Outbound = {
+    type: string;
+    storeId: string;
+};
+
+/** @internal */
+export const GetProjectEnvContentHintEnvs7$outboundSchema: z.ZodType<
+    GetProjectEnvContentHintEnvs7$Outbound,
+    z.ZodTypeDef,
+    GetProjectEnvContentHintEnvs7
+> = z.object({
+    type: GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody27Type$outboundSchema,
+    storeId: z.string(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetProjectEnvContentHintEnvs7$ {
+    /** @deprecated use `GetProjectEnvContentHintEnvs7$inboundSchema` instead. */
+    export const inboundSchema = GetProjectEnvContentHintEnvs7$inboundSchema;
+    /** @deprecated use `GetProjectEnvContentHintEnvs7$outboundSchema` instead. */
+    export const outboundSchema = GetProjectEnvContentHintEnvs7$outboundSchema;
+    /** @deprecated use `GetProjectEnvContentHintEnvs7$Outbound` instead. */
+    export type Outbound = GetProjectEnvContentHintEnvs7$Outbound;
+}
+
+/** @internal */
+export const GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody26Type$inboundSchema: z.ZodNativeEnum<
+    typeof GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody26Type
+> = z.nativeEnum(GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody26Type);
+
+/** @internal */
+export const GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody26Type$outboundSchema: z.ZodNativeEnum<
+    typeof GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody26Type
+> = GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody26Type$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody26Type$ {
+    /** @deprecated use `GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody26Type$inboundSchema` instead. */
+    export const inboundSchema =
+        GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody26Type$inboundSchema;
+    /** @deprecated use `GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody26Type$outboundSchema` instead. */
+    export const outboundSchema =
+        GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody26Type$outboundSchema;
+}
+
+/** @internal */
+export const GetProjectEnvContentHintEnvs6$inboundSchema: z.ZodType<
+    GetProjectEnvContentHintEnvs6,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    type: GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody26Type$inboundSchema,
+    storeId: z.string(),
+});
+
+/** @internal */
+export type GetProjectEnvContentHintEnvs6$Outbound = {
+    type: string;
+    storeId: string;
+};
+
+/** @internal */
+export const GetProjectEnvContentHintEnvs6$outboundSchema: z.ZodType<
+    GetProjectEnvContentHintEnvs6$Outbound,
+    z.ZodTypeDef,
+    GetProjectEnvContentHintEnvs6
+> = z.object({
+    type: GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody26Type$outboundSchema,
+    storeId: z.string(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetProjectEnvContentHintEnvs6$ {
+    /** @deprecated use `GetProjectEnvContentHintEnvs6$inboundSchema` instead. */
+    export const inboundSchema = GetProjectEnvContentHintEnvs6$inboundSchema;
+    /** @deprecated use `GetProjectEnvContentHintEnvs6$outboundSchema` instead. */
+    export const outboundSchema = GetProjectEnvContentHintEnvs6$outboundSchema;
+    /** @deprecated use `GetProjectEnvContentHintEnvs6$Outbound` instead. */
+    export type Outbound = GetProjectEnvContentHintEnvs6$Outbound;
+}
+
+/** @internal */
+export const GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody25Type$inboundSchema: z.ZodNativeEnum<
+    typeof GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody25Type
+> = z.nativeEnum(GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody25Type);
+
+/** @internal */
+export const GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody25Type$outboundSchema: z.ZodNativeEnum<
+    typeof GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody25Type
+> = GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody25Type$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody25Type$ {
+    /** @deprecated use `GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody25Type$inboundSchema` instead. */
+    export const inboundSchema =
+        GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody25Type$inboundSchema;
+    /** @deprecated use `GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody25Type$outboundSchema` instead. */
+    export const outboundSchema =
+        GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody25Type$outboundSchema;
+}
+
+/** @internal */
+export const GetProjectEnvContentHintEnvs5$inboundSchema: z.ZodType<
+    GetProjectEnvContentHintEnvs5,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    type: GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody25Type$inboundSchema,
+    storeId: z.string(),
+});
+
+/** @internal */
+export type GetProjectEnvContentHintEnvs5$Outbound = {
+    type: string;
+    storeId: string;
+};
+
+/** @internal */
+export const GetProjectEnvContentHintEnvs5$outboundSchema: z.ZodType<
+    GetProjectEnvContentHintEnvs5$Outbound,
+    z.ZodTypeDef,
+    GetProjectEnvContentHintEnvs5
+> = z.object({
+    type: GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody25Type$outboundSchema,
+    storeId: z.string(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetProjectEnvContentHintEnvs5$ {
+    /** @deprecated use `GetProjectEnvContentHintEnvs5$inboundSchema` instead. */
+    export const inboundSchema = GetProjectEnvContentHintEnvs5$inboundSchema;
+    /** @deprecated use `GetProjectEnvContentHintEnvs5$outboundSchema` instead. */
+    export const outboundSchema = GetProjectEnvContentHintEnvs5$outboundSchema;
+    /** @deprecated use `GetProjectEnvContentHintEnvs5$Outbound` instead. */
+    export type Outbound = GetProjectEnvContentHintEnvs5$Outbound;
+}
+
+/** @internal */
+export const GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody24Type$inboundSchema: z.ZodNativeEnum<
+    typeof GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody24Type
+> = z.nativeEnum(GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody24Type);
+
+/** @internal */
+export const GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody24Type$outboundSchema: z.ZodNativeEnum<
+    typeof GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody24Type
+> = GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody24Type$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody24Type$ {
+    /** @deprecated use `GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody24Type$inboundSchema` instead. */
+    export const inboundSchema =
+        GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody24Type$inboundSchema;
+    /** @deprecated use `GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody24Type$outboundSchema` instead. */
+    export const outboundSchema =
+        GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody24Type$outboundSchema;
+}
+
+/** @internal */
+export const GetProjectEnvContentHintEnvs4$inboundSchema: z.ZodType<
+    GetProjectEnvContentHintEnvs4,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    type: GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody24Type$inboundSchema,
+    storeId: z.string(),
+});
+
+/** @internal */
+export type GetProjectEnvContentHintEnvs4$Outbound = {
+    type: string;
+    storeId: string;
+};
+
+/** @internal */
+export const GetProjectEnvContentHintEnvs4$outboundSchema: z.ZodType<
+    GetProjectEnvContentHintEnvs4$Outbound,
+    z.ZodTypeDef,
+    GetProjectEnvContentHintEnvs4
+> = z.object({
+    type: GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody24Type$outboundSchema,
+    storeId: z.string(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetProjectEnvContentHintEnvs4$ {
+    /** @deprecated use `GetProjectEnvContentHintEnvs4$inboundSchema` instead. */
+    export const inboundSchema = GetProjectEnvContentHintEnvs4$inboundSchema;
+    /** @deprecated use `GetProjectEnvContentHintEnvs4$outboundSchema` instead. */
+    export const outboundSchema = GetProjectEnvContentHintEnvs4$outboundSchema;
+    /** @deprecated use `GetProjectEnvContentHintEnvs4$Outbound` instead. */
+    export type Outbound = GetProjectEnvContentHintEnvs4$Outbound;
+}
+
+/** @internal */
+export const GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody23Type$inboundSchema: z.ZodNativeEnum<
+    typeof GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody23Type
+> = z.nativeEnum(GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody23Type);
+
+/** @internal */
+export const GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody23Type$outboundSchema: z.ZodNativeEnum<
+    typeof GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody23Type
+> = GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody23Type$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody23Type$ {
+    /** @deprecated use `GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody23Type$inboundSchema` instead. */
+    export const inboundSchema =
+        GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody23Type$inboundSchema;
+    /** @deprecated use `GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody23Type$outboundSchema` instead. */
+    export const outboundSchema =
+        GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody23Type$outboundSchema;
+}
+
+/** @internal */
+export const GetProjectEnvContentHintEnvs3$inboundSchema: z.ZodType<
+    GetProjectEnvContentHintEnvs3,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    type: GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody23Type$inboundSchema,
+    storeId: z.string(),
+});
+
+/** @internal */
+export type GetProjectEnvContentHintEnvs3$Outbound = {
+    type: string;
+    storeId: string;
+};
+
+/** @internal */
+export const GetProjectEnvContentHintEnvs3$outboundSchema: z.ZodType<
+    GetProjectEnvContentHintEnvs3$Outbound,
+    z.ZodTypeDef,
+    GetProjectEnvContentHintEnvs3
+> = z.object({
+    type: GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody23Type$outboundSchema,
+    storeId: z.string(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetProjectEnvContentHintEnvs3$ {
+    /** @deprecated use `GetProjectEnvContentHintEnvs3$inboundSchema` instead. */
+    export const inboundSchema = GetProjectEnvContentHintEnvs3$inboundSchema;
+    /** @deprecated use `GetProjectEnvContentHintEnvs3$outboundSchema` instead. */
+    export const outboundSchema = GetProjectEnvContentHintEnvs3$outboundSchema;
+    /** @deprecated use `GetProjectEnvContentHintEnvs3$Outbound` instead. */
+    export type Outbound = GetProjectEnvContentHintEnvs3$Outbound;
+}
+
+/** @internal */
+export const GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody22Type$inboundSchema: z.ZodNativeEnum<
+    typeof GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody22Type
+> = z.nativeEnum(GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody22Type);
+
+/** @internal */
+export const GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody22Type$outboundSchema: z.ZodNativeEnum<
+    typeof GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody22Type
+> = GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody22Type$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody22Type$ {
+    /** @deprecated use `GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody22Type$inboundSchema` instead. */
+    export const inboundSchema =
+        GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody22Type$inboundSchema;
+    /** @deprecated use `GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody22Type$outboundSchema` instead. */
+    export const outboundSchema =
+        GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody22Type$outboundSchema;
+}
+
+/** @internal */
+export const GetProjectEnvContentHintEnvs2$inboundSchema: z.ZodType<
+    GetProjectEnvContentHintEnvs2,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    type: GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody22Type$inboundSchema,
+    storeId: z.string(),
+});
+
+/** @internal */
+export type GetProjectEnvContentHintEnvs2$Outbound = {
+    type: string;
+    storeId: string;
+};
+
+/** @internal */
+export const GetProjectEnvContentHintEnvs2$outboundSchema: z.ZodType<
+    GetProjectEnvContentHintEnvs2$Outbound,
+    z.ZodTypeDef,
+    GetProjectEnvContentHintEnvs2
+> = z.object({
+    type: GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody22Type$outboundSchema,
+    storeId: z.string(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetProjectEnvContentHintEnvs2$ {
+    /** @deprecated use `GetProjectEnvContentHintEnvs2$inboundSchema` instead. */
+    export const inboundSchema = GetProjectEnvContentHintEnvs2$inboundSchema;
+    /** @deprecated use `GetProjectEnvContentHintEnvs2$outboundSchema` instead. */
+    export const outboundSchema = GetProjectEnvContentHintEnvs2$outboundSchema;
+    /** @deprecated use `GetProjectEnvContentHintEnvs2$Outbound` instead. */
+    export type Outbound = GetProjectEnvContentHintEnvs2$Outbound;
+}
+
+/** @internal */
+export const GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody2Type$inboundSchema: z.ZodNativeEnum<
+    typeof GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody2Type
+> = z.nativeEnum(GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody2Type);
+
+/** @internal */
+export const GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody2Type$outboundSchema: z.ZodNativeEnum<
+    typeof GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody2Type
+> = GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody2Type$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody2Type$ {
+    /** @deprecated use `GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody2Type$inboundSchema` instead. */
+    export const inboundSchema =
+        GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody2Type$inboundSchema;
+    /** @deprecated use `GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody2Type$outboundSchema` instead. */
+    export const outboundSchema =
+        GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody2Type$outboundSchema;
+}
+
+/** @internal */
+export const GetProjectEnvContentHintEnvs1$inboundSchema: z.ZodType<
+    GetProjectEnvContentHintEnvs1,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    type: GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody2Type$inboundSchema,
+    storeId: z.string(),
+});
+
+/** @internal */
+export type GetProjectEnvContentHintEnvs1$Outbound = {
+    type: string;
+    storeId: string;
+};
+
+/** @internal */
+export const GetProjectEnvContentHintEnvs1$outboundSchema: z.ZodType<
+    GetProjectEnvContentHintEnvs1$Outbound,
+    z.ZodTypeDef,
+    GetProjectEnvContentHintEnvs1
+> = z.object({
+    type: GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody2Type$outboundSchema,
+    storeId: z.string(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetProjectEnvContentHintEnvs1$ {
+    /** @deprecated use `GetProjectEnvContentHintEnvs1$inboundSchema` instead. */
+    export const inboundSchema = GetProjectEnvContentHintEnvs1$inboundSchema;
+    /** @deprecated use `GetProjectEnvContentHintEnvs1$outboundSchema` instead. */
+    export const outboundSchema = GetProjectEnvContentHintEnvs1$outboundSchema;
+    /** @deprecated use `GetProjectEnvContentHintEnvs1$Outbound` instead. */
+    export type Outbound = GetProjectEnvContentHintEnvs1$Outbound;
+}
+
+/** @internal */
+export const GetProjectEnvResponseBodyEnvsContentHint$inboundSchema: z.ZodType<
+    GetProjectEnvResponseBodyEnvsContentHint,
+    z.ZodTypeDef,
+    unknown
+> = z.union([
+    z.lazy(() => GetProjectEnvContentHintEnvs1$inboundSchema),
+    z.lazy(() => GetProjectEnvContentHintEnvs2$inboundSchema),
+    z.lazy(() => GetProjectEnvContentHintEnvs3$inboundSchema),
+    z.lazy(() => GetProjectEnvContentHintEnvs4$inboundSchema),
+    z.lazy(() => GetProjectEnvContentHintEnvs5$inboundSchema),
+    z.lazy(() => GetProjectEnvContentHintEnvs6$inboundSchema),
+    z.lazy(() => GetProjectEnvContentHintEnvs7$inboundSchema),
+    z.lazy(() => GetProjectEnvContentHintEnvs8$inboundSchema),
+    z.lazy(() => GetProjectEnvContentHintEnvs9$inboundSchema),
+    z.lazy(() => GetProjectEnvContentHintEnvs10$inboundSchema),
+    z.lazy(() => GetProjectEnvContentHintEnvs11$inboundSchema),
+    z.lazy(() => GetProjectEnvContentHintEnvs12$inboundSchema),
+    z.lazy(() => GetProjectEnvContentHintEnvs13$inboundSchema),
+    z.lazy(() => GetProjectEnvContentHintEnvs14$inboundSchema),
+]);
+
+/** @internal */
+export type GetProjectEnvResponseBodyEnvsContentHint$Outbound =
+    | GetProjectEnvContentHintEnvs1$Outbound
+    | GetProjectEnvContentHintEnvs2$Outbound
+    | GetProjectEnvContentHintEnvs3$Outbound
+    | GetProjectEnvContentHintEnvs4$Outbound
+    | GetProjectEnvContentHintEnvs5$Outbound
+    | GetProjectEnvContentHintEnvs6$Outbound
+    | GetProjectEnvContentHintEnvs7$Outbound
+    | GetProjectEnvContentHintEnvs8$Outbound
+    | GetProjectEnvContentHintEnvs9$Outbound
+    | GetProjectEnvContentHintEnvs10$Outbound
+    | GetProjectEnvContentHintEnvs11$Outbound
+    | GetProjectEnvContentHintEnvs12$Outbound
+    | GetProjectEnvContentHintEnvs13$Outbound
+    | GetProjectEnvContentHintEnvs14$Outbound;
+
+/** @internal */
+export const GetProjectEnvResponseBodyEnvsContentHint$outboundSchema: z.ZodType<
+    GetProjectEnvResponseBodyEnvsContentHint$Outbound,
+    z.ZodTypeDef,
+    GetProjectEnvResponseBodyEnvsContentHint
+> = z.union([
+    z.lazy(() => GetProjectEnvContentHintEnvs1$outboundSchema),
+    z.lazy(() => GetProjectEnvContentHintEnvs2$outboundSchema),
+    z.lazy(() => GetProjectEnvContentHintEnvs3$outboundSchema),
+    z.lazy(() => GetProjectEnvContentHintEnvs4$outboundSchema),
+    z.lazy(() => GetProjectEnvContentHintEnvs5$outboundSchema),
+    z.lazy(() => GetProjectEnvContentHintEnvs6$outboundSchema),
+    z.lazy(() => GetProjectEnvContentHintEnvs7$outboundSchema),
+    z.lazy(() => GetProjectEnvContentHintEnvs8$outboundSchema),
+    z.lazy(() => GetProjectEnvContentHintEnvs9$outboundSchema),
+    z.lazy(() => GetProjectEnvContentHintEnvs10$outboundSchema),
+    z.lazy(() => GetProjectEnvContentHintEnvs11$outboundSchema),
+    z.lazy(() => GetProjectEnvContentHintEnvs12$outboundSchema),
+    z.lazy(() => GetProjectEnvContentHintEnvs13$outboundSchema),
+    z.lazy(() => GetProjectEnvContentHintEnvs14$outboundSchema),
+]);
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetProjectEnvResponseBodyEnvsContentHint$ {
+    /** @deprecated use `GetProjectEnvResponseBodyEnvsContentHint$inboundSchema` instead. */
+    export const inboundSchema = GetProjectEnvResponseBodyEnvsContentHint$inboundSchema;
+    /** @deprecated use `GetProjectEnvResponseBodyEnvsContentHint$outboundSchema` instead. */
+    export const outboundSchema = GetProjectEnvResponseBodyEnvsContentHint$outboundSchema;
+    /** @deprecated use `GetProjectEnvResponseBodyEnvsContentHint$Outbound` instead. */
+    export type Outbound = GetProjectEnvResponseBodyEnvsContentHint$Outbound;
+}
+
+/** @internal */
+export const GetProjectEnvResponseBodyEnvsResponse200Type$inboundSchema: z.ZodNativeEnum<
+    typeof GetProjectEnvResponseBodyEnvsResponse200Type
+> = z.nativeEnum(GetProjectEnvResponseBodyEnvsResponse200Type);
+
+/** @internal */
+export const GetProjectEnvResponseBodyEnvsResponse200Type$outboundSchema: z.ZodNativeEnum<
+    typeof GetProjectEnvResponseBodyEnvsResponse200Type
+> = GetProjectEnvResponseBodyEnvsResponse200Type$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetProjectEnvResponseBodyEnvsResponse200Type$ {
+    /** @deprecated use `GetProjectEnvResponseBodyEnvsResponse200Type$inboundSchema` instead. */
+    export const inboundSchema = GetProjectEnvResponseBodyEnvsResponse200Type$inboundSchema;
+    /** @deprecated use `GetProjectEnvResponseBodyEnvsResponse200Type$outboundSchema` instead. */
+    export const outboundSchema = GetProjectEnvResponseBodyEnvsResponse200Type$outboundSchema;
+}
+
+/** @internal */
+export const GetProjectEnvResponseBodyEnvsInternalContentHint$inboundSchema: z.ZodType<
+    GetProjectEnvResponseBodyEnvsInternalContentHint,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    type: GetProjectEnvResponseBodyEnvsResponse200Type$inboundSchema,
+    encryptedValue: z.string(),
+});
+
+/** @internal */
+export type GetProjectEnvResponseBodyEnvsInternalContentHint$Outbound = {
+    type: string;
+    encryptedValue: string;
+};
+
+/** @internal */
+export const GetProjectEnvResponseBodyEnvsInternalContentHint$outboundSchema: z.ZodType<
+    GetProjectEnvResponseBodyEnvsInternalContentHint$Outbound,
+    z.ZodTypeDef,
+    GetProjectEnvResponseBodyEnvsInternalContentHint
+> = z.object({
+    type: GetProjectEnvResponseBodyEnvsResponse200Type$outboundSchema,
+    encryptedValue: z.string(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetProjectEnvResponseBodyEnvsInternalContentHint$ {
+    /** @deprecated use `GetProjectEnvResponseBodyEnvsInternalContentHint$inboundSchema` instead. */
+    export const inboundSchema = GetProjectEnvResponseBodyEnvsInternalContentHint$inboundSchema;
+    /** @deprecated use `GetProjectEnvResponseBodyEnvsInternalContentHint$outboundSchema` instead. */
+    export const outboundSchema = GetProjectEnvResponseBodyEnvsInternalContentHint$outboundSchema;
+    /** @deprecated use `GetProjectEnvResponseBodyEnvsInternalContentHint$Outbound` instead. */
+    export type Outbound = GetProjectEnvResponseBodyEnvsInternalContentHint$Outbound;
+}
+
+/** @internal */
+export const GetProjectEnvResponseBody2$inboundSchema: z.ZodType<
+    GetProjectEnvResponseBody2,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    target: z
+        .union([
+            z.array(GetProjectEnvTargetEnvs1$inboundSchema),
+            GetProjectEnvTargetEnvs2$inboundSchema,
+        ])
+        .optional(),
+    type: GetProjectEnvResponseBodyEnvsType$inboundSchema,
+    sunsetSecretId: z.string().optional(),
+    id: z.string().optional(),
+    key: z.string(),
+    value: z.string(),
+    configurationId: z.nullable(z.string()).optional(),
+    createdAt: z.number().optional(),
+    updatedAt: z.number().optional(),
+    createdBy: z.nullable(z.string()).optional(),
+    updatedBy: z.nullable(z.string()).optional(),
+    gitBranch: z.string().optional(),
+    edgeConfigId: z.nullable(z.string()).optional(),
+    edgeConfigTokenId: z.nullable(z.string()).optional(),
+    contentHint: z
+        .nullable(
+            z.union([
+                z.lazy(() => GetProjectEnvContentHintEnvs1$inboundSchema),
+                z.lazy(() => GetProjectEnvContentHintEnvs2$inboundSchema),
+                z.lazy(() => GetProjectEnvContentHintEnvs3$inboundSchema),
+                z.lazy(() => GetProjectEnvContentHintEnvs4$inboundSchema),
+                z.lazy(() => GetProjectEnvContentHintEnvs5$inboundSchema),
+                z.lazy(() => GetProjectEnvContentHintEnvs6$inboundSchema),
+                z.lazy(() => GetProjectEnvContentHintEnvs7$inboundSchema),
+                z.lazy(() => GetProjectEnvContentHintEnvs8$inboundSchema),
+                z.lazy(() => GetProjectEnvContentHintEnvs9$inboundSchema),
+                z.lazy(() => GetProjectEnvContentHintEnvs10$inboundSchema),
+                z.lazy(() => GetProjectEnvContentHintEnvs11$inboundSchema),
+                z.lazy(() => GetProjectEnvContentHintEnvs12$inboundSchema),
+                z.lazy(() => GetProjectEnvContentHintEnvs13$inboundSchema),
+                z.lazy(() => GetProjectEnvContentHintEnvs14$inboundSchema),
+            ])
+        )
+        .optional(),
+    internalContentHint: z
+        .nullable(z.lazy(() => GetProjectEnvResponseBodyEnvsInternalContentHint$inboundSchema))
+        .optional(),
+    decrypted: z.boolean().optional(),
+    comment: z.string().optional(),
+    customEnvironmentIds: z.array(z.string()).optional(),
+    vsmValue: z.string().optional(),
+});
+
+/** @internal */
+export type GetProjectEnvResponseBody2$Outbound = {
+    target?: Array<string> | string | undefined;
+    type: string;
+    sunsetSecretId?: string | undefined;
+    id?: string | undefined;
+    key: string;
+    value: string;
+    configurationId?: string | null | undefined;
+    createdAt?: number | undefined;
+    updatedAt?: number | undefined;
+    createdBy?: string | null | undefined;
+    updatedBy?: string | null | undefined;
+    gitBranch?: string | undefined;
+    edgeConfigId?: string | null | undefined;
+    edgeConfigTokenId?: string | null | undefined;
+    contentHint?:
+        | GetProjectEnvContentHintEnvs1$Outbound
+        | GetProjectEnvContentHintEnvs2$Outbound
+        | GetProjectEnvContentHintEnvs3$Outbound
+        | GetProjectEnvContentHintEnvs4$Outbound
+        | GetProjectEnvContentHintEnvs5$Outbound
+        | GetProjectEnvContentHintEnvs6$Outbound
+        | GetProjectEnvContentHintEnvs7$Outbound
+        | GetProjectEnvContentHintEnvs8$Outbound
+        | GetProjectEnvContentHintEnvs9$Outbound
+        | GetProjectEnvContentHintEnvs10$Outbound
+        | GetProjectEnvContentHintEnvs11$Outbound
+        | GetProjectEnvContentHintEnvs12$Outbound
+        | GetProjectEnvContentHintEnvs13$Outbound
+        | GetProjectEnvContentHintEnvs14$Outbound
+        | null
+        | undefined;
+    internalContentHint?:
+        | GetProjectEnvResponseBodyEnvsInternalContentHint$Outbound
+        | null
+        | undefined;
+    decrypted?: boolean | undefined;
+    comment?: string | undefined;
+    customEnvironmentIds?: Array<string> | undefined;
+    vsmValue?: string | undefined;
+};
+
+/** @internal */
+export const GetProjectEnvResponseBody2$outboundSchema: z.ZodType<
+    GetProjectEnvResponseBody2$Outbound,
+    z.ZodTypeDef,
+    GetProjectEnvResponseBody2
+> = z.object({
+    target: z
+        .union([
+            z.array(GetProjectEnvTargetEnvs1$outboundSchema),
+            GetProjectEnvTargetEnvs2$outboundSchema,
+        ])
+        .optional(),
+    type: GetProjectEnvResponseBodyEnvsType$outboundSchema,
+    sunsetSecretId: z.string().optional(),
+    id: z.string().optional(),
+    key: z.string(),
+    value: z.string(),
+    configurationId: z.nullable(z.string()).optional(),
+    createdAt: z.number().optional(),
+    updatedAt: z.number().optional(),
+    createdBy: z.nullable(z.string()).optional(),
+    updatedBy: z.nullable(z.string()).optional(),
+    gitBranch: z.string().optional(),
+    edgeConfigId: z.nullable(z.string()).optional(),
+    edgeConfigTokenId: z.nullable(z.string()).optional(),
+    contentHint: z
+        .nullable(
+            z.union([
+                z.lazy(() => GetProjectEnvContentHintEnvs1$outboundSchema),
+                z.lazy(() => GetProjectEnvContentHintEnvs2$outboundSchema),
+                z.lazy(() => GetProjectEnvContentHintEnvs3$outboundSchema),
+                z.lazy(() => GetProjectEnvContentHintEnvs4$outboundSchema),
+                z.lazy(() => GetProjectEnvContentHintEnvs5$outboundSchema),
+                z.lazy(() => GetProjectEnvContentHintEnvs6$outboundSchema),
+                z.lazy(() => GetProjectEnvContentHintEnvs7$outboundSchema),
+                z.lazy(() => GetProjectEnvContentHintEnvs8$outboundSchema),
+                z.lazy(() => GetProjectEnvContentHintEnvs9$outboundSchema),
+                z.lazy(() => GetProjectEnvContentHintEnvs10$outboundSchema),
+                z.lazy(() => GetProjectEnvContentHintEnvs11$outboundSchema),
+                z.lazy(() => GetProjectEnvContentHintEnvs12$outboundSchema),
+                z.lazy(() => GetProjectEnvContentHintEnvs13$outboundSchema),
+                z.lazy(() => GetProjectEnvContentHintEnvs14$outboundSchema),
+            ])
+        )
+        .optional(),
+    internalContentHint: z
+        .nullable(z.lazy(() => GetProjectEnvResponseBodyEnvsInternalContentHint$outboundSchema))
+        .optional(),
+    decrypted: z.boolean().optional(),
+    comment: z.string().optional(),
+    customEnvironmentIds: z.array(z.string()).optional(),
+    vsmValue: z.string().optional(),
 });
 
 /**
@@ -1957,26 +3553,26 @@ export namespace GetProjectEnvResponseBodyType$ {
 }
 
 /** @internal */
-export const GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody114Type$inboundSchema: z.ZodNativeEnum<
-    typeof GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody114Type
-> = z.nativeEnum(GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody114Type);
+export const GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody114Type$inboundSchema: z.ZodNativeEnum<
+    typeof GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody114Type
+> = z.nativeEnum(GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody114Type);
 
 /** @internal */
-export const GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody114Type$outboundSchema: z.ZodNativeEnum<
-    typeof GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody114Type
-> = GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody114Type$inboundSchema;
+export const GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody114Type$outboundSchema: z.ZodNativeEnum<
+    typeof GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody114Type
+> = GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody114Type$inboundSchema;
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody114Type$ {
-    /** @deprecated use `GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody114Type$inboundSchema` instead. */
+export namespace GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody114Type$ {
+    /** @deprecated use `GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody114Type$inboundSchema` instead. */
     export const inboundSchema =
-        GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody114Type$inboundSchema;
-    /** @deprecated use `GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody114Type$outboundSchema` instead. */
+        GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody114Type$inboundSchema;
+    /** @deprecated use `GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody114Type$outboundSchema` instead. */
     export const outboundSchema =
-        GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody114Type$outboundSchema;
+        GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody114Type$outboundSchema;
 }
 
 /** @internal */
@@ -1985,14 +3581,20 @@ export const GetProjectEnvContentHint14$inboundSchema: z.ZodType<
     z.ZodTypeDef,
     unknown
 > = z.object({
-    type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody114Type$inboundSchema,
+    type: GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody114Type$inboundSchema,
     storeId: z.string(),
+    integrationId: z.string(),
+    integrationProductId: z.string(),
+    integrationConfigurationId: z.string(),
 });
 
 /** @internal */
 export type GetProjectEnvContentHint14$Outbound = {
     type: string;
     storeId: string;
+    integrationId: string;
+    integrationProductId: string;
+    integrationConfigurationId: string;
 };
 
 /** @internal */
@@ -2001,8 +3603,11 @@ export const GetProjectEnvContentHint14$outboundSchema: z.ZodType<
     z.ZodTypeDef,
     GetProjectEnvContentHint14
 > = z.object({
-    type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody114Type$outboundSchema,
+    type: GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody114Type$outboundSchema,
     storeId: z.string(),
+    integrationId: z.string(),
+    integrationProductId: z.string(),
+    integrationConfigurationId: z.string(),
 });
 
 /**
@@ -2019,26 +3624,26 @@ export namespace GetProjectEnvContentHint14$ {
 }
 
 /** @internal */
-export const GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody113Type$inboundSchema: z.ZodNativeEnum<
-    typeof GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody113Type
-> = z.nativeEnum(GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody113Type);
+export const GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody113Type$inboundSchema: z.ZodNativeEnum<
+    typeof GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody113Type
+> = z.nativeEnum(GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody113Type);
 
 /** @internal */
-export const GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody113Type$outboundSchema: z.ZodNativeEnum<
-    typeof GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody113Type
-> = GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody113Type$inboundSchema;
+export const GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody113Type$outboundSchema: z.ZodNativeEnum<
+    typeof GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody113Type
+> = GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody113Type$inboundSchema;
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody113Type$ {
-    /** @deprecated use `GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody113Type$inboundSchema` instead. */
+export namespace GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody113Type$ {
+    /** @deprecated use `GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody113Type$inboundSchema` instead. */
     export const inboundSchema =
-        GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody113Type$inboundSchema;
-    /** @deprecated use `GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody113Type$outboundSchema` instead. */
+        GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody113Type$inboundSchema;
+    /** @deprecated use `GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody113Type$outboundSchema` instead. */
     export const outboundSchema =
-        GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody113Type$outboundSchema;
+        GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody113Type$outboundSchema;
 }
 
 /** @internal */
@@ -2047,7 +3652,7 @@ export const GetProjectEnvContentHint13$inboundSchema: z.ZodType<
     z.ZodTypeDef,
     unknown
 > = z.object({
-    type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody113Type$inboundSchema,
+    type: GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody113Type$inboundSchema,
     storeId: z.string(),
 });
 
@@ -2063,7 +3668,7 @@ export const GetProjectEnvContentHint13$outboundSchema: z.ZodType<
     z.ZodTypeDef,
     GetProjectEnvContentHint13
 > = z.object({
-    type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody113Type$outboundSchema,
+    type: GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody113Type$outboundSchema,
     storeId: z.string(),
 });
 
@@ -2081,26 +3686,26 @@ export namespace GetProjectEnvContentHint13$ {
 }
 
 /** @internal */
-export const GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody112Type$inboundSchema: z.ZodNativeEnum<
-    typeof GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody112Type
-> = z.nativeEnum(GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody112Type);
+export const GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody112Type$inboundSchema: z.ZodNativeEnum<
+    typeof GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody112Type
+> = z.nativeEnum(GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody112Type);
 
 /** @internal */
-export const GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody112Type$outboundSchema: z.ZodNativeEnum<
-    typeof GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody112Type
-> = GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody112Type$inboundSchema;
+export const GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody112Type$outboundSchema: z.ZodNativeEnum<
+    typeof GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody112Type
+> = GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody112Type$inboundSchema;
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody112Type$ {
-    /** @deprecated use `GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody112Type$inboundSchema` instead. */
+export namespace GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody112Type$ {
+    /** @deprecated use `GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody112Type$inboundSchema` instead. */
     export const inboundSchema =
-        GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody112Type$inboundSchema;
-    /** @deprecated use `GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody112Type$outboundSchema` instead. */
+        GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody112Type$inboundSchema;
+    /** @deprecated use `GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody112Type$outboundSchema` instead. */
     export const outboundSchema =
-        GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody112Type$outboundSchema;
+        GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody112Type$outboundSchema;
 }
 
 /** @internal */
@@ -2109,7 +3714,7 @@ export const GetProjectEnvContentHint12$inboundSchema: z.ZodType<
     z.ZodTypeDef,
     unknown
 > = z.object({
-    type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody112Type$inboundSchema,
+    type: GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody112Type$inboundSchema,
     storeId: z.string(),
 });
 
@@ -2125,7 +3730,7 @@ export const GetProjectEnvContentHint12$outboundSchema: z.ZodType<
     z.ZodTypeDef,
     GetProjectEnvContentHint12
 > = z.object({
-    type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody112Type$outboundSchema,
+    type: GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody112Type$outboundSchema,
     storeId: z.string(),
 });
 
@@ -2143,26 +3748,26 @@ export namespace GetProjectEnvContentHint12$ {
 }
 
 /** @internal */
-export const GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody111Type$inboundSchema: z.ZodNativeEnum<
-    typeof GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody111Type
-> = z.nativeEnum(GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody111Type);
+export const GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody111Type$inboundSchema: z.ZodNativeEnum<
+    typeof GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody111Type
+> = z.nativeEnum(GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody111Type);
 
 /** @internal */
-export const GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody111Type$outboundSchema: z.ZodNativeEnum<
-    typeof GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody111Type
-> = GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody111Type$inboundSchema;
+export const GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody111Type$outboundSchema: z.ZodNativeEnum<
+    typeof GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody111Type
+> = GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody111Type$inboundSchema;
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody111Type$ {
-    /** @deprecated use `GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody111Type$inboundSchema` instead. */
+export namespace GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody111Type$ {
+    /** @deprecated use `GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody111Type$inboundSchema` instead. */
     export const inboundSchema =
-        GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody111Type$inboundSchema;
-    /** @deprecated use `GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody111Type$outboundSchema` instead. */
+        GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody111Type$inboundSchema;
+    /** @deprecated use `GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody111Type$outboundSchema` instead. */
     export const outboundSchema =
-        GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody111Type$outboundSchema;
+        GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody111Type$outboundSchema;
 }
 
 /** @internal */
@@ -2171,7 +3776,7 @@ export const GetProjectEnvContentHint11$inboundSchema: z.ZodType<
     z.ZodTypeDef,
     unknown
 > = z.object({
-    type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody111Type$inboundSchema,
+    type: GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody111Type$inboundSchema,
     storeId: z.string(),
 });
 
@@ -2187,7 +3792,7 @@ export const GetProjectEnvContentHint11$outboundSchema: z.ZodType<
     z.ZodTypeDef,
     GetProjectEnvContentHint11
 > = z.object({
-    type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody111Type$outboundSchema,
+    type: GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody111Type$outboundSchema,
     storeId: z.string(),
 });
 
@@ -2205,26 +3810,26 @@ export namespace GetProjectEnvContentHint11$ {
 }
 
 /** @internal */
-export const GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody110Type$inboundSchema: z.ZodNativeEnum<
-    typeof GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody110Type
-> = z.nativeEnum(GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody110Type);
+export const GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody110Type$inboundSchema: z.ZodNativeEnum<
+    typeof GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody110Type
+> = z.nativeEnum(GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody110Type);
 
 /** @internal */
-export const GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody110Type$outboundSchema: z.ZodNativeEnum<
-    typeof GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody110Type
-> = GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody110Type$inboundSchema;
+export const GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody110Type$outboundSchema: z.ZodNativeEnum<
+    typeof GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody110Type
+> = GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody110Type$inboundSchema;
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody110Type$ {
-    /** @deprecated use `GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody110Type$inboundSchema` instead. */
+export namespace GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody110Type$ {
+    /** @deprecated use `GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody110Type$inboundSchema` instead. */
     export const inboundSchema =
-        GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody110Type$inboundSchema;
-    /** @deprecated use `GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody110Type$outboundSchema` instead. */
+        GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody110Type$inboundSchema;
+    /** @deprecated use `GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody110Type$outboundSchema` instead. */
     export const outboundSchema =
-        GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody110Type$outboundSchema;
+        GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody110Type$outboundSchema;
 }
 
 /** @internal */
@@ -2233,7 +3838,7 @@ export const GetProjectEnvContentHint10$inboundSchema: z.ZodType<
     z.ZodTypeDef,
     unknown
 > = z.object({
-    type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody110Type$inboundSchema,
+    type: GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody110Type$inboundSchema,
     storeId: z.string(),
 });
 
@@ -2249,7 +3854,7 @@ export const GetProjectEnvContentHint10$outboundSchema: z.ZodType<
     z.ZodTypeDef,
     GetProjectEnvContentHint10
 > = z.object({
-    type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody110Type$outboundSchema,
+    type: GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody110Type$outboundSchema,
     storeId: z.string(),
 });
 
@@ -2267,26 +3872,26 @@ export namespace GetProjectEnvContentHint10$ {
 }
 
 /** @internal */
-export const GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody19Type$inboundSchema: z.ZodNativeEnum<
-    typeof GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody19Type
-> = z.nativeEnum(GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody19Type);
+export const GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody19Type$inboundSchema: z.ZodNativeEnum<
+    typeof GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody19Type
+> = z.nativeEnum(GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody19Type);
 
 /** @internal */
-export const GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody19Type$outboundSchema: z.ZodNativeEnum<
-    typeof GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody19Type
-> = GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody19Type$inboundSchema;
+export const GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody19Type$outboundSchema: z.ZodNativeEnum<
+    typeof GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody19Type
+> = GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody19Type$inboundSchema;
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody19Type$ {
-    /** @deprecated use `GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody19Type$inboundSchema` instead. */
+export namespace GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody19Type$ {
+    /** @deprecated use `GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody19Type$inboundSchema` instead. */
     export const inboundSchema =
-        GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody19Type$inboundSchema;
-    /** @deprecated use `GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody19Type$outboundSchema` instead. */
+        GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody19Type$inboundSchema;
+    /** @deprecated use `GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody19Type$outboundSchema` instead. */
     export const outboundSchema =
-        GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody19Type$outboundSchema;
+        GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody19Type$outboundSchema;
 }
 
 /** @internal */
@@ -2295,7 +3900,7 @@ export const GetProjectEnvContentHint9$inboundSchema: z.ZodType<
     z.ZodTypeDef,
     unknown
 > = z.object({
-    type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody19Type$inboundSchema,
+    type: GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody19Type$inboundSchema,
     storeId: z.string(),
 });
 
@@ -2311,7 +3916,7 @@ export const GetProjectEnvContentHint9$outboundSchema: z.ZodType<
     z.ZodTypeDef,
     GetProjectEnvContentHint9
 > = z.object({
-    type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody19Type$outboundSchema,
+    type: GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody19Type$outboundSchema,
     storeId: z.string(),
 });
 
@@ -2329,26 +3934,26 @@ export namespace GetProjectEnvContentHint9$ {
 }
 
 /** @internal */
-export const GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody18Type$inboundSchema: z.ZodNativeEnum<
-    typeof GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody18Type
-> = z.nativeEnum(GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody18Type);
+export const GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody18Type$inboundSchema: z.ZodNativeEnum<
+    typeof GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody18Type
+> = z.nativeEnum(GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody18Type);
 
 /** @internal */
-export const GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody18Type$outboundSchema: z.ZodNativeEnum<
-    typeof GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody18Type
-> = GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody18Type$inboundSchema;
+export const GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody18Type$outboundSchema: z.ZodNativeEnum<
+    typeof GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody18Type
+> = GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody18Type$inboundSchema;
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody18Type$ {
-    /** @deprecated use `GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody18Type$inboundSchema` instead. */
+export namespace GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody18Type$ {
+    /** @deprecated use `GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody18Type$inboundSchema` instead. */
     export const inboundSchema =
-        GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody18Type$inboundSchema;
-    /** @deprecated use `GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody18Type$outboundSchema` instead. */
+        GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody18Type$inboundSchema;
+    /** @deprecated use `GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody18Type$outboundSchema` instead. */
     export const outboundSchema =
-        GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody18Type$outboundSchema;
+        GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody18Type$outboundSchema;
 }
 
 /** @internal */
@@ -2357,7 +3962,7 @@ export const GetProjectEnvContentHint8$inboundSchema: z.ZodType<
     z.ZodTypeDef,
     unknown
 > = z.object({
-    type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody18Type$inboundSchema,
+    type: GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody18Type$inboundSchema,
     storeId: z.string(),
 });
 
@@ -2373,7 +3978,7 @@ export const GetProjectEnvContentHint8$outboundSchema: z.ZodType<
     z.ZodTypeDef,
     GetProjectEnvContentHint8
 > = z.object({
-    type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody18Type$outboundSchema,
+    type: GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody18Type$outboundSchema,
     storeId: z.string(),
 });
 
@@ -2391,26 +3996,26 @@ export namespace GetProjectEnvContentHint8$ {
 }
 
 /** @internal */
-export const GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody1Type$inboundSchema: z.ZodNativeEnum<
-    typeof GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody1Type
-> = z.nativeEnum(GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody1Type);
+export const GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody1Type$inboundSchema: z.ZodNativeEnum<
+    typeof GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody1Type
+> = z.nativeEnum(GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody1Type);
 
 /** @internal */
-export const GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody1Type$outboundSchema: z.ZodNativeEnum<
-    typeof GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody1Type
-> = GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody1Type$inboundSchema;
+export const GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody1Type$outboundSchema: z.ZodNativeEnum<
+    typeof GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody1Type
+> = GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody1Type$inboundSchema;
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody1Type$ {
-    /** @deprecated use `GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody1Type$inboundSchema` instead. */
+export namespace GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody1Type$ {
+    /** @deprecated use `GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody1Type$inboundSchema` instead. */
     export const inboundSchema =
-        GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody1Type$inboundSchema;
-    /** @deprecated use `GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody1Type$outboundSchema` instead. */
+        GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody1Type$inboundSchema;
+    /** @deprecated use `GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody1Type$outboundSchema` instead. */
     export const outboundSchema =
-        GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody1Type$outboundSchema;
+        GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody1Type$outboundSchema;
 }
 
 /** @internal */
@@ -2419,7 +4024,7 @@ export const GetProjectEnvContentHint7$inboundSchema: z.ZodType<
     z.ZodTypeDef,
     unknown
 > = z.object({
-    type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody1Type$inboundSchema,
+    type: GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody1Type$inboundSchema,
     storeId: z.string(),
 });
 
@@ -2435,7 +4040,7 @@ export const GetProjectEnvContentHint7$outboundSchema: z.ZodType<
     z.ZodTypeDef,
     GetProjectEnvContentHint7
 > = z.object({
-    type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBody1Type$outboundSchema,
+    type: GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody1Type$outboundSchema,
     storeId: z.string(),
 });
 
@@ -2453,26 +4058,26 @@ export namespace GetProjectEnvContentHint7$ {
 }
 
 /** @internal */
-export const GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBodyType$inboundSchema: z.ZodNativeEnum<
-    typeof GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBodyType
-> = z.nativeEnum(GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBodyType);
+export const GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBodyType$inboundSchema: z.ZodNativeEnum<
+    typeof GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBodyType
+> = z.nativeEnum(GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBodyType);
 
 /** @internal */
-export const GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBodyType$outboundSchema: z.ZodNativeEnum<
-    typeof GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBodyType
-> = GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBodyType$inboundSchema;
+export const GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBodyType$outboundSchema: z.ZodNativeEnum<
+    typeof GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBodyType
+> = GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBodyType$inboundSchema;
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBodyType$ {
-    /** @deprecated use `GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBodyType$inboundSchema` instead. */
+export namespace GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBodyType$ {
+    /** @deprecated use `GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBodyType$inboundSchema` instead. */
     export const inboundSchema =
-        GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBodyType$inboundSchema;
-    /** @deprecated use `GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBodyType$outboundSchema` instead. */
+        GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBodyType$inboundSchema;
+    /** @deprecated use `GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBodyType$outboundSchema` instead. */
     export const outboundSchema =
-        GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBodyType$outboundSchema;
+        GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBodyType$outboundSchema;
 }
 
 /** @internal */
@@ -2481,7 +4086,7 @@ export const GetProjectEnvContentHint6$inboundSchema: z.ZodType<
     z.ZodTypeDef,
     unknown
 > = z.object({
-    type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBodyType$inboundSchema,
+    type: GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBodyType$inboundSchema,
     storeId: z.string(),
 });
 
@@ -2497,7 +4102,7 @@ export const GetProjectEnvContentHint6$outboundSchema: z.ZodType<
     z.ZodTypeDef,
     GetProjectEnvContentHint6
 > = z.object({
-    type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONResponseBodyType$outboundSchema,
+    type: GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBodyType$outboundSchema,
     storeId: z.string(),
 });
 
@@ -2515,26 +4120,26 @@ export namespace GetProjectEnvContentHint6$ {
 }
 
 /** @internal */
-export const GetProjectEnvContentHintProjectsResponse200ApplicationJSONType$inboundSchema: z.ZodNativeEnum<
-    typeof GetProjectEnvContentHintProjectsResponse200ApplicationJSONType
-> = z.nativeEnum(GetProjectEnvContentHintProjectsResponse200ApplicationJSONType);
+export const GetProjectEnvContentHintEnvsResponse200ApplicationJSONType$inboundSchema: z.ZodNativeEnum<
+    typeof GetProjectEnvContentHintEnvsResponse200ApplicationJSONType
+> = z.nativeEnum(GetProjectEnvContentHintEnvsResponse200ApplicationJSONType);
 
 /** @internal */
-export const GetProjectEnvContentHintProjectsResponse200ApplicationJSONType$outboundSchema: z.ZodNativeEnum<
-    typeof GetProjectEnvContentHintProjectsResponse200ApplicationJSONType
-> = GetProjectEnvContentHintProjectsResponse200ApplicationJSONType$inboundSchema;
+export const GetProjectEnvContentHintEnvsResponse200ApplicationJSONType$outboundSchema: z.ZodNativeEnum<
+    typeof GetProjectEnvContentHintEnvsResponse200ApplicationJSONType
+> = GetProjectEnvContentHintEnvsResponse200ApplicationJSONType$inboundSchema;
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace GetProjectEnvContentHintProjectsResponse200ApplicationJSONType$ {
-    /** @deprecated use `GetProjectEnvContentHintProjectsResponse200ApplicationJSONType$inboundSchema` instead. */
+export namespace GetProjectEnvContentHintEnvsResponse200ApplicationJSONType$ {
+    /** @deprecated use `GetProjectEnvContentHintEnvsResponse200ApplicationJSONType$inboundSchema` instead. */
     export const inboundSchema =
-        GetProjectEnvContentHintProjectsResponse200ApplicationJSONType$inboundSchema;
-    /** @deprecated use `GetProjectEnvContentHintProjectsResponse200ApplicationJSONType$outboundSchema` instead. */
+        GetProjectEnvContentHintEnvsResponse200ApplicationJSONType$inboundSchema;
+    /** @deprecated use `GetProjectEnvContentHintEnvsResponse200ApplicationJSONType$outboundSchema` instead. */
     export const outboundSchema =
-        GetProjectEnvContentHintProjectsResponse200ApplicationJSONType$outboundSchema;
+        GetProjectEnvContentHintEnvsResponse200ApplicationJSONType$outboundSchema;
 }
 
 /** @internal */
@@ -2543,7 +4148,7 @@ export const GetProjectEnvContentHint5$inboundSchema: z.ZodType<
     z.ZodTypeDef,
     unknown
 > = z.object({
-    type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONType$inboundSchema,
+    type: GetProjectEnvContentHintEnvsResponse200ApplicationJSONType$inboundSchema,
     storeId: z.string(),
 });
 
@@ -2559,7 +4164,7 @@ export const GetProjectEnvContentHint5$outboundSchema: z.ZodType<
     z.ZodTypeDef,
     GetProjectEnvContentHint5
 > = z.object({
-    type: GetProjectEnvContentHintProjectsResponse200ApplicationJSONType$outboundSchema,
+    type: GetProjectEnvContentHintEnvsResponse200ApplicationJSONType$outboundSchema,
     storeId: z.string(),
 });
 
@@ -2577,24 +4182,24 @@ export namespace GetProjectEnvContentHint5$ {
 }
 
 /** @internal */
-export const GetProjectEnvContentHintProjectsResponse200Type$inboundSchema: z.ZodNativeEnum<
-    typeof GetProjectEnvContentHintProjectsResponse200Type
-> = z.nativeEnum(GetProjectEnvContentHintProjectsResponse200Type);
+export const GetProjectEnvContentHintEnvsResponse200Type$inboundSchema: z.ZodNativeEnum<
+    typeof GetProjectEnvContentHintEnvsResponse200Type
+> = z.nativeEnum(GetProjectEnvContentHintEnvsResponse200Type);
 
 /** @internal */
-export const GetProjectEnvContentHintProjectsResponse200Type$outboundSchema: z.ZodNativeEnum<
-    typeof GetProjectEnvContentHintProjectsResponse200Type
-> = GetProjectEnvContentHintProjectsResponse200Type$inboundSchema;
+export const GetProjectEnvContentHintEnvsResponse200Type$outboundSchema: z.ZodNativeEnum<
+    typeof GetProjectEnvContentHintEnvsResponse200Type
+> = GetProjectEnvContentHintEnvsResponse200Type$inboundSchema;
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace GetProjectEnvContentHintProjectsResponse200Type$ {
-    /** @deprecated use `GetProjectEnvContentHintProjectsResponse200Type$inboundSchema` instead. */
-    export const inboundSchema = GetProjectEnvContentHintProjectsResponse200Type$inboundSchema;
-    /** @deprecated use `GetProjectEnvContentHintProjectsResponse200Type$outboundSchema` instead. */
-    export const outboundSchema = GetProjectEnvContentHintProjectsResponse200Type$outboundSchema;
+export namespace GetProjectEnvContentHintEnvsResponse200Type$ {
+    /** @deprecated use `GetProjectEnvContentHintEnvsResponse200Type$inboundSchema` instead. */
+    export const inboundSchema = GetProjectEnvContentHintEnvsResponse200Type$inboundSchema;
+    /** @deprecated use `GetProjectEnvContentHintEnvsResponse200Type$outboundSchema` instead. */
+    export const outboundSchema = GetProjectEnvContentHintEnvsResponse200Type$outboundSchema;
 }
 
 /** @internal */
@@ -2603,7 +4208,7 @@ export const GetProjectEnvContentHint4$inboundSchema: z.ZodType<
     z.ZodTypeDef,
     unknown
 > = z.object({
-    type: GetProjectEnvContentHintProjectsResponse200Type$inboundSchema,
+    type: GetProjectEnvContentHintEnvsResponse200Type$inboundSchema,
     storeId: z.string(),
 });
 
@@ -2619,7 +4224,7 @@ export const GetProjectEnvContentHint4$outboundSchema: z.ZodType<
     z.ZodTypeDef,
     GetProjectEnvContentHint4
 > = z.object({
-    type: GetProjectEnvContentHintProjectsResponse200Type$outboundSchema,
+    type: GetProjectEnvContentHintEnvsResponse200Type$outboundSchema,
     storeId: z.string(),
 });
 
@@ -2637,24 +4242,24 @@ export namespace GetProjectEnvContentHint4$ {
 }
 
 /** @internal */
-export const GetProjectEnvContentHintProjectsResponseType$inboundSchema: z.ZodNativeEnum<
-    typeof GetProjectEnvContentHintProjectsResponseType
-> = z.nativeEnum(GetProjectEnvContentHintProjectsResponseType);
+export const GetProjectEnvContentHintEnvsResponseType$inboundSchema: z.ZodNativeEnum<
+    typeof GetProjectEnvContentHintEnvsResponseType
+> = z.nativeEnum(GetProjectEnvContentHintEnvsResponseType);
 
 /** @internal */
-export const GetProjectEnvContentHintProjectsResponseType$outboundSchema: z.ZodNativeEnum<
-    typeof GetProjectEnvContentHintProjectsResponseType
-> = GetProjectEnvContentHintProjectsResponseType$inboundSchema;
+export const GetProjectEnvContentHintEnvsResponseType$outboundSchema: z.ZodNativeEnum<
+    typeof GetProjectEnvContentHintEnvsResponseType
+> = GetProjectEnvContentHintEnvsResponseType$inboundSchema;
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace GetProjectEnvContentHintProjectsResponseType$ {
-    /** @deprecated use `GetProjectEnvContentHintProjectsResponseType$inboundSchema` instead. */
-    export const inboundSchema = GetProjectEnvContentHintProjectsResponseType$inboundSchema;
-    /** @deprecated use `GetProjectEnvContentHintProjectsResponseType$outboundSchema` instead. */
-    export const outboundSchema = GetProjectEnvContentHintProjectsResponseType$outboundSchema;
+export namespace GetProjectEnvContentHintEnvsResponseType$ {
+    /** @deprecated use `GetProjectEnvContentHintEnvsResponseType$inboundSchema` instead. */
+    export const inboundSchema = GetProjectEnvContentHintEnvsResponseType$inboundSchema;
+    /** @deprecated use `GetProjectEnvContentHintEnvsResponseType$outboundSchema` instead. */
+    export const outboundSchema = GetProjectEnvContentHintEnvsResponseType$outboundSchema;
 }
 
 /** @internal */
@@ -2663,7 +4268,7 @@ export const GetProjectEnvContentHint3$inboundSchema: z.ZodType<
     z.ZodTypeDef,
     unknown
 > = z.object({
-    type: GetProjectEnvContentHintProjectsResponseType$inboundSchema,
+    type: GetProjectEnvContentHintEnvsResponseType$inboundSchema,
     storeId: z.string(),
 });
 
@@ -2679,7 +4284,7 @@ export const GetProjectEnvContentHint3$outboundSchema: z.ZodType<
     z.ZodTypeDef,
     GetProjectEnvContentHint3
 > = z.object({
-    type: GetProjectEnvContentHintProjectsResponseType$outboundSchema,
+    type: GetProjectEnvContentHintEnvsResponseType$outboundSchema,
     storeId: z.string(),
 });
 
@@ -2697,24 +4302,24 @@ export namespace GetProjectEnvContentHint3$ {
 }
 
 /** @internal */
-export const GetProjectEnvContentHintProjectsType$inboundSchema: z.ZodNativeEnum<
-    typeof GetProjectEnvContentHintProjectsType
-> = z.nativeEnum(GetProjectEnvContentHintProjectsType);
+export const GetProjectEnvContentHintEnvsType$inboundSchema: z.ZodNativeEnum<
+    typeof GetProjectEnvContentHintEnvsType
+> = z.nativeEnum(GetProjectEnvContentHintEnvsType);
 
 /** @internal */
-export const GetProjectEnvContentHintProjectsType$outboundSchema: z.ZodNativeEnum<
-    typeof GetProjectEnvContentHintProjectsType
-> = GetProjectEnvContentHintProjectsType$inboundSchema;
+export const GetProjectEnvContentHintEnvsType$outboundSchema: z.ZodNativeEnum<
+    typeof GetProjectEnvContentHintEnvsType
+> = GetProjectEnvContentHintEnvsType$inboundSchema;
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace GetProjectEnvContentHintProjectsType$ {
-    /** @deprecated use `GetProjectEnvContentHintProjectsType$inboundSchema` instead. */
-    export const inboundSchema = GetProjectEnvContentHintProjectsType$inboundSchema;
-    /** @deprecated use `GetProjectEnvContentHintProjectsType$outboundSchema` instead. */
-    export const outboundSchema = GetProjectEnvContentHintProjectsType$outboundSchema;
+export namespace GetProjectEnvContentHintEnvsType$ {
+    /** @deprecated use `GetProjectEnvContentHintEnvsType$inboundSchema` instead. */
+    export const inboundSchema = GetProjectEnvContentHintEnvsType$inboundSchema;
+    /** @deprecated use `GetProjectEnvContentHintEnvsType$outboundSchema` instead. */
+    export const outboundSchema = GetProjectEnvContentHintEnvsType$outboundSchema;
 }
 
 /** @internal */
@@ -2723,7 +4328,7 @@ export const GetProjectEnvContentHint2$inboundSchema: z.ZodType<
     z.ZodTypeDef,
     unknown
 > = z.object({
-    type: GetProjectEnvContentHintProjectsType$inboundSchema,
+    type: GetProjectEnvContentHintEnvsType$inboundSchema,
     storeId: z.string(),
 });
 
@@ -2739,7 +4344,7 @@ export const GetProjectEnvContentHint2$outboundSchema: z.ZodType<
     z.ZodTypeDef,
     GetProjectEnvContentHint2
 > = z.object({
-    type: GetProjectEnvContentHintProjectsType$outboundSchema,
+    type: GetProjectEnvContentHintEnvsType$outboundSchema,
     storeId: z.string(),
 });
 
@@ -2891,24 +4496,26 @@ export namespace GetProjectEnvResponseBodyContentHint$ {
 }
 
 /** @internal */
-export const GetProjectEnvResponseBodyProjectsResponseType$inboundSchema: z.ZodNativeEnum<
-    typeof GetProjectEnvResponseBodyProjectsResponseType
-> = z.nativeEnum(GetProjectEnvResponseBodyProjectsResponseType);
+export const GetProjectEnvResponseBodyEnvsResponse200ApplicationJSONType$inboundSchema: z.ZodNativeEnum<
+    typeof GetProjectEnvResponseBodyEnvsResponse200ApplicationJSONType
+> = z.nativeEnum(GetProjectEnvResponseBodyEnvsResponse200ApplicationJSONType);
 
 /** @internal */
-export const GetProjectEnvResponseBodyProjectsResponseType$outboundSchema: z.ZodNativeEnum<
-    typeof GetProjectEnvResponseBodyProjectsResponseType
-> = GetProjectEnvResponseBodyProjectsResponseType$inboundSchema;
+export const GetProjectEnvResponseBodyEnvsResponse200ApplicationJSONType$outboundSchema: z.ZodNativeEnum<
+    typeof GetProjectEnvResponseBodyEnvsResponse200ApplicationJSONType
+> = GetProjectEnvResponseBodyEnvsResponse200ApplicationJSONType$inboundSchema;
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace GetProjectEnvResponseBodyProjectsResponseType$ {
-    /** @deprecated use `GetProjectEnvResponseBodyProjectsResponseType$inboundSchema` instead. */
-    export const inboundSchema = GetProjectEnvResponseBodyProjectsResponseType$inboundSchema;
-    /** @deprecated use `GetProjectEnvResponseBodyProjectsResponseType$outboundSchema` instead. */
-    export const outboundSchema = GetProjectEnvResponseBodyProjectsResponseType$outboundSchema;
+export namespace GetProjectEnvResponseBodyEnvsResponse200ApplicationJSONType$ {
+    /** @deprecated use `GetProjectEnvResponseBodyEnvsResponse200ApplicationJSONType$inboundSchema` instead. */
+    export const inboundSchema =
+        GetProjectEnvResponseBodyEnvsResponse200ApplicationJSONType$inboundSchema;
+    /** @deprecated use `GetProjectEnvResponseBodyEnvsResponse200ApplicationJSONType$outboundSchema` instead. */
+    export const outboundSchema =
+        GetProjectEnvResponseBodyEnvsResponse200ApplicationJSONType$outboundSchema;
 }
 
 /** @internal */
@@ -2917,7 +4524,7 @@ export const GetProjectEnvResponseBodyInternalContentHint$inboundSchema: z.ZodTy
     z.ZodTypeDef,
     unknown
 > = z.object({
-    type: GetProjectEnvResponseBodyProjectsResponseType$inboundSchema,
+    type: GetProjectEnvResponseBodyEnvsResponse200ApplicationJSONType$inboundSchema,
     encryptedValue: z.string(),
 });
 
@@ -2933,7 +4540,7 @@ export const GetProjectEnvResponseBodyInternalContentHint$outboundSchema: z.ZodT
     z.ZodTypeDef,
     GetProjectEnvResponseBodyInternalContentHint
 > = z.object({
-    type: GetProjectEnvResponseBodyProjectsResponseType$outboundSchema,
+    type: GetProjectEnvResponseBodyEnvsResponse200ApplicationJSONType$outboundSchema,
     encryptedValue: z.string(),
 });
 
@@ -2961,6 +4568,7 @@ export const GetProjectEnvResponseBody1$inboundSchema: z.ZodType<
         .union([z.array(GetProjectEnvTarget1$inboundSchema), GetProjectEnvTarget2$inboundSchema])
         .optional(),
     type: GetProjectEnvResponseBodyType$inboundSchema,
+    sunsetSecretId: z.string().optional(),
     id: z.string().optional(),
     key: z.string(),
     configurationId: z.nullable(z.string()).optional(),
@@ -2995,7 +4603,8 @@ export const GetProjectEnvResponseBody1$inboundSchema: z.ZodType<
         .nullable(z.lazy(() => GetProjectEnvResponseBodyInternalContentHint$inboundSchema))
         .optional(),
     comment: z.string().optional(),
-    customEnvironmentId: z.string().optional(),
+    customEnvironmentIds: z.array(z.string()).optional(),
+    vsmValue: z.string().optional(),
 });
 
 /** @internal */
@@ -3003,6 +4612,7 @@ export type GetProjectEnvResponseBody1$Outbound = {
     decrypted: boolean;
     target?: Array<string> | string | undefined;
     type: string;
+    sunsetSecretId?: string | undefined;
     id?: string | undefined;
     key: string;
     configurationId?: string | null | undefined;
@@ -3032,7 +4642,8 @@ export type GetProjectEnvResponseBody1$Outbound = {
         | undefined;
     internalContentHint?: GetProjectEnvResponseBodyInternalContentHint$Outbound | null | undefined;
     comment?: string | undefined;
-    customEnvironmentId?: string | undefined;
+    customEnvironmentIds?: Array<string> | undefined;
+    vsmValue?: string | undefined;
 };
 
 /** @internal */
@@ -3046,6 +4657,7 @@ export const GetProjectEnvResponseBody1$outboundSchema: z.ZodType<
         .union([z.array(GetProjectEnvTarget1$outboundSchema), GetProjectEnvTarget2$outboundSchema])
         .optional(),
     type: GetProjectEnvResponseBodyType$outboundSchema,
+    sunsetSecretId: z.string().optional(),
     id: z.string().optional(),
     key: z.string(),
     configurationId: z.nullable(z.string()).optional(),
@@ -3080,7 +4692,8 @@ export const GetProjectEnvResponseBody1$outboundSchema: z.ZodType<
         .nullable(z.lazy(() => GetProjectEnvResponseBodyInternalContentHint$outboundSchema))
         .optional(),
     comment: z.string().optional(),
-    customEnvironmentId: z.string().optional(),
+    customEnvironmentIds: z.array(z.string()).optional(),
+    vsmValue: z.string().optional(),
 });
 
 /**
@@ -3103,12 +4716,14 @@ export const GetProjectEnvResponseBody$inboundSchema: z.ZodType<
     unknown
 > = z.union([
     z.lazy(() => GetProjectEnvResponseBody1$inboundSchema),
+    z.lazy(() => GetProjectEnvResponseBody3$inboundSchema),
     z.lazy(() => GetProjectEnvResponseBody2$inboundSchema),
 ]);
 
 /** @internal */
 export type GetProjectEnvResponseBody$Outbound =
     | GetProjectEnvResponseBody1$Outbound
+    | GetProjectEnvResponseBody3$Outbound
     | GetProjectEnvResponseBody2$Outbound;
 
 /** @internal */
@@ -3118,6 +4733,7 @@ export const GetProjectEnvResponseBody$outboundSchema: z.ZodType<
     GetProjectEnvResponseBody
 > = z.union([
     z.lazy(() => GetProjectEnvResponseBody1$outboundSchema),
+    z.lazy(() => GetProjectEnvResponseBody3$outboundSchema),
     z.lazy(() => GetProjectEnvResponseBody2$outboundSchema),
 ]);
 

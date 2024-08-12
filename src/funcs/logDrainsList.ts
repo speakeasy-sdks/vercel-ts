@@ -10,11 +10,11 @@ import { RequestOptions } from "../lib/sdks.js";
 import { extractSecurity, resolveGlobalSecurity } from "../lib/security.js";
 import { pathToFunc } from "../lib/url.js";
 import {
-    GetAllLogDrainsRequest,
-    GetAllLogDrainsRequest$outboundSchema,
-    GetAllLogDrainsResponseBody,
-    GetAllLogDrainsResponseBody$inboundSchema,
-} from "../models/getalllogdrainsop.js";
+    GetIntegrationLogDrainsRequest,
+    GetIntegrationLogDrainsRequest$outboundSchema,
+    GetIntegrationLogDrainsResponseBody,
+    GetIntegrationLogDrainsResponseBody$inboundSchema,
+} from "../models/getintegrationlogdrainsop.js";
 import {
     ConnectionError,
     InvalidRequestError,
@@ -28,20 +28,19 @@ import { Result } from "../types/fp.js";
 import * as z from "zod";
 
 /**
- * Retrieves a list of all the Log Drains
+ * Retrieves a list of Integration log drains
  *
  * @remarks
- * Retrieves a list of all the Log Drains owned by the account. This endpoint must be called with an account AccessToken (integration OAuth2 clients are not allowed). Only log drains owned by the authenticated account can be accessed.
+ * Retrieves a list of all Integration log drains that are defined for the authenticated user or team. When using an OAuth2 token, the list is limited to log drains created by the authenticated integration.
  */
 export async function logDrainsList(
     client$: VercelCore,
-    projectId?: string | undefined,
     teamId?: string | undefined,
     slug?: string | undefined,
     options?: RequestOptions
 ): Promise<
     Result<
-        Array<GetAllLogDrainsResponseBody>,
+        Array<GetIntegrationLogDrainsResponseBody>,
         | SDKError
         | SDKValidationError
         | UnexpectedClientError
@@ -51,15 +50,14 @@ export async function logDrainsList(
         | ConnectionError
     >
 > {
-    const input$: GetAllLogDrainsRequest = {
-        projectId: projectId,
+    const input$: GetIntegrationLogDrainsRequest = {
         teamId: teamId,
         slug: slug,
     };
 
     const parsed$ = schemas$.safeParse(
         input$,
-        (value$) => GetAllLogDrainsRequest$outboundSchema.parse(value$),
+        (value$) => GetIntegrationLogDrainsRequest$outboundSchema.parse(value$),
         "Input validation failed"
     );
     if (!parsed$.ok) {
@@ -68,10 +66,9 @@ export async function logDrainsList(
     const payload$ = parsed$.value;
     const body$ = null;
 
-    const path$ = pathToFunc("/v1/log-drains")();
+    const path$ = pathToFunc("/v2/integrations/log-drains")();
 
     const query$ = encodeFormQuery$({
-        projectId: payload$.projectId,
         slug: payload$.slug,
         teamId: payload$.teamId,
     });
@@ -80,11 +77,12 @@ export async function logDrainsList(
         Accept: "application/json",
     });
 
-    const security$ = await extractSecurity(client$.options$.security);
+    const bearerToken$ = await extractSecurity(client$.options$.bearerToken);
+    const security$ = bearerToken$ == null ? {} : { bearerToken: bearerToken$ };
     const context = {
-        operationID: "getAllLogDrains",
+        operationID: "getIntegrationLogDrains",
         oAuth2Scopes: [],
-        securitySource: client$.options$.security,
+        securitySource: client$.options$.bearerToken,
     };
     const securitySettings$ = resolveGlobalSecurity(security$);
 
@@ -118,7 +116,7 @@ export async function logDrainsList(
     const response = doResult.value;
 
     const [result$] = await m$.match<
-        Array<GetAllLogDrainsResponseBody>,
+        Array<GetIntegrationLogDrainsResponseBody>,
         | SDKError
         | SDKValidationError
         | UnexpectedClientError
@@ -127,7 +125,7 @@ export async function logDrainsList(
         | RequestTimeoutError
         | ConnectionError
     >(
-        m$.json(200, z.array(GetAllLogDrainsResponseBody$inboundSchema)),
+        m$.json(200, z.array(GetIntegrationLogDrainsResponseBody$inboundSchema)),
         m$.fail([400, 401, 403, "4XX", "5XX"])
     )(response);
     if (!result$.ok) {

@@ -15,26 +15,13 @@ export type EmailLoginRequestBody = {
     tokenName?: string | undefined;
 };
 
-export type EmailLoginResponseBody2 = {
-    /**
-     * The token used to verify the user accepted the login request
-     */
-    token: string;
-    /**
-     * The code the user is going to receive on the email. **Must** be displayed to the user so they can verify the request is the correct.
-     */
-    securityCode: string;
-};
-
-export type EmailLoginResponseBody1 = {
-    token: string;
-    securityCode: string;
-};
-
 /**
  * The request was successful and an email was sent
  */
-export type EmailLoginResponseBody = EmailLoginResponseBody1 | EmailLoginResponseBody2;
+export type EmailLoginResponseBody = {
+    token: string;
+    securityCode: string;
+};
 
 /** @internal */
 export const EmailLoginRequestBody$inboundSchema: z.ZodType<
@@ -76,107 +63,30 @@ export namespace EmailLoginRequestBody$ {
 }
 
 /** @internal */
-export const EmailLoginResponseBody2$inboundSchema: z.ZodType<
-    EmailLoginResponseBody2,
-    z.ZodTypeDef,
-    unknown
-> = z.object({
-    token: z.string(),
-    securityCode: z.string(),
-});
-
-/** @internal */
-export type EmailLoginResponseBody2$Outbound = {
-    token: string;
-    securityCode: string;
-};
-
-/** @internal */
-export const EmailLoginResponseBody2$outboundSchema: z.ZodType<
-    EmailLoginResponseBody2$Outbound,
-    z.ZodTypeDef,
-    EmailLoginResponseBody2
-> = z.object({
-    token: z.string(),
-    securityCode: z.string(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace EmailLoginResponseBody2$ {
-    /** @deprecated use `EmailLoginResponseBody2$inboundSchema` instead. */
-    export const inboundSchema = EmailLoginResponseBody2$inboundSchema;
-    /** @deprecated use `EmailLoginResponseBody2$outboundSchema` instead. */
-    export const outboundSchema = EmailLoginResponseBody2$outboundSchema;
-    /** @deprecated use `EmailLoginResponseBody2$Outbound` instead. */
-    export type Outbound = EmailLoginResponseBody2$Outbound;
-}
-
-/** @internal */
-export const EmailLoginResponseBody1$inboundSchema: z.ZodType<
-    EmailLoginResponseBody1,
-    z.ZodTypeDef,
-    unknown
-> = z.object({
-    token: z.string(),
-    securityCode: z.string(),
-});
-
-/** @internal */
-export type EmailLoginResponseBody1$Outbound = {
-    token: string;
-    securityCode: string;
-};
-
-/** @internal */
-export const EmailLoginResponseBody1$outboundSchema: z.ZodType<
-    EmailLoginResponseBody1$Outbound,
-    z.ZodTypeDef,
-    EmailLoginResponseBody1
-> = z.object({
-    token: z.string(),
-    securityCode: z.string(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace EmailLoginResponseBody1$ {
-    /** @deprecated use `EmailLoginResponseBody1$inboundSchema` instead. */
-    export const inboundSchema = EmailLoginResponseBody1$inboundSchema;
-    /** @deprecated use `EmailLoginResponseBody1$outboundSchema` instead. */
-    export const outboundSchema = EmailLoginResponseBody1$outboundSchema;
-    /** @deprecated use `EmailLoginResponseBody1$Outbound` instead. */
-    export type Outbound = EmailLoginResponseBody1$Outbound;
-}
-
-/** @internal */
 export const EmailLoginResponseBody$inboundSchema: z.ZodType<
     EmailLoginResponseBody,
     z.ZodTypeDef,
     unknown
-> = z.union([
-    z.lazy(() => EmailLoginResponseBody1$inboundSchema),
-    z.lazy(() => EmailLoginResponseBody2$inboundSchema),
-]);
+> = z.object({
+    token: z.string(),
+    securityCode: z.string(),
+});
 
 /** @internal */
-export type EmailLoginResponseBody$Outbound =
-    | EmailLoginResponseBody1$Outbound
-    | EmailLoginResponseBody2$Outbound;
+export type EmailLoginResponseBody$Outbound = {
+    token: string;
+    securityCode: string;
+};
 
 /** @internal */
 export const EmailLoginResponseBody$outboundSchema: z.ZodType<
     EmailLoginResponseBody$Outbound,
     z.ZodTypeDef,
     EmailLoginResponseBody
-> = z.union([
-    z.lazy(() => EmailLoginResponseBody1$outboundSchema),
-    z.lazy(() => EmailLoginResponseBody2$outboundSchema),
-]);
+> = z.object({
+    token: z.string(),
+    securityCode: z.string(),
+});
 
 /**
  * @internal

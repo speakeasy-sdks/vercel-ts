@@ -1,17 +1,15 @@
 # EmailInviteCodes
 
 
-## Supported Types
+## Fields
 
-### `models.EmailInviteCodes1`
-
-```typescript
-const value: models.EmailInviteCodes1 = /* values here */
-```
-
-### `models.EmailInviteCodes2`
-
-```typescript
-const value: models.EmailInviteCodes2 = /* values here */
-```
-
+| Field                                                                                          | Type                                                                                           | Required                                                                                       | Description                                                                                    |
+| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| `accessGroups`                                                                                 | *string*[]                                                                                     | :heavy_minus_sign:                                                                             | N/A                                                                                            |
+| `id`                                                                                           | *string*                                                                                       | :heavy_check_mark:                                                                             | N/A                                                                                            |
+| `email`                                                                                        | *string*                                                                                       | :heavy_minus_sign:                                                                             | N/A                                                                                            |
+| `role`                                                                                         | [models.GetTeamMembersTeamsRole](../models/getteammembersteamsrole.md)                         | :heavy_minus_sign:                                                                             | N/A                                                                                            |
+| `isDSyncUser`                                                                                  | *boolean*                                                                                      | :heavy_check_mark:                                                                             | N/A                                                                                            |
+| `createdAt`                                                                                    | *number*                                                                                       | :heavy_minus_sign:                                                                             | N/A                                                                                            |
+| `expired`                                                                                      | *boolean*                                                                                      | :heavy_minus_sign:                                                                             | N/A                                                                                            |
+| `projects`                                                                                     | Record<string, [models.GetTeamMembersTeamsProjects](../models/getteammembersteamsprojects.md)> | :heavy_minus_sign:                                                                             | N/A                                                                                            |

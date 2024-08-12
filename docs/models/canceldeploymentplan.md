@@ -1,7 +1,5 @@
 # CancelDeploymentPlan
 
-The pricing plan the deployment was made under
-
 
 ## Values
 

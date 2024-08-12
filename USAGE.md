@@ -5,7 +5,7 @@ import { Vercel } from "vercel";
 const vercel = new Vercel();
 
 async function run() {
-    const result = await vercel.getDeploymentBuilds("<value>");
+    const result = await vercel.listDeploymentBuilds("<value>");
 
     // Handle the result
     console.log(result);

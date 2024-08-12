@@ -10,6 +10,33 @@ export const AuthTokenScopesType = {
 } as const;
 export type AuthTokenScopesType = ClosedEnum<typeof AuthTokenScopesType>;
 
+export const AuthTokenScopesOrigin = {
+    Saml: "saml",
+    Github: "github",
+    Gitlab: "gitlab",
+    Bitbucket: "bitbucket",
+    Email: "email",
+    Manual: "manual",
+    Passkey: "passkey",
+} as const;
+export type AuthTokenScopesOrigin = ClosedEnum<typeof AuthTokenScopesOrigin>;
+
+/**
+ * The access scopes granted to the token.
+ */
+export type Scopes2 = {
+    type: AuthTokenScopesType;
+    teamId: string;
+    origin: AuthTokenScopesOrigin;
+    createdAt: number;
+    expiresAt?: number | undefined;
+};
+
+export const ScopesType = {
+    User: "user",
+} as const;
+export type ScopesType = ClosedEnum<typeof ScopesType>;
+
 export const ScopesOrigin = {
     Saml: "saml",
     Github: "github",
@@ -24,36 +51,9 @@ export type ScopesOrigin = ClosedEnum<typeof ScopesOrigin>;
 /**
  * The access scopes granted to the token.
  */
-export type Scopes2 = {
-    type: AuthTokenScopesType;
-    teamId: string;
-    origin: ScopesOrigin;
-    createdAt: number;
-    expiresAt?: number | undefined;
-};
-
-export const ScopesType = {
-    User: "user",
-} as const;
-export type ScopesType = ClosedEnum<typeof ScopesType>;
-
-export const Origin = {
-    Saml: "saml",
-    Github: "github",
-    Gitlab: "gitlab",
-    Bitbucket: "bitbucket",
-    Email: "email",
-    Manual: "manual",
-    Passkey: "passkey",
-} as const;
-export type Origin = ClosedEnum<typeof Origin>;
-
-/**
- * The access scopes granted to the token.
- */
 export type Scopes1 = {
     type: ScopesType;
-    origin: Origin;
+    origin: ScopesOrigin;
     createdAt: number;
     expiresAt?: number | undefined;
 };
@@ -118,29 +118,29 @@ export namespace AuthTokenScopesType$ {
 }
 
 /** @internal */
-export const ScopesOrigin$inboundSchema: z.ZodNativeEnum<typeof ScopesOrigin> =
-    z.nativeEnum(ScopesOrigin);
+export const AuthTokenScopesOrigin$inboundSchema: z.ZodNativeEnum<typeof AuthTokenScopesOrigin> =
+    z.nativeEnum(AuthTokenScopesOrigin);
 
 /** @internal */
-export const ScopesOrigin$outboundSchema: z.ZodNativeEnum<typeof ScopesOrigin> =
-    ScopesOrigin$inboundSchema;
+export const AuthTokenScopesOrigin$outboundSchema: z.ZodNativeEnum<typeof AuthTokenScopesOrigin> =
+    AuthTokenScopesOrigin$inboundSchema;
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ScopesOrigin$ {
-    /** @deprecated use `ScopesOrigin$inboundSchema` instead. */
-    export const inboundSchema = ScopesOrigin$inboundSchema;
-    /** @deprecated use `ScopesOrigin$outboundSchema` instead. */
-    export const outboundSchema = ScopesOrigin$outboundSchema;
+export namespace AuthTokenScopesOrigin$ {
+    /** @deprecated use `AuthTokenScopesOrigin$inboundSchema` instead. */
+    export const inboundSchema = AuthTokenScopesOrigin$inboundSchema;
+    /** @deprecated use `AuthTokenScopesOrigin$outboundSchema` instead. */
+    export const outboundSchema = AuthTokenScopesOrigin$outboundSchema;
 }
 
 /** @internal */
 export const Scopes2$inboundSchema: z.ZodType<Scopes2, z.ZodTypeDef, unknown> = z.object({
     type: AuthTokenScopesType$inboundSchema,
     teamId: z.string(),
-    origin: ScopesOrigin$inboundSchema,
+    origin: AuthTokenScopesOrigin$inboundSchema,
     createdAt: z.number(),
     expiresAt: z.number().optional(),
 });
@@ -158,7 +158,7 @@ export type Scopes2$Outbound = {
 export const Scopes2$outboundSchema: z.ZodType<Scopes2$Outbound, z.ZodTypeDef, Scopes2> = z.object({
     type: AuthTokenScopesType$outboundSchema,
     teamId: z.string(),
-    origin: ScopesOrigin$outboundSchema,
+    origin: AuthTokenScopesOrigin$outboundSchema,
     createdAt: z.number(),
     expiresAt: z.number().optional(),
 });
@@ -196,26 +196,28 @@ export namespace ScopesType$ {
 }
 
 /** @internal */
-export const Origin$inboundSchema: z.ZodNativeEnum<typeof Origin> = z.nativeEnum(Origin);
+export const ScopesOrigin$inboundSchema: z.ZodNativeEnum<typeof ScopesOrigin> =
+    z.nativeEnum(ScopesOrigin);
 
 /** @internal */
-export const Origin$outboundSchema: z.ZodNativeEnum<typeof Origin> = Origin$inboundSchema;
+export const ScopesOrigin$outboundSchema: z.ZodNativeEnum<typeof ScopesOrigin> =
+    ScopesOrigin$inboundSchema;
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace Origin$ {
-    /** @deprecated use `Origin$inboundSchema` instead. */
-    export const inboundSchema = Origin$inboundSchema;
-    /** @deprecated use `Origin$outboundSchema` instead. */
-    export const outboundSchema = Origin$outboundSchema;
+export namespace ScopesOrigin$ {
+    /** @deprecated use `ScopesOrigin$inboundSchema` instead. */
+    export const inboundSchema = ScopesOrigin$inboundSchema;
+    /** @deprecated use `ScopesOrigin$outboundSchema` instead. */
+    export const outboundSchema = ScopesOrigin$outboundSchema;
 }
 
 /** @internal */
 export const Scopes1$inboundSchema: z.ZodType<Scopes1, z.ZodTypeDef, unknown> = z.object({
     type: ScopesType$inboundSchema,
-    origin: Origin$inboundSchema,
+    origin: ScopesOrigin$inboundSchema,
     createdAt: z.number(),
     expiresAt: z.number().optional(),
 });
@@ -231,7 +233,7 @@ export type Scopes1$Outbound = {
 /** @internal */
 export const Scopes1$outboundSchema: z.ZodType<Scopes1$Outbound, z.ZodTypeDef, Scopes1> = z.object({
     type: ScopesType$outboundSchema,
-    origin: Origin$outboundSchema,
+    origin: ScopesOrigin$outboundSchema,
     createdAt: z.number(),
     expiresAt: z.number().optional(),
 });

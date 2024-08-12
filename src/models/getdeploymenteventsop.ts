@@ -67,145 +67,6 @@ export type GetDeploymentEventsRequest = {
     slug?: string | undefined;
 };
 
-export const GetDeploymentEvents3Type = {
-    Command: "command",
-    Stdout: "stdout",
-    Stderr: "stderr",
-    Exit: "exit",
-    DeploymentState: "deployment-state",
-    Delimiter: "delimiter",
-    Middleware: "middleware",
-    MiddlewareInvocation: "middleware-invocation",
-    EdgeFunctionInvocation: "edge-function-invocation",
-    Fatal: "fatal",
-} as const;
-export type GetDeploymentEvents3Type = ClosedEnum<typeof GetDeploymentEvents3Type>;
-
-export type GetDeploymentEvents3Info = {
-    type: string;
-    name: string;
-    entrypoint?: string | undefined;
-    path?: string | undefined;
-    step?: string | undefined;
-    readyState?: string | undefined;
-};
-
-export const GetDeploymentEvents3VercelCache = {
-    Miss: "MISS",
-    Hit: "HIT",
-    Stale: "STALE",
-    Bypass: "BYPASS",
-    Prerender: "PRERENDER",
-    Revalidated: "REVALIDATED",
-} as const;
-export type GetDeploymentEvents3VercelCache = ClosedEnum<typeof GetDeploymentEvents3VercelCache>;
-
-export type GetDeploymentEvents3Proxy = {
-    timestamp: number;
-    method: string;
-    host: string;
-    path: string;
-    statusCode?: number | undefined;
-    userAgent: Array<string>;
-    referer: string;
-    clientIp: string;
-    region: string;
-    scheme?: string | undefined;
-    responseByteSize?: number | undefined;
-    cacheId?: string | undefined;
-    pathType?: string | undefined;
-    vercelId?: string | undefined;
-    vercelCache?: GetDeploymentEvents3VercelCache | undefined;
-    lambdaRegion?: string | undefined;
-};
-
-export type ThreePayload = {
-    deploymentId: string;
-    info?: GetDeploymentEvents3Info | undefined;
-    text?: string | undefined;
-    id: string;
-    date: number;
-    serial: string;
-    created?: number | undefined;
-    statusCode?: number | undefined;
-    requestId?: string | undefined;
-    proxy?: GetDeploymentEvents3Proxy | undefined;
-};
-
-export type Three2 = {
-    type: GetDeploymentEvents3Type;
-    created: number;
-    payload: ThreePayload;
-};
-
-export type ThreeInfo = {
-    type: string;
-    name: string;
-    entrypoint?: string | undefined;
-    path?: string | undefined;
-    step?: string | undefined;
-    readyState?: string | undefined;
-};
-
-export const ThreeVercelCache = {
-    Miss: "MISS",
-    Hit: "HIT",
-    Stale: "STALE",
-    Bypass: "BYPASS",
-    Prerender: "PRERENDER",
-    Revalidated: "REVALIDATED",
-} as const;
-export type ThreeVercelCache = ClosedEnum<typeof ThreeVercelCache>;
-
-export type ThreeProxy = {
-    timestamp: number;
-    method: string;
-    host: string;
-    path: string;
-    statusCode?: number | undefined;
-    userAgent: Array<string>;
-    referer: string;
-    clientIp: string;
-    region: string;
-    scheme?: string | undefined;
-    responseByteSize?: number | undefined;
-    cacheId?: string | undefined;
-    pathType?: string | undefined;
-    vercelId?: string | undefined;
-    vercelCache?: ThreeVercelCache | undefined;
-    lambdaRegion?: string | undefined;
-};
-
-export const ThreeType = {
-    Command: "command",
-    Stdout: "stdout",
-    Stderr: "stderr",
-    Exit: "exit",
-    DeploymentState: "deployment-state",
-    Delimiter: "delimiter",
-    Middleware: "middleware",
-    MiddlewareInvocation: "middleware-invocation",
-    EdgeFunctionInvocation: "edge-function-invocation",
-    Fatal: "fatal",
-} as const;
-export type ThreeType = ClosedEnum<typeof ThreeType>;
-
-export type Three1 = {
-    created: number;
-    date: number;
-    deploymentId: string;
-    id: string;
-    info: ThreeInfo;
-    proxy?: ThreeProxy | undefined;
-    requestId?: string | undefined;
-    serial: string;
-    statusCode?: number | undefined;
-    text?: string | undefined;
-    type: ThreeType;
-};
-
-export type ResponseBody3 = Three2 | Three1;
-
 export const GetDeploymentEventsResponseBodyDeploymentsResponseType = {
     Command: "command",
     Stdout: "stdout",
@@ -243,6 +104,17 @@ export type GetDeploymentEventsResponseBodyDeploymentsVercelCache = ClosedEnum<
     typeof GetDeploymentEventsResponseBodyDeploymentsVercelCache
 >;
 
+export const GetDeploymentEventsResponseBodyDeploymentsWafAction = {
+    Log: "log",
+    Challenge: "challenge",
+    Deny: "deny",
+    Bypass: "bypass",
+    RateLimit: "rate_limit",
+} as const;
+export type GetDeploymentEventsResponseBodyDeploymentsWafAction = ClosedEnum<
+    typeof GetDeploymentEventsResponseBodyDeploymentsWafAction
+>;
+
 export type GetDeploymentEventsResponseBodyDeploymentsProxy = {
     timestamp: number;
     method: string;
@@ -260,6 +132,8 @@ export type GetDeploymentEventsResponseBodyDeploymentsProxy = {
     vercelId?: string | undefined;
     vercelCache?: GetDeploymentEventsResponseBodyDeploymentsVercelCache | undefined;
     lambdaRegion?: string | undefined;
+    wafAction?: GetDeploymentEventsResponseBodyDeploymentsWafAction | undefined;
+    wafRuleId?: string | undefined;
 };
 
 export type ResponseBodyPayload = {
@@ -275,7 +149,7 @@ export type ResponseBodyPayload = {
     proxy?: GetDeploymentEventsResponseBodyDeploymentsProxy | undefined;
 };
 
-export type GetDeploymentEventsResponseBody2 = {
+export type GetDeploymentEventsResponseBodyDeployments2 = {
     type: GetDeploymentEventsResponseBodyDeploymentsResponseType;
     created: number;
     payload: ResponseBodyPayload;
@@ -300,6 +174,15 @@ export const ResponseBodyVercelCache = {
 } as const;
 export type ResponseBodyVercelCache = ClosedEnum<typeof ResponseBodyVercelCache>;
 
+export const ResponseBodyWafAction = {
+    Log: "log",
+    Challenge: "challenge",
+    Deny: "deny",
+    Bypass: "bypass",
+    RateLimit: "rate_limit",
+} as const;
+export type ResponseBodyWafAction = ClosedEnum<typeof ResponseBodyWafAction>;
+
 export type ResponseBodyProxy = {
     timestamp: number;
     method: string;
@@ -317,6 +200,8 @@ export type ResponseBodyProxy = {
     vercelId?: string | undefined;
     vercelCache?: ResponseBodyVercelCache | undefined;
     lambdaRegion?: string | undefined;
+    wafAction?: ResponseBodyWafAction | undefined;
+    wafRuleId?: string | undefined;
 };
 
 export const GetDeploymentEventsResponseBodyDeploymentsType = {
@@ -335,7 +220,7 @@ export type GetDeploymentEventsResponseBodyDeploymentsType = ClosedEnum<
     typeof GetDeploymentEventsResponseBodyDeploymentsType
 >;
 
-export type GetDeploymentEventsResponseBody1 = {
+export type GetDeploymentEventsResponseBodyDeployments1 = {
     created: number;
     date: number;
     deploymentId: string;
@@ -356,10 +241,8 @@ export type GetDeploymentEventsResponseBody1 = {
  * Array of deployment logs for the provided query.
  */
 export type GetDeploymentEventsResponseBody =
-    | GetDeploymentEventsResponseBody2
-    | GetDeploymentEventsResponseBody1
-    | Three2
-    | Three1;
+    | GetDeploymentEventsResponseBodyDeployments2
+    | GetDeploymentEventsResponseBodyDeployments1;
 
 export const GetDeploymentEventsResponseBodyType = {
     Command: "command",
@@ -398,6 +281,17 @@ export type GetDeploymentEventsResponseBodyVercelCache = ClosedEnum<
     typeof GetDeploymentEventsResponseBodyVercelCache
 >;
 
+export const GetDeploymentEventsResponseBodyWafAction = {
+    Log: "log",
+    Challenge: "challenge",
+    Deny: "deny",
+    Bypass: "bypass",
+    RateLimit: "rate_limit",
+} as const;
+export type GetDeploymentEventsResponseBodyWafAction = ClosedEnum<
+    typeof GetDeploymentEventsResponseBodyWafAction
+>;
+
 export type GetDeploymentEventsResponseBodyProxy = {
     timestamp: number;
     method: string;
@@ -415,6 +309,8 @@ export type GetDeploymentEventsResponseBodyProxy = {
     vercelId?: string | undefined;
     vercelCache?: GetDeploymentEventsResponseBodyVercelCache | undefined;
     lambdaRegion?: string | undefined;
+    wafAction?: GetDeploymentEventsResponseBodyWafAction | undefined;
+    wafRuleId?: string | undefined;
 };
 
 export type Payload = {
@@ -430,7 +326,7 @@ export type Payload = {
     proxy?: GetDeploymentEventsResponseBodyProxy | undefined;
 };
 
-export type ResponseBody2 = {
+export type GetDeploymentEventsResponseBody2 = {
     type: GetDeploymentEventsResponseBodyType;
     created: number;
     payload: Payload;
@@ -455,6 +351,15 @@ export const VercelCache = {
 } as const;
 export type VercelCache = ClosedEnum<typeof VercelCache>;
 
+export const WafAction = {
+    Log: "log",
+    Challenge: "challenge",
+    Deny: "deny",
+    Bypass: "bypass",
+    RateLimit: "rate_limit",
+} as const;
+export type WafAction = ClosedEnum<typeof WafAction>;
+
 export type Proxy = {
     timestamp: number;
     method: string;
@@ -472,9 +377,11 @@ export type Proxy = {
     vercelId?: string | undefined;
     vercelCache?: VercelCache | undefined;
     lambdaRegion?: string | undefined;
+    wafAction?: WafAction | undefined;
+    wafRuleId?: string | undefined;
 };
 
-export const ResponseBodyType = {
+export const GetDeploymentEventsResponseBodyDeploymentsResponse200Type = {
     Command: "command",
     Stdout: "stdout",
     Stderr: "stderr",
@@ -486,9 +393,11 @@ export const ResponseBodyType = {
     EdgeFunctionInvocation: "edge-function-invocation",
     Fatal: "fatal",
 } as const;
-export type ResponseBodyType = ClosedEnum<typeof ResponseBodyType>;
+export type GetDeploymentEventsResponseBodyDeploymentsResponse200Type = ClosedEnum<
+    typeof GetDeploymentEventsResponseBodyDeploymentsResponse200Type
+>;
 
-export type ResponseBody1 = {
+export type GetDeploymentEventsResponseBody1 = {
     created: number;
     date: number;
     deploymentId: string;
@@ -499,17 +408,17 @@ export type ResponseBody1 = {
     serial: string;
     statusCode?: number | undefined;
     text?: string | undefined;
-    type: ResponseBodyType;
+    type: GetDeploymentEventsResponseBodyDeploymentsResponse200Type;
 };
 
-export type GetDeploymentEventsDeploymentsResponseBody = ResponseBody2 | ResponseBody1;
+export type GetDeploymentEventsDeploymentsResponseBody =
+    | GetDeploymentEventsResponseBody2
+    | GetDeploymentEventsResponseBody1;
 
 export type GetDeploymentEventsResponse =
-    | Array<ResponseBody2 | ResponseBody1>
-    | GetDeploymentEventsResponseBody2
-    | GetDeploymentEventsResponseBody1
-    | Three2
-    | Three1;
+    | Array<GetDeploymentEventsResponseBody2 | GetDeploymentEventsResponseBody1>
+    | GetDeploymentEventsResponseBodyDeployments2
+    | GetDeploymentEventsResponseBodyDeployments1;
 
 /** @internal */
 export const Direction$inboundSchema: z.ZodNativeEnum<typeof Direction> = z.nativeEnum(Direction);
@@ -624,513 +533,6 @@ export namespace GetDeploymentEventsRequest$ {
 }
 
 /** @internal */
-export const GetDeploymentEvents3Type$inboundSchema: z.ZodNativeEnum<
-    typeof GetDeploymentEvents3Type
-> = z.nativeEnum(GetDeploymentEvents3Type);
-
-/** @internal */
-export const GetDeploymentEvents3Type$outboundSchema: z.ZodNativeEnum<
-    typeof GetDeploymentEvents3Type
-> = GetDeploymentEvents3Type$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GetDeploymentEvents3Type$ {
-    /** @deprecated use `GetDeploymentEvents3Type$inboundSchema` instead. */
-    export const inboundSchema = GetDeploymentEvents3Type$inboundSchema;
-    /** @deprecated use `GetDeploymentEvents3Type$outboundSchema` instead. */
-    export const outboundSchema = GetDeploymentEvents3Type$outboundSchema;
-}
-
-/** @internal */
-export const GetDeploymentEvents3Info$inboundSchema: z.ZodType<
-    GetDeploymentEvents3Info,
-    z.ZodTypeDef,
-    unknown
-> = z.object({
-    type: z.string(),
-    name: z.string(),
-    entrypoint: z.string().optional(),
-    path: z.string().optional(),
-    step: z.string().optional(),
-    readyState: z.string().optional(),
-});
-
-/** @internal */
-export type GetDeploymentEvents3Info$Outbound = {
-    type: string;
-    name: string;
-    entrypoint?: string | undefined;
-    path?: string | undefined;
-    step?: string | undefined;
-    readyState?: string | undefined;
-};
-
-/** @internal */
-export const GetDeploymentEvents3Info$outboundSchema: z.ZodType<
-    GetDeploymentEvents3Info$Outbound,
-    z.ZodTypeDef,
-    GetDeploymentEvents3Info
-> = z.object({
-    type: z.string(),
-    name: z.string(),
-    entrypoint: z.string().optional(),
-    path: z.string().optional(),
-    step: z.string().optional(),
-    readyState: z.string().optional(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GetDeploymentEvents3Info$ {
-    /** @deprecated use `GetDeploymentEvents3Info$inboundSchema` instead. */
-    export const inboundSchema = GetDeploymentEvents3Info$inboundSchema;
-    /** @deprecated use `GetDeploymentEvents3Info$outboundSchema` instead. */
-    export const outboundSchema = GetDeploymentEvents3Info$outboundSchema;
-    /** @deprecated use `GetDeploymentEvents3Info$Outbound` instead. */
-    export type Outbound = GetDeploymentEvents3Info$Outbound;
-}
-
-/** @internal */
-export const GetDeploymentEvents3VercelCache$inboundSchema: z.ZodNativeEnum<
-    typeof GetDeploymentEvents3VercelCache
-> = z.nativeEnum(GetDeploymentEvents3VercelCache);
-
-/** @internal */
-export const GetDeploymentEvents3VercelCache$outboundSchema: z.ZodNativeEnum<
-    typeof GetDeploymentEvents3VercelCache
-> = GetDeploymentEvents3VercelCache$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GetDeploymentEvents3VercelCache$ {
-    /** @deprecated use `GetDeploymentEvents3VercelCache$inboundSchema` instead. */
-    export const inboundSchema = GetDeploymentEvents3VercelCache$inboundSchema;
-    /** @deprecated use `GetDeploymentEvents3VercelCache$outboundSchema` instead. */
-    export const outboundSchema = GetDeploymentEvents3VercelCache$outboundSchema;
-}
-
-/** @internal */
-export const GetDeploymentEvents3Proxy$inboundSchema: z.ZodType<
-    GetDeploymentEvents3Proxy,
-    z.ZodTypeDef,
-    unknown
-> = z.object({
-    timestamp: z.number(),
-    method: z.string(),
-    host: z.string(),
-    path: z.string(),
-    statusCode: z.number().optional(),
-    userAgent: z.array(z.string()),
-    referer: z.string(),
-    clientIp: z.string(),
-    region: z.string(),
-    scheme: z.string().optional(),
-    responseByteSize: z.number().optional(),
-    cacheId: z.string().optional(),
-    pathType: z.string().optional(),
-    vercelId: z.string().optional(),
-    vercelCache: GetDeploymentEvents3VercelCache$inboundSchema.optional(),
-    lambdaRegion: z.string().optional(),
-});
-
-/** @internal */
-export type GetDeploymentEvents3Proxy$Outbound = {
-    timestamp: number;
-    method: string;
-    host: string;
-    path: string;
-    statusCode?: number | undefined;
-    userAgent: Array<string>;
-    referer: string;
-    clientIp: string;
-    region: string;
-    scheme?: string | undefined;
-    responseByteSize?: number | undefined;
-    cacheId?: string | undefined;
-    pathType?: string | undefined;
-    vercelId?: string | undefined;
-    vercelCache?: string | undefined;
-    lambdaRegion?: string | undefined;
-};
-
-/** @internal */
-export const GetDeploymentEvents3Proxy$outboundSchema: z.ZodType<
-    GetDeploymentEvents3Proxy$Outbound,
-    z.ZodTypeDef,
-    GetDeploymentEvents3Proxy
-> = z.object({
-    timestamp: z.number(),
-    method: z.string(),
-    host: z.string(),
-    path: z.string(),
-    statusCode: z.number().optional(),
-    userAgent: z.array(z.string()),
-    referer: z.string(),
-    clientIp: z.string(),
-    region: z.string(),
-    scheme: z.string().optional(),
-    responseByteSize: z.number().optional(),
-    cacheId: z.string().optional(),
-    pathType: z.string().optional(),
-    vercelId: z.string().optional(),
-    vercelCache: GetDeploymentEvents3VercelCache$outboundSchema.optional(),
-    lambdaRegion: z.string().optional(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GetDeploymentEvents3Proxy$ {
-    /** @deprecated use `GetDeploymentEvents3Proxy$inboundSchema` instead. */
-    export const inboundSchema = GetDeploymentEvents3Proxy$inboundSchema;
-    /** @deprecated use `GetDeploymentEvents3Proxy$outboundSchema` instead. */
-    export const outboundSchema = GetDeploymentEvents3Proxy$outboundSchema;
-    /** @deprecated use `GetDeploymentEvents3Proxy$Outbound` instead. */
-    export type Outbound = GetDeploymentEvents3Proxy$Outbound;
-}
-
-/** @internal */
-export const ThreePayload$inboundSchema: z.ZodType<ThreePayload, z.ZodTypeDef, unknown> = z.object({
-    deploymentId: z.string(),
-    info: z.lazy(() => GetDeploymentEvents3Info$inboundSchema).optional(),
-    text: z.string().optional(),
-    id: z.string(),
-    date: z.number(),
-    serial: z.string(),
-    created: z.number().optional(),
-    statusCode: z.number().optional(),
-    requestId: z.string().optional(),
-    proxy: z.lazy(() => GetDeploymentEvents3Proxy$inboundSchema).optional(),
-});
-
-/** @internal */
-export type ThreePayload$Outbound = {
-    deploymentId: string;
-    info?: GetDeploymentEvents3Info$Outbound | undefined;
-    text?: string | undefined;
-    id: string;
-    date: number;
-    serial: string;
-    created?: number | undefined;
-    statusCode?: number | undefined;
-    requestId?: string | undefined;
-    proxy?: GetDeploymentEvents3Proxy$Outbound | undefined;
-};
-
-/** @internal */
-export const ThreePayload$outboundSchema: z.ZodType<
-    ThreePayload$Outbound,
-    z.ZodTypeDef,
-    ThreePayload
-> = z.object({
-    deploymentId: z.string(),
-    info: z.lazy(() => GetDeploymentEvents3Info$outboundSchema).optional(),
-    text: z.string().optional(),
-    id: z.string(),
-    date: z.number(),
-    serial: z.string(),
-    created: z.number().optional(),
-    statusCode: z.number().optional(),
-    requestId: z.string().optional(),
-    proxy: z.lazy(() => GetDeploymentEvents3Proxy$outboundSchema).optional(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ThreePayload$ {
-    /** @deprecated use `ThreePayload$inboundSchema` instead. */
-    export const inboundSchema = ThreePayload$inboundSchema;
-    /** @deprecated use `ThreePayload$outboundSchema` instead. */
-    export const outboundSchema = ThreePayload$outboundSchema;
-    /** @deprecated use `ThreePayload$Outbound` instead. */
-    export type Outbound = ThreePayload$Outbound;
-}
-
-/** @internal */
-export const Three2$inboundSchema: z.ZodType<Three2, z.ZodTypeDef, unknown> = z.object({
-    type: GetDeploymentEvents3Type$inboundSchema,
-    created: z.number(),
-    payload: z.lazy(() => ThreePayload$inboundSchema),
-});
-
-/** @internal */
-export type Three2$Outbound = {
-    type: string;
-    created: number;
-    payload: ThreePayload$Outbound;
-};
-
-/** @internal */
-export const Three2$outboundSchema: z.ZodType<Three2$Outbound, z.ZodTypeDef, Three2> = z.object({
-    type: GetDeploymentEvents3Type$outboundSchema,
-    created: z.number(),
-    payload: z.lazy(() => ThreePayload$outboundSchema),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace Three2$ {
-    /** @deprecated use `Three2$inboundSchema` instead. */
-    export const inboundSchema = Three2$inboundSchema;
-    /** @deprecated use `Three2$outboundSchema` instead. */
-    export const outboundSchema = Three2$outboundSchema;
-    /** @deprecated use `Three2$Outbound` instead. */
-    export type Outbound = Three2$Outbound;
-}
-
-/** @internal */
-export const ThreeInfo$inboundSchema: z.ZodType<ThreeInfo, z.ZodTypeDef, unknown> = z.object({
-    type: z.string(),
-    name: z.string(),
-    entrypoint: z.string().optional(),
-    path: z.string().optional(),
-    step: z.string().optional(),
-    readyState: z.string().optional(),
-});
-
-/** @internal */
-export type ThreeInfo$Outbound = {
-    type: string;
-    name: string;
-    entrypoint?: string | undefined;
-    path?: string | undefined;
-    step?: string | undefined;
-    readyState?: string | undefined;
-};
-
-/** @internal */
-export const ThreeInfo$outboundSchema: z.ZodType<ThreeInfo$Outbound, z.ZodTypeDef, ThreeInfo> =
-    z.object({
-        type: z.string(),
-        name: z.string(),
-        entrypoint: z.string().optional(),
-        path: z.string().optional(),
-        step: z.string().optional(),
-        readyState: z.string().optional(),
-    });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ThreeInfo$ {
-    /** @deprecated use `ThreeInfo$inboundSchema` instead. */
-    export const inboundSchema = ThreeInfo$inboundSchema;
-    /** @deprecated use `ThreeInfo$outboundSchema` instead. */
-    export const outboundSchema = ThreeInfo$outboundSchema;
-    /** @deprecated use `ThreeInfo$Outbound` instead. */
-    export type Outbound = ThreeInfo$Outbound;
-}
-
-/** @internal */
-export const ThreeVercelCache$inboundSchema: z.ZodNativeEnum<typeof ThreeVercelCache> =
-    z.nativeEnum(ThreeVercelCache);
-
-/** @internal */
-export const ThreeVercelCache$outboundSchema: z.ZodNativeEnum<typeof ThreeVercelCache> =
-    ThreeVercelCache$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ThreeVercelCache$ {
-    /** @deprecated use `ThreeVercelCache$inboundSchema` instead. */
-    export const inboundSchema = ThreeVercelCache$inboundSchema;
-    /** @deprecated use `ThreeVercelCache$outboundSchema` instead. */
-    export const outboundSchema = ThreeVercelCache$outboundSchema;
-}
-
-/** @internal */
-export const ThreeProxy$inboundSchema: z.ZodType<ThreeProxy, z.ZodTypeDef, unknown> = z.object({
-    timestamp: z.number(),
-    method: z.string(),
-    host: z.string(),
-    path: z.string(),
-    statusCode: z.number().optional(),
-    userAgent: z.array(z.string()),
-    referer: z.string(),
-    clientIp: z.string(),
-    region: z.string(),
-    scheme: z.string().optional(),
-    responseByteSize: z.number().optional(),
-    cacheId: z.string().optional(),
-    pathType: z.string().optional(),
-    vercelId: z.string().optional(),
-    vercelCache: ThreeVercelCache$inboundSchema.optional(),
-    lambdaRegion: z.string().optional(),
-});
-
-/** @internal */
-export type ThreeProxy$Outbound = {
-    timestamp: number;
-    method: string;
-    host: string;
-    path: string;
-    statusCode?: number | undefined;
-    userAgent: Array<string>;
-    referer: string;
-    clientIp: string;
-    region: string;
-    scheme?: string | undefined;
-    responseByteSize?: number | undefined;
-    cacheId?: string | undefined;
-    pathType?: string | undefined;
-    vercelId?: string | undefined;
-    vercelCache?: string | undefined;
-    lambdaRegion?: string | undefined;
-};
-
-/** @internal */
-export const ThreeProxy$outboundSchema: z.ZodType<ThreeProxy$Outbound, z.ZodTypeDef, ThreeProxy> =
-    z.object({
-        timestamp: z.number(),
-        method: z.string(),
-        host: z.string(),
-        path: z.string(),
-        statusCode: z.number().optional(),
-        userAgent: z.array(z.string()),
-        referer: z.string(),
-        clientIp: z.string(),
-        region: z.string(),
-        scheme: z.string().optional(),
-        responseByteSize: z.number().optional(),
-        cacheId: z.string().optional(),
-        pathType: z.string().optional(),
-        vercelId: z.string().optional(),
-        vercelCache: ThreeVercelCache$outboundSchema.optional(),
-        lambdaRegion: z.string().optional(),
-    });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ThreeProxy$ {
-    /** @deprecated use `ThreeProxy$inboundSchema` instead. */
-    export const inboundSchema = ThreeProxy$inboundSchema;
-    /** @deprecated use `ThreeProxy$outboundSchema` instead. */
-    export const outboundSchema = ThreeProxy$outboundSchema;
-    /** @deprecated use `ThreeProxy$Outbound` instead. */
-    export type Outbound = ThreeProxy$Outbound;
-}
-
-/** @internal */
-export const ThreeType$inboundSchema: z.ZodNativeEnum<typeof ThreeType> = z.nativeEnum(ThreeType);
-
-/** @internal */
-export const ThreeType$outboundSchema: z.ZodNativeEnum<typeof ThreeType> = ThreeType$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ThreeType$ {
-    /** @deprecated use `ThreeType$inboundSchema` instead. */
-    export const inboundSchema = ThreeType$inboundSchema;
-    /** @deprecated use `ThreeType$outboundSchema` instead. */
-    export const outboundSchema = ThreeType$outboundSchema;
-}
-
-/** @internal */
-export const Three1$inboundSchema: z.ZodType<Three1, z.ZodTypeDef, unknown> = z.object({
-    created: z.number(),
-    date: z.number(),
-    deploymentId: z.string(),
-    id: z.string(),
-    info: z.lazy(() => ThreeInfo$inboundSchema),
-    proxy: z.lazy(() => ThreeProxy$inboundSchema).optional(),
-    requestId: z.string().optional(),
-    serial: z.string(),
-    statusCode: z.number().optional(),
-    text: z.string().optional(),
-    type: ThreeType$inboundSchema,
-});
-
-/** @internal */
-export type Three1$Outbound = {
-    created: number;
-    date: number;
-    deploymentId: string;
-    id: string;
-    info: ThreeInfo$Outbound;
-    proxy?: ThreeProxy$Outbound | undefined;
-    requestId?: string | undefined;
-    serial: string;
-    statusCode?: number | undefined;
-    text?: string | undefined;
-    type: string;
-};
-
-/** @internal */
-export const Three1$outboundSchema: z.ZodType<Three1$Outbound, z.ZodTypeDef, Three1> = z.object({
-    created: z.number(),
-    date: z.number(),
-    deploymentId: z.string(),
-    id: z.string(),
-    info: z.lazy(() => ThreeInfo$outboundSchema),
-    proxy: z.lazy(() => ThreeProxy$outboundSchema).optional(),
-    requestId: z.string().optional(),
-    serial: z.string(),
-    statusCode: z.number().optional(),
-    text: z.string().optional(),
-    type: ThreeType$outboundSchema,
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace Three1$ {
-    /** @deprecated use `Three1$inboundSchema` instead. */
-    export const inboundSchema = Three1$inboundSchema;
-    /** @deprecated use `Three1$outboundSchema` instead. */
-    export const outboundSchema = Three1$outboundSchema;
-    /** @deprecated use `Three1$Outbound` instead. */
-    export type Outbound = Three1$Outbound;
-}
-
-/** @internal */
-export const ResponseBody3$inboundSchema: z.ZodType<ResponseBody3, z.ZodTypeDef, unknown> = z.union(
-    [z.lazy(() => Three2$inboundSchema), z.lazy(() => Three1$inboundSchema)]
-);
-
-/** @internal */
-export type ResponseBody3$Outbound = Three2$Outbound | Three1$Outbound;
-
-/** @internal */
-export const ResponseBody3$outboundSchema: z.ZodType<
-    ResponseBody3$Outbound,
-    z.ZodTypeDef,
-    ResponseBody3
-> = z.union([z.lazy(() => Three2$outboundSchema), z.lazy(() => Three1$outboundSchema)]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ResponseBody3$ {
-    /** @deprecated use `ResponseBody3$inboundSchema` instead. */
-    export const inboundSchema = ResponseBody3$inboundSchema;
-    /** @deprecated use `ResponseBody3$outboundSchema` instead. */
-    export const outboundSchema = ResponseBody3$outboundSchema;
-    /** @deprecated use `ResponseBody3$Outbound` instead. */
-    export type Outbound = ResponseBody3$Outbound;
-}
-
-/** @internal */
 export const GetDeploymentEventsResponseBodyDeploymentsResponseType$inboundSchema: z.ZodNativeEnum<
     typeof GetDeploymentEventsResponseBodyDeploymentsResponseType
 > = z.nativeEnum(GetDeploymentEventsResponseBodyDeploymentsResponseType);
@@ -1228,6 +630,28 @@ export namespace GetDeploymentEventsResponseBodyDeploymentsVercelCache$ {
 }
 
 /** @internal */
+export const GetDeploymentEventsResponseBodyDeploymentsWafAction$inboundSchema: z.ZodNativeEnum<
+    typeof GetDeploymentEventsResponseBodyDeploymentsWafAction
+> = z.nativeEnum(GetDeploymentEventsResponseBodyDeploymentsWafAction);
+
+/** @internal */
+export const GetDeploymentEventsResponseBodyDeploymentsWafAction$outboundSchema: z.ZodNativeEnum<
+    typeof GetDeploymentEventsResponseBodyDeploymentsWafAction
+> = GetDeploymentEventsResponseBodyDeploymentsWafAction$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetDeploymentEventsResponseBodyDeploymentsWafAction$ {
+    /** @deprecated use `GetDeploymentEventsResponseBodyDeploymentsWafAction$inboundSchema` instead. */
+    export const inboundSchema = GetDeploymentEventsResponseBodyDeploymentsWafAction$inboundSchema;
+    /** @deprecated use `GetDeploymentEventsResponseBodyDeploymentsWafAction$outboundSchema` instead. */
+    export const outboundSchema =
+        GetDeploymentEventsResponseBodyDeploymentsWafAction$outboundSchema;
+}
+
+/** @internal */
 export const GetDeploymentEventsResponseBodyDeploymentsProxy$inboundSchema: z.ZodType<
     GetDeploymentEventsResponseBodyDeploymentsProxy,
     z.ZodTypeDef,
@@ -1249,6 +673,8 @@ export const GetDeploymentEventsResponseBodyDeploymentsProxy$inboundSchema: z.Zo
     vercelId: z.string().optional(),
     vercelCache: GetDeploymentEventsResponseBodyDeploymentsVercelCache$inboundSchema.optional(),
     lambdaRegion: z.string().optional(),
+    wafAction: GetDeploymentEventsResponseBodyDeploymentsWafAction$inboundSchema.optional(),
+    wafRuleId: z.string().optional(),
 });
 
 /** @internal */
@@ -1269,6 +695,8 @@ export type GetDeploymentEventsResponseBodyDeploymentsProxy$Outbound = {
     vercelId?: string | undefined;
     vercelCache?: string | undefined;
     lambdaRegion?: string | undefined;
+    wafAction?: string | undefined;
+    wafRuleId?: string | undefined;
 };
 
 /** @internal */
@@ -1293,6 +721,8 @@ export const GetDeploymentEventsResponseBodyDeploymentsProxy$outboundSchema: z.Z
     vercelId: z.string().optional(),
     vercelCache: GetDeploymentEventsResponseBodyDeploymentsVercelCache$outboundSchema.optional(),
     lambdaRegion: z.string().optional(),
+    wafAction: GetDeploymentEventsResponseBodyDeploymentsWafAction$outboundSchema.optional(),
+    wafRuleId: z.string().optional(),
 });
 
 /**
@@ -1372,8 +802,8 @@ export namespace ResponseBodyPayload$ {
 }
 
 /** @internal */
-export const GetDeploymentEventsResponseBody2$inboundSchema: z.ZodType<
-    GetDeploymentEventsResponseBody2,
+export const GetDeploymentEventsResponseBodyDeployments2$inboundSchema: z.ZodType<
+    GetDeploymentEventsResponseBodyDeployments2,
     z.ZodTypeDef,
     unknown
 > = z.object({
@@ -1383,17 +813,17 @@ export const GetDeploymentEventsResponseBody2$inboundSchema: z.ZodType<
 });
 
 /** @internal */
-export type GetDeploymentEventsResponseBody2$Outbound = {
+export type GetDeploymentEventsResponseBodyDeployments2$Outbound = {
     type: string;
     created: number;
     payload: ResponseBodyPayload$Outbound;
 };
 
 /** @internal */
-export const GetDeploymentEventsResponseBody2$outboundSchema: z.ZodType<
-    GetDeploymentEventsResponseBody2$Outbound,
+export const GetDeploymentEventsResponseBodyDeployments2$outboundSchema: z.ZodType<
+    GetDeploymentEventsResponseBodyDeployments2$Outbound,
     z.ZodTypeDef,
-    GetDeploymentEventsResponseBody2
+    GetDeploymentEventsResponseBodyDeployments2
 > = z.object({
     type: GetDeploymentEventsResponseBodyDeploymentsResponseType$outboundSchema,
     created: z.number(),
@@ -1404,13 +834,13 @@ export const GetDeploymentEventsResponseBody2$outboundSchema: z.ZodType<
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace GetDeploymentEventsResponseBody2$ {
-    /** @deprecated use `GetDeploymentEventsResponseBody2$inboundSchema` instead. */
-    export const inboundSchema = GetDeploymentEventsResponseBody2$inboundSchema;
-    /** @deprecated use `GetDeploymentEventsResponseBody2$outboundSchema` instead. */
-    export const outboundSchema = GetDeploymentEventsResponseBody2$outboundSchema;
-    /** @deprecated use `GetDeploymentEventsResponseBody2$Outbound` instead. */
-    export type Outbound = GetDeploymentEventsResponseBody2$Outbound;
+export namespace GetDeploymentEventsResponseBodyDeployments2$ {
+    /** @deprecated use `GetDeploymentEventsResponseBodyDeployments2$inboundSchema` instead. */
+    export const inboundSchema = GetDeploymentEventsResponseBodyDeployments2$inboundSchema;
+    /** @deprecated use `GetDeploymentEventsResponseBodyDeployments2$outboundSchema` instead. */
+    export const outboundSchema = GetDeploymentEventsResponseBodyDeployments2$outboundSchema;
+    /** @deprecated use `GetDeploymentEventsResponseBodyDeployments2$Outbound` instead. */
+    export type Outbound = GetDeploymentEventsResponseBodyDeployments2$Outbound;
 }
 
 /** @internal */
@@ -1483,6 +913,25 @@ export namespace ResponseBodyVercelCache$ {
 }
 
 /** @internal */
+export const ResponseBodyWafAction$inboundSchema: z.ZodNativeEnum<typeof ResponseBodyWafAction> =
+    z.nativeEnum(ResponseBodyWafAction);
+
+/** @internal */
+export const ResponseBodyWafAction$outboundSchema: z.ZodNativeEnum<typeof ResponseBodyWafAction> =
+    ResponseBodyWafAction$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace ResponseBodyWafAction$ {
+    /** @deprecated use `ResponseBodyWafAction$inboundSchema` instead. */
+    export const inboundSchema = ResponseBodyWafAction$inboundSchema;
+    /** @deprecated use `ResponseBodyWafAction$outboundSchema` instead. */
+    export const outboundSchema = ResponseBodyWafAction$outboundSchema;
+}
+
+/** @internal */
 export const ResponseBodyProxy$inboundSchema: z.ZodType<ResponseBodyProxy, z.ZodTypeDef, unknown> =
     z.object({
         timestamp: z.number(),
@@ -1501,6 +950,8 @@ export const ResponseBodyProxy$inboundSchema: z.ZodType<ResponseBodyProxy, z.Zod
         vercelId: z.string().optional(),
         vercelCache: ResponseBodyVercelCache$inboundSchema.optional(),
         lambdaRegion: z.string().optional(),
+        wafAction: ResponseBodyWafAction$inboundSchema.optional(),
+        wafRuleId: z.string().optional(),
     });
 
 /** @internal */
@@ -1521,6 +972,8 @@ export type ResponseBodyProxy$Outbound = {
     vercelId?: string | undefined;
     vercelCache?: string | undefined;
     lambdaRegion?: string | undefined;
+    wafAction?: string | undefined;
+    wafRuleId?: string | undefined;
 };
 
 /** @internal */
@@ -1545,6 +998,8 @@ export const ResponseBodyProxy$outboundSchema: z.ZodType<
     vercelId: z.string().optional(),
     vercelCache: ResponseBodyVercelCache$outboundSchema.optional(),
     lambdaRegion: z.string().optional(),
+    wafAction: ResponseBodyWafAction$outboundSchema.optional(),
+    wafRuleId: z.string().optional(),
 });
 
 /**
@@ -1582,8 +1037,8 @@ export namespace GetDeploymentEventsResponseBodyDeploymentsType$ {
 }
 
 /** @internal */
-export const GetDeploymentEventsResponseBody1$inboundSchema: z.ZodType<
-    GetDeploymentEventsResponseBody1,
+export const GetDeploymentEventsResponseBodyDeployments1$inboundSchema: z.ZodType<
+    GetDeploymentEventsResponseBodyDeployments1,
     z.ZodTypeDef,
     unknown
 > = z.object({
@@ -1601,7 +1056,7 @@ export const GetDeploymentEventsResponseBody1$inboundSchema: z.ZodType<
 });
 
 /** @internal */
-export type GetDeploymentEventsResponseBody1$Outbound = {
+export type GetDeploymentEventsResponseBodyDeployments1$Outbound = {
     created: number;
     date: number;
     deploymentId: string;
@@ -1616,10 +1071,10 @@ export type GetDeploymentEventsResponseBody1$Outbound = {
 };
 
 /** @internal */
-export const GetDeploymentEventsResponseBody1$outboundSchema: z.ZodType<
-    GetDeploymentEventsResponseBody1$Outbound,
+export const GetDeploymentEventsResponseBodyDeployments1$outboundSchema: z.ZodType<
+    GetDeploymentEventsResponseBodyDeployments1$Outbound,
     z.ZodTypeDef,
-    GetDeploymentEventsResponseBody1
+    GetDeploymentEventsResponseBodyDeployments1
 > = z.object({
     created: z.number(),
     date: z.number(),
@@ -1638,13 +1093,13 @@ export const GetDeploymentEventsResponseBody1$outboundSchema: z.ZodType<
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace GetDeploymentEventsResponseBody1$ {
-    /** @deprecated use `GetDeploymentEventsResponseBody1$inboundSchema` instead. */
-    export const inboundSchema = GetDeploymentEventsResponseBody1$inboundSchema;
-    /** @deprecated use `GetDeploymentEventsResponseBody1$outboundSchema` instead. */
-    export const outboundSchema = GetDeploymentEventsResponseBody1$outboundSchema;
-    /** @deprecated use `GetDeploymentEventsResponseBody1$Outbound` instead. */
-    export type Outbound = GetDeploymentEventsResponseBody1$Outbound;
+export namespace GetDeploymentEventsResponseBodyDeployments1$ {
+    /** @deprecated use `GetDeploymentEventsResponseBodyDeployments1$inboundSchema` instead. */
+    export const inboundSchema = GetDeploymentEventsResponseBodyDeployments1$inboundSchema;
+    /** @deprecated use `GetDeploymentEventsResponseBodyDeployments1$outboundSchema` instead. */
+    export const outboundSchema = GetDeploymentEventsResponseBodyDeployments1$outboundSchema;
+    /** @deprecated use `GetDeploymentEventsResponseBodyDeployments1$Outbound` instead. */
+    export type Outbound = GetDeploymentEventsResponseBodyDeployments1$Outbound;
 }
 
 /** @internal */
@@ -1653,17 +1108,14 @@ export const GetDeploymentEventsResponseBody$inboundSchema: z.ZodType<
     z.ZodTypeDef,
     unknown
 > = z.union([
-    z.lazy(() => GetDeploymentEventsResponseBody2$inboundSchema),
-    z.lazy(() => GetDeploymentEventsResponseBody1$inboundSchema),
-    z.union([z.lazy(() => Three2$inboundSchema), z.lazy(() => Three1$inboundSchema)]),
+    z.lazy(() => GetDeploymentEventsResponseBodyDeployments2$inboundSchema),
+    z.lazy(() => GetDeploymentEventsResponseBodyDeployments1$inboundSchema),
 ]);
 
 /** @internal */
 export type GetDeploymentEventsResponseBody$Outbound =
-    | GetDeploymentEventsResponseBody2$Outbound
-    | GetDeploymentEventsResponseBody1$Outbound
-    | Three2$Outbound
-    | Three1$Outbound;
+    | GetDeploymentEventsResponseBodyDeployments2$Outbound
+    | GetDeploymentEventsResponseBodyDeployments1$Outbound;
 
 /** @internal */
 export const GetDeploymentEventsResponseBody$outboundSchema: z.ZodType<
@@ -1671,9 +1123,8 @@ export const GetDeploymentEventsResponseBody$outboundSchema: z.ZodType<
     z.ZodTypeDef,
     GetDeploymentEventsResponseBody
 > = z.union([
-    z.lazy(() => GetDeploymentEventsResponseBody2$outboundSchema),
-    z.lazy(() => GetDeploymentEventsResponseBody1$outboundSchema),
-    z.union([z.lazy(() => Three2$outboundSchema), z.lazy(() => Three1$outboundSchema)]),
+    z.lazy(() => GetDeploymentEventsResponseBodyDeployments2$outboundSchema),
+    z.lazy(() => GetDeploymentEventsResponseBodyDeployments1$outboundSchema),
 ]);
 
 /**
@@ -1783,6 +1234,27 @@ export namespace GetDeploymentEventsResponseBodyVercelCache$ {
 }
 
 /** @internal */
+export const GetDeploymentEventsResponseBodyWafAction$inboundSchema: z.ZodNativeEnum<
+    typeof GetDeploymentEventsResponseBodyWafAction
+> = z.nativeEnum(GetDeploymentEventsResponseBodyWafAction);
+
+/** @internal */
+export const GetDeploymentEventsResponseBodyWafAction$outboundSchema: z.ZodNativeEnum<
+    typeof GetDeploymentEventsResponseBodyWafAction
+> = GetDeploymentEventsResponseBodyWafAction$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetDeploymentEventsResponseBodyWafAction$ {
+    /** @deprecated use `GetDeploymentEventsResponseBodyWafAction$inboundSchema` instead. */
+    export const inboundSchema = GetDeploymentEventsResponseBodyWafAction$inboundSchema;
+    /** @deprecated use `GetDeploymentEventsResponseBodyWafAction$outboundSchema` instead. */
+    export const outboundSchema = GetDeploymentEventsResponseBodyWafAction$outboundSchema;
+}
+
+/** @internal */
 export const GetDeploymentEventsResponseBodyProxy$inboundSchema: z.ZodType<
     GetDeploymentEventsResponseBodyProxy,
     z.ZodTypeDef,
@@ -1804,6 +1276,8 @@ export const GetDeploymentEventsResponseBodyProxy$inboundSchema: z.ZodType<
     vercelId: z.string().optional(),
     vercelCache: GetDeploymentEventsResponseBodyVercelCache$inboundSchema.optional(),
     lambdaRegion: z.string().optional(),
+    wafAction: GetDeploymentEventsResponseBodyWafAction$inboundSchema.optional(),
+    wafRuleId: z.string().optional(),
 });
 
 /** @internal */
@@ -1824,6 +1298,8 @@ export type GetDeploymentEventsResponseBodyProxy$Outbound = {
     vercelId?: string | undefined;
     vercelCache?: string | undefined;
     lambdaRegion?: string | undefined;
+    wafAction?: string | undefined;
+    wafRuleId?: string | undefined;
 };
 
 /** @internal */
@@ -1848,6 +1324,8 @@ export const GetDeploymentEventsResponseBodyProxy$outboundSchema: z.ZodType<
     vercelId: z.string().optional(),
     vercelCache: GetDeploymentEventsResponseBodyVercelCache$outboundSchema.optional(),
     lambdaRegion: z.string().optional(),
+    wafAction: GetDeploymentEventsResponseBodyWafAction$outboundSchema.optional(),
+    wafRuleId: z.string().optional(),
 });
 
 /**
@@ -1919,25 +1397,28 @@ export namespace Payload$ {
 }
 
 /** @internal */
-export const ResponseBody2$inboundSchema: z.ZodType<ResponseBody2, z.ZodTypeDef, unknown> =
-    z.object({
-        type: GetDeploymentEventsResponseBodyType$inboundSchema,
-        created: z.number(),
-        payload: z.lazy(() => Payload$inboundSchema),
-    });
+export const GetDeploymentEventsResponseBody2$inboundSchema: z.ZodType<
+    GetDeploymentEventsResponseBody2,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    type: GetDeploymentEventsResponseBodyType$inboundSchema,
+    created: z.number(),
+    payload: z.lazy(() => Payload$inboundSchema),
+});
 
 /** @internal */
-export type ResponseBody2$Outbound = {
+export type GetDeploymentEventsResponseBody2$Outbound = {
     type: string;
     created: number;
     payload: Payload$Outbound;
 };
 
 /** @internal */
-export const ResponseBody2$outboundSchema: z.ZodType<
-    ResponseBody2$Outbound,
+export const GetDeploymentEventsResponseBody2$outboundSchema: z.ZodType<
+    GetDeploymentEventsResponseBody2$Outbound,
     z.ZodTypeDef,
-    ResponseBody2
+    GetDeploymentEventsResponseBody2
 > = z.object({
     type: GetDeploymentEventsResponseBodyType$outboundSchema,
     created: z.number(),
@@ -1948,13 +1429,13 @@ export const ResponseBody2$outboundSchema: z.ZodType<
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ResponseBody2$ {
-    /** @deprecated use `ResponseBody2$inboundSchema` instead. */
-    export const inboundSchema = ResponseBody2$inboundSchema;
-    /** @deprecated use `ResponseBody2$outboundSchema` instead. */
-    export const outboundSchema = ResponseBody2$outboundSchema;
-    /** @deprecated use `ResponseBody2$Outbound` instead. */
-    export type Outbound = ResponseBody2$Outbound;
+export namespace GetDeploymentEventsResponseBody2$ {
+    /** @deprecated use `GetDeploymentEventsResponseBody2$inboundSchema` instead. */
+    export const inboundSchema = GetDeploymentEventsResponseBody2$inboundSchema;
+    /** @deprecated use `GetDeploymentEventsResponseBody2$outboundSchema` instead. */
+    export const outboundSchema = GetDeploymentEventsResponseBody2$outboundSchema;
+    /** @deprecated use `GetDeploymentEventsResponseBody2$Outbound` instead. */
+    export type Outbound = GetDeploymentEventsResponseBody2$Outbound;
 }
 
 /** @internal */
@@ -2020,6 +1501,23 @@ export namespace VercelCache$ {
 }
 
 /** @internal */
+export const WafAction$inboundSchema: z.ZodNativeEnum<typeof WafAction> = z.nativeEnum(WafAction);
+
+/** @internal */
+export const WafAction$outboundSchema: z.ZodNativeEnum<typeof WafAction> = WafAction$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace WafAction$ {
+    /** @deprecated use `WafAction$inboundSchema` instead. */
+    export const inboundSchema = WafAction$inboundSchema;
+    /** @deprecated use `WafAction$outboundSchema` instead. */
+    export const outboundSchema = WafAction$outboundSchema;
+}
+
+/** @internal */
 export const Proxy$inboundSchema: z.ZodType<Proxy, z.ZodTypeDef, unknown> = z.object({
     timestamp: z.number(),
     method: z.string(),
@@ -2037,6 +1535,8 @@ export const Proxy$inboundSchema: z.ZodType<Proxy, z.ZodTypeDef, unknown> = z.ob
     vercelId: z.string().optional(),
     vercelCache: VercelCache$inboundSchema.optional(),
     lambdaRegion: z.string().optional(),
+    wafAction: WafAction$inboundSchema.optional(),
+    wafRuleId: z.string().optional(),
 });
 
 /** @internal */
@@ -2057,6 +1557,8 @@ export type Proxy$Outbound = {
     vercelId?: string | undefined;
     vercelCache?: string | undefined;
     lambdaRegion?: string | undefined;
+    wafAction?: string | undefined;
+    wafRuleId?: string | undefined;
 };
 
 /** @internal */
@@ -2077,6 +1579,8 @@ export const Proxy$outboundSchema: z.ZodType<Proxy$Outbound, z.ZodTypeDef, Proxy
     vercelId: z.string().optional(),
     vercelCache: VercelCache$outboundSchema.optional(),
     lambdaRegion: z.string().optional(),
+    wafAction: WafAction$outboundSchema.optional(),
+    wafRuleId: z.string().optional(),
 });
 
 /**
@@ -2093,42 +1597,49 @@ export namespace Proxy$ {
 }
 
 /** @internal */
-export const ResponseBodyType$inboundSchema: z.ZodNativeEnum<typeof ResponseBodyType> =
-    z.nativeEnum(ResponseBodyType);
+export const GetDeploymentEventsResponseBodyDeploymentsResponse200Type$inboundSchema: z.ZodNativeEnum<
+    typeof GetDeploymentEventsResponseBodyDeploymentsResponse200Type
+> = z.nativeEnum(GetDeploymentEventsResponseBodyDeploymentsResponse200Type);
 
 /** @internal */
-export const ResponseBodyType$outboundSchema: z.ZodNativeEnum<typeof ResponseBodyType> =
-    ResponseBodyType$inboundSchema;
+export const GetDeploymentEventsResponseBodyDeploymentsResponse200Type$outboundSchema: z.ZodNativeEnum<
+    typeof GetDeploymentEventsResponseBodyDeploymentsResponse200Type
+> = GetDeploymentEventsResponseBodyDeploymentsResponse200Type$inboundSchema;
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ResponseBodyType$ {
-    /** @deprecated use `ResponseBodyType$inboundSchema` instead. */
-    export const inboundSchema = ResponseBodyType$inboundSchema;
-    /** @deprecated use `ResponseBodyType$outboundSchema` instead. */
-    export const outboundSchema = ResponseBodyType$outboundSchema;
+export namespace GetDeploymentEventsResponseBodyDeploymentsResponse200Type$ {
+    /** @deprecated use `GetDeploymentEventsResponseBodyDeploymentsResponse200Type$inboundSchema` instead. */
+    export const inboundSchema =
+        GetDeploymentEventsResponseBodyDeploymentsResponse200Type$inboundSchema;
+    /** @deprecated use `GetDeploymentEventsResponseBodyDeploymentsResponse200Type$outboundSchema` instead. */
+    export const outboundSchema =
+        GetDeploymentEventsResponseBodyDeploymentsResponse200Type$outboundSchema;
 }
 
 /** @internal */
-export const ResponseBody1$inboundSchema: z.ZodType<ResponseBody1, z.ZodTypeDef, unknown> =
-    z.object({
-        created: z.number(),
-        date: z.number(),
-        deploymentId: z.string(),
-        id: z.string(),
-        info: z.lazy(() => Info$inboundSchema),
-        proxy: z.lazy(() => Proxy$inboundSchema).optional(),
-        requestId: z.string().optional(),
-        serial: z.string(),
-        statusCode: z.number().optional(),
-        text: z.string().optional(),
-        type: ResponseBodyType$inboundSchema,
-    });
+export const GetDeploymentEventsResponseBody1$inboundSchema: z.ZodType<
+    GetDeploymentEventsResponseBody1,
+    z.ZodTypeDef,
+    unknown
+> = z.object({
+    created: z.number(),
+    date: z.number(),
+    deploymentId: z.string(),
+    id: z.string(),
+    info: z.lazy(() => Info$inboundSchema),
+    proxy: z.lazy(() => Proxy$inboundSchema).optional(),
+    requestId: z.string().optional(),
+    serial: z.string(),
+    statusCode: z.number().optional(),
+    text: z.string().optional(),
+    type: GetDeploymentEventsResponseBodyDeploymentsResponse200Type$inboundSchema,
+});
 
 /** @internal */
-export type ResponseBody1$Outbound = {
+export type GetDeploymentEventsResponseBody1$Outbound = {
     created: number;
     date: number;
     deploymentId: string;
@@ -2143,10 +1654,10 @@ export type ResponseBody1$Outbound = {
 };
 
 /** @internal */
-export const ResponseBody1$outboundSchema: z.ZodType<
-    ResponseBody1$Outbound,
+export const GetDeploymentEventsResponseBody1$outboundSchema: z.ZodType<
+    GetDeploymentEventsResponseBody1$Outbound,
     z.ZodTypeDef,
-    ResponseBody1
+    GetDeploymentEventsResponseBody1
 > = z.object({
     created: z.number(),
     date: z.number(),
@@ -2158,20 +1669,20 @@ export const ResponseBody1$outboundSchema: z.ZodType<
     serial: z.string(),
     statusCode: z.number().optional(),
     text: z.string().optional(),
-    type: ResponseBodyType$outboundSchema,
+    type: GetDeploymentEventsResponseBodyDeploymentsResponse200Type$outboundSchema,
 });
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ResponseBody1$ {
-    /** @deprecated use `ResponseBody1$inboundSchema` instead. */
-    export const inboundSchema = ResponseBody1$inboundSchema;
-    /** @deprecated use `ResponseBody1$outboundSchema` instead. */
-    export const outboundSchema = ResponseBody1$outboundSchema;
-    /** @deprecated use `ResponseBody1$Outbound` instead. */
-    export type Outbound = ResponseBody1$Outbound;
+export namespace GetDeploymentEventsResponseBody1$ {
+    /** @deprecated use `GetDeploymentEventsResponseBody1$inboundSchema` instead. */
+    export const inboundSchema = GetDeploymentEventsResponseBody1$inboundSchema;
+    /** @deprecated use `GetDeploymentEventsResponseBody1$outboundSchema` instead. */
+    export const outboundSchema = GetDeploymentEventsResponseBody1$outboundSchema;
+    /** @deprecated use `GetDeploymentEventsResponseBody1$Outbound` instead. */
+    export type Outbound = GetDeploymentEventsResponseBody1$Outbound;
 }
 
 /** @internal */
@@ -2179,12 +1690,15 @@ export const GetDeploymentEventsDeploymentsResponseBody$inboundSchema: z.ZodType
     GetDeploymentEventsDeploymentsResponseBody,
     z.ZodTypeDef,
     unknown
-> = z.union([z.lazy(() => ResponseBody2$inboundSchema), z.lazy(() => ResponseBody1$inboundSchema)]);
+> = z.union([
+    z.lazy(() => GetDeploymentEventsResponseBody2$inboundSchema),
+    z.lazy(() => GetDeploymentEventsResponseBody1$inboundSchema),
+]);
 
 /** @internal */
 export type GetDeploymentEventsDeploymentsResponseBody$Outbound =
-    | ResponseBody2$Outbound
-    | ResponseBody1$Outbound;
+    | GetDeploymentEventsResponseBody2$Outbound
+    | GetDeploymentEventsResponseBody1$Outbound;
 
 /** @internal */
 export const GetDeploymentEventsDeploymentsResponseBody$outboundSchema: z.ZodType<
@@ -2192,8 +1706,8 @@ export const GetDeploymentEventsDeploymentsResponseBody$outboundSchema: z.ZodTyp
     z.ZodTypeDef,
     GetDeploymentEventsDeploymentsResponseBody
 > = z.union([
-    z.lazy(() => ResponseBody2$outboundSchema),
-    z.lazy(() => ResponseBody1$outboundSchema),
+    z.lazy(() => GetDeploymentEventsResponseBody2$outboundSchema),
+    z.lazy(() => GetDeploymentEventsResponseBody1$outboundSchema),
 ]);
 
 /**
@@ -2217,24 +1731,21 @@ export const GetDeploymentEventsResponse$inboundSchema: z.ZodType<
 > = z.union([
     z.array(
         z.union([
-            z.lazy(() => ResponseBody2$inboundSchema),
-            z.lazy(() => ResponseBody1$inboundSchema),
+            z.lazy(() => GetDeploymentEventsResponseBody2$inboundSchema),
+            z.lazy(() => GetDeploymentEventsResponseBody1$inboundSchema),
         ])
     ),
     z.union([
-        z.lazy(() => GetDeploymentEventsResponseBody2$inboundSchema),
-        z.lazy(() => GetDeploymentEventsResponseBody1$inboundSchema),
-        z.union([z.lazy(() => Three2$inboundSchema), z.lazy(() => Three1$inboundSchema)]),
+        z.lazy(() => GetDeploymentEventsResponseBodyDeployments2$inboundSchema),
+        z.lazy(() => GetDeploymentEventsResponseBodyDeployments1$inboundSchema),
     ]),
 ]);
 
 /** @internal */
 export type GetDeploymentEventsResponse$Outbound =
-    | Array<ResponseBody2$Outbound | ResponseBody1$Outbound>
-    | GetDeploymentEventsResponseBody2$Outbound
-    | GetDeploymentEventsResponseBody1$Outbound
-    | Three2$Outbound
-    | Three1$Outbound;
+    | Array<GetDeploymentEventsResponseBody2$Outbound | GetDeploymentEventsResponseBody1$Outbound>
+    | GetDeploymentEventsResponseBodyDeployments2$Outbound
+    | GetDeploymentEventsResponseBodyDeployments1$Outbound;
 
 /** @internal */
 export const GetDeploymentEventsResponse$outboundSchema: z.ZodType<
@@ -2244,14 +1755,13 @@ export const GetDeploymentEventsResponse$outboundSchema: z.ZodType<
 > = z.union([
     z.array(
         z.union([
-            z.lazy(() => ResponseBody2$outboundSchema),
-            z.lazy(() => ResponseBody1$outboundSchema),
+            z.lazy(() => GetDeploymentEventsResponseBody2$outboundSchema),
+            z.lazy(() => GetDeploymentEventsResponseBody1$outboundSchema),
         ])
     ),
     z.union([
-        z.lazy(() => GetDeploymentEventsResponseBody2$outboundSchema),
-        z.lazy(() => GetDeploymentEventsResponseBody1$outboundSchema),
-        z.union([z.lazy(() => Three2$outboundSchema), z.lazy(() => Three1$outboundSchema)]),
+        z.lazy(() => GetDeploymentEventsResponseBodyDeployments2$outboundSchema),
+        z.lazy(() => GetDeploymentEventsResponseBodyDeployments1$outboundSchema),
     ]),
 ]);
 

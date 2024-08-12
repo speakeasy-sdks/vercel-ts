@@ -9,7 +9,7 @@ import * as z from "zod";
 /**
  * The role of the user to invite
  */
-export const InviteUserToTeamTeamsRole = {
+export const InviteUserToTeamRole = {
     Owner: "OWNER",
     Member: "MEMBER",
     Developer: "DEVELOPER",
@@ -20,12 +20,12 @@ export const InviteUserToTeamTeamsRole = {
 /**
  * The role of the user to invite
  */
-export type InviteUserToTeamTeamsRole = ClosedEnum<typeof InviteUserToTeamTeamsRole>;
+export type InviteUserToTeamRole = ClosedEnum<typeof InviteUserToTeamRole>;
 
 /**
  * Sets the project roles for the invited user
  */
-export const InviteUserToTeamRole = {
+export const InviteUserToTeamTeamsRole = {
     Admin: "ADMIN",
     ProjectViewer: "PROJECT_VIEWER",
     ProjectDeveloper: "PROJECT_DEVELOPER",
@@ -33,7 +33,7 @@ export const InviteUserToTeamRole = {
 /**
  * Sets the project roles for the invited user
  */
-export type InviteUserToTeamRole = ClosedEnum<typeof InviteUserToTeamRole>;
+export type InviteUserToTeamTeamsRole = ClosedEnum<typeof InviteUserToTeamTeamsRole>;
 
 export type InviteUserToTeamProjects = {
     /**
@@ -43,7 +43,7 @@ export type InviteUserToTeamProjects = {
     /**
      * Sets the project roles for the invited user
      */
-    role: InviteUserToTeamRole;
+    role: InviteUserToTeamTeamsRole;
 };
 
 export type InviteUserToTeamRequestBody = {
@@ -58,7 +58,7 @@ export type InviteUserToTeamRequestBody = {
     /**
      * The role of the user to invite
      */
-    role?: InviteUserToTeamTeamsRole | undefined;
+    role?: InviteUserToTeamRole | undefined;
     projects?: Array<InviteUserToTeamProjects> | undefined;
 };
 
@@ -129,6 +129,25 @@ export type InviteUserToTeamResponseBody =
     | InviteUserToTeamResponseBody1;
 
 /** @internal */
+export const InviteUserToTeamRole$inboundSchema: z.ZodNativeEnum<typeof InviteUserToTeamRole> =
+    z.nativeEnum(InviteUserToTeamRole);
+
+/** @internal */
+export const InviteUserToTeamRole$outboundSchema: z.ZodNativeEnum<typeof InviteUserToTeamRole> =
+    InviteUserToTeamRole$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace InviteUserToTeamRole$ {
+    /** @deprecated use `InviteUserToTeamRole$inboundSchema` instead. */
+    export const inboundSchema = InviteUserToTeamRole$inboundSchema;
+    /** @deprecated use `InviteUserToTeamRole$outboundSchema` instead. */
+    export const outboundSchema = InviteUserToTeamRole$outboundSchema;
+}
+
+/** @internal */
 export const InviteUserToTeamTeamsRole$inboundSchema: z.ZodNativeEnum<
     typeof InviteUserToTeamTeamsRole
 > = z.nativeEnum(InviteUserToTeamTeamsRole);
@@ -150,32 +169,13 @@ export namespace InviteUserToTeamTeamsRole$ {
 }
 
 /** @internal */
-export const InviteUserToTeamRole$inboundSchema: z.ZodNativeEnum<typeof InviteUserToTeamRole> =
-    z.nativeEnum(InviteUserToTeamRole);
-
-/** @internal */
-export const InviteUserToTeamRole$outboundSchema: z.ZodNativeEnum<typeof InviteUserToTeamRole> =
-    InviteUserToTeamRole$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace InviteUserToTeamRole$ {
-    /** @deprecated use `InviteUserToTeamRole$inboundSchema` instead. */
-    export const inboundSchema = InviteUserToTeamRole$inboundSchema;
-    /** @deprecated use `InviteUserToTeamRole$outboundSchema` instead. */
-    export const outboundSchema = InviteUserToTeamRole$outboundSchema;
-}
-
-/** @internal */
 export const InviteUserToTeamProjects$inboundSchema: z.ZodType<
     InviteUserToTeamProjects,
     z.ZodTypeDef,
     unknown
 > = z.object({
     projectId: z.string(),
-    role: InviteUserToTeamRole$inboundSchema,
+    role: InviteUserToTeamTeamsRole$inboundSchema,
 });
 
 /** @internal */
@@ -191,7 +191,7 @@ export const InviteUserToTeamProjects$outboundSchema: z.ZodType<
     InviteUserToTeamProjects
 > = z.object({
     projectId: z.string(),
-    role: InviteUserToTeamRole$outboundSchema,
+    role: InviteUserToTeamTeamsRole$outboundSchema,
 });
 
 /**
@@ -215,7 +215,7 @@ export const InviteUserToTeamRequestBody$inboundSchema: z.ZodType<
 > = z.object({
     uid: z.string().optional(),
     email: z.string().optional(),
-    role: InviteUserToTeamTeamsRole$inboundSchema.default("MEMBER"),
+    role: InviteUserToTeamRole$inboundSchema.default("VIEWER"),
     projects: z.array(z.lazy(() => InviteUserToTeamProjects$inboundSchema)).optional(),
 });
 
@@ -235,7 +235,7 @@ export const InviteUserToTeamRequestBody$outboundSchema: z.ZodType<
 > = z.object({
     uid: z.string().optional(),
     email: z.string().optional(),
-    role: InviteUserToTeamTeamsRole$outboundSchema.default("MEMBER"),
+    role: InviteUserToTeamRole$outboundSchema.default("VIEWER"),
     projects: z.array(z.lazy(() => InviteUserToTeamProjects$outboundSchema)).optional(),
 });
 

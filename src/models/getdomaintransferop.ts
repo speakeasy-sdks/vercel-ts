@@ -6,9 +6,6 @@ import { ClosedEnum } from "../types/enums.js";
 import * as z from "zod";
 
 export type GetDomainTransferRequest = {
-    /**
-     * The domain to check the transfer status for.
-     */
     domain: string;
     /**
      * The Team identifier to perform the request on behalf of.
