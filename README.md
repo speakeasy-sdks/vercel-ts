@@ -280,6 +280,159 @@ run();
 * [delete](docs/sdks/secrets/README.md#delete) - Delete a secret
 <!-- End Available Resources and Operations [operations] -->
 
+<!-- Start Standalone functions [standalone-funcs] -->
+## Standalone functions
+
+All the methods listed above are available as standalone functions. These
+functions are ideal for use in applications running in the browser, serverless
+runtimes or other environments where application bundle size is a primary
+concern. When using a bundler to build your application, all unused
+functionality will be either excluded from the final bundle or tree-shaken away.
+
+To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
+
+<details>
+
+<summary>Available standalone functions</summary>
+
+- [accessGroupsCreate](docs/sdks/accessgroups/README.md#create)
+- [accessGroupsDelete](docs/sdks/accessgroups/README.md#delete)
+- [accessGroupsListMembers](docs/sdks/accessgroups/README.md#listmembers)
+- [accessGroupsListProjects](docs/sdks/accessgroups/README.md#listprojects)
+- [accessGroupsList](docs/sdks/accessgroups/README.md#list)
+- [accessGroupsRead](docs/sdks/accessgroups/README.md#read)
+- [accessGroupsUpdate](docs/sdks/accessgroups/README.md#update)
+- [aliasesAssign](docs/sdks/aliases/README.md#assign)
+- [aliasesDelete](docs/sdks/aliases/README.md#delete)
+- [aliasesGet](docs/sdks/aliases/README.md#get)
+- [aliasesList](docs/sdks/aliases/README.md#list)
+- [artifactsDownload](docs/sdks/artifacts/README.md#download)
+- [artifactsExists](docs/sdks/artifacts/README.md#exists)
+- [artifactsQuery](docs/sdks/artifacts/README.md#query)
+- [artifactsRecordEvents](docs/sdks/artifacts/README.md#recordevents)
+- [artifactsStatus](docs/sdks/artifacts/README.md#status)
+- [artifactsUpload](docs/sdks/artifacts/README.md#upload)
+- [authenticationLogin](docs/sdks/authentication/README.md#login)
+- [authenticationVerify](docs/sdks/authentication/README.md#verify)
+- [certsGetById](docs/sdks/certs/README.md#getbyid)
+- [certsIssue](docs/sdks/certs/README.md#issue)
+- [certsRemove](docs/sdks/certs/README.md#remove)
+- [certsUpload](docs/sdks/certs/README.md#upload)
+- [checksCreate](docs/sdks/checks/README.md#create)
+- [checksGet](docs/sdks/checks/README.md#get)
+- [checksList](docs/sdks/checks/README.md#list)
+- [checksRerequest](docs/sdks/checks/README.md#rerequest)
+- [checksUpdate](docs/sdks/checks/README.md#update)
+- [dataCacheBillingSettings](docs/sdks/vercel/README.md#datacachebillingsettings)
+- [datacachePurgeall](docs/sdks/vercel/README.md#datacachepurgeall)
+- [deploymentsCancel](docs/sdks/deployments/README.md#cancel)
+- [deploymentsCreate](docs/sdks/deployments/README.md#create)
+- [deploymentsDelete](docs/sdks/deployments/README.md#delete)
+- [deploymentsGetEvents](docs/sdks/deployments/README.md#getevents)
+- [deploymentsGetFileContents](docs/sdks/deployments/README.md#getfilecontents)
+- [deploymentsGet](docs/sdks/deployments/README.md#get)
+- [deploymentsListAliases](docs/sdks/deployments/README.md#listaliases)
+- [deploymentsListFiles](docs/sdks/deployments/README.md#listfiles)
+- [deploymentsList](docs/sdks/deployments/README.md#list)
+- [deploymentsUploadFile](docs/sdks/deployments/README.md#uploadfile)
+- [dnsCreateRecord](docs/sdks/dns/README.md#createrecord)
+- [dnsListRecords](docs/sdks/dns/README.md#listrecords)
+- [dnsRemoveRecord](docs/sdks/dns/README.md#removerecord)
+- [dnsUpdateRecord](docs/sdks/dns/README.md#updaterecord)
+- [domainsBuy](docs/sdks/domains/README.md#buy)
+- [domainsCheckPrice](docs/sdks/domains/README.md#checkprice)
+- [domainsCheckStatus](docs/sdks/domains/README.md#checkstatus)
+- [domainsCreateOrTransfer](docs/sdks/domains/README.md#createortransfer)
+- [domainsCreate](docs/sdks/domains/README.md#create)
+- [domainsDelete](docs/sdks/domains/README.md#delete)
+- [domainsGetConfig](docs/sdks/domains/README.md#getconfig)
+- [domainsGetTransfer](docs/sdks/domains/README.md#gettransfer)
+- [domainsGet](docs/sdks/domains/README.md#get)
+- [domainsList](docs/sdks/domains/README.md#list)
+- [domainsUpdate](docs/sdks/domains/README.md#update)
+- [domainsVerify](docs/sdks/domains/README.md#verify)
+- [edgeConfigsCreateToken](docs/sdks/edgeconfigs/README.md#createtoken)
+- [edgeConfigsCreate](docs/sdks/edgeconfigs/README.md#create)
+- [edgeConfigsDeleteSchema](docs/sdks/edgeconfigs/README.md#deleteschema)
+- [edgeConfigsDeleteTokens](docs/sdks/edgeconfigs/README.md#deletetokens)
+- [edgeConfigsDelete](docs/sdks/edgeconfigs/README.md#delete)
+- [edgeConfigsGetItem](docs/sdks/edgeconfigs/README.md#getitem)
+- [edgeConfigsGetItems](docs/sdks/edgeconfigs/README.md#getitems)
+- [edgeConfigsGetSchema](docs/sdks/edgeconfigs/README.md#getschema)
+- [edgeConfigsGetToken](docs/sdks/edgeconfigs/README.md#gettoken)
+- [edgeConfigsGetTokens](docs/sdks/edgeconfigs/README.md#gettokens)
+- [edgeConfigsGet](docs/sdks/edgeconfigs/README.md#get)
+- [edgeConfigsList](docs/sdks/edgeconfigs/README.md#list)
+- [edgeConfigsUpdateSchema](docs/sdks/edgeconfigs/README.md#updateschema)
+- [edgeConfigsUpdate](docs/sdks/edgeconfigs/README.md#update)
+- [envsCreate](docs/sdks/envs/README.md#create)
+- [envsDelete](docs/sdks/envs/README.md#delete)
+- [envsGet](docs/sdks/envs/README.md#get)
+- [envsListByProject](docs/sdks/envs/README.md#listbyproject)
+- [envsUpdate](docs/sdks/envs/README.md#update)
+- [eventsList](docs/sdks/events/README.md#list)
+- [integrationsDeleteConfiguration](docs/sdks/integrations/README.md#deleteconfiguration)
+- [integrationsGetConfiguration](docs/sdks/integrations/README.md#getconfiguration)
+- [integrationsGetConfigurations](docs/sdks/integrations/README.md#getconfigurations)
+- [integrationsGetGitNamespaces](docs/sdks/integrations/README.md#getgitnamespaces)
+- [integrationsSearchRepos](docs/sdks/integrations/README.md#searchrepos)
+- [listDeploymentBuilds](docs/sdks/vercel/README.md#listdeploymentbuilds)
+- [logDrainsCreateConfigurable](docs/sdks/logdrains/README.md#createconfigurable)
+- [logDrainsCreate](docs/sdks/logdrains/README.md#create)
+- [logDrainsDeleteConfigurable](docs/sdks/logdrains/README.md#deleteconfigurable)
+- [logDrainsDeleteIntegration](docs/sdks/logdrains/README.md#deleteintegration)
+- [logDrainsGetAll](docs/sdks/logdrains/README.md#getall)
+- [logDrainsGetConfigurable](docs/sdks/logdrains/README.md#getconfigurable)
+- [logDrainsList](docs/sdks/logdrains/README.md#list)
+- [projectDomainsDelete](docs/sdks/projectdomains/README.md#delete)
+- [projectDomainsGet](docs/sdks/projectdomains/README.md#get)
+- [projectDomainsUpdate](docs/sdks/projectdomains/README.md#update)
+- [projectMembersAdd](docs/sdks/projectmembers/README.md#add)
+- [projectMembersGet](docs/sdks/projectmembers/README.md#get)
+- [projectMembersRemove](docs/sdks/projectmembers/README.md#remove)
+- [projectsCreate](docs/sdks/projects/README.md#create)
+- [projectsDelete](docs/sdks/projects/README.md#delete)
+- [projectsGetAll](docs/sdks/projects/README.md#getall)
+- [projectsPause](docs/sdks/projects/README.md#pause)
+- [projectsUnpause](docs/sdks/projects/README.md#unpause)
+- [projectsUpdateDataCache](docs/sdks/projects/README.md#updatedatacache)
+- [projectsUpdate](docs/sdks/projects/README.md#update)
+- [promotionsCreate](docs/sdks/promotions/README.md#create)
+- [promotionsListAliases](docs/sdks/promotions/README.md#listaliases)
+- [protectionBypassUpdate](docs/sdks/protectionbypass/README.md#update)
+- [secretsCreate](docs/sdks/secrets/README.md#create)
+- [secretsDelete](docs/sdks/secrets/README.md#delete)
+- [secretsGet](docs/sdks/secrets/README.md#get)
+- [secretsList](docs/sdks/secrets/README.md#list)
+- [secretsRename](docs/sdks/secrets/README.md#rename)
+- [teamsCreate](docs/sdks/teams/README.md#create)
+- [teamsDeleteInviteCode](docs/sdks/teams/README.md#deleteinvitecode)
+- [teamsDelete](docs/sdks/teams/README.md#delete)
+- [teamsGetAccessRequest](docs/sdks/teams/README.md#getaccessrequest)
+- [teamsGetMembers](docs/sdks/teams/README.md#getmembers)
+- [teamsGet](docs/sdks/teams/README.md#get)
+- [teamsInviteUser](docs/sdks/teams/README.md#inviteuser)
+- [teamsJoin](docs/sdks/teams/README.md#join)
+- [teamsList](docs/sdks/teams/README.md#list)
+- [teamsRemoveMember](docs/sdks/teams/README.md#removemember)
+- [teamsRequestAccess](docs/sdks/teams/README.md#requestaccess)
+- [teamsUpdateMember](docs/sdks/teams/README.md#updatemember)
+- [teamsUpdate](docs/sdks/teams/README.md#update)
+- [tokensCreate](docs/sdks/tokens/README.md#create)
+- [tokensDelete](docs/sdks/tokens/README.md#delete)
+- [tokensGet](docs/sdks/tokens/README.md#get)
+- [tokensList](docs/sdks/tokens/README.md#list)
+- [userGetAuthUser](docs/sdks/user/README.md#getauthuser)
+- [userRequestDelete](docs/sdks/user/README.md#requestdelete)
+- [webhooksCreate](docs/sdks/webhooks/README.md#create)
+- [webhooksDelete](docs/sdks/webhooks/README.md#delete)
+- [webhooksGet](docs/sdks/webhooks/README.md#get)
+- [webhooksList](docs/sdks/webhooks/README.md#list)
+
+
+</details>
+<!-- End Standalone functions [standalone-funcs] -->
+
 <!-- Start File uploads [file-upload] -->
 ## File uploads
 
@@ -315,6 +468,68 @@ run();
 
 ```
 <!-- End File uploads [file-upload] -->
+
+<!-- Start Retries [retries] -->
+## Retries
+
+Some of the endpoints in this SDK support retries.  If you use the SDK without any configuration, it will fall back to the default retry strategy provided by the API.  However, the default retry strategy can be overridden on a per-operation basis, or across the entire SDK.
+
+To change the default retry strategy for a single API call, simply provide a retryConfig object to the call:
+```typescript
+import { Vercel } from "vercel";
+
+const vercel = new Vercel();
+
+async function run() {
+    const result = await vercel.listDeploymentBuilds("<value>", {
+        retries: {
+            strategy: "backoff",
+            backoff: {
+                initialInterval: 1,
+                maxInterval: 50,
+                exponent: 1.1,
+                maxElapsedTime: 100,
+            },
+            retryConnectionErrors: false,
+        },
+    });
+
+    // Handle the result
+    console.log(result);
+}
+
+run();
+
+```
+
+If you'd like to override the default retry strategy for all operations that support retries, you can provide a retryConfig at SDK initialization:
+```typescript
+import { Vercel } from "vercel";
+
+const vercel = new Vercel({
+    retryConfig: {
+        strategy: "backoff",
+        backoff: {
+            initialInterval: 1,
+            maxInterval: 50,
+            exponent: 1.1,
+            maxElapsedTime: 100,
+        },
+        retryConnectionErrors: false,
+    },
+});
+
+async function run() {
+    const result = await vercel.listDeploymentBuilds("<value>");
+
+    // Handle the result
+    console.log(result);
+}
+
+run();
+
+```
+<!-- End Retries [retries] -->
 
 <!-- Start Error Handling [errors] -->
 ## Error Handling
@@ -495,221 +710,6 @@ run();
 ```
 <!-- End Authentication [security] -->
 
-<!-- Start Retries [retries] -->
-## Retries
-
-Some of the endpoints in this SDK support retries.  If you use the SDK without any configuration, it will fall back to the default retry strategy provided by the API.  However, the default retry strategy can be overridden on a per-operation basis, or across the entire SDK.
-
-To change the default retry strategy for a single API call, simply provide a retryConfig object to the call:
-```typescript
-import { Vercel } from "vercel";
-
-const vercel = new Vercel();
-
-async function run() {
-    const result = await vercel.listDeploymentBuilds("<value>", {
-        retries: {
-            strategy: "backoff",
-            backoff: {
-                initialInterval: 1,
-                maxInterval: 50,
-                exponent: 1.1,
-                maxElapsedTime: 100,
-            },
-            retryConnectionErrors: false,
-        },
-    });
-
-    // Handle the result
-    console.log(result);
-}
-
-run();
-
-```
-
-If you'd like to override the default retry strategy for all operations that support retries, you can provide a retryConfig at SDK initialization:
-```typescript
-import { Vercel } from "vercel";
-
-const vercel = new Vercel({
-    retryConfig: {
-        strategy: "backoff",
-        backoff: {
-            initialInterval: 1,
-            maxInterval: 50,
-            exponent: 1.1,
-            maxElapsedTime: 100,
-        },
-        retryConnectionErrors: false,
-    },
-});
-
-async function run() {
-    const result = await vercel.listDeploymentBuilds("<value>");
-
-    // Handle the result
-    console.log(result);
-}
-
-run();
-
-```
-<!-- End Retries [retries] -->
-
-<!-- Start Standalone functions [standalone-funcs] -->
-## Standalone functions
-
-All the methods listed above are available as standalone functions. These
-functions are ideal for use in applications running in the browser, serverless
-runtimes or other environments where application bundle size is a primary
-concern. When using a bundler to build your application, all unused
-functionality will be either excluded from the final bundle or tree-shaken away.
-
-To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
-
-<details>
-
-<summary>Available standalone functions</summary>
-
-- [accessGroupsCreate](docs/sdks/accessgroups/README.md#create)
-- [accessGroupsDelete](docs/sdks/accessgroups/README.md#delete)
-- [accessGroupsListMembers](docs/sdks/accessgroups/README.md#listmembers)
-- [accessGroupsListProjects](docs/sdks/accessgroups/README.md#listprojects)
-- [accessGroupsList](docs/sdks/accessgroups/README.md#list)
-- [accessGroupsRead](docs/sdks/accessgroups/README.md#read)
-- [accessGroupsUpdate](docs/sdks/accessgroups/README.md#update)
-- [aliasesAssign](docs/sdks/aliases/README.md#assign)
-- [aliasesDelete](docs/sdks/aliases/README.md#delete)
-- [aliasesGet](docs/sdks/aliases/README.md#get)
-- [aliasesList](docs/sdks/aliases/README.md#list)
-- [artifactsDownload](docs/sdks/artifacts/README.md#download)
-- [artifactsExists](docs/sdks/artifacts/README.md#exists)
-- [artifactsQuery](docs/sdks/artifacts/README.md#query)
-- [artifactsRecordEvents](docs/sdks/artifacts/README.md#recordevents)
-- [artifactsStatus](docs/sdks/artifacts/README.md#status)
-- [artifactsUpload](docs/sdks/artifacts/README.md#upload)
-- [authenticationLogin](docs/sdks/authentication/README.md#login)
-- [authenticationVerify](docs/sdks/authentication/README.md#verify)
-- [certsGetById](docs/sdks/certs/README.md#getbyid)
-- [certsIssue](docs/sdks/certs/README.md#issue)
-- [certsRemove](docs/sdks/certs/README.md#remove)
-- [certsUpload](docs/sdks/certs/README.md#upload)
-- [checksCreate](docs/sdks/checks/README.md#create)
-- [checksGet](docs/sdks/checks/README.md#get)
-- [checksList](docs/sdks/checks/README.md#list)
-- [checksRerequest](docs/sdks/checks/README.md#rerequest)
-- [checksUpdate](docs/sdks/checks/README.md#update)
-- [dataCacheBillingSettings](docs/sdks/vercel/README.md#datacachebillingsettings)
-- [datacachePurgeall](docs/sdks/vercel/README.md#datacachepurgeall)
-- [deploymentsCancel](docs/sdks/deployments/README.md#cancel)
-- [deploymentsCreate](docs/sdks/deployments/README.md#create)
-- [deploymentsDelete](docs/sdks/deployments/README.md#delete)
-- [deploymentsGetEvents](docs/sdks/deployments/README.md#getevents)
-- [deploymentsGetFileContents](docs/sdks/deployments/README.md#getfilecontents)
-- [deploymentsGet](docs/sdks/deployments/README.md#get)
-- [deploymentsListAliases](docs/sdks/deployments/README.md#listaliases)
-- [deploymentsListFiles](docs/sdks/deployments/README.md#listfiles)
-- [deploymentsList](docs/sdks/deployments/README.md#list)
-- [deploymentsUploadFile](docs/sdks/deployments/README.md#uploadfile)
-- [dnsCreateRecord](docs/sdks/dns/README.md#createrecord)
-- [dnsListRecords](docs/sdks/dns/README.md#listrecords)
-- [dnsRemoveRecord](docs/sdks/dns/README.md#removerecord)
-- [dnsUpdateRecord](docs/sdks/dns/README.md#updaterecord)
-- [domainsBuy](docs/sdks/domains/README.md#buy)
-- [domainsCheckPrice](docs/sdks/domains/README.md#checkprice)
-- [domainsCheckStatus](docs/sdks/domains/README.md#checkstatus)
-- [domainsCreateOrTransfer](docs/sdks/domains/README.md#createortransfer)
-- [domainsCreate](docs/sdks/domains/README.md#create)
-- [domainsDelete](docs/sdks/domains/README.md#delete)
-- [domainsGetConfig](docs/sdks/domains/README.md#getconfig)
-- [domainsGetTransfer](docs/sdks/domains/README.md#gettransfer)
-- [domainsGet](docs/sdks/domains/README.md#get)
-- [domainsList](docs/sdks/domains/README.md#list)
-- [domainsUpdate](docs/sdks/domains/README.md#update)
-- [domainsVerify](docs/sdks/domains/README.md#verify)
-- [edgeConfigsCreateToken](docs/sdks/edgeconfigs/README.md#createtoken)
-- [edgeConfigsCreate](docs/sdks/edgeconfigs/README.md#create)
-- [edgeConfigsDeleteSchema](docs/sdks/edgeconfigs/README.md#deleteschema)
-- [edgeConfigsDeleteTokens](docs/sdks/edgeconfigs/README.md#deletetokens)
-- [edgeConfigsDelete](docs/sdks/edgeconfigs/README.md#delete)
-- [edgeConfigsGetItem](docs/sdks/edgeconfigs/README.md#getitem)
-- [edgeConfigsGetItems](docs/sdks/edgeconfigs/README.md#getitems)
-- [edgeConfigsGetSchema](docs/sdks/edgeconfigs/README.md#getschema)
-- [edgeConfigsGetToken](docs/sdks/edgeconfigs/README.md#gettoken)
-- [edgeConfigsGetTokens](docs/sdks/edgeconfigs/README.md#gettokens)
-- [edgeConfigsGet](docs/sdks/edgeconfigs/README.md#get)
-- [edgeConfigsList](docs/sdks/edgeconfigs/README.md#list)
-- [edgeConfigsUpdateSchema](docs/sdks/edgeconfigs/README.md#updateschema)
-- [edgeConfigsUpdate](docs/sdks/edgeconfigs/README.md#update)
-- [envsCreate](docs/sdks/envs/README.md#create)
-- [envsDelete](docs/sdks/envs/README.md#delete)
-- [envsGet](docs/sdks/envs/README.md#get)
-- [envsListByProject](docs/sdks/envs/README.md#listbyproject)
-- [envsUpdate](docs/sdks/envs/README.md#update)
-- [eventsList](docs/sdks/events/README.md#list)
-- [integrationsDeleteConfiguration](docs/sdks/integrations/README.md#deleteconfiguration)
-- [integrationsGetConfiguration](docs/sdks/integrations/README.md#getconfiguration)
-- [integrationsGetConfigurations](docs/sdks/integrations/README.md#getconfigurations)
-- [integrationsGetGitNamespaces](docs/sdks/integrations/README.md#getgitnamespaces)
-- [integrationsSearchRepos](docs/sdks/integrations/README.md#searchrepos)
-- [listDeploymentBuilds](docs/sdks/vercel/README.md#listdeploymentbuilds)
-- [logDrainsCreateConfigurable](docs/sdks/logdrains/README.md#createconfigurable)
-- [logDrainsCreate](docs/sdks/logdrains/README.md#create)
-- [logDrainsDeleteConfigurable](docs/sdks/logdrains/README.md#deleteconfigurable)
-- [logDrainsDeleteIntegration](docs/sdks/logdrains/README.md#deleteintegration)
-- [logDrainsGetAll](docs/sdks/logdrains/README.md#getall)
-- [logDrainsGetConfigurable](docs/sdks/logdrains/README.md#getconfigurable)
-- [logDrainsList](docs/sdks/logdrains/README.md#list)
-- [projectDomainsDelete](docs/sdks/projectdomains/README.md#delete)
-- [projectDomainsGet](docs/sdks/projectdomains/README.md#get)
-- [projectDomainsUpdate](docs/sdks/projectdomains/README.md#update)
-- [projectMembersAdd](docs/sdks/projectmembers/README.md#add)
-- [projectMembersGet](docs/sdks/projectmembers/README.md#get)
-- [projectMembersRemove](docs/sdks/projectmembers/README.md#remove)
-- [projectsCreate](docs/sdks/projects/README.md#create)
-- [projectsDelete](docs/sdks/projects/README.md#delete)
-- [projectsGetAll](docs/sdks/projects/README.md#getall)
-- [projectsPause](docs/sdks/projects/README.md#pause)
-- [projectsUnpause](docs/sdks/projects/README.md#unpause)
-- [projectsUpdateDataCache](docs/sdks/projects/README.md#updatedatacache)
-- [projectsUpdate](docs/sdks/projects/README.md#update)
-- [promotionsCreate](docs/sdks/promotions/README.md#create)
-- [promotionsListAliases](docs/sdks/promotions/README.md#listaliases)
-- [protectionBypassUpdate](docs/sdks/protectionbypass/README.md#update)
-- [secretsCreate](docs/sdks/secrets/README.md#create)
-- [secretsDelete](docs/sdks/secrets/README.md#delete)
-- [secretsGet](docs/sdks/secrets/README.md#get)
-- [secretsList](docs/sdks/secrets/README.md#list)
-- [secretsRename](docs/sdks/secrets/README.md#rename)
-- [teamsCreate](docs/sdks/teams/README.md#create)
-- [teamsDeleteInviteCode](docs/sdks/teams/README.md#deleteinvitecode)
-- [teamsDelete](docs/sdks/teams/README.md#delete)
-- [teamsGetAccessRequest](docs/sdks/teams/README.md#getaccessrequest)
-- [teamsGetMembers](docs/sdks/teams/README.md#getmembers)
-- [teamsGet](docs/sdks/teams/README.md#get)
-- [teamsInviteUser](docs/sdks/teams/README.md#inviteuser)
-- [teamsJoin](docs/sdks/teams/README.md#join)
-- [teamsList](docs/sdks/teams/README.md#list)
-- [teamsRemoveMember](docs/sdks/teams/README.md#removemember)
-- [teamsRequestAccess](docs/sdks/teams/README.md#requestaccess)
-- [teamsUpdateMember](docs/sdks/teams/README.md#updatemember)
-- [teamsUpdate](docs/sdks/teams/README.md#update)
-- [tokensCreate](docs/sdks/tokens/README.md#create)
-- [tokensDelete](docs/sdks/tokens/README.md#delete)
-- [tokensGet](docs/sdks/tokens/README.md#get)
-- [tokensList](docs/sdks/tokens/README.md#list)
-- [userGetAuthUser](docs/sdks/user/README.md#getauthuser)
-- [userRequestDelete](docs/sdks/user/README.md#requestdelete)
-- [webhooksCreate](docs/sdks/webhooks/README.md#create)
-- [webhooksDelete](docs/sdks/webhooks/README.md#delete)
-- [webhooksGet](docs/sdks/webhooks/README.md#get)
-- [webhooksList](docs/sdks/webhooks/README.md#list)
-
-
-</details>
-<!-- End Standalone functions [standalone-funcs] -->
-
 <!-- Start Debugging [debug] -->
 ## Debugging
 
@@ -737,7 +737,7 @@ looking for the latest version.
 
 ## Contributions
 
-While we value open-source contributions to this SDK, this library is generated programmatically.
-Feel free to open a PR or a Github issue as a proof of concept and we'll do our best to include it in a future release!
+While we value open-source contributions to this SDK, this library is generated programmatically. Any manual changes added to internal files will be overwritten on the next generation. 
+We look forward to hearing your feedback. Feel free to open a PR or an issue with a proof of concept and we'll do our best to include it in a future release. 
 
-### SDK Created by [Speakeasy](https://docs.speakeasyapi.dev/docs/using-speakeasy/client-sdks)
+### SDK Created by [Speakeasy](https://www.speakeasy.com/?utm_source=<no value>&utm_campaign=typescript)
