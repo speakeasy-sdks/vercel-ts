@@ -3,7 +3,7 @@ speakeasyVersion: latest
 sources:
     vercel-openapi:
         inputs:
-            - location: vercel-tmp.yaml
+            - location: vercel-api-suggest.yaml
         registry:
             location: registry.speakeasyapi.dev/vercel/vercel/vercel-openapi
 targets:
