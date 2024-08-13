@@ -7,9 +7,10 @@ import { promotionsListAliases } from "../funcs/promotionsListAliases.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import {
     ListPromoteAliasesRequest,
-    ListPromoteAliasesResponseBody,
+    ListPromoteAliasesResponse,
 } from "../models/listpromotealiasesop.js";
 import { unwrapAsync } from "../types/fp.js";
+import { PageIterator, unwrapResultIterator } from "../types/operations.js";
 
 export class Promotions extends ClientSDK {
     /**
@@ -37,7 +38,7 @@ export class Promotions extends ClientSDK {
     async listAliases(
         request: ListPromoteAliasesRequest,
         options?: RequestOptions
-    ): Promise<ListPromoteAliasesResponseBody> {
-        return unwrapAsync(promotionsListAliases(this, request, options));
+    ): Promise<PageIterator<ListPromoteAliasesResponse>> {
+        return unwrapResultIterator(promotionsListAliases(this, request, options));
     }
 }

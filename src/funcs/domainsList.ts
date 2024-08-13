@@ -3,6 +3,7 @@
  */
 
 import { VercelCore } from "../core.js";
+import { dlv } from "../lib/dlv.js";
 import { encodeFormQuery as encodeFormQuery$ } from "../lib/encodings.js";
 import * as m$ from "../lib/matchers.js";
 import * as schemas$ from "../lib/schemas.js";
@@ -12,8 +13,8 @@ import { pathToFunc } from "../lib/url.js";
 import {
     GetDomainsRequest,
     GetDomainsRequest$outboundSchema,
-    GetDomainsResponseBody,
-    GetDomainsResponseBody$inboundSchema,
+    GetDomainsResponse,
+    GetDomainsResponse$inboundSchema,
 } from "../models/getdomainsop.js";
 import {
     ConnectionError,
@@ -25,6 +26,7 @@ import {
 import { SDKError } from "../models/sdkerror.js";
 import { SDKValidationError } from "../models/sdkvalidationerror.js";
 import { Result } from "../types/fp.js";
+import { createPageIterator, haltIterator, PageIterator, Paginator } from "../types/operations.js";
 
 /**
  * List all the domains
@@ -37,15 +39,17 @@ export async function domainsList(
     request?: GetDomainsRequest | undefined,
     options?: RequestOptions
 ): Promise<
-    Result<
-        GetDomainsResponseBody,
-        | SDKError
-        | SDKValidationError
-        | UnexpectedClientError
-        | InvalidRequestError
-        | RequestAbortedError
-        | RequestTimeoutError
-        | ConnectionError
+    PageIterator<
+        Result<
+            GetDomainsResponse,
+            | SDKError
+            | SDKValidationError
+            | UnexpectedClientError
+            | InvalidRequestError
+            | RequestAbortedError
+            | RequestTimeoutError
+            | ConnectionError
+        >
     >
 > {
     const input$ = typeof request === "undefined" ? {} : request;
@@ -56,7 +60,7 @@ export async function domainsList(
         "Input validation failed"
     );
     if (!parsed$.ok) {
-        return parsed$;
+        return haltIterator(parsed$);
     }
     const payload$ = parsed$.value;
     const body$ = null;
@@ -98,7 +102,7 @@ export async function domainsList(
         options
     );
     if (!requestRes.ok) {
-        return requestRes;
+        return haltIterator(requestRes);
     }
     const request$ = requestRes.value;
 
@@ -109,12 +113,16 @@ export async function domainsList(
         retryCodes: options?.retryCodes || ["429", "500", "502", "503", "504"],
     });
     if (!doResult.ok) {
-        return doResult;
+        return haltIterator(doResult);
     }
     const response = doResult.value;
 
-    const [result$] = await m$.match<
-        GetDomainsResponseBody,
+    const responseFields$ = {
+        HttpMeta: { Response: response, Request: request$ },
+    };
+
+    const [result$, raw$] = await m$.match<
+        GetDomainsResponse,
         | SDKError
         | SDKValidationError
         | UnexpectedClientError
@@ -123,12 +131,44 @@ export async function domainsList(
         | RequestTimeoutError
         | ConnectionError
     >(
-        m$.json(200, GetDomainsResponseBody$inboundSchema),
+        m$.json(200, GetDomainsResponse$inboundSchema, { key: "Result" }),
         m$.fail([400, 401, 403, 409, "4XX", "5XX"])
-    )(response);
+    )(response, { extraFields: responseFields$ });
     if (!result$.ok) {
-        return result$;
+        return haltIterator(result$);
     }
 
-    return result$;
+    const nextFunc = (
+        responseData: unknown
+    ): Paginator<
+        Result<
+            GetDomainsResponse,
+            | SDKError
+            | SDKValidationError
+            | UnexpectedClientError
+            | InvalidRequestError
+            | RequestAbortedError
+            | RequestTimeoutError
+            | ConnectionError
+        >
+    > => {
+        const nextCursor = dlv(responseData, "pagination.since");
+
+        if (nextCursor == null) {
+            return () => null;
+        }
+
+        return () =>
+            domainsList(
+                client$,
+                {
+                    ...input$,
+                    since: nextCursor,
+                },
+                options
+            );
+    };
+
+    const page$ = { ...result$, next: nextFunc(raw$) };
+    return { ...page$, ...createPageIterator(page$, (v) => !v.ok) };
 }

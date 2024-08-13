@@ -26,7 +26,7 @@ workflow:
     sources:
         vercel-openapi:
             inputs:
-                - location: vercel-api-suggest.yaml
+                - location: vercel-tmp.yaml
             registry:
                 location: registry.speakeasyapi.dev/vercel/vercel/vercel-openapi
     targets:

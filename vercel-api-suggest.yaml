@@ -9935,6 +9935,14 @@ paths:
           schema:
             type: string
       x-speakeasy-name-override: listRecords
+      x-speakeasy-pagination:
+        type: cursor
+        inputs:
+          - name: since
+            in: parameters
+            type: cursor
+        outputs:
+          nextCursor: $.pagination.since
   /v2/domains/{domain}/records:
     post:
       description: Creates a DNS record for a domain.
@@ -10280,7 +10288,6 @@ paths:
                               minimum: 0
                               maximum: 65535
                               example: 5000
-
                         target:
                           type: string
                           example: host.example.com
@@ -11221,6 +11228,14 @@ paths:
           schema:
             type: string
       x-speakeasy-name-override: list
+      x-speakeasy-pagination:
+        type: cursor
+        inputs:
+          - name: since
+            in: parameters
+            type: cursor
+        outputs:
+          nextCursor: $.pagination.since
     post:
       description: >-
         This endpoint is used for adding a new apex domain name with Vercel for the authenticating user. Can also be used for initiating a domain transfer request from an external Registrar to Vercel.
@@ -24691,6 +24706,14 @@ paths:
             type: string
       x-speakeasy-group: domains
       x-speakeasy-name-override: listByProject
+      x-speakeasy-pagination:
+        type: cursor
+        inputs:
+          - name: since
+            in: parameters
+            type: cursor
+        outputs:
+          nextCursor: $.pagination.since
   /v9/projects/{idOrName}/domains/{domain}:
     get:
       description: Get project domain by project id/name and domain name.
@@ -29093,6 +29116,14 @@ paths:
             type: string
       x-speakeasy-group: promotions
       x-speakeasy-name-override: listAliases
+      x-speakeasy-pagination:
+        type: cursor
+        inputs:
+          - name: since
+            in: parameters
+            type: cursor
+        outputs:
+          nextCursor: $.pagination.since
   /v1/projects/{projectId}/pause:
     post:
       description: >-
@@ -34278,6 +34309,14 @@ paths:
           schema:
             type: string
       x-speakeasy-name-override: list
+      x-speakeasy-pagination:
+        type: cursor
+        inputs:
+          - name: since
+            in: parameters
+            type: cursor
+        outputs:
+          nextCursor: $.pagination.since
   /v4/aliases/{idOrAlias}:
     get:
       description: Retrieves an Alias for the given host name or alias ID.
@@ -35701,6 +35740,14 @@ paths:
           schema:
             type: string
       x-speakeasy-name-override: list
+      x-speakeasy-pagination:
+        type: cursor
+        inputs:
+          - name: since
+            in: parameters
+            type: cursor
+        outputs:
+          nextCursor: $.pagination.since
   /registration:
     post:
       description: >-

@@ -26,8 +26,9 @@ async function run() {
     domain: "example.com",
   });
 
-  // Handle the result
-  console.log(result)
+  for await (const page of result) {
+    // handle page
+  }
 }
 
 run();
@@ -59,8 +60,9 @@ async function run() {
 
   const { value: result } = res;
 
-  // Handle the result
-  console.log(result)
+  for await (const page of result) {
+    // handle page
+  }
 }
 
 run();
@@ -78,7 +80,7 @@ run();
 
 ### Response
 
-**Promise\<[models.GetRecordsResponseBody](../../models/getrecordsresponsebody.md)\>**
+**Promise\<[models.GetRecordsResponse](../../models/getrecordsresponse.md)\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

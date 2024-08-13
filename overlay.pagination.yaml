@@ -1,0 +1,15 @@
+overlay: 1.0.0
+info:
+  title: Add pagination to relevant operations
+  version: 0.0.0
+actions:
+  - target: $.paths.*.*[?(@.responses..*["$ref"] == "#/components/schemas/Pagination")]
+    update:
+      x-speakeasy-pagination:
+        type: cursor
+        inputs:
+          - name: from
+            in: parameters
+            type: cursor
+        outputs:
+          nextCursor: $.pagination.since
