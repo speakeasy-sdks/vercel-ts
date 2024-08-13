@@ -10,8 +10,9 @@ import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import { AssignAliasRequestBody, AssignAliasResponseBody } from "../models/assignaliasop.js";
 import { DeleteAliasResponseBody } from "../models/deletealiasop.js";
 import { GetAliasRequest, GetAliasResponseBody } from "../models/getaliasop.js";
-import { ListAliasesRequest, ListAliasesResponseBody } from "../models/listaliasesop.js";
+import { ListAliasesRequest, ListAliasesResponse } from "../models/listaliasesop.js";
 import { unwrapAsync } from "../types/fp.js";
+import { PageIterator, unwrapResultIterator } from "../types/operations.js";
 
 export class Aliases extends ClientSDK {
     /**
@@ -23,8 +24,8 @@ export class Aliases extends ClientSDK {
     async list(
         request?: ListAliasesRequest | undefined,
         options?: RequestOptions
-    ): Promise<ListAliasesResponseBody> {
-        return unwrapAsync(aliasesList(this, request, options));
+    ): Promise<PageIterator<ListAliasesResponse>> {
+        return unwrapResultIterator(aliasesList(this, request, options));
     }
 
     /**

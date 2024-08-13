@@ -98,8 +98,9 @@ async function run() {
     projectId: "<value>",
   });
 
-  // Handle the result
-  console.log(result)
+  for await (const page of result) {
+    // handle page
+  }
 }
 
 run();
@@ -131,8 +132,9 @@ async function run() {
 
   const { value: result } = res;
 
-  // Handle the result
-  console.log(result)
+  for await (const page of result) {
+    // handle page
+  }
 }
 
 run();
@@ -150,7 +152,7 @@ run();
 
 ### Response
 
-**Promise\<[models.ListPromoteAliasesResponseBody](../../models/listpromotealiasesresponsebody.md)\>**
+**Promise\<[models.ListPromoteAliasesResponse](../../models/listpromotealiasesresponse.md)\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

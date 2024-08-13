@@ -29,11 +29,12 @@ import {
 import { DeleteDomainResponseBody } from "../models/deletedomainop.js";
 import { GetDomainConfigResponseBody, Strict } from "../models/getdomainconfigop.js";
 import { GetDomainResponseBody } from "../models/getdomainop.js";
-import { GetDomainsRequest, GetDomainsResponseBody } from "../models/getdomainsop.js";
+import { GetDomainsRequest, GetDomainsResponse } from "../models/getdomainsop.js";
 import { GetDomainTransferResponseBody } from "../models/getdomaintransferop.js";
 import { PatchDomainRequestBody, PatchDomainResponseBody } from "../models/patchdomainop.js";
 import { VerifyProjectDomainResponseBody } from "../models/verifyprojectdomainop.js";
 import { unwrapAsync } from "../types/fp.js";
+import { PageIterator, unwrapResultIterator } from "../types/operations.js";
 
 export class Domains extends ClientSDK {
     /**
@@ -137,8 +138,8 @@ export class Domains extends ClientSDK {
     async list(
         request?: GetDomainsRequest | undefined,
         options?: RequestOptions
-    ): Promise<GetDomainsResponseBody> {
-        return unwrapAsync(domainsList(this, request, options));
+    ): Promise<PageIterator<GetDomainsResponse>> {
+        return unwrapResultIterator(domainsList(this, request, options));
     }
 
     /**

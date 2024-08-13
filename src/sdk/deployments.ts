@@ -26,10 +26,11 @@ import {
 } from "../models/getdeploymenteventsop.js";
 import { GetDeploymentFileContentsRequest } from "../models/getdeploymentfilecontentsop.js";
 import { GetDeploymentResponseBody } from "../models/getdeploymentop.js";
-import { GetDeploymentsRequest, GetDeploymentsResponseBody } from "../models/getdeploymentsop.js";
+import { GetDeploymentsRequest, GetDeploymentsResponse } from "../models/getdeploymentsop.js";
 import { ListDeploymentAliasesResponseBody } from "../models/listdeploymentaliasesop.js";
 import { UploadFileRequest, UploadFileResponseBody } from "../models/uploadfileop.js";
 import { unwrapAsync } from "../types/fp.js";
+import { PageIterator, unwrapResultIterator } from "../types/operations.js";
 
 export { GetEventsAcceptEnum } from "../funcs/deploymentsGetEvents.js";
 
@@ -156,8 +157,8 @@ export class Deployments extends ClientSDK {
     async list(
         request?: GetDeploymentsRequest | undefined,
         options?: RequestOptions
-    ): Promise<GetDeploymentsResponseBody> {
-        return unwrapAsync(deploymentsList(this, request, options));
+    ): Promise<PageIterator<GetDeploymentsResponse>> {
+        return unwrapResultIterator(deploymentsList(this, request, options));
     }
 
     /**

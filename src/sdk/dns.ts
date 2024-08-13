@@ -8,10 +8,11 @@ import { dnsRemoveRecord } from "../funcs/dnsRemoveRecord.js";
 import { dnsUpdateRecord } from "../funcs/dnsUpdateRecord.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import { CreateRecordRequestBody, CreateRecordResponseBody } from "../models/createrecordop.js";
-import { GetRecordsRequest, GetRecordsResponseBody } from "../models/getrecordsop.js";
+import { GetRecordsRequest, GetRecordsResponse } from "../models/getrecordsop.js";
 import { RemoveRecordResponseBody } from "../models/removerecordop.js";
 import { UpdateRecordRequestBody, UpdateRecordResponseBody } from "../models/updaterecordop.js";
 import { unwrapAsync } from "../types/fp.js";
+import { PageIterator, unwrapResultIterator } from "../types/operations.js";
 
 export class Dns extends ClientSDK {
     /**
@@ -23,8 +24,8 @@ export class Dns extends ClientSDK {
     async listRecords(
         request: GetRecordsRequest,
         options?: RequestOptions
-    ): Promise<GetRecordsResponseBody> {
-        return unwrapAsync(dnsListRecords(this, request, options));
+    ): Promise<PageIterator<GetRecordsResponse>> {
+        return unwrapResultIterator(dnsListRecords(this, request, options));
     }
 
     /**

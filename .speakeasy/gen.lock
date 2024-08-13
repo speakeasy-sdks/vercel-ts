@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 08d4af4d-7f06-4aa7-83b0-4bcfdb3dadd5
 management:
-  docChecksum: 3a2248c592784887ed86a09e9eb60d94
+  docChecksum: f303b47d8c858ee4bd6b68b526b60ec3
   docVersion: 0.0.1
   speakeasyVersion: 1.363.0
   generationVersion: 2.396.0
-  releaseVersion: 0.6.0
-  configChecksum: 7c75fbb0009237e2bb49cbda6279e6ea
+  releaseVersion: 0.6.1
+  configChecksum: 625d7c1b9c6dedcde9bf0678cc9ff029
   repoURL: https://github.com/speakeasy-sdks/vercel-ts.git
   installationURL: https://github.com/speakeasy-sdks/vercel-ts
   published: true
@@ -1442,6 +1442,7 @@ generatedFiles:
   - docs/models/getdeploymentscustomenvironment.md
   - docs/models/getdeploymentsdeployments.md
   - docs/models/getdeploymentsresponsebody.md
+  - docs/models/getdeploymentsresponse.md
   - docs/models/deletedeploymentrequest.md
   - docs/models/state.md
   - docs/models/deletedeploymentresponsebody.md
@@ -1476,6 +1477,7 @@ generatedFiles:
   - docs/models/getdomainsservicetype.md
   - docs/models/getdomainsdomains.md
   - docs/models/getdomainsresponsebody.md
+  - docs/models/getdomainsresponse.md
   - docs/models/createortransferdomainrequestbody3.md
   - docs/models/createortransferdomainrequestbody2.md
   - docs/models/createortransferdomainrequestbody1.md
@@ -1511,6 +1513,7 @@ generatedFiles:
   - docs/models/records.md
   - docs/models/getrecordsresponsebody2.md
   - docs/models/getrecordsresponsebody.md
+  - docs/models/getrecordsresponse.md
   - docs/models/createrecordrequestbodydnsrequest10type.md
   - docs/models/requestbodyhttps.md
   - docs/models/ten.md
@@ -2217,6 +2220,7 @@ generatedFiles:
   - docs/models/listpromotealiasesresponsebody2.md
   - docs/models/listpromotealiasesresponsebody1.md
   - docs/models/listpromotealiasesresponsebody.md
+  - docs/models/listpromotealiasesresponse.md
   - docs/models/queryparamrole.md
   - docs/models/getteammembersrequest.md
   - docs/models/getteammembersgithub.md
@@ -2673,6 +2677,7 @@ generatedFiles:
   - docs/models/listaliasesprotectionbypass.md
   - docs/models/listaliasesaliases.md
   - docs/models/listaliasesresponsebody.md
+  - docs/models/listaliasesresponse.md
   - docs/models/getaliasrequest.md
   - docs/models/getaliascreator.md
   - docs/models/deployment.md

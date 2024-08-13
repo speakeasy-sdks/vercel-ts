@@ -3,6 +3,7 @@
  */
 
 import { VercelCore } from "../core.js";
+import { dlv } from "../lib/dlv.js";
 import { encodeFormQuery as encodeFormQuery$ } from "../lib/encodings.js";
 import * as m$ from "../lib/matchers.js";
 import * as schemas$ from "../lib/schemas.js";
@@ -19,12 +20,13 @@ import {
 import {
     ListAliasesRequest,
     ListAliasesRequest$outboundSchema,
-    ListAliasesResponseBody,
-    ListAliasesResponseBody$inboundSchema,
+    ListAliasesResponse,
+    ListAliasesResponse$inboundSchema,
 } from "../models/listaliasesop.js";
 import { SDKError } from "../models/sdkerror.js";
 import { SDKValidationError } from "../models/sdkvalidationerror.js";
 import { Result } from "../types/fp.js";
+import { createPageIterator, haltIterator, PageIterator, Paginator } from "../types/operations.js";
 
 /**
  * List aliases
@@ -37,15 +39,17 @@ export async function aliasesList(
     request?: ListAliasesRequest | undefined,
     options?: RequestOptions
 ): Promise<
-    Result<
-        ListAliasesResponseBody,
-        | SDKError
-        | SDKValidationError
-        | UnexpectedClientError
-        | InvalidRequestError
-        | RequestAbortedError
-        | RequestTimeoutError
-        | ConnectionError
+    PageIterator<
+        Result<
+            ListAliasesResponse,
+            | SDKError
+            | SDKValidationError
+            | UnexpectedClientError
+            | InvalidRequestError
+            | RequestAbortedError
+            | RequestTimeoutError
+            | ConnectionError
+        >
     >
 > {
     const input$ = typeof request === "undefined" ? {} : request;
@@ -56,7 +60,7 @@ export async function aliasesList(
         "Input validation failed"
     );
     if (!parsed$.ok) {
-        return parsed$;
+        return haltIterator(parsed$);
     }
     const payload$ = parsed$.value;
     const body$ = null;
@@ -102,7 +106,7 @@ export async function aliasesList(
         options
     );
     if (!requestRes.ok) {
-        return requestRes;
+        return haltIterator(requestRes);
     }
     const request$ = requestRes.value;
 
@@ -113,12 +117,16 @@ export async function aliasesList(
         retryCodes: options?.retryCodes || ["429", "500", "502", "503", "504"],
     });
     if (!doResult.ok) {
-        return doResult;
+        return haltIterator(doResult);
     }
     const response = doResult.value;
 
-    const [result$] = await m$.match<
-        ListAliasesResponseBody,
+    const responseFields$ = {
+        HttpMeta: { Response: response, Request: request$ },
+    };
+
+    const [result$, raw$] = await m$.match<
+        ListAliasesResponse,
         | SDKError
         | SDKValidationError
         | UnexpectedClientError
@@ -127,12 +135,44 @@ export async function aliasesList(
         | RequestTimeoutError
         | ConnectionError
     >(
-        m$.json(200, ListAliasesResponseBody$inboundSchema),
+        m$.json(200, ListAliasesResponse$inboundSchema, { key: "Result" }),
         m$.fail([400, 401, 403, 404, "4XX", "5XX"])
-    )(response);
+    )(response, { extraFields: responseFields$ });
     if (!result$.ok) {
-        return result$;
+        return haltIterator(result$);
     }
 
-    return result$;
+    const nextFunc = (
+        responseData: unknown
+    ): Paginator<
+        Result<
+            ListAliasesResponse,
+            | SDKError
+            | SDKValidationError
+            | UnexpectedClientError
+            | InvalidRequestError
+            | RequestAbortedError
+            | RequestTimeoutError
+            | ConnectionError
+        >
+    > => {
+        const nextCursor = dlv(responseData, "pagination.since");
+
+        if (nextCursor == null) {
+            return () => null;
+        }
+
+        return () =>
+            aliasesList(
+                client$,
+                {
+                    ...input$,
+                    since: nextCursor,
+                },
+                options
+            );
+    };
+
+    const page$ = { ...result$, next: nextFunc(raw$) };
+    return { ...page$, ...createPageIterator(page$, (v) => !v.ok) };
 }
