@@ -1,11 +1,15 @@
 # CreateConfigurableLogDrainDisabledReason
 
+## Example Usage
+
+```typescript
+import { CreateConfigurableLogDrainDisabledReason } from "@simplesagar/vercel/models/createconfigurablelogdrainop.js";
+
+let value: CreateConfigurableLogDrainDisabledReason = "account-plan-downgrade";
+```
 
 ## Values
 
-| Name                   | Value                  |
-| ---------------------- | ---------------------- |
-| `DisabledByOwner`      | disabled-by-owner      |
-| `FeatureNotAvailable`  | feature-not-available  |
-| `AccountPlanDowngrade` | account-plan-downgrade |
-| `DisabledByAdmin`      | disabled-by-admin      |
+```typescript
+"disabled-by-owner" | "feature-not-available" | "account-plan-downgrade" | "disabled-by-admin"
+```

@@ -2,6 +2,15 @@
 
 The list of environment variables for the given project
 
+## Example Usage
+
+```typescript
+import { FilterProjectEnvsResponseBody } from "@simplesagar/vercel/models/filterprojectenvsop.js";
+
+let value: FilterProjectEnvsResponseBody = {
+    envs: [{}],
+};
+```
 
 ## Supported Types
 

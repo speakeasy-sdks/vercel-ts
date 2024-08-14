@@ -1,5 +1,22 @@
 # CreateConfigurableLogDrainResponseBody
 
+## Example Usage
+
+```typescript
+import { CreateConfigurableLogDrainResponseBody } from "@simplesagar/vercel/models/createconfigurablelogdrainop.js";
+
+let value: CreateConfigurableLogDrainResponseBody = {
+    id: "<id>",
+    deliveryFormat: "json",
+    url: "https://idolized-science.info",
+    name: "<value>",
+    ownerId: "<value>",
+    createdAt: 2811.53,
+    deletedAt: 3210.43,
+    updatedAt: 7139.27,
+    environments: ["production"],
+};
+```
 
 ## Fields
 

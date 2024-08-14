@@ -1,5 +1,12 @@
 # UpdateProjectSecurity
 
+## Example Usage
+
+```typescript
+import { UpdateProjectSecurity } from "@simplesagar/vercel/models/updateprojectop.js";
+
+let value: UpdateProjectSecurity = {};
+```
 
 ## Fields
 

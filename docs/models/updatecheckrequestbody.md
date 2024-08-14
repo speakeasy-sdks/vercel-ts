@@ -1,5 +1,12 @@
 # UpdateCheckRequestBody
 
+## Example Usage
+
+```typescript
+import { UpdateCheckRequestBody } from "@simplesagar/vercel/models/updatecheckop.js";
+
+let value: UpdateCheckRequestBody = {};
+```
 
 ## Fields
 

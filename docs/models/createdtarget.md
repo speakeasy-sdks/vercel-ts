@@ -1,5 +1,12 @@
 # CreatedTarget
 
+## Example Usage
+
+```typescript
+import { CreatedTarget } from "@simplesagar/vercel/models/createprojectenvop.js";
+
+let value: CreatedTarget = "preview";
+```
 
 ## Supported Types
 

@@ -1,5 +1,17 @@
 # CreateTeamStorageRedisTotalCommands
 
+## Example Usage
+
+```typescript
+import { CreateTeamStorageRedisTotalCommands } from "@simplesagar/vercel/models/createteamop.js";
+
+let value: CreateTeamStorageRedisTotalCommands = {
+    price: 1156.61,
+    batch: 6633.18,
+    threshold: 7278.88,
+    hidden: false,
+};
+```
 
 ## Fields
 

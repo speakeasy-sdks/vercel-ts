@@ -1,5 +1,12 @@
 # GitNamespaceId
 
+## Example Usage
+
+```typescript
+import { GitNamespaceId } from "@simplesagar/vercel/models/authuser.js";
+
+let value: GitNamespaceId = 9025.81;
+```
 
 ## Supported Types
 

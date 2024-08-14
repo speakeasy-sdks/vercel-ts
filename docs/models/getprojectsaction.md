@@ -1,13 +1,15 @@
 # GetProjectsAction
 
+## Example Usage
+
+```typescript
+import { GetProjectsAction } from "@simplesagar/vercel/models/getprojectsop.js";
+
+let value: GetProjectsAction = "challenge";
+```
 
 ## Values
 
-| Name        | Value       |
-| ----------- | ----------- |
-| `Deny`      | deny        |
-| `Challenge` | challenge   |
-| `Log`       | log         |
-| `Bypass`    | bypass      |
-| `RateLimit` | rate_limit  |
-| `Redirect`  | redirect    |
+```typescript
+"deny" | "challenge" | "log" | "bypass" | "rate_limit" | "redirect"
+```

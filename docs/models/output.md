@@ -2,6 +2,13 @@
 
 The results of the check Run
 
+## Example Usage
+
+```typescript
+import { Output } from "@simplesagar/vercel/models/updatecheckop.js";
+
+let value: Output = {};
+```
 
 ## Fields
 

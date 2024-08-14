@@ -2,6 +2,13 @@
 
 update
 
+## Example Usage
+
+```typescript
+import { PatchDomainRequestBody1 } from "@simplesagar/vercel/models/patchdomainop.js";
+
+let value: PatchDomainRequestBody1 = {};
+```
 
 ## Fields
 

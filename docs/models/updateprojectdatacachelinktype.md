@@ -1,8 +1,15 @@
 # UpdateProjectDataCacheLinkType
 
+## Example Usage
+
+```typescript
+import { UpdateProjectDataCacheLinkType } from "@simplesagar/vercel/models/updateprojectdatacacheop.js";
+
+let value: UpdateProjectDataCacheLinkType = "gitlab";
+```
 
 ## Values
 
-| Name     | Value    |
-| -------- | -------- |
-| `Gitlab` | gitlab   |
+```typescript
+"gitlab"
+```

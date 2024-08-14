@@ -1,5 +1,15 @@
 # FilterProjectEnvsContentHintEnvsResponse5
 
+## Example Usage
+
+```typescript
+import { FilterProjectEnvsContentHintEnvsResponse5 } from "@simplesagar/vercel/models/filterprojectenvsop.js";
+
+let value: FilterProjectEnvsContentHintEnvsResponse5 = {
+    type: "blob-read-write-token",
+    storeId: "<value>",
+};
+```
 
 ## Fields
 

@@ -2,14 +2,16 @@
 
 Only return members with the specified team role.
 
+## Example Usage
+
+```typescript
+import { QueryParamRole } from "@simplesagar/vercel/models/getteammembersop.js";
+
+let value: QueryParamRole = "OWNER";
+```
 
 ## Values
 
-| Name          | Value         |
-| ------------- | ------------- |
-| `Owner`       | OWNER         |
-| `Member`      | MEMBER        |
-| `Developer`   | DEVELOPER     |
-| `Viewer`      | VIEWER        |
-| `Billing`     | BILLING       |
-| `Contributor` | CONTRIBUTOR   |
+```typescript
+"OWNER" | "MEMBER" | "DEVELOPER" | "VIEWER" | "BILLING" | "CONTRIBUTOR"
+```

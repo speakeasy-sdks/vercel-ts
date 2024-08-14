@@ -1,5 +1,12 @@
 # RoutesLocale
 
+## Example Usage
+
+```typescript
+import { RoutesLocale } from "@simplesagar/vercel/models/canceldeploymentop.js";
+
+let value: RoutesLocale = {};
+```
 
 ## Fields
 

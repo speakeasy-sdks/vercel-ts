@@ -2,6 +2,17 @@
 
 The alias was successfully assigned to the deployment
 
+## Example Usage
+
+```typescript
+import { AssignAliasResponseBody } from "@simplesagar/vercel/models/assignaliasop.js";
+
+let value: AssignAliasResponseBody = {
+    uid: "2WjyKQmM8ZnGcJsPWMrHRHrE",
+    alias: "my-alias.vercel.app",
+    created: new Date("2017-04-26T23:00:34.232Z"),
+};
+```
 
 ## Fields
 

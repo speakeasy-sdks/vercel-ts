@@ -1,13 +1,15 @@
 # CancelDeploymentStatus
 
+## Example Usage
+
+```typescript
+import { CancelDeploymentStatus } from "@simplesagar/vercel/models/canceldeploymentop.js";
+
+let value: CancelDeploymentStatus = "INITIALIZING";
+```
 
 ## Values
 
-| Name           | Value          |
-| -------------- | -------------- |
-| `Building`     | BUILDING       |
-| `Error`        | ERROR          |
-| `Initializing` | INITIALIZING   |
-| `Queued`       | QUEUED         |
-| `Ready`        | READY          |
-| `Canceled`     | CANCELED       |
+```typescript
+"BUILDING" | "ERROR" | "INITIALIZING" | "QUEUED" | "READY" | "CANCELED"
+```

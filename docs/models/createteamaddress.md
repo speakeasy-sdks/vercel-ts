@@ -1,5 +1,12 @@
 # CreateTeamAddress
 
+## Example Usage
+
+```typescript
+import { CreateTeamAddress } from "@simplesagar/vercel/models/createteamop.js";
+
+let value: CreateTeamAddress = {};
+```
 
 ## Fields
 

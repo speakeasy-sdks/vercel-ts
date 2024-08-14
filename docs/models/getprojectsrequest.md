@@ -1,5 +1,12 @@
 # GetProjectsRequest
 
+## Example Usage
+
+```typescript
+import { GetProjectsRequest } from "@simplesagar/vercel/models/getprojectsop.js";
+
+let value: GetProjectsRequest = {};
+```
 
 ## Fields
 

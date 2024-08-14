@@ -1,5 +1,15 @@
 # GetProjectsContentHint7
 
+## Example Usage
+
+```typescript
+import { GetProjectsContentHint7 } from "@simplesagar/vercel/models/getprojectsop.js";
+
+let value: GetProjectsContentHint7 = {
+    type: "postgres-url-non-pooling",
+    storeId: "<value>",
+};
+```
 
 ## Fields
 

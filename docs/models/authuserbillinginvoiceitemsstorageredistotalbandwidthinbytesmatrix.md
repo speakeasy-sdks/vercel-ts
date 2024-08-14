@@ -1,5 +1,17 @@
 # AuthUserBillingInvoiceItemsStorageRedisTotalBandwidthInBytesMatrix
 
+## Example Usage
+
+```typescript
+import { AuthUserBillingInvoiceItemsStorageRedisTotalBandwidthInBytesMatrix } from "@simplesagar/vercel/models/authuser.js";
+
+let value: AuthUserBillingInvoiceItemsStorageRedisTotalBandwidthInBytesMatrix = {
+    defaultUnitPrice: "<value>",
+    dimensionPrices: {
+        key: "<value>",
+    },
+};
+```
 
 ## Fields
 

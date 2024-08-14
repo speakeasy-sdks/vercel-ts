@@ -1,5 +1,16 @@
 # ResponseBodyTeam
 
+## Example Usage
+
+```typescript
+import { ResponseBodyTeam } from "@simplesagar/vercel/models/getdeploymentop.js";
+
+let value: ResponseBodyTeam = {
+    id: "<id>",
+    name: "<value>",
+    slug: "<value>",
+};
+```
 
 ## Fields
 

@@ -1,5 +1,23 @@
 # Records
 
+## Example Usage
+
+```typescript
+import { Records } from "@simplesagar/vercel/models/getrecordsop.js";
+
+let value: Records = {
+    id: "<id>",
+    slug: "<value>",
+    name: "<value>",
+    type: "A",
+    value: "<value>",
+    creator: "<value>",
+    created: 1064.29,
+    updated: 1747.72,
+    createdAt: 3164.88,
+    updatedAt: 3891.35,
+};
+```
 
 ## Fields
 

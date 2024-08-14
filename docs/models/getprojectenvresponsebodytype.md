@@ -1,12 +1,15 @@
 # GetProjectEnvResponseBodyType
 
+## Example Usage
+
+```typescript
+import { GetProjectEnvResponseBodyType } from "@simplesagar/vercel/models/getprojectenvop.js";
+
+let value: GetProjectEnvResponseBodyType = "system";
+```
 
 ## Values
 
-| Name        | Value       |
-| ----------- | ----------- |
-| `System`    | system      |
-| `Encrypted` | encrypted   |
-| `Plain`     | plain       |
-| `Sensitive` | sensitive   |
-| `Secret`    | secret      |
+```typescript
+"system" | "encrypted" | "plain" | "sensitive" | "secret"
+```

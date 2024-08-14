@@ -1,5 +1,14 @@
 # PatchDomainRequest
 
+## Example Usage
+
+```typescript
+import { PatchDomainRequest } from "@simplesagar/vercel/models/patchdomainop.js";
+
+let value: PatchDomainRequest = {
+    domain: "personal-extremist.com",
+};
+```
 
 ## Fields
 

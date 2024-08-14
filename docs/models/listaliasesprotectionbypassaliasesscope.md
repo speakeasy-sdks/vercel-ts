@@ -1,8 +1,15 @@
 # ListAliasesProtectionBypassAliasesScope
 
+## Example Usage
+
+```typescript
+import { ListAliasesProtectionBypassAliasesScope } from "@simplesagar/vercel/models/listaliasesop.js";
+
+let value: ListAliasesProtectionBypassAliasesScope = "alias-protection-override";
+```
 
 ## Values
 
-| Name                      | Value                     |
-| ------------------------- | ------------------------- |
-| `AliasProtectionOverride` | alias-protection-override |
+```typescript
+"alias-protection-override"
+```

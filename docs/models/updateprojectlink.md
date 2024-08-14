@@ -1,5 +1,21 @@
 # UpdateProjectLink
 
+## Example Usage
+
+```typescript
+import { UpdateProjectLink } from "@simplesagar/vercel/models/updateprojectop.js";
+
+let value: UpdateProjectLink = {
+    deployHooks: [
+        {
+            id: "<id>",
+            name: "<value>",
+            ref: "<value>",
+            url: "https://natural-sovereignty.org",
+        },
+    ],
+};
+```
 
 ## Supported Types
 

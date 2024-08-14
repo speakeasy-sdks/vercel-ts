@@ -1,5 +1,15 @@
 # RequestBody5
 
+## Example Usage
+
+```typescript
+import { RequestBody5 } from "@simplesagar/vercel/models/createrecordop.js";
+
+let value: RequestBody5 = {
+    name: "subdomain",
+    type: "ALIAS",
+};
+```
 
 ## Fields
 

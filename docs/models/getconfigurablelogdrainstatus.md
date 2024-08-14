@@ -1,10 +1,15 @@
 # GetConfigurableLogDrainStatus
 
+## Example Usage
+
+```typescript
+import { GetConfigurableLogDrainStatus } from "@simplesagar/vercel/models/getconfigurablelogdrainop.js";
+
+let value: GetConfigurableLogDrainStatus = "disabled";
+```
 
 ## Values
 
-| Name       | Value      |
-| ---------- | ---------- |
-| `Enabled`  | enabled    |
-| `Disabled` | disabled   |
-| `Errored`  | errored    |
+```typescript
+"enabled" | "disabled" | "errored"
+```

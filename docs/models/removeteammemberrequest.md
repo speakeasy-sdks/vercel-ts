@@ -1,5 +1,15 @@
 # RemoveTeamMemberRequest
 
+## Example Usage
+
+```typescript
+import { RemoveTeamMemberRequest } from "@simplesagar/vercel/models/removeteammemberop.js";
+
+let value: RemoveTeamMemberRequest = {
+    teamId: "<value>",
+    uid: "<value>",
+};
+```
 
 ## Fields
 

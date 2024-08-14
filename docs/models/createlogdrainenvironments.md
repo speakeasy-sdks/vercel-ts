@@ -2,10 +2,16 @@
 
 The environment of log drain
 
+## Example Usage
+
+```typescript
+import { CreateLogDrainEnvironments } from "@simplesagar/vercel/models/createlogdrainop.js";
+
+let value: CreateLogDrainEnvironments = "production";
+```
 
 ## Values
 
-| Name         | Value        |
-| ------------ | ------------ |
-| `Production` | production   |
-| `Preview`    | preview      |
+```typescript
+"production" | "preview"
+```

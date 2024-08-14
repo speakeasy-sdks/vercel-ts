@@ -1,5 +1,14 @@
 # RemoveProjectMemberResponseBody
 
+## Example Usage
+
+```typescript
+import { RemoveProjectMemberResponseBody } from "@simplesagar/vercel/models/removeprojectmemberop.js";
+
+let value: RemoveProjectMemberResponseBody = {
+    id: "<id>",
+};
+```
 
 ## Fields
 

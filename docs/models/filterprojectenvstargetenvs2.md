@@ -1,10 +1,15 @@
 # FilterProjectEnvsTargetEnvs2
 
+## Example Usage
+
+```typescript
+import { FilterProjectEnvsTargetEnvs2 } from "@simplesagar/vercel/models/filterprojectenvsop.js";
+
+let value: FilterProjectEnvsTargetEnvs2 = "development";
+```
 
 ## Values
 
-| Name          | Value         |
-| ------------- | ------------- |
-| `Production`  | production    |
-| `Preview`     | preview       |
-| `Development` | development   |
+```typescript
+"production" | "preview" | "development"
+```

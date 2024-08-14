@@ -2,6 +2,15 @@
 
 Map with information about the members origin if they joined by requesting access.
 
+## Example Usage
+
+```typescript
+import { GetTeamMembersJoinedFrom } from "@simplesagar/vercel/models/getteammembersop.js";
+
+let value: GetTeamMembersJoinedFrom = {
+    origin: "teams",
+};
+```
 
 ## Fields
 

@@ -1,5 +1,14 @@
 # UploadFileResponseBody1
 
+## Example Usage
+
+```typescript
+import { UploadFileResponseBody1 } from "@simplesagar/vercel/models/uploadfileop.js";
+
+let value: UploadFileResponseBody1 = {
+    urls: ["example-upload.aws.com"],
+};
+```
 
 ## Fields
 

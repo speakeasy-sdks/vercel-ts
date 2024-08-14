@@ -1,5 +1,12 @@
 # Flags
 
+## Example Usage
+
+```typescript
+import { Flags } from "@simplesagar/vercel/models/createdeploymentop.js";
+
+let value: Flags = [{}];
+```
 
 ## Supported Types
 

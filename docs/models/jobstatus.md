@@ -1,12 +1,15 @@
 # JobStatus
 
+## Example Usage
+
+```typescript
+import { JobStatus } from "@simplesagar/vercel/models/updateprojectdatacacheop.js";
+
+let value: JobStatus = "in-progress";
+```
 
 ## Values
 
-| Name         | Value        |
-| ------------ | ------------ |
-| `Succeeded`  | succeeded    |
-| `Failed`     | failed       |
-| `Skipped`    | skipped      |
-| `Pending`    | pending      |
-| `InProgress` | in-progress  |
+```typescript
+"succeeded" | "failed" | "skipped" | "pending" | "in-progress"
+```

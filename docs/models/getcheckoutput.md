@@ -1,5 +1,12 @@
 # GetCheckOutput
 
+## Example Usage
+
+```typescript
+import { GetCheckOutput } from "@simplesagar/vercel/models/getcheckop.js";
+
+let value: GetCheckOutput = {};
+```
 
 ## Fields
 

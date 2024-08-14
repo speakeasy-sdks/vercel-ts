@@ -1,9 +1,15 @@
 # CreateTeamCurrency
 
+## Example Usage
+
+```typescript
+import { CreateTeamCurrency } from "@simplesagar/vercel/models/createteamop.js";
+
+let value: CreateTeamCurrency = "usd";
+```
 
 ## Values
 
-| Name  | Value |
-| ----- | ----- |
-| `Usd` | usd   |
-| `Eur` | eur   |
+```typescript
+"usd" | "eur"
+```

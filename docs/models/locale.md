@@ -1,5 +1,12 @@
 # Locale
 
+## Example Usage
+
+```typescript
+import { Locale } from "@simplesagar/vercel/models/createdeploymentop.js";
+
+let value: Locale = {};
+```
 
 ## Fields
 

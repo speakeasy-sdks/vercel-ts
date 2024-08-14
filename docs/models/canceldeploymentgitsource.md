@@ -1,5 +1,17 @@
 # CancelDeploymentGitSource
 
+## Example Usage
+
+```typescript
+import { CancelDeploymentGitSource } from "@simplesagar/vercel/models/canceldeploymentop.js";
+
+let value: CancelDeploymentGitSource = {
+    type: "github",
+    ref: "<value>",
+    sha: "<value>",
+    repoId: 3416.98,
+};
+```
 
 ## Supported Types
 

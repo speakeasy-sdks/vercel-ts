@@ -2,6 +2,29 @@
 
 Successful response.
 
+## Example Usage
+
+```typescript
+import { ListUserEventsResponseBody } from "@simplesagar/vercel/models/listusereventsop.js";
+
+let value: ListUserEventsResponseBody = {
+    events: [
+        {
+            id: "uev_bfmMjiMnXfnPbT97dGdpJbCN",
+            text: "You logged in via GitHub",
+            entities: [
+                {
+                    type: "author",
+                    start: 0,
+                    end: 3,
+                },
+            ],
+            createdAt: 1632859321020,
+            userId: "zTuNVUXEAvvnNN3IaqinkyMw",
+        },
+    ],
+};
+```
 
 ## Fields
 

@@ -1,5 +1,12 @@
 # Permissions
 
+## Example Usage
+
+```typescript
+import { Permissions } from "@simplesagar/vercel/models/updateprojectdatacacheop.js";
+
+let value: Permissions = {};
+```
 
 ## Fields
 

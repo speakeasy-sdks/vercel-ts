@@ -2,6 +2,18 @@
 
 The domain was updated successfuly
 
+## Example Usage
+
+```typescript
+import { UpdateProjectDomainResponseBody } from "@simplesagar/vercel/models/updateprojectdomainop.js";
+
+let value: UpdateProjectDomainResponseBody = {
+    name: "<value>",
+    apexName: "<value>",
+    projectId: "<value>",
+    verified: false,
+};
+```
 
 ## Fields
 

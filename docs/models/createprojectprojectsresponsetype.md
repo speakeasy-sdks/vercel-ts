@@ -1,12 +1,15 @@
 # CreateProjectProjectsResponseType
 
+## Example Usage
+
+```typescript
+import { CreateProjectProjectsResponseType } from "@simplesagar/vercel/models/createprojectop.js";
+
+let value: CreateProjectProjectsResponseType = "sensitive";
+```
 
 ## Values
 
-| Name        | Value       |
-| ----------- | ----------- |
-| `System`    | system      |
-| `Encrypted` | encrypted   |
-| `Plain`     | plain       |
-| `Sensitive` | sensitive   |
-| `Secret`    | secret      |
+```typescript
+"system" | "encrypted" | "plain" | "sensitive" | "secret"
+```

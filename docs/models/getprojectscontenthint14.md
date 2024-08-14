@@ -1,5 +1,18 @@
 # GetProjectsContentHint14
 
+## Example Usage
+
+```typescript
+import { GetProjectsContentHint14 } from "@simplesagar/vercel/models/getprojectsop.js";
+
+let value: GetProjectsContentHint14 = {
+    type: "integration-store-secret",
+    storeId: "<value>",
+    integrationId: "<value>",
+    integrationProductId: "<value>",
+    integrationConfigurationId: "<value>",
+};
+```
 
 ## Fields
 

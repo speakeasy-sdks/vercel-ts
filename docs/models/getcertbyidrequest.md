@@ -1,5 +1,14 @@
 # GetCertByIdRequest
 
+## Example Usage
+
+```typescript
+import { GetCertByIdRequest } from "@simplesagar/vercel/models/getcertbyidop.js";
+
+let value: GetCertByIdRequest = {
+    id: "<id>",
+};
+```
 
 ## Fields
 

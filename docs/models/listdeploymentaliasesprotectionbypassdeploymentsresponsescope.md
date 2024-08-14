@@ -1,8 +1,16 @@
 # ListDeploymentAliasesProtectionBypassDeploymentsResponseScope
 
+## Example Usage
+
+```typescript
+import { ListDeploymentAliasesProtectionBypassDeploymentsResponseScope } from "@simplesagar/vercel/models/listdeploymentaliasesop.js";
+
+let value: ListDeploymentAliasesProtectionBypassDeploymentsResponseScope =
+    "alias-protection-override";
+```
 
 ## Values
 
-| Name                      | Value                     |
-| ------------------------- | ------------------------- |
-| `AliasProtectionOverride` | alias-protection-override |
+```typescript
+"alias-protection-override"
+```

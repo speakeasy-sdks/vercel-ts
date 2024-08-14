@@ -1,5 +1,19 @@
 # GetTeamMembersMembers
 
+## Example Usage
+
+```typescript
+import { GetTeamMembersMembers } from "@simplesagar/vercel/models/getteammembersop.js";
+
+let value: GetTeamMembersMembers = {
+    confirmed: true,
+    email: "jane.doe@example.com",
+    role: "OWNER",
+    uid: "zTuNVUXEAvvnNN3IaqinkyMw",
+    username: "jane-doe",
+    createdAt: 1588720733602,
+};
+```
 
 ## Fields
 

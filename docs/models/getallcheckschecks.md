@@ -1,5 +1,20 @@
 # GetAllChecksChecks
 
+## Example Usage
+
+```typescript
+import { GetAllChecksChecks } from "@simplesagar/vercel/models/getallchecksop.js";
+
+let value: GetAllChecksChecks = {
+    createdAt: 3595.08,
+    id: "<id>",
+    integrationId: "<value>",
+    name: "<value>",
+    rerequestable: false,
+    status: "running",
+    updatedAt: 4370.32,
+};
+```
 
 ## Fields
 

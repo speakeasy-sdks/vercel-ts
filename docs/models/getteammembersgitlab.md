@@ -2,6 +2,13 @@
 
 Information about the GitLab account of this user.
 
+## Example Usage
+
+```typescript
+import { GetTeamMembersGitlab } from "@simplesagar/vercel/models/getteammembersop.js";
+
+let value: GetTeamMembersGitlab = {};
+```
 
 ## Fields
 

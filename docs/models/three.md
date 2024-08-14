@@ -1,5 +1,16 @@
 # Three
 
+## Example Usage
+
+```typescript
+import { Three } from "@simplesagar/vercel/models/createdeploymentop.js";
+
+let value: Three = {
+    projectId: "<value>",
+    ref: "<value>",
+    type: "gitlab",
+};
+```
 
 ## Fields
 

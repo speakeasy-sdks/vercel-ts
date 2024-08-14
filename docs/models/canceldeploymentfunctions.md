@@ -1,5 +1,12 @@
 # CancelDeploymentFunctions
 
+## Example Usage
+
+```typescript
+import { CancelDeploymentFunctions } from "@simplesagar/vercel/models/canceldeploymentop.js";
+
+let value: CancelDeploymentFunctions = {};
+```
 
 ## Fields
 

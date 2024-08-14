@@ -1,5 +1,17 @@
 # CreateTeamEdgeConfigRead
 
+## Example Usage
+
+```typescript
+import { CreateTeamEdgeConfigRead } from "@simplesagar/vercel/models/createteamop.js";
+
+let value: CreateTeamEdgeConfigRead = {
+    price: 6397.05,
+    batch: 9274.03,
+    threshold: 4083.03,
+    hidden: false,
+};
+```
 
 ## Fields
 

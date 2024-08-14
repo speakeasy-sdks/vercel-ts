@@ -2,6 +2,13 @@
 
 Project settings that will be applied to the deployment. It is required for the first deployment of a project and will be saved for any following deployments
 
+## Example Usage
+
+```typescript
+import { ProjectSettings } from "@simplesagar/vercel/models/createdeploymentop.js";
+
+let value: ProjectSettings = {};
+```
 
 ## Fields
 

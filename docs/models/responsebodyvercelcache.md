@@ -1,13 +1,15 @@
 # ResponseBodyVercelCache
 
+## Example Usage
+
+```typescript
+import { ResponseBodyVercelCache } from "@simplesagar/vercel/models/getdeploymenteventsop.js";
+
+let value: ResponseBodyVercelCache = "HIT";
+```
 
 ## Values
 
-| Name          | Value         |
-| ------------- | ------------- |
-| `Miss`        | MISS          |
-| `Hit`         | HIT           |
-| `Stale`       | STALE         |
-| `Bypass`      | BYPASS        |
-| `Prerender`   | PRERENDER     |
-| `Revalidated` | REVALIDATED   |
+```typescript
+"MISS" | "HIT" | "STALE" | "BYPASS" | "PRERENDER" | "REVALIDATED"
+```

@@ -1,5 +1,29 @@
 # UpdateProjectTargets
 
+## Example Usage
+
+```typescript
+import { UpdateProjectTargets } from "@simplesagar/vercel/models/updateprojectop.js";
+
+let value: UpdateProjectTargets = {
+    createdAt: 4334.39,
+    createdIn: "<value>",
+    creator: {
+        email: "Reyna_Davis@yahoo.com",
+        uid: "<value>",
+        username: "Asa_Bednar",
+    },
+    deploymentHostname: "<value>",
+    name: "<value>",
+    id: "<id>",
+    plan: "pro",
+    private: false,
+    readyState: "READY",
+    type: "LAMBDAS",
+    url: "https://some-possession.biz",
+    userId: "<value>",
+};
+```
 
 ## Fields
 

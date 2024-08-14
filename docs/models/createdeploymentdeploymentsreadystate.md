@@ -1,11 +1,15 @@
 # CreateDeploymentDeploymentsReadyState
 
+## Example Usage
+
+```typescript
+import { CreateDeploymentDeploymentsReadyState } from "@simplesagar/vercel/models/createdeploymentop.js";
+
+let value: CreateDeploymentDeploymentsReadyState = "ERROR";
+```
 
 ## Values
 
-| Name           | Value          |
-| -------------- | -------------- |
-| `Building`     | BUILDING       |
-| `Error`        | ERROR          |
-| `Initializing` | INITIALIZING   |
-| `Ready`        | READY          |
+```typescript
+"BUILDING" | "ERROR" | "INITIALIZING" | "READY"
+```

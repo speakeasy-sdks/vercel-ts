@@ -1,5 +1,15 @@
 # GetDeploymentFileContentsRequest
 
+## Example Usage
+
+```typescript
+import { GetDeploymentFileContentsRequest } from "@simplesagar/vercel/models/getdeploymentfilecontentsop.js";
+
+let value: GetDeploymentFileContentsRequest = {
+    id: "<id>",
+    fileId: "<value>",
+};
+```
 
 ## Fields
 

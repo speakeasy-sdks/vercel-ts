@@ -1,8 +1,15 @@
 # GetDeploymentResponseBodyDeploymentsType
 
+## Example Usage
+
+```typescript
+import { GetDeploymentResponseBodyDeploymentsType } from "@simplesagar/vercel/models/getdeploymentop.js";
+
+let value: GetDeploymentResponseBodyDeploymentsType = "LAMBDAS";
+```
 
 ## Values
 
-| Name      | Value     |
-| --------- | --------- |
-| `Lambdas` | LAMBDAS   |
+```typescript
+"LAMBDAS"
+```

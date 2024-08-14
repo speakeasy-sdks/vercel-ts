@@ -1,5 +1,17 @@
 # CreateTeamEdgeFunctionExecutionUnits
 
+## Example Usage
+
+```typescript
+import { CreateTeamEdgeFunctionExecutionUnits } from "@simplesagar/vercel/models/createteamop.js";
+
+let value: CreateTeamEdgeFunctionExecutionUnits = {
+    price: 8093.65,
+    batch: 5960.65,
+    threshold: 7090.36,
+    hidden: false,
+};
+```
 
 ## Fields
 

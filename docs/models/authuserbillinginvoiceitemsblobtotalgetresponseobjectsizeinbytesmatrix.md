@@ -1,5 +1,17 @@
 # AuthUserBillingInvoiceItemsBlobTotalGetResponseObjectSizeInBytesMatrix
 
+## Example Usage
+
+```typescript
+import { AuthUserBillingInvoiceItemsBlobTotalGetResponseObjectSizeInBytesMatrix } from "@simplesagar/vercel/models/authuser.js";
+
+let value: AuthUserBillingInvoiceItemsBlobTotalGetResponseObjectSizeInBytesMatrix = {
+    defaultUnitPrice: "<value>",
+    dimensionPrices: {
+        key: "<value>",
+    },
+};
+```
 
 ## Fields
 

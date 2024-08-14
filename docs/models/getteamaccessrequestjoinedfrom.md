@@ -2,6 +2,15 @@
 
 A map that describes the origin from where the user joined.
 
+## Example Usage
+
+```typescript
+import { GetTeamAccessRequestJoinedFrom } from "@simplesagar/vercel/models/getteamaccessrequestop.js";
+
+let value: GetTeamAccessRequestJoinedFrom = {
+    origin: "organization-teams",
+};
+```
 
 ## Fields
 

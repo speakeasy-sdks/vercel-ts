@@ -1,5 +1,15 @@
 # AuthUserBillingInvoiceItemsPreviewDeploymentSuffixFrequency
 
+## Example Usage
+
+```typescript
+import { AuthUserBillingInvoiceItemsPreviewDeploymentSuffixFrequency } from "@simplesagar/vercel/models/authuser.js";
+
+let value: AuthUserBillingInvoiceItemsPreviewDeploymentSuffixFrequency = {
+    interval: "month",
+    intervalCount: 6692.37,
+};
+```
 
 ## Fields
 

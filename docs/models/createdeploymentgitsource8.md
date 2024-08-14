@@ -1,5 +1,17 @@
 # CreateDeploymentGitSource8
 
+## Example Usage
+
+```typescript
+import { CreateDeploymentGitSource8 } from "@simplesagar/vercel/models/createdeploymentop.js";
+
+let value: CreateDeploymentGitSource8 = {
+    type: "gitlab",
+    ref: "<value>",
+    sha: "<value>",
+    projectId: 3518.7,
+};
+```
 
 ## Fields
 

@@ -1,5 +1,15 @@
 # CancelDeploymentHas2
 
+## Example Usage
+
+```typescript
+import { CancelDeploymentHas2 } from "@simplesagar/vercel/models/canceldeploymentop.js";
+
+let value: CancelDeploymentHas2 = {
+    type: "query",
+    key: "<key>",
+};
+```
 
 ## Fields
 

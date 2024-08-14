@@ -1,5 +1,16 @@
 # RemoveProjectEnvResponseBody1
 
+## Example Usage
+
+```typescript
+import { RemoveProjectEnvResponseBody1 } from "@simplesagar/vercel/models/removeprojectenvop.js";
+
+let value: RemoveProjectEnvResponseBody1 = {
+    type: "encrypted",
+    key: "<key>",
+    value: "<value>",
+};
+```
 
 ## Fields
 

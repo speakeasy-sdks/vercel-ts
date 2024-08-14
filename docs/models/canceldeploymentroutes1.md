@@ -1,5 +1,14 @@
 # CancelDeploymentRoutes1
 
+## Example Usage
+
+```typescript
+import { CancelDeploymentRoutes1 } from "@simplesagar/vercel/models/canceldeploymentop.js";
+
+let value: CancelDeploymentRoutes1 = {
+    src: "<value>",
+};
+```
 
 ## Fields
 

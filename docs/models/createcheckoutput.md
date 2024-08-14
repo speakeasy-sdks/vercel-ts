@@ -1,5 +1,12 @@
 # CreateCheckOutput
 
+## Example Usage
+
+```typescript
+import { CreateCheckOutput } from "@simplesagar/vercel/models/createcheckop.js";
+
+let value: CreateCheckOutput = {};
+```
 
 ## Fields
 

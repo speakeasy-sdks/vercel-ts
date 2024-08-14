@@ -1,5 +1,16 @@
 # UploadCertRequestBody
 
+## Example Usage
+
+```typescript
+import { UploadCertRequestBody } from "@simplesagar/vercel/models/uploadcertop.js";
+
+let value: UploadCertRequestBody = {
+    ca: "<value>",
+    key: "<key>",
+    cert: "<value>",
+};
+```
 
 ## Fields
 

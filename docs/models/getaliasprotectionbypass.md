@@ -1,5 +1,16 @@
 # GetAliasProtectionBypass
 
+## Example Usage
+
+```typescript
+import { GetAliasProtectionBypass } from "@simplesagar/vercel/models/getaliasop.js";
+
+let value: GetAliasProtectionBypass = {
+    createdAt: 9202.72,
+    createdBy: "<value>",
+    scope: "alias-protection-override",
+};
+```
 
 ## Supported Types
 

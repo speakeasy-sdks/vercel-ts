@@ -2,6 +2,13 @@
 
 Whether or not remote caching is enabled for the team
 
+## Example Usage
+
+```typescript
+import { PatchTeamRemoteCaching } from "@simplesagar/vercel/models/patchteamop.js";
+
+let value: PatchTeamRemoteCaching = {};
+```
 
 ## Fields
 

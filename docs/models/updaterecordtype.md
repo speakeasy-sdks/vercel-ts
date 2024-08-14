@@ -2,18 +2,16 @@
 
 The type of the DNS record
 
+## Example Usage
+
+```typescript
+import { UpdateRecordType } from "@simplesagar/vercel/models/updaterecordop.js";
+
+let value: UpdateRecordType = "A";
+```
 
 ## Values
 
-| Name    | Value   |
-| ------- | ------- |
-| `A`     | A       |
-| `Aaaa`  | AAAA    |
-| `Alias` | ALIAS   |
-| `Caa`   | CAA     |
-| `Cname` | CNAME   |
-| `Https` | HTTPS   |
-| `Mx`    | MX      |
-| `Srv`   | SRV     |
-| `Txt`   | TXT     |
-| `Ns`    | NS      |
+```typescript
+"A" | "AAAA" | "ALIAS" | "CAA" | "CNAME" | "HTTPS" | "MX" | "SRV" | "TXT" | "NS"
+```

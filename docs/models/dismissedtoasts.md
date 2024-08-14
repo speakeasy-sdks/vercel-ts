@@ -2,6 +2,21 @@
 
 A record of when, under a certain scopeId, a toast was dismissed
 
+## Example Usage
+
+```typescript
+import { DismissedToasts } from "@simplesagar/vercel/models/authuser.js";
+
+let value: DismissedToasts = {
+    name: "<value>",
+    dismissals: [
+        {
+            scopeId: "<value>",
+            createdAt: 9700.79,
+        },
+    ],
+};
+```
 
 ## Fields
 

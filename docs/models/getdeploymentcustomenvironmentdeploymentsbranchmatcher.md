@@ -1,5 +1,15 @@
 # GetDeploymentCustomEnvironmentDeploymentsBranchMatcher
 
+## Example Usage
+
+```typescript
+import { GetDeploymentCustomEnvironmentDeploymentsBranchMatcher } from "@simplesagar/vercel/models/getdeploymentop.js";
+
+let value: GetDeploymentCustomEnvironmentDeploymentsBranchMatcher = {
+    type: "endsWith",
+    pattern: "<value>",
+};
+```
 
 ## Fields
 

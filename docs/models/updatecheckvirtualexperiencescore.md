@@ -1,5 +1,15 @@
 # UpdateCheckVirtualExperienceScore
 
+## Example Usage
+
+```typescript
+import { UpdateCheckVirtualExperienceScore } from "@simplesagar/vercel/models/updatecheckop.js";
+
+let value: UpdateCheckVirtualExperienceScore = {
+    value: 2088.76,
+    source: "web-vitals",
+};
+```
 
 ## Fields
 

@@ -1,5 +1,12 @@
 # FirewallRoutes
 
+## Example Usage
+
+```typescript
+import { FirewallRoutes } from "@simplesagar/vercel/models/updateprojectdatacacheop.js";
+
+let value: FirewallRoutes = {};
+```
 
 ## Fields
 

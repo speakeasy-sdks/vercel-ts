@@ -1,5 +1,14 @@
 # CreateAccessGroupRequestBody
 
+## Example Usage
+
+```typescript
+import { CreateAccessGroupRequestBody } from "@simplesagar/vercel/models/createaccessgroupop.js";
+
+let value: CreateAccessGroupRequestBody = {
+    name: "My access group",
+};
+```
 
 ## Fields
 

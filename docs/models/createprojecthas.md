@@ -1,5 +1,14 @@
 # CreateProjectHas
 
+## Example Usage
+
+```typescript
+import { CreateProjectHas } from "@simplesagar/vercel/models/createprojectop.js";
+
+let value: CreateProjectHas = {
+    type: "ip_address",
+};
+```
 
 ## Fields
 

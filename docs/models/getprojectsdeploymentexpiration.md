@@ -1,5 +1,12 @@
 # GetProjectsDeploymentExpiration
 
+## Example Usage
+
+```typescript
+import { GetProjectsDeploymentExpiration } from "@simplesagar/vercel/models/getprojectsop.js";
+
+let value: GetProjectsDeploymentExpiration = {};
+```
 
 ## Fields
 

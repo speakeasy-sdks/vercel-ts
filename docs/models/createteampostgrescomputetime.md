@@ -1,5 +1,17 @@
 # CreateTeamPostgresComputeTime
 
+## Example Usage
+
+```typescript
+import { CreateTeamPostgresComputeTime } from "@simplesagar/vercel/models/createteamop.js";
+
+let value: CreateTeamPostgresComputeTime = {
+    price: 5269.07,
+    batch: 6780.6,
+    threshold: 4876.76,
+    hidden: false,
+};
+```
 
 ## Fields
 

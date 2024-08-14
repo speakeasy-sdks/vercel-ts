@@ -1,5 +1,14 @@
 # GetProjectsWebAnalytics
 
+## Example Usage
+
+```typescript
+import { GetProjectsWebAnalytics } from "@simplesagar/vercel/models/getprojectsop.js";
+
+let value: GetProjectsWebAnalytics = {
+    id: "<id>",
+};
+```
 
 ## Fields
 

@@ -1,5 +1,15 @@
 # RemoveProjectMemberRequest
 
+## Example Usage
+
+```typescript
+import { RemoveProjectMemberRequest } from "@simplesagar/vercel/models/removeprojectmemberop.js";
+
+let value: RemoveProjectMemberRequest = {
+    idOrName: "prj_pavWOn1iLObbXLRiwVvzmPrTWyTf",
+    uid: "ndlgr43fadlPyCtREAqxxdyFK",
+};
+```
 
 ## Fields
 

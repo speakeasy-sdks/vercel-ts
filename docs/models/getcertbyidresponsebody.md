@@ -1,5 +1,18 @@
 # GetCertByIdResponseBody
 
+## Example Usage
+
+```typescript
+import { GetCertByIdResponseBody } from "@simplesagar/vercel/models/getcertbyidop.js";
+
+let value: GetCertByIdResponseBody = {
+    id: "<id>",
+    createdAt: 100.63,
+    expiresAt: 3662.44,
+    autoRenew: false,
+    cns: ["<value>"],
+};
+```
 
 ## Fields
 

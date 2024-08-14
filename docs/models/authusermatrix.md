@@ -1,5 +1,17 @@
 # AuthUserMatrix
 
+## Example Usage
+
+```typescript
+import { AuthUserMatrix } from "@simplesagar/vercel/models/authuser.js";
+
+let value: AuthUserMatrix = {
+    defaultUnitPrice: "<value>",
+    dimensionPrices: {
+        key: "<value>",
+    },
+};
+```
 
 ## Fields
 

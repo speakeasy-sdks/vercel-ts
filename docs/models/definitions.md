@@ -1,5 +1,16 @@
 # Definitions
 
+## Example Usage
+
+```typescript
+import { Definitions } from "@simplesagar/vercel/models/updateprojectdatacacheop.js";
+
+let value: Definitions = {
+    host: "vercel.com",
+    path: "/api/crons/sync-something?hello=world",
+    schedule: "0 0 * * *",
+};
+```
 
 ## Fields
 

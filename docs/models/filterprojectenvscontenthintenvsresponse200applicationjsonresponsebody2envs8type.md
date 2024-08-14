@@ -1,8 +1,16 @@
 # FilterProjectEnvsContentHintEnvsResponse200ApplicationJSONResponseBody2Envs8Type
 
+## Example Usage
+
+```typescript
+import { FilterProjectEnvsContentHintEnvsResponse200ApplicationJSONResponseBody2Envs8Type } from "@simplesagar/vercel/models/filterprojectenvsop.js";
+
+let value: FilterProjectEnvsContentHintEnvsResponse200ApplicationJSONResponseBody2Envs8Type =
+    "postgres-prisma-url";
+```
 
 ## Values
 
-| Name                | Value               |
-| ------------------- | ------------------- |
-| `PostgresPrismaUrl` | postgres-prisma-url |
+```typescript
+"postgres-prisma-url"
+```

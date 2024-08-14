@@ -1,5 +1,17 @@
 # EdgeRequestAdditionalCpuDuration
 
+## Example Usage
+
+```typescript
+import { EdgeRequestAdditionalCpuDuration } from "@simplesagar/vercel/models/authuser.js";
+
+let value: EdgeRequestAdditionalCpuDuration = {
+    price: 3423.42,
+    batch: 9887.49,
+    threshold: 7573.64,
+    hidden: false,
+};
+```
 
 ## Fields
 

@@ -1,5 +1,14 @@
 # ErrorT
 
+## Example Usage
+
+```typescript
+import { ErrorT } from "@simplesagar/vercel/models/artifactqueryop.js";
+
+let value: ErrorT = {
+    message: "<value>",
+};
+```
 
 ## Fields
 

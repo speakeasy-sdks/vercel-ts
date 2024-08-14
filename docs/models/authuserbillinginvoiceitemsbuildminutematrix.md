@@ -1,5 +1,17 @@
 # AuthUserBillingInvoiceItemsBuildMinuteMatrix
 
+## Example Usage
+
+```typescript
+import { AuthUserBillingInvoiceItemsBuildMinuteMatrix } from "@simplesagar/vercel/models/authuser.js";
+
+let value: AuthUserBillingInvoiceItemsBuildMinuteMatrix = {
+    defaultUnitPrice: "<value>",
+    dimensionPrices: {
+        key: "<value>",
+    },
+};
+```
 
 ## Fields
 

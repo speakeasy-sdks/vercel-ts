@@ -1,13 +1,15 @@
 # Role
 
+## Example Usage
+
+```typescript
+import { Role } from "@simplesagar/vercel/models/teamlimited.js";
+
+let value: Role = "CONTRIBUTOR";
+```
 
 ## Values
 
-| Name          | Value         |
-| ------------- | ------------- |
-| `Owner`       | OWNER         |
-| `Member`      | MEMBER        |
-| `Developer`   | DEVELOPER     |
-| `Billing`     | BILLING       |
-| `Viewer`      | VIEWER        |
-| `Contributor` | CONTRIBUTOR   |
+```typescript
+"OWNER" | "MEMBER" | "DEVELOPER" | "BILLING" | "VIEWER" | "CONTRIBUTOR"
+```

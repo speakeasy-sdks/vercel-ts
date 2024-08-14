@@ -1,13 +1,15 @@
 # TeamRole
 
+## Example Usage
+
+```typescript
+import { TeamRole } from "@simplesagar/vercel/models/listaccessgroupmembersop.js";
+
+let value: TeamRole = "BILLING";
+```
 
 ## Values
 
-| Name          | Value         |
-| ------------- | ------------- |
-| `Owner`       | OWNER         |
-| `Member`      | MEMBER        |
-| `Developer`   | DEVELOPER     |
-| `Billing`     | BILLING       |
-| `Viewer`      | VIEWER        |
-| `Contributor` | CONTRIBUTOR   |
+```typescript
+"OWNER" | "MEMBER" | "DEVELOPER" | "BILLING" | "VIEWER" | "CONTRIBUTOR"
+```

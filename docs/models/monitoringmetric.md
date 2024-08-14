@@ -1,5 +1,17 @@
 # MonitoringMetric
 
+## Example Usage
+
+```typescript
+import { MonitoringMetric } from "@simplesagar/vercel/models/authuser.js";
+
+let value: MonitoringMetric = {
+    price: 7255.74,
+    batch: 2440.32,
+    threshold: 385.57,
+    hidden: false,
+};
+```
 
 ## Fields
 

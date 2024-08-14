@@ -1,5 +1,15 @@
 # RemoveRecordRequest
 
+## Example Usage
+
+```typescript
+import { RemoveRecordRequest } from "@simplesagar/vercel/models/removerecordop.js";
+
+let value: RemoveRecordRequest = {
+    domain: "example.com",
+    recordId: "rec_V0fra8eEgQwEpFhYG2vTzC3K",
+};
+```
 
 ## Fields
 

@@ -1,5 +1,29 @@
 # GetProjectsTargets
 
+## Example Usage
+
+```typescript
+import { GetProjectsTargets } from "@simplesagar/vercel/models/getprojectsop.js";
+
+let value: GetProjectsTargets = {
+    createdAt: 9441.2,
+    createdIn: "<value>",
+    creator: {
+        email: "Leo.Purdy@hotmail.com",
+        uid: "<value>",
+        username: "Ottilie_Cruickshank",
+    },
+    deploymentHostname: "<value>",
+    name: "<value>",
+    id: "<id>",
+    plan: "pro",
+    private: false,
+    readyState: "QUEUED",
+    type: "LAMBDAS",
+    url: "https://enraged-wrench.org",
+    userId: "<value>",
+};
+```
 
 ## Fields
 

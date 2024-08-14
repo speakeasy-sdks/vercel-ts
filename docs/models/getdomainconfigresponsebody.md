@@ -1,5 +1,14 @@
 # GetDomainConfigResponseBody
 
+## Example Usage
+
+```typescript
+import { GetDomainConfigResponseBody } from "@simplesagar/vercel/models/getdomainconfigop.js";
+
+let value: GetDomainConfigResponseBody = {
+    misconfigured: false,
+};
+```
 
 ## Fields
 

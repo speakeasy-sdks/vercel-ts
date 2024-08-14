@@ -2,6 +2,15 @@
 
 set of dashboard view preferences (cards or list) per scopeId
 
+## Example Usage
+
+```typescript
+import { ActiveDashboardViews } from "@simplesagar/vercel/models/authuser.js";
+
+let value: ActiveDashboardViews = {
+    scopeId: "<value>",
+};
+```
 
 ## Fields
 

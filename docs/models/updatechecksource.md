@@ -1,8 +1,15 @@
 # UpdateCheckSource
 
+## Example Usage
+
+```typescript
+import { UpdateCheckSource } from "@simplesagar/vercel/models/updatecheckop.js";
+
+let value: UpdateCheckSource = "web-vitals";
+```
 
 ## Values
 
-| Name        | Value       |
-| ----------- | ----------- |
-| `WebVitals` | web-vitals  |
+```typescript
+"web-vitals"
+```

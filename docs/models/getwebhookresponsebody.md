@@ -1,5 +1,19 @@
 # GetWebhookResponseBody
 
+## Example Usage
+
+```typescript
+import { GetWebhookResponseBody } from "@simplesagar/vercel/models/getwebhookop.js";
+
+let value: GetWebhookResponseBody = {
+    events: ["deployment.created"],
+    id: "account_hook_GflD6EYyo7F4ViYS",
+    url: "https://my-webhook.com",
+    ownerId: "ZspSRT4ljIEEmMHgoDwKWDei",
+    createdAt: 1567024758130,
+    updatedAt: 1567024758130,
+};
+```
 
 ## Fields
 

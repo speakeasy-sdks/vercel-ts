@@ -1,5 +1,16 @@
 # GetDeploymentResponseBodyGitSource
 
+## Example Usage
+
+```typescript
+import { GetDeploymentResponseBodyGitSource } from "@simplesagar/vercel/models/getdeploymentop.js";
+
+let value: GetDeploymentResponseBodyGitSource = {
+    type: "bitbucket",
+    owner: "<value>",
+    slug: "<value>",
+};
+```
 
 ## Supported Types
 

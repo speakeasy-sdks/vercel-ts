@@ -1,5 +1,14 @@
 # CreateEdgeConfigTokenRequest
 
+## Example Usage
+
+```typescript
+import { CreateEdgeConfigTokenRequest } from "@simplesagar/vercel/models/createedgeconfigtokenop.js";
+
+let value: CreateEdgeConfigTokenRequest = {
+    edgeConfigId: "<value>",
+};
+```
 
 ## Fields
 

@@ -2,6 +2,16 @@
 
 Since June '23
 
+## Example Usage
+
+```typescript
+import { GetDeploymentsGitComments } from "@simplesagar/vercel/models/getdeploymentsop.js";
+
+let value: GetDeploymentsGitComments = {
+    onPullRequest: false,
+    onCommit: false,
+};
+```
 
 ## Fields
 

@@ -1,11 +1,15 @@
 # CancelDeploymentChecksConclusion
 
+## Example Usage
+
+```typescript
+import { CancelDeploymentChecksConclusion } from "@simplesagar/vercel/models/canceldeploymentop.js";
+
+let value: CancelDeploymentChecksConclusion = "skipped";
+```
 
 ## Values
 
-| Name        | Value       |
-| ----------- | ----------- |
-| `Succeeded` | succeeded   |
-| `Failed`    | failed      |
-| `Skipped`   | skipped     |
-| `Canceled`  | canceled    |
+```typescript
+"succeeded" | "failed" | "skipped" | "canceled"
+```

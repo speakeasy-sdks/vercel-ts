@@ -1,12 +1,15 @@
 # RemoveProjectEnvResponseBodyEnvsResponseType
 
+## Example Usage
+
+```typescript
+import { RemoveProjectEnvResponseBodyEnvsResponseType } from "@simplesagar/vercel/models/removeprojectenvop.js";
+
+let value: RemoveProjectEnvResponseBodyEnvsResponseType = "system";
+```
 
 ## Values
 
-| Name        | Value       |
-| ----------- | ----------- |
-| `System`    | system      |
-| `Encrypted` | encrypted   |
-| `Plain`     | plain       |
-| `Sensitive` | sensitive   |
-| `Secret`    | secret      |
+```typescript
+"system" | "encrypted" | "plain" | "sensitive" | "secret"
+```

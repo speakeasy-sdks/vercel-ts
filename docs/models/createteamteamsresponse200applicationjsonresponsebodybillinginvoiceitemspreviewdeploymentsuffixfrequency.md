@@ -1,5 +1,18 @@
 # CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPreviewDeploymentSuffixFrequency
 
+## Example Usage
+
+```typescript
+import {
+  CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPreviewDeploymentSuffixFrequency,
+} from "@simplesagar/vercel/models/createteamop.js";
+
+let value: CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPreviewDeploymentSuffixFrequency =
+    {
+        interval: "month",
+        intervalCount: 4828.92,
+    };
+```
 
 ## Fields
 

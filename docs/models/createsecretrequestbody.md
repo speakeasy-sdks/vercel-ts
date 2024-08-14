@@ -1,5 +1,15 @@
 # CreateSecretRequestBody
 
+## Example Usage
+
+```typescript
+import { CreateSecretRequestBody } from "@simplesagar/vercel/models/createsecretop.js";
+
+let value: CreateSecretRequestBody = {
+    name: "my-api-key",
+    value: "some secret value",
+};
+```
 
 ## Fields
 

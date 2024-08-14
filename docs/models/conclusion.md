@@ -2,13 +2,16 @@
 
 The result of the check being run
 
+## Example Usage
+
+```typescript
+import { Conclusion } from "@simplesagar/vercel/models/updatecheckop.js";
+
+let value: Conclusion = "canceled";
+```
 
 ## Values
 
-| Name        | Value       |
-| ----------- | ----------- |
-| `Canceled`  | canceled    |
-| `Failed`    | failed      |
-| `Neutral`   | neutral     |
-| `Succeeded` | succeeded   |
-| `Skipped`   | skipped     |
+```typescript
+"canceled" | "failed" | "neutral" | "succeeded" | "skipped"
+```

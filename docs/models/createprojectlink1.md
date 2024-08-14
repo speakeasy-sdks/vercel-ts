@@ -1,5 +1,21 @@
 # CreateProjectLink1
 
+## Example Usage
+
+```typescript
+import { CreateProjectLink1 } from "@simplesagar/vercel/models/createprojectop.js";
+
+let value: CreateProjectLink1 = {
+    deployHooks: [
+        {
+            id: "<id>",
+            name: "<value>",
+            ref: "<value>",
+            url: "http://dental-narrative.net",
+        },
+    ],
+};
+```
 
 ## Fields
 

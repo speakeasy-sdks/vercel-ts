@@ -1,5 +1,17 @@
 # EdgeMiddlewareInvocations
 
+## Example Usage
+
+```typescript
+import { EdgeMiddlewareInvocations } from "@simplesagar/vercel/models/authuser.js";
+
+let value: EdgeMiddlewareInvocations = {
+    price: 8634.71,
+    batch: 7294.48,
+    threshold: 5665.06,
+    hidden: false,
+};
+```
 
 ## Fields
 

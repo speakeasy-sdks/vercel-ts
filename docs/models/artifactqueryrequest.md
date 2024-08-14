@@ -1,5 +1,12 @@
 # ArtifactQueryRequest
 
+## Example Usage
+
+```typescript
+import { ArtifactQueryRequest } from "@simplesagar/vercel/models/artifactqueryop.js";
+
+let value: ArtifactQueryRequest = {};
+```
 
 ## Fields
 

@@ -1,8 +1,16 @@
 # CreateProjectContentHintProjectsResponse200ApplicationJSONResponseBodyEnv12Type
 
+## Example Usage
+
+```typescript
+import { CreateProjectContentHintProjectsResponse200ApplicationJSONResponseBodyEnv12Type } from "@simplesagar/vercel/models/createprojectop.js";
+
+let value: CreateProjectContentHintProjectsResponse200ApplicationJSONResponseBodyEnv12Type =
+    "postgres-database";
+```
 
 ## Values
 
-| Name               | Value              |
-| ------------------ | ------------------ |
-| `PostgresDatabase` | postgres-database  |
+```typescript
+"postgres-database"
+```

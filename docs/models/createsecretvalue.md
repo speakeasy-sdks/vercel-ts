@@ -1,5 +1,12 @@
 # CreateSecretValue
 
+## Example Usage
+
+```typescript
+import { CreateSecretValue } from "@simplesagar/vercel/models/createsecretop.js";
+
+let value: CreateSecretValue = {};
+```
 
 ## Fields
 

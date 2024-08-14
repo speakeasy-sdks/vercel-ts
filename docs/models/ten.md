@@ -1,5 +1,19 @@
 # Ten
 
+## Example Usage
+
+```typescript
+import { Ten } from "@simplesagar/vercel/models/createrecordop.js";
+
+let value: Ten = {
+    name: "<value>",
+    type: "AAAA",
+    https: {
+        priority: 10,
+        target: "host.example.com",
+    },
+};
+```
 
 ## Fields
 

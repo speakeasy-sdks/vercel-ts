@@ -1,5 +1,19 @@
 # FilterProjectEnvsResponseBody2
 
+## Example Usage
+
+```typescript
+import { FilterProjectEnvsResponseBody2 } from "@simplesagar/vercel/models/filterprojectenvsop.js";
+
+let value: FilterProjectEnvsResponseBody2 = {
+    envs: [{}],
+    pagination: {
+        count: 20,
+        next: 1540095775951,
+        prev: 1540095775951,
+    },
+};
+```
 
 ## Fields
 

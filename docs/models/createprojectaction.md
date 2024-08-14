@@ -1,13 +1,15 @@
 # CreateProjectAction
 
+## Example Usage
+
+```typescript
+import { CreateProjectAction } from "@simplesagar/vercel/models/createprojectop.js";
+
+let value: CreateProjectAction = "log";
+```
 
 ## Values
 
-| Name        | Value       |
-| ----------- | ----------- |
-| `Deny`      | deny        |
-| `Challenge` | challenge   |
-| `Log`       | log         |
-| `Bypass`    | bypass      |
-| `RateLimit` | rate_limit  |
-| `Redirect`  | redirect    |
+```typescript
+"deny" | "challenge" | "log" | "bypass" | "rate_limit" | "redirect"
+```

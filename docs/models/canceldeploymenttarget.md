@@ -1,9 +1,15 @@
 # CancelDeploymentTarget
 
+## Example Usage
+
+```typescript
+import { CancelDeploymentTarget } from "@simplesagar/vercel/models/canceldeploymentop.js";
+
+let value: CancelDeploymentTarget = "production";
+```
 
 ## Values
 
-| Name         | Value        |
-| ------------ | ------------ |
-| `Staging`    | staging      |
-| `Production` | production   |
+```typescript
+"staging" | "production"
+```

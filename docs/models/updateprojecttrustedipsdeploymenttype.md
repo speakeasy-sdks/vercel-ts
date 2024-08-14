@@ -1,11 +1,15 @@
 # UpdateProjectTrustedIpsDeploymentType
 
+## Example Usage
+
+```typescript
+import { UpdateProjectTrustedIpsDeploymentType } from "@simplesagar/vercel/models/updateprojectop.js";
+
+let value: UpdateProjectTrustedIpsDeploymentType = "all";
+```
 
 ## Values
 
-| Name                                  | Value                                 |
-| ------------------------------------- | ------------------------------------- |
-| `All`                                 | all                                   |
-| `Preview`                             | preview                               |
-| `ProdDeploymentUrlsAndAllPreviews`    | prod_deployment_urls_and_all_previews |
-| `Production`                          | production                            |
+```typescript
+"all" | "preview" | "prod_deployment_urls_and_all_previews" | "production"
+```

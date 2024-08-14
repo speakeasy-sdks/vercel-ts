@@ -1,5 +1,21 @@
 # Proxy
 
+## Example Usage
+
+```typescript
+import { Proxy } from "@simplesagar/vercel/models/getdeploymenteventsop.js";
+
+let value: Proxy = {
+    timestamp: 7567.79,
+    method: "<value>",
+    host: "all-partridge.net",
+    path: "/lib",
+    userAgent: ["<value>"],
+    referer: "<value>",
+    clientIp: "<value>",
+    region: "<value>",
+};
+```
 
 ## Fields
 

@@ -1,5 +1,19 @@
 # GetConfigurationResponseBodyIntegrationsScopesQueue
 
+## Example Usage
+
+```typescript
+import { GetConfigurationResponseBodyIntegrationsScopesQueue } from "@simplesagar/vercel/models/getconfigurationop.js";
+
+let value: GetConfigurationResponseBodyIntegrationsScopesQueue = {
+    scopes: {
+        added: ["read-write:edge-config"],
+        upgraded: ["read-write:deployment-check"],
+    },
+    note: "<value>",
+    requestedAt: 9762.26,
+};
+```
 
 ## Fields
 

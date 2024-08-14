@@ -1,10 +1,15 @@
 # GetProjectsChecksState
 
+## Example Usage
+
+```typescript
+import { GetProjectsChecksState } from "@simplesagar/vercel/models/getprojectsop.js";
+
+let value: GetProjectsChecksState = "registered";
+```
 
 ## Values
 
-| Name         | Value        |
-| ------------ | ------------ |
-| `Registered` | registered   |
-| `Running`    | running      |
-| `Completed`  | completed    |
+```typescript
+"registered" | "running" | "completed"
+```

@@ -2,6 +2,15 @@
 
 When "Single Sign-On (SAML)" is configured, this object contains information that allows the client-side to identify whether or not this Team has SAML enforced.
 
+## Example Usage
+
+```typescript
+import { Saml } from "@simplesagar/vercel/models/teamlimited.js";
+
+let value: Saml = {
+    enforced: false,
+};
+```
 
 ## Fields
 

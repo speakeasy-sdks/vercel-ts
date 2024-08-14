@@ -1,5 +1,14 @@
 # Paths
 
+## Example Usage
+
+```typescript
+import { Paths } from "@simplesagar/vercel/models/updateprojectop.js";
+
+let value: Paths = {
+    value: "<value>",
+};
+```
 
 ## Fields
 

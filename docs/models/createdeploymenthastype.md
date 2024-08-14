@@ -1,10 +1,15 @@
 # CreateDeploymentHasType
 
+## Example Usage
+
+```typescript
+import { CreateDeploymentHasType } from "@simplesagar/vercel/models/createdeploymentop.js";
+
+let value: CreateDeploymentHasType = "cookie";
+```
 
 ## Values
 
-| Name     | Value    |
-| -------- | -------- |
-| `Header` | header   |
-| `Cookie` | cookie   |
-| `Query`  | query    |
+```typescript
+"header" | "cookie" | "query"
+```

@@ -1,13 +1,15 @@
 # CreateDeploymentReadyState
 
+## Example Usage
+
+```typescript
+import { CreateDeploymentReadyState } from "@simplesagar/vercel/models/createdeploymentop.js";
+
+let value: CreateDeploymentReadyState = "READY";
+```
 
 ## Values
 
-| Name           | Value          |
-| -------------- | -------------- |
-| `Canceled`     | CANCELED       |
-| `Error`        | ERROR          |
-| `Queued`       | QUEUED         |
-| `Building`     | BUILDING       |
-| `Initializing` | INITIALIZING   |
-| `Ready`        | READY          |
+```typescript
+"CANCELED" | "ERROR" | "QUEUED" | "BUILDING" | "INITIALIZING" | "READY"
+```

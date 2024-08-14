@@ -1,5 +1,14 @@
 # RequestAccessToTeamRequest
 
+## Example Usage
+
+```typescript
+import { RequestAccessToTeamRequest } from "@simplesagar/vercel/models/requestaccesstoteamop.js";
+
+let value: RequestAccessToTeamRequest = {
+    teamId: "<value>",
+};
+```
 
 ## Fields
 

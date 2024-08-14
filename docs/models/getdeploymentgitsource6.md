@@ -1,5 +1,17 @@
 # GetDeploymentGitSource6
 
+## Example Usage
+
+```typescript
+import { GetDeploymentGitSource6 } from "@simplesagar/vercel/models/getdeploymentop.js";
+
+let value: GetDeploymentGitSource6 = {
+    type: "custom",
+    ref: "<value>",
+    sha: "<value>",
+    gitUrl: "<value>",
+};
+```
 
 ## Fields
 

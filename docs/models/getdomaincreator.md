@@ -2,6 +2,17 @@
 
 An object containing information of the domain creator, including the user's id, username, and email.
 
+## Example Usage
+
+```typescript
+import { GetDomainCreator } from "@simplesagar/vercel/models/getdomainop.js";
+
+let value: GetDomainCreator = {
+    username: "vercel_user",
+    email: "demo@example.com",
+    id: "ZspSRT4ljIEEmMHgoDwKWDei",
+};
+```
 
 ## Fields
 

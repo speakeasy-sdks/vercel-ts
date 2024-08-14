@@ -1,5 +1,12 @@
 # CreateProjectDeploymentExpiration
 
+## Example Usage
+
+```typescript
+import { CreateProjectDeploymentExpiration } from "@simplesagar/vercel/models/createprojectop.js";
+
+let value: CreateProjectDeploymentExpiration = {};
+```
 
 ## Fields
 

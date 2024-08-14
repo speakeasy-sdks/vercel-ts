@@ -1,5 +1,12 @@
 # BuyDomainRequest
 
+## Example Usage
+
+```typescript
+import { BuyDomainRequest } from "@simplesagar/vercel/models/buydomainop.js";
+
+let value: BuyDomainRequest = {};
+```
 
 ## Fields
 

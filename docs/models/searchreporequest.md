@@ -1,5 +1,12 @@
 # SearchRepoRequest
 
+## Example Usage
+
+```typescript
+import { SearchRepoRequest } from "@simplesagar/vercel/models/searchrepoop.js";
+
+let value: SearchRepoRequest = {};
+```
 
 ## Fields
 

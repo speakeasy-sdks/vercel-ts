@@ -1,5 +1,15 @@
 # EditProjectEnvResponseBodyContentHint
 
+## Example Usage
+
+```typescript
+import { EditProjectEnvResponseBodyContentHint } from "@simplesagar/vercel/models/editprojectenvop.js";
+
+let value: EditProjectEnvResponseBodyContentHint = {
+    type: "redis-rest-api-read-only-token",
+    storeId: "<value>",
+};
+```
 
 ## Supported Types
 

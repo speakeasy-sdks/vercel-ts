@@ -1,5 +1,14 @@
 # EmailLoginRequestBody
 
+## Example Usage
+
+```typescript
+import { EmailLoginRequestBody } from "@simplesagar/vercel/models/emailloginop.js";
+
+let value: EmailLoginRequestBody = {
+    email: "user@mail.com",
+};
+```
 
 ## Fields
 

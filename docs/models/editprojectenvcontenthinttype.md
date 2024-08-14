@@ -1,8 +1,15 @@
 # EditProjectEnvContentHintType
 
+## Example Usage
+
+```typescript
+import { EditProjectEnvContentHintType } from "@simplesagar/vercel/models/editprojectenvop.js";
+
+let value: EditProjectEnvContentHintType = "redis-url";
+```
 
 ## Values
 
-| Name       | Value      |
-| ---------- | ---------- |
-| `RedisUrl` | redis-url  |
+```typescript
+"redis-url"
+```

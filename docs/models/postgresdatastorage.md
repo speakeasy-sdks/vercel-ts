@@ -1,5 +1,17 @@
 # PostgresDataStorage
 
+## Example Usage
+
+```typescript
+import { PostgresDataStorage } from "@simplesagar/vercel/models/authuser.js";
+
+let value: PostgresDataStorage = {
+    price: 2168.7,
+    batch: 2380.11,
+    threshold: 9031.5,
+    hidden: false,
+};
+```
 
 ## Fields
 

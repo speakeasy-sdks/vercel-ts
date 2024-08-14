@@ -2,14 +2,16 @@
 
 String indicating the type of file tree entry.
 
+## Example Usage
+
+```typescript
+import { Type } from "@simplesagar/vercel/models/filetree.js";
+
+let value: Type = "file";
+```
 
 ## Values
 
-| Name         | Value        |
-| ------------ | ------------ |
-| `Directory`  | directory    |
-| `File`       | file         |
-| `Symlink`    | symlink      |
-| `Lambda`     | lambda       |
-| `Middleware` | middleware   |
-| `Invalid`    | invalid      |
+```typescript
+"directory" | "file" | "symlink" | "lambda" | "middleware" | "invalid"
+```

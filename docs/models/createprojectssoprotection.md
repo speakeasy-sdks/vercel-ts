@@ -1,5 +1,14 @@
 # CreateProjectSsoProtection
 
+## Example Usage
+
+```typescript
+import { CreateProjectSsoProtection } from "@simplesagar/vercel/models/createprojectop.js";
+
+let value: CreateProjectSsoProtection = {
+    deploymentType: "all",
+};
+```
 
 ## Fields
 

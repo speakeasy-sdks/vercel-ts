@@ -2,12 +2,16 @@
 
 Status code for domain redirect
 
+## Example Usage
+
+```typescript
+import { RedirectStatusCode } from "@simplesagar/vercel/models/updateprojectdomainop.js";
+
+let value: RedirectStatusCode = 307;
+```
 
 ## Values
 
-| Name                   | Value                  |
-| ---------------------- | ---------------------- |
-| `ThreeHundredAndOne`   | 301                    |
-| `ThreeHundredAndTwo`   | 302                    |
-| `ThreeHundredAndSeven` | 307                    |
-| `ThreeHundredAndEight` | 308                    |
+```typescript
+301 | 302 | 307 | 308
+```

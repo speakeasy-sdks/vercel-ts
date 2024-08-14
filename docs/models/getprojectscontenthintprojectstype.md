@@ -1,8 +1,15 @@
 # GetProjectsContentHintProjectsType
 
+## Example Usage
+
+```typescript
+import { GetProjectsContentHintProjectsType } from "@simplesagar/vercel/models/getprojectsop.js";
+
+let value: GetProjectsContentHintProjectsType = "redis-rest-api-url";
+```
 
 ## Values
 
-| Name               | Value              |
-| ------------------ | ------------------ |
-| `RedisRestApiUrl`  | redis-rest-api-url |
+```typescript
+"redis-rest-api-url"
+```

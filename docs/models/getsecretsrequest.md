@@ -1,5 +1,12 @@
 # GetSecretsRequest
 
+## Example Usage
+
+```typescript
+import { GetSecretsRequest } from "@simplesagar/vercel/models/getsecretsop.js";
+
+let value: GetSecretsRequest = {};
+```
 
 ## Fields
 

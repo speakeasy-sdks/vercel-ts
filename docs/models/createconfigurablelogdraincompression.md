@@ -1,10 +1,15 @@
 # CreateConfigurableLogDrainCompression
 
+## Example Usage
+
+```typescript
+import { CreateConfigurableLogDrainCompression } from "@simplesagar/vercel/models/createconfigurablelogdrainop.js";
+
+let value: CreateConfigurableLogDrainCompression = "gzip";
+```
 
 ## Values
 
-| Name   | Value  |
-| ------ | ------ |
-| `Gzip` | gzip   |
-| `Zstd` | zstd   |
-| `None` | none   |
+```typescript
+"gzip" | "zstd" | "none"
+```

@@ -2,6 +2,33 @@
 
 Successful response retrieving a list of paginated DNS records.
 
+## Example Usage
+
+```typescript
+import { ResponseBody3 } from "@simplesagar/vercel/models/getrecordsop.js";
+
+let value: ResponseBody3 = {
+    records: [
+        {
+            id: "<id>",
+            slug: "<value>",
+            name: "<value>",
+            type: "TXT",
+            value: "<value>",
+            creator: "<value>",
+            created: 2871.19,
+            updated: 9682.87,
+            createdAt: 429.76,
+            updatedAt: 9197.83,
+        },
+    ],
+    pagination: {
+        count: 20,
+        next: 1540095775951,
+        prev: 1540095775951,
+    },
+};
+```
 
 ## Fields
 

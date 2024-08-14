@@ -1,5 +1,12 @@
 # PatchDomainResponseBody3
 
+## Example Usage
+
+```typescript
+import { PatchDomainResponseBody3 } from "@simplesagar/vercel/models/patchdomainop.js";
+
+let value: PatchDomainResponseBody3 = {};
+```
 
 ## Fields
 

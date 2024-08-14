@@ -1,8 +1,15 @@
 # ProtectionBypassScope
 
+## Example Usage
+
+```typescript
+import { ProtectionBypassScope } from "@simplesagar/vercel/models/getaliasop.js";
+
+let value: ProtectionBypassScope = "shareable-link";
+```
 
 ## Values
 
-| Name            | Value           |
-| --------------- | --------------- |
-| `ShareableLink` | shareable-link  |
+```typescript
+"shareable-link"
+```

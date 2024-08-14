@@ -1,8 +1,15 @@
 # FilterProjectEnvsContentHintEnvsType
 
+## Example Usage
+
+```typescript
+import { FilterProjectEnvsContentHintEnvsType } from "@simplesagar/vercel/models/filterprojectenvsop.js";
+
+let value: FilterProjectEnvsContentHintEnvsType = "redis-rest-api-url";
+```
 
 ## Values
 
-| Name               | Value              |
-| ------------------ | ------------------ |
-| `RedisRestApiUrl`  | redis-rest-api-url |
+```typescript
+"redis-rest-api-url"
+```

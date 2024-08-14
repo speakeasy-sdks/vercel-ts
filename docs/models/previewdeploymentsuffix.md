@@ -2,6 +2,17 @@
 
 Will be used to create an invoice item. The price must be in cents: 2000 for $20.
 
+## Example Usage
+
+```typescript
+import { PreviewDeploymentSuffix } from "@simplesagar/vercel/models/authuser.js";
+
+let value: PreviewDeploymentSuffix = {
+    price: 7708.73,
+    quantity: 9637.41,
+    hidden: false,
+};
+```
 
 ## Fields
 

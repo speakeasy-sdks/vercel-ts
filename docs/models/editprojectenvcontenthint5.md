@@ -1,5 +1,15 @@
 # EditProjectEnvContentHint5
 
+## Example Usage
+
+```typescript
+import { EditProjectEnvContentHint5 } from "@simplesagar/vercel/models/editprojectenvop.js";
+
+let value: EditProjectEnvContentHint5 = {
+    type: "blob-read-write-token",
+    storeId: "<value>",
+};
+```
 
 ## Fields
 

@@ -1,5 +1,14 @@
 # ResponseBodyRoutes
 
+## Example Usage
+
+```typescript
+import { ResponseBodyRoutes } from "@simplesagar/vercel/models/getdeploymentop.js";
+
+let value: ResponseBodyRoutes = {
+    handle: "error",
+};
+```
 
 ## Supported Types
 

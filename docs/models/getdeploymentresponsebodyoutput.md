@@ -1,5 +1,15 @@
 # GetDeploymentResponseBodyOutput
 
+## Example Usage
+
+```typescript
+import { GetDeploymentResponseBodyOutput } from "@simplesagar/vercel/models/getdeploymentop.js";
+
+let value: GetDeploymentResponseBodyOutput = {
+    path: "/etc",
+    functionName: "<value>",
+};
+```
 
 ## Fields
 

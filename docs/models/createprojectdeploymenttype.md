@@ -1,10 +1,15 @@
 # CreateProjectDeploymentType
 
+## Example Usage
+
+```typescript
+import { CreateProjectDeploymentType } from "@simplesagar/vercel/models/createprojectop.js";
+
+let value: CreateProjectDeploymentType = "all";
+```
 
 ## Values
 
-| Name                                  | Value                                 |
-| ------------------------------------- | ------------------------------------- |
-| `All`                                 | all                                   |
-| `Preview`                             | preview                               |
-| `ProdDeploymentUrlsAndAllPreviews`    | prod_deployment_urls_and_all_previews |
+```typescript
+"all" | "preview" | "prod_deployment_urls_and_all_previews"
+```

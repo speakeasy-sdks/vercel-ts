@@ -1,5 +1,18 @@
 # CreateDeploymentGitSource9
 
+## Example Usage
+
+```typescript
+import { CreateDeploymentGitSource9 } from "@simplesagar/vercel/models/createdeploymentop.js";
+
+let value: CreateDeploymentGitSource9 = {
+    type: "bitbucket",
+    ref: "<value>",
+    sha: "<value>",
+    workspaceUuid: "<value>",
+    repoUuid: "<value>",
+};
+```
 
 ## Fields
 

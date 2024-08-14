@@ -1,5 +1,14 @@
 # ListPromoteAliasesRequest
 
+## Example Usage
+
+```typescript
+import { ListPromoteAliasesRequest } from "@simplesagar/vercel/models/listpromotealiasesop.js";
+
+let value: ListPromoteAliasesRequest = {
+    projectId: "<value>",
+};
+```
 
 ## Fields
 

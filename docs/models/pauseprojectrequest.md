@@ -1,5 +1,14 @@
 # PauseProjectRequest
 
+## Example Usage
+
+```typescript
+import { PauseProjectRequest } from "@simplesagar/vercel/models/pauseprojectop.js";
+
+let value: PauseProjectRequest = {
+    projectId: "<value>",
+};
+```
 
 ## Fields
 

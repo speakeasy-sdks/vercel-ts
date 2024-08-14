@@ -1,5 +1,12 @@
 # CancelDeploymentOidcTokenClaims
 
+## Example Usage
+
+```typescript
+import { CancelDeploymentOidcTokenClaims } from "@simplesagar/vercel/models/canceldeploymentop.js";
+
+let value: CancelDeploymentOidcTokenClaims = "<value>";
+```
 
 ## Supported Types
 

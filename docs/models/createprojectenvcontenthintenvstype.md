@@ -1,8 +1,15 @@
 # CreateProjectEnvContentHintEnvsType
 
+## Example Usage
+
+```typescript
+import { CreateProjectEnvContentHintEnvsType } from "@simplesagar/vercel/models/createprojectenvop.js";
+
+let value: CreateProjectEnvContentHintEnvsType = "redis-rest-api-url";
+```
 
 ## Values
 
-| Name               | Value              |
-| ------------------ | ------------------ |
-| `RedisRestApiUrl`  | redis-rest-api-url |
+```typescript
+"redis-rest-api-url"
+```

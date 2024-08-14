@@ -2,6 +2,23 @@
 
 The team was created successfully
 
+## Example Usage
+
+```typescript
+import { CreateTeamResponseBody } from "@simplesagar/vercel/models/createteamop.js";
+
+let value: CreateTeamResponseBody = {
+    id: "team_nLlpyC6RE1qxqglFKbrMxlud",
+    slug: "<value>",
+    billing: {
+        period: {
+            start: 4835.18,
+            end: 5101.28,
+        },
+        plan: "pro",
+    },
+};
+```
 
 ## Fields
 

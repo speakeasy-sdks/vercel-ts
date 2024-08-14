@@ -1,5 +1,15 @@
 # GetConfigurationResponseBodyIntegrationsResponseScopes
 
+## Example Usage
+
+```typescript
+import { GetConfigurationResponseBodyIntegrationsResponseScopes } from "@simplesagar/vercel/models/getconfigurationop.js";
+
+let value: GetConfigurationResponseBodyIntegrationsResponseScopes = {
+    added: ["read-write:deployment-check"],
+    upgraded: ["read:deployment"],
+};
+```
 
 ## Fields
 

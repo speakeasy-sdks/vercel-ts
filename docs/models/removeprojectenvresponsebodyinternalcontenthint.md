@@ -2,6 +2,16 @@
 
 Similar to `contentHints`, but should not be exposed to the user.
 
+## Example Usage
+
+```typescript
+import { RemoveProjectEnvResponseBodyInternalContentHint } from "@simplesagar/vercel/models/removeprojectenvop.js";
+
+let value: RemoveProjectEnvResponseBodyInternalContentHint = {
+    type: "flags-secret",
+    encryptedValue: "<value>",
+};
+```
 
 ## Fields
 

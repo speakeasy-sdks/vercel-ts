@@ -2,6 +2,17 @@
 
 The access scopes granted to the token.
 
+## Example Usage
+
+```typescript
+import { Scopes1 } from "@simplesagar/vercel/models/authtoken.js";
+
+let value: Scopes1 = {
+    type: "user",
+    origin: "email",
+    createdAt: 4923.61,
+};
+```
 
 ## Fields
 

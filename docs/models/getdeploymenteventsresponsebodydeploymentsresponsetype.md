@@ -1,17 +1,15 @@
 # GetDeploymentEventsResponseBodyDeploymentsResponseType
 
+## Example Usage
+
+```typescript
+import { GetDeploymentEventsResponseBodyDeploymentsResponseType } from "@simplesagar/vercel/models/getdeploymenteventsop.js";
+
+let value: GetDeploymentEventsResponseBodyDeploymentsResponseType = "middleware-invocation";
+```
 
 ## Values
 
-| Name                     | Value                    |
-| ------------------------ | ------------------------ |
-| `Command`                | command                  |
-| `Stdout`                 | stdout                   |
-| `Stderr`                 | stderr                   |
-| `Exit`                   | exit                     |
-| `DeploymentState`        | deployment-state         |
-| `Delimiter`              | delimiter                |
-| `Middleware`             | middleware               |
-| `MiddlewareInvocation`   | middleware-invocation    |
-| `EdgeFunctionInvocation` | edge-function-invocation |
-| `Fatal`                  | fatal                    |
+```typescript
+"command" | "stdout" | "stderr" | "exit" | "deployment-state" | "delimiter" | "middleware" | "middleware-invocation" | "edge-function-invocation" | "fatal"
+```

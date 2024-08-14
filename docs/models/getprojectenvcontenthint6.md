@@ -1,5 +1,15 @@
 # GetProjectEnvContentHint6
 
+## Example Usage
+
+```typescript
+import { GetProjectEnvContentHint6 } from "@simplesagar/vercel/models/getprojectenvop.js";
+
+let value: GetProjectEnvContentHint6 = {
+    type: "postgres-url",
+    storeId: "<value>",
+};
+```
 
 ## Fields
 

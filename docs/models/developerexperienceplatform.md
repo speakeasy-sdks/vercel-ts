@@ -2,6 +2,17 @@
 
 Will be used to create an invoice item. The price must be in cents: 2000 for $20.
 
+## Example Usage
+
+```typescript
+import { DeveloperExperiencePlatform } from "@simplesagar/vercel/models/authuser.js";
+
+let value: DeveloperExperiencePlatform = {
+    price: 9781.73,
+    quantity: 7317.44,
+    hidden: false,
+};
+```
 
 ## Fields
 

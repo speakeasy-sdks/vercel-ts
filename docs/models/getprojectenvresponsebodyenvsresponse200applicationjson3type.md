@@ -1,8 +1,15 @@
 # GetProjectEnvResponseBodyEnvsResponse200ApplicationJson3Type
 
+## Example Usage
+
+```typescript
+import { GetProjectEnvResponseBodyEnvsResponse200ApplicationJson3Type } from "@simplesagar/vercel/models/getprojectenvop.js";
+
+let value: GetProjectEnvResponseBodyEnvsResponse200ApplicationJson3Type = "flags-secret";
+```
 
 ## Values
 
-| Name          | Value         |
-| ------------- | ------------- |
-| `FlagsSecret` | flags-secret  |
+```typescript
+"flags-secret"
+```

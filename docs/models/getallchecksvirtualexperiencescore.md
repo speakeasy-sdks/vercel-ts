@@ -1,5 +1,15 @@
 # GetAllChecksVirtualExperienceScore
 
+## Example Usage
+
+```typescript
+import { GetAllChecksVirtualExperienceScore } from "@simplesagar/vercel/models/getallchecksop.js";
+
+let value: GetAllChecksVirtualExperienceScore = {
+    value: 6169.34,
+    source: "web-vitals",
+};
+```
 
 ## Fields
 

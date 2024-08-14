@@ -1,5 +1,15 @@
 # UpdateCheckTBT
 
+## Example Usage
+
+```typescript
+import { UpdateCheckTBT } from "@simplesagar/vercel/models/updatecheckop.js";
+
+let value: UpdateCheckTBT = {
+    value: 6527.9,
+    source: "web-vitals",
+};
+```
 
 ## Fields
 

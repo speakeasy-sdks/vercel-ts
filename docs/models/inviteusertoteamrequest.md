@@ -1,5 +1,14 @@
 # InviteUserToTeamRequest
 
+## Example Usage
+
+```typescript
+import { InviteUserToTeamRequest } from "@simplesagar/vercel/models/inviteusertoteamop.js";
+
+let value: InviteUserToTeamRequest = {
+    teamId: "<value>",
+};
+```
 
 ## Fields
 

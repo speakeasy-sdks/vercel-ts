@@ -2,6 +2,15 @@
 
 The alias was successfully removed
 
+## Example Usage
+
+```typescript
+import { DeleteAliasResponseBody } from "@simplesagar/vercel/models/deletealiasop.js";
+
+let value: DeleteAliasResponseBody = {
+    status: "SUCCESS",
+};
+```
 
 ## Fields
 

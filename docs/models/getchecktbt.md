@@ -1,5 +1,15 @@
 # GetCheckTBT
 
+## Example Usage
+
+```typescript
+import { GetCheckTBT } from "@simplesagar/vercel/models/getcheckop.js";
+
+let value: GetCheckTBT = {
+    value: 1709.09,
+    source: "web-vitals",
+};
+```
 
 ## Fields
 

@@ -2,6 +2,20 @@
 
 A partial representation of a Build used by the deployment endpoint.
 
+## Example Usage
+
+```typescript
+import { CancelDeploymentLambdas } from "@simplesagar/vercel/models/canceldeploymentop.js";
+
+let value: CancelDeploymentLambdas = {
+    output: [
+        {
+            path: "/System",
+            functionName: "<value>",
+        },
+    ],
+};
+```
 
 ## Fields
 

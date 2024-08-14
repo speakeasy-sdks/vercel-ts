@@ -1,5 +1,17 @@
 # CreateTeamEdgeMiddlewareInvocations
 
+## Example Usage
+
+```typescript
+import { CreateTeamEdgeMiddlewareInvocations } from "@simplesagar/vercel/models/createteamop.js";
+
+let value: CreateTeamEdgeMiddlewareInvocations = {
+    price: 5372.36,
+    batch: 9543.34,
+    threshold: 4555.79,
+    hidden: false,
+};
+```
 
 ## Fields
 

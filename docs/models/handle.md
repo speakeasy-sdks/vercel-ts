@@ -1,9 +1,15 @@
 # Handle
 
+## Example Usage
+
+```typescript
+import { Handle } from "@simplesagar/vercel/models/updateprojectdatacacheop.js";
+
+let value: Handle = "finalize";
+```
 
 ## Values
 
-| Name       | Value      |
-| ---------- | ---------- |
-| `Init`     | init       |
-| `Finalize` | finalize   |
+```typescript
+"init" | "finalize"
+```

@@ -1,5 +1,12 @@
 # CreateDeploymentProjectSettings
 
+## Example Usage
+
+```typescript
+import { CreateDeploymentProjectSettings } from "@simplesagar/vercel/models/createdeploymentop.js";
+
+let value: CreateDeploymentProjectSettings = {};
+```
 
 ## Fields
 

@@ -1,5 +1,14 @@
 # DeleteSecretRequest
 
+## Example Usage
+
+```typescript
+import { DeleteSecretRequest } from "@simplesagar/vercel/models/deletesecretop.js";
+
+let value: DeleteSecretRequest = {
+    idOrName: "sec_RKc5iV0rV3ZSrFrHiruRno7k",
+};
+```
 
 ## Fields
 

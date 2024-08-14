@@ -1,10 +1,15 @@
 # CreateProjectTier
 
+## Example Usage
+
+```typescript
+import { CreateProjectTier } from "@simplesagar/vercel/models/createprojectop.js";
+
+let value: CreateProjectTier = "critical";
+```
 
 ## Values
 
-| Name       | Value      |
-| ---------- | ---------- |
-| `Standard` | standard   |
-| `Advanced` | advanced   |
-| `Critical` | critical   |
+```typescript
+"standard" | "advanced" | "critical"
+```

@@ -1,5 +1,14 @@
 # GetAliasRequest
 
+## Example Usage
+
+```typescript
+import { GetAliasRequest } from "@simplesagar/vercel/models/getaliasop.js";
+
+let value: GetAliasRequest = {
+    idOrAlias: "example.vercel.app",
+};
+```
 
 ## Fields
 

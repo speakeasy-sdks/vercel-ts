@@ -2,18 +2,16 @@
 
 The type of record, it could be one of the valid DNS records.
 
+## Example Usage
+
+```typescript
+import { CreateRecordRequestBodyDnsType } from "@simplesagar/vercel/models/createrecordop.js";
+
+let value: CreateRecordRequestBodyDnsType = "CNAME";
+```
 
 ## Values
 
-| Name    | Value   |
-| ------- | ------- |
-| `A`     | A       |
-| `Aaaa`  | AAAA    |
-| `Alias` | ALIAS   |
-| `Caa`   | CAA     |
-| `Cname` | CNAME   |
-| `Https` | HTTPS   |
-| `Mx`    | MX      |
-| `Srv`   | SRV     |
-| `Txt`   | TXT     |
-| `Ns`    | NS      |
+```typescript
+"A" | "AAAA" | "ALIAS" | "CAA" | "CNAME" | "HTTPS" | "MX" | "SRV" | "TXT" | "NS"
+```

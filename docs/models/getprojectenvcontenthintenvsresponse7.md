@@ -1,5 +1,15 @@
 # GetProjectEnvContentHintEnvsResponse7
 
+## Example Usage
+
+```typescript
+import { GetProjectEnvContentHintEnvsResponse7 } from "@simplesagar/vercel/models/getprojectenvop.js";
+
+let value: GetProjectEnvContentHintEnvsResponse7 = {
+    type: "postgres-url-non-pooling",
+    storeId: "<value>",
+};
+```
 
 ## Fields
 

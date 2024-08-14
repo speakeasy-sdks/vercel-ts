@@ -1,5 +1,21 @@
 # ResponseBodyProxy
 
+## Example Usage
+
+```typescript
+import { ResponseBodyProxy } from "@simplesagar/vercel/models/getdeploymenteventsop.js";
+
+let value: ResponseBodyProxy = {
+    timestamp: 1470.14,
+    method: "<value>",
+    host: "well-groomed-chronicle.biz",
+    path: "/etc/mail",
+    userAgent: ["<value>"],
+    referer: "<value>",
+    clientIp: "<value>",
+    region: "<value>",
+};
+```
 
 ## Fields
 

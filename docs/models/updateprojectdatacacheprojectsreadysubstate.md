@@ -1,9 +1,15 @@
 # UpdateProjectDataCacheProjectsReadySubstate
 
+## Example Usage
+
+```typescript
+import { UpdateProjectDataCacheProjectsReadySubstate } from "@simplesagar/vercel/models/updateprojectdatacacheop.js";
+
+let value: UpdateProjectDataCacheProjectsReadySubstate = "STAGED";
+```
 
 ## Values
 
-| Name       | Value      |
-| ---------- | ---------- |
-| `Staged`   | STAGED     |
-| `Promoted` | PROMOTED   |
+```typescript
+"STAGED" | "PROMOTED"
+```

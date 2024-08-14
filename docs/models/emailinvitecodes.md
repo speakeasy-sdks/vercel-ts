@@ -1,5 +1,15 @@
 # EmailInviteCodes
 
+## Example Usage
+
+```typescript
+import { EmailInviteCodes } from "@simplesagar/vercel/models/getteammembersop.js";
+
+let value: EmailInviteCodes = {
+    id: "<id>",
+    isDSyncUser: false,
+};
+```
 
 ## Fields
 

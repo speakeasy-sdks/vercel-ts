@@ -1,10 +1,15 @@
 # CreateDeploymentCustomEnvironmentType
 
+## Example Usage
+
+```typescript
+import { CreateDeploymentCustomEnvironmentType } from "@simplesagar/vercel/models/createdeploymentop.js";
+
+let value: CreateDeploymentCustomEnvironmentType = "startsWith";
+```
 
 ## Values
 
-| Name         | Value        |
-| ------------ | ------------ |
-| `StartsWith` | startsWith   |
-| `Equals`     | equals       |
-| `EndsWith`   | endsWith     |
+```typescript
+"startsWith" | "equals" | "endsWith"
+```

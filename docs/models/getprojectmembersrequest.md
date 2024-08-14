@@ -1,5 +1,14 @@
 # GetProjectMembersRequest
 
+## Example Usage
+
+```typescript
+import { GetProjectMembersRequest } from "@simplesagar/vercel/models/getprojectmembersop.js";
+
+let value: GetProjectMembersRequest = {
+    idOrName: "prj_pavWOn1iLObbXLRiwVvzmPrTWyTf",
+};
+```
 
 ## Fields
 

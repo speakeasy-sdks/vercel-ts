@@ -1,5 +1,12 @@
 # GetProjectsProjectsValue
 
+## Example Usage
+
+```typescript
+import { GetProjectsProjectsValue } from "@simplesagar/vercel/models/getprojectsop.js";
+
+let value: GetProjectsProjectsValue = "<value>";
+```
 
 ## Supported Types
 

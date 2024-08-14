@@ -1,5 +1,15 @@
 # GetProjectEnvResponseBodyEnvsResponseContentHint
 
+## Example Usage
+
+```typescript
+import { GetProjectEnvResponseBodyEnvsResponseContentHint } from "@simplesagar/vercel/models/getprojectenvop.js";
+
+let value: GetProjectEnvResponseBodyEnvsResponseContentHint = {
+    type: "postgres-password",
+    storeId: "<value>",
+};
+```
 
 ## Supported Types
 

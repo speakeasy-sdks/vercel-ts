@@ -1,13 +1,15 @@
 # CreateConfigurableLogDrainSources
 
+## Example Usage
+
+```typescript
+import { CreateConfigurableLogDrainSources } from "@simplesagar/vercel/models/createconfigurablelogdrainop.js";
+
+let value: CreateConfigurableLogDrainSources = "build";
+```
 
 ## Values
 
-| Name       | Value      |
-| ---------- | ---------- |
-| `Static`   | static     |
-| `Lambda`   | lambda     |
-| `Build`    | build      |
-| `Edge`     | edge       |
-| `External` | external   |
-| `Firewall` | firewall   |
+```typescript
+"static" | "lambda" | "build" | "edge" | "external" | "firewall"
+```

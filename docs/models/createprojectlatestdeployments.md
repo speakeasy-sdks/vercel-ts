@@ -1,5 +1,29 @@
 # CreateProjectLatestDeployments
 
+## Example Usage
+
+```typescript
+import { CreateProjectLatestDeployments } from "@simplesagar/vercel/models/createprojectop.js";
+
+let value: CreateProjectLatestDeployments = {
+    createdAt: 6289.82,
+    createdIn: "<value>",
+    creator: {
+        email: "Savion42@gmail.com",
+        uid: "<value>",
+        username: "Pierre67",
+    },
+    deploymentHostname: "<value>",
+    name: "<value>",
+    id: "<id>",
+    plan: "hobby",
+    private: false,
+    readyState: "INITIALIZING",
+    type: "LAMBDAS",
+    url: "https://left-cousin.net",
+    userId: "<value>",
+};
+```
 
 ## Fields
 

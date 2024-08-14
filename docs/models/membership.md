@@ -2,6 +2,13 @@
 
 The membership of the authenticated User in relation to the Team.
 
+## Example Usage
+
+```typescript
+import { Membership } from "@simplesagar/vercel/models/teamlimited.js";
+
+let value: Membership = {};
+```
 
 ## Fields
 

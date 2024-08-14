@@ -2,6 +2,13 @@
 
 An object that contains the Build's configuration
 
+## Example Usage
+
+```typescript
+import { Config } from "@simplesagar/vercel/models/listdeploymentbuildsop.js";
+
+let value: Config = {};
+```
 
 ## Fields
 

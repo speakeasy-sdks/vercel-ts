@@ -1,10 +1,15 @@
 # UpdateProjectTier
 
+## Example Usage
+
+```typescript
+import { UpdateProjectTier } from "@simplesagar/vercel/models/updateprojectop.js";
+
+let value: UpdateProjectTier = "advanced";
+```
 
 ## Values
 
-| Name       | Value      |
-| ---------- | ---------- |
-| `Standard` | standard   |
-| `Advanced` | advanced   |
-| `Critical` | critical   |
+```typescript
+"standard" | "advanced" | "critical"
+```

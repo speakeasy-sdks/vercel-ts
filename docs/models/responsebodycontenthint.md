@@ -1,5 +1,15 @@
 # ResponseBodyContentHint
 
+## Example Usage
+
+```typescript
+import { ResponseBodyContentHint } from "@simplesagar/vercel/models/filterprojectenvsop.js";
+
+let value: ResponseBodyContentHint = {
+    type: "postgres-url",
+    storeId: "<value>",
+};
+```
 
 ## Supported Types
 

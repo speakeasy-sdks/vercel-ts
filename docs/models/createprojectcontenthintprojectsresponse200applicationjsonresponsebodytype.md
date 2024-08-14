@@ -1,8 +1,16 @@
 # CreateProjectContentHintProjectsResponse200ApplicationJSONResponseBodyType
 
+## Example Usage
+
+```typescript
+import { CreateProjectContentHintProjectsResponse200ApplicationJSONResponseBodyType } from "@simplesagar/vercel/models/createprojectop.js";
+
+let value: CreateProjectContentHintProjectsResponse200ApplicationJSONResponseBodyType =
+    "postgres-url";
+```
 
 ## Values
 
-| Name          | Value         |
-| ------------- | ------------- |
-| `PostgresUrl` | postgres-url  |
+```typescript
+"postgres-url"
+```

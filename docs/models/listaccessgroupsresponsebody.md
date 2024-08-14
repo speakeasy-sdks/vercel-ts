@@ -1,5 +1,12 @@
 # ListAccessGroupsResponseBody
 
+## Example Usage
+
+```typescript
+import { ListAccessGroupsResponseBody } from "@simplesagar/vercel/models/listaccessgroupsop.js";
+
+let value: ListAccessGroupsResponseBody = {};
+```
 
 ## Supported Types
 

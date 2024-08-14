@@ -2,11 +2,16 @@
 
 State of all registered checks
 
+## Example Usage
+
+```typescript
+import { GetDeploymentsChecksState } from "@simplesagar/vercel/models/getdeploymentsop.js";
+
+let value: GetDeploymentsChecksState = "completed";
+```
 
 ## Values
 
-| Name         | Value        |
-| ------------ | ------------ |
-| `Registered` | registered   |
-| `Running`    | running      |
-| `Completed`  | completed    |
+```typescript
+"registered" | "running" | "completed"
+```

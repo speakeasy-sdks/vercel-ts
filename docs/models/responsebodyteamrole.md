@@ -2,14 +2,16 @@
 
 The role of this user in the team.
 
+## Example Usage
+
+```typescript
+import { ResponseBodyTeamRole } from "@simplesagar/vercel/models/getprojectmembersop.js";
+
+let value: ResponseBodyTeamRole = "CONTRIBUTOR";
+```
 
 ## Values
 
-| Name          | Value         |
-| ------------- | ------------- |
-| `Owner`       | OWNER         |
-| `Member`      | MEMBER        |
-| `Developer`   | DEVELOPER     |
-| `Billing`     | BILLING       |
-| `Viewer`      | VIEWER        |
-| `Contributor` | CONTRIBUTOR   |
+```typescript
+"OWNER" | "MEMBER" | "DEVELOPER" | "BILLING" | "VIEWER" | "CONTRIBUTOR"
+```

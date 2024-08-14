@@ -1,5 +1,16 @@
 # RequestAccessToTeamRequestBody
 
+## Example Usage
+
+```typescript
+import { RequestAccessToTeamRequestBody } from "@simplesagar/vercel/models/requestaccesstoteamop.js";
+
+let value: RequestAccessToTeamRequestBody = {
+    joinedFrom: {
+        origin: "github",
+    },
+};
+```
 
 ## Fields
 

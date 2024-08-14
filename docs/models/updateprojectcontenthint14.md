@@ -1,5 +1,18 @@
 # UpdateProjectContentHint14
 
+## Example Usage
+
+```typescript
+import { UpdateProjectContentHint14 } from "@simplesagar/vercel/models/updateprojectop.js";
+
+let value: UpdateProjectContentHint14 = {
+    type: "integration-store-secret",
+    storeId: "<value>",
+    integrationId: "<value>",
+    integrationProductId: "<value>",
+    integrationConfigurationId: "<value>",
+};
+```
 
 ## Fields
 

@@ -1,5 +1,15 @@
 # UpdateCheckFCP
 
+## Example Usage
+
+```typescript
+import { UpdateCheckFCP } from "@simplesagar/vercel/models/updatecheckop.js";
+
+let value: UpdateCheckFCP = {
+    value: 9883.74,
+    source: "web-vitals",
+};
+```
 
 ## Fields
 

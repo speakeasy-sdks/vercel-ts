@@ -1,5 +1,15 @@
 # UpdateProjectMitigate
 
+## Example Usage
+
+```typescript
+import { UpdateProjectMitigate } from "@simplesagar/vercel/models/updateprojectop.js";
+
+let value: UpdateProjectMitigate = {
+    action: "bypass",
+    ruleId: "<value>",
+};
+```
 
 ## Fields
 

@@ -1,5 +1,23 @@
 # BuyDomainRequestBody
 
+## Example Usage
+
+```typescript
+import { BuyDomainRequestBody } from "@simplesagar/vercel/models/buydomainop.js";
+
+let value: BuyDomainRequestBody = {
+    name: "example.com",
+    country: "US",
+    firstName: "Jane",
+    lastName: "Doe",
+    address1: "340 S Lemon Ave Suite 4133",
+    city: "San Francisco",
+    state: "CA",
+    postalCode: "91789",
+    phone: "+1.4158551452",
+    email: "jane.doe@someplace.com",
+};
+```
 
 ## Fields
 

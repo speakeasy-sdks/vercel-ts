@@ -1,5 +1,17 @@
 # CreateTeamAnalyticsUsage
 
+## Example Usage
+
+```typescript
+import { CreateTeamAnalyticsUsage } from "@simplesagar/vercel/models/createteamop.js";
+
+let value: CreateTeamAnalyticsUsage = {
+    price: 8180.34,
+    batch: 7268.78,
+    threshold: 1024.13,
+    hidden: false,
+};
+```
 
 ## Fields
 

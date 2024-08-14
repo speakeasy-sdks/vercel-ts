@@ -1,8 +1,15 @@
 # CreateConfigurableLogDrainCreatedFrom
 
+## Example Usage
+
+```typescript
+import { CreateConfigurableLogDrainCreatedFrom } from "@simplesagar/vercel/models/createconfigurablelogdrainop.js";
+
+let value: CreateConfigurableLogDrainCreatedFrom = "self-served";
+```
 
 ## Values
 
-| Name         | Value        |
-| ------------ | ------------ |
-| `SelfServed` | self-served  |
+```typescript
+"self-served"
+```

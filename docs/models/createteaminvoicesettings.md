@@ -1,5 +1,12 @@
 # CreateTeamInvoiceSettings
 
+## Example Usage
+
+```typescript
+import { CreateTeamInvoiceSettings } from "@simplesagar/vercel/models/createteamop.js";
+
+let value: CreateTeamInvoiceSettings = {};
+```
 
 ## Fields
 

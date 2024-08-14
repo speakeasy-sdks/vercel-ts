@@ -1,10 +1,15 @@
 # CreateProjectEnvTargetEnvsResponse2
 
+## Example Usage
+
+```typescript
+import { CreateProjectEnvTargetEnvsResponse2 } from "@simplesagar/vercel/models/createprojectenvop.js";
+
+let value: CreateProjectEnvTargetEnvsResponse2 = "development";
+```
 
 ## Values
 
-| Name          | Value         |
-| ------------- | ------------- |
-| `Production`  | production    |
-| `Preview`     | preview       |
-| `Development` | development   |
+```typescript
+"production" | "preview" | "development"
+```

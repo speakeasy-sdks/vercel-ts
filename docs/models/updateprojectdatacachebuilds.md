@@ -1,5 +1,14 @@
 # UpdateProjectDataCacheBuilds
 
+## Example Usage
+
+```typescript
+import { UpdateProjectDataCacheBuilds } from "@simplesagar/vercel/models/updateprojectdatacacheop.js";
+
+let value: UpdateProjectDataCacheBuilds = {
+    use: "<value>",
+};
+```
 
 ## Fields
 

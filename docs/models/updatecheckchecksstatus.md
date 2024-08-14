@@ -1,10 +1,15 @@
 # UpdateCheckChecksStatus
 
+## Example Usage
+
+```typescript
+import { UpdateCheckChecksStatus } from "@simplesagar/vercel/models/updatecheckop.js";
+
+let value: UpdateCheckChecksStatus = "running";
+```
 
 ## Values
 
-| Name         | Value        |
-| ------------ | ------------ |
-| `Registered` | registered   |
-| `Running`    | running      |
-| `Completed`  | completed    |
+```typescript
+"registered" | "running" | "completed"
+```

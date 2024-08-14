@@ -1,5 +1,14 @@
 # CreateDeploymentRequestBody
 
+## Example Usage
+
+```typescript
+import { CreateDeploymentRequestBody } from "@simplesagar/vercel/models/createdeploymentop.js";
+
+let value: CreateDeploymentRequestBody = {
+    name: "my-instant-deployment",
+};
+```
 
 ## Fields
 

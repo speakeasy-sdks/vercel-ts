@@ -2,6 +2,15 @@
 
 The custom environment used for this deployment, if any
 
+## Example Usage
+
+```typescript
+import { GetDeploymentsCustomEnvironment } from "@simplesagar/vercel/models/getdeploymentsop.js";
+
+let value: GetDeploymentsCustomEnvironment = {
+    id: "<id>",
+};
+```
 
 ## Fields
 

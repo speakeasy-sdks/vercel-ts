@@ -1,5 +1,12 @@
 # CreateProjectFirewallRoutes
 
+## Example Usage
+
+```typescript
+import { CreateProjectFirewallRoutes } from "@simplesagar/vercel/models/createprojectop.js";
+
+let value: CreateProjectFirewallRoutes = {};
+```
 
 ## Fields
 

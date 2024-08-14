@@ -1,5 +1,19 @@
 # CancelDeploymentCustomEnvironment1
 
+## Example Usage
+
+```typescript
+import { CancelDeploymentCustomEnvironment1 } from "@simplesagar/vercel/models/canceldeploymentop.js";
+
+let value: CancelDeploymentCustomEnvironment1 = {
+    id: "<id>",
+    name: "<value>",
+    slug: "<value>",
+    type: "development",
+    createdAt: 2536.42,
+    updatedAt: 3299.35,
+};
+```
 
 ## Fields
 

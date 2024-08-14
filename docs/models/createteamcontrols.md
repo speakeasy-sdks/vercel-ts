@@ -1,5 +1,12 @@
 # CreateTeamControls
 
+## Example Usage
+
+```typescript
+import { CreateTeamControls } from "@simplesagar/vercel/models/createteamop.js";
+
+let value: CreateTeamControls = {};
+```
 
 ## Fields
 

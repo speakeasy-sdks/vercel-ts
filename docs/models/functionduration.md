@@ -1,5 +1,17 @@
 # FunctionDuration
 
+## Example Usage
+
+```typescript
+import { FunctionDuration } from "@simplesagar/vercel/models/authuser.js";
+
+let value: FunctionDuration = {
+    price: 5646.67,
+    batch: 4849.66,
+    threshold: 511.7,
+    hidden: false,
+};
+```
 
 ## Fields
 

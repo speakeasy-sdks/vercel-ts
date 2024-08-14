@@ -2,6 +2,18 @@
 
 Metadata for the User who generated the event.
 
+## Example Usage
+
+```typescript
+import { UserModel } from "@simplesagar/vercel/models/userevent.js";
+
+let value: UserModel = {
+    avatar: "https://loremflickr.com/640/480",
+    email: "Eudora_Kemmer13@yahoo.com",
+    uid: "<value>",
+    username: "Filiberto.Boyer",
+};
+```
 
 ## Fields
 

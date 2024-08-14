@@ -1,5 +1,12 @@
 # FlagsDefinitions
 
+## Example Usage
+
+```typescript
+import { FlagsDefinitions } from "@simplesagar/vercel/models/createdeploymentop.js";
+
+let value: FlagsDefinitions = {};
+```
 
 ## Fields
 

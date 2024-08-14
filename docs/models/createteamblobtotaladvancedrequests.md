@@ -1,5 +1,17 @@
 # CreateTeamBlobTotalAdvancedRequests
 
+## Example Usage
+
+```typescript
+import { CreateTeamBlobTotalAdvancedRequests } from "@simplesagar/vercel/models/createteamop.js";
+
+let value: CreateTeamBlobTotalAdvancedRequests = {
+    price: 1076.17,
+    batch: 8777.51,
+    threshold: 5682.18,
+    hidden: false,
+};
+```
 
 ## Fields
 

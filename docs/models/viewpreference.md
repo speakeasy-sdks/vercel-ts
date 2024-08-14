@@ -1,9 +1,15 @@
 # ViewPreference
 
+## Example Usage
+
+```typescript
+import { ViewPreference } from "@simplesagar/vercel/models/authuser.js";
+
+let value: ViewPreference = "cards";
+```
 
 ## Values
 
-| Name    | Value   |
-| ------- | ------- |
-| `List`  | list    |
-| `Cards` | cards   |
+```typescript
+"list" | "cards"
+```

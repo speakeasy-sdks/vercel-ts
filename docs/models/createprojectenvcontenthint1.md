@@ -1,5 +1,15 @@
 # CreateProjectEnvContentHint1
 
+## Example Usage
+
+```typescript
+import { CreateProjectEnvContentHint1 } from "@simplesagar/vercel/models/createprojectenvop.js";
+
+let value: CreateProjectEnvContentHint1 = {
+    type: "redis-url",
+    storeId: "<value>",
+};
+```
 
 ## Fields
 

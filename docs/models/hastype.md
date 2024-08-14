@@ -1,8 +1,15 @@
 # HasType
 
+## Example Usage
+
+```typescript
+import { HasType } from "@simplesagar/vercel/models/createdeploymentop.js";
+
+let value: HasType = "host";
+```
 
 ## Values
 
-| Name   | Value  |
-| ------ | ------ |
-| `Host` | host   |
+```typescript
+"host"
+```

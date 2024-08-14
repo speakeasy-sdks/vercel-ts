@@ -1,8 +1,15 @@
 # CancelDeploymentMissingType
 
+## Example Usage
+
+```typescript
+import { CancelDeploymentMissingType } from "@simplesagar/vercel/models/canceldeploymentop.js";
+
+let value: CancelDeploymentMissingType = "host";
+```
 
 ## Values
 
-| Name   | Value  |
-| ------ | ------ |
-| `Host` | host   |
+```typescript
+"host"
+```

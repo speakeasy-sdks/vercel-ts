@@ -2,6 +2,17 @@
 
 Information for the Directory Sync configuration.
 
+## Example Usage
+
+```typescript
+import { Directory } from "@simplesagar/vercel/models/teamlimited.js";
+
+let value: Directory = {
+    type: "OktaSAML",
+    state: "active",
+    connectedAt: 1611796915677,
+};
+```
 
 ## Fields
 

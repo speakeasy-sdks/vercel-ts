@@ -1,5 +1,15 @@
 # UpdateProjectContentHint5
 
+## Example Usage
+
+```typescript
+import { UpdateProjectContentHint5 } from "@simplesagar/vercel/models/updateprojectop.js";
+
+let value: UpdateProjectContentHint5 = {
+    type: "blob-read-write-token",
+    storeId: "<value>",
+};
+```
 
 ## Fields
 

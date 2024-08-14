@@ -1,5 +1,15 @@
 # CreateTeamPeriod
 
+## Example Usage
+
+```typescript
+import { CreateTeamPeriod } from "@simplesagar/vercel/models/createteamop.js";
+
+let value: CreateTeamPeriod = {
+    start: 938.94,
+    end: 2476.85,
+};
+```
 
 ## Fields
 

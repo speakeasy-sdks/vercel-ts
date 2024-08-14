@@ -1,5 +1,12 @@
 # ResponseBodyFlags
 
+## Example Usage
+
+```typescript
+import { ResponseBodyFlags } from "@simplesagar/vercel/models/getdeploymentop.js";
+
+let value: ResponseBodyFlags = [{}];
+```
 
 ## Supported Types
 

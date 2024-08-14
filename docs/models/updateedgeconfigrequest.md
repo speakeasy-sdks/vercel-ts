@@ -1,5 +1,14 @@
 # UpdateEdgeConfigRequest
 
+## Example Usage
+
+```typescript
+import { UpdateEdgeConfigRequest } from "@simplesagar/vercel/models/updateedgeconfigop.js";
+
+let value: UpdateEdgeConfigRequest = {
+    edgeConfigId: "<value>",
+};
+```
 
 ## Fields
 

@@ -1,5 +1,17 @@
 # GetProjectsLinkProjectsResponseDeployHooks
 
+## Example Usage
+
+```typescript
+import { GetProjectsLinkProjectsResponseDeployHooks } from "@simplesagar/vercel/models/getprojectsop.js";
+
+let value: GetProjectsLinkProjectsResponseDeployHooks = {
+    id: "<id>",
+    name: "<value>",
+    ref: "<value>",
+    url: "https://perfect-clause.com",
+};
+```
 
 ## Fields
 

@@ -1,5 +1,14 @@
 # CreateProjectMissing
 
+## Example Usage
+
+```typescript
+import { CreateProjectMissing } from "@simplesagar/vercel/models/createprojectop.js";
+
+let value: CreateProjectMissing = {
+    type: "environment",
+};
+```
 
 ## Fields
 

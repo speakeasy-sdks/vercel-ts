@@ -1,5 +1,12 @@
 # RemoveProjectEnvResponseBodyTarget
 
+## Example Usage
+
+```typescript
+import { RemoveProjectEnvResponseBodyTarget } from "@simplesagar/vercel/models/removeprojectenvop.js";
+
+let value: RemoveProjectEnvResponseBodyTarget = ["preview"];
+```
 
 ## Supported Types
 

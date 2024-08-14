@@ -1,11 +1,15 @@
 # GetDeploymentResponseBodyDeploymentsReadyState
 
+## Example Usage
+
+```typescript
+import { GetDeploymentResponseBodyDeploymentsReadyState } from "@simplesagar/vercel/models/getdeploymentop.js";
+
+let value: GetDeploymentResponseBodyDeploymentsReadyState = "ERROR";
+```
 
 ## Values
 
-| Name           | Value          |
-| -------------- | -------------- |
-| `Building`     | BUILDING       |
-| `Error`        | ERROR          |
-| `Initializing` | INITIALIZING   |
-| `Ready`        | READY          |
+```typescript
+"BUILDING" | "ERROR" | "INITIALIZING" | "READY"
+```

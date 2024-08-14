@@ -1,5 +1,15 @@
 # PatchDomainResponseBody
 
+## Example Usage
+
+```typescript
+import { PatchDomainResponseBody } from "@simplesagar/vercel/models/patchdomainop.js";
+
+let value: PatchDomainResponseBody = {
+    moved: false,
+    token: "<value>",
+};
+```
 
 ## Supported Types
 

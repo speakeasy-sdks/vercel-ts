@@ -2,6 +2,13 @@
 
 Populates initial git metadata for different git providers.
 
+## Example Usage
+
+```typescript
+import { GitMetadata } from "@simplesagar/vercel/models/createdeploymentop.js";
+
+let value: GitMetadata = {};
+```
 
 ## Fields
 

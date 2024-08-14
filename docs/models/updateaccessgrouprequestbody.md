@@ -1,5 +1,12 @@
 # UpdateAccessGroupRequestBody
 
+## Example Usage
+
+```typescript
+import { UpdateAccessGroupRequestBody } from "@simplesagar/vercel/models/updateaccessgroupop.js";
+
+let value: UpdateAccessGroupRequestBody = {};
+```
 
 ## Fields
 

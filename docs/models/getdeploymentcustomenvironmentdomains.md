@@ -1,5 +1,17 @@
 # GetDeploymentCustomEnvironmentDomains
 
+## Example Usage
+
+```typescript
+import { GetDeploymentCustomEnvironmentDomains } from "@simplesagar/vercel/models/getdeploymentop.js";
+
+let value: GetDeploymentCustomEnvironmentDomains = {
+    name: "<value>",
+    apexName: "<value>",
+    projectId: "<value>",
+    verified: false,
+};
+```
 
 ## Fields
 

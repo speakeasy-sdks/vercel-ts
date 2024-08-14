@@ -1,5 +1,15 @@
 # ContentHint10
 
+## Example Usage
+
+```typescript
+import { ContentHint10 } from "@simplesagar/vercel/models/updateprojectdatacacheop.js";
+
+let value: ContentHint10 = {
+    type: "postgres-host",
+    storeId: "<value>",
+};
+```
 
 ## Fields
 

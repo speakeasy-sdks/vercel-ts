@@ -1,5 +1,15 @@
 # RemoveProjectEnvContentHint3
 
+## Example Usage
+
+```typescript
+import { RemoveProjectEnvContentHint3 } from "@simplesagar/vercel/models/removeprojectenvop.js";
+
+let value: RemoveProjectEnvContentHint3 = {
+    type: "redis-rest-api-token",
+    storeId: "<value>",
+};
+```
 
 ## Fields
 

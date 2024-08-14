@@ -1,5 +1,17 @@
 # Members
 
+## Example Usage
+
+```typescript
+import { Members } from "@simplesagar/vercel/models/listaccessgroupmembersop.js";
+
+let value: Members = {
+    email: "Hunter.Gulgowski96@yahoo.com",
+    uid: "<value>",
+    username: "Donny_Hoppe",
+    teamRole: "VIEWER",
+};
+```
 
 ## Fields
 

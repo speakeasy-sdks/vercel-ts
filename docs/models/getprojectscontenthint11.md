@@ -1,5 +1,15 @@
 # GetProjectsContentHint11
 
+## Example Usage
+
+```typescript
+import { GetProjectsContentHint11 } from "@simplesagar/vercel/models/getprojectsop.js";
+
+let value: GetProjectsContentHint11 = {
+    type: "postgres-password",
+    storeId: "<value>",
+};
+```
 
 ## Fields
 

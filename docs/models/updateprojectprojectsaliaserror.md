@@ -1,5 +1,15 @@
 # UpdateProjectProjectsAliasError
 
+## Example Usage
+
+```typescript
+import { UpdateProjectProjectsAliasError } from "@simplesagar/vercel/models/updateprojectop.js";
+
+let value: UpdateProjectProjectsAliasError = {
+    code: "<value>",
+    message: "<value>",
+};
+```
 
 ## Fields
 

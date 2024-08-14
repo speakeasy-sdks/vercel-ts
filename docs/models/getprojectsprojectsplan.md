@@ -1,10 +1,15 @@
 # GetProjectsProjectsPlan
 
+## Example Usage
+
+```typescript
+import { GetProjectsProjectsPlan } from "@simplesagar/vercel/models/getprojectsop.js";
+
+let value: GetProjectsProjectsPlan = "pro";
+```
 
 ## Values
 
-| Name         | Value        |
-| ------------ | ------------ |
-| `Pro`        | pro          |
-| `Enterprise` | enterprise   |
-| `Hobby`      | hobby        |
+```typescript
+"pro" | "enterprise" | "hobby"
+```

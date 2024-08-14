@@ -1,5 +1,14 @@
 # DeleteEdgeConfigSchemaRequest
 
+## Example Usage
+
+```typescript
+import { DeleteEdgeConfigSchemaRequest } from "@simplesagar/vercel/models/deleteedgeconfigschemaop.js";
+
+let value: DeleteEdgeConfigSchemaRequest = {
+    edgeConfigId: "<value>",
+};
+```
 
 ## Fields
 

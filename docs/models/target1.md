@@ -1,10 +1,15 @@
 # Target1
 
+## Example Usage
+
+```typescript
+import { Target1 } from "@simplesagar/vercel/models/createprojectop.js";
+
+let value: Target1 = "development";
+```
 
 ## Values
 
-| Name          | Value         |
-| ------------- | ------------- |
-| `Production`  | production    |
-| `Preview`     | preview       |
-| `Development` | development   |
+```typescript
+"production" | "preview" | "development"
+```

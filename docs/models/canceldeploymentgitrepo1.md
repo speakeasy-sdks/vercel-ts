@@ -1,5 +1,22 @@
 # CancelDeploymentGitRepo1
 
+## Example Usage
+
+```typescript
+import { CancelDeploymentGitRepo1 } from "@simplesagar/vercel/models/canceldeploymentop.js";
+
+let value: CancelDeploymentGitRepo1 = {
+    namespace: "<value>",
+    projectId: 243.13,
+    type: "gitlab",
+    url: "http://gorgeous-tic.name",
+    path: "/Applications",
+    defaultBranch: "<value>",
+    name: "<value>",
+    private: false,
+    ownerType: "team",
+};
+```
 
 ## Fields
 

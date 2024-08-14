@@ -1,11 +1,15 @@
 # GetConfigurableLogDrainDisabledReason
 
+## Example Usage
+
+```typescript
+import { GetConfigurableLogDrainDisabledReason } from "@simplesagar/vercel/models/getconfigurablelogdrainop.js";
+
+let value: GetConfigurableLogDrainDisabledReason = "account-plan-downgrade";
+```
 
 ## Values
 
-| Name                   | Value                  |
-| ---------------------- | ---------------------- |
-| `DisabledByOwner`      | disabled-by-owner      |
-| `FeatureNotAvailable`  | feature-not-available  |
-| `AccountPlanDowngrade` | account-plan-downgrade |
-| `DisabledByAdmin`      | disabled-by-admin      |
+```typescript
+"disabled-by-owner" | "feature-not-available" | "account-plan-downgrade" | "disabled-by-admin"
+```

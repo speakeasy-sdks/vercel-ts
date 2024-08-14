@@ -2,6 +2,15 @@
 
 Flags defined in the Build Output API, used by this deployment. Primarily used by the Toolbar to know about the used flags.
 
+## Example Usage
+
+```typescript
+import { Flags1 } from "@simplesagar/vercel/models/createdeploymentop.js";
+
+let value: Flags1 = {
+    definitions: {},
+};
+```
 
 ## Fields
 

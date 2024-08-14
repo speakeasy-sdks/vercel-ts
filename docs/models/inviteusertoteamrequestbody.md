@@ -1,5 +1,12 @@
 # InviteUserToTeamRequestBody
 
+## Example Usage
+
+```typescript
+import { InviteUserToTeamRequestBody } from "@simplesagar/vercel/models/inviteusertoteamop.js";
+
+let value: InviteUserToTeamRequestBody = {};
+```
 
 ## Fields
 

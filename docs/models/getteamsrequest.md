@@ -1,5 +1,12 @@
 # GetTeamsRequest
 
+## Example Usage
+
+```typescript
+import { GetTeamsRequest } from "@simplesagar/vercel/models/getteamsop.js";
+
+let value: GetTeamsRequest = {};
+```
 
 ## Fields
 

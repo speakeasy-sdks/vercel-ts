@@ -1,5 +1,15 @@
 # RequestPromoteRequest
 
+## Example Usage
+
+```typescript
+import { RequestPromoteRequest } from "@simplesagar/vercel/models/requestpromoteop.js";
+
+let value: RequestPromoteRequest = {
+    projectId: "<value>",
+    deploymentId: "<value>",
+};
+```
 
 ## Fields
 

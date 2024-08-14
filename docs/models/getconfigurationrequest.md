@@ -1,5 +1,14 @@
 # GetConfigurationRequest
 
+## Example Usage
+
+```typescript
+import { GetConfigurationRequest } from "@simplesagar/vercel/models/getconfigurationop.js";
+
+let value: GetConfigurationRequest = {
+    id: "icfg_cuwj0AdCdH3BwWT4LPijCC7t",
+};
+```
 
 ## Fields
 

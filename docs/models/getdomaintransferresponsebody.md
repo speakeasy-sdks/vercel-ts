@@ -1,5 +1,17 @@
 # GetDomainTransferResponseBody
 
+## Example Usage
+
+```typescript
+import { GetDomainTransferResponseBody } from "@simplesagar/vercel/models/getdomaintransferop.js";
+
+let value: GetDomainTransferResponseBody = {
+    transferable: false,
+    transferPolicy: "not-supported",
+    reason: "<value>",
+    status: "pending_registry",
+};
+```
 
 ## Fields
 

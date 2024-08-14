@@ -1,5 +1,14 @@
 # UnpauseProjectRequest
 
+## Example Usage
+
+```typescript
+import { UnpauseProjectRequest } from "@simplesagar/vercel/models/unpauseprojectop.js";
+
+let value: UnpauseProjectRequest = {
+    projectId: "<value>",
+};
+```
 
 ## Fields
 

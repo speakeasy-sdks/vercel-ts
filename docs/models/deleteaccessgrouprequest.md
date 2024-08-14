@@ -1,5 +1,14 @@
 # DeleteAccessGroupRequest
 
+## Example Usage
+
+```typescript
+import { DeleteAccessGroupRequest } from "@simplesagar/vercel/models/deleteaccessgroupop.js";
+
+let value: DeleteAccessGroupRequest = {
+    idOrName: "<value>",
+};
+```
 
 ## Fields
 

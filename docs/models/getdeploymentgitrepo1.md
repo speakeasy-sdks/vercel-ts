@@ -1,5 +1,22 @@
 # GetDeploymentGitRepo1
 
+## Example Usage
+
+```typescript
+import { GetDeploymentGitRepo1 } from "@simplesagar/vercel/models/getdeploymentop.js";
+
+let value: GetDeploymentGitRepo1 = {
+    namespace: "<value>",
+    projectId: 3807.29,
+    type: "gitlab",
+    url: "http://polite-placement.org",
+    path: "/rescue",
+    defaultBranch: "<value>",
+    name: "<value>",
+    private: false,
+    ownerType: "user",
+};
+```
 
 ## Fields
 

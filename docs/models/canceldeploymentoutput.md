@@ -1,5 +1,15 @@
 # CancelDeploymentOutput
 
+## Example Usage
+
+```typescript
+import { CancelDeploymentOutput } from "@simplesagar/vercel/models/canceldeploymentop.js";
+
+let value: CancelDeploymentOutput = {
+    path: "/usr/libdata",
+    functionName: "<value>",
+};
+```
 
 ## Fields
 

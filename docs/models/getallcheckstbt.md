@@ -1,5 +1,15 @@
 # GetAllChecksTBT
 
+## Example Usage
+
+```typescript
+import { GetAllChecksTBT } from "@simplesagar/vercel/models/getallchecksop.js";
+
+let value: GetAllChecksTBT = {
+    value: 2223.21,
+    source: "web-vitals",
+};
+```
 
 ## Fields
 

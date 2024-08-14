@@ -1,5 +1,29 @@
 # GetAllChecksMetrics
 
+## Example Usage
+
+```typescript
+import { GetAllChecksMetrics } from "@simplesagar/vercel/models/getallchecksop.js";
+
+let value: GetAllChecksMetrics = {
+    fcp: {
+        value: 3864.89,
+        source: "web-vitals",
+    },
+    lcp: {
+        value: 9437.49,
+        source: "web-vitals",
+    },
+    cls: {
+        value: 9025.99,
+        source: "web-vitals",
+    },
+    tbt: {
+        value: 6818.2,
+        source: "web-vitals",
+    },
+};
+```
 
 ## Fields
 

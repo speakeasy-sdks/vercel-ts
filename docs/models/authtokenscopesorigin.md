@@ -1,14 +1,15 @@
 # AuthTokenScopesOrigin
 
+## Example Usage
+
+```typescript
+import { AuthTokenScopesOrigin } from "@simplesagar/vercel/models/authtoken.js";
+
+let value: AuthTokenScopesOrigin = "email";
+```
 
 ## Values
 
-| Name        | Value       |
-| ----------- | ----------- |
-| `Saml`      | saml        |
-| `Github`    | github      |
-| `Gitlab`    | gitlab      |
-| `Bitbucket` | bitbucket   |
-| `Email`     | email       |
-| `Manual`    | manual      |
-| `Passkey`   | passkey     |
+```typescript
+"saml" | "github" | "gitlab" | "bitbucket" | "email" | "manual" | "passkey"
+```

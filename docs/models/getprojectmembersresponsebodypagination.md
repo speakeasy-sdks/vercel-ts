@@ -1,5 +1,17 @@
 # GetProjectMembersResponseBodyPagination
 
+## Example Usage
+
+```typescript
+import { GetProjectMembersResponseBodyPagination } from "@simplesagar/vercel/models/getprojectmembersop.js";
+
+let value: GetProjectMembersResponseBodyPagination = {
+    hasNext: false,
+    count: 20,
+    next: 1540095775951,
+    prev: 1540095775951,
+};
+```
 
 ## Fields
 

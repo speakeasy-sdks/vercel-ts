@@ -2,6 +2,13 @@
 
 Array of project memberships
 
+## Example Usage
+
+```typescript
+import { GetTeamMembersProjects } from "@simplesagar/vercel/models/getteammembersop.js";
+
+let value: GetTeamMembersProjects = {};
+```
 
 ## Fields
 

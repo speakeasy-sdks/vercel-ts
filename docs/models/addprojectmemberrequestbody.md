@@ -1,5 +1,15 @@
 # AddProjectMemberRequestBody
 
+## Example Usage
+
+```typescript
+import { AddProjectMemberRequestBody } from "@simplesagar/vercel/models/addprojectmemberop.js";
+
+let value: AddProjectMemberRequestBody = {
+    email: "entity@example.com",
+    role: "ADMIN",
+};
+```
 
 ## Supported Types
 

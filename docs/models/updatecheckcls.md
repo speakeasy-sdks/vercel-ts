@@ -1,5 +1,15 @@
 # UpdateCheckCLS
 
+## Example Usage
+
+```typescript
+import { UpdateCheckCLS } from "@simplesagar/vercel/models/updatecheckop.js";
+
+let value: UpdateCheckCLS = {
+    value: 1020.44,
+    source: "web-vitals",
+};
+```
 
 ## Fields
 

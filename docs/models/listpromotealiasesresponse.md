@@ -1,5 +1,14 @@
 # ListPromoteAliasesResponse
 
+## Example Usage
+
+```typescript
+import { ListPromoteAliasesResponse } from "@simplesagar/vercel/models/listpromotealiasesop.js";
+
+let value: ListPromoteAliasesResponse = {
+    result: {},
+};
+```
 
 ## Fields
 

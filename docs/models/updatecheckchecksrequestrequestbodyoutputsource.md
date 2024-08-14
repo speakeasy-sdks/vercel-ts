@@ -1,8 +1,15 @@
 # UpdateCheckChecksRequestRequestBodyOutputSource
 
+## Example Usage
+
+```typescript
+import { UpdateCheckChecksRequestRequestBodyOutputSource } from "@simplesagar/vercel/models/updatecheckop.js";
+
+let value: UpdateCheckChecksRequestRequestBodyOutputSource = "web-vitals";
+```
 
 ## Values
 
-| Name        | Value       |
-| ----------- | ----------- |
-| `WebVitals` | web-vitals  |
+```typescript
+"web-vitals"
+```

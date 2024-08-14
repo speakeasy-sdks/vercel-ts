@@ -1,10 +1,15 @@
 # CreateProjectTarget2
 
+## Example Usage
+
+```typescript
+import { CreateProjectTarget2 } from "@simplesagar/vercel/models/createprojectop.js";
+
+let value: CreateProjectTarget2 = "development";
+```
 
 ## Values
 
-| Name          | Value         |
-| ------------- | ------------- |
-| `Production`  | production    |
-| `Preview`     | preview       |
-| `Development` | development   |
+```typescript
+"production" | "preview" | "development"
+```

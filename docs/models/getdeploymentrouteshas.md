@@ -1,5 +1,15 @@
 # GetDeploymentRoutesHas
 
+## Example Usage
+
+```typescript
+import { GetDeploymentRoutesHas } from "@simplesagar/vercel/models/getdeploymentop.js";
+
+let value: GetDeploymentRoutesHas = {
+    type: "cookie",
+    key: "<key>",
+};
+```
 
 ## Supported Types
 

@@ -1,5 +1,16 @@
 # Env
 
+## Example Usage
+
+```typescript
+import { Env } from "@simplesagar/vercel/models/updateprojectdatacacheop.js";
+
+let value: Env = {
+    type: "plain",
+    key: "<key>",
+    value: "<value>",
+};
+```
 
 ## Fields
 

@@ -1,5 +1,15 @@
 # CreateTeamTeamsResponse200Frequency
 
+## Example Usage
+
+```typescript
+import { CreateTeamTeamsResponse200Frequency } from "@simplesagar/vercel/models/createteamop.js";
+
+let value: CreateTeamTeamsResponse200Frequency = {
+    interval: "month",
+    intervalCount: 9661.48,
+};
+```
 
 ## Fields
 

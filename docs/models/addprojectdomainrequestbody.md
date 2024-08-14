@@ -1,5 +1,14 @@
 # AddProjectDomainRequestBody
 
+## Example Usage
+
+```typescript
+import { AddProjectDomainRequestBody } from "@simplesagar/vercel/models/addprojectdomainop.js";
+
+let value: AddProjectDomainRequestBody = {
+    name: "www.example.com",
+};
+```
 
 ## Fields
 

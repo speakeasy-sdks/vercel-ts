@@ -1,5 +1,17 @@
 # CreateTeamWafOwaspExcessBytes
 
+## Example Usage
+
+```typescript
+import { CreateTeamWafOwaspExcessBytes } from "@simplesagar/vercel/models/createteamop.js";
+
+let value: CreateTeamWafOwaspExcessBytes = {
+    price: 573.2,
+    batch: 9148.64,
+    threshold: 800.61,
+    hidden: false,
+};
+```
 
 ## Fields
 

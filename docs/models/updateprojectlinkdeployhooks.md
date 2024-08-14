@@ -1,5 +1,17 @@
 # UpdateProjectLinkDeployHooks
 
+## Example Usage
+
+```typescript
+import { UpdateProjectLinkDeployHooks } from "@simplesagar/vercel/models/updateprojectop.js";
+
+let value: UpdateProjectLinkDeployHooks = {
+    id: "<id>",
+    name: "<value>",
+    ref: "<value>",
+    url: "http://exhausted-bloom.net",
+};
+```
 
 ## Fields
 

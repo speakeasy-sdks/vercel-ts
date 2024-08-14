@@ -1,5 +1,12 @@
 # UpdateProjectDataCacheRequestBody
 
+## Example Usage
+
+```typescript
+import { UpdateProjectDataCacheRequestBody } from "@simplesagar/vercel/models/updateprojectdatacacheop.js";
+
+let value: UpdateProjectDataCacheRequestBody = {};
+```
 
 ## Fields
 

@@ -1,5 +1,15 @@
 # GetDeploymentMissing2
 
+## Example Usage
+
+```typescript
+import { GetDeploymentMissing2 } from "@simplesagar/vercel/models/getdeploymentop.js";
+
+let value: GetDeploymentMissing2 = {
+    type: "cookie",
+    key: "<key>",
+};
+```
 
 ## Fields
 

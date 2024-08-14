@@ -1,5 +1,12 @@
 # UpdateProjectValueProjects2
 
+## Example Usage
+
+```typescript
+import { UpdateProjectValueProjects2 } from "@simplesagar/vercel/models/updateprojectop.js";
+
+let value: UpdateProjectValueProjects2 = {};
+```
 
 ## Fields
 

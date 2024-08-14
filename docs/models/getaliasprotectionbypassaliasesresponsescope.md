@@ -1,8 +1,15 @@
 # GetAliasProtectionBypassAliasesResponseScope
 
+## Example Usage
+
+```typescript
+import { GetAliasProtectionBypassAliasesResponseScope } from "@simplesagar/vercel/models/getaliasop.js";
+
+let value: GetAliasProtectionBypassAliasesResponseScope = "email_invite";
+```
 
 ## Values
 
-| Name          | Value         |
-| ------------- | ------------- |
-| `EmailInvite` | email_invite  |
+```typescript
+"email_invite"
+```

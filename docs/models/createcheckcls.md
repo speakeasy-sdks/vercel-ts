@@ -1,5 +1,15 @@
 # CreateCheckCLS
 
+## Example Usage
+
+```typescript
+import { CreateCheckCLS } from "@simplesagar/vercel/models/createcheckop.js";
+
+let value: CreateCheckCLS = {
+    value: 4736,
+    source: "web-vitals",
+};
+```
 
 ## Fields
 

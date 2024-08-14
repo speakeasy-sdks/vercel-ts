@@ -1,5 +1,14 @@
 # CreateProjectRequestBody
 
+## Example Usage
+
+```typescript
+import { CreateProjectRequestBody } from "@simplesagar/vercel/models/createprojectop.js";
+
+let value: CreateProjectRequestBody = {
+    name: "a-project-name",
+};
+```
 
 ## Fields
 

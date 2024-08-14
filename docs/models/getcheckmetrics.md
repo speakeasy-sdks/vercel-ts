@@ -1,5 +1,29 @@
 # GetCheckMetrics
 
+## Example Usage
+
+```typescript
+import { GetCheckMetrics } from "@simplesagar/vercel/models/getcheckop.js";
+
+let value: GetCheckMetrics = {
+    fcp: {
+        value: 3581.52,
+        source: "web-vitals",
+    },
+    lcp: {
+        value: 1289.26,
+        source: "web-vitals",
+    },
+    cls: {
+        value: 7506.86,
+        source: "web-vitals",
+    },
+    tbt: {
+        value: 3154.28,
+        source: "web-vitals",
+    },
+};
+```
 
 ## Fields
 

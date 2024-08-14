@@ -1,9 +1,15 @@
 # CancelDeploymentGitRepoOwnerType
 
+## Example Usage
+
+```typescript
+import { CancelDeploymentGitRepoOwnerType } from "@simplesagar/vercel/models/canceldeploymentop.js";
+
+let value: CancelDeploymentGitRepoOwnerType = "team";
+```
 
 ## Values
 
-| Name   | Value  |
-| ------ | ------ |
-| `Team` | team   |
-| `User` | user   |
+```typescript
+"team" | "user"
+```

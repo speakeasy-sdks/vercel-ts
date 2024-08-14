@@ -1,13 +1,15 @@
 # GetConfigurationResponseBodyIntegrationsDisabledReason
 
+## Example Usage
+
+```typescript
+import { GetConfigurationResponseBodyIntegrationsDisabledReason } from "@simplesagar/vercel/models/getconfigurationop.js";
+
+let value: GetConfigurationResponseBodyIntegrationsDisabledReason = "original-owner-left-the-team";
+```
 
 ## Values
 
-| Name                           | Value                          |
-| ------------------------------ | ------------------------------ |
-| `DisabledByOwner`              | disabled-by-owner              |
-| `FeatureNotAvailable`          | feature-not-available          |
-| `DisabledByAdmin`              | disabled-by-admin              |
-| `OriginalOwnerLeftTheTeam`     | original-owner-left-the-team   |
-| `AccountPlanDowngrade`         | account-plan-downgrade         |
-| `OriginalOwnerRoleDowngraded`  | original-owner-role-downgraded |
+```typescript
+"disabled-by-owner" | "feature-not-available" | "disabled-by-admin" | "original-owner-left-the-team" | "account-plan-downgrade" | "original-owner-role-downgraded"
+```

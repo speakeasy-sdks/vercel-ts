@@ -2,6 +2,17 @@
 
 The protection bypass for the alias
 
+## Example Usage
+
+```typescript
+import { ProtectionBypass1 } from "@simplesagar/vercel/models/getaliasop.js";
+
+let value: ProtectionBypass1 = {
+    createdAt: 8979.56,
+    createdBy: "<value>",
+    scope: "shareable-link",
+};
+```
 
 ## Fields
 

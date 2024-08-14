@@ -1,5 +1,17 @@
 # StorageRedisTotalDatabases
 
+## Example Usage
+
+```typescript
+import { StorageRedisTotalDatabases } from "@simplesagar/vercel/models/authuser.js";
+
+let value: StorageRedisTotalDatabases = {
+    price: 2426.37,
+    batch: 7057.1,
+    threshold: 7310.65,
+    hidden: false,
+};
+```
 
 ## Fields
 

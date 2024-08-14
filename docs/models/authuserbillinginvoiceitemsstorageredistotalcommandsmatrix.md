@@ -1,5 +1,17 @@
 # AuthUserBillingInvoiceItemsStorageRedisTotalCommandsMatrix
 
+## Example Usage
+
+```typescript
+import { AuthUserBillingInvoiceItemsStorageRedisTotalCommandsMatrix } from "@simplesagar/vercel/models/authuser.js";
+
+let value: AuthUserBillingInvoiceItemsStorageRedisTotalCommandsMatrix = {
+    defaultUnitPrice: "<value>",
+    dimensionPrices: {
+        key: "<value>",
+    },
+};
+```
 
 ## Fields
 

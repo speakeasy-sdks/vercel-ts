@@ -1,5 +1,17 @@
 # AuthUserBillingInvoiceItemsEdgeRequestAdditionalCpuDurationMatrix
 
+## Example Usage
+
+```typescript
+import { AuthUserBillingInvoiceItemsEdgeRequestAdditionalCpuDurationMatrix } from "@simplesagar/vercel/models/authuser.js";
+
+let value: AuthUserBillingInvoiceItemsEdgeRequestAdditionalCpuDurationMatrix = {
+    defaultUnitPrice: "<value>",
+    dimensionPrices: {
+        key: "<value>",
+    },
+};
+```
 
 ## Fields
 

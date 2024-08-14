@@ -2,6 +2,18 @@
 
 Successfully joined a team.
 
+## Example Usage
+
+```typescript
+import { JoinTeamResponseBody } from "@simplesagar/vercel/models/jointeamop.js";
+
+let value: JoinTeamResponseBody = {
+    teamId: "team_LLHUOMOoDlqOp8wPE4kFo9pE",
+    slug: "my-team",
+    name: "My Team",
+    from: "email",
+};
+```
 
 ## Fields
 

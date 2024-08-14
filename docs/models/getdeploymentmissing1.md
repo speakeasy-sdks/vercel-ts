@@ -1,5 +1,15 @@
 # GetDeploymentMissing1
 
+## Example Usage
+
+```typescript
+import { GetDeploymentMissing1 } from "@simplesagar/vercel/models/getdeploymentop.js";
+
+let value: GetDeploymentMissing1 = {
+    type: "host",
+    value: "<value>",
+};
+```
 
 ## Fields
 

@@ -1,5 +1,12 @@
 # PatchDomainRequestBody
 
+## Example Usage
+
+```typescript
+import { PatchDomainRequestBody } from "@simplesagar/vercel/models/patchdomainop.js";
+
+let value: PatchDomainRequestBody = {};
+```
 
 ## Supported Types
 

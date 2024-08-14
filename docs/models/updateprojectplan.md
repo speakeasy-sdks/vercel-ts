@@ -1,10 +1,15 @@
 # UpdateProjectPlan
 
+## Example Usage
+
+```typescript
+import { UpdateProjectPlan } from "@simplesagar/vercel/models/updateprojectop.js";
+
+let value: UpdateProjectPlan = "pro";
+```
 
 ## Values
 
-| Name         | Value        |
-| ------------ | ------------ |
-| `Pro`        | pro          |
-| `Enterprise` | enterprise   |
-| `Hobby`      | hobby        |
+```typescript
+"pro" | "enterprise" | "hobby"
+```

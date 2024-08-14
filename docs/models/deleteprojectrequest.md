@@ -1,5 +1,14 @@
 # DeleteProjectRequest
 
+## Example Usage
+
+```typescript
+import { DeleteProjectRequest } from "@simplesagar/vercel/models/deleteprojectop.js";
+
+let value: DeleteProjectRequest = {
+    idOrName: "prj_12HKQaOmR5t5Uy6vdcQsNIiZgHGB",
+};
+```
 
 ## Fields
 

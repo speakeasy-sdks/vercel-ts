@@ -1,5 +1,24 @@
 # Crons
 
+## Example Usage
+
+```typescript
+import { Crons } from "@simplesagar/vercel/models/updateprojectdatacacheop.js";
+
+let value: Crons = {
+    enabledAt: 2444.25,
+    disabledAt: 6235.1,
+    updatedAt: 1589.69,
+    deploymentId: "<value>",
+    definitions: [
+        {
+            host: "vercel.com",
+            path: "/api/crons/sync-something?hello=world",
+            schedule: "0 0 * * *",
+        },
+    ],
+};
+```
 
 ## Fields
 

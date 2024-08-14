@@ -1,5 +1,14 @@
 # CreateProjectTrustedIps
 
+## Example Usage
+
+```typescript
+import { CreateProjectTrustedIps } from "@simplesagar/vercel/models/createprojectop.js";
+
+let value: CreateProjectTrustedIps = {
+    deploymentType: "all",
+};
+```
 
 ## Supported Types
 

@@ -1,5 +1,14 @@
 # Roles2
 
+## Example Usage
+
+```typescript
+import { Roles2 } from "@simplesagar/vercel/models/patchteamop.js";
+
+let value: Roles2 = {
+    accessGroupId: "<value>",
+};
+```
 
 ## Fields
 

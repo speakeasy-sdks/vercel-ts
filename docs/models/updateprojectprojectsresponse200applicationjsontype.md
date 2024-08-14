@@ -1,8 +1,15 @@
 # UpdateProjectProjectsResponse200ApplicationJSONType
 
+## Example Usage
+
+```typescript
+import { UpdateProjectProjectsResponse200ApplicationJSONType } from "@simplesagar/vercel/models/updateprojectop.js";
+
+let value: UpdateProjectProjectsResponse200ApplicationJSONType = "flags-secret";
+```
 
 ## Values
 
-| Name          | Value         |
-| ------------- | ------------- |
-| `FlagsSecret` | flags-secret  |
+```typescript
+"flags-secret"
+```

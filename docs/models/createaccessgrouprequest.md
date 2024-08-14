@@ -1,5 +1,12 @@
 # CreateAccessGroupRequest
 
+## Example Usage
+
+```typescript
+import { CreateAccessGroupRequest } from "@simplesagar/vercel/models/createaccessgroupop.js";
+
+let value: CreateAccessGroupRequest = {};
+```
 
 ## Fields
 

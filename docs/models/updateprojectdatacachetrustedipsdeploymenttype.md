@@ -1,11 +1,15 @@
 # UpdateProjectDataCacheTrustedIpsDeploymentType
 
+## Example Usage
+
+```typescript
+import { UpdateProjectDataCacheTrustedIpsDeploymentType } from "@simplesagar/vercel/models/updateprojectdatacacheop.js";
+
+let value: UpdateProjectDataCacheTrustedIpsDeploymentType = "prod_deployment_urls_and_all_previews";
+```
 
 ## Values
 
-| Name                                  | Value                                 |
-| ------------------------------------- | ------------------------------------- |
-| `All`                                 | all                                   |
-| `Preview`                             | preview                               |
-| `ProdDeploymentUrlsAndAllPreviews`    | prod_deployment_urls_and_all_previews |
-| `Production`                          | production                            |
+```typescript
+"all" | "preview" | "prod_deployment_urls_and_all_previews" | "production"
+```

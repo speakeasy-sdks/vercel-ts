@@ -2,11 +2,16 @@
 
 The delivery log format
 
+## Example Usage
+
+```typescript
+import { GetIntegrationLogDrainsDeliveryFormat } from "@simplesagar/vercel/models/getintegrationlogdrainsop.js";
+
+let value: GetIntegrationLogDrainsDeliveryFormat = "json";
+```
 
 ## Values
 
-| Name     | Value    |
-| -------- | -------- |
-| `Json`   | json     |
-| `Ndjson` | ndjson   |
-| `Syslog` | syslog   |
+```typescript
+"json" | "ndjson" | "syslog"
+```

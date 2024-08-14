@@ -1,12 +1,15 @@
 # ResponseBodyWafAction
 
+## Example Usage
+
+```typescript
+import { ResponseBodyWafAction } from "@simplesagar/vercel/models/getdeploymenteventsop.js";
+
+let value: ResponseBodyWafAction = "challenge";
+```
 
 ## Values
 
-| Name        | Value       |
-| ----------- | ----------- |
-| `Log`       | log         |
-| `Challenge` | challenge   |
-| `Deny`      | deny        |
-| `Bypass`    | bypass      |
-| `RateLimit` | rate_limit  |
+```typescript
+"log" | "challenge" | "deny" | "bypass" | "rate_limit"
+```

@@ -1,5 +1,16 @@
 # CreateProjectProjectsCreator
 
+## Example Usage
+
+```typescript
+import { CreateProjectProjectsCreator } from "@simplesagar/vercel/models/createprojectop.js";
+
+let value: CreateProjectProjectsCreator = {
+    email: "Grace_Kohler@hotmail.com",
+    uid: "<value>",
+    username: "Christa16",
+};
+```
 
 ## Fields
 

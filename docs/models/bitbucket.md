@@ -1,5 +1,12 @@
 # Bitbucket
 
+## Example Usage
+
+```typescript
+import { Bitbucket } from "@simplesagar/vercel/models/requestaccesstoteamop.js";
+
+let value: Bitbucket = {};
+```
 
 ## Fields
 

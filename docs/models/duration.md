@@ -1,10 +1,15 @@
 # Duration
 
+## Example Usage
+
+```typescript
+import { Duration } from "@simplesagar/vercel/models/authuser.js";
+
+let value: Duration = "forever";
+```
 
 ## Values
 
-| Name        | Value       |
-| ----------- | ----------- |
-| `Forever`   | forever     |
-| `Repeating` | repeating   |
-| `Once`      | once        |
+```typescript
+"forever" | "repeating" | "once"
+```

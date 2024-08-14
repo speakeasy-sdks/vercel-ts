@@ -1,5 +1,14 @@
 # CreateProjectPaths
 
+## Example Usage
+
+```typescript
+import { CreateProjectPaths } from "@simplesagar/vercel/models/createprojectop.js";
+
+let value: CreateProjectPaths = {
+    value: "<value>",
+};
+```
 
 ## Fields
 

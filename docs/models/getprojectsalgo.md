@@ -1,9 +1,15 @@
 # GetProjectsAlgo
 
+## Example Usage
+
+```typescript
+import { GetProjectsAlgo } from "@simplesagar/vercel/models/getprojectsop.js";
+
+let value: GetProjectsAlgo = "token_bucket";
+```
 
 ## Values
 
-| Name          | Value         |
-| ------------- | ------------- |
-| `FixedWindow` | fixed_window  |
-| `TokenBucket` | token_bucket  |
+```typescript
+"fixed_window" | "token_bucket"
+```

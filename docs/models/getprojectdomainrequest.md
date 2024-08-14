@@ -1,5 +1,15 @@
 # GetProjectDomainRequest
 
+## Example Usage
+
+```typescript
+import { GetProjectDomainRequest } from "@simplesagar/vercel/models/getprojectdomainop.js";
+
+let value: GetProjectDomainRequest = {
+    idOrName: "<value>",
+    domain: "www.example.com",
+};
+```
 
 ## Fields
 

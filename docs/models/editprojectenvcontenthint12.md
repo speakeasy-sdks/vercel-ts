@@ -1,5 +1,15 @@
 # EditProjectEnvContentHint12
 
+## Example Usage
+
+```typescript
+import { EditProjectEnvContentHint12 } from "@simplesagar/vercel/models/editprojectenvop.js";
+
+let value: EditProjectEnvContentHint12 = {
+    type: "postgres-database",
+    storeId: "<value>",
+};
+```
 
 ## Fields
 

@@ -2,10 +2,16 @@
 
 A string representing the permission for projects. Possible values are `all` or `selected`.
 
+## Example Usage
+
+```typescript
+import { ProjectSelection } from "@simplesagar/vercel/models/getconfigurationop.js";
+
+let value: ProjectSelection = "all";
+```
 
 ## Values
 
-| Name       | Value      |
-| ---------- | ---------- |
-| `Selected` | selected   |
-| `All`      | all        |
+```typescript
+"selected" | "all"
+```

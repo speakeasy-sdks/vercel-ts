@@ -1,5 +1,12 @@
 # RecordEventsRequest
 
+## Example Usage
+
+```typescript
+import { RecordEventsRequest } from "@simplesagar/vercel/models/recordeventsop.js";
+
+let value: RecordEventsRequest = {};
+```
 
 ## Fields
 

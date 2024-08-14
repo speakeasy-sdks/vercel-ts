@@ -1,5 +1,14 @@
 # UpdateProjectSpeedInsights
 
+## Example Usage
+
+```typescript
+import { UpdateProjectSpeedInsights } from "@simplesagar/vercel/models/updateprojectop.js";
+
+let value: UpdateProjectSpeedInsights = {
+    id: "<id>",
+};
+```
 
 ## Fields
 

@@ -1,5 +1,17 @@
 # AuthUserBillingInvoiceItemsDataCacheWriteMatrix
 
+## Example Usage
+
+```typescript
+import { AuthUserBillingInvoiceItemsDataCacheWriteMatrix } from "@simplesagar/vercel/models/authuser.js";
+
+let value: AuthUserBillingInvoiceItemsDataCacheWriteMatrix = {
+    defaultUnitPrice: "<value>",
+    dimensionPrices: {
+        key: "<value>",
+    },
+};
+```
 
 ## Fields
 

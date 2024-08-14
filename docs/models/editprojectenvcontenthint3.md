@@ -1,5 +1,15 @@
 # EditProjectEnvContentHint3
 
+## Example Usage
+
+```typescript
+import { EditProjectEnvContentHint3 } from "@simplesagar/vercel/models/editprojectenvop.js";
+
+let value: EditProjectEnvContentHint3 = {
+    type: "redis-rest-api-token",
+    storeId: "<value>",
+};
+```
 
 ## Fields
 

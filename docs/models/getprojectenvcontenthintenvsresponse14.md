@@ -1,5 +1,18 @@
 # GetProjectEnvContentHintEnvsResponse14
 
+## Example Usage
+
+```typescript
+import { GetProjectEnvContentHintEnvsResponse14 } from "@simplesagar/vercel/models/getprojectenvop.js";
+
+let value: GetProjectEnvContentHintEnvsResponse14 = {
+    type: "integration-store-secret",
+    storeId: "<value>",
+    integrationId: "<value>",
+    integrationProductId: "<value>",
+    integrationConfigurationId: "<value>",
+};
+```
 
 ## Fields
 

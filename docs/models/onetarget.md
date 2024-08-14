@@ -1,10 +1,15 @@
 # OneTarget
 
+## Example Usage
+
+```typescript
+import { OneTarget } from "@simplesagar/vercel/models/createprojectenvop.js";
+
+let value: OneTarget = "preview";
+```
 
 ## Values
 
-| Name          | Value         |
-| ------------- | ------------- |
-| `Production`  | production    |
-| `Preview`     | preview       |
-| `Development` | development   |
+```typescript
+"production" | "preview" | "development"
+```

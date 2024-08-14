@@ -1,5 +1,18 @@
 # CreateTeamItems
 
+## Example Usage
+
+```typescript
+import { CreateTeamItems } from "@simplesagar/vercel/models/createteamop.js";
+
+let value: CreateTeamItems = {
+    id: "<id>",
+    priceId: "<value>",
+    productId: "<value>",
+    amount: 3735.11,
+    quantity: 7029.52,
+};
+```
 
 ## Fields
 

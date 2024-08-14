@@ -1,5 +1,17 @@
 # Five
 
+## Example Usage
+
+```typescript
+import { Five } from "@simplesagar/vercel/models/createdeploymentop.js";
+
+let value: Five = {
+    owner: "<value>",
+    ref: "<value>",
+    slug: "<value>",
+    type: "bitbucket",
+};
+```
 
 ## Fields
 

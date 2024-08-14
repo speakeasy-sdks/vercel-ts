@@ -1,5 +1,23 @@
 # GetAllLogDrainsResponseBody
 
+## Example Usage
+
+```typescript
+import { GetAllLogDrainsResponseBody } from "@simplesagar/vercel/models/getalllogdrainsop.js";
+
+let value: GetAllLogDrainsResponseBody = {
+    id: "<id>",
+    deliveryFormat: "ndjson",
+    url: "https://sad-great-grandfather.name",
+    name: "<value>",
+    ownerId: "<value>",
+    createdAt: 3813.97,
+    deletedAt: 3991.61,
+    updatedAt: 219.73,
+    environments: ["production"],
+    secret: "<value>",
+};
+```
 
 ## Fields
 

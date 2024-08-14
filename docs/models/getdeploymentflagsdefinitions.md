@@ -1,5 +1,12 @@
 # GetDeploymentFlagsDefinitions
 
+## Example Usage
+
+```typescript
+import { GetDeploymentFlagsDefinitions } from "@simplesagar/vercel/models/getdeploymentop.js";
+
+let value: GetDeploymentFlagsDefinitions = {};
+```
 
 ## Fields
 

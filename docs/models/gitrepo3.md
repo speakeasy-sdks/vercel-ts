@@ -1,5 +1,23 @@
 # GitRepo3
 
+## Example Usage
+
+```typescript
+import { GitRepo3 } from "@simplesagar/vercel/models/createdeploymentop.js";
+
+let value: GitRepo3 = {
+    owner: "<value>",
+    repoUuid: "<value>",
+    slug: "<value>",
+    type: "bitbucket",
+    workspaceUuid: "<value>",
+    path: "/sys",
+    defaultBranch: "<value>",
+    name: "<value>",
+    private: false,
+    ownerType: "team",
+};
+```
 
 ## Fields
 

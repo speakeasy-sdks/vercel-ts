@@ -1,5 +1,21 @@
 # Seven
 
+## Example Usage
+
+```typescript
+import { Seven } from "@simplesagar/vercel/models/createrecordop.js";
+
+let value: Seven = {
+    name: "<value>",
+    type: "A",
+    srv: {
+        priority: 10,
+        weight: 10,
+        port: 5000,
+        target: "host.example.com",
+    },
+};
+```
 
 ## Fields
 

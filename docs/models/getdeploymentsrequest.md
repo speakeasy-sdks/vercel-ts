@@ -1,5 +1,12 @@
 # GetDeploymentsRequest
 
+## Example Usage
+
+```typescript
+import { GetDeploymentsRequest } from "@simplesagar/vercel/models/getdeploymentsop.js";
+
+let value: GetDeploymentsRequest = {};
+```
 
 ## Fields
 

@@ -1,13 +1,15 @@
 # Reason
 
+## Example Usage
+
+```typescript
+import { Reason } from "@simplesagar/vercel/models/authuser.js";
+
+let value: Reason = "SUBSCRIPTION_CANCELED";
+```
 
 ## Values
 
-| Name                       | Value                      |
-| -------------------------- | -------------------------- |
-| `SubscriptionCanceled`     | SUBSCRIPTION_CANCELED      |
-| `SubscriptionExpired`      | SUBSCRIPTION_EXPIRED       |
-| `UnpaidInvoice`            | UNPAID_INVOICE             |
-| `EnterpriseTrialEnded`     | ENTERPRISE_TRIAL_ENDED     |
-| `FairUseLimitsExceeded`    | FAIR_USE_LIMITS_EXCEEDED   |
-| `BlockedForPlatformAbuse`  | BLOCKED_FOR_PLATFORM_ABUSE |
+```typescript
+"SUBSCRIPTION_CANCELED" | "SUBSCRIPTION_EXPIRED" | "UNPAID_INVOICE" | "ENTERPRISE_TRIAL_ENDED" | "FAIR_USE_LIMITS_EXCEEDED" | "BLOCKED_FOR_PLATFORM_ABUSE"
+```

@@ -1,5 +1,14 @@
 # UpdateProjectDataCacheOidcTokenConfig
 
+## Example Usage
+
+```typescript
+import { UpdateProjectDataCacheOidcTokenConfig } from "@simplesagar/vercel/models/updateprojectdatacacheop.js";
+
+let value: UpdateProjectDataCacheOidcTokenConfig = {
+    enabled: false,
+};
+```
 
 ## Fields
 

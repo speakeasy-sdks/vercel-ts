@@ -1,5 +1,15 @@
 # CreateCheckVirtualExperienceScore
 
+## Example Usage
+
+```typescript
+import { CreateCheckVirtualExperienceScore } from "@simplesagar/vercel/models/createcheckop.js";
+
+let value: CreateCheckVirtualExperienceScore = {
+    value: 1863.32,
+    source: "web-vitals",
+};
+```
 
 ## Fields
 

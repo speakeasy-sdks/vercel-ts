@@ -1,5 +1,14 @@
 # DatacachePurgeallRequest
 
+## Example Usage
+
+```typescript
+import { DatacachePurgeallRequest } from "@simplesagar/vercel/models/datacachepurgeallop.js";
+
+let value: DatacachePurgeallRequest = {
+    projectIdOrName: "<value>",
+};
+```
 
 ## Fields
 

@@ -1,5 +1,18 @@
 # GetProjectsLastAliasRequest
 
+## Example Usage
+
+```typescript
+import { GetProjectsLastAliasRequest } from "@simplesagar/vercel/models/getprojectsop.js";
+
+let value: GetProjectsLastAliasRequest = {
+    fromDeploymentId: "<value>",
+    toDeploymentId: "<value>",
+    jobStatus: "pending",
+    requestedAt: 5356.33,
+    type: "rollback",
+};
+```
 
 ## Fields
 

@@ -1,5 +1,15 @@
 # RequestBodyHttps
 
+## Example Usage
+
+```typescript
+import { RequestBodyHttps } from "@simplesagar/vercel/models/createrecordop.js";
+
+let value: RequestBodyHttps = {
+    priority: 10,
+    target: "host.example.com",
+};
+```
 
 ## Fields
 

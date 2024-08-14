@@ -1,18 +1,15 @@
 # GetTeamMembersOrigin
 
+## Example Usage
+
+```typescript
+import { GetTeamMembersOrigin } from "@simplesagar/vercel/models/getteammembersop.js";
+
+let value: GetTeamMembersOrigin = "link";
+```
 
 ## Values
 
-| Name                | Value               |
-| ------------------- | ------------------- |
-| `Teams`             | teams               |
-| `Link`              | link                |
-| `Mail`              | mail                |
-| `Import`            | import              |
-| `Github`            | github              |
-| `Gitlab`            | gitlab              |
-| `Bitbucket`         | bitbucket           |
-| `Saml`              | saml                |
-| `Dsync`             | dsync               |
-| `Feedback`          | feedback            |
-| `OrganizationTeams` | organization-teams  |
+```typescript
+"teams" | "link" | "mail" | "import" | "github" | "gitlab" | "bitbucket" | "saml" | "dsync" | "feedback" | "organization-teams"
+```

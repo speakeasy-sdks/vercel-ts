@@ -1,5 +1,17 @@
 # CreateTeamWebAnalyticsEvent
 
+## Example Usage
+
+```typescript
+import { CreateTeamWebAnalyticsEvent } from "@simplesagar/vercel/models/createteamop.js";
+
+let value: CreateTeamWebAnalyticsEvent = {
+    price: 7551.06,
+    batch: 7150.53,
+    threshold: 322.73,
+    hidden: false,
+};
+```
 
 ## Fields
 

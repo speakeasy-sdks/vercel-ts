@@ -1,5 +1,14 @@
 # GetProjectsSpeedInsights
 
+## Example Usage
+
+```typescript
+import { GetProjectsSpeedInsights } from "@simplesagar/vercel/models/getprojectsop.js";
+
+let value: GetProjectsSpeedInsights = {
+    id: "<id>",
+};
+```
 
 ## Fields
 

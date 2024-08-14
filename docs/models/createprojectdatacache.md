@@ -1,5 +1,14 @@
 # CreateProjectDataCache
 
+## Example Usage
+
+```typescript
+import { CreateProjectDataCache } from "@simplesagar/vercel/models/createprojectop.js";
+
+let value: CreateProjectDataCache = {
+    userDisabled: false,
+};
+```
 
 ## Fields
 

@@ -1,5 +1,18 @@
 # ResponseBodyGitSource
 
+## Example Usage
+
+```typescript
+import { ResponseBodyGitSource } from "@simplesagar/vercel/models/getdeploymentop.js";
+
+let value: ResponseBodyGitSource = {
+    type: "bitbucket",
+    ref: "<value>",
+    sha: "<value>",
+    workspaceUuid: "<value>",
+    repoUuid: "<value>",
+};
+```
 
 ## Supported Types
 

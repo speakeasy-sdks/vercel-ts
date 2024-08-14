@@ -1,5 +1,17 @@
 # AuthUserBillingInvoiceItemsServerlessFunctionExecutionMatrix
 
+## Example Usage
+
+```typescript
+import { AuthUserBillingInvoiceItemsServerlessFunctionExecutionMatrix } from "@simplesagar/vercel/models/authuser.js";
+
+let value: AuthUserBillingInvoiceItemsServerlessFunctionExecutionMatrix = {
+    defaultUnitPrice: "<value>",
+    dimensionPrices: {
+        key: "<value>",
+    },
+};
+```
 
 ## Fields
 

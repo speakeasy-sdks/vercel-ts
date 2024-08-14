@@ -1,5 +1,12 @@
 # RequestDeleteRequestBody
 
+## Example Usage
+
+```typescript
+import { RequestDeleteRequestBody } from "@simplesagar/vercel/models/requestdeleteop.js";
+
+let value: RequestDeleteRequestBody = {};
+```
 
 ## Fields
 

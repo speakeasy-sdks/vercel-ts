@@ -2,13 +2,16 @@
 
 The type of environment variable
 
+## Example Usage
+
+```typescript
+import { OneType } from "@simplesagar/vercel/models/createprojectenvop.js";
+
+let value: OneType = "plain";
+```
 
 ## Values
 
-| Name        | Value       |
-| ----------- | ----------- |
-| `System`    | system      |
-| `Secret`    | secret      |
-| `Encrypted` | encrypted   |
-| `Plain`     | plain       |
-| `Sensitive` | sensitive   |
+```typescript
+"system" | "secret" | "encrypted" | "plain" | "sensitive"
+```

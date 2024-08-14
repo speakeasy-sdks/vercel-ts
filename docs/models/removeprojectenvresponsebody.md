@@ -2,6 +2,17 @@
 
 The environment variable was successfully removed
 
+## Example Usage
+
+```typescript
+import { RemoveProjectEnvResponseBody } from "@simplesagar/vercel/models/removeprojectenvop.js";
+
+let value: RemoveProjectEnvResponseBody = {
+    type: "plain",
+    key: "<key>",
+    value: "<value>",
+};
+```
 
 ## Supported Types
 

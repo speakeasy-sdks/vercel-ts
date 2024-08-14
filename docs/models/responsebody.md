@@ -1,5 +1,16 @@
 # ResponseBody
 
+## Example Usage
+
+```typescript
+import { ResponseBody } from "@simplesagar/vercel/models/artifactqueryop.js";
+
+let value: ResponseBody = {
+    error: {
+        message: "<value>",
+    },
+};
+```
 
 ## Supported Types
 

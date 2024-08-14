@@ -2,6 +2,23 @@
 
 The environment variable was created successfully
 
+## Example Usage
+
+```typescript
+import { CreateProjectEnvResponseBody } from "@simplesagar/vercel/models/createprojectenvop.js";
+
+let value: CreateProjectEnvResponseBody = {
+    created: [{}],
+    failed: [
+        {
+            error: {
+                code: "<value>",
+                message: "<value>",
+            },
+        },
+    ],
+};
+```
 
 ## Fields
 

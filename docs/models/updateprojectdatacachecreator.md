@@ -1,5 +1,16 @@
 # UpdateProjectDataCacheCreator
 
+## Example Usage
+
+```typescript
+import { UpdateProjectDataCacheCreator } from "@simplesagar/vercel/models/updateprojectdatacacheop.js";
+
+let value: UpdateProjectDataCacheCreator = {
+    email: "Friedrich67@hotmail.com",
+    uid: "<value>",
+    username: "Kevin_Glover28",
+};
+```
 
 ## Fields
 

@@ -2,11 +2,16 @@
 
 The type of the output
 
+## Example Usage
+
+```typescript
+import { ListDeploymentBuildsType } from "@simplesagar/vercel/models/listdeploymentbuildsop.js";
+
+let value: ListDeploymentBuildsType = "file";
+```
 
 ## Values
 
-| Name     | Value    |
-| -------- | -------- |
-| `Lambda` | lambda   |
-| `File`   | file     |
-| `Edge`   | edge     |
+```typescript
+"lambda" | "file" | "edge"
+```

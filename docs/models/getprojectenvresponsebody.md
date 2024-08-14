@@ -1,5 +1,16 @@
 # GetProjectEnvResponseBody
 
+## Example Usage
+
+```typescript
+import { GetProjectEnvResponseBody } from "@simplesagar/vercel/models/getprojectenvop.js";
+
+let value: GetProjectEnvResponseBody = {
+    decrypted: false,
+    type: "system",
+    key: "<key>",
+};
+```
 
 ## Supported Types
 

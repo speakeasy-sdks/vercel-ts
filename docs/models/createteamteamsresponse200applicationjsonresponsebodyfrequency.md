@@ -1,5 +1,15 @@
 # CreateTeamTeamsResponse200ApplicationJSONResponseBodyFrequency
 
+## Example Usage
+
+```typescript
+import { CreateTeamTeamsResponse200ApplicationJSONResponseBodyFrequency } from "@simplesagar/vercel/models/createteamop.js";
+
+let value: CreateTeamTeamsResponse200ApplicationJSONResponseBodyFrequency = {
+    interval: "month",
+    intervalCount: 2448.89,
+};
+```
 
 ## Fields
 

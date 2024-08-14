@@ -1,14 +1,15 @@
 # GetDeploymentResponseBodyDeploymentsSource
 
+## Example Usage
+
+```typescript
+import { GetDeploymentResponseBodyDeploymentsSource } from "@simplesagar/vercel/models/getdeploymentop.js";
+
+let value: GetDeploymentResponseBodyDeploymentsSource = "redeploy";
+```
 
 ## Values
 
-| Name                   | Value                  |
-| ---------------------- | ---------------------- |
-| `ApiTriggerGitDeploy`  | api-trigger-git-deploy |
-| `Cli`                  | cli                    |
-| `CloneRepo`            | clone/repo             |
-| `Git`                  | git                    |
-| `Import`               | import                 |
-| `ImportRepo`           | import/repo            |
-| `Redeploy`             | redeploy               |
+```typescript
+"api-trigger-git-deploy" | "cli" | "clone/repo" | "git" | "import" | "import/repo" | "redeploy"
+```

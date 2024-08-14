@@ -1,9 +1,15 @@
 # GetAllLogDrainsEnvironments
 
+## Example Usage
+
+```typescript
+import { GetAllLogDrainsEnvironments } from "@simplesagar/vercel/models/getalllogdrainsop.js";
+
+let value: GetAllLogDrainsEnvironments = "production";
+```
 
 ## Values
 
-| Name         | Value        |
-| ------------ | ------------ |
-| `Production` | production   |
-| `Preview`    | preview      |
+```typescript
+"production" | "preview"
+```

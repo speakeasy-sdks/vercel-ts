@@ -1,5 +1,15 @@
 # EditProjectEnvContentHint8
 
+## Example Usage
+
+```typescript
+import { EditProjectEnvContentHint8 } from "@simplesagar/vercel/models/editprojectenvop.js";
+
+let value: EditProjectEnvContentHint8 = {
+    type: "postgres-prisma-url",
+    storeId: "<value>",
+};
+```
 
 ## Fields
 

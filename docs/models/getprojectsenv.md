@@ -1,5 +1,16 @@
 # GetProjectsEnv
 
+## Example Usage
+
+```typescript
+import { GetProjectsEnv } from "@simplesagar/vercel/models/getprojectsop.js";
+
+let value: GetProjectsEnv = {
+    type: "plain",
+    key: "<key>",
+    value: "<value>",
+};
+```
 
 ## Fields
 

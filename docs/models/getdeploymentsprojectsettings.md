@@ -2,6 +2,13 @@
 
 The project settings which was used for this deployment
 
+## Example Usage
+
+```typescript
+import { GetDeploymentsProjectSettings } from "@simplesagar/vercel/models/getdeploymentsop.js";
+
+let value: GetDeploymentsProjectSettings = {};
+```
 
 ## Fields
 

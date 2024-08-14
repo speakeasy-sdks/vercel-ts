@@ -1,5 +1,15 @@
 # GetProjectsMitigate
 
+## Example Usage
+
+```typescript
+import { GetProjectsMitigate } from "@simplesagar/vercel/models/getprojectsop.js";
+
+let value: GetProjectsMitigate = {
+    action: "deny",
+    ruleId: "<value>",
+};
+```
 
 ## Fields
 

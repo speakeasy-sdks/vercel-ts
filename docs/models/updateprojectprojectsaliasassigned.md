@@ -1,5 +1,12 @@
 # UpdateProjectProjectsAliasAssigned
 
+## Example Usage
+
+```typescript
+import { UpdateProjectProjectsAliasAssigned } from "@simplesagar/vercel/models/updateprojectop.js";
+
+let value: UpdateProjectProjectsAliasAssigned = 2561.39;
+```
 
 ## Supported Types
 

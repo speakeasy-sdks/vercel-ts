@@ -1,12 +1,15 @@
 # EditProjectEnvResponseBodyType
 
+## Example Usage
+
+```typescript
+import { EditProjectEnvResponseBodyType } from "@simplesagar/vercel/models/editprojectenvop.js";
+
+let value: EditProjectEnvResponseBodyType = "plain";
+```
 
 ## Values
 
-| Name        | Value       |
-| ----------- | ----------- |
-| `System`    | system      |
-| `Encrypted` | encrypted   |
-| `Plain`     | plain       |
-| `Sensitive` | sensitive   |
-| `Secret`    | secret      |
+```typescript
+"system" | "encrypted" | "plain" | "sensitive" | "secret"
+```

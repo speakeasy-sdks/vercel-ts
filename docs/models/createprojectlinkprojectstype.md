@@ -1,8 +1,15 @@
 # CreateProjectLinkProjectsType
 
+## Example Usage
+
+```typescript
+import { CreateProjectLinkProjectsType } from "@simplesagar/vercel/models/createprojectop.js";
+
+let value: CreateProjectLinkProjectsType = "gitlab";
+```
 
 ## Values
 
-| Name     | Value    |
-| -------- | -------- |
-| `Gitlab` | gitlab   |
+```typescript
+"gitlab"
+```

@@ -1,10 +1,15 @@
 # GetDeploymentHasType
 
+## Example Usage
+
+```typescript
+import { GetDeploymentHasType } from "@simplesagar/vercel/models/getdeploymentop.js";
+
+let value: GetDeploymentHasType = "header";
+```
 
 ## Values
 
-| Name     | Value    |
-| -------- | -------- |
-| `Header` | header   |
-| `Cookie` | cookie   |
-| `Query`  | query    |
+```typescript
+"header" | "cookie" | "query"
+```

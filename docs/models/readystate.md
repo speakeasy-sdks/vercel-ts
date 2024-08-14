@@ -2,17 +2,16 @@
 
 The state of the deployment depending on the process of deploying, or if it is ready or in an error state
 
+## Example Usage
+
+```typescript
+import { ReadyState } from "@simplesagar/vercel/models/listdeploymentbuildsop.js";
+
+let value: ReadyState = "READY";
+```
 
 ## Values
 
-| Name           | Value          |
-| -------------- | -------------- |
-| `Initializing` | INITIALIZING   |
-| `Building`     | BUILDING       |
-| `Uploading`    | UPLOADING      |
-| `Deploying`    | DEPLOYING      |
-| `Ready`        | READY          |
-| `Archived`     | ARCHIVED       |
-| `Error`        | ERROR          |
-| `Queued`       | QUEUED         |
-| `Canceled`     | CANCELED       |
+```typescript
+"INITIALIZING" | "BUILDING" | "UPLOADING" | "DEPLOYING" | "READY" | "ARCHIVED" | "ERROR" | "QUEUED" | "CANCELED"
+```

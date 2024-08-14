@@ -1,10 +1,15 @@
 # CancelDeploymentChecksState
 
+## Example Usage
+
+```typescript
+import { CancelDeploymentChecksState } from "@simplesagar/vercel/models/canceldeploymentop.js";
+
+let value: CancelDeploymentChecksState = "running";
+```
 
 ## Values
 
-| Name         | Value        |
-| ------------ | ------------ |
-| `Registered` | registered   |
-| `Running`    | running      |
-| `Completed`  | completed    |
+```typescript
+"registered" | "running" | "completed"
+```

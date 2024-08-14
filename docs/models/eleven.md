@@ -1,5 +1,15 @@
 # Eleven
 
+## Example Usage
+
+```typescript
+import { Eleven } from "@simplesagar/vercel/models/updateprojectdatacacheop.js";
+
+let value: Eleven = {
+    type: "postgres-password",
+    storeId: "<value>",
+};
+```
 
 ## Fields
 

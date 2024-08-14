@@ -1,5 +1,17 @@
 # CreateTeamBlobStores
 
+## Example Usage
+
+```typescript
+import { CreateTeamBlobStores } from "@simplesagar/vercel/models/createteamop.js";
+
+let value: CreateTeamBlobStores = {
+    price: 365.61,
+    batch: 4246.63,
+    threshold: 4069.22,
+    hidden: false,
+};
+```
 
 ## Fields
 

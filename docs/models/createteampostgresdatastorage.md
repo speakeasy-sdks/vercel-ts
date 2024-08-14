@@ -1,5 +1,17 @@
 # CreateTeamPostgresDataStorage
 
+## Example Usage
+
+```typescript
+import { CreateTeamPostgresDataStorage } from "@simplesagar/vercel/models/createteamop.js";
+
+let value: CreateTeamPostgresDataStorage = {
+    price: 1446.91,
+    batch: 5.45,
+    threshold: 1680.42,
+    hidden: false,
+};
+```
 
 ## Fields
 

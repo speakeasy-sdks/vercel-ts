@@ -1,5 +1,17 @@
 # GetProjectsLinkDeployHooks
 
+## Example Usage
+
+```typescript
+import { GetProjectsLinkDeployHooks } from "@simplesagar/vercel/models/getprojectsop.js";
+
+let value: GetProjectsLinkDeployHooks = {
+    id: "<id>",
+    name: "<value>",
+    ref: "<value>",
+    url: "http://jealous-hearing.net",
+};
+```
 
 ## Fields
 

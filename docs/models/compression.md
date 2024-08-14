@@ -1,10 +1,15 @@
 # Compression
 
+## Example Usage
+
+```typescript
+import { Compression } from "@simplesagar/vercel/models/getconfigurablelogdrainop.js";
+
+let value: Compression = "none";
+```
 
 ## Values
 
-| Name   | Value  |
-| ------ | ------ |
-| `Gzip` | gzip   |
-| `Zstd` | zstd   |
-| `None` | none   |
+```typescript
+"gzip" | "zstd" | "none"
+```

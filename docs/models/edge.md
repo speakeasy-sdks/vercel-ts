@@ -2,6 +2,15 @@
 
 Exists if the output is an edge function.
 
+## Example Usage
+
+```typescript
+import { Edge } from "@simplesagar/vercel/models/listdeploymentbuildsop.js";
+
+let value: Edge = {
+    regions: ["<value>"],
+};
+```
 
 ## Fields
 

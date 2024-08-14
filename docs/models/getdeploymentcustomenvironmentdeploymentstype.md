@@ -1,10 +1,15 @@
 # GetDeploymentCustomEnvironmentDeploymentsType
 
+## Example Usage
+
+```typescript
+import { GetDeploymentCustomEnvironmentDeploymentsType } from "@simplesagar/vercel/models/getdeploymentop.js";
+
+let value: GetDeploymentCustomEnvironmentDeploymentsType = "production";
+```
 
 ## Values
 
-| Name          | Value         |
-| ------------- | ------------- |
-| `Production`  | production    |
-| `Preview`     | preview       |
-| `Development` | development   |
+```typescript
+"production" | "preview" | "development"
+```

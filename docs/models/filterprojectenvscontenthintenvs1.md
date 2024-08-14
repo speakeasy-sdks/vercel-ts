@@ -1,5 +1,15 @@
 # FilterProjectEnvsContentHintEnvs1
 
+## Example Usage
+
+```typescript
+import { FilterProjectEnvsContentHintEnvs1 } from "@simplesagar/vercel/models/filterprojectenvsop.js";
+
+let value: FilterProjectEnvsContentHintEnvs1 = {
+    type: "redis-url",
+    storeId: "<value>",
+};
+```
 
 ## Fields
 

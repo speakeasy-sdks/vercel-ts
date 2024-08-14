@@ -1,5 +1,17 @@
 # StorageRedisTotalDailyAvgStorageInBytes
 
+## Example Usage
+
+```typescript
+import { StorageRedisTotalDailyAvgStorageInBytes } from "@simplesagar/vercel/models/authuser.js";
+
+let value: StorageRedisTotalDailyAvgStorageInBytes = {
+    price: 2273.62,
+    batch: 3476.98,
+    threshold: 688.52,
+    hidden: false,
+};
+```
 
 ## Fields
 

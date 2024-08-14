@@ -2,13 +2,16 @@
 
 The type of environment variable
 
+## Example Usage
+
+```typescript
+import { EditProjectEnvType } from "@simplesagar/vercel/models/editprojectenvop.js";
+
+let value: EditProjectEnvType = "plain";
+```
 
 ## Values
 
-| Name        | Value       |
-| ----------- | ----------- |
-| `System`    | system      |
-| `Secret`    | secret      |
-| `Encrypted` | encrypted   |
-| `Plain`     | plain       |
-| `Sensitive` | sensitive   |
+```typescript
+"system" | "secret" | "encrypted" | "plain" | "sensitive"
+```

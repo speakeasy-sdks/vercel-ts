@@ -3,6 +3,13 @@
 File already uploaded
 File successfully uploaded
 
+## Example Usage
+
+```typescript
+import { UploadFileResponseBody } from "@simplesagar/vercel/models/uploadfileop.js";
+
+let value: UploadFileResponseBody = {};
+```
 
 ## Supported Types
 

@@ -1,9 +1,15 @@
 # ProgramType
 
+## Example Usage
+
+```typescript
+import { ProgramType } from "@simplesagar/vercel/models/authuser.js";
+
+let value: ProgramType = "startup";
+```
 
 ## Values
 
-| Name      | Value     |
-| --------- | --------- |
-| `Startup` | startup   |
-| `Agency`  | agency    |
+```typescript
+"startup" | "agency"
+```

@@ -1,5 +1,17 @@
 # AuthUserBillingInvoiceItemsWebAnalyticsEventMatrix
 
+## Example Usage
+
+```typescript
+import { AuthUserBillingInvoiceItemsWebAnalyticsEventMatrix } from "@simplesagar/vercel/models/authuser.js";
+
+let value: AuthUserBillingInvoiceItemsWebAnalyticsEventMatrix = {
+    defaultUnitPrice: "<value>",
+    dimensionPrices: {
+        key: "<value>",
+    },
+};
+```
 
 ## Fields
 

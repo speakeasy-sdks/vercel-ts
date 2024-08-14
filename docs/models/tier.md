@@ -1,10 +1,15 @@
 # Tier
 
+## Example Usage
+
+```typescript
+import { Tier } from "@simplesagar/vercel/models/updateprojectdatacacheop.js";
+
+let value: Tier = "advanced";
+```
 
 ## Values
 
-| Name       | Value      |
-| ---------- | ---------- |
-| `Standard` | standard   |
-| `Advanced` | advanced   |
-| `Critical` | critical   |
+```typescript
+"standard" | "advanced" | "critical"
+```

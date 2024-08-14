@@ -1,5 +1,18 @@
 # CreateProjectEnvContentHint14
 
+## Example Usage
+
+```typescript
+import { CreateProjectEnvContentHint14 } from "@simplesagar/vercel/models/createprojectenvop.js";
+
+let value: CreateProjectEnvContentHint14 = {
+    type: "integration-store-secret",
+    storeId: "<value>",
+    integrationId: "<value>",
+    integrationProductId: "<value>",
+    integrationConfigurationId: "<value>",
+};
+```
 
 ## Fields
 

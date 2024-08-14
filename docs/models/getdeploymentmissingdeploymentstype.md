@@ -1,8 +1,15 @@
 # GetDeploymentMissingDeploymentsType
 
+## Example Usage
+
+```typescript
+import { GetDeploymentMissingDeploymentsType } from "@simplesagar/vercel/models/getdeploymentop.js";
+
+let value: GetDeploymentMissingDeploymentsType = "host";
+```
 
 ## Values
 
-| Name   | Value  |
-| ------ | ------ |
-| `Host` | host   |
+```typescript
+"host"
+```

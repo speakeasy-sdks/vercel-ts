@@ -1,5 +1,15 @@
 # Twelve
 
+## Example Usage
+
+```typescript
+import { Twelve } from "@simplesagar/vercel/models/updateprojectdatacacheop.js";
+
+let value: Twelve = {
+    type: "postgres-database",
+    storeId: "<value>",
+};
+```
 
 ## Fields
 

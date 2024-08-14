@@ -1,5 +1,12 @@
 # CreateProjectSrc2
 
+## Example Usage
+
+```typescript
+import { CreateProjectSrc2 } from "@simplesagar/vercel/models/createprojectop.js";
+
+let value: CreateProjectSrc2 = {};
+```
 
 ## Fields
 

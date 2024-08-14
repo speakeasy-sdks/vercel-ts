@@ -1,5 +1,14 @@
 # JoinedFrom
 
+## Example Usage
+
+```typescript
+import { JoinedFrom } from "@simplesagar/vercel/models/teamlimited.js";
+
+let value: JoinedFrom = {
+    origin: "teams",
+};
+```
 
 ## Fields
 

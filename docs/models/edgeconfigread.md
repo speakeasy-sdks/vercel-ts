@@ -1,5 +1,17 @@
 # EdgeConfigRead
 
+## Example Usage
+
+```typescript
+import { EdgeConfigRead } from "@simplesagar/vercel/models/authuser.js";
+
+let value: EdgeConfigRead = {
+    price: 1644.88,
+    batch: 8998.67,
+    threshold: 7482.24,
+    hidden: false,
+};
+```
 
 ## Fields
 

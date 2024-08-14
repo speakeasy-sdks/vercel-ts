@@ -1,5 +1,14 @@
 # CreateCheckRequest
 
+## Example Usage
+
+```typescript
+import { CreateCheckRequest } from "@simplesagar/vercel/models/createcheckop.js";
+
+let value: CreateCheckRequest = {
+    deploymentId: "dpl_2qn7PZrx89yxY34vEZPD31Y9XVj6",
+};
+```
 
 ## Fields
 

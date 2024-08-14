@@ -1,5 +1,12 @@
 # EditProjectEnvResponseBodyTarget
 
+## Example Usage
+
+```typescript
+import { EditProjectEnvResponseBodyTarget } from "@simplesagar/vercel/models/editprojectenvop.js";
+
+let value: EditProjectEnvResponseBodyTarget = ["development"];
+```
 
 ## Supported Types
 

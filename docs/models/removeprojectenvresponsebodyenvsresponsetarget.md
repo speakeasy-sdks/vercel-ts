@@ -1,5 +1,12 @@
 # RemoveProjectEnvResponseBodyEnvsResponseTarget
 
+## Example Usage
+
+```typescript
+import { RemoveProjectEnvResponseBodyEnvsResponseTarget } from "@simplesagar/vercel/models/removeprojectenvop.js";
+
+let value: RemoveProjectEnvResponseBodyEnvsResponseTarget = ["development"];
+```
 
 ## Supported Types
 

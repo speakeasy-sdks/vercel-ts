@@ -1,5 +1,12 @@
 # FilterProjectEnvsResponseBodyEnvsResponseTarget
 
+## Example Usage
+
+```typescript
+import { FilterProjectEnvsResponseBodyEnvsResponseTarget } from "@simplesagar/vercel/models/filterprojectenvsop.js";
+
+let value: FilterProjectEnvsResponseBodyEnvsResponseTarget = ["development"];
+```
 
 ## Supported Types
 

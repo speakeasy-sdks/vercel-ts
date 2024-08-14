@@ -1,5 +1,23 @@
 # ResponseBodyRecords
 
+## Example Usage
+
+```typescript
+import { ResponseBodyRecords } from "@simplesagar/vercel/models/getrecordsop.js";
+
+let value: ResponseBodyRecords = {
+    id: "<id>",
+    slug: "<value>",
+    name: "<value>",
+    type: "HTTPS",
+    value: "<value>",
+    creator: "<value>",
+    created: 5413.81,
+    updated: 1209.19,
+    createdAt: 9233.06,
+    updatedAt: 6806.97,
+};
+```
 
 ## Fields
 

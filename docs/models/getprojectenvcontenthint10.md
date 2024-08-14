@@ -1,5 +1,15 @@
 # GetProjectEnvContentHint10
 
+## Example Usage
+
+```typescript
+import { GetProjectEnvContentHint10 } from "@simplesagar/vercel/models/getprojectenvop.js";
+
+let value: GetProjectEnvContentHint10 = {
+    type: "postgres-host",
+    storeId: "<value>",
+};
+```
 
 ## Fields
 

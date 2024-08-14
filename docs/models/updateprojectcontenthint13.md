@@ -1,5 +1,15 @@
 # UpdateProjectContentHint13
 
+## Example Usage
+
+```typescript
+import { UpdateProjectContentHint13 } from "@simplesagar/vercel/models/updateprojectop.js";
+
+let value: UpdateProjectContentHint13 = {
+    type: "postgres-url-no-ssl",
+    storeId: "<value>",
+};
+```
 
 ## Fields
 

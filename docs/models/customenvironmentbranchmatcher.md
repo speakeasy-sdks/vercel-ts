@@ -1,5 +1,15 @@
 # CustomEnvironmentBranchMatcher
 
+## Example Usage
+
+```typescript
+import { CustomEnvironmentBranchMatcher } from "@simplesagar/vercel/models/canceldeploymentop.js";
+
+let value: CustomEnvironmentBranchMatcher = {
+    type: "endsWith",
+    pattern: "<value>",
+};
+```
 
 ## Fields
 

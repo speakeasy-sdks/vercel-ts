@@ -1,5 +1,24 @@
 # UpdateProjectCrons
 
+## Example Usage
+
+```typescript
+import { UpdateProjectCrons } from "@simplesagar/vercel/models/updateprojectop.js";
+
+let value: UpdateProjectCrons = {
+    enabledAt: 1943.42,
+    disabledAt: 6178.77,
+    updatedAt: 7733.26,
+    deploymentId: "<value>",
+    definitions: [
+        {
+            host: "vercel.com",
+            path: "/api/crons/sync-something?hello=world",
+            schedule: "0 0 * * *",
+        },
+    ],
+};
+```
 
 ## Fields
 

@@ -1,5 +1,12 @@
 # UpdateRecordRequestBody
 
+## Example Usage
+
+```typescript
+import { UpdateRecordRequestBody } from "@simplesagar/vercel/models/updaterecordop.js";
+
+let value: UpdateRecordRequestBody = {};
+```
 
 ## Fields
 

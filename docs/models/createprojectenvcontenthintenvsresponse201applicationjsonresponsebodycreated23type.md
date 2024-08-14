@@ -1,8 +1,18 @@
 # CreateProjectEnvContentHintEnvsResponse201ApplicationJSONResponseBodyCreated23Type
 
+## Example Usage
+
+```typescript
+import {
+  CreateProjectEnvContentHintEnvsResponse201ApplicationJSONResponseBodyCreated23Type,
+} from "@simplesagar/vercel/models/createprojectenvop.js";
+
+let value: CreateProjectEnvContentHintEnvsResponse201ApplicationJSONResponseBodyCreated23Type =
+    "redis-rest-api-token";
+```
 
 ## Values
 
-| Name                 | Value                |
-| -------------------- | -------------------- |
-| `RedisRestApiToken`  | redis-rest-api-token |
+```typescript
+"redis-rest-api-token"
+```

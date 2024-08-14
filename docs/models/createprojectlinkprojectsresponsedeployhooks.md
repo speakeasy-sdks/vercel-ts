@@ -1,5 +1,17 @@
 # CreateProjectLinkProjectsResponseDeployHooks
 
+## Example Usage
+
+```typescript
+import { CreateProjectLinkProjectsResponseDeployHooks } from "@simplesagar/vercel/models/createprojectop.js";
+
+let value: CreateProjectLinkProjectsResponseDeployHooks = {
+    id: "<id>",
+    name: "<value>",
+    ref: "<value>",
+    url: "https://elliptical-rediscovery.org",
+};
+```
 
 ## Fields
 

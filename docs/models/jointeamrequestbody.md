@@ -1,5 +1,12 @@
 # JoinTeamRequestBody
 
+## Example Usage
+
+```typescript
+import { JoinTeamRequestBody } from "@simplesagar/vercel/models/jointeamop.js";
+
+let value: JoinTeamRequestBody = {};
+```
 
 ## Fields
 

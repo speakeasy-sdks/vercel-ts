@@ -1,5 +1,15 @@
 # CreateDeploymentOutput
 
+## Example Usage
+
+```typescript
+import { CreateDeploymentOutput } from "@simplesagar/vercel/models/createdeploymentop.js";
+
+let value: CreateDeploymentOutput = {
+    path: "/etc/mail",
+    functionName: "<value>",
+};
+```
 
 ## Fields
 

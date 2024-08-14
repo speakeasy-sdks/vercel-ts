@@ -1,5 +1,15 @@
 # RoutesHas
 
+## Example Usage
+
+```typescript
+import { RoutesHas } from "@simplesagar/vercel/models/createdeploymentop.js";
+
+let value: RoutesHas = {
+    type: "host",
+    value: "<value>",
+};
+```
 
 ## Supported Types
 

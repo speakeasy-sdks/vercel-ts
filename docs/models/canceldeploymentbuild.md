@@ -1,5 +1,14 @@
 # CancelDeploymentBuild
 
+## Example Usage
+
+```typescript
+import { CancelDeploymentBuild } from "@simplesagar/vercel/models/canceldeploymentop.js";
+
+let value: CancelDeploymentBuild = {
+    env: ["<value>"],
+};
+```
 
 ## Fields
 

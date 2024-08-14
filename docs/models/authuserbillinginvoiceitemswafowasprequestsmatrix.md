@@ -1,5 +1,17 @@
 # AuthUserBillingInvoiceItemsWafOwaspRequestsMatrix
 
+## Example Usage
+
+```typescript
+import { AuthUserBillingInvoiceItemsWafOwaspRequestsMatrix } from "@simplesagar/vercel/models/authuser.js";
+
+let value: AuthUserBillingInvoiceItemsWafOwaspRequestsMatrix = {
+    defaultUnitPrice: "<value>",
+    dimensionPrices: {
+        key: "<value>",
+    },
+};
+```
 
 ## Fields
 

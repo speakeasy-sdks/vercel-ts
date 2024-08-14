@@ -1,13 +1,15 @@
 # UpdateProjectReadyState
 
+## Example Usage
+
+```typescript
+import { UpdateProjectReadyState } from "@simplesagar/vercel/models/updateprojectop.js";
+
+let value: UpdateProjectReadyState = "ERROR";
+```
 
 ## Values
 
-| Name           | Value          |
-| -------------- | -------------- |
-| `Building`     | BUILDING       |
-| `Error`        | ERROR          |
-| `Initializing` | INITIALIZING   |
-| `Queued`       | QUEUED         |
-| `Ready`        | READY          |
-| `Canceled`     | CANCELED       |
+```typescript
+"BUILDING" | "ERROR" | "INITIALIZING" | "QUEUED" | "READY" | "CANCELED"
+```

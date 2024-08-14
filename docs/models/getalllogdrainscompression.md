@@ -1,10 +1,15 @@
 # GetAllLogDrainsCompression
 
+## Example Usage
+
+```typescript
+import { GetAllLogDrainsCompression } from "@simplesagar/vercel/models/getalllogdrainsop.js";
+
+let value: GetAllLogDrainsCompression = "gzip";
+```
 
 ## Values
 
-| Name   | Value  |
-| ------ | ------ |
-| `Gzip` | gzip   |
-| `Zstd` | zstd   |
-| `None` | none   |
+```typescript
+"gzip" | "zstd" | "none"
+```

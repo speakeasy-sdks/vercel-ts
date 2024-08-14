@@ -1,5 +1,12 @@
 # CreateEdgeConfigItems
 
+## Example Usage
+
+```typescript
+import { CreateEdgeConfigItems } from "@simplesagar/vercel/models/createedgeconfigop.js";
+
+let value: CreateEdgeConfigItems = false;
+```
 
 ## Supported Types
 

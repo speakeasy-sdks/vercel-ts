@@ -2,6 +2,50 @@
 
 The deployment including both public and private information
 
+## Example Usage
+
+```typescript
+import { GetDeploymentResponseBody1 } from "@simplesagar/vercel/models/getdeploymentop.js";
+
+let value: GetDeploymentResponseBody1 = {
+    build: {
+        env: ["<value>"],
+    },
+    env: ["<value>"],
+    inspectorUrl: "<value>",
+    isInConcurrentBuildsQueue: false,
+    projectSettings: {},
+    aliasAssigned: false,
+    bootedAt: 7382.27,
+    buildingAt: 4148.57,
+    buildSkipped: false,
+    creator: {
+        uid: "<value>",
+    },
+    public: false,
+    status: "ERROR",
+    id: "<id>",
+    type: "LAMBDAS",
+    createdAt: 3605.45,
+    name: "<value>",
+    readyState: "CANCELED",
+    meta: {
+        key: "<value>",
+    },
+    regions: ["<value>"],
+    url: "https://gullible-trapdoor.info",
+    version: 460.07,
+    projectId: "<value>",
+    plan: "hobby",
+    createdIn: "<value>",
+    ownerId: "<value>",
+    routes: [
+        {
+            src: "<value>",
+        },
+    ],
+};
+```
 
 ## Fields
 

@@ -1,5 +1,15 @@
 # FilterProjectEnvsContentHintEnvsResponse8
 
+## Example Usage
+
+```typescript
+import { FilterProjectEnvsContentHintEnvsResponse8 } from "@simplesagar/vercel/models/filterprojectenvsop.js";
+
+let value: FilterProjectEnvsContentHintEnvsResponse8 = {
+    type: "postgres-prisma-url",
+    storeId: "<value>",
+};
+```
 
 ## Fields
 

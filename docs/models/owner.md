@@ -1,5 +1,15 @@
 # Owner
 
+## Example Usage
+
+```typescript
+import { Owner } from "@simplesagar/vercel/models/searchrepoop.js";
+
+let value: Owner = {
+    id: 3998.02,
+    name: "<value>",
+};
+```
 
 ## Fields
 

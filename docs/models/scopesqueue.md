@@ -1,5 +1,19 @@
 # ScopesQueue
 
+## Example Usage
+
+```typescript
+import { ScopesQueue } from "@simplesagar/vercel/models/getconfigurationsop.js";
+
+let value: ScopesQueue = {
+    scopes: {
+        added: ["read:integration-configuration"],
+        upgraded: ["read-write:integration-resource"],
+    },
+    note: "<value>",
+    requestedAt: 9846.32,
+};
+```
 
 ## Fields
 

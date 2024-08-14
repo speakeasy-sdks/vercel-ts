@@ -1,5 +1,29 @@
 # GetProjectsLatestDeployments
 
+## Example Usage
+
+```typescript
+import { GetProjectsLatestDeployments } from "@simplesagar/vercel/models/getprojectsop.js";
+
+let value: GetProjectsLatestDeployments = {
+    createdAt: 5370.23,
+    createdIn: "<value>",
+    creator: {
+        email: "Isaias91@hotmail.com",
+        uid: "<value>",
+        username: "Felix_Ratke",
+    },
+    deploymentHostname: "<value>",
+    name: "<value>",
+    id: "<id>",
+    plan: "hobby",
+    private: false,
+    readyState: "BUILDING",
+    type: "LAMBDAS",
+    url: "https://triangular-apprehension.com",
+    userId: "<value>",
+};
+```
 
 ## Fields
 

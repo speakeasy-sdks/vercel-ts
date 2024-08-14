@@ -1,5 +1,14 @@
 # GetProjectsHas
 
+## Example Usage
+
+```typescript
+import { GetProjectsHas } from "@simplesagar/vercel/models/getprojectsop.js";
+
+let value: GetProjectsHas = {
+    type: "ip_address",
+};
+```
 
 ## Fields
 

@@ -1,5 +1,12 @@
 # UpdateProjectPermissions
 
+## Example Usage
+
+```typescript
+import { UpdateProjectPermissions } from "@simplesagar/vercel/models/updateprojectop.js";
+
+let value: UpdateProjectPermissions = {};
+```
 
 ## Fields
 

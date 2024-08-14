@@ -1,5 +1,15 @@
 # Lcp
 
+## Example Usage
+
+```typescript
+import { Lcp } from "@simplesagar/vercel/models/updatecheckop.js";
+
+let value: Lcp = {
+    value: 1200,
+    source: "web-vitals",
+};
+```
 
 ## Fields
 

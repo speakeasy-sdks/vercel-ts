@@ -2,11 +2,16 @@
 
 The project role of the member that will be added. \"null\" will remove this project level role.
 
+## Example Usage
+
+```typescript
+import { UpdateTeamMemberRole } from "@simplesagar/vercel/models/updateteammemberop.js";
+
+let value: UpdateTeamMemberRole = "ADMIN";
+```
 
 ## Values
 
-| Name               | Value              |
-| ------------------ | ------------------ |
-| `Admin`            | ADMIN              |
-| `ProjectViewer`    | PROJECT_VIEWER     |
-| `ProjectDeveloper` | PROJECT_DEVELOPER  |
+```typescript
+"ADMIN" | "PROJECT_VIEWER" | "PROJECT_DEVELOPER"
+```

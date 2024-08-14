@@ -1,5 +1,14 @@
 # PatchTeamRequest
 
+## Example Usage
+
+```typescript
+import { PatchTeamRequest } from "@simplesagar/vercel/models/patchteamop.js";
+
+let value: PatchTeamRequest = {
+    teamId: "<value>",
+};
+```
 
 ## Fields
 

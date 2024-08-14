@@ -1,5 +1,17 @@
 # BlobTotalSimpleRequests
 
+## Example Usage
+
+```typescript
+import { BlobTotalSimpleRequests } from "@simplesagar/vercel/models/authuser.js";
+
+let value: BlobTotalSimpleRequests = {
+    price: 2114.55,
+    batch: 2646.19,
+    threshold: 593.83,
+    hidden: false,
+};
+```
 
 ## Fields
 

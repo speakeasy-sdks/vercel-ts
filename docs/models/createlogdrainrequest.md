@@ -1,5 +1,12 @@
 # CreateLogDrainRequest
 
+## Example Usage
+
+```typescript
+import { CreateLogDrainRequest } from "@simplesagar/vercel/models/createlogdrainop.js";
+
+let value: CreateLogDrainRequest = {};
+```
 
 ## Fields
 

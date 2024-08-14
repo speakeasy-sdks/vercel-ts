@@ -1,5 +1,16 @@
 # UpdateProjectCreator
 
+## Example Usage
+
+```typescript
+import { UpdateProjectCreator } from "@simplesagar/vercel/models/updateprojectop.js";
+
+let value: UpdateProjectCreator = {
+    email: "Abelardo36@yahoo.com",
+    uid: "<value>",
+    username: "Hallie_Collins",
+};
+```
 
 ## Fields
 

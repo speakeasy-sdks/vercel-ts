@@ -2,15 +2,16 @@
 
 The source of the deployment.
 
+## Example Usage
+
+```typescript
+import { GetDeploymentsSource } from "@simplesagar/vercel/models/getdeploymentsop.js";
+
+let value: GetDeploymentsSource = "cli";
+```
 
 ## Values
 
-| Name                   | Value                  |
-| ---------------------- | ---------------------- |
-| `ApiTriggerGitDeploy`  | api-trigger-git-deploy |
-| `Cli`                  | cli                    |
-| `CloneRepo`            | clone/repo             |
-| `Git`                  | git                    |
-| `Import`               | import                 |
-| `ImportRepo`           | import/repo            |
-| `Redeploy`             | redeploy               |
+```typescript
+"api-trigger-git-deploy" | "cli" | "clone/repo" | "git" | "import" | "import/repo" | "redeploy"
+```

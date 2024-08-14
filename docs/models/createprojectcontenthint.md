@@ -1,5 +1,18 @@
 # CreateProjectContentHint
 
+## Example Usage
+
+```typescript
+import { CreateProjectContentHint } from "@simplesagar/vercel/models/createprojectop.js";
+
+let value: CreateProjectContentHint = {
+    type: "integration-store-secret",
+    storeId: "<value>",
+    integrationId: "<value>",
+    integrationProductId: "<value>",
+    integrationConfigurationId: "<value>",
+};
+```
 
 ## Supported Types
 

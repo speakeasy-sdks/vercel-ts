@@ -1,10 +1,15 @@
 # GetProjectEnvTargetEnvs2
 
+## Example Usage
+
+```typescript
+import { GetProjectEnvTargetEnvs2 } from "@simplesagar/vercel/models/getprojectenvop.js";
+
+let value: GetProjectEnvTargetEnvs2 = "development";
+```
 
 ## Values
 
-| Name          | Value         |
-| ------------- | ------------- |
-| `Production`  | production    |
-| `Preview`     | preview       |
-| `Development` | development   |
+```typescript
+"production" | "preview" | "development"
+```

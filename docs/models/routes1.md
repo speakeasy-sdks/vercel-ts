@@ -1,5 +1,14 @@
 # Routes1
 
+## Example Usage
+
+```typescript
+import { Routes1 } from "@simplesagar/vercel/models/createdeploymentop.js";
+
+let value: Routes1 = {
+    src: "<value>",
+};
+```
 
 ## Fields
 

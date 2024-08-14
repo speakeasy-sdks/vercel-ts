@@ -1,5 +1,14 @@
 # GetProjectsDataCache
 
+## Example Usage
+
+```typescript
+import { GetProjectsDataCache } from "@simplesagar/vercel/models/getprojectsop.js";
+
+let value: GetProjectsDataCache = {
+    userDisabled: false,
+};
+```
 
 ## Fields
 

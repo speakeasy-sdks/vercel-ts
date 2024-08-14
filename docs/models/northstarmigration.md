@@ -1,5 +1,20 @@
 # NorthstarMigration
 
+## Example Usage
+
+```typescript
+import { NorthstarMigration } from "@simplesagar/vercel/models/authuser.js";
+
+let value: NorthstarMigration = {
+    teamId: "<value>",
+    projects: 4441.21,
+    stores: 5063.12,
+    integrationConfigurations: 3670.46,
+    integrationClients: 9998.09,
+    startTime: 7897.7,
+    endTime: 1972.59,
+};
+```
 
 ## Fields
 

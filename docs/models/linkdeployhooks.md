@@ -1,5 +1,17 @@
 # LinkDeployHooks
 
+## Example Usage
+
+```typescript
+import { LinkDeployHooks } from "@simplesagar/vercel/models/updateprojectdatacacheop.js";
+
+let value: LinkDeployHooks = {
+    id: "<id>",
+    name: "<value>",
+    ref: "<value>",
+    url: "http://lumpy-loincloth.org",
+};
+```
 
 ## Fields
 

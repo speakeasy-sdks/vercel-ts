@@ -1,5 +1,17 @@
 # FastOriginTransfer
 
+## Example Usage
+
+```typescript
+import { FastOriginTransfer } from "@simplesagar/vercel/models/authuser.js";
+
+let value: FastOriginTransfer = {
+    price: 6573.19,
+    batch: 5597.74,
+    threshold: 5173.26,
+    hidden: false,
+};
+```
 
 ## Fields
 

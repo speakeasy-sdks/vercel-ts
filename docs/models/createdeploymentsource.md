@@ -1,14 +1,15 @@
 # CreateDeploymentSource
 
+## Example Usage
+
+```typescript
+import { CreateDeploymentSource } from "@simplesagar/vercel/models/createdeploymentop.js";
+
+let value: CreateDeploymentSource = "import";
+```
 
 ## Values
 
-| Name                   | Value                  |
-| ---------------------- | ---------------------- |
-| `Cli`                  | cli                    |
-| `Git`                  | git                    |
-| `Import`               | import                 |
-| `ImportRepo`           | import/repo            |
-| `CloneRepo`            | clone/repo             |
-| `ApiTriggerGitDeploy`  | api-trigger-git-deploy |
-| `Redeploy`             | redeploy               |
+```typescript
+"cli" | "git" | "import" | "import/repo" | "clone/repo" | "api-trigger-git-deploy" | "redeploy"
+```

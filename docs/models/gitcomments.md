@@ -1,5 +1,15 @@
 # GitComments
 
+## Example Usage
+
+```typescript
+import { GitComments } from "@simplesagar/vercel/models/updateprojectdatacacheop.js";
+
+let value: GitComments = {
+    onPullRequest: false,
+    onCommit: false,
+};
+```
 
 ## Fields
 

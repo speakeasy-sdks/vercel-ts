@@ -1,13 +1,15 @@
 # RoutesHandle
 
+## Example Usage
+
+```typescript
+import { RoutesHandle } from "@simplesagar/vercel/models/createdeploymentop.js";
+
+let value: RoutesHandle = "resource";
+```
 
 ## Values
 
-| Name         | Value        |
-| ------------ | ------------ |
-| `Error`      | error        |
-| `Filesystem` | filesystem   |
-| `Hit`        | hit          |
-| `Miss`       | miss         |
-| `Rewrite`    | rewrite      |
-| `Resource`   | resource     |
+```typescript
+"error" | "filesystem" | "hit" | "miss" | "rewrite" | "resource"
+```

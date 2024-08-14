@@ -1,10 +1,15 @@
 # ChecksState
 
+## Example Usage
+
+```typescript
+import { ChecksState } from "@simplesagar/vercel/models/createdeploymentop.js";
+
+let value: ChecksState = "registered";
+```
 
 ## Values
 
-| Name         | Value        |
-| ------------ | ------------ |
-| `Registered` | registered   |
-| `Running`    | running      |
-| `Completed`  | completed    |
+```typescript
+"registered" | "running" | "completed"
+```

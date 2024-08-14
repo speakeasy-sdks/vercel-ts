@@ -1,12 +1,15 @@
 # CreateProjectJobStatus
 
+## Example Usage
+
+```typescript
+import { CreateProjectJobStatus } from "@simplesagar/vercel/models/createprojectop.js";
+
+let value: CreateProjectJobStatus = "succeeded";
+```
 
 ## Values
 
-| Name         | Value        |
-| ------------ | ------------ |
-| `Succeeded`  | succeeded    |
-| `Failed`     | failed       |
-| `Skipped`    | skipped      |
-| `Pending`    | pending      |
-| `InProgress` | in-progress  |
+```typescript
+"succeeded" | "failed" | "skipped" | "pending" | "in-progress"
+```

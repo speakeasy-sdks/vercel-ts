@@ -1,10 +1,15 @@
 # CreateDeploymentMissingType
 
+## Example Usage
+
+```typescript
+import { CreateDeploymentMissingType } from "@simplesagar/vercel/models/createdeploymentop.js";
+
+let value: CreateDeploymentMissingType = "cookie";
+```
 
 ## Values
 
-| Name     | Value    |
-| -------- | -------- |
-| `Header` | header   |
-| `Cookie` | cookie   |
-| `Query`  | query    |
+```typescript
+"header" | "cookie" | "query"
+```

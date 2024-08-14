@@ -1,5 +1,17 @@
 # Failed
 
+## Example Usage
+
+```typescript
+import { Failed } from "@simplesagar/vercel/models/createprojectenvop.js";
+
+let value: Failed = {
+    error: {
+        code: "<value>",
+        message: "<value>",
+    },
+};
+```
 
 ## Fields
 

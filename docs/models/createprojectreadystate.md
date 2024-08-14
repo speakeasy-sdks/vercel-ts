@@ -1,13 +1,15 @@
 # CreateProjectReadyState
 
+## Example Usage
+
+```typescript
+import { CreateProjectReadyState } from "@simplesagar/vercel/models/createprojectop.js";
+
+let value: CreateProjectReadyState = "QUEUED";
+```
 
 ## Values
 
-| Name           | Value          |
-| -------------- | -------------- |
-| `Building`     | BUILDING       |
-| `Error`        | ERROR          |
-| `Initializing` | INITIALIZING   |
-| `Queued`       | QUEUED         |
-| `Ready`        | READY          |
-| `Canceled`     | CANCELED       |
+```typescript
+"BUILDING" | "ERROR" | "INITIALIZING" | "QUEUED" | "READY" | "CANCELED"
+```

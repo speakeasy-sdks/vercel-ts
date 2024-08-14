@@ -1,12 +1,15 @@
 # CreatedType
 
+## Example Usage
+
+```typescript
+import { CreatedType } from "@simplesagar/vercel/models/createprojectenvop.js";
+
+let value: CreatedType = "plain";
+```
 
 ## Values
 
-| Name        | Value       |
-| ----------- | ----------- |
-| `System`    | system      |
-| `Encrypted` | encrypted   |
-| `Plain`     | plain       |
-| `Sensitive` | sensitive   |
-| `Secret`    | secret      |
+```typescript
+"system" | "encrypted" | "plain" | "sensitive" | "secret"
+```

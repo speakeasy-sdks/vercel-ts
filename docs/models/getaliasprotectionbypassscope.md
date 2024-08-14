@@ -1,8 +1,15 @@
 # GetAliasProtectionBypassScope
 
+## Example Usage
+
+```typescript
+import { GetAliasProtectionBypassScope } from "@simplesagar/vercel/models/getaliasop.js";
+
+let value: GetAliasProtectionBypassScope = "user";
+```
 
 ## Values
 
-| Name   | Value  |
-| ------ | ------ |
-| `User` | user   |
+```typescript
+"user"
+```

@@ -1,5 +1,15 @@
 # EditProjectEnvRequest
 
+## Example Usage
+
+```typescript
+import { EditProjectEnvRequest } from "@simplesagar/vercel/models/editprojectenvop.js";
+
+let value: EditProjectEnvRequest = {
+    idOrName: "prj_XLKmu1DyR1eY7zq8UgeRKbA7yVLA",
+    id: "XMbOEya1gUUO1ir4",
+};
+```
 
 ## Fields
 

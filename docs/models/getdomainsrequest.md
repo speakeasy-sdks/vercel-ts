@@ -1,5 +1,12 @@
 # GetDomainsRequest
 
+## Example Usage
+
+```typescript
+import { GetDomainsRequest } from "@simplesagar/vercel/models/getdomainsop.js";
+
+let value: GetDomainsRequest = {};
+```
 
 ## Fields
 

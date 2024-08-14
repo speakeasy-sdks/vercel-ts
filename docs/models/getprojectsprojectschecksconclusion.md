@@ -1,11 +1,15 @@
 # GetProjectsProjectsChecksConclusion
 
+## Example Usage
+
+```typescript
+import { GetProjectsProjectsChecksConclusion } from "@simplesagar/vercel/models/getprojectsop.js";
+
+let value: GetProjectsProjectsChecksConclusion = "succeeded";
+```
 
 ## Values
 
-| Name        | Value       |
-| ----------- | ----------- |
-| `Succeeded` | succeeded   |
-| `Failed`    | failed      |
-| `Skipped`   | skipped     |
-| `Canceled`  | canceled    |
+```typescript
+"succeeded" | "failed" | "skipped" | "canceled"
+```

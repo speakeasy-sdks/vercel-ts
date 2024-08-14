@@ -1,8 +1,15 @@
 # RemoveProjectEnvContentHintEnvsResponse200Type
 
+## Example Usage
+
+```typescript
+import { RemoveProjectEnvContentHintEnvsResponse200Type } from "@simplesagar/vercel/models/removeprojectenvop.js";
+
+let value: RemoveProjectEnvContentHintEnvsResponse200Type = "redis-rest-api-read-only-token";
+```
 
 ## Values
 
-| Name                           | Value                          |
-| ------------------------------ | ------------------------------ |
-| `RedisRestApiReadOnlyToken`    | redis-rest-api-read-only-token |
+```typescript
+"redis-rest-api-read-only-token"
+```

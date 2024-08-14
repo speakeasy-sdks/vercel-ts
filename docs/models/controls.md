@@ -1,5 +1,12 @@
 # Controls
 
+## Example Usage
+
+```typescript
+import { Controls } from "@simplesagar/vercel/models/authuser.js";
+
+let value: Controls = {};
+```
 
 ## Fields
 

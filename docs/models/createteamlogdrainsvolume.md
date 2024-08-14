@@ -1,5 +1,17 @@
 # CreateTeamLogDrainsVolume
 
+## Example Usage
+
+```typescript
+import { CreateTeamLogDrainsVolume } from "@simplesagar/vercel/models/createteamop.js";
+
+let value: CreateTeamLogDrainsVolume = {
+    price: 1830.33,
+    batch: 6113.28,
+    threshold: 4030.26,
+    hidden: false,
+};
+```
 
 ## Fields
 

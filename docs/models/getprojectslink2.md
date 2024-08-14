@@ -1,5 +1,21 @@
 # GetProjectsLink2
 
+## Example Usage
+
+```typescript
+import { GetProjectsLink2 } from "@simplesagar/vercel/models/getprojectsop.js";
+
+let value: GetProjectsLink2 = {
+    deployHooks: [
+        {
+            id: "<id>",
+            name: "<value>",
+            ref: "<value>",
+            url: "http://big-willingness.net",
+        },
+    ],
+};
+```
 
 ## Fields
 

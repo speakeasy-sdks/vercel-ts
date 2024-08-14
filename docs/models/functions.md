@@ -1,5 +1,12 @@
 # Functions
 
+## Example Usage
+
+```typescript
+import { Functions } from "@simplesagar/vercel/models/createdeploymentop.js";
+
+let value: Functions = {};
+```
 
 ## Fields
 

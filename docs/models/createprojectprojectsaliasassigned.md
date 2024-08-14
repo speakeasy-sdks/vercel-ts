@@ -1,5 +1,12 @@
 # CreateProjectProjectsAliasAssigned
 
+## Example Usage
+
+```typescript
+import { CreateProjectProjectsAliasAssigned } from "@simplesagar/vercel/models/createprojectop.js";
+
+let value: CreateProjectProjectsAliasAssigned = false;
+```
 
 ## Supported Types
 

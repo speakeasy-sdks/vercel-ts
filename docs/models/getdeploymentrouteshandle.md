@@ -1,13 +1,15 @@
 # GetDeploymentRoutesHandle
 
+## Example Usage
+
+```typescript
+import { GetDeploymentRoutesHandle } from "@simplesagar/vercel/models/getdeploymentop.js";
+
+let value: GetDeploymentRoutesHandle = "error";
+```
 
 ## Values
 
-| Name         | Value        |
-| ------------ | ------------ |
-| `Error`      | error        |
-| `Filesystem` | filesystem   |
-| `Hit`        | hit          |
-| `Miss`       | miss         |
-| `Rewrite`    | rewrite      |
-| `Resource`   | resource     |
+```typescript
+"error" | "filesystem" | "hit" | "miss" | "rewrite" | "resource"
+```

@@ -1,9 +1,15 @@
 # Platform
 
+## Example Usage
+
+```typescript
+import { Platform } from "@simplesagar/vercel/models/authuser.js";
+
+let value: Platform = "stripeTestMode";
+```
 
 ## Values
 
-| Name             | Value            |
-| ---------------- | ---------------- |
-| `Stripe`         | stripe           |
-| `StripeTestMode` | stripeTestMode   |
+```typescript
+"stripe" | "stripeTestMode"
+```

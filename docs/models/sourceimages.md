@@ -1,5 +1,17 @@
 # SourceImages
 
+## Example Usage
+
+```typescript
+import { SourceImages } from "@simplesagar/vercel/models/authuser.js";
+
+let value: SourceImages = {
+    price: 9322.96,
+    batch: 1509.35,
+    threshold: 9930.02,
+    hidden: false,
+};
+```
 
 ## Fields
 

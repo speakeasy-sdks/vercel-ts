@@ -1,5 +1,14 @@
 # ResponseBodyWebAnalytics
 
+## Example Usage
+
+```typescript
+import { ResponseBodyWebAnalytics } from "@simplesagar/vercel/models/getdeploymentop.js";
+
+let value: ResponseBodyWebAnalytics = {
+    id: "<id>",
+};
+```
 
 ## Fields
 

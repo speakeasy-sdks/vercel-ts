@@ -1,10 +1,15 @@
 # GetDeploymentMissingType
 
+## Example Usage
+
+```typescript
+import { GetDeploymentMissingType } from "@simplesagar/vercel/models/getdeploymentop.js";
+
+let value: GetDeploymentMissingType = "query";
+```
 
 ## Values
 
-| Name     | Value    |
-| -------- | -------- |
-| `Header` | header   |
-| `Cookie` | cookie   |
-| `Query`  | query    |
+```typescript
+"header" | "cookie" | "query"
+```

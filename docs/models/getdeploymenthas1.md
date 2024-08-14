@@ -1,5 +1,15 @@
 # GetDeploymentHas1
 
+## Example Usage
+
+```typescript
+import { GetDeploymentHas1 } from "@simplesagar/vercel/models/getdeploymentop.js";
+
+let value: GetDeploymentHas1 = {
+    type: "host",
+    value: "<value>",
+};
+```
 
 ## Fields
 

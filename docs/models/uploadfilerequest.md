@@ -1,5 +1,12 @@
 # UploadFileRequest
 
+## Example Usage
+
+```typescript
+import { UploadFileRequest } from "@simplesagar/vercel/models/uploadfileop.js";
+
+let value: UploadFileRequest = {};
+```
 
 ## Fields
 

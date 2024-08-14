@@ -1,5 +1,29 @@
 # Targets
 
+## Example Usage
+
+```typescript
+import { Targets } from "@simplesagar/vercel/models/updateprojectdatacacheop.js";
+
+let value: Targets = {
+    createdAt: 5920.42,
+    createdIn: "<value>",
+    creator: {
+        email: "Kianna89@hotmail.com",
+        uid: "<value>",
+        username: "Veda.Parisian",
+    },
+    deploymentHostname: "<value>",
+    name: "<value>",
+    id: "<id>",
+    plan: "hobby",
+    private: false,
+    readyState: "CANCELED",
+    type: "LAMBDAS",
+    url: "https://chilly-effacement.net",
+    userId: "<value>",
+};
+```
 
 ## Fields
 

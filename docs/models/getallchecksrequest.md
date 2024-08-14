@@ -1,5 +1,14 @@
 # GetAllChecksRequest
 
+## Example Usage
+
+```typescript
+import { GetAllChecksRequest } from "@simplesagar/vercel/models/getallchecksop.js";
+
+let value: GetAllChecksRequest = {
+    deploymentId: "dpl_2qn7PZrx89yxY34vEZPD31Y9XVj6",
+};
+```
 
 ## Fields
 

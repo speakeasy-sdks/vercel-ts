@@ -1,5 +1,16 @@
 # CreateConfigurableLogDrainRequestBody
 
+## Example Usage
+
+```typescript
+import { CreateConfigurableLogDrainRequestBody } from "@simplesagar/vercel/models/createconfigurablelogdrainop.js";
+
+let value: CreateConfigurableLogDrainRequestBody = {
+    deliveryFormat: "json",
+    url: "https://big-hearted-paddle.net",
+    sources: ["firewall"],
+};
+```
 
 ## Fields
 

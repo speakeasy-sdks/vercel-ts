@@ -2,6 +2,16 @@
 
 An object describing the reason why the User account is being deleted.
 
+## Example Usage
+
+```typescript
+import { RequestDeleteReasons } from "@simplesagar/vercel/models/requestdeleteop.js";
+
+let value: RequestDeleteReasons = {
+    slug: "<value>",
+    description: "Front-line regional matrices",
+};
+```
 
 ## Fields
 

@@ -1,5 +1,17 @@
 # PostgresComputeTime
 
+## Example Usage
+
+```typescript
+import { PostgresComputeTime } from "@simplesagar/vercel/models/authuser.js";
+
+let value: PostgresComputeTime = {
+    price: 9639.76,
+    batch: 7731.1,
+    threshold: 7412.38,
+    hidden: false,
+};
+```
 
 ## Fields
 

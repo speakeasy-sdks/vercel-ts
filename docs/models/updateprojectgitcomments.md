@@ -1,5 +1,15 @@
 # UpdateProjectGitComments
 
+## Example Usage
+
+```typescript
+import { UpdateProjectGitComments } from "@simplesagar/vercel/models/updateprojectop.js";
+
+let value: UpdateProjectGitComments = {
+    onPullRequest: false,
+    onCommit: false,
+};
+```
 
 ## Fields
 

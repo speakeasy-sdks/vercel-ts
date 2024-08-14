@@ -1,5 +1,15 @@
 # CreateProjectEnvError
 
+## Example Usage
+
+```typescript
+import { CreateProjectEnvError } from "@simplesagar/vercel/models/createprojectenvop.js";
+
+let value: CreateProjectEnvError = {
+    code: "<value>",
+    message: "<value>",
+};
+```
 
 ## Fields
 

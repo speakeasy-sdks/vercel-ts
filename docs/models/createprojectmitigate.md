@@ -1,5 +1,15 @@
 # CreateProjectMitigate
 
+## Example Usage
+
+```typescript
+import { CreateProjectMitigate } from "@simplesagar/vercel/models/createprojectop.js";
+
+let value: CreateProjectMitigate = {
+    action: "redirect",
+    ruleId: "<value>",
+};
+```
 
 ## Fields
 

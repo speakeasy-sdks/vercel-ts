@@ -1,5 +1,16 @@
 # CancelDeploymentTeam
 
+## Example Usage
+
+```typescript
+import { CancelDeploymentTeam } from "@simplesagar/vercel/models/canceldeploymentop.js";
+
+let value: CancelDeploymentTeam = {
+    id: "<id>",
+    name: "<value>",
+    slug: "<value>",
+};
+```
 
 ## Fields
 

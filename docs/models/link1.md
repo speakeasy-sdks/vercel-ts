@@ -1,5 +1,21 @@
 # Link1
 
+## Example Usage
+
+```typescript
+import { Link1 } from "@simplesagar/vercel/models/updateprojectdatacacheop.js";
+
+let value: Link1 = {
+    deployHooks: [
+        {
+            id: "<id>",
+            name: "<value>",
+            ref: "<value>",
+            url: "https://tender-carload.name",
+        },
+    ],
+};
+```
 
 ## Fields
 

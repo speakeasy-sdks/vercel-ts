@@ -1,5 +1,12 @@
 # StatusRequest
 
+## Example Usage
+
+```typescript
+import { StatusRequest } from "@simplesagar/vercel/models/statusop.js";
+
+let value: StatusRequest = {};
+```
 
 ## Fields
 

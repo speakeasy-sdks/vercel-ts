@@ -1,12 +1,15 @@
 # GetProjectsType
 
+## Example Usage
+
+```typescript
+import { GetProjectsType } from "@simplesagar/vercel/models/getprojectsop.js";
+
+let value: GetProjectsType = "plain";
+```
 
 ## Values
 
-| Name        | Value       |
-| ----------- | ----------- |
-| `System`    | system      |
-| `Encrypted` | encrypted   |
-| `Plain`     | plain       |
-| `Sensitive` | sensitive   |
-| `Secret`    | secret      |
+```typescript
+"system" | "encrypted" | "plain" | "sensitive" | "secret"
+```

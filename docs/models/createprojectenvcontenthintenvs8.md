@@ -1,5 +1,15 @@
 # CreateProjectEnvContentHintEnvs8
 
+## Example Usage
+
+```typescript
+import { CreateProjectEnvContentHintEnvs8 } from "@simplesagar/vercel/models/createprojectenvop.js";
+
+let value: CreateProjectEnvContentHintEnvs8 = {
+    type: "postgres-prisma-url",
+    storeId: "<value>",
+};
+```
 
 ## Fields
 

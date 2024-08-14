@@ -1,5 +1,17 @@
 # DeployHooks
 
+## Example Usage
+
+```typescript
+import { DeployHooks } from "@simplesagar/vercel/models/updateprojectdatacacheop.js";
+
+let value: DeployHooks = {
+    id: "<id>",
+    name: "<value>",
+    ref: "<value>",
+    url: "https://feline-eve.com",
+};
+```
 
 ## Fields
 

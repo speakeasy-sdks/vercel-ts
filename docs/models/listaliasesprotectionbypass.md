@@ -1,5 +1,16 @@
 # ListAliasesProtectionBypass
 
+## Example Usage
+
+```typescript
+import { ListAliasesProtectionBypass } from "@simplesagar/vercel/models/listaliasesop.js";
+
+let value: ListAliasesProtectionBypass = {
+    createdAt: 1181.26,
+    createdBy: "<value>",
+    scope: "shareable-link",
+};
+```
 
 ## Supported Types
 

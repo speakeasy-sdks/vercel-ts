@@ -1,5 +1,12 @@
 # CreateAuthTokenRequest
 
+## Example Usage
+
+```typescript
+import { CreateAuthTokenRequest } from "@simplesagar/vercel/models/createauthtokenop.js";
+
+let value: CreateAuthTokenRequest = {};
+```
 
 ## Fields
 

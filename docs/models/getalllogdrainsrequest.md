@@ -1,5 +1,12 @@
 # GetAllLogDrainsRequest
 
+## Example Usage
+
+```typescript
+import { GetAllLogDrainsRequest } from "@simplesagar/vercel/models/getalllogdrainsop.js";
+
+let value: GetAllLogDrainsRequest = {};
+```
 
 ## Fields
 

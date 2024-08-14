@@ -1,5 +1,18 @@
 # ListAliasesAliases
 
+## Example Usage
+
+```typescript
+import { ListAliasesAliases } from "@simplesagar/vercel/models/listaliasesop.js";
+
+let value: ListAliasesAliases = {
+    alias: "my-alias.vercel.app",
+    created: new Date("2017-04-26T23:00:34.232Z"),
+    deploymentId: "dpl_5m8CQaRBm3FnWRW1od3wKTpaECPx",
+    projectId: "prj_12HKQaOmR5t5Uy6vdcQsNIiZgHGB",
+    uid: "<value>",
+};
+```
 
 ## Fields
 

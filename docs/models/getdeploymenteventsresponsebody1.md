@@ -1,5 +1,23 @@
 # GetDeploymentEventsResponseBody1
 
+## Example Usage
+
+```typescript
+import { GetDeploymentEventsResponseBody1 } from "@simplesagar/vercel/models/getdeploymenteventsop.js";
+
+let value: GetDeploymentEventsResponseBody1 = {
+    created: 1605.38,
+    date: 97.66,
+    deploymentId: "<value>",
+    id: "<id>",
+    info: {
+        type: "<value>",
+        name: "<value>",
+    },
+    serial: "<value>",
+    type: "middleware-invocation",
+};
+```
 
 ## Fields
 

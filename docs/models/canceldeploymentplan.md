@@ -1,10 +1,15 @@
 # CancelDeploymentPlan
 
+## Example Usage
+
+```typescript
+import { CancelDeploymentPlan } from "@simplesagar/vercel/models/canceldeploymentop.js";
+
+let value: CancelDeploymentPlan = "pro";
+```
 
 ## Values
 
-| Name         | Value        |
-| ------------ | ------------ |
-| `Pro`        | pro          |
-| `Enterprise` | enterprise   |
-| `Hobby`      | hobby        |
+```typescript
+"pro" | "enterprise" | "hobby"
+```

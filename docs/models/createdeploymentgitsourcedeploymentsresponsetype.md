@@ -1,8 +1,15 @@
 # CreateDeploymentGitSourceDeploymentsResponseType
 
+## Example Usage
+
+```typescript
+import { CreateDeploymentGitSourceDeploymentsResponseType } from "@simplesagar/vercel/models/createdeploymentop.js";
+
+let value: CreateDeploymentGitSourceDeploymentsResponseType = "github";
+```
 
 ## Values
 
-| Name     | Value    |
-| -------- | -------- |
-| `Github` | github   |
+```typescript
+"github"
+```

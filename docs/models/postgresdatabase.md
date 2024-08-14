@@ -1,5 +1,17 @@
 # PostgresDatabase
 
+## Example Usage
+
+```typescript
+import { PostgresDatabase } from "@simplesagar/vercel/models/authuser.js";
+
+let value: PostgresDatabase = {
+    price: 3330.72,
+    batch: 7274.81,
+    threshold: 997.33,
+    hidden: false,
+};
+```
 
 ## Fields
 

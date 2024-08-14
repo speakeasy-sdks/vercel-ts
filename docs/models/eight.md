@@ -1,5 +1,16 @@
 # Eight
 
+## Example Usage
+
+```typescript
+import { Eight } from "@simplesagar/vercel/models/createrecordop.js";
+
+let value: Eight = {
+    name: "<value>",
+    type: "CNAME",
+    value: "hello",
+};
+```
 
 ## Fields
 

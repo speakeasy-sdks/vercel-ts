@@ -1,8 +1,16 @@
 # RemoveProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody35Type
 
+## Example Usage
+
+```typescript
+import { RemoveProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody35Type } from "@simplesagar/vercel/models/removeprojectenvop.js";
+
+let value: RemoveProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody35Type =
+    "blob-read-write-token";
+```
 
 ## Values
 
-| Name                  | Value                 |
-| --------------------- | --------------------- |
-| `BlobReadWriteToken`  | blob-read-write-token |
+```typescript
+"blob-read-write-token"
+```

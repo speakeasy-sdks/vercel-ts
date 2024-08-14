@@ -1,10 +1,15 @@
 # ImportFlowGitProvider
 
+## Example Usage
+
+```typescript
+import { ImportFlowGitProvider } from "@simplesagar/vercel/models/authuser.js";
+
+let value: ImportFlowGitProvider = "github";
+```
 
 ## Values
 
-| Name        | Value       |
-| ----------- | ----------- |
-| `Github`    | github      |
-| `Gitlab`    | gitlab      |
-| `Bitbucket` | bitbucket   |
+```typescript
+"github" | "gitlab" | "bitbucket"
+```

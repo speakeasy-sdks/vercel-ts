@@ -1,5 +1,12 @@
 # DataCacheBillingSettingsRequestBody
 
+## Example Usage
+
+```typescript
+import { DataCacheBillingSettingsRequestBody } from "@simplesagar/vercel/models/datacachebillingsettingsop.js";
+
+let value: DataCacheBillingSettingsRequestBody = {};
+```
 
 ## Fields
 

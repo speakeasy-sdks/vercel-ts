@@ -1,5 +1,12 @@
 # Id
 
+## Example Usage
+
+```typescript
+import { Id } from "@simplesagar/vercel/models/gitnamespacesop.js";
+
+let value: Id = "<value>";
+```
 
 ## Supported Types
 

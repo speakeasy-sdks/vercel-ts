@@ -1,5 +1,17 @@
 # CreateTeamFastDataTransfer
 
+## Example Usage
+
+```typescript
+import { CreateTeamFastDataTransfer } from "@simplesagar/vercel/models/createteamop.js";
+
+let value: CreateTeamFastDataTransfer = {
+    price: 3574.25,
+    batch: 6682.34,
+    threshold: 6216.66,
+    hidden: false,
+};
+```
 
 ## Fields
 

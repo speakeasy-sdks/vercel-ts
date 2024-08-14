@@ -1,5 +1,12 @@
 # ListAliasesRequest
 
+## Example Usage
+
+```typescript
+import { ListAliasesRequest } from "@simplesagar/vercel/models/listaliasesop.js";
+
+let value: ListAliasesRequest = {};
+```
 
 ## Fields
 

@@ -1,10 +1,15 @@
 # GetTeamMembersTeamsProjects
 
+## Example Usage
+
+```typescript
+import { GetTeamMembersTeamsProjects } from "@simplesagar/vercel/models/getteammembersop.js";
+
+let value: GetTeamMembersTeamsProjects = "PROJECT_VIEWER";
+```
 
 ## Values
 
-| Name               | Value              |
-| ------------------ | ------------------ |
-| `Admin`            | ADMIN              |
-| `ProjectDeveloper` | PROJECT_DEVELOPER  |
-| `ProjectViewer`    | PROJECT_VIEWER     |
+```typescript
+"ADMIN" | "PROJECT_DEVELOPER" | "PROJECT_VIEWER"
+```

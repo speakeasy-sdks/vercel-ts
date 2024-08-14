@@ -1,5 +1,14 @@
 # StatusResponseBody
 
+## Example Usage
+
+```typescript
+import { StatusResponseBody } from "@simplesagar/vercel/models/statusop.js";
+
+let value: StatusResponseBody = {
+    status: "over_limit",
+};
+```
 
 ## Fields
 

@@ -1,5 +1,14 @@
 # UpdateProjectDataCacheTrustedIpsAddresses
 
+## Example Usage
+
+```typescript
+import { UpdateProjectDataCacheTrustedIpsAddresses } from "@simplesagar/vercel/models/updateprojectdatacacheop.js";
+
+let value: UpdateProjectDataCacheTrustedIpsAddresses = {
+    value: "<value>",
+};
+```
 
 ## Fields
 

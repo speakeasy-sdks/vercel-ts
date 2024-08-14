@@ -1,10 +1,15 @@
 # CancelDeploymentCustomEnvironmentDeploymentsType
 
+## Example Usage
+
+```typescript
+import { CancelDeploymentCustomEnvironmentDeploymentsType } from "@simplesagar/vercel/models/canceldeploymentop.js";
+
+let value: CancelDeploymentCustomEnvironmentDeploymentsType = "endsWith";
+```
 
 ## Values
 
-| Name         | Value        |
-| ------------ | ------------ |
-| `StartsWith` | startsWith   |
-| `Equals`     | equals       |
-| `EndsWith`   | endsWith     |
+```typescript
+"startsWith" | "equals" | "endsWith"
+```

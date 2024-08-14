@@ -1,5 +1,15 @@
 # GetProjectsGitComments
 
+## Example Usage
+
+```typescript
+import { GetProjectsGitComments } from "@simplesagar/vercel/models/getprojectsop.js";
+
+let value: GetProjectsGitComments = {
+    onPullRequest: false,
+    onCommit: false,
+};
+```
 
 ## Fields
 

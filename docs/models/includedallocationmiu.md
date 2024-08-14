@@ -2,6 +2,17 @@
 
 Will be used to create an invoice item. The price must be in cents: 2000 for $20.
 
+## Example Usage
+
+```typescript
+import { IncludedAllocationMiu } from "@simplesagar/vercel/models/authuser.js";
+
+let value: IncludedAllocationMiu = {
+    price: 7275.47,
+    quantity: 1897.53,
+    hidden: false,
+};
+```
 
 ## Fields
 
