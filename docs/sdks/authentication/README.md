@@ -13,7 +13,7 @@ Request a new login for a user to get a token. This will respond with a verifica
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel();
 
@@ -33,8 +33,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { authenticationLogin } from "vercel/funcs/authenticationLogin.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { authenticationLogin } from "@simplesagar/vercel/funcs/authenticationLogin.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -82,7 +82,7 @@ Verify the user accepted the login request and get a authentication token. The u
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel();
 
@@ -104,8 +104,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { authenticationVerify } from "vercel/funcs/authenticationVerify.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { authenticationVerify } from "@simplesagar/vercel/funcs/authenticationVerify.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.

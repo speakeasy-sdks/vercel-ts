@@ -13,7 +13,7 @@ Allows users to promote a deployment to production. Note: This does NOT rebuild 
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -34,8 +34,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { promotionsCreate } from "vercel/funcs/promotionsCreate.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { promotionsCreate } from "@simplesagar/vercel/funcs/promotionsCreate.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -87,7 +87,7 @@ Get a list of aliases related to the last promote request with their mapping sta
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -112,8 +112,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { promotionsListAliases } from "vercel/funcs/promotionsListAliases.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { promotionsListAliases } from "@simplesagar/vercel/funcs/promotionsListAliases.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.

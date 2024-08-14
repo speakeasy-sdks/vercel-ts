@@ -25,7 +25,7 @@ Returns all Edge Configs.
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -47,8 +47,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { edgeConfigsList } from "vercel/funcs/edgeConfigsList.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { edgeConfigsList } from "@simplesagar/vercel/funcs/edgeConfigsList.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -99,7 +99,7 @@ Creates an Edge Config.
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -121,8 +121,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { edgeConfigsCreate } from "vercel/funcs/edgeConfigsCreate.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { edgeConfigsCreate } from "@simplesagar/vercel/funcs/edgeConfigsCreate.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -174,7 +174,7 @@ Returns an Edge Config.
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -196,8 +196,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { edgeConfigsGet } from "vercel/funcs/edgeConfigsGet.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { edgeConfigsGet } from "@simplesagar/vercel/funcs/edgeConfigsGet.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -249,7 +249,7 @@ Updates an Edge Config.
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -271,8 +271,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { edgeConfigsUpdate } from "vercel/funcs/edgeConfigsUpdate.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { edgeConfigsUpdate } from "@simplesagar/vercel/funcs/edgeConfigsUpdate.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -325,7 +325,7 @@ Delete an Edge Config by id.
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -346,8 +346,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { edgeConfigsDelete } from "vercel/funcs/edgeConfigsDelete.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { edgeConfigsDelete } from "@simplesagar/vercel/funcs/edgeConfigsDelete.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -398,7 +398,7 @@ Returns all items of an Edge Config.
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -420,8 +420,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { edgeConfigsGetItems } from "vercel/funcs/edgeConfigsGetItems.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { edgeConfigsGetItems } from "@simplesagar/vercel/funcs/edgeConfigsGetItems.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -473,7 +473,7 @@ Returns the schema of an Edge Config.
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -495,8 +495,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { edgeConfigsGetSchema } from "vercel/funcs/edgeConfigsGetSchema.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { edgeConfigsGetSchema } from "@simplesagar/vercel/funcs/edgeConfigsGetSchema.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -548,7 +548,7 @@ Update an Edge Config's schema.
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -572,8 +572,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { edgeConfigsUpdateSchema } from "vercel/funcs/edgeConfigsUpdateSchema.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { edgeConfigsUpdateSchema } from "@simplesagar/vercel/funcs/edgeConfigsUpdateSchema.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -625,7 +625,7 @@ Deletes the schema of existing Edge Config.
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -646,8 +646,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { edgeConfigsDeleteSchema } from "vercel/funcs/edgeConfigsDeleteSchema.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { edgeConfigsDeleteSchema } from "@simplesagar/vercel/funcs/edgeConfigsDeleteSchema.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -698,7 +698,7 @@ Returns a specific Edge Config Item.
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -720,8 +720,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { edgeConfigsGetItem } from "vercel/funcs/edgeConfigsGetItem.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { edgeConfigsGetItem } from "@simplesagar/vercel/funcs/edgeConfigsGetItem.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -774,7 +774,7 @@ Returns all tokens of an Edge Config.
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -796,8 +796,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { edgeConfigsGetTokens } from "vercel/funcs/edgeConfigsGetTokens.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { edgeConfigsGetTokens } from "@simplesagar/vercel/funcs/edgeConfigsGetTokens.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -849,7 +849,7 @@ Deletes one or more tokens of an existing Edge Config.
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -870,8 +870,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { edgeConfigsDeleteTokens } from "vercel/funcs/edgeConfigsDeleteTokens.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { edgeConfigsDeleteTokens } from "@simplesagar/vercel/funcs/edgeConfigsDeleteTokens.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -923,7 +923,7 @@ Return meta data about an Edge Config token.
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -945,8 +945,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { edgeConfigsGetToken } from "vercel/funcs/edgeConfigsGetToken.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { edgeConfigsGetToken } from "@simplesagar/vercel/funcs/edgeConfigsGetToken.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -999,7 +999,7 @@ Adds a token to an existing Edge Config.
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -1021,8 +1021,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { edgeConfigsCreateToken } from "vercel/funcs/edgeConfigsCreateToken.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { edgeConfigsCreateToken } from "@simplesagar/vercel/funcs/edgeConfigsCreateToken.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.

@@ -21,7 +21,7 @@ Records an artifacts cache usage event. The body of this request is an array of 
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -42,8 +42,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { artifactsRecordEvents } from "vercel/funcs/artifactsRecordEvents.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { artifactsRecordEvents } from "@simplesagar/vercel/funcs/artifactsRecordEvents.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -92,7 +92,7 @@ Check the status of Remote Caching for this principal. Returns a JSON-encoded st
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -114,8 +114,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { artifactsStatus } from "vercel/funcs/artifactsStatus.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { artifactsStatus } from "@simplesagar/vercel/funcs/artifactsStatus.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -166,7 +166,7 @@ Uploads a cache artifact identified by the `hash` specified on the path. The cac
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -191,8 +191,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { artifactsUpload } from "vercel/funcs/artifactsUpload.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { artifactsUpload } from "@simplesagar/vercel/funcs/artifactsUpload.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -245,7 +245,7 @@ Downloads a cache artifact indentified by its `hash` specified on the request pa
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -269,8 +269,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { artifactsDownload } from "vercel/funcs/artifactsDownload.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { artifactsDownload } from "@simplesagar/vercel/funcs/artifactsDownload.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -322,7 +322,7 @@ Check that a cache artifact with the given `hash` exists. This request returns r
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -343,8 +343,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { artifactsExists } from "vercel/funcs/artifactsExists.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { artifactsExists } from "@simplesagar/vercel/funcs/artifactsExists.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -395,7 +395,7 @@ Query information about an array of artifacts.
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -417,8 +417,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { artifactsQuery } from "vercel/funcs/artifactsQuery.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { artifactsQuery } from "@simplesagar/vercel/funcs/artifactsQuery.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.

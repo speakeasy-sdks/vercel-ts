@@ -18,7 +18,7 @@ Allows to read an access group
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -40,8 +40,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { accessGroupsRead } from "vercel/funcs/accessGroupsRead.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { accessGroupsRead } from "@simplesagar/vercel/funcs/accessGroupsRead.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -93,7 +93,7 @@ Allows to update an access group metadata
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -115,8 +115,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { accessGroupsUpdate } from "vercel/funcs/accessGroupsUpdate.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { accessGroupsUpdate } from "@simplesagar/vercel/funcs/accessGroupsUpdate.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -169,7 +169,7 @@ Allows to delete an access group
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -190,8 +190,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { accessGroupsDelete } from "vercel/funcs/accessGroupsDelete.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { accessGroupsDelete } from "@simplesagar/vercel/funcs/accessGroupsDelete.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -242,7 +242,7 @@ List members of an access group
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -266,8 +266,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { accessGroupsListMembers } from "vercel/funcs/accessGroupsListMembers.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { accessGroupsListMembers } from "@simplesagar/vercel/funcs/accessGroupsListMembers.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -319,7 +319,7 @@ List access groups
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -341,8 +341,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { accessGroupsList } from "vercel/funcs/accessGroupsList.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { accessGroupsList } from "@simplesagar/vercel/funcs/accessGroupsList.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -392,7 +392,7 @@ Allows to create an access group
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -414,8 +414,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { accessGroupsCreate } from "vercel/funcs/accessGroupsCreate.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { accessGroupsCreate } from "@simplesagar/vercel/funcs/accessGroupsCreate.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -467,7 +467,7 @@ List projects of an access group
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -491,8 +491,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { accessGroupsListProjects } from "vercel/funcs/accessGroupsListProjects.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { accessGroupsListProjects } from "@simplesagar/vercel/funcs/accessGroupsListProjects.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.

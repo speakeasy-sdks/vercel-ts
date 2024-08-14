@@ -12,7 +12,7 @@ Update the deployment protection automation bypass for a project
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -34,8 +34,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { protectionBypassUpdate } from "vercel/funcs/protectionBypassUpdate.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { protectionBypassUpdate } from "@simplesagar/vercel/funcs/protectionBypassUpdate.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.

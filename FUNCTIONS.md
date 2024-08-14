@@ -19,9 +19,9 @@ specific category of applications.
 ## Example
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { listDeploymentBuilds } from "vercel/funcs/listDeploymentBuilds.js";
-import { SDKValidationError } from "vercel/models/sdkvalidationerror.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { listDeploymentBuilds } from "@simplesagar/vercel/funcs/listDeploymentBuilds.js";
+import { SDKValidationError } from "@simplesagar/vercel/models/sdkvalidationerror.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.

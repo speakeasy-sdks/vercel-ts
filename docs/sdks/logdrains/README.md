@@ -18,7 +18,7 @@ Retrieves a list of all Integration log drains that are defined for the authenti
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -40,8 +40,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { logDrainsList } from "vercel/funcs/logDrainsList.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { logDrainsList } from "@simplesagar/vercel/funcs/logDrainsList.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -92,7 +92,7 @@ Creates an Integration log drain. This endpoint must be called with an OAuth2 cl
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -114,8 +114,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { logDrainsCreate } from "vercel/funcs/logDrainsCreate.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { logDrainsCreate } from "@simplesagar/vercel/funcs/logDrainsCreate.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -167,7 +167,7 @@ Deletes the Integration log drain with the provided `id`. When using an OAuth2 T
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -188,8 +188,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { logDrainsDeleteIntegration } from "vercel/funcs/logDrainsDeleteIntegration.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { logDrainsDeleteIntegration } from "@simplesagar/vercel/funcs/logDrainsDeleteIntegration.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -240,7 +240,7 @@ Retrieves a Configurable Log Drain. This endpoint must be called with a team Acc
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -262,8 +262,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { logDrainsGetConfigurable } from "vercel/funcs/logDrainsGetConfigurable.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { logDrainsGetConfigurable } from "@simplesagar/vercel/funcs/logDrainsGetConfigurable.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -315,7 +315,7 @@ Deletes a Configurable Log Drain. This endpoint must be called with a team Acces
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -336,8 +336,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { logDrainsDeleteConfigurable } from "vercel/funcs/logDrainsDeleteConfigurable.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { logDrainsDeleteConfigurable } from "@simplesagar/vercel/funcs/logDrainsDeleteConfigurable.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -388,7 +388,7 @@ Retrieves a list of all the Log Drains owned by the account. This endpoint must 
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -410,8 +410,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { logDrainsGetAll } from "vercel/funcs/logDrainsGetAll.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { logDrainsGetAll } from "@simplesagar/vercel/funcs/logDrainsGetAll.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -463,7 +463,7 @@ Creates a configurable log drain. This endpoint must be called with a team Acces
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -485,8 +485,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { logDrainsCreateConfigurable } from "vercel/funcs/logDrainsCreateConfigurable.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { logDrainsCreateConfigurable } from "@simplesagar/vercel/funcs/logDrainsCreateConfigurable.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.

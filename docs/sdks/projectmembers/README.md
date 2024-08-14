@@ -14,7 +14,7 @@ Lists all members of a project.
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -38,8 +38,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { projectMembersGet } from "vercel/funcs/projectMembersGet.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { projectMembersGet } from "@simplesagar/vercel/funcs/projectMembersGet.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -91,7 +91,7 @@ Adds a new member to the project.
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -113,8 +113,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { projectMembersAdd } from "vercel/funcs/projectMembersAdd.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { projectMembersAdd } from "@simplesagar/vercel/funcs/projectMembersAdd.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -167,7 +167,7 @@ Remove a member from a specific project
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -189,8 +189,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { projectMembersRemove } from "vercel/funcs/projectMembersRemove.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { projectMembersRemove } from "@simplesagar/vercel/funcs/projectMembersRemove.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.

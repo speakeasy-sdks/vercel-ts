@@ -22,7 +22,7 @@ Update the data cache feature on a project.
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -44,8 +44,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { projectsUpdateDataCache } from "vercel/funcs/projectsUpdateDataCache.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { projectsUpdateDataCache } from "@simplesagar/vercel/funcs/projectsUpdateDataCache.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -98,7 +98,7 @@ Allows to retrieve the list of projects of the authenticated user or team. The l
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -121,8 +121,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { projectsGetAll } from "vercel/funcs/projectsGetAll.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { projectsGetAll } from "@simplesagar/vercel/funcs/projectsGetAll.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -173,7 +173,7 @@ Allows to create a new project with the provided configuration. It only requires
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -195,8 +195,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { projectsCreate } from "vercel/funcs/projectsCreate.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { projectsCreate } from "@simplesagar/vercel/funcs/projectsCreate.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -248,7 +248,7 @@ Update the fields of a project using either its `name` or `id`.
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -270,8 +270,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { projectsUpdate } from "vercel/funcs/projectsUpdate.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { projectsUpdate } from "@simplesagar/vercel/funcs/projectsUpdate.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -324,7 +324,7 @@ Delete a specific project by passing either the project `id` or `name` in the UR
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -345,8 +345,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { projectsDelete } from "vercel/funcs/projectsDelete.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { projectsDelete } from "@simplesagar/vercel/funcs/projectsDelete.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -397,7 +397,7 @@ Pause a project by passing its project `id` in the URL. If the project does not 
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -418,8 +418,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { projectsPause } from "vercel/funcs/projectsPause.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { projectsPause } from "@simplesagar/vercel/funcs/projectsPause.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -470,7 +470,7 @@ Unpause a project by passing its project `id` in the URL. If the project does no
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -491,8 +491,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { projectsUnpause } from "vercel/funcs/projectsUnpause.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { projectsUnpause } from "@simplesagar/vercel/funcs/projectsUnpause.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.

@@ -19,7 +19,7 @@ Creates a webhook
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -41,8 +41,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { webhooksCreate } from "vercel/funcs/webhooksCreate.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { webhooksCreate } from "@simplesagar/vercel/funcs/webhooksCreate.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -94,7 +94,7 @@ Get a list of webhooks
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -116,8 +116,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { webhooksList } from "vercel/funcs/webhooksList.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { webhooksList } from "@simplesagar/vercel/funcs/webhooksList.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -169,7 +169,7 @@ Get a webhook
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -191,8 +191,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { webhooksGet } from "vercel/funcs/webhooksGet.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { webhooksGet } from "@simplesagar/vercel/funcs/webhooksGet.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -244,7 +244,7 @@ Deletes a webhook
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -265,8 +265,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { webhooksDelete } from "vercel/funcs/webhooksDelete.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { webhooksDelete } from "@simplesagar/vercel/funcs/webhooksDelete.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.

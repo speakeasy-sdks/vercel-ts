@@ -1,8 +1,8 @@
-speakeasyVersion: 1.364.0
+speakeasyVersion: 1.366.0
 sources:
     vercel-openapi:
         sourceNamespace: vercel-openapi
-        sourceRevisionDigest: sha256:1f08f77fb93f1084cf6d6ce942adc9997f6b4f5290b9c2fcdeb5b8fdc5eefa18
+        sourceRevisionDigest: sha256:06743f106c74223ee213c091fcd67bf31aefa2aa5f169d70d3c24b97e9daeb04
         sourceBlobDigest: sha256:1a52393c8b8a95494acd8021e4b8d989834cb74f03291f3e48470b4077667b9b
         tags:
             - latest
@@ -11,7 +11,7 @@ targets:
     typescript:
         source: vercel-openapi
         sourceNamespace: vercel-openapi
-        sourceRevisionDigest: sha256:1f08f77fb93f1084cf6d6ce942adc9997f6b4f5290b9c2fcdeb5b8fdc5eefa18
+        sourceRevisionDigest: sha256:06743f106c74223ee213c091fcd67bf31aefa2aa5f169d70d3c24b97e9daeb04
         sourceBlobDigest: sha256:1a52393c8b8a95494acd8021e4b8d989834cb74f03291f3e48470b4077667b9b
         outLocation: .
 workflow:
@@ -28,3 +28,6 @@ workflow:
             target: typescript
             source: vercel-openapi
             output: .
+            publish:
+                npm:
+                    token: $npm_token
