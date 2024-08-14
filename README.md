@@ -5,6 +5,9 @@
   <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge" /></a>
 </div>
 
+> [!NOTE]
+> This SDK is an example and not yet ready for production usage.
+
 <!-- Start SDK Installation [installation] -->
 ## SDK Installation
 
