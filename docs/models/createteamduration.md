@@ -5,7 +5,7 @@
 ```typescript
 import { CreateTeamDuration } from "@simplesagar/vercel/models/createteamop.js";
 
-let value: CreateTeamDuration = "repeating";
+let value: CreateTeamDuration = "once";
 ```
 
 ## Values

@@ -9,7 +9,7 @@ import { Reasons } from "@simplesagar/vercel/models/deleteteamop.js";
 
 let value: Reasons = {
     slug: "<value>",
-    description: "Cross-platform executive middleware",
+    description: "Configurable methodical info-mediaries",
 };
 ```
 

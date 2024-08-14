@@ -7,13 +7,13 @@ import { GetConfigurableLogDrainResponseBody } from "@simplesagar/vercel/models/
 
 let value: GetConfigurableLogDrainResponseBody = {
     id: "<id>",
-    deliveryFormat: "syslog",
-    url: "http://burly-story.com",
+    deliveryFormat: "json",
+    url: "https://cloudy-filing.org",
     name: "<value>",
     ownerId: "<value>",
-    createdAt: 1173.15,
-    deletedAt: 4837.06,
-    updatedAt: 2712.52,
+    createdAt: 7137.67,
+    deletedAt: 3996.67,
+    updatedAt: 6391.87,
     environments: ["production"],
     secret: "<value>",
 };

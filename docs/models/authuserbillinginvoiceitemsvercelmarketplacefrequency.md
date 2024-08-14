@@ -7,7 +7,7 @@ import { AuthUserBillingInvoiceItemsVercelMarketplaceFrequency } from "@simplesa
 
 let value: AuthUserBillingInvoiceItemsVercelMarketplaceFrequency = {
     interval: "month",
-    intervalCount: 4413.21,
+    intervalCount: 4969.15,
 };
 ```
 

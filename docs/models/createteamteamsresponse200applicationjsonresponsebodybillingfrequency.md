@@ -7,7 +7,7 @@ import { CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingFrequency }
 
 let value: CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingFrequency = {
     interval: "month",
-    intervalCount: 7730.35,
+    intervalCount: 2055.66,
 };
 ```
 

@@ -5,9 +5,7 @@
 ```typescript
 import { Roles } from "@simplesagar/vercel/models/patchteamop.js";
 
-let value: Roles = {
-    accessGroupId: "<value>",
-};
+let value: Roles = "MEMBER";
 ```
 
 ## Supported Types

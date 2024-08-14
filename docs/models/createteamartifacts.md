@@ -6,9 +6,9 @@
 import { CreateTeamArtifacts } from "@simplesagar/vercel/models/createteamop.js";
 
 let value: CreateTeamArtifacts = {
-    price: 9754.25,
-    batch: 1563.83,
-    threshold: 7820.9,
+    price: 8777.51,
+    batch: 5682.18,
+    threshold: 4319.94,
     hidden: false,
 };
 ```

@@ -9,9 +9,9 @@ import { UserModel } from "@simplesagar/vercel/models/userevent.js";
 
 let value: UserModel = {
     avatar: "https://loremflickr.com/640/480",
-    email: "Eudora_Kemmer13@yahoo.com",
+    email: "Magali.Jacobson@hotmail.com",
     uid: "<value>",
-    username: "Filiberto.Boyer",
+    username: "Zola.Wyman",
 };
 ```
 

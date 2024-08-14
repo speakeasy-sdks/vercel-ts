@@ -9,8 +9,8 @@ import { GetEdgeConfigTransfer } from "@simplesagar/vercel/models/getedgeconfigo
 
 let value: GetEdgeConfigTransfer = {
     fromAccountId: "<value>",
-    startedAt: 632.07,
-    doneAt: 9257.03,
+    startedAt: 4565.2,
+    doneAt: 5920.81,
 };
 ```
 

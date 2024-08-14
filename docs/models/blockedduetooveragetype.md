@@ -5,7 +5,7 @@
 ```typescript
 import { BlockedDueToOverageType } from "@simplesagar/vercel/models/authuser.js";
 
-let value: BlockedDueToOverageType = "logDrainsVolume";
+let value: BlockedDueToOverageType = "dataCacheRead";
 ```
 
 ## Values

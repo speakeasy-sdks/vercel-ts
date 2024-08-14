@@ -5,7 +5,7 @@
 ```typescript
 import { NamespaceId } from "@simplesagar/vercel/models/searchrepoop.js";
 
-let value: NamespaceId = 5896.95;
+let value: NamespaceId = "<value>";
 ```
 
 ## Supported Types

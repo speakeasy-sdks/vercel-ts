@@ -5,7 +5,7 @@
 ```typescript
 import { ProgramType } from "@simplesagar/vercel/models/authuser.js";
 
-let value: ProgramType = "startup";
+let value: ProgramType = "agency";
 ```
 
 ## Values

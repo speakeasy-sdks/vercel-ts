@@ -6,8 +6,8 @@
 import { Trial } from "@simplesagar/vercel/models/authuser.js";
 
 let value: Trial = {
-    start: 7607.44,
-    end: 8989.61,
+    start: 5326.69,
+    end: 5873.75,
 };
 ```
 

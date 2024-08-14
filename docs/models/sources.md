@@ -5,7 +5,7 @@
 ```typescript
 import { Sources } from "@simplesagar/vercel/models/createlogdrainop.js";
 
-let value: Sources = "static";
+let value: Sources = "firewall";
 ```
 
 ## Values

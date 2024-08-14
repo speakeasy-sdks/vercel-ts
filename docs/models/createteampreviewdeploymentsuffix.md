@@ -8,8 +8,8 @@ Will be used to create an invoice item. The price must be in cents: 2000 for $20
 import { CreateTeamPreviewDeploymentSuffix } from "@simplesagar/vercel/models/createteamop.js";
 
 let value: CreateTeamPreviewDeploymentSuffix = {
-    price: 4530.94,
-    quantity: 1940.23,
+    price: 4269.04,
+    quantity: 3008.24,
     hidden: false,
 };
 ```

@@ -5,7 +5,7 @@
 ```typescript
 import { ResponseBodyDisabledReason } from "@simplesagar/vercel/models/getconfigurationop.js";
 
-let value: ResponseBodyDisabledReason = "original-owner-role-downgraded";
+let value: ResponseBodyDisabledReason = "account-plan-downgrade";
 ```
 
 ## Values

@@ -7,7 +7,7 @@ import { AuthUserBillingInvoiceItemsTeamSeatsFrequency } from "@simplesagar/verc
 
 let value: AuthUserBillingInvoiceItemsTeamSeatsFrequency = {
     interval: "month",
-    intervalCount: 9974.37,
+    intervalCount: 4864.1,
 };
 ```
 

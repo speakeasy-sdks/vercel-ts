@@ -7,7 +7,7 @@ import { RequestBody4 } from "@simplesagar/vercel/models/createrecordop.js";
 
 let value: RequestBody4 = {
   name: "subdomain",
-  type: "A",
+  type: "MX",
   value: "0 issue \\"letsencrypt.org\\"",
 };
 ```

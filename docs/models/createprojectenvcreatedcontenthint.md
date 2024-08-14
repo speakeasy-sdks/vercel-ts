@@ -6,7 +6,7 @@
 import { CreateProjectEnvCreatedContentHint } from "@simplesagar/vercel/models/createprojectenvop.js";
 
 let value: CreateProjectEnvCreatedContentHint = {
-    type: "redis-rest-api-token",
+    type: "postgres-password",
     storeId: "<value>",
 };
 ```

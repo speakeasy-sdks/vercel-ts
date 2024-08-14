@@ -7,7 +7,7 @@ import { CreateTeamTeamsResponse200ApplicationJSONFrequency } from "@simplesagar
 
 let value: CreateTeamTeamsResponse200ApplicationJSONFrequency = {
     interval: "month",
-    intervalCount: 6854.78,
+    intervalCount: 7214.3,
 };
 ```
 

@@ -10,10 +10,10 @@ let value: CreateTeamDiscount = {
     coupon: {
         id: "<id>",
         name: "<value>",
-        amountOff: 7332.89,
-        percentageOff: 5750.78,
-        durationInMonths: 4097.26,
-        duration: "repeating",
+        amountOff: 7372.79,
+        percentageOff: 8723.03,
+        durationInMonths: 51.52,
+        duration: "forever",
     },
 };
 ```

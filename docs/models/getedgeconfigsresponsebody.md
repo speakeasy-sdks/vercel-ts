@@ -8,8 +8,8 @@ List of all edge configs.
 import { GetEdgeConfigsResponseBody } from "@simplesagar/vercel/models/getedgeconfigsop.js";
 
 let value: GetEdgeConfigsResponseBody = {
-    sizeInBytes: 3782.45,
-    itemCount: 51.89,
+    sizeInBytes: 3092.51,
+    itemCount: 4776.46,
 };
 ```
 

@@ -7,11 +7,11 @@ import { ResponseBodyScopesQueue } from "@simplesagar/vercel/models/getconfigura
 
 let value: ResponseBodyScopesQueue = {
     scopes: {
-        added: ["read-write:project-env-vars"],
-        upgraded: ["read-write:deployment-check"],
+        added: ["read:user"],
+        upgraded: ["read:user"],
     },
     note: "<value>",
-    requestedAt: 5219.96,
+    requestedAt: 9364.69,
 };
 ```
 

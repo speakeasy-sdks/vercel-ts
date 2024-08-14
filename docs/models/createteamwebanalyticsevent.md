@@ -6,9 +6,9 @@
 import { CreateTeamWebAnalyticsEvent } from "@simplesagar/vercel/models/createteamop.js";
 
 let value: CreateTeamWebAnalyticsEvent = {
-    price: 7551.06,
-    batch: 7150.53,
-    threshold: 322.73,
+    price: 5459.18,
+    batch: 4731.43,
+    threshold: 5888.12,
     hidden: false,
 };
 ```

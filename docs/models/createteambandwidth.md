@@ -6,9 +6,9 @@
 import { CreateTeamBandwidth } from "@simplesagar/vercel/models/createteamop.js";
 
 let value: CreateTeamBandwidth = {
-    price: 3041.98,
-    batch: 2470.45,
-    threshold: 753.59,
+    price: 2465.57,
+    batch: 2840.86,
+    threshold: 5964.33,
     hidden: false,
 };
 ```

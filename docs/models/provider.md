@@ -5,7 +5,7 @@
 ```typescript
 import { Provider } from "@simplesagar/vercel/models/gitnamespacesop.js";
 
-let value: Provider = "bitbucket";
+let value: Provider = "github";
 ```
 
 ## Values

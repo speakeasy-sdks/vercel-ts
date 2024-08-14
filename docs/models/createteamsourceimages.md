@@ -6,9 +6,9 @@
 import { CreateTeamSourceImages } from "@simplesagar/vercel/models/createteamop.js";
 
 let value: CreateTeamSourceImages = {
-    price: 8028.94,
-    batch: 1572.22,
-    threshold: 1591.46,
+    price: 6374.62,
+    batch: 5546.03,
+    threshold: 8119.39,
     hidden: false,
 };
 ```

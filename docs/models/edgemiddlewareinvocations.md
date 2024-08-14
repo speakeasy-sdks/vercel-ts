@@ -6,9 +6,9 @@
 import { EdgeMiddlewareInvocations } from "@simplesagar/vercel/models/authuser.js";
 
 let value: EdgeMiddlewareInvocations = {
-    price: 8634.71,
-    batch: 7294.48,
-    threshold: 5665.06,
+    price: 3063.82,
+    batch: 3423.42,
+    threshold: 9887.49,
     hidden: false,
 };
 ```

@@ -6,9 +6,9 @@
 import { StorageRedisTotalBandwidthInBytes } from "@simplesagar/vercel/models/authuser.js";
 
 let value: StorageRedisTotalBandwidthInBytes = {
-    price: 3302.67,
-    batch: 1645.32,
-    threshold: 8138.8,
+    price: 8634.77,
+    batch: 2273.62,
+    threshold: 3476.98,
     hidden: false,
 };
 ```

@@ -6,9 +6,9 @@
 import { ServerlessFunctionExecution } from "@simplesagar/vercel/models/authuser.js";
 
 let value: ServerlessFunctionExecution = {
-    price: 8200.23,
-    batch: 2514.64,
-    threshold: 2981.87,
+    price: 9930.02,
+    batch: 3302.67,
+    threshold: 1645.32,
     hidden: false,
 };
 ```

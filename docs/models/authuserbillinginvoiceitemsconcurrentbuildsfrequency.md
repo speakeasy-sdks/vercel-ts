@@ -7,7 +7,7 @@ import { AuthUserBillingInvoiceItemsConcurrentBuildsFrequency } from "@simplesag
 
 let value: AuthUserBillingInvoiceItemsConcurrentBuildsFrequency = {
     interval: "month",
-    intervalCount: 3591.11,
+    intervalCount: 3262.69,
 };
 ```
 

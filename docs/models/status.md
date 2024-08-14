@@ -5,7 +5,7 @@
 ```typescript
 import { Status } from "@simplesagar/vercel/models/authuser.js";
 
-let value: Status = "canceled";
+let value: Status = "overdue";
 ```
 
 ## Values

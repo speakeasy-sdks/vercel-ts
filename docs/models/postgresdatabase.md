@@ -6,9 +6,9 @@
 import { PostgresDatabase } from "@simplesagar/vercel/models/authuser.js";
 
 let value: PostgresDatabase = {
-    price: 3330.72,
-    batch: 7274.81,
-    threshold: 997.33,
+    price: 7566.54,
+    batch: 8200.23,
+    threshold: 2514.64,
     hidden: false,
 };
 ```

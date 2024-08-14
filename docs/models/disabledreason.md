@@ -5,7 +5,7 @@
 ```typescript
 import { DisabledReason } from "@simplesagar/vercel/models/getconfigurationsop.js";
 
-let value: DisabledReason = "disabled-by-admin";
+let value: DisabledReason = "original-owner-role-downgraded";
 ```
 
 ## Values

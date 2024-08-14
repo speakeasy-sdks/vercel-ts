@@ -6,9 +6,9 @@
 import { WebAnalyticsEvent } from "@simplesagar/vercel/models/authuser.js";
 
 let value: WebAnalyticsEvent = {
-    price: 3359.77,
-    batch: 3919.33,
-    threshold: 7277.71,
+    price: 7060.61,
+    batch: 2176.63,
+    threshold: 3189.17,
     hidden: false,
 };
 ```

@@ -6,7 +6,7 @@
 import { EditProjectEnvResponseBodyContentHint } from "@simplesagar/vercel/models/editprojectenvop.js";
 
 let value: EditProjectEnvResponseBodyContentHint = {
-    type: "redis-rest-api-read-only-token",
+    type: "postgres-user",
     storeId: "<value>",
 };
 ```

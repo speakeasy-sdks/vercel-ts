@@ -6,9 +6,9 @@
 import { CreateTeamAnalyticsUsage } from "@simplesagar/vercel/models/createteamop.js";
 
 let value: CreateTeamAnalyticsUsage = {
-    price: 8180.34,
-    batch: 7268.78,
-    threshold: 1024.13,
+    price: 4246.63,
+    batch: 4069.22,
+    threshold: 1076.17,
     hidden: false,
 };
 ```

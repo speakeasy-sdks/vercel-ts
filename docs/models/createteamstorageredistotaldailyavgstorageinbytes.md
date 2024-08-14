@@ -6,9 +6,9 @@
 import { CreateTeamStorageRedisTotalDailyAvgStorageInBytes } from "@simplesagar/vercel/models/createteamop.js";
 
 let value: CreateTeamStorageRedisTotalDailyAvgStorageInBytes = {
-    price: 8544.6,
-    batch: 6374.62,
-    threshold: 5546.03,
+    price: 5171.37,
+    batch: 2928.88,
+    threshold: 7551.06,
     hidden: false,
 };
 ```

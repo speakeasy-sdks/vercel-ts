@@ -6,9 +6,9 @@
 import { Bandwidth } from "@simplesagar/vercel/models/authuser.js";
 
 let value: Bandwidth = {
-    price: 850.76,
-    batch: 4981.8,
-    threshold: 4527.29,
+    price: 6277.35,
+    batch: 7631.65,
+    threshold: 4014.28,
     hidden: false,
 };
 ```

@@ -7,7 +7,7 @@ import { Six } from "@simplesagar/vercel/models/createrecordop.js";
 
 let value: Six = {
     name: "subdomain",
-    type: "MX",
+    type: "SRV",
     value: "10 mail.example.com.",
     mxPriority: 10,
 };

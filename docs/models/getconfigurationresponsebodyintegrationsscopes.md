@@ -6,8 +6,8 @@
 import { GetConfigurationResponseBodyIntegrationsScopes } from "@simplesagar/vercel/models/getconfigurationop.js";
 
 let value: GetConfigurationResponseBodyIntegrationsScopes = {
-    added: ["read-write:log-drain"],
-    upgraded: ["read:domain"],
+    added: ["read-write:deployment-check"],
+    upgraded: ["read-write:project"],
 };
 ```
 

@@ -6,9 +6,9 @@
 import { BuildMinute } from "@simplesagar/vercel/models/authuser.js";
 
 let value: BuildMinute = {
-    price: 5755.34,
-    batch: 8760.27,
-    threshold: 1949.01,
+    price: 1201.2,
+    batch: 9369.28,
+    threshold: 3344.74,
     hidden: false,
 };
 ```

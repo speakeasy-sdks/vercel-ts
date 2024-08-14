@@ -7,7 +7,7 @@ import { RequestBody3 } from "@simplesagar/vercel/models/createrecordop.js";
 
 let value: RequestBody3 = {
     name: "subdomain",
-    type: "A",
+    type: "HTTPS",
     value: "cname.vercel-dns.com",
 };
 ```

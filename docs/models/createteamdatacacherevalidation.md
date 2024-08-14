@@ -6,9 +6,9 @@
 import { CreateTeamDataCacheRevalidation } from "@simplesagar/vercel/models/createteamop.js";
 
 let value: CreateTeamDataCacheRevalidation = {
-    price: 2503.98,
-    batch: 2244.67,
-    threshold: 4833.94,
+    price: 3774.06,
+    batch: 7051.48,
+    threshold: 8093.65,
     hidden: false,
 };
 ```

@@ -7,7 +7,7 @@ import { Seven } from "@simplesagar/vercel/models/createrecordop.js";
 
 let value: Seven = {
     name: "<value>",
-    type: "A",
+    type: "NS",
     srv: {
         priority: 10,
         weight: 10,

@@ -12,6 +12,7 @@ import { domainsGet } from "../funcs/domainsGet.js";
 import { domainsGetConfig } from "../funcs/domainsGetConfig.js";
 import { domainsGetTransfer } from "../funcs/domainsGetTransfer.js";
 import { domainsList } from "../funcs/domainsList.js";
+import { domainsListByProject } from "../funcs/domainsListByProject.js";
 import { domainsUpdate } from "../funcs/domainsUpdate.js";
 import { domainsVerify } from "../funcs/domainsVerify.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
@@ -31,6 +32,10 @@ import { GetDomainConfigResponseBody, Strict } from "../models/getdomainconfigop
 import { GetDomainResponseBody } from "../models/getdomainop.js";
 import { GetDomainsRequest, GetDomainsResponse } from "../models/getdomainsop.js";
 import { GetDomainTransferResponseBody } from "../models/getdomaintransferop.js";
+import {
+    GetProjectDomainsRequest,
+    GetProjectDomainsResponse,
+} from "../models/getprojectdomainsop.js";
 import { PatchDomainRequestBody, PatchDomainResponseBody } from "../models/patchdomainop.js";
 import { VerifyProjectDomainResponseBody } from "../models/verifyprojectdomainop.js";
 import { unwrapAsync } from "../types/fp.js";
@@ -186,6 +191,19 @@ export class Domains extends ClientSDK {
         options?: RequestOptions
     ): Promise<DeleteDomainResponseBody> {
         return unwrapAsync(domainsDelete(this, domain, teamId, slug, options));
+    }
+
+    /**
+     * Retrieve project domains by project by id or name
+     *
+     * @remarks
+     * Retrieve the domains associated with a given project by passing either the project `id` or `name` in the URL.
+     */
+    async listByProject(
+        request: GetProjectDomainsRequest,
+        options?: RequestOptions
+    ): Promise<PageIterator<GetProjectDomainsResponse>> {
+        return unwrapResultIterator(domainsListByProject(this, request, options));
     }
 
     /**

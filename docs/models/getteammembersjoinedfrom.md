@@ -8,7 +8,7 @@ Map with information about the members origin if they joined by requesting acces
 import { GetTeamMembersJoinedFrom } from "@simplesagar/vercel/models/getteammembersop.js";
 
 let value: GetTeamMembersJoinedFrom = {
-    origin: "teams",
+    origin: "saml",
 };
 ```
 

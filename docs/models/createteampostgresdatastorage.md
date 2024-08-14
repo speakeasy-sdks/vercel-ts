@@ -6,9 +6,9 @@
 import { CreateTeamPostgresDataStorage } from "@simplesagar/vercel/models/createteamop.js";
 
 let value: CreateTeamPostgresDataStorage = {
-    price: 1446.91,
-    batch: 5.45,
-    threshold: 1680.42,
+    price: 882.48,
+    batch: 2153.98,
+    threshold: 6022.29,
     hidden: false,
 };
 ```

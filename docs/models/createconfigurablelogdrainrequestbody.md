@@ -7,8 +7,8 @@ import { CreateConfigurableLogDrainRequestBody } from "@simplesagar/vercel/model
 
 let value: CreateConfigurableLogDrainRequestBody = {
     deliveryFormat: "json",
-    url: "https://big-hearted-paddle.net",
-    sources: ["firewall"],
+    url: "https://idolized-science.info",
+    sources: ["lambda"],
 };
 ```
 

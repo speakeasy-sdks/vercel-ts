@@ -5,7 +5,7 @@
 ```typescript
 import { GitUserId } from "@simplesagar/vercel/models/teamlimited.js";
 
-let value: GitUserId = "<value>";
+let value: GitUserId = 4585.03;
 ```
 
 ## Supported Types

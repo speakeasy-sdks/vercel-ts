@@ -5,7 +5,7 @@
 ```typescript
 import { GitNamespaceId } from "@simplesagar/vercel/models/authuser.js";
 
-let value: GitNamespaceId = 9025.81;
+let value: GitNamespaceId = 9391.61;
 ```
 
 ## Supported Types

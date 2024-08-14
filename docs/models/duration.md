@@ -5,7 +5,7 @@
 ```typescript
 import { Duration } from "@simplesagar/vercel/models/authuser.js";
 
-let value: Duration = "forever";
+let value: Duration = "repeating";
 ```
 
 ## Values

@@ -7,7 +7,7 @@ import { Ten } from "@simplesagar/vercel/models/createrecordop.js";
 
 let value: Ten = {
     name: "<value>",
-    type: "AAAA",
+    type: "A",
     https: {
         priority: 10,
         target: "host.example.com",

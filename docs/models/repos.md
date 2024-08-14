@@ -7,19 +7,19 @@ import { Repos } from "@simplesagar/vercel/models/searchrepoop.js";
 
 let value: Repos = {
     id: "<value>",
-    provider: "github",
-    url: "http://slushy-praise.biz",
+    provider: "github-custom-host",
+    url: "https://oblong-geography.biz",
     name: "<value>",
     slug: "<value>",
     namespace: "<value>",
     owner: {
-        id: 8987.6,
+        id: "<value>",
         name: "<value>",
     },
-    ownerType: "team",
+    ownerType: "user",
     private: false,
     defaultBranch: "<value>",
-    updatedAt: 89.31,
+    updatedAt: 9849.34,
 };
 ```
 

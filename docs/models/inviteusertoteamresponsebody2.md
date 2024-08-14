@@ -7,8 +7,8 @@ import { InviteUserToTeamResponseBody2 } from "@simplesagar/vercel/models/invite
 
 let value: InviteUserToTeamResponseBody2 = {
     uid: "<value>",
-    username: "Chauncey.Mayert",
-    role: "OWNER",
+    username: "Elisa.Smith",
+    role: "CONTRIBUTOR",
 };
 ```
 

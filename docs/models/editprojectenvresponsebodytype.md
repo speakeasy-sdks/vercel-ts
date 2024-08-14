@@ -5,7 +5,7 @@
 ```typescript
 import { EditProjectEnvResponseBodyType } from "@simplesagar/vercel/models/editprojectenvop.js";
 
-let value: EditProjectEnvResponseBodyType = "plain";
+let value: EditProjectEnvResponseBodyType = "system";
 ```
 
 ## Values

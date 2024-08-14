@@ -5,7 +5,7 @@
 ```typescript
 import { RequestAccessToTeamTeamsGitUserId } from "@simplesagar/vercel/models/requestaccesstoteamop.js";
 
-let value: RequestAccessToTeamTeamsGitUserId = 3004.03;
+let value: RequestAccessToTeamTeamsGitUserId = 2672.07;
 ```
 
 ## Supported Types

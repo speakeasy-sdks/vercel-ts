@@ -9,7 +9,7 @@ import { RequestDeleteReasons } from "@simplesagar/vercel/models/requestdeleteop
 
 let value: RequestDeleteReasons = {
     slug: "<value>",
-    description: "Front-line regional matrices",
+    description: "Up-sized 24 hour projection",
 };
 ```
 

@@ -5,7 +5,7 @@
 ```typescript
 import { Origin } from "@simplesagar/vercel/models/teamlimited.js";
 
-let value: Origin = "link";
+let value: Origin = "feedback";
 ```
 
 ## Values

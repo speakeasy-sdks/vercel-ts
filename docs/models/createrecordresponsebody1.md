@@ -7,7 +7,7 @@ import { CreateRecordResponseBody1 } from "@simplesagar/vercel/models/createreco
 
 let value: CreateRecordResponseBody1 = {
     uid: "<value>",
-    updated: 4347.61,
+    updated: 5973.03,
 };
 ```
 

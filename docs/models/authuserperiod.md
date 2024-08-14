@@ -6,8 +6,8 @@
 import { AuthUserPeriod } from "@simplesagar/vercel/models/authuser.js";
 
 let value: AuthUserPeriod = {
-    start: 7060.61,
-    end: 2176.63,
+    start: 1623.58,
+    end: 8915.81,
 };
 ```
 

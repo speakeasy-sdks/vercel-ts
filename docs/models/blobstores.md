@@ -6,9 +6,9 @@
 import { BlobStores } from "@simplesagar/vercel/models/authuser.js";
 
 let value: BlobStores = {
-    price: 8667.89,
-    batch: 9326.66,
-    threshold: 6277.35,
+    price: 3114.86,
+    batch: 4166.92,
+    threshold: 8886.16,
     hidden: false,
 };
 ```

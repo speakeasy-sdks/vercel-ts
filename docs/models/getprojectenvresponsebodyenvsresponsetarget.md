@@ -5,7 +5,7 @@
 ```typescript
 import { GetProjectEnvResponseBodyEnvsResponseTarget } from "@simplesagar/vercel/models/getprojectenvop.js";
 
-let value: GetProjectEnvResponseBodyEnvsResponseTarget = ["development"];
+let value: GetProjectEnvResponseBodyEnvsResponseTarget = ["production"];
 ```
 
 ## Supported Types

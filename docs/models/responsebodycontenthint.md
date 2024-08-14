@@ -6,7 +6,7 @@
 import { ResponseBodyContentHint } from "@simplesagar/vercel/models/filterprojectenvsop.js";
 
 let value: ResponseBodyContentHint = {
-    type: "postgres-url",
+    type: "redis-rest-api-read-only-token",
     storeId: "<value>",
 };
 ```

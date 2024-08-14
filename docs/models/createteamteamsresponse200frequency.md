@@ -7,7 +7,7 @@ import { CreateTeamTeamsResponse200Frequency } from "@simplesagar/vercel/models/
 
 let value: CreateTeamTeamsResponse200Frequency = {
     interval: "month",
-    intervalCount: 9661.48,
+    intervalCount: 1660.47,
 };
 ```
 

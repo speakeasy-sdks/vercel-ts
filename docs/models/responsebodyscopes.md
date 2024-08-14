@@ -6,8 +6,8 @@
 import { ResponseBodyScopes } from "@simplesagar/vercel/models/getconfigurationsop.js";
 
 let value: ResponseBodyScopes = {
-    added: ["read-write:project-env-vars"],
-    upgraded: ["read-write:project-env-vars"],
+    added: ["read-write:edge-config"],
+    upgraded: ["read-write:deployment-check"],
 };
 ```
 

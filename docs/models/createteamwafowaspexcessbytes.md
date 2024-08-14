@@ -6,9 +6,9 @@
 import { CreateTeamWafOwaspExcessBytes } from "@simplesagar/vercel/models/createteamop.js";
 
 let value: CreateTeamWafOwaspExcessBytes = {
-    price: 573.2,
-    batch: 9148.64,
-    threshold: 800.61,
+    price: 4566.88,
+    batch: 1729.51,
+    threshold: 8247.98,
     hidden: false,
 };
 ```

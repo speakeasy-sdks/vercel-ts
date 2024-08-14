@@ -8,8 +8,8 @@ Will be used to create an invoice item. The price must be in cents: 2000 for $20
 import { AuthUserWebAnalytics } from "@simplesagar/vercel/models/authuser.js";
 
 let value: AuthUserWebAnalytics = {
-    price: 5873.75,
-    quantity: 3262.69,
+    price: 4468.77,
+    quantity: 7963.97,
     hidden: false,
 };
 ```

@@ -7,11 +7,11 @@ import { GetConfigurationResponseBodyScopesQueue } from "@simplesagar/vercel/mod
 
 let value: GetConfigurationResponseBodyScopesQueue = {
     scopes: {
-        added: ["read-write:deployment-check"],
-        upgraded: ["read-write:project"],
+        added: ["read:team"],
+        upgraded: ["read-write:otel-endpoint"],
     },
     note: "<value>",
-    requestedAt: 820.57,
+    requestedAt: 7730.84,
 };
 ```
 

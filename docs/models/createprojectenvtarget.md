@@ -5,7 +5,7 @@
 ```typescript
 import { CreateProjectEnvTarget } from "@simplesagar/vercel/models/createprojectenvop.js";
 
-let value: CreateProjectEnvTarget = "preview";
+let value: CreateProjectEnvTarget = ["development"];
 ```
 
 ## Supported Types
