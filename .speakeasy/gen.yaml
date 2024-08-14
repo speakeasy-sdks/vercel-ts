@@ -35,7 +35,7 @@ typescript:
   methodArguments: infer-optional-args
   moduleFormat: esm
   outputModelSuffix: output
-  packageName: vercel
+  packageName: "@speakeasy-sdks/vercel"
   responseFormat: flat
   templateVersion: v2
   useIndexModules: false
