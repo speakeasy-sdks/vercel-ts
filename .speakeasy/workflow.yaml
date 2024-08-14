@@ -11,3 +11,6 @@ targets:
         target: typescript
         source: vercel-openapi
         output: .
+        publish:
+            npm:
+                token: $npm_token
