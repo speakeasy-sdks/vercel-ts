@@ -24611,9 +24611,7 @@ paths:
           required: true
           schema:
             description: The unique project identifier or the project name
-            oneOf:
-              - type: string
-              - type: integer
+            type: string
         - name: production
           description: Filters only production domains when set to `true`.
           in: query
