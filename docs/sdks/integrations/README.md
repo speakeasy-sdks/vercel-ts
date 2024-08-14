@@ -20,7 +20,7 @@ Allows to retrieve all configurations for an authenticated integration. When the
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -42,8 +42,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { integrationsGetConfigurations } from "vercel/funcs/integrationsGetConfigurations.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { integrationsGetConfigurations } from "@simplesagar/vercel/funcs/integrationsGetConfigurations.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -95,7 +95,7 @@ Allows to retrieve a the configuration with the provided id in case it exists. T
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -117,8 +117,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { integrationsGetConfiguration } from "vercel/funcs/integrationsGetConfiguration.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { integrationsGetConfiguration } from "@simplesagar/vercel/funcs/integrationsGetConfiguration.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -170,7 +170,7 @@ Allows to remove the configuration with the `id` provided in the parameters. The
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -191,8 +191,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { integrationsDeleteConfiguration } from "vercel/funcs/integrationsDeleteConfiguration.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { integrationsDeleteConfiguration } from "@simplesagar/vercel/funcs/integrationsDeleteConfiguration.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -243,7 +243,7 @@ Lists git namespaces for a supported provider. Supported providers are `github`,
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -265,8 +265,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { integrationsGetGitNamespaces } from "vercel/funcs/integrationsGetGitNamespaces.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { integrationsGetGitNamespaces } from "@simplesagar/vercel/funcs/integrationsGetGitNamespaces.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -319,7 +319,7 @@ Lists git repositories linked to a namespace `id` for a supported provider. A sp
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -341,8 +341,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { integrationsSearchRepos } from "vercel/funcs/integrationsSearchRepos.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { integrationsSearchRepos } from "@simplesagar/vercel/funcs/integrationsSearchRepos.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.

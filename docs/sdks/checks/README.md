@@ -16,7 +16,7 @@ Creates a new check. This endpoint must be called with an OAuth2 or it will prod
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -38,8 +38,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { checksCreate } from "vercel/funcs/checksCreate.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { checksCreate } from "@simplesagar/vercel/funcs/checksCreate.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -92,7 +92,7 @@ List all of the checks created for a deployment.
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -114,8 +114,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { checksList } from "vercel/funcs/checksList.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { checksList } from "@simplesagar/vercel/funcs/checksList.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -167,7 +167,7 @@ Return a detailed response for a single check.
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -189,8 +189,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { checksGet } from "vercel/funcs/checksGet.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { checksGet } from "@simplesagar/vercel/funcs/checksGet.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -243,7 +243,7 @@ Update an existing check. This endpoint must be called with an OAuth2 or it will
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -268,8 +268,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { checksUpdate } from "vercel/funcs/checksUpdate.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { checksUpdate } from "@simplesagar/vercel/funcs/checksUpdate.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -322,7 +322,7 @@ Rerequest a selected check that has failed.
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -344,8 +344,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { checksRerequest } from "vercel/funcs/checksRerequest.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { checksRerequest } from "@simplesagar/vercel/funcs/checksRerequest.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.

@@ -20,7 +20,7 @@ Retrieves the active Vercel secrets for the authenticated user or team. By defau
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -42,8 +42,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { secretsList } from "vercel/funcs/secretsList.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { secretsList } from "@simplesagar/vercel/funcs/secretsList.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -96,7 +96,7 @@ Allows to create a new secret.
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -118,8 +118,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { secretsCreate } from "vercel/funcs/secretsCreate.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { secretsCreate } from "@simplesagar/vercel/funcs/secretsCreate.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -170,7 +170,7 @@ Enables to edit the name of a secret. The name has to be unique to the user or t
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -192,8 +192,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { secretsRename } from "vercel/funcs/secretsRename.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { secretsRename } from "@simplesagar/vercel/funcs/secretsRename.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -246,7 +246,7 @@ Retrieves the information for a specific secret by passing either the secret id 
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -268,8 +268,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { secretsGet } from "vercel/funcs/secretsGet.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { secretsGet } from "@simplesagar/vercel/funcs/secretsGet.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -322,7 +322,7 @@ This deletes the user or team’s secret defined in the URL.
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -344,8 +344,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { secretsDelete } from "vercel/funcs/secretsDelete.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { secretsDelete } from "@simplesagar/vercel/funcs/secretsDelete.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.

@@ -27,7 +27,7 @@ Allows to purchase the specified domain.
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -49,8 +49,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { domainsBuy } from "vercel/funcs/domainsBuy.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { domainsBuy } from "@simplesagar/vercel/funcs/domainsBuy.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -102,7 +102,7 @@ Check the price to purchase a domain and how long a single purchase period is.
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -124,8 +124,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { domainsCheckPrice } from "vercel/funcs/domainsCheckPrice.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { domainsCheckPrice } from "@simplesagar/vercel/funcs/domainsCheckPrice.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -178,7 +178,7 @@ Check if a domain name is available for purchase.
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -200,8 +200,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { domainsCheckStatus } from "vercel/funcs/domainsCheckStatus.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { domainsCheckStatus } from "@simplesagar/vercel/funcs/domainsCheckStatus.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -253,7 +253,7 @@ Fetch domain transfer availability or transfer status if a transfer is in progre
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -275,8 +275,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { domainsGetTransfer } from "vercel/funcs/domainsGetTransfer.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { domainsGetTransfer } from "@simplesagar/vercel/funcs/domainsGetTransfer.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -328,7 +328,7 @@ Get a Domain's configuration.
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -350,8 +350,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { domainsGetConfig } from "vercel/funcs/domainsGetConfig.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { domainsGetConfig } from "@simplesagar/vercel/funcs/domainsGetConfig.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -404,7 +404,7 @@ Get information for a single domain in an account or team.
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -426,8 +426,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { domainsGet } from "vercel/funcs/domainsGet.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { domainsGet } from "@simplesagar/vercel/funcs/domainsGet.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -479,7 +479,7 @@ Retrieves a list of domains registered for the authenticated user or team. By de
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -502,8 +502,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { domainsList } from "vercel/funcs/domainsList.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { domainsList } from "@simplesagar/vercel/funcs/domainsList.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -554,7 +554,7 @@ This endpoint is used for adding a new apex domain name with Vercel for the auth
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -576,8 +576,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { domainsCreateOrTransfer } from "vercel/funcs/domainsCreateOrTransfer.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { domainsCreateOrTransfer } from "@simplesagar/vercel/funcs/domainsCreateOrTransfer.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -629,7 +629,7 @@ Update or move apex domain.
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -651,8 +651,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { domainsUpdate } from "vercel/funcs/domainsUpdate.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { domainsUpdate } from "@simplesagar/vercel/funcs/domainsUpdate.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -705,7 +705,7 @@ Delete a previously registered domain name from Vercel. Deleting a domain will a
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -727,8 +727,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { domainsDelete } from "vercel/funcs/domainsDelete.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { domainsDelete } from "@simplesagar/vercel/funcs/domainsDelete.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -780,7 +780,7 @@ Add a domain to the project by passing its domain name and by specifying the pro
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -802,8 +802,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { domainsCreate } from "vercel/funcs/domainsCreate.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { domainsCreate } from "@simplesagar/vercel/funcs/domainsCreate.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -856,7 +856,7 @@ Attempts to verify a project domain with `verified = false` by checking the corr
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -878,8 +878,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { domainsVerify } from "vercel/funcs/domainsVerify.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { domainsVerify } from "@simplesagar/vercel/funcs/domainsVerify.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.

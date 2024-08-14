@@ -28,7 +28,7 @@ Get a paginated list of team members for the provided team.
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -52,8 +52,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { teamsGetMembers } from "vercel/funcs/teamsGetMembers.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { teamsGetMembers } from "@simplesagar/vercel/funcs/teamsGetMembers.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -105,7 +105,7 @@ Invite a user to join the team specified in the URL. The authenticated user need
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -127,8 +127,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { teamsInviteUser } from "vercel/funcs/teamsInviteUser.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { teamsInviteUser } from "@simplesagar/vercel/funcs/teamsInviteUser.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -179,7 +179,7 @@ Request access to a team as a member. An owner has to approve the request. Only 
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -201,8 +201,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { teamsRequestAccess } from "vercel/funcs/teamsRequestAccess.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { teamsRequestAccess } from "@simplesagar/vercel/funcs/teamsRequestAccess.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -253,7 +253,7 @@ Check the status of a join request. It'll respond with a 404 if the request has 
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -275,8 +275,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { teamsGetAccessRequest } from "vercel/funcs/teamsGetAccessRequest.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { teamsGetAccessRequest } from "@simplesagar/vercel/funcs/teamsGetAccessRequest.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -327,7 +327,7 @@ Join a team with a provided invite code or team ID.
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -349,8 +349,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { teamsJoin } from "vercel/funcs/teamsJoin.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { teamsJoin } from "@simplesagar/vercel/funcs/teamsJoin.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -401,7 +401,7 @@ Update the membership of a Team Member on the Team specified by `teamId`, such a
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -423,8 +423,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { teamsUpdateMember } from "vercel/funcs/teamsUpdateMember.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { teamsUpdateMember } from "@simplesagar/vercel/funcs/teamsUpdateMember.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -476,7 +476,7 @@ Remove a Team Member from the Team, or dismiss a user that requested access, or 
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -498,8 +498,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { teamsRemoveMember } from "vercel/funcs/teamsRemoveMember.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { teamsRemoveMember } from "@simplesagar/vercel/funcs/teamsRemoveMember.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -550,7 +550,7 @@ Get information for the Team specified by the `teamId` parameter.
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -572,8 +572,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { teamsGet } from "vercel/funcs/teamsGet.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { teamsGet } from "@simplesagar/vercel/funcs/teamsGet.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -623,7 +623,7 @@ Update the information of a Team specified by the `teamId` parameter. The reques
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -645,8 +645,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { teamsUpdate } from "vercel/funcs/teamsUpdate.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { teamsUpdate } from "@simplesagar/vercel/funcs/teamsUpdate.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -698,7 +698,7 @@ Get a paginated list of all the Teams the authenticated User is a member of.
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -720,8 +720,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { teamsList } from "vercel/funcs/teamsList.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { teamsList } from "@simplesagar/vercel/funcs/teamsList.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -773,7 +773,7 @@ Create a new Team under your account. You need to send a POST request with the d
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -795,8 +795,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { teamsCreate } from "vercel/funcs/teamsCreate.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { teamsCreate } from "@simplesagar/vercel/funcs/teamsCreate.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -846,7 +846,7 @@ Delete a team under your account. You need to send a `DELETE` request with the d
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -868,8 +868,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { teamsDelete } from "vercel/funcs/teamsDelete.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { teamsDelete } from "@simplesagar/vercel/funcs/teamsDelete.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -922,7 +922,7 @@ Delete an active Team invite code.
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -944,8 +944,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { teamsDeleteInviteCode } from "vercel/funcs/teamsDeleteInviteCode.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { teamsDeleteInviteCode } from "@simplesagar/vercel/funcs/teamsDeleteInviteCode.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.

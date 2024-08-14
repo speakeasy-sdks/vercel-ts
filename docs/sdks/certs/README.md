@@ -15,7 +15,7 @@ Get cert by id
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -37,8 +37,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { certsGetById } from "vercel/funcs/certsGetById.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { certsGetById } from "@simplesagar/vercel/funcs/certsGetById.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -90,7 +90,7 @@ Remove cert
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -112,8 +112,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { certsRemove } from "vercel/funcs/certsRemove.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { certsRemove } from "@simplesagar/vercel/funcs/certsRemove.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -165,7 +165,7 @@ Issue a new cert
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -187,8 +187,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { certsIssue } from "vercel/funcs/certsIssue.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { certsIssue } from "@simplesagar/vercel/funcs/certsIssue.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -240,7 +240,7 @@ Upload a cert
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -262,8 +262,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { certsUpload } from "vercel/funcs/certsUpload.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { certsUpload } from "@simplesagar/vercel/funcs/certsUpload.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.

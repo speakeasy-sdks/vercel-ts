@@ -14,7 +14,7 @@ Get project domain by project id/name and domain name.
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -36,8 +36,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { projectDomainsGet } from "vercel/funcs/projectDomainsGet.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { projectDomainsGet } from "@simplesagar/vercel/funcs/projectDomainsGet.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -90,7 +90,7 @@ Update a project domain's configuration, including the name, git branch and redi
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -115,8 +115,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { projectDomainsUpdate } from "vercel/funcs/projectDomainsUpdate.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { projectDomainsUpdate } from "@simplesagar/vercel/funcs/projectDomainsUpdate.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -169,7 +169,7 @@ Remove a domain from a project by passing the domain name and by specifying the 
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -191,8 +191,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { projectDomainsDelete } from "vercel/funcs/projectDomainsDelete.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { projectDomainsDelete } from "@simplesagar/vercel/funcs/projectDomainsDelete.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.

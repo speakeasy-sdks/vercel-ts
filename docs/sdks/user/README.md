@@ -17,7 +17,7 @@ Retrieves information related to the currently authenticated User.
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -39,8 +39,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { userGetAuthUser } from "vercel/funcs/userGetAuthUser.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { userGetAuthUser } from "@simplesagar/vercel/funcs/userGetAuthUser.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -89,7 +89,7 @@ Initiates the deletion process for the currently authenticated User, by sending 
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -111,8 +111,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { userRequestDelete } from "vercel/funcs/userRequestDelete.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { userRequestDelete } from "@simplesagar/vercel/funcs/userRequestDelete.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.

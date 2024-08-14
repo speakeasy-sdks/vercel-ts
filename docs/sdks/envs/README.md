@@ -16,7 +16,7 @@ Retrieve the environment variables for a given project by passing either the pro
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -40,8 +40,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { envsListByProject } from "vercel/funcs/envsListByProject.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { envsListByProject } from "@simplesagar/vercel/funcs/envsListByProject.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -93,7 +93,7 @@ Retrieve the environment variable for a given project.
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -115,8 +115,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { envsGet } from "vercel/funcs/envsGet.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { envsGet } from "@simplesagar/vercel/funcs/envsGet.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -169,7 +169,7 @@ Create one ore more environment variables for a project by passing its `key`, `v
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -193,8 +193,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { envsCreate } from "vercel/funcs/envsCreate.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { envsCreate } from "@simplesagar/vercel/funcs/envsCreate.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -246,7 +246,7 @@ Delete a specific environment variable for a given project by passing the enviro
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -268,8 +268,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { envsDelete } from "vercel/funcs/envsDelete.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { envsDelete } from "@simplesagar/vercel/funcs/envsDelete.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -322,7 +322,7 @@ Edit a specific environment variable for a given project by passing the environm
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -347,8 +347,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { envsUpdate } from "vercel/funcs/envsUpdate.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { envsUpdate } from "@simplesagar/vercel/funcs/envsUpdate.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.

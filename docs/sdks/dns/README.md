@@ -15,7 +15,7 @@ Retrieves a list of DNS records created for a domain name. By default it returns
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -40,8 +40,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { dnsListRecords } from "vercel/funcs/dnsListRecords.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { dnsListRecords } from "@simplesagar/vercel/funcs/dnsListRecords.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -94,7 +94,7 @@ Creates a DNS record for a domain.
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -116,8 +116,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { dnsCreateRecord } from "vercel/funcs/dnsCreateRecord.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { dnsCreateRecord } from "@simplesagar/vercel/funcs/dnsCreateRecord.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -170,7 +170,7 @@ Updates an existing DNS record for a domain name.
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -192,8 +192,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { dnsUpdateRecord } from "vercel/funcs/dnsUpdateRecord.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { dnsUpdateRecord } from "@simplesagar/vercel/funcs/dnsUpdateRecord.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -246,7 +246,7 @@ Removes an existing DNS record from a domain name.
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -268,8 +268,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { dnsRemoveRecord } from "vercel/funcs/dnsRemoveRecord.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { dnsRemoveRecord } from "@simplesagar/vercel/funcs/dnsRemoveRecord.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.

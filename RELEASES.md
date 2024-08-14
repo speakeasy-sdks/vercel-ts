@@ -33,3 +33,13 @@ Based on:
 - Speakeasy CLI 1.364.0 (2.396.0) https://github.com/speakeasy-api/speakeasy
 ### Generated
 - [typescript v0.6.2] .
+
+## 2024-08-14 04:12:00
+### Changes
+Based on:
+- OpenAPI Doc  
+- Speakeasy CLI 1.366.0 (2.396.0) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [typescript v0.6.3] .
+### Releases
+- [NPM v0.6.3] https://www.npmjs.com/package/@simplesagar/vercel/v/0.6.3 - .

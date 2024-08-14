@@ -15,7 +15,7 @@ Retrieves a list of aliases for the authenticated User or Team. When `domain` is
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -38,8 +38,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { aliasesList } from "vercel/funcs/aliasesList.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { aliasesList } from "@simplesagar/vercel/funcs/aliasesList.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -90,7 +90,7 @@ Retrieves an Alias for the given host name or alias ID.
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -114,8 +114,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { aliasesGet } from "vercel/funcs/aliasesGet.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { aliasesGet } from "@simplesagar/vercel/funcs/aliasesGet.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -167,7 +167,7 @@ Delete an Alias with the specified ID.
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -189,8 +189,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { aliasesDelete } from "vercel/funcs/aliasesDelete.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { aliasesDelete } from "@simplesagar/vercel/funcs/aliasesDelete.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -242,7 +242,7 @@ Creates a new alias for the deployment with the given deployment ID. The authent
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -264,8 +264,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { aliasesAssign } from "vercel/funcs/aliasesAssign.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { aliasesAssign } from "@simplesagar/vercel/funcs/aliasesAssign.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.

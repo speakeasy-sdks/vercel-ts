@@ -15,7 +15,7 @@ Retrieve a list of the current User's authentication tokens.
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -37,8 +37,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { tokensList } from "vercel/funcs/tokensList.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { tokensList } from "@simplesagar/vercel/funcs/tokensList.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -87,7 +87,7 @@ Creates and returns a new authentication token for the currently authenticated U
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -109,8 +109,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { tokensCreate } from "vercel/funcs/tokensCreate.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { tokensCreate } from "@simplesagar/vercel/funcs/tokensCreate.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -162,7 +162,7 @@ Retrieve metadata about an authentication token belonging to the currently authe
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -184,8 +184,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { tokensGet } from "vercel/funcs/tokensGet.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { tokensGet } from "@simplesagar/vercel/funcs/tokensGet.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -235,7 +235,7 @@ Invalidate an authentication token, such that it will no longer be valid for fut
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -257,8 +257,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { tokensDelete } from "vercel/funcs/tokensDelete.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { tokensDelete } from "@simplesagar/vercel/funcs/tokensDelete.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.

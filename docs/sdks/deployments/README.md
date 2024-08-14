@@ -25,7 +25,7 @@ Get the build logs of a deployment by deployment ID and build ID. It can work as
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -49,8 +49,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { deploymentsGetEvents } from "vercel/funcs/deploymentsGetEvents.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { deploymentsGetEvents } from "@simplesagar/vercel/funcs/deploymentsGetEvents.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -102,7 +102,7 @@ Retrieves information for a deployment either by supplying its ID (`id` property
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -124,8 +124,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { deploymentsGet } from "vercel/funcs/deploymentsGet.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { deploymentsGet } from "@simplesagar/vercel/funcs/deploymentsGet.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -178,7 +178,7 @@ Create a new deployment with all the required and intended data. If the deployme
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -200,8 +200,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { deploymentsCreate } from "vercel/funcs/deploymentsCreate.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { deploymentsCreate } from "@simplesagar/vercel/funcs/deploymentsCreate.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -251,7 +251,7 @@ This endpoint allows you to cancel a deployment which is currently building, by 
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -273,8 +273,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { deploymentsCancel } from "vercel/funcs/deploymentsCancel.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { deploymentsCancel } from "@simplesagar/vercel/funcs/deploymentsCancel.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -326,7 +326,7 @@ Before you create a deployment you need to upload the required files for that de
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -348,8 +348,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { deploymentsUploadFile } from "vercel/funcs/deploymentsUploadFile.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { deploymentsUploadFile } from "@simplesagar/vercel/funcs/deploymentsUploadFile.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -399,7 +399,7 @@ Retrieves all Aliases for the Deployment with the given ID. The authenticated us
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -421,8 +421,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { deploymentsListAliases } from "vercel/funcs/deploymentsListAliases.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { deploymentsListAliases } from "@simplesagar/vercel/funcs/deploymentsListAliases.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -474,7 +474,7 @@ Allows to retrieve the file structure of a deployment by supplying the deploymen
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -496,8 +496,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { deploymentsListFiles } from "vercel/funcs/deploymentsListFiles.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { deploymentsListFiles } from "@simplesagar/vercel/funcs/deploymentsListFiles.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -549,7 +549,7 @@ Allows to retrieve the content of a file by supplying the file identifier and th
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -573,8 +573,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { deploymentsGetFileContents } from "vercel/funcs/deploymentsGetFileContents.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { deploymentsGetFileContents } from "@simplesagar/vercel/funcs/deploymentsGetFileContents.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -626,7 +626,7 @@ List deployments under the authenticated user or team. If a deployment hasn't fi
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -649,8 +649,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { deploymentsList } from "vercel/funcs/deploymentsList.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { deploymentsList } from "@simplesagar/vercel/funcs/deploymentsList.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -701,7 +701,7 @@ This API allows you to delete a deployment, either by supplying its `id` in the 
 ### Example Usage
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
   bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -723,8 +723,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { VercelCore } from "vercel/core.js";
-import { deploymentsDelete } from "vercel/funcs/deploymentsDelete.js";
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { deploymentsDelete } from "@simplesagar/vercel/funcs/deploymentsDelete.js";
 
 // Use `VercelCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.

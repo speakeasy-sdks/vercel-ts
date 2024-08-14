@@ -11,25 +11,25 @@
 ### NPM
 
 ```bash
-npm add vercel
+npm add @simplesagar/vercel
 ```
 
 ### PNPM
 
 ```bash
-pnpm add vercel
+pnpm add @simplesagar/vercel
 ```
 
 ### Bun
 
 ```bash
-bun add vercel
+bun add @simplesagar/vercel
 ```
 
 ### Yarn
 
 ```bash
-yarn add vercel zod
+yarn add @simplesagar/vercel zod
 
 # Note that Yarn does not install peer dependencies automatically. You will need
 # to install zod as shown above.
@@ -37,7 +37,7 @@ yarn add vercel zod
 
 > [!NOTE]
 > This package is published as an ES Module (ESM) only. For applications using
-> CommonJS, use `await import("vercel")` to import and use this package.
+> CommonJS, use `await import("@simplesagar/vercel")` to import and use this package.
 <!-- End SDK Installation [installation] -->
 
 <!-- Start Requirements [requirements] -->
@@ -52,7 +52,7 @@ For supported JavaScript runtimes, please consult [RUNTIMES.md](RUNTIMES.md).
 ### Example
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel();
 
@@ -448,7 +448,7 @@ Certain SDK methods accept files as part of a multi-part request. It is possible
 > - **Node.js v18:** A file stream can be created using the `fileFrom` helper from [`fetch-blob/from.js`](https://www.npmjs.com/package/fetch-blob).
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
     bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -476,7 +476,7 @@ Some of the endpoints in this SDK support retries.  If you use the SDK without a
 
 To change the default retry strategy for a single API call, simply provide a retryConfig object to the call:
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel();
 
@@ -504,7 +504,7 @@ run();
 
 If you'd like to override the default retry strategy for all operations that support retries, you can provide a retryConfig at SDK initialization:
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
     retryConfig: {
@@ -544,8 +544,8 @@ Validation errors can also occur when either method arguments or data returned f
 
 
 ```typescript
-import { Vercel } from "vercel";
-import { SDKValidationError } from "vercel/models/sdkvalidationerror.js";
+import { Vercel } from "@simplesagar/vercel";
+import { SDKValidationError } from "@simplesagar/vercel/models/sdkvalidationerror.js";
 
 const vercel = new Vercel();
 
@@ -589,7 +589,7 @@ You can override the default server globally by passing a server index to the `s
 | 0 | `https://api.vercel.com` | None |
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
     serverIdx: 0,
@@ -612,7 +612,7 @@ run();
 The default server can also be overridden globally by passing a URL to the `serverURL` optional parameter when initializing the SDK client instance. For example:
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
     serverURL: "https://api.vercel.com",
@@ -648,8 +648,8 @@ custom header and a timeout to requests and how to use the `"requestError"` hook
 to log errors:
 
 ```typescript
-import { Vercel } from "vercel";
-import { HTTPClient } from "vercel/lib/http";
+import { Vercel } from "@simplesagar/vercel";
+import { HTTPClient } from "@simplesagar/vercel/lib/http";
 
 const httpClient = new HTTPClient({
   // fetcher takes a function that has the same signature as native `fetch`.
@@ -692,7 +692,7 @@ This SDK supports the following security scheme globally:
 
 To authenticate with the API the `bearerToken` parameter must be set when initializing the SDK client instance. For example:
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
     bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
@@ -719,7 +719,7 @@ To log HTTP requests and responses, you can pass a logger that matches `console`
 > Beware that debug logging will reveal secrets, like API tokens in headers, in log messages printed to a console or files. It's recommended to use this feature only during local development and not in production.
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const sdk = new Vercel({ debugLogger: console });
 ```
@@ -738,7 +738,7 @@ syntax.
 Here's an example of one such pagination call:
 
 ```typescript
-import { Vercel } from "vercel";
+import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
     bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
