@@ -1,6 +1,6 @@
 {
   "name": "@simplesagar/vercel",
-  "version": "0.6.4",
+  "version": "0.6.5",
   "author": "Speakeasy",
   "type": "module",
   "main": "./esm/index.js",

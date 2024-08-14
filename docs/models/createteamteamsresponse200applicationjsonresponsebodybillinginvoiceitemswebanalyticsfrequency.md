@@ -10,7 +10,7 @@ import {
 let value: CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsWebAnalyticsFrequency =
     {
         interval: "month",
-        intervalCount: 3008.24,
+        intervalCount: 2470.45,
     };
 ```
 

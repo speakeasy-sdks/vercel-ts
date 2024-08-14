@@ -2,8 +2,8 @@ speakeasyVersion: 1.367.0
 sources:
     vercel-openapi:
         sourceNamespace: vercel-openapi
-        sourceRevisionDigest: sha256:f2a81efcd80f8c2b1329211f0b07ad8941d234dd9fffc7c372e64c33c8d47aff
-        sourceBlobDigest: sha256:1a52393c8b8a95494acd8021e4b8d989834cb74f03291f3e48470b4077667b9b
+        sourceRevisionDigest: sha256:72ffe3fb038c4079682e9279ed440ae20be03f2ffc84aebd15da791b8c75a4f3
+        sourceBlobDigest: sha256:4de52f9cf017aed3e9641883e9f27cfc002cda33b1e3f640577648f06d6c582b
         tags:
             - latest
             - main
@@ -11,8 +11,8 @@ targets:
     typescript:
         source: vercel-openapi
         sourceNamespace: vercel-openapi
-        sourceRevisionDigest: sha256:f2a81efcd80f8c2b1329211f0b07ad8941d234dd9fffc7c372e64c33c8d47aff
-        sourceBlobDigest: sha256:1a52393c8b8a95494acd8021e4b8d989834cb74f03291f3e48470b4077667b9b
+        sourceRevisionDigest: sha256:72ffe3fb038c4079682e9279ed440ae20be03f2ffc84aebd15da791b8c75a4f3
+        sourceBlobDigest: sha256:4de52f9cf017aed3e9641883e9f27cfc002cda33b1e3f640577648f06d6c582b
         outLocation: .
 workflow:
     workflowVersion: 1.0.0

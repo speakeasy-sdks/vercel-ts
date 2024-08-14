@@ -10,15 +10,15 @@ import { AuthUser } from "@simplesagar/vercel/models/authuser.js";
 let value: AuthUser = {
     createdAt: 1630748523395,
     softBlock: {
-        blockedAt: 4671.19,
-        reason: "ENTERPRISE_TRIAL_ENDED",
+        blockedAt: 8288.41,
+        reason: "SUBSCRIPTION_EXPIRED",
     },
     billing: {
         period: {
-            start: 755.66,
-            end: 2902.48,
+            start: 7904.63,
+            end: 5910.65,
         },
-        plan: "hobby",
+        plan: "enterprise",
     },
     resourceConfig: {},
     stagingPrefix: "<value>",

@@ -8,25 +8,25 @@ import { Subscriptions } from "@simplesagar/vercel/models/authuser.js";
 let value: Subscriptions = {
     id: "<id>",
     trial: {
-        start: 7538.9,
-        end: 8536.06,
+        start: 2201.04,
+        end: 1180.41,
     },
     period: {
-        start: 6040.78,
-        end: 8894.48,
+        start: 6228.94,
+        end: 7847.31,
     },
     frequency: {
-        interval: "day",
-        intervalCount: 2201.04,
+        interval: "month",
+        intervalCount: 4915.91,
     },
     discount: {
         id: "<id>",
         coupon: {
             id: "<id>",
             name: "<value>",
-            amountOff: 1180.41,
-            percentageOff: 6228.94,
-            durationInMonths: 7847.31,
+            amountOff: 4589.7,
+            percentageOff: 8541.15,
+            durationInMonths: 3223.33,
             duration: "forever",
         },
     },
@@ -35,8 +35,8 @@ let value: Subscriptions = {
             id: "<id>",
             priceId: "<value>",
             productId: "<value>",
-            amount: 4915.91,
-            quantity: 4589.7,
+            amount: 3165.01,
+            quantity: 9650.9,
         },
     ],
 };

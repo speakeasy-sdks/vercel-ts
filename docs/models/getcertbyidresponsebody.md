@@ -7,8 +7,8 @@ import { GetCertByIdResponseBody } from "@simplesagar/vercel/models/getcertbyido
 
 let value: GetCertByIdResponseBody = {
     id: "<id>",
-    createdAt: 100.63,
-    expiresAt: 3662.44,
+    createdAt: 5457.79,
+    expiresAt: 439.75,
     autoRenew: false,
     cns: ["<value>"],
 };

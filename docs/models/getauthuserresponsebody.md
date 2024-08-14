@@ -9,21 +9,7 @@ import { GetAuthUserResponseBody } from "@simplesagar/vercel/models/getauthusero
 
 let value: GetAuthUserResponseBody = {
     user: {
-        createdAt: 1630748523395,
-        softBlock: {
-            blockedAt: 9233.06,
-            reason: "ENTERPRISE_TRIAL_ENDED",
-        },
-        billing: {
-            period: {
-                start: 2828.37,
-                end: 6937.46,
-            },
-            plan: "enterprise",
-        },
-        resourceConfig: {},
-        stagingPrefix: "<value>",
-        hasTrialAvailable: false,
+        limited: false,
         id: "AEIIDYVk59zbFF2Sxfyxxmua",
         email: "me@example.com",
         name: "John Doe",

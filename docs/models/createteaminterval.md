@@ -5,7 +5,7 @@
 ```typescript
 import { CreateTeamInterval } from "@simplesagar/vercel/models/createteamop.js";
 
-let value: CreateTeamInterval = "month";
+let value: CreateTeamInterval = "day";
 ```
 
 ## Values

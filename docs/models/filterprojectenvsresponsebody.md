@@ -7,9 +7,7 @@ The list of environment variables for the given project
 ```typescript
 import { FilterProjectEnvsResponseBody } from "@simplesagar/vercel/models/filterprojectenvsop.js";
 
-let value: FilterProjectEnvsResponseBody = {
-    envs: [{}],
-};
+let value: FilterProjectEnvsResponseBody = {};
 ```
 
 ## Supported Types

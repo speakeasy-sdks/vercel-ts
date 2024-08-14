@@ -8,13 +8,13 @@ import { CreateConfigurableLogDrainResponseBody } from "@simplesagar/vercel/mode
 let value: CreateConfigurableLogDrainResponseBody = {
     id: "<id>",
     deliveryFormat: "json",
-    url: "https://idolized-science.info",
+    url: "https://overjoyed-bite.net",
     name: "<value>",
     ownerId: "<value>",
-    createdAt: 2811.53,
-    deletedAt: 3210.43,
-    updatedAt: 7139.27,
-    environments: ["production"],
+    createdAt: 6656.78,
+    deletedAt: 6347.86,
+    updatedAt: 296.34,
+    environments: ["preview"],
 };
 ```
 

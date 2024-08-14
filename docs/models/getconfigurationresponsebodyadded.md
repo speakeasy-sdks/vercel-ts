@@ -5,7 +5,7 @@
 ```typescript
 import { GetConfigurationResponseBodyAdded } from "@simplesagar/vercel/models/getconfigurationop.js";
 
-let value: GetConfigurationResponseBodyAdded = "read-write:integration-resource";
+let value: GetConfigurationResponseBodyAdded = "read-write:deployment-check";
 ```
 
 ## Values

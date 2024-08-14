@@ -6,8 +6,8 @@
 import { CreateWebhookRequestBody } from "@simplesagar/vercel/models/createwebhookop.js";
 
 let value: CreateWebhookRequestBody = {
-    url: "http://immediate-savings.info",
-    events: ["budget.reached"],
+    url: "http://admirable-antelope.biz",
+    events: ["budget.reset"],
 };
 ```
 

@@ -5,7 +5,7 @@
 ```typescript
 import { CreateConfigurableLogDrainSources } from "@simplesagar/vercel/models/createconfigurablelogdrainop.js";
 
-let value: CreateConfigurableLogDrainSources = "build";
+let value: CreateConfigurableLogDrainSources = "lambda";
 ```
 
 ## Values

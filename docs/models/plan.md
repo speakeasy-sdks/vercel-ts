@@ -5,7 +5,7 @@
 ```typescript
 import { Plan } from "@simplesagar/vercel/models/authuser.js";
 
-let value: Plan = "hobby";
+let value: Plan = "enterprise";
 ```
 
 ## Values

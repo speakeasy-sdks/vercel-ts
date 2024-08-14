@@ -6,9 +6,9 @@
 import { CreateTeamLogDrainsVolume } from "@simplesagar/vercel/models/createteamop.js";
 
 let value: CreateTeamLogDrainsVolume = {
-    price: 1830.33,
-    batch: 6113.28,
-    threshold: 4030.26,
+    price: 5.45,
+    batch: 1680.42,
+    threshold: 4254.02,
     hidden: false,
 };
 ```

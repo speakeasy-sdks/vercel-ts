@@ -6,9 +6,9 @@
 import { SourceImages } from "@simplesagar/vercel/models/authuser.js";
 
 let value: SourceImages = {
-    price: 9322.96,
-    batch: 1509.35,
-    threshold: 9930.02,
+    price: 8138.8,
+    batch: 5129.05,
+    threshold: 1403.84,
     hidden: false,
 };
 ```

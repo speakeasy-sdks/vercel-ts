@@ -6,9 +6,9 @@
 import { CreateTeamFunctionInvocation } from "@simplesagar/vercel/models/createteamop.js";
 
 let value: CreateTeamFunctionInvocation = {
-    price: 813.71,
-    batch: 2124.34,
-    threshold: 3220.17,
+    price: 6780.6,
+    batch: 4876.76,
+    threshold: 1446.91,
     hidden: false,
 };
 ```

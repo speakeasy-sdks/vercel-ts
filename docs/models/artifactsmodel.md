@@ -6,9 +6,9 @@
 import { ArtifactsModel } from "@simplesagar/vercel/models/authuser.js";
 
 let value: ArtifactsModel = {
-    price: 5678.46,
-    batch: 1721.95,
-    threshold: 6211.69,
+    price: 4527.29,
+    batch: 8667.89,
+    threshold: 9326.66,
     hidden: false,
 };
 ```

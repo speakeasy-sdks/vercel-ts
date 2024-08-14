@@ -5,7 +5,7 @@
 ```typescript
 import { GetRecordsResponseBodyType } from "@simplesagar/vercel/models/getrecordsop.js";
 
-let value: GetRecordsResponseBodyType = "AAAA";
+let value: GetRecordsResponseBodyType = "NS";
 ```
 
 ## Values

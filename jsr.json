@@ -2,7 +2,7 @@
 
 {
   "name": "@simplesagar/vercel",
-  "version": "0.6.4",
+  "version": "0.6.5",
   "exports": {
     ".": "./src/index.ts",    
     "./models": "./src/models/index.ts",

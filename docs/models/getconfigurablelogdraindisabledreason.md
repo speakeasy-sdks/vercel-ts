@@ -5,7 +5,7 @@
 ```typescript
 import { GetConfigurableLogDrainDisabledReason } from "@simplesagar/vercel/models/getconfigurablelogdrainop.js";
 
-let value: GetConfigurableLogDrainDisabledReason = "account-plan-downgrade";
+let value: GetConfigurableLogDrainDisabledReason = "disabled-by-owner";
 ```
 
 ## Values

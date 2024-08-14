@@ -7,7 +7,7 @@ Defines the installation type. - 'external' integrations are installed via the e
 ```typescript
 import { InstallationType } from "@simplesagar/vercel/models/getconfigurationsop.js";
 
-let value: InstallationType = "marketplace";
+let value: InstallationType = "external";
 ```
 
 ## Values

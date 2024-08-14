@@ -5,7 +5,7 @@
 ```typescript
 import { CreateEdgeConfigItems } from "@simplesagar/vercel/models/createedgeconfigop.js";
 
-let value: CreateEdgeConfigItems = false;
+let value: CreateEdgeConfigItems = {};
 ```
 
 ## Supported Types

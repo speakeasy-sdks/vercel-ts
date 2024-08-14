@@ -8,26 +8,26 @@ import { CreateTeamSubscriptions } from "@simplesagar/vercel/models/createteamop
 let value: CreateTeamSubscriptions = {
     id: "<id>",
     trial: {
-        start: 5156.38,
-        end: 3572.07,
+        start: 9195.08,
+        end: 340.7,
     },
     period: {
-        start: 8890.6,
-        end: 9729.12,
+        start: 7104.56,
+        end: 8852.08,
     },
     frequency: {
-        interval: "week",
-        intervalCount: 8723.03,
+        interval: "month",
+        intervalCount: 8448.54,
     },
     discount: {
         id: "<id>",
         coupon: {
             id: "<id>",
             name: "<value>",
-            amountOff: 51.52,
-            percentageOff: 1566.53,
-            durationInMonths: 6941.58,
-            duration: "once",
+            amountOff: 4835.18,
+            percentageOff: 5101.28,
+            durationInMonths: 1403.16,
+            duration: "forever",
         },
     },
     items: [
@@ -35,8 +35,8 @@ let value: CreateTeamSubscriptions = {
             id: "<id>",
             priceId: "<value>",
             productId: "<value>",
-            amount: 9195.08,
-            quantity: 340.7,
+            amount: 3589.95,
+            quantity: 6214.73,
         },
     ],
 };

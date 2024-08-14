@@ -9,8 +9,8 @@ import { Scopes1 } from "@simplesagar/vercel/models/authtoken.js";
 
 let value: Scopes1 = {
     type: "user",
-    origin: "email",
-    createdAt: 4923.61,
+    origin: "passkey",
+    createdAt: 6293.77,
 };
 ```
 

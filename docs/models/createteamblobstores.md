@@ -6,9 +6,9 @@
 import { CreateTeamBlobStores } from "@simplesagar/vercel/models/createteamop.js";
 
 let value: CreateTeamBlobStores = {
-    price: 365.61,
-    batch: 4246.63,
-    threshold: 4069.22,
+    price: 9353.02,
+    batch: 1175.25,
+    threshold: 7722.66,
     hidden: false,
 };
 ```

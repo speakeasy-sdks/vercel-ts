@@ -8,8 +8,8 @@ Will be used to create an invoice item. The price must be in cents: 2000 for $20
 import { CreateTeamManagedInfrastructureCommitment } from "@simplesagar/vercel/models/createteamop.js";
 
 let value: CreateTeamManagedInfrastructureCommitment = {
-    price: 5388.69,
-    quantity: 2164.57,
+    price: 1940.23,
+    quantity: 4939.58,
     hidden: false,
 };
 ```

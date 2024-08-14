@@ -9,8 +9,8 @@ let value: CreateTeamItems = {
     id: "<id>",
     priceId: "<value>",
     productId: "<value>",
-    amount: 3735.11,
-    quantity: 7029.52,
+    amount: 6941.58,
+    quantity: 6841.26,
 };
 ```
 

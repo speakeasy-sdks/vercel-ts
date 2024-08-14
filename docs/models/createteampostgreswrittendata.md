@@ -6,9 +6,9 @@
 import { CreateTeamPostgresWrittenData } from "@simplesagar/vercel/models/createteamop.js";
 
 let value: CreateTeamPostgresWrittenData = {
-    price: 9323.94,
-    batch: 882.48,
-    threshold: 2153.98,
+    price: 6057.12,
+    batch: 7272.5,
+    threshold: 1156.61,
     hidden: false,
 };
 ```

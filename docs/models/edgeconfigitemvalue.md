@@ -5,7 +5,7 @@
 ```typescript
 import { EdgeConfigItemValue } from "@simplesagar/vercel/models/edgeconfigitemvalue.js";
 
-let value: EdgeConfigItemValue = 9282.19;
+let value: EdgeConfigItemValue = {};
 ```
 
 ## Supported Types

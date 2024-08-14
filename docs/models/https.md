@@ -6,7 +6,7 @@
 import { Https } from "@simplesagar/vercel/models/updaterecordop.js";
 
 let value: Https = {
-    priority: 528940,
+    priority: 970222,
     target: "example2.com.",
 };
 ```

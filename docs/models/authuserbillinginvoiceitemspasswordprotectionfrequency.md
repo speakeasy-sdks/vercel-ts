@@ -7,7 +7,7 @@ import { AuthUserBillingInvoiceItemsPasswordProtectionFrequency } from "@simples
 
 let value: AuthUserBillingInvoiceItemsPasswordProtectionFrequency = {
     interval: "month",
-    intervalCount: 7955.91,
+    intervalCount: 9637.41,
 };
 ```
 

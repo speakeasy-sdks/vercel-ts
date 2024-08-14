@@ -5,7 +5,7 @@
 ```typescript
 import { ResponseBodyUpgraded } from "@simplesagar/vercel/models/getconfigurationop.js";
 
-let value: ResponseBodyUpgraded = "read:integration-configuration";
+let value: ResponseBodyUpgraded = "read:deployment";
 ```
 
 ## Values

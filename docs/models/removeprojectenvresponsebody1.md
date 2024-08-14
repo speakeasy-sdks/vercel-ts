@@ -6,7 +6,7 @@
 import { RemoveProjectEnvResponseBody1 } from "@simplesagar/vercel/models/removeprojectenvop.js";
 
 let value: RemoveProjectEnvResponseBody1 = {
-    type: "encrypted",
+    type: "system",
     key: "<key>",
     value: "<value>",
 };

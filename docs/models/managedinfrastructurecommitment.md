@@ -8,8 +8,8 @@ Will be used to create an invoice item. The price must be in cents: 2000 for $20
 import { ManagedInfrastructureCommitment } from "@simplesagar/vercel/models/authuser.js";
 
 let value: ManagedInfrastructureCommitment = {
-    price: 5208.75,
-    quantity: 5777.09,
+    price: 7955.91,
+    quantity: 6845.53,
     hidden: false,
 };
 ```

@@ -7,8 +7,8 @@ import { CreateRecordRequestBody } from "@simplesagar/vercel/models/createrecord
 
 let value: CreateRecordRequestBody = {
     name: "subdomain",
-    type: "SRV",
-    value: "2001:DB8::42",
+    type: "CAA",
+    value: "192.0.2.42",
 };
 ```
 

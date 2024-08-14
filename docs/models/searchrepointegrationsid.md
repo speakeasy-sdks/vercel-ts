@@ -5,7 +5,7 @@
 ```typescript
 import { SearchRepoIntegrationsId } from "@simplesagar/vercel/models/searchrepoop.js";
 
-let value: SearchRepoIntegrationsId = 9834.27;
+let value: SearchRepoIntegrationsId = 8987.6;
 ```
 
 ## Supported Types

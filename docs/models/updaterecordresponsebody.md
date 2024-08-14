@@ -7,11 +7,11 @@ import { UpdateRecordResponseBody } from "@simplesagar/vercel/models/updaterecor
 
 let value: UpdateRecordResponseBody = {
     creator: "<value>",
-    domain: "functional-zen.com",
+    domain: "giant-earthquake.net",
     id: "<id>",
     name: "<value>",
-    recordType: "CAA",
-    type: "record-sys",
+    recordType: "ALIAS",
+    type: "record",
     value: "<value>",
 };
 ```

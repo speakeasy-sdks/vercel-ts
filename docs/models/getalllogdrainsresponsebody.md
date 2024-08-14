@@ -7,14 +7,14 @@ import { GetAllLogDrainsResponseBody } from "@simplesagar/vercel/models/getalllo
 
 let value: GetAllLogDrainsResponseBody = {
     id: "<id>",
-    deliveryFormat: "ndjson",
-    url: "https://sad-great-grandfather.name",
+    deliveryFormat: "json",
+    url: "https://super-tonic.name",
     name: "<value>",
     ownerId: "<value>",
-    createdAt: 3813.97,
-    deletedAt: 3991.61,
-    updatedAt: 219.73,
-    environments: ["production"],
+    createdAt: 6717.94,
+    deletedAt: 7263.43,
+    updatedAt: 3240.83,
+    environments: ["preview"],
     secret: "<value>",
 };
 ```

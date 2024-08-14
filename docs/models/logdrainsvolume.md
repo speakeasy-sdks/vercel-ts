@@ -6,9 +6,9 @@
 import { LogDrainsVolume } from "@simplesagar/vercel/models/authuser.js";
 
 let value: LogDrainsVolume = {
-    price: 6144.38,
-    batch: 8268.62,
-    threshold: 7316.34,
+    price: 385.57,
+    batch: 9639.76,
+    threshold: 7731.1,
     hidden: false,
 };
 ```

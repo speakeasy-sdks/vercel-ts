@@ -142,6 +142,7 @@ run();
 * [createOrTransfer](docs/sdks/domains/README.md#createortransfer) - Register or transfer-in a new Domain
 * [update](docs/sdks/domains/README.md#update) - Update or move apex domain
 * [delete](docs/sdks/domains/README.md#delete) - Remove a domain by name
+* [listByProject](docs/sdks/domains/README.md#listbyproject) - Retrieve project domains by project by id or name
 * [create](docs/sdks/domains/README.md#create) - Add a domain to a project
 * [verify](docs/sdks/domains/README.md#verify) - Verify project domain
 
@@ -351,6 +352,7 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [domainsGetConfig](docs/sdks/domains/README.md#getconfig)
 - [domainsGetTransfer](docs/sdks/domains/README.md#gettransfer)
 - [domainsGet](docs/sdks/domains/README.md#get)
+- [domainsListByProject](docs/sdks/domains/README.md#listbyproject)
 - [domainsList](docs/sdks/domains/README.md#list)
 - [domainsUpdate](docs/sdks/domains/README.md#update)
 - [domainsVerify](docs/sdks/domains/README.md#verify)

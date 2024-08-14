@@ -6,9 +6,9 @@
 import { AnalyticsUsage } from "@simplesagar/vercel/models/authuser.js";
 
 let value: AnalyticsUsage = {
-    price: 3252.97,
-    batch: 4483.69,
-    threshold: 4969.15,
+    price: 6211.69,
+    batch: 850.76,
+    threshold: 4981.8,
     hidden: false,
 };
 ```

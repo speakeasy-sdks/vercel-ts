@@ -8,8 +8,8 @@ Will be used to create an invoice item. The price must be in cents: 2000 for $20
 import { PreviewDeploymentSuffix } from "@simplesagar/vercel/models/authuser.js";
 
 let value: PreviewDeploymentSuffix = {
-    price: 7708.73,
-    quantity: 9637.41,
+    price: 9974.37,
+    quantity: 8659.46,
     hidden: false,
 };
 ```

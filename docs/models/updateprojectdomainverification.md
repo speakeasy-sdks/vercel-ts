@@ -9,7 +9,7 @@ import { UpdateProjectDomainVerification } from "@simplesagar/vercel/models/upda
 
 let value: UpdateProjectDomainVerification = {
     type: "<value>",
-    domain: "overjoyed-bite.net",
+    domain: "ambitious-abdomen.name",
     value: "<value>",
     reason: "<value>",
 };

@@ -6,7 +6,7 @@
 import { RemoveProjectEnvResponseBodyEnvsContentHint } from "@simplesagar/vercel/models/removeprojectenvop.js";
 
 let value: RemoveProjectEnvResponseBodyEnvsContentHint = {
-    type: "postgres-url-no-ssl",
+    type: "postgres-url-non-pooling",
     storeId: "<value>",
 };
 ```

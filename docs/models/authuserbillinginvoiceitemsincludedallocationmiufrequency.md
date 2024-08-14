@@ -7,7 +7,7 @@ import { AuthUserBillingInvoiceItemsIncludedAllocationMiuFrequency } from "@simp
 
 let value: AuthUserBillingInvoiceItemsIncludedAllocationMiuFrequency = {
     interval: "month",
-    intervalCount: 460.13,
+    intervalCount: 5777.09,
 };
 ```
 

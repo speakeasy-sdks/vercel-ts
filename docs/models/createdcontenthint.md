@@ -6,7 +6,7 @@
 import { CreatedContentHint } from "@simplesagar/vercel/models/createprojectenvop.js";
 
 let value: CreatedContentHint = {
-    type: "postgres-prisma-url",
+    type: "postgres-url-no-ssl",
     storeId: "<value>",
 };
 ```

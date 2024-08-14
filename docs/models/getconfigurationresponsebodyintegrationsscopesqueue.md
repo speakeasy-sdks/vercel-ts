@@ -7,11 +7,11 @@ import { GetConfigurationResponseBodyIntegrationsScopesQueue } from "@simplesaga
 
 let value: GetConfigurationResponseBodyIntegrationsScopesQueue = {
     scopes: {
-        added: ["read-write:edge-config"],
-        upgraded: ["read-write:deployment-check"],
+        added: ["read-write:integration-configuration"],
+        upgraded: ["read:deployment"],
     },
     note: "<value>",
-    requestedAt: 9762.26,
+    requestedAt: 7652.71,
 };
 ```
 

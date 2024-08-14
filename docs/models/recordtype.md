@@ -5,7 +5,7 @@
 ```typescript
 import { RecordType } from "@simplesagar/vercel/models/updaterecordop.js";
 
-let value: RecordType = "HTTPS";
+let value: RecordType = "AAAA";
 ```
 
 ## Values

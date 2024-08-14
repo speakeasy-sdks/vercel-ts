@@ -6,8 +6,8 @@
 import { CreateTeamTeamsPeriod } from "@simplesagar/vercel/models/createteamop.js";
 
 let value: CreateTeamTeamsPeriod = {
-    start: 1729.51,
-    end: 8247.98,
+    start: 7332.89,
+    end: 5750.78,
 };
 ```
 

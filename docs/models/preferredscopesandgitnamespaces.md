@@ -7,7 +7,7 @@ import { PreferredScopesAndGitNamespaces } from "@simplesagar/vercel/models/auth
 
 let value: PreferredScopesAndGitNamespaces = {
     scopeId: "<value>",
-    gitNamespaceId: 3340.18,
+    gitNamespaceId: "<value>",
 };
 ```
 

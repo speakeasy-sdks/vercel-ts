@@ -7,11 +7,11 @@ import { ScopesQueue } from "@simplesagar/vercel/models/getconfigurationsop.js";
 
 let value: ScopesQueue = {
     scopes: {
-        added: ["read:integration-configuration"],
-        upgraded: ["read-write:integration-resource"],
+        added: ["read-write:integration-resource"],
+        upgraded: ["read:user"],
     },
     note: "<value>",
-    requestedAt: 9846.32,
+    requestedAt: 8897.94,
 };
 ```
 

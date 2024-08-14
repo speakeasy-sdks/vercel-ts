@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 08d4af4d-7f06-4aa7-83b0-4bcfdb3dadd5
 management:
-  docChecksum: f303b47d8c858ee4bd6b68b526b60ec3
+  docChecksum: 1dc76dcc561898c8b84cf7285236da83
   docVersion: 0.0.1
   speakeasyVersion: 1.367.0
   generationVersion: 2.399.0
-  releaseVersion: 0.6.4
-  configChecksum: 2ae8b97571e9c980f76b7ee5057a5d6a
+  releaseVersion: 0.6.5
+  configChecksum: 9350a84e0e779de343634254b7528147
   repoURL: https://github.com/speakeasy-sdks/vercel-ts.git
   installationURL: https://github.com/speakeasy-sdks/vercel-ts
   published: true
@@ -82,6 +82,7 @@ generatedFiles:
   - src/funcs/domainsCreateOrTransfer.ts
   - src/funcs/domainsUpdate.ts
   - src/funcs/domainsDelete.ts
+  - src/funcs/domainsListByProject.ts
   - src/funcs/domainsCreate.ts
   - src/funcs/domainsVerify.ts
   - src/funcs/dnsListRecords.ts
@@ -277,6 +278,7 @@ generatedFiles:
   - src/models/createortransferdomainop.ts
   - src/models/patchdomainop.ts
   - src/models/deletedomainop.ts
+  - src/models/getprojectdomainsop.ts
   - src/models/addprojectdomainop.ts
   - src/models/verifyprojectdomainop.ts
   - src/models/getrecordsop.ts
@@ -1497,6 +1499,15 @@ generatedFiles:
   - docs/models/patchdomainresponsebody.md
   - docs/models/deletedomainrequest.md
   - docs/models/deletedomainresponsebody.md
+  - docs/models/production.md
+  - docs/models/redirects.md
+  - docs/models/verified.md
+  - docs/models/order.md
+  - docs/models/getprojectdomainsrequest.md
+  - docs/models/getprojectdomainsverification.md
+  - docs/models/getprojectdomainsdomains.md
+  - docs/models/getprojectdomainsresponsebody.md
+  - docs/models/getprojectdomainsresponse.md
   - docs/models/addprojectdomainredirectstatuscode.md
   - docs/models/addprojectdomainrequestbody.md
   - docs/models/addprojectdomainrequest.md

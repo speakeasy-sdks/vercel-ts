@@ -5,7 +5,7 @@
 ```typescript
 import { Access } from "@simplesagar/vercel/models/getaliasop.js";
 
-let value: Access = "requested";
+let value: Access = "granted";
 ```
 
 ## Values

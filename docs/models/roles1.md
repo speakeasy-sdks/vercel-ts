@@ -5,7 +5,7 @@
 ```typescript
 import { Roles1 } from "@simplesagar/vercel/models/patchteamop.js";
 
-let value: Roles1 = "BILLING";
+let value: Roles1 = "OWNER";
 ```
 
 ## Values

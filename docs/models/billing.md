@@ -9,8 +9,8 @@ import { Billing } from "@simplesagar/vercel/models/authuser.js";
 
 let value: Billing = {
     period: {
-        start: 3223.33,
-        end: 1348.18,
+        start: 4912.01,
+        end: 7298.28,
     },
     plan: "pro",
 };

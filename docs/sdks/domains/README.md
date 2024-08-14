@@ -17,6 +17,7 @@ Domains
 * [createOrTransfer](#createortransfer) - Register or transfer-in a new Domain
 * [update](#update) - Update or move apex domain
 * [delete](#delete) - Remove a domain by name
+* [listByProject](#listbyproject) - Retrieve project domains by project by id or name
 * [create](#create) - Add a domain to a project
 * [verify](#verify) - Verify project domain
 
@@ -767,6 +768,85 @@ run();
 ### Response
 
 **Promise\<[models.DeleteDomainResponseBody](../../models/deletedomainresponsebody.md)\>**
+### Errors
+
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| models.SDKError | 4xx-5xx         | */*             |
+
+## listByProject
+
+Retrieve the domains associated with a given project by passing either the project `id` or `name` in the URL.
+
+### Example Usage
+
+```typescript
+import { Vercel } from "@simplesagar/vercel";
+
+const vercel = new Vercel({
+  bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const result = await vercel.domains.listByProject({
+    idOrName: "<value>",
+  });
+
+  for await (const page of result) {
+    // handle page
+  }
+}
+
+run();
+```
+
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { VercelCore } from "@simplesagar/vercel/core.js";
+import { domainsListByProject } from "@simplesagar/vercel/funcs/domainsListByProject.js";
+
+// Use `VercelCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const vercel = new VercelCore({
+  bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const res = await domainsListByProject(vercel, {
+    idOrName: "<value>",
+  });
+
+  if (!res.ok) {
+    throw res.error;
+  }
+
+  const { value: result } = res;
+
+  for await (const page of result) {
+    // handle page
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [models.GetProjectDomainsRequest](../../models/getprojectdomainsrequest.md)                                                                                                    | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+
+### Response
+
+**Promise\<[models.GetProjectDomainsResponse](../../models/getprojectdomainsresponse.md)\>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

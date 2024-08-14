@@ -5,7 +5,7 @@
 ```typescript
 import { Id } from "@simplesagar/vercel/models/gitnamespacesop.js";
 
-let value: Id = "<value>";
+let value: Id = 5962.11;
 ```
 
 ## Supported Types

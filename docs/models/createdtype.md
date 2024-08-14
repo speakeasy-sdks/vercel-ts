@@ -5,7 +5,7 @@
 ```typescript
 import { CreatedType } from "@simplesagar/vercel/models/createprojectenvop.js";
 
-let value: CreatedType = "plain";
+let value: CreatedType = "encrypted";
 ```
 
 ## Values

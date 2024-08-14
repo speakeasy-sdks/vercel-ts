@@ -9,7 +9,7 @@ import { VerifyProjectDomainVerification } from "@simplesagar/vercel/models/veri
 
 let value: VerifyProjectDomainVerification = {
     type: "<value>",
-    domain: "petty-lawyer.info",
+    domain: "vapid-porthole.net",
     value: "<value>",
     reason: "<value>",
 };

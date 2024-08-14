@@ -6,9 +6,9 @@
 import { CreateTeamEdgeFunctionExecutionUnits } from "@simplesagar/vercel/models/createteamop.js";
 
 let value: CreateTeamEdgeFunctionExecutionUnits = {
-    price: 8093.65,
-    batch: 5960.65,
-    threshold: 7090.36,
+    price: 7699.67,
+    batch: 3730.4,
+    threshold: 3574.25,
     hidden: false,
 };
 ```

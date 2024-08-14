@@ -8,6 +8,7 @@ The configuration with the provided id
 import { GetConfigurationResponseBody } from "@simplesagar/vercel/models/getconfigurationop.js";
 
 let value: GetConfigurationResponseBody = {
+    projectSelection: "all",
     createdAt: 1558531915505,
     id: "icfg_3bwCLgxL8qt5kjRLcv2Dit7F",
     integrationId: "oac_xzpVzcUOgcB1nrVlirtKhbWV",

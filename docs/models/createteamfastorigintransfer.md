@@ -6,9 +6,9 @@
 import { CreateTeamFastOriginTransfer } from "@simplesagar/vercel/models/createteamop.js";
 
 let value: CreateTeamFastOriginTransfer = {
-    price: 4568.85,
-    batch: 2885.7,
-    threshold: 850.66,
+    price: 6113.28,
+    batch: 4030.26,
+    threshold: 3676.26,
     hidden: false,
 };
 ```

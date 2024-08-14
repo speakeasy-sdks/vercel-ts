@@ -5,7 +5,7 @@
 ```typescript
 import { Compression } from "@simplesagar/vercel/models/getconfigurablelogdrainop.js";
 
-let value: Compression = "none";
+let value: Compression = "zstd";
 ```
 
 ## Values

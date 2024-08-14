@@ -5,7 +5,7 @@
 ```typescript
 import { SearchRepoProvider } from "@simplesagar/vercel/models/searchrepoop.js";
 
-let value: SearchRepoProvider = "github";
+let value: SearchRepoProvider = "bitbucket";
 ```
 
 ## Values

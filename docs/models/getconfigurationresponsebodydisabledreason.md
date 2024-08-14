@@ -5,7 +5,7 @@
 ```typescript
 import { GetConfigurationResponseBodyDisabledReason } from "@simplesagar/vercel/models/getconfigurationop.js";
 
-let value: GetConfigurationResponseBodyDisabledReason = "disabled-by-owner";
+let value: GetConfigurationResponseBodyDisabledReason = "feature-not-available";
 ```
 
 ## Values

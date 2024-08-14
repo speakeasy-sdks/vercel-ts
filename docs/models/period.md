@@ -6,8 +6,8 @@
 import { Period } from "@simplesagar/vercel/models/authuser.js";
 
 let value: Period = {
-    start: 1478.01,
-    end: 2536.25,
+    start: 6378.56,
+    end: 4918.92,
 };
 ```
 

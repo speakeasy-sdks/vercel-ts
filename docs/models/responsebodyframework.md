@@ -5,7 +5,7 @@
 ```typescript
 import { ResponseBodyFramework } from "@simplesagar/vercel/models/getwebhooksop.js";
 
-let value: ResponseBodyFramework = "nextjs";
+let value: ResponseBodyFramework = "solidstart-1";
 ```
 
 ## Values

@@ -6,9 +6,9 @@
 import { FunctionInvocation } from "@simplesagar/vercel/models/authuser.js";
 
 let value: FunctionInvocation = {
-    price: 9011.63,
-    batch: 1040.78,
-    threshold: 5546.45,
+    price: 7316.34,
+    batch: 7255.74,
+    threshold: 2440.32,
     hidden: false,
 };
 ```

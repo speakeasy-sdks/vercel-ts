@@ -9,10 +9,10 @@ import { CreateTeamBilling } from "@simplesagar/vercel/models/createteamop.js";
 
 let value: CreateTeamBilling = {
     period: {
-        start: 8852.08,
-        end: 1770.05,
+        start: 2393.37,
+        end: 9233.06,
     },
-    plan: "hobby",
+    plan: "enterprise",
 };
 ```
 

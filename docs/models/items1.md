@@ -5,7 +5,7 @@
 ```typescript
 import { Items1 } from "@simplesagar/vercel/models/createedgeconfigop.js";
 
-let value: Items1 = {};
+let value: Items1 = false;
 ```
 
 ## Supported Types

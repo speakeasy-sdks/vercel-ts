@@ -5,7 +5,7 @@
 ```typescript
 import { Upgraded } from "@simplesagar/vercel/models/getconfigurationsop.js";
 
-let value: Upgraded = "read-write:log-drain";
+let value: Upgraded = "read:domain";
 ```
 
 ## Values
