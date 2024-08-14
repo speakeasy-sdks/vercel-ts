@@ -1,5 +1,23 @@
 # GetDeploymentGitRepo3
 
+## Example Usage
+
+```typescript
+import { GetDeploymentGitRepo3 } from "@simplesagar/vercel/models/getdeploymentop.js";
+
+let value: GetDeploymentGitRepo3 = {
+    owner: "<value>",
+    repoUuid: "<value>",
+    slug: "<value>",
+    type: "bitbucket",
+    workspaceUuid: "<value>",
+    path: "/usr/libexec",
+    defaultBranch: "<value>",
+    name: "<value>",
+    private: false,
+    ownerType: "user",
+};
+```
 
 ## Fields
 

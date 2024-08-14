@@ -1,18 +1,15 @@
 # RequestAccessToTeamTeamsOrigin
 
+## Example Usage
+
+```typescript
+import { RequestAccessToTeamTeamsOrigin } from "@simplesagar/vercel/models/requestaccesstoteamop.js";
+
+let value: RequestAccessToTeamTeamsOrigin = "feedback";
+```
 
 ## Values
 
-| Name                | Value               |
-| ------------------- | ------------------- |
-| `Import`            | import              |
-| `Teams`             | teams               |
-| `Github`            | github              |
-| `Gitlab`            | gitlab              |
-| `Bitbucket`         | bitbucket           |
-| `Feedback`          | feedback            |
-| `OrganizationTeams` | organization-teams  |
-| `Mail`              | mail                |
-| `Link`              | link                |
-| `Saml`              | saml                |
-| `Dsync`             | dsync               |
+```typescript
+"import" | "teams" | "github" | "gitlab" | "bitbucket" | "feedback" | "organization-teams" | "mail" | "link" | "saml" | "dsync"
+```

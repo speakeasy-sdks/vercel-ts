@@ -2,14 +2,16 @@
 
 The role used for the invitation
 
+## Example Usage
+
+```typescript
+import { ResponseBodyRole } from "@simplesagar/vercel/models/inviteusertoteamop.js";
+
+let value: ResponseBodyRole = "MEMBER";
+```
 
 ## Values
 
-| Name          | Value         |
-| ------------- | ------------- |
-| `Owner`       | OWNER         |
-| `Member`      | MEMBER        |
-| `Developer`   | DEVELOPER     |
-| `Billing`     | BILLING       |
-| `Viewer`      | VIEWER        |
-| `Contributor` | CONTRIBUTOR   |
+```typescript
+"OWNER" | "MEMBER" | "DEVELOPER" | "BILLING" | "VIEWER" | "CONTRIBUTOR"
+```

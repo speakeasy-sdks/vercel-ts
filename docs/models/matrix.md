@@ -1,5 +1,17 @@
 # Matrix
 
+## Example Usage
+
+```typescript
+import { Matrix } from "@simplesagar/vercel/models/authuser.js";
+
+let value: Matrix = {
+    defaultUnitPrice: "<value>",
+    dimensionPrices: {
+        key: "<value>",
+    },
+};
+```
 
 ## Fields
 

@@ -1,9 +1,15 @@
 # CreateProjectHandle
 
+## Example Usage
+
+```typescript
+import { CreateProjectHandle } from "@simplesagar/vercel/models/createprojectop.js";
+
+let value: CreateProjectHandle = "finalize";
+```
 
 ## Values
 
-| Name       | Value      |
-| ---------- | ---------- |
-| `Init`     | init       |
-| `Finalize` | finalize   |
+```typescript
+"init" | "finalize"
+```

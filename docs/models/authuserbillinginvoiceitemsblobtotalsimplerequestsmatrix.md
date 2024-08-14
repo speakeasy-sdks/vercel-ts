@@ -1,5 +1,17 @@
 # AuthUserBillingInvoiceItemsBlobTotalSimpleRequestsMatrix
 
+## Example Usage
+
+```typescript
+import { AuthUserBillingInvoiceItemsBlobTotalSimpleRequestsMatrix } from "@simplesagar/vercel/models/authuser.js";
+
+let value: AuthUserBillingInvoiceItemsBlobTotalSimpleRequestsMatrix = {
+    defaultUnitPrice: "<value>",
+    dimensionPrices: {
+        key: "<value>",
+    },
+};
+```
 
 ## Fields
 

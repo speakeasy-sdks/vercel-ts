@@ -1,5 +1,16 @@
 # GetProjectEnvResponseBody3
 
+## Example Usage
+
+```typescript
+import { GetProjectEnvResponseBody3 } from "@simplesagar/vercel/models/getprojectenvop.js";
+
+let value: GetProjectEnvResponseBody3 = {
+    type: "secret",
+    key: "<key>",
+    value: "<value>",
+};
+```
 
 ## Fields
 

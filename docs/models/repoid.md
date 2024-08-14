@@ -1,5 +1,12 @@
 # RepoId
 
+## Example Usage
+
+```typescript
+import { RepoId } from "@simplesagar/vercel/models/createdeploymentop.js";
+
+let value: RepoId = 3581.07;
+```
 
 ## Supported Types
 

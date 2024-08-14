@@ -2,6 +2,34 @@
 
 The deployment including only public information
 
+## Example Usage
+
+```typescript
+import { GetDeploymentResponseBody2 } from "@simplesagar/vercel/models/getdeploymentop.js";
+
+let value: GetDeploymentResponseBody2 = {
+    aliasAssigned: false,
+    bootedAt: 3917.74,
+    buildingAt: 163.28,
+    buildSkipped: false,
+    creator: {
+        uid: "<value>",
+    },
+    public: false,
+    status: "INITIALIZING",
+    id: "<id>",
+    type: "LAMBDAS",
+    createdAt: 1852.32,
+    name: "<value>",
+    readyState: "CANCELED",
+    meta: {
+        key: "<value>",
+    },
+    regions: ["<value>"],
+    url: "http://miserable-trip.net",
+    version: 996.15,
+};
+```
 
 ## Fields
 

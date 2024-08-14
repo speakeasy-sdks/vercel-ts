@@ -1,5 +1,14 @@
 # RenameSecretRequest
 
+## Example Usage
+
+```typescript
+import { RenameSecretRequest } from "@simplesagar/vercel/models/renamesecretop.js";
+
+let value: RenameSecretRequest = {
+    name: "my-api-key",
+};
+```
 
 ## Fields
 

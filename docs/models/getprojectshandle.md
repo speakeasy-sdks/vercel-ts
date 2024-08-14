@@ -1,9 +1,15 @@
 # GetProjectsHandle
 
+## Example Usage
+
+```typescript
+import { GetProjectsHandle } from "@simplesagar/vercel/models/getprojectsop.js";
+
+let value: GetProjectsHandle = "finalize";
+```
 
 ## Values
 
-| Name       | Value      |
-| ---------- | ---------- |
-| `Init`     | init       |
-| `Finalize` | finalize   |
+```typescript
+"init" | "finalize"
+```

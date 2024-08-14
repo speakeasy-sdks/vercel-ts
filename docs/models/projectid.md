@@ -1,5 +1,12 @@
 # ProjectId
 
+## Example Usage
+
+```typescript
+import { ProjectId } from "@simplesagar/vercel/models/createdeploymentop.js";
+
+let value: ProjectId = 9509.53;
+```
 
 ## Supported Types
 

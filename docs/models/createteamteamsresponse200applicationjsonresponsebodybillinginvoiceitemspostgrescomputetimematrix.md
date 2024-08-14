@@ -1,5 +1,20 @@
 # CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresComputeTimeMatrix
 
+## Example Usage
+
+```typescript
+import {
+  CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresComputeTimeMatrix,
+} from "@simplesagar/vercel/models/createteamop.js";
+
+let value: CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPostgresComputeTimeMatrix =
+    {
+        defaultUnitPrice: "<value>",
+        dimensionPrices: {
+            key: "<value>",
+        },
+    };
+```
 
 ## Fields
 

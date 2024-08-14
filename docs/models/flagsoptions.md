@@ -1,5 +1,14 @@
 # FlagsOptions
 
+## Example Usage
+
+```typescript
+import { FlagsOptions } from "@simplesagar/vercel/models/canceldeploymentop.js";
+
+let value: FlagsOptions = {
+    value: "<value>",
+};
+```
 
 ## Fields
 

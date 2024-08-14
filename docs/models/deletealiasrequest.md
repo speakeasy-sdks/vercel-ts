@@ -1,5 +1,14 @@
 # DeleteAliasRequest
 
+## Example Usage
+
+```typescript
+import { DeleteAliasRequest } from "@simplesagar/vercel/models/deletealiasop.js";
+
+let value: DeleteAliasRequest = {
+    aliasId: "<value>",
+};
+```
 
 ## Fields
 

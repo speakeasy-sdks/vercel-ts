@@ -1,9 +1,15 @@
 # GetDeploymentGitRepoDeploymentsResponseOwnerType
 
+## Example Usage
+
+```typescript
+import { GetDeploymentGitRepoDeploymentsResponseOwnerType } from "@simplesagar/vercel/models/getdeploymentop.js";
+
+let value: GetDeploymentGitRepoDeploymentsResponseOwnerType = "team";
+```
 
 ## Values
 
-| Name   | Value  |
-| ------ | ------ |
-| `Team` | team   |
-| `User` | user   |
+```typescript
+"team" | "user"
+```

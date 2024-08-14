@@ -1,8 +1,15 @@
 # CreateProjectScope
 
+## Example Usage
+
+```typescript
+import { CreateProjectScope } from "@simplesagar/vercel/models/createprojectop.js";
+
+let value: CreateProjectScope = "automation-bypass";
+```
 
 ## Values
 
-| Name               | Value              |
-| ------------------ | ------------------ |
-| `AutomationBypass` | automation-bypass  |
+```typescript
+"automation-bypass"
+```

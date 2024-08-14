@@ -2,6 +2,19 @@
 
 IMPORTANT: If extending Billing, particularly with optional fields, make sure you also update `sync-orb-subscription-to-owner.ts` to handle the items when the object is recreated.
 
+## Example Usage
+
+```typescript
+import { CreateTeamBilling } from "@simplesagar/vercel/models/createteamop.js";
+
+let value: CreateTeamBilling = {
+    period: {
+        start: 8852.08,
+        end: 1770.05,
+    },
+    plan: "hobby",
+};
+```
 
 ## Fields
 

@@ -1,12 +1,15 @@
 # GetDeploymentEventsResponseBodyWafAction
 
+## Example Usage
+
+```typescript
+import { GetDeploymentEventsResponseBodyWafAction } from "@simplesagar/vercel/models/getdeploymenteventsop.js";
+
+let value: GetDeploymentEventsResponseBodyWafAction = "bypass";
+```
 
 ## Values
 
-| Name        | Value       |
-| ----------- | ----------- |
-| `Log`       | log         |
-| `Challenge` | challenge   |
-| `Deny`      | deny        |
-| `Bypass`    | bypass      |
-| `RateLimit` | rate_limit  |
+```typescript
+"log" | "challenge" | "deny" | "bypass" | "rate_limit"
+```

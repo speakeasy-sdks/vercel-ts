@@ -1,5 +1,15 @@
 # UpdateTeamMemberProjects
 
+## Example Usage
+
+```typescript
+import { UpdateTeamMemberProjects } from "@simplesagar/vercel/models/updateteammemberop.js";
+
+let value: UpdateTeamMemberProjects = {
+    projectId: "prj_ndlgr43fadlPyCtREAqxxdyFK",
+    role: "ADMIN",
+};
+```
 
 ## Fields
 

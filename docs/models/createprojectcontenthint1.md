@@ -1,5 +1,15 @@
 # CreateProjectContentHint1
 
+## Example Usage
+
+```typescript
+import { CreateProjectContentHint1 } from "@simplesagar/vercel/models/createprojectop.js";
+
+let value: CreateProjectContentHint1 = {
+    type: "redis-url",
+    storeId: "<value>",
+};
+```
 
 ## Fields
 

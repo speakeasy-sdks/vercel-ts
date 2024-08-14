@@ -1,5 +1,14 @@
 # Addresses
 
+## Example Usage
+
+```typescript
+import { Addresses } from "@simplesagar/vercel/models/updateprojectop.js";
+
+let value: Addresses = {
+    value: "<value>",
+};
+```
 
 ## Fields
 

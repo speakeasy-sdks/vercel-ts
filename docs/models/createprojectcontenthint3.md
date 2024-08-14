@@ -1,5 +1,15 @@
 # CreateProjectContentHint3
 
+## Example Usage
+
+```typescript
+import { CreateProjectContentHint3 } from "@simplesagar/vercel/models/createprojectop.js";
+
+let value: CreateProjectContentHint3 = {
+    type: "redis-rest-api-token",
+    storeId: "<value>",
+};
+```
 
 ## Fields
 

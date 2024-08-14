@@ -2,6 +2,16 @@
 
 Successful response which returns the price of the domain and the period.
 
+## Example Usage
+
+```typescript
+import { CheckDomainPriceResponseBody } from "@simplesagar/vercel/models/checkdomainpriceop.js";
+
+let value: CheckDomainPriceResponseBody = {
+    price: 20,
+    period: 1,
+};
+```
 
 ## Fields
 

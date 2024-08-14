@@ -1,5 +1,14 @@
 # DownloadArtifactRequest
 
+## Example Usage
+
+```typescript
+import { DownloadArtifactRequest } from "@simplesagar/vercel/models/downloadartifactop.js";
+
+let value: DownloadArtifactRequest = {
+    hash: "12HKQaOmR5t5Uy6vdcQsNIiZgHGB",
+};
+```
 
 ## Fields
 

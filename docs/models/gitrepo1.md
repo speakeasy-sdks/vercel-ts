@@ -1,5 +1,22 @@
 # GitRepo1
 
+## Example Usage
+
+```typescript
+import { GitRepo1 } from "@simplesagar/vercel/models/createdeploymentop.js";
+
+let value: GitRepo1 = {
+    namespace: "<value>",
+    projectId: 193,
+    type: "gitlab",
+    url: "https://wooden-documentary.com",
+    path: "/srv",
+    defaultBranch: "<value>",
+    name: "<value>",
+    private: false,
+    ownerType: "team",
+};
+```
 
 ## Fields
 

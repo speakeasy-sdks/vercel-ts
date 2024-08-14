@@ -1,5 +1,17 @@
 # AuthUserBillingInvoiceItemsFastOriginTransferMatrix
 
+## Example Usage
+
+```typescript
+import { AuthUserBillingInvoiceItemsFastOriginTransferMatrix } from "@simplesagar/vercel/models/authuser.js";
+
+let value: AuthUserBillingInvoiceItemsFastOriginTransferMatrix = {
+    defaultUnitPrice: "<value>",
+    dimensionPrices: {
+        key: "<value>",
+    },
+};
+```
 
 ## Fields
 

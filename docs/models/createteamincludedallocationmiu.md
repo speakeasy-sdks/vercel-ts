@@ -2,6 +2,17 @@
 
 Will be used to create an invoice item. The price must be in cents: 2000 for $20.
 
+## Example Usage
+
+```typescript
+import { CreateTeamIncludedAllocationMiu } from "@simplesagar/vercel/models/createteamop.js";
+
+let value: CreateTeamIncludedAllocationMiu = {
+    price: 6756.89,
+    quantity: 2310.7,
+    hidden: false,
+};
+```
 
 ## Fields
 

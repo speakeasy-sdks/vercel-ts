@@ -1,5 +1,12 @@
 # AssignAliasRequestBody
 
+## Example Usage
+
+```typescript
+import { AssignAliasRequestBody } from "@simplesagar/vercel/models/assignaliasop.js";
+
+let value: AssignAliasRequestBody = {};
+```
 
 ## Fields
 

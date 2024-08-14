@@ -1,5 +1,12 @@
 # CreateWebhookRequest
 
+## Example Usage
+
+```typescript
+import { CreateWebhookRequest } from "@simplesagar/vercel/models/createwebhookop.js";
+
+let value: CreateWebhookRequest = {};
+```
 
 ## Fields
 

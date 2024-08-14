@@ -1,13 +1,15 @@
 # VercelCache
 
+## Example Usage
+
+```typescript
+import { VercelCache } from "@simplesagar/vercel/models/getdeploymenteventsop.js";
+
+let value: VercelCache = "HIT";
+```
 
 ## Values
 
-| Name          | Value         |
-| ------------- | ------------- |
-| `Miss`        | MISS          |
-| `Hit`         | HIT           |
-| `Stale`       | STALE         |
-| `Bypass`      | BYPASS        |
-| `Prerender`   | PRERENDER     |
-| `Revalidated` | REVALIDATED   |
+```typescript
+"MISS" | "HIT" | "STALE" | "BYPASS" | "PRERENDER" | "REVALIDATED"
+```

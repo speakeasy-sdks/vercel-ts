@@ -1,9 +1,15 @@
 # GetProjectsTrustedIpsProtectionMode
 
+## Example Usage
+
+```typescript
+import { GetProjectsTrustedIpsProtectionMode } from "@simplesagar/vercel/models/getprojectsop.js";
+
+let value: GetProjectsTrustedIpsProtectionMode = "additional";
+```
 
 ## Values
 
-| Name         | Value        |
-| ------------ | ------------ |
-| `Additional` | additional   |
-| `Exclusive`  | exclusive    |
+```typescript
+"additional" | "exclusive"
+```

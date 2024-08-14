@@ -1,8 +1,15 @@
 # GetProjectEnvResponseBodyEnvsResponse200Type
 
+## Example Usage
+
+```typescript
+import { GetProjectEnvResponseBodyEnvsResponse200Type } from "@simplesagar/vercel/models/getprojectenvop.js";
+
+let value: GetProjectEnvResponseBodyEnvsResponse200Type = "flags-secret";
+```
 
 ## Values
 
-| Name          | Value         |
-| ------------- | ------------- |
-| `FlagsSecret` | flags-secret  |
+```typescript
+"flags-secret"
+```

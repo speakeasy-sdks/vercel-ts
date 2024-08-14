@@ -1,5 +1,15 @@
 # ResponseBodyProject
 
+## Example Usage
+
+```typescript
+import { ResponseBodyProject } from "@simplesagar/vercel/models/getdeploymentop.js";
+
+let value: ResponseBodyProject = {
+    id: "<id>",
+    name: "<value>",
+};
+```
 
 ## Fields
 

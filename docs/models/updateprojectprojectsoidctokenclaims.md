@@ -1,5 +1,12 @@
 # UpdateProjectProjectsOidcTokenClaims
 
+## Example Usage
+
+```typescript
+import { UpdateProjectProjectsOidcTokenClaims } from "@simplesagar/vercel/models/updateprojectop.js";
+
+let value: UpdateProjectProjectsOidcTokenClaims = "<value>";
+```
 
 ## Supported Types
 

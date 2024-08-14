@@ -1,13 +1,15 @@
 # UpdateProjectDataCacheReadyState
 
+## Example Usage
+
+```typescript
+import { UpdateProjectDataCacheReadyState } from "@simplesagar/vercel/models/updateprojectdatacacheop.js";
+
+let value: UpdateProjectDataCacheReadyState = "CANCELED";
+```
 
 ## Values
 
-| Name           | Value          |
-| -------------- | -------------- |
-| `Building`     | BUILDING       |
-| `Error`        | ERROR          |
-| `Initializing` | INITIALIZING   |
-| `Queued`       | QUEUED         |
-| `Ready`        | READY          |
-| `Canceled`     | CANCELED       |
+```typescript
+"BUILDING" | "ERROR" | "INITIALIZING" | "QUEUED" | "READY" | "CANCELED"
+```

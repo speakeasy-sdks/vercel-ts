@@ -1,5 +1,20 @@
 # UpdateRecordResponseBody
 
+## Example Usage
+
+```typescript
+import { UpdateRecordResponseBody } from "@simplesagar/vercel/models/updaterecordop.js";
+
+let value: UpdateRecordResponseBody = {
+    creator: "<value>",
+    domain: "functional-zen.com",
+    id: "<id>",
+    name: "<value>",
+    recordType: "CAA",
+    type: "record-sys",
+    value: "<value>",
+};
+```
 
 ## Fields
 

@@ -2,6 +2,50 @@
 
 The private deployment representation of a Deployment.
 
+## Example Usage
+
+```typescript
+import { CancelDeploymentResponseBody } from "@simplesagar/vercel/models/canceldeploymentop.js";
+
+let value: CancelDeploymentResponseBody = {
+    build: {
+        env: ["<value>"],
+    },
+    env: ["<value>"],
+    inspectorUrl: "<value>",
+    isInConcurrentBuildsQueue: false,
+    projectSettings: {},
+    aliasAssigned: false,
+    bootedAt: 5771.4,
+    buildingAt: 2897.76,
+    buildSkipped: false,
+    creator: {
+        uid: "<value>",
+    },
+    public: false,
+    status: "READY",
+    id: "<id>",
+    createdAt: 5390.74,
+    name: "<value>",
+    meta: {
+        key: "<value>",
+    },
+    readyState: "READY",
+    regions: ["<value>"],
+    type: "LAMBDAS",
+    url: "https://weak-gnat.com",
+    version: 2270.84,
+    createdIn: "<value>",
+    ownerId: "<value>",
+    plan: "enterprise",
+    projectId: "<value>",
+    routes: [
+        {
+            handle: "miss",
+        },
+    ],
+};
+```
 
 ## Fields
 

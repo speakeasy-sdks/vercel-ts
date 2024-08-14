@@ -1,8 +1,15 @@
 # CreateDeploymentGitRepoDeploymentsType
 
+## Example Usage
+
+```typescript
+import { CreateDeploymentGitRepoDeploymentsType } from "@simplesagar/vercel/models/createdeploymentop.js";
+
+let value: CreateDeploymentGitRepoDeploymentsType = "bitbucket";
+```
 
 ## Values
 
-| Name        | Value       |
-| ----------- | ----------- |
-| `Bitbucket` | bitbucket   |
+```typescript
+"bitbucket"
+```

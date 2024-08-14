@@ -1,5 +1,14 @@
 # GetDomainTransferRequest
 
+## Example Usage
+
+```typescript
+import { GetDomainTransferRequest } from "@simplesagar/vercel/models/getdomaintransferop.js";
+
+let value: GetDomainTransferRequest = {
+    domain: "example.com",
+};
+```
 
 ## Fields
 

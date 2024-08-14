@@ -1,8 +1,15 @@
 # CreateTeamTeamsResponseInterval
 
+## Example Usage
+
+```typescript
+import { CreateTeamTeamsResponseInterval } from "@simplesagar/vercel/models/createteamop.js";
+
+let value: CreateTeamTeamsResponseInterval = "month";
+```
 
 ## Values
 
-| Name    | Value   |
-| ------- | ------- |
-| `Month` | month   |
+```typescript
+"month"
+```

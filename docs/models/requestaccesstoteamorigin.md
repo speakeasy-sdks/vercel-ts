@@ -2,15 +2,16 @@
 
 The origin of the request.
 
+## Example Usage
+
+```typescript
+import { RequestAccessToTeamOrigin } from "@simplesagar/vercel/models/requestaccesstoteamop.js";
+
+let value: RequestAccessToTeamOrigin = "github";
+```
 
 ## Values
 
-| Name                | Value               |
-| ------------------- | ------------------- |
-| `Import`            | import              |
-| `Teams`             | teams               |
-| `Github`            | github              |
-| `Gitlab`            | gitlab              |
-| `Bitbucket`         | bitbucket           |
-| `Feedback`          | feedback            |
-| `OrganizationTeams` | organization-teams  |
+```typescript
+"import" | "teams" | "github" | "gitlab" | "bitbucket" | "feedback" | "organization-teams"
+```

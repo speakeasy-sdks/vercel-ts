@@ -1,5 +1,19 @@
 # Coupon
 
+## Example Usage
+
+```typescript
+import { Coupon } from "@simplesagar/vercel/models/authuser.js";
+
+let value: Coupon = {
+    id: "<id>",
+    name: "<value>",
+    amountOff: 8915.81,
+    percentageOff: 2908.41,
+    durationInMonths: 7009.28,
+    duration: "forever",
+};
+```
 
 ## Fields
 

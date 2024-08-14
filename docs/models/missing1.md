@@ -1,5 +1,15 @@
 # Missing1
 
+## Example Usage
+
+```typescript
+import { Missing1 } from "@simplesagar/vercel/models/createdeploymentop.js";
+
+let value: Missing1 = {
+    type: "host",
+    value: "<value>",
+};
+```
 
 ## Fields
 

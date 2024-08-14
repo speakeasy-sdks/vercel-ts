@@ -2,6 +2,20 @@
 
 A partial representation of a Build used by the deployment endpoint.
 
+## Example Usage
+
+```typescript
+import { ResponseBodyLambdas } from "@simplesagar/vercel/models/getdeploymentop.js";
+
+let value: ResponseBodyLambdas = {
+    output: [
+        {
+            path: "/var/spool",
+            functionName: "<value>",
+        },
+    ],
+};
+```
 
 ## Fields
 

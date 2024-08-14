@@ -1,5 +1,15 @@
 # ContentHint7
 
+## Example Usage
+
+```typescript
+import { ContentHint7 } from "@simplesagar/vercel/models/updateprojectdatacacheop.js";
+
+let value: ContentHint7 = {
+    type: "postgres-url-non-pooling",
+    storeId: "<value>",
+};
+```
 
 ## Fields
 

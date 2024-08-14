@@ -1,5 +1,14 @@
 # GetDeploymentsSpeedInsights
 
+## Example Usage
+
+```typescript
+import { GetDeploymentsSpeedInsights } from "@simplesagar/vercel/models/getdeploymentsop.js";
+
+let value: GetDeploymentsSpeedInsights = {
+    id: "<id>",
+};
+```
 
 ## Fields
 

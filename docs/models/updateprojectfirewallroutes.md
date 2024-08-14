@@ -1,5 +1,12 @@
 # UpdateProjectFirewallRoutes
 
+## Example Usage
+
+```typescript
+import { UpdateProjectFirewallRoutes } from "@simplesagar/vercel/models/updateprojectop.js";
+
+let value: UpdateProjectFirewallRoutes = {};
+```
 
 ## Fields
 

@@ -1,5 +1,15 @@
 # CreateTeamTrial
 
+## Example Usage
+
+```typescript
+import { CreateTeamTrial } from "@simplesagar/vercel/models/createteamop.js";
+
+let value: CreateTeamTrial = {
+    start: 4585.03,
+    end: 3644.63,
+};
+```
 
 ## Fields
 

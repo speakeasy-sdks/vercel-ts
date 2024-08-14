@@ -1,5 +1,15 @@
 # RoutesMissing
 
+## Example Usage
+
+```typescript
+import { RoutesMissing } from "@simplesagar/vercel/models/createdeploymentop.js";
+
+let value: RoutesMissing = {
+    type: "header",
+    key: "<key>",
+};
+```
 
 ## Supported Types
 

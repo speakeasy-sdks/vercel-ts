@@ -2,6 +2,13 @@
 
 Ensures visitors to your Preview Deployments are logged into Vercel and have a minimum of Viewer access on your team
 
+## Example Usage
+
+```typescript
+import { SsoProtection } from "@simplesagar/vercel/models/updateprojectop.js";
+
+let value: SsoProtection = {};
+```
 
 ## Fields
 

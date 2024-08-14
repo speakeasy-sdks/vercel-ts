@@ -2,6 +2,19 @@
 
 Successfuly requested access to the team.
 
+## Example Usage
+
+```typescript
+import { RequestAccessToTeamResponseBody } from "@simplesagar/vercel/models/requestaccesstoteamop.js";
+
+let value: RequestAccessToTeamResponseBody = {
+    teamSlug: "<value>",
+    teamName: "<value>",
+    github: {},
+    gitlab: {},
+    bitbucket: {},
+};
+```
 
 ## Fields
 

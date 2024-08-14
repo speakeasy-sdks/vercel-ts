@@ -1,5 +1,17 @@
 # DataCacheRevalidation
 
+## Example Usage
+
+```typescript
+import { DataCacheRevalidation } from "@simplesagar/vercel/models/authuser.js";
+
+let value: DataCacheRevalidation = {
+    price: 9369.28,
+    batch: 3344.74,
+    threshold: 6592.68,
+    hidden: false,
+};
+```
 
 ## Fields
 

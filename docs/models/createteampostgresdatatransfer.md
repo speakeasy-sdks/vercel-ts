@@ -1,5 +1,17 @@
 # CreateTeamPostgresDataTransfer
 
+## Example Usage
+
+```typescript
+import { CreateTeamPostgresDataTransfer } from "@simplesagar/vercel/models/createteamop.js";
+
+let value: CreateTeamPostgresDataTransfer = {
+    price: 4254.02,
+    batch: 644.35,
+    threshold: 635.53,
+    hidden: false,
+};
+```
 
 ## Fields
 

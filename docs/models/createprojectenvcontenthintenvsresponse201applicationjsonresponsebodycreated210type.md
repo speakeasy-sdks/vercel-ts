@@ -1,8 +1,18 @@
 # CreateProjectEnvContentHintEnvsResponse201ApplicationJSONResponseBodyCreated210Type
 
+## Example Usage
+
+```typescript
+import {
+  CreateProjectEnvContentHintEnvsResponse201ApplicationJSONResponseBodyCreated210Type,
+} from "@simplesagar/vercel/models/createprojectenvop.js";
+
+let value: CreateProjectEnvContentHintEnvsResponse201ApplicationJSONResponseBodyCreated210Type =
+    "postgres-host";
+```
 
 ## Values
 
-| Name           | Value          |
-| -------------- | -------------- |
-| `PostgresHost` | postgres-host  |
+```typescript
+"postgres-host"
+```

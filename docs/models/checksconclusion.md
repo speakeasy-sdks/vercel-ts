@@ -1,11 +1,15 @@
 # ChecksConclusion
 
+## Example Usage
+
+```typescript
+import { ChecksConclusion } from "@simplesagar/vercel/models/createdeploymentop.js";
+
+let value: ChecksConclusion = "skipped";
+```
 
 ## Values
 
-| Name        | Value       |
-| ----------- | ----------- |
-| `Succeeded` | succeeded   |
-| `Failed`    | failed      |
-| `Skipped`   | skipped     |
-| `Canceled`  | canceled    |
+```typescript
+"succeeded" | "failed" | "skipped" | "canceled"
+```

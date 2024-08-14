@@ -1,5 +1,17 @@
 # BuildMinute
 
+## Example Usage
+
+```typescript
+import { BuildMinute } from "@simplesagar/vercel/models/authuser.js";
+
+let value: BuildMinute = {
+    price: 5755.34,
+    batch: 8760.27,
+    threshold: 1949.01,
+    hidden: false,
+};
+```
 
 ## Fields
 

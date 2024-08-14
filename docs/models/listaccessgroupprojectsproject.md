@@ -1,5 +1,12 @@
 # ListAccessGroupProjectsProject
 
+## Example Usage
+
+```typescript
+import { ListAccessGroupProjectsProject } from "@simplesagar/vercel/models/listaccessgroupprojectsop.js";
+
+let value: ListAccessGroupProjectsProject = {};
+```
 
 ## Fields
 

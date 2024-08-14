@@ -1,5 +1,12 @@
 # CreateProjectProjectsTarget
 
+## Example Usage
+
+```typescript
+import { CreateProjectProjectsTarget } from "@simplesagar/vercel/models/createprojectop.js";
+
+let value: CreateProjectProjectsTarget = "development";
+```
 
 ## Supported Types
 

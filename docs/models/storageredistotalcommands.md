@@ -1,5 +1,17 @@
 # StorageRedisTotalCommands
 
+## Example Usage
+
+```typescript
+import { StorageRedisTotalCommands } from "@simplesagar/vercel/models/authuser.js";
+
+let value: StorageRedisTotalCommands = {
+    price: 5129.05,
+    batch: 1403.84,
+    threshold: 8634.77,
+    hidden: false,
+};
+```
 
 ## Fields
 

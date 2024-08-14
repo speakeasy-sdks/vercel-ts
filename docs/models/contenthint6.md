@@ -1,5 +1,15 @@
 # ContentHint6
 
+## Example Usage
+
+```typescript
+import { ContentHint6 } from "@simplesagar/vercel/models/updateprojectdatacacheop.js";
+
+let value: ContentHint6 = {
+    type: "postgres-url",
+    storeId: "<value>",
+};
+```
 
 ## Fields
 

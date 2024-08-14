@@ -1,5 +1,16 @@
 # Four
 
+## Example Usage
+
+```typescript
+import { Four } from "@simplesagar/vercel/models/createdeploymentop.js";
+
+let value: Four = {
+    ref: "<value>",
+    repoUuid: "<value>",
+    type: "bitbucket",
+};
+```
 
 ## Fields
 

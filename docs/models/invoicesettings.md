@@ -1,5 +1,12 @@
 # InvoiceSettings
 
+## Example Usage
+
+```typescript
+import { InvoiceSettings } from "@simplesagar/vercel/models/authuser.js";
+
+let value: InvoiceSettings = {};
+```
 
 ## Fields
 

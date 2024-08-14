@@ -2,6 +2,13 @@
 
 The list of configurations for the authenticated user
 
+## Example Usage
+
+```typescript
+import { GetConfigurationsResponseBody } from "@simplesagar/vercel/models/getconfigurationsop.js";
+
+let value: GetConfigurationsResponseBody = {};
+```
 
 ## Fields
 

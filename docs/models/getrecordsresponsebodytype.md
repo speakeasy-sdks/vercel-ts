@@ -1,17 +1,15 @@
 # GetRecordsResponseBodyType
 
+## Example Usage
+
+```typescript
+import { GetRecordsResponseBodyType } from "@simplesagar/vercel/models/getrecordsop.js";
+
+let value: GetRecordsResponseBodyType = "AAAA";
+```
 
 ## Values
 
-| Name    | Value   |
-| ------- | ------- |
-| `A`     | A       |
-| `Aaaa`  | AAAA    |
-| `Alias` | ALIAS   |
-| `Caa`   | CAA     |
-| `Cname` | CNAME   |
-| `Https` | HTTPS   |
-| `Mx`    | MX      |
-| `Srv`   | SRV     |
-| `Txt`   | TXT     |
-| `Ns`    | NS      |
+```typescript
+"A" | "AAAA" | "ALIAS" | "CAA" | "CNAME" | "HTTPS" | "MX" | "SRV" | "TXT" | "NS"
+```

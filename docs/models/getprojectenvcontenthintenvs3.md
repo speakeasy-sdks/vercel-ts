@@ -1,5 +1,15 @@
 # GetProjectEnvContentHintEnvs3
 
+## Example Usage
+
+```typescript
+import { GetProjectEnvContentHintEnvs3 } from "@simplesagar/vercel/models/getprojectenvop.js";
+
+let value: GetProjectEnvContentHintEnvs3 = {
+    type: "redis-rest-api-token",
+    storeId: "<value>",
+};
+```
 
 ## Fields
 

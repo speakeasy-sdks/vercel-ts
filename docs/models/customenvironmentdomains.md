@@ -1,5 +1,17 @@
 # CustomEnvironmentDomains
 
+## Example Usage
+
+```typescript
+import { CustomEnvironmentDomains } from "@simplesagar/vercel/models/canceldeploymentop.js";
+
+let value: CustomEnvironmentDomains = {
+    name: "<value>",
+    apexName: "<value>",
+    projectId: "<value>",
+    verified: false,
+};
+```
 
 ## Fields
 

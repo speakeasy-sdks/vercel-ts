@@ -1,5 +1,15 @@
 # CreateProjectContentHint8
 
+## Example Usage
+
+```typescript
+import { CreateProjectContentHint8 } from "@simplesagar/vercel/models/createprojectop.js";
+
+let value: CreateProjectContentHint8 = {
+    type: "postgres-prisma-url",
+    storeId: "<value>",
+};
+```
 
 ## Fields
 

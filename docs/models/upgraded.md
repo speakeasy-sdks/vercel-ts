@@ -1,25 +1,15 @@
 # Upgraded
 
+## Example Usage
+
+```typescript
+import { Upgraded } from "@simplesagar/vercel/models/getconfigurationsop.js";
+
+let value: Upgraded = "read-write:log-drain";
+```
 
 ## Values
 
-| Name                                 | Value                                |
-| ------------------------------------ | ------------------------------------ |
-| `ReadIntegrationConfiguration`       | read:integration-configuration       |
-| `ReadWriteIntegrationConfiguration`  | read-write:integration-configuration |
-| `ReadDeployment`                     | read:deployment                      |
-| `ReadWriteDeployment`                | read-write:deployment                |
-| `ReadWriteDeploymentCheck`           | read-write:deployment-check          |
-| `ReadProject`                        | read:project                         |
-| `ReadWriteProject`                   | read-write:project                   |
-| `ReadWriteProjectEnvVars`            | read-write:project-env-vars          |
-| `ReadWriteGlobalProjectEnvVars`      | read-write:global-project-env-vars   |
-| `ReadTeam`                           | read:team                            |
-| `ReadUser`                           | read:user                            |
-| `ReadWriteLogDrain`                  | read-write:log-drain                 |
-| `ReadDomain`                         | read:domain                          |
-| `ReadWriteDomain`                    | read-write:domain                    |
-| `ReadWriteEdgeConfig`                | read-write:edge-config               |
-| `ReadWriteOtelEndpoint`              | read-write:otel-endpoint             |
-| `ReadMonitoring`                     | read:monitoring                      |
-| `ReadWriteIntegrationResource`       | read-write:integration-resource      |
+```typescript
+"read:integration-configuration" | "read-write:integration-configuration" | "read:deployment" | "read-write:deployment" | "read-write:deployment-check" | "read:project" | "read-write:project" | "read-write:project-env-vars" | "read-write:global-project-env-vars" | "read:team" | "read:user" | "read-write:log-drain" | "read:domain" | "read-write:domain" | "read-write:edge-config" | "read-write:otel-endpoint" | "read:monitoring" | "read-write:integration-resource"
+```

@@ -1,5 +1,20 @@
 # CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeRequestMatrix
 
+## Example Usage
+
+```typescript
+import {
+  CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeRequestMatrix,
+} from "@simplesagar/vercel/models/createteamop.js";
+
+let value: CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeRequestMatrix =
+    {
+        defaultUnitPrice: "<value>",
+        dimensionPrices: {
+            key: "<value>",
+        },
+    };
+```
 
 ## Fields
 

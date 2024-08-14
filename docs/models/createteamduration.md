@@ -1,10 +1,15 @@
 # CreateTeamDuration
 
+## Example Usage
+
+```typescript
+import { CreateTeamDuration } from "@simplesagar/vercel/models/createteamop.js";
+
+let value: CreateTeamDuration = "repeating";
+```
 
 ## Values
 
-| Name        | Value       |
-| ----------- | ----------- |
-| `Forever`   | forever     |
-| `Repeating` | repeating   |
-| `Once`      | once        |
+```typescript
+"forever" | "repeating" | "once"
+```

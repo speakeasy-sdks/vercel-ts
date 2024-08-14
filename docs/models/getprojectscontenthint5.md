@@ -1,5 +1,15 @@
 # GetProjectsContentHint5
 
+## Example Usage
+
+```typescript
+import { GetProjectsContentHint5 } from "@simplesagar/vercel/models/getprojectsop.js";
+
+let value: GetProjectsContentHint5 = {
+    type: "blob-read-write-token",
+    storeId: "<value>",
+};
+```
 
 ## Fields
 

@@ -1,5 +1,15 @@
 # CancelDeploymentAliasError
 
+## Example Usage
+
+```typescript
+import { CancelDeploymentAliasError } from "@simplesagar/vercel/models/canceldeploymentop.js";
+
+let value: CancelDeploymentAliasError = {
+    code: "<value>",
+    message: "<value>",
+};
+```
 
 ## Fields
 

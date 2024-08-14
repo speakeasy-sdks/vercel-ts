@@ -1,5 +1,15 @@
 # CreateWebhookRequestBody
 
+## Example Usage
+
+```typescript
+import { CreateWebhookRequestBody } from "@simplesagar/vercel/models/createwebhookop.js";
+
+let value: CreateWebhookRequestBody = {
+    url: "http://immediate-savings.info",
+    events: ["budget.reached"],
+};
+```
 
 ## Fields
 

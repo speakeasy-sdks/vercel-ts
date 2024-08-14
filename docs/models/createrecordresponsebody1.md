@@ -1,5 +1,15 @@
 # CreateRecordResponseBody1
 
+## Example Usage
+
+```typescript
+import { CreateRecordResponseBody1 } from "@simplesagar/vercel/models/createrecordop.js";
+
+let value: CreateRecordResponseBody1 = {
+    uid: "<value>",
+    updated: 4347.61,
+};
+```
 
 ## Fields
 

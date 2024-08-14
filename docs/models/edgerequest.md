@@ -1,5 +1,17 @@
 # EdgeRequest
 
+## Example Usage
+
+```typescript
+import { EdgeRequest } from "@simplesagar/vercel/models/authuser.js";
+
+let value: EdgeRequest = {
+    price: 5782.1,
+    batch: 3679.17,
+    threshold: 3063.82,
+    hidden: false,
+};
+```
 
 ## Fields
 

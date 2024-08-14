@@ -1,5 +1,15 @@
 # GetProjectsContentHint13
 
+## Example Usage
+
+```typescript
+import { GetProjectsContentHint13 } from "@simplesagar/vercel/models/getprojectsop.js";
+
+let value: GetProjectsContentHint13 = {
+    type: "postgres-url-no-ssl",
+    storeId: "<value>",
+};
+```
 
 ## Fields
 

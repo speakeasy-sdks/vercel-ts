@@ -1,12 +1,15 @@
 # GetProjectsJobStatus
 
+## Example Usage
+
+```typescript
+import { GetProjectsJobStatus } from "@simplesagar/vercel/models/getprojectsop.js";
+
+let value: GetProjectsJobStatus = "failed";
+```
 
 ## Values
 
-| Name         | Value        |
-| ------------ | ------------ |
-| `Succeeded`  | succeeded    |
-| `Failed`     | failed       |
-| `Skipped`    | skipped      |
-| `Pending`    | pending      |
-| `InProgress` | in-progress  |
+```typescript
+"succeeded" | "failed" | "skipped" | "pending" | "in-progress"
+```

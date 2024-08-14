@@ -1,5 +1,14 @@
 # UpdateEdgeConfigRequestBody
 
+## Example Usage
+
+```typescript
+import { UpdateEdgeConfigRequestBody } from "@simplesagar/vercel/models/updateedgeconfigop.js";
+
+let value: UpdateEdgeConfigRequestBody = {
+    slug: "<value>",
+};
+```
 
 ## Fields
 

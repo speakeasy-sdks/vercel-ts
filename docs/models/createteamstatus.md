@@ -1,12 +1,15 @@
 # CreateTeamStatus
 
+## Example Usage
+
+```typescript
+import { CreateTeamStatus } from "@simplesagar/vercel/models/createteamop.js";
+
+let value: CreateTeamStatus = "expired";
+```
 
 ## Values
 
-| Name       | Value      |
-| ---------- | ---------- |
-| `Active`   | active     |
-| `Trialing` | trialing   |
-| `Overdue`  | overdue    |
-| `Expired`  | expired    |
-| `Canceled` | canceled   |
+```typescript
+"active" | "trialing" | "overdue" | "expired" | "canceled"
+```

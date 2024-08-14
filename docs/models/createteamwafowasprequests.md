@@ -1,5 +1,17 @@
 # CreateTeamWafOwaspRequests
 
+## Example Usage
+
+```typescript
+import { CreateTeamWafOwaspRequests } from "@simplesagar/vercel/models/createteamop.js";
+
+let value: CreateTeamWafOwaspRequests = {
+    price: 493.48,
+    batch: 5171.37,
+    threshold: 2928.88,
+    hidden: false,
+};
+```
 
 ## Fields
 

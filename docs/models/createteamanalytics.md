@@ -2,6 +2,17 @@
 
 Will be used to create an invoice item. The price must be in cents: 2000 for $20.
 
+## Example Usage
+
+```typescript
+import { CreateTeamAnalytics } from "@simplesagar/vercel/models/createteamop.js";
+
+let value: CreateTeamAnalytics = {
+    price: 9001.03,
+    quantity: 9918.91,
+    hidden: false,
+};
+```
 
 ## Fields
 

@@ -1,5 +1,15 @@
 # GetConfigurationResponseBodyScopes
 
+## Example Usage
+
+```typescript
+import { GetConfigurationResponseBodyScopes } from "@simplesagar/vercel/models/getconfigurationop.js";
+
+let value: GetConfigurationResponseBodyScopes = {
+    added: ["read:deployment"],
+    upgraded: ["read:domain"],
+};
+```
 
 ## Fields
 

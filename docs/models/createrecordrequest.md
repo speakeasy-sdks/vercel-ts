@@ -1,5 +1,14 @@
 # CreateRecordRequest
 
+## Example Usage
+
+```typescript
+import { CreateRecordRequest } from "@simplesagar/vercel/models/createrecordop.js";
+
+let value: CreateRecordRequest = {
+    domain: "example.com",
+};
+```
 
 ## Fields
 

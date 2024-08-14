@@ -1,5 +1,14 @@
 # ListAccessGroupMembersRequest
 
+## Example Usage
+
+```typescript
+import { ListAccessGroupMembersRequest } from "@simplesagar/vercel/models/listaccessgroupmembersop.js";
+
+let value: ListAccessGroupMembersRequest = {
+    idOrName: "ag_pavWOn1iLObbXLRiwVvzmPrTWyTf",
+};
+```
 
 ## Fields
 

@@ -1,9 +1,15 @@
 # UpdateProjectAlgo
 
+## Example Usage
+
+```typescript
+import { UpdateProjectAlgo } from "@simplesagar/vercel/models/updateprojectop.js";
+
+let value: UpdateProjectAlgo = "token_bucket";
+```
 
 ## Values
 
-| Name          | Value         |
-| ------------- | ------------- |
-| `FixedWindow` | fixed_window  |
-| `TokenBucket` | token_bucket  |
+```typescript
+"fixed_window" | "token_bucket"
+```

@@ -2,6 +2,13 @@
 
 Attribution information for the session or current page
 
+## Example Usage
+
+```typescript
+import { Attribution } from "@simplesagar/vercel/models/createteamop.js";
+
+let value: Attribution = {};
+```
 
 ## Fields
 

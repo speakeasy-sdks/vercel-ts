@@ -1,8 +1,18 @@
 # UpdateProjectDataCacheContentHintProjectsResponse200ApplicationJSONResponseBodyEnv13Type
 
+## Example Usage
+
+```typescript
+import {
+  UpdateProjectDataCacheContentHintProjectsResponse200ApplicationJSONResponseBodyEnv13Type,
+} from "@simplesagar/vercel/models/updateprojectdatacacheop.js";
+
+let value: UpdateProjectDataCacheContentHintProjectsResponse200ApplicationJSONResponseBodyEnv13Type =
+    "postgres-url-no-ssl";
+```
 
 ## Values
 
-| Name                | Value               |
-| ------------------- | ------------------- |
-| `PostgresUrlNoSsl`  | postgres-url-no-ssl |
+```typescript
+"postgres-url-no-ssl"
+```

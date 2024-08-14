@@ -1,5 +1,14 @@
 # GetEdgeConfigItemsRequest
 
+## Example Usage
+
+```typescript
+import { GetEdgeConfigItemsRequest } from "@simplesagar/vercel/models/getedgeconfigitemsop.js";
+
+let value: GetEdgeConfigItemsRequest = {
+    edgeConfigId: "<value>",
+};
+```
 
 ## Fields
 

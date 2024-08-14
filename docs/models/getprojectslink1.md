@@ -1,5 +1,21 @@
 # GetProjectsLink1
 
+## Example Usage
+
+```typescript
+import { GetProjectsLink1 } from "@simplesagar/vercel/models/getprojectsop.js";
+
+let value: GetProjectsLink1 = {
+    deployHooks: [
+        {
+            id: "<id>",
+            name: "<value>",
+            ref: "<value>",
+            url: "http://tragic-framework.org",
+        },
+    ],
+};
+```
 
 ## Fields
 

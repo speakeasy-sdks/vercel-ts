@@ -1,5 +1,14 @@
 # UpdateProjectRequest
 
+## Example Usage
+
+```typescript
+import { UpdateProjectRequest } from "@simplesagar/vercel/models/updateprojectop.js";
+
+let value: UpdateProjectRequest = {
+    idOrName: "prj_12HKQaOmR5t5Uy6vdcQsNIiZgHGB",
+};
+```
 
 ## Fields
 

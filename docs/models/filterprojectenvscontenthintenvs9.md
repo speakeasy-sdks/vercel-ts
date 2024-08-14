@@ -1,5 +1,15 @@
 # FilterProjectEnvsContentHintEnvs9
 
+## Example Usage
+
+```typescript
+import { FilterProjectEnvsContentHintEnvs9 } from "@simplesagar/vercel/models/filterprojectenvsop.js";
+
+let value: FilterProjectEnvsContentHintEnvs9 = {
+    type: "postgres-user",
+    storeId: "<value>",
+};
+```
 
 ## Fields
 

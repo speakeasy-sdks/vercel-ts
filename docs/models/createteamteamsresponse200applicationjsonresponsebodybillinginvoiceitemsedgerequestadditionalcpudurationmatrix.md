@@ -1,5 +1,20 @@
 # CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeRequestAdditionalCpuDurationMatrix
 
+## Example Usage
+
+```typescript
+import {
+  CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeRequestAdditionalCpuDurationMatrix,
+} from "@simplesagar/vercel/models/createteamop.js";
+
+let value: CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeRequestAdditionalCpuDurationMatrix =
+    {
+        defaultUnitPrice: "<value>",
+        dimensionPrices: {
+            key: "<value>",
+        },
+    };
+```
 
 ## Fields
 

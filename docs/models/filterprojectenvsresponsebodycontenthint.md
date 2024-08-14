@@ -1,5 +1,15 @@
 # FilterProjectEnvsResponseBodyContentHint
 
+## Example Usage
+
+```typescript
+import { FilterProjectEnvsResponseBodyContentHint } from "@simplesagar/vercel/models/filterprojectenvsop.js";
+
+let value: FilterProjectEnvsResponseBodyContentHint = {
+    type: "postgres-prisma-url",
+    storeId: "<value>",
+};
+```
 
 ## Supported Types
 

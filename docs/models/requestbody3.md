@@ -1,5 +1,16 @@
 # RequestBody3
 
+## Example Usage
+
+```typescript
+import { RequestBody3 } from "@simplesagar/vercel/models/createrecordop.js";
+
+let value: RequestBody3 = {
+    name: "subdomain",
+    type: "A",
+    value: "cname.vercel-dns.com",
+};
+```
 
 ## Fields
 

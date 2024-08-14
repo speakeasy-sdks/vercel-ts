@@ -1,5 +1,15 @@
 # ContentHint8
 
+## Example Usage
+
+```typescript
+import { ContentHint8 } from "@simplesagar/vercel/models/updateprojectdatacacheop.js";
+
+let value: ContentHint8 = {
+    type: "postgres-prisma-url",
+    storeId: "<value>",
+};
+```
 
 ## Fields
 

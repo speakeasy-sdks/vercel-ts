@@ -2,11 +2,16 @@
 
 Role of this user in the project.
 
+## Example Usage
+
+```typescript
+import { ComputedProjectRole } from "@simplesagar/vercel/models/getprojectmembersop.js";
+
+let value: ComputedProjectRole = "ADMIN";
+```
 
 ## Values
 
-| Name               | Value              |
-| ------------------ | ------------------ |
-| `Admin`            | ADMIN              |
-| `ProjectDeveloper` | PROJECT_DEVELOPER  |
-| `ProjectViewer`    | PROJECT_VIEWER     |
+```typescript
+"ADMIN" | "PROJECT_DEVELOPER" | "PROJECT_VIEWER"
+```

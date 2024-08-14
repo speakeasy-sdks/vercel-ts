@@ -1,5 +1,20 @@
 # TrustedIps1
 
+## Example Usage
+
+```typescript
+import { TrustedIps1 } from "@simplesagar/vercel/models/updateprojectdatacacheop.js";
+
+let value: TrustedIps1 = {
+    deploymentType: "prod_deployment_urls_and_all_previews",
+    addresses: [
+        {
+            value: "<value>",
+        },
+    ],
+    protectionMode: "exclusive",
+};
+```
 
 ## Fields
 

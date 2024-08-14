@@ -1,8 +1,15 @@
 # UpdateProjectProjectsType
 
+## Example Usage
+
+```typescript
+import { UpdateProjectProjectsType } from "@simplesagar/vercel/models/updateprojectop.js";
+
+let value: UpdateProjectProjectsType = "LAMBDAS";
+```
 
 ## Values
 
-| Name      | Value     |
-| --------- | --------- |
-| `Lambdas` | LAMBDAS   |
+```typescript
+"LAMBDAS"
+```

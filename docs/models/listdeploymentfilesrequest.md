@@ -1,5 +1,14 @@
 # ListDeploymentFilesRequest
 
+## Example Usage
+
+```typescript
+import { ListDeploymentFilesRequest } from "@simplesagar/vercel/models/listdeploymentfilesop.js";
+
+let value: ListDeploymentFilesRequest = {
+    id: "<id>",
+};
+```
 
 ## Fields
 

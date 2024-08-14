@@ -1,8 +1,15 @@
 # CreateProjectEnvCreatedEnvsResponseType
 
+## Example Usage
+
+```typescript
+import { CreateProjectEnvCreatedEnvsResponseType } from "@simplesagar/vercel/models/createprojectenvop.js";
+
+let value: CreateProjectEnvCreatedEnvsResponseType = "flags-secret";
+```
 
 ## Values
 
-| Name          | Value         |
-| ------------- | ------------- |
-| `FlagsSecret` | flags-secret  |
+```typescript
+"flags-secret"
+```

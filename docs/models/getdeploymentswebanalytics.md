@@ -1,5 +1,14 @@
 # GetDeploymentsWebAnalytics
 
+## Example Usage
+
+```typescript
+import { GetDeploymentsWebAnalytics } from "@simplesagar/vercel/models/getdeploymentsop.js";
+
+let value: GetDeploymentsWebAnalytics = {
+    id: "<id>",
+};
+```
 
 ## Fields
 

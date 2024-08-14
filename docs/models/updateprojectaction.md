@@ -1,13 +1,15 @@
 # UpdateProjectAction
 
+## Example Usage
+
+```typescript
+import { UpdateProjectAction } from "@simplesagar/vercel/models/updateprojectop.js";
+
+let value: UpdateProjectAction = "log";
+```
 
 ## Values
 
-| Name        | Value       |
-| ----------- | ----------- |
-| `Deny`      | deny        |
-| `Challenge` | challenge   |
-| `Log`       | log         |
-| `Bypass`    | bypass      |
-| `RateLimit` | rate_limit  |
-| `Redirect`  | redirect    |
+```typescript
+"deny" | "challenge" | "log" | "bypass" | "rate_limit" | "redirect"
+```

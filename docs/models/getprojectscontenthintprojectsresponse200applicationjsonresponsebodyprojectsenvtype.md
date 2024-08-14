@@ -1,8 +1,18 @@
 # GetProjectsContentHintProjectsResponse200ApplicationJSONResponseBodyProjectsEnvType
 
+## Example Usage
+
+```typescript
+import {
+  GetProjectsContentHintProjectsResponse200ApplicationJSONResponseBodyProjectsEnvType,
+} from "@simplesagar/vercel/models/getprojectsop.js";
+
+let value: GetProjectsContentHintProjectsResponse200ApplicationJSONResponseBodyProjectsEnvType =
+    "postgres-prisma-url";
+```
 
 ## Values
 
-| Name                | Value               |
-| ------------------- | ------------------- |
-| `PostgresPrismaUrl` | postgres-prisma-url |
+```typescript
+"postgres-prisma-url"
+```

@@ -2,6 +2,15 @@
 
 Allows to protect project deployments with a password
 
+## Example Usage
+
+```typescript
+import { UpdateProjectPasswordProtection } from "@simplesagar/vercel/models/updateprojectop.js";
+
+let value: UpdateProjectPasswordProtection = {
+    deploymentType: "preview",
+};
+```
 
 ## Fields
 

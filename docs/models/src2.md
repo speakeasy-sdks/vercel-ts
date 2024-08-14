@@ -1,5 +1,12 @@
 # Src2
 
+## Example Usage
+
+```typescript
+import { Src2 } from "@simplesagar/vercel/models/updateprojectdatacacheop.js";
+
+let value: Src2 = {};
+```
 
 ## Fields
 

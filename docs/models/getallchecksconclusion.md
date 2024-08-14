@@ -1,13 +1,15 @@
 # GetAllChecksConclusion
 
+## Example Usage
+
+```typescript
+import { GetAllChecksConclusion } from "@simplesagar/vercel/models/getallchecksop.js";
+
+let value: GetAllChecksConclusion = "failed";
+```
 
 ## Values
 
-| Name        | Value       |
-| ----------- | ----------- |
-| `Canceled`  | canceled    |
-| `Failed`    | failed      |
-| `Neutral`   | neutral     |
-| `Succeeded` | succeeded   |
-| `Skipped`   | skipped     |
-| `Stale`     | stale       |
+```typescript
+"canceled" | "failed" | "neutral" | "succeeded" | "skipped" | "stale"
+```

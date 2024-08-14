@@ -1,11 +1,15 @@
 # SearchRepoProvider
 
+## Example Usage
+
+```typescript
+import { SearchRepoProvider } from "@simplesagar/vercel/models/searchrepoop.js";
+
+let value: SearchRepoProvider = "github";
+```
 
 ## Values
 
-| Name               | Value              |
-| ------------------ | ------------------ |
-| `Github`           | github             |
-| `GithubCustomHost` | github-custom-host |
-| `Gitlab`           | gitlab             |
-| `Bitbucket`        | bitbucket          |
+```typescript
+"github" | "github-custom-host" | "gitlab" | "bitbucket"
+```

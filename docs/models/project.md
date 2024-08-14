@@ -1,5 +1,15 @@
 # Project
 
+## Example Usage
+
+```typescript
+import { Project } from "@simplesagar/vercel/models/createdeploymentop.js";
+
+let value: Project = {
+    id: "<id>",
+    name: "<value>",
+};
+```
 
 ## Fields
 

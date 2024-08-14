@@ -1,5 +1,14 @@
 # ResponseBodyCreator
 
+## Example Usage
+
+```typescript
+import { ResponseBodyCreator } from "@simplesagar/vercel/models/getdeploymentop.js";
+
+let value: ResponseBodyCreator = {
+    uid: "<value>",
+};
+```
 
 ## Fields
 

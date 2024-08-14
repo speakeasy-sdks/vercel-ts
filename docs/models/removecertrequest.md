@@ -1,5 +1,14 @@
 # RemoveCertRequest
 
+## Example Usage
+
+```typescript
+import { RemoveCertRequest } from "@simplesagar/vercel/models/removecertop.js";
+
+let value: RemoveCertRequest = {
+    id: "<id>",
+};
+```
 
 ## Fields
 

@@ -1,5 +1,14 @@
 # GetProjectsTrustedIpsAddresses
 
+## Example Usage
+
+```typescript
+import { GetProjectsTrustedIpsAddresses } from "@simplesagar/vercel/models/getprojectsop.js";
+
+let value: GetProjectsTrustedIpsAddresses = {
+    value: "<value>",
+};
+```
 
 ## Fields
 

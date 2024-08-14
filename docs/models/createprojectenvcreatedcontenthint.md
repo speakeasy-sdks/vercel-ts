@@ -1,5 +1,15 @@
 # CreateProjectEnvCreatedContentHint
 
+## Example Usage
+
+```typescript
+import { CreateProjectEnvCreatedContentHint } from "@simplesagar/vercel/models/createprojectenvop.js";
+
+let value: CreateProjectEnvCreatedContentHint = {
+    type: "redis-rest-api-token",
+    storeId: "<value>",
+};
+```
 
 ## Supported Types
 

@@ -1,5 +1,18 @@
 # IssueCertResponseBody
 
+## Example Usage
+
+```typescript
+import { IssueCertResponseBody } from "@simplesagar/vercel/models/issuecertop.js";
+
+let value: IssueCertResponseBody = {
+    id: "<id>",
+    createdAt: 4758.26,
+    expiresAt: 9308.4,
+    autoRenew: false,
+    cns: ["<value>"],
+};
+```
 
 ## Fields
 

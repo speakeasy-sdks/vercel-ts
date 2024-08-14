@@ -1,5 +1,21 @@
 # UpdateProjectLink1
 
+## Example Usage
+
+```typescript
+import { UpdateProjectLink1 } from "@simplesagar/vercel/models/updateprojectop.js";
+
+let value: UpdateProjectLink1 = {
+    deployHooks: [
+        {
+            id: "<id>",
+            name: "<value>",
+            ref: "<value>",
+            url: "https://striped-deduce.info",
+        },
+    ],
+};
+```
 
 ## Fields
 

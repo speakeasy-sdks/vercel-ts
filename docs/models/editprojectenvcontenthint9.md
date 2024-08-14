@@ -1,5 +1,15 @@
 # EditProjectEnvContentHint9
 
+## Example Usage
+
+```typescript
+import { EditProjectEnvContentHint9 } from "@simplesagar/vercel/models/editprojectenvop.js";
+
+let value: EditProjectEnvContentHint9 = {
+    type: "postgres-user",
+    storeId: "<value>",
+};
+```
 
 ## Fields
 

@@ -1,5 +1,12 @@
 # UpdateProjectDeploymentExpiration
 
+## Example Usage
+
+```typescript
+import { UpdateProjectDeploymentExpiration } from "@simplesagar/vercel/models/updateprojectop.js";
+
+let value: UpdateProjectDeploymentExpiration = {};
+```
 
 ## Fields
 

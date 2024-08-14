@@ -2,6 +2,30 @@
 
 Metrics about the page
 
+## Example Usage
+
+```typescript
+import { Metrics } from "@simplesagar/vercel/models/updatecheckop.js";
+
+let value: Metrics = {
+    fcp: {
+        value: 1200,
+        source: "web-vitals",
+    },
+    lcp: {
+        value: 1200,
+        source: "web-vitals",
+    },
+    cls: {
+        value: 4,
+        source: "web-vitals",
+    },
+    tbt: {
+        value: 3000,
+        source: "web-vitals",
+    },
+};
+```
 
 ## Fields
 

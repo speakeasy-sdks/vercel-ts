@@ -1,9 +1,15 @@
 # CreateDeploymentGitRepoDeploymentsOwnerType
 
+## Example Usage
+
+```typescript
+import { CreateDeploymentGitRepoDeploymentsOwnerType } from "@simplesagar/vercel/models/createdeploymentop.js";
+
+let value: CreateDeploymentGitRepoDeploymentsOwnerType = "user";
+```
 
 ## Values
 
-| Name   | Value  |
-| ------ | ------ |
-| `Team` | team   |
-| `User` | user   |
+```typescript
+"team" | "user"
+```

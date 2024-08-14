@@ -1,9 +1,15 @@
 # ListDeploymentAliasesProtectionBypassAccess
 
+## Example Usage
+
+```typescript
+import { ListDeploymentAliasesProtectionBypassAccess } from "@simplesagar/vercel/models/listdeploymentaliasesop.js";
+
+let value: ListDeploymentAliasesProtectionBypassAccess = "granted";
+```
 
 ## Values
 
-| Name        | Value       |
-| ----------- | ----------- |
-| `Requested` | requested   |
-| `Granted`   | granted     |
+```typescript
+"requested" | "granted"
+```

@@ -1,5 +1,17 @@
 # CreateTeamDataCacheRevalidation
 
+## Example Usage
+
+```typescript
+import { CreateTeamDataCacheRevalidation } from "@simplesagar/vercel/models/createteamop.js";
+
+let value: CreateTeamDataCacheRevalidation = {
+    price: 2503.98,
+    batch: 2244.67,
+    threshold: 4833.94,
+    hidden: false,
+};
+```
 
 ## Fields
 

@@ -1,8 +1,15 @@
 # GetProjectEnvContentHintEnvsType
 
+## Example Usage
+
+```typescript
+import { GetProjectEnvContentHintEnvsType } from "@simplesagar/vercel/models/getprojectenvop.js";
+
+let value: GetProjectEnvContentHintEnvsType = "redis-rest-api-url";
+```
 
 ## Values
 
-| Name               | Value              |
-| ------------------ | ------------------ |
-| `RedisRestApiUrl`  | redis-rest-api-url |
+```typescript
+"redis-rest-api-url"
+```

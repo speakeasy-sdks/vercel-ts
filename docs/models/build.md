@@ -1,5 +1,14 @@
 # Build
 
+## Example Usage
+
+```typescript
+import { Build } from "@simplesagar/vercel/models/createdeploymentop.js";
+
+let value: Build = {
+    env: ["<value>"],
+};
+```
 
 ## Fields
 

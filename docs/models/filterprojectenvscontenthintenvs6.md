@@ -1,5 +1,15 @@
 # FilterProjectEnvsContentHintEnvs6
 
+## Example Usage
+
+```typescript
+import { FilterProjectEnvsContentHintEnvs6 } from "@simplesagar/vercel/models/filterprojectenvsop.js";
+
+let value: FilterProjectEnvsContentHintEnvs6 = {
+    type: "postgres-url",
+    storeId: "<value>",
+};
+```
 
 ## Fields
 

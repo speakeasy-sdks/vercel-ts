@@ -2,6 +2,52 @@
 
 The successfully created deployment
 
+## Example Usage
+
+```typescript
+import { CreateDeploymentResponseBody } from "@simplesagar/vercel/models/createdeploymentop.js";
+
+let value: CreateDeploymentResponseBody = {
+    build: {
+        env: ["<value>"],
+    },
+    env: ["<value>"],
+    inspectorUrl: "<value>",
+    isInConcurrentBuildsQueue: false,
+    projectSettings: {},
+    aliasAssigned: false,
+    bootedAt: 9757.52,
+    buildingAt: 2716.53,
+    buildSkipped: false,
+    creator: {
+        uid: "<value>",
+    },
+    public: false,
+    status: "ERROR",
+    type: "LAMBDAS",
+    createdAt: 4554.44,
+    name: "<value>",
+    id: "<id>",
+    version: 9700.76,
+    meta: {
+        key: "<value>",
+    },
+    readyState: "QUEUED",
+    regions: ["<value>"],
+    url: "http://exalted-tart.name",
+    projectId: "<value>",
+    ownerId: "<value>",
+    routes: [
+        {
+            src: "<value>",
+            continue: false,
+            middleware: 3103.81,
+        },
+    ],
+    plan: "pro",
+    createdIn: "<value>",
+};
+```
 
 ## Fields
 

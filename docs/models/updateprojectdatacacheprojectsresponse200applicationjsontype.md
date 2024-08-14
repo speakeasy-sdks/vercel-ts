@@ -1,8 +1,15 @@
 # UpdateProjectDataCacheProjectsResponse200ApplicationJSONType
 
+## Example Usage
+
+```typescript
+import { UpdateProjectDataCacheProjectsResponse200ApplicationJSONType } from "@simplesagar/vercel/models/updateprojectdatacacheop.js";
+
+let value: UpdateProjectDataCacheProjectsResponse200ApplicationJSONType = "flags-secret";
+```
 
 ## Values
 
-| Name          | Value         |
-| ------------- | ------------- |
-| `FlagsSecret` | flags-secret  |
+```typescript
+"flags-secret"
+```

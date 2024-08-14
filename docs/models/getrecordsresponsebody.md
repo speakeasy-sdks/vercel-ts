@@ -2,6 +2,13 @@
 
 Successful response retrieving a list of paginated DNS records.
 
+## Example Usage
+
+```typescript
+import { GetRecordsResponseBody } from "@simplesagar/vercel/models/getrecordsop.js";
+
+let value: GetRecordsResponseBody = "<value>";
+```
 
 ## Supported Types
 

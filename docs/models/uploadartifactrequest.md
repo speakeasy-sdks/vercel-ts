@@ -1,5 +1,15 @@
 # UploadArtifactRequest
 
+## Example Usage
+
+```typescript
+import { UploadArtifactRequest } from "@simplesagar/vercel/models/uploadartifactop.js";
+
+let value: UploadArtifactRequest = {
+    contentLength: 5820.2,
+    hash: "12HKQaOmR5t5Uy6vdcQsNIiZgHGB",
+};
+```
 
 ## Fields
 

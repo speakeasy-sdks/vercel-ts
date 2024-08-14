@@ -1,5 +1,15 @@
 # CreateLogDrainRequestBody
 
+## Example Usage
+
+```typescript
+import { CreateLogDrainRequestBody } from "@simplesagar/vercel/models/createlogdrainop.js";
+
+let value: CreateLogDrainRequestBody = {
+    name: "My first log drain",
+    url: "https://example.com/log-drain",
+};
+```
 
 ## Fields
 

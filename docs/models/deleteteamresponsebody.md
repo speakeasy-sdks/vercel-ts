@@ -2,6 +2,15 @@
 
 The Team was successfully deleted
 
+## Example Usage
+
+```typescript
+import { DeleteTeamResponseBody } from "@simplesagar/vercel/models/deleteteamop.js";
+
+let value: DeleteTeamResponseBody = {
+    id: "team_LLHUOMOoDlqOp8wPE4kFo9pE",
+};
+```
 
 ## Fields
 

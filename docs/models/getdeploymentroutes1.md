@@ -1,5 +1,14 @@
 # GetDeploymentRoutes1
 
+## Example Usage
+
+```typescript
+import { GetDeploymentRoutes1 } from "@simplesagar/vercel/models/getdeploymentop.js";
+
+let value: GetDeploymentRoutes1 = {
+    src: "<value>",
+};
+```
 
 ## Fields
 

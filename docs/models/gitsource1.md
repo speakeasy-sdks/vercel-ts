@@ -1,5 +1,16 @@
 # GitSource1
 
+## Example Usage
+
+```typescript
+import { GitSource1 } from "@simplesagar/vercel/models/createdeploymentop.js";
+
+let value: GitSource1 = {
+    ref: "<value>",
+    repoId: "<value>",
+    type: "github",
+};
+```
 
 ## Fields
 

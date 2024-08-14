@@ -1,5 +1,16 @@
 # CreateDeploymentTeam
 
+## Example Usage
+
+```typescript
+import { CreateDeploymentTeam } from "@simplesagar/vercel/models/createdeploymentop.js";
+
+let value: CreateDeploymentTeam = {
+    name: "<value>",
+    id: "<id>",
+    slug: "<value>",
+};
+```
 
 ## Fields
 

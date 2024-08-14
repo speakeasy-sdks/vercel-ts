@@ -1,5 +1,15 @@
 # ProjectsMetadata
 
+## Example Usage
+
+```typescript
+import { ProjectsMetadata } from "@simplesagar/vercel/models/getwebhooksop.js";
+
+let value: ProjectsMetadata = {
+    id: "<id>",
+    name: "<value>",
+};
+```
 
 ## Fields
 

@@ -1,8 +1,15 @@
 # UpdateProjectScope
 
+## Example Usage
+
+```typescript
+import { UpdateProjectScope } from "@simplesagar/vercel/models/updateprojectop.js";
+
+let value: UpdateProjectScope = "automation-bypass";
+```
 
 ## Values
 
-| Name               | Value              |
-| ------------------ | ------------------ |
-| `AutomationBypass` | automation-bypass  |
+```typescript
+"automation-bypass"
+```

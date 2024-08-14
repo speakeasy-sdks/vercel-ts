@@ -1,5 +1,17 @@
 # FunctionInvocation
 
+## Example Usage
+
+```typescript
+import { FunctionInvocation } from "@simplesagar/vercel/models/authuser.js";
+
+let value: FunctionInvocation = {
+    price: 9011.63,
+    batch: 1040.78,
+    threshold: 5546.45,
+    hidden: false,
+};
+```
 
 ## Fields
 

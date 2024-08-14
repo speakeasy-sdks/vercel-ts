@@ -1,5 +1,17 @@
 # CreateTeamBuildMinute
 
+## Example Usage
+
+```typescript
+import { CreateTeamBuildMinute } from "@simplesagar/vercel/models/createteamop.js";
+
+let value: CreateTeamBuildMinute = {
+    price: 9325.62,
+    batch: 26.77,
+    threshold: 3917.97,
+    hidden: false,
+};
+```
 
 ## Fields
 

@@ -1,5 +1,12 @@
 # ResponseBodyFunctions
 
+## Example Usage
+
+```typescript
+import { ResponseBodyFunctions } from "@simplesagar/vercel/models/getdeploymentop.js";
+
+let value: ResponseBodyFunctions = {};
+```
 
 ## Fields
 

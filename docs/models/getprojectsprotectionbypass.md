@@ -1,5 +1,16 @@
 # GetProjectsProtectionBypass
 
+## Example Usage
+
+```typescript
+import { GetProjectsProtectionBypass } from "@simplesagar/vercel/models/getprojectsop.js";
+
+let value: GetProjectsProtectionBypass = {
+    createdAt: 5899.1,
+    createdBy: "<value>",
+    scope: "automation-bypass",
+};
+```
 
 ## Fields
 

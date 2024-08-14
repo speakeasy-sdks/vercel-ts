@@ -1,5 +1,15 @@
 # GetAllChecksLCP
 
+## Example Usage
+
+```typescript
+import { GetAllChecksLCP } from "@simplesagar/vercel/models/getallchecksop.js";
+
+let value: GetAllChecksLCP = {
+    value: 1496.75,
+    source: "web-vitals",
+};
+```
 
 ## Fields
 

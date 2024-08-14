@@ -1,5 +1,12 @@
 # FlagJSONValue
 
+## Example Usage
+
+```typescript
+import { FlagJSONValue } from "@simplesagar/vercel/models/flagjsonvalue.js";
+
+let value: FlagJSONValue = {};
+```
 
 ## Supported Types
 

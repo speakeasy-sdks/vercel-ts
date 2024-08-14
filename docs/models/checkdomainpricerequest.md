@@ -1,5 +1,14 @@
 # CheckDomainPriceRequest
 
+## Example Usage
+
+```typescript
+import { CheckDomainPriceRequest } from "@simplesagar/vercel/models/checkdomainpriceop.js";
+
+let value: CheckDomainPriceRequest = {
+    name: "example.com",
+};
+```
 
 ## Fields
 

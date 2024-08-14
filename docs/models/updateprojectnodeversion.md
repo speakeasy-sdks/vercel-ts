@@ -1,13 +1,15 @@
 # UpdateProjectNodeVersion
 
+## Example Usage
+
+```typescript
+import { UpdateProjectNodeVersion } from "@simplesagar/vercel/models/updateprojectop.js";
+
+let value: UpdateProjectNodeVersion = "12.x";
+```
 
 ## Values
 
-| Name        | Value       |
-| ----------- | ----------- |
-| `TwentyX`   | 20.x        |
-| `EighteenX` | 18.x        |
-| `SixteenX`  | 16.x        |
-| `FourteenX` | 14.x        |
-| `TwelveX`   | 12.x        |
-| `TenX`      | 10.x        |
+```typescript
+"20.x" | "18.x" | "16.x" | "14.x" | "12.x" | "10.x"
+```

@@ -1,5 +1,14 @@
 # Missing
 
+## Example Usage
+
+```typescript
+import { Missing } from "@simplesagar/vercel/models/updateprojectdatacacheop.js";
+
+let value: Missing = {
+    type: "cookie",
+};
+```
 
 ## Fields
 

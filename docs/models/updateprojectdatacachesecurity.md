@@ -1,5 +1,12 @@
 # UpdateProjectDataCacheSecurity
 
+## Example Usage
+
+```typescript
+import { UpdateProjectDataCacheSecurity } from "@simplesagar/vercel/models/updateprojectdatacacheop.js";
+
+let value: UpdateProjectDataCacheSecurity = {};
+```
 
 ## Fields
 

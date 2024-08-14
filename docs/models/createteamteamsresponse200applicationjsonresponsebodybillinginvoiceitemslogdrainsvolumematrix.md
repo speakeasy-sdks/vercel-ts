@@ -1,5 +1,20 @@
 # CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsLogDrainsVolumeMatrix
 
+## Example Usage
+
+```typescript
+import {
+  CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsLogDrainsVolumeMatrix,
+} from "@simplesagar/vercel/models/createteamop.js";
+
+let value: CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsLogDrainsVolumeMatrix =
+    {
+        defaultUnitPrice: "<value>",
+        dimensionPrices: {
+            key: "<value>",
+        },
+    };
+```
 
 ## Fields
 

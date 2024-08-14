@@ -1,5 +1,17 @@
 # StorageRedisTotalBandwidthInBytes
 
+## Example Usage
+
+```typescript
+import { StorageRedisTotalBandwidthInBytes } from "@simplesagar/vercel/models/authuser.js";
+
+let value: StorageRedisTotalBandwidthInBytes = {
+    price: 3302.67,
+    batch: 1645.32,
+    threshold: 8138.8,
+    hidden: false,
+};
+```
 
 ## Fields
 

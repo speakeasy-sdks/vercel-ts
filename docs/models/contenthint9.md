@@ -1,5 +1,15 @@
 # ContentHint9
 
+## Example Usage
+
+```typescript
+import { ContentHint9 } from "@simplesagar/vercel/models/updateprojectdatacacheop.js";
+
+let value: ContentHint9 = {
+    type: "postgres-user",
+    storeId: "<value>",
+};
+```
 
 ## Fields
 

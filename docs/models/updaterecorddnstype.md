@@ -1,9 +1,15 @@
 # UpdateRecordDnsType
 
+## Example Usage
+
+```typescript
+import { UpdateRecordDnsType } from "@simplesagar/vercel/models/updaterecordop.js";
+
+let value: UpdateRecordDnsType = "record";
+```
 
 ## Values
 
-| Name        | Value       |
-| ----------- | ----------- |
-| `Record`    | record      |
-| `RecordSys` | record-sys  |
+```typescript
+"record" | "record-sys"
+```

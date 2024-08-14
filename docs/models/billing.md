@@ -2,6 +2,19 @@
 
 An object containing billing infomation associated with the User account.
 
+## Example Usage
+
+```typescript
+import { Billing } from "@simplesagar/vercel/models/authuser.js";
+
+let value: Billing = {
+    period: {
+        start: 3223.33,
+        end: 1348.18,
+    },
+    plan: "pro",
+};
+```
 
 ## Fields
 

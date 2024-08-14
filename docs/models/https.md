@@ -1,5 +1,15 @@
 # Https
 
+## Example Usage
+
+```typescript
+import { Https } from "@simplesagar/vercel/models/updaterecordop.js";
+
+let value: Https = {
+    priority: 528940,
+    target: "example2.com.",
+};
+```
 
 ## Fields
 

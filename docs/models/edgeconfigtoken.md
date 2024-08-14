@@ -2,6 +2,19 @@
 
 The EdgeConfig.
 
+## Example Usage
+
+```typescript
+import { EdgeConfigToken } from "@simplesagar/vercel/models/edgeconfigtoken.js";
+
+let value: EdgeConfigToken = {
+    token: "<value>",
+    label: "<value>",
+    id: "<id>",
+    edgeConfigId: "<value>",
+    createdAt: 4565.2,
+};
+```
 
 ## Fields
 

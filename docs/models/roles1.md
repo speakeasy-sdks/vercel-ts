@@ -1,13 +1,15 @@
 # Roles1
 
+## Example Usage
+
+```typescript
+import { Roles1 } from "@simplesagar/vercel/models/patchteamop.js";
+
+let value: Roles1 = "BILLING";
+```
 
 ## Values
 
-| Name          | Value         |
-| ------------- | ------------- |
-| `Owner`       | OWNER         |
-| `Member`      | MEMBER        |
-| `Developer`   | DEVELOPER     |
-| `Billing`     | BILLING       |
-| `Viewer`      | VIEWER        |
-| `Contributor` | CONTRIBUTOR   |
+```typescript
+"OWNER" | "MEMBER" | "DEVELOPER" | "BILLING" | "VIEWER" | "CONTRIBUTOR"
+```

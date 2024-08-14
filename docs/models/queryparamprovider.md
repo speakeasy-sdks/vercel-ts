@@ -1,11 +1,15 @@
 # QueryParamProvider
 
+## Example Usage
+
+```typescript
+import { QueryParamProvider } from "@simplesagar/vercel/models/searchrepoop.js";
+
+let value: QueryParamProvider = "github-custom-host";
+```
 
 ## Values
 
-| Name               | Value              |
-| ------------------ | ------------------ |
-| `Github`           | github             |
-| `GithubCustomHost` | github-custom-host |
-| `Gitlab`           | gitlab             |
-| `Bitbucket`        | bitbucket          |
+```typescript
+"github" | "github-custom-host" | "gitlab" | "bitbucket"
+```

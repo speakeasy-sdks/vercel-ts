@@ -1,5 +1,14 @@
 # VerifyTokenRequest
 
+## Example Usage
+
+```typescript
+import { VerifyTokenRequest } from "@simplesagar/vercel/models/verifytokenop.js";
+
+let value: VerifyTokenRequest = {
+    token: "<value>",
+};
+```
 
 ## Fields
 

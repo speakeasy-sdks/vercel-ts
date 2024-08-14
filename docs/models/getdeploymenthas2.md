@@ -1,5 +1,15 @@
 # GetDeploymentHas2
 
+## Example Usage
+
+```typescript
+import { GetDeploymentHas2 } from "@simplesagar/vercel/models/getdeploymentop.js";
+
+let value: GetDeploymentHas2 = {
+    type: "header",
+    key: "<key>",
+};
+```
 
 ## Fields
 

@@ -1,14 +1,15 @@
 # CancelDeploymentSource
 
+## Example Usage
+
+```typescript
+import { CancelDeploymentSource } from "@simplesagar/vercel/models/canceldeploymentop.js";
+
+let value: CancelDeploymentSource = "git";
+```
 
 ## Values
 
-| Name                   | Value                  |
-| ---------------------- | ---------------------- |
-| `ApiTriggerGitDeploy`  | api-trigger-git-deploy |
-| `Cli`                  | cli                    |
-| `CloneRepo`            | clone/repo             |
-| `Git`                  | git                    |
-| `Import`               | import                 |
-| `ImportRepo`           | import/repo            |
-| `Redeploy`             | redeploy               |
+```typescript
+"api-trigger-git-deploy" | "cli" | "clone/repo" | "git" | "import" | "import/repo" | "redeploy"
+```

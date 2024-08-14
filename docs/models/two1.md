@@ -1,5 +1,17 @@
 # Two1
 
+## Example Usage
+
+```typescript
+import { Two1 } from "@simplesagar/vercel/models/createprojectenvop.js";
+
+let value: Two1 = {
+    key: "API_URL",
+    value: "https://api.vercel.com",
+    type: "plain",
+    target: ["preview"],
+};
+```
 
 ## Fields
 

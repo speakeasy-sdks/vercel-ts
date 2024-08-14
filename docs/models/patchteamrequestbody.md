@@ -1,5 +1,12 @@
 # PatchTeamRequestBody
 
+## Example Usage
+
+```typescript
+import { PatchTeamRequestBody } from "@simplesagar/vercel/models/patchteamop.js";
+
+let value: PatchTeamRequestBody = {};
+```
 
 ## Fields
 

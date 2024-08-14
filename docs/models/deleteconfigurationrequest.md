@@ -1,5 +1,14 @@
 # DeleteConfigurationRequest
 
+## Example Usage
+
+```typescript
+import { DeleteConfigurationRequest } from "@simplesagar/vercel/models/deleteconfigurationop.js";
+
+let value: DeleteConfigurationRequest = {
+    id: "<id>",
+};
+```
 
 ## Fields
 

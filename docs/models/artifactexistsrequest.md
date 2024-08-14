@@ -1,5 +1,14 @@
 # ArtifactExistsRequest
 
+## Example Usage
+
+```typescript
+import { ArtifactExistsRequest } from "@simplesagar/vercel/models/artifactexistsop.js";
+
+let value: ArtifactExistsRequest = {
+    hash: "12HKQaOmR5t5Uy6vdcQsNIiZgHGB",
+};
+```
 
 ## Fields
 

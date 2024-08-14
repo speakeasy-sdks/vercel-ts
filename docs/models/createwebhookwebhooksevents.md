@@ -2,33 +2,16 @@
 
 The webhooks events
 
+## Example Usage
+
+```typescript
+import { CreateWebhookWebhooksEvents } from "@simplesagar/vercel/models/createwebhookop.js";
+
+let value: CreateWebhookWebhooksEvents = "deployment.created";
+```
 
 ## Values
 
-| Name                                             | Value                                            |
-| ------------------------------------------------ | ------------------------------------------------ |
-| `BudgetReached`                                  | budget.reached                                   |
-| `BudgetReset`                                    | budget.reset                                     |
-| `DomainCreated`                                  | domain.created                                   |
-| `DeploymentCreated`                              | deployment.created                               |
-| `DeploymentError`                                | deployment.error                                 |
-| `DeploymentCanceled`                             | deployment.canceled                              |
-| `DeploymentSucceeded`                            | deployment.succeeded                             |
-| `DeploymentReady`                                | deployment.ready                                 |
-| `DeploymentCheckRerequested`                     | deployment.check-rerequested                     |
-| `DeploymentPromoted`                             | deployment.promoted                              |
-| `EdgeConfigCreated`                              | edge-config.created                              |
-| `EdgeConfigDeleted`                              | edge-config.deleted                              |
-| `EdgeConfigUpdated`                              | edge-config.updated                              |
-| `IntegrationConfigurationPermissionUpgraded`     | integration-configuration.permission-upgraded    |
-| `IntegrationConfigurationRemoved`                | integration-configuration.removed                |
-| `IntegrationConfigurationScopeChangeConfirmed`   | integration-configuration.scope-change-confirmed |
-| `ProjectCreated`                                 | project.created                                  |
-| `ProjectRemoved`                                 | project.removed                                  |
-| `DeploymentChecksCompleted`                      | deployment-checks-completed                      |
-| `DeploymentPrepared`                             | deployment-prepared                              |
-| `Deployment`                                     | deployment                                       |
-| `MarketplaceInvoiceCreated`                      | marketplace.invoice.created                      |
-| `MarketplaceInvoicePaid`                         | marketplace.invoice.paid                         |
-| `MarketplaceInvoiceNotpaid`                      | marketplace.invoice.notpaid                      |
-| `TestWebhook`                                    | test-webhook                                     |
+```typescript
+"budget.reached" | "budget.reset" | "domain.created" | "deployment.created" | "deployment.error" | "deployment.canceled" | "deployment.succeeded" | "deployment.ready" | "deployment.check-rerequested" | "deployment.promoted" | "edge-config.created" | "edge-config.deleted" | "edge-config.updated" | "integration-configuration.permission-upgraded" | "integration-configuration.removed" | "integration-configuration.scope-change-confirmed" | "project.created" | "project.removed" | "deployment-checks-completed" | "deployment-prepared" | "deployment" | "marketplace.invoice.created" | "marketplace.invoice.paid" | "marketplace.invoice.notpaid" | "test-webhook"
+```

@@ -1,5 +1,27 @@
 # Repos
 
+## Example Usage
+
+```typescript
+import { Repos } from "@simplesagar/vercel/models/searchrepoop.js";
+
+let value: Repos = {
+    id: "<value>",
+    provider: "github",
+    url: "http://slushy-praise.biz",
+    name: "<value>",
+    slug: "<value>",
+    namespace: "<value>",
+    owner: {
+        id: 8987.6,
+        name: "<value>",
+    },
+    ownerType: "team",
+    private: false,
+    defaultBranch: "<value>",
+    updatedAt: 89.31,
+};
+```
 
 ## Fields
 

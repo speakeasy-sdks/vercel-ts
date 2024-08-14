@@ -1,5 +1,17 @@
 # ArtifactsModel
 
+## Example Usage
+
+```typescript
+import { ArtifactsModel } from "@simplesagar/vercel/models/authuser.js";
+
+let value: ArtifactsModel = {
+    price: 5678.46,
+    batch: 1721.95,
+    threshold: 6211.69,
+    hidden: false,
+};
+```
 
 ## Fields
 

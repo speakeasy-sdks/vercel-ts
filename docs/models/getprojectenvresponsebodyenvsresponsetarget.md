@@ -1,5 +1,12 @@
 # GetProjectEnvResponseBodyEnvsResponseTarget
 
+## Example Usage
+
+```typescript
+import { GetProjectEnvResponseBodyEnvsResponseTarget } from "@simplesagar/vercel/models/getprojectenvop.js";
+
+let value: GetProjectEnvResponseBodyEnvsResponseTarget = ["development"];
+```
 
 ## Supported Types
 

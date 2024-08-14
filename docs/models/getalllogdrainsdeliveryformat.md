@@ -1,10 +1,15 @@
 # GetAllLogDrainsDeliveryFormat
 
+## Example Usage
+
+```typescript
+import { GetAllLogDrainsDeliveryFormat } from "@simplesagar/vercel/models/getalllogdrainsop.js";
+
+let value: GetAllLogDrainsDeliveryFormat = "ndjson";
+```
 
 ## Values
 
-| Name     | Value    |
-| -------- | -------- |
-| `Json`   | json     |
-| `Ndjson` | ndjson   |
-| `Syslog` | syslog   |
+```typescript
+"json" | "ndjson" | "syslog"
+```

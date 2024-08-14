@@ -1,5 +1,14 @@
 # DeleteIntegrationLogDrainRequest
 
+## Example Usage
+
+```typescript
+import { DeleteIntegrationLogDrainRequest } from "@simplesagar/vercel/models/deleteintegrationlogdrainop.js";
+
+let value: DeleteIntegrationLogDrainRequest = {
+    id: "<id>",
+};
+```
 
 ## Fields
 

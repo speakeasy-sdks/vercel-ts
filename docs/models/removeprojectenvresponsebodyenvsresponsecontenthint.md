@@ -1,5 +1,15 @@
 # RemoveProjectEnvResponseBodyEnvsResponseContentHint
 
+## Example Usage
+
+```typescript
+import { RemoveProjectEnvResponseBodyEnvsResponseContentHint } from "@simplesagar/vercel/models/removeprojectenvop.js";
+
+let value: RemoveProjectEnvResponseBodyEnvsResponseContentHint = {
+    type: "postgres-url",
+    storeId: "<value>",
+};
+```
 
 ## Supported Types
 

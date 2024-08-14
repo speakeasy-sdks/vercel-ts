@@ -1,13 +1,15 @@
 # GetProjectsReadyState
 
+## Example Usage
+
+```typescript
+import { GetProjectsReadyState } from "@simplesagar/vercel/models/getprojectsop.js";
+
+let value: GetProjectsReadyState = "INITIALIZING";
+```
 
 ## Values
 
-| Name           | Value          |
-| -------------- | -------------- |
-| `Building`     | BUILDING       |
-| `Error`        | ERROR          |
-| `Initializing` | INITIALIZING   |
-| `Queued`       | QUEUED         |
-| `Ready`        | READY          |
-| `Canceled`     | CANCELED       |
+```typescript
+"BUILDING" | "ERROR" | "INITIALIZING" | "QUEUED" | "READY" | "CANCELED"
+```

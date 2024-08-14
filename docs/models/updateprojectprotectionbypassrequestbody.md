@@ -1,5 +1,12 @@
 # UpdateProjectProtectionBypassRequestBody
 
+## Example Usage
+
+```typescript
+import { UpdateProjectProtectionBypassRequestBody } from "@simplesagar/vercel/models/updateprojectprotectionbypassop.js";
+
+let value: UpdateProjectProtectionBypassRequestBody = {};
+```
 
 ## Fields
 

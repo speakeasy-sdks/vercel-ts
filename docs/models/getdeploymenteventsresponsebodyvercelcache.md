@@ -1,13 +1,15 @@
 # GetDeploymentEventsResponseBodyVercelCache
 
+## Example Usage
+
+```typescript
+import { GetDeploymentEventsResponseBodyVercelCache } from "@simplesagar/vercel/models/getdeploymenteventsop.js";
+
+let value: GetDeploymentEventsResponseBodyVercelCache = "PRERENDER";
+```
 
 ## Values
 
-| Name          | Value         |
-| ------------- | ------------- |
-| `Miss`        | MISS          |
-| `Hit`         | HIT           |
-| `Stale`       | STALE         |
-| `Bypass`      | BYPASS        |
-| `Prerender`   | PRERENDER     |
-| `Revalidated` | REVALIDATED   |
+```typescript
+"MISS" | "HIT" | "STALE" | "BYPASS" | "PRERENDER" | "REVALIDATED"
+```

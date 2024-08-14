@@ -2,11 +2,16 @@
 
 The Git Provider of the repository
 
+## Example Usage
+
+```typescript
+import { CreateProjectProjectsType } from "@simplesagar/vercel/models/createprojectop.js";
+
+let value: CreateProjectProjectsType = "github";
+```
 
 ## Values
 
-| Name        | Value       |
-| ----------- | ----------- |
-| `Github`    | github      |
-| `Gitlab`    | gitlab      |
-| `Bitbucket` | bitbucket   |
+```typescript
+"github" | "gitlab" | "bitbucket"
+```

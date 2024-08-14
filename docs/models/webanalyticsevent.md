@@ -1,5 +1,17 @@
 # WebAnalyticsEvent
 
+## Example Usage
+
+```typescript
+import { WebAnalyticsEvent } from "@simplesagar/vercel/models/authuser.js";
+
+let value: WebAnalyticsEvent = {
+    price: 3359.77,
+    batch: 3919.33,
+    threshold: 7277.71,
+    hidden: false,
+};
+```
 
 ## Fields
 

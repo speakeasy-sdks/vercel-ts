@@ -1,5 +1,15 @@
 # CreateCheckTBT
 
+## Example Usage
+
+```typescript
+import { CreateCheckTBT } from "@simplesagar/vercel/models/createcheckop.js";
+
+let value: CreateCheckTBT = {
+    value: 2645.55,
+    source: "web-vitals",
+};
+```
 
 ## Fields
 

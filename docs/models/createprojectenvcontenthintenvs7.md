@@ -1,5 +1,15 @@
 # CreateProjectEnvContentHintEnvs7
 
+## Example Usage
+
+```typescript
+import { CreateProjectEnvContentHintEnvs7 } from "@simplesagar/vercel/models/createprojectenvop.js";
+
+let value: CreateProjectEnvContentHintEnvs7 = {
+    type: "postgres-url-non-pooling",
+    storeId: "<value>",
+};
+```
 
 ## Fields
 

@@ -1,5 +1,12 @@
 # Utm
 
+## Example Usage
+
+```typescript
+import { Utm } from "@simplesagar/vercel/models/createteamop.js";
+
+let value: Utm = {};
+```
 
 ## Fields
 

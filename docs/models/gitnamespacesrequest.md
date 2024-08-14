@@ -1,5 +1,12 @@
 # GitNamespacesRequest
 
+## Example Usage
+
+```typescript
+import { GitNamespacesRequest } from "@simplesagar/vercel/models/gitnamespacesop.js";
+
+let value: GitNamespacesRequest = {};
+```
 
 ## Fields
 

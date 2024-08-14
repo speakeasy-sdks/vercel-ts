@@ -1,12 +1,15 @@
 # FilterProjectEnvsResponseBodyEnvsResponse200Type
 
+## Example Usage
+
+```typescript
+import { FilterProjectEnvsResponseBodyEnvsResponse200Type } from "@simplesagar/vercel/models/filterprojectenvsop.js";
+
+let value: FilterProjectEnvsResponseBodyEnvsResponse200Type = "secret";
+```
 
 ## Values
 
-| Name        | Value       |
-| ----------- | ----------- |
-| `System`    | system      |
-| `Encrypted` | encrypted   |
-| `Plain`     | plain       |
-| `Sensitive` | sensitive   |
-| `Secret`    | secret      |
+```typescript
+"system" | "encrypted" | "plain" | "sensitive" | "secret"
+```

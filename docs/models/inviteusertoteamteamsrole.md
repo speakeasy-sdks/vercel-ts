@@ -2,11 +2,16 @@
 
 Sets the project roles for the invited user
 
+## Example Usage
+
+```typescript
+import { InviteUserToTeamTeamsRole } from "@simplesagar/vercel/models/inviteusertoteamop.js";
+
+let value: InviteUserToTeamTeamsRole = "ADMIN";
+```
 
 ## Values
 
-| Name               | Value              |
-| ------------------ | ------------------ |
-| `Admin`            | ADMIN              |
-| `ProjectViewer`    | PROJECT_VIEWER     |
-| `ProjectDeveloper` | PROJECT_DEVELOPER  |
+```typescript
+"ADMIN" | "PROJECT_VIEWER" | "PROJECT_DEVELOPER"
+```

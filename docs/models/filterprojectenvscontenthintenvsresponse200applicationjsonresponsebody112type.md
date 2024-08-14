@@ -1,8 +1,16 @@
 # FilterProjectEnvsContentHintEnvsResponse200ApplicationJSONResponseBody112Type
 
+## Example Usage
+
+```typescript
+import { FilterProjectEnvsContentHintEnvsResponse200ApplicationJSONResponseBody112Type } from "@simplesagar/vercel/models/filterprojectenvsop.js";
+
+let value: FilterProjectEnvsContentHintEnvsResponse200ApplicationJSONResponseBody112Type =
+    "postgres-database";
+```
 
 ## Values
 
-| Name               | Value              |
-| ------------------ | ------------------ |
-| `PostgresDatabase` | postgres-database  |
+```typescript
+"postgres-database"
+```

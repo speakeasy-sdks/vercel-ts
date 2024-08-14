@@ -1,8 +1,15 @@
 # CreateTeamPricingExperiment
 
+## Example Usage
+
+```typescript
+import { CreateTeamPricingExperiment } from "@simplesagar/vercel/models/createteamop.js";
+
+let value: CreateTeamPricingExperiment = "august-2022";
+```
 
 ## Values
 
-| Name         | Value        |
-| ------------ | ------------ |
-| `August2022` | august-2022  |
+```typescript
+"august-2022"
+```

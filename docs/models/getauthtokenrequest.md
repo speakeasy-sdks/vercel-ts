@@ -1,5 +1,14 @@
 # GetAuthTokenRequest
 
+## Example Usage
+
+```typescript
+import { GetAuthTokenRequest } from "@simplesagar/vercel/models/getauthtokenop.js";
+
+let value: GetAuthTokenRequest = {
+    tokenId: "5d9f2ebd38ddca62e5d51e9c1704c72530bdc8bfdd41e782a6687c48399e8391",
+};
+```
 
 ## Fields
 

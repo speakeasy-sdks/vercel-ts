@@ -1,5 +1,18 @@
 # UpdateProjectOptionsAllowlist
 
+## Example Usage
+
+```typescript
+import { UpdateProjectOptionsAllowlist } from "@simplesagar/vercel/models/updateprojectop.js";
+
+let value: UpdateProjectOptionsAllowlist = {
+    paths: [
+        {
+            value: "<value>",
+        },
+    ],
+};
+```
 
 ## Fields
 

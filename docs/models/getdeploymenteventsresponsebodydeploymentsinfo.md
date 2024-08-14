@@ -1,5 +1,15 @@
 # GetDeploymentEventsResponseBodyDeploymentsInfo
 
+## Example Usage
+
+```typescript
+import { GetDeploymentEventsResponseBodyDeploymentsInfo } from "@simplesagar/vercel/models/getdeploymenteventsop.js";
+
+let value: GetDeploymentEventsResponseBodyDeploymentsInfo = {
+    type: "<value>",
+    name: "<value>",
+};
+```
 
 ## Fields
 

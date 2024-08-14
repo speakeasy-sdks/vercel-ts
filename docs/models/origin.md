@@ -1,18 +1,15 @@
 # Origin
 
+## Example Usage
+
+```typescript
+import { Origin } from "@simplesagar/vercel/models/teamlimited.js";
+
+let value: Origin = "link";
+```
 
 ## Values
 
-| Name                | Value               |
-| ------------------- | ------------------- |
-| `Link`              | link                |
-| `Saml`              | saml                |
-| `Mail`              | mail                |
-| `Import`            | import              |
-| `Teams`             | teams               |
-| `Github`            | github              |
-| `Gitlab`            | gitlab              |
-| `Bitbucket`         | bitbucket           |
-| `Dsync`             | dsync               |
-| `Feedback`          | feedback            |
-| `OrganizationTeams` | organization-teams  |
+```typescript
+"link" | "saml" | "mail" | "import" | "teams" | "github" | "gitlab" | "bitbucket" | "dsync" | "feedback" | "organization-teams"
+```

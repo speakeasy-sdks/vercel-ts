@@ -1,5 +1,16 @@
 # CancelDeploymentGitSource2
 
+## Example Usage
+
+```typescript
+import { CancelDeploymentGitSource2 } from "@simplesagar/vercel/models/canceldeploymentop.js";
+
+let value: CancelDeploymentGitSource2 = {
+    type: "github",
+    org: "<value>",
+    repo: "<value>",
+};
+```
 
 ## Fields
 

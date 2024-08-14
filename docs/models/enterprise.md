@@ -2,6 +2,17 @@
 
 Will be used to create an invoice item. The price must be in cents: 2000 for $20.
 
+## Example Usage
+
+```typescript
+import { Enterprise } from "@simplesagar/vercel/models/authuser.js";
+
+let value: Enterprise = {
+    price: 7963.97,
+    quantity: 4330.77,
+    hidden: false,
+};
+```
 
 ## Fields
 

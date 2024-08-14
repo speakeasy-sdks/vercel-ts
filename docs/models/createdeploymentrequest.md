@@ -1,5 +1,12 @@
 # CreateDeploymentRequest
 
+## Example Usage
+
+```typescript
+import { CreateDeploymentRequest } from "@simplesagar/vercel/models/createdeploymentop.js";
+
+let value: CreateDeploymentRequest = {};
+```
 
 ## Fields
 

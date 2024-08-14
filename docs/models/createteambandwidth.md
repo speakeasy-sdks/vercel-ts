@@ -1,5 +1,17 @@
 # CreateTeamBandwidth
 
+## Example Usage
+
+```typescript
+import { CreateTeamBandwidth } from "@simplesagar/vercel/models/createteamop.js";
+
+let value: CreateTeamBandwidth = {
+    price: 3041.98,
+    batch: 2470.45,
+    threshold: 753.59,
+    hidden: false,
+};
+```
 
 ## Fields
 

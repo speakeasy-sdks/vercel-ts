@@ -1,5 +1,15 @@
 # CancelDeploymentRoutesMissing
 
+## Example Usage
+
+```typescript
+import { CancelDeploymentRoutesMissing } from "@simplesagar/vercel/models/canceldeploymentop.js";
+
+let value: CancelDeploymentRoutesMissing = {
+    type: "host",
+    value: "<value>",
+};
+```
 
 ## Supported Types
 

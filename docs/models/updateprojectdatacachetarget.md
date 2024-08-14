@@ -1,5 +1,12 @@
 # UpdateProjectDataCacheTarget
 
+## Example Usage
+
+```typescript
+import { UpdateProjectDataCacheTarget } from "@simplesagar/vercel/models/updateprojectdatacacheop.js";
+
+let value: UpdateProjectDataCacheTarget = "preview";
+```
 
 ## Supported Types
 

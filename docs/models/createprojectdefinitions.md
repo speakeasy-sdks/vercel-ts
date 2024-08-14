@@ -1,5 +1,16 @@
 # CreateProjectDefinitions
 
+## Example Usage
+
+```typescript
+import { CreateProjectDefinitions } from "@simplesagar/vercel/models/createprojectop.js";
+
+let value: CreateProjectDefinitions = {
+    host: "vercel.com",
+    path: "/api/crons/sync-something?hello=world",
+    schedule: "0 0 * * *",
+};
+```
 
 ## Fields
 

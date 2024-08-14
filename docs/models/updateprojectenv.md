@@ -1,5 +1,16 @@
 # UpdateProjectEnv
 
+## Example Usage
+
+```typescript
+import { UpdateProjectEnv } from "@simplesagar/vercel/models/updateprojectop.js";
+
+let value: UpdateProjectEnv = {
+    type: "secret",
+    key: "<key>",
+    value: "<value>",
+};
+```
 
 ## Fields
 

@@ -1,5 +1,12 @@
 # EditProjectEnvRequestBody
 
+## Example Usage
+
+```typescript
+import { EditProjectEnvRequestBody } from "@simplesagar/vercel/models/editprojectenvop.js";
+
+let value: EditProjectEnvRequestBody = {};
+```
 
 ## Fields
 

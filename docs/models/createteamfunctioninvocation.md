@@ -1,5 +1,17 @@
 # CreateTeamFunctionInvocation
 
+## Example Usage
+
+```typescript
+import { CreateTeamFunctionInvocation } from "@simplesagar/vercel/models/createteamop.js";
+
+let value: CreateTeamFunctionInvocation = {
+    price: 813.71,
+    batch: 2124.34,
+    threshold: 3220.17,
+    hidden: false,
+};
+```
 
 ## Fields
 

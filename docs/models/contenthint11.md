@@ -1,5 +1,15 @@
 # ContentHint11
 
+## Example Usage
+
+```typescript
+import { ContentHint11 } from "@simplesagar/vercel/models/createprojectop.js";
+
+let value: ContentHint11 = {
+    type: "postgres-password",
+    storeId: "<value>",
+};
+```
 
 ## Fields
 

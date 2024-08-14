@@ -1,5 +1,17 @@
 # AuthUserBillingInvoiceItemsPostgresComputeTimeMatrix
 
+## Example Usage
+
+```typescript
+import { AuthUserBillingInvoiceItemsPostgresComputeTimeMatrix } from "@simplesagar/vercel/models/authuser.js";
+
+let value: AuthUserBillingInvoiceItemsPostgresComputeTimeMatrix = {
+    defaultUnitPrice: "<value>",
+    dimensionPrices: {
+        key: "<value>",
+    },
+};
+```
 
 ## Fields
 

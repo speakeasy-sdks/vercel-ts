@@ -1,8 +1,15 @@
 # AuthUserBillingInvoiceItemsAnalyticsInterval
 
+## Example Usage
+
+```typescript
+import { AuthUserBillingInvoiceItemsAnalyticsInterval } from "@simplesagar/vercel/models/authuser.js";
+
+let value: AuthUserBillingInvoiceItemsAnalyticsInterval = "month";
+```
 
 ## Values
 
-| Name    | Value   |
-| ------- | ------- |
-| `Month` | month   |
+```typescript
+"month"
+```

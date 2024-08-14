@@ -2,9 +2,16 @@
 
 The type of the deployment.
 
+## Example Usage
+
+```typescript
+import { GetDeploymentsType } from "@simplesagar/vercel/models/getdeploymentsop.js";
+
+let value: GetDeploymentsType = "LAMBDAS";
+```
 
 ## Values
 
-| Name      | Value     |
-| --------- | --------- |
-| `Lambdas` | LAMBDAS   |
+```typescript
+"LAMBDAS"
+```

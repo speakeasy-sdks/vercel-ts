@@ -1,10 +1,15 @@
 # Plan
 
+## Example Usage
+
+```typescript
+import { Plan } from "@simplesagar/vercel/models/authuser.js";
+
+let value: Plan = "hobby";
+```
 
 ## Values
 
-| Name         | Value        |
-| ------------ | ------------ |
-| `Pro`        | pro          |
-| `Enterprise` | enterprise   |
-| `Hobby`      | hobby        |
+```typescript
+"pro" | "enterprise" | "hobby"
+```

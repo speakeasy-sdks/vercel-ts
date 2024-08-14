@@ -1,5 +1,12 @@
 # IssueCertRequestBody
 
+## Example Usage
+
+```typescript
+import { IssueCertRequestBody } from "@simplesagar/vercel/models/issuecertop.js";
+
+let value: IssueCertRequestBody = {};
+```
 
 ## Fields
 

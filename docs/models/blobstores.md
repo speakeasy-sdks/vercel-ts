@@ -1,5 +1,17 @@
 # BlobStores
 
+## Example Usage
+
+```typescript
+import { BlobStores } from "@simplesagar/vercel/models/authuser.js";
+
+let value: BlobStores = {
+    price: 8667.89,
+    batch: 9326.66,
+    threshold: 6277.35,
+    hidden: false,
+};
+```
 
 ## Fields
 

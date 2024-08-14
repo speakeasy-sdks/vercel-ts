@@ -2,6 +2,21 @@
 
 Restricts access to deployments based on the incoming request IP address
 
+## Example Usage
+
+```typescript
+import { TrustedIps } from "@simplesagar/vercel/models/updateprojectop.js";
+
+let value: TrustedIps = {
+    deploymentType: "preview",
+    addresses: [
+        {
+            value: "<value>",
+        },
+    ],
+    protectionMode: "exclusive",
+};
+```
 
 ## Fields
 

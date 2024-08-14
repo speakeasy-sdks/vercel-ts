@@ -1,5 +1,17 @@
 # CreateTeamDataCacheWrite
 
+## Example Usage
+
+```typescript
+import { CreateTeamDataCacheWrite } from "@simplesagar/vercel/models/createteamop.js";
+
+let value: CreateTeamDataCacheWrite = {
+    price: 247.53,
+    batch: 399.92,
+    threshold: 74.68,
+    hidden: false,
+};
+```
 
 ## Fields
 

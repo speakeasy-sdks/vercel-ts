@@ -1,5 +1,15 @@
 # Thirteen
 
+## Example Usage
+
+```typescript
+import { Thirteen } from "@simplesagar/vercel/models/updateprojectdatacacheop.js";
+
+let value: Thirteen = {
+    type: "postgres-url-no-ssl",
+    storeId: "<value>",
+};
+```
 
 ## Fields
 

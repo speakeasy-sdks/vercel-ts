@@ -2,26 +2,16 @@
 
 The type of entity.
 
+## Example Usage
+
+```typescript
+import { UserEventType } from "@simplesagar/vercel/models/userevent.js";
+
+let value: UserEventType = "author";
+```
 
 ## Values
 
-| Name             | Value            |
-| ---------------- | ---------------- |
-| `Author`         | author           |
-| `BitbucketLogin` | bitbucket_login  |
-| `Bold`           | bold             |
-| `DeploymentHost` | deployment_host  |
-| `DnsRecord`      | dns_record       |
-| `GitLink`        | git_link         |
-| `GithubLogin`    | github_login     |
-| `GitlabLogin`    | gitlab_login     |
-| `HookName`       | hook_name        |
-| `Integration`    | integration      |
-| `EdgeConfig`     | edge-config      |
-| `Link`           | link             |
-| `ProjectName`    | project_name     |
-| `ScalingRules`   | scaling_rules    |
-| `EnvVarName`     | env_var_name     |
-| `Target`         | target           |
-| `Store`          | store            |
-| `System`         | system           |
+```typescript
+"author" | "bitbucket_login" | "bold" | "deployment_host" | "dns_record" | "git_link" | "github_login" | "gitlab_login" | "hook_name" | "integration" | "edge-config" | "link" | "project_name" | "scaling_rules" | "env_var_name" | "target" | "store" | "system"
+```

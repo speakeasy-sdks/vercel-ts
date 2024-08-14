@@ -1,5 +1,14 @@
 # DeleteEdgeConfigTokensRequest
 
+## Example Usage
+
+```typescript
+import { DeleteEdgeConfigTokensRequest } from "@simplesagar/vercel/models/deleteedgeconfigtokensop.js";
+
+let value: DeleteEdgeConfigTokensRequest = {
+    edgeConfigId: "<value>",
+};
+```
 
 ## Fields
 

@@ -1,5 +1,17 @@
 # CreateTeamDataCacheRead
 
+## Example Usage
+
+```typescript
+import { CreateTeamDataCacheRead } from "@simplesagar/vercel/models/createteamop.js";
+
+let value: CreateTeamDataCacheRead = {
+    price: 9315.05,
+    batch: 2421.78,
+    threshold: 6738.38,
+    hidden: false,
+};
+```
 
 ## Fields
 

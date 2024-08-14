@@ -1,5 +1,12 @@
 # GetDeploymentRoutesLocale
 
+## Example Usage
+
+```typescript
+import { GetDeploymentRoutesLocale } from "@simplesagar/vercel/models/getdeploymentop.js";
+
+let value: GetDeploymentRoutesLocale = {};
+```
 
 ## Fields
 

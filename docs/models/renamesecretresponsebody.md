@@ -1,5 +1,17 @@
 # RenameSecretResponseBody
 
+## Example Usage
+
+```typescript
+import { RenameSecretResponseBody } from "@simplesagar/vercel/models/renamesecretop.js";
+
+let value: RenameSecretResponseBody = {
+    uid: "<value>",
+    name: "<value>",
+    created: new Date("2023-09-22T04:54:47.478Z"),
+    oldName: "<value>",
+};
+```
 
 ## Fields
 

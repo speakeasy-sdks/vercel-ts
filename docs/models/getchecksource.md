@@ -1,8 +1,15 @@
 # GetCheckSource
 
+## Example Usage
+
+```typescript
+import { GetCheckSource } from "@simplesagar/vercel/models/getcheckop.js";
+
+let value: GetCheckSource = "web-vitals";
+```
 
 ## Values
 
-| Name        | Value       |
-| ----------- | ----------- |
-| `WebVitals` | web-vitals  |
+```typescript
+"web-vitals"
+```

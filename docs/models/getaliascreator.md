@@ -2,6 +2,17 @@
 
 Information of the user who created the alias
 
+## Example Usage
+
+```typescript
+import { GetAliasCreator } from "@simplesagar/vercel/models/getaliasop.js";
+
+let value: GetAliasCreator = {
+    uid: "96SnxkFiMyVKsK3pnoHfx3Hz",
+    email: "john-doe@gmail.com",
+    username: "john-doe",
+};
+```
 
 ## Fields
 

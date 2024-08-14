@@ -1,5 +1,15 @@
 # ListAccessGroupProjectsPagination
 
+## Example Usage
+
+```typescript
+import { ListAccessGroupProjectsPagination } from "@simplesagar/vercel/models/listaccessgroupprojectsop.js";
+
+let value: ListAccessGroupProjectsPagination = {
+    count: 7991.59,
+    next: "<value>",
+};
+```
 
 ## Fields
 

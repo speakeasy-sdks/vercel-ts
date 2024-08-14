@@ -1,5 +1,17 @@
 # DataCacheWrite
 
+## Example Usage
+
+```typescript
+import { DataCacheWrite } from "@simplesagar/vercel/models/authuser.js";
+
+let value: DataCacheWrite = {
+    price: 1753.72,
+    batch: 7249.94,
+    threshold: 1158.98,
+    hidden: false,
+};
+```
 
 ## Fields
 

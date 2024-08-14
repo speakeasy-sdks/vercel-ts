@@ -1,5 +1,15 @@
 # GetDeploymentResponseBodyProject
 
+## Example Usage
+
+```typescript
+import { GetDeploymentResponseBodyProject } from "@simplesagar/vercel/models/getdeploymentop.js";
+
+let value: GetDeploymentResponseBodyProject = {
+    id: "<id>",
+    name: "<value>",
+};
+```
 
 ## Fields
 

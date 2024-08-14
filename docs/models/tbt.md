@@ -1,5 +1,15 @@
 # Tbt
 
+## Example Usage
+
+```typescript
+import { Tbt } from "@simplesagar/vercel/models/updatecheckop.js";
+
+let value: Tbt = {
+    value: 3000,
+    source: "web-vitals",
+};
+```
 
 ## Fields
 

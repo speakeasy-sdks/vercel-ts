@@ -1,5 +1,15 @@
 # VerifyProjectDomainRequest
 
+## Example Usage
+
+```typescript
+import { VerifyProjectDomainRequest } from "@simplesagar/vercel/models/verifyprojectdomainop.js";
+
+let value: VerifyProjectDomainRequest = {
+    idOrName: "prj_12HKQaOmR5t5Uy6vdcQsNIiZgHGB",
+    domain: "example.com",
+};
+```
 
 ## Fields
 

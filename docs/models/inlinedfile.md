@@ -2,6 +2,16 @@
 
 Used in the case you want to inline a file inside the request
 
+## Example Usage
+
+```typescript
+import { InlinedFile } from "@simplesagar/vercel/models/createdeploymentop.js";
+
+let value: InlinedFile = {
+    data: "<value>",
+    file: "folder/file.js",
+};
+```
 
 ## Fields
 

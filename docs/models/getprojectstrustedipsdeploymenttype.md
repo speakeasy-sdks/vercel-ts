@@ -1,11 +1,15 @@
 # GetProjectsTrustedIpsDeploymentType
 
+## Example Usage
+
+```typescript
+import { GetProjectsTrustedIpsDeploymentType } from "@simplesagar/vercel/models/getprojectsop.js";
+
+let value: GetProjectsTrustedIpsDeploymentType = "production";
+```
 
 ## Values
 
-| Name                                  | Value                                 |
-| ------------------------------------- | ------------------------------------- |
-| `All`                                 | all                                   |
-| `Preview`                             | preview                               |
-| `ProdDeploymentUrlsAndAllPreviews`    | prod_deployment_urls_and_all_previews |
-| `Production`                          | production                            |
+```typescript
+"all" | "preview" | "prod_deployment_urls_and_all_previews" | "production"
+```

@@ -3,6 +3,18 @@
 The project domain was verified successfully
 Domain is already verified
 
+## Example Usage
+
+```typescript
+import { VerifyProjectDomainResponseBody } from "@simplesagar/vercel/models/verifyprojectdomainop.js";
+
+let value: VerifyProjectDomainResponseBody = {
+    name: "<value>",
+    apexName: "<value>",
+    projectId: "<value>",
+    verified: false,
+};
+```
 
 ## Fields
 

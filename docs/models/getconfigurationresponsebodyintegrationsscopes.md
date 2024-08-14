@@ -1,5 +1,15 @@
 # GetConfigurationResponseBodyIntegrationsScopes
 
+## Example Usage
+
+```typescript
+import { GetConfigurationResponseBodyIntegrationsScopes } from "@simplesagar/vercel/models/getconfigurationop.js";
+
+let value: GetConfigurationResponseBodyIntegrationsScopes = {
+    added: ["read-write:log-drain"],
+    upgraded: ["read:domain"],
+};
+```
 
 ## Fields
 

@@ -1,5 +1,16 @@
 # EditProjectEnvResponseBody1
 
+## Example Usage
+
+```typescript
+import { EditProjectEnvResponseBody1 } from "@simplesagar/vercel/models/editprojectenvop.js";
+
+let value: EditProjectEnvResponseBody1 = {
+    type: "system",
+    key: "<key>",
+    value: "<value>",
+};
+```
 
 ## Fields
 

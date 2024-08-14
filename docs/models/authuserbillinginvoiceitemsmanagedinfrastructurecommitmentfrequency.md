@@ -1,5 +1,15 @@
 # AuthUserBillingInvoiceItemsManagedInfrastructureCommitmentFrequency
 
+## Example Usage
+
+```typescript
+import { AuthUserBillingInvoiceItemsManagedInfrastructureCommitmentFrequency } from "@simplesagar/vercel/models/authuser.js";
+
+let value: AuthUserBillingInvoiceItemsManagedInfrastructureCommitmentFrequency = {
+    interval: "month",
+    intervalCount: 2899.13,
+};
+```
 
 ## Fields
 

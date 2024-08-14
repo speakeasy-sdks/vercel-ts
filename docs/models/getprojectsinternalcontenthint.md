@@ -2,6 +2,16 @@
 
 Similar to `contentHints`, but should not be exposed to the user.
 
+## Example Usage
+
+```typescript
+import { GetProjectsInternalContentHint } from "@simplesagar/vercel/models/getprojectsop.js";
+
+let value: GetProjectsInternalContentHint = {
+    type: "flags-secret",
+    encryptedValue: "<value>",
+};
+```
 
 ## Fields
 

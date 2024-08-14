@@ -1,5 +1,17 @@
 # AuthUserBillingInvoiceItemsSourceImagesMatrix
 
+## Example Usage
+
+```typescript
+import { AuthUserBillingInvoiceItemsSourceImagesMatrix } from "@simplesagar/vercel/models/authuser.js";
+
+let value: AuthUserBillingInvoiceItemsSourceImagesMatrix = {
+    defaultUnitPrice: "<value>",
+    dimensionPrices: {
+        key: "<value>",
+    },
+};
+```
 
 ## Fields
 

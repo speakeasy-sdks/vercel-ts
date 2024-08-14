@@ -2,14 +2,16 @@
 
 The role of the user to invite
 
+## Example Usage
+
+```typescript
+import { InviteUserToTeamRole } from "@simplesagar/vercel/models/inviteusertoteamop.js";
+
+let value: InviteUserToTeamRole = "OWNER";
+```
 
 ## Values
 
-| Name          | Value         |
-| ------------- | ------------- |
-| `Owner`       | OWNER         |
-| `Member`      | MEMBER        |
-| `Developer`   | DEVELOPER     |
-| `Billing`     | BILLING       |
-| `Viewer`      | VIEWER        |
-| `Contributor` | CONTRIBUTOR   |
+```typescript
+"OWNER" | "MEMBER" | "DEVELOPER" | "BILLING" | "VIEWER" | "CONTRIBUTOR"
+```

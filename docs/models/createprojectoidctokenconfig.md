@@ -1,5 +1,14 @@
 # CreateProjectOidcTokenConfig
 
+## Example Usage
+
+```typescript
+import { CreateProjectOidcTokenConfig } from "@simplesagar/vercel/models/createprojectop.js";
+
+let value: CreateProjectOidcTokenConfig = {
+    enabled: false,
+};
+```
 
 ## Fields
 

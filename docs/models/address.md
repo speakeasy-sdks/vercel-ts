@@ -1,5 +1,12 @@
 # Address
 
+## Example Usage
+
+```typescript
+import { Address } from "@simplesagar/vercel/models/authuser.js";
+
+let value: Address = {};
+```
 
 ## Fields
 

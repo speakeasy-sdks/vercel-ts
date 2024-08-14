@@ -1,10 +1,15 @@
 # CreateCheckStatus
 
+## Example Usage
+
+```typescript
+import { CreateCheckStatus } from "@simplesagar/vercel/models/createcheckop.js";
+
+let value: CreateCheckStatus = "completed";
+```
 
 ## Values
 
-| Name         | Value        |
-| ------------ | ------------ |
-| `Registered` | registered   |
-| `Running`    | running      |
-| `Completed`  | completed    |
+```typescript
+"registered" | "running" | "completed"
+```

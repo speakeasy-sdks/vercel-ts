@@ -1,8 +1,15 @@
 # GetProjectsContentHintProjectsResponse200Type
 
+## Example Usage
+
+```typescript
+import { GetProjectsContentHintProjectsResponse200Type } from "@simplesagar/vercel/models/getprojectsop.js";
+
+let value: GetProjectsContentHintProjectsResponse200Type = "redis-rest-api-read-only-token";
+```
 
 ## Values
 
-| Name                           | Value                          |
-| ------------------------------ | ------------------------------ |
-| `RedisRestApiReadOnlyToken`    | redis-rest-api-read-only-token |
+```typescript
+"redis-rest-api-read-only-token"
+```

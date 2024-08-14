@@ -1,5 +1,16 @@
 # UpdateProjectProtectionBypassProtectionBypass
 
+## Example Usage
+
+```typescript
+import { UpdateProjectProtectionBypassProtectionBypass } from "@simplesagar/vercel/models/updateprojectprotectionbypassop.js";
+
+let value: UpdateProjectProtectionBypassProtectionBypass = {
+    createdAt: 8518.54,
+    createdBy: "<value>",
+    scope: "automation-bypass",
+};
+```
 
 ## Fields
 

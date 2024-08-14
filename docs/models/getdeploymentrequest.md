@@ -1,5 +1,14 @@
 # GetDeploymentRequest
 
+## Example Usage
+
+```typescript
+import { GetDeploymentRequest } from "@simplesagar/vercel/models/getdeploymentop.js";
+
+let value: GetDeploymentRequest = {
+    idOrUrl: "dpl_89qyp1cskzkLrVicDaZoDbjyHuDJ",
+};
+```
 
 ## Fields
 

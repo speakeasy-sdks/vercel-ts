@@ -2,12 +2,16 @@
 
 Conclusion for checks
 
+## Example Usage
+
+```typescript
+import { GetDeploymentsChecksConclusion } from "@simplesagar/vercel/models/getdeploymentsop.js";
+
+let value: GetDeploymentsChecksConclusion = "succeeded";
+```
 
 ## Values
 
-| Name        | Value       |
-| ----------- | ----------- |
-| `Succeeded` | succeeded   |
-| `Failed`    | failed      |
-| `Skipped`   | skipped     |
-| `Canceled`  | canceled    |
+```typescript
+"succeeded" | "failed" | "skipped" | "canceled"
+```

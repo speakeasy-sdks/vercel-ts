@@ -1,8 +1,15 @@
 # ListAliasesProtectionBypassScope
 
+## Example Usage
+
+```typescript
+import { ListAliasesProtectionBypassScope } from "@simplesagar/vercel/models/listaliasesop.js";
+
+let value: ListAliasesProtectionBypassScope = "user";
+```
 
 ## Values
 
-| Name   | Value  |
-| ------ | ------ |
-| `User` | user   |
+```typescript
+"user"
+```

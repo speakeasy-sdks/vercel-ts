@@ -1,5 +1,15 @@
 # GetProjectsAliasError
 
+## Example Usage
+
+```typescript
+import { GetProjectsAliasError } from "@simplesagar/vercel/models/getprojectsop.js";
+
+let value: GetProjectsAliasError = {
+    code: "<value>",
+    message: "<value>",
+};
+```
 
 ## Fields
 

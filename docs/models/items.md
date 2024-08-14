@@ -1,5 +1,18 @@
 # Items
 
+## Example Usage
+
+```typescript
+import { Items } from "@simplesagar/vercel/models/authuser.js";
+
+let value: Items = {
+    id: "<id>",
+    priceId: "<value>",
+    productId: "<value>",
+    amount: 6649.65,
+    quantity: 5221.76,
+};
+```
 
 ## Fields
 

@@ -1,5 +1,12 @@
 # ListPromoteAliasesResponseBody
 
+## Example Usage
+
+```typescript
+import { ListPromoteAliasesResponseBody } from "@simplesagar/vercel/models/listpromotealiasesop.js";
+
+let value: ListPromoteAliasesResponseBody = {};
+```
 
 ## Supported Types
 

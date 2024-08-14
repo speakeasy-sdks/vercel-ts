@@ -1,5 +1,15 @@
 # RemoveProjectEnvContentHintEnvs8
 
+## Example Usage
+
+```typescript
+import { RemoveProjectEnvContentHintEnvs8 } from "@simplesagar/vercel/models/removeprojectenvop.js";
+
+let value: RemoveProjectEnvContentHintEnvs8 = {
+    type: "postgres-prisma-url",
+    storeId: "<value>",
+};
+```
 
 ## Fields
 

@@ -2,6 +2,17 @@
 
 The protection bypass for the alias
 
+## Example Usage
+
+```typescript
+import { ListAliasesProtectionBypass3 } from "@simplesagar/vercel/models/listaliasesop.js";
+
+let value: ListAliasesProtectionBypass3 = {
+    createdAt: 2295.67,
+    createdBy: "<value>",
+    scope: "alias-protection-override",
+};
+```
 
 ## Fields
 

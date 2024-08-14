@@ -1,5 +1,19 @@
 # ResponseBodyScopesQueue
 
+## Example Usage
+
+```typescript
+import { ResponseBodyScopesQueue } from "@simplesagar/vercel/models/getconfigurationop.js";
+
+let value: ResponseBodyScopesQueue = {
+    scopes: {
+        added: ["read-write:project-env-vars"],
+        upgraded: ["read-write:deployment-check"],
+    },
+    note: "<value>",
+    requestedAt: 5219.96,
+};
+```
 
 ## Fields
 

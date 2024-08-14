@@ -1,5 +1,14 @@
 # Options
 
+## Example Usage
+
+```typescript
+import { Options } from "@simplesagar/vercel/models/createdeploymentop.js";
+
+let value: Options = {
+    value: false,
+};
+```
 
 ## Fields
 

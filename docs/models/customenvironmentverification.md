@@ -2,6 +2,18 @@
 
 A list of verification challenges, one of which must be completed to verify the domain for use on the project. After the challenge is complete `POST /projects/:idOrName/domains/:domain/verify` to verify the domain. Possible challenges: - If `verification.type = TXT` the `verification.domain` will be checked for a TXT record matching `verification.value`.
 
+## Example Usage
+
+```typescript
+import { CustomEnvironmentVerification } from "@simplesagar/vercel/models/canceldeploymentop.js";
+
+let value: CustomEnvironmentVerification = {
+    type: "<value>",
+    domain: "torn-cleft.com",
+    value: "<value>",
+    reason: "<value>",
+};
+```
 
 ## Fields
 

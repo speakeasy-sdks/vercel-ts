@@ -2,6 +2,36 @@
 
 Data for the currently authenticated User.
 
+## Example Usage
+
+```typescript
+import { AuthUser } from "@simplesagar/vercel/models/authuser.js";
+
+let value: AuthUser = {
+    createdAt: 1630748523395,
+    softBlock: {
+        blockedAt: 4671.19,
+        reason: "ENTERPRISE_TRIAL_ENDED",
+    },
+    billing: {
+        period: {
+            start: 755.66,
+            end: 2902.48,
+        },
+        plan: "hobby",
+    },
+    resourceConfig: {},
+    stagingPrefix: "<value>",
+    hasTrialAvailable: false,
+    id: "AEIIDYVk59zbFF2Sxfyxxmua",
+    email: "me@example.com",
+    name: "John Doe",
+    username: "jdoe",
+    avatar: "22cb30c85ff45ac4c72de8981500006b28114aa1",
+    defaultTeamId: "<value>",
+    version: "northstar",
+};
+```
 
 ## Fields
 

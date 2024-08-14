@@ -1,13 +1,15 @@
 # CancelDeploymentRoutesHandle
 
+## Example Usage
+
+```typescript
+import { CancelDeploymentRoutesHandle } from "@simplesagar/vercel/models/canceldeploymentop.js";
+
+let value: CancelDeploymentRoutesHandle = "resource";
+```
 
 ## Values
 
-| Name         | Value        |
-| ------------ | ------------ |
-| `Error`      | error        |
-| `Filesystem` | filesystem   |
-| `Hit`        | hit          |
-| `Miss`       | miss         |
-| `Rewrite`    | rewrite      |
-| `Resource`   | resource     |
+```typescript
+"error" | "filesystem" | "hit" | "miss" | "rewrite" | "resource"
+```

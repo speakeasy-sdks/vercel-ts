@@ -1,10 +1,15 @@
 # GetProjectsTier
 
+## Example Usage
+
+```typescript
+import { GetProjectsTier } from "@simplesagar/vercel/models/getprojectsop.js";
+
+let value: GetProjectsTier = "advanced";
+```
 
 ## Values
 
-| Name       | Value      |
-| ---------- | ---------- |
-| `Standard` | standard   |
-| `Advanced` | advanced   |
-| `Critical` | critical   |
+```typescript
+"standard" | "advanced" | "critical"
+```

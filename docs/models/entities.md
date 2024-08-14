@@ -2,6 +2,17 @@
 
 A list of "entities" within the event `text`. Useful for enhancing the displayed text with additional styling and links.
 
+## Example Usage
+
+```typescript
+import { Entities } from "@simplesagar/vercel/models/userevent.js";
+
+let value: Entities = {
+    type: "author",
+    start: 0,
+    end: 3,
+};
+```
 
 ## Fields
 

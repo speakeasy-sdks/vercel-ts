@@ -1,5 +1,15 @@
 # GetDeploymentGitSourceDeployments3
 
+## Example Usage
+
+```typescript
+import { GetDeploymentGitSourceDeployments3 } from "@simplesagar/vercel/models/getdeploymentop.js";
+
+let value: GetDeploymentGitSourceDeployments3 = {
+    type: "gitlab",
+    projectId: 1310.55,
+};
+```
 
 ## Fields
 

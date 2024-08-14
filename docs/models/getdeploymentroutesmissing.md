@@ -1,5 +1,15 @@
 # GetDeploymentRoutesMissing
 
+## Example Usage
+
+```typescript
+import { GetDeploymentRoutesMissing } from "@simplesagar/vercel/models/getdeploymentop.js";
+
+let value: GetDeploymentRoutesMissing = {
+    type: "query",
+    key: "<key>",
+};
+```
 
 ## Supported Types
 

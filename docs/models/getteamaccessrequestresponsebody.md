@@ -2,6 +2,24 @@
 
 Successfully
 
+## Example Usage
+
+```typescript
+import { GetTeamAccessRequestResponseBody } from "@simplesagar/vercel/models/getteamaccessrequestop.js";
+
+let value: GetTeamAccessRequestResponseBody = {
+    teamSlug: "my-team",
+    teamName: "My Team",
+    confirmed: false,
+    joinedFrom: {
+        origin: "github",
+    },
+    accessRequestedAt: 1588720733602,
+    github: {},
+    gitlab: {},
+    bitbucket: {},
+};
+```
 
 ## Fields
 

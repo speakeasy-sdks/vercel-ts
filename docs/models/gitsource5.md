@@ -1,5 +1,16 @@
 # GitSource5
 
+## Example Usage
+
+```typescript
+import { GitSource5 } from "@simplesagar/vercel/models/createdeploymentop.js";
+
+let value: GitSource5 = {
+    type: "bitbucket",
+    owner: "<value>",
+    slug: "<value>",
+};
+```
 
 ## Fields
 

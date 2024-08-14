@@ -1,9 +1,15 @@
 # CreateTeamPlatform
 
+## Example Usage
+
+```typescript
+import { CreateTeamPlatform } from "@simplesagar/vercel/models/createteamop.js";
+
+let value: CreateTeamPlatform = "stripeTestMode";
+```
 
 ## Values
 
-| Name             | Value            |
-| ---------------- | ---------------- |
-| `Stripe`         | stripe           |
-| `StripeTestMode` | stripeTestMode   |
+```typescript
+"stripe" | "stripeTestMode"
+```

@@ -1,5 +1,14 @@
 # GetRecordsRequest
 
+## Example Usage
+
+```typescript
+import { GetRecordsRequest } from "@simplesagar/vercel/models/getrecordsop.js";
+
+let value: GetRecordsRequest = {
+    domain: "example.com",
+};
+```
 
 ## Fields
 

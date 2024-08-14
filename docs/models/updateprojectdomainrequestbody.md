@@ -1,5 +1,12 @@
 # UpdateProjectDomainRequestBody
 
+## Example Usage
+
+```typescript
+import { UpdateProjectDomainRequestBody } from "@simplesagar/vercel/models/updateprojectdomainop.js";
+
+let value: UpdateProjectDomainRequestBody = {};
+```
 
 ## Fields
 

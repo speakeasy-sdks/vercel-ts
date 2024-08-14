@@ -1,5 +1,12 @@
 # Created2
 
+## Example Usage
+
+```typescript
+import { Created2 } from "@simplesagar/vercel/models/createprojectenvop.js";
+
+let value: Created2 = {};
+```
 
 ## Fields
 

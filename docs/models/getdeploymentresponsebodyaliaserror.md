@@ -1,5 +1,15 @@
 # GetDeploymentResponseBodyAliasError
 
+## Example Usage
+
+```typescript
+import { GetDeploymentResponseBodyAliasError } from "@simplesagar/vercel/models/getdeploymentop.js";
+
+let value: GetDeploymentResponseBodyAliasError = {
+    code: "<value>",
+    message: "<value>",
+};
+```
 
 ## Fields
 

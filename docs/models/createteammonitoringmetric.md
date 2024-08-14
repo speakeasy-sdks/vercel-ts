@@ -1,5 +1,17 @@
 # CreateTeamMonitoringMetric
 
+## Example Usage
+
+```typescript
+import { CreateTeamMonitoringMetric } from "@simplesagar/vercel/models/createteamop.js";
+
+let value: CreateTeamMonitoringMetric = {
+    price: 3676.26,
+    batch: 7452.33,
+    threshold: 7262.27,
+    hidden: false,
+};
+```
 
 ## Fields
 

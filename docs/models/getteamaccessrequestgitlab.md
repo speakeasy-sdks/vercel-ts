@@ -2,6 +2,13 @@
 
 Map of the connected GitLab account.
 
+## Example Usage
+
+```typescript
+import { GetTeamAccessRequestGitlab } from "@simplesagar/vercel/models/getteamaccessrequestop.js";
+
+let value: GetTeamAccessRequestGitlab = {};
+```
 
 ## Fields
 

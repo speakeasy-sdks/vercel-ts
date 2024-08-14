@@ -1,5 +1,12 @@
 # GetProjectsSecurity
 
+## Example Usage
+
+```typescript
+import { GetProjectsSecurity } from "@simplesagar/vercel/models/getprojectsop.js";
+
+let value: GetProjectsSecurity = {};
+```
 
 ## Fields
 

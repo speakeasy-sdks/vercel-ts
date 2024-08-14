@@ -1,5 +1,20 @@
 # CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsStorageRedisTotalCommandsMatrix
 
+## Example Usage
+
+```typescript
+import {
+  CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsStorageRedisTotalCommandsMatrix,
+} from "@simplesagar/vercel/models/createteamop.js";
+
+let value: CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsStorageRedisTotalCommandsMatrix =
+    {
+        defaultUnitPrice: "<value>",
+        dimensionPrices: {
+            key: "<value>",
+        },
+    };
+```
 
 ## Fields
 

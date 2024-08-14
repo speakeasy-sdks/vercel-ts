@@ -1,5 +1,15 @@
 # CreateOrTransferDomainRequestBody
 
+## Example Usage
+
+```typescript
+import { CreateOrTransferDomainRequestBody } from "@simplesagar/vercel/models/createortransferdomainop.js";
+
+let value: CreateOrTransferDomainRequestBody = {
+    name: "example.com",
+    method: "transfer-in",
+};
+```
 
 ## Supported Types
 

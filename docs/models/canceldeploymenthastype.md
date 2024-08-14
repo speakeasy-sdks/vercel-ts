@@ -1,8 +1,15 @@
 # CancelDeploymentHasType
 
+## Example Usage
+
+```typescript
+import { CancelDeploymentHasType } from "@simplesagar/vercel/models/canceldeploymentop.js";
+
+let value: CancelDeploymentHasType = "host";
+```
 
 ## Values
 
-| Name   | Value  |
-| ------ | ------ |
-| `Host` | host   |
+```typescript
+"host"
+```

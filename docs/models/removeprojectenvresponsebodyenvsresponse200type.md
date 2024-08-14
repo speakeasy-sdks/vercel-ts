@@ -1,8 +1,15 @@
 # RemoveProjectEnvResponseBodyEnvsResponse200Type
 
+## Example Usage
+
+```typescript
+import { RemoveProjectEnvResponseBodyEnvsResponse200Type } from "@simplesagar/vercel/models/removeprojectenvop.js";
+
+let value: RemoveProjectEnvResponseBodyEnvsResponse200Type = "flags-secret";
+```
 
 ## Values
 
-| Name          | Value         |
-| ------------- | ------------- |
-| `FlagsSecret` | flags-secret  |
+```typescript
+"flags-secret"
+```

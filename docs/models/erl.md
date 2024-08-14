@@ -1,5 +1,17 @@
 # Erl
 
+## Example Usage
+
+```typescript
+import { Erl } from "@simplesagar/vercel/models/updateprojectdatacacheop.js";
+
+let value: Erl = {
+    algo: "fixed_window",
+    window: 4701.32,
+    limit: 3015.75,
+    keys: ["<value>"],
+};
+```
 
 ## Fields
 

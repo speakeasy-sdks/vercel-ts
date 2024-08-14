@@ -1,8 +1,15 @@
 # UpdateProjectDataCacheContentHintType
 
+## Example Usage
+
+```typescript
+import { UpdateProjectDataCacheContentHintType } from "@simplesagar/vercel/models/updateprojectdatacacheop.js";
+
+let value: UpdateProjectDataCacheContentHintType = "redis-rest-api-url";
+```
 
 ## Values
 
-| Name               | Value              |
-| ------------------ | ------------------ |
-| `RedisRestApiUrl`  | redis-rest-api-url |
+```typescript
+"redis-rest-api-url"
+```

@@ -1,5 +1,18 @@
 # UpdateProjectDataCacheOptionsAllowlist
 
+## Example Usage
+
+```typescript
+import { UpdateProjectDataCacheOptionsAllowlist } from "@simplesagar/vercel/models/updateprojectdatacacheop.js";
+
+let value: UpdateProjectDataCacheOptionsAllowlist = {
+    paths: [
+        {
+            value: "<value>",
+        },
+    ],
+};
+```
 
 ## Fields
 

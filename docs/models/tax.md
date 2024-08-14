@@ -1,5 +1,15 @@
 # Tax
 
+## Example Usage
+
+```typescript
+import { Tax } from "@simplesagar/vercel/models/authuser.js";
+
+let value: Tax = {
+    type: "<value>",
+    id: "<id>",
+};
+```
 
 ## Fields
 

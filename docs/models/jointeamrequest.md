@@ -1,5 +1,14 @@
 # JoinTeamRequest
 
+## Example Usage
+
+```typescript
+import { JoinTeamRequest } from "@simplesagar/vercel/models/jointeamop.js";
+
+let value: JoinTeamRequest = {
+    teamId: "<value>",
+};
+```
 
 ## Fields
 

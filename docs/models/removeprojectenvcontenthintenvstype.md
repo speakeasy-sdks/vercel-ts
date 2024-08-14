@@ -1,8 +1,15 @@
 # RemoveProjectEnvContentHintEnvsType
 
+## Example Usage
+
+```typescript
+import { RemoveProjectEnvContentHintEnvsType } from "@simplesagar/vercel/models/removeprojectenvop.js";
+
+let value: RemoveProjectEnvContentHintEnvsType = "redis-rest-api-url";
+```
 
 ## Values
 
-| Name               | Value              |
-| ------------------ | ------------------ |
-| `RedisRestApiUrl`  | redis-rest-api-url |
+```typescript
+"redis-rest-api-url"
+```

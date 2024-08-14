@@ -1,5 +1,14 @@
 # CreateProjectWebAnalytics
 
+## Example Usage
+
+```typescript
+import { CreateProjectWebAnalytics } from "@simplesagar/vercel/models/createprojectop.js";
+
+let value: CreateProjectWebAnalytics = {
+    id: "<id>",
+};
+```
 
 ## Fields
 

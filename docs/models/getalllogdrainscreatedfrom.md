@@ -1,8 +1,15 @@
 # GetAllLogDrainsCreatedFrom
 
+## Example Usage
+
+```typescript
+import { GetAllLogDrainsCreatedFrom } from "@simplesagar/vercel/models/getalllogdrainsop.js";
+
+let value: GetAllLogDrainsCreatedFrom = "self-served";
+```
 
 ## Values
 
-| Name         | Value        |
-| ------------ | ------------ |
-| `SelfServed` | self-served  |
+```typescript
+"self-served"
+```

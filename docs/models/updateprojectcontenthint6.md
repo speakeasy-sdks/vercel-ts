@@ -1,5 +1,15 @@
 # UpdateProjectContentHint6
 
+## Example Usage
+
+```typescript
+import { UpdateProjectContentHint6 } from "@simplesagar/vercel/models/updateprojectop.js";
+
+let value: UpdateProjectContentHint6 = {
+    type: "postgres-url",
+    storeId: "<value>",
+};
+```
 
 ## Fields
 

@@ -2,6 +2,17 @@
 
 The member was successfully added to the team
 
+## Example Usage
+
+```typescript
+import { InviteUserToTeamResponseBody1 } from "@simplesagar/vercel/models/inviteusertoteamop.js";
+
+let value: InviteUserToTeamResponseBody1 = {
+    uid: "kr1PsOIzqEL5Xg6M4VZcZosf",
+    username: "john-doe",
+    role: "MEMBER",
+};
+```
 
 ## Fields
 

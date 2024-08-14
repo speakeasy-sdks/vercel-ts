@@ -1,5 +1,12 @@
 # UploadCertRequest
 
+## Example Usage
+
+```typescript
+import { UploadCertRequest } from "@simplesagar/vercel/models/uploadcertop.js";
+
+let value: UploadCertRequest = {};
+```
 
 ## Fields
 

@@ -1,5 +1,12 @@
 # DeploymentExpiration
 
+## Example Usage
+
+```typescript
+import { DeploymentExpiration } from "@simplesagar/vercel/models/updateprojectdatacacheop.js";
+
+let value: DeploymentExpiration = {};
+```
 
 ## Fields
 

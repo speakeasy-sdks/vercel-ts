@@ -1,5 +1,18 @@
 # RemoveProjectEnvContentHintEnvsResponse14
 
+## Example Usage
+
+```typescript
+import { RemoveProjectEnvContentHintEnvsResponse14 } from "@simplesagar/vercel/models/removeprojectenvop.js";
+
+let value: RemoveProjectEnvContentHintEnvsResponse14 = {
+    type: "integration-store-secret",
+    storeId: "<value>",
+    integrationId: "<value>",
+    integrationProductId: "<value>",
+    integrationConfigurationId: "<value>",
+};
+```
 
 ## Fields
 

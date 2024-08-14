@@ -2,6 +2,16 @@
 
 List of all edge configs.
 
+## Example Usage
+
+```typescript
+import { GetEdgeConfigsResponseBody } from "@simplesagar/vercel/models/getedgeconfigsop.js";
+
+let value: GetEdgeConfigsResponseBody = {
+    sizeInBytes: 3782.45,
+    itemCount: 51.89,
+};
+```
 
 ## Fields
 

@@ -1,5 +1,21 @@
 # GetDeploymentEventsResponseBodyDeploymentsProxy
 
+## Example Usage
+
+```typescript
+import { GetDeploymentEventsResponseBodyDeploymentsProxy } from "@simplesagar/vercel/models/getdeploymenteventsop.js";
+
+let value: GetDeploymentEventsResponseBodyDeploymentsProxy = {
+    timestamp: 5100.17,
+    method: "<value>",
+    host: "cumbersome-mama.com",
+    path: "/usr",
+    userAgent: ["<value>"],
+    referer: "<value>",
+    clientIp: "<value>",
+    region: "<value>",
+};
+```
 
 ## Fields
 

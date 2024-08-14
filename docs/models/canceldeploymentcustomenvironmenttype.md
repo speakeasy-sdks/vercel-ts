@@ -1,10 +1,15 @@
 # CancelDeploymentCustomEnvironmentType
 
+## Example Usage
+
+```typescript
+import { CancelDeploymentCustomEnvironmentType } from "@simplesagar/vercel/models/canceldeploymentop.js";
+
+let value: CancelDeploymentCustomEnvironmentType = "production";
+```
 
 ## Values
 
-| Name          | Value         |
-| ------------- | ------------- |
-| `Production`  | production    |
-| `Preview`     | preview       |
-| `Development` | development   |
+```typescript
+"production" | "preview" | "development"
+```

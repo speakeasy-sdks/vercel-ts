@@ -1,5 +1,14 @@
 # Routes2
 
+## Example Usage
+
+```typescript
+import { Routes2 } from "@simplesagar/vercel/models/createdeploymentop.js";
+
+let value: Routes2 = {
+    handle: "rewrite",
+};
+```
 
 ## Fields
 

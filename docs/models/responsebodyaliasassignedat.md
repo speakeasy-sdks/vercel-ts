@@ -1,5 +1,12 @@
 # ResponseBodyAliasAssignedAt
 
+## Example Usage
+
+```typescript
+import { ResponseBodyAliasAssignedAt } from "@simplesagar/vercel/models/getdeploymentop.js";
+
+let value: ResponseBodyAliasAssignedAt = false;
+```
 
 ## Supported Types
 

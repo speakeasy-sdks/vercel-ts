@@ -1,5 +1,17 @@
 # CreateTeamPostgresWrittenData
 
+## Example Usage
+
+```typescript
+import { CreateTeamPostgresWrittenData } from "@simplesagar/vercel/models/createteamop.js";
+
+let value: CreateTeamPostgresWrittenData = {
+    price: 9323.94,
+    batch: 882.48,
+    threshold: 2153.98,
+    hidden: false,
+};
+```
 
 ## Fields
 

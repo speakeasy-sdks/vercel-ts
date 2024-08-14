@@ -1,9 +1,15 @@
 # Currency
 
+## Example Usage
+
+```typescript
+import { Currency } from "@simplesagar/vercel/models/authuser.js";
+
+let value: Currency = "eur";
+```
 
 ## Values
 
-| Name  | Value |
-| ----- | ----- |
-| `Usd` | usd   |
-| `Eur` | eur   |
+```typescript
+"usd" | "eur"
+```

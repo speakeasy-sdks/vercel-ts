@@ -1,5 +1,12 @@
 # GetAllChecksOutput
 
+## Example Usage
+
+```typescript
+import { GetAllChecksOutput } from "@simplesagar/vercel/models/getallchecksop.js";
+
+let value: GetAllChecksOutput = {};
+```
 
 ## Fields
 

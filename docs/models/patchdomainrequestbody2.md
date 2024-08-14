@@ -2,6 +2,13 @@
 
 move-out
 
+## Example Usage
+
+```typescript
+import { PatchDomainRequestBody2 } from "@simplesagar/vercel/models/patchdomainop.js";
+
+let value: PatchDomainRequestBody2 = {};
+```
 
 ## Fields
 

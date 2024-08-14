@@ -1,5 +1,17 @@
 # AuthUserBillingInvoiceItemsEdgeConfigWriteMatrix
 
+## Example Usage
+
+```typescript
+import { AuthUserBillingInvoiceItemsEdgeConfigWriteMatrix } from "@simplesagar/vercel/models/authuser.js";
+
+let value: AuthUserBillingInvoiceItemsEdgeConfigWriteMatrix = {
+    defaultUnitPrice: "<value>",
+    dimensionPrices: {
+        key: "<value>",
+    },
+};
+```
 
 ## Fields
 

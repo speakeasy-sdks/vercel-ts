@@ -1,5 +1,12 @@
 # Github
 
+## Example Usage
+
+```typescript
+import { Github } from "@simplesagar/vercel/models/requestaccesstoteamop.js";
+
+let value: Github = {};
+```
 
 ## Fields
 

@@ -1,5 +1,12 @@
 # Items1
 
+## Example Usage
+
+```typescript
+import { Items1 } from "@simplesagar/vercel/models/createedgeconfigop.js";
+
+let value: Items1 = {};
+```
 
 ## Supported Types
 

@@ -1,5 +1,15 @@
 # ContentHint1
 
+## Example Usage
+
+```typescript
+import { ContentHint1 } from "@simplesagar/vercel/models/updateprojectdatacacheop.js";
+
+let value: ContentHint1 = {
+    type: "redis-url",
+    storeId: "<value>",
+};
+```
 
 ## Fields
 

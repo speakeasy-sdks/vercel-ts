@@ -1,9 +1,15 @@
 # CreateTeamProgramType
 
+## Example Usage
+
+```typescript
+import { CreateTeamProgramType } from "@simplesagar/vercel/models/createteamop.js";
+
+let value: CreateTeamProgramType = "agency";
+```
 
 ## Values
 
-| Name      | Value     |
-| --------- | --------- |
-| `Startup` | startup   |
-| `Agency`  | agency    |
+```typescript
+"startup" | "agency"
+```

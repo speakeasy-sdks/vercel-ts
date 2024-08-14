@@ -1,5 +1,19 @@
 # CreateTeamCoupon
 
+## Example Usage
+
+```typescript
+import { CreateTeamCoupon } from "@simplesagar/vercel/models/createteamop.js";
+
+let value: CreateTeamCoupon = {
+    id: "<id>",
+    name: "<value>",
+    amountOff: 4731.43,
+    percentageOff: 5888.12,
+    durationInMonths: 8822.84,
+    duration: "once",
+};
+```
 
 ## Fields
 

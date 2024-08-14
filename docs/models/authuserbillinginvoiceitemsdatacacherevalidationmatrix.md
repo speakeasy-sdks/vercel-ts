@@ -1,5 +1,17 @@
 # AuthUserBillingInvoiceItemsDataCacheRevalidationMatrix
 
+## Example Usage
+
+```typescript
+import { AuthUserBillingInvoiceItemsDataCacheRevalidationMatrix } from "@simplesagar/vercel/models/authuser.js";
+
+let value: AuthUserBillingInvoiceItemsDataCacheRevalidationMatrix = {
+    defaultUnitPrice: "<value>",
+    dimensionPrices: {
+        key: "<value>",
+    },
+};
+```
 
 ## Fields
 

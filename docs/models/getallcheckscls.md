@@ -1,5 +1,15 @@
 # GetAllChecksCLS
 
+## Example Usage
+
+```typescript
+import { GetAllChecksCLS } from "@simplesagar/vercel/models/getallchecksop.js";
+
+let value: GetAllChecksCLS = {
+    value: 6120.96,
+    source: "web-vitals",
+};
+```
 
 ## Fields
 

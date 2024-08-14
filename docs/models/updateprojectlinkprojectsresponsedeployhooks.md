@@ -1,5 +1,17 @@
 # UpdateProjectLinkProjectsResponseDeployHooks
 
+## Example Usage
+
+```typescript
+import { UpdateProjectLinkProjectsResponseDeployHooks } from "@simplesagar/vercel/models/updateprojectop.js";
+
+let value: UpdateProjectLinkProjectsResponseDeployHooks = {
+    id: "<id>",
+    name: "<value>",
+    ref: "<value>",
+    url: "http://solid-curriculum.org",
+};
+```
 
 ## Fields
 

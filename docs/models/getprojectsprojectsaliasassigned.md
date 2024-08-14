@@ -1,5 +1,12 @@
 # GetProjectsProjectsAliasAssigned
 
+## Example Usage
+
+```typescript
+import { GetProjectsProjectsAliasAssigned } from "@simplesagar/vercel/models/getprojectsop.js";
+
+let value: GetProjectsProjectsAliasAssigned = false;
+```
 
 ## Supported Types
 

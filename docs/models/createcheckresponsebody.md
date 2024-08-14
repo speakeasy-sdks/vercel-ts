@@ -1,5 +1,21 @@
 # CreateCheckResponseBody
 
+## Example Usage
+
+```typescript
+import { CreateCheckResponseBody } from "@simplesagar/vercel/models/createcheckop.js";
+
+let value: CreateCheckResponseBody = {
+    id: "<id>",
+    name: "<value>",
+    status: "running",
+    blocking: false,
+    integrationId: "<value>",
+    deploymentId: "<value>",
+    createdAt: 1352.18,
+    updatedAt: 187.89,
+};
+```
 
 ## Fields
 

@@ -1,9 +1,15 @@
 # GetProjectsProjectsResponse200Type
 
+## Example Usage
+
+```typescript
+import { GetProjectsProjectsResponse200Type } from "@simplesagar/vercel/models/getprojectsop.js";
+
+let value: GetProjectsProjectsResponse200Type = "rollback";
+```
 
 ## Values
 
-| Name       | Value      |
-| ---------- | ---------- |
-| `Promote`  | promote    |
-| `Rollback` | rollback   |
+```typescript
+"promote" | "rollback"
+```

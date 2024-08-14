@@ -1,5 +1,14 @@
 # Roles
 
+## Example Usage
+
+```typescript
+import { Roles } from "@simplesagar/vercel/models/patchteamop.js";
+
+let value: Roles = {
+    accessGroupId: "<value>",
+};
+```
 
 ## Supported Types
 

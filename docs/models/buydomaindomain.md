@@ -1,5 +1,18 @@
 # BuyDomainDomain
 
+## Example Usage
+
+```typescript
+import { BuyDomainDomain } from "@simplesagar/vercel/models/buydomainop.js";
+
+let value: BuyDomainDomain = {
+    uid: "<value>",
+    ns: ["<value>"],
+    verified: false,
+    created: 9911.42,
+    pending: false,
+};
+```
 
 ## Fields
 

@@ -1,5 +1,17 @@
 # BlobTotalGetResponseObjectSizeInBytes
 
+## Example Usage
+
+```typescript
+import { BlobTotalGetResponseObjectSizeInBytes } from "@simplesagar/vercel/models/authuser.js";
+
+let value: BlobTotalGetResponseObjectSizeInBytes = {
+    price: 6972.74,
+    batch: 3481.92,
+    threshold: 4633.44,
+    hidden: false,
+};
+```
 
 ## Fields
 

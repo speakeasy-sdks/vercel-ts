@@ -1,5 +1,15 @@
 # AuthUserBillingInvoiceItemsConcurrentBuildsFrequency
 
+## Example Usage
+
+```typescript
+import { AuthUserBillingInvoiceItemsConcurrentBuildsFrequency } from "@simplesagar/vercel/models/authuser.js";
+
+let value: AuthUserBillingInvoiceItemsConcurrentBuildsFrequency = {
+    interval: "month",
+    intervalCount: 3591.11,
+};
+```
 
 ## Fields
 

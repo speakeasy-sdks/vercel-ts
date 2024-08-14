@@ -1,5 +1,12 @@
 # CreateOrTransferDomainRequest
 
+## Example Usage
+
+```typescript
+import { CreateOrTransferDomainRequest } from "@simplesagar/vercel/models/createortransferdomainop.js";
+
+let value: CreateOrTransferDomainRequest = {};
+```
 
 ## Fields
 

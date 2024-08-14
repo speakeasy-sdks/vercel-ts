@@ -1,5 +1,12 @@
 # CancelDeploymentFlagsDefinitions
 
+## Example Usage
+
+```typescript
+import { CancelDeploymentFlagsDefinitions } from "@simplesagar/vercel/models/canceldeploymentop.js";
+
+let value: CancelDeploymentFlagsDefinitions = {};
+```
 
 ## Fields
 

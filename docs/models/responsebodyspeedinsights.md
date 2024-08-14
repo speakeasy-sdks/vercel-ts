@@ -1,5 +1,14 @@
 # ResponseBodySpeedInsights
 
+## Example Usage
+
+```typescript
+import { ResponseBodySpeedInsights } from "@simplesagar/vercel/models/getdeploymentop.js";
+
+let value: ResponseBodySpeedInsights = {
+    id: "<id>",
+};
+```
 
 ## Fields
 

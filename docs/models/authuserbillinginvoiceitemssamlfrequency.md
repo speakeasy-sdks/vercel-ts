@@ -1,5 +1,15 @@
 # AuthUserBillingInvoiceItemsSamlFrequency
 
+## Example Usage
+
+```typescript
+import { AuthUserBillingInvoiceItemsSamlFrequency } from "@simplesagar/vercel/models/authuser.js";
+
+let value: AuthUserBillingInvoiceItemsSamlFrequency = {
+    interval: "month",
+    intervalCount: 7358.94,
+};
+```
 
 ## Fields
 

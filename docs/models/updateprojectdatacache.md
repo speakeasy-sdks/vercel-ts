@@ -1,5 +1,14 @@
 # UpdateProjectDataCache
 
+## Example Usage
+
+```typescript
+import { UpdateProjectDataCache } from "@simplesagar/vercel/models/updateprojectop.js";
+
+let value: UpdateProjectDataCache = {
+    userDisabled: false,
+};
+```
 
 ## Fields
 

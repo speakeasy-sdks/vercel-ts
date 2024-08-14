@@ -1,5 +1,15 @@
 # Period
 
+## Example Usage
+
+```typescript
+import { Period } from "@simplesagar/vercel/models/authuser.js";
+
+let value: Period = {
+    start: 1478.01,
+    end: 2536.25,
+};
+```
 
 ## Fields
 

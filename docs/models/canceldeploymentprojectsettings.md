@@ -1,5 +1,12 @@
 # CancelDeploymentProjectSettings
 
+## Example Usage
+
+```typescript
+import { CancelDeploymentProjectSettings } from "@simplesagar/vercel/models/canceldeploymentop.js";
+
+let value: CancelDeploymentProjectSettings = {};
+```
 
 ## Fields
 

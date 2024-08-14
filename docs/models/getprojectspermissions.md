@@ -1,5 +1,12 @@
 # GetProjectsPermissions
 
+## Example Usage
+
+```typescript
+import { GetProjectsPermissions } from "@simplesagar/vercel/models/getprojectsop.js";
+
+let value: GetProjectsPermissions = {};
+```
 
 ## Fields
 

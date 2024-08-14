@@ -1,5 +1,15 @@
 # ContentHint
 
+## Example Usage
+
+```typescript
+import { ContentHint } from "@simplesagar/vercel/models/updateprojectdatacacheop.js";
+
+let value: ContentHint = {
+    type: "redis-rest-api-url",
+    storeId: "<value>",
+};
+```
 
 ## Supported Types
 

@@ -1,5 +1,14 @@
 # CreateProjectProjectsBuilds
 
+## Example Usage
+
+```typescript
+import { CreateProjectProjectsBuilds } from "@simplesagar/vercel/models/createprojectop.js";
+
+let value: CreateProjectProjectsBuilds = {
+    use: "<value>",
+};
+```
 
 ## Fields
 

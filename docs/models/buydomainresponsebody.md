@@ -2,6 +2,21 @@
 
 Successful response for purchasing a Domain.
 
+## Example Usage
+
+```typescript
+import { BuyDomainResponseBody } from "@simplesagar/vercel/models/buydomainop.js";
+
+let value: BuyDomainResponseBody = {
+    domain: {
+        uid: "<value>",
+        ns: ["<value>"],
+        verified: false,
+        created: 6939.57,
+        pending: false,
+    },
+};
+```
 
 ## Fields
 

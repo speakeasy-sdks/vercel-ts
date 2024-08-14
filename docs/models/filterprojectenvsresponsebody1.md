@@ -1,5 +1,12 @@
 # FilterProjectEnvsResponseBody1
 
+## Example Usage
+
+```typescript
+import { FilterProjectEnvsResponseBody1 } from "@simplesagar/vercel/models/filterprojectenvsop.js";
+
+let value: FilterProjectEnvsResponseBody1 = {};
+```
 
 ## Fields
 

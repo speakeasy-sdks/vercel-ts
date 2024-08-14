@@ -1,8 +1,15 @@
 # GetDeploymentGitSourceType
 
+## Example Usage
+
+```typescript
+import { GetDeploymentGitSourceType } from "@simplesagar/vercel/models/getdeploymentop.js";
+
+let value: GetDeploymentGitSourceType = "github";
+```
 
 ## Values
 
-| Name     | Value    |
-| -------- | -------- |
-| `Github` | github   |
+```typescript
+"github"
+```

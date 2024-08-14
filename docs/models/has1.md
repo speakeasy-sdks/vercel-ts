@@ -1,5 +1,15 @@
 # Has1
 
+## Example Usage
+
+```typescript
+import { Has1 } from "@simplesagar/vercel/models/createdeploymentop.js";
+
+let value: Has1 = {
+    type: "host",
+    value: "<value>",
+};
+```
 
 ## Fields
 

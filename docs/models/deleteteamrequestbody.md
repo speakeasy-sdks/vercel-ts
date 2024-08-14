@@ -1,5 +1,12 @@
 # DeleteTeamRequestBody
 
+## Example Usage
+
+```typescript
+import { DeleteTeamRequestBody } from "@simplesagar/vercel/models/deleteteamop.js";
+
+let value: DeleteTeamRequestBody = {};
+```
 
 ## Fields
 

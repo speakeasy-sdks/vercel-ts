@@ -1,10 +1,15 @@
 # EditProjectEnvTarget
 
+## Example Usage
+
+```typescript
+import { EditProjectEnvTarget } from "@simplesagar/vercel/models/editprojectenvop.js";
+
+let value: EditProjectEnvTarget = "production";
+```
 
 ## Values
 
-| Name          | Value         |
-| ------------- | ------------- |
-| `Production`  | production    |
-| `Preview`     | preview       |
-| `Development` | development   |
+```typescript
+"production" | "preview" | "development"
+```

@@ -1,5 +1,12 @@
 # IssueCertRequest
 
+## Example Usage
+
+```typescript
+import { IssueCertRequest } from "@simplesagar/vercel/models/issuecertop.js";
+
+let value: IssueCertRequest = {};
+```
 
 ## Fields
 

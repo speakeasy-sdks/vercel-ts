@@ -1,5 +1,12 @@
 # PatchTeamSaml
 
+## Example Usage
+
+```typescript
+import { PatchTeamSaml } from "@simplesagar/vercel/models/patchteamop.js";
+
+let value: PatchTeamSaml = {};
+```
 
 ## Fields
 

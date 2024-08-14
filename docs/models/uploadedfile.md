@@ -2,6 +2,15 @@
 
 Used in the case you want to reference a file that was already uploaded
 
+## Example Usage
+
+```typescript
+import { UploadedFile } from "@simplesagar/vercel/models/createdeploymentop.js";
+
+let value: UploadedFile = {
+    file: "folder/file.js",
+};
+```
 
 ## Fields
 

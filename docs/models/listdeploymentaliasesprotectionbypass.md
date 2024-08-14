@@ -1,5 +1,17 @@
 # ListDeploymentAliasesProtectionBypass
 
+## Example Usage
+
+```typescript
+import { ListDeploymentAliasesProtectionBypass } from "@simplesagar/vercel/models/listdeploymentaliasesop.js";
+
+let value: ListDeploymentAliasesProtectionBypass = {
+    createdAt: 6850.92,
+    lastUpdatedAt: 5098.07,
+    lastUpdatedBy: "<value>",
+    scope: "email_invite",
+};
+```
 
 ## Supported Types
 

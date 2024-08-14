@@ -2,6 +2,13 @@
 
 The environment variable was successfully edited
 
+## Example Usage
+
+```typescript
+import { EditProjectEnvResponseBody } from "@simplesagar/vercel/models/editprojectenvop.js";
+
+let value: EditProjectEnvResponseBody = {};
+```
 
 ## Supported Types
 

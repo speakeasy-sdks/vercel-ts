@@ -1,8 +1,16 @@
 # CreateDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody9Type
 
+## Example Usage
+
+```typescript
+import { CreateDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody9Type } from "@simplesagar/vercel/models/createdeploymentop.js";
+
+let value: CreateDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody9Type =
+    "bitbucket";
+```
 
 ## Values
 
-| Name        | Value       |
-| ----------- | ----------- |
-| `Bitbucket` | bitbucket   |
+```typescript
+"bitbucket"
+```

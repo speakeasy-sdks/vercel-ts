@@ -1,5 +1,21 @@
 # Link
 
+## Example Usage
+
+```typescript
+import { Link } from "@simplesagar/vercel/models/updateprojectdatacacheop.js";
+
+let value: Link = {
+    deployHooks: [
+        {
+            id: "<id>",
+            name: "<value>",
+            ref: "<value>",
+            url: "https://flat-directive.biz",
+        },
+    ],
+};
+```
 
 ## Supported Types
 

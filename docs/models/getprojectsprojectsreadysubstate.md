@@ -1,9 +1,15 @@
 # GetProjectsProjectsReadySubstate
 
+## Example Usage
+
+```typescript
+import { GetProjectsProjectsReadySubstate } from "@simplesagar/vercel/models/getprojectsop.js";
+
+let value: GetProjectsProjectsReadySubstate = "STAGED";
+```
 
 ## Values
 
-| Name       | Value      |
-| ---------- | ---------- |
-| `Staged`   | STAGED     |
-| `Promoted` | PROMOTED   |
+```typescript
+"STAGED" | "PROMOTED"
+```

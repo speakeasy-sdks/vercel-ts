@@ -1,5 +1,17 @@
 # EdgeConfigWrite
 
+## Example Usage
+
+```typescript
+import { EdgeConfigWrite } from "@simplesagar/vercel/models/authuser.js";
+
+let value: EdgeConfigWrite = {
+    price: 568.77,
+    batch: 4973.57,
+    threshold: 9804.86,
+    hidden: false,
+};
+```
 
 ## Fields
 

@@ -1,5 +1,12 @@
 # UpdateTeamMemberJoinedFrom
 
+## Example Usage
+
+```typescript
+import { UpdateTeamMemberJoinedFrom } from "@simplesagar/vercel/models/updateteammemberop.js";
+
+let value: UpdateTeamMemberJoinedFrom = {};
+```
 
 ## Fields
 

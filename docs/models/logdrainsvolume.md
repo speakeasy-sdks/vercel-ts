@@ -1,5 +1,17 @@
 # LogDrainsVolume
 
+## Example Usage
+
+```typescript
+import { LogDrainsVolume } from "@simplesagar/vercel/models/authuser.js";
+
+let value: LogDrainsVolume = {
+    price: 6144.38,
+    batch: 8268.62,
+    threshold: 7316.34,
+    hidden: false,
+};
+```
 
 ## Fields
 

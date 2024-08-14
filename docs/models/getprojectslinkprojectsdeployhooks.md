@@ -1,5 +1,17 @@
 # GetProjectsLinkProjectsDeployHooks
 
+## Example Usage
+
+```typescript
+import { GetProjectsLinkProjectsDeployHooks } from "@simplesagar/vercel/models/getprojectsop.js";
+
+let value: GetProjectsLinkProjectsDeployHooks = {
+    id: "<id>",
+    name: "<value>",
+    ref: "<value>",
+    url: "http://nimble-caution.info",
+};
+```
 
 ## Fields
 

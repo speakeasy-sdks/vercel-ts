@@ -1,5 +1,15 @@
 # ResponseBody1
 
+## Example Usage
+
+```typescript
+import { ResponseBody1 } from "@simplesagar/vercel/models/artifactqueryop.js";
+
+let value: ResponseBody1 = {
+    size: 1433.53,
+    taskDurationMs: 5373.73,
+};
+```
 
 ## Fields
 

@@ -1,10 +1,15 @@
 # GetDeploymentCustomEnvironmentDeploymentsResponse200Type
 
+## Example Usage
+
+```typescript
+import { GetDeploymentCustomEnvironmentDeploymentsResponse200Type } from "@simplesagar/vercel/models/getdeploymentop.js";
+
+let value: GetDeploymentCustomEnvironmentDeploymentsResponse200Type = "startsWith";
+```
 
 ## Values
 
-| Name         | Value        |
-| ------------ | ------------ |
-| `StartsWith` | startsWith   |
-| `Equals`     | equals       |
-| `EndsWith`   | endsWith     |
+```typescript
+"startsWith" | "equals" | "endsWith"
+```

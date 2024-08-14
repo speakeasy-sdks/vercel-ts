@@ -1,5 +1,15 @@
 # CreateAuthTokenRequestBody2
 
+## Example Usage
+
+```typescript
+import { CreateAuthTokenRequestBody2 } from "@simplesagar/vercel/models/createauthtokenop.js";
+
+let value: CreateAuthTokenRequestBody2 = {
+    type: "oauth2-token",
+    name: "<value>",
+};
+```
 
 ## Fields
 

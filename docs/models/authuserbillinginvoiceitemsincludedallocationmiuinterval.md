@@ -1,8 +1,15 @@
 # AuthUserBillingInvoiceItemsIncludedAllocationMiuInterval
 
+## Example Usage
+
+```typescript
+import { AuthUserBillingInvoiceItemsIncludedAllocationMiuInterval } from "@simplesagar/vercel/models/authuser.js";
+
+let value: AuthUserBillingInvoiceItemsIncludedAllocationMiuInterval = "month";
+```
 
 ## Values
 
-| Name    | Value   |
-| ------- | ------- |
-| `Month` | month   |
+```typescript
+"month"
+```

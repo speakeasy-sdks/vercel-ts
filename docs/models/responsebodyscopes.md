@@ -1,5 +1,15 @@
 # ResponseBodyScopes
 
+## Example Usage
+
+```typescript
+import { ResponseBodyScopes } from "@simplesagar/vercel/models/getconfigurationsop.js";
+
+let value: ResponseBodyScopes = {
+    added: ["read-write:project-env-vars"],
+    upgraded: ["read-write:project-env-vars"],
+};
+```
 
 ## Fields
 

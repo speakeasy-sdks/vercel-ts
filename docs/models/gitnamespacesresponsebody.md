@@ -1,5 +1,17 @@
 # GitNamespacesResponseBody
 
+## Example Usage
+
+```typescript
+import { GitNamespacesResponseBody } from "@simplesagar/vercel/models/gitnamespacesop.js";
+
+let value: GitNamespacesResponseBody = {
+    provider: "<value>",
+    slug: "<value>",
+    id: "<value>",
+    ownerType: "<value>",
+};
+```
 
 ## Fields
 

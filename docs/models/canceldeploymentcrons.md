@@ -1,5 +1,15 @@
 # CancelDeploymentCrons
 
+## Example Usage
+
+```typescript
+import { CancelDeploymentCrons } from "@simplesagar/vercel/models/canceldeploymentop.js";
+
+let value: CancelDeploymentCrons = {
+    schedule: "<value>",
+    path: "/root",
+};
+```
 
 ## Fields
 

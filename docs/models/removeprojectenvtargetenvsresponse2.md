@@ -1,10 +1,15 @@
 # RemoveProjectEnvTargetEnvsResponse2
 
+## Example Usage
+
+```typescript
+import { RemoveProjectEnvTargetEnvsResponse2 } from "@simplesagar/vercel/models/removeprojectenvop.js";
+
+let value: RemoveProjectEnvTargetEnvsResponse2 = "production";
+```
 
 ## Values
 
-| Name          | Value         |
-| ------------- | ------------- |
-| `Production`  | production    |
-| `Preview`     | preview       |
-| `Development` | development   |
+```typescript
+"production" | "preview" | "development"
+```

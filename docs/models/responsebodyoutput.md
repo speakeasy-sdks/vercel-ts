@@ -1,5 +1,15 @@
 # ResponseBodyOutput
 
+## Example Usage
+
+```typescript
+import { ResponseBodyOutput } from "@simplesagar/vercel/models/getdeploymentop.js";
+
+let value: ResponseBodyOutput = {
+    path: "/usr/share",
+    functionName: "<value>",
+};
+```
 
 ## Fields
 

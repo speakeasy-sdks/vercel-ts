@@ -2,6 +2,16 @@
 
 If the output is a Serverless Function, an object containing the name, location and memory size of the function
 
+## Example Usage
+
+```typescript
+import { Lambda } from "@simplesagar/vercel/models/listdeploymentbuildsop.js";
+
+let value: Lambda = {
+    functionName: "<value>",
+    deployedTo: ["<value>"],
+};
+```
 
 ## Fields
 

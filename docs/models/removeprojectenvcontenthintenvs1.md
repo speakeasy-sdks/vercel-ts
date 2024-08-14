@@ -1,5 +1,15 @@
 # RemoveProjectEnvContentHintEnvs1
 
+## Example Usage
+
+```typescript
+import { RemoveProjectEnvContentHintEnvs1 } from "@simplesagar/vercel/models/removeprojectenvop.js";
+
+let value: RemoveProjectEnvContentHintEnvs1 = {
+    type: "redis-url",
+    storeId: "<value>",
+};
+```
 
 ## Fields
 

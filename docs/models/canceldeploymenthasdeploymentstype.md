@@ -1,10 +1,15 @@
 # CancelDeploymentHasDeploymentsType
 
+## Example Usage
+
+```typescript
+import { CancelDeploymentHasDeploymentsType } from "@simplesagar/vercel/models/canceldeploymentop.js";
+
+let value: CancelDeploymentHasDeploymentsType = "cookie";
+```
 
 ## Values
 
-| Name     | Value    |
-| -------- | -------- |
-| `Header` | header   |
-| `Cookie` | cookie   |
-| `Query`  | query    |
+```typescript
+"header" | "cookie" | "query"
+```

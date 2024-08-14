@@ -1,5 +1,16 @@
 # UpdateProjectDataCacheProtectionBypass
 
+## Example Usage
+
+```typescript
+import { UpdateProjectDataCacheProtectionBypass } from "@simplesagar/vercel/models/updateprojectdatacacheop.js";
+
+let value: UpdateProjectDataCacheProtectionBypass = {
+    createdAt: 2497.96,
+    createdBy: "<value>",
+    scope: "automation-bypass",
+};
+```
 
 ## Fields
 

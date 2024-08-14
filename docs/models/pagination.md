@@ -2,6 +2,17 @@
 
 This object contains information related to the pagination of the current request, including the necessary parameters to get the next or previous page of data.
 
+## Example Usage
+
+```typescript
+import { Pagination } from "@simplesagar/vercel/models/pagination.js";
+
+let value: Pagination = {
+    count: 20,
+    next: 1540095775951,
+    prev: 1540095775951,
+};
+```
 
 ## Fields
 

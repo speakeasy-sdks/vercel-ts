@@ -2,6 +2,17 @@
 
 Will be used to create an invoice item. The price must be in cents: 2000 for $20.
 
+## Example Usage
+
+```typescript
+import { PasswordProtection } from "@simplesagar/vercel/models/authuser.js";
+
+let value: PasswordProtection = {
+    price: 6845.53,
+    quantity: 3445.3,
+    hidden: false,
+};
+```
 
 ## Fields
 

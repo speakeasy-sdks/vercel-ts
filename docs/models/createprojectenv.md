@@ -1,5 +1,16 @@
 # CreateProjectEnv
 
+## Example Usage
+
+```typescript
+import { CreateProjectEnv } from "@simplesagar/vercel/models/createprojectop.js";
+
+let value: CreateProjectEnv = {
+    type: "plain",
+    key: "<key>",
+    value: "<value>",
+};
+```
 
 ## Fields
 

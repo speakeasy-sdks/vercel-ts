@@ -1,5 +1,18 @@
 # GitSource9
 
+## Example Usage
+
+```typescript
+import { GitSource9 } from "@simplesagar/vercel/models/canceldeploymentop.js";
+
+let value: GitSource9 = {
+    type: "bitbucket",
+    ref: "<value>",
+    sha: "<value>",
+    workspaceUuid: "<value>",
+    repoUuid: "<value>",
+};
+```
 
 ## Fields
 

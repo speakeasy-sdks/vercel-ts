@@ -1,12 +1,15 @@
 # Status
 
+## Example Usage
+
+```typescript
+import { Status } from "@simplesagar/vercel/models/authuser.js";
+
+let value: Status = "canceled";
+```
 
 ## Values
 
-| Name       | Value      |
-| ---------- | ---------- |
-| `Active`   | active     |
-| `Trialing` | trialing   |
-| `Overdue`  | overdue    |
-| `Expired`  | expired    |
-| `Canceled` | canceled   |
+```typescript
+"active" | "trialing" | "overdue" | "expired" | "canceled"
+```

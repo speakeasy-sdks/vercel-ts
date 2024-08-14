@@ -1,10 +1,15 @@
 # ListAccessGroupProjectsRole
 
+## Example Usage
+
+```typescript
+import { ListAccessGroupProjectsRole } from "@simplesagar/vercel/models/listaccessgroupprojectsop.js";
+
+let value: ListAccessGroupProjectsRole = "PROJECT_VIEWER";
+```
 
 ## Values
 
-| Name               | Value              |
-| ------------------ | ------------------ |
-| `Admin`            | ADMIN              |
-| `ProjectDeveloper` | PROJECT_DEVELOPER  |
-| `ProjectViewer`    | PROJECT_VIEWER     |
+```typescript
+"ADMIN" | "PROJECT_DEVELOPER" | "PROJECT_VIEWER"
+```

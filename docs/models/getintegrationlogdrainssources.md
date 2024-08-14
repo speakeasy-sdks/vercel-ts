@@ -2,14 +2,16 @@
 
 The sources from which logs are currently being delivered to this log drain.
 
+## Example Usage
+
+```typescript
+import { GetIntegrationLogDrainsSources } from "@simplesagar/vercel/models/getintegrationlogdrainsop.js";
+
+let value: GetIntegrationLogDrainsSources = "firewall";
+```
 
 ## Values
 
-| Name       | Value      |
-| ---------- | ---------- |
-| `Build`    | build      |
-| `Edge`     | edge       |
-| `Lambda`   | lambda     |
-| `Static`   | static     |
-| `External` | external   |
-| `Firewall` | firewall   |
+```typescript
+"build" | "edge" | "lambda" | "static" | "external" | "firewall"
+```

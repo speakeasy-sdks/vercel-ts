@@ -1,11 +1,15 @@
 # GetDeploymentResponseBodyChecksConclusion
 
+## Example Usage
+
+```typescript
+import { GetDeploymentResponseBodyChecksConclusion } from "@simplesagar/vercel/models/getdeploymentop.js";
+
+let value: GetDeploymentResponseBodyChecksConclusion = "canceled";
+```
 
 ## Values
 
-| Name        | Value       |
-| ----------- | ----------- |
-| `Succeeded` | succeeded   |
-| `Failed`    | failed      |
-| `Skipped`   | skipped     |
-| `Canceled`  | canceled    |
+```typescript
+"succeeded" | "failed" | "skipped" | "canceled"
+```

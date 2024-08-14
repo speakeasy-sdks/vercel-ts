@@ -1,5 +1,17 @@
 # CreateTeamFunctionDuration
 
+## Example Usage
+
+```typescript
+import { CreateTeamFunctionDuration } from "@simplesagar/vercel/models/createteamop.js";
+
+let value: CreateTeamFunctionDuration = {
+    price: 8744,
+    batch: 2331.73,
+    threshold: 1124.27,
+    hidden: false,
+};
+```
 
 ## Fields
 

@@ -1,10 +1,15 @@
 # UpdateProjectDataCacheTarget1
 
+## Example Usage
+
+```typescript
+import { UpdateProjectDataCacheTarget1 } from "@simplesagar/vercel/models/updateprojectdatacacheop.js";
+
+let value: UpdateProjectDataCacheTarget1 = "production";
+```
 
 ## Values
 
-| Name          | Value         |
-| ------------- | ------------- |
-| `Production`  | production    |
-| `Preview`     | preview       |
-| `Development` | development   |
+```typescript
+"production" | "preview" | "development"
+```

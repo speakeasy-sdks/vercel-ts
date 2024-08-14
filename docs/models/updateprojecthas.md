@@ -1,5 +1,14 @@
 # UpdateProjectHas
 
+## Example Usage
+
+```typescript
+import { UpdateProjectHas } from "@simplesagar/vercel/models/updateprojectop.js";
+
+let value: UpdateProjectHas = {
+    type: "host",
+};
+```
 
 ## Fields
 

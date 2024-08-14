@@ -2,6 +2,17 @@
 
 Will be used to create an invoice item. The price must be in cents: 2000 for $20.
 
+## Example Usage
+
+```typescript
+import { CreateTeamPasswordProtection } from "@simplesagar/vercel/models/createteamop.js";
+
+let value: CreateTeamPasswordProtection = {
+    price: 7214.3,
+    quantity: 2940.76,
+    hidden: false,
+};
+```
 
 ## Fields
 

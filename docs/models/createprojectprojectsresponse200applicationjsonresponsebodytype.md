@@ -1,9 +1,15 @@
 # CreateProjectProjectsResponse200ApplicationJSONResponseBodyType
 
+## Example Usage
+
+```typescript
+import { CreateProjectProjectsResponse200ApplicationJSONResponseBodyType } from "@simplesagar/vercel/models/createprojectop.js";
+
+let value: CreateProjectProjectsResponse200ApplicationJSONResponseBodyType = "promote";
+```
 
 ## Values
 
-| Name       | Value      |
-| ---------- | ---------- |
-| `Promote`  | promote    |
-| `Rollback` | rollback   |
+```typescript
+"promote" | "rollback"
+```

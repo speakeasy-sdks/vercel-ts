@@ -2,6 +2,15 @@
 
 Flags defined in the Build Output API, used by this deployment. Primarily used by the Toolbar to know about the used flags.
 
+## Example Usage
+
+```typescript
+import { CancelDeploymentFlags1 } from "@simplesagar/vercel/models/canceldeploymentop.js";
+
+let value: CancelDeploymentFlags1 = {
+    definitions: {},
+};
+```
 
 ## Fields
 

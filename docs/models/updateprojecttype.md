@@ -1,12 +1,15 @@
 # UpdateProjectType
 
+## Example Usage
+
+```typescript
+import { UpdateProjectType } from "@simplesagar/vercel/models/updateprojectop.js";
+
+let value: UpdateProjectType = "system";
+```
 
 ## Values
 
-| Name        | Value       |
-| ----------- | ----------- |
-| `System`    | system      |
-| `Encrypted` | encrypted   |
-| `Plain`     | plain       |
-| `Sensitive` | sensitive   |
-| `Secret`    | secret      |
+```typescript
+"system" | "encrypted" | "plain" | "sensitive" | "secret"
+```

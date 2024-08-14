@@ -1,8 +1,15 @@
 # CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONType
 
+## Example Usage
+
+```typescript
+import { CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONType } from "@simplesagar/vercel/models/canceldeploymentop.js";
+
+let value: CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONType = "bitbucket";
+```
 
 ## Values
 
-| Name        | Value       |
-| ----------- | ----------- |
-| `Bitbucket` | bitbucket   |
+```typescript
+"bitbucket"
+```

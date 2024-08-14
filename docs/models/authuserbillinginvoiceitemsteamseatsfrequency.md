@@ -1,5 +1,15 @@
 # AuthUserBillingInvoiceItemsTeamSeatsFrequency
 
+## Example Usage
+
+```typescript
+import { AuthUserBillingInvoiceItemsTeamSeatsFrequency } from "@simplesagar/vercel/models/authuser.js";
+
+let value: AuthUserBillingInvoiceItemsTeamSeatsFrequency = {
+    interval: "month",
+    intervalCount: 9974.37,
+};
+```
 
 ## Fields
 

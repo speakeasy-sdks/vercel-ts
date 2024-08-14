@@ -1,5 +1,17 @@
 # ServerlessFunctionExecution
 
+## Example Usage
+
+```typescript
+import { ServerlessFunctionExecution } from "@simplesagar/vercel/models/authuser.js";
+
+let value: ServerlessFunctionExecution = {
+    price: 8200.23,
+    batch: 2514.64,
+    threshold: 2981.87,
+    hidden: false,
+};
+```
 
 ## Fields
 

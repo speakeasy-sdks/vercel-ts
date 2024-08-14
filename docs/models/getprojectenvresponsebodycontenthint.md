@@ -1,5 +1,15 @@
 # GetProjectEnvResponseBodyContentHint
 
+## Example Usage
+
+```typescript
+import { GetProjectEnvResponseBodyContentHint } from "@simplesagar/vercel/models/getprojectenvop.js";
+
+let value: GetProjectEnvResponseBodyContentHint = {
+    type: "redis-url",
+    storeId: "<value>",
+};
+```
 
 ## Supported Types
 

@@ -1,14 +1,15 @@
 # ScopesOrigin
 
+## Example Usage
+
+```typescript
+import { ScopesOrigin } from "@simplesagar/vercel/models/authtoken.js";
+
+let value: ScopesOrigin = "passkey";
+```
 
 ## Values
 
-| Name        | Value       |
-| ----------- | ----------- |
-| `Saml`      | saml        |
-| `Github`    | github      |
-| `Gitlab`    | gitlab      |
-| `Bitbucket` | bitbucket   |
-| `Email`     | email       |
-| `Manual`    | manual      |
-| `Passkey`   | passkey     |
+```typescript
+"saml" | "github" | "gitlab" | "bitbucket" | "email" | "manual" | "passkey"
+```

@@ -1,5 +1,16 @@
 # CreateRecordRequestBody
 
+## Example Usage
+
+```typescript
+import { CreateRecordRequestBody } from "@simplesagar/vercel/models/createrecordop.js";
+
+let value: CreateRecordRequestBody = {
+    name: "subdomain",
+    type: "SRV",
+    value: "2001:DB8::42",
+};
+```
 
 ## Supported Types
 

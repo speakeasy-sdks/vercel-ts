@@ -1,5 +1,14 @@
 # UpdateProjectTrustedIps
 
+## Example Usage
+
+```typescript
+import { UpdateProjectTrustedIps } from "@simplesagar/vercel/models/updateprojectop.js";
+
+let value: UpdateProjectTrustedIps = {
+    deploymentType: "all",
+};
+```
 
 ## Supported Types
 

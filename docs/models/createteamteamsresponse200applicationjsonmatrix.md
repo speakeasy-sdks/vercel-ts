@@ -1,5 +1,17 @@
 # CreateTeamTeamsResponse200ApplicationJSONMatrix
 
+## Example Usage
+
+```typescript
+import { CreateTeamTeamsResponse200ApplicationJSONMatrix } from "@simplesagar/vercel/models/createteamop.js";
+
+let value: CreateTeamTeamsResponse200ApplicationJSONMatrix = {
+    defaultUnitPrice: "<value>",
+    dimensionPrices: {
+        key: "<value>",
+    },
+};
+```
 
 ## Fields
 

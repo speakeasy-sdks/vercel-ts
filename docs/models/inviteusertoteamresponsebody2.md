@@ -1,5 +1,16 @@
 # InviteUserToTeamResponseBody2
 
+## Example Usage
+
+```typescript
+import { InviteUserToTeamResponseBody2 } from "@simplesagar/vercel/models/inviteusertoteamop.js";
+
+let value: InviteUserToTeamResponseBody2 = {
+    uid: "<value>",
+    username: "Chauncey.Mayert",
+    role: "OWNER",
+};
+```
 
 ## Fields
 

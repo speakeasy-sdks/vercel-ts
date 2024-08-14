@@ -1,5 +1,17 @@
 # EdgeFunctionExecutionUnits
 
+## Example Usage
+
+```typescript
+import { EdgeFunctionExecutionUnits } from "@simplesagar/vercel/models/authuser.js";
+
+let value: EdgeFunctionExecutionUnits = {
+    price: 873.82,
+    batch: 964.5,
+    threshold: 3864.47,
+    hidden: false,
+};
+```
 
 ## Fields
 

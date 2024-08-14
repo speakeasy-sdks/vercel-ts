@@ -1,5 +1,15 @@
 # CreateProjectContentHint9
 
+## Example Usage
+
+```typescript
+import { CreateProjectContentHint9 } from "@simplesagar/vercel/models/createprojectop.js";
+
+let value: CreateProjectContentHint9 = {
+    type: "postgres-user",
+    storeId: "<value>",
+};
+```
 
 ## Fields
 

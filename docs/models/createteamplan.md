@@ -1,10 +1,15 @@
 # CreateTeamPlan
 
+## Example Usage
+
+```typescript
+import { CreateTeamPlan } from "@simplesagar/vercel/models/createteamop.js";
+
+let value: CreateTeamPlan = "enterprise";
+```
 
 ## Values
 
-| Name         | Value        |
-| ------------ | ------------ |
-| `Pro`        | pro          |
-| `Enterprise` | enterprise   |
-| `Hobby`      | hobby        |
+```typescript
+"pro" | "enterprise" | "hobby"
+```

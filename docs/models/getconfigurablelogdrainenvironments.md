@@ -1,9 +1,15 @@
 # GetConfigurableLogDrainEnvironments
 
+## Example Usage
+
+```typescript
+import { GetConfigurableLogDrainEnvironments } from "@simplesagar/vercel/models/getconfigurablelogdrainop.js";
+
+let value: GetConfigurableLogDrainEnvironments = "production";
+```
 
 ## Values
 
-| Name         | Value        |
-| ------------ | ------------ |
-| `Production` | production   |
-| `Preview`    | preview      |
+```typescript
+"production" | "preview"
+```

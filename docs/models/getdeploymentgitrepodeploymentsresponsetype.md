@@ -1,8 +1,15 @@
 # GetDeploymentGitRepoDeploymentsResponseType
 
+## Example Usage
+
+```typescript
+import { GetDeploymentGitRepoDeploymentsResponseType } from "@simplesagar/vercel/models/getdeploymentop.js";
+
+let value: GetDeploymentGitRepoDeploymentsResponseType = "gitlab";
+```
 
 ## Values
 
-| Name     | Value    |
-| -------- | -------- |
-| `Gitlab` | gitlab   |
+```typescript
+"gitlab"
+```

@@ -2,6 +2,13 @@
 
 Deployment Target or Targets in which the ENV variable will be used
 
+## Example Usage
+
+```typescript
+import { CreateProjectTarget } from "@simplesagar/vercel/models/createprojectop.js";
+
+let value: CreateProjectTarget = ["development"];
+```
 
 ## Supported Types
 

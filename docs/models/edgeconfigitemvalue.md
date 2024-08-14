@@ -1,5 +1,12 @@
 # EdgeConfigItemValue
 
+## Example Usage
+
+```typescript
+import { EdgeConfigItemValue } from "@simplesagar/vercel/models/edgeconfigitemvalue.js";
+
+let value: EdgeConfigItemValue = 9282.19;
+```
 
 ## Supported Types
 

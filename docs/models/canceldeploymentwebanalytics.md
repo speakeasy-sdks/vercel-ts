@@ -1,5 +1,14 @@
 # CancelDeploymentWebAnalytics
 
+## Example Usage
+
+```typescript
+import { CancelDeploymentWebAnalytics } from "@simplesagar/vercel/models/canceldeploymentop.js";
+
+let value: CancelDeploymentWebAnalytics = {
+    id: "<id>",
+};
+```
 
 ## Fields
 

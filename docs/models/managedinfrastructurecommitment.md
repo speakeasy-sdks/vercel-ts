@@ -2,6 +2,17 @@
 
 Will be used to create an invoice item. The price must be in cents: 2000 for $20.
 
+## Example Usage
+
+```typescript
+import { ManagedInfrastructureCommitment } from "@simplesagar/vercel/models/authuser.js";
+
+let value: ManagedInfrastructureCommitment = {
+    price: 5208.75,
+    quantity: 5777.09,
+    hidden: false,
+};
+```
 
 ## Fields
 

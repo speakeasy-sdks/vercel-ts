@@ -1,5 +1,12 @@
 # GetDeploymentsAliasAssigned
 
+## Example Usage
+
+```typescript
+import { GetDeploymentsAliasAssigned } from "@simplesagar/vercel/models/getdeploymentsop.js";
+
+let value: GetDeploymentsAliasAssigned = 291;
+```
 
 ## Supported Types
 

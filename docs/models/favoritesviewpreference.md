@@ -1,9 +1,15 @@
 # FavoritesViewPreference
 
+## Example Usage
+
+```typescript
+import { FavoritesViewPreference } from "@simplesagar/vercel/models/authuser.js";
+
+let value: FavoritesViewPreference = "open";
+```
 
 ## Values
 
-| Name     | Value    |
-| -------- | -------- |
-| `Open`   | open     |
-| `Closed` | closed   |
+```typescript
+"open" | "closed"
+```

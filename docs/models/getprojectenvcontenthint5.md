@@ -1,5 +1,15 @@
 # GetProjectEnvContentHint5
 
+## Example Usage
+
+```typescript
+import { GetProjectEnvContentHint5 } from "@simplesagar/vercel/models/getprojectenvop.js";
+
+let value: GetProjectEnvContentHint5 = {
+    type: "blob-read-write-token",
+    storeId: "<value>",
+};
+```
 
 ## Fields
 

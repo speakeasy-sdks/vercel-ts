@@ -1,5 +1,17 @@
 # CreateTeamEdgeRequestAdditionalCpuDuration
 
+## Example Usage
+
+```typescript
+import { CreateTeamEdgeRequestAdditionalCpuDuration } from "@simplesagar/vercel/models/createteamop.js";
+
+let value: CreateTeamEdgeRequestAdditionalCpuDuration = {
+    price: 6540.82,
+    batch: 7699.67,
+    threshold: 3730.4,
+    hidden: false,
+};
+```
 
 ## Fields
 

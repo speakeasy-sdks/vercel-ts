@@ -1,5 +1,15 @@
 # AliasWarning
 
+## Example Usage
+
+```typescript
+import { AliasWarning } from "@simplesagar/vercel/models/createdeploymentop.js";
+
+let value: AliasWarning = {
+    code: "<value>",
+    message: "<value>",
+};
+```
 
 ## Fields
 

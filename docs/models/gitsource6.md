@@ -1,5 +1,17 @@
 # GitSource6
 
+## Example Usage
+
+```typescript
+import { GitSource6 } from "@simplesagar/vercel/models/canceldeploymentop.js";
+
+let value: GitSource6 = {
+    type: "custom",
+    ref: "<value>",
+    sha: "<value>",
+    gitUrl: "<value>",
+};
+```
 
 ## Fields
 

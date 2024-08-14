@@ -1,5 +1,12 @@
 # CreateEdgeConfigRequest
 
+## Example Usage
+
+```typescript
+import { CreateEdgeConfigRequest } from "@simplesagar/vercel/models/createedgeconfigop.js";
+
+let value: CreateEdgeConfigRequest = {};
+```
 
 ## Fields
 

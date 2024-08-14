@@ -1,5 +1,23 @@
 # GetConfigurableLogDrainResponseBody
 
+## Example Usage
+
+```typescript
+import { GetConfigurableLogDrainResponseBody } from "@simplesagar/vercel/models/getconfigurablelogdrainop.js";
+
+let value: GetConfigurableLogDrainResponseBody = {
+    id: "<id>",
+    deliveryFormat: "syslog",
+    url: "http://burly-story.com",
+    name: "<value>",
+    ownerId: "<value>",
+    createdAt: 1173.15,
+    deletedAt: 4837.06,
+    updatedAt: 2712.52,
+    environments: ["production"],
+    secret: "<value>",
+};
+```
 
 ## Fields
 

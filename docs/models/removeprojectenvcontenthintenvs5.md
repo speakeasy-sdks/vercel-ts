@@ -1,5 +1,15 @@
 # RemoveProjectEnvContentHintEnvs5
 
+## Example Usage
+
+```typescript
+import { RemoveProjectEnvContentHintEnvs5 } from "@simplesagar/vercel/models/removeprojectenvop.js";
+
+let value: RemoveProjectEnvContentHintEnvs5 = {
+    type: "blob-read-write-token",
+    storeId: "<value>",
+};
+```
 
 ## Fields
 

@@ -1,5 +1,19 @@
 # GetDeploymentCustomEnvironmentDeployments1
 
+## Example Usage
+
+```typescript
+import { GetDeploymentCustomEnvironmentDeployments1 } from "@simplesagar/vercel/models/getdeploymentop.js";
+
+let value: GetDeploymentCustomEnvironmentDeployments1 = {
+    id: "<id>",
+    name: "<value>",
+    slug: "<value>",
+    type: "development",
+    createdAt: 330.74,
+    updatedAt: 5223.71,
+};
+```
 
 ## Fields
 

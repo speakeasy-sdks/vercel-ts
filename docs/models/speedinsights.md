@@ -1,5 +1,14 @@
 # SpeedInsights
 
+## Example Usage
+
+```typescript
+import { SpeedInsights } from "@simplesagar/vercel/models/updateprojectdatacacheop.js";
+
+let value: SpeedInsights = {
+    id: "<id>",
+};
+```
 
 ## Fields
 

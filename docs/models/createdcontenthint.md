@@ -1,5 +1,15 @@
 # CreatedContentHint
 
+## Example Usage
+
+```typescript
+import { CreatedContentHint } from "@simplesagar/vercel/models/createprojectenvop.js";
+
+let value: CreatedContentHint = {
+    type: "postgres-prisma-url",
+    storeId: "<value>",
+};
+```
 
 ## Supported Types
 

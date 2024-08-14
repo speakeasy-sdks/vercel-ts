@@ -1,5 +1,17 @@
 # WafOwaspExcessBytes
 
+## Example Usage
+
+```typescript
+import { WafOwaspExcessBytes } from "@simplesagar/vercel/models/authuser.js";
+
+let value: WafOwaspExcessBytes = {
+    price: 3952.33,
+    batch: 9775.18,
+    threshold: 3108.4,
+    hidden: false,
+};
+```
 
 ## Fields
 

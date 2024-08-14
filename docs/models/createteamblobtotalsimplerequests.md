@@ -1,5 +1,17 @@
 # CreateTeamBlobTotalSimpleRequests
 
+## Example Usage
+
+```typescript
+import { CreateTeamBlobTotalSimpleRequests } from "@simplesagar/vercel/models/createteamop.js";
+
+let value: CreateTeamBlobTotalSimpleRequests = {
+    price: 7722.66,
+    batch: 9758.84,
+    threshold: 6109.87,
+    hidden: false,
+};
+```
 
 ## Fields
 

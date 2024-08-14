@@ -1,5 +1,12 @@
 # GetDeploymentGitSourceRepoId
 
+## Example Usage
+
+```typescript
+import { GetDeploymentGitSourceRepoId } from "@simplesagar/vercel/models/getdeploymentop.js";
+
+let value: GetDeploymentGitSourceRepoId = "<value>";
+```
 
 ## Supported Types
 

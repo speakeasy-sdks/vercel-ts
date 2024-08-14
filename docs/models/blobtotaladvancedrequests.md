@@ -1,5 +1,17 @@
 # BlobTotalAdvancedRequests
 
+## Example Usage
+
+```typescript
+import { BlobTotalAdvancedRequests } from "@simplesagar/vercel/models/authuser.js";
+
+let value: BlobTotalAdvancedRequests = {
+    price: 7631.65,
+    batch: 4014.28,
+    threshold: 3114.86,
+    hidden: false,
+};
+```
 
 ## Fields
 

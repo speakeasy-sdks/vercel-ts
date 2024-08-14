@@ -1,5 +1,17 @@
 # PostgresDataTransfer
 
+## Example Usage
+
+```typescript
+import { PostgresDataTransfer } from "@simplesagar/vercel/models/authuser.js";
+
+let value: PostgresDataTransfer = {
+    price: 6444.2,
+    batch: 429.24,
+    threshold: 3397.56,
+    hidden: false,
+};
+```
 
 ## Fields
 

@@ -1,5 +1,17 @@
 # CreateTeamStorageRedisTotalBandwidthInBytes
 
+## Example Usage
+
+```typescript
+import { CreateTeamStorageRedisTotalBandwidthInBytes } from "@simplesagar/vercel/models/createteamop.js";
+
+let value: CreateTeamStorageRedisTotalBandwidthInBytes = {
+    price: 3421.37,
+    batch: 6057.12,
+    threshold: 7272.5,
+    hidden: false,
+};
+```
 
 ## Fields
 

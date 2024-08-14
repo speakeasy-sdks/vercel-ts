@@ -1,5 +1,17 @@
 # ResponseBodyPayload
 
+## Example Usage
+
+```typescript
+import { ResponseBodyPayload } from "@simplesagar/vercel/models/getdeploymenteventsop.js";
+
+let value: ResponseBodyPayload = {
+    deploymentId: "<value>",
+    id: "<id>",
+    date: 6494.63,
+    serial: "<value>",
+};
+```
 
 ## Fields
 

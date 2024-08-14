@@ -1,10 +1,15 @@
 # GetTeamMembersTeamsResponseRole
 
+## Example Usage
+
+```typescript
+import { GetTeamMembersTeamsResponseRole } from "@simplesagar/vercel/models/getteammembersop.js";
+
+let value: GetTeamMembersTeamsResponseRole = "PROJECT_DEVELOPER";
+```
 
 ## Values
 
-| Name               | Value              |
-| ------------------ | ------------------ |
-| `Admin`            | ADMIN              |
-| `ProjectDeveloper` | PROJECT_DEVELOPER  |
-| `ProjectViewer`    | PROJECT_VIEWER     |
+```typescript
+"ADMIN" | "PROJECT_DEVELOPER" | "PROJECT_VIEWER"
+```

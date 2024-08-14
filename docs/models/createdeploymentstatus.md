@@ -1,13 +1,15 @@
 # CreateDeploymentStatus
 
+## Example Usage
+
+```typescript
+import { CreateDeploymentStatus } from "@simplesagar/vercel/models/createdeploymentop.js";
+
+let value: CreateDeploymentStatus = "QUEUED";
+```
 
 ## Values
 
-| Name           | Value          |
-| -------------- | -------------- |
-| `Canceled`     | CANCELED       |
-| `Error`        | ERROR          |
-| `Queued`       | QUEUED         |
-| `Building`     | BUILDING       |
-| `Initializing` | INITIALIZING   |
-| `Ready`        | READY          |
+```typescript
+"CANCELED" | "ERROR" | "QUEUED" | "BUILDING" | "INITIALIZING" | "READY"
+```

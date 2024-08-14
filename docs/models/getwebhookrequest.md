@@ -1,5 +1,14 @@
 # GetWebhookRequest
 
+## Example Usage
+
+```typescript
+import { GetWebhookRequest } from "@simplesagar/vercel/models/getwebhookop.js";
+
+let value: GetWebhookRequest = {
+    id: "<id>",
+};
+```
 
 ## Fields
 

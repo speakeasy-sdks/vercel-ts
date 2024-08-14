@@ -1,5 +1,17 @@
 # DataCacheRead
 
+## Example Usage
+
+```typescript
+import { DataCacheRead } from "@simplesagar/vercel/models/authuser.js";
+
+let value: DataCacheRead = {
+    price: 9185.47,
+    batch: 7412.32,
+    threshold: 1201.2,
+    hidden: false,
+};
+```
 
 ## Fields
 

@@ -1,5 +1,14 @@
 # GetProjectsOidcTokenConfig
 
+## Example Usage
+
+```typescript
+import { GetProjectsOidcTokenConfig } from "@simplesagar/vercel/models/getprojectsop.js";
+
+let value: GetProjectsOidcTokenConfig = {
+    enabled: false,
+};
+```
 
 ## Fields
 

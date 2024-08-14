@@ -1,8 +1,16 @@
 # FilterProjectEnvsContentHintEnvsResponse200ApplicationJSONResponseBody3Envs3Type
 
+## Example Usage
+
+```typescript
+import { FilterProjectEnvsContentHintEnvsResponse200ApplicationJSONResponseBody3Envs3Type } from "@simplesagar/vercel/models/filterprojectenvsop.js";
+
+let value: FilterProjectEnvsContentHintEnvsResponse200ApplicationJSONResponseBody3Envs3Type =
+    "redis-rest-api-token";
+```
 
 ## Values
 
-| Name                 | Value                |
-| -------------------- | -------------------- |
-| `RedisRestApiToken`  | redis-rest-api-token |
+```typescript
+"redis-rest-api-token"
+```

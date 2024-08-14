@@ -1,5 +1,15 @@
 # CreateProjectProjectsAliasError
 
+## Example Usage
+
+```typescript
+import { CreateProjectProjectsAliasError } from "@simplesagar/vercel/models/createprojectop.js";
+
+let value: CreateProjectProjectsAliasError = {
+    code: "<value>",
+    message: "<value>",
+};
+```
 
 ## Fields
 

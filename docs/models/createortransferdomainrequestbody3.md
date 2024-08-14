@@ -2,6 +2,16 @@
 
 transfer-in
 
+## Example Usage
+
+```typescript
+import { CreateOrTransferDomainRequestBody3 } from "@simplesagar/vercel/models/createortransferdomainop.js";
+
+let value: CreateOrTransferDomainRequestBody3 = {
+    name: "example.com",
+    method: "transfer-in",
+};
+```
 
 ## Fields
 

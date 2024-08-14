@@ -1,11 +1,15 @@
 # Provider
 
+## Example Usage
+
+```typescript
+import { Provider } from "@simplesagar/vercel/models/gitnamespacesop.js";
+
+let value: Provider = "bitbucket";
+```
 
 ## Values
 
-| Name               | Value              |
-| ------------------ | ------------------ |
-| `Github`           | github             |
-| `GithubCustomHost` | github-custom-host |
-| `Gitlab`           | gitlab             |
-| `Bitbucket`        | bitbucket          |
+```typescript
+"github" | "github-custom-host" | "gitlab" | "bitbucket"
+```

@@ -1,5 +1,18 @@
 # FilterProjectEnvsContentHint14
 
+## Example Usage
+
+```typescript
+import { FilterProjectEnvsContentHint14 } from "@simplesagar/vercel/models/filterprojectenvsop.js";
+
+let value: FilterProjectEnvsContentHint14 = {
+    type: "integration-store-secret",
+    storeId: "<value>",
+    integrationId: "<value>",
+    integrationProductId: "<value>",
+    integrationConfigurationId: "<value>",
+};
+```
 
 ## Fields
 

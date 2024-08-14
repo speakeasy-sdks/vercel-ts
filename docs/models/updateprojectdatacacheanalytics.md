@@ -1,5 +1,16 @@
 # UpdateProjectDataCacheAnalytics
 
+## Example Usage
+
+```typescript
+import { UpdateProjectDataCacheAnalytics } from "@simplesagar/vercel/models/updateprojectdatacacheop.js";
+
+let value: UpdateProjectDataCacheAnalytics = {
+    id: "<id>",
+    disabledAt: 4663.11,
+    enabledAt: 4746.97,
+};
+```
 
 ## Fields
 

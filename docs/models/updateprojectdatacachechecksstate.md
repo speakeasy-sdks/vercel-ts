@@ -1,10 +1,15 @@
 # UpdateProjectDataCacheChecksState
 
+## Example Usage
+
+```typescript
+import { UpdateProjectDataCacheChecksState } from "@simplesagar/vercel/models/updateprojectdatacacheop.js";
+
+let value: UpdateProjectDataCacheChecksState = "running";
+```
 
 ## Values
 
-| Name         | Value        |
-| ------------ | ------------ |
-| `Registered` | registered   |
-| `Running`    | running      |
-| `Completed`  | completed    |
+```typescript
+"registered" | "running" | "completed"
+```

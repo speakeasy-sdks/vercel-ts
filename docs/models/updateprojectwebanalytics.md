@@ -1,5 +1,14 @@
 # UpdateProjectWebAnalytics
 
+## Example Usage
+
+```typescript
+import { UpdateProjectWebAnalytics } from "@simplesagar/vercel/models/updateprojectop.js";
+
+let value: UpdateProjectWebAnalytics = {
+    id: "<id>",
+};
+```
 
 ## Fields
 

@@ -1,9 +1,15 @@
 # ProtectionBypassAccess
 
+## Example Usage
+
+```typescript
+import { ProtectionBypassAccess } from "@simplesagar/vercel/models/listaliasesop.js";
+
+let value: ProtectionBypassAccess = "granted";
+```
 
 ## Values
 
-| Name        | Value       |
-| ----------- | ----------- |
-| `Requested` | requested   |
-| `Granted`   | granted     |
+```typescript
+"requested" | "granted"
+```

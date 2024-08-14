@@ -1,5 +1,15 @@
 # FilterProjectEnvsContentHintEnvsResponse12
 
+## Example Usage
+
+```typescript
+import { FilterProjectEnvsContentHintEnvsResponse12 } from "@simplesagar/vercel/models/filterprojectenvsop.js";
+
+let value: FilterProjectEnvsContentHintEnvsResponse12 = {
+    type: "postgres-database",
+    storeId: "<value>",
+};
+```
 
 ## Fields
 

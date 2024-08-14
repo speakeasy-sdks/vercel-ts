@@ -1,5 +1,17 @@
 # AuthUserBillingInvoiceItemsStorageRedisTotalDailyAvgStorageInBytesMatrix
 
+## Example Usage
+
+```typescript
+import { AuthUserBillingInvoiceItemsStorageRedisTotalDailyAvgStorageInBytesMatrix } from "@simplesagar/vercel/models/authuser.js";
+
+let value: AuthUserBillingInvoiceItemsStorageRedisTotalDailyAvgStorageInBytesMatrix = {
+    defaultUnitPrice: "<value>",
+    dimensionPrices: {
+        key: "<value>",
+    },
+};
+```
 
 ## Fields
 

@@ -1,5 +1,12 @@
 # GetIntegrationLogDrainsRequest
 
+## Example Usage
+
+```typescript
+import { GetIntegrationLogDrainsRequest } from "@simplesagar/vercel/models/getintegrationlogdrainsop.js";
+
+let value: GetIntegrationLogDrainsRequest = {};
+```
 
 ## Fields
 

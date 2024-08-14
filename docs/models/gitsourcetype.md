@@ -1,8 +1,15 @@
 # GitSourceType
 
+## Example Usage
+
+```typescript
+import { GitSourceType } from "@simplesagar/vercel/models/createdeploymentop.js";
+
+let value: GitSourceType = "github";
+```
 
 ## Values
 
-| Name     | Value    |
-| -------- | -------- |
-| `Github` | github   |
+```typescript
+"github"
+```

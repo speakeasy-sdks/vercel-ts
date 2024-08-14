@@ -1,5 +1,15 @@
 # CancelDeploymentRoutesHas
 
+## Example Usage
+
+```typescript
+import { CancelDeploymentRoutesHas } from "@simplesagar/vercel/models/canceldeploymentop.js";
+
+let value: CancelDeploymentRoutesHas = {
+    type: "host",
+    value: "<value>",
+};
+```
 
 ## Supported Types
 

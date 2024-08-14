@@ -2,13 +2,16 @@
 
 Type of the ENV variable
 
+## Example Usage
+
+```typescript
+import { CreateProjectType } from "@simplesagar/vercel/models/createprojectop.js";
+
+let value: CreateProjectType = "secret";
+```
 
 ## Values
 
-| Name        | Value       |
-| ----------- | ----------- |
-| `System`    | system      |
-| `Secret`    | secret      |
-| `Encrypted` | encrypted   |
-| `Plain`     | plain       |
-| `Sensitive` | sensitive   |
+```typescript
+"system" | "secret" | "encrypted" | "plain" | "sensitive"
+```

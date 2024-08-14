@@ -1,8 +1,18 @@
 # CreateProjectEnvContentHintEnvsResponse201ApplicationJSONResponseBodyCreated1Type
 
+## Example Usage
+
+```typescript
+import {
+  CreateProjectEnvContentHintEnvsResponse201ApplicationJSONResponseBodyCreated1Type,
+} from "@simplesagar/vercel/models/createprojectenvop.js";
+
+let value: CreateProjectEnvContentHintEnvsResponse201ApplicationJSONResponseBodyCreated1Type =
+    "postgres-prisma-url";
+```
 
 ## Values
 
-| Name                | Value               |
-| ------------------- | ------------------- |
-| `PostgresPrismaUrl` | postgres-prisma-url |
+```typescript
+"postgres-prisma-url"
+```

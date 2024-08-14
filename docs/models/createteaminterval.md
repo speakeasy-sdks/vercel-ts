@@ -1,11 +1,15 @@
 # CreateTeamInterval
 
+## Example Usage
+
+```typescript
+import { CreateTeamInterval } from "@simplesagar/vercel/models/createteamop.js";
+
+let value: CreateTeamInterval = "month";
+```
 
 ## Values
 
-| Name    | Value   |
-| ------- | ------- |
-| `Month` | month   |
-| `Day`   | day     |
-| `Week`  | week    |
-| `Year`  | year    |
+```typescript
+"month" | "day" | "week" | "year"
+```

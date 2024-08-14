@@ -1,8 +1,15 @@
 # EditProjectEnvResponseBodyEnvsType
 
+## Example Usage
+
+```typescript
+import { EditProjectEnvResponseBodyEnvsType } from "@simplesagar/vercel/models/editprojectenvop.js";
+
+let value: EditProjectEnvResponseBodyEnvsType = "flags-secret";
+```
 
 ## Values
 
-| Name          | Value         |
-| ------------- | ------------- |
-| `FlagsSecret` | flags-secret  |
+```typescript
+"flags-secret"
+```

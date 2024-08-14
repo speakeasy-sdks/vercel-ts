@@ -1,5 +1,17 @@
 # AuthUserBillingInvoiceItemsPostgresDataStorageMatrix
 
+## Example Usage
+
+```typescript
+import { AuthUserBillingInvoiceItemsPostgresDataStorageMatrix } from "@simplesagar/vercel/models/authuser.js";
+
+let value: AuthUserBillingInvoiceItemsPostgresDataStorageMatrix = {
+    defaultUnitPrice: "<value>",
+    dimensionPrices: {
+        key: "<value>",
+    },
+};
+```
 
 ## Fields
 

@@ -2,6 +2,16 @@
 
 An Edge Config
 
+## Example Usage
+
+```typescript
+import { UpdateEdgeConfigResponseBody } from "@simplesagar/vercel/models/updateedgeconfigop.js";
+
+let value: UpdateEdgeConfigResponseBody = {
+    sizeInBytes: 2840,
+    itemCount: 6330.62,
+};
+```
 
 ## Fields
 

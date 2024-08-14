@@ -1,5 +1,15 @@
 # FilterProjectEnvsResponseBodyEnvsContentHint
 
+## Example Usage
+
+```typescript
+import { FilterProjectEnvsResponseBodyEnvsContentHint } from "@simplesagar/vercel/models/filterprojectenvsop.js";
+
+let value: FilterProjectEnvsResponseBodyEnvsContentHint = {
+    type: "redis-rest-api-url",
+    storeId: "<value>",
+};
+```
 
 ## Supported Types
 

@@ -1,5 +1,15 @@
 # Nine
 
+## Example Usage
+
+```typescript
+import { Nine } from "@simplesagar/vercel/models/createrecordop.js";
+
+let value: Nine = {
+    name: "subdomain",
+    type: "MX",
+};
+```
 
 ## Fields
 

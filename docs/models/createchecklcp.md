@@ -1,5 +1,15 @@
 # CreateCheckLCP
 
+## Example Usage
+
+```typescript
+import { CreateCheckLCP } from "@simplesagar/vercel/models/createcheckop.js";
+
+let value: CreateCheckLCP = {
+    value: 4146.62,
+    source: "web-vitals",
+};
+```
 
 ## Fields
 

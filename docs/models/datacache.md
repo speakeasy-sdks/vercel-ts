@@ -2,6 +2,13 @@
 
 data cache settings
 
+## Example Usage
+
+```typescript
+import { DataCache } from "@simplesagar/vercel/models/authuser.js";
+
+let value: DataCache = {};
+```
 
 ## Fields
 

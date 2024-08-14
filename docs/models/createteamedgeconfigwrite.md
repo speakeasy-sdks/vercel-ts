@@ -1,5 +1,17 @@
 # CreateTeamEdgeConfigWrite
 
+## Example Usage
+
+```typescript
+import { CreateTeamEdgeConfigWrite } from "@simplesagar/vercel/models/createteamop.js";
+
+let value: CreateTeamEdgeConfigWrite = {
+    price: 6931.53,
+    batch: 3774.06,
+    threshold: 7051.48,
+    hidden: false,
+};
+```
 
 ## Fields
 

@@ -1,5 +1,14 @@
 # GetDeploymentEventsRequest
 
+## Example Usage
+
+```typescript
+import { GetDeploymentEventsRequest } from "@simplesagar/vercel/models/getdeploymenteventsop.js";
+
+let value: GetDeploymentEventsRequest = {
+    idOrUrl: "dpl_5WJWYSyB7BpgTj3EuwF37WMRBXBtPQ2iTMJHJBJyRfd",
+};
+```
 
 ## Fields
 

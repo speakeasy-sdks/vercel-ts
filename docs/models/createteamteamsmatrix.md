@@ -1,5 +1,17 @@
 # CreateTeamTeamsMatrix
 
+## Example Usage
+
+```typescript
+import { CreateTeamTeamsMatrix } from "@simplesagar/vercel/models/createteamop.js";
+
+let value: CreateTeamTeamsMatrix = {
+    defaultUnitPrice: "<value>",
+    dimensionPrices: {
+        key: "<value>",
+    },
+};
+```
 
 ## Fields
 

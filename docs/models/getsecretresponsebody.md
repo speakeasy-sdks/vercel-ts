@@ -2,6 +2,17 @@
 
 Data representing a secret.
 
+## Example Usage
+
+```typescript
+import { GetSecretResponseBody } from "@simplesagar/vercel/models/getsecretop.js";
+
+let value: GetSecretResponseBody = {
+    created: new Date("2021-02-10T13:11:49.180Z"),
+    name: "my-api-key",
+    uid: "sec_XCG7t7AIHuO2SBA8667zNUiM",
+};
+```
 
 ## Fields
 

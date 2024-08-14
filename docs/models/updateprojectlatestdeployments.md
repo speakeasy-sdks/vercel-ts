@@ -1,5 +1,29 @@
 # UpdateProjectLatestDeployments
 
+## Example Usage
+
+```typescript
+import { UpdateProjectLatestDeployments } from "@simplesagar/vercel/models/updateprojectop.js";
+
+let value: UpdateProjectLatestDeployments = {
+    createdAt: 9807,
+    createdIn: "<value>",
+    creator: {
+        email: "Gustave_Stoltenberg@gmail.com",
+        uid: "<value>",
+        username: "Everett_Willms41",
+    },
+    deploymentHostname: "<value>",
+    name: "<value>",
+    id: "<id>",
+    plan: "hobby",
+    private: false,
+    readyState: "INITIALIZING",
+    type: "LAMBDAS",
+    url: "http://husky-bid.biz",
+    userId: "<value>",
+};
+```
 
 ## Fields
 

@@ -1,9 +1,15 @@
 # RecentsViewPreference
 
+## Example Usage
+
+```typescript
+import { RecentsViewPreference } from "@simplesagar/vercel/models/authuser.js";
+
+let value: RecentsViewPreference = "open";
+```
 
 ## Values
 
-| Name     | Value    |
-| -------- | -------- |
-| `Open`   | open     |
-| `Closed` | closed   |
+```typescript
+"open" | "closed"
+```

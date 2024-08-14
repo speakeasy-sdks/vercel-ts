@@ -1,5 +1,17 @@
 # BlobTotalAvgSizeInBytes
 
+## Example Usage
+
+```typescript
+import { BlobTotalAvgSizeInBytes } from "@simplesagar/vercel/models/authuser.js";
+
+let value: BlobTotalAvgSizeInBytes = {
+    price: 4166.92,
+    batch: 8886.16,
+    threshold: 8108.39,
+    hidden: false,
+};
+```
 
 ## Fields
 

@@ -1,5 +1,12 @@
 # UpdateCheckOutput
 
+## Example Usage
+
+```typescript
+import { UpdateCheckOutput } from "@simplesagar/vercel/models/updatecheckop.js";
+
+let value: UpdateCheckOutput = {};
+```
 
 ## Fields
 

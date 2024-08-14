@@ -1,5 +1,14 @@
 # ReadAccessGroupRequest
 
+## Example Usage
+
+```typescript
+import { ReadAccessGroupRequest } from "@simplesagar/vercel/models/readaccessgroupop.js";
+
+let value: ReadAccessGroupRequest = {
+    idOrName: "<value>",
+};
+```
 
 ## Fields
 

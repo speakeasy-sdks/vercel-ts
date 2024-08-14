@@ -1,5 +1,15 @@
 # ResponseBodyInfo
 
+## Example Usage
+
+```typescript
+import { ResponseBodyInfo } from "@simplesagar/vercel/models/getdeploymenteventsop.js";
+
+let value: ResponseBodyInfo = {
+    type: "<value>",
+    name: "<value>",
+};
+```
 
 ## Fields
 

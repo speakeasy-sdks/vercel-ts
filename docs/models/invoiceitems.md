@@ -1,5 +1,12 @@
 # InvoiceItems
 
+## Example Usage
+
+```typescript
+import { InvoiceItems } from "@simplesagar/vercel/models/authuser.js";
+
+let value: InvoiceItems = {};
+```
 
 ## Fields
 

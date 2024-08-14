@@ -1,5 +1,17 @@
 # CreateTeamSourceImages
 
+## Example Usage
+
+```typescript
+import { CreateTeamSourceImages } from "@simplesagar/vercel/models/createteamop.js";
+
+let value: CreateTeamSourceImages = {
+    price: 8028.94,
+    batch: 1572.22,
+    threshold: 1591.46,
+    hidden: false,
+};
+```
 
 ## Fields
 

@@ -2,6 +2,16 @@
 
 Optional instructions for revoking and regenerating a automation bypass
 
+## Example Usage
+
+```typescript
+import { Revoke } from "@simplesagar/vercel/models/updateprojectprotectionbypassop.js";
+
+let value: Revoke = {
+    secret: "<value>",
+    regenerate: false,
+};
+```
 
 ## Fields
 

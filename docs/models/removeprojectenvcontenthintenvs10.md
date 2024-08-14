@@ -1,5 +1,15 @@
 # RemoveProjectEnvContentHintEnvs10
 
+## Example Usage
+
+```typescript
+import { RemoveProjectEnvContentHintEnvs10 } from "@simplesagar/vercel/models/removeprojectenvop.js";
+
+let value: RemoveProjectEnvContentHintEnvs10 = {
+    type: "postgres-host",
+    storeId: "<value>",
+};
+```
 
 ## Fields
 

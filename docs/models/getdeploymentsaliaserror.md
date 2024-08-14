@@ -2,6 +2,16 @@
 
 An error object in case aliasing of the deployment failed.
 
+## Example Usage
+
+```typescript
+import { GetDeploymentsAliasError } from "@simplesagar/vercel/models/getdeploymentsop.js";
+
+let value: GetDeploymentsAliasError = {
+    code: "<value>",
+    message: "<value>",
+};
+```
 
 ## Fields
 

@@ -1,5 +1,15 @@
 # CancelDeploymentMissing1
 
+## Example Usage
+
+```typescript
+import { CancelDeploymentMissing1 } from "@simplesagar/vercel/models/canceldeploymentop.js";
+
+let value: CancelDeploymentMissing1 = {
+    type: "host",
+    value: "<value>",
+};
+```
 
 ## Fields
 

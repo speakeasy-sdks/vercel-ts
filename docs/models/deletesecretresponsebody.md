@@ -1,5 +1,16 @@
 # DeleteSecretResponseBody
 
+## Example Usage
+
+```typescript
+import { DeleteSecretResponseBody } from "@simplesagar/vercel/models/deletesecretop.js";
+
+let value: DeleteSecretResponseBody = {
+  uid: "sec_XCG7t7AIHuO2SBA8667zNUiM",
+  name: "my-api-key",
+  created: 2021-02-10T13:11:49.180Z,
+};
+```
 
 ## Fields
 

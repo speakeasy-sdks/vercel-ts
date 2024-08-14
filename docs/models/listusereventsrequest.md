@@ -1,5 +1,12 @@
 # ListUserEventsRequest
 
+## Example Usage
+
+```typescript
+import { ListUserEventsRequest } from "@simplesagar/vercel/models/listusereventsop.js";
+
+let value: ListUserEventsRequest = {};
+```
 
 ## Fields
 

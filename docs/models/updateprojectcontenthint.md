@@ -1,5 +1,15 @@
 # UpdateProjectContentHint
 
+## Example Usage
+
+```typescript
+import { UpdateProjectContentHint } from "@simplesagar/vercel/models/updateprojectop.js";
+
+let value: UpdateProjectContentHint = {
+    type: "postgres-password",
+    storeId: "<value>",
+};
+```
 
 ## Supported Types
 

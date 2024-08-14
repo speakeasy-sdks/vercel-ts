@@ -1,13 +1,15 @@
 # DisabledReason
 
+## Example Usage
+
+```typescript
+import { DisabledReason } from "@simplesagar/vercel/models/getconfigurationsop.js";
+
+let value: DisabledReason = "disabled-by-admin";
+```
 
 ## Values
 
-| Name                           | Value                          |
-| ------------------------------ | ------------------------------ |
-| `DisabledByOwner`              | disabled-by-owner              |
-| `FeatureNotAvailable`          | feature-not-available          |
-| `DisabledByAdmin`              | disabled-by-admin              |
-| `OriginalOwnerLeftTheTeam`     | original-owner-left-the-team   |
-| `AccountPlanDowngrade`         | account-plan-downgrade         |
-| `OriginalOwnerRoleDowngraded`  | original-owner-role-downgraded |
+```typescript
+"disabled-by-owner" | "feature-not-available" | "disabled-by-admin" | "original-owner-left-the-team" | "account-plan-downgrade" | "original-owner-role-downgraded"
+```

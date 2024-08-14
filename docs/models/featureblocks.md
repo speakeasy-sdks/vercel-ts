@@ -2,6 +2,13 @@
 
 Feature blocks for the user
 
+## Example Usage
+
+```typescript
+import { FeatureBlocks } from "@simplesagar/vercel/models/authuser.js";
+
+let value: FeatureBlocks = {};
+```
 
 ## Fields
 

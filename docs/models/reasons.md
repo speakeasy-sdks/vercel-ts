@@ -2,6 +2,16 @@
 
 An object describing the reason why the team is being deleted.
 
+## Example Usage
+
+```typescript
+import { Reasons } from "@simplesagar/vercel/models/deleteteamop.js";
+
+let value: Reasons = {
+    slug: "<value>",
+    description: "Cross-platform executive middleware",
+};
+```
 
 ## Fields
 

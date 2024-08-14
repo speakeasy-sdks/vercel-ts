@@ -1,5 +1,20 @@
 # CreateProjectTrustedIps1
 
+## Example Usage
+
+```typescript
+import { CreateProjectTrustedIps1 } from "@simplesagar/vercel/models/createprojectop.js";
+
+let value: CreateProjectTrustedIps1 = {
+    deploymentType: "preview",
+    addresses: [
+        {
+            value: "<value>",
+        },
+    ],
+    protectionMode: "exclusive",
+};
+```
 
 ## Fields
 

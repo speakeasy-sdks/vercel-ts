@@ -1,5 +1,18 @@
 # ContentHint14
 
+## Example Usage
+
+```typescript
+import { ContentHint14 } from "@simplesagar/vercel/models/createprojectop.js";
+
+let value: ContentHint14 = {
+    type: "integration-store-secret",
+    storeId: "<value>",
+    integrationId: "<value>",
+    integrationProductId: "<value>",
+    integrationConfigurationId: "<value>",
+};
+```
 
 ## Fields
 

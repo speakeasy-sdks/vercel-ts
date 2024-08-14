@@ -1,5 +1,12 @@
 # ListAccessGroupsRequest
 
+## Example Usage
+
+```typescript
+import { ListAccessGroupsRequest } from "@simplesagar/vercel/models/listaccessgroupsop.js";
+
+let value: ListAccessGroupsRequest = {};
+```
 
 ## Fields
 

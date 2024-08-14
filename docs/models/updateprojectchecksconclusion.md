@@ -1,11 +1,15 @@
 # UpdateProjectChecksConclusion
 
+## Example Usage
+
+```typescript
+import { UpdateProjectChecksConclusion } from "@simplesagar/vercel/models/updateprojectop.js";
+
+let value: UpdateProjectChecksConclusion = "skipped";
+```
 
 ## Values
 
-| Name        | Value       |
-| ----------- | ----------- |
-| `Succeeded` | succeeded   |
-| `Failed`    | failed      |
-| `Skipped`   | skipped     |
-| `Canceled`  | canceled    |
+```typescript
+"succeeded" | "failed" | "skipped" | "canceled"
+```

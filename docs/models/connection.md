@@ -2,6 +2,18 @@
 
 Information for the SAML Single Sign-On configuration.
 
+## Example Usage
+
+```typescript
+import { Connection } from "@simplesagar/vercel/models/teamlimited.js";
+
+let value: Connection = {
+    type: "OktaSAML",
+    status: "linked",
+    state: "active",
+    connectedAt: 1611796915677,
+};
+```
 
 ## Fields
 
