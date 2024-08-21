@@ -2,6 +2,8 @@ import { VercelCore } from "vercel/core.js";
 import { projectsGetAll } from "vercel/funcs/projectsGetAll.js";
 import { SDKValidationError } from "vercel/models/sdkvalidationerror.js";
 
+console.log("VERCEL_BEARER_TOKEN:", process.env["VERCEL_BEARER_TOKEN"]);
+
 const vercel = new VercelCore({
   bearerToken: process.env["VERCEL_BEARER_TOKEN"] || "",
 });
