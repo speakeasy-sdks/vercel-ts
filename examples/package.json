@@ -2,9 +2,10 @@
   "type": "module",
   "name": "examples",
   "scripts": {
-    "list-projects": "tsx ./src/list-projects.ts"
+    "list-projects": "dotenvx run -- tsx ./src/list-projects.ts"
   },
   "dependencies": {
+    "@dotenvx/dotenvx": "^1.8.0",
     "vercel": "file:../"
   },
   "devDependencies": {
