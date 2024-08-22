@@ -3,10 +3,10 @@ id: 08d4af4d-7f06-4aa7-83b0-4bcfdb3dadd5
 management:
   docChecksum: 1dc76dcc561898c8b84cf7285236da83
   docVersion: 0.0.1
-  speakeasyVersion: 1.367.0
-  generationVersion: 2.399.0
-  releaseVersion: 0.6.5
-  configChecksum: 9350a84e0e779de343634254b7528147
+  speakeasyVersion: 1.377.1
+  generationVersion: 2.404.1
+  releaseVersion: 0.7.0
+  configChecksum: e9ecb956b75ac21fc2c9d9762c67e6dd
   repoURL: https://github.com/speakeasy-sdks/vercel-ts.git
   installationURL: https://github.com/speakeasy-sdks/vercel-ts
   published: true
@@ -14,8 +14,8 @@ features:
   typescript:
     acceptHeaders: 2.81.2
     additionalDependencies: 0.1.0
-    constsAndDefaults: 0.1.8
-    core: 3.13.2
+    constsAndDefaults: 0.1.10
+    core: 3.14.1
     defaultEnabledRetries: 0.1.0
     deprecations: 2.81.1
     downloadStreams: 0.1.1
