@@ -6,9 +6,9 @@
 import { GetProjectsDefinitions } from "@simplesagar/vercel/models/getprojectsop.js";
 
 let value: GetProjectsDefinitions = {
-    host: "vercel.com",
-    path: "/api/crons/sync-something?hello=world",
-    schedule: "0 0 * * *",
+  host: "vercel.com",
+  path: "/api/crons/sync-something?hello=world",
+  schedule: "0 0 * * *",
 };
 ```
 

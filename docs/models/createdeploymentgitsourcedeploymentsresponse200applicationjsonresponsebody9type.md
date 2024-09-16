@@ -5,7 +5,8 @@
 ```typescript
 import { CreateDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody9Type } from "@simplesagar/vercel/models/createdeploymentop.js";
 
-let value: CreateDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody9Type =
+let value:
+  CreateDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody9Type =
     "bitbucket";
 ```
 

@@ -6,7 +6,7 @@
 import { UpdateProjectDataCacheTrustedIps } from "@simplesagar/vercel/models/updateprojectdatacacheop.js";
 
 let value: UpdateProjectDataCacheTrustedIps = {
-    deploymentType: "prod_deployment_urls_and_all_previews",
+  deploymentType: "prod_deployment_urls_and_all_previews",
 };
 ```
 

@@ -11,12 +11,12 @@ import { logDrainsGetConfigurable } from "../funcs/logDrainsGetConfigurable.js";
 import { logDrainsList } from "../funcs/logDrainsList.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import {
-    CreateConfigurableLogDrainRequestBody,
-    CreateConfigurableLogDrainResponseBody,
+  CreateConfigurableLogDrainRequestBody,
+  CreateConfigurableLogDrainResponseBody,
 } from "../models/createconfigurablelogdrainop.js";
 import {
-    CreateLogDrainRequestBody,
-    CreateLogDrainResponseBody,
+  CreateLogDrainRequestBody,
+  CreateLogDrainResponseBody,
 } from "../models/createlogdrainop.js";
 import { GetAllLogDrainsResponseBody } from "../models/getalllogdrainsop.js";
 import { GetConfigurableLogDrainResponseBody } from "../models/getconfigurablelogdrainop.js";
@@ -24,107 +24,148 @@ import { GetIntegrationLogDrainsResponseBody } from "../models/getintegrationlog
 import { unwrapAsync } from "../types/fp.js";
 
 export class LogDrains extends ClientSDK {
-    /**
-     * Retrieves a list of Integration log drains
-     *
-     * @remarks
-     * Retrieves a list of all Integration log drains that are defined for the authenticated user or team. When using an OAuth2 token, the list is limited to log drains created by the authenticated integration.
-     */
-    async list(
-        teamId?: string | undefined,
-        slug?: string | undefined,
-        options?: RequestOptions
-    ): Promise<Array<GetIntegrationLogDrainsResponseBody>> {
-        return unwrapAsync(logDrainsList(this, teamId, slug, options));
-    }
+  /**
+   * Retrieves a list of Integration log drains
+   *
+   * @remarks
+   * Retrieves a list of all Integration log drains that are defined for the authenticated user or team. When using an OAuth2 token, the list is limited to log drains created by the authenticated integration.
+   */
+  async list(
+    teamId?: string | undefined,
+    slug?: string | undefined,
+    options?: RequestOptions,
+  ): Promise<Array<GetIntegrationLogDrainsResponseBody>> {
+    return unwrapAsync(logDrainsList(
+      this,
+      teamId,
+      slug,
+      options,
+    ));
+  }
 
-    /**
-     * Creates a new Integration Log Drain
-     *
-     * @remarks
-     * Creates an Integration log drain. This endpoint must be called with an OAuth2 client (integration), since log drains are tied to integrations. If it is called with a different token type it will produce a 400 error.
-     */
-    async create(
-        teamId?: string | undefined,
-        slug?: string | undefined,
-        requestBody?: CreateLogDrainRequestBody | undefined,
-        options?: RequestOptions
-    ): Promise<CreateLogDrainResponseBody> {
-        return unwrapAsync(logDrainsCreate(this, teamId, slug, requestBody, options));
-    }
+  /**
+   * Creates a new Integration Log Drain
+   *
+   * @remarks
+   * Creates an Integration log drain. This endpoint must be called with an OAuth2 client (integration), since log drains are tied to integrations. If it is called with a different token type it will produce a 400 error.
+   */
+  async create(
+    teamId?: string | undefined,
+    slug?: string | undefined,
+    requestBody?: CreateLogDrainRequestBody | undefined,
+    options?: RequestOptions,
+  ): Promise<CreateLogDrainResponseBody> {
+    return unwrapAsync(logDrainsCreate(
+      this,
+      teamId,
+      slug,
+      requestBody,
+      options,
+    ));
+  }
 
-    /**
-     * Deletes the Integration log drain with the provided `id`
-     *
-     * @remarks
-     * Deletes the Integration log drain with the provided `id`. When using an OAuth2 Token, the log drain can be deleted only if the integration owns it.
-     */
-    async deleteIntegration(
-        id: string,
-        teamId?: string | undefined,
-        slug?: string | undefined,
-        options?: RequestOptions
-    ): Promise<void> {
-        return unwrapAsync(logDrainsDeleteIntegration(this, id, teamId, slug, options));
-    }
+  /**
+   * Deletes the Integration log drain with the provided `id`
+   *
+   * @remarks
+   * Deletes the Integration log drain with the provided `id`. When using an OAuth2 Token, the log drain can be deleted only if the integration owns it.
+   */
+  async deleteIntegration(
+    id: string,
+    teamId?: string | undefined,
+    slug?: string | undefined,
+    options?: RequestOptions,
+  ): Promise<void> {
+    return unwrapAsync(logDrainsDeleteIntegration(
+      this,
+      id,
+      teamId,
+      slug,
+      options,
+    ));
+  }
 
-    /**
-     * Retrieves a Configurable Log Drain
-     *
-     * @remarks
-     * Retrieves a Configurable Log Drain. This endpoint must be called with a team AccessToken (integration OAuth2 clients are not allowed). Only log drains owned by the authenticated team can be accessed.
-     */
-    async getConfigurable(
-        id: string,
-        teamId?: string | undefined,
-        slug?: string | undefined,
-        options?: RequestOptions
-    ): Promise<GetConfigurableLogDrainResponseBody> {
-        return unwrapAsync(logDrainsGetConfigurable(this, id, teamId, slug, options));
-    }
+  /**
+   * Retrieves a Configurable Log Drain
+   *
+   * @remarks
+   * Retrieves a Configurable Log Drain. This endpoint must be called with a team AccessToken (integration OAuth2 clients are not allowed). Only log drains owned by the authenticated team can be accessed.
+   */
+  async getConfigurable(
+    id: string,
+    teamId?: string | undefined,
+    slug?: string | undefined,
+    options?: RequestOptions,
+  ): Promise<GetConfigurableLogDrainResponseBody> {
+    return unwrapAsync(logDrainsGetConfigurable(
+      this,
+      id,
+      teamId,
+      slug,
+      options,
+    ));
+  }
 
-    /**
-     * Deletes a Configurable Log Drain
-     *
-     * @remarks
-     * Deletes a Configurable Log Drain. This endpoint must be called with a team AccessToken (integration OAuth2 clients are not allowed). Only log drains owned by the authenticated team can be deleted.
-     */
-    async deleteConfigurable(
-        id: string,
-        teamId?: string | undefined,
-        slug?: string | undefined,
-        options?: RequestOptions
-    ): Promise<void> {
-        return unwrapAsync(logDrainsDeleteConfigurable(this, id, teamId, slug, options));
-    }
+  /**
+   * Deletes a Configurable Log Drain
+   *
+   * @remarks
+   * Deletes a Configurable Log Drain. This endpoint must be called with a team AccessToken (integration OAuth2 clients are not allowed). Only log drains owned by the authenticated team can be deleted.
+   */
+  async deleteConfigurable(
+    id: string,
+    teamId?: string | undefined,
+    slug?: string | undefined,
+    options?: RequestOptions,
+  ): Promise<void> {
+    return unwrapAsync(logDrainsDeleteConfigurable(
+      this,
+      id,
+      teamId,
+      slug,
+      options,
+    ));
+  }
 
-    /**
-     * Retrieves a list of all the Log Drains
-     *
-     * @remarks
-     * Retrieves a list of all the Log Drains owned by the account. This endpoint must be called with an account AccessToken (integration OAuth2 clients are not allowed). Only log drains owned by the authenticated account can be accessed.
-     */
-    async getAll(
-        projectId?: string | undefined,
-        teamId?: string | undefined,
-        slug?: string | undefined,
-        options?: RequestOptions
-    ): Promise<Array<GetAllLogDrainsResponseBody>> {
-        return unwrapAsync(logDrainsGetAll(this, projectId, teamId, slug, options));
-    }
+  /**
+   * Retrieves a list of all the Log Drains
+   *
+   * @remarks
+   * Retrieves a list of all the Log Drains owned by the account. This endpoint must be called with an account AccessToken (integration OAuth2 clients are not allowed). Only log drains owned by the authenticated account can be accessed.
+   */
+  async getAll(
+    projectId?: string | undefined,
+    teamId?: string | undefined,
+    slug?: string | undefined,
+    options?: RequestOptions,
+  ): Promise<Array<GetAllLogDrainsResponseBody>> {
+    return unwrapAsync(logDrainsGetAll(
+      this,
+      projectId,
+      teamId,
+      slug,
+      options,
+    ));
+  }
 
-    /**
-     * Creates a Configurable Log Drain
-     *
-     * @remarks
-     * Creates a configurable log drain. This endpoint must be called with a team AccessToken (integration OAuth2 clients are not allowed)
-     */
-    async createConfigurable(
-        teamId?: string | undefined,
-        slug?: string | undefined,
-        requestBody?: CreateConfigurableLogDrainRequestBody | undefined,
-        options?: RequestOptions
-    ): Promise<CreateConfigurableLogDrainResponseBody> {
-        return unwrapAsync(logDrainsCreateConfigurable(this, teamId, slug, requestBody, options));
-    }
+  /**
+   * Creates a Configurable Log Drain
+   *
+   * @remarks
+   * Creates a configurable log drain. This endpoint must be called with a team AccessToken (integration OAuth2 clients are not allowed)
+   */
+  async createConfigurable(
+    teamId?: string | undefined,
+    slug?: string | undefined,
+    requestBody?: CreateConfigurableLogDrainRequestBody | undefined,
+    options?: RequestOptions,
+  ): Promise<CreateConfigurableLogDrainResponseBody> {
+    return unwrapAsync(logDrainsCreateConfigurable(
+      this,
+      teamId,
+      slug,
+      requestBody,
+      options,
+    ));
+  }
 }

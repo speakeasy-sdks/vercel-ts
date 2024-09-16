@@ -6,7 +6,7 @@
 import { UpdateProjectHas } from "@simplesagar/vercel/models/updateprojectop.js";
 
 let value: UpdateProjectHas = {
-    type: "host",
+  type: "host",
 };
 ```
 

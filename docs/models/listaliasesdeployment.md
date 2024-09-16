@@ -8,8 +8,8 @@ A map with the deployment ID, URL and metadata
 import { ListAliasesDeployment } from "@simplesagar/vercel/models/listaliasesop.js";
 
 let value: ListAliasesDeployment = {
-    id: "dpl_5m8CQaRBm3FnWRW1od3wKTpaECPx",
-    url: "my-instant-deployment-3ij3cxz9qr.now.sh",
+  id: "dpl_5m8CQaRBm3FnWRW1od3wKTpaECPx",
+  url: "my-instant-deployment-3ij3cxz9qr.now.sh",
 };
 ```
 

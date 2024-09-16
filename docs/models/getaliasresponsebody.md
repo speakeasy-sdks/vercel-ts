@@ -6,11 +6,11 @@
 import { GetAliasResponseBody } from "@simplesagar/vercel/models/getaliasop.js";
 
 let value: GetAliasResponseBody = {
-    alias: "my-alias.vercel.app",
-    created: new Date("2017-04-26T23:00:34.232Z"),
-    deploymentId: "dpl_5m8CQaRBm3FnWRW1od3wKTpaECPx",
-    projectId: "prj_12HKQaOmR5t5Uy6vdcQsNIiZgHGB",
-    uid: "<value>",
+  alias: "my-alias.vercel.app",
+  created: new Date("2017-04-26T23:00:34.232Z"),
+  deploymentId: "dpl_5m8CQaRBm3FnWRW1od3wKTpaECPx",
+  projectId: "prj_12HKQaOmR5t5Uy6vdcQsNIiZgHGB",
+  uid: "<value>",
 };
 ```
 

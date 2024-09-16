@@ -6,8 +6,8 @@
 import { CreateAccessGroupProjects } from "@simplesagar/vercel/models/createaccessgroupop.js";
 
 let value: CreateAccessGroupProjects = {
-    projectId: "prj_ndlgr43fadlPyCtREAqxxdyFK",
-    role: "ADMIN",
+  projectId: "prj_ndlgr43fadlPyCtREAqxxdyFK",
+  role: "ADMIN",
 };
 ```
 

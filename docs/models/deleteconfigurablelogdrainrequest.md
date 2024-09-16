@@ -6,7 +6,7 @@
 import { DeleteConfigurableLogDrainRequest } from "@simplesagar/vercel/models/deleteconfigurablelogdrainop.js";
 
 let value: DeleteConfigurableLogDrainRequest = {
-    id: "<id>",
+  id: "<id>",
 };
 ```
 

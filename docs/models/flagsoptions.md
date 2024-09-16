@@ -6,7 +6,7 @@
 import { FlagsOptions } from "@simplesagar/vercel/models/canceldeploymentop.js";
 
 let value: FlagsOptions = {
-    value: "<value>",
+  value: "<value>",
 };
 ```
 

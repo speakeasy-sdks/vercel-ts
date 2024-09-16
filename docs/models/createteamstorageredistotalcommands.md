@@ -6,10 +6,10 @@
 import { CreateTeamStorageRedisTotalCommands } from "@simplesagar/vercel/models/createteamop.js";
 
 let value: CreateTeamStorageRedisTotalCommands = {
-    price: 9148.64,
-    batch: 800.61,
-    threshold: 493.48,
-    hidden: false,
+  price: 4566.88,
+  batch: 1729.51,
+  threshold: 8247.98,
+  hidden: false,
 };
 ```
 

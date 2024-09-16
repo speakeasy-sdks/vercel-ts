@@ -6,10 +6,10 @@
 import { GitNamespacesResponseBody } from "@simplesagar/vercel/models/gitnamespacesop.js";
 
 let value: GitNamespacesResponseBody = {
-    provider: "<value>",
-    slug: "<value>",
-    id: 8918.01,
-    ownerType: "<value>",
+  provider: "<value>",
+  slug: "<value>",
+  id: 8987.6,
+  ownerType: "<value>",
 };
 ```
 

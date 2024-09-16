@@ -6,8 +6,8 @@
 import { Tax } from "@simplesagar/vercel/models/authuser.js";
 
 let value: Tax = {
-    type: "<value>",
-    id: "<id>",
+  type: "<value>",
+  id: "<id>",
 };
 ```
 

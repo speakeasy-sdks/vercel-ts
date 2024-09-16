@@ -5,7 +5,7 @@
 ```typescript
 import { UpdateProjectDataCacheType } from "@simplesagar/vercel/models/updateprojectdatacacheop.js";
 
-let value: UpdateProjectDataCacheType = "system";
+let value: UpdateProjectDataCacheType = "plain";
 ```
 
 ## Values

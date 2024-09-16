@@ -6,10 +6,10 @@
 import { CreateTeamBlobTotalSimpleRequests } from "@simplesagar/vercel/models/createteamop.js";
 
 let value: CreateTeamBlobTotalSimpleRequests = {
-    price: 2244.67,
-    batch: 4833.94,
-    threshold: 247.53,
-    hidden: false,
+  price: 3774.06,
+  batch: 7051.48,
+  threshold: 8093.65,
+  hidden: false,
 };
 ```
 

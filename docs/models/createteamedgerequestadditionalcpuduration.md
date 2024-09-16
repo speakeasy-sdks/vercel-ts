@@ -6,10 +6,10 @@
 import { CreateTeamEdgeRequestAdditionalCpuDuration } from "@simplesagar/vercel/models/createteamop.js";
 
 let value: CreateTeamEdgeRequestAdditionalCpuDuration = {
-    price: 2331.73,
-    batch: 1124.27,
-    threshold: 813.71,
-    hidden: false,
+  price: 7452.33,
+  batch: 7262.27,
+  threshold: 5269.07,
+  hidden: false,
 };
 ```
 

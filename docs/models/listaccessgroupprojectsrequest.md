@@ -6,7 +6,7 @@
 import { ListAccessGroupProjectsRequest } from "@simplesagar/vercel/models/listaccessgroupprojectsop.js";
 
 let value: ListAccessGroupProjectsRequest = {
-    idOrName: "ag_pavWOn1iLObbXLRiwVvzmPrTWyTf",
+  idOrName: "ag_pavWOn1iLObbXLRiwVvzmPrTWyTf",
 };
 ```
 

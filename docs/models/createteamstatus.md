@@ -5,7 +5,7 @@
 ```typescript
 import { CreateTeamStatus } from "@simplesagar/vercel/models/createteamop.js";
 
-let value: CreateTeamStatus = "canceled";
+let value: CreateTeamStatus = "overdue";
 ```
 
 ## Values

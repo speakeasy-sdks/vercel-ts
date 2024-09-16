@@ -6,10 +6,10 @@
 import { AuthUserBillingInvoiceItemsDataCacheReadMatrix } from "@simplesagar/vercel/models/authuser.js";
 
 let value: AuthUserBillingInvoiceItemsDataCacheReadMatrix = {
-    defaultUnitPrice: "<value>",
-    dimensionPrices: {
-        key: "<value>",
-    },
+  defaultUnitPrice: "<value>",
+  dimensionPrices: {
+    "key": "<value>",
+  },
 };
 ```
 

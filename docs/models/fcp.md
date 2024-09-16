@@ -6,8 +6,8 @@
 import { Fcp } from "@simplesagar/vercel/models/updatecheckop.js";
 
 let value: Fcp = {
-    value: 1200,
-    source: "web-vitals",
+  value: 1200,
+  source: "web-vitals",
 };
 ```
 

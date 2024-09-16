@@ -7,7 +7,8 @@ import {
   CreateProjectEnvContentHintEnvsResponse201ApplicationJSONResponseBodyCreated27Type,
 } from "@simplesagar/vercel/models/createprojectenvop.js";
 
-let value: CreateProjectEnvContentHintEnvsResponse201ApplicationJSONResponseBodyCreated27Type =
+let value:
+  CreateProjectEnvContentHintEnvsResponse201ApplicationJSONResponseBodyCreated27Type =
     "postgres-url-non-pooling";
 ```
 

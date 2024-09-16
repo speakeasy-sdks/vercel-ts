@@ -6,8 +6,8 @@
 import { GitAccount } from "@simplesagar/vercel/models/searchrepoop.js";
 
 let value: GitAccount = {
-    provider: "github",
-    namespaceId: "<value>",
+  provider: "github",
+  namespaceId: "<value>",
 };
 ```
 

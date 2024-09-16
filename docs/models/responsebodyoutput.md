@@ -6,8 +6,8 @@
 import { ResponseBodyOutput } from "@simplesagar/vercel/models/getdeploymentop.js";
 
 let value: ResponseBodyOutput = {
-    path: "/usr/share",
-    functionName: "<value>",
+  path: "/var/mail",
+  functionName: "<value>",
 };
 ```
 

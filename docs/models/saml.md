@@ -8,7 +8,7 @@ When "Single Sign-On (SAML)" is configured, this object contains information tha
 import { Saml } from "@simplesagar/vercel/models/teamlimited.js";
 
 let value: Saml = {
-    enforced: false,
+  enforced: false,
 };
 ```
 

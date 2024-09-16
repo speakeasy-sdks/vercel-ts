@@ -6,8 +6,8 @@
 import { UpdateProjectContentHint7 } from "@simplesagar/vercel/models/updateprojectop.js";
 
 let value: UpdateProjectContentHint7 = {
-    type: "postgres-url-non-pooling",
-    storeId: "<value>",
+  type: "postgres-url-non-pooling",
+  storeId: "<value>",
 };
 ```
 

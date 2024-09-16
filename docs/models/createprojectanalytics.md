@@ -6,9 +6,9 @@
 import { CreateProjectAnalytics } from "@simplesagar/vercel/models/createprojectop.js";
 
 let value: CreateProjectAnalytics = {
-    id: "<id>",
-    disabledAt: 672.49,
-    enabledAt: 7438.35,
+  id: "<id>",
+  disabledAt: 672.49,
+  enabledAt: 7438.35,
 };
 ```
 

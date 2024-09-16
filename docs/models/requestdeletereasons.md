@@ -8,8 +8,8 @@ An object describing the reason why the User account is being deleted.
 import { RequestDeleteReasons } from "@simplesagar/vercel/models/requestdeleteop.js";
 
 let value: RequestDeleteReasons = {
-    slug: "<value>",
-    description: "Up-sized 24 hour projection",
+  slug: "<value>",
+  description: "Reactive human-resource frame",
 };
 ```
 

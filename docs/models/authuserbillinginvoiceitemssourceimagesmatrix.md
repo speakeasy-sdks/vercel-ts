@@ -6,10 +6,10 @@
 import { AuthUserBillingInvoiceItemsSourceImagesMatrix } from "@simplesagar/vercel/models/authuser.js";
 
 let value: AuthUserBillingInvoiceItemsSourceImagesMatrix = {
-    defaultUnitPrice: "<value>",
-    dimensionPrices: {
-        key: "<value>",
-    },
+  defaultUnitPrice: "<value>",
+  dimensionPrices: {
+    "key": "<value>",
+  },
 };
 ```
 

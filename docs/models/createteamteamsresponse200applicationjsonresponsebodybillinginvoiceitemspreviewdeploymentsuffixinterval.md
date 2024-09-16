@@ -7,7 +7,8 @@ import {
   CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPreviewDeploymentSuffixInterval,
 } from "@simplesagar/vercel/models/createteamop.js";
 
-let value: CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPreviewDeploymentSuffixInterval =
+let value:
+  CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsPreviewDeploymentSuffixInterval =
     "month";
 ```
 

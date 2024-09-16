@@ -6,7 +6,7 @@
 import { CreateAccessGroupRequestBody } from "@simplesagar/vercel/models/createaccessgroupop.js";
 
 let value: CreateAccessGroupRequestBody = {
-    name: "My access group",
+  name: "My access group",
 };
 ```
 

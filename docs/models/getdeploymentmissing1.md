@@ -6,8 +6,8 @@
 import { GetDeploymentMissing1 } from "@simplesagar/vercel/models/getdeploymentop.js";
 
 let value: GetDeploymentMissing1 = {
-    type: "host",
-    value: "<value>",
+  type: "host",
+  value: "<value>",
 };
 ```
 

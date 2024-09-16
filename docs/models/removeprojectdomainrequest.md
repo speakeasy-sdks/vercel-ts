@@ -6,8 +6,8 @@
 import { RemoveProjectDomainRequest } from "@simplesagar/vercel/models/removeprojectdomainop.js";
 
 let value: RemoveProjectDomainRequest = {
-    idOrName: "<value>",
-    domain: "www.example.com",
+  idOrName: "<value>",
+  domain: "www.example.com",
 };
 ```
 

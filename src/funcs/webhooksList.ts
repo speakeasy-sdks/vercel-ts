@@ -10,22 +10,21 @@ import { RequestOptions } from "../lib/sdks.js";
 import { extractSecurity, resolveGlobalSecurity } from "../lib/security.js";
 import { pathToFunc } from "../lib/url.js";
 import {
-    GetWebhooksRequest,
-    GetWebhooksRequest$outboundSchema,
-    GetWebhooksResponseBody,
-    GetWebhooksResponseBody$inboundSchema,
+  GetWebhooksRequest,
+  GetWebhooksRequest$outboundSchema,
+  GetWebhooksResponseBody,
+  GetWebhooksResponseBody$inboundSchema,
 } from "../models/getwebhooksop.js";
 import {
-    ConnectionError,
-    InvalidRequestError,
-    RequestAbortedError,
-    RequestTimeoutError,
-    UnexpectedClientError,
+  ConnectionError,
+  InvalidRequestError,
+  RequestAbortedError,
+  RequestTimeoutError,
+  UnexpectedClientError,
 } from "../models/httpclienterrors.js";
 import { SDKError } from "../models/sdkerror.js";
 import { SDKValidationError } from "../models/sdkvalidationerror.js";
 import { Result } from "../types/fp.js";
-import * as z from "zod";
 
 /**
  * Get a list of webhooks
@@ -34,106 +33,103 @@ import * as z from "zod";
  * Get a list of webhooks
  */
 export async function webhooksList(
-    client$: VercelCore,
-    projectId?: string | undefined,
-    teamId?: string | undefined,
-    slug?: string | undefined,
-    options?: RequestOptions
+  client$: VercelCore,
+  projectId?: string | undefined,
+  teamId?: string | undefined,
+  slug?: string | undefined,
+  options?: RequestOptions,
 ): Promise<
-    Result<
-        Array<GetWebhooksResponseBody>,
-        | SDKError
-        | SDKValidationError
-        | UnexpectedClientError
-        | InvalidRequestError
-        | RequestAbortedError
-        | RequestTimeoutError
-        | ConnectionError
-    >
+  Result<
+    GetWebhooksResponseBody,
+    | SDKError
+    | SDKValidationError
+    | UnexpectedClientError
+    | InvalidRequestError
+    | RequestAbortedError
+    | RequestTimeoutError
+    | ConnectionError
+  >
 > {
-    const input$: GetWebhooksRequest = {
-        projectId: projectId,
-        teamId: teamId,
-        slug: slug,
-    };
+  const input$: GetWebhooksRequest = {
+    projectId: projectId,
+    teamId: teamId,
+    slug: slug,
+  };
 
-    const parsed$ = schemas$.safeParse(
-        input$,
-        (value$) => GetWebhooksRequest$outboundSchema.parse(value$),
-        "Input validation failed"
-    );
-    if (!parsed$.ok) {
-        return parsed$;
-    }
-    const payload$ = parsed$.value;
-    const body$ = null;
+  const parsed$ = schemas$.safeParse(
+    input$,
+    (value$) => GetWebhooksRequest$outboundSchema.parse(value$),
+    "Input validation failed",
+  );
+  if (!parsed$.ok) {
+    return parsed$;
+  }
+  const payload$ = parsed$.value;
+  const body$ = null;
 
-    const path$ = pathToFunc("/v1/webhooks")();
+  const path$ = pathToFunc("/v1/webhooks")();
 
-    const query$ = encodeFormQuery$({
-        projectId: payload$.projectId,
-        slug: payload$.slug,
-        teamId: payload$.teamId,
-    });
+  const query$ = encodeFormQuery$({
+    "projectId": payload$.projectId,
+    "slug": payload$.slug,
+    "teamId": payload$.teamId,
+  });
 
-    const headers$ = new Headers({
-        Accept: "application/json",
-    });
+  const headers$ = new Headers({
+    Accept: "application/json",
+  });
 
-    const bearerToken$ = await extractSecurity(client$.options$.bearerToken);
-    const security$ = bearerToken$ == null ? {} : { bearerToken: bearerToken$ };
-    const context = {
-        operationID: "getWebhooks",
-        oAuth2Scopes: [],
-        securitySource: client$.options$.bearerToken,
-    };
-    const securitySettings$ = resolveGlobalSecurity(security$);
+  const bearerToken$ = await extractSecurity(client$.options$.bearerToken);
+  const security$ = bearerToken$ == null ? {} : { bearerToken: bearerToken$ };
+  const context = {
+    operationID: "getWebhooks",
+    oAuth2Scopes: [],
+    securitySource: client$.options$.bearerToken,
+  };
+  const securitySettings$ = resolveGlobalSecurity(security$);
 
-    const requestRes = client$.createRequest$(
-        context,
-        {
-            security: securitySettings$,
-            method: "GET",
-            path: path$,
-            headers: headers$,
-            query: query$,
-            body: body$,
-            timeoutMs: options?.timeoutMs || client$.options$.timeoutMs || -1,
-        },
-        options
-    );
-    if (!requestRes.ok) {
-        return requestRes;
-    }
-    const request$ = requestRes.value;
+  const requestRes = client$.createRequest$(context, {
+    security: securitySettings$,
+    method: "GET",
+    path: path$,
+    headers: headers$,
+    query: query$,
+    body: body$,
+    timeoutMs: options?.timeoutMs || client$.options$.timeoutMs || -1,
+  }, options);
+  if (!requestRes.ok) {
+    return requestRes;
+  }
+  const request$ = requestRes.value;
 
-    const doResult = await client$.do$(request$, {
-        context,
-        errorCodes: ["400", "401", "403", "4XX", "5XX"],
-        retryConfig: options?.retries || client$.options$.retryConfig,
-        retryCodes: options?.retryCodes || ["429", "500", "502", "503", "504"],
-    });
-    if (!doResult.ok) {
-        return doResult;
-    }
-    const response = doResult.value;
+  const doResult = await client$.do$(request$, {
+    context,
+    errorCodes: ["400", "401", "403", "4XX", "5XX"],
+    retryConfig: options?.retries
+      || client$.options$.retryConfig,
+    retryCodes: options?.retryCodes || ["429", "500", "502", "503", "504"],
+  });
+  if (!doResult.ok) {
+    return doResult;
+  }
+  const response = doResult.value;
 
-    const [result$] = await m$.match<
-        Array<GetWebhooksResponseBody>,
-        | SDKError
-        | SDKValidationError
-        | UnexpectedClientError
-        | InvalidRequestError
-        | RequestAbortedError
-        | RequestTimeoutError
-        | ConnectionError
-    >(
-        m$.json(200, z.array(GetWebhooksResponseBody$inboundSchema)),
-        m$.fail([400, 401, 403, "4XX", "5XX"])
-    )(response);
-    if (!result$.ok) {
-        return result$;
-    }
-
+  const [result$] = await m$.match<
+    GetWebhooksResponseBody,
+    | SDKError
+    | SDKValidationError
+    | UnexpectedClientError
+    | InvalidRequestError
+    | RequestAbortedError
+    | RequestTimeoutError
+    | ConnectionError
+  >(
+    m$.json(200, GetWebhooksResponseBody$inboundSchema),
+    m$.fail([400, 401, 403, "4XX", "5XX"]),
+  )(response);
+  if (!result$.ok) {
     return result$;
+  }
+
+  return result$;
 }

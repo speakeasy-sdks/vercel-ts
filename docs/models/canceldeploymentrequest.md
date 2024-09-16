@@ -6,7 +6,7 @@
 import { CancelDeploymentRequest } from "@simplesagar/vercel/models/canceldeploymentop.js";
 
 let value: CancelDeploymentRequest = {
-    id: "dpl_5WJWYSyB7BpgTj3EuwF37WMRBXBtPQ2iTMJHJBJyRfd",
+  id: "dpl_5WJWYSyB7BpgTj3EuwF37WMRBXBtPQ2iTMJHJBJyRfd",
 };
 ```
 

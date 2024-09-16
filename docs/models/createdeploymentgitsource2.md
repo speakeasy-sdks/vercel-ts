@@ -6,9 +6,9 @@
 import { CreateDeploymentGitSource2 } from "@simplesagar/vercel/models/createdeploymentop.js";
 
 let value: CreateDeploymentGitSource2 = {
-    type: "github",
-    org: "<value>",
-    repo: "<value>",
+  type: "github",
+  org: "<value>",
+  repo: "<value>",
 };
 ```
 

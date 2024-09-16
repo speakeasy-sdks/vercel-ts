@@ -6,10 +6,10 @@
 import { FastOriginTransfer } from "@simplesagar/vercel/models/authuser.js";
 
 let value: FastOriginTransfer = {
-    price: 511.7,
-    batch: 9011.63,
-    threshold: 1040.78,
-    hidden: false,
+  price: 385.57,
+  batch: 9639.76,
+  threshold: 7731.1,
+  hidden: false,
 };
 ```
 

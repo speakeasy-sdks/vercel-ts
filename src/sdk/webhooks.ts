@@ -7,69 +7,96 @@ import { webhooksDelete } from "../funcs/webhooksDelete.js";
 import { webhooksGet } from "../funcs/webhooksGet.js";
 import { webhooksList } from "../funcs/webhooksList.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
-import { CreateWebhookRequestBody, CreateWebhookResponseBody } from "../models/createwebhookop.js";
+import {
+  CreateWebhookRequestBody,
+  CreateWebhookResponseBody,
+} from "../models/createwebhookop.js";
 import { GetWebhookResponseBody } from "../models/getwebhookop.js";
 import { GetWebhooksResponseBody } from "../models/getwebhooksop.js";
 import { unwrapAsync } from "../types/fp.js";
 
 export class Webhooks extends ClientSDK {
-    /**
-     * Creates a webhook
-     *
-     * @remarks
-     * Creates a webhook
-     */
-    async create(
-        teamId?: string | undefined,
-        slug?: string | undefined,
-        requestBody?: CreateWebhookRequestBody | undefined,
-        options?: RequestOptions
-    ): Promise<CreateWebhookResponseBody> {
-        return unwrapAsync(webhooksCreate(this, teamId, slug, requestBody, options));
-    }
+  /**
+   * Creates a webhook
+   *
+   * @remarks
+   * Creates a webhook
+   */
+  async create(
+    teamId?: string | undefined,
+    slug?: string | undefined,
+    requestBody?: CreateWebhookRequestBody | undefined,
+    options?: RequestOptions,
+  ): Promise<CreateWebhookResponseBody> {
+    return unwrapAsync(webhooksCreate(
+      this,
+      teamId,
+      slug,
+      requestBody,
+      options,
+    ));
+  }
 
-    /**
-     * Get a list of webhooks
-     *
-     * @remarks
-     * Get a list of webhooks
-     */
-    async list(
-        projectId?: string | undefined,
-        teamId?: string | undefined,
-        slug?: string | undefined,
-        options?: RequestOptions
-    ): Promise<Array<GetWebhooksResponseBody>> {
-        return unwrapAsync(webhooksList(this, projectId, teamId, slug, options));
-    }
+  /**
+   * Get a list of webhooks
+   *
+   * @remarks
+   * Get a list of webhooks
+   */
+  async list(
+    projectId?: string | undefined,
+    teamId?: string | undefined,
+    slug?: string | undefined,
+    options?: RequestOptions,
+  ): Promise<GetWebhooksResponseBody> {
+    return unwrapAsync(webhooksList(
+      this,
+      projectId,
+      teamId,
+      slug,
+      options,
+    ));
+  }
 
-    /**
-     * Get a webhook
-     *
-     * @remarks
-     * Get a webhook
-     */
-    async get(
-        id: string,
-        teamId?: string | undefined,
-        slug?: string | undefined,
-        options?: RequestOptions
-    ): Promise<GetWebhookResponseBody> {
-        return unwrapAsync(webhooksGet(this, id, teamId, slug, options));
-    }
+  /**
+   * Get a webhook
+   *
+   * @remarks
+   * Get a webhook
+   */
+  async get(
+    id: string,
+    teamId?: string | undefined,
+    slug?: string | undefined,
+    options?: RequestOptions,
+  ): Promise<GetWebhookResponseBody> {
+    return unwrapAsync(webhooksGet(
+      this,
+      id,
+      teamId,
+      slug,
+      options,
+    ));
+  }
 
-    /**
-     * Deletes a webhook
-     *
-     * @remarks
-     * Deletes a webhook
-     */
-    async delete(
-        id: string,
-        teamId?: string | undefined,
-        slug?: string | undefined,
-        options?: RequestOptions
-    ): Promise<void> {
-        return unwrapAsync(webhooksDelete(this, id, teamId, slug, options));
-    }
+  /**
+   * Deletes a webhook
+   *
+   * @remarks
+   * Deletes a webhook
+   */
+  async delete(
+    id: string,
+    teamId?: string | undefined,
+    slug?: string | undefined,
+    options?: RequestOptions,
+  ): Promise<void> {
+    return unwrapAsync(webhooksDelete(
+      this,
+      id,
+      teamId,
+      slug,
+      options,
+    ));
+  }
 }

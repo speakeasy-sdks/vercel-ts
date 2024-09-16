@@ -5,7 +5,9 @@
 ```typescript
 import { UpdateProjectTarget } from "@simplesagar/vercel/models/updateprojectop.js";
 
-let value: UpdateProjectTarget = ["development"];
+let value: UpdateProjectTarget = [
+  "development",
+];
 ```
 
 ## Supported Types

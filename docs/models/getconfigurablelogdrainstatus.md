@@ -5,7 +5,7 @@
 ```typescript
 import { GetConfigurableLogDrainStatus } from "@simplesagar/vercel/models/getconfigurablelogdrainop.js";
 
-let value: GetConfigurableLogDrainStatus = "disabled";
+let value: GetConfigurableLogDrainStatus = "errored";
 ```
 
 ## Values

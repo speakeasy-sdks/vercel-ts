@@ -6,7 +6,7 @@
 import { DeleteWebhookRequest } from "@simplesagar/vercel/models/deletewebhookop.js";
 
 let value: DeleteWebhookRequest = {
-    id: "<id>",
+  id: "<id>",
 };
 ```
 

@@ -6,8 +6,8 @@
 import { GetDeploymentRoutesMissing } from "@simplesagar/vercel/models/getdeploymentop.js";
 
 let value: GetDeploymentRoutesMissing = {
-    type: "query",
-    key: "<key>",
+  type: "query",
+  key: "<key>",
 };
 ```
 

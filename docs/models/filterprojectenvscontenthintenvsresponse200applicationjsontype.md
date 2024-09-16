@@ -5,7 +5,8 @@
 ```typescript
 import { FilterProjectEnvsContentHintEnvsResponse200ApplicationJSONType } from "@simplesagar/vercel/models/filterprojectenvsop.js";
 
-let value: FilterProjectEnvsContentHintEnvsResponse200ApplicationJSONType = "blob-read-write-token";
+let value: FilterProjectEnvsContentHintEnvsResponse200ApplicationJSONType =
+  "blob-read-write-token";
 ```
 
 ## Values

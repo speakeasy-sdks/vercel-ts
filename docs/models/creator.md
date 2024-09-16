@@ -6,7 +6,7 @@
 import { Creator } from "@simplesagar/vercel/models/createdeploymentop.js";
 
 let value: Creator = {
-    uid: "<value>",
+  uid: "<value>",
 };
 ```
 

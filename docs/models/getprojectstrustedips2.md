@@ -6,7 +6,7 @@
 import { GetProjectsTrustedIps2 } from "@simplesagar/vercel/models/getprojectsop.js";
 
 let value: GetProjectsTrustedIps2 = {
-    deploymentType: "prod_deployment_urls_and_all_previews",
+  deploymentType: "prod_deployment_urls_and_all_previews",
 };
 ```
 

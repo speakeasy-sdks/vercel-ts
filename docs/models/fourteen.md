@@ -6,11 +6,11 @@
 import { Fourteen } from "@simplesagar/vercel/models/updateprojectdatacacheop.js";
 
 let value: Fourteen = {
-    type: "integration-store-secret",
-    storeId: "<value>",
-    integrationId: "<value>",
-    integrationProductId: "<value>",
-    integrationConfigurationId: "<value>",
+  type: "integration-store-secret",
+  storeId: "<value>",
+  integrationId: "<value>",
+  integrationProductId: "<value>",
+  integrationConfigurationId: "<value>",
 };
 ```
 

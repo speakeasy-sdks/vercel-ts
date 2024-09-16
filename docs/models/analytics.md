@@ -8,9 +8,9 @@ Will be used to create an invoice item. The price must be in cents: 2000 for $20
 import { Analytics } from "@simplesagar/vercel/models/authuser.js";
 
 let value: Analytics = {
-    price: 460.13,
-    quantity: 7275.47,
-    hidden: false,
+  price: 7955.91,
+  quantity: 6845.53,
+  hidden: false,
 };
 ```
 

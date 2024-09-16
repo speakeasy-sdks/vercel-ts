@@ -6,10 +6,10 @@
 import { GetProjectDomainResponseBody } from "@simplesagar/vercel/models/getprojectdomainop.js";
 
 let value: GetProjectDomainResponseBody = {
-    name: "<value>",
-    apexName: "<value>",
-    projectId: "<value>",
-    verified: false,
+  name: "<value>",
+  apexName: "<value>",
+  projectId: "<value>",
+  verified: false,
 };
 ```
 

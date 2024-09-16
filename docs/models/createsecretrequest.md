@@ -6,7 +6,7 @@
 import { CreateSecretRequest } from "@simplesagar/vercel/models/createsecretop.js";
 
 let value: CreateSecretRequest = {
-    name: "my-api-key",
+  name: "my-api-key",
 };
 ```
 

@@ -5,7 +5,7 @@
 ```typescript
 import { GetDeploymentEventsResponseBodyDeploymentsType } from "@simplesagar/vercel/models/getdeploymenteventsop.js";
 
-let value: GetDeploymentEventsResponseBodyDeploymentsType = "fatal";
+let value: GetDeploymentEventsResponseBodyDeploymentsType = "delimiter";
 ```
 
 ## Values

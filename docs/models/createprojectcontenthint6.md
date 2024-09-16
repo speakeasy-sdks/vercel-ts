@@ -6,8 +6,8 @@
 import { CreateProjectContentHint6 } from "@simplesagar/vercel/models/createprojectop.js";
 
 let value: CreateProjectContentHint6 = {
-    type: "postgres-url",
-    storeId: "<value>",
+  type: "postgres-url",
+  storeId: "<value>",
 };
 ```
 

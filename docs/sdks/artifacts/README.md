@@ -28,9 +28,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  await vercel.artifacts.recordEvents();
-
-  
+  await vercel.artifacts.recordEvents({});
 }
 
 run();
@@ -51,7 +49,7 @@ const vercel = new VercelCore({
 });
 
 async function run() {
-  const res = await artifactsRecordEvents(vercel);
+  const res = await artifactsRecordEvents(vercel, {});
 
   if (!res.ok) {
     throw res.error;
@@ -100,7 +98,7 @@ const vercel = new Vercel({
 
 async function run() {
   const result = await vercel.artifacts.status();
-
+  
   // Handle the result
   console.log(result)
 }
@@ -177,7 +175,7 @@ async function run() {
     contentLength: 4036.54,
     hash: "12HKQaOmR5t5Uy6vdcQsNIiZgHGB",
   });
-
+  
   // Handle the result
   console.log(result)
 }
@@ -201,7 +199,7 @@ const vercel = new VercelCore({
 
 async function run() {
   const res = await artifactsUpload(vercel, {
-    contentLength: 5459.09,
+    contentLength: 4036.54,
     hash: "12HKQaOmR5t5Uy6vdcQsNIiZgHGB",
   });
 
@@ -255,7 +253,7 @@ async function run() {
   const result = await vercel.artifacts.download({
     hash: "12HKQaOmR5t5Uy6vdcQsNIiZgHGB",
   });
-
+  
   // Handle the result
   console.log(result)
 }
@@ -330,8 +328,6 @@ const vercel = new Vercel({
 
 async function run() {
   await vercel.artifacts.exists("12HKQaOmR5t5Uy6vdcQsNIiZgHGB");
-
-  
 }
 
 run();
@@ -403,7 +399,7 @@ const vercel = new Vercel({
 
 async function run() {
   const result = await vercel.artifacts.query();
-
+  
   // Handle the result
   console.log(result)
 }

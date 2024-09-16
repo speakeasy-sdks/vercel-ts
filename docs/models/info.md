@@ -6,8 +6,8 @@
 import { Info } from "@simplesagar/vercel/models/getdeploymenteventsop.js";
 
 let value: Info = {
-    type: "<value>",
-    name: "<value>",
+  type: "<value>",
+  name: "<value>",
 };
 ```
 

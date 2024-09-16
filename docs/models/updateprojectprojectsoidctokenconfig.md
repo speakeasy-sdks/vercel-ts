@@ -6,7 +6,7 @@
 import { UpdateProjectProjectsOidcTokenConfig } from "@simplesagar/vercel/models/updateprojectop.js";
 
 let value: UpdateProjectProjectsOidcTokenConfig = {
-    enabled: false,
+  enabled: false,
 };
 ```
 

@@ -6,8 +6,8 @@
 import { CreateTeamAwsMarketplace } from "@simplesagar/vercel/models/createteamop.js";
 
 let value: CreateTeamAwsMarketplace = {
-    productCode: "<value>",
-    customerId: "<value>",
+  productCode: "<value>",
+  customerId: "<value>",
 };
 ```
 

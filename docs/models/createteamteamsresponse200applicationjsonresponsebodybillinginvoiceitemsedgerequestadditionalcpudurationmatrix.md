@@ -7,12 +7,13 @@ import {
   CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeRequestAdditionalCpuDurationMatrix,
 } from "@simplesagar/vercel/models/createteamop.js";
 
-let value: CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeRequestAdditionalCpuDurationMatrix =
+let value:
+  CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsEdgeRequestAdditionalCpuDurationMatrix =
     {
-        defaultUnitPrice: "<value>",
-        dimensionPrices: {
-            key: "<value>",
-        },
+      defaultUnitPrice: "<value>",
+      dimensionPrices: {
+        "key": "<value>",
+      },
     };
 ```
 

@@ -8,7 +8,7 @@ The alias was successfully removed
 import { DeleteAliasResponseBody } from "@simplesagar/vercel/models/deletealiasop.js";
 
 let value: DeleteAliasResponseBody = {
-    status: "SUCCESS",
+  status: "SUCCESS",
 };
 ```
 

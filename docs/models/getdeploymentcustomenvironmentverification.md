@@ -8,10 +8,10 @@ A list of verification challenges, one of which must be completed to verify the 
 import { GetDeploymentCustomEnvironmentVerification } from "@simplesagar/vercel/models/getdeploymentop.js";
 
 let value: GetDeploymentCustomEnvironmentVerification = {
-    type: "<value>",
-    domain: "emotional-daikon.name",
-    value: "<value>",
-    reason: "<value>",
+  type: "<value>",
+  domain: "gentle-bladder.biz",
+  value: "<value>",
+  reason: "<value>",
 };
 ```
 

@@ -6,10 +6,10 @@
 import { GetDeploymentCustomEnvironmentDeploymentsDomains } from "@simplesagar/vercel/models/getdeploymentop.js";
 
 let value: GetDeploymentCustomEnvironmentDeploymentsDomains = {
-    name: "<value>",
-    apexName: "<value>",
-    projectId: "<value>",
-    verified: false,
+  name: "<value>",
+  apexName: "<value>",
+  projectId: "<value>",
+  verified: false,
 };
 ```
 

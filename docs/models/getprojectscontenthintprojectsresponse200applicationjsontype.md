@@ -5,7 +5,8 @@
 ```typescript
 import { GetProjectsContentHintProjectsResponse200ApplicationJSONType } from "@simplesagar/vercel/models/getprojectsop.js";
 
-let value: GetProjectsContentHintProjectsResponse200ApplicationJSONType = "blob-read-write-token";
+let value: GetProjectsContentHintProjectsResponse200ApplicationJSONType =
+  "blob-read-write-token";
 ```
 
 ## Values

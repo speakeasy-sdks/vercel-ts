@@ -8,11 +8,11 @@ The EdgeConfig.
 import { EdgeConfigToken } from "@simplesagar/vercel/models/edgeconfigtoken.js";
 
 let value: EdgeConfigToken = {
-    token: "<value>",
-    label: "<value>",
-    id: "<id>",
-    edgeConfigId: "<value>",
-    createdAt: 5910.27,
+  token: "<value>",
+  label: "<value>",
+  id: "<id>",
+  edgeConfigId: "<value>",
+  createdAt: 5910.27,
 };
 ```
 

@@ -7,68 +7,95 @@ import { aliasesDelete } from "../funcs/aliasesDelete.js";
 import { aliasesGet } from "../funcs/aliasesGet.js";
 import { aliasesList } from "../funcs/aliasesList.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
-import { AssignAliasRequestBody, AssignAliasResponseBody } from "../models/assignaliasop.js";
+import {
+  AssignAliasRequestBody,
+  AssignAliasResponseBody,
+} from "../models/assignaliasop.js";
 import { DeleteAliasResponseBody } from "../models/deletealiasop.js";
 import { GetAliasRequest, GetAliasResponseBody } from "../models/getaliasop.js";
-import { ListAliasesRequest, ListAliasesResponse } from "../models/listaliasesop.js";
+import {
+  ListAliasesRequest,
+  ListAliasesResponse,
+} from "../models/listaliasesop.js";
 import { unwrapAsync } from "../types/fp.js";
 import { PageIterator, unwrapResultIterator } from "../types/operations.js";
 
 export class Aliases extends ClientSDK {
-    /**
-     * List aliases
-     *
-     * @remarks
-     * Retrieves a list of aliases for the authenticated User or Team. When `domain` is provided, only aliases for that domain will be returned. When `projectId` is provided, it will only return the given project aliases.
-     */
-    async list(
-        request?: ListAliasesRequest | undefined,
-        options?: RequestOptions
-    ): Promise<PageIterator<ListAliasesResponse>> {
-        return unwrapResultIterator(aliasesList(this, request, options));
-    }
+  /**
+   * List aliases
+   *
+   * @remarks
+   * Retrieves a list of aliases for the authenticated User or Team. When `domain` is provided, only aliases for that domain will be returned. When `projectId` is provided, it will only return the given project aliases.
+   */
+  async list(
+    request: ListAliasesRequest,
+    options?: RequestOptions,
+  ): Promise<PageIterator<ListAliasesResponse>> {
+    return unwrapResultIterator(aliasesList(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Get an Alias
-     *
-     * @remarks
-     * Retrieves an Alias for the given host name or alias ID.
-     */
-    async get(
-        request: GetAliasRequest,
-        options?: RequestOptions
-    ): Promise<Array<GetAliasResponseBody>> {
-        return unwrapAsync(aliasesGet(this, request, options));
-    }
+  /**
+   * Get an Alias
+   *
+   * @remarks
+   * Retrieves an Alias for the given host name or alias ID.
+   */
+  async get(
+    request: GetAliasRequest,
+    options?: RequestOptions,
+  ): Promise<Array<GetAliasResponseBody>> {
+    return unwrapAsync(aliasesGet(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Delete an Alias
-     *
-     * @remarks
-     * Delete an Alias with the specified ID.
-     */
-    async delete(
-        aliasId: string,
-        teamId?: string | undefined,
-        slug?: string | undefined,
-        options?: RequestOptions
-    ): Promise<DeleteAliasResponseBody> {
-        return unwrapAsync(aliasesDelete(this, aliasId, teamId, slug, options));
-    }
+  /**
+   * Delete an Alias
+   *
+   * @remarks
+   * Delete an Alias with the specified ID.
+   */
+  async delete(
+    aliasId: string,
+    teamId?: string | undefined,
+    slug?: string | undefined,
+    options?: RequestOptions,
+  ): Promise<DeleteAliasResponseBody> {
+    return unwrapAsync(aliasesDelete(
+      this,
+      aliasId,
+      teamId,
+      slug,
+      options,
+    ));
+  }
 
-    /**
-     * Assign an Alias
-     *
-     * @remarks
-     * Creates a new alias for the deployment with the given deployment ID. The authenticated user or team must own this deployment. If the desired alias is already assigned to another deployment, then it will be removed from the old deployment and assigned to the new one.
-     */
-    async assign(
-        id: string,
-        teamId?: string | undefined,
-        slug?: string | undefined,
-        requestBody?: AssignAliasRequestBody | undefined,
-        options?: RequestOptions
-    ): Promise<AssignAliasResponseBody> {
-        return unwrapAsync(aliasesAssign(this, id, teamId, slug, requestBody, options));
-    }
+  /**
+   * Assign an Alias
+   *
+   * @remarks
+   * Creates a new alias for the deployment with the given deployment ID. The authenticated user or team must own this deployment. If the desired alias is already assigned to another deployment, then it will be removed from the old deployment and assigned to the new one.
+   */
+  async assign(
+    id: string,
+    teamId?: string | undefined,
+    slug?: string | undefined,
+    requestBody?: AssignAliasRequestBody | undefined,
+    options?: RequestOptions,
+  ): Promise<AssignAliasResponseBody> {
+    return unwrapAsync(aliasesAssign(
+      this,
+      id,
+      teamId,
+      slug,
+      requestBody,
+      options,
+    ));
+  }
 }

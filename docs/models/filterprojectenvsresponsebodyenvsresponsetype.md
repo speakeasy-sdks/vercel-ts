@@ -5,7 +5,7 @@
 ```typescript
 import { FilterProjectEnvsResponseBodyEnvsResponseType } from "@simplesagar/vercel/models/filterprojectenvsop.js";
 
-let value: FilterProjectEnvsResponseBodyEnvsResponseType = "secret";
+let value: FilterProjectEnvsResponseBodyEnvsResponseType = "encrypted";
 ```
 
 ## Values

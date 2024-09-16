@@ -8,15 +8,15 @@ The environment variable was created successfully
 import { CreateProjectEnvResponseBody } from "@simplesagar/vercel/models/createprojectenvop.js";
 
 let value: CreateProjectEnvResponseBody = {
-    created: [{}],
-    failed: [
-        {
-            error: {
-                code: "<value>",
-                message: "<value>",
-            },
-        },
-    ],
+  created: {},
+  failed: [
+    {
+      error: {
+        code: "<value>",
+        message: "<value>",
+      },
+    },
+  ],
 };
 ```
 

@@ -6,39 +6,39 @@
 import { CreateTeamSubscriptions } from "@simplesagar/vercel/models/createteamop.js";
 
 let value: CreateTeamSubscriptions = {
+  id: "<id>",
+  trial: {
+    start: 1276.88,
+    end: 3589.95,
+  },
+  period: {
+    start: 6214.73,
+    end: 9371.17,
+  },
+  frequency: {
+    interval: "month",
+    intervalCount: 9233.06,
+  },
+  discount: {
     id: "<id>",
-    trial: {
-        start: 9195.08,
-        end: 340.7,
+    coupon: {
+      id: "<id>",
+      name: "<value>",
+      amountOff: 6308.71,
+      percentageOff: 2828.37,
+      durationInMonths: 6937.46,
+      duration: "repeating",
     },
-    period: {
-        start: 7104.56,
-        end: 8852.08,
+  },
+  items: [
+    {
+      id: "<id>",
+      priceId: "<value>",
+      productId: "<value>",
+      amount: 1062.55,
+      quantity: 6002.13,
     },
-    frequency: {
-        interval: "month",
-        intervalCount: 8448.54,
-    },
-    discount: {
-        id: "<id>",
-        coupon: {
-            id: "<id>",
-            name: "<value>",
-            amountOff: 4835.18,
-            percentageOff: 5101.28,
-            durationInMonths: 1403.16,
-            duration: "forever",
-        },
-    },
-    items: [
-        {
-            id: "<id>",
-            priceId: "<value>",
-            productId: "<value>",
-            amount: 3589.95,
-            quantity: 6214.73,
-        },
-    ],
+  ],
 };
 ```
 

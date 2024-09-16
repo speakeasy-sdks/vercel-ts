@@ -6,8 +6,8 @@
 import { GetProjectEnvResponseBodyEnvsResponseContentHint } from "@simplesagar/vercel/models/getprojectenvop.js";
 
 let value: GetProjectEnvResponseBodyEnvsResponseContentHint = {
-    type: "redis-url",
-    storeId: "<value>",
+  type: "redis-rest-api-read-only-token",
+  storeId: "<value>",
 };
 ```
 

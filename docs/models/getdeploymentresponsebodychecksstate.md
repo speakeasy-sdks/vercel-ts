@@ -5,7 +5,7 @@
 ```typescript
 import { GetDeploymentResponseBodyChecksState } from "@simplesagar/vercel/models/getdeploymentop.js";
 
-let value: GetDeploymentResponseBodyChecksState = "registered";
+let value: GetDeploymentResponseBodyChecksState = "running";
 ```
 
 ## Values

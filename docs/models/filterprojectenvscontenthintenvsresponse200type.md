@@ -5,7 +5,8 @@
 ```typescript
 import { FilterProjectEnvsContentHintEnvsResponse200Type } from "@simplesagar/vercel/models/filterprojectenvsop.js";
 
-let value: FilterProjectEnvsContentHintEnvsResponse200Type = "redis-rest-api-read-only-token";
+let value: FilterProjectEnvsContentHintEnvsResponse200Type =
+  "redis-rest-api-read-only-token";
 ```
 
 ## Values

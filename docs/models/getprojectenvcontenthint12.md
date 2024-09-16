@@ -6,8 +6,8 @@
 import { GetProjectEnvContentHint12 } from "@simplesagar/vercel/models/getprojectenvop.js";
 
 let value: GetProjectEnvContentHint12 = {
-    type: "postgres-database",
-    storeId: "<value>",
+  type: "postgres-database",
+  storeId: "<value>",
 };
 ```
 

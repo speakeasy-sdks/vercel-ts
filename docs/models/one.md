@@ -8,9 +8,9 @@ A list of projects and spaces across teams that a user has marked as a favorite.
 import { One } from "@simplesagar/vercel/models/authuser.js";
 
 let value: One = {
-    projectId: "<value>",
-    scopeSlug: "<value>",
-    scopeId: "<value>",
+  projectId: "<value>",
+  scopeSlug: "<value>",
+  scopeId: "<value>",
 };
 ```
 

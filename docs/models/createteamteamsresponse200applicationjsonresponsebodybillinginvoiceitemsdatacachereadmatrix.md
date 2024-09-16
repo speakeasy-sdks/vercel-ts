@@ -7,12 +7,13 @@ import {
   CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsDataCacheReadMatrix,
 } from "@simplesagar/vercel/models/createteamop.js";
 
-let value: CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsDataCacheReadMatrix =
+let value:
+  CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsDataCacheReadMatrix =
     {
-        defaultUnitPrice: "<value>",
-        dimensionPrices: {
-            key: "<value>",
-        },
+      defaultUnitPrice: "<value>",
+      dimensionPrices: {
+        "key": "<value>",
+      },
     };
 ```
 

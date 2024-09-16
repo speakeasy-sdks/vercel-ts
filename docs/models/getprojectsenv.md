@@ -6,9 +6,9 @@
 import { GetProjectsEnv } from "@simplesagar/vercel/models/getprojectsop.js";
 
 let value: GetProjectsEnv = {
-    type: "plain",
-    key: "<key>",
-    value: "<value>",
+  type: "plain",
+  key: "<key>",
+  value: "<value>",
 };
 ```
 

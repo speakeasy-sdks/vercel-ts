@@ -5,7 +5,7 @@
 ```typescript
 import { SearchRepoIntegrationsProvider } from "@simplesagar/vercel/models/searchrepoop.js";
 
-let value: SearchRepoIntegrationsProvider = "github";
+let value: SearchRepoIntegrationsProvider = "github-custom-host";
 ```
 
 ## Values

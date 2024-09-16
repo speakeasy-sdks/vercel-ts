@@ -6,7 +6,7 @@
 import { UpdateProjectBuilds } from "@simplesagar/vercel/models/updateprojectop.js";
 
 let value: UpdateProjectBuilds = {
-    use: "<value>",
+  use: "<value>",
 };
 ```
 

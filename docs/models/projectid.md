@@ -5,7 +5,7 @@
 ```typescript
 import { ProjectId } from "@simplesagar/vercel/models/createdeploymentop.js";
 
-let value: ProjectId = 9509.53;
+let value: ProjectId = 2282.63;
 ```
 
 ## Supported Types

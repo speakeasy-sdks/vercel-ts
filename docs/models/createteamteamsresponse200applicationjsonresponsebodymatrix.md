@@ -6,10 +6,10 @@
 import { CreateTeamTeamsResponse200ApplicationJSONResponseBodyMatrix } from "@simplesagar/vercel/models/createteamop.js";
 
 let value: CreateTeamTeamsResponse200ApplicationJSONResponseBodyMatrix = {
-    defaultUnitPrice: "<value>",
-    dimensionPrices: {
-        key: "<value>",
-    },
+  defaultUnitPrice: "<value>",
+  dimensionPrices: {
+    "key": "<value>",
+  },
 };
 ```
 

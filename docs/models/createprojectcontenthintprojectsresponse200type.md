@@ -5,7 +5,8 @@
 ```typescript
 import { CreateProjectContentHintProjectsResponse200Type } from "@simplesagar/vercel/models/createprojectop.js";
 
-let value: CreateProjectContentHintProjectsResponse200Type = "redis-rest-api-read-only-token";
+let value: CreateProjectContentHintProjectsResponse200Type =
+  "redis-rest-api-read-only-token";
 ```
 
 ## Values

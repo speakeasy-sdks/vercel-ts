@@ -6,8 +6,8 @@
 import { GetProjectEnvContentHintEnvs2 } from "@simplesagar/vercel/models/getprojectenvop.js";
 
 let value: GetProjectEnvContentHintEnvs2 = {
-    type: "redis-rest-api-url",
-    storeId: "<value>",
+  type: "redis-rest-api-url",
+  storeId: "<value>",
 };
 ```
 

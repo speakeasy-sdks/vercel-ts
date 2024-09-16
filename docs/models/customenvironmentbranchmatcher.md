@@ -6,8 +6,8 @@
 import { CustomEnvironmentBranchMatcher } from "@simplesagar/vercel/models/canceldeploymentop.js";
 
 let value: CustomEnvironmentBranchMatcher = {
-    type: "endsWith",
-    pattern: "<value>",
+  type: "endsWith",
+  pattern: "<value>",
 };
 ```
 

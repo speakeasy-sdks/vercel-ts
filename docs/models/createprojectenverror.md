@@ -6,8 +6,8 @@
 import { CreateProjectEnvError } from "@simplesagar/vercel/models/createprojectenvop.js";
 
 let value: CreateProjectEnvError = {
-    code: "<value>",
-    message: "<value>",
+  code: "<value>",
+  message: "<value>",
 };
 ```
 

@@ -5,10 +5,11 @@
 ```typescript
 import { AuthUserBillingInvoiceItemsManagedInfrastructureCommitmentFrequency } from "@simplesagar/vercel/models/authuser.js";
 
-let value: AuthUserBillingInvoiceItemsManagedInfrastructureCommitmentFrequency = {
+let value: AuthUserBillingInvoiceItemsManagedInfrastructureCommitmentFrequency =
+  {
     interval: "month",
-    intervalCount: 2420.99,
-};
+    intervalCount: 1415.06,
+  };
 ```
 
 ## Fields

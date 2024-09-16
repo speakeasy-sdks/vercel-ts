@@ -8,8 +8,8 @@ The deployment was successfully deleted
 import { DeleteDeploymentResponseBody } from "@simplesagar/vercel/models/deletedeploymentop.js";
 
 let value: DeleteDeploymentResponseBody = {
-    uid: "dpl_5WJWYSyB7BpgTj3EuwF37WMRBXBtPQ2iTMJHJBJyRfd",
-    state: "DELETED",
+  uid: "dpl_5WJWYSyB7BpgTj3EuwF37WMRBXBtPQ2iTMJHJBJyRfd",
+  state: "DELETED",
 };
 ```
 

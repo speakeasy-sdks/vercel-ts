@@ -23,7 +23,7 @@ const vercel = new Vercel();
 
 async function run() {
   const result = await vercel.listDeploymentBuilds("<value>");
-
+  
   // Handle the result
   console.log(result)
 }
@@ -90,8 +90,6 @@ const vercel = new Vercel();
 
 async function run() {
   await vercel.datacachePurgeall("<value>");
-
-  
 }
 
 run();
@@ -155,7 +153,7 @@ const vercel = new Vercel();
 
 async function run() {
   const result = await vercel.dataCacheBillingSettings();
-
+  
   // Handle the result
   console.log(result)
 }

@@ -6,10 +6,10 @@
 import { CreateProjectLinkProjectsResponseDeployHooks } from "@simplesagar/vercel/models/createprojectop.js";
 
 let value: CreateProjectLinkProjectsResponseDeployHooks = {
-    id: "<id>",
-    name: "<value>",
-    ref: "<value>",
-    url: "https://elliptical-rediscovery.org",
+  id: "<id>",
+  name: "<value>",
+  ref: "<value>",
+  url: "https://elliptical-rediscovery.org",
 };
 ```
 

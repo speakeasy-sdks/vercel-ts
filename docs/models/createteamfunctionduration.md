@@ -6,10 +6,10 @@
 import { CreateTeamFunctionDuration } from "@simplesagar/vercel/models/createteamop.js";
 
 let value: CreateTeamFunctionDuration = {
-    price: 7452.33,
-    batch: 7262.27,
-    threshold: 5269.07,
-    hidden: false,
+  price: 644.35,
+  batch: 635.53,
+  threshold: 2643.33,
+  hidden: false,
 };
 ```
 

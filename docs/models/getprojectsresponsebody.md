@@ -8,12 +8,12 @@ The paginated list of projects
 import { GetProjectsResponseBody } from "@simplesagar/vercel/models/getprojectsop.js";
 
 let value: GetProjectsResponseBody = {
-    projects: [],
-    pagination: {
-        count: 20,
-        next: 1540095775951,
-        prev: 1540095775951,
-    },
+  projects: [],
+  pagination: {
+    count: 20,
+    next: 1540095775951,
+    prev: 1540095775951,
+  },
 };
 ```
 

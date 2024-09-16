@@ -6,39 +6,39 @@
 import { Subscriptions } from "@simplesagar/vercel/models/authuser.js";
 
 let value: Subscriptions = {
+  id: "<id>",
+  trial: {
+    start: 1348.18,
+    end: 3165.01,
+  },
+  period: {
+    start: 9650.9,
+    end: 4825.84,
+  },
+  frequency: {
+    interval: "day",
+    intervalCount: 7298.28,
+  },
+  discount: {
     id: "<id>",
-    trial: {
-        start: 2201.04,
-        end: 1180.41,
+    coupon: {
+      id: "<id>",
+      name: "<value>",
+      amountOff: 723.5,
+      percentageOff: 691.82,
+      durationInMonths: 2801.14,
+      duration: "once",
     },
-    period: {
-        start: 6228.94,
-        end: 7847.31,
+  },
+  items: [
+    {
+      id: "<id>",
+      priceId: "<value>",
+      productId: "<value>",
+      amount: 9025.81,
+      quantity: 7348.14,
     },
-    frequency: {
-        interval: "month",
-        intervalCount: 4915.91,
-    },
-    discount: {
-        id: "<id>",
-        coupon: {
-            id: "<id>",
-            name: "<value>",
-            amountOff: 4589.7,
-            percentageOff: 8541.15,
-            durationInMonths: 3223.33,
-            duration: "forever",
-        },
-    },
-    items: [
-        {
-            id: "<id>",
-            priceId: "<value>",
-            productId: "<value>",
-            amount: 3165.01,
-            quantity: 9650.9,
-        },
-    ],
+  ],
 };
 ```
 

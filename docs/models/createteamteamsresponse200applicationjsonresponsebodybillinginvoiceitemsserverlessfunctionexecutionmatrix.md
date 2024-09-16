@@ -7,12 +7,13 @@ import {
   CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsServerlessFunctionExecutionMatrix,
 } from "@simplesagar/vercel/models/createteamop.js";
 
-let value: CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsServerlessFunctionExecutionMatrix =
+let value:
+  CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsServerlessFunctionExecutionMatrix =
     {
-        defaultUnitPrice: "<value>",
-        dimensionPrices: {
-            key: "<value>",
-        },
+      defaultUnitPrice: "<value>",
+      dimensionPrices: {
+        "key": "<value>",
+      },
     };
 ```
 

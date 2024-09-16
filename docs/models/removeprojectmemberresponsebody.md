@@ -6,7 +6,7 @@
 import { RemoveProjectMemberResponseBody } from "@simplesagar/vercel/models/removeprojectmemberop.js";
 
 let value: RemoveProjectMemberResponseBody = {
-    id: "<id>",
+  id: "<id>",
 };
 ```
 

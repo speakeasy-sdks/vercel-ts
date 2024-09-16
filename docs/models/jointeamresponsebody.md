@@ -8,10 +8,10 @@ Successfully joined a team.
 import { JoinTeamResponseBody } from "@simplesagar/vercel/models/jointeamop.js";
 
 let value: JoinTeamResponseBody = {
-    teamId: "team_LLHUOMOoDlqOp8wPE4kFo9pE",
-    slug: "my-team",
-    name: "My Team",
-    from: "email",
+  teamId: "team_LLHUOMOoDlqOp8wPE4kFo9pE",
+  slug: "my-team",
+  name: "My Team",
+  from: "email",
 };
 ```
 

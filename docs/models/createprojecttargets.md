@@ -6,22 +6,22 @@
 import { CreateProjectTargets } from "@simplesagar/vercel/models/createprojectop.js";
 
 let value: CreateProjectTargets = {
-    createdAt: 7653.26,
-    createdIn: "<value>",
-    creator: {
-        email: "Nella.Bosco8@hotmail.com",
-        uid: "<value>",
-        username: "Nellie_Lueilwitz4",
-    },
-    deploymentHostname: "<value>",
-    name: "<value>",
-    id: "<id>",
-    plan: "hobby",
-    private: false,
-    readyState: "ERROR",
-    type: "LAMBDAS",
-    url: "http://flaky-day.net",
-    userId: "<value>",
+  createdAt: 7653.26,
+  createdIn: "<value>",
+  creator: {
+    email: "Nella.Bosco8@hotmail.com",
+    uid: "<value>",
+    username: "Nellie_Lueilwitz4",
+  },
+  deploymentHostname: "<value>",
+  name: "<value>",
+  id: "<id>",
+  plan: "hobby",
+  private: false,
+  readyState: "ERROR",
+  type: "LAMBDAS",
+  url: "http://flaky-day.net",
+  userId: "<value>",
 };
 ```
 

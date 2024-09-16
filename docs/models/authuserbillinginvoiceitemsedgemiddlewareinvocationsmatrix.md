@@ -6,10 +6,10 @@
 import { AuthUserBillingInvoiceItemsEdgeMiddlewareInvocationsMatrix } from "@simplesagar/vercel/models/authuser.js";
 
 let value: AuthUserBillingInvoiceItemsEdgeMiddlewareInvocationsMatrix = {
-    defaultUnitPrice: "<value>",
-    dimensionPrices: {
-        key: "<value>",
-    },
+  defaultUnitPrice: "<value>",
+  dimensionPrices: {
+    "key": "<value>",
+  },
 };
 ```
 

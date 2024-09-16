@@ -1,4 +1,4 @@
-speakeasyVersion: 1.377.1
+speakeasyVersion: 1.398.0
 sources:
     vercel-openapi:
         sourceNamespace: vercel-openapi
@@ -13,7 +13,6 @@ targets:
         sourceNamespace: vercel-openapi
         sourceRevisionDigest: sha256:0383fdbc6542b0de7c20181cb93c81300409000dd6b7899198a1d0c95df6893d
         sourceBlobDigest: sha256:4de52f9cf017aed3e9641883e9f27cfc002cda33b1e3f640577648f06d6c582b
-        outLocation: .
 workflow:
     workflowVersion: 1.0.0
     speakeasyVersion: latest

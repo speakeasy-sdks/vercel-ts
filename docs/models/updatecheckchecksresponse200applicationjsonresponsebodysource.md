@@ -5,7 +5,8 @@
 ```typescript
 import { UpdateCheckChecksResponse200ApplicationJSONResponseBodySource } from "@simplesagar/vercel/models/updatecheckop.js";
 
-let value: UpdateCheckChecksResponse200ApplicationJSONResponseBodySource = "web-vitals";
+let value: UpdateCheckChecksResponse200ApplicationJSONResponseBodySource =
+  "web-vitals";
 ```
 
 ## Values

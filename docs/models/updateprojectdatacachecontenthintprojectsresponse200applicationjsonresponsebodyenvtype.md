@@ -7,7 +7,8 @@ import {
   UpdateProjectDataCacheContentHintProjectsResponse200ApplicationJSONResponseBodyEnvType,
 } from "@simplesagar/vercel/models/updateprojectdatacacheop.js";
 
-let value: UpdateProjectDataCacheContentHintProjectsResponse200ApplicationJSONResponseBodyEnvType =
+let value:
+  UpdateProjectDataCacheContentHintProjectsResponse200ApplicationJSONResponseBodyEnvType =
     "postgres-prisma-url";
 ```
 

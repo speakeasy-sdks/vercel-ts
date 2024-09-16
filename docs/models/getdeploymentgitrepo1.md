@@ -6,15 +6,15 @@
 import { GetDeploymentGitRepo1 } from "@simplesagar/vercel/models/getdeploymentop.js";
 
 let value: GetDeploymentGitRepo1 = {
-    namespace: "<value>",
-    projectId: 3807.29,
-    type: "gitlab",
-    url: "http://polite-placement.org",
-    path: "/rescue",
-    defaultBranch: "<value>",
-    name: "<value>",
-    private: false,
-    ownerType: "user",
+  namespace: "<value>",
+  projectId: 2414.18,
+  type: "gitlab",
+  url: "https://pushy-gender.biz",
+  path: "/tmp",
+  defaultBranch: "<value>",
+  name: "<value>",
+  private: false,
+  ownerType: "user",
 };
 ```
 

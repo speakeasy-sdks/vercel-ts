@@ -8,9 +8,9 @@ Will be used to create an invoice item. The price must be in cents: 2000 for $20
 import { AuthUserSaml } from "@simplesagar/vercel/models/authuser.js";
 
 let value: AuthUserSaml = {
-    price: 4413.21,
-    quantity: 452.34,
-    hidden: false,
+  price: 850.76,
+  quantity: 4981.8,
+  hidden: false,
 };
 ```
 

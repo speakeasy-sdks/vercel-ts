@@ -7,7 +7,7 @@ The result of the check being run
 ```typescript
 import { Conclusion } from "@simplesagar/vercel/models/updatecheckop.js";
 
-let value: Conclusion = "canceled";
+let value: Conclusion = "neutral";
 ```
 
 ## Values

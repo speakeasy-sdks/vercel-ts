@@ -6,8 +6,8 @@
 import { Dismissals } from "@simplesagar/vercel/models/authuser.js";
 
 let value: Dismissals = {
-    scopeId: "<value>",
-    createdAt: 5063.12,
+  scopeId: "<value>",
+  createdAt: 8288.41,
 };
 ```
 

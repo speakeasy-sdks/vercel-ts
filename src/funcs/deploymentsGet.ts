@@ -4,8 +4,8 @@
 
 import { VercelCore } from "../core.js";
 import {
-    encodeFormQuery as encodeFormQuery$,
-    encodeSimple as encodeSimple$,
+  encodeFormQuery as encodeFormQuery$,
+  encodeSimple as encodeSimple$,
 } from "../lib/encodings.js";
 import * as m$ from "../lib/matchers.js";
 import * as schemas$ from "../lib/schemas.js";
@@ -13,17 +13,17 @@ import { RequestOptions } from "../lib/sdks.js";
 import { extractSecurity, resolveGlobalSecurity } from "../lib/security.js";
 import { pathToFunc } from "../lib/url.js";
 import {
-    GetDeploymentRequest,
-    GetDeploymentRequest$outboundSchema,
-    GetDeploymentResponseBody,
-    GetDeploymentResponseBody$inboundSchema,
+  GetDeploymentRequest,
+  GetDeploymentRequest$outboundSchema,
+  GetDeploymentResponseBody,
+  GetDeploymentResponseBody$inboundSchema,
 } from "../models/getdeploymentop.js";
 import {
-    ConnectionError,
-    InvalidRequestError,
-    RequestAbortedError,
-    RequestTimeoutError,
-    UnexpectedClientError,
+  ConnectionError,
+  InvalidRequestError,
+  RequestAbortedError,
+  RequestTimeoutError,
+  UnexpectedClientError,
 } from "../models/httpclienterrors.js";
 import { SDKError } from "../models/sdkerror.js";
 import { SDKValidationError } from "../models/sdkvalidationerror.js";
@@ -36,115 +36,112 @@ import { Result } from "../types/fp.js";
  * Retrieves information for a deployment either by supplying its ID (`id` property) or Hostname (`url` property). Additional details will be included when the authenticated user or team is an owner of the deployment.
  */
 export async function deploymentsGet(
-    client$: VercelCore,
-    idOrUrl: string,
-    withGitRepoInfo?: string | undefined,
-    teamId?: string | undefined,
-    slug?: string | undefined,
-    options?: RequestOptions
+  client$: VercelCore,
+  idOrUrl: string,
+  withGitRepoInfo?: string | undefined,
+  teamId?: string | undefined,
+  slug?: string | undefined,
+  options?: RequestOptions,
 ): Promise<
-    Result<
-        GetDeploymentResponseBody,
-        | SDKError
-        | SDKValidationError
-        | UnexpectedClientError
-        | InvalidRequestError
-        | RequestAbortedError
-        | RequestTimeoutError
-        | ConnectionError
-    >
+  Result<
+    GetDeploymentResponseBody,
+    | SDKError
+    | SDKValidationError
+    | UnexpectedClientError
+    | InvalidRequestError
+    | RequestAbortedError
+    | RequestTimeoutError
+    | ConnectionError
+  >
 > {
-    const input$: GetDeploymentRequest = {
-        idOrUrl: idOrUrl,
-        withGitRepoInfo: withGitRepoInfo,
-        teamId: teamId,
-        slug: slug,
-    };
+  const input$: GetDeploymentRequest = {
+    idOrUrl: idOrUrl,
+    withGitRepoInfo: withGitRepoInfo,
+    teamId: teamId,
+    slug: slug,
+  };
 
-    const parsed$ = schemas$.safeParse(
-        input$,
-        (value$) => GetDeploymentRequest$outboundSchema.parse(value$),
-        "Input validation failed"
-    );
-    if (!parsed$.ok) {
-        return parsed$;
-    }
-    const payload$ = parsed$.value;
-    const body$ = null;
+  const parsed$ = schemas$.safeParse(
+    input$,
+    (value$) => GetDeploymentRequest$outboundSchema.parse(value$),
+    "Input validation failed",
+  );
+  if (!parsed$.ok) {
+    return parsed$;
+  }
+  const payload$ = parsed$.value;
+  const body$ = null;
 
-    const pathParams$ = {
-        idOrUrl: encodeSimple$("idOrUrl", payload$.idOrUrl, {
-            explode: false,
-            charEncoding: "percent",
-        }),
-    };
+  const pathParams$ = {
+    idOrUrl: encodeSimple$("idOrUrl", payload$.idOrUrl, {
+      explode: false,
+      charEncoding: "percent",
+    }),
+  };
 
-    const path$ = pathToFunc("/v13/deployments/{idOrUrl}#idOrUrl")(pathParams$);
+  const path$ = pathToFunc("/v13/deployments/{idOrUrl}#idOrUrl")(pathParams$);
 
-    const query$ = encodeFormQuery$({
-        slug: payload$.slug,
-        teamId: payload$.teamId,
-        withGitRepoInfo: payload$.withGitRepoInfo,
-    });
+  const query$ = encodeFormQuery$({
+    "slug": payload$.slug,
+    "teamId": payload$.teamId,
+    "withGitRepoInfo": payload$.withGitRepoInfo,
+  });
 
-    const headers$ = new Headers({
-        Accept: "application/json",
-    });
+  const headers$ = new Headers({
+    Accept: "application/json",
+  });
 
-    const bearerToken$ = await extractSecurity(client$.options$.bearerToken);
-    const security$ = bearerToken$ == null ? {} : { bearerToken: bearerToken$ };
-    const context = {
-        operationID: "getDeployment",
-        oAuth2Scopes: [],
-        securitySource: client$.options$.bearerToken,
-    };
-    const securitySettings$ = resolveGlobalSecurity(security$);
+  const bearerToken$ = await extractSecurity(client$.options$.bearerToken);
+  const security$ = bearerToken$ == null ? {} : { bearerToken: bearerToken$ };
+  const context = {
+    operationID: "getDeployment",
+    oAuth2Scopes: [],
+    securitySource: client$.options$.bearerToken,
+  };
+  const securitySettings$ = resolveGlobalSecurity(security$);
 
-    const requestRes = client$.createRequest$(
-        context,
-        {
-            security: securitySettings$,
-            method: "GET",
-            path: path$,
-            headers: headers$,
-            query: query$,
-            body: body$,
-            timeoutMs: options?.timeoutMs || client$.options$.timeoutMs || -1,
-        },
-        options
-    );
-    if (!requestRes.ok) {
-        return requestRes;
-    }
-    const request$ = requestRes.value;
+  const requestRes = client$.createRequest$(context, {
+    security: securitySettings$,
+    method: "GET",
+    path: path$,
+    headers: headers$,
+    query: query$,
+    body: body$,
+    timeoutMs: options?.timeoutMs || client$.options$.timeoutMs || -1,
+  }, options);
+  if (!requestRes.ok) {
+    return requestRes;
+  }
+  const request$ = requestRes.value;
 
-    const doResult = await client$.do$(request$, {
-        context,
-        errorCodes: ["400", "403", "404", "4XX", "5XX"],
-        retryConfig: options?.retries || client$.options$.retryConfig,
-        retryCodes: options?.retryCodes || ["429", "500", "502", "503", "504"],
-    });
-    if (!doResult.ok) {
-        return doResult;
-    }
-    const response = doResult.value;
+  const doResult = await client$.do$(request$, {
+    context,
+    errorCodes: ["400", "403", "404", "4XX", "5XX"],
+    retryConfig: options?.retries
+      || client$.options$.retryConfig,
+    retryCodes: options?.retryCodes || ["429", "500", "502", "503", "504"],
+  });
+  if (!doResult.ok) {
+    return doResult;
+  }
+  const response = doResult.value;
 
-    const [result$] = await m$.match<
-        GetDeploymentResponseBody,
-        | SDKError
-        | SDKValidationError
-        | UnexpectedClientError
-        | InvalidRequestError
-        | RequestAbortedError
-        | RequestTimeoutError
-        | ConnectionError
-    >(
-        m$.json(200, GetDeploymentResponseBody$inboundSchema),
-        m$.fail([400, 403, 404, "4XX", "5XX"])
-    )(response);
-    if (!result$.ok) {
-        return result$;
-    }
-
+  const [result$] = await m$.match<
+    GetDeploymentResponseBody,
+    | SDKError
+    | SDKValidationError
+    | UnexpectedClientError
+    | InvalidRequestError
+    | RequestAbortedError
+    | RequestTimeoutError
+    | ConnectionError
+  >(
+    m$.json(200, GetDeploymentResponseBody$inboundSchema),
+    m$.fail([400, 403, 404, "4XX", "5XX"]),
+  )(response);
+  if (!result$.ok) {
     return result$;
+  }
+
+  return result$;
 }

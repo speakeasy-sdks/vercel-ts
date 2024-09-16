@@ -6,8 +6,8 @@
 import { FilterProjectEnvsContentHintEnvsResponse12 } from "@simplesagar/vercel/models/filterprojectenvsop.js";
 
 let value: FilterProjectEnvsContentHintEnvsResponse12 = {
-    type: "postgres-database",
-    storeId: "<value>",
+  type: "postgres-database",
+  storeId: "<value>",
 };
 ```
 

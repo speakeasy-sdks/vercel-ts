@@ -6,8 +6,8 @@
 import { AuthUserFrequency } from "@simplesagar/vercel/models/authuser.js";
 
 let value: AuthUserFrequency = {
-    interval: "month",
-    intervalCount: 2040.72,
+  interval: "month",
+  intervalCount: 7317.44,
 };
 ```
 

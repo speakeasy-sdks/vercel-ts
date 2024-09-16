@@ -5,7 +5,7 @@
 ```typescript
 import { ChecksConclusion } from "@simplesagar/vercel/models/createdeploymentop.js";
 
-let value: ChecksConclusion = "skipped";
+let value: ChecksConclusion = "canceled";
 ```
 
 ## Values

@@ -6,15 +6,15 @@
 import { CreateTeamDiscount } from "@simplesagar/vercel/models/createteamop.js";
 
 let value: CreateTeamDiscount = {
+  id: "<id>",
+  coupon: {
     id: "<id>",
-    coupon: {
-        id: "<id>",
-        name: "<value>",
-        amountOff: 7372.79,
-        percentageOff: 8723.03,
-        durationInMonths: 51.52,
-        duration: "forever",
-    },
+    name: "<value>",
+    amountOff: 8852.08,
+    percentageOff: 1770.05,
+    durationInMonths: 8448.54,
+    duration: "repeating",
+  },
 };
 ```
 

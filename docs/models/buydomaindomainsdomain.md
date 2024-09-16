@@ -6,11 +6,13 @@
 import { BuyDomainDomainsDomain } from "@simplesagar/vercel/models/buydomainop.js";
 
 let value: BuyDomainDomainsDomain = {
-    uid: "<value>",
-    ns: ["<value>"],
-    verified: false,
-    created: 3831.03,
-    pending: false,
+  uid: "<value>",
+  ns: [
+    "<value>",
+  ],
+  verified: false,
+  created: 3831.03,
+  pending: false,
 };
 ```
 

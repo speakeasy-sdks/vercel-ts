@@ -6,7 +6,7 @@
 import { GetDomainRequest } from "@simplesagar/vercel/models/getdomainop.js";
 
 let value: GetDomainRequest = {
-    domain: "example.com",
+  domain: "example.com",
 };
 ```
 

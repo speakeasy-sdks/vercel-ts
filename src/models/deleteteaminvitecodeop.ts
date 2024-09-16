@@ -5,50 +5,50 @@
 import * as z from "zod";
 
 export type DeleteTeamInviteCodeRequest = {
-    /**
-     * The Team invite code ID.
-     */
-    inviteId: string;
-    /**
-     * The Team identifier to perform the request on behalf of.
-     */
-    teamId: string;
+  /**
+   * The Team invite code ID.
+   */
+  inviteId: string;
+  /**
+   * The Team identifier to perform the request on behalf of.
+   */
+  teamId: string;
 };
 
 /**
  * Successfully deleted Team invite code.
  */
 export type DeleteTeamInviteCodeResponseBody = {
-    /**
-     * ID of the team.
-     */
-    id: string;
+  /**
+   * ID of the team.
+   */
+  id: string;
 };
 
 /** @internal */
 export const DeleteTeamInviteCodeRequest$inboundSchema: z.ZodType<
-    DeleteTeamInviteCodeRequest,
-    z.ZodTypeDef,
-    unknown
+  DeleteTeamInviteCodeRequest,
+  z.ZodTypeDef,
+  unknown
 > = z.object({
-    inviteId: z.string(),
-    teamId: z.string(),
+  inviteId: z.string(),
+  teamId: z.string(),
 });
 
 /** @internal */
 export type DeleteTeamInviteCodeRequest$Outbound = {
-    inviteId: string;
-    teamId: string;
+  inviteId: string;
+  teamId: string;
 };
 
 /** @internal */
 export const DeleteTeamInviteCodeRequest$outboundSchema: z.ZodType<
-    DeleteTeamInviteCodeRequest$Outbound,
-    z.ZodTypeDef,
-    DeleteTeamInviteCodeRequest
+  DeleteTeamInviteCodeRequest$Outbound,
+  z.ZodTypeDef,
+  DeleteTeamInviteCodeRequest
 > = z.object({
-    inviteId: z.string(),
-    teamId: z.string(),
+  inviteId: z.string(),
+  teamId: z.string(),
 });
 
 /**
@@ -56,35 +56,35 @@ export const DeleteTeamInviteCodeRequest$outboundSchema: z.ZodType<
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
 export namespace DeleteTeamInviteCodeRequest$ {
-    /** @deprecated use `DeleteTeamInviteCodeRequest$inboundSchema` instead. */
-    export const inboundSchema = DeleteTeamInviteCodeRequest$inboundSchema;
-    /** @deprecated use `DeleteTeamInviteCodeRequest$outboundSchema` instead. */
-    export const outboundSchema = DeleteTeamInviteCodeRequest$outboundSchema;
-    /** @deprecated use `DeleteTeamInviteCodeRequest$Outbound` instead. */
-    export type Outbound = DeleteTeamInviteCodeRequest$Outbound;
+  /** @deprecated use `DeleteTeamInviteCodeRequest$inboundSchema` instead. */
+  export const inboundSchema = DeleteTeamInviteCodeRequest$inboundSchema;
+  /** @deprecated use `DeleteTeamInviteCodeRequest$outboundSchema` instead. */
+  export const outboundSchema = DeleteTeamInviteCodeRequest$outboundSchema;
+  /** @deprecated use `DeleteTeamInviteCodeRequest$Outbound` instead. */
+  export type Outbound = DeleteTeamInviteCodeRequest$Outbound;
 }
 
 /** @internal */
 export const DeleteTeamInviteCodeResponseBody$inboundSchema: z.ZodType<
-    DeleteTeamInviteCodeResponseBody,
-    z.ZodTypeDef,
-    unknown
+  DeleteTeamInviteCodeResponseBody,
+  z.ZodTypeDef,
+  unknown
 > = z.object({
-    id: z.string(),
+  id: z.string(),
 });
 
 /** @internal */
 export type DeleteTeamInviteCodeResponseBody$Outbound = {
-    id: string;
+  id: string;
 };
 
 /** @internal */
 export const DeleteTeamInviteCodeResponseBody$outboundSchema: z.ZodType<
-    DeleteTeamInviteCodeResponseBody$Outbound,
-    z.ZodTypeDef,
-    DeleteTeamInviteCodeResponseBody
+  DeleteTeamInviteCodeResponseBody$Outbound,
+  z.ZodTypeDef,
+  DeleteTeamInviteCodeResponseBody
 > = z.object({
-    id: z.string(),
+  id: z.string(),
 });
 
 /**
@@ -92,10 +92,10 @@ export const DeleteTeamInviteCodeResponseBody$outboundSchema: z.ZodType<
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
 export namespace DeleteTeamInviteCodeResponseBody$ {
-    /** @deprecated use `DeleteTeamInviteCodeResponseBody$inboundSchema` instead. */
-    export const inboundSchema = DeleteTeamInviteCodeResponseBody$inboundSchema;
-    /** @deprecated use `DeleteTeamInviteCodeResponseBody$outboundSchema` instead. */
-    export const outboundSchema = DeleteTeamInviteCodeResponseBody$outboundSchema;
-    /** @deprecated use `DeleteTeamInviteCodeResponseBody$Outbound` instead. */
-    export type Outbound = DeleteTeamInviteCodeResponseBody$Outbound;
+  /** @deprecated use `DeleteTeamInviteCodeResponseBody$inboundSchema` instead. */
+  export const inboundSchema = DeleteTeamInviteCodeResponseBody$inboundSchema;
+  /** @deprecated use `DeleteTeamInviteCodeResponseBody$outboundSchema` instead. */
+  export const outboundSchema = DeleteTeamInviteCodeResponseBody$outboundSchema;
+  /** @deprecated use `DeleteTeamInviteCodeResponseBody$Outbound` instead. */
+  export type Outbound = DeleteTeamInviteCodeResponseBody$Outbound;
 }

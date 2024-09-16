@@ -8,9 +8,9 @@ A list of "entities" within the event `text`. Useful for enhancing the displayed
 import { Entities } from "@simplesagar/vercel/models/userevent.js";
 
 let value: Entities = {
-    type: "author",
-    start: 0,
-    end: 3,
+  type: "author",
+  start: 0,
+  end: 3,
 };
 ```
 

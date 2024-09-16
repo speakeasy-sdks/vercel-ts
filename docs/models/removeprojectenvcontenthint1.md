@@ -6,8 +6,8 @@
 import { RemoveProjectEnvContentHint1 } from "@simplesagar/vercel/models/removeprojectenvop.js";
 
 let value: RemoveProjectEnvContentHint1 = {
-    type: "redis-url",
-    storeId: "<value>",
+  type: "redis-url",
+  storeId: "<value>",
 };
 ```
 

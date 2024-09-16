@@ -5,7 +5,8 @@
 ```typescript
 import { CreateProjectContentHintProjectsResponse200ApplicationJSONResponseBodyEnv14Type } from "@simplesagar/vercel/models/createprojectop.js";
 
-let value: CreateProjectContentHintProjectsResponse200ApplicationJSONResponseBodyEnv14Type =
+let value:
+  CreateProjectContentHintProjectsResponse200ApplicationJSONResponseBodyEnv14Type =
     "integration-store-secret";
 ```
 

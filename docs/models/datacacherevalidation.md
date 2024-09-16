@@ -6,10 +6,10 @@
 import { DataCacheRevalidation } from "@simplesagar/vercel/models/authuser.js";
 
 let value: DataCacheRevalidation = {
-    price: 1158.98,
-    batch: 1644.88,
-    threshold: 8998.67,
-    hidden: false,
+  price: 3864.47,
+  batch: 8634.71,
+  threshold: 7294.48,
+  hidden: false,
 };
 ```
 

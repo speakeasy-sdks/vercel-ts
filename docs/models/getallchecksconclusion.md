@@ -5,7 +5,7 @@
 ```typescript
 import { GetAllChecksConclusion } from "@simplesagar/vercel/models/getallchecksop.js";
 
-let value: GetAllChecksConclusion = "failed";
+let value: GetAllChecksConclusion = "canceled";
 ```
 
 ## Values

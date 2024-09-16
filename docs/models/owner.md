@@ -6,8 +6,8 @@
 import { Owner } from "@simplesagar/vercel/models/searchrepoop.js";
 
 let value: Owner = {
-    id: 89.31,
-    name: "<value>",
+  id: "<id>",
+  name: "<value>",
 };
 ```
 

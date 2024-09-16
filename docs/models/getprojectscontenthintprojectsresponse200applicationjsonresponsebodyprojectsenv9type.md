@@ -7,7 +7,8 @@ import {
   GetProjectsContentHintProjectsResponse200ApplicationJSONResponseBodyProjectsEnv9Type,
 } from "@simplesagar/vercel/models/getprojectsop.js";
 
-let value: GetProjectsContentHintProjectsResponse200ApplicationJSONResponseBodyProjectsEnv9Type =
+let value:
+  GetProjectsContentHintProjectsResponse200ApplicationJSONResponseBodyProjectsEnv9Type =
     "postgres-user";
 ```
 

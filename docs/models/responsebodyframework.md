@@ -3,9 +3,9 @@
 ## Example Usage
 
 ```typescript
-import { ResponseBodyFramework } from "@simplesagar/vercel/models/getwebhooksop.js";
+import { ResponseBodyFramework } from "@simplesagar/vercel/models/getdeploymentop.js";
 
-let value: ResponseBodyFramework = "solidstart-1";
+let value: ResponseBodyFramework = "astro";
 ```
 
 ## Values

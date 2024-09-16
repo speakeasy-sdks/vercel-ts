@@ -6,12 +6,16 @@
 import { GetConfigurationResponseBodyIntegrationsScopesQueue } from "@simplesagar/vercel/models/getconfigurationop.js";
 
 let value: GetConfigurationResponseBodyIntegrationsScopesQueue = {
-    scopes: {
-        added: ["read-write:integration-configuration"],
-        upgraded: ["read:deployment"],
-    },
-    note: "<value>",
-    requestedAt: 7652.71,
+  scopes: {
+    added: [
+      "read:user",
+    ],
+    upgraded: [
+      "read:monitoring",
+    ],
+  },
+  note: "<value>",
+  requestedAt: 7453.98,
 };
 ```
 

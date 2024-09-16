@@ -6,7 +6,7 @@
 import { GetProjectsWebAnalytics } from "@simplesagar/vercel/models/getprojectsop.js";
 
 let value: GetProjectsWebAnalytics = {
-    id: "<id>",
+  id: "<id>",
 };
 ```
 

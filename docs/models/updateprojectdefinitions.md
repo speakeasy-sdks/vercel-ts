@@ -6,9 +6,9 @@
 import { UpdateProjectDefinitions } from "@simplesagar/vercel/models/updateprojectop.js";
 
 let value: UpdateProjectDefinitions = {
-    host: "vercel.com",
-    path: "/api/crons/sync-something?hello=world",
-    schedule: "0 0 * * *",
+  host: "vercel.com",
+  path: "/api/crons/sync-something?hello=world",
+  schedule: "0 0 * * *",
 };
 ```
 

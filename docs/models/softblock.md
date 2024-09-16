@@ -8,8 +8,8 @@ When the User account has been "soft blocked", this property will contain the da
 import { SoftBlock } from "@simplesagar/vercel/models/authuser.js";
 
 let value: SoftBlock = {
-    blockedAt: 2569.16,
-    reason: "SUBSCRIPTION_EXPIRED",
+  blockedAt: 7088.98,
+  reason: "ENTERPRISE_TRIAL_ENDED",
 };
 ```
 

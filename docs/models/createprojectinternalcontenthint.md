@@ -8,8 +8,8 @@ Similar to `contentHints`, but should not be exposed to the user.
 import { CreateProjectInternalContentHint } from "@simplesagar/vercel/models/createprojectop.js";
 
 let value: CreateProjectInternalContentHint = {
-    type: "flags-secret",
-    encryptedValue: "<value>",
+  type: "flags-secret",
+  encryptedValue: "<value>",
 };
 ```
 

@@ -6,10 +6,10 @@
 import { CreateTeamTeamsResponse200Matrix } from "@simplesagar/vercel/models/createteamop.js";
 
 let value: CreateTeamTeamsResponse200Matrix = {
-    defaultUnitPrice: "<value>",
-    dimensionPrices: {
-        key: "<value>",
-    },
+  defaultUnitPrice: "<value>",
+  dimensionPrices: {
+    "key": "<value>",
+  },
 };
 ```
 

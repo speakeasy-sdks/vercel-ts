@@ -8,8 +8,10 @@ If the output is a Serverless Function, an object containing the name, location 
 import { Lambda } from "@simplesagar/vercel/models/listdeploymentbuildsop.js";
 
 let value: Lambda = {
-    functionName: "<value>",
-    deployedTo: ["<value>"],
+  functionName: "<value>",
+  deployedTo: [
+    "<value>",
+  ],
 };
 ```
 

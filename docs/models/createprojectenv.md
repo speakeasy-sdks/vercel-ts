@@ -6,9 +6,9 @@
 import { CreateProjectEnv } from "@simplesagar/vercel/models/createprojectop.js";
 
 let value: CreateProjectEnv = {
-    type: "plain",
-    key: "<key>",
-    value: "<value>",
+  type: "plain",
+  key: "<key>",
+  value: "<value>",
 };
 ```
 

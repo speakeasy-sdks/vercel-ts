@@ -8,9 +8,9 @@ The environment variable was successfully removed
 import { RemoveProjectEnvResponseBody } from "@simplesagar/vercel/models/removeprojectenvop.js";
 
 let value: RemoveProjectEnvResponseBody = {
-    type: "system",
-    key: "<key>",
-    value: "<value>",
+  type: "system",
+  key: "<key>",
+  value: "<value>",
 };
 ```
 

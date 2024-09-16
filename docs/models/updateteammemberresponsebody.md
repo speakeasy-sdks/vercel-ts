@@ -8,7 +8,7 @@ Successfully updated the membership.
 import { UpdateTeamMemberResponseBody } from "@simplesagar/vercel/models/updateteammemberop.js";
 
 let value: UpdateTeamMemberResponseBody = {
-    id: "<id>",
+  id: "<id>",
 };
 ```
 

@@ -5,7 +5,7 @@
 ```typescript
 import { ResponseBodyStatus } from "@simplesagar/vercel/models/getdeploymentop.js";
 
-let value: ResponseBodyStatus = "ERROR";
+let value: ResponseBodyStatus = "CANCELED";
 ```
 
 ## Values

@@ -6,22 +6,22 @@
 import { CreateCheckMetrics } from "@simplesagar/vercel/models/createcheckop.js";
 
 let value: CreateCheckMetrics = {
-    fcp: {
-        value: 7742.34,
-        source: "web-vitals",
-    },
-    lcp: {
-        value: 7369.18,
-        source: "web-vitals",
-    },
-    cls: {
-        value: 4561.5,
-        source: "web-vitals",
-    },
-    tbt: {
-        value: 2165.5,
-        source: "web-vitals",
-    },
+  fcp: {
+    value: 1863.32,
+    source: "web-vitals",
+  },
+  lcp: {
+    value: 7742.34,
+    source: "web-vitals",
+  },
+  cls: {
+    value: 7369.18,
+    source: "web-vitals",
+  },
+  tbt: {
+    value: 4561.5,
+    source: "web-vitals",
+  },
 };
 ```
 

@@ -9,19 +9,19 @@ import * as schemas$ from "../lib/schemas.js";
 import { RequestOptions } from "../lib/sdks.js";
 import { pathToFunc } from "../lib/url.js";
 import {
-    ConnectionError,
-    InvalidRequestError,
-    RequestAbortedError,
-    RequestTimeoutError,
-    UnexpectedClientError,
+  ConnectionError,
+  InvalidRequestError,
+  RequestAbortedError,
+  RequestTimeoutError,
+  UnexpectedClientError,
 } from "../models/httpclienterrors.js";
 import { SDKError } from "../models/sdkerror.js";
 import { SDKValidationError } from "../models/sdkvalidationerror.js";
 import {
-    VerifyTokenRequest,
-    VerifyTokenRequest$outboundSchema,
-    VerifyTokenResponseBody,
-    VerifyTokenResponseBody$inboundSchema,
+  VerifyTokenRequest,
+  VerifyTokenRequest$outboundSchema,
+  VerifyTokenResponseBody,
+  VerifyTokenResponseBody$inboundSchema,
 } from "../models/verifytokenop.js";
 import { Result } from "../types/fp.js";
 
@@ -32,104 +32,105 @@ import { Result } from "../types/fp.js";
  * Verify the user accepted the login request and get a authentication token. The user email address and the token received after requesting the login must be added to the URL as a query string with the names `email` and `token`.
  */
 export async function authenticationVerify(
-    client$: VercelCore,
-    request: VerifyTokenRequest,
-    options?: RequestOptions
+  client$: VercelCore,
+  request: VerifyTokenRequest,
+  options?: RequestOptions,
 ): Promise<
-    Result<
-        VerifyTokenResponseBody,
-        | SDKError
-        | SDKValidationError
-        | UnexpectedClientError
-        | InvalidRequestError
-        | RequestAbortedError
-        | RequestTimeoutError
-        | ConnectionError
-    >
+  Result<
+    VerifyTokenResponseBody,
+    | SDKError
+    | SDKValidationError
+    | UnexpectedClientError
+    | InvalidRequestError
+    | RequestAbortedError
+    | RequestTimeoutError
+    | ConnectionError
+  >
 > {
-    const input$ = request;
+  const input$ = request;
 
-    const parsed$ = schemas$.safeParse(
-        input$,
-        (value$) => VerifyTokenRequest$outboundSchema.parse(value$),
-        "Input validation failed"
-    );
-    if (!parsed$.ok) {
-        return parsed$;
-    }
-    const payload$ = parsed$.value;
-    const body$ = null;
+  const parsed$ = schemas$.safeParse(
+    input$,
+    (value$) => VerifyTokenRequest$outboundSchema.parse(value$),
+    "Input validation failed",
+  );
+  if (!parsed$.ok) {
+    return parsed$;
+  }
+  const payload$ = parsed$.value;
+  const body$ = null;
 
-    const path$ = pathToFunc("/registration/verify")();
+  const path$ = pathToFunc("/registration/verify")();
 
-    const query$ = encodeFormQuery$({
-        email: payload$.email,
-        landingPage: payload$.landingPage,
-        oppId: payload$.oppId,
-        pageBeforeConversionPage: payload$.pageBeforeConversionPage,
-        sessionReferrer: payload$.sessionReferrer,
-        ssoUserId: payload$.ssoUserId,
-        teamName: payload$.teamName,
-        teamPlan: payload$.teamPlan,
-        teamSlug: payload$.teamSlug,
-        token: payload$.token,
-        tokenName: payload$.tokenName,
-        utmCampaign: payload$.utmCampaign,
-        utmMedium: payload$.utmMedium,
-        utmSource: payload$.utmSource,
-        utmTerm: payload$.utmTerm,
-    });
+  const query$ = encodeFormQuery$({
+    "email": payload$.email,
+    "landingPage": payload$.landingPage,
+    "oppId": payload$.oppId,
+    "pageBeforeConversionPage": payload$.pageBeforeConversionPage,
+    "sessionReferrer": payload$.sessionReferrer,
+    "ssoUserId": payload$.ssoUserId,
+    "teamName": payload$.teamName,
+    "teamPlan": payload$.teamPlan,
+    "teamSlug": payload$.teamSlug,
+    "token": payload$.token,
+    "tokenName": payload$.tokenName,
+    "utmCampaign": payload$.utmCampaign,
+    "utmMedium": payload$.utmMedium,
+    "utmSource": payload$.utmSource,
+    "utmTerm": payload$.utmTerm,
+  });
 
-    const headers$ = new Headers({
-        Accept: "application/json",
-    });
+  const headers$ = new Headers({
+    Accept: "application/json",
+  });
 
-    const context = { operationID: "verifyToken", oAuth2Scopes: [], securitySource: null };
+  const context = {
+    operationID: "verifyToken",
+    oAuth2Scopes: [],
+    securitySource: null,
+  };
 
-    const requestRes = client$.createRequest$(
-        context,
-        {
-            method: "GET",
-            path: path$,
-            headers: headers$,
-            query: query$,
-            body: body$,
-            timeoutMs: options?.timeoutMs || client$.options$.timeoutMs || -1,
-        },
-        options
-    );
-    if (!requestRes.ok) {
-        return requestRes;
-    }
-    const request$ = requestRes.value;
+  const requestRes = client$.createRequest$(context, {
+    method: "GET",
+    path: path$,
+    headers: headers$,
+    query: query$,
+    body: body$,
+    timeoutMs: options?.timeoutMs || client$.options$.timeoutMs || -1,
+  }, options);
+  if (!requestRes.ok) {
+    return requestRes;
+  }
+  const request$ = requestRes.value;
 
-    const doResult = await client$.do$(request$, {
-        context,
-        errorCodes: ["400", "403", "404", "4XX", "503", "5XX"],
-        retryConfig: options?.retries || client$.options$.retryConfig,
-        retryCodes: options?.retryCodes || ["429", "500", "502", "503", "504"],
-    });
-    if (!doResult.ok) {
-        return doResult;
-    }
-    const response = doResult.value;
+  const doResult = await client$.do$(request$, {
+    context,
+    errorCodes: ["400", "403", "404", "4XX", "503", "5XX"],
+    retryConfig: options?.retries
+      || client$.options$.retryConfig,
+    retryCodes: options?.retryCodes || ["429", "500", "502", "503", "504"],
+  });
+  if (!doResult.ok) {
+    return doResult;
+  }
+  const response = doResult.value;
 
-    const [result$] = await m$.match<
-        VerifyTokenResponseBody,
-        | SDKError
-        | SDKValidationError
-        | UnexpectedClientError
-        | InvalidRequestError
-        | RequestAbortedError
-        | RequestTimeoutError
-        | ConnectionError
-    >(
-        m$.json(200, VerifyTokenResponseBody$inboundSchema),
-        m$.fail([400, 403, 404, "4XX", 503, "5XX"])
-    )(response);
-    if (!result$.ok) {
-        return result$;
-    }
-
+  const [result$] = await m$.match<
+    VerifyTokenResponseBody,
+    | SDKError
+    | SDKValidationError
+    | UnexpectedClientError
+    | InvalidRequestError
+    | RequestAbortedError
+    | RequestTimeoutError
+    | ConnectionError
+  >(
+    m$.json(200, VerifyTokenResponseBody$inboundSchema),
+    m$.fail([400, 403, 404, "4XX", 503, "5XX"]),
+  )(response);
+  if (!result$.ok) {
     return result$;
+  }
+
+  return result$;
 }

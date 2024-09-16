@@ -8,12 +8,12 @@ A partial representation of a Build used by the deployment endpoint.
 import { CancelDeploymentLambdas } from "@simplesagar/vercel/models/canceldeploymentop.js";
 
 let value: CancelDeploymentLambdas = {
-    output: [
-        {
-            path: "/System",
-            functionName: "<value>",
-        },
-    ],
+  output: [
+    {
+      path: "/System",
+      functionName: "<value>",
+    },
+  ],
 };
 ```
 

@@ -7,12 +7,13 @@ import {
   CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsStorageRedisTotalBandwidthInBytesMatrix,
 } from "@simplesagar/vercel/models/createteamop.js";
 
-let value: CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsStorageRedisTotalBandwidthInBytesMatrix =
+let value:
+  CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsStorageRedisTotalBandwidthInBytesMatrix =
     {
-        defaultUnitPrice: "<value>",
-        dimensionPrices: {
-            key: "<value>",
-        },
+      defaultUnitPrice: "<value>",
+      dimensionPrices: {
+        "key": "<value>",
+      },
     };
 ```
 

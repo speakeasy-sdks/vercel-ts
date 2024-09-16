@@ -5,7 +5,9 @@
 ```typescript
 import { ResponseBodyOidcTokenClaims } from "@simplesagar/vercel/models/getdeploymentop.js";
 
-let value: ResponseBodyOidcTokenClaims = "<value>";
+let value: ResponseBodyOidcTokenClaims = [
+  "<value>",
+];
 ```
 
 ## Supported Types

@@ -6,11 +6,11 @@
 import { LastAliasRequest } from "@simplesagar/vercel/models/updateprojectdatacacheop.js";
 
 let value: LastAliasRequest = {
-    fromDeploymentId: "<value>",
-    toDeploymentId: "<value>",
-    jobStatus: "failed",
-    requestedAt: 6754.39,
-    type: "rollback",
+  fromDeploymentId: "<value>",
+  toDeploymentId: "<value>",
+  jobStatus: "failed",
+  requestedAt: 6754.39,
+  type: "rollback",
 };
 ```
 

@@ -6,8 +6,8 @@
 import { GetProjectEnvRequest } from "@simplesagar/vercel/models/getprojectenvop.js";
 
 let value: GetProjectEnvRequest = {
-    idOrName: "prj_XLKmu1DyR1eY7zq8UgeRKbA7yVLA",
-    id: "<id>",
+  idOrName: "prj_XLKmu1DyR1eY7zq8UgeRKbA7yVLA",
+  id: "<id>",
 };
 ```
 

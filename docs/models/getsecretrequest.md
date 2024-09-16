@@ -6,7 +6,7 @@
 import { GetSecretRequest } from "@simplesagar/vercel/models/getsecretop.js";
 
 let value: GetSecretRequest = {
-    idOrName: "sec_RKc5iV0rV3ZSrFrHiruRno7k",
+  idOrName: "sec_RKc5iV0rV3ZSrFrHiruRno7k",
 };
 ```
 

@@ -6,11 +6,11 @@
 import { GetProjectsProjects } from "@simplesagar/vercel/models/getprojectsop.js";
 
 let value: GetProjectsProjects = {
-    accountId: "<value>",
-    directoryListing: false,
-    id: "<id>",
-    name: "<value>",
-    nodeVersion: "14.x",
+  accountId: "<value>",
+  directoryListing: false,
+  id: "<id>",
+  name: "<value>",
+  nodeVersion: "14.x",
 };
 ```
 

@@ -6,7 +6,7 @@
 import { ListPromoteAliasesRequest } from "@simplesagar/vercel/models/listpromotealiasesop.js";
 
 let value: ListPromoteAliasesRequest = {
-    projectId: "<value>",
+  projectId: "<value>",
 };
 ```
 

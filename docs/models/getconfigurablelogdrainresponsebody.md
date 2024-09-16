@@ -6,16 +6,18 @@
 import { GetConfigurableLogDrainResponseBody } from "@simplesagar/vercel/models/getconfigurablelogdrainop.js";
 
 let value: GetConfigurableLogDrainResponseBody = {
-    id: "<id>",
-    deliveryFormat: "json",
-    url: "https://cloudy-filing.org",
-    name: "<value>",
-    ownerId: "<value>",
-    createdAt: 7137.67,
-    deletedAt: 3996.67,
-    updatedAt: 6391.87,
-    environments: ["production"],
-    secret: "<value>",
+  id: "<id>",
+  deliveryFormat: "ndjson",
+  url: "http://agreeable-homework.info",
+  name: "<value>",
+  ownerId: "<value>",
+  createdAt: 6145.28,
+  deletedAt: 6616.07,
+  updatedAt: 700.42,
+  environments: [
+    "preview",
+  ],
+  secret: "<value>",
 };
 ```
 
@@ -40,7 +42,7 @@ let value: GetConfigurableLogDrainResponseBody = {
 | `environments`                                                                                     | [models.GetConfigurableLogDrainEnvironments](../models/getconfigurablelogdrainenvironments.md)[]   | :heavy_check_mark:                                                                                 | N/A                                                                                                |
 | `status`                                                                                           | [models.GetConfigurableLogDrainStatus](../models/getconfigurablelogdrainstatus.md)                 | :heavy_minus_sign:                                                                                 | N/A                                                                                                |
 | `disabledAt`                                                                                       | *number*                                                                                           | :heavy_minus_sign:                                                                                 | N/A                                                                                                |
-| `disabledReason`                                                                                   | [models.GetConfigurableLogDrainDisabledReason](../models/getconfigurablelogdraindisabledreason.md) | :heavy_minus_sign:                                                                                 | N/A                                                                                                |
+| `disabledReason`                                                                                   | [models.DisabledReason](../models/disabledreason.md)                                               | :heavy_minus_sign:                                                                                 | N/A                                                                                                |
 | `disabledBy`                                                                                       | *string*                                                                                           | :heavy_minus_sign:                                                                                 | N/A                                                                                                |
 | `firstErrorTimestamp`                                                                              | *number*                                                                                           | :heavy_minus_sign:                                                                                 | N/A                                                                                                |
 | `samplingRate`                                                                                     | *number*                                                                                           | :heavy_minus_sign:                                                                                 | N/A                                                                                                |

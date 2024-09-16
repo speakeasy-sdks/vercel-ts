@@ -7,7 +7,7 @@ The framework that is being used for this project. When `null` is used no framew
 ```typescript
 import { Framework } from "@simplesagar/vercel/models/createdeploymentop.js";
 
-let value: Framework = "gatsby";
+let value: Framework = "scully";
 ```
 
 ## Values

@@ -6,8 +6,8 @@
 import { PatchDomainResponseBody2 } from "@simplesagar/vercel/models/patchdomainop.js";
 
 let value: PatchDomainResponseBody2 = {
-    moved: false,
-    token: "<value>",
+  moved: false,
+  token: "<value>",
 };
 ```
 

@@ -6,10 +6,10 @@
 import { AuthUserBillingInvoiceItemsMonitoringMetricMatrix } from "@simplesagar/vercel/models/authuser.js";
 
 let value: AuthUserBillingInvoiceItemsMonitoringMetricMatrix = {
-    defaultUnitPrice: "<value>",
-    dimensionPrices: {
-        key: "<value>",
-    },
+  defaultUnitPrice: "<value>",
+  dimensionPrices: {
+    "key": "<value>",
+  },
 };
 ```
 

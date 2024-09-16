@@ -5,7 +5,8 @@
 ```typescript
 import { GetDeploymentEventsResponseBodyDeploymentsResponseType } from "@simplesagar/vercel/models/getdeploymenteventsop.js";
 
-let value: GetDeploymentEventsResponseBodyDeploymentsResponseType = "middleware-invocation";
+let value: GetDeploymentEventsResponseBodyDeploymentsResponseType =
+  "deployment-state";
 ```
 
 ## Values

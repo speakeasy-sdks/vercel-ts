@@ -6,7 +6,7 @@
 import { CreateRecordRequest } from "@simplesagar/vercel/models/createrecordop.js";
 
 let value: CreateRecordRequest = {
-    domain: "example.com",
+  domain: "example.com",
 };
 ```
 

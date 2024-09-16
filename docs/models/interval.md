@@ -5,7 +5,7 @@
 ```typescript
 import { Interval } from "@simplesagar/vercel/models/authuser.js";
 
-let value: Interval = "day";
+let value: Interval = "year";
 ```
 
 ## Values

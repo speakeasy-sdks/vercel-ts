@@ -8,11 +8,11 @@ The project was successfuly created
 import { CreateProjectResponseBody } from "@simplesagar/vercel/models/createprojectop.js";
 
 let value: CreateProjectResponseBody = {
-    accountId: "<value>",
-    directoryListing: false,
-    id: "<id>",
-    name: "<value>",
-    nodeVersion: "14.x",
+  accountId: "<value>",
+  directoryListing: false,
+  id: "<id>",
+  name: "<value>",
+  nodeVersion: "14.x",
 };
 ```
 

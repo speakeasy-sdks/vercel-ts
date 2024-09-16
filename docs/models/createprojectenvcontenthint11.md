@@ -6,8 +6,8 @@
 import { CreateProjectEnvContentHint11 } from "@simplesagar/vercel/models/createprojectenvop.js";
 
 let value: CreateProjectEnvContentHint11 = {
-    type: "postgres-password",
-    storeId: "<value>",
+  type: "postgres-password",
+  storeId: "<value>",
 };
 ```
 

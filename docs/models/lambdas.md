@@ -8,12 +8,12 @@ A partial representation of a Build used by the deployment endpoint.
 import { Lambdas } from "@simplesagar/vercel/models/createdeploymentop.js";
 
 let value: Lambdas = {
-    output: [
-        {
-            path: "/opt/bin",
-            functionName: "<value>",
-        },
-    ],
+  output: [
+    {
+      path: "/System",
+      functionName: "<value>",
+    },
+  ],
 };
 ```
 

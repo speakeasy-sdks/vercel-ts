@@ -6,7 +6,7 @@
 import { WebAnalytics } from "@simplesagar/vercel/models/authuser.js";
 
 let value: WebAnalytics = {
-    isCurrentlyBlocked: false,
+  isCurrentlyBlocked: false,
 };
 ```
 

@@ -6,10 +6,10 @@
 import { StorageRedisTotalDailyAvgStorageInBytes } from "@simplesagar/vercel/models/authuser.js";
 
 let value: StorageRedisTotalDailyAvgStorageInBytes = {
-    price: 7310.65,
-    batch: 3952.33,
-    threshold: 9775.18,
-    hidden: false,
+  price: 7277.71,
+  batch: 7945.07,
+  threshold: 8152,
+  hidden: false,
 };
 ```
 

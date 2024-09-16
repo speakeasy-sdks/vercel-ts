@@ -35,7 +35,7 @@ const vercel = new Vercel({
 
 async function run() {
   const result = await vercel.edgeConfigs.list();
-
+  
   // Handle the result
   console.log(result)
 }
@@ -109,7 +109,7 @@ const vercel = new Vercel({
 
 async function run() {
   const result = await vercel.edgeConfigs.create();
-
+  
   // Handle the result
   console.log(result)
 }
@@ -184,7 +184,7 @@ const vercel = new Vercel({
 
 async function run() {
   const result = await vercel.edgeConfigs.get("<value>");
-
+  
   // Handle the result
   console.log(result)
 }
@@ -259,7 +259,7 @@ const vercel = new Vercel({
 
 async function run() {
   const result = await vercel.edgeConfigs.update("<value>");
-
+  
   // Handle the result
   console.log(result)
 }
@@ -335,8 +335,6 @@ const vercel = new Vercel({
 
 async function run() {
   await vercel.edgeConfigs.delete("<value>");
-
-  
 }
 
 run();
@@ -408,7 +406,7 @@ const vercel = new Vercel({
 
 async function run() {
   const result = await vercel.edgeConfigs.getItems("<value>");
-
+  
   // Handle the result
   console.log(result)
 }
@@ -483,7 +481,7 @@ const vercel = new Vercel({
 
 async function run() {
   const result = await vercel.edgeConfigs.getSchema("<value>");
-
+  
   // Handle the result
   console.log(result)
 }
@@ -560,7 +558,7 @@ async function run() {
   const result = await vercel.edgeConfigs.updateSchema({
     edgeConfigId: "<value>",
   });
-
+  
   // Handle the result
   console.log(result)
 }
@@ -635,8 +633,6 @@ const vercel = new Vercel({
 
 async function run() {
   await vercel.edgeConfigs.deleteSchema("<value>");
-
-  
 }
 
 run();
@@ -708,7 +704,7 @@ const vercel = new Vercel({
 
 async function run() {
   const result = await vercel.edgeConfigs.getItem("<value>", "<value>");
-
+  
   // Handle the result
   console.log(result)
 }
@@ -784,7 +780,7 @@ const vercel = new Vercel({
 
 async function run() {
   const result = await vercel.edgeConfigs.getTokens("<value>");
-
+  
   // Handle the result
   console.log(result)
 }
@@ -859,8 +855,6 @@ const vercel = new Vercel({
 
 async function run() {
   await vercel.edgeConfigs.deleteTokens("<value>");
-
-  
 }
 
 run();
@@ -933,7 +927,7 @@ const vercel = new Vercel({
 
 async function run() {
   const result = await vercel.edgeConfigs.getToken("<value>", "<value>");
-
+  
   // Handle the result
   console.log(result)
 }
@@ -1009,7 +1003,7 @@ const vercel = new Vercel({
 
 async function run() {
   const result = await vercel.edgeConfigs.createToken("<value>");
-
+  
   // Handle the result
   console.log(result)
 }

@@ -6,10 +6,10 @@
 import { CreateTeamBlobTotalAvgSizeInBytes } from "@simplesagar/vercel/models/createteamop.js";
 
 let value: CreateTeamBlobTotalAvgSizeInBytes = {
-    price: 26.77,
-    batch: 3917.97,
-    threshold: 9315.05,
-    hidden: false,
+  price: 399.92,
+  batch: 74.68,
+  threshold: 6397.05,
+  hidden: false,
 };
 ```
 

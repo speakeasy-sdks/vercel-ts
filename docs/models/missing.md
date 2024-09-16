@@ -6,7 +6,7 @@
 import { Missing } from "@simplesagar/vercel/models/updateprojectdatacacheop.js";
 
 let value: Missing = {
-    type: "cookie",
+  type: "cookie",
 };
 ```
 

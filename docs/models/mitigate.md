@@ -6,8 +6,8 @@
 import { Mitigate } from "@simplesagar/vercel/models/updateprojectdatacacheop.js";
 
 let value: Mitigate = {
-    action: "rate_limit",
-    ruleId: "<value>",
+  action: "rate_limit",
+  ruleId: "<value>",
 };
 ```
 

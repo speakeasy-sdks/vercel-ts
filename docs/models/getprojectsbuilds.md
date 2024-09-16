@@ -6,7 +6,7 @@
 import { GetProjectsBuilds } from "@simplesagar/vercel/models/getprojectsop.js";
 
 let value: GetProjectsBuilds = {
-    use: "<value>",
+  use: "<value>",
 };
 ```
 

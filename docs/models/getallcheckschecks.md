@@ -6,13 +6,13 @@
 import { GetAllChecksChecks } from "@simplesagar/vercel/models/getallchecksop.js";
 
 let value: GetAllChecksChecks = {
-    createdAt: 3595.08,
-    id: "<id>",
-    integrationId: "<value>",
-    name: "<value>",
-    rerequestable: false,
-    status: "running",
-    updatedAt: 4370.32,
+  createdAt: 4499.5,
+  id: "<id>",
+  integrationId: "<value>",
+  name: "<value>",
+  rerequestable: false,
+  status: "running",
+  updatedAt: 6130.64,
 };
 ```
 

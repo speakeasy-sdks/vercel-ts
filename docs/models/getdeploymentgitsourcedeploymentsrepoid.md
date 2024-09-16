@@ -5,7 +5,7 @@
 ```typescript
 import { GetDeploymentGitSourceDeploymentsRepoId } from "@simplesagar/vercel/models/getdeploymentop.js";
 
-let value: GetDeploymentGitSourceDeploymentsRepoId = 333.04;
+let value: GetDeploymentGitSourceDeploymentsRepoId = "<value>";
 ```
 
 ## Supported Types

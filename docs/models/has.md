@@ -6,7 +6,7 @@
 import { Has } from "@simplesagar/vercel/models/updateprojectdatacacheop.js";
 
 let value: Has = {
-    type: "path",
+  type: "path",
 };
 ```
 

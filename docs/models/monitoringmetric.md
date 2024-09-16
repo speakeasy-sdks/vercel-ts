@@ -6,10 +6,10 @@
 import { MonitoringMetric } from "@simplesagar/vercel/models/authuser.js";
 
 let value: MonitoringMetric = {
-    price: 7412.38,
-    batch: 2168.7,
-    threshold: 2380.11,
-    hidden: false,
+  price: 997.33,
+  batch: 5845.93,
+  threshold: 4755.89,
+  hidden: false,
 };
 ```
 

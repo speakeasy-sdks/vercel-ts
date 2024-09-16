@@ -6,10 +6,10 @@
 import { CreateDeploymentGitSource7 } from "@simplesagar/vercel/models/createdeploymentop.js";
 
 let value: CreateDeploymentGitSource7 = {
-    type: "github",
-    ref: "<value>",
-    sha: "<value>",
-    repoId: 2377.42,
+  type: "github",
+  ref: "<value>",
+  sha: "<value>",
+  repoId: 8859.63,
 };
 ```
 

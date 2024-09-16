@@ -5,7 +5,8 @@
 ```typescript
 import { CreateDeploymentGitSourceDeploymentsRequestRequestBodyType } from "@simplesagar/vercel/models/createdeploymentop.js";
 
-let value: CreateDeploymentGitSourceDeploymentsRequestRequestBodyType = "github";
+let value: CreateDeploymentGitSourceDeploymentsRequestRequestBodyType =
+  "github";
 ```
 
 ## Values

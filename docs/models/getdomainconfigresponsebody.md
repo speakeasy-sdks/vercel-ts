@@ -6,7 +6,7 @@
 import { GetDomainConfigResponseBody } from "@simplesagar/vercel/models/getdomainconfigop.js";
 
 let value: GetDomainConfigResponseBody = {
-    misconfigured: false,
+  misconfigured: false,
 };
 ```
 

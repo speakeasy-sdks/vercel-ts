@@ -5,47 +5,47 @@
 import * as z from "zod";
 
 export type PauseProjectRequest = {
-    /**
-     * The unique project identifier
-     */
-    projectId: string;
-    /**
-     * The Team identifier to perform the request on behalf of.
-     */
-    teamId?: string | undefined;
-    /**
-     * The Team slug to perform the request on behalf of.
-     */
-    slug?: string | undefined;
+  /**
+   * The unique project identifier
+   */
+  projectId: string;
+  /**
+   * The Team identifier to perform the request on behalf of.
+   */
+  teamId?: string | undefined;
+  /**
+   * The Team slug to perform the request on behalf of.
+   */
+  slug?: string | undefined;
 };
 
 /** @internal */
 export const PauseProjectRequest$inboundSchema: z.ZodType<
-    PauseProjectRequest,
-    z.ZodTypeDef,
-    unknown
+  PauseProjectRequest,
+  z.ZodTypeDef,
+  unknown
 > = z.object({
-    projectId: z.string(),
-    teamId: z.string().optional(),
-    slug: z.string().optional(),
+  projectId: z.string(),
+  teamId: z.string().optional(),
+  slug: z.string().optional(),
 });
 
 /** @internal */
 export type PauseProjectRequest$Outbound = {
-    projectId: string;
-    teamId?: string | undefined;
-    slug?: string | undefined;
+  projectId: string;
+  teamId?: string | undefined;
+  slug?: string | undefined;
 };
 
 /** @internal */
 export const PauseProjectRequest$outboundSchema: z.ZodType<
-    PauseProjectRequest$Outbound,
-    z.ZodTypeDef,
-    PauseProjectRequest
+  PauseProjectRequest$Outbound,
+  z.ZodTypeDef,
+  PauseProjectRequest
 > = z.object({
-    projectId: z.string(),
-    teamId: z.string().optional(),
-    slug: z.string().optional(),
+  projectId: z.string(),
+  teamId: z.string().optional(),
+  slug: z.string().optional(),
 });
 
 /**
@@ -53,10 +53,10 @@ export const PauseProjectRequest$outboundSchema: z.ZodType<
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
 export namespace PauseProjectRequest$ {
-    /** @deprecated use `PauseProjectRequest$inboundSchema` instead. */
-    export const inboundSchema = PauseProjectRequest$inboundSchema;
-    /** @deprecated use `PauseProjectRequest$outboundSchema` instead. */
-    export const outboundSchema = PauseProjectRequest$outboundSchema;
-    /** @deprecated use `PauseProjectRequest$Outbound` instead. */
-    export type Outbound = PauseProjectRequest$Outbound;
+  /** @deprecated use `PauseProjectRequest$inboundSchema` instead. */
+  export const inboundSchema = PauseProjectRequest$inboundSchema;
+  /** @deprecated use `PauseProjectRequest$outboundSchema` instead. */
+  export const outboundSchema = PauseProjectRequest$outboundSchema;
+  /** @deprecated use `PauseProjectRequest$Outbound` instead. */
+  export type Outbound = PauseProjectRequest$Outbound;
 }

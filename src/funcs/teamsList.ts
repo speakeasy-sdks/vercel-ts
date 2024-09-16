@@ -10,17 +10,17 @@ import { RequestOptions } from "../lib/sdks.js";
 import { extractSecurity, resolveGlobalSecurity } from "../lib/security.js";
 import { pathToFunc } from "../lib/url.js";
 import {
-    GetTeamsRequest,
-    GetTeamsRequest$outboundSchema,
-    GetTeamsResponseBody,
-    GetTeamsResponseBody$inboundSchema,
+  GetTeamsRequest,
+  GetTeamsRequest$outboundSchema,
+  GetTeamsResponseBody,
+  GetTeamsResponseBody$inboundSchema,
 } from "../models/getteamsop.js";
 import {
-    ConnectionError,
-    InvalidRequestError,
-    RequestAbortedError,
-    RequestTimeoutError,
-    UnexpectedClientError,
+  ConnectionError,
+  InvalidRequestError,
+  RequestAbortedError,
+  RequestTimeoutError,
+  UnexpectedClientError,
 } from "../models/httpclienterrors.js";
 import { SDKError } from "../models/sdkerror.js";
 import { SDKValidationError } from "../models/sdkvalidationerror.js";
@@ -33,106 +33,103 @@ import { Result } from "../types/fp.js";
  * Get a paginated list of all the Teams the authenticated User is a member of.
  */
 export async function teamsList(
-    client$: VercelCore,
-    limit?: number | undefined,
-    since?: number | undefined,
-    until?: number | undefined,
-    options?: RequestOptions
+  client$: VercelCore,
+  limit?: number | undefined,
+  since?: number | undefined,
+  until?: number | undefined,
+  options?: RequestOptions,
 ): Promise<
-    Result<
-        GetTeamsResponseBody,
-        | SDKError
-        | SDKValidationError
-        | UnexpectedClientError
-        | InvalidRequestError
-        | RequestAbortedError
-        | RequestTimeoutError
-        | ConnectionError
-    >
+  Result<
+    GetTeamsResponseBody,
+    | SDKError
+    | SDKValidationError
+    | UnexpectedClientError
+    | InvalidRequestError
+    | RequestAbortedError
+    | RequestTimeoutError
+    | ConnectionError
+  >
 > {
-    const input$: GetTeamsRequest = {
-        limit: limit,
-        since: since,
-        until: until,
-    };
+  const input$: GetTeamsRequest = {
+    limit: limit,
+    since: since,
+    until: until,
+  };
 
-    const parsed$ = schemas$.safeParse(
-        input$,
-        (value$) => GetTeamsRequest$outboundSchema.parse(value$),
-        "Input validation failed"
-    );
-    if (!parsed$.ok) {
-        return parsed$;
-    }
-    const payload$ = parsed$.value;
-    const body$ = null;
+  const parsed$ = schemas$.safeParse(
+    input$,
+    (value$) => GetTeamsRequest$outboundSchema.parse(value$),
+    "Input validation failed",
+  );
+  if (!parsed$.ok) {
+    return parsed$;
+  }
+  const payload$ = parsed$.value;
+  const body$ = null;
 
-    const path$ = pathToFunc("/v2/teams")();
+  const path$ = pathToFunc("/v2/teams")();
 
-    const query$ = encodeFormQuery$({
-        limit: payload$.limit,
-        since: payload$.since,
-        until: payload$.until,
-    });
+  const query$ = encodeFormQuery$({
+    "limit": payload$.limit,
+    "since": payload$.since,
+    "until": payload$.until,
+  });
 
-    const headers$ = new Headers({
-        Accept: "application/json",
-    });
+  const headers$ = new Headers({
+    Accept: "application/json",
+  });
 
-    const bearerToken$ = await extractSecurity(client$.options$.bearerToken);
-    const security$ = bearerToken$ == null ? {} : { bearerToken: bearerToken$ };
-    const context = {
-        operationID: "getTeams",
-        oAuth2Scopes: [],
-        securitySource: client$.options$.bearerToken,
-    };
-    const securitySettings$ = resolveGlobalSecurity(security$);
+  const bearerToken$ = await extractSecurity(client$.options$.bearerToken);
+  const security$ = bearerToken$ == null ? {} : { bearerToken: bearerToken$ };
+  const context = {
+    operationID: "getTeams",
+    oAuth2Scopes: [],
+    securitySource: client$.options$.bearerToken,
+  };
+  const securitySettings$ = resolveGlobalSecurity(security$);
 
-    const requestRes = client$.createRequest$(
-        context,
-        {
-            security: securitySettings$,
-            method: "GET",
-            path: path$,
-            headers: headers$,
-            query: query$,
-            body: body$,
-            timeoutMs: options?.timeoutMs || client$.options$.timeoutMs || -1,
-        },
-        options
-    );
-    if (!requestRes.ok) {
-        return requestRes;
-    }
-    const request$ = requestRes.value;
+  const requestRes = client$.createRequest$(context, {
+    security: securitySettings$,
+    method: "GET",
+    path: path$,
+    headers: headers$,
+    query: query$,
+    body: body$,
+    timeoutMs: options?.timeoutMs || client$.options$.timeoutMs || -1,
+  }, options);
+  if (!requestRes.ok) {
+    return requestRes;
+  }
+  const request$ = requestRes.value;
 
-    const doResult = await client$.do$(request$, {
-        context,
-        errorCodes: ["400", "403", "4XX", "5XX"],
-        retryConfig: options?.retries || client$.options$.retryConfig,
-        retryCodes: options?.retryCodes || ["429", "500", "502", "503", "504"],
-    });
-    if (!doResult.ok) {
-        return doResult;
-    }
-    const response = doResult.value;
+  const doResult = await client$.do$(request$, {
+    context,
+    errorCodes: ["400", "403", "4XX", "5XX"],
+    retryConfig: options?.retries
+      || client$.options$.retryConfig,
+    retryCodes: options?.retryCodes || ["429", "500", "502", "503", "504"],
+  });
+  if (!doResult.ok) {
+    return doResult;
+  }
+  const response = doResult.value;
 
-    const [result$] = await m$.match<
-        GetTeamsResponseBody,
-        | SDKError
-        | SDKValidationError
-        | UnexpectedClientError
-        | InvalidRequestError
-        | RequestAbortedError
-        | RequestTimeoutError
-        | ConnectionError
-    >(
-        m$.json(200, GetTeamsResponseBody$inboundSchema),
-        m$.fail([400, 403, "4XX", "5XX"])
-    )(response);
-    if (!result$.ok) {
-        return result$;
-    }
-
+  const [result$] = await m$.match<
+    GetTeamsResponseBody,
+    | SDKError
+    | SDKValidationError
+    | UnexpectedClientError
+    | InvalidRequestError
+    | RequestAbortedError
+    | RequestTimeoutError
+    | ConnectionError
+  >(
+    m$.json(200, GetTeamsResponseBody$inboundSchema),
+    m$.fail([400, 403, "4XX", "5XX"]),
+  )(response);
+  if (!result$.ok) {
     return result$;
+  }
+
+  return result$;
 }

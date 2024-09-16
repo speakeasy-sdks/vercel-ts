@@ -6,11 +6,10 @@
 import { ResponseBodyGitSource } from "@simplesagar/vercel/models/getdeploymentop.js";
 
 let value: ResponseBodyGitSource = {
-    type: "bitbucket",
-    ref: "<value>",
-    sha: "<value>",
-    workspaceUuid: "<value>",
-    repoUuid: "<value>",
+  type: "github",
+  ref: "<value>",
+  sha: "<value>",
+  repoId: 333.04,
 };
 ```
 

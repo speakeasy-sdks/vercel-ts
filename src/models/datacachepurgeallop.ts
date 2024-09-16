@@ -5,30 +5,30 @@
 import * as z from "zod";
 
 export type DatacachePurgeallRequest = {
-    projectIdOrName: string;
+  projectIdOrName: string;
 };
 
 /** @internal */
 export const DatacachePurgeallRequest$inboundSchema: z.ZodType<
-    DatacachePurgeallRequest,
-    z.ZodTypeDef,
-    unknown
+  DatacachePurgeallRequest,
+  z.ZodTypeDef,
+  unknown
 > = z.object({
-    projectIdOrName: z.string(),
+  projectIdOrName: z.string(),
 });
 
 /** @internal */
 export type DatacachePurgeallRequest$Outbound = {
-    projectIdOrName: string;
+  projectIdOrName: string;
 };
 
 /** @internal */
 export const DatacachePurgeallRequest$outboundSchema: z.ZodType<
-    DatacachePurgeallRequest$Outbound,
-    z.ZodTypeDef,
-    DatacachePurgeallRequest
+  DatacachePurgeallRequest$Outbound,
+  z.ZodTypeDef,
+  DatacachePurgeallRequest
 > = z.object({
-    projectIdOrName: z.string(),
+  projectIdOrName: z.string(),
 });
 
 /**
@@ -36,10 +36,10 @@ export const DatacachePurgeallRequest$outboundSchema: z.ZodType<
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
 export namespace DatacachePurgeallRequest$ {
-    /** @deprecated use `DatacachePurgeallRequest$inboundSchema` instead. */
-    export const inboundSchema = DatacachePurgeallRequest$inboundSchema;
-    /** @deprecated use `DatacachePurgeallRequest$outboundSchema` instead. */
-    export const outboundSchema = DatacachePurgeallRequest$outboundSchema;
-    /** @deprecated use `DatacachePurgeallRequest$Outbound` instead. */
-    export type Outbound = DatacachePurgeallRequest$Outbound;
+  /** @deprecated use `DatacachePurgeallRequest$inboundSchema` instead. */
+  export const inboundSchema = DatacachePurgeallRequest$inboundSchema;
+  /** @deprecated use `DatacachePurgeallRequest$outboundSchema` instead. */
+  export const outboundSchema = DatacachePurgeallRequest$outboundSchema;
+  /** @deprecated use `DatacachePurgeallRequest$Outbound` instead. */
+  export type Outbound = DatacachePurgeallRequest$Outbound;
 }

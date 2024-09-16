@@ -6,8 +6,8 @@
 import { CreateProjectAliasError } from "@simplesagar/vercel/models/createprojectop.js";
 
 let value: CreateProjectAliasError = {
-    code: "<value>",
-    message: "<value>",
+  code: "<value>",
+  message: "<value>",
 };
 ```
 

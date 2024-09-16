@@ -5,7 +5,7 @@
 ```typescript
 import { RepoId } from "@simplesagar/vercel/models/createdeploymentop.js";
 
-let value: RepoId = 3581.07;
+let value: RepoId = "<value>";
 ```
 
 ## Supported Types

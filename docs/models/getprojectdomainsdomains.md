@@ -6,10 +6,10 @@
 import { GetProjectDomainsDomains } from "@simplesagar/vercel/models/getprojectdomainsop.js";
 
 let value: GetProjectDomainsDomains = {
-    name: "<value>",
-    apexName: "<value>",
-    projectId: "<value>",
-    verified: false,
+  name: "<value>",
+  apexName: "<value>",
+  projectId: "<value>",
+  verified: false,
 };
 ```
 

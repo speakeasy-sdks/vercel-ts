@@ -6,10 +6,9 @@
 import { CreateProjectEnvRequestBody1 } from "@simplesagar/vercel/models/createprojectenvop.js";
 
 let value: CreateProjectEnvRequestBody1 = {
-    key: "API_URL",
-    value: "https://api.vercel.com",
-    type: "plain",
-    target: ["preview"],
+  key: "API_URL",
+  value: "https://api.vercel.com",
+  type: "plain",
 };
 ```
 

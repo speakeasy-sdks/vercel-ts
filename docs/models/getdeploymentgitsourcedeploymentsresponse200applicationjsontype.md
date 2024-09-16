@@ -5,7 +5,8 @@
 ```typescript
 import { GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONType } from "@simplesagar/vercel/models/getdeploymentop.js";
 
-let value: GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONType = "custom";
+let value: GetDeploymentGitSourceDeploymentsResponse200ApplicationJSONType =
+  "custom";
 ```
 
 ## Values

@@ -6,8 +6,8 @@
 import { BranchMatcher } from "@simplesagar/vercel/models/createdeploymentop.js";
 
 let value: BranchMatcher = {
-    type: "endsWith",
-    pattern: "<value>",
+  type: "equals",
+  pattern: "<value>",
 };
 ```
 

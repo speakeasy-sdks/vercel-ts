@@ -6,16 +6,16 @@
 import { ResponseBodyRecords } from "@simplesagar/vercel/models/getrecordsop.js";
 
 let value: ResponseBodyRecords = {
-    id: "<id>",
-    slug: "<value>",
-    name: "<value>",
-    type: "NS",
-    value: "<value>",
-    creator: "<value>",
-    created: 429.76,
-    updated: 9197.83,
-    createdAt: 1160.98,
-    updatedAt: 360.33,
+  id: "<id>",
+  slug: "<value>",
+  name: "<value>",
+  type: "NS",
+  value: "<value>",
+  creator: "<value>",
+  created: 429.76,
+  updated: 9197.83,
+  createdAt: 1160.98,
+  updatedAt: 360.33,
 };
 ```
 

@@ -6,8 +6,8 @@
 import { GetProjectEnvContentHintEnvs7 } from "@simplesagar/vercel/models/getprojectenvop.js";
 
 let value: GetProjectEnvContentHintEnvs7 = {
-    type: "postgres-url-non-pooling",
-    storeId: "<value>",
+  type: "postgres-url-non-pooling",
+  storeId: "<value>",
 };
 ```
 

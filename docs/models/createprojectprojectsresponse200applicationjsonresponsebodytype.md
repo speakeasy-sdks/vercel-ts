@@ -5,7 +5,8 @@
 ```typescript
 import { CreateProjectProjectsResponse200ApplicationJSONResponseBodyType } from "@simplesagar/vercel/models/createprojectop.js";
 
-let value: CreateProjectProjectsResponse200ApplicationJSONResponseBodyType = "promote";
+let value: CreateProjectProjectsResponse200ApplicationJSONResponseBodyType =
+  "promote";
 ```
 
 ## Values

@@ -6,7 +6,7 @@
 import { JoinedFrom } from "@simplesagar/vercel/models/teamlimited.js";
 
 let value: JoinedFrom = {
-    origin: "teams",
+  origin: "organization-teams",
 };
 ```
 

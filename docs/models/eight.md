@@ -6,9 +6,9 @@
 import { Eight } from "@simplesagar/vercel/models/createrecordop.js";
 
 let value: Eight = {
-    name: "<value>",
-    type: "A",
-    value: "hello",
+  name: "<value>",
+  type: "A",
+  value: "hello",
 };
 ```
 

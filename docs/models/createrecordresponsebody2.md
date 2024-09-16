@@ -6,7 +6,7 @@
 import { CreateRecordResponseBody2 } from "@simplesagar/vercel/models/createrecordop.js";
 
 let value: CreateRecordResponseBody2 = {
-    uid: "rec_V0fra8eEgQwEpFhYG2vTzC3K",
+  uid: "rec_V0fra8eEgQwEpFhYG2vTzC3K",
 };
 ```
 

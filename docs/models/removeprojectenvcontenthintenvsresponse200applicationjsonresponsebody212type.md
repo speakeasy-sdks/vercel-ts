@@ -5,7 +5,8 @@
 ```typescript
 import { RemoveProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody212Type } from "@simplesagar/vercel/models/removeprojectenvop.js";
 
-let value: RemoveProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody212Type =
+let value:
+  RemoveProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody212Type =
     "postgres-database";
 ```
 

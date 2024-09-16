@@ -6,8 +6,8 @@
 import { RemoveProjectEnvContentHintEnvsResponse13 } from "@simplesagar/vercel/models/removeprojectenvop.js";
 
 let value: RemoveProjectEnvContentHintEnvsResponse13 = {
-    type: "postgres-url-no-ssl",
-    storeId: "<value>",
+  type: "postgres-url-no-ssl",
+  storeId: "<value>",
 };
 ```
 

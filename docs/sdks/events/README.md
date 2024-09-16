@@ -23,8 +23,8 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.events.list();
-
+  const result = await vercel.events.list({});
+  
   // Handle the result
   console.log(result)
 }
@@ -47,7 +47,7 @@ const vercel = new VercelCore({
 });
 
 async function run() {
-  const res = await eventsList(vercel);
+  const res = await eventsList(vercel, {});
 
   if (!res.ok) {
     throw res.error;

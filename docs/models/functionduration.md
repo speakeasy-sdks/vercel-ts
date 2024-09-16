@@ -6,10 +6,10 @@
 import { FunctionDuration } from "@simplesagar/vercel/models/authuser.js";
 
 let value: FunctionDuration = {
-    price: 5546.45,
-    batch: 6144.38,
-    threshold: 8268.62,
-    hidden: false,
+  price: 7412.38,
+  batch: 2168.7,
+  threshold: 2380.11,
+  hidden: false,
 };
 ```
 

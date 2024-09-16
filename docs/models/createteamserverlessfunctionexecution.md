@@ -6,10 +6,10 @@
 import { CreateTeamServerlessFunctionExecution } from "@simplesagar/vercel/models/createteamop.js";
 
 let value: CreateTeamServerlessFunctionExecution = {
-    price: 6633.18,
-    batch: 7278.88,
-    threshold: 8544.6,
-    hidden: false,
+  price: 9148.64,
+  batch: 800.61,
+  threshold: 493.48,
+  hidden: false,
 };
 ```
 

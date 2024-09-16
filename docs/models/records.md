@@ -6,16 +6,16 @@
 import { Records } from "@simplesagar/vercel/models/getrecordsop.js";
 
 let value: Records = {
-    id: "<id>",
-    slug: "<value>",
-    name: "<value>",
-    type: "HTTPS",
-    value: "<value>",
-    creator: "<value>",
-    created: 3000.29,
-    updated: 9063.55,
-    createdAt: 1604.67,
-    updatedAt: 5801.07,
+  id: "<id>",
+  slug: "<value>",
+  name: "<value>",
+  type: "HTTPS",
+  value: "<value>",
+  creator: "<value>",
+  created: 3000.29,
+  updated: 9063.55,
+  createdAt: 1604.67,
+  updatedAt: 5801.07,
 };
 ```
 

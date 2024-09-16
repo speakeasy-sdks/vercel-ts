@@ -6,14 +6,14 @@
 import { CreateCheckResponseBody } from "@simplesagar/vercel/models/createcheckop.js";
 
 let value: CreateCheckResponseBody = {
-    id: "<id>",
-    name: "<value>",
-    status: "running",
-    blocking: false,
-    integrationId: "<value>",
-    deploymentId: "<value>",
-    createdAt: 1352.18,
-    updatedAt: 187.89,
+  id: "<id>",
+  name: "<value>",
+  status: "registered",
+  blocking: false,
+  integrationId: "<value>",
+  deploymentId: "<value>",
+  createdAt: 5684.34,
+  updatedAt: 1352.18,
 };
 ```
 

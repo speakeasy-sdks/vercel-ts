@@ -6,8 +6,8 @@
 import { EditProjectEnvContentHint5 } from "@simplesagar/vercel/models/editprojectenvop.js";
 
 let value: EditProjectEnvContentHint5 = {
-    type: "blob-read-write-token",
-    storeId: "<value>",
+  type: "blob-read-write-token",
+  storeId: "<value>",
 };
 ```
 

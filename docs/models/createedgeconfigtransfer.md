@@ -8,9 +8,9 @@ Keeps track of the current state of the Edge Config while it gets transferred.
 import { CreateEdgeConfigTransfer } from "@simplesagar/vercel/models/createedgeconfigop.js";
 
 let value: CreateEdgeConfigTransfer = {
-    fromAccountId: "<value>",
-    startedAt: 5145.13,
-    doneAt: 4326.06,
+  fromAccountId: "<value>",
+  startedAt: 5145.13,
+  doneAt: 4326.06,
 };
 ```
 

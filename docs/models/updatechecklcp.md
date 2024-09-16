@@ -6,8 +6,8 @@
 import { UpdateCheckLCP } from "@simplesagar/vercel/models/updatecheckop.js";
 
 let value: UpdateCheckLCP = {
-    value: 9589.5,
-    source: "web-vitals",
+  value: 9883.74,
+  source: "web-vitals",
 };
 ```
 

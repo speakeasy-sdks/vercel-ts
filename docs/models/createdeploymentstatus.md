@@ -5,7 +5,7 @@
 ```typescript
 import { CreateDeploymentStatus } from "@simplesagar/vercel/models/createdeploymentop.js";
 
-let value: CreateDeploymentStatus = "QUEUED";
+let value: CreateDeploymentStatus = "ERROR";
 ```
 
 ## Values

@@ -6,8 +6,8 @@
 import { Tbt } from "@simplesagar/vercel/models/updatecheckop.js";
 
 let value: Tbt = {
-    value: 3000,
-    source: "web-vitals",
+  value: 3000,
+  source: "web-vitals",
 };
 ```
 

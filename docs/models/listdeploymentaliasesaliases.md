@@ -8,9 +8,9 @@ A list of the aliases assigned to the deployment
 import { ListDeploymentAliasesAliases } from "@simplesagar/vercel/models/listdeploymentaliasesop.js";
 
 let value: ListDeploymentAliasesAliases = {
-    uid: "2WjyKQmM8ZnGcJsPWMrHRHrE",
-    alias: "my-alias.vercel.app",
-    created: new Date("2017-04-26T23:00:34.232Z"),
+  uid: "2WjyKQmM8ZnGcJsPWMrHRHrE",
+  alias: "my-alias.vercel.app",
+  created: new Date("2017-04-26T23:00:34.232Z"),
 };
 ```
 

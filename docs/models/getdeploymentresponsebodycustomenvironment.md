@@ -6,12 +6,12 @@
 import { GetDeploymentResponseBodyCustomEnvironment } from "@simplesagar/vercel/models/getdeploymentop.js";
 
 let value: GetDeploymentResponseBodyCustomEnvironment = {
-    id: "<id>",
-    name: "<value>",
-    slug: "<value>",
-    type: "preview",
-    createdAt: 4287.96,
-    updatedAt: 6498.32,
+  id: "<id>",
+  name: "<value>",
+  slug: "<value>",
+  type: "preview",
+  createdAt: 156.06,
+  updatedAt: 5130.75,
 };
 ```
 

@@ -5,47 +5,47 @@
 import * as z from "zod";
 
 export type UnpauseProjectRequest = {
-    /**
-     * The unique project identifier
-     */
-    projectId: string;
-    /**
-     * The Team identifier to perform the request on behalf of.
-     */
-    teamId?: string | undefined;
-    /**
-     * The Team slug to perform the request on behalf of.
-     */
-    slug?: string | undefined;
+  /**
+   * The unique project identifier
+   */
+  projectId: string;
+  /**
+   * The Team identifier to perform the request on behalf of.
+   */
+  teamId?: string | undefined;
+  /**
+   * The Team slug to perform the request on behalf of.
+   */
+  slug?: string | undefined;
 };
 
 /** @internal */
 export const UnpauseProjectRequest$inboundSchema: z.ZodType<
-    UnpauseProjectRequest,
-    z.ZodTypeDef,
-    unknown
+  UnpauseProjectRequest,
+  z.ZodTypeDef,
+  unknown
 > = z.object({
-    projectId: z.string(),
-    teamId: z.string().optional(),
-    slug: z.string().optional(),
+  projectId: z.string(),
+  teamId: z.string().optional(),
+  slug: z.string().optional(),
 });
 
 /** @internal */
 export type UnpauseProjectRequest$Outbound = {
-    projectId: string;
-    teamId?: string | undefined;
-    slug?: string | undefined;
+  projectId: string;
+  teamId?: string | undefined;
+  slug?: string | undefined;
 };
 
 /** @internal */
 export const UnpauseProjectRequest$outboundSchema: z.ZodType<
-    UnpauseProjectRequest$Outbound,
-    z.ZodTypeDef,
-    UnpauseProjectRequest
+  UnpauseProjectRequest$Outbound,
+  z.ZodTypeDef,
+  UnpauseProjectRequest
 > = z.object({
-    projectId: z.string(),
-    teamId: z.string().optional(),
-    slug: z.string().optional(),
+  projectId: z.string(),
+  teamId: z.string().optional(),
+  slug: z.string().optional(),
 });
 
 /**
@@ -53,10 +53,10 @@ export const UnpauseProjectRequest$outboundSchema: z.ZodType<
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
 export namespace UnpauseProjectRequest$ {
-    /** @deprecated use `UnpauseProjectRequest$inboundSchema` instead. */
-    export const inboundSchema = UnpauseProjectRequest$inboundSchema;
-    /** @deprecated use `UnpauseProjectRequest$outboundSchema` instead. */
-    export const outboundSchema = UnpauseProjectRequest$outboundSchema;
-    /** @deprecated use `UnpauseProjectRequest$Outbound` instead. */
-    export type Outbound = UnpauseProjectRequest$Outbound;
+  /** @deprecated use `UnpauseProjectRequest$inboundSchema` instead. */
+  export const inboundSchema = UnpauseProjectRequest$inboundSchema;
+  /** @deprecated use `UnpauseProjectRequest$outboundSchema` instead. */
+  export const outboundSchema = UnpauseProjectRequest$outboundSchema;
+  /** @deprecated use `UnpauseProjectRequest$Outbound` instead. */
+  export type Outbound = UnpauseProjectRequest$Outbound;
 }

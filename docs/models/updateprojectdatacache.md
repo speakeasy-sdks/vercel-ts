@@ -6,7 +6,7 @@
 import { UpdateProjectDataCache } from "@simplesagar/vercel/models/updateprojectop.js";
 
 let value: UpdateProjectDataCache = {
-    userDisabled: false,
+  userDisabled: false,
 };
 ```
 

@@ -5,8 +5,8 @@
 import { VercelCore } from "../core.js";
 import { dlv } from "../lib/dlv.js";
 import {
-    encodeFormQuery as encodeFormQuery$,
-    encodeSimple as encodeSimple$,
+  encodeFormQuery as encodeFormQuery$,
+  encodeSimple as encodeSimple$,
 } from "../lib/encodings.js";
 import * as m$ from "../lib/matchers.js";
 import * as schemas$ from "../lib/schemas.js";
@@ -14,22 +14,27 @@ import { RequestOptions } from "../lib/sdks.js";
 import { extractSecurity, resolveGlobalSecurity } from "../lib/security.js";
 import { pathToFunc } from "../lib/url.js";
 import {
-    GetRecordsRequest,
-    GetRecordsRequest$outboundSchema,
-    GetRecordsResponse,
-    GetRecordsResponse$inboundSchema,
+  GetRecordsRequest,
+  GetRecordsRequest$outboundSchema,
+  GetRecordsResponse,
+  GetRecordsResponse$inboundSchema,
 } from "../models/getrecordsop.js";
 import {
-    ConnectionError,
-    InvalidRequestError,
-    RequestAbortedError,
-    RequestTimeoutError,
-    UnexpectedClientError,
+  ConnectionError,
+  InvalidRequestError,
+  RequestAbortedError,
+  RequestTimeoutError,
+  UnexpectedClientError,
 } from "../models/httpclienterrors.js";
 import { SDKError } from "../models/sdkerror.js";
 import { SDKValidationError } from "../models/sdkvalidationerror.js";
 import { Result } from "../types/fp.js";
-import { createPageIterator, haltIterator, PageIterator, Paginator } from "../types/operations.js";
+import {
+  createPageIterator,
+  haltIterator,
+  PageIterator,
+  Paginator,
+} from "../types/operations.js";
 
 /**
  * List existing DNS records
@@ -38,147 +43,144 @@ import { createPageIterator, haltIterator, PageIterator, Paginator } from "../ty
  * Retrieves a list of DNS records created for a domain name. By default it returns 20 records if no limit is provided. The rest can be retrieved using the pagination options.
  */
 export async function dnsListRecords(
-    client$: VercelCore,
-    request: GetRecordsRequest,
-    options?: RequestOptions
+  client$: VercelCore,
+  request: GetRecordsRequest,
+  options?: RequestOptions,
 ): Promise<
-    PageIterator<
-        Result<
-            GetRecordsResponse,
-            | SDKError
-            | SDKValidationError
-            | UnexpectedClientError
-            | InvalidRequestError
-            | RequestAbortedError
-            | RequestTimeoutError
-            | ConnectionError
-        >
+  PageIterator<
+    Result<
+      GetRecordsResponse,
+      | SDKError
+      | SDKValidationError
+      | UnexpectedClientError
+      | InvalidRequestError
+      | RequestAbortedError
+      | RequestTimeoutError
+      | ConnectionError
     >
+  >
 > {
-    const input$ = request;
+  const input$ = request;
 
-    const parsed$ = schemas$.safeParse(
-        input$,
-        (value$) => GetRecordsRequest$outboundSchema.parse(value$),
-        "Input validation failed"
-    );
-    if (!parsed$.ok) {
-        return haltIterator(parsed$);
+  const parsed$ = schemas$.safeParse(
+    input$,
+    (value$) => GetRecordsRequest$outboundSchema.parse(value$),
+    "Input validation failed",
+  );
+  if (!parsed$.ok) {
+    return haltIterator(parsed$);
+  }
+  const payload$ = parsed$.value;
+  const body$ = null;
+
+  const pathParams$ = {
+    domain: encodeSimple$("domain", payload$.domain, {
+      explode: false,
+      charEncoding: "percent",
+    }),
+  };
+
+  const path$ = pathToFunc("/v4/domains/{domain}/records")(pathParams$);
+
+  const query$ = encodeFormQuery$({
+    "limit": payload$.limit,
+    "since": payload$.since,
+    "slug": payload$.slug,
+    "teamId": payload$.teamId,
+    "until": payload$.until,
+  });
+
+  const headers$ = new Headers({
+    Accept: "application/json",
+  });
+
+  const bearerToken$ = await extractSecurity(client$.options$.bearerToken);
+  const security$ = bearerToken$ == null ? {} : { bearerToken: bearerToken$ };
+  const context = {
+    operationID: "getRecords",
+    oAuth2Scopes: [],
+    securitySource: client$.options$.bearerToken,
+  };
+  const securitySettings$ = resolveGlobalSecurity(security$);
+
+  const requestRes = client$.createRequest$(context, {
+    security: securitySettings$,
+    method: "GET",
+    path: path$,
+    headers: headers$,
+    query: query$,
+    body: body$,
+    timeoutMs: options?.timeoutMs || client$.options$.timeoutMs || -1,
+  }, options);
+  if (!requestRes.ok) {
+    return haltIterator(requestRes);
+  }
+  const request$ = requestRes.value;
+
+  const doResult = await client$.do$(request$, {
+    context,
+    errorCodes: ["400", "401", "403", "404", "4XX", "5XX"],
+    retryConfig: options?.retries
+      || client$.options$.retryConfig,
+    retryCodes: options?.retryCodes || ["429", "500", "502", "503", "504"],
+  });
+  if (!doResult.ok) {
+    return haltIterator(doResult);
+  }
+  const response = doResult.value;
+
+  const responseFields$ = {
+    HttpMeta: { Response: response, Request: request$ },
+  };
+
+  const [result$, raw$] = await m$.match<
+    GetRecordsResponse,
+    | SDKError
+    | SDKValidationError
+    | UnexpectedClientError
+    | InvalidRequestError
+    | RequestAbortedError
+    | RequestTimeoutError
+    | ConnectionError
+  >(
+    m$.json(200, GetRecordsResponse$inboundSchema, { key: "Result" }),
+    m$.fail([400, 401, 403, 404, "4XX", "5XX"]),
+  )(response, { extraFields: responseFields$ });
+  if (!result$.ok) {
+    return haltIterator(result$);
+  }
+
+  const nextFunc = (
+    responseData: unknown,
+  ): Paginator<
+    Result<
+      GetRecordsResponse,
+      | SDKError
+      | SDKValidationError
+      | UnexpectedClientError
+      | InvalidRequestError
+      | RequestAbortedError
+      | RequestTimeoutError
+      | ConnectionError
+    >
+  > => {
+    const nextCursor = dlv(responseData, "pagination.since");
+
+    if (nextCursor == null) {
+      return () => null;
     }
-    const payload$ = parsed$.value;
-    const body$ = null;
 
-    const pathParams$ = {
-        domain: encodeSimple$("domain", payload$.domain, {
-            explode: false,
-            charEncoding: "percent",
-        }),
-    };
-
-    const path$ = pathToFunc("/v4/domains/{domain}/records")(pathParams$);
-
-    const query$ = encodeFormQuery$({
-        limit: payload$.limit,
-        since: payload$.since,
-        slug: payload$.slug,
-        teamId: payload$.teamId,
-        until: payload$.until,
-    });
-
-    const headers$ = new Headers({
-        Accept: "application/json",
-    });
-
-    const bearerToken$ = await extractSecurity(client$.options$.bearerToken);
-    const security$ = bearerToken$ == null ? {} : { bearerToken: bearerToken$ };
-    const context = {
-        operationID: "getRecords",
-        oAuth2Scopes: [],
-        securitySource: client$.options$.bearerToken,
-    };
-    const securitySettings$ = resolveGlobalSecurity(security$);
-
-    const requestRes = client$.createRequest$(
-        context,
+    return () =>
+      dnsListRecords(
+        client$,
         {
-            security: securitySettings$,
-            method: "GET",
-            path: path$,
-            headers: headers$,
-            query: query$,
-            body: body$,
-            timeoutMs: options?.timeoutMs || client$.options$.timeoutMs || -1,
+          ...input$,
+          since: nextCursor,
         },
-        options
-    );
-    if (!requestRes.ok) {
-        return haltIterator(requestRes);
-    }
-    const request$ = requestRes.value;
+        options,
+      );
+  };
 
-    const doResult = await client$.do$(request$, {
-        context,
-        errorCodes: ["400", "401", "403", "404", "4XX", "5XX"],
-        retryConfig: options?.retries || client$.options$.retryConfig,
-        retryCodes: options?.retryCodes || ["429", "500", "502", "503", "504"],
-    });
-    if (!doResult.ok) {
-        return haltIterator(doResult);
-    }
-    const response = doResult.value;
-
-    const responseFields$ = {
-        HttpMeta: { Response: response, Request: request$ },
-    };
-
-    const [result$, raw$] = await m$.match<
-        GetRecordsResponse,
-        | SDKError
-        | SDKValidationError
-        | UnexpectedClientError
-        | InvalidRequestError
-        | RequestAbortedError
-        | RequestTimeoutError
-        | ConnectionError
-    >(
-        m$.json(200, GetRecordsResponse$inboundSchema, { key: "Result" }),
-        m$.fail([400, 401, 403, 404, "4XX", "5XX"])
-    )(response, { extraFields: responseFields$ });
-    if (!result$.ok) {
-        return haltIterator(result$);
-    }
-
-    const nextFunc = (
-        responseData: unknown
-    ): Paginator<
-        Result<
-            GetRecordsResponse,
-            | SDKError
-            | SDKValidationError
-            | UnexpectedClientError
-            | InvalidRequestError
-            | RequestAbortedError
-            | RequestTimeoutError
-            | ConnectionError
-        >
-    > => {
-        const nextCursor = dlv(responseData, "pagination.since");
-
-        if (nextCursor == null) {
-            return () => null;
-        }
-
-        return () =>
-            dnsListRecords(
-                client$,
-                {
-                    ...input$,
-                    since: nextCursor,
-                },
-                options
-            );
-    };
-
-    const page$ = { ...result$, next: nextFunc(raw$) };
-    return { ...page$, ...createPageIterator(page$, (v) => !v.ok) };
+  const page$ = { ...result$, next: nextFunc(raw$) };
+  return { ...page$, ...createPageIterator(page$, (v) => !v.ok) };
 }

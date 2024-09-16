@@ -6,8 +6,8 @@
 import { EditProjectEnvContentHint6 } from "@simplesagar/vercel/models/editprojectenvop.js";
 
 let value: EditProjectEnvContentHint6 = {
-    type: "postgres-url",
-    storeId: "<value>",
+  type: "postgres-url",
+  storeId: "<value>",
 };
 ```
 

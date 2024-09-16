@@ -6,11 +6,11 @@
 import { CreateTeamItems } from "@simplesagar/vercel/models/createteamop.js";
 
 let value: CreateTeamItems = {
-    id: "<id>",
-    priceId: "<value>",
-    productId: "<value>",
-    amount: 6941.58,
-    quantity: 6841.26,
+  id: "<id>",
+  priceId: "<value>",
+  productId: "<value>",
+  amount: 5101.28,
+  quantity: 1403.16,
 };
 ```
 

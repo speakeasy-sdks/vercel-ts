@@ -7,7 +7,8 @@ import {
   CreateProjectEnvContentHintEnvsResponse201ApplicationJSONResponseBodyCreated23Type,
 } from "@simplesagar/vercel/models/createprojectenvop.js";
 
-let value: CreateProjectEnvContentHintEnvsResponse201ApplicationJSONResponseBodyCreated23Type =
+let value:
+  CreateProjectEnvContentHintEnvsResponse201ApplicationJSONResponseBodyCreated23Type =
     "redis-rest-api-token";
 ```
 

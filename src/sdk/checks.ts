@@ -8,87 +8,124 @@ import { checksList } from "../funcs/checksList.js";
 import { checksRerequest } from "../funcs/checksRerequest.js";
 import { checksUpdate } from "../funcs/checksUpdate.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
-import { CreateCheckRequestBody, CreateCheckResponseBody } from "../models/createcheckop.js";
+import {
+  CreateCheckRequestBody,
+  CreateCheckResponseBody,
+} from "../models/createcheckop.js";
 import { GetAllChecksResponseBody } from "../models/getallchecksop.js";
 import { GetCheckResponseBody } from "../models/getcheckop.js";
 import { RerequestCheckResponseBody } from "../models/rerequestcheckop.js";
-import { UpdateCheckRequest, UpdateCheckResponseBody } from "../models/updatecheckop.js";
+import {
+  UpdateCheckRequest,
+  UpdateCheckResponseBody,
+} from "../models/updatecheckop.js";
 import { unwrapAsync } from "../types/fp.js";
 
 export class Checks extends ClientSDK {
-    /**
-     * Creates a new Check
-     *
-     * @remarks
-     * Creates a new check. This endpoint must be called with an OAuth2 or it will produce a 400 error.
-     */
-    async create(
-        deploymentId: string,
-        teamId?: string | undefined,
-        slug?: string | undefined,
-        requestBody?: CreateCheckRequestBody | undefined,
-        options?: RequestOptions
-    ): Promise<CreateCheckResponseBody> {
-        return unwrapAsync(checksCreate(this, deploymentId, teamId, slug, requestBody, options));
-    }
+  /**
+   * Creates a new Check
+   *
+   * @remarks
+   * Creates a new check. This endpoint must be called with an OAuth2 or it will produce a 400 error.
+   */
+  async create(
+    deploymentId: string,
+    teamId?: string | undefined,
+    slug?: string | undefined,
+    requestBody?: CreateCheckRequestBody | undefined,
+    options?: RequestOptions,
+  ): Promise<CreateCheckResponseBody> {
+    return unwrapAsync(checksCreate(
+      this,
+      deploymentId,
+      teamId,
+      slug,
+      requestBody,
+      options,
+    ));
+  }
 
-    /**
-     * Retrieve a list of all checks
-     *
-     * @remarks
-     * List all of the checks created for a deployment.
-     */
-    async list(
-        deploymentId: string,
-        teamId?: string | undefined,
-        slug?: string | undefined,
-        options?: RequestOptions
-    ): Promise<GetAllChecksResponseBody> {
-        return unwrapAsync(checksList(this, deploymentId, teamId, slug, options));
-    }
+  /**
+   * Retrieve a list of all checks
+   *
+   * @remarks
+   * List all of the checks created for a deployment.
+   */
+  async list(
+    deploymentId: string,
+    teamId?: string | undefined,
+    slug?: string | undefined,
+    options?: RequestOptions,
+  ): Promise<GetAllChecksResponseBody> {
+    return unwrapAsync(checksList(
+      this,
+      deploymentId,
+      teamId,
+      slug,
+      options,
+    ));
+  }
 
-    /**
-     * Get a single check
-     *
-     * @remarks
-     * Return a detailed response for a single check.
-     */
-    async get(
-        deploymentId: string,
-        checkId: string,
-        teamId?: string | undefined,
-        slug?: string | undefined,
-        options?: RequestOptions
-    ): Promise<GetCheckResponseBody> {
-        return unwrapAsync(checksGet(this, deploymentId, checkId, teamId, slug, options));
-    }
+  /**
+   * Get a single check
+   *
+   * @remarks
+   * Return a detailed response for a single check.
+   */
+  async get(
+    deploymentId: string,
+    checkId: string,
+    teamId?: string | undefined,
+    slug?: string | undefined,
+    options?: RequestOptions,
+  ): Promise<GetCheckResponseBody> {
+    return unwrapAsync(checksGet(
+      this,
+      deploymentId,
+      checkId,
+      teamId,
+      slug,
+      options,
+    ));
+  }
 
-    /**
-     * Update a check
-     *
-     * @remarks
-     * Update an existing check. This endpoint must be called with an OAuth2 or it will produce a 400 error.
-     */
-    async update(
-        request: UpdateCheckRequest,
-        options?: RequestOptions
-    ): Promise<UpdateCheckResponseBody> {
-        return unwrapAsync(checksUpdate(this, request, options));
-    }
+  /**
+   * Update a check
+   *
+   * @remarks
+   * Update an existing check. This endpoint must be called with an OAuth2 or it will produce a 400 error.
+   */
+  async update(
+    request: UpdateCheckRequest,
+    options?: RequestOptions,
+  ): Promise<UpdateCheckResponseBody> {
+    return unwrapAsync(checksUpdate(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Rerequest a check
-     *
-     * @remarks
-     * Rerequest a selected check that has failed.
-     */
-    async rerequest(
-        deploymentId: string,
-        checkId: string,
-        teamId?: string | undefined,
-        slug?: string | undefined,
-        options?: RequestOptions
-    ): Promise<RerequestCheckResponseBody> {
-        return unwrapAsync(checksRerequest(this, deploymentId, checkId, teamId, slug, options));
-    }
+  /**
+   * Rerequest a check
+   *
+   * @remarks
+   * Rerequest a selected check that has failed.
+   */
+  async rerequest(
+    deploymentId: string,
+    checkId: string,
+    teamId?: string | undefined,
+    slug?: string | undefined,
+    options?: RequestOptions,
+  ): Promise<RerequestCheckResponseBody> {
+    return unwrapAsync(checksRerequest(
+      this,
+      deploymentId,
+      checkId,
+      teamId,
+      slug,
+      options,
+    ));
+  }
 }

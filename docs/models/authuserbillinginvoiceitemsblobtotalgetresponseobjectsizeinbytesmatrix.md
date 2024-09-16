@@ -5,12 +5,13 @@
 ```typescript
 import { AuthUserBillingInvoiceItemsBlobTotalGetResponseObjectSizeInBytesMatrix } from "@simplesagar/vercel/models/authuser.js";
 
-let value: AuthUserBillingInvoiceItemsBlobTotalGetResponseObjectSizeInBytesMatrix = {
+let value:
+  AuthUserBillingInvoiceItemsBlobTotalGetResponseObjectSizeInBytesMatrix = {
     defaultUnitPrice: "<value>",
     dimensionPrices: {
-        key: "<value>",
+      "key": "<value>",
     },
-};
+  };
 ```
 
 ## Fields

@@ -28,7 +28,7 @@ const vercel = new Vercel({
 
 async function run() {
   const result = await vercel.integrations.getConfigurations("account");
-
+  
   // Handle the result
   console.log(result)
 }
@@ -51,7 +51,7 @@ const vercel = new VercelCore({
 });
 
 async function run() {
-  const res = await integrationsGetConfigurations(vercel, "project");
+  const res = await integrationsGetConfigurations(vercel, "account");
 
   if (!res.ok) {
     throw res.error;
@@ -79,7 +79,7 @@ run();
 
 ### Response
 
-**Promise\<[models.GetConfigurationsResponseBody[]](../../models/.md)\>**
+**Promise\<[models.GetConfigurationsResponseBody](../../models/getconfigurationsresponsebody.md)\>**
 
 ### Errors
 
@@ -103,7 +103,7 @@ const vercel = new Vercel({
 
 async function run() {
   const result = await vercel.integrations.getConfiguration("icfg_cuwj0AdCdH3BwWT4LPijCC7t");
-
+  
   // Handle the result
   console.log(result)
 }
@@ -177,9 +177,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  await vercel.integrations.deleteConfiguration("<value>");
-
-  
+  await vercel.integrations.deleteConfiguration("<id>");
 }
 
 run();
@@ -200,7 +198,7 @@ const vercel = new VercelCore({
 });
 
 async function run() {
-  const res = await integrationsDeleteConfiguration(vercel, "<value>");
+  const res = await integrationsDeleteConfiguration(vercel, "<id>");
 
   if (!res.ok) {
     throw res.error;
@@ -251,7 +249,7 @@ const vercel = new Vercel({
 
 async function run() {
   const result = await vercel.integrations.getGitNamespaces();
-
+  
   // Handle the result
   console.log(result)
 }
@@ -326,8 +324,8 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.integrations.searchRepos();
-
+  const result = await vercel.integrations.searchRepos({});
+  
   // Handle the result
   console.log(result)
 }
@@ -350,7 +348,7 @@ const vercel = new VercelCore({
 });
 
 async function run() {
-  const res = await integrationsSearchRepos(vercel);
+  const res = await integrationsSearchRepos(vercel, {});
 
   if (!res.ok) {
     throw res.error;

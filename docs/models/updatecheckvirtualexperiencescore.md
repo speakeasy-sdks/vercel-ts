@@ -6,8 +6,8 @@
 import { UpdateCheckVirtualExperienceScore } from "@simplesagar/vercel/models/updatecheckop.js";
 
 let value: UpdateCheckVirtualExperienceScore = {
-    value: 2088.76,
-    source: "web-vitals",
+  value: 6527.9,
+  source: "web-vitals",
 };
 ```
 

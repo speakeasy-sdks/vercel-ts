@@ -6,8 +6,8 @@
 import { GetDeploymentRoutesHas } from "@simplesagar/vercel/models/getdeploymentop.js";
 
 let value: GetDeploymentRoutesHas = {
-    type: "cookie",
-    key: "<key>",
+  type: "host",
+  value: "<value>",
 };
 ```
 

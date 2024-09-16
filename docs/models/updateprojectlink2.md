@@ -6,14 +6,14 @@
 import { UpdateProjectLink2 } from "@simplesagar/vercel/models/updateprojectop.js";
 
 let value: UpdateProjectLink2 = {
-    deployHooks: [
-        {
-            id: "<id>",
-            name: "<value>",
-            ref: "<value>",
-            url: "https://fragrant-championship.org",
-        },
-    ],
+  deployHooks: [
+    {
+      id: "<id>",
+      name: "<value>",
+      ref: "<value>",
+      url: "https://fragrant-championship.org",
+    },
+  ],
 };
 ```
 

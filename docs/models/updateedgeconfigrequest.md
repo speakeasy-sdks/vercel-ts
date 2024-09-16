@@ -6,7 +6,7 @@
 import { UpdateEdgeConfigRequest } from "@simplesagar/vercel/models/updateedgeconfigop.js";
 
 let value: UpdateEdgeConfigRequest = {
-    edgeConfigId: "<value>",
+  edgeConfigId: "<value>",
 };
 ```
 

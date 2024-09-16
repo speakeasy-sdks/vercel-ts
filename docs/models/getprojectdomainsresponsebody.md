@@ -8,19 +8,19 @@ Successful response retrieving a list of domains
 import { GetProjectDomainsResponseBody } from "@simplesagar/vercel/models/getprojectdomainsop.js";
 
 let value: GetProjectDomainsResponseBody = {
-    domains: [
-        {
-            name: "<value>",
-            apexName: "<value>",
-            projectId: "<value>",
-            verified: false,
-        },
-    ],
-    pagination: {
-        count: 20,
-        next: 1540095775951,
-        prev: 1540095775951,
+  domains: [
+    {
+      name: "<value>",
+      apexName: "<value>",
+      projectId: "<value>",
+      verified: false,
     },
+  ],
+  pagination: {
+    count: 20,
+    next: 1540095775951,
+    prev: 1540095775951,
+  },
 };
 ```
 

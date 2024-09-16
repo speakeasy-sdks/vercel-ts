@@ -6,10 +6,10 @@
 import { CreateProjectLinkProjectsDeployHooks } from "@simplesagar/vercel/models/createprojectop.js";
 
 let value: CreateProjectLinkProjectsDeployHooks = {
-    id: "<id>",
-    name: "<value>",
-    ref: "<value>",
-    url: "https://knowing-amenity.net",
+  id: "<id>",
+  name: "<value>",
+  ref: "<value>",
+  url: "https://knowing-amenity.net",
 };
 ```
 

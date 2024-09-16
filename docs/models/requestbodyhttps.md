@@ -6,8 +6,8 @@
 import { RequestBodyHttps } from "@simplesagar/vercel/models/createrecordop.js";
 
 let value: RequestBodyHttps = {
-    priority: 10,
-    target: "host.example.com",
+  priority: 10,
+  target: "host.example.com",
 };
 ```
 

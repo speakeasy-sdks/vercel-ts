@@ -25,7 +25,7 @@ const vercel = new Vercel({
 
 async function run() {
   const result = await vercel.tokens.list();
-
+  
   // Handle the result
   console.log(result)
 }
@@ -97,7 +97,7 @@ const vercel = new Vercel({
 
 async function run() {
   const result = await vercel.tokens.create();
-
+  
   // Handle the result
   console.log(result)
 }
@@ -172,7 +172,7 @@ const vercel = new Vercel({
 
 async function run() {
   const result = await vercel.tokens.get("5d9f2ebd38ddca62e5d51e9c1704c72530bdc8bfdd41e782a6687c48399e8391");
-
+  
   // Handle the result
   console.log(result)
 }
@@ -245,7 +245,7 @@ const vercel = new Vercel({
 
 async function run() {
   const result = await vercel.tokens.delete("5d9f2ebd38ddca62e5d51e9c1704c72530bdc8bfdd41e782a6687c48399e8391");
-
+  
   // Handle the result
   console.log(result)
 }

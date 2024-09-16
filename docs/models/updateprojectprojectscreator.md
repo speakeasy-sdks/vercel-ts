@@ -6,9 +6,9 @@
 import { UpdateProjectProjectsCreator } from "@simplesagar/vercel/models/updateprojectop.js";
 
 let value: UpdateProjectProjectsCreator = {
-    email: "Larissa.Bednar@gmail.com",
-    uid: "<value>",
-    username: "Jefferey.Gibson",
+  email: "Larissa.Bednar@gmail.com",
+  uid: "<value>",
+  username: "Jefferey.Gibson",
 };
 ```
 

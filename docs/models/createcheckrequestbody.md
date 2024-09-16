@@ -6,8 +6,8 @@
 import { CreateCheckRequestBody } from "@simplesagar/vercel/models/createcheckop.js";
 
 let value: CreateCheckRequestBody = {
-    name: "Performance Check",
-    blocking: true,
+  name: "Performance Check",
+  blocking: true,
 };
 ```
 

@@ -30,7 +30,7 @@ const vercel = new Vercel({
 
 async function run() {
   const result = await vercel.projects.updateDataCache("prj_12HKQaOmR5t5Uy6vdcQsNIiZgHGB");
-
+  
   // Handle the result
   console.log(result)
 }
@@ -105,10 +105,11 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.projects.getAll();
-
+  const result = await vercel.projects.getAll({});
+  
   for await (const page of result) {
-    // handle page
+    // Handle the page
+    console.log(page);
   }
 }
 
@@ -130,7 +131,7 @@ const vercel = new VercelCore({
 });
 
 async function run() {
-  const res = await projectsGetAll(vercel);
+  const res = await projectsGetAll(vercel, {});
 
   if (!res.ok) {
     throw res.error;
@@ -139,7 +140,8 @@ async function run() {
   const { value: result } = res;
 
   for await (const page of result) {
-    // handle page
+    // Handle the page
+    console.log(page);
   }
 }
 
@@ -181,7 +183,7 @@ const vercel = new Vercel({
 
 async function run() {
   const result = await vercel.projects.create();
-
+  
   // Handle the result
   console.log(result)
 }
@@ -256,7 +258,7 @@ const vercel = new Vercel({
 
 async function run() {
   const result = await vercel.projects.update("prj_12HKQaOmR5t5Uy6vdcQsNIiZgHGB");
-
+  
   // Handle the result
   console.log(result)
 }
@@ -332,8 +334,6 @@ const vercel = new Vercel({
 
 async function run() {
   await vercel.projects.delete("prj_12HKQaOmR5t5Uy6vdcQsNIiZgHGB");
-
-  
 }
 
 run();
@@ -405,8 +405,6 @@ const vercel = new Vercel({
 
 async function run() {
   await vercel.projects.pause("<value>");
-
-  
 }
 
 run();
@@ -478,8 +476,6 @@ const vercel = new Vercel({
 
 async function run() {
   await vercel.projects.unpause("<value>");
-
-  
 }
 
 run();

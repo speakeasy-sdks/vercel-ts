@@ -6,8 +6,8 @@
 import { GetDeploymentCustomEnvironmentBranchMatcher } from "@simplesagar/vercel/models/getdeploymentop.js";
 
 let value: GetDeploymentCustomEnvironmentBranchMatcher = {
-    type: "startsWith",
-    pattern: "<value>",
+  type: "startsWith",
+  pattern: "<value>",
 };
 ```
 

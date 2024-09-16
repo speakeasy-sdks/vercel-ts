@@ -6,9 +6,9 @@
 import { GetDeploymentResponseBodyTeam } from "@simplesagar/vercel/models/getdeploymentop.js";
 
 let value: GetDeploymentResponseBodyTeam = {
-    id: "<id>",
-    name: "<value>",
-    slug: "<value>",
+  id: "<id>",
+  name: "<value>",
+  slug: "<value>",
 };
 ```
 

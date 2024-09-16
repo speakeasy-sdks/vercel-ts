@@ -6,7 +6,7 @@
 import { GetWebhookRequest } from "@simplesagar/vercel/models/getwebhookop.js";
 
 let value: GetWebhookRequest = {
-    id: "<id>",
+  id: "<id>",
 };
 ```
 

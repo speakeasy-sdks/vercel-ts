@@ -6,9 +6,9 @@
 import { ResponseBody } from "@simplesagar/vercel/models/artifactqueryop.js";
 
 let value: ResponseBody = {
-    error: {
-        message: "<value>",
-    },
+  error: {
+    message: "<value>",
+  },
 };
 ```
 

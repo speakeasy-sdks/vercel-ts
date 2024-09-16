@@ -6,7 +6,7 @@
 import { RenameSecretRequest } from "@simplesagar/vercel/models/renamesecretop.js";
 
 let value: RenameSecretRequest = {
-    name: "my-api-key",
+  name: "my-api-key",
 };
 ```
 

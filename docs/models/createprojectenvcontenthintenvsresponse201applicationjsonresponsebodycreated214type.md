@@ -7,7 +7,8 @@ import {
   CreateProjectEnvContentHintEnvsResponse201ApplicationJSONResponseBodyCreated214Type,
 } from "@simplesagar/vercel/models/createprojectenvop.js";
 
-let value: CreateProjectEnvContentHintEnvsResponse201ApplicationJSONResponseBodyCreated214Type =
+let value:
+  CreateProjectEnvContentHintEnvsResponse201ApplicationJSONResponseBodyCreated214Type =
     "integration-store-secret";
 ```
 

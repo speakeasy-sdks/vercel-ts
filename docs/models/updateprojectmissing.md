@@ -6,7 +6,7 @@
 import { UpdateProjectMissing } from "@simplesagar/vercel/models/updateprojectop.js";
 
 let value: UpdateProjectMissing = {
-    type: "environment",
+  type: "environment",
 };
 ```
 

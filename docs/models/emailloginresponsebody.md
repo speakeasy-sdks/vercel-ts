@@ -8,8 +8,8 @@ The request was successful and an email was sent
 import { EmailLoginResponseBody } from "@simplesagar/vercel/models/emailloginop.js";
 
 let value: EmailLoginResponseBody = {
-    token: "<value>",
-    securityCode: "<value>",
+  token: "<value>",
+  securityCode: "<value>",
 };
 ```
 

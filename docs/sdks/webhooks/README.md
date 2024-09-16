@@ -27,7 +27,7 @@ const vercel = new Vercel({
 
 async function run() {
   const result = await vercel.webhooks.create();
-
+  
   // Handle the result
   console.log(result)
 }
@@ -102,7 +102,7 @@ const vercel = new Vercel({
 
 async function run() {
   const result = await vercel.webhooks.list();
-
+  
   // Handle the result
   console.log(result)
 }
@@ -153,7 +153,7 @@ run();
 
 ### Response
 
-**Promise\<[models.GetWebhooksResponseBody[]](../../models/.md)\>**
+**Promise\<[models.GetWebhooksResponseBody](../../models/getwebhooksresponsebody.md)\>**
 
 ### Errors
 
@@ -176,8 +176,8 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.webhooks.get("<value>");
-
+  const result = await vercel.webhooks.get("<id>");
+  
   // Handle the result
   console.log(result)
 }
@@ -200,7 +200,7 @@ const vercel = new VercelCore({
 });
 
 async function run() {
-  const res = await webhooksGet(vercel, "<value>");
+  const res = await webhooksGet(vercel, "<id>");
 
   if (!res.ok) {
     throw res.error;
@@ -251,9 +251,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  await vercel.webhooks.delete("<value>");
-
-  
+  await vercel.webhooks.delete("<id>");
 }
 
 run();
@@ -274,7 +272,7 @@ const vercel = new VercelCore({
 });
 
 async function run() {
-  const res = await webhooksDelete(vercel, "<value>");
+  const res = await webhooksDelete(vercel, "<id>");
 
   if (!res.ok) {
     throw res.error;

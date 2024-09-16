@@ -6,8 +6,8 @@
 import { Nine } from "@simplesagar/vercel/models/createrecordop.js";
 
 let value: Nine = {
-    name: "subdomain",
-    type: "A",
+  name: "subdomain",
+  type: "A",
 };
 ```
 

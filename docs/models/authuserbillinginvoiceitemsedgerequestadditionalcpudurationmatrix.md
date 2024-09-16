@@ -6,10 +6,10 @@
 import { AuthUserBillingInvoiceItemsEdgeRequestAdditionalCpuDurationMatrix } from "@simplesagar/vercel/models/authuser.js";
 
 let value: AuthUserBillingInvoiceItemsEdgeRequestAdditionalCpuDurationMatrix = {
-    defaultUnitPrice: "<value>",
-    dimensionPrices: {
-        key: "<value>",
-    },
+  defaultUnitPrice: "<value>",
+  dimensionPrices: {
+    "key": "<value>",
+  },
 };
 ```
 

@@ -6,7 +6,7 @@
 import { ListDeploymentAliasesRequest } from "@simplesagar/vercel/models/listdeploymentaliasesop.js";
 
 let value: ListDeploymentAliasesRequest = {
-    id: "dpl_FjvFJncQHQcZMznrUm9EoB8sFuPa",
+  id: "dpl_FjvFJncQHQcZMznrUm9EoB8sFuPa",
 };
 ```
 

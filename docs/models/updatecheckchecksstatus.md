@@ -5,7 +5,7 @@
 ```typescript
 import { UpdateCheckChecksStatus } from "@simplesagar/vercel/models/updatecheckop.js";
 
-let value: UpdateCheckChecksStatus = "running";
+let value: UpdateCheckChecksStatus = "registered";
 ```
 
 ## Values

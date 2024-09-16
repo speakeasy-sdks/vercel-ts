@@ -6,7 +6,7 @@
 import { GetDeploymentsWebAnalytics } from "@simplesagar/vercel/models/getdeploymentsop.js";
 
 let value: GetDeploymentsWebAnalytics = {
-    id: "<id>",
+  id: "<id>",
 };
 ```
 

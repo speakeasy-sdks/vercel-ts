@@ -6,8 +6,8 @@
 import { RemoveProjectEnvResponseBodyContentHint } from "@simplesagar/vercel/models/removeprojectenvop.js";
 
 let value: RemoveProjectEnvResponseBodyContentHint = {
-    type: "postgres-database",
-    storeId: "<value>",
+  type: "postgres-password",
+  storeId: "<value>",
 };
 ```
 

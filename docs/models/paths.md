@@ -6,7 +6,7 @@
 import { Paths } from "@simplesagar/vercel/models/updateprojectop.js";
 
 let value: Paths = {
-    value: "<value>",
+  value: "<value>",
 };
 ```
 

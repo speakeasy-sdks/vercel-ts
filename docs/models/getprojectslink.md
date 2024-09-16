@@ -6,14 +6,14 @@
 import { GetProjectsLink } from "@simplesagar/vercel/models/getprojectsop.js";
 
 let value: GetProjectsLink = {
-    deployHooks: [
-        {
-            id: "<id>",
-            name: "<value>",
-            ref: "<value>",
-            url: "https://embarrassed-advent.net",
-        },
-    ],
+  deployHooks: [
+    {
+      id: "<id>",
+      name: "<value>",
+      ref: "<value>",
+      url: "https://embarrassed-advent.net",
+    },
+  ],
 };
 ```
 

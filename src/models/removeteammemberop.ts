@@ -5,44 +5,44 @@
 import * as z from "zod";
 
 export type RemoveTeamMemberRequest = {
-    teamId: string;
-    uid: string;
+  teamId: string;
+  uid: string;
 };
 
 /**
  * Successfully removed a member of the team.
  */
 export type RemoveTeamMemberResponseBody = {
-    /**
-     * ID of the team.
-     */
-    id: string;
+  /**
+   * ID of the team.
+   */
+  id: string;
 };
 
 /** @internal */
 export const RemoveTeamMemberRequest$inboundSchema: z.ZodType<
-    RemoveTeamMemberRequest,
-    z.ZodTypeDef,
-    unknown
+  RemoveTeamMemberRequest,
+  z.ZodTypeDef,
+  unknown
 > = z.object({
-    teamId: z.string(),
-    uid: z.string(),
+  teamId: z.string(),
+  uid: z.string(),
 });
 
 /** @internal */
 export type RemoveTeamMemberRequest$Outbound = {
-    teamId: string;
-    uid: string;
+  teamId: string;
+  uid: string;
 };
 
 /** @internal */
 export const RemoveTeamMemberRequest$outboundSchema: z.ZodType<
-    RemoveTeamMemberRequest$Outbound,
-    z.ZodTypeDef,
-    RemoveTeamMemberRequest
+  RemoveTeamMemberRequest$Outbound,
+  z.ZodTypeDef,
+  RemoveTeamMemberRequest
 > = z.object({
-    teamId: z.string(),
-    uid: z.string(),
+  teamId: z.string(),
+  uid: z.string(),
 });
 
 /**
@@ -50,35 +50,35 @@ export const RemoveTeamMemberRequest$outboundSchema: z.ZodType<
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
 export namespace RemoveTeamMemberRequest$ {
-    /** @deprecated use `RemoveTeamMemberRequest$inboundSchema` instead. */
-    export const inboundSchema = RemoveTeamMemberRequest$inboundSchema;
-    /** @deprecated use `RemoveTeamMemberRequest$outboundSchema` instead. */
-    export const outboundSchema = RemoveTeamMemberRequest$outboundSchema;
-    /** @deprecated use `RemoveTeamMemberRequest$Outbound` instead. */
-    export type Outbound = RemoveTeamMemberRequest$Outbound;
+  /** @deprecated use `RemoveTeamMemberRequest$inboundSchema` instead. */
+  export const inboundSchema = RemoveTeamMemberRequest$inboundSchema;
+  /** @deprecated use `RemoveTeamMemberRequest$outboundSchema` instead. */
+  export const outboundSchema = RemoveTeamMemberRequest$outboundSchema;
+  /** @deprecated use `RemoveTeamMemberRequest$Outbound` instead. */
+  export type Outbound = RemoveTeamMemberRequest$Outbound;
 }
 
 /** @internal */
 export const RemoveTeamMemberResponseBody$inboundSchema: z.ZodType<
-    RemoveTeamMemberResponseBody,
-    z.ZodTypeDef,
-    unknown
+  RemoveTeamMemberResponseBody,
+  z.ZodTypeDef,
+  unknown
 > = z.object({
-    id: z.string(),
+  id: z.string(),
 });
 
 /** @internal */
 export type RemoveTeamMemberResponseBody$Outbound = {
-    id: string;
+  id: string;
 };
 
 /** @internal */
 export const RemoveTeamMemberResponseBody$outboundSchema: z.ZodType<
-    RemoveTeamMemberResponseBody$Outbound,
-    z.ZodTypeDef,
-    RemoveTeamMemberResponseBody
+  RemoveTeamMemberResponseBody$Outbound,
+  z.ZodTypeDef,
+  RemoveTeamMemberResponseBody
 > = z.object({
-    id: z.string(),
+  id: z.string(),
 });
 
 /**
@@ -86,10 +86,10 @@ export const RemoveTeamMemberResponseBody$outboundSchema: z.ZodType<
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
 export namespace RemoveTeamMemberResponseBody$ {
-    /** @deprecated use `RemoveTeamMemberResponseBody$inboundSchema` instead. */
-    export const inboundSchema = RemoveTeamMemberResponseBody$inboundSchema;
-    /** @deprecated use `RemoveTeamMemberResponseBody$outboundSchema` instead. */
-    export const outboundSchema = RemoveTeamMemberResponseBody$outboundSchema;
-    /** @deprecated use `RemoveTeamMemberResponseBody$Outbound` instead. */
-    export type Outbound = RemoveTeamMemberResponseBody$Outbound;
+  /** @deprecated use `RemoveTeamMemberResponseBody$inboundSchema` instead. */
+  export const inboundSchema = RemoveTeamMemberResponseBody$inboundSchema;
+  /** @deprecated use `RemoveTeamMemberResponseBody$outboundSchema` instead. */
+  export const outboundSchema = RemoveTeamMemberResponseBody$outboundSchema;
+  /** @deprecated use `RemoveTeamMemberResponseBody$Outbound` instead. */
+  export type Outbound = RemoveTeamMemberResponseBody$Outbound;
 }

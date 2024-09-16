@@ -6,16 +6,16 @@
 import { GitRepo3 } from "@simplesagar/vercel/models/createdeploymentop.js";
 
 let value: GitRepo3 = {
-    owner: "<value>",
-    repoUuid: "<value>",
-    slug: "<value>",
-    type: "bitbucket",
-    workspaceUuid: "<value>",
-    path: "/sys",
-    defaultBranch: "<value>",
-    name: "<value>",
-    private: false,
-    ownerType: "team",
+  owner: "<value>",
+  repoUuid: "<value>",
+  slug: "<value>",
+  type: "bitbucket",
+  workspaceUuid: "<value>",
+  path: "/opt/sbin",
+  defaultBranch: "<value>",
+  name: "<value>",
+  private: false,
+  ownerType: "user",
 };
 ```
 

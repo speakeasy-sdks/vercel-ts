@@ -6,11 +6,11 @@
 import { UpdateProjectLastAliasRequest } from "@simplesagar/vercel/models/updateprojectop.js";
 
 let value: UpdateProjectLastAliasRequest = {
-    fromDeploymentId: "<value>",
-    toDeploymentId: "<value>",
-    jobStatus: "succeeded",
-    requestedAt: 5876,
-    type: "promote",
+  fromDeploymentId: "<value>",
+  toDeploymentId: "<value>",
+  jobStatus: "succeeded",
+  requestedAt: 5876,
+  type: "promote",
 };
 ```
 

@@ -6,8 +6,8 @@
 import { GetProjectEnvContentHintEnvs13 } from "@simplesagar/vercel/models/getprojectenvop.js";
 
 let value: GetProjectEnvContentHintEnvs13 = {
-    type: "postgres-url-no-ssl",
-    storeId: "<value>",
+  type: "postgres-url-no-ssl",
+  storeId: "<value>",
 };
 ```
 

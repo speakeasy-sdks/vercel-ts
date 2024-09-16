@@ -6,8 +6,8 @@
 import { AwsMarketplace } from "@simplesagar/vercel/models/authuser.js";
 
 let value: AwsMarketplace = {
-    productCode: "<value>",
-    customerId: "<value>",
+  productCode: "<value>",
+  customerId: "<value>",
 };
 ```
 

@@ -8,14 +8,14 @@ A limited form of data representing a Team, due to the authentication token miss
 import { TeamLimited } from "@simplesagar/vercel/models/teamlimited.js";
 
 let value: TeamLimited = {
-    limited: false,
-    id: "team_nllPyCtREAqxxdyFKbbMDlxd",
-    slug: "my-team",
-    name: "My Team",
-    avatar: "6eb07268bcfadd309905ffb1579354084c24655c",
-    membership: {},
-    created: "<value>",
-    createdAt: 1630748523395,
+  limited: false,
+  id: "team_nllPyCtREAqxxdyFKbbMDlxd",
+  slug: "my-team",
+  name: "My Team",
+  avatar: "6eb07268bcfadd309905ffb1579354084c24655c",
+  membership: {},
+  created: "<value>",
+  createdAt: 1630748523395,
 };
 ```
 

@@ -8,11 +8,11 @@ An object containing billing infomation associated with the User account.
 import { Billing } from "@simplesagar/vercel/models/authuser.js";
 
 let value: Billing = {
-    period: {
-        start: 4912.01,
-        end: 7298.28,
-    },
-    plan: "pro",
+  period: {
+    start: 1764.99,
+    end: 9700.79,
+  },
+  plan: "hobby",
 };
 ```
 

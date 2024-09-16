@@ -8,7 +8,7 @@ Successfully deleted Team invite code.
 import { DeleteTeamInviteCodeResponseBody } from "@simplesagar/vercel/models/deleteteaminvitecodeop.js";
 
 let value: DeleteTeamInviteCodeResponseBody = {
-    id: "<id>",
+  id: "<id>",
 };
 ```
 

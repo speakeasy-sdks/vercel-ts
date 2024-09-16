@@ -6,8 +6,8 @@
 import { CancelDeploymentAliasWarning } from "@simplesagar/vercel/models/canceldeploymentop.js";
 
 let value: CancelDeploymentAliasWarning = {
-    code: "<value>",
-    message: "<value>",
+  code: "<value>",
+  message: "<value>",
 };
 ```
 

@@ -6,8 +6,8 @@
 import { ContentHint13 } from "@simplesagar/vercel/models/createprojectop.js";
 
 let value: ContentHint13 = {
-    type: "postgres-url-no-ssl",
-    storeId: "<value>",
+  type: "postgres-url-no-ssl",
+  storeId: "<value>",
 };
 ```
 

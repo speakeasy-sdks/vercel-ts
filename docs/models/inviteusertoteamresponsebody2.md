@@ -6,9 +6,9 @@
 import { InviteUserToTeamResponseBody2 } from "@simplesagar/vercel/models/inviteusertoteamop.js";
 
 let value: InviteUserToTeamResponseBody2 = {
-    uid: "<value>",
-    username: "Elisa.Smith",
-    role: "CONTRIBUTOR",
+  uid: "<value>",
+  username: "Trent_Gleichner3",
+  role: "DEVELOPER",
 };
 ```
 

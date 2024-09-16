@@ -6,7 +6,7 @@
 import { GetProjectsPaths } from "@simplesagar/vercel/models/getprojectsop.js";
 
 let value: GetProjectsPaths = {
-    value: "<value>",
+  value: "<value>",
 };
 ```
 

@@ -6,7 +6,9 @@
 import { UploadFileResponseBody1 } from "@simplesagar/vercel/models/uploadfileop.js";
 
 let value: UploadFileResponseBody1 = {
-    urls: ["example-upload.aws.com"],
+  urls: [
+    "example-upload.aws.com",
+  ],
 };
 ```
 

@@ -6,11 +6,11 @@
 import { Items } from "@simplesagar/vercel/models/authuser.js";
 
 let value: Items = {
-    id: "<id>",
-    priceId: "<value>",
-    productId: "<value>",
-    amount: 8894.48,
-    quantity: 4956.17,
+  id: "<id>",
+  priceId: "<value>",
+  productId: "<value>",
+  amount: 8541.15,
+  quantity: 3223.33,
 };
 ```
 

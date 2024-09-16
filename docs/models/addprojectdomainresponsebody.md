@@ -8,10 +8,10 @@ The domain was successfully added to the project
 import { AddProjectDomainResponseBody } from "@simplesagar/vercel/models/addprojectdomainop.js";
 
 let value: AddProjectDomainResponseBody = {
-    name: "<value>",
-    apexName: "<value>",
-    projectId: "<value>",
-    verified: false,
+  name: "<value>",
+  apexName: "<value>",
+  projectId: "<value>",
+  verified: false,
 };
 ```
 

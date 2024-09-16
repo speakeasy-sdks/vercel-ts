@@ -6,8 +6,8 @@
 import { GetAllChecksLCP } from "@simplesagar/vercel/models/getallchecksop.js";
 
 let value: GetAllChecksLCP = {
-    value: 1496.75,
-    source: "web-vitals",
+  value: 6176.36,
+  source: "web-vitals",
 };
 ```
 

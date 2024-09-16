@@ -6,10 +6,12 @@
 import { GetProjectsErl } from "@simplesagar/vercel/models/getprojectsop.js";
 
 let value: GetProjectsErl = {
-    algo: "fixed_window",
-    window: 852.95,
-    limit: 580.29,
-    keys: ["<value>"],
+  algo: "fixed_window",
+  window: 852.95,
+  limit: 580.29,
+  keys: [
+    "<value>",
+  ],
 };
 ```
 

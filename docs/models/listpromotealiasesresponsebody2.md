@@ -6,18 +6,18 @@
 import { ListPromoteAliasesResponseBody2 } from "@simplesagar/vercel/models/listpromotealiasesop.js";
 
 let value: ListPromoteAliasesResponseBody2 = {
-    aliases: [
-        {
-            status: "<value>",
-            alias: "<value>",
-            id: "<id>",
-        },
-    ],
-    pagination: {
-        count: 20,
-        next: 1540095775951,
-        prev: 1540095775951,
+  aliases: [
+    {
+      status: "<value>",
+      alias: "<value>",
+      id: "<id>",
     },
+  ],
+  pagination: {
+    count: 20,
+    next: 1540095775951,
+    prev: 1540095775951,
+  },
 };
 ```
 

@@ -6,8 +6,8 @@
 import { Has2 } from "@simplesagar/vercel/models/createdeploymentop.js";
 
 let value: Has2 = {
-    type: "query",
-    key: "<key>",
+  type: "header",
+  key: "<key>",
 };
 ```
 

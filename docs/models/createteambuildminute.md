@@ -6,10 +6,10 @@
 import { CreateTeamBuildMinute } from "@simplesagar/vercel/models/createteamop.js";
 
 let value: CreateTeamBuildMinute = {
-    price: 399.92,
-    batch: 74.68,
-    threshold: 6397.05,
-    hidden: false,
+  price: 5960.65,
+  batch: 7090.36,
+  threshold: 5372.36,
+  hidden: false,
 };
 ```
 

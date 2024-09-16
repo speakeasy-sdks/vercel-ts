@@ -6,10 +6,10 @@
 import { RequestBodySrv } from "@simplesagar/vercel/models/createrecordop.js";
 
 let value: RequestBodySrv = {
-    priority: 10,
-    weight: 10,
-    port: 5000,
-    target: "host.example.com",
+  priority: 10,
+  weight: 10,
+  port: 5000,
+  target: "host.example.com",
 };
 ```
 

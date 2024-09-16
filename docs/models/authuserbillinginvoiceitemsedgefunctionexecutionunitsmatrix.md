@@ -6,10 +6,10 @@
 import { AuthUserBillingInvoiceItemsEdgeFunctionExecutionUnitsMatrix } from "@simplesagar/vercel/models/authuser.js";
 
 let value: AuthUserBillingInvoiceItemsEdgeFunctionExecutionUnitsMatrix = {
-    defaultUnitPrice: "<value>",
-    dimensionPrices: {
-        key: "<value>",
-    },
+  defaultUnitPrice: "<value>",
+  dimensionPrices: {
+    "key": "<value>",
+  },
 };
 ```
 

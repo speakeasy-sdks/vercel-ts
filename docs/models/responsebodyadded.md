@@ -3,9 +3,9 @@
 ## Example Usage
 
 ```typescript
-import { ResponseBodyAdded } from "@simplesagar/vercel/models/getconfigurationop.js";
+import { ResponseBodyAdded } from "@simplesagar/vercel/models/getconfigurationsop.js";
 
-let value: ResponseBodyAdded = "read-write:project-env-vars";
+let value: ResponseBodyAdded = "read-write:log-drain";
 ```
 
 ## Values

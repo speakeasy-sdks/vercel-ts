@@ -6,9 +6,9 @@
 import { UpdateProjectProtectionBypass } from "@simplesagar/vercel/models/updateprojectop.js";
 
 let value: UpdateProjectProtectionBypass = {
-    createdAt: 2728.22,
-    createdBy: "<value>",
-    scope: "automation-bypass",
+  createdAt: 2728.22,
+  createdBy: "<value>",
+  scope: "automation-bypass",
 };
 ```
 

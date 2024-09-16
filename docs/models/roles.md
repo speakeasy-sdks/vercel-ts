@@ -5,7 +5,7 @@
 ```typescript
 import { Roles } from "@simplesagar/vercel/models/patchteamop.js";
 
-let value: Roles = "MEMBER";
+let value: Roles = "VIEWER";
 ```
 
 ## Supported Types

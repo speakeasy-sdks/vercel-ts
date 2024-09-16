@@ -6,8 +6,8 @@
 import { CancelDeploymentProject } from "@simplesagar/vercel/models/canceldeploymentop.js";
 
 let value: CancelDeploymentProject = {
-    id: "<id>",
-    name: "<value>",
+  id: "<id>",
+  name: "<value>",
 };
 ```
 

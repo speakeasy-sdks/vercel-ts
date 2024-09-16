@@ -6,8 +6,8 @@
 import { GitSource3 } from "@simplesagar/vercel/models/createdeploymentop.js";
 
 let value: GitSource3 = {
-    type: "gitlab",
-    projectId: 9425.84,
+  type: "gitlab",
+  projectId: "<value>",
 };
 ```
 

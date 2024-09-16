@@ -6,7 +6,7 @@
 import { GetProjectDomainsRequest } from "@simplesagar/vercel/models/getprojectdomainsop.js";
 
 let value: GetProjectDomainsRequest = {
-    idOrName: "<value>",
+  idOrName: "<value>",
 };
 ```
 

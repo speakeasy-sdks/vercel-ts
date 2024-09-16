@@ -4,45 +4,39 @@
 
 import * as z from "zod";
 
-export type EdgeConfigItemValue =
-    | string
-    | number
-    | boolean
-    | { [k: string]: EdgeConfigItemValue }
-    | Array<EdgeConfigItemValue>;
+export type EdgeConfigItemValue = string | number | boolean | {
+  [k: string]: EdgeConfigItemValue;
+} | Array<EdgeConfigItemValue>;
 
 /** @internal */
 export const EdgeConfigItemValue$inboundSchema: z.ZodType<
-    EdgeConfigItemValue,
-    z.ZodTypeDef,
-    unknown
+  EdgeConfigItemValue,
+  z.ZodTypeDef,
+  unknown
 > = z.union([
-    z.string(),
-    z.number(),
-    z.boolean(),
-    z.record(z.lazy(() => EdgeConfigItemValue$inboundSchema)),
-    z.array(z.lazy(() => EdgeConfigItemValue$inboundSchema)),
+  z.string(),
+  z.number(),
+  z.boolean(),
+  z.record(z.lazy(() => EdgeConfigItemValue$inboundSchema)),
+  z.array(z.lazy(() => EdgeConfigItemValue$inboundSchema)),
 ]);
 
 /** @internal */
-export type EdgeConfigItemValue$Outbound =
-    | string
-    | number
-    | boolean
-    | { [k: string]: EdgeConfigItemValue$Outbound }
-    | Array<EdgeConfigItemValue$Outbound>;
+export type EdgeConfigItemValue$Outbound = string | number | boolean | {
+  [k: string]: EdgeConfigItemValue$Outbound;
+} | Array<EdgeConfigItemValue$Outbound>;
 
 /** @internal */
 export const EdgeConfigItemValue$outboundSchema: z.ZodType<
-    EdgeConfigItemValue$Outbound,
-    z.ZodTypeDef,
-    EdgeConfigItemValue
+  EdgeConfigItemValue$Outbound,
+  z.ZodTypeDef,
+  EdgeConfigItemValue
 > = z.union([
-    z.string(),
-    z.number(),
-    z.boolean(),
-    z.record(z.lazy(() => EdgeConfigItemValue$outboundSchema)),
-    z.array(z.lazy(() => EdgeConfigItemValue$outboundSchema)),
+  z.string(),
+  z.number(),
+  z.boolean(),
+  z.record(z.lazy(() => EdgeConfigItemValue$outboundSchema)),
+  z.array(z.lazy(() => EdgeConfigItemValue$outboundSchema)),
 ]);
 
 /**
@@ -50,10 +44,10 @@ export const EdgeConfigItemValue$outboundSchema: z.ZodType<
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
 export namespace EdgeConfigItemValue$ {
-    /** @deprecated use `EdgeConfigItemValue$inboundSchema` instead. */
-    export const inboundSchema = EdgeConfigItemValue$inboundSchema;
-    /** @deprecated use `EdgeConfigItemValue$outboundSchema` instead. */
-    export const outboundSchema = EdgeConfigItemValue$outboundSchema;
-    /** @deprecated use `EdgeConfigItemValue$Outbound` instead. */
-    export type Outbound = EdgeConfigItemValue$Outbound;
+  /** @deprecated use `EdgeConfigItemValue$inboundSchema` instead. */
+  export const inboundSchema = EdgeConfigItemValue$inboundSchema;
+  /** @deprecated use `EdgeConfigItemValue$outboundSchema` instead. */
+  export const outboundSchema = EdgeConfigItemValue$outboundSchema;
+  /** @deprecated use `EdgeConfigItemValue$Outbound` instead. */
+  export type Outbound = EdgeConfigItemValue$Outbound;
 }

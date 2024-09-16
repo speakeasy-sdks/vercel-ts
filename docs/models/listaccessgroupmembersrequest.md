@@ -6,7 +6,7 @@
 import { ListAccessGroupMembersRequest } from "@simplesagar/vercel/models/listaccessgroupmembersop.js";
 
 let value: ListAccessGroupMembersRequest = {
-    idOrName: "ag_pavWOn1iLObbXLRiwVvzmPrTWyTf",
+  idOrName: "ag_pavWOn1iLObbXLRiwVvzmPrTWyTf",
 };
 ```
 

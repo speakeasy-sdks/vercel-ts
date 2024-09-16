@@ -36,7 +36,7 @@ const vercel = new Vercel({
 
 async function run() {
   const result = await vercel.domains.buy();
-
+  
   // Handle the result
   console.log(result)
 }
@@ -111,7 +111,7 @@ const vercel = new Vercel({
 
 async function run() {
   const result = await vercel.domains.checkPrice("example.com");
-
+  
   // Handle the result
   console.log(result)
 }
@@ -187,7 +187,7 @@ const vercel = new Vercel({
 
 async function run() {
   const result = await vercel.domains.checkStatus("example.com");
-
+  
   // Handle the result
   console.log(result)
 }
@@ -262,7 +262,7 @@ const vercel = new Vercel({
 
 async function run() {
   const result = await vercel.domains.getTransfer("example.com");
-
+  
   // Handle the result
   console.log(result)
 }
@@ -337,7 +337,7 @@ const vercel = new Vercel({
 
 async function run() {
   const result = await vercel.domains.getConfig("example.com");
-
+  
   // Handle the result
   console.log(result)
 }
@@ -413,7 +413,7 @@ const vercel = new Vercel({
 
 async function run() {
   const result = await vercel.domains.get("example.com");
-
+  
   // Handle the result
   console.log(result)
 }
@@ -487,10 +487,11 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.domains.list();
-
+  const result = await vercel.domains.list({});
+  
   for await (const page of result) {
-    // handle page
+    // Handle the page
+    console.log(page);
   }
 }
 
@@ -512,7 +513,7 @@ const vercel = new VercelCore({
 });
 
 async function run() {
-  const res = await domainsList(vercel);
+  const res = await domainsList(vercel, {});
 
   if (!res.ok) {
     throw res.error;
@@ -521,7 +522,8 @@ async function run() {
   const { value: result } = res;
 
   for await (const page of result) {
-    // handle page
+    // Handle the page
+    console.log(page);
   }
 }
 
@@ -563,7 +565,7 @@ const vercel = new Vercel({
 
 async function run() {
   const result = await vercel.domains.createOrTransfer();
-
+  
   // Handle the result
   console.log(result)
 }
@@ -637,8 +639,8 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.domains.update("<value>");
-
+  const result = await vercel.domains.update("tidy-amazon.name");
+  
   // Handle the result
   console.log(result)
 }
@@ -661,7 +663,7 @@ const vercel = new VercelCore({
 });
 
 async function run() {
-  const res = await domainsUpdate(vercel, "<value>");
+  const res = await domainsUpdate(vercel, "tidy-amazon.name");
 
   if (!res.ok) {
     throw res.error;
@@ -714,7 +716,7 @@ const vercel = new Vercel({
 
 async function run() {
   const result = await vercel.domains.delete("example.com");
-
+  
   // Handle the result
   console.log(result)
 }
@@ -791,9 +793,10 @@ async function run() {
   const result = await vercel.domains.listByProject({
     idOrName: "<value>",
   });
-
+  
   for await (const page of result) {
-    // handle page
+    // Handle the page
+    console.log(page);
   }
 }
 
@@ -826,7 +829,8 @@ async function run() {
   const { value: result } = res;
 
   for await (const page of result) {
-    // handle page
+    // Handle the page
+    console.log(page);
   }
 }
 
@@ -868,7 +872,7 @@ const vercel = new Vercel({
 
 async function run() {
   const result = await vercel.domains.create("<value>");
-
+  
   // Handle the result
   console.log(result)
 }
@@ -944,7 +948,7 @@ const vercel = new Vercel({
 
 async function run() {
   const result = await vercel.domains.verify("prj_12HKQaOmR5t5Uy6vdcQsNIiZgHGB", "example.com");
-
+  
   // Handle the result
   console.log(result)
 }

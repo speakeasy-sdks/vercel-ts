@@ -6,10 +6,10 @@
 import { DataCacheRead } from "@simplesagar/vercel/models/authuser.js";
 
 let value: DataCacheRead = {
-    price: 6592.68,
-    batch: 1753.72,
-    threshold: 7249.94,
-    hidden: false,
+  price: 9804.86,
+  batch: 873.82,
+  threshold: 964.5,
+  hidden: false,
 };
 ```
 

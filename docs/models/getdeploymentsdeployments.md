@@ -6,15 +6,15 @@
 import { GetDeploymentsDeployments } from "@simplesagar/vercel/models/getdeploymentsop.js";
 
 let value: GetDeploymentsDeployments = {
-    uid: "dpl_2euZBFqxYdDMDG1jTrHFnNZ2eUVa",
-    name: "docs",
-    url: "docs-9jaeg38me.vercel.app",
-    created: 1609492210000,
-    type: "LAMBDAS",
-    creator: {
-        uid: "eLrCnEgbKhsHyfbiNR7E8496",
-    },
-    inspectorUrl: "https://vercel.com/acme/nextjs/J1hXN00qjUeoYfpEEf7dnDtpSiVq",
+  uid: "dpl_2euZBFqxYdDMDG1jTrHFnNZ2eUVa",
+  name: "docs",
+  url: "docs-9jaeg38me.vercel.app",
+  created: 1609492210000,
+  type: "LAMBDAS",
+  creator: {
+    uid: "eLrCnEgbKhsHyfbiNR7E8496",
+  },
+  inspectorUrl: "https://vercel.com/acme/nextjs/J1hXN00qjUeoYfpEEf7dnDtpSiVq",
 };
 ```
 

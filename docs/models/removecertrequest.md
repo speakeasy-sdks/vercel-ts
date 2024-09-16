@@ -6,7 +6,7 @@
 import { RemoveCertRequest } from "@simplesagar/vercel/models/removecertop.js";
 
 let value: RemoveCertRequest = {
-    id: "<id>",
+  id: "<id>",
 };
 ```
 

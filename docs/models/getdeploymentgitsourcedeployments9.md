@@ -6,11 +6,11 @@
 import { GetDeploymentGitSourceDeployments9 } from "@simplesagar/vercel/models/getdeploymentop.js";
 
 let value: GetDeploymentGitSourceDeployments9 = {
-    type: "bitbucket",
-    ref: "<value>",
-    sha: "<value>",
-    workspaceUuid: "<value>",
-    repoUuid: "<value>",
+  type: "bitbucket",
+  ref: "<value>",
+  sha: "<value>",
+  workspaceUuid: "<value>",
+  repoUuid: "<value>",
 };
 ```
 

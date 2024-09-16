@@ -8,9 +8,9 @@ Will be used to create an invoice item. The price must be in cents: 2000 for $20
 import { IncludedAllocationMiu } from "@simplesagar/vercel/models/authuser.js";
 
 let value: IncludedAllocationMiu = {
-    price: 3759.94,
-    quantity: 7791.8,
-    hidden: false,
+  price: 7358.94,
+  quantity: 8786.01,
+  hidden: false,
 };
 ```
 

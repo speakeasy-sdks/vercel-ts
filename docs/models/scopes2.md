@@ -8,10 +8,10 @@ The access scopes granted to the token.
 import { Scopes2 } from "@simplesagar/vercel/models/authtoken.js";
 
 let value: Scopes2 = {
-    type: "team",
-    teamId: "<value>",
-    origin: "email",
-    createdAt: 4923.61,
+  type: "team",
+  teamId: "<value>",
+  origin: "manual",
+  createdAt: 4150.33,
 };
 ```
 

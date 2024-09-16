@@ -5,7 +5,7 @@
 ```typescript
 import { GetAllChecksStatus } from "@simplesagar/vercel/models/getallchecksop.js";
 
-let value: GetAllChecksStatus = "running";
+let value: GetAllChecksStatus = "completed";
 ```
 
 ## Values

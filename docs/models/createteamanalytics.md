@@ -8,9 +8,9 @@ Will be used to create an invoice item. The price must be in cents: 2000 for $20
 import { CreateTeamAnalytics } from "@simplesagar/vercel/models/createteamop.js";
 
 let value: CreateTeamAnalytics = {
-    price: 2310.7,
-    quantity: 2448.89,
-    hidden: false,
+  price: 2940.76,
+  quantity: 4828.92,
+  hidden: false,
 };
 ```
 

@@ -6,8 +6,8 @@
 import { AuthUserBillingInvoiceItemsIncludedAllocationMiuFrequency } from "@simplesagar/vercel/models/authuser.js";
 
 let value: AuthUserBillingInvoiceItemsIncludedAllocationMiuFrequency = {
-    interval: "month",
-    intervalCount: 5777.09,
+  interval: "month",
+  intervalCount: 9637.41,
 };
 ```
 

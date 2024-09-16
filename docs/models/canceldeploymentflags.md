@@ -6,7 +6,7 @@
 import { CancelDeploymentFlags } from "@simplesagar/vercel/models/canceldeploymentop.js";
 
 let value: CancelDeploymentFlags = {
-    definitions: {},
+  definitions: {},
 };
 ```
 

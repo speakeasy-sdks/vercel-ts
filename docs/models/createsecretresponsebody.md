@@ -8,10 +8,10 @@ Successful response showing the created secret.
 import { CreateSecretResponseBody } from "@simplesagar/vercel/models/createsecretop.js";
 
 let value: CreateSecretResponseBody = {
-    value: {},
-    created: new Date("2021-02-10T13:11:49.180Z"),
-    name: "my-api-key",
-    uid: "sec_XCG7t7AIHuO2SBA8667zNUiM",
+  value: {},
+  created: new Date("2021-02-10T13:11:49.180Z"),
+  name: "my-api-key",
+  uid: "sec_XCG7t7AIHuO2SBA8667zNUiM",
 };
 ```
 

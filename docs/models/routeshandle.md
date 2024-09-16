@@ -5,7 +5,7 @@
 ```typescript
 import { RoutesHandle } from "@simplesagar/vercel/models/createdeploymentop.js";
 
-let value: RoutesHandle = "resource";
+let value: RoutesHandle = "rewrite";
 ```
 
 ## Values

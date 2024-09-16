@@ -5,7 +5,7 @@
 ```typescript
 import { GetConfigurationResponseBodyIntegrationsUpgraded } from "@simplesagar/vercel/models/getconfigurationop.js";
 
-let value: GetConfigurationResponseBodyIntegrationsUpgraded = "read:domain";
+let value: GetConfigurationResponseBodyIntegrationsUpgraded = "read:project";
 ```
 
 ## Values

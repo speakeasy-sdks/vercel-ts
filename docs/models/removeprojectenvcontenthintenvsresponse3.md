@@ -6,8 +6,8 @@
 import { RemoveProjectEnvContentHintEnvsResponse3 } from "@simplesagar/vercel/models/removeprojectenvop.js";
 
 let value: RemoveProjectEnvContentHintEnvsResponse3 = {
-    type: "redis-rest-api-token",
-    storeId: "<value>",
+  type: "redis-rest-api-token",
+  storeId: "<value>",
 };
 ```
 

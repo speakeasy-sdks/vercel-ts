@@ -6,8 +6,8 @@
 import { CreateProjectMitigate } from "@simplesagar/vercel/models/createprojectop.js";
 
 let value: CreateProjectMitigate = {
-    action: "redirect",
-    ruleId: "<value>",
+  action: "redirect",
+  ruleId: "<value>",
 };
 ```
 

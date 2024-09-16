@@ -6,10 +6,10 @@
 import { Payload } from "@simplesagar/vercel/models/getdeploymenteventsop.js";
 
 let value: Payload = {
-    deploymentId: "<value>",
-    id: "<id>",
-    date: 6900.25,
-    serial: "<value>",
+  deploymentId: "<value>",
+  id: "<id>",
+  date: 4732.21,
+  serial: "<value>",
 };
 ```
 

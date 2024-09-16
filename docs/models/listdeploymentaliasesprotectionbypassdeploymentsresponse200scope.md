@@ -5,7 +5,8 @@
 ```typescript
 import { ListDeploymentAliasesProtectionBypassDeploymentsResponse200Scope } from "@simplesagar/vercel/models/listdeploymentaliasesop.js";
 
-let value: ListDeploymentAliasesProtectionBypassDeploymentsResponse200Scope = "email_invite";
+let value: ListDeploymentAliasesProtectionBypassDeploymentsResponse200Scope =
+  "email_invite";
 ```
 
 ## Values

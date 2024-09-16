@@ -6,10 +6,10 @@
 import { StorageRedisTotalCommands } from "@simplesagar/vercel/models/authuser.js";
 
 let value: StorageRedisTotalCommands = {
-    price: 688.52,
-    batch: 2426.37,
-    threshold: 7057.1,
-    hidden: false,
+  price: 3924.3,
+  batch: 3359.77,
+  threshold: 3919.33,
+  hidden: false,
 };
 ```
 

@@ -8,7 +8,7 @@ Authentication token successfully deleted.
 import { DeleteAuthTokenResponseBody } from "@simplesagar/vercel/models/deleteauthtokenop.js";
 
 let value: DeleteAuthTokenResponseBody = {
-    tokenId: "5d9f2ebd38ddca62e5d51e9c1704c72530bdc8bfdd41e782a6687c48399e8391",
+  tokenId: "5d9f2ebd38ddca62e5d51e9c1704c72530bdc8bfdd41e782a6687c48399e8391",
 };
 ```
 

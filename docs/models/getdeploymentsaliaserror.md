@@ -8,8 +8,8 @@ An error object in case aliasing of the deployment failed.
 import { GetDeploymentsAliasError } from "@simplesagar/vercel/models/getdeploymentsop.js";
 
 let value: GetDeploymentsAliasError = {
-    code: "<value>",
-    message: "<value>",
+  code: "<value>",
+  message: "<value>",
 };
 ```
 

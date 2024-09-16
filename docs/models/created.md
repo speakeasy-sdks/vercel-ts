@@ -5,7 +5,9 @@
 ```typescript
 import { Created } from "@simplesagar/vercel/models/createprojectenvop.js";
 
-let value: Created = {};
+let value: Created = [
+  {},
+];
 ```
 
 ## Supported Types

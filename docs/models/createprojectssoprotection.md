@@ -6,7 +6,7 @@
 import { CreateProjectSsoProtection } from "@simplesagar/vercel/models/createprojectop.js";
 
 let value: CreateProjectSsoProtection = {
-    deploymentType: "all",
+  deploymentType: "all",
 };
 ```
 

@@ -6,8 +6,8 @@
 import { UpdateProjectDomainRequest } from "@simplesagar/vercel/models/updateprojectdomainop.js";
 
 let value: UpdateProjectDomainRequest = {
-    idOrName: "<value>",
-    domain: "www.example.com",
+  idOrName: "<value>",
+  domain: "www.example.com",
 };
 ```
 

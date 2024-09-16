@@ -6,8 +6,8 @@
 import { PreferredScopesAndGitNamespaces } from "@simplesagar/vercel/models/authuser.js";
 
 let value: PreferredScopesAndGitNamespaces = {
-    scopeId: "<value>",
-    gitNamespaceId: "<value>",
+  scopeId: "<value>",
+  gitNamespaceId: "<value>",
 };
 ```
 

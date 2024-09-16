@@ -8,11 +8,11 @@ Specify a list of paths that should not be protected by Deployment Protection to
 import { OptionsAllowlist } from "@simplesagar/vercel/models/updateprojectop.js";
 
 let value: OptionsAllowlist = {
-    paths: [
-        {
-            value: "<value>",
-        },
-    ],
+  paths: [
+    {
+      value: "<value>",
+    },
+  ],
 };
 ```
 

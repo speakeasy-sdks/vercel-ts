@@ -8,11 +8,11 @@ Successfuly requested access to the team.
 import { RequestAccessToTeamResponseBody } from "@simplesagar/vercel/models/requestaccesstoteamop.js";
 
 let value: RequestAccessToTeamResponseBody = {
-    teamSlug: "<value>",
-    teamName: "<value>",
-    github: {},
-    gitlab: {},
-    bitbucket: {},
+  teamSlug: "<value>",
+  teamName: "<value>",
+  github: {},
+  gitlab: {},
+  bitbucket: {},
 };
 ```
 

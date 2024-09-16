@@ -6,9 +6,9 @@
 import { CreateProjectEnv12 } from "@simplesagar/vercel/models/createprojectenvop.js";
 
 let value: CreateProjectEnv12 = {
-    key: "API_URL",
-    value: "https://api.vercel.com",
-    type: "plain",
+  key: "API_URL",
+  value: "https://api.vercel.com",
+  type: "plain",
 };
 ```
 

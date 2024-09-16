@@ -5,7 +5,7 @@
 ```typescript
 import { GetDeploymentResponseBodySource } from "@simplesagar/vercel/models/getdeploymentop.js";
 
-let value: GetDeploymentResponseBodySource = "clone/repo";
+let value: GetDeploymentResponseBodySource = "redeploy";
 ```
 
 ## Values

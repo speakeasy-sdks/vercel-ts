@@ -6,10 +6,10 @@
 import { RenameSecretResponseBody } from "@simplesagar/vercel/models/renamesecretop.js";
 
 let value: RenameSecretResponseBody = {
-    uid: "<value>",
-    name: "<value>",
-    created: new Date("2022-02-03T14:30:29.622Z"),
-    oldName: "<value>",
+  uid: "<value>",
+  name: "<value>",
+  created: new Date("2024-05-21T07:21:31.125Z"),
+  oldName: "<value>",
 };
 ```
 

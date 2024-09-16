@@ -6,28 +6,28 @@
 import { SearchRepoResponseBody } from "@simplesagar/vercel/models/searchrepoop.js";
 
 let value: SearchRepoResponseBody = {
-    gitAccount: {
-        provider: "bitbucket",
-        namespaceId: 585.34,
+  gitAccount: {
+    provider: "gitlab",
+    namespaceId: 9672.6,
+  },
+  repos: [
+    {
+      id: "<id>",
+      provider: "github",
+      url: "https://any-bush.info",
+      name: "<value>",
+      slug: "<value>",
+      namespace: "<value>",
+      owner: {
+        id: "<id>",
+        name: "<value>",
+      },
+      ownerType: "user",
+      private: false,
+      defaultBranch: "<value>",
+      updatedAt: 4037.93,
     },
-    repos: [
-        {
-            id: "<value>",
-            provider: "github-custom-host",
-            url: "http://chilly-jeweller.info",
-            name: "<value>",
-            slug: "<value>",
-            namespace: "<value>",
-            owner: {
-                id: 9799.63,
-                name: "<value>",
-            },
-            ownerType: "team",
-            private: false,
-            defaultBranch: "<value>",
-            updatedAt: 4237.06,
-        },
-    ],
+  ],
 };
 ```
 

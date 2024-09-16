@@ -8,8 +8,8 @@ Similar to `contentHints`, but should not be exposed to the user.
 import { InternalContentHint } from "@simplesagar/vercel/models/updateprojectdatacacheop.js";
 
 let value: InternalContentHint = {
-    type: "flags-secret",
-    encryptedValue: "<value>",
+  type: "flags-secret",
+  encryptedValue: "<value>",
 };
 ```
 

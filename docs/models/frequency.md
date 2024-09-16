@@ -6,8 +6,8 @@
 import { Frequency } from "@simplesagar/vercel/models/authuser.js";
 
 let value: Frequency = {
-    interval: "week",
-    intervalCount: 1797.95,
+  interval: "year",
+  intervalCount: 6040.78,
 };
 ```
 

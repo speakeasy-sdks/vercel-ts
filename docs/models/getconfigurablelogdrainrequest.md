@@ -6,7 +6,7 @@
 import { GetConfigurableLogDrainRequest } from "@simplesagar/vercel/models/getconfigurablelogdrainop.js";
 
 let value: GetConfigurableLogDrainRequest = {
-    id: "<id>",
+  id: "<id>",
 };
 ```
 

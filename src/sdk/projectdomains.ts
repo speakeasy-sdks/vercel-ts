@@ -9,54 +9,72 @@ import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import { GetProjectDomainResponseBody } from "../models/getprojectdomainop.js";
 import { RemoveProjectDomainResponseBody } from "../models/removeprojectdomainop.js";
 import {
-    UpdateProjectDomainRequest,
-    UpdateProjectDomainResponseBody,
+  UpdateProjectDomainRequest,
+  UpdateProjectDomainResponseBody,
 } from "../models/updateprojectdomainop.js";
 import { unwrapAsync } from "../types/fp.js";
 
 export class ProjectDomains extends ClientSDK {
-    /**
-     * Get a project domain
-     *
-     * @remarks
-     * Get project domain by project id/name and domain name.
-     */
-    async get(
-        idOrName: string,
-        domain: string,
-        teamId?: string | undefined,
-        slug?: string | undefined,
-        options?: RequestOptions
-    ): Promise<GetProjectDomainResponseBody> {
-        return unwrapAsync(projectDomainsGet(this, idOrName, domain, teamId, slug, options));
-    }
+  /**
+   * Get a project domain
+   *
+   * @remarks
+   * Get project domain by project id/name and domain name.
+   */
+  async get(
+    idOrName: string,
+    domain: string,
+    teamId?: string | undefined,
+    slug?: string | undefined,
+    options?: RequestOptions,
+  ): Promise<GetProjectDomainResponseBody> {
+    return unwrapAsync(projectDomainsGet(
+      this,
+      idOrName,
+      domain,
+      teamId,
+      slug,
+      options,
+    ));
+  }
 
-    /**
-     * Update a project domain
-     *
-     * @remarks
-     * Update a project domain's configuration, including the name, git branch and redirect of the domain.
-     */
-    async update(
-        request: UpdateProjectDomainRequest,
-        options?: RequestOptions
-    ): Promise<UpdateProjectDomainResponseBody> {
-        return unwrapAsync(projectDomainsUpdate(this, request, options));
-    }
+  /**
+   * Update a project domain
+   *
+   * @remarks
+   * Update a project domain's configuration, including the name, git branch and redirect of the domain.
+   */
+  async update(
+    request: UpdateProjectDomainRequest,
+    options?: RequestOptions,
+  ): Promise<UpdateProjectDomainResponseBody> {
+    return unwrapAsync(projectDomainsUpdate(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Remove a domain from a project
-     *
-     * @remarks
-     * Remove a domain from a project by passing the domain name and by specifying the project by either passing the project `id` or `name` in the URL.
-     */
-    async delete(
-        idOrName: string,
-        domain: string,
-        teamId?: string | undefined,
-        slug?: string | undefined,
-        options?: RequestOptions
-    ): Promise<RemoveProjectDomainResponseBody> {
-        return unwrapAsync(projectDomainsDelete(this, idOrName, domain, teamId, slug, options));
-    }
+  /**
+   * Remove a domain from a project
+   *
+   * @remarks
+   * Remove a domain from a project by passing the domain name and by specifying the project by either passing the project `id` or `name` in the URL.
+   */
+  async delete(
+    idOrName: string,
+    domain: string,
+    teamId?: string | undefined,
+    slug?: string | undefined,
+    options?: RequestOptions,
+  ): Promise<RemoveProjectDomainResponseBody> {
+    return unwrapAsync(projectDomainsDelete(
+      this,
+      idOrName,
+      domain,
+      teamId,
+      slug,
+      options,
+    ));
+  }
 }

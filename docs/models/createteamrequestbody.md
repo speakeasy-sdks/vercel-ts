@@ -6,7 +6,7 @@
 import { CreateTeamRequestBody } from "@simplesagar/vercel/models/createteamop.js";
 
 let value: CreateTeamRequestBody = {
-    slug: "a-random-team",
+  slug: "a-random-team",
 };
 ```
 

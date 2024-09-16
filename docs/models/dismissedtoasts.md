@@ -8,13 +8,13 @@ A record of when, under a certain scopeId, a toast was dismissed
 import { DismissedToasts } from "@simplesagar/vercel/models/authuser.js";
 
 let value: DismissedToasts = {
-    name: "<value>",
-    dismissals: [
-        {
-            scopeId: "<value>",
-            createdAt: 3670.46,
-        },
-    ],
+  name: "<value>",
+  dismissals: [
+    {
+      scopeId: "<value>",
+      createdAt: 3041.73,
+    },
+  ],
 };
 ```
 

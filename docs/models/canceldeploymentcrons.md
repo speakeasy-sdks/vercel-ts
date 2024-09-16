@@ -6,8 +6,8 @@
 import { CancelDeploymentCrons } from "@simplesagar/vercel/models/canceldeploymentop.js";
 
 let value: CancelDeploymentCrons = {
-    schedule: "<value>",
-    path: "/root",
+  schedule: "<value>",
+  path: "/root",
 };
 ```
 

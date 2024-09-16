@@ -6,8 +6,8 @@
 import { UpdateTeamMemberRequest } from "@simplesagar/vercel/models/updateteammemberop.js";
 
 let value: UpdateTeamMemberRequest = {
-    teamId: "<value>",
-    uid: "<value>",
+  teamId: "<value>",
+  uid: "<value>",
 };
 ```
 

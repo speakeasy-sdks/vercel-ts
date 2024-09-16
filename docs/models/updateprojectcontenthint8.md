@@ -6,8 +6,8 @@
 import { UpdateProjectContentHint8 } from "@simplesagar/vercel/models/updateprojectop.js";
 
 let value: UpdateProjectContentHint8 = {
-    type: "postgres-prisma-url",
-    storeId: "<value>",
+  type: "postgres-prisma-url",
+  storeId: "<value>",
 };
 ```
 

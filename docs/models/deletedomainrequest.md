@@ -6,7 +6,7 @@
 import { DeleteDomainRequest } from "@simplesagar/vercel/models/deletedomainop.js";
 
 let value: DeleteDomainRequest = {
-    domain: "example.com",
+  domain: "example.com",
 };
 ```
 

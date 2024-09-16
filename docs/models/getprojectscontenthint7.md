@@ -6,8 +6,8 @@
 import { GetProjectsContentHint7 } from "@simplesagar/vercel/models/getprojectsop.js";
 
 let value: GetProjectsContentHint7 = {
-    type: "postgres-url-non-pooling",
-    storeId: "<value>",
+  type: "postgres-url-non-pooling",
+  storeId: "<value>",
 };
 ```
 

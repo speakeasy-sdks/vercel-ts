@@ -5,7 +5,7 @@
 ```typescript
 import { FilterProjectEnvsResponseBodyType } from "@simplesagar/vercel/models/filterprojectenvsop.js";
 
-let value: FilterProjectEnvsResponseBodyType = "sensitive";
+let value: FilterProjectEnvsResponseBodyType = "system";
 ```
 
 ## Values

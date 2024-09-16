@@ -6,7 +6,7 @@
 import { CheckDomainStatusRequest } from "@simplesagar/vercel/models/checkdomainstatusop.js";
 
 let value: CheckDomainStatusRequest = {
-    name: "example.com",
+  name: "example.com",
 };
 ```
 

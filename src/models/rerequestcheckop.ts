@@ -5,56 +5,56 @@
 import * as z from "zod";
 
 export type RerequestCheckRequest = {
-    /**
-     * The deployment to rerun the check for.
-     */
-    deploymentId: string;
-    /**
-     * The check to rerun
-     */
-    checkId: string;
-    /**
-     * The Team identifier to perform the request on behalf of.
-     */
-    teamId?: string | undefined;
-    /**
-     * The Team slug to perform the request on behalf of.
-     */
-    slug?: string | undefined;
+  /**
+   * The deployment to rerun the check for.
+   */
+  deploymentId: string;
+  /**
+   * The check to rerun
+   */
+  checkId: string;
+  /**
+   * The Team identifier to perform the request on behalf of.
+   */
+  teamId?: string | undefined;
+  /**
+   * The Team slug to perform the request on behalf of.
+   */
+  slug?: string | undefined;
 };
 
 export type RerequestCheckResponseBody = {};
 
 /** @internal */
 export const RerequestCheckRequest$inboundSchema: z.ZodType<
-    RerequestCheckRequest,
-    z.ZodTypeDef,
-    unknown
+  RerequestCheckRequest,
+  z.ZodTypeDef,
+  unknown
 > = z.object({
-    deploymentId: z.string(),
-    checkId: z.string(),
-    teamId: z.string().optional(),
-    slug: z.string().optional(),
+  deploymentId: z.string(),
+  checkId: z.string(),
+  teamId: z.string().optional(),
+  slug: z.string().optional(),
 });
 
 /** @internal */
 export type RerequestCheckRequest$Outbound = {
-    deploymentId: string;
-    checkId: string;
-    teamId?: string | undefined;
-    slug?: string | undefined;
+  deploymentId: string;
+  checkId: string;
+  teamId?: string | undefined;
+  slug?: string | undefined;
 };
 
 /** @internal */
 export const RerequestCheckRequest$outboundSchema: z.ZodType<
-    RerequestCheckRequest$Outbound,
-    z.ZodTypeDef,
-    RerequestCheckRequest
+  RerequestCheckRequest$Outbound,
+  z.ZodTypeDef,
+  RerequestCheckRequest
 > = z.object({
-    deploymentId: z.string(),
-    checkId: z.string(),
-    teamId: z.string().optional(),
-    slug: z.string().optional(),
+  deploymentId: z.string(),
+  checkId: z.string(),
+  teamId: z.string().optional(),
+  slug: z.string().optional(),
 });
 
 /**
@@ -62,19 +62,19 @@ export const RerequestCheckRequest$outboundSchema: z.ZodType<
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
 export namespace RerequestCheckRequest$ {
-    /** @deprecated use `RerequestCheckRequest$inboundSchema` instead. */
-    export const inboundSchema = RerequestCheckRequest$inboundSchema;
-    /** @deprecated use `RerequestCheckRequest$outboundSchema` instead. */
-    export const outboundSchema = RerequestCheckRequest$outboundSchema;
-    /** @deprecated use `RerequestCheckRequest$Outbound` instead. */
-    export type Outbound = RerequestCheckRequest$Outbound;
+  /** @deprecated use `RerequestCheckRequest$inboundSchema` instead. */
+  export const inboundSchema = RerequestCheckRequest$inboundSchema;
+  /** @deprecated use `RerequestCheckRequest$outboundSchema` instead. */
+  export const outboundSchema = RerequestCheckRequest$outboundSchema;
+  /** @deprecated use `RerequestCheckRequest$Outbound` instead. */
+  export type Outbound = RerequestCheckRequest$Outbound;
 }
 
 /** @internal */
 export const RerequestCheckResponseBody$inboundSchema: z.ZodType<
-    RerequestCheckResponseBody,
-    z.ZodTypeDef,
-    unknown
+  RerequestCheckResponseBody,
+  z.ZodTypeDef,
+  unknown
 > = z.object({});
 
 /** @internal */
@@ -82,9 +82,9 @@ export type RerequestCheckResponseBody$Outbound = {};
 
 /** @internal */
 export const RerequestCheckResponseBody$outboundSchema: z.ZodType<
-    RerequestCheckResponseBody$Outbound,
-    z.ZodTypeDef,
-    RerequestCheckResponseBody
+  RerequestCheckResponseBody$Outbound,
+  z.ZodTypeDef,
+  RerequestCheckResponseBody
 > = z.object({});
 
 /**
@@ -92,10 +92,10 @@ export const RerequestCheckResponseBody$outboundSchema: z.ZodType<
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
 export namespace RerequestCheckResponseBody$ {
-    /** @deprecated use `RerequestCheckResponseBody$inboundSchema` instead. */
-    export const inboundSchema = RerequestCheckResponseBody$inboundSchema;
-    /** @deprecated use `RerequestCheckResponseBody$outboundSchema` instead. */
-    export const outboundSchema = RerequestCheckResponseBody$outboundSchema;
-    /** @deprecated use `RerequestCheckResponseBody$Outbound` instead. */
-    export type Outbound = RerequestCheckResponseBody$Outbound;
+  /** @deprecated use `RerequestCheckResponseBody$inboundSchema` instead. */
+  export const inboundSchema = RerequestCheckResponseBody$inboundSchema;
+  /** @deprecated use `RerequestCheckResponseBody$outboundSchema` instead. */
+  export const outboundSchema = RerequestCheckResponseBody$outboundSchema;
+  /** @deprecated use `RerequestCheckResponseBody$Outbound` instead. */
+  export type Outbound = RerequestCheckResponseBody$Outbound;
 }

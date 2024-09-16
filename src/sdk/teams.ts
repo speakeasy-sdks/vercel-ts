@@ -16,209 +16,291 @@ import { teamsRequestAccess } from "../funcs/teamsRequestAccess.js";
 import { teamsUpdate } from "../funcs/teamsUpdate.js";
 import { teamsUpdateMember } from "../funcs/teamsUpdateMember.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
-import { CreateTeamRequestBody, CreateTeamResponseBody } from "../models/createteamop.js";
+import {
+  CreateTeamRequestBody,
+  CreateTeamResponseBody,
+} from "../models/createteamop.js";
 import { DeleteTeamInviteCodeResponseBody } from "../models/deleteteaminvitecodeop.js";
-import { DeleteTeamRequestBody, DeleteTeamResponseBody } from "../models/deleteteamop.js";
+import {
+  DeleteTeamRequestBody,
+  DeleteTeamResponseBody,
+} from "../models/deleteteamop.js";
 import { GetTeamAccessRequestResponseBody } from "../models/getteamaccessrequestop.js";
-import { GetTeamMembersRequest, GetTeamMembersResponseBody } from "../models/getteammembersop.js";
+import {
+  GetTeamMembersRequest,
+  GetTeamMembersResponseBody,
+} from "../models/getteammembersop.js";
 import { GetTeamsResponseBody } from "../models/getteamsop.js";
 import {
-    InviteUserToTeamRequestBody,
-    InviteUserToTeamResponseBody,
+  InviteUserToTeamRequestBody,
+  InviteUserToTeamResponseBody,
 } from "../models/inviteusertoteamop.js";
-import { JoinTeamRequestBody, JoinTeamResponseBody } from "../models/jointeamop.js";
+import {
+  JoinTeamRequestBody,
+  JoinTeamResponseBody,
+} from "../models/jointeamop.js";
 import { PatchTeamRequestBody } from "../models/patchteamop.js";
 import { RemoveTeamMemberResponseBody } from "../models/removeteammemberop.js";
 import {
-    RequestAccessToTeamRequestBody,
-    RequestAccessToTeamResponseBody,
+  RequestAccessToTeamRequestBody,
+  RequestAccessToTeamResponseBody,
 } from "../models/requestaccesstoteamop.js";
 import { Team } from "../models/team.js";
 import {
-    UpdateTeamMemberRequestBody,
-    UpdateTeamMemberResponseBody,
+  UpdateTeamMemberRequestBody,
+  UpdateTeamMemberResponseBody,
 } from "../models/updateteammemberop.js";
 import { unwrapAsync } from "../types/fp.js";
 
 export class Teams extends ClientSDK {
-    /**
-     * List team members
-     *
-     * @remarks
-     * Get a paginated list of team members for the provided team.
-     */
-    async getMembers(
-        request: GetTeamMembersRequest,
-        options?: RequestOptions
-    ): Promise<GetTeamMembersResponseBody> {
-        return unwrapAsync(teamsGetMembers(this, request, options));
-    }
+  /**
+   * List team members
+   *
+   * @remarks
+   * Get a paginated list of team members for the provided team.
+   */
+  async getMembers(
+    request: GetTeamMembersRequest,
+    options?: RequestOptions,
+  ): Promise<GetTeamMembersResponseBody> {
+    return unwrapAsync(teamsGetMembers(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Invite a user
-     *
-     * @remarks
-     * Invite a user to join the team specified in the URL. The authenticated user needs to be an `OWNER` in order to successfully invoke this endpoint. The user can be specified with an email or an ID. If both email and ID are provided, ID will take priority.
-     */
-    async inviteUser(
-        teamId: string,
-        requestBody?: InviteUserToTeamRequestBody | undefined,
-        options?: RequestOptions
-    ): Promise<InviteUserToTeamResponseBody> {
-        return unwrapAsync(teamsInviteUser(this, teamId, requestBody, options));
-    }
+  /**
+   * Invite a user
+   *
+   * @remarks
+   * Invite a user to join the team specified in the URL. The authenticated user needs to be an `OWNER` in order to successfully invoke this endpoint. The user can be specified with an email or an ID. If both email and ID are provided, ID will take priority.
+   */
+  async inviteUser(
+    teamId: string,
+    requestBody?: InviteUserToTeamRequestBody | undefined,
+    options?: RequestOptions,
+  ): Promise<InviteUserToTeamResponseBody> {
+    return unwrapAsync(teamsInviteUser(
+      this,
+      teamId,
+      requestBody,
+      options,
+    ));
+  }
 
-    /**
-     * Request access to a team
-     *
-     * @remarks
-     * Request access to a team as a member. An owner has to approve the request. Only 10 users can request access to a team at the same time.
-     */
-    async requestAccess(
-        teamId: string,
-        requestBody?: RequestAccessToTeamRequestBody | undefined,
-        options?: RequestOptions
-    ): Promise<RequestAccessToTeamResponseBody> {
-        return unwrapAsync(teamsRequestAccess(this, teamId, requestBody, options));
-    }
+  /**
+   * Request access to a team
+   *
+   * @remarks
+   * Request access to a team as a member. An owner has to approve the request. Only 10 users can request access to a team at the same time.
+   */
+  async requestAccess(
+    teamId: string,
+    requestBody?: RequestAccessToTeamRequestBody | undefined,
+    options?: RequestOptions,
+  ): Promise<RequestAccessToTeamResponseBody> {
+    return unwrapAsync(teamsRequestAccess(
+      this,
+      teamId,
+      requestBody,
+      options,
+    ));
+  }
 
-    /**
-     * Get access request status
-     *
-     * @remarks
-     * Check the status of a join request. It'll respond with a 404 if the request has been declined. If no `userId` path segment was provided, this endpoint will instead return the status of the authenticated user.
-     */
-    async getAccessRequest(
-        teamId: string,
-        userId: string,
-        options?: RequestOptions
-    ): Promise<GetTeamAccessRequestResponseBody> {
-        return unwrapAsync(teamsGetAccessRequest(this, teamId, userId, options));
-    }
+  /**
+   * Get access request status
+   *
+   * @remarks
+   * Check the status of a join request. It'll respond with a 404 if the request has been declined. If no `userId` path segment was provided, this endpoint will instead return the status of the authenticated user.
+   */
+  async getAccessRequest(
+    teamId: string,
+    userId: string,
+    options?: RequestOptions,
+  ): Promise<GetTeamAccessRequestResponseBody> {
+    return unwrapAsync(teamsGetAccessRequest(
+      this,
+      teamId,
+      userId,
+      options,
+    ));
+  }
 
-    /**
-     * Join a team
-     *
-     * @remarks
-     * Join a team with a provided invite code or team ID.
-     */
-    async join(
-        teamId: string,
-        requestBody?: JoinTeamRequestBody | undefined,
-        options?: RequestOptions
-    ): Promise<JoinTeamResponseBody> {
-        return unwrapAsync(teamsJoin(this, teamId, requestBody, options));
-    }
+  /**
+   * Join a team
+   *
+   * @remarks
+   * Join a team with a provided invite code or team ID.
+   */
+  async join(
+    teamId: string,
+    requestBody?: JoinTeamRequestBody | undefined,
+    options?: RequestOptions,
+  ): Promise<JoinTeamResponseBody> {
+    return unwrapAsync(teamsJoin(
+      this,
+      teamId,
+      requestBody,
+      options,
+    ));
+  }
 
-    /**
-     * Update a Team Member
-     *
-     * @remarks
-     * Update the membership of a Team Member on the Team specified by `teamId`, such as changing the _role_ of the member, or confirming a request to join the Team for an unconfirmed member. The authenticated user must be an `OWNER` of the Team.
-     */
-    async updateMember(
-        teamId: string,
-        uid: string,
-        requestBody?: UpdateTeamMemberRequestBody | undefined,
-        options?: RequestOptions
-    ): Promise<UpdateTeamMemberResponseBody> {
-        return unwrapAsync(teamsUpdateMember(this, teamId, uid, requestBody, options));
-    }
+  /**
+   * Update a Team Member
+   *
+   * @remarks
+   * Update the membership of a Team Member on the Team specified by `teamId`, such as changing the _role_ of the member, or confirming a request to join the Team for an unconfirmed member. The authenticated user must be an `OWNER` of the Team.
+   */
+  async updateMember(
+    teamId: string,
+    uid: string,
+    requestBody?: UpdateTeamMemberRequestBody | undefined,
+    options?: RequestOptions,
+  ): Promise<UpdateTeamMemberResponseBody> {
+    return unwrapAsync(teamsUpdateMember(
+      this,
+      teamId,
+      uid,
+      requestBody,
+      options,
+    ));
+  }
 
-    /**
-     * Remove a Team Member
-     *
-     * @remarks
-     * Remove a Team Member from the Team, or dismiss a user that requested access, or leave a team.
-     */
-    async removeMember(
-        teamId: string,
-        uid: string,
-        options?: RequestOptions
-    ): Promise<RemoveTeamMemberResponseBody> {
-        return unwrapAsync(teamsRemoveMember(this, teamId, uid, options));
-    }
+  /**
+   * Remove a Team Member
+   *
+   * @remarks
+   * Remove a Team Member from the Team, or dismiss a user that requested access, or leave a team.
+   */
+  async removeMember(
+    teamId: string,
+    uid: string,
+    options?: RequestOptions,
+  ): Promise<RemoveTeamMemberResponseBody> {
+    return unwrapAsync(teamsRemoveMember(
+      this,
+      teamId,
+      uid,
+      options,
+    ));
+  }
 
-    /**
-     * Get a Team
-     *
-     * @remarks
-     * Get information for the Team specified by the `teamId` parameter.
-     */
-    async get(teamId: string, options?: RequestOptions): Promise<Team> {
-        return unwrapAsync(teamsGet(this, teamId, options));
-    }
+  /**
+   * Get a Team
+   *
+   * @remarks
+   * Get information for the Team specified by the `teamId` parameter.
+   */
+  async get(
+    teamId: string,
+    options?: RequestOptions,
+  ): Promise<Team> {
+    return unwrapAsync(teamsGet(
+      this,
+      teamId,
+      options,
+    ));
+  }
 
-    /**
-     * Update a Team
-     *
-     * @remarks
-     * Update the information of a Team specified by the `teamId` parameter. The request body should contain the information that will be updated on the Team.
-     */
-    async update(
-        teamId: string,
-        slug?: string | undefined,
-        requestBody?: PatchTeamRequestBody | undefined,
-        options?: RequestOptions
-    ): Promise<Team> {
-        return unwrapAsync(teamsUpdate(this, teamId, slug, requestBody, options));
-    }
+  /**
+   * Update a Team
+   *
+   * @remarks
+   * Update the information of a Team specified by the `teamId` parameter. The request body should contain the information that will be updated on the Team.
+   */
+  async update(
+    teamId: string,
+    slug?: string | undefined,
+    requestBody?: PatchTeamRequestBody | undefined,
+    options?: RequestOptions,
+  ): Promise<Team> {
+    return unwrapAsync(teamsUpdate(
+      this,
+      teamId,
+      slug,
+      requestBody,
+      options,
+    ));
+  }
 
-    /**
-     * List all teams
-     *
-     * @remarks
-     * Get a paginated list of all the Teams the authenticated User is a member of.
-     */
-    async list(
-        limit?: number | undefined,
-        since?: number | undefined,
-        until?: number | undefined,
-        options?: RequestOptions
-    ): Promise<GetTeamsResponseBody> {
-        return unwrapAsync(teamsList(this, limit, since, until, options));
-    }
+  /**
+   * List all teams
+   *
+   * @remarks
+   * Get a paginated list of all the Teams the authenticated User is a member of.
+   */
+  async list(
+    limit?: number | undefined,
+    since?: number | undefined,
+    until?: number | undefined,
+    options?: RequestOptions,
+  ): Promise<GetTeamsResponseBody> {
+    return unwrapAsync(teamsList(
+      this,
+      limit,
+      since,
+      until,
+      options,
+    ));
+  }
 
-    /**
-     * Create a Team
-     *
-     * @remarks
-     * Create a new Team under your account. You need to send a POST request with the desired Team slug, and optionally the Team name.
-     */
-    async create(
-        request?: CreateTeamRequestBody | undefined,
-        options?: RequestOptions
-    ): Promise<CreateTeamResponseBody> {
-        return unwrapAsync(teamsCreate(this, request, options));
-    }
+  /**
+   * Create a Team
+   *
+   * @remarks
+   * Create a new Team under your account. You need to send a POST request with the desired Team slug, and optionally the Team name.
+   */
+  async create(
+    request?: CreateTeamRequestBody | undefined,
+    options?: RequestOptions,
+  ): Promise<CreateTeamResponseBody> {
+    return unwrapAsync(teamsCreate(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Delete a Team
-     *
-     * @remarks
-     * Delete a team under your account. You need to send a `DELETE` request with the desired team `id`. An optional array of reasons for deletion may also be sent.
-     */
-    async delete(
-        teamId: string,
-        newDefaultTeamId?: string | undefined,
-        slug?: string | undefined,
-        requestBody?: DeleteTeamRequestBody | undefined,
-        options?: RequestOptions
-    ): Promise<DeleteTeamResponseBody> {
-        return unwrapAsync(teamsDelete(this, teamId, newDefaultTeamId, slug, requestBody, options));
-    }
+  /**
+   * Delete a Team
+   *
+   * @remarks
+   * Delete a team under your account. You need to send a `DELETE` request with the desired team `id`. An optional array of reasons for deletion may also be sent.
+   */
+  async delete(
+    teamId: string,
+    newDefaultTeamId?: string | undefined,
+    slug?: string | undefined,
+    requestBody?: DeleteTeamRequestBody | undefined,
+    options?: RequestOptions,
+  ): Promise<DeleteTeamResponseBody> {
+    return unwrapAsync(teamsDelete(
+      this,
+      teamId,
+      newDefaultTeamId,
+      slug,
+      requestBody,
+      options,
+    ));
+  }
 
-    /**
-     * Delete a Team invite code
-     *
-     * @remarks
-     * Delete an active Team invite code.
-     */
-    async deleteInviteCode(
-        inviteId: string,
-        teamId: string,
-        options?: RequestOptions
-    ): Promise<DeleteTeamInviteCodeResponseBody> {
-        return unwrapAsync(teamsDeleteInviteCode(this, inviteId, teamId, options));
-    }
+  /**
+   * Delete a Team invite code
+   *
+   * @remarks
+   * Delete an active Team invite code.
+   */
+  async deleteInviteCode(
+    inviteId: string,
+    teamId: string,
+    options?: RequestOptions,
+  ): Promise<DeleteTeamInviteCodeResponseBody> {
+    return unwrapAsync(teamsDeleteInviteCode(
+      this,
+      inviteId,
+      teamId,
+      options,
+    ));
+  }
 }

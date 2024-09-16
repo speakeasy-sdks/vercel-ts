@@ -6,7 +6,7 @@
 import { UpdateProjectProtectionBypassRequest } from "@simplesagar/vercel/models/updateprojectprotectionbypassop.js";
 
 let value: UpdateProjectProtectionBypassRequest = {
-    idOrName: "<value>",
+  idOrName: "<value>",
 };
 ```
 

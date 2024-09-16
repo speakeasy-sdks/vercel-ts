@@ -5,7 +5,9 @@
 ```typescript
 import { GetProjectsOidcTokenClaims } from "@simplesagar/vercel/models/getprojectsop.js";
 
-let value: GetProjectsOidcTokenClaims = ["<value>"];
+let value: GetProjectsOidcTokenClaims = [
+  "<value>",
+];
 ```
 
 ## Supported Types

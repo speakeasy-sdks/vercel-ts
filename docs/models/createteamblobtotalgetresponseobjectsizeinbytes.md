@@ -6,10 +6,10 @@
 import { CreateTeamBlobTotalGetResponseObjectSizeInBytes } from "@simplesagar/vercel/models/createteamop.js";
 
 let value: CreateTeamBlobTotalGetResponseObjectSizeInBytes = {
-    price: 2421.78,
-    batch: 6738.38,
-    threshold: 2503.98,
-    hidden: false,
+  price: 9274.03,
+  batch: 4083.03,
+  threshold: 6931.53,
+  hidden: false,
 };
 ```
 

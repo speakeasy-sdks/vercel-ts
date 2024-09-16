@@ -6,8 +6,8 @@
 import { UpdateProjectContentHint13 } from "@simplesagar/vercel/models/updateprojectop.js";
 
 let value: UpdateProjectContentHint13 = {
-    type: "postgres-url-no-ssl",
-    storeId: "<value>",
+  type: "postgres-url-no-ssl",
+  storeId: "<value>",
 };
 ```
 

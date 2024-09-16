@@ -8,9 +8,9 @@ Information of the user who created the alias
 import { GetAliasCreator } from "@simplesagar/vercel/models/getaliasop.js";
 
 let value: GetAliasCreator = {
-    uid: "96SnxkFiMyVKsK3pnoHfx3Hz",
-    email: "john-doe@gmail.com",
-    username: "john-doe",
+  uid: "96SnxkFiMyVKsK3pnoHfx3Hz",
+  email: "john-doe@gmail.com",
+  username: "john-doe",
 };
 ```
 

@@ -6,14 +6,14 @@
 import { GetDeploymentEventsResponseBody2 } from "@simplesagar/vercel/models/getdeploymenteventsop.js";
 
 let value: GetDeploymentEventsResponseBody2 = {
-    type: "deployment-state",
-    created: 6996.22,
-    payload: {
-        deploymentId: "<value>",
-        id: "<id>",
-        date: 5801.97,
-        serial: "<value>",
-    },
+  type: "middleware",
+  created: 5801.97,
+  payload: {
+    deploymentId: "<value>",
+    id: "<id>",
+    date: 3277.2,
+    serial: "<value>",
+  },
 };
 ```
 

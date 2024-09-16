@@ -6,13 +6,13 @@
 import { GetProjectsTrustedIps } from "@simplesagar/vercel/models/getprojectsop.js";
 
 let value: GetProjectsTrustedIps = {
-    deploymentType: "all",
-    addresses: [
-        {
-            value: "<value>",
-        },
-    ],
-    protectionMode: "additional",
+  deploymentType: "all",
+  addresses: [
+    {
+      value: "<value>",
+    },
+  ],
+  protectionMode: "additional",
 };
 ```
 

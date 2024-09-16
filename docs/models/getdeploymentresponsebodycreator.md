@@ -6,7 +6,7 @@
 import { GetDeploymentResponseBodyCreator } from "@simplesagar/vercel/models/getdeploymentop.js";
 
 let value: GetDeploymentResponseBodyCreator = {
-    uid: "<value>",
+  uid: "<value>",
 };
 ```
 

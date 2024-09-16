@@ -6,8 +6,8 @@
 import { RemoveProjectEnvRequest } from "@simplesagar/vercel/models/removeprojectenvop.js";
 
 let value: RemoveProjectEnvRequest = {
-    idOrName: "prj_XLKmu1DyR1eY7zq8UgeRKbA7yVLA",
-    id: "XMbOEya1gUUO1ir4",
+  idOrName: "prj_XLKmu1DyR1eY7zq8UgeRKbA7yVLA",
+  id: "XMbOEya1gUUO1ir4",
 };
 ```
 

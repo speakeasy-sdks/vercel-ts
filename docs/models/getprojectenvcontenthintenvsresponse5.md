@@ -6,8 +6,8 @@
 import { GetProjectEnvContentHintEnvsResponse5 } from "@simplesagar/vercel/models/getprojectenvop.js";
 
 let value: GetProjectEnvContentHintEnvsResponse5 = {
-    type: "blob-read-write-token",
-    storeId: "<value>",
+  type: "blob-read-write-token",
+  storeId: "<value>",
 };
 ```
 

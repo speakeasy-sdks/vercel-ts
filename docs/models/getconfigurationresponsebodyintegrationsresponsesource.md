@@ -7,7 +7,8 @@ Source defines where the configuration was installed from. It is used to analyze
 ```typescript
 import { GetConfigurationResponseBodyIntegrationsResponseSource } from "@simplesagar/vercel/models/getconfigurationop.js";
 
-let value: GetConfigurationResponseBodyIntegrationsResponseSource = "marketplace";
+let value: GetConfigurationResponseBodyIntegrationsResponseSource =
+  "marketplace";
 ```
 
 ## Values

@@ -6,15 +6,15 @@
 import { Discount } from "@simplesagar/vercel/models/authuser.js";
 
 let value: Discount = {
+  id: "<id>",
+  coupon: {
     id: "<id>",
-    coupon: {
-        id: "<id>",
-        name: "<value>",
-        amountOff: 5221.76,
-        percentageOff: 7538.9,
-        durationInMonths: 8536.06,
-        duration: "repeating",
-    },
+    name: "<value>",
+    amountOff: 7847.31,
+    percentageOff: 1114.96,
+    durationInMonths: 4915.91,
+    duration: "repeating",
+  },
 };
 ```
 

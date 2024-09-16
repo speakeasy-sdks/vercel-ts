@@ -5,7 +5,9 @@
 ```typescript
 import { ResponseBodyFlags } from "@simplesagar/vercel/models/getdeploymentop.js";
 
-let value: ResponseBodyFlags = [{}];
+let value: ResponseBodyFlags = {
+  definitions: {},
+};
 ```
 
 ## Supported Types

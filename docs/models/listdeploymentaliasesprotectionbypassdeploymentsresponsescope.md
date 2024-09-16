@@ -6,7 +6,7 @@
 import { ListDeploymentAliasesProtectionBypassDeploymentsResponseScope } from "@simplesagar/vercel/models/listdeploymentaliasesop.js";
 
 let value: ListDeploymentAliasesProtectionBypassDeploymentsResponseScope =
-    "alias-protection-override";
+  "alias-protection-override";
 ```
 
 ## Values

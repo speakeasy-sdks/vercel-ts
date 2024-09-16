@@ -6,7 +6,7 @@
 import { PauseProjectRequest } from "@simplesagar/vercel/models/pauseprojectop.js";
 
 let value: PauseProjectRequest = {
-    projectId: "<value>",
+  projectId: "<value>",
 };
 ```
 

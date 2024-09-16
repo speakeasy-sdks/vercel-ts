@@ -6,8 +6,8 @@
 import { RoutesHas } from "@simplesagar/vercel/models/createdeploymentop.js";
 
 let value: RoutesHas = {
-    type: "host",
-    value: "<value>",
+  type: "query",
+  key: "<key>",
 };
 ```
 

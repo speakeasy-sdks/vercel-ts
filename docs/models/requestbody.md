@@ -6,10 +6,10 @@
 import { RequestBody } from "@simplesagar/vercel/models/recordeventsop.js";
 
 let value: RequestBody = {
-    sessionId: "<value>",
-    source: "REMOTE",
-    event: "HIT",
-    hash: "12HKQaOmR5t5Uy6vdcQsNIiZgHGB",
+  sessionId: "<value>",
+  source: "REMOTE",
+  event: "HIT",
+  hash: "12HKQaOmR5t5Uy6vdcQsNIiZgHGB",
 };
 ```
 

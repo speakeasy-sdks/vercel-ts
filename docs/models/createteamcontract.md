@@ -6,8 +6,8 @@
 import { CreateTeamContract } from "@simplesagar/vercel/models/createteamop.js";
 
 let value: CreateTeamContract = {
-    start: 5718.44,
-    end: 8806.79,
+  start: 9661.48,
+  end: 650.82,
 };
 ```
 

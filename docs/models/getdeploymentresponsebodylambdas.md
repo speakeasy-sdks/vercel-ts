@@ -8,12 +8,12 @@ A partial representation of a Build used by the deployment endpoint.
 import { GetDeploymentResponseBodyLambdas } from "@simplesagar/vercel/models/getdeploymentop.js";
 
 let value: GetDeploymentResponseBodyLambdas = {
-    output: [
-        {
-            path: "/etc",
-            functionName: "<value>",
-        },
-    ],
+  output: [
+    {
+      path: "/etc",
+      functionName: "<value>",
+    },
+  ],
 };
 ```
 

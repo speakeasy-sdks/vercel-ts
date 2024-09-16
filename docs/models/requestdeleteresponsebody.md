@@ -8,9 +8,9 @@ Response indicating that the User deletion process has been initiated, and a con
 import { RequestDeleteResponseBody } from "@simplesagar/vercel/models/requestdeleteop.js";
 
 let value: RequestDeleteResponseBody = {
-    id: "<id>",
-    email: "Mittie_Rath@gmail.com",
-    message: "Verification email sent",
+  id: "<id>",
+  email: "Lola.Skiles@hotmail.com",
+  message: "Verification email sent",
 };
 ```
 

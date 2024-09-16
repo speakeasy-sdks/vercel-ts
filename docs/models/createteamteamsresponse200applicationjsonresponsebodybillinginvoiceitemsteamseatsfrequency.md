@@ -7,10 +7,11 @@ import {
   CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsTeamSeatsFrequency,
 } from "@simplesagar/vercel/models/createteamop.js";
 
-let value: CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsTeamSeatsFrequency =
+let value:
+  CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInvoiceItemsTeamSeatsFrequency =
     {
-        interval: "month",
-        intervalCount: 7268.78,
+      interval: "month",
+      intervalCount: 4246.63,
     };
 ```
 

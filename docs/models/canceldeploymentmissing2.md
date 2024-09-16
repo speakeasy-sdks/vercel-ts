@@ -6,8 +6,8 @@
 import { CancelDeploymentMissing2 } from "@simplesagar/vercel/models/canceldeploymentop.js";
 
 let value: CancelDeploymentMissing2 = {
-    type: "cookie",
-    key: "<key>",
+  type: "cookie",
+  key: "<key>",
 };
 ```
 

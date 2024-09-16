@@ -26,7 +26,7 @@ async function run() {
   const result = await vercel.projectMembers.get({
     idOrName: "prj_pavWOn1iLObbXLRiwVvzmPrTWyTf",
   });
-
+  
   // Handle the result
   console.log(result)
 }
@@ -101,7 +101,7 @@ const vercel = new Vercel({
 
 async function run() {
   const result = await vercel.projectMembers.add("prj_pavWOn1iLObbXLRiwVvzmPrTWyTf");
-
+  
   // Handle the result
   console.log(result)
 }
@@ -177,7 +177,7 @@ const vercel = new Vercel({
 
 async function run() {
   const result = await vercel.projectMembers.remove("prj_pavWOn1iLObbXLRiwVvzmPrTWyTf", "ndlgr43fadlPyCtREAqxxdyFK");
-
+  
   // Handle the result
   console.log(result)
 }

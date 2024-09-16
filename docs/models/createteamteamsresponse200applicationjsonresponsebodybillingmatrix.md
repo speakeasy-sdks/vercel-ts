@@ -5,12 +5,13 @@
 ```typescript
 import { CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingMatrix } from "@simplesagar/vercel/models/createteamop.js";
 
-let value: CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingMatrix = {
+let value: CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingMatrix =
+  {
     defaultUnitPrice: "<value>",
     dimensionPrices: {
-        key: "<value>",
+      "key": "<value>",
     },
-};
+  };
 ```
 
 ## Fields

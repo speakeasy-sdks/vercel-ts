@@ -6,8 +6,8 @@
 import { ContentHint6 } from "@simplesagar/vercel/models/updateprojectdatacacheop.js";
 
 let value: ContentHint6 = {
-    type: "postgres-url",
-    storeId: "<value>",
+  type: "postgres-url",
+  storeId: "<value>",
 };
 ```
 

@@ -8,14 +8,14 @@ A limited form of data for the currently authenticated User, due to the authenti
 import { AuthUserLimited } from "@simplesagar/vercel/models/authuserlimited.js";
 
 let value: AuthUserLimited = {
-    limited: false,
-    id: "AEIIDYVk59zbFF2Sxfyxxmua",
-    email: "me@example.com",
-    name: "John Doe",
-    username: "jdoe",
-    avatar: "22cb30c85ff45ac4c72de8981500006b28114aa1",
-    defaultTeamId: "<value>",
-    version: "northstar",
+  limited: false,
+  id: "AEIIDYVk59zbFF2Sxfyxxmua",
+  email: "me@example.com",
+  name: "John Doe",
+  username: "jdoe",
+  avatar: "22cb30c85ff45ac4c72de8981500006b28114aa1",
+  defaultTeamId: "<value>",
+  version: "northstar",
 };
 ```
 

@@ -6,8 +6,8 @@
 import { CancelDeploymentRoutesHas } from "@simplesagar/vercel/models/canceldeploymentop.js";
 
 let value: CancelDeploymentRoutesHas = {
-    type: "host",
-    value: "<value>",
+  type: "host",
+  value: "<value>",
 };
 ```
 

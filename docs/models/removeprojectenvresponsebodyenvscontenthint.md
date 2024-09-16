@@ -6,8 +6,8 @@
 import { RemoveProjectEnvResponseBodyEnvsContentHint } from "@simplesagar/vercel/models/removeprojectenvop.js";
 
 let value: RemoveProjectEnvResponseBodyEnvsContentHint = {
-    type: "postgres-url-non-pooling",
-    storeId: "<value>",
+  type: "redis-rest-api-url",
+  storeId: "<value>",
 };
 ```
 

@@ -7,7 +7,8 @@ import {
   FilterProjectEnvsContentHintEnvsResponse200ApplicationJSONResponseBody2Envs12Type,
 } from "@simplesagar/vercel/models/filterprojectenvsop.js";
 
-let value: FilterProjectEnvsContentHintEnvsResponse200ApplicationJSONResponseBody2Envs12Type =
+let value:
+  FilterProjectEnvsContentHintEnvsResponse200ApplicationJSONResponseBody2Envs12Type =
     "postgres-database";
 ```
 

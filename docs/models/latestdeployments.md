@@ -6,22 +6,22 @@
 import { LatestDeployments } from "@simplesagar/vercel/models/updateprojectdatacacheop.js";
 
 let value: LatestDeployments = {
-    createdAt: 6048.46,
-    createdIn: "<value>",
-    creator: {
-        email: "Myrtis44@yahoo.com",
-        uid: "<value>",
-        username: "Easter35",
-    },
-    deploymentHostname: "<value>",
-    name: "<value>",
-    id: "<id>",
-    plan: "pro",
-    private: false,
-    readyState: "INITIALIZING",
-    type: "LAMBDAS",
-    url: "http://reliable-evaluation.org",
-    userId: "<value>",
+  createdAt: 6048.46,
+  createdIn: "<value>",
+  creator: {
+    email: "Myrtis44@yahoo.com",
+    uid: "<value>",
+    username: "Easter35",
+  },
+  deploymentHostname: "<value>",
+  name: "<value>",
+  id: "<id>",
+  plan: "pro",
+  private: false,
+  readyState: "INITIALIZING",
+  type: "LAMBDAS",
+  url: "http://reliable-evaluation.org",
+  userId: "<value>",
 };
 ```
 

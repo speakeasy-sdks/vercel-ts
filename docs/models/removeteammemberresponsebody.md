@@ -8,7 +8,7 @@ Successfully removed a member of the team.
 import { RemoveTeamMemberResponseBody } from "@simplesagar/vercel/models/removeteammemberop.js";
 
 let value: RemoveTeamMemberResponseBody = {
-    id: "<id>",
+  id: "<id>",
 };
 ```
 

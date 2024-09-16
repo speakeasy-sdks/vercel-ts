@@ -22,7 +22,7 @@ const vercel = new Vercel({
 
 async function run() {
   const result = await vercel.protectionBypass.update("<value>");
-
+  
   // Handle the result
   console.log(result)
 }

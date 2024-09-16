@@ -6,16 +6,16 @@
 import { CancelDeploymentGitRepo } from "@simplesagar/vercel/models/canceldeploymentop.js";
 
 let value: CancelDeploymentGitRepo = {
-    owner: "<value>",
-    repoUuid: "<value>",
-    slug: "<value>",
-    type: "bitbucket",
-    workspaceUuid: "<value>",
-    path: "/home/user",
-    defaultBranch: "<value>",
-    name: "<value>",
-    private: false,
-    ownerType: "user",
+  owner: "<value>",
+  repoUuid: "<value>",
+  slug: "<value>",
+  type: "bitbucket",
+  workspaceUuid: "<value>",
+  path: "/home/user",
+  defaultBranch: "<value>",
+  name: "<value>",
+  private: false,
+  ownerType: "user",
 };
 ```
 

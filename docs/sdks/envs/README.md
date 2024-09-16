@@ -28,7 +28,7 @@ async function run() {
   const result = await vercel.envs.listByProject({
     idOrName: "prj_XLKmu1DyR1eY7zq8UgeRKbA7yVLA",
   });
-
+  
   // Handle the result
   console.log(result)
 }
@@ -102,8 +102,8 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.envs.get("prj_XLKmu1DyR1eY7zq8UgeRKbA7yVLA", "<value>");
-
+  const result = await vercel.envs.get("prj_XLKmu1DyR1eY7zq8UgeRKbA7yVLA", "<id>");
+  
   // Handle the result
   console.log(result)
 }
@@ -126,7 +126,7 @@ const vercel = new VercelCore({
 });
 
 async function run() {
-  const res = await envsGet(vercel, "prj_XLKmu1DyR1eY7zq8UgeRKbA7yVLA", "<value>");
+  const res = await envsGet(vercel, "prj_XLKmu1DyR1eY7zq8UgeRKbA7yVLA", "<id>");
 
   if (!res.ok) {
     throw res.error;
@@ -181,7 +181,7 @@ async function run() {
   const result = await vercel.envs.create({
     idOrName: "prj_XLKmu1DyR1eY7zq8UgeRKbA7yVLA",
   });
-
+  
   // Handle the result
   console.log(result)
 }
@@ -256,7 +256,7 @@ const vercel = new Vercel({
 
 async function run() {
   const result = await vercel.envs.delete("prj_XLKmu1DyR1eY7zq8UgeRKbA7yVLA", "XMbOEya1gUUO1ir4");
-
+  
   // Handle the result
   console.log(result)
 }
@@ -335,7 +335,7 @@ async function run() {
     idOrName: "prj_XLKmu1DyR1eY7zq8UgeRKbA7yVLA",
     id: "XMbOEya1gUUO1ir4",
   });
-
+  
   // Handle the result
   console.log(result)
 }

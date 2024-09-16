@@ -5,7 +5,7 @@
 ```typescript
 import { CreateConfigurableLogDrainCompression } from "@simplesagar/vercel/models/createconfigurablelogdrainop.js";
 
-let value: CreateConfigurableLogDrainCompression = "zstd";
+let value: CreateConfigurableLogDrainCompression = "gzip";
 ```
 
 ## Values

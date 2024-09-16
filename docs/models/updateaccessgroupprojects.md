@@ -6,8 +6,8 @@
 import { UpdateAccessGroupProjects } from "@simplesagar/vercel/models/updateaccessgroupop.js";
 
 let value: UpdateAccessGroupProjects = {
-    projectId: "prj_ndlgr43fadlPyCtREAqxxdyFK",
-    role: "ADMIN",
+  projectId: "prj_ndlgr43fadlPyCtREAqxxdyFK",
+  role: "ADMIN",
 };
 ```
 

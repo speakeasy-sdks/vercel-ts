@@ -6,14 +6,14 @@
 import { Seven } from "@simplesagar/vercel/models/createrecordop.js";
 
 let value: Seven = {
-    name: "<value>",
-    type: "NS",
-    srv: {
-        priority: 10,
-        weight: 10,
-        port: 5000,
-        target: "host.example.com",
-    },
+  name: "<value>",
+  type: "NS",
+  srv: {
+    priority: 10,
+    weight: 10,
+    port: 5000,
+    target: "host.example.com",
+  },
 };
 ```
 

@@ -10,17 +10,17 @@ import { RequestOptions } from "../lib/sdks.js";
 import { extractSecurity, resolveGlobalSecurity } from "../lib/security.js";
 import { pathToFunc } from "../lib/url.js";
 import {
-    ConnectionError,
-    InvalidRequestError,
-    RequestAbortedError,
-    RequestTimeoutError,
-    UnexpectedClientError,
+  ConnectionError,
+  InvalidRequestError,
+  RequestAbortedError,
+  RequestTimeoutError,
+  UnexpectedClientError,
 } from "../models/httpclienterrors.js";
 import {
-    RemoveTeamMemberRequest,
-    RemoveTeamMemberRequest$outboundSchema,
-    RemoveTeamMemberResponseBody,
-    RemoveTeamMemberResponseBody$inboundSchema,
+  RemoveTeamMemberRequest,
+  RemoveTeamMemberRequest$outboundSchema,
+  RemoveTeamMemberResponseBody,
+  RemoveTeamMemberResponseBody$inboundSchema,
 } from "../models/removeteammemberop.js";
 import { SDKError } from "../models/sdkerror.js";
 import { SDKValidationError } from "../models/sdkvalidationerror.js";
@@ -33,105 +33,105 @@ import { Result } from "../types/fp.js";
  * Remove a Team Member from the Team, or dismiss a user that requested access, or leave a team.
  */
 export async function teamsRemoveMember(
-    client$: VercelCore,
-    teamId: string,
-    uid: string,
-    options?: RequestOptions
+  client$: VercelCore,
+  teamId: string,
+  uid: string,
+  options?: RequestOptions,
 ): Promise<
-    Result<
-        RemoveTeamMemberResponseBody,
-        | SDKError
-        | SDKValidationError
-        | UnexpectedClientError
-        | InvalidRequestError
-        | RequestAbortedError
-        | RequestTimeoutError
-        | ConnectionError
-    >
+  Result<
+    RemoveTeamMemberResponseBody,
+    | SDKError
+    | SDKValidationError
+    | UnexpectedClientError
+    | InvalidRequestError
+    | RequestAbortedError
+    | RequestTimeoutError
+    | ConnectionError
+  >
 > {
-    const input$: RemoveTeamMemberRequest = {
-        teamId: teamId,
-        uid: uid,
-    };
+  const input$: RemoveTeamMemberRequest = {
+    teamId: teamId,
+    uid: uid,
+  };
 
-    const parsed$ = schemas$.safeParse(
-        input$,
-        (value$) => RemoveTeamMemberRequest$outboundSchema.parse(value$),
-        "Input validation failed"
-    );
-    if (!parsed$.ok) {
-        return parsed$;
-    }
-    const payload$ = parsed$.value;
-    const body$ = null;
+  const parsed$ = schemas$.safeParse(
+    input$,
+    (value$) => RemoveTeamMemberRequest$outboundSchema.parse(value$),
+    "Input validation failed",
+  );
+  if (!parsed$.ok) {
+    return parsed$;
+  }
+  const payload$ = parsed$.value;
+  const body$ = null;
 
-    const pathParams$ = {
-        teamId: encodeSimple$("teamId", payload$.teamId, {
-            explode: false,
-            charEncoding: "percent",
-        }),
-        uid: encodeSimple$("uid", payload$.uid, { explode: false, charEncoding: "percent" }),
-    };
+  const pathParams$ = {
+    teamId: encodeSimple$("teamId", payload$.teamId, {
+      explode: false,
+      charEncoding: "percent",
+    }),
+    uid: encodeSimple$("uid", payload$.uid, {
+      explode: false,
+      charEncoding: "percent",
+    }),
+  };
 
-    const path$ = pathToFunc("/v1/teams/{teamId}/members/{uid}")(pathParams$);
+  const path$ = pathToFunc("/v1/teams/{teamId}/members/{uid}")(pathParams$);
 
-    const headers$ = new Headers({
-        Accept: "application/json",
-    });
+  const headers$ = new Headers({
+    Accept: "application/json",
+  });
 
-    const bearerToken$ = await extractSecurity(client$.options$.bearerToken);
-    const security$ = bearerToken$ == null ? {} : { bearerToken: bearerToken$ };
-    const context = {
-        operationID: "removeTeamMember",
-        oAuth2Scopes: [],
-        securitySource: client$.options$.bearerToken,
-    };
-    const securitySettings$ = resolveGlobalSecurity(security$);
+  const bearerToken$ = await extractSecurity(client$.options$.bearerToken);
+  const security$ = bearerToken$ == null ? {} : { bearerToken: bearerToken$ };
+  const context = {
+    operationID: "removeTeamMember",
+    oAuth2Scopes: [],
+    securitySource: client$.options$.bearerToken,
+  };
+  const securitySettings$ = resolveGlobalSecurity(security$);
 
-    const requestRes = client$.createRequest$(
-        context,
-        {
-            security: securitySettings$,
-            method: "DELETE",
-            path: path$,
-            headers: headers$,
-            body: body$,
-            timeoutMs: options?.timeoutMs || client$.options$.timeoutMs || -1,
-        },
-        options
-    );
-    if (!requestRes.ok) {
-        return requestRes;
-    }
-    const request$ = requestRes.value;
+  const requestRes = client$.createRequest$(context, {
+    security: securitySettings$,
+    method: "DELETE",
+    path: path$,
+    headers: headers$,
+    body: body$,
+    timeoutMs: options?.timeoutMs || client$.options$.timeoutMs || -1,
+  }, options);
+  if (!requestRes.ok) {
+    return requestRes;
+  }
+  const request$ = requestRes.value;
 
-    const doResult = await client$.do$(request$, {
-        context,
-        errorCodes: ["400", "401", "403", "404", "4XX", "503", "5XX"],
-        retryConfig: options?.retries || client$.options$.retryConfig,
-        retryCodes: options?.retryCodes || ["429", "500", "502", "503", "504"],
-    });
-    if (!doResult.ok) {
-        return doResult;
-    }
-    const response = doResult.value;
+  const doResult = await client$.do$(request$, {
+    context,
+    errorCodes: ["400", "401", "403", "404", "4XX", "503", "5XX"],
+    retryConfig: options?.retries
+      || client$.options$.retryConfig,
+    retryCodes: options?.retryCodes || ["429", "500", "502", "503", "504"],
+  });
+  if (!doResult.ok) {
+    return doResult;
+  }
+  const response = doResult.value;
 
-    const [result$] = await m$.match<
-        RemoveTeamMemberResponseBody,
-        | SDKError
-        | SDKValidationError
-        | UnexpectedClientError
-        | InvalidRequestError
-        | RequestAbortedError
-        | RequestTimeoutError
-        | ConnectionError
-    >(
-        m$.json(200, RemoveTeamMemberResponseBody$inboundSchema),
-        m$.fail([400, 401, 403, 404, "4XX", 503, "5XX"])
-    )(response);
-    if (!result$.ok) {
-        return result$;
-    }
-
+  const [result$] = await m$.match<
+    RemoveTeamMemberResponseBody,
+    | SDKError
+    | SDKValidationError
+    | UnexpectedClientError
+    | InvalidRequestError
+    | RequestAbortedError
+    | RequestTimeoutError
+    | ConnectionError
+  >(
+    m$.json(200, RemoveTeamMemberResponseBody$inboundSchema),
+    m$.fail([400, 401, 403, 404, "4XX", 503, "5XX"]),
+  )(response);
+  if (!result$.ok) {
     return result$;
+  }
+
+  return result$;
 }

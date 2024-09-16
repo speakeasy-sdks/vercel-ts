@@ -8,9 +8,9 @@ Will be used to create an invoice item. The price must be in cents: 2000 for $20
 import { DeveloperExperiencePlatform } from "@simplesagar/vercel/models/authuser.js";
 
 let value: DeveloperExperiencePlatform = {
-    price: 2899.13,
-    quantity: 5208.75,
-    hidden: false,
+  price: 6692.37,
+  quantity: 7708.73,
+  hidden: false,
 };
 ```
 

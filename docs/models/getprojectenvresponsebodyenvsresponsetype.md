@@ -5,7 +5,7 @@
 ```typescript
 import { GetProjectEnvResponseBodyEnvsResponseType } from "@simplesagar/vercel/models/getprojectenvop.js";
 
-let value: GetProjectEnvResponseBodyEnvsResponseType = "encrypted";
+let value: GetProjectEnvResponseBodyEnvsResponseType = "system";
 ```
 
 ## Values

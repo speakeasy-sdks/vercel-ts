@@ -6,7 +6,7 @@
 import { GetProjectsMissing } from "@simplesagar/vercel/models/getprojectsop.js";
 
 let value: GetProjectsMissing = {
-    type: "query",
+  type: "query",
 };
 ```
 

@@ -6,8 +6,8 @@
 import { CreateProjectGitComments } from "@simplesagar/vercel/models/createprojectop.js";
 
 let value: CreateProjectGitComments = {
-    onPullRequest: false,
-    onCommit: false,
+  onPullRequest: false,
+  onCommit: false,
 };
 ```
 

@@ -8,10 +8,10 @@ A list of verification challenges, one of which must be completed to verify the 
 import { GetProjectDomainsVerification } from "@simplesagar/vercel/models/getprojectdomainsop.js";
 
 let value: GetProjectDomainsVerification = {
-    type: "<value>",
-    domain: "lovable-gazelle.org",
-    value: "<value>",
-    reason: "<value>",
+  type: "<value>",
+  domain: "lovable-gazelle.org",
+  value: "<value>",
+  reason: "<value>",
 };
 ```
 

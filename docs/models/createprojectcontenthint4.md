@@ -6,8 +6,8 @@
 import { CreateProjectContentHint4 } from "@simplesagar/vercel/models/createprojectop.js";
 
 let value: CreateProjectContentHint4 = {
-    type: "redis-rest-api-read-only-token",
-    storeId: "<value>",
+  type: "redis-rest-api-read-only-token",
+  storeId: "<value>",
 };
 ```
 

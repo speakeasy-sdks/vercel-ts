@@ -6,7 +6,7 @@
 import { CreateProjectRequestBody } from "@simplesagar/vercel/models/createprojectop.js";
 
 let value: CreateProjectRequestBody = {
-    name: "a-project-name",
+  name: "a-project-name",
 };
 ```
 

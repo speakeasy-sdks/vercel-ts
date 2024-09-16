@@ -28,7 +28,7 @@ const vercel = new Vercel({
 
 async function run() {
   const result = await vercel.secrets.list();
-
+  
   // Handle the result
   console.log(result)
 }
@@ -104,7 +104,7 @@ const vercel = new Vercel({
 
 async function run() {
   const result = await vercel.secrets.create("my-api-key");
-
+  
   // Handle the result
   console.log(result)
 }
@@ -178,7 +178,7 @@ const vercel = new Vercel({
 
 async function run() {
   const result = await vercel.secrets.rename("my-api-key");
-
+  
   // Handle the result
   console.log(result)
 }
@@ -254,7 +254,7 @@ const vercel = new Vercel({
 
 async function run() {
   const result = await vercel.secrets.get("sec_RKc5iV0rV3ZSrFrHiruRno7k");
-
+  
   // Handle the result
   console.log(result)
 }
@@ -330,7 +330,7 @@ const vercel = new Vercel({
 
 async function run() {
   const result = await vercel.secrets.delete("sec_RKc5iV0rV3ZSrFrHiruRno7k");
-
+  
   // Handle the result
   console.log(result)
 }

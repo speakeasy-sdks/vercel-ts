@@ -6,8 +6,8 @@
 import { CancelDeploymentGitSource1 } from "@simplesagar/vercel/models/canceldeploymentop.js";
 
 let value: CancelDeploymentGitSource1 = {
-    type: "github",
-    repoId: "<value>",
+  type: "github",
+  repoId: "<value>",
 };
 ```
 

@@ -28,7 +28,7 @@ const vercel = new Vercel({
 
 async function run() {
   const result = await vercel.logDrains.list();
-
+  
   // Handle the result
   console.log(result)
 }
@@ -102,7 +102,7 @@ const vercel = new Vercel({
 
 async function run() {
   const result = await vercel.logDrains.create();
-
+  
   // Handle the result
   console.log(result)
 }
@@ -176,9 +176,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  await vercel.logDrains.deleteIntegration("<value>");
-
-  
+  await vercel.logDrains.deleteIntegration("<id>");
 }
 
 run();
@@ -199,7 +197,7 @@ const vercel = new VercelCore({
 });
 
 async function run() {
-  const res = await logDrainsDeleteIntegration(vercel, "<value>");
+  const res = await logDrainsDeleteIntegration(vercel, "<id>");
 
   if (!res.ok) {
     throw res.error;
@@ -249,8 +247,8 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.logDrains.getConfigurable("<value>");
-
+  const result = await vercel.logDrains.getConfigurable("<id>");
+  
   // Handle the result
   console.log(result)
 }
@@ -273,7 +271,7 @@ const vercel = new VercelCore({
 });
 
 async function run() {
-  const res = await logDrainsGetConfigurable(vercel, "<value>");
+  const res = await logDrainsGetConfigurable(vercel, "<id>");
 
   if (!res.ok) {
     throw res.error;
@@ -324,9 +322,7 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  await vercel.logDrains.deleteConfigurable("<value>");
-
-  
+  await vercel.logDrains.deleteConfigurable("<id>");
 }
 
 run();
@@ -347,7 +343,7 @@ const vercel = new VercelCore({
 });
 
 async function run() {
-  const res = await logDrainsDeleteConfigurable(vercel, "<value>");
+  const res = await logDrainsDeleteConfigurable(vercel, "<id>");
 
   if (!res.ok) {
     throw res.error;
@@ -398,7 +394,7 @@ const vercel = new Vercel({
 
 async function run() {
   const result = await vercel.logDrains.getAll();
-
+  
   // Handle the result
   console.log(result)
 }
@@ -473,7 +469,7 @@ const vercel = new Vercel({
 
 async function run() {
   const result = await vercel.logDrains.createConfigurable();
-
+  
   // Handle the result
   console.log(result)
 }

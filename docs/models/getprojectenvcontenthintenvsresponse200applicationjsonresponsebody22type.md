@@ -5,7 +5,8 @@
 ```typescript
 import { GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody22Type } from "@simplesagar/vercel/models/getprojectenvop.js";
 
-let value: GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody22Type =
+let value:
+  GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody22Type =
     "redis-rest-api-url";
 ```
 

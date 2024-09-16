@@ -6,10 +6,10 @@
 import { GetTeamMembersPagination } from "@simplesagar/vercel/models/getteammembersop.js";
 
 let value: GetTeamMembersPagination = {
-    hasNext: false,
-    count: 20,
-    next: 1540095775951,
-    prev: 1540095775951,
+  hasNext: false,
+  count: 20,
+  next: 1540095775951,
+  prev: 1540095775951,
 };
 ```
 

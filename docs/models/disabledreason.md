@@ -3,13 +3,13 @@
 ## Example Usage
 
 ```typescript
-import { DisabledReason } from "@simplesagar/vercel/models/getconfigurationsop.js";
+import { DisabledReason } from "@simplesagar/vercel/models/getconfigurablelogdrainop.js";
 
-let value: DisabledReason = "original-owner-role-downgraded";
+let value: DisabledReason = "feature-not-available";
 ```
 
 ## Values
 
 ```typescript
-"disabled-by-owner" | "feature-not-available" | "disabled-by-admin" | "original-owner-left-the-team" | "account-plan-downgrade" | "original-owner-role-downgraded"
+"disabled-by-owner" | "feature-not-available" | "account-plan-downgrade" | "disabled-by-admin"
 ```
