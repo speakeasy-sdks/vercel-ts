@@ -6,9 +6,11 @@
 import { EnvironmentVariables } from "@simplesagar/vercel/models/createprojectop.js";
 
 let value: EnvironmentVariables = {
-    key: "<key>",
-    target: ["production"],
-    value: "<value>",
+  key: "<key>",
+  target: [
+    "production",
+  ],
+  value: "<value>",
 };
 ```
 

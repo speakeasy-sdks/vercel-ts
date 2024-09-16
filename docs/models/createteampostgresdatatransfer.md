@@ -6,10 +6,10 @@
 import { CreateTeamPostgresDataTransfer } from "@simplesagar/vercel/models/createteamop.js";
 
 let value: CreateTeamPostgresDataTransfer = {
-    price: 8583.38,
-    batch: 7143.76,
-    threshold: 8028.94,
-    hidden: false,
+  price: 6633.18,
+  batch: 7278.88,
+  threshold: 8544.6,
+  hidden: false,
 };
 ```
 

@@ -8,10 +8,10 @@ Defines the Git Repository source to be deployed. This property can not be used 
 import { GitSource } from "@simplesagar/vercel/models/createdeploymentop.js";
 
 let value: GitSource = {
-    org: "<value>",
-    ref: "<value>",
-    repo: "<value>",
-    type: "github",
+  org: "<value>",
+  ref: "<value>",
+  repo: "<value>",
+  type: "github",
 };
 ```
 

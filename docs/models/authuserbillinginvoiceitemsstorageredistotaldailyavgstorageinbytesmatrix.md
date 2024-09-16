@@ -5,12 +5,13 @@
 ```typescript
 import { AuthUserBillingInvoiceItemsStorageRedisTotalDailyAvgStorageInBytesMatrix } from "@simplesagar/vercel/models/authuser.js";
 
-let value: AuthUserBillingInvoiceItemsStorageRedisTotalDailyAvgStorageInBytesMatrix = {
+let value:
+  AuthUserBillingInvoiceItemsStorageRedisTotalDailyAvgStorageInBytesMatrix = {
     defaultUnitPrice: "<value>",
     dimensionPrices: {
-        key: "<value>",
+      "key": "<value>",
     },
-};
+  };
 ```
 
 ## Fields

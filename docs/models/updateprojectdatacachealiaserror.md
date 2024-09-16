@@ -6,8 +6,8 @@
 import { UpdateProjectDataCacheAliasError } from "@simplesagar/vercel/models/updateprojectdatacacheop.js";
 
 let value: UpdateProjectDataCacheAliasError = {
-    code: "<value>",
-    message: "<value>",
+  code: "<value>",
+  message: "<value>",
 };
 ```
 

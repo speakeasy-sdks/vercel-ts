@@ -6,7 +6,7 @@
 import { CreateDeploymentRequestBody } from "@simplesagar/vercel/models/createdeploymentop.js";
 
 let value: CreateDeploymentRequestBody = {
-    name: "my-instant-deployment",
+  name: "my-instant-deployment",
 };
 ```
 

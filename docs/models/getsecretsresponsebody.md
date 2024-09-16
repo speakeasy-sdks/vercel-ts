@@ -8,18 +8,18 @@ Successful response retrieving a list of secrets.
 import { GetSecretsResponseBody } from "@simplesagar/vercel/models/getsecretsop.js";
 
 let value: GetSecretsResponseBody = {
-    secrets: [
-        {
-            created: new Date("2021-02-10T13:11:49.180Z"),
-            name: "my-api-key",
-            uid: "sec_XCG7t7AIHuO2SBA8667zNUiM",
-        },
-    ],
-    pagination: {
-        count: 20,
-        next: 1540095775951,
-        prev: 1540095775951,
+  secrets: [
+    {
+      created: new Date("2021-02-10T13:11:49.180Z"),
+      name: "my-api-key",
+      uid: "sec_XCG7t7AIHuO2SBA8667zNUiM",
     },
+  ],
+  pagination: {
+    count: 20,
+    next: 1540095775951,
+    prev: 1540095775951,
+  },
 };
 ```
 

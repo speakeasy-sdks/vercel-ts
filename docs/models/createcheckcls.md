@@ -6,8 +6,8 @@
 import { CreateCheckCLS } from "@simplesagar/vercel/models/createcheckop.js";
 
 let value: CreateCheckCLS = {
-    value: 4736,
-    source: "web-vitals",
+  value: 4146.62,
+  source: "web-vitals",
 };
 ```
 

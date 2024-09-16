@@ -5,7 +5,7 @@
 ```typescript
 import { GetTeamMembersTeamsRole } from "@simplesagar/vercel/models/getteammembersop.js";
 
-let value: GetTeamMembersTeamsRole = "CONTRIBUTOR";
+let value: GetTeamMembersTeamsRole = "DEVELOPER";
 ```
 
 ## Values

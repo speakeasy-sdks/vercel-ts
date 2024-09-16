@@ -6,8 +6,8 @@
 import { ContentHint1 } from "@simplesagar/vercel/models/updateprojectdatacacheop.js";
 
 let value: ContentHint1 = {
-    type: "redis-url",
-    storeId: "<value>",
+  type: "redis-url",
+  storeId: "<value>",
 };
 ```
 

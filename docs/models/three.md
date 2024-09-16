@@ -6,9 +6,9 @@
 import { Three } from "@simplesagar/vercel/models/createdeploymentop.js";
 
 let value: Three = {
-    projectId: "<value>",
-    ref: "<value>",
-    type: "gitlab",
+  projectId: 4895.09,
+  ref: "<value>",
+  type: "gitlab",
 };
 ```
 

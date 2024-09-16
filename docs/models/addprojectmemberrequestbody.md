@@ -6,8 +6,8 @@
 import { AddProjectMemberRequestBody } from "@simplesagar/vercel/models/addprojectmemberop.js";
 
 let value: AddProjectMemberRequestBody = {
-    uid: "ndlgr43fadlPyCtREAqxxdyFK",
-    role: "ADMIN",
+  username: "example",
+  role: "ADMIN",
 };
 ```
 

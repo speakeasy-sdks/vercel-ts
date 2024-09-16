@@ -6,11 +6,11 @@
 import { GitSource9 } from "@simplesagar/vercel/models/canceldeploymentop.js";
 
 let value: GitSource9 = {
-    type: "bitbucket",
-    ref: "<value>",
-    sha: "<value>",
-    workspaceUuid: "<value>",
-    repoUuid: "<value>",
+  type: "bitbucket",
+  ref: "<value>",
+  sha: "<value>",
+  workspaceUuid: "<value>",
+  repoUuid: "<value>",
 };
 ```
 

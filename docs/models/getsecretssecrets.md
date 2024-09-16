@@ -8,9 +8,9 @@ Data representing a secret.
 import { GetSecretsSecrets } from "@simplesagar/vercel/models/getsecretsop.js";
 
 let value: GetSecretsSecrets = {
-    created: new Date("2021-02-10T13:11:49.180Z"),
-    name: "my-api-key",
-    uid: "sec_XCG7t7AIHuO2SBA8667zNUiM",
+  created: new Date("2021-02-10T13:11:49.180Z"),
+  name: "my-api-key",
+  uid: "sec_XCG7t7AIHuO2SBA8667zNUiM",
 };
 ```
 

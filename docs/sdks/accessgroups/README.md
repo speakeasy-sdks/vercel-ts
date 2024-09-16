@@ -28,7 +28,7 @@ const vercel = new Vercel({
 
 async function run() {
   const result = await vercel.accessGroups.read("<value>");
-
+  
   // Handle the result
   console.log(result)
 }
@@ -103,7 +103,7 @@ const vercel = new Vercel({
 
 async function run() {
   const result = await vercel.accessGroups.update("<value>");
-
+  
   // Handle the result
   console.log(result)
 }
@@ -179,8 +179,6 @@ const vercel = new Vercel({
 
 async function run() {
   await vercel.accessGroups.delete("<value>");
-
-  
 }
 
 run();
@@ -254,7 +252,7 @@ async function run() {
   const result = await vercel.accessGroups.listMembers({
     idOrName: "ag_pavWOn1iLObbXLRiwVvzmPrTWyTf",
   });
-
+  
   // Handle the result
   console.log(result)
 }
@@ -328,8 +326,8 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.accessGroups.list();
-
+  const result = await vercel.accessGroups.list({});
+  
   // Handle the result
   console.log(result)
 }
@@ -352,7 +350,7 @@ const vercel = new VercelCore({
 });
 
 async function run() {
-  const res = await accessGroupsList(vercel);
+  const res = await accessGroupsList(vercel, {});
 
   if (!res.ok) {
     throw res.error;
@@ -402,7 +400,7 @@ const vercel = new Vercel({
 
 async function run() {
   const result = await vercel.accessGroups.create();
-
+  
   // Handle the result
   console.log(result)
 }
@@ -479,7 +477,7 @@ async function run() {
   const result = await vercel.accessGroups.listProjects({
     idOrName: "ag_pavWOn1iLObbXLRiwVvzmPrTWyTf",
   });
-
+  
   // Handle the result
   console.log(result)
 }

@@ -6,10 +6,10 @@
 import { CreateTeamEdgeConfigRead } from "@simplesagar/vercel/models/createteamop.js";
 
 let value: CreateTeamEdgeConfigRead = {
-    price: 9543.34,
-    batch: 4555.79,
-    threshold: 3519.36,
-    hidden: false,
+  price: 6682.34,
+  batch: 6216.66,
+  threshold: 4568.85,
+  hidden: false,
 };
 ```
 

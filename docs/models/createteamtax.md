@@ -6,8 +6,8 @@
 import { CreateTeamTax } from "@simplesagar/vercel/models/createteamop.js";
 
 let value: CreateTeamTax = {
-    type: "<value>",
-    id: "<id>",
+  type: "<value>",
+  id: "<id>",
 };
 ```
 

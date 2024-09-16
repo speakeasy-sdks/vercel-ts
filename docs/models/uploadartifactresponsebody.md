@@ -8,7 +8,9 @@ File successfully uploaded
 import { UploadArtifactResponseBody } from "@simplesagar/vercel/models/uploadartifactop.js";
 
 let value: UploadArtifactResponseBody = {
-    urls: ["https://api.vercel.com/v2/now/artifact/12HKQaOmR5t5Uy6vdcQsNIiZgHGB"],
+  urls: [
+    "https://api.vercel.com/v2/now/artifact/12HKQaOmR5t5Uy6vdcQsNIiZgHGB",
+  ],
 };
 ```
 

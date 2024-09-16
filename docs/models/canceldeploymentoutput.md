@@ -6,8 +6,8 @@
 import { CancelDeploymentOutput } from "@simplesagar/vercel/models/canceldeploymentop.js";
 
 let value: CancelDeploymentOutput = {
-    path: "/usr/libdata",
-    functionName: "<value>",
+  path: "/usr/libdata",
+  functionName: "<value>",
 };
 ```
 

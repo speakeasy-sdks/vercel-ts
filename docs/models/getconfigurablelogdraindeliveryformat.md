@@ -5,7 +5,7 @@
 ```typescript
 import { GetConfigurableLogDrainDeliveryFormat } from "@simplesagar/vercel/models/getconfigurablelogdrainop.js";
 
-let value: GetConfigurableLogDrainDeliveryFormat = "ndjson";
+let value: GetConfigurableLogDrainDeliveryFormat = "json";
 ```
 
 ## Values

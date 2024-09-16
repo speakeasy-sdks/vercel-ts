@@ -8,7 +8,7 @@ Responds with the project ID on success.
 import { AddProjectMemberResponseBody } from "@simplesagar/vercel/models/addprojectmemberop.js";
 
 let value: AddProjectMemberResponseBody = {
-    id: "<id>",
+  id: "<id>",
 };
 ```
 

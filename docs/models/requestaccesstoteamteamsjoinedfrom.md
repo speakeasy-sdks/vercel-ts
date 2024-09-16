@@ -6,7 +6,7 @@
 import { RequestAccessToTeamTeamsJoinedFrom } from "@simplesagar/vercel/models/requestaccesstoteamop.js";
 
 let value: RequestAccessToTeamTeamsJoinedFrom = {
-    origin: "mail",
+  origin: "dsync",
 };
 ```
 

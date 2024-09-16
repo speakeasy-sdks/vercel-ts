@@ -5,7 +5,7 @@
 ```typescript
 import { CreateWebhookEvents } from "@simplesagar/vercel/models/createwebhookop.js";
 
-let value: CreateWebhookEvents = "deployment";
+let value: CreateWebhookEvents = "deployment-checks-completed";
 ```
 
 ## Values

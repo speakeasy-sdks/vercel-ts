@@ -6,12 +6,14 @@
 import { GetIntegrationLogDrainsResponseBody } from "@simplesagar/vercel/models/getintegrationlogdrainsop.js";
 
 let value: GetIntegrationLogDrainsResponseBody = {
-    createdAt: 1558531915505,
-    id: "ld_nBuA7zCID8g4QZ8g",
-    name: "My first log drain",
-    ownerId: "kr1PsOIzqEL5Xg6M4VZcZosf",
-    url: "https://example.com/log-drain",
-    environments: ["production"],
+  createdAt: 1558531915505,
+  id: "ld_nBuA7zCID8g4QZ8g",
+  name: "My first log drain",
+  ownerId: "kr1PsOIzqEL5Xg6M4VZcZosf",
+  url: "https://example.com/log-drain",
+  environments: [
+    "production",
+  ],
 };
 ```
 

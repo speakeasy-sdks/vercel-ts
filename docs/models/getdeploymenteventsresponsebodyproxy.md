@@ -6,14 +6,16 @@
 import { GetDeploymentEventsResponseBodyProxy } from "@simplesagar/vercel/models/getdeploymenteventsop.js";
 
 let value: GetDeploymentEventsResponseBodyProxy = {
-    timestamp: 8771.31,
-    method: "<value>",
-    host: "husky-bone.org",
-    path: "/opt/sbin",
-    userAgent: ["<value>"],
-    referer: "<value>",
-    clientIp: "<value>",
-    region: "<value>",
+  timestamp: 3990.25,
+  method: "<value>",
+  host: "bronze-thrift.info",
+  path: "/usr/X11R6",
+  userAgent: [
+    "<value>",
+  ],
+  referer: "<value>",
+  clientIp: "<value>",
+  region: "<value>",
 };
 ```
 

@@ -6,9 +6,11 @@
 import { CreateConfigurableLogDrainRequestBody } from "@simplesagar/vercel/models/createconfigurablelogdrainop.js";
 
 let value: CreateConfigurableLogDrainRequestBody = {
-    deliveryFormat: "json",
-    url: "https://idolized-science.info",
-    sources: ["lambda"],
+  deliveryFormat: "json",
+  url: "https://severe-great-grandfather.com",
+  sources: [
+    "edge",
+  ],
 };
 ```
 

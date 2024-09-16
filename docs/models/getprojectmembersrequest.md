@@ -6,7 +6,7 @@
 import { GetProjectMembersRequest } from "@simplesagar/vercel/models/getprojectmembersop.js";
 
 let value: GetProjectMembersRequest = {
-    idOrName: "prj_pavWOn1iLObbXLRiwVvzmPrTWyTf",
+  idOrName: "prj_pavWOn1iLObbXLRiwVvzmPrTWyTf",
 };
 ```
 

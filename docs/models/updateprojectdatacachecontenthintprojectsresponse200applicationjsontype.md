@@ -5,7 +5,9 @@
 ```typescript
 import { UpdateProjectDataCacheContentHintProjectsResponse200ApplicationJSONType } from "@simplesagar/vercel/models/updateprojectdatacacheop.js";
 
-let value: UpdateProjectDataCacheContentHintProjectsResponse200ApplicationJSONType = "postgres-url";
+let value:
+  UpdateProjectDataCacheContentHintProjectsResponse200ApplicationJSONType =
+    "postgres-url";
 ```
 
 ## Values

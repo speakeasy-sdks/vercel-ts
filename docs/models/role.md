@@ -5,7 +5,7 @@
 ```typescript
 import { Role } from "@simplesagar/vercel/models/teamlimited.js";
 
-let value: Role = "BILLING";
+let value: Role = "CONTRIBUTOR";
 ```
 
 ## Values

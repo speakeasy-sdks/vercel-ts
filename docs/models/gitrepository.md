@@ -8,8 +8,8 @@ The Git Repository that will be connected to the project. When this is defined, 
 import { GitRepository } from "@simplesagar/vercel/models/createprojectop.js";
 
 let value: GitRepository = {
-    repo: "<value>",
-    type: "bitbucket",
+  repo: "<value>",
+  type: "bitbucket",
 };
 ```
 

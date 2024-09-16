@@ -9,42 +9,50 @@ The deployment including both public and private information
 import { GetDeploymentResponseBody } from "@simplesagar/vercel/models/getdeploymentop.js";
 
 let value: GetDeploymentResponseBody = {
-    build: {
-        env: ["<value>"],
-    },
-    env: ["<value>"],
-    inspectorUrl: "<value>",
-    isInConcurrentBuildsQueue: false,
-    projectSettings: {},
-    aliasAssigned: false,
-    bootedAt: 3485.19,
-    buildingAt: 9372.85,
-    buildSkipped: false,
-    creator: {
-        uid: "<value>",
-    },
-    public: false,
-    status: "READY",
-    id: "<id>",
-    type: "LAMBDAS",
-    createdAt: 2572.33,
-    name: "<value>",
-    readyState: "CANCELED",
-    meta: {
-        key: "<value>",
-    },
-    regions: ["<value>"],
-    url: "http://wide-eyed-progenitor.org",
-    version: 8970.71,
-    projectId: "<value>",
-    plan: "pro",
-    createdIn: "<value>",
-    ownerId: "<value>",
-    routes: [
-        {
-            src: "<value>",
-        },
+  build: {
+    env: [
+      "<value>",
     ],
+  },
+  env: [
+    "<value>",
+  ],
+  inspectorUrl: "<value>",
+  isInConcurrentBuildsQueue: false,
+  projectSettings: {},
+  aliasAssigned: false,
+  bootedAt: 460.07,
+  buildingAt: 7386.83,
+  buildSkipped: false,
+  creator: {
+    uid: "<value>",
+  },
+  public: false,
+  status: "BUILDING",
+  id: "<id>",
+  type: "LAMBDAS",
+  createdAt: 4490.83,
+  name: "<value>",
+  readyState: "ERROR",
+  meta: {
+    "key": "<value>",
+  },
+  regions: [
+    "<value>",
+  ],
+  url: "https://sturdy-diabetes.org",
+  version: 3817.6,
+  projectId: "<value>",
+  plan: "hobby",
+  createdIn: "<value>",
+  ownerId: "<value>",
+  routes: [
+    {
+      src: "<value>",
+      continue: false,
+      middleware: 9049.49,
+    },
+  ],
 };
 ```
 

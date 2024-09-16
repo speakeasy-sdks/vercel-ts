@@ -6,8 +6,8 @@
 import { RoutesMissing } from "@simplesagar/vercel/models/createdeploymentop.js";
 
 let value: RoutesMissing = {
-    type: "header",
-    key: "<key>",
+  type: "host",
+  value: "<value>",
 };
 ```
 

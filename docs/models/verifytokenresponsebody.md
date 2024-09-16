@@ -8,8 +8,8 @@ The verification was successful.
 import { VerifyTokenResponseBody } from "@simplesagar/vercel/models/verifytokenop.js";
 
 let value: VerifyTokenResponseBody = {
-    token: "1ioXyz9Ue4xdCYGROet1dlKd",
-    email: "amy@example.com",
+  token: "1ioXyz9Ue4xdCYGROet1dlKd",
+  email: "amy@example.com",
 };
 ```
 

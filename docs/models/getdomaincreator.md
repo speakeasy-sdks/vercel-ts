@@ -8,9 +8,9 @@ An object containing information of the domain creator, including the user's id,
 import { GetDomainCreator } from "@simplesagar/vercel/models/getdomainop.js";
 
 let value: GetDomainCreator = {
-    username: "vercel_user",
-    email: "demo@example.com",
-    id: "ZspSRT4ljIEEmMHgoDwKWDei",
+  username: "vercel_user",
+  email: "demo@example.com",
+  id: "ZspSRT4ljIEEmMHgoDwKWDei",
 };
 ```
 

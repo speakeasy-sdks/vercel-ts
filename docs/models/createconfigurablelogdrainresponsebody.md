@@ -6,15 +6,17 @@
 import { CreateConfigurableLogDrainResponseBody } from "@simplesagar/vercel/models/createconfigurablelogdrainop.js";
 
 let value: CreateConfigurableLogDrainResponseBody = {
-    id: "<id>",
-    deliveryFormat: "json",
-    url: "https://overjoyed-bite.net",
-    name: "<value>",
-    ownerId: "<value>",
-    createdAt: 6656.78,
-    deletedAt: 6347.86,
-    updatedAt: 296.34,
-    environments: ["preview"],
+  id: "<id>",
+  deliveryFormat: "syslog",
+  url: "https://calculating-postbox.org",
+  name: "<value>",
+  ownerId: "<value>",
+  createdAt: 8913.15,
+  deletedAt: 291.9,
+  updatedAt: 12.07,
+  environments: [
+    "preview",
+  ],
 };
 ```
 

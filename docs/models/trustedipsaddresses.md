@@ -6,7 +6,7 @@
 import { TrustedIpsAddresses } from "@simplesagar/vercel/models/createprojectop.js";
 
 let value: TrustedIpsAddresses = {
-    value: "<value>",
+  value: "<value>",
 };
 ```
 

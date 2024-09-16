@@ -5,7 +5,7 @@
 ```typescript
 import { GetDeploymentEventsResponseBodyType } from "@simplesagar/vercel/models/getdeploymenteventsop.js";
 
-let value: GetDeploymentEventsResponseBodyType = "deployment-state";
+let value: GetDeploymentEventsResponseBodyType = "edge-function-invocation";
 ```
 
 ## Values

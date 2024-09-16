@@ -8,13 +8,15 @@ Domain purchase is being processed asynchronously.
 import { BuyDomainDomainsResponseBody } from "@simplesagar/vercel/models/buydomainop.js";
 
 let value: BuyDomainDomainsResponseBody = {
-    domain: {
-        uid: "<value>",
-        ns: ["<value>"],
-        verified: false,
-        created: 5199.52,
-        pending: false,
-    },
+  domain: {
+    uid: "<value>",
+    ns: [
+      "<value>",
+    ],
+    verified: false,
+    created: 5199.52,
+    pending: false,
+  },
 };
 ```
 

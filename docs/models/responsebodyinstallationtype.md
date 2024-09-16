@@ -5,7 +5,7 @@ Defines the installation type. - 'external' integrations are installed via the e
 ## Example Usage
 
 ```typescript
-import { ResponseBodyInstallationType } from "@simplesagar/vercel/models/getconfigurationop.js";
+import { ResponseBodyInstallationType } from "@simplesagar/vercel/models/getconfigurationsop.js";
 
 let value: ResponseBodyInstallationType = "external";
 ```

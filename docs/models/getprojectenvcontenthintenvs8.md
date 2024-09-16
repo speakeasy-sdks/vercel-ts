@@ -6,8 +6,8 @@
 import { GetProjectEnvContentHintEnvs8 } from "@simplesagar/vercel/models/getprojectenvop.js";
 
 let value: GetProjectEnvContentHintEnvs8 = {
-    type: "postgres-prisma-url",
-    storeId: "<value>",
+  type: "postgres-prisma-url",
+  storeId: "<value>",
 };
 ```
 

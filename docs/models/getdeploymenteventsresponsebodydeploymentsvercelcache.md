@@ -5,7 +5,7 @@
 ```typescript
 import { GetDeploymentEventsResponseBodyDeploymentsVercelCache } from "@simplesagar/vercel/models/getdeploymenteventsop.js";
 
-let value: GetDeploymentEventsResponseBodyDeploymentsVercelCache = "STALE";
+let value: GetDeploymentEventsResponseBodyDeploymentsVercelCache = "BYPASS";
 ```
 
 ## Values

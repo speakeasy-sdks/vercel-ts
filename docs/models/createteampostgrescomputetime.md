@@ -6,10 +6,10 @@
 import { CreateTeamPostgresComputeTime } from "@simplesagar/vercel/models/createteamop.js";
 
 let value: CreateTeamPostgresComputeTime = {
-    price: 2082.53,
-    batch: 3483.57,
-    threshold: 9323.94,
-    hidden: false,
+  price: 1572.22,
+  batch: 1591.46,
+  threshold: 3421.37,
+  hidden: false,
 };
 ```
 

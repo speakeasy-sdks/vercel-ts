@@ -6,8 +6,8 @@
 import { GetCheckTBT } from "@simplesagar/vercel/models/getcheckop.js";
 
 let value: GetCheckTBT = {
-    value: 1709.09,
-    source: "web-vitals",
+  value: 6706.38,
+  source: "web-vitals",
 };
 ```
 

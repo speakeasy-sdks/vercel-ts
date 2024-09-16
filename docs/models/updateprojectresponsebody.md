@@ -8,11 +8,11 @@ The project was successfully updated
 import { UpdateProjectResponseBody } from "@simplesagar/vercel/models/updateprojectop.js";
 
 let value: UpdateProjectResponseBody = {
-    accountId: "<value>",
-    directoryListing: false,
-    id: "<id>",
-    name: "<value>",
-    nodeVersion: "20.x",
+  accountId: "<value>",
+  directoryListing: false,
+  id: "<id>",
+  name: "<value>",
+  nodeVersion: "20.x",
 };
 ```
 

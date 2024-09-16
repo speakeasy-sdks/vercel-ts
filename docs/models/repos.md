@@ -6,20 +6,20 @@
 import { Repos } from "@simplesagar/vercel/models/searchrepoop.js";
 
 let value: Repos = {
-    id: "<value>",
-    provider: "github-custom-host",
-    url: "https://oblong-geography.biz",
+  id: 8595.81,
+  provider: "bitbucket",
+  url: "http://fat-interpretation.info",
+  name: "<value>",
+  slug: "<value>",
+  namespace: "<value>",
+  owner: {
+    id: "<id>",
     name: "<value>",
-    slug: "<value>",
-    namespace: "<value>",
-    owner: {
-        id: "<value>",
-        name: "<value>",
-    },
-    ownerType: "user",
-    private: false,
-    defaultBranch: "<value>",
-    updatedAt: 9849.34,
+  },
+  ownerType: "user",
+  private: false,
+  defaultBranch: "<value>",
+  updatedAt: 4570.59,
 };
 ```
 

@@ -6,9 +6,9 @@
 import { GetProjectEnvResponseBody3 } from "@simplesagar/vercel/models/getprojectenvop.js";
 
 let value: GetProjectEnvResponseBody3 = {
-    type: "system",
-    key: "<key>",
-    value: "<value>",
+  type: "secret",
+  key: "<key>",
+  value: "<value>",
 };
 ```
 

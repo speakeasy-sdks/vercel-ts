@@ -6,8 +6,8 @@
 import { Files } from "@simplesagar/vercel/models/createdeploymentop.js";
 
 let value: Files = {
-    data: "<value>",
-    file: "folder/file.js",
+  data: "<value>",
+  file: "folder/file.js",
 };
 ```
 

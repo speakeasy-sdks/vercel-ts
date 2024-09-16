@@ -8,17 +8,17 @@ An object representing a Build on Vercel
 import { Builds } from "@simplesagar/vercel/models/listdeploymentbuildsop.js";
 
 let value: Builds = {
-    id: "<id>",
-    deploymentId: "<value>",
-    entrypoint: "<value>",
-    readyState: "ARCHIVED",
-    output: [
-        {
-            path: "/usr/sbin",
-            digest: "<value>",
-            mode: 5448.83,
-        },
-    ],
+  id: "<id>",
+  deploymentId: "<value>",
+  entrypoint: "<value>",
+  readyState: "ARCHIVED",
+  output: [
+    {
+      path: "/usr/sbin",
+      digest: "<value>",
+      mode: 5448.83,
+    },
+  ],
 };
 ```
 

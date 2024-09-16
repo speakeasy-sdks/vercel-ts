@@ -6,10 +6,10 @@
 import { CreateTeamDataCacheWrite } from "@simplesagar/vercel/models/createteamop.js";
 
 let value: CreateTeamDataCacheWrite = {
-    price: 5960.65,
-    batch: 7090.36,
-    threshold: 5372.36,
-    hidden: false,
+  price: 7699.67,
+  batch: 3730.4,
+  threshold: 3574.25,
+  hidden: false,
 };
 ```
 

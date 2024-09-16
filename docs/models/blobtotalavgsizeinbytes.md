@@ -6,10 +6,10 @@
 import { BlobTotalAvgSizeInBytes } from "@simplesagar/vercel/models/authuser.js";
 
 let value: BlobTotalAvgSizeInBytes = {
-    price: 4633.44,
-    batch: 2114.55,
-    threshold: 2646.19,
-    hidden: false,
+  price: 1201.2,
+  batch: 9369.28,
+  threshold: 3344.74,
+  hidden: false,
 };
 ```
 

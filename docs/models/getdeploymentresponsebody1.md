@@ -8,42 +8,48 @@ The deployment including both public and private information
 import { GetDeploymentResponseBody1 } from "@simplesagar/vercel/models/getdeploymentop.js";
 
 let value: GetDeploymentResponseBody1 = {
-    build: {
-        env: ["<value>"],
-    },
-    env: ["<value>"],
-    inspectorUrl: "<value>",
-    isInConcurrentBuildsQueue: false,
-    projectSettings: {},
-    aliasAssigned: false,
-    bootedAt: 7382.27,
-    buildingAt: 4148.57,
-    buildSkipped: false,
-    creator: {
-        uid: "<value>",
-    },
-    public: false,
-    status: "ERROR",
-    id: "<id>",
-    type: "LAMBDAS",
-    createdAt: 3605.45,
-    name: "<value>",
-    readyState: "CANCELED",
-    meta: {
-        key: "<value>",
-    },
-    regions: ["<value>"],
-    url: "https://gullible-trapdoor.info",
-    version: 460.07,
-    projectId: "<value>",
-    plan: "hobby",
-    createdIn: "<value>",
-    ownerId: "<value>",
-    routes: [
-        {
-            src: "<value>",
-        },
+  build: {
+    env: [
+      "<value>",
     ],
+  },
+  env: [
+    "<value>",
+  ],
+  inspectorUrl: "<value>",
+  isInConcurrentBuildsQueue: false,
+  projectSettings: {},
+  aliasAssigned: false,
+  bootedAt: 5546.88,
+  buildingAt: 4278.34,
+  buildSkipped: false,
+  creator: {
+    uid: "<value>",
+  },
+  public: false,
+  status: "BUILDING",
+  id: "<id>",
+  type: "LAMBDAS",
+  createdAt: 8225.6,
+  name: "<value>",
+  readyState: "READY",
+  meta: {
+    "key": "<value>",
+  },
+  regions: [
+    "<value>",
+  ],
+  url: "https://immense-icing.info",
+  version: 9689.04,
+  projectId: "<value>",
+  plan: "hobby",
+  createdIn: "<value>",
+  ownerId: "<value>",
+  routes: [
+    {
+      handle: "resource",
+    },
+  ],
 };
 ```
 
@@ -104,7 +110,7 @@ let value: GetDeploymentResponseBody1 = {
 | `readySubstate`                                                                                                                                                                                                             | [models.ResponseBodyReadySubstate](../models/responsebodyreadysubstate.md)                                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                                                                          | Since June 2023 Substate of deployment when readyState is 'READY' Tracks whether or not deployment has seen production traffic: - STAGED: never seen production traffic - PROMOTED: has seen production traffic             |
 | `regions`                                                                                                                                                                                                                   | *string*[]                                                                                                                                                                                                                  | :heavy_check_mark:                                                                                                                                                                                                          | N/A                                                                                                                                                                                                                         |
 | `softDeletedByRetention`                                                                                                                                                                                                    | *boolean*                                                                                                                                                                                                                   | :heavy_minus_sign:                                                                                                                                                                                                          | N/A                                                                                                                                                                                                                         |
-| `source`                                                                                                                                                                                                                    | [models.GetDeploymentResponseBodyDeploymentsSource](../models/getdeploymentresponsebodydeploymentssource.md)                                                                                                                | :heavy_minus_sign:                                                                                                                                                                                                          | N/A                                                                                                                                                                                                                         |
+| `source`                                                                                                                                                                                                                    | [models.ResponseBodySource](../models/responsebodysource.md)                                                                                                                                                                | :heavy_minus_sign:                                                                                                                                                                                                          | N/A                                                                                                                                                                                                                         |
 | `target`                                                                                                                                                                                                                    | [models.ResponseBodyTarget](../models/responsebodytarget.md)                                                                                                                                                                | :heavy_minus_sign:                                                                                                                                                                                                          | N/A                                                                                                                                                                                                                         |
 | `undeletedAt`                                                                                                                                                                                                               | *number*                                                                                                                                                                                                                    | :heavy_minus_sign:                                                                                                                                                                                                          | N/A                                                                                                                                                                                                                         |
 | `url`                                                                                                                                                                                                                       | *string*                                                                                                                                                                                                                    | :heavy_check_mark:                                                                                                                                                                                                          | N/A                                                                                                                                                                                                                         |

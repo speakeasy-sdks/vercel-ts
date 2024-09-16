@@ -6,11 +6,11 @@
 import { GetProjectsOptionsAllowlist } from "@simplesagar/vercel/models/getprojectsop.js";
 
 let value: GetProjectsOptionsAllowlist = {
-    paths: [
-        {
-            value: "<value>",
-        },
-    ],
+  paths: [
+    {
+      value: "<value>",
+    },
+  ],
 };
 ```
 

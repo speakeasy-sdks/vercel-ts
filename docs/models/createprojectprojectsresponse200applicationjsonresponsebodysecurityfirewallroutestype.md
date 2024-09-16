@@ -7,7 +7,8 @@ import {
   CreateProjectProjectsResponse200ApplicationJSONResponseBodySecurityFirewallRoutesType,
 } from "@simplesagar/vercel/models/createprojectop.js";
 
-let value: CreateProjectProjectsResponse200ApplicationJSONResponseBodySecurityFirewallRoutesType =
+let value:
+  CreateProjectProjectsResponse200ApplicationJSONResponseBodySecurityFirewallRoutesType =
     "region";
 ```
 

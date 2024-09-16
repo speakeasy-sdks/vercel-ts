@@ -6,13 +6,13 @@
 import { ResponseBodyMembers } from "@simplesagar/vercel/models/getprojectmembersop.js";
 
 let value: ResponseBodyMembers = {
-    email: "jane.doe@example.com",
-    role: "ADMIN",
-    computedProjectRole: "ADMIN",
-    uid: "zTuNVUXEAvvnNN3IaqinkyMw",
-    username: "jane-doe",
-    createdAt: 1588720733602,
-    teamRole: "CONTRIBUTOR",
+  email: "jane.doe@example.com",
+  role: "ADMIN",
+  computedProjectRole: "ADMIN",
+  uid: "zTuNVUXEAvvnNN3IaqinkyMw",
+  username: "jane-doe",
+  createdAt: 1588720733602,
+  teamRole: "CONTRIBUTOR",
 };
 ```
 

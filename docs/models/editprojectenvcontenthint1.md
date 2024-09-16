@@ -6,8 +6,8 @@
 import { EditProjectEnvContentHint1 } from "@simplesagar/vercel/models/editprojectenvop.js";
 
 let value: EditProjectEnvContentHint1 = {
-    type: "redis-url",
-    storeId: "<value>",
+  type: "redis-url",
+  storeId: "<value>",
 };
 ```
 

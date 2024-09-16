@@ -5,7 +5,7 @@
 ```typescript
 import { ResponseBodyWafAction } from "@simplesagar/vercel/models/getdeploymenteventsop.js";
 
-let value: ResponseBodyWafAction = "challenge";
+let value: ResponseBodyWafAction = "log";
 ```
 
 ## Values

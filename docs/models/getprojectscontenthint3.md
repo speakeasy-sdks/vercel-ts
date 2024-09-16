@@ -6,8 +6,8 @@
 import { GetProjectsContentHint3 } from "@simplesagar/vercel/models/getprojectsop.js";
 
 let value: GetProjectsContentHint3 = {
-    type: "redis-rest-api-token",
-    storeId: "<value>",
+  type: "redis-rest-api-token",
+  storeId: "<value>",
 };
 ```
 

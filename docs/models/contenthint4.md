@@ -6,8 +6,8 @@
 import { ContentHint4 } from "@simplesagar/vercel/models/updateprojectdatacacheop.js";
 
 let value: ContentHint4 = {
-    type: "redis-rest-api-read-only-token",
-    storeId: "<value>",
+  type: "redis-rest-api-read-only-token",
+  storeId: "<value>",
 };
 ```
 

@@ -4,8 +4,8 @@
 
 import { VercelCore } from "../core.js";
 import {
-    encodeFormQuery as encodeFormQuery$,
-    encodeJSON as encodeJSON$,
+  encodeFormQuery as encodeFormQuery$,
+  encodeJSON as encodeJSON$,
 } from "../lib/encodings.js";
 import * as m$ from "../lib/matchers.js";
 import * as schemas$ from "../lib/schemas.js";
@@ -13,18 +13,18 @@ import { RequestOptions } from "../lib/sdks.js";
 import { extractSecurity, resolveGlobalSecurity } from "../lib/security.js";
 import { pathToFunc } from "../lib/url.js";
 import {
-    CreateLogDrainRequest,
-    CreateLogDrainRequest$outboundSchema,
-    CreateLogDrainRequestBody,
-    CreateLogDrainResponseBody,
-    CreateLogDrainResponseBody$inboundSchema,
+  CreateLogDrainRequest,
+  CreateLogDrainRequest$outboundSchema,
+  CreateLogDrainRequestBody,
+  CreateLogDrainResponseBody,
+  CreateLogDrainResponseBody$inboundSchema,
 } from "../models/createlogdrainop.js";
 import {
-    ConnectionError,
-    InvalidRequestError,
-    RequestAbortedError,
-    RequestTimeoutError,
-    UnexpectedClientError,
+  ConnectionError,
+  InvalidRequestError,
+  RequestAbortedError,
+  RequestTimeoutError,
+  UnexpectedClientError,
 } from "../models/httpclienterrors.js";
 import { SDKError } from "../models/sdkerror.js";
 import { SDKValidationError } from "../models/sdkvalidationerror.js";
@@ -37,106 +37,103 @@ import { Result } from "../types/fp.js";
  * Creates an Integration log drain. This endpoint must be called with an OAuth2 client (integration), since log drains are tied to integrations. If it is called with a different token type it will produce a 400 error.
  */
 export async function logDrainsCreate(
-    client$: VercelCore,
-    teamId?: string | undefined,
-    slug?: string | undefined,
-    requestBody?: CreateLogDrainRequestBody | undefined,
-    options?: RequestOptions
+  client$: VercelCore,
+  teamId?: string | undefined,
+  slug?: string | undefined,
+  requestBody?: CreateLogDrainRequestBody | undefined,
+  options?: RequestOptions,
 ): Promise<
-    Result<
-        CreateLogDrainResponseBody,
-        | SDKError
-        | SDKValidationError
-        | UnexpectedClientError
-        | InvalidRequestError
-        | RequestAbortedError
-        | RequestTimeoutError
-        | ConnectionError
-    >
+  Result<
+    CreateLogDrainResponseBody,
+    | SDKError
+    | SDKValidationError
+    | UnexpectedClientError
+    | InvalidRequestError
+    | RequestAbortedError
+    | RequestTimeoutError
+    | ConnectionError
+  >
 > {
-    const input$: CreateLogDrainRequest = {
-        teamId: teamId,
-        slug: slug,
-        requestBody: requestBody,
-    };
+  const input$: CreateLogDrainRequest = {
+    teamId: teamId,
+    slug: slug,
+    requestBody: requestBody,
+  };
 
-    const parsed$ = schemas$.safeParse(
-        input$,
-        (value$) => CreateLogDrainRequest$outboundSchema.parse(value$),
-        "Input validation failed"
-    );
-    if (!parsed$.ok) {
-        return parsed$;
-    }
-    const payload$ = parsed$.value;
-    const body$ = encodeJSON$("body", payload$.RequestBody, { explode: true });
+  const parsed$ = schemas$.safeParse(
+    input$,
+    (value$) => CreateLogDrainRequest$outboundSchema.parse(value$),
+    "Input validation failed",
+  );
+  if (!parsed$.ok) {
+    return parsed$;
+  }
+  const payload$ = parsed$.value;
+  const body$ = encodeJSON$("body", payload$.RequestBody, { explode: true });
 
-    const path$ = pathToFunc("/v2/integrations/log-drains")();
+  const path$ = pathToFunc("/v2/integrations/log-drains")();
 
-    const query$ = encodeFormQuery$({
-        slug: payload$.slug,
-        teamId: payload$.teamId,
-    });
+  const query$ = encodeFormQuery$({
+    "slug": payload$.slug,
+    "teamId": payload$.teamId,
+  });
 
-    const headers$ = new Headers({
-        "Content-Type": "application/json",
-        Accept: "application/json",
-    });
+  const headers$ = new Headers({
+    "Content-Type": "application/json",
+    Accept: "application/json",
+  });
 
-    const bearerToken$ = await extractSecurity(client$.options$.bearerToken);
-    const security$ = bearerToken$ == null ? {} : { bearerToken: bearerToken$ };
-    const context = {
-        operationID: "createLogDrain",
-        oAuth2Scopes: [],
-        securitySource: client$.options$.bearerToken,
-    };
-    const securitySettings$ = resolveGlobalSecurity(security$);
+  const bearerToken$ = await extractSecurity(client$.options$.bearerToken);
+  const security$ = bearerToken$ == null ? {} : { bearerToken: bearerToken$ };
+  const context = {
+    operationID: "createLogDrain",
+    oAuth2Scopes: [],
+    securitySource: client$.options$.bearerToken,
+  };
+  const securitySettings$ = resolveGlobalSecurity(security$);
 
-    const requestRes = client$.createRequest$(
-        context,
-        {
-            security: securitySettings$,
-            method: "POST",
-            path: path$,
-            headers: headers$,
-            query: query$,
-            body: body$,
-            timeoutMs: options?.timeoutMs || client$.options$.timeoutMs || -1,
-        },
-        options
-    );
-    if (!requestRes.ok) {
-        return requestRes;
-    }
-    const request$ = requestRes.value;
+  const requestRes = client$.createRequest$(context, {
+    security: securitySettings$,
+    method: "POST",
+    path: path$,
+    headers: headers$,
+    query: query$,
+    body: body$,
+    timeoutMs: options?.timeoutMs || client$.options$.timeoutMs || -1,
+  }, options);
+  if (!requestRes.ok) {
+    return requestRes;
+  }
+  const request$ = requestRes.value;
 
-    const doResult = await client$.do$(request$, {
-        context,
-        errorCodes: ["400", "401", "403", "4XX", "5XX"],
-        retryConfig: options?.retries || client$.options$.retryConfig,
-        retryCodes: options?.retryCodes || ["429", "500", "502", "503", "504"],
-    });
-    if (!doResult.ok) {
-        return doResult;
-    }
-    const response = doResult.value;
+  const doResult = await client$.do$(request$, {
+    context,
+    errorCodes: ["400", "401", "403", "4XX", "5XX"],
+    retryConfig: options?.retries
+      || client$.options$.retryConfig,
+    retryCodes: options?.retryCodes || ["429", "500", "502", "503", "504"],
+  });
+  if (!doResult.ok) {
+    return doResult;
+  }
+  const response = doResult.value;
 
-    const [result$] = await m$.match<
-        CreateLogDrainResponseBody,
-        | SDKError
-        | SDKValidationError
-        | UnexpectedClientError
-        | InvalidRequestError
-        | RequestAbortedError
-        | RequestTimeoutError
-        | ConnectionError
-    >(
-        m$.json(200, CreateLogDrainResponseBody$inboundSchema),
-        m$.fail([400, 401, 403, "4XX", "5XX"])
-    )(response);
-    if (!result$.ok) {
-        return result$;
-    }
-
+  const [result$] = await m$.match<
+    CreateLogDrainResponseBody,
+    | SDKError
+    | SDKValidationError
+    | UnexpectedClientError
+    | InvalidRequestError
+    | RequestAbortedError
+    | RequestTimeoutError
+    | ConnectionError
+  >(
+    m$.json(200, CreateLogDrainResponseBody$inboundSchema),
+    m$.fail([400, 401, 403, "4XX", "5XX"]),
+  )(response);
+  if (!result$.ok) {
     return result$;
+  }
+
+  return result$;
 }

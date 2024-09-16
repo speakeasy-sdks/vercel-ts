@@ -6,10 +6,10 @@
 import { PostgresWrittenData } from "@simplesagar/vercel/models/authuser.js";
 
 let value: PostgresWrittenData = {
-    price: 2981.87,
-    batch: 9322.96,
-    threshold: 1509.35,
-    hidden: false,
+  price: 8634.77,
+  batch: 2273.62,
+  threshold: 3476.98,
+  hidden: false,
 };
 ```
 

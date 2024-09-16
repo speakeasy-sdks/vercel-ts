@@ -6,14 +6,14 @@
 import { UpdateCheckResponseBody } from "@simplesagar/vercel/models/updatecheckop.js";
 
 let value: UpdateCheckResponseBody = {
-    id: "<id>",
-    name: "<value>",
-    status: "running",
-    blocking: false,
-    integrationId: "<value>",
-    deploymentId: "<value>",
-    createdAt: 2532.91,
-    updatedAt: 4143.69,
+  id: "<id>",
+  name: "<value>",
+  status: "running",
+  blocking: false,
+  integrationId: "<value>",
+  deploymentId: "<value>",
+  createdAt: 5818.5,
+  updatedAt: 2532.91,
 };
 ```
 

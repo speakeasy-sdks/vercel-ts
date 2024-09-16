@@ -6,8 +6,8 @@
 import { ResponseBodyAliasError } from "@simplesagar/vercel/models/getdeploymentop.js";
 
 let value: ResponseBodyAliasError = {
-    code: "<value>",
-    message: "<value>",
+  code: "<value>",
+  message: "<value>",
 };
 ```
 

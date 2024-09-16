@@ -8,8 +8,8 @@ An object describing the reason why the team is being deleted.
 import { Reasons } from "@simplesagar/vercel/models/deleteteamop.js";
 
 let value: Reasons = {
-    slug: "<value>",
-    description: "Configurable methodical info-mediaries",
+  slug: "<value>",
+  description: "Synergized motivating initiative",
 };
 ```
 

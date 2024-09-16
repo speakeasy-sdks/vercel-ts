@@ -5,7 +5,7 @@
 ```typescript
 import { GetDeploymentEventsResponseBodyWafAction } from "@simplesagar/vercel/models/getdeploymenteventsop.js";
 
-let value: GetDeploymentEventsResponseBodyWafAction = "bypass";
+let value: GetDeploymentEventsResponseBodyWafAction = "rate_limit";
 ```
 
 ## Values

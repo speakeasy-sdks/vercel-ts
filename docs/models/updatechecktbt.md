@@ -6,8 +6,8 @@
 import { UpdateCheckTBT } from "@simplesagar/vercel/models/updatecheckop.js";
 
 let value: UpdateCheckTBT = {
-    value: 6527.9,
-    source: "web-vitals",
+  value: 1020.44,
+  source: "web-vitals",
 };
 ```
 

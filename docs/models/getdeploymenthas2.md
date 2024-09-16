@@ -6,8 +6,8 @@
 import { GetDeploymentHas2 } from "@simplesagar/vercel/models/getdeploymentop.js";
 
 let value: GetDeploymentHas2 = {
-    type: "header",
-    key: "<key>",
+  type: "cookie",
+  key: "<key>",
 };
 ```
 

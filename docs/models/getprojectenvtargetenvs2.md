@@ -5,7 +5,7 @@
 ```typescript
 import { GetProjectEnvTargetEnvs2 } from "@simplesagar/vercel/models/getprojectenvop.js";
 
-let value: GetProjectEnvTargetEnvs2 = "production";
+let value: GetProjectEnvTargetEnvs2 = "preview";
 ```
 
 ## Values

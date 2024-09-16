@@ -8,8 +8,8 @@ Successful response which returns the price of the domain and the period.
 import { CheckDomainPriceResponseBody } from "@simplesagar/vercel/models/checkdomainpriceop.js";
 
 let value: CheckDomainPriceResponseBody = {
-    price: 20,
-    period: 1,
+  price: 20,
+  period: 1,
 };
 ```
 

@@ -8,8 +8,8 @@ Since June '23
 import { GetDeploymentsGitComments } from "@simplesagar/vercel/models/getdeploymentsop.js";
 
 let value: GetDeploymentsGitComments = {
-    onPullRequest: false,
-    onCommit: false,
+  onPullRequest: false,
+  onCommit: false,
 };
 ```
 

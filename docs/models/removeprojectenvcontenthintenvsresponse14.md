@@ -6,11 +6,11 @@
 import { RemoveProjectEnvContentHintEnvsResponse14 } from "@simplesagar/vercel/models/removeprojectenvop.js";
 
 let value: RemoveProjectEnvContentHintEnvsResponse14 = {
-    type: "integration-store-secret",
-    storeId: "<value>",
-    integrationId: "<value>",
-    integrationProductId: "<value>",
-    integrationConfigurationId: "<value>",
+  type: "integration-store-secret",
+  storeId: "<value>",
+  integrationId: "<value>",
+  integrationProductId: "<value>",
+  integrationConfigurationId: "<value>",
 };
 ```
 

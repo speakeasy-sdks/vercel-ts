@@ -8,9 +8,9 @@ Will be used to create an invoice item. The price must be in cents: 2000 for $20
 import { CreateTeamPasswordProtection } from "@simplesagar/vercel/models/createteamop.js";
 
 let value: CreateTeamPasswordProtection = {
-    price: 4378.14,
-    quantity: 1390.72,
-    hidden: false,
+  price: 1024.13,
+  quantity: 9754.25,
+  hidden: false,
 };
 ```
 

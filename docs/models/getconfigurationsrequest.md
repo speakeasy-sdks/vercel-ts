@@ -6,7 +6,7 @@
 import { GetConfigurationsRequest } from "@simplesagar/vercel/models/getconfigurationsop.js";
 
 let value: GetConfigurationsRequest = {
-    view: "project",
+  view: "project",
 };
 ```
 

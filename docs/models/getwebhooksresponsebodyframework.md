@@ -1,11 +1,11 @@
-# GetDeploymentResponseBodyFramework
+# GetWebhooksResponseBodyFramework
 
 ## Example Usage
 
 ```typescript
-import { GetDeploymentResponseBodyFramework } from "@simplesagar/vercel/models/getdeploymentop.js";
+import { GetWebhooksResponseBodyFramework } from "@simplesagar/vercel/models/getwebhooksop.js";
 
-let value: GetDeploymentResponseBodyFramework = "fasthtml";
+let value: GetWebhooksResponseBodyFramework = "nextjs";
 ```
 
 ## Values

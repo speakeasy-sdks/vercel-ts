@@ -6,7 +6,7 @@
 import { CreateDeploymentSpeedInsights } from "@simplesagar/vercel/models/createdeploymentop.js";
 
 let value: CreateDeploymentSpeedInsights = {
-    id: "<id>",
+  id: "<id>",
 };
 ```
 

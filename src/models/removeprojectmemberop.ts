@@ -5,58 +5,58 @@
 import * as z from "zod";
 
 export type RemoveProjectMemberRequest = {
-    /**
-     * The ID or name of the Project.
-     */
-    idOrName: string;
-    /**
-     * The user ID of the member.
-     */
-    uid: string;
-    /**
-     * The Team identifier to perform the request on behalf of.
-     */
-    teamId?: string | undefined;
-    /**
-     * The Team slug to perform the request on behalf of.
-     */
-    slug?: string | undefined;
+  /**
+   * The ID or name of the Project.
+   */
+  idOrName: string;
+  /**
+   * The user ID of the member.
+   */
+  uid: string;
+  /**
+   * The Team identifier to perform the request on behalf of.
+   */
+  teamId?: string | undefined;
+  /**
+   * The Team slug to perform the request on behalf of.
+   */
+  slug?: string | undefined;
 };
 
 export type RemoveProjectMemberResponseBody = {
-    id: string;
+  id: string;
 };
 
 /** @internal */
 export const RemoveProjectMemberRequest$inboundSchema: z.ZodType<
-    RemoveProjectMemberRequest,
-    z.ZodTypeDef,
-    unknown
+  RemoveProjectMemberRequest,
+  z.ZodTypeDef,
+  unknown
 > = z.object({
-    idOrName: z.string(),
-    uid: z.string(),
-    teamId: z.string().optional(),
-    slug: z.string().optional(),
+  idOrName: z.string(),
+  uid: z.string(),
+  teamId: z.string().optional(),
+  slug: z.string().optional(),
 });
 
 /** @internal */
 export type RemoveProjectMemberRequest$Outbound = {
-    idOrName: string;
-    uid: string;
-    teamId?: string | undefined;
-    slug?: string | undefined;
+  idOrName: string;
+  uid: string;
+  teamId?: string | undefined;
+  slug?: string | undefined;
 };
 
 /** @internal */
 export const RemoveProjectMemberRequest$outboundSchema: z.ZodType<
-    RemoveProjectMemberRequest$Outbound,
-    z.ZodTypeDef,
-    RemoveProjectMemberRequest
+  RemoveProjectMemberRequest$Outbound,
+  z.ZodTypeDef,
+  RemoveProjectMemberRequest
 > = z.object({
-    idOrName: z.string(),
-    uid: z.string(),
-    teamId: z.string().optional(),
-    slug: z.string().optional(),
+  idOrName: z.string(),
+  uid: z.string(),
+  teamId: z.string().optional(),
+  slug: z.string().optional(),
 });
 
 /**
@@ -64,35 +64,35 @@ export const RemoveProjectMemberRequest$outboundSchema: z.ZodType<
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
 export namespace RemoveProjectMemberRequest$ {
-    /** @deprecated use `RemoveProjectMemberRequest$inboundSchema` instead. */
-    export const inboundSchema = RemoveProjectMemberRequest$inboundSchema;
-    /** @deprecated use `RemoveProjectMemberRequest$outboundSchema` instead. */
-    export const outboundSchema = RemoveProjectMemberRequest$outboundSchema;
-    /** @deprecated use `RemoveProjectMemberRequest$Outbound` instead. */
-    export type Outbound = RemoveProjectMemberRequest$Outbound;
+  /** @deprecated use `RemoveProjectMemberRequest$inboundSchema` instead. */
+  export const inboundSchema = RemoveProjectMemberRequest$inboundSchema;
+  /** @deprecated use `RemoveProjectMemberRequest$outboundSchema` instead. */
+  export const outboundSchema = RemoveProjectMemberRequest$outboundSchema;
+  /** @deprecated use `RemoveProjectMemberRequest$Outbound` instead. */
+  export type Outbound = RemoveProjectMemberRequest$Outbound;
 }
 
 /** @internal */
 export const RemoveProjectMemberResponseBody$inboundSchema: z.ZodType<
-    RemoveProjectMemberResponseBody,
-    z.ZodTypeDef,
-    unknown
+  RemoveProjectMemberResponseBody,
+  z.ZodTypeDef,
+  unknown
 > = z.object({
-    id: z.string(),
+  id: z.string(),
 });
 
 /** @internal */
 export type RemoveProjectMemberResponseBody$Outbound = {
-    id: string;
+  id: string;
 };
 
 /** @internal */
 export const RemoveProjectMemberResponseBody$outboundSchema: z.ZodType<
-    RemoveProjectMemberResponseBody$Outbound,
-    z.ZodTypeDef,
-    RemoveProjectMemberResponseBody
+  RemoveProjectMemberResponseBody$Outbound,
+  z.ZodTypeDef,
+  RemoveProjectMemberResponseBody
 > = z.object({
-    id: z.string(),
+  id: z.string(),
 });
 
 /**
@@ -100,10 +100,10 @@ export const RemoveProjectMemberResponseBody$outboundSchema: z.ZodType<
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
 export namespace RemoveProjectMemberResponseBody$ {
-    /** @deprecated use `RemoveProjectMemberResponseBody$inboundSchema` instead. */
-    export const inboundSchema = RemoveProjectMemberResponseBody$inboundSchema;
-    /** @deprecated use `RemoveProjectMemberResponseBody$outboundSchema` instead. */
-    export const outboundSchema = RemoveProjectMemberResponseBody$outboundSchema;
-    /** @deprecated use `RemoveProjectMemberResponseBody$Outbound` instead. */
-    export type Outbound = RemoveProjectMemberResponseBody$Outbound;
+  /** @deprecated use `RemoveProjectMemberResponseBody$inboundSchema` instead. */
+  export const inboundSchema = RemoveProjectMemberResponseBody$inboundSchema;
+  /** @deprecated use `RemoveProjectMemberResponseBody$outboundSchema` instead. */
+  export const outboundSchema = RemoveProjectMemberResponseBody$outboundSchema;
+  /** @deprecated use `RemoveProjectMemberResponseBody$Outbound` instead. */
+  export type Outbound = RemoveProjectMemberResponseBody$Outbound;
 }

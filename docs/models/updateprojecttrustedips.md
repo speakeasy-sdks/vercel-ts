@@ -6,7 +6,7 @@
 import { UpdateProjectTrustedIps } from "@simplesagar/vercel/models/updateprojectop.js";
 
 let value: UpdateProjectTrustedIps = {
-    deploymentType: "all",
+  deploymentType: "all",
 };
 ```
 

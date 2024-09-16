@@ -5,7 +5,9 @@
 ```typescript
 import { CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInterval } from "@simplesagar/vercel/models/createteamop.js";
 
-let value: CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInterval = "month";
+let value:
+  CreateTeamTeamsResponse200ApplicationJSONResponseBodyBillingInterval =
+    "month";
 ```
 
 ## Values

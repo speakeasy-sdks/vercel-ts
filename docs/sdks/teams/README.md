@@ -38,7 +38,7 @@ async function run() {
   const result = await vercel.teams.getMembers({
     teamId: "<value>",
   });
-
+  
   // Handle the result
   console.log(result)
 }
@@ -113,7 +113,7 @@ const vercel = new Vercel({
 
 async function run() {
   const result = await vercel.teams.inviteUser("<value>");
-
+  
   // Handle the result
   console.log(result)
 }
@@ -187,7 +187,7 @@ const vercel = new Vercel({
 
 async function run() {
   const result = await vercel.teams.requestAccess("<value>");
-
+  
   // Handle the result
   console.log(result)
 }
@@ -261,7 +261,7 @@ const vercel = new Vercel({
 
 async function run() {
   const result = await vercel.teams.getAccessRequest("<value>", "<value>");
-
+  
   // Handle the result
   console.log(result)
 }
@@ -335,7 +335,7 @@ const vercel = new Vercel({
 
 async function run() {
   const result = await vercel.teams.join("<value>");
-
+  
   // Handle the result
   console.log(result)
 }
@@ -409,7 +409,7 @@ const vercel = new Vercel({
 
 async function run() {
   const result = await vercel.teams.updateMember("<value>", "<value>");
-
+  
   // Handle the result
   console.log(result)
 }
@@ -484,7 +484,7 @@ const vercel = new Vercel({
 
 async function run() {
   const result = await vercel.teams.removeMember("<value>", "<value>");
-
+  
   // Handle the result
   console.log(result)
 }
@@ -558,7 +558,7 @@ const vercel = new Vercel({
 
 async function run() {
   const result = await vercel.teams.get("<value>");
-
+  
   // Handle the result
   console.log(result)
 }
@@ -631,7 +631,7 @@ const vercel = new Vercel({
 
 async function run() {
   const result = await vercel.teams.update("<value>");
-
+  
   // Handle the result
   console.log(result)
 }
@@ -706,7 +706,7 @@ const vercel = new Vercel({
 
 async function run() {
   const result = await vercel.teams.list();
-
+  
   // Handle the result
   console.log(result)
 }
@@ -781,7 +781,7 @@ const vercel = new Vercel({
 
 async function run() {
   const result = await vercel.teams.create();
-
+  
   // Handle the result
   console.log(result)
 }
@@ -854,7 +854,7 @@ const vercel = new Vercel({
 
 async function run() {
   const result = await vercel.teams.delete("<value>");
-
+  
   // Handle the result
   console.log(result)
 }
@@ -930,7 +930,7 @@ const vercel = new Vercel({
 
 async function run() {
   const result = await vercel.teams.deleteInviteCode("2wn2hudbr4chb1ecywo9dvzo7g9sscs6mzcz8htdde0txyom4l", "team_LLHUOMOoDlqOp8wPE4kFo9pE");
-
+  
   // Handle the result
   console.log(result)
 }

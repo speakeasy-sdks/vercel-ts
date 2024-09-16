@@ -8,8 +8,34 @@
 > [!NOTE]
 > This SDK is an example and not yet ready for production usage.
 
+<!-- Start Summary [summary] -->
+## Summary
+
+Vercel API: Vercel combines the best developer experience with an obsessive focus on end-user performance. Our platform enables frontend teams to do their best work.
+<!-- End Summary [summary] -->
+
+<!-- Start Table of Contents [toc] -->
+## Table of Contents
+
+* [SDK Installation](#sdk-installation)
+* [Requirements](#requirements)
+* [SDK Example Usage](#sdk-example-usage)
+* [Available Resources and Operations](#available-resources-and-operations)
+* [Standalone functions](#standalone-functions)
+* [Pagination](#pagination)
+* [File uploads](#file-uploads)
+* [Retries](#retries)
+* [Error Handling](#error-handling)
+* [Server Selection](#server-selection)
+* [Custom HTTP Client](#custom-http-client)
+* [Authentication](#authentication)
+* [Debugging](#debugging)
+<!-- End Table of Contents [toc] -->
+
 <!-- Start SDK Installation [installation] -->
 ## SDK Installation
+
+The SDK can be installed with either [npm](https://www.npmjs.com/), [pnpm](https://pnpm.io/), [bun](https://bun.sh/) or [yarn](https://classic.yarnpkg.com/en/) package managers.
 
 ### NPM
 
@@ -60,10 +86,10 @@ import { Vercel } from "@simplesagar/vercel";
 const vercel = new Vercel();
 
 async function run() {
-    const result = await vercel.listDeploymentBuilds("<value>");
+  const result = await vercel.listDeploymentBuilds("<value>");
 
-    // Handle the result
-    console.log(result);
+  // Handle the result
+  console.log(result);
 }
 
 run();
@@ -74,11 +100,8 @@ run();
 <!-- Start Available Resources and Operations [operations] -->
 ## Available Resources and Operations
 
-### [Vercel SDK](docs/sdks/vercel/README.md)
-
-* [listDeploymentBuilds](docs/sdks/vercel/README.md#listdeploymentbuilds) - Retrieves the list of builds given their deployment's unique identifier. No longer listed as public API as of May 2023.
-* [datacachePurgeall](docs/sdks/vercel/README.md#datacachepurgeall)
-* [dataCacheBillingSettings](docs/sdks/vercel/README.md#datacachebillingsettings)
+<details open>
+<summary>Available methods</summary>
 
 ### [accessGroups](docs/sdks/accessgroups/README.md)
 
@@ -90,6 +113,13 @@ run();
 * [create](docs/sdks/accessgroups/README.md#create) - Creates an access group
 * [listProjects](docs/sdks/accessgroups/README.md#listprojects) - List projects of an access group
 
+### [aliases](docs/sdks/aliases/README.md)
+
+* [list](docs/sdks/aliases/README.md#list) - List aliases
+* [get](docs/sdks/aliases/README.md#get) - Get an Alias
+* [delete](docs/sdks/aliases/README.md#delete) - Delete an Alias
+* [assign](docs/sdks/aliases/README.md#assign) - Assign an Alias
+
 ### [artifacts](docs/sdks/artifacts/README.md)
 
 * [recordEvents](docs/sdks/artifacts/README.md#recordevents) - Record an artifacts cache usage event
@@ -99,6 +129,18 @@ run();
 * [exists](docs/sdks/artifacts/README.md#exists) - Check if a cache artifact exists
 * [query](docs/sdks/artifacts/README.md#query) - Query information about an artifact
 
+### [authentication](docs/sdks/authentication/README.md)
+
+* [login](docs/sdks/authentication/README.md#login) - Login with email
+* [verify](docs/sdks/authentication/README.md#verify) - Verify a login request to get an authentication token
+
+### [certs](docs/sdks/certs/README.md)
+
+* [getById](docs/sdks/certs/README.md#getbyid) - Get cert by id
+* [remove](docs/sdks/certs/README.md#remove) - Remove cert
+* [issue](docs/sdks/certs/README.md#issue) - Issue a new cert
+* [upload](docs/sdks/certs/README.md#upload) - Upload a cert
+
 ### [checks](docs/sdks/checks/README.md)
 
 * [create](docs/sdks/checks/README.md#create) - Creates a new Check
@@ -106,16 +148,6 @@ run();
 * [get](docs/sdks/checks/README.md#get) - Get a single check
 * [update](docs/sdks/checks/README.md#update) - Update a check
 * [rerequest](docs/sdks/checks/README.md#rerequest) - Rerequest a check
-
-### [projects](docs/sdks/projects/README.md)
-
-* [updateDataCache](docs/sdks/projects/README.md#updatedatacache) - Update the data cache feature
-* [getAll](docs/sdks/projects/README.md#getall) - Retrieve a list of projects
-* [create](docs/sdks/projects/README.md#create) - Create a new project
-* [update](docs/sdks/projects/README.md#update) - Update an existing project
-* [delete](docs/sdks/projects/README.md#delete) - Delete a Project
-* [pause](docs/sdks/projects/README.md#pause) - Pause a project
-* [unpause](docs/sdks/projects/README.md#unpause) - Unpause a project
 
 ### [deployments](docs/sdks/deployments/README.md)
 
@@ -129,6 +161,13 @@ run();
 * [getFileContents](docs/sdks/deployments/README.md#getfilecontents) - Get Deployment File Contents
 * [list](docs/sdks/deployments/README.md#list) - List deployments
 * [delete](docs/sdks/deployments/README.md#delete) - Delete a Deployment
+
+### [dns](docs/sdks/dns/README.md)
+
+* [listRecords](docs/sdks/dns/README.md#listrecords) - List existing DNS records
+* [createRecord](docs/sdks/dns/README.md#createrecord) - Create a DNS record
+* [updateRecord](docs/sdks/dns/README.md#updaterecord) - Update an existing DNS record
+* [removeRecord](docs/sdks/dns/README.md#removerecord) - Delete a DNS record
 
 ### [domains](docs/sdks/domains/README.md)
 
@@ -146,13 +185,6 @@ run();
 * [create](docs/sdks/domains/README.md#create) - Add a domain to a project
 * [verify](docs/sdks/domains/README.md#verify) - Verify project domain
 
-### [dns](docs/sdks/dns/README.md)
-
-* [listRecords](docs/sdks/dns/README.md#listrecords) - List existing DNS records
-* [createRecord](docs/sdks/dns/README.md#createrecord) - Create a DNS record
-* [updateRecord](docs/sdks/dns/README.md#updaterecord) - Update an existing DNS record
-* [removeRecord](docs/sdks/dns/README.md#removerecord) - Delete a DNS record
-
 ### [edgeConfigs](docs/sdks/edgeconfigs/README.md)
 
 * [list](docs/sdks/edgeconfigs/README.md#list) - Get Edge Configs
@@ -169,6 +201,14 @@ run();
 * [deleteTokens](docs/sdks/edgeconfigs/README.md#deletetokens) - Delete one or more Edge Config tokens
 * [getToken](docs/sdks/edgeconfigs/README.md#gettoken) - Get Edge Config token meta data
 * [createToken](docs/sdks/edgeconfigs/README.md#createtoken) - Create an Edge Config token
+
+### [envs](docs/sdks/envs/README.md)
+
+* [listByProject](docs/sdks/envs/README.md#listbyproject) - Retrieve the environment variables of a project by id or name
+* [get](docs/sdks/envs/README.md#get) - Retrieve the decrypted value of an environment variable of a project by id
+* [create](docs/sdks/envs/README.md#create) - Create one or more environment variables
+* [delete](docs/sdks/envs/README.md#delete) - Remove an environment variable
+* [update](docs/sdks/envs/README.md#update) - Edit an environment variable
 
 ### [events](docs/sdks/events/README.md)
 
@@ -192,34 +232,44 @@ run();
 * [getAll](docs/sdks/logdrains/README.md#getall) - Retrieves a list of all the Log Drains
 * [createConfigurable](docs/sdks/logdrains/README.md#createconfigurable) - Creates a Configurable Log Drain
 
-### [projectMembers](docs/sdks/projectmembers/README.md)
-
-* [get](docs/sdks/projectmembers/README.md#get) - List project members
-* [add](docs/sdks/projectmembers/README.md#add) - Adds a new member to a project.
-* [remove](docs/sdks/projectmembers/README.md#remove) - Remove a Project Member
-
 ### [projectDomains](docs/sdks/projectdomains/README.md)
 
 * [get](docs/sdks/projectdomains/README.md#get) - Get a project domain
 * [update](docs/sdks/projectdomains/README.md#update) - Update a project domain
 * [delete](docs/sdks/projectdomains/README.md#delete) - Remove a domain from a project
 
-### [envs](docs/sdks/envs/README.md)
+### [projectMembers](docs/sdks/projectmembers/README.md)
 
-* [listByProject](docs/sdks/envs/README.md#listbyproject) - Retrieve the environment variables of a project by id or name
-* [get](docs/sdks/envs/README.md#get) - Retrieve the decrypted value of an environment variable of a project by id
-* [create](docs/sdks/envs/README.md#create) - Create one or more environment variables
-* [delete](docs/sdks/envs/README.md#delete) - Remove an environment variable
-* [update](docs/sdks/envs/README.md#update) - Edit an environment variable
+* [get](docs/sdks/projectmembers/README.md#get) - List project members
+* [add](docs/sdks/projectmembers/README.md#add) - Adds a new member to a project.
+* [remove](docs/sdks/projectmembers/README.md#remove) - Remove a Project Member
 
-### [protectionBypass](docs/sdks/protectionbypass/README.md)
+### [projects](docs/sdks/projects/README.md)
 
-* [update](docs/sdks/protectionbypass/README.md#update) - Update Protection Bypass for Automation
+* [updateDataCache](docs/sdks/projects/README.md#updatedatacache) - Update the data cache feature
+* [getAll](docs/sdks/projects/README.md#getall) - Retrieve a list of projects
+* [create](docs/sdks/projects/README.md#create) - Create a new project
+* [update](docs/sdks/projects/README.md#update) - Update an existing project
+* [delete](docs/sdks/projects/README.md#delete) - Delete a Project
+* [pause](docs/sdks/projects/README.md#pause) - Pause a project
+* [unpause](docs/sdks/projects/README.md#unpause) - Unpause a project
 
 ### [promotions](docs/sdks/promotions/README.md)
 
 * [create](docs/sdks/promotions/README.md#create) - Points all production domains for a project to the given deploy
 * [listAliases](docs/sdks/promotions/README.md#listaliases) - Gets a list of aliases with status for the current promote
+
+### [protectionBypass](docs/sdks/protectionbypass/README.md)
+
+* [update](docs/sdks/protectionbypass/README.md#update) - Update Protection Bypass for Automation
+
+### [secrets](docs/sdks/secrets/README.md)
+
+* [list](docs/sdks/secrets/README.md#list) - List secrets
+* [create](docs/sdks/secrets/README.md#create) - Create a new secret
+* [rename](docs/sdks/secrets/README.md#rename) - Change secret name
+* [get](docs/sdks/secrets/README.md#get) - Get a single secret
+* [delete](docs/sdks/secrets/README.md#delete) - Delete a secret
 
 ### [teams](docs/sdks/teams/README.md)
 
@@ -237,17 +287,23 @@ run();
 * [delete](docs/sdks/teams/README.md#delete) - Delete a Team
 * [deleteInviteCode](docs/sdks/teams/README.md#deleteinvitecode) - Delete a Team invite code
 
-### [user](docs/sdks/user/README.md)
-
-* [getAuthUser](docs/sdks/user/README.md#getauthuser) - Get the User
-* [requestDelete](docs/sdks/user/README.md#requestdelete) - Delete User Account
-
 ### [tokens](docs/sdks/tokens/README.md)
 
 * [list](docs/sdks/tokens/README.md#list) - List Auth Tokens
 * [create](docs/sdks/tokens/README.md#create) - Create an Auth Token
 * [get](docs/sdks/tokens/README.md#get) - Get Auth Token Metadata
 * [delete](docs/sdks/tokens/README.md#delete) - Delete an authentication token
+
+### [user](docs/sdks/user/README.md)
+
+* [getAuthUser](docs/sdks/user/README.md#getauthuser) - Get the User
+* [requestDelete](docs/sdks/user/README.md#requestdelete) - Delete User Account
+
+### [Vercel SDK](docs/sdks/vercel/README.md)
+
+* [listDeploymentBuilds](docs/sdks/vercel/README.md#listdeploymentbuilds) - Retrieves the list of builds given their deployment's unique identifier. No longer listed as public API as of May 2023.
+* [datacachePurgeall](docs/sdks/vercel/README.md#datacachepurgeall)
+* [dataCacheBillingSettings](docs/sdks/vercel/README.md#datacachebillingsettings)
 
 ### [webhooks](docs/sdks/webhooks/README.md)
 
@@ -256,32 +312,7 @@ run();
 * [get](docs/sdks/webhooks/README.md#get) - Get a webhook
 * [delete](docs/sdks/webhooks/README.md#delete) - Deletes a webhook
 
-### [aliases](docs/sdks/aliases/README.md)
-
-* [list](docs/sdks/aliases/README.md#list) - List aliases
-* [get](docs/sdks/aliases/README.md#get) - Get an Alias
-* [delete](docs/sdks/aliases/README.md#delete) - Delete an Alias
-* [assign](docs/sdks/aliases/README.md#assign) - Assign an Alias
-
-### [certs](docs/sdks/certs/README.md)
-
-* [getById](docs/sdks/certs/README.md#getbyid) - Get cert by id
-* [remove](docs/sdks/certs/README.md#remove) - Remove cert
-* [issue](docs/sdks/certs/README.md#issue) - Issue a new cert
-* [upload](docs/sdks/certs/README.md#upload) - Upload a cert
-
-### [authentication](docs/sdks/authentication/README.md)
-
-* [login](docs/sdks/authentication/README.md#login) - Login with email
-* [verify](docs/sdks/authentication/README.md#verify) - Verify a login request to get an authentication token
-
-### [secrets](docs/sdks/secrets/README.md)
-
-* [list](docs/sdks/secrets/README.md#list) - List secrets
-* [create](docs/sdks/secrets/README.md#create) - Create a new secret
-* [rename](docs/sdks/secrets/README.md#rename) - Change secret name
-* [get](docs/sdks/secrets/README.md#get) - Get a single secret
-* [delete](docs/sdks/secrets/README.md#delete) - Delete a secret
+</details>
 <!-- End Available Resources and Operations [operations] -->
 
 <!-- Start Standalone functions [standalone-funcs] -->
@@ -456,17 +487,17 @@ Certain SDK methods accept files as part of a multi-part request. It is possible
 import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
-    bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
+  bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
 async function run() {
-    const result = await vercel.artifacts.upload({
-        contentLength: 4036.54,
-        hash: "12HKQaOmR5t5Uy6vdcQsNIiZgHGB",
-    });
+  const result = await vercel.artifacts.upload({
+    contentLength: 4036.54,
+    hash: "12HKQaOmR5t5Uy6vdcQsNIiZgHGB",
+  });
 
-    // Handle the result
-    console.log(result);
+  // Handle the result
+  console.log(result);
 }
 
 run();
@@ -486,21 +517,21 @@ import { Vercel } from "@simplesagar/vercel";
 const vercel = new Vercel();
 
 async function run() {
-    const result = await vercel.listDeploymentBuilds("<value>", {
-        retries: {
-            strategy: "backoff",
-            backoff: {
-                initialInterval: 1,
-                maxInterval: 50,
-                exponent: 1.1,
-                maxElapsedTime: 100,
-            },
-            retryConnectionErrors: false,
-        },
-    });
+  const result = await vercel.listDeploymentBuilds("<value>", {
+    retries: {
+      strategy: "backoff",
+      backoff: {
+        initialInterval: 1,
+        maxInterval: 50,
+        exponent: 1.1,
+        maxElapsedTime: 100,
+      },
+      retryConnectionErrors: false,
+    },
+  });
 
-    // Handle the result
-    console.log(result);
+  // Handle the result
+  console.log(result);
 }
 
 run();
@@ -512,23 +543,23 @@ If you'd like to override the default retry strategy for all operations that sup
 import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
-    retryConfig: {
-        strategy: "backoff",
-        backoff: {
-            initialInterval: 1,
-            maxInterval: 50,
-            exponent: 1.1,
-            maxElapsedTime: 100,
-        },
-        retryConnectionErrors: false,
+  retryConfig: {
+    strategy: "backoff",
+    backoff: {
+      initialInterval: 1,
+      maxInterval: 50,
+      exponent: 1.1,
+      maxElapsedTime: 100,
     },
+    retryConnectionErrors: false,
+  },
 });
 
 async function run() {
-    const result = await vercel.listDeploymentBuilds("<value>");
+  const result = await vercel.listDeploymentBuilds("<value>");
 
-    // Handle the result
-    console.log(result);
+  // Handle the result
+  console.log(result);
 }
 
 run();
@@ -555,26 +586,26 @@ import { SDKValidationError } from "@simplesagar/vercel/models/sdkvalidationerro
 const vercel = new Vercel();
 
 async function run() {
-    let result;
-    try {
-        result = await vercel.listDeploymentBuilds("<value>");
-    } catch (err) {
-        switch (true) {
-            case err instanceof SDKValidationError: {
-                // Validation errors can be pretty-printed
-                console.error(err.pretty());
-                // Raw value may also be inspected
-                console.error(err.rawValue);
-                return;
-            }
-            default: {
-                throw err;
-            }
-        }
-    }
+  let result;
+  try {
+    result = await vercel.listDeploymentBuilds("<value>");
 
     // Handle the result
     console.log(result);
+  } catch (err) {
+    switch (true) {
+      case (err instanceof SDKValidationError): {
+        // Validation errors can be pretty-printed
+        console.error(err.pretty());
+        // Raw value may also be inspected
+        console.error(err.rawValue);
+        return;
+      }
+      default: {
+        throw err;
+      }
+    }
+  }
 }
 
 run();
@@ -597,14 +628,14 @@ You can override the default server globally by passing a server index to the `s
 import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
-    serverIdx: 0,
+  serverIdx: 0,
 });
 
 async function run() {
-    const result = await vercel.listDeploymentBuilds("<value>");
+  const result = await vercel.listDeploymentBuilds("<value>");
 
-    // Handle the result
-    console.log(result);
+  // Handle the result
+  console.log(result);
 }
 
 run();
@@ -620,14 +651,14 @@ The default server can also be overridden globally by passing a URL to the `serv
 import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
-    serverURL: "https://api.vercel.com",
+  serverURL: "https://api.vercel.com",
 });
 
 async function run() {
-    const result = await vercel.listDeploymentBuilds("<value>");
+  const result = await vercel.listDeploymentBuilds("<value>");
 
-    // Handle the result
-    console.log(result);
+  // Handle the result
+  console.log(result);
 }
 
 run();
@@ -700,14 +731,14 @@ To authenticate with the API the `bearerToken` parameter must be set when initia
 import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
-    bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
+  bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
 async function run() {
-    const result = await vercel.listDeploymentBuilds("<value>");
+  const result = await vercel.listDeploymentBuilds("<value>");
 
-    // Handle the result
-    console.log(result);
+  // Handle the result
+  console.log(result);
 }
 
 run();
@@ -748,15 +779,16 @@ Here's an example of one such pagination call:
 import { Vercel } from "@simplesagar/vercel";
 
 const vercel = new Vercel({
-    bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
+  bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
 async function run() {
-    const result = await vercel.projects.getAll();
+  const result = await vercel.projects.getAll({});
 
-    for await (const page of result) {
-        // handle page
-    }
+  for await (const page of result) {
+    // Handle the page
+    console.log(page);
+  }
 }
 
 run();

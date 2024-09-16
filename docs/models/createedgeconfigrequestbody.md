@@ -6,7 +6,7 @@
 import { CreateEdgeConfigRequestBody } from "@simplesagar/vercel/models/createedgeconfigop.js";
 
 let value: CreateEdgeConfigRequestBody = {
-    slug: "<value>",
+  slug: "<value>",
 };
 ```
 

@@ -6,10 +6,10 @@
 import { GetDeploymentGitSourceDeployments6 } from "@simplesagar/vercel/models/getdeploymentop.js";
 
 let value: GetDeploymentGitSourceDeployments6 = {
-    type: "custom",
-    ref: "<value>",
-    sha: "<value>",
-    gitUrl: "<value>",
+  type: "custom",
+  ref: "<value>",
+  sha: "<value>",
+  gitUrl: "<value>",
 };
 ```
 

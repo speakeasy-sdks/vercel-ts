@@ -8,9 +8,9 @@ Will be used to create an invoice item. The price must be in cents: 2000 for $20
 import { CreateTeamConcurrentBuilds } from "@simplesagar/vercel/models/createteamop.js";
 
 let value: CreateTeamConcurrentBuilds = {
-    price: 2164.57,
-    quantity: 7730.35,
-    hidden: false,
+  price: 1940.23,
+  quantity: 4939.58,
+  hidden: false,
 };
 ```
 

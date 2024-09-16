@@ -5,7 +5,8 @@
 ```typescript
 import { FilterProjectEnvsContentHintEnvsResponse200ApplicationJSONResponseBody2Envs7Type } from "@simplesagar/vercel/models/filterprojectenvsop.js";
 
-let value: FilterProjectEnvsContentHintEnvsResponse200ApplicationJSONResponseBody2Envs7Type =
+let value:
+  FilterProjectEnvsContentHintEnvsResponse200ApplicationJSONResponseBody2Envs7Type =
     "postgres-url-non-pooling";
 ```
 

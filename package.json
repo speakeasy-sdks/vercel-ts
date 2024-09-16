@@ -1,6 +1,6 @@
 {
   "name": "@simplesagar/vercel",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "author": "Speakeasy",
   "type": "module",
   "main": "./esm/index.js",
@@ -30,7 +30,7 @@
   "scripts": {
     "lint": "eslint --max-warnings=0 src",
     "build": "tsc",
-    "prepare": "npm run build"
+    "prepublishOnly": "npm run build"
   },
   "peerDependencies": {
     "zod": ">= 3"

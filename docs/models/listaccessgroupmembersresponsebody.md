@@ -6,18 +6,18 @@
 import { ListAccessGroupMembersResponseBody } from "@simplesagar/vercel/models/listaccessgroupmembersop.js";
 
 let value: ListAccessGroupMembersResponseBody = {
-    members: [
-        {
-            email: "Kenyon_Huel7@yahoo.com",
-            uid: "<value>",
-            username: "Ettie.Bogisich",
-            teamRole: "DEVELOPER",
-        },
-    ],
-    pagination: {
-        count: 8326.2,
-        next: "<value>",
+  members: [
+    {
+      email: "Kenyon_Huel7@yahoo.com",
+      uid: "<value>",
+      username: "Ettie.Bogisich",
+      teamRole: "DEVELOPER",
     },
+  ],
+  pagination: {
+    count: 8326.2,
+    next: "<value>",
+  },
 };
 ```
 

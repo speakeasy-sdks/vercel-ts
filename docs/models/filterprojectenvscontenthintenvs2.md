@@ -6,8 +6,8 @@
 import { FilterProjectEnvsContentHintEnvs2 } from "@simplesagar/vercel/models/filterprojectenvsop.js";
 
 let value: FilterProjectEnvsContentHintEnvs2 = {
-    type: "redis-rest-api-url",
-    storeId: "<value>",
+  type: "redis-rest-api-url",
+  storeId: "<value>",
 };
 ```
 

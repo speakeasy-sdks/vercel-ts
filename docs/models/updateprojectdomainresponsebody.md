@@ -8,10 +8,10 @@ The domain was updated successfuly
 import { UpdateProjectDomainResponseBody } from "@simplesagar/vercel/models/updateprojectdomainop.js";
 
 let value: UpdateProjectDomainResponseBody = {
-    name: "<value>",
-    apexName: "<value>",
-    projectId: "<value>",
-    verified: false,
+  name: "<value>",
+  apexName: "<value>",
+  projectId: "<value>",
+  verified: false,
 };
 ```
 

@@ -6,8 +6,8 @@
 import { RequestBody5 } from "@simplesagar/vercel/models/createrecordop.js";
 
 let value: RequestBody5 = {
-    name: "subdomain",
-    type: "TXT",
+  name: "subdomain",
+  type: "TXT",
 };
 ```
 

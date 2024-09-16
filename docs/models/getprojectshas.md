@@ -6,7 +6,7 @@
 import { GetProjectsHas } from "@simplesagar/vercel/models/getprojectsop.js";
 
 let value: GetProjectsHas = {
-    type: "ip_address",
+  type: "ip_address",
 };
 ```
 

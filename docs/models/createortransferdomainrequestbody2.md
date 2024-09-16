@@ -8,8 +8,8 @@ move-in
 import { CreateOrTransferDomainRequestBody2 } from "@simplesagar/vercel/models/createortransferdomainop.js";
 
 let value: CreateOrTransferDomainRequestBody2 = {
-    name: "example.com",
-    method: "transfer-in",
+  name: "example.com",
+  method: "transfer-in",
 };
 ```
 

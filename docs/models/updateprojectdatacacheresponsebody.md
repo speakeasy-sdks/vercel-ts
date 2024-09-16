@@ -6,11 +6,11 @@
 import { UpdateProjectDataCacheResponseBody } from "@simplesagar/vercel/models/updateprojectdatacacheop.js";
 
 let value: UpdateProjectDataCacheResponseBody = {
-    accountId: "<value>",
-    directoryListing: false,
-    id: "<id>",
-    name: "<value>",
-    nodeVersion: "16.x",
+  accountId: "<value>",
+  directoryListing: false,
+  id: "<id>",
+  name: "<value>",
+  nodeVersion: "16.x",
 };
 ```
 

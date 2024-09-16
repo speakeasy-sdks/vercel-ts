@@ -8,7 +8,7 @@ Metadata information of the user who created the deployment.
 import { GetDeploymentsCreator } from "@simplesagar/vercel/models/getdeploymentsop.js";
 
 let value: GetDeploymentsCreator = {
-    uid: "eLrCnEgbKhsHyfbiNR7E8496",
+  uid: "eLrCnEgbKhsHyfbiNR7E8496",
 };
 ```
 

@@ -6,8 +6,8 @@
 import { CancelDeploymentMissing1 } from "@simplesagar/vercel/models/canceldeploymentop.js";
 
 let value: CancelDeploymentMissing1 = {
-    type: "host",
-    value: "<value>",
+  type: "host",
+  value: "<value>",
 };
 ```
 

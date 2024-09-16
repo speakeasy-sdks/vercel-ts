@@ -6,10 +6,10 @@
 import { CreateTeamEdgeMiddlewareInvocations } from "@simplesagar/vercel/models/createteamop.js";
 
 let value: CreateTeamEdgeMiddlewareInvocations = {
-    price: 6682.34,
-    batch: 6216.66,
-    threshold: 4568.85,
-    hidden: false,
+  price: 2124.34,
+  batch: 3220.17,
+  threshold: 1830.33,
+  hidden: false,
 };
 ```
 

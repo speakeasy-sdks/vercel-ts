@@ -6,7 +6,7 @@
 import { CancelDeploymentRoutes1 } from "@simplesagar/vercel/models/canceldeploymentop.js";
 
 let value: CancelDeploymentRoutes1 = {
-    src: "<value>",
+  src: "<value>",
 };
 ```
 

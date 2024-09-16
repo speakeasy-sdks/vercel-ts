@@ -6,10 +6,10 @@
 import { CreateTeamMonitoringMetric } from "@simplesagar/vercel/models/createteamop.js";
 
 let value: CreateTeamMonitoringMetric = {
-    price: 644.35,
-    batch: 635.53,
-    threshold: 2643.33,
-    hidden: false,
+  price: 8583.38,
+  batch: 7143.76,
+  threshold: 8028.94,
+  hidden: false,
 };
 ```
 

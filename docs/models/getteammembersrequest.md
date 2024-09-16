@@ -6,7 +6,7 @@
 import { GetTeamMembersRequest } from "@simplesagar/vercel/models/getteammembersop.js";
 
 let value: GetTeamMembersRequest = {
-    teamId: "<value>",
+  teamId: "<value>",
 };
 ```
 

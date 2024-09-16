@@ -8,8 +8,8 @@ Similar to `contentHints`, but should not be exposed to the user.
 import { EditProjectEnvResponseBodyInternalContentHint } from "@simplesagar/vercel/models/editprojectenvop.js";
 
 let value: EditProjectEnvResponseBodyInternalContentHint = {
-    type: "flags-secret",
-    encryptedValue: "<value>",
+  type: "flags-secret",
+  encryptedValue: "<value>",
 };
 ```
 

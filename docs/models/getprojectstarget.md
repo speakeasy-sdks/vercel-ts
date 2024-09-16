@@ -5,7 +5,9 @@
 ```typescript
 import { GetProjectsTarget } from "@simplesagar/vercel/models/getprojectsop.js";
 
-let value: GetProjectsTarget = ["production"];
+let value: GetProjectsTarget = [
+  "production",
+];
 ```
 
 ## Supported Types

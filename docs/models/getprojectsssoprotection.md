@@ -6,7 +6,7 @@
 import { GetProjectsSsoProtection } from "@simplesagar/vercel/models/getprojectsop.js";
 
 let value: GetProjectsSsoProtection = {
-    deploymentType: "prod_deployment_urls_and_all_previews",
+  deploymentType: "prod_deployment_urls_and_all_previews",
 };
 ```
 

@@ -6,8 +6,8 @@
 import { GetCheckCLS } from "@simplesagar/vercel/models/getcheckop.js";
 
 let value: GetCheckCLS = {
-    value: 6706.38,
-    source: "web-vitals",
+  value: 6531.4,
+  source: "web-vitals",
 };
 ```
 

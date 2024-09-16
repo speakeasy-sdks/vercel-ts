@@ -5,7 +5,8 @@
 ```typescript
 import { CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody9Type } from "@simplesagar/vercel/models/canceldeploymentop.js";
 
-let value: CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody9Type =
+let value:
+  CancelDeploymentGitSourceDeploymentsResponse200ApplicationJSONResponseBody9Type =
     "bitbucket";
 ```
 

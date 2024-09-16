@@ -8,11 +8,11 @@ The EdgeConfig.
 import { EdgeConfigItem } from "@simplesagar/vercel/models/edgeconfigitem.js";
 
 let value: EdgeConfigItem = {
-    key: "<key>",
-    value: "<value>",
-    edgeConfigId: "<value>",
-    createdAt: 6570.2,
-    updatedAt: 3433.92,
+  key: "<key>",
+  value: "<value>",
+  edgeConfigId: "<value>",
+  createdAt: 6570.2,
+  updatedAt: 3433.92,
 };
 ```
 

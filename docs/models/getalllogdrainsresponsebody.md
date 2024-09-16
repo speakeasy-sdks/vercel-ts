@@ -6,16 +6,18 @@
 import { GetAllLogDrainsResponseBody } from "@simplesagar/vercel/models/getalllogdrainsop.js";
 
 let value: GetAllLogDrainsResponseBody = {
-    id: "<id>",
-    deliveryFormat: "json",
-    url: "https://super-tonic.name",
-    name: "<value>",
-    ownerId: "<value>",
-    createdAt: 6717.94,
-    deletedAt: 7263.43,
-    updatedAt: 3240.83,
-    environments: ["preview"],
-    secret: "<value>",
+  id: "<id>",
+  deliveryFormat: "ndjson",
+  url: "http://cautious-species.info",
+  name: "<value>",
+  ownerId: "<value>",
+  createdAt: 7758.03,
+  deletedAt: 4053.73,
+  updatedAt: 2811.53,
+  environments: [
+    "production",
+  ],
+  secret: "<value>",
 };
 ```
 

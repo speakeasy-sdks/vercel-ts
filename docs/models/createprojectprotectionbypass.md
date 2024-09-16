@@ -6,9 +6,9 @@
 import { CreateProjectProtectionBypass } from "@simplesagar/vercel/models/createprojectop.js";
 
 let value: CreateProjectProtectionBypass = {
-    createdAt: 92.4,
-    createdBy: "<value>",
-    scope: "automation-bypass",
+  createdAt: 92.4,
+  createdBy: "<value>",
+  scope: "automation-bypass",
 };
 ```
 

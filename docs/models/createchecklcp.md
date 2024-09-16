@@ -6,8 +6,8 @@
 import { CreateCheckLCP } from "@simplesagar/vercel/models/createcheckop.js";
 
 let value: CreateCheckLCP = {
-    value: 4146.62,
-    source: "web-vitals",
+  value: 1059.07,
+  source: "web-vitals",
 };
 ```
 

@@ -5,7 +5,8 @@
 ```typescript
 import { UpdateProjectContentHintProjectsResponseType } from "@simplesagar/vercel/models/updateprojectop.js";
 
-let value: UpdateProjectContentHintProjectsResponseType = "redis-rest-api-token";
+let value: UpdateProjectContentHintProjectsResponseType =
+  "redis-rest-api-token";
 ```
 
 ## Values

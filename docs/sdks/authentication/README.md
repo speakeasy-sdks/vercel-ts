@@ -21,7 +21,7 @@ const vercel = new Vercel();
 
 async function run() {
   const result = await vercel.authentication.login();
-
+  
   // Handle the result
   console.log(result)
 }
@@ -92,7 +92,7 @@ async function run() {
   const result = await vercel.authentication.verify({
     token: "<value>",
   });
-
+  
   // Handle the result
   console.log(result)
 }

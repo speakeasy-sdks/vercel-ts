@@ -6,12 +6,12 @@
 import { CancelDeploymentCustomEnvironment } from "@simplesagar/vercel/models/canceldeploymentop.js";
 
 let value: CancelDeploymentCustomEnvironment = {
-    id: "<id>",
-    name: "<value>",
-    slug: "<value>",
-    type: "development",
-    createdAt: 1046.27,
-    updatedAt: 5124.52,
+  id: "<id>",
+  name: "<value>",
+  slug: "<value>",
+  type: "development",
+  createdAt: 1046.27,
+  updatedAt: 5124.52,
 };
 ```
 

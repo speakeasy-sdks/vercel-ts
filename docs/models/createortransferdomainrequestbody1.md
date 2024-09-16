@@ -8,7 +8,7 @@ add
 import { CreateOrTransferDomainRequestBody1 } from "@simplesagar/vercel/models/createortransferdomainop.js";
 
 let value: CreateOrTransferDomainRequestBody1 = {
-    name: "example.com",
+  name: "example.com",
 };
 ```
 

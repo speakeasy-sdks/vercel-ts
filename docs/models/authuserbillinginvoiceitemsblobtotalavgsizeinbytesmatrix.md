@@ -6,10 +6,10 @@
 import { AuthUserBillingInvoiceItemsBlobTotalAvgSizeInBytesMatrix } from "@simplesagar/vercel/models/authuser.js";
 
 let value: AuthUserBillingInvoiceItemsBlobTotalAvgSizeInBytesMatrix = {
-    defaultUnitPrice: "<value>",
-    dimensionPrices: {
-        key: "<value>",
-    },
+  defaultUnitPrice: "<value>",
+  dimensionPrices: {
+    "key": "<value>",
+  },
 };
 ```
 

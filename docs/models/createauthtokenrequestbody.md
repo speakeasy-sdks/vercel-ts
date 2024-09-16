@@ -6,7 +6,8 @@
 import { CreateAuthTokenRequestBody } from "@simplesagar/vercel/models/createauthtokenop.js";
 
 let value: CreateAuthTokenRequestBody = {
-    name: "<value>",
+  type: "oauth2-token",
+  name: "<value>",
 };
 ```
 

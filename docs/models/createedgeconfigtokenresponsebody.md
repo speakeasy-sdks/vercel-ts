@@ -6,8 +6,8 @@
 import { CreateEdgeConfigTokenResponseBody } from "@simplesagar/vercel/models/createedgeconfigtokenop.js";
 
 let value: CreateEdgeConfigTokenResponseBody = {
-    token: "<value>",
-    id: "<id>",
+  token: "<value>",
+  id: "<id>",
 };
 ```
 

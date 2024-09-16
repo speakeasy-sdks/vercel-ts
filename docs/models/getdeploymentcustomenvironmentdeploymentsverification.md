@@ -8,10 +8,10 @@ A list of verification challenges, one of which must be completed to verify the 
 import { GetDeploymentCustomEnvironmentDeploymentsVerification } from "@simplesagar/vercel/models/getdeploymentop.js";
 
 let value: GetDeploymentCustomEnvironmentDeploymentsVerification = {
-    type: "<value>",
-    domain: "cuddly-timpani.org",
-    value: "<value>",
-    reason: "<value>",
+  type: "<value>",
+  domain: "unwelcome-wrench.net",
+  value: "<value>",
+  reason: "<value>",
 };
 ```
 

@@ -6,14 +6,14 @@
 import { CreateProjectLink } from "@simplesagar/vercel/models/createprojectop.js";
 
 let value: CreateProjectLink = {
-    deployHooks: [
-        {
-            id: "<id>",
-            name: "<value>",
-            ref: "<value>",
-            url: "https://circular-polarisation.name",
-        },
-    ],
+  deployHooks: [
+    {
+      id: "<id>",
+      name: "<value>",
+      ref: "<value>",
+      url: "https://circular-polarisation.name",
+    },
+  ],
 };
 ```
 

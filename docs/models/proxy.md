@@ -6,14 +6,16 @@
 import { Proxy } from "@simplesagar/vercel/models/getdeploymenteventsop.js";
 
 let value: Proxy = {
-    timestamp: 7567.79,
-    method: "<value>",
-    host: "all-partridge.net",
-    path: "/lib",
-    userAgent: ["<value>"],
-    referer: "<value>",
-    clientIp: "<value>",
-    region: "<value>",
+  timestamp: 270.69,
+  method: "<value>",
+  host: "pointless-reference.biz",
+  path: "/usr/libexec",
+  userAgent: [
+    "<value>",
+  ],
+  referer: "<value>",
+  clientIp: "<value>",
+  region: "<value>",
 };
 ```
 

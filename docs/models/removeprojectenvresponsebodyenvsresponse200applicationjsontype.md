@@ -5,7 +5,8 @@
 ```typescript
 import { RemoveProjectEnvResponseBodyEnvsResponse200ApplicationJSONType } from "@simplesagar/vercel/models/removeprojectenvop.js";
 
-let value: RemoveProjectEnvResponseBodyEnvsResponse200ApplicationJSONType = "flags-secret";
+let value: RemoveProjectEnvResponseBodyEnvsResponse200ApplicationJSONType =
+  "flags-secret";
 ```
 
 ## Values

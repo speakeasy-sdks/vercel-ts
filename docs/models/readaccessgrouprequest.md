@@ -6,7 +6,7 @@
 import { ReadAccessGroupRequest } from "@simplesagar/vercel/models/readaccessgroupop.js";
 
 let value: ReadAccessGroupRequest = {
-    idOrName: "<value>",
+  idOrName: "<value>",
 };
 ```
 

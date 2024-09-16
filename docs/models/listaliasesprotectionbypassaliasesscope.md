@@ -5,7 +5,8 @@
 ```typescript
 import { ListAliasesProtectionBypassAliasesScope } from "@simplesagar/vercel/models/listaliasesop.js";
 
-let value: ListAliasesProtectionBypassAliasesScope = "alias-protection-override";
+let value: ListAliasesProtectionBypassAliasesScope =
+  "alias-protection-override";
 ```
 
 ## Values

@@ -6,8 +6,8 @@
 import { CreateProjectEnvCreatedContentHint } from "@simplesagar/vercel/models/createprojectenvop.js";
 
 let value: CreateProjectEnvCreatedContentHint = {
-    type: "postgres-password",
-    storeId: "<value>",
+  type: "postgres-url",
+  storeId: "<value>",
 };
 ```
 

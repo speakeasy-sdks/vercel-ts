@@ -6,12 +6,12 @@
 import { GetDeploymentCustomEnvironment1 } from "@simplesagar/vercel/models/getdeploymentop.js";
 
 let value: GetDeploymentCustomEnvironment1 = {
-    id: "<id>",
-    name: "<value>",
-    slug: "<value>",
-    type: "development",
-    createdAt: 850.01,
-    updatedAt: 1594.14,
+  id: "<id>",
+  name: "<value>",
+  slug: "<value>",
+  type: "production",
+  createdAt: 1594.14,
+  updatedAt: 944.58,
 };
 ```
 

@@ -6,8 +6,8 @@
 import { Has1 } from "@simplesagar/vercel/models/createdeploymentop.js";
 
 let value: Has1 = {
-    type: "host",
-    value: "<value>",
+  type: "host",
+  value: "<value>",
 };
 ```
 

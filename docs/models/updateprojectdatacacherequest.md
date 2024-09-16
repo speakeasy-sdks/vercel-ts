@@ -6,7 +6,7 @@
 import { UpdateProjectDataCacheRequest } from "@simplesagar/vercel/models/updateprojectdatacacheop.js";
 
 let value: UpdateProjectDataCacheRequest = {
-    projectId: "prj_12HKQaOmR5t5Uy6vdcQsNIiZgHGB",
+  projectId: "prj_12HKQaOmR5t5Uy6vdcQsNIiZgHGB",
 };
 ```
 

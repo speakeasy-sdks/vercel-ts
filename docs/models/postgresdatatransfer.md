@@ -6,10 +6,10 @@
 import { PostgresDataTransfer } from "@simplesagar/vercel/models/authuser.js";
 
 let value: PostgresDataTransfer = {
-    price: 997.33,
-    batch: 5845.93,
-    threshold: 4755.89,
-    hidden: false,
+  price: 9930.02,
+  batch: 3302.67,
+  threshold: 1645.32,
+  hidden: false,
 };
 ```
 

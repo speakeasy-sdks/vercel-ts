@@ -8,9 +8,9 @@ The member was successfully added to the team
 import { InviteUserToTeamResponseBody } from "@simplesagar/vercel/models/inviteusertoteamop.js";
 
 let value: InviteUserToTeamResponseBody = {
-    uid: "kr1PsOIzqEL5Xg6M4VZcZosf",
-    username: "john-doe",
-    role: "MEMBER",
+  uid: "kr1PsOIzqEL5Xg6M4VZcZosf",
+  username: "john-doe",
+  role: "MEMBER",
 };
 ```
 

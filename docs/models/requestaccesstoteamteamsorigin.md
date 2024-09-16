@@ -5,7 +5,7 @@
 ```typescript
 import { RequestAccessToTeamTeamsOrigin } from "@simplesagar/vercel/models/requestaccesstoteamop.js";
 
-let value: RequestAccessToTeamTeamsOrigin = "feedback";
+let value: RequestAccessToTeamTeamsOrigin = "teams";
 ```
 
 ## Values

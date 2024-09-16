@@ -5,7 +5,7 @@
 ```typescript
 import { CreateDeploymentHasType } from "@simplesagar/vercel/models/createdeploymentop.js";
 
-let value: CreateDeploymentHasType = "cookie";
+let value: CreateDeploymentHasType = "query";
 ```
 
 ## Values

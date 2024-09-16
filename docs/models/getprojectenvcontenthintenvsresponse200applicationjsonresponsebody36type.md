@@ -5,7 +5,8 @@
 ```typescript
 import { GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody36Type } from "@simplesagar/vercel/models/getprojectenvop.js";
 
-let value: GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody36Type =
+let value:
+  GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody36Type =
     "postgres-url";
 ```
 

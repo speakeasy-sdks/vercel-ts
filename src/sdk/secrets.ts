@@ -8,88 +8,129 @@ import { secretsGet } from "../funcs/secretsGet.js";
 import { secretsList } from "../funcs/secretsList.js";
 import { secretsRename } from "../funcs/secretsRename.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
-import { CreateSecretRequestBody, CreateSecretResponseBody } from "../models/createsecretop.js";
+import {
+  CreateSecretRequestBody,
+  CreateSecretResponseBody,
+} from "../models/createsecretop.js";
 import { DeleteSecretResponseBody } from "../models/deletesecretop.js";
-import { GetSecretResponseBody, QueryParamDecrypt } from "../models/getsecretop.js";
+import {
+  GetSecretResponseBody,
+  QueryParamDecrypt,
+} from "../models/getsecretop.js";
 import { GetSecretsResponseBody } from "../models/getsecretsop.js";
-import { RenameSecretRequestBody, RenameSecretResponseBody } from "../models/renamesecretop.js";
+import {
+  RenameSecretRequestBody,
+  RenameSecretResponseBody,
+} from "../models/renamesecretop.js";
 import { unwrapAsync } from "../types/fp.js";
 
 export class Secrets extends ClientSDK {
-    /**
-     * List secrets
-     *
-     * @remarks
-     * Retrieves the active Vercel secrets for the authenticated user or team. By default it returns 20 secrets. The rest can be retrieved using the pagination options. The body will contain an entry for each secret.
-     */
-    async list(
-        id?: string | undefined,
-        projectId?: string | undefined,
-        teamId?: string | undefined,
-        slug?: string | undefined,
-        options?: RequestOptions
-    ): Promise<GetSecretsResponseBody> {
-        return unwrapAsync(secretsList(this, id, projectId, teamId, slug, options));
-    }
+  /**
+   * List secrets
+   *
+   * @remarks
+   * Retrieves the active Vercel secrets for the authenticated user or team. By default it returns 20 secrets. The rest can be retrieved using the pagination options. The body will contain an entry for each secret.
+   */
+  async list(
+    id?: string | undefined,
+    projectId?: string | undefined,
+    teamId?: string | undefined,
+    slug?: string | undefined,
+    options?: RequestOptions,
+  ): Promise<GetSecretsResponseBody> {
+    return unwrapAsync(secretsList(
+      this,
+      id,
+      projectId,
+      teamId,
+      slug,
+      options,
+    ));
+  }
 
-    /**
-     * Create a new secret
-     *
-     * @remarks
-     * Allows to create a new secret.
-     */
-    async create(
-        name: string,
-        requestBody?: CreateSecretRequestBody | undefined,
-        options?: RequestOptions
-    ): Promise<CreateSecretResponseBody> {
-        return unwrapAsync(secretsCreate(this, name, requestBody, options));
-    }
+  /**
+   * Create a new secret
+   *
+   * @remarks
+   * Allows to create a new secret.
+   */
+  async create(
+    name: string,
+    requestBody?: CreateSecretRequestBody | undefined,
+    options?: RequestOptions,
+  ): Promise<CreateSecretResponseBody> {
+    return unwrapAsync(secretsCreate(
+      this,
+      name,
+      requestBody,
+      options,
+    ));
+  }
 
-    /**
-     * Change secret name
-     *
-     * @remarks
-     * Enables to edit the name of a secret. The name has to be unique to the user or team’s secrets.
-     */
-    async rename(
-        name: string,
-        teamId?: string | undefined,
-        slug?: string | undefined,
-        requestBody?: RenameSecretRequestBody | undefined,
-        options?: RequestOptions
-    ): Promise<RenameSecretResponseBody> {
-        return unwrapAsync(secretsRename(this, name, teamId, slug, requestBody, options));
-    }
+  /**
+   * Change secret name
+   *
+   * @remarks
+   * Enables to edit the name of a secret. The name has to be unique to the user or team’s secrets.
+   */
+  async rename(
+    name: string,
+    teamId?: string | undefined,
+    slug?: string | undefined,
+    requestBody?: RenameSecretRequestBody | undefined,
+    options?: RequestOptions,
+  ): Promise<RenameSecretResponseBody> {
+    return unwrapAsync(secretsRename(
+      this,
+      name,
+      teamId,
+      slug,
+      requestBody,
+      options,
+    ));
+  }
 
-    /**
-     * Get a single secret
-     *
-     * @remarks
-     * Retrieves the information for a specific secret by passing either the secret id or name in the URL.
-     */
-    async get(
-        idOrName: string,
-        decrypt?: QueryParamDecrypt | undefined,
-        teamId?: string | undefined,
-        slug?: string | undefined,
-        options?: RequestOptions
-    ): Promise<GetSecretResponseBody> {
-        return unwrapAsync(secretsGet(this, idOrName, decrypt, teamId, slug, options));
-    }
+  /**
+   * Get a single secret
+   *
+   * @remarks
+   * Retrieves the information for a specific secret by passing either the secret id or name in the URL.
+   */
+  async get(
+    idOrName: string,
+    decrypt?: QueryParamDecrypt | undefined,
+    teamId?: string | undefined,
+    slug?: string | undefined,
+    options?: RequestOptions,
+  ): Promise<GetSecretResponseBody> {
+    return unwrapAsync(secretsGet(
+      this,
+      idOrName,
+      decrypt,
+      teamId,
+      slug,
+      options,
+    ));
+  }
 
-    /**
-     * Delete a secret
-     *
-     * @remarks
-     * This deletes the user or team’s secret defined in the URL.
-     */
-    async delete(
-        idOrName: string,
-        teamId?: string | undefined,
-        slug?: string | undefined,
-        options?: RequestOptions
-    ): Promise<DeleteSecretResponseBody> {
-        return unwrapAsync(secretsDelete(this, idOrName, teamId, slug, options));
-    }
+  /**
+   * Delete a secret
+   *
+   * @remarks
+   * This deletes the user or team’s secret defined in the URL.
+   */
+  async delete(
+    idOrName: string,
+    teamId?: string | undefined,
+    slug?: string | undefined,
+    options?: RequestOptions,
+  ): Promise<DeleteSecretResponseBody> {
+    return unwrapAsync(secretsDelete(
+      this,
+      idOrName,
+      teamId,
+      slug,
+      options,
+    ));
+  }
 }

@@ -6,8 +6,8 @@
 import { UpdateProjectAliasError } from "@simplesagar/vercel/models/updateprojectop.js";
 
 let value: UpdateProjectAliasError = {
-    code: "<value>",
-    message: "<value>",
+  code: "<value>",
+  message: "<value>",
 };
 ```
 

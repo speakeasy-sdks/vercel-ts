@@ -8,13 +8,13 @@ Represents an Access Group.
 import { AccessGroup } from "@simplesagar/vercel/models/accessgroup.js";
 
 let value: AccessGroup = {
-    name: "my-access-group",
-    createdAt: "1588720733602",
-    teamId: "team_123a6c5209bc3778245d011443644c8d27dc2c50",
-    updatedAt: "1588720733602",
-    accessGroupId: "ag_123a6c5209bc3778245d011443644c8d27dc2c50",
-    membersCount: 5,
-    projectsCount: 2,
+  name: "my-access-group",
+  createdAt: "1588720733602",
+  teamId: "team_123a6c5209bc3778245d011443644c8d27dc2c50",
+  updatedAt: "1588720733602",
+  accessGroupId: "ag_123a6c5209bc3778245d011443644c8d27dc2c50",
+  membersCount: 5,
+  projectsCount: 2,
 };
 ```
 

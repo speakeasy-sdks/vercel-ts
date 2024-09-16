@@ -5,7 +5,7 @@
 ```typescript
 import { RemoveProjectEnvResponseBodyType } from "@simplesagar/vercel/models/removeprojectenvop.js";
 
-let value: RemoveProjectEnvResponseBodyType = "plain";
+let value: RemoveProjectEnvResponseBodyType = "secret";
 ```
 
 ## Values

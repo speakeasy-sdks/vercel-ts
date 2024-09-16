@@ -6,22 +6,22 @@
 import { UpdateCheckMetrics } from "@simplesagar/vercel/models/updatecheckop.js";
 
 let value: UpdateCheckMetrics = {
-    fcp: {
-        value: 6350.59,
-        source: "web-vitals",
-    },
-    lcp: {
-        value: 1613.09,
-        source: "web-vitals",
-    },
-    cls: {
-        value: 9953,
-        source: "web-vitals",
-    },
-    tbt: {
-        value: 6531.08,
-        source: "web-vitals",
-    },
+  fcp: {
+    value: 2088.76,
+    source: "web-vitals",
+  },
+  lcp: {
+    value: 6350.59,
+    source: "web-vitals",
+  },
+  cls: {
+    value: 1613.09,
+    source: "web-vitals",
+  },
+  tbt: {
+    value: 9953,
+    source: "web-vitals",
+  },
 };
 ```
 

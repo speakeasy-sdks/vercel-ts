@@ -6,8 +6,8 @@
 import { GetDeploymentGitSourceDeployments1 } from "@simplesagar/vercel/models/getdeploymentop.js";
 
 let value: GetDeploymentGitSourceDeployments1 = {
-    type: "github",
-    repoId: "<value>",
+  type: "github",
+  repoId: 1310.55,
 };
 ```
 

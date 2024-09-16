@@ -6,9 +6,9 @@
 import { CreateDeploymentTeam } from "@simplesagar/vercel/models/createdeploymentop.js";
 
 let value: CreateDeploymentTeam = {
-    name: "<value>",
-    id: "<id>",
-    slug: "<value>",
+  name: "<value>",
+  id: "<id>",
+  slug: "<value>",
 };
 ```
 

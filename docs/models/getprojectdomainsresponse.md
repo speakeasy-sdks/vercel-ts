@@ -6,21 +6,21 @@
 import { GetProjectDomainsResponse } from "@simplesagar/vercel/models/getprojectdomainsop.js";
 
 let value: GetProjectDomainsResponse = {
-    result: {
-        domains: [
-            {
-                name: "<value>",
-                apexName: "<value>",
-                projectId: "<value>",
-                verified: false,
-            },
-        ],
-        pagination: {
-            count: 20,
-            next: 1540095775951,
-            prev: 1540095775951,
-        },
+  result: {
+    domains: [
+      {
+        name: "<value>",
+        apexName: "<value>",
+        projectId: "<value>",
+        verified: false,
+      },
+    ],
+    pagination: {
+      count: 20,
+      next: 1540095775951,
+      prev: 1540095775951,
     },
+  },
 };
 ```
 

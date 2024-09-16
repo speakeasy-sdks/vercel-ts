@@ -6,9 +6,9 @@
 import { ResponseBodyAliases } from "@simplesagar/vercel/models/listpromotealiasesop.js";
 
 let value: ResponseBodyAliases = {
-    status: "<value>",
-    alias: "<value>",
-    id: "<id>",
+  status: "<value>",
+  alias: "<value>",
+  id: "<id>",
 };
 ```
 

@@ -8,9 +8,9 @@ Information for the Directory Sync configuration.
 import { Directory } from "@simplesagar/vercel/models/teamlimited.js";
 
 let value: Directory = {
-    type: "OktaSAML",
-    state: "active",
-    connectedAt: 1611796915677,
+  type: "OktaSAML",
+  state: "active",
+  connectedAt: 1611796915677,
 };
 ```
 

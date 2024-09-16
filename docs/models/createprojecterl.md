@@ -6,10 +6,12 @@
 import { CreateProjectErl } from "@simplesagar/vercel/models/createprojectop.js";
 
 let value: CreateProjectErl = {
-    algo: "token_bucket",
-    window: 4551.69,
-    limit: 2317.01,
-    keys: ["<value>"],
+  algo: "token_bucket",
+  window: 4551.69,
+  limit: 2317.01,
+  keys: [
+    "<value>",
+  ],
 };
 ```
 

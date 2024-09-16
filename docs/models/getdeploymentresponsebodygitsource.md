@@ -6,9 +6,8 @@
 import { GetDeploymentResponseBodyGitSource } from "@simplesagar/vercel/models/getdeploymentop.js";
 
 let value: GetDeploymentResponseBodyGitSource = {
-    type: "bitbucket",
-    owner: "<value>",
-    slug: "<value>",
+  type: "bitbucket",
+  repoUuid: "<value>",
 };
 ```
 

@@ -6,9 +6,9 @@
 import { EditProjectEnvResponseBody1 } from "@simplesagar/vercel/models/editprojectenvop.js";
 
 let value: EditProjectEnvResponseBody1 = {
-    type: "system",
-    key: "<key>",
-    value: "<value>",
+  type: "sensitive",
+  key: "<key>",
+  value: "<value>",
 };
 ```
 

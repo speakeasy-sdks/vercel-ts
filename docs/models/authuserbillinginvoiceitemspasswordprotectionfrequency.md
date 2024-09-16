@@ -6,8 +6,8 @@
 import { AuthUserBillingInvoiceItemsPasswordProtectionFrequency } from "@simplesagar/vercel/models/authuser.js";
 
 let value: AuthUserBillingInvoiceItemsPasswordProtectionFrequency = {
-    interval: "month",
-    intervalCount: 9637.41,
+  interval: "month",
+  intervalCount: 4864.1,
 };
 ```
 

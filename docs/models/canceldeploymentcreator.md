@@ -6,7 +6,7 @@
 import { CancelDeploymentCreator } from "@simplesagar/vercel/models/canceldeploymentop.js";
 
 let value: CancelDeploymentCreator = {
-    uid: "<value>",
+  uid: "<value>",
 };
 ```
 

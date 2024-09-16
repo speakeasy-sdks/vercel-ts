@@ -8,9 +8,9 @@ A deployment file tree entry
 import { FileTree } from "@simplesagar/vercel/models/filetree.js";
 
 let value: FileTree = {
-    name: "my-file.json",
-    type: "file",
-    mode: 6485.98,
+  name: "my-file.json",
+  type: "file",
+  mode: 6485.98,
 };
 ```
 

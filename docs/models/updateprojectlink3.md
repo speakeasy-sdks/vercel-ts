@@ -6,14 +6,14 @@
 import { UpdateProjectLink3 } from "@simplesagar/vercel/models/updateprojectop.js";
 
 let value: UpdateProjectLink3 = {
-    deployHooks: [
-        {
-            id: "<id>",
-            name: "<value>",
-            ref: "<value>",
-            url: "http://general-authentication.org",
-        },
-    ],
+  deployHooks: [
+    {
+      id: "<id>",
+      name: "<value>",
+      ref: "<value>",
+      url: "http://general-authentication.org",
+    },
+  ],
 };
 ```
 

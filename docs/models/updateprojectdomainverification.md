@@ -8,10 +8,10 @@ A list of verification challenges, one of which must be completed to verify the 
 import { UpdateProjectDomainVerification } from "@simplesagar/vercel/models/updateprojectdomainop.js";
 
 let value: UpdateProjectDomainVerification = {
-    type: "<value>",
-    domain: "ambitious-abdomen.name",
-    value: "<value>",
-    reason: "<value>",
+  type: "<value>",
+  domain: "hairy-wrecker.biz",
+  value: "<value>",
+  reason: "<value>",
 };
 ```
 

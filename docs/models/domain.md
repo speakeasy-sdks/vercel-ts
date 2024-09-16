@@ -7,7 +7,9 @@ Get only aliases of the given domain name
 ```typescript
 import { Domain } from "@simplesagar/vercel/models/listaliasesop.js";
 
-let value: Domain = "my-test-domain.com";
+let value: Domain = [
+  "my-test-domain.com",
+];
 ```
 
 ## Supported Types

@@ -3,9 +3,9 @@
 ## Example Usage
 
 ```typescript
-import { ResponseBodyDisabledReason } from "@simplesagar/vercel/models/getconfigurationop.js";
+import { ResponseBodyDisabledReason } from "@simplesagar/vercel/models/getconfigurationsop.js";
 
-let value: ResponseBodyDisabledReason = "account-plan-downgrade";
+let value: ResponseBodyDisabledReason = "original-owner-role-downgraded";
 ```
 
 ## Values

@@ -5,7 +5,8 @@
 ```typescript
 import { GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody28Type } from "@simplesagar/vercel/models/getprojectenvop.js";
 
-let value: GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody28Type =
+let value:
+  GetProjectEnvContentHintEnvsResponse200ApplicationJSONResponseBody28Type =
     "postgres-prisma-url";
 ```
 

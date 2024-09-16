@@ -6,8 +6,8 @@
 import { CreateProjectContentHint5 } from "@simplesagar/vercel/models/createprojectop.js";
 
 let value: CreateProjectContentHint5 = {
-    type: "blob-read-write-token",
-    storeId: "<value>",
+  type: "blob-read-write-token",
+  storeId: "<value>",
 };
 ```
 

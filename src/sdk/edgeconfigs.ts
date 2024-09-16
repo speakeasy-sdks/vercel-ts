@@ -18,12 +18,12 @@ import { edgeConfigsUpdate } from "../funcs/edgeConfigsUpdate.js";
 import { edgeConfigsUpdateSchema } from "../funcs/edgeConfigsUpdateSchema.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import {
-    CreateEdgeConfigRequestBody,
-    CreateEdgeConfigResponseBody,
+  CreateEdgeConfigRequestBody,
+  CreateEdgeConfigResponseBody,
 } from "../models/createedgeconfigop.js";
 import {
-    CreateEdgeConfigTokenRequestBody,
-    CreateEdgeConfigTokenResponseBody,
+  CreateEdgeConfigTokenRequestBody,
+  CreateEdgeConfigTokenResponseBody,
 } from "../models/createedgeconfigtokenop.js";
 import { DeleteEdgeConfigTokensRequestBody } from "../models/deleteedgeconfigtokensop.js";
 import { EdgeConfigItem } from "../models/edgeconfigitem.js";
@@ -32,233 +32,311 @@ import { GetEdgeConfigResponseBody } from "../models/getedgeconfigop.js";
 import { GetEdgeConfigSchemaResponseBody } from "../models/getedgeconfigschemaop.js";
 import { GetEdgeConfigsResponseBody } from "../models/getedgeconfigsop.js";
 import {
-    PatchEdgeConfigSchemaRequest,
-    PatchEdgeConfigSchemaResponseBody,
+  PatchEdgeConfigSchemaRequest,
+  PatchEdgeConfigSchemaResponseBody,
 } from "../models/patchedgeconfigschemaop.js";
 import {
-    UpdateEdgeConfigRequestBody,
-    UpdateEdgeConfigResponseBody,
+  UpdateEdgeConfigRequestBody,
+  UpdateEdgeConfigResponseBody,
 } from "../models/updateedgeconfigop.js";
 import { unwrapAsync } from "../types/fp.js";
 
 export class EdgeConfigs extends ClientSDK {
-    /**
-     * Get Edge Configs
-     *
-     * @remarks
-     * Returns all Edge Configs.
-     */
-    async list(
-        teamId?: string | undefined,
-        slug?: string | undefined,
-        options?: RequestOptions
-    ): Promise<GetEdgeConfigsResponseBody> {
-        return unwrapAsync(edgeConfigsList(this, teamId, slug, options));
-    }
+  /**
+   * Get Edge Configs
+   *
+   * @remarks
+   * Returns all Edge Configs.
+   */
+  async list(
+    teamId?: string | undefined,
+    slug?: string | undefined,
+    options?: RequestOptions,
+  ): Promise<GetEdgeConfigsResponseBody> {
+    return unwrapAsync(edgeConfigsList(
+      this,
+      teamId,
+      slug,
+      options,
+    ));
+  }
 
-    /**
-     * Create an Edge Config
-     *
-     * @remarks
-     * Creates an Edge Config.
-     */
-    async create(
-        teamId?: string | undefined,
-        slug?: string | undefined,
-        requestBody?: CreateEdgeConfigRequestBody | undefined,
-        options?: RequestOptions
-    ): Promise<CreateEdgeConfigResponseBody> {
-        return unwrapAsync(edgeConfigsCreate(this, teamId, slug, requestBody, options));
-    }
+  /**
+   * Create an Edge Config
+   *
+   * @remarks
+   * Creates an Edge Config.
+   */
+  async create(
+    teamId?: string | undefined,
+    slug?: string | undefined,
+    requestBody?: CreateEdgeConfigRequestBody | undefined,
+    options?: RequestOptions,
+  ): Promise<CreateEdgeConfigResponseBody> {
+    return unwrapAsync(edgeConfigsCreate(
+      this,
+      teamId,
+      slug,
+      requestBody,
+      options,
+    ));
+  }
 
-    /**
-     * Get an Edge Config
-     *
-     * @remarks
-     * Returns an Edge Config.
-     */
-    async get(
-        edgeConfigId: string,
-        teamId?: string | undefined,
-        slug?: string | undefined,
-        options?: RequestOptions
-    ): Promise<GetEdgeConfigResponseBody> {
-        return unwrapAsync(edgeConfigsGet(this, edgeConfigId, teamId, slug, options));
-    }
+  /**
+   * Get an Edge Config
+   *
+   * @remarks
+   * Returns an Edge Config.
+   */
+  async get(
+    edgeConfigId: string,
+    teamId?: string | undefined,
+    slug?: string | undefined,
+    options?: RequestOptions,
+  ): Promise<GetEdgeConfigResponseBody> {
+    return unwrapAsync(edgeConfigsGet(
+      this,
+      edgeConfigId,
+      teamId,
+      slug,
+      options,
+    ));
+  }
 
-    /**
-     * Update an Edge Config
-     *
-     * @remarks
-     * Updates an Edge Config.
-     */
-    async update(
-        edgeConfigId: string,
-        teamId?: string | undefined,
-        slug?: string | undefined,
-        requestBody?: UpdateEdgeConfigRequestBody | undefined,
-        options?: RequestOptions
-    ): Promise<UpdateEdgeConfigResponseBody> {
-        return unwrapAsync(
-            edgeConfigsUpdate(this, edgeConfigId, teamId, slug, requestBody, options)
-        );
-    }
+  /**
+   * Update an Edge Config
+   *
+   * @remarks
+   * Updates an Edge Config.
+   */
+  async update(
+    edgeConfigId: string,
+    teamId?: string | undefined,
+    slug?: string | undefined,
+    requestBody?: UpdateEdgeConfigRequestBody | undefined,
+    options?: RequestOptions,
+  ): Promise<UpdateEdgeConfigResponseBody> {
+    return unwrapAsync(edgeConfigsUpdate(
+      this,
+      edgeConfigId,
+      teamId,
+      slug,
+      requestBody,
+      options,
+    ));
+  }
 
-    /**
-     * Delete an Edge Config
-     *
-     * @remarks
-     * Delete an Edge Config by id.
-     */
-    async delete(
-        edgeConfigId: string,
-        teamId?: string | undefined,
-        slug?: string | undefined,
-        options?: RequestOptions
-    ): Promise<void> {
-        return unwrapAsync(edgeConfigsDelete(this, edgeConfigId, teamId, slug, options));
-    }
+  /**
+   * Delete an Edge Config
+   *
+   * @remarks
+   * Delete an Edge Config by id.
+   */
+  async delete(
+    edgeConfigId: string,
+    teamId?: string | undefined,
+    slug?: string | undefined,
+    options?: RequestOptions,
+  ): Promise<void> {
+    return unwrapAsync(edgeConfigsDelete(
+      this,
+      edgeConfigId,
+      teamId,
+      slug,
+      options,
+    ));
+  }
 
-    /**
-     * Get Edge Config items
-     *
-     * @remarks
-     * Returns all items of an Edge Config.
-     */
-    async getItems(
-        edgeConfigId: string,
-        teamId?: string | undefined,
-        slug?: string | undefined,
-        options?: RequestOptions
-    ): Promise<EdgeConfigItem> {
-        return unwrapAsync(edgeConfigsGetItems(this, edgeConfigId, teamId, slug, options));
-    }
+  /**
+   * Get Edge Config items
+   *
+   * @remarks
+   * Returns all items of an Edge Config.
+   */
+  async getItems(
+    edgeConfigId: string,
+    teamId?: string | undefined,
+    slug?: string | undefined,
+    options?: RequestOptions,
+  ): Promise<EdgeConfigItem> {
+    return unwrapAsync(edgeConfigsGetItems(
+      this,
+      edgeConfigId,
+      teamId,
+      slug,
+      options,
+    ));
+  }
 
-    /**
-     * Get Edge Config schema
-     *
-     * @remarks
-     * Returns the schema of an Edge Config.
-     */
-    async getSchema(
-        edgeConfigId: string,
-        teamId?: string | undefined,
-        slug?: string | undefined,
-        options?: RequestOptions
-    ): Promise<GetEdgeConfigSchemaResponseBody> {
-        return unwrapAsync(edgeConfigsGetSchema(this, edgeConfigId, teamId, slug, options));
-    }
+  /**
+   * Get Edge Config schema
+   *
+   * @remarks
+   * Returns the schema of an Edge Config.
+   */
+  async getSchema(
+    edgeConfigId: string,
+    teamId?: string | undefined,
+    slug?: string | undefined,
+    options?: RequestOptions,
+  ): Promise<GetEdgeConfigSchemaResponseBody> {
+    return unwrapAsync(edgeConfigsGetSchema(
+      this,
+      edgeConfigId,
+      teamId,
+      slug,
+      options,
+    ));
+  }
 
-    /**
-     * Update Edge Config schema
-     *
-     * @remarks
-     * Update an Edge Config's schema.
-     */
-    async updateSchema(
-        request: PatchEdgeConfigSchemaRequest,
-        options?: RequestOptions
-    ): Promise<PatchEdgeConfigSchemaResponseBody> {
-        return unwrapAsync(edgeConfigsUpdateSchema(this, request, options));
-    }
+  /**
+   * Update Edge Config schema
+   *
+   * @remarks
+   * Update an Edge Config's schema.
+   */
+  async updateSchema(
+    request: PatchEdgeConfigSchemaRequest,
+    options?: RequestOptions,
+  ): Promise<PatchEdgeConfigSchemaResponseBody> {
+    return unwrapAsync(edgeConfigsUpdateSchema(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Delete an Edge Config's schema
-     *
-     * @remarks
-     * Deletes the schema of existing Edge Config.
-     */
-    async deleteSchema(
-        edgeConfigId: string,
-        teamId?: string | undefined,
-        slug?: string | undefined,
-        options?: RequestOptions
-    ): Promise<void> {
-        return unwrapAsync(edgeConfigsDeleteSchema(this, edgeConfigId, teamId, slug, options));
-    }
+  /**
+   * Delete an Edge Config's schema
+   *
+   * @remarks
+   * Deletes the schema of existing Edge Config.
+   */
+  async deleteSchema(
+    edgeConfigId: string,
+    teamId?: string | undefined,
+    slug?: string | undefined,
+    options?: RequestOptions,
+  ): Promise<void> {
+    return unwrapAsync(edgeConfigsDeleteSchema(
+      this,
+      edgeConfigId,
+      teamId,
+      slug,
+      options,
+    ));
+  }
 
-    /**
-     * Get an Edge Config item
-     *
-     * @remarks
-     * Returns a specific Edge Config Item.
-     */
-    async getItem(
-        edgeConfigId: string,
-        edgeConfigItemKey: string,
-        teamId?: string | undefined,
-        slug?: string | undefined,
-        options?: RequestOptions
-    ): Promise<EdgeConfigItem> {
-        return unwrapAsync(
-            edgeConfigsGetItem(this, edgeConfigId, edgeConfigItemKey, teamId, slug, options)
-        );
-    }
+  /**
+   * Get an Edge Config item
+   *
+   * @remarks
+   * Returns a specific Edge Config Item.
+   */
+  async getItem(
+    edgeConfigId: string,
+    edgeConfigItemKey: string,
+    teamId?: string | undefined,
+    slug?: string | undefined,
+    options?: RequestOptions,
+  ): Promise<EdgeConfigItem> {
+    return unwrapAsync(edgeConfigsGetItem(
+      this,
+      edgeConfigId,
+      edgeConfigItemKey,
+      teamId,
+      slug,
+      options,
+    ));
+  }
 
-    /**
-     * Get all tokens of an Edge Config
-     *
-     * @remarks
-     * Returns all tokens of an Edge Config.
-     */
-    async getTokens(
-        edgeConfigId: string,
-        teamId?: string | undefined,
-        slug?: string | undefined,
-        options?: RequestOptions
-    ): Promise<EdgeConfigToken> {
-        return unwrapAsync(edgeConfigsGetTokens(this, edgeConfigId, teamId, slug, options));
-    }
+  /**
+   * Get all tokens of an Edge Config
+   *
+   * @remarks
+   * Returns all tokens of an Edge Config.
+   */
+  async getTokens(
+    edgeConfigId: string,
+    teamId?: string | undefined,
+    slug?: string | undefined,
+    options?: RequestOptions,
+  ): Promise<EdgeConfigToken> {
+    return unwrapAsync(edgeConfigsGetTokens(
+      this,
+      edgeConfigId,
+      teamId,
+      slug,
+      options,
+    ));
+  }
 
-    /**
-     * Delete one or more Edge Config tokens
-     *
-     * @remarks
-     * Deletes one or more tokens of an existing Edge Config.
-     */
-    async deleteTokens(
-        edgeConfigId: string,
-        teamId?: string | undefined,
-        slug?: string | undefined,
-        requestBody?: DeleteEdgeConfigTokensRequestBody | undefined,
-        options?: RequestOptions
-    ): Promise<void> {
-        return unwrapAsync(
-            edgeConfigsDeleteTokens(this, edgeConfigId, teamId, slug, requestBody, options)
-        );
-    }
+  /**
+   * Delete one or more Edge Config tokens
+   *
+   * @remarks
+   * Deletes one or more tokens of an existing Edge Config.
+   */
+  async deleteTokens(
+    edgeConfigId: string,
+    teamId?: string | undefined,
+    slug?: string | undefined,
+    requestBody?: DeleteEdgeConfigTokensRequestBody | undefined,
+    options?: RequestOptions,
+  ): Promise<void> {
+    return unwrapAsync(edgeConfigsDeleteTokens(
+      this,
+      edgeConfigId,
+      teamId,
+      slug,
+      requestBody,
+      options,
+    ));
+  }
 
-    /**
-     * Get Edge Config token meta data
-     *
-     * @remarks
-     * Return meta data about an Edge Config token.
-     */
-    async getToken(
-        edgeConfigId: string,
-        token: string,
-        teamId?: string | undefined,
-        slug?: string | undefined,
-        options?: RequestOptions
-    ): Promise<EdgeConfigToken> {
-        return unwrapAsync(edgeConfigsGetToken(this, edgeConfigId, token, teamId, slug, options));
-    }
+  /**
+   * Get Edge Config token meta data
+   *
+   * @remarks
+   * Return meta data about an Edge Config token.
+   */
+  async getToken(
+    edgeConfigId: string,
+    token: string,
+    teamId?: string | undefined,
+    slug?: string | undefined,
+    options?: RequestOptions,
+  ): Promise<EdgeConfigToken> {
+    return unwrapAsync(edgeConfigsGetToken(
+      this,
+      edgeConfigId,
+      token,
+      teamId,
+      slug,
+      options,
+    ));
+  }
 
-    /**
-     * Create an Edge Config token
-     *
-     * @remarks
-     * Adds a token to an existing Edge Config.
-     */
-    async createToken(
-        edgeConfigId: string,
-        teamId?: string | undefined,
-        slug?: string | undefined,
-        requestBody?: CreateEdgeConfigTokenRequestBody | undefined,
-        options?: RequestOptions
-    ): Promise<CreateEdgeConfigTokenResponseBody> {
-        return unwrapAsync(
-            edgeConfigsCreateToken(this, edgeConfigId, teamId, slug, requestBody, options)
-        );
-    }
+  /**
+   * Create an Edge Config token
+   *
+   * @remarks
+   * Adds a token to an existing Edge Config.
+   */
+  async createToken(
+    edgeConfigId: string,
+    teamId?: string | undefined,
+    slug?: string | undefined,
+    requestBody?: CreateEdgeConfigTokenRequestBody | undefined,
+    options?: RequestOptions,
+  ): Promise<CreateEdgeConfigTokenResponseBody> {
+    return unwrapAsync(edgeConfigsCreateToken(
+      this,
+      edgeConfigId,
+      teamId,
+      slug,
+      requestBody,
+      options,
+    ));
+  }
 }

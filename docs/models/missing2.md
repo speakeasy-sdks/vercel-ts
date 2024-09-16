@@ -6,8 +6,8 @@
 import { Missing2 } from "@simplesagar/vercel/models/createdeploymentop.js";
 
 let value: Missing2 = {
-    type: "header",
-    key: "<key>",
+  type: "query",
+  key: "<key>",
 };
 ```
 

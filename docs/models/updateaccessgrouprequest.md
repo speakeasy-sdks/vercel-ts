@@ -6,7 +6,7 @@
 import { UpdateAccessGroupRequest } from "@simplesagar/vercel/models/updateaccessgroupop.js";
 
 let value: UpdateAccessGroupRequest = {
-    idOrName: "<value>",
+  idOrName: "<value>",
 };
 ```
 

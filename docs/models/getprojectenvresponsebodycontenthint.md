@@ -6,8 +6,8 @@
 import { GetProjectEnvResponseBodyContentHint } from "@simplesagar/vercel/models/getprojectenvop.js";
 
 let value: GetProjectEnvResponseBodyContentHint = {
-    type: "postgres-url-no-ssl",
-    storeId: "<value>",
+  type: "postgres-host",
+  storeId: "<value>",
 };
 ```
 

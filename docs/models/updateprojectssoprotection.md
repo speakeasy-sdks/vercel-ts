@@ -6,7 +6,7 @@
 import { UpdateProjectSsoProtection } from "@simplesagar/vercel/models/updateprojectop.js";
 
 let value: UpdateProjectSsoProtection = {
-    deploymentType: "all",
+  deploymentType: "all",
 };
 ```
 

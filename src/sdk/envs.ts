@@ -9,87 +9,116 @@ import { envsListByProject } from "../funcs/envsListByProject.js";
 import { envsUpdate } from "../funcs/envsUpdate.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import {
-    CreateProjectEnvRequest,
-    CreateProjectEnvResponseBody,
+  CreateProjectEnvRequest,
+  CreateProjectEnvResponseBody,
 } from "../models/createprojectenvop.js";
-import { EditProjectEnvRequest, EditProjectEnvResponseBody } from "../models/editprojectenvop.js";
 import {
-    FilterProjectEnvsRequest,
-    FilterProjectEnvsResponseBody,
+  EditProjectEnvRequest,
+  EditProjectEnvResponseBody,
+} from "../models/editprojectenvop.js";
+import {
+  FilterProjectEnvsRequest,
+  FilterProjectEnvsResponseBody,
 } from "../models/filterprojectenvsop.js";
 import { GetProjectEnvResponseBody } from "../models/getprojectenvop.js";
 import { RemoveProjectEnvResponseBody } from "../models/removeprojectenvop.js";
 import { unwrapAsync } from "../types/fp.js";
 
 export class Envs extends ClientSDK {
-    /**
-     * Retrieve the environment variables of a project by id or name
-     *
-     * @remarks
-     * Retrieve the environment variables for a given project by passing either the project `id` or `name` in the URL.
-     */
-    async listByProject(
-        request: FilterProjectEnvsRequest,
-        options?: RequestOptions
-    ): Promise<FilterProjectEnvsResponseBody> {
-        return unwrapAsync(envsListByProject(this, request, options));
-    }
+  /**
+   * Retrieve the environment variables of a project by id or name
+   *
+   * @remarks
+   * Retrieve the environment variables for a given project by passing either the project `id` or `name` in the URL.
+   */
+  async listByProject(
+    request: FilterProjectEnvsRequest,
+    options?: RequestOptions,
+  ): Promise<FilterProjectEnvsResponseBody> {
+    return unwrapAsync(envsListByProject(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Retrieve the decrypted value of an environment variable of a project by id
-     *
-     * @remarks
-     * Retrieve the environment variable for a given project.
-     */
-    async get(
-        idOrName: string,
-        id: string,
-        teamId?: string | undefined,
-        slug?: string | undefined,
-        options?: RequestOptions
-    ): Promise<GetProjectEnvResponseBody> {
-        return unwrapAsync(envsGet(this, idOrName, id, teamId, slug, options));
-    }
+  /**
+   * Retrieve the decrypted value of an environment variable of a project by id
+   *
+   * @remarks
+   * Retrieve the environment variable for a given project.
+   */
+  async get(
+    idOrName: string,
+    id: string,
+    teamId?: string | undefined,
+    slug?: string | undefined,
+    options?: RequestOptions,
+  ): Promise<GetProjectEnvResponseBody> {
+    return unwrapAsync(envsGet(
+      this,
+      idOrName,
+      id,
+      teamId,
+      slug,
+      options,
+    ));
+  }
 
-    /**
-     * Create one or more environment variables
-     *
-     * @remarks
-     * Create one ore more environment variables for a project by passing its `key`, `value`, `type` and `target` and by specifying the project by either passing the project `id` or `name` in the URL.
-     */
-    async create(
-        request: CreateProjectEnvRequest,
-        options?: RequestOptions
-    ): Promise<CreateProjectEnvResponseBody> {
-        return unwrapAsync(envsCreate(this, request, options));
-    }
+  /**
+   * Create one or more environment variables
+   *
+   * @remarks
+   * Create one ore more environment variables for a project by passing its `key`, `value`, `type` and `target` and by specifying the project by either passing the project `id` or `name` in the URL.
+   */
+  async create(
+    request: CreateProjectEnvRequest,
+    options?: RequestOptions,
+  ): Promise<CreateProjectEnvResponseBody> {
+    return unwrapAsync(envsCreate(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Remove an environment variable
-     *
-     * @remarks
-     * Delete a specific environment variable for a given project by passing the environment variable identifier and either passing the project `id` or `name` in the URL.
-     */
-    async delete(
-        idOrName: string,
-        id: string,
-        teamId?: string | undefined,
-        slug?: string | undefined,
-        options?: RequestOptions
-    ): Promise<RemoveProjectEnvResponseBody> {
-        return unwrapAsync(envsDelete(this, idOrName, id, teamId, slug, options));
-    }
+  /**
+   * Remove an environment variable
+   *
+   * @remarks
+   * Delete a specific environment variable for a given project by passing the environment variable identifier and either passing the project `id` or `name` in the URL.
+   */
+  async delete(
+    idOrName: string,
+    id: string,
+    teamId?: string | undefined,
+    slug?: string | undefined,
+    options?: RequestOptions,
+  ): Promise<RemoveProjectEnvResponseBody> {
+    return unwrapAsync(envsDelete(
+      this,
+      idOrName,
+      id,
+      teamId,
+      slug,
+      options,
+    ));
+  }
 
-    /**
-     * Edit an environment variable
-     *
-     * @remarks
-     * Edit a specific environment variable for a given project by passing the environment variable identifier and either passing the project `id` or `name` in the URL.
-     */
-    async update(
-        request: EditProjectEnvRequest,
-        options?: RequestOptions
-    ): Promise<EditProjectEnvResponseBody> {
-        return unwrapAsync(envsUpdate(this, request, options));
-    }
+  /**
+   * Edit an environment variable
+   *
+   * @remarks
+   * Edit a specific environment variable for a given project by passing the environment variable identifier and either passing the project `id` or `name` in the URL.
+   */
+  async update(
+    request: EditProjectEnvRequest,
+    options?: RequestOptions,
+  ): Promise<EditProjectEnvResponseBody> {
+    return unwrapAsync(envsUpdate(
+      this,
+      request,
+      options,
+    ));
+  }
 }

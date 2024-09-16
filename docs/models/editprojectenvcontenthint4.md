@@ -6,8 +6,8 @@
 import { EditProjectEnvContentHint4 } from "@simplesagar/vercel/models/editprojectenvop.js";
 
 let value: EditProjectEnvContentHint4 = {
-    type: "redis-rest-api-read-only-token",
-    storeId: "<value>",
+  type: "redis-rest-api-read-only-token",
+  storeId: "<value>",
 };
 ```
 

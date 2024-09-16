@@ -6,7 +6,7 @@
 import { ListDeploymentBuildsRequest } from "@simplesagar/vercel/models/listdeploymentbuildsop.js";
 
 let value: ListDeploymentBuildsRequest = {
-    deploymentId: "<value>",
+  deploymentId: "<value>",
 };
 ```
 

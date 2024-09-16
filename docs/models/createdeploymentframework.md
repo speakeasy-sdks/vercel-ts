@@ -5,7 +5,7 @@
 ```typescript
 import { CreateDeploymentFramework } from "@simplesagar/vercel/models/createdeploymentop.js";
 
-let value: CreateDeploymentFramework = "saber";
+let value: CreateDeploymentFramework = "jekyll";
 ```
 
 ## Values

@@ -6,8 +6,8 @@
 import { AliasError } from "@simplesagar/vercel/models/createdeploymentop.js";
 
 let value: AliasError = {
-    code: "<value>",
-    message: "<value>",
+  code: "<value>",
+  message: "<value>",
 };
 ```
 

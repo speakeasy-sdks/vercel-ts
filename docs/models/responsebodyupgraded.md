@@ -3,9 +3,9 @@
 ## Example Usage
 
 ```typescript
-import { ResponseBodyUpgraded } from "@simplesagar/vercel/models/getconfigurationop.js";
+import { ResponseBodyUpgraded } from "@simplesagar/vercel/models/getconfigurationsop.js";
 
-let value: ResponseBodyUpgraded = "read:deployment";
+let value: ResponseBodyUpgraded = "read:domain";
 ```
 
 ## Values

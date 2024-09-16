@@ -6,7 +6,7 @@
 import { ErrorT } from "@simplesagar/vercel/models/artifactqueryop.js";
 
 let value: ErrorT = {
-    message: "<value>",
+  message: "<value>",
 };
 ```
 

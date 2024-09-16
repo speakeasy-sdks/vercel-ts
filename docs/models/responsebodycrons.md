@@ -6,8 +6,8 @@
 import { ResponseBodyCrons } from "@simplesagar/vercel/models/getdeploymentop.js";
 
 let value: ResponseBodyCrons = {
-    schedule: "<value>",
-    path: "/opt/bin",
+  schedule: "<value>",
+  path: "/lib",
 };
 ```
 

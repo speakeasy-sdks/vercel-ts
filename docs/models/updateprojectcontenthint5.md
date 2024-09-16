@@ -6,8 +6,8 @@
 import { UpdateProjectContentHint5 } from "@simplesagar/vercel/models/updateprojectop.js";
 
 let value: UpdateProjectContentHint5 = {
-    type: "blob-read-write-token",
-    storeId: "<value>",
+  type: "blob-read-write-token",
+  storeId: "<value>",
 };
 ```
 

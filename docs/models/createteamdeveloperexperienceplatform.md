@@ -8,9 +8,9 @@ Will be used to create an invoice item. The price must be in cents: 2000 for $20
 import { CreateTeamDeveloperExperiencePlatform } from "@simplesagar/vercel/models/createteamop.js";
 
 let value: CreateTeamDeveloperExperiencePlatform = {
-    price: 7465.85,
-    quantity: 9227.57,
-    hidden: false,
+  price: 7781.72,
+  quantity: 5354.68,
+  hidden: false,
 };
 ```
 

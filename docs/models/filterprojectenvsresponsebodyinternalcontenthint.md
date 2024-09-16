@@ -8,8 +8,8 @@ Similar to `contentHints`, but should not be exposed to the user.
 import { FilterProjectEnvsResponseBodyInternalContentHint } from "@simplesagar/vercel/models/filterprojectenvsop.js";
 
 let value: FilterProjectEnvsResponseBodyInternalContentHint = {
-    type: "flags-secret",
-    encryptedValue: "<value>",
+  type: "flags-secret",
+  encryptedValue: "<value>",
 };
 ```
 

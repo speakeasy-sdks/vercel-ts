@@ -6,8 +6,8 @@
 import { Eleven } from "@simplesagar/vercel/models/updateprojectdatacacheop.js";
 
 let value: Eleven = {
-    type: "postgres-password",
-    storeId: "<value>",
+  type: "postgres-password",
+  storeId: "<value>",
 };
 ```
 

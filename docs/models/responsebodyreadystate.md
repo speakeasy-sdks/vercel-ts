@@ -5,7 +5,7 @@
 ```typescript
 import { ResponseBodyReadyState } from "@simplesagar/vercel/models/getdeploymentop.js";
 
-let value: ResponseBodyReadyState = "QUEUED";
+let value: ResponseBodyReadyState = "ERROR";
 ```
 
 ## Values

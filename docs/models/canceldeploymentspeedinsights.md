@@ -6,7 +6,7 @@
 import { CancelDeploymentSpeedInsights } from "@simplesagar/vercel/models/canceldeploymentop.js";
 
 let value: CancelDeploymentSpeedInsights = {
-    id: "<id>",
+  id: "<id>",
 };
 ```
 

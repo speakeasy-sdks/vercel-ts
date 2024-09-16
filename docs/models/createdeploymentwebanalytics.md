@@ -6,7 +6,7 @@
 import { CreateDeploymentWebAnalytics } from "@simplesagar/vercel/models/createdeploymentop.js";
 
 let value: CreateDeploymentWebAnalytics = {
-    id: "<id>",
+  id: "<id>",
 };
 ```
 

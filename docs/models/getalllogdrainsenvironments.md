@@ -5,7 +5,7 @@
 ```typescript
 import { GetAllLogDrainsEnvironments } from "@simplesagar/vercel/models/getalllogdrainsop.js";
 
-let value: GetAllLogDrainsEnvironments = "production";
+let value: GetAllLogDrainsEnvironments = "preview";
 ```
 
 ## Values

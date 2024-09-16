@@ -6,8 +6,8 @@
 import { GetDeploymentResponseBodyAliasWarning } from "@simplesagar/vercel/models/getdeploymentop.js";
 
 let value: GetDeploymentResponseBodyAliasWarning = {
-    code: "<value>",
-    message: "<value>",
+  code: "<value>",
+  message: "<value>",
 };
 ```
 

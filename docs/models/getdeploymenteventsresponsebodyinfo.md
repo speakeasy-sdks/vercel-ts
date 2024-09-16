@@ -6,8 +6,8 @@
 import { GetDeploymentEventsResponseBodyInfo } from "@simplesagar/vercel/models/getdeploymenteventsop.js";
 
 let value: GetDeploymentEventsResponseBodyInfo = {
-    type: "<value>",
-    name: "<value>",
+  type: "<value>",
+  name: "<value>",
 };
 ```
 

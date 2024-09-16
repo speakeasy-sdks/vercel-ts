@@ -8,22 +8,22 @@ Metrics about the page
 import { Metrics } from "@simplesagar/vercel/models/updatecheckop.js";
 
 let value: Metrics = {
-    fcp: {
-        value: 1200,
-        source: "web-vitals",
-    },
-    lcp: {
-        value: 1200,
-        source: "web-vitals",
-    },
-    cls: {
-        value: 4,
-        source: "web-vitals",
-    },
-    tbt: {
-        value: 3000,
-        source: "web-vitals",
-    },
+  fcp: {
+    value: 1200,
+    source: "web-vitals",
+  },
+  lcp: {
+    value: 1200,
+    source: "web-vitals",
+  },
+  cls: {
+    value: 4,
+    source: "web-vitals",
+  },
+  tbt: {
+    value: 3000,
+    source: "web-vitals",
+  },
 };
 ```
 

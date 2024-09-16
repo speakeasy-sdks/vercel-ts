@@ -6,8 +6,8 @@
 import { DeleteTeamInviteCodeRequest } from "@simplesagar/vercel/models/deleteteaminvitecodeop.js";
 
 let value: DeleteTeamInviteCodeRequest = {
-    inviteId: "2wn2hudbr4chb1ecywo9dvzo7g9sscs6mzcz8htdde0txyom4l",
-    teamId: "team_LLHUOMOoDlqOp8wPE4kFo9pE",
+  inviteId: "2wn2hudbr4chb1ecywo9dvzo7g9sscs6mzcz8htdde0txyom4l",
+  teamId: "team_LLHUOMOoDlqOp8wPE4kFo9pE",
 };
 ```
 

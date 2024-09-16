@@ -5,7 +5,7 @@
 ```typescript
 import { VercelCache } from "@simplesagar/vercel/models/getdeploymenteventsop.js";
 
-let value: VercelCache = "HIT";
+let value: VercelCache = "PRERENDER";
 ```
 
 ## Values

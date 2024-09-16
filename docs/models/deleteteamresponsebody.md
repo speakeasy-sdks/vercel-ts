@@ -8,7 +8,7 @@ The Team was successfully deleted
 import { DeleteTeamResponseBody } from "@simplesagar/vercel/models/deleteteamop.js";
 
 let value: DeleteTeamResponseBody = {
-    id: "team_LLHUOMOoDlqOp8wPE4kFo9pE",
+  id: "team_LLHUOMOoDlqOp8wPE4kFo9pE",
 };
 ```
 

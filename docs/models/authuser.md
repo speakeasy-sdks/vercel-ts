@@ -8,28 +8,28 @@ Data for the currently authenticated User.
 import { AuthUser } from "@simplesagar/vercel/models/authuser.js";
 
 let value: AuthUser = {
-    createdAt: 1630748523395,
-    softBlock: {
-        blockedAt: 8288.41,
-        reason: "SUBSCRIPTION_EXPIRED",
+  createdAt: 1630748523395,
+  softBlock: {
+    blockedAt: 7239.42,
+    reason: "FAIR_USE_LIMITS_EXCEEDED",
+  },
+  billing: {
+    period: {
+      start: 5591.74,
+      end: 5908.58,
     },
-    billing: {
-        period: {
-            start: 7904.63,
-            end: 5910.65,
-        },
-        plan: "enterprise",
-    },
-    resourceConfig: {},
-    stagingPrefix: "<value>",
-    hasTrialAvailable: false,
-    id: "AEIIDYVk59zbFF2Sxfyxxmua",
-    email: "me@example.com",
-    name: "John Doe",
-    username: "jdoe",
-    avatar: "22cb30c85ff45ac4c72de8981500006b28114aa1",
-    defaultTeamId: "<value>",
-    version: "northstar",
+    plan: "hobby",
+  },
+  resourceConfig: {},
+  stagingPrefix: "<value>",
+  hasTrialAvailable: false,
+  id: "AEIIDYVk59zbFF2Sxfyxxmua",
+  email: "me@example.com",
+  name: "John Doe",
+  username: "jdoe",
+  avatar: "22cb30c85ff45ac4c72de8981500006b28114aa1",
+  defaultTeamId: "<value>",
+  version: "northstar",
 };
 ```
 

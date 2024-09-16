@@ -6,12 +6,12 @@
 import { CreateTeamCoupon } from "@simplesagar/vercel/models/createteamop.js";
 
 let value: CreateTeamCoupon = {
-    id: "<id>",
-    name: "<value>",
-    amountOff: 5156.38,
-    percentageOff: 3572.07,
-    durationInMonths: 8890.6,
-    duration: "once",
+  id: "<id>",
+  name: "<value>",
+  amountOff: 6841.26,
+  percentageOff: 9195.08,
+  durationInMonths: 340.7,
+  duration: "once",
 };
 ```
 

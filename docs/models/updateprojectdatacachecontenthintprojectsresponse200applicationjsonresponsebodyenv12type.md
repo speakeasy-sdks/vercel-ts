@@ -7,7 +7,8 @@ import {
   UpdateProjectDataCacheContentHintProjectsResponse200ApplicationJSONResponseBodyEnv12Type,
 } from "@simplesagar/vercel/models/updateprojectdatacacheop.js";
 
-let value: UpdateProjectDataCacheContentHintProjectsResponse200ApplicationJSONResponseBodyEnv12Type =
+let value:
+  UpdateProjectDataCacheContentHintProjectsResponse200ApplicationJSONResponseBodyEnv12Type =
     "postgres-database";
 ```
 

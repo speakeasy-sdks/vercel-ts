@@ -5,7 +5,9 @@
 ```typescript
 import { RemoveProjectEnvResponseBodyTarget } from "@simplesagar/vercel/models/removeprojectenvop.js";
 
-let value: RemoveProjectEnvResponseBodyTarget = ["production"];
+let value: RemoveProjectEnvResponseBodyTarget = [
+  "preview",
+];
 ```
 
 ## Supported Types

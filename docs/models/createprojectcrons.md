@@ -6,17 +6,17 @@
 import { CreateProjectCrons } from "@simplesagar/vercel/models/createprojectop.js";
 
 let value: CreateProjectCrons = {
-    enabledAt: 6793.93,
-    disabledAt: 4785.96,
-    updatedAt: 4536.97,
-    deploymentId: "<value>",
-    definitions: [
-        {
-            host: "vercel.com",
-            path: "/api/crons/sync-something?hello=world",
-            schedule: "0 0 * * *",
-        },
-    ],
+  enabledAt: 6793.93,
+  disabledAt: 4785.96,
+  updatedAt: 4536.97,
+  deploymentId: "<value>",
+  definitions: [
+    {
+      host: "vercel.com",
+      path: "/api/crons/sync-something?hello=world",
+      schedule: "0 0 * * *",
+    },
+  ],
 };
 ```
 

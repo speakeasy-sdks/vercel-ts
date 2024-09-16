@@ -8,11 +8,11 @@ IMPORTANT: If extending Billing, particularly with optional fields, make sure yo
 import { CreateTeamBilling } from "@simplesagar/vercel/models/createteamop.js";
 
 let value: CreateTeamBilling = {
-    period: {
-        start: 2393.37,
-        end: 9233.06,
-    },
-    plan: "enterprise",
+  period: {
+    start: 9631.98,
+    end: 5855.93,
+  },
+  plan: "pro",
 };
 ```
 

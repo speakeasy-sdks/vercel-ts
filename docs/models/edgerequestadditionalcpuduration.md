@@ -6,10 +6,10 @@
 import { EdgeRequestAdditionalCpuDuration } from "@simplesagar/vercel/models/authuser.js";
 
 let value: EdgeRequestAdditionalCpuDuration = {
-    price: 9449.5,
-    batch: 6573.19,
-    threshold: 5597.74,
-    hidden: false,
+  price: 5546.45,
+  batch: 6144.38,
+  threshold: 8268.62,
+  hidden: false,
 };
 ```
 

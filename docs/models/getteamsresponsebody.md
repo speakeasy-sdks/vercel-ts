@@ -8,12 +8,23 @@ A paginated list of teams.
 import { GetTeamsResponseBody } from "@simplesagar/vercel/models/getteamsop.js";
 
 let value: GetTeamsResponseBody = {
-    teams: [{}],
-    pagination: {
-        count: 20,
-        next: 1540095775951,
-        prev: 1540095775951,
+  teams: [
+    {
+      limited: false,
+      id: "team_nllPyCtREAqxxdyFKbbMDlxd",
+      slug: "my-team",
+      name: "My Team",
+      avatar: "6eb07268bcfadd309905ffb1579354084c24655c",
+      membership: {},
+      created: "<value>",
+      createdAt: 1630748523395,
     },
+  ],
+  pagination: {
+    count: 20,
+    next: 1540095775951,
+    prev: 1540095775951,
+  },
 };
 ```
 

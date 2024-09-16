@@ -6,8 +6,8 @@
 import { AliasWarning } from "@simplesagar/vercel/models/createdeploymentop.js";
 
 let value: AliasWarning = {
-    code: "<value>",
-    message: "<value>",
+  code: "<value>",
+  message: "<value>",
 };
 ```
 

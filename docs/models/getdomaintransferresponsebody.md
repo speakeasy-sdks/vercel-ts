@@ -6,10 +6,10 @@
 import { GetDomainTransferResponseBody } from "@simplesagar/vercel/models/getdomaintransferop.js";
 
 let value: GetDomainTransferResponseBody = {
-    transferable: false,
-    transferPolicy: "not-supported",
-    reason: "<value>",
-    status: "pending_registry",
+  transferable: false,
+  transferPolicy: "not-supported",
+  reason: "<value>",
+  status: "pending_registry",
 };
 ```
 

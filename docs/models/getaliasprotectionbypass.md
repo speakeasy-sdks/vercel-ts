@@ -6,11 +6,9 @@
 import { GetAliasProtectionBypass } from "@simplesagar/vercel/models/getaliasop.js";
 
 let value: GetAliasProtectionBypass = {
-    createdAt: 4758.26,
-    lastUpdatedAt: 9308.4,
-    lastUpdatedBy: "<value>",
-    access: "granted",
-    scope: "user",
+  createdAt: 1242.89,
+  createdBy: "<value>",
+  scope: "shareable-link",
 };
 ```
 

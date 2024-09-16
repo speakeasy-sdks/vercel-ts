@@ -5,7 +5,7 @@
 ```typescript
 import { GetDeploymentCustomEnvironmentType } from "@simplesagar/vercel/models/getdeploymentop.js";
 
-let value: GetDeploymentCustomEnvironmentType = "preview";
+let value: GetDeploymentCustomEnvironmentType = "development";
 ```
 
 ## Values

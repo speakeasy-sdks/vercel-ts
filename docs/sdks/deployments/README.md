@@ -35,7 +35,7 @@ async function run() {
   const result = await vercel.deployments.getEvents({
     idOrUrl: "dpl_5WJWYSyB7BpgTj3EuwF37WMRBXBtPQ2iTMJHJBJyRfd",
   });
-
+  
   // Handle the result
   console.log(result)
 }
@@ -110,7 +110,7 @@ const vercel = new Vercel({
 
 async function run() {
   const result = await vercel.deployments.get("dpl_89qyp1cskzkLrVicDaZoDbjyHuDJ");
-
+  
   // Handle the result
   console.log(result)
 }
@@ -185,8 +185,8 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.deployments.create();
-
+  const result = await vercel.deployments.create({});
+  
   // Handle the result
   console.log(result)
 }
@@ -209,7 +209,7 @@ const vercel = new VercelCore({
 });
 
 async function run() {
-  const res = await deploymentsCreate(vercel);
+  const res = await deploymentsCreate(vercel, {});
 
   if (!res.ok) {
     throw res.error;
@@ -259,7 +259,7 @@ const vercel = new Vercel({
 
 async function run() {
   const result = await vercel.deployments.cancel("dpl_5WJWYSyB7BpgTj3EuwF37WMRBXBtPQ2iTMJHJBJyRfd");
-
+  
   // Handle the result
   console.log(result)
 }
@@ -333,8 +333,8 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.deployments.uploadFile();
-
+  const result = await vercel.deployments.uploadFile({});
+  
   // Handle the result
   console.log(result)
 }
@@ -357,7 +357,7 @@ const vercel = new VercelCore({
 });
 
 async function run() {
-  const res = await deploymentsUploadFile(vercel);
+  const res = await deploymentsUploadFile(vercel, {});
 
   if (!res.ok) {
     throw res.error;
@@ -407,7 +407,7 @@ const vercel = new Vercel({
 
 async function run() {
   const result = await vercel.deployments.listAliases("dpl_FjvFJncQHQcZMznrUm9EoB8sFuPa");
-
+  
   // Handle the result
   console.log(result)
 }
@@ -481,8 +481,8 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.deployments.listFiles("<value>");
-
+  const result = await vercel.deployments.listFiles("<id>");
+  
   // Handle the result
   console.log(result)
 }
@@ -505,7 +505,7 @@ const vercel = new VercelCore({
 });
 
 async function run() {
-  const res = await deploymentsListFiles(vercel, "<value>");
+  const res = await deploymentsListFiles(vercel, "<id>");
 
   if (!res.ok) {
     throw res.error;
@@ -560,8 +560,6 @@ async function run() {
     id: "<id>",
     fileId: "<value>",
   });
-
-  
 }
 
 run();
@@ -633,10 +631,11 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.deployments.list();
-
+  const result = await vercel.deployments.list({});
+  
   for await (const page of result) {
-    // handle page
+    // Handle the page
+    console.log(page);
   }
 }
 
@@ -658,7 +657,7 @@ const vercel = new VercelCore({
 });
 
 async function run() {
-  const res = await deploymentsList(vercel);
+  const res = await deploymentsList(vercel, {});
 
   if (!res.ok) {
     throw res.error;
@@ -667,7 +666,8 @@ async function run() {
   const { value: result } = res;
 
   for await (const page of result) {
-    // handle page
+    // Handle the page
+    console.log(page);
   }
 }
 
@@ -709,7 +709,7 @@ const vercel = new Vercel({
 
 async function run() {
   const result = await vercel.deployments.delete("dpl_5WJWYSyB7BpgTj3EuwF37WMRBXBtPQ2iTMJHJBJyRfd");
-
+  
   // Handle the result
   console.log(result)
 }

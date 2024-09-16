@@ -6,11 +6,11 @@
 import { UpdateProjectDataCacheOptionsAllowlist } from "@simplesagar/vercel/models/updateprojectdatacacheop.js";
 
 let value: UpdateProjectDataCacheOptionsAllowlist = {
-    paths: [
-        {
-            value: "<value>",
-        },
-    ],
+  paths: [
+    {
+      value: "<value>",
+    },
+  ],
 };
 ```
 

@@ -6,10 +6,10 @@
 import { CreateTeamEdgeRequest } from "@simplesagar/vercel/models/createteamop.js";
 
 let value: CreateTeamEdgeRequest = {
-    price: 2885.7,
-    batch: 850.66,
-    threshold: 8744,
-    hidden: false,
+  price: 6113.28,
+  batch: 4030.26,
+  threshold: 3676.26,
+  hidden: false,
 };
 ```
 

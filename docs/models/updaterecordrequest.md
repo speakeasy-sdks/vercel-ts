@@ -6,7 +6,7 @@
 import { UpdateRecordRequest } from "@simplesagar/vercel/models/updaterecordop.js";
 
 let value: UpdateRecordRequest = {
-    recordId: "rec_2qn7pzrx89yxy34vezpd31y9",
+  recordId: "rec_2qn7pzrx89yxy34vezpd31y9",
 };
 ```
 

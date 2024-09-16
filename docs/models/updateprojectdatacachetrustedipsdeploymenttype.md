@@ -5,7 +5,8 @@
 ```typescript
 import { UpdateProjectDataCacheTrustedIpsDeploymentType } from "@simplesagar/vercel/models/updateprojectdatacacheop.js";
 
-let value: UpdateProjectDataCacheTrustedIpsDeploymentType = "prod_deployment_urls_and_all_previews";
+let value: UpdateProjectDataCacheTrustedIpsDeploymentType =
+  "prod_deployment_urls_and_all_previews";
 ```
 
 ## Values

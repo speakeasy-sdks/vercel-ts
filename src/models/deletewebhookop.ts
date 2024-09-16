@@ -5,44 +5,44 @@
 import * as z from "zod";
 
 export type DeleteWebhookRequest = {
-    id: string;
-    /**
-     * The Team identifier to perform the request on behalf of.
-     */
-    teamId?: string | undefined;
-    /**
-     * The Team slug to perform the request on behalf of.
-     */
-    slug?: string | undefined;
+  id: string;
+  /**
+   * The Team identifier to perform the request on behalf of.
+   */
+  teamId?: string | undefined;
+  /**
+   * The Team slug to perform the request on behalf of.
+   */
+  slug?: string | undefined;
 };
 
 /** @internal */
 export const DeleteWebhookRequest$inboundSchema: z.ZodType<
-    DeleteWebhookRequest,
-    z.ZodTypeDef,
-    unknown
+  DeleteWebhookRequest,
+  z.ZodTypeDef,
+  unknown
 > = z.object({
-    id: z.string(),
-    teamId: z.string().optional(),
-    slug: z.string().optional(),
+  id: z.string(),
+  teamId: z.string().optional(),
+  slug: z.string().optional(),
 });
 
 /** @internal */
 export type DeleteWebhookRequest$Outbound = {
-    id: string;
-    teamId?: string | undefined;
-    slug?: string | undefined;
+  id: string;
+  teamId?: string | undefined;
+  slug?: string | undefined;
 };
 
 /** @internal */
 export const DeleteWebhookRequest$outboundSchema: z.ZodType<
-    DeleteWebhookRequest$Outbound,
-    z.ZodTypeDef,
-    DeleteWebhookRequest
+  DeleteWebhookRequest$Outbound,
+  z.ZodTypeDef,
+  DeleteWebhookRequest
 > = z.object({
-    id: z.string(),
-    teamId: z.string().optional(),
-    slug: z.string().optional(),
+  id: z.string(),
+  teamId: z.string().optional(),
+  slug: z.string().optional(),
 });
 
 /**
@@ -50,10 +50,10 @@ export const DeleteWebhookRequest$outboundSchema: z.ZodType<
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
 export namespace DeleteWebhookRequest$ {
-    /** @deprecated use `DeleteWebhookRequest$inboundSchema` instead. */
-    export const inboundSchema = DeleteWebhookRequest$inboundSchema;
-    /** @deprecated use `DeleteWebhookRequest$outboundSchema` instead. */
-    export const outboundSchema = DeleteWebhookRequest$outboundSchema;
-    /** @deprecated use `DeleteWebhookRequest$Outbound` instead. */
-    export type Outbound = DeleteWebhookRequest$Outbound;
+  /** @deprecated use `DeleteWebhookRequest$inboundSchema` instead. */
+  export const inboundSchema = DeleteWebhookRequest$inboundSchema;
+  /** @deprecated use `DeleteWebhookRequest$outboundSchema` instead. */
+  export const outboundSchema = DeleteWebhookRequest$outboundSchema;
+  /** @deprecated use `DeleteWebhookRequest$Outbound` instead. */
+  export type Outbound = DeleteWebhookRequest$Outbound;
 }

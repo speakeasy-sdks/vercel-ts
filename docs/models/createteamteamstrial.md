@@ -6,8 +6,8 @@
 import { CreateTeamTeamsTrial } from "@simplesagar/vercel/models/createteamop.js";
 
 let value: CreateTeamTeamsTrial = {
-    start: 8822.84,
-    end: 8964.8,
+  start: 3572.07,
+  end: 8890.6,
 };
 ```
 

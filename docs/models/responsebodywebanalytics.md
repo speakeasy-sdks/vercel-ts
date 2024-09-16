@@ -6,7 +6,7 @@
 import { ResponseBodyWebAnalytics } from "@simplesagar/vercel/models/getdeploymentop.js";
 
 let value: ResponseBodyWebAnalytics = {
-    id: "<id>",
+  id: "<id>",
 };
 ```
 

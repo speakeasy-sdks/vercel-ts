@@ -24,10 +24,11 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.aliases.list();
-
+  const result = await vercel.aliases.list({});
+  
   for await (const page of result) {
-    // handle page
+    // Handle the page
+    console.log(page);
   }
 }
 
@@ -49,7 +50,7 @@ const vercel = new VercelCore({
 });
 
 async function run() {
-  const res = await aliasesList(vercel);
+  const res = await aliasesList(vercel, {});
 
   if (!res.ok) {
     throw res.error;
@@ -58,7 +59,8 @@ async function run() {
   const { value: result } = res;
 
   for await (const page of result) {
-    // handle page
+    // Handle the page
+    console.log(page);
   }
 }
 
@@ -102,7 +104,7 @@ async function run() {
   const result = await vercel.aliases.get({
     idOrAlias: "example.vercel.app",
   });
-
+  
   // Handle the result
   console.log(result)
 }
@@ -177,7 +179,7 @@ const vercel = new Vercel({
 
 async function run() {
   const result = await vercel.aliases.delete("<value>");
-
+  
   // Handle the result
   console.log(result)
 }
@@ -251,8 +253,8 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.aliases.assign("<value>");
-
+  const result = await vercel.aliases.assign("<id>");
+  
   // Handle the result
   console.log(result)
 }
@@ -275,7 +277,7 @@ const vercel = new VercelCore({
 });
 
 async function run() {
-  const res = await aliasesAssign(vercel, "<value>");
+  const res = await aliasesAssign(vercel, "<id>");
 
   if (!res.ok) {
     throw res.error;

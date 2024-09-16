@@ -6,7 +6,7 @@
 import { FilterProjectEnvsRequest } from "@simplesagar/vercel/models/filterprojectenvsop.js";
 
 let value: FilterProjectEnvsRequest = {
-    idOrName: "prj_XLKmu1DyR1eY7zq8UgeRKbA7yVLA",
+  idOrName: "prj_XLKmu1DyR1eY7zq8UgeRKbA7yVLA",
 };
 ```
 

@@ -6,8 +6,8 @@
 import { GetProjectsMitigate } from "@simplesagar/vercel/models/getprojectsop.js";
 
 let value: GetProjectsMitigate = {
-    action: "deny",
-    ruleId: "<value>",
+  action: "deny",
+  ruleId: "<value>",
 };
 ```
 

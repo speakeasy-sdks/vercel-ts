@@ -6,8 +6,8 @@
 import { InviteUserToTeamProjects } from "@simplesagar/vercel/models/inviteusertoteamop.js";
 
 let value: InviteUserToTeamProjects = {
-    projectId: "prj_ndlgr43fadlPyCtREAqxxdyFK",
-    role: "ADMIN",
+  projectId: "prj_ndlgr43fadlPyCtREAqxxdyFK",
+  role: "ADMIN",
 };
 ```
 

@@ -6,11 +6,11 @@
 import { ListAccessGroupProjectsProjects } from "@simplesagar/vercel/models/listaccessgroupprojectsop.js";
 
 let value: ListAccessGroupProjectsProjects = {
-    projectId: "<value>",
-    role: "PROJECT_DEVELOPER",
-    createdAt: "<value>",
-    updatedAt: "<value>",
-    project: {},
+  projectId: "<value>",
+  role: "PROJECT_DEVELOPER",
+  createdAt: "<value>",
+  updatedAt: "<value>",
+  project: {},
 };
 ```
 

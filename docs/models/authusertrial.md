@@ -6,8 +6,8 @@
 import { AuthUserTrial } from "@simplesagar/vercel/models/authuser.js";
 
 let value: AuthUserTrial = {
-    start: 9738.19,
-    end: 9745.89,
+  start: 2072.96,
+  end: 4800.61,
 };
 ```
 

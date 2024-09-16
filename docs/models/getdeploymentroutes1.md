@@ -6,7 +6,7 @@
 import { GetDeploymentRoutes1 } from "@simplesagar/vercel/models/getdeploymentop.js";
 
 let value: GetDeploymentRoutes1 = {
-    src: "<value>",
+  src: "<value>",
 };
 ```
 

@@ -6,9 +6,9 @@
 import { GetDeploymentGitSource5 } from "@simplesagar/vercel/models/getdeploymentop.js";
 
 let value: GetDeploymentGitSource5 = {
-    type: "bitbucket",
-    owner: "<value>",
-    slug: "<value>",
+  type: "bitbucket",
+  owner: "<value>",
+  slug: "<value>",
 };
 ```
 

@@ -5,7 +5,7 @@
 ```typescript
 import { Reason } from "@simplesagar/vercel/models/authuser.js";
 
-let value: Reason = "SUBSCRIPTION_CANCELED";
+let value: Reason = "UNPAID_INVOICE";
 ```
 
 ## Values

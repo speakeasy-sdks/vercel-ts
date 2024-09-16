@@ -6,7 +6,7 @@
 import { DeleteAccessGroupRequest } from "@simplesagar/vercel/models/deleteaccessgroupop.js";
 
 let value: DeleteAccessGroupRequest = {
-    idOrName: "<value>",
+  idOrName: "<value>",
 };
 ```
 

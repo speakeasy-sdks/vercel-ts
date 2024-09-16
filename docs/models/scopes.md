@@ -6,10 +6,9 @@
 import { Scopes } from "@simplesagar/vercel/models/authtoken.js";
 
 let value: Scopes = {
-    type: "team",
-    teamId: "<value>",
-    origin: "bitbucket",
-    createdAt: 2138.35,
+  type: "user",
+  origin: "github",
+  createdAt: 8493.2,
 };
 ```
 

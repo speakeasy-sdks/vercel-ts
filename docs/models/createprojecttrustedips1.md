@@ -6,13 +6,13 @@
 import { CreateProjectTrustedIps1 } from "@simplesagar/vercel/models/createprojectop.js";
 
 let value: CreateProjectTrustedIps1 = {
-    deploymentType: "preview",
-    addresses: [
-        {
-            value: "<value>",
-        },
-    ],
-    protectionMode: "exclusive",
+  deploymentType: "preview",
+  addresses: [
+    {
+      value: "<value>",
+    },
+  ],
+  protectionMode: "exclusive",
 };
 ```
 

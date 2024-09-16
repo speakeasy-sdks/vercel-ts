@@ -8,7 +8,7 @@ OpenID Connect JSON Web Token generation configuration.
 import { OidcTokenConfig } from "@simplesagar/vercel/models/createprojectop.js";
 
 let value: OidcTokenConfig = {
-    enabled: false,
+  enabled: false,
 };
 ```
 

@@ -6,14 +6,14 @@
 import { CreateProjectLink3 } from "@simplesagar/vercel/models/createprojectop.js";
 
 let value: CreateProjectLink3 = {
-    deployHooks: [
-        {
-            id: "<id>",
-            name: "<value>",
-            ref: "<value>",
-            url: "http://frizzy-counter.org",
-        },
-    ],
+  deployHooks: [
+    {
+      id: "<id>",
+      name: "<value>",
+      ref: "<value>",
+      url: "http://frizzy-counter.org",
+    },
+  ],
 };
 ```
 

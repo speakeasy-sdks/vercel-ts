@@ -6,8 +6,8 @@
 import { FilterProjectEnvsResponseBodyEnvsContentHint } from "@simplesagar/vercel/models/filterprojectenvsop.js";
 
 let value: FilterProjectEnvsResponseBodyEnvsContentHint = {
-    type: "postgres-url",
-    storeId: "<value>",
+  type: "postgres-database",
+  storeId: "<value>",
 };
 ```
 

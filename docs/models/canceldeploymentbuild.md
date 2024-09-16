@@ -6,7 +6,9 @@
 import { CancelDeploymentBuild } from "@simplesagar/vercel/models/canceldeploymentop.js";
 
 let value: CancelDeploymentBuild = {
-    env: ["<value>"],
+  env: [
+    "<value>",
+  ],
 };
 ```
 

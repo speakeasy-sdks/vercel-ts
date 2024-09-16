@@ -5,7 +5,7 @@
 ```typescript
 import { AuthTokenScopesOrigin } from "@simplesagar/vercel/models/authtoken.js";
 
-let value: AuthTokenScopesOrigin = "passkey";
+let value: AuthTokenScopesOrigin = "gitlab";
 ```
 
 ## Values

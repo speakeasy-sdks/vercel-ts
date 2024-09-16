@@ -5,7 +5,8 @@
 ```typescript
 import { GetDeploymentResponseBodyDeploymentsResponseReadyState } from "@simplesagar/vercel/models/getdeploymentop.js";
 
-let value: GetDeploymentResponseBodyDeploymentsResponseReadyState = "BUILDING";
+let value: GetDeploymentResponseBodyDeploymentsResponseReadyState =
+  "INITIALIZING";
 ```
 
 ## Values

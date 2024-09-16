@@ -6,8 +6,11 @@
 import { EditProjectEnvResponseBodyContentHint } from "@simplesagar/vercel/models/editprojectenvop.js";
 
 let value: EditProjectEnvResponseBodyContentHint = {
-    type: "postgres-user",
-    storeId: "<value>",
+  type: "integration-store-secret",
+  storeId: "<value>",
+  integrationId: "<value>",
+  integrationProductId: "<value>",
+  integrationConfigurationId: "<value>",
 };
 ```
 

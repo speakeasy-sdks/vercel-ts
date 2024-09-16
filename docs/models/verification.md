@@ -8,10 +8,10 @@ A list of verification challenges, one of which must be completed to verify the 
 import { Verification } from "@simplesagar/vercel/models/getprojectdomainop.js";
 
 let value: Verification = {
-    type: "<value>",
-    domain: "rectangular-sucker.org",
-    value: "<value>",
-    reason: "<value>",
+  type: "<value>",
+  domain: "well-made-loop.net",
+  value: "<value>",
+  reason: "<value>",
 };
 ```
 

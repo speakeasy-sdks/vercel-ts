@@ -6,7 +6,7 @@
 import { PatchEdgeConfigSchemaRequest } from "@simplesagar/vercel/models/patchedgeconfigschemaop.js";
 
 let value: PatchEdgeConfigSchemaRequest = {
-    edgeConfigId: "<value>",
+  edgeConfigId: "<value>",
 };
 ```
 

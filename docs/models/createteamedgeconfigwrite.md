@@ -6,10 +6,10 @@
 import { CreateTeamEdgeConfigWrite } from "@simplesagar/vercel/models/createteamop.js";
 
 let value: CreateTeamEdgeConfigWrite = {
-    price: 6001.93,
-    batch: 8975.43,
-    threshold: 6540.82,
-    hidden: false,
+  price: 2885.7,
+  batch: 850.66,
+  threshold: 8744,
+  hidden: false,
 };
 ```
 

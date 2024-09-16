@@ -5,44 +5,44 @@
 import * as z from "zod";
 
 export type DeleteEdgeConfigSchemaRequest = {
-    edgeConfigId: string;
-    /**
-     * The Team identifier to perform the request on behalf of.
-     */
-    teamId?: string | undefined;
-    /**
-     * The Team slug to perform the request on behalf of.
-     */
-    slug?: string | undefined;
+  edgeConfigId: string;
+  /**
+   * The Team identifier to perform the request on behalf of.
+   */
+  teamId?: string | undefined;
+  /**
+   * The Team slug to perform the request on behalf of.
+   */
+  slug?: string | undefined;
 };
 
 /** @internal */
 export const DeleteEdgeConfigSchemaRequest$inboundSchema: z.ZodType<
-    DeleteEdgeConfigSchemaRequest,
-    z.ZodTypeDef,
-    unknown
+  DeleteEdgeConfigSchemaRequest,
+  z.ZodTypeDef,
+  unknown
 > = z.object({
-    edgeConfigId: z.string(),
-    teamId: z.string().optional(),
-    slug: z.string().optional(),
+  edgeConfigId: z.string(),
+  teamId: z.string().optional(),
+  slug: z.string().optional(),
 });
 
 /** @internal */
 export type DeleteEdgeConfigSchemaRequest$Outbound = {
-    edgeConfigId: string;
-    teamId?: string | undefined;
-    slug?: string | undefined;
+  edgeConfigId: string;
+  teamId?: string | undefined;
+  slug?: string | undefined;
 };
 
 /** @internal */
 export const DeleteEdgeConfigSchemaRequest$outboundSchema: z.ZodType<
-    DeleteEdgeConfigSchemaRequest$Outbound,
-    z.ZodTypeDef,
-    DeleteEdgeConfigSchemaRequest
+  DeleteEdgeConfigSchemaRequest$Outbound,
+  z.ZodTypeDef,
+  DeleteEdgeConfigSchemaRequest
 > = z.object({
-    edgeConfigId: z.string(),
-    teamId: z.string().optional(),
-    slug: z.string().optional(),
+  edgeConfigId: z.string(),
+  teamId: z.string().optional(),
+  slug: z.string().optional(),
 });
 
 /**
@@ -50,10 +50,10 @@ export const DeleteEdgeConfigSchemaRequest$outboundSchema: z.ZodType<
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
 export namespace DeleteEdgeConfigSchemaRequest$ {
-    /** @deprecated use `DeleteEdgeConfigSchemaRequest$inboundSchema` instead. */
-    export const inboundSchema = DeleteEdgeConfigSchemaRequest$inboundSchema;
-    /** @deprecated use `DeleteEdgeConfigSchemaRequest$outboundSchema` instead. */
-    export const outboundSchema = DeleteEdgeConfigSchemaRequest$outboundSchema;
-    /** @deprecated use `DeleteEdgeConfigSchemaRequest$Outbound` instead. */
-    export type Outbound = DeleteEdgeConfigSchemaRequest$Outbound;
+  /** @deprecated use `DeleteEdgeConfigSchemaRequest$inboundSchema` instead. */
+  export const inboundSchema = DeleteEdgeConfigSchemaRequest$inboundSchema;
+  /** @deprecated use `DeleteEdgeConfigSchemaRequest$outboundSchema` instead. */
+  export const outboundSchema = DeleteEdgeConfigSchemaRequest$outboundSchema;
+  /** @deprecated use `DeleteEdgeConfigSchemaRequest$Outbound` instead. */
+  export type Outbound = DeleteEdgeConfigSchemaRequest$Outbound;
 }

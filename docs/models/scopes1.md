@@ -8,9 +8,9 @@ The access scopes granted to the token.
 import { Scopes1 } from "@simplesagar/vercel/models/authtoken.js";
 
 let value: Scopes1 = {
-    type: "user",
-    origin: "passkey",
-    createdAt: 6293.77,
+  type: "user",
+  origin: "saml",
+  createdAt: 3228.29,
 };
 ```
 

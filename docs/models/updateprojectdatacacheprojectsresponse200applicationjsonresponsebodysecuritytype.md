@@ -5,7 +5,8 @@
 ```typescript
 import { UpdateProjectDataCacheProjectsResponse200ApplicationJSONResponseBodySecurityType } from "@simplesagar/vercel/models/updateprojectdatacacheop.js";
 
-let value: UpdateProjectDataCacheProjectsResponse200ApplicationJSONResponseBodySecurityType =
+let value:
+  UpdateProjectDataCacheProjectsResponse200ApplicationJSONResponseBodySecurityType =
     "protocol";
 ```
 

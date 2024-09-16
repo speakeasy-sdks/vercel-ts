@@ -6,10 +6,10 @@
 import { CreateTeamFastDataTransfer } from "@simplesagar/vercel/models/createteamop.js";
 
 let value: CreateTeamFastDataTransfer = {
-    price: 2124.34,
-    batch: 3220.17,
-    threshold: 1830.33,
-    hidden: false,
+  price: 6780.6,
+  batch: 4876.76,
+  threshold: 1446.91,
+  hidden: false,
 };
 ```
 

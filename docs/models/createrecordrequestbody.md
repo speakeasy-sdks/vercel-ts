@@ -6,9 +6,9 @@
 import { CreateRecordRequestBody } from "@simplesagar/vercel/models/createrecordop.js";
 
 let value: CreateRecordRequestBody = {
-    name: "subdomain",
-    type: "CAA",
-    value: "192.0.2.42",
+  name: "subdomain",
+  type: "CAA",
+  value: "192.0.2.42",
 };
 ```
 

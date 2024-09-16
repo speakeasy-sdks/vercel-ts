@@ -8,8 +8,8 @@ Successful response showing the uid of the newly created DNS record.
 import { CreateRecordResponseBody } from "@simplesagar/vercel/models/createrecordop.js";
 
 let value: CreateRecordResponseBody = {
-    uid: "<value>",
-    updated: 6490.78,
+  uid: "<value>",
+  updated: 6490.78,
 };
 ```
 

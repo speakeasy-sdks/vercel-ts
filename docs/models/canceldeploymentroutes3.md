@@ -6,9 +6,9 @@
 import { CancelDeploymentRoutes3 } from "@simplesagar/vercel/models/canceldeploymentop.js";
 
 let value: CancelDeploymentRoutes3 = {
-    src: "<value>",
-    continue: false,
-    middleware: 2826.99,
+  src: "<value>",
+  continue: false,
+  middleware: 2826.99,
 };
 ```
 

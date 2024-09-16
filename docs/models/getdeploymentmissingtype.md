@@ -5,7 +5,7 @@
 ```typescript
 import { GetDeploymentMissingType } from "@simplesagar/vercel/models/getdeploymentop.js";
 
-let value: GetDeploymentMissingType = "query";
+let value: GetDeploymentMissingType = "header";
 ```
 
 ## Values

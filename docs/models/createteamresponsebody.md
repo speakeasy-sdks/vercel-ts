@@ -8,15 +8,15 @@ The team was created successfully
 import { CreateTeamResponseBody } from "@simplesagar/vercel/models/createteamop.js";
 
 let value: CreateTeamResponseBody = {
-    id: "team_nLlpyC6RE1qxqglFKbrMxlud",
-    slug: "<value>",
-    billing: {
-        period: {
-            start: 2828.37,
-            end: 6937.46,
-        },
-        plan: "enterprise",
+  id: "team_nLlpyC6RE1qxqglFKbrMxlud",
+  slug: "<value>",
+  billing: {
+    period: {
+      start: 2536.25,
+      end: 2569.16,
     },
+    plan: "pro",
+  },
 };
 ```
 

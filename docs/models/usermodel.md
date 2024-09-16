@@ -8,10 +8,10 @@ Metadata for the User who generated the event.
 import { UserModel } from "@simplesagar/vercel/models/userevent.js";
 
 let value: UserModel = {
-    avatar: "https://loremflickr.com/640/480",
-    email: "Magali.Jacobson@hotmail.com",
-    uid: "<value>",
-    username: "Zola.Wyman",
+  avatar: "https://loremflickr.com/640/480",
+  email: "Magali.Jacobson@hotmail.com",
+  uid: "<value>",
+  username: "Zola.Wyman",
 };
 ```
 

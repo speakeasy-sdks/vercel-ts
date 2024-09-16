@@ -6,10 +6,10 @@
 import { AuthUserMatrix } from "@simplesagar/vercel/models/authuser.js";
 
 let value: AuthUserMatrix = {
-    defaultUnitPrice: "<value>",
-    dimensionPrices: {
-        key: "<value>",
-    },
+  defaultUnitPrice: "<value>",
+  dimensionPrices: {
+    "key": "<value>",
+  },
 };
 ```
 

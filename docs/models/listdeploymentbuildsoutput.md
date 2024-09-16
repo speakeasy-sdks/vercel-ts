@@ -8,9 +8,9 @@ A list of outputs for the Build that can be either Serverless Functions or stati
 import { ListDeploymentBuildsOutput } from "@simplesagar/vercel/models/listdeploymentbuildsop.js";
 
 let value: ListDeploymentBuildsOutput = {
-    path: "/usr/bin",
-    digest: "<value>",
-    mode: 8442.66,
+  path: "/usr/bin",
+  digest: "<value>",
+  mode: 8442.66,
 };
 ```
 

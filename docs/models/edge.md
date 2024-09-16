@@ -8,7 +8,9 @@ Exists if the output is an edge function.
 import { Edge } from "@simplesagar/vercel/models/listdeploymentbuildsop.js";
 
 let value: Edge = {
-    regions: ["<value>"],
+  regions: [
+    "<value>",
+  ],
 };
 ```
 

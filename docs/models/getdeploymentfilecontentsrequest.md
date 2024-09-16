@@ -6,8 +6,8 @@
 import { GetDeploymentFileContentsRequest } from "@simplesagar/vercel/models/getdeploymentfilecontentsop.js";
 
 let value: GetDeploymentFileContentsRequest = {
-    id: "<id>",
-    fileId: "<value>",
+  id: "<id>",
+  fileId: "<value>",
 };
 ```
 

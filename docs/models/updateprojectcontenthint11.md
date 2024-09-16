@@ -6,8 +6,8 @@
 import { UpdateProjectContentHint11 } from "@simplesagar/vercel/models/updateprojectop.js";
 
 let value: UpdateProjectContentHint11 = {
-    type: "postgres-password",
-    storeId: "<value>",
+  type: "postgres-password",
+  storeId: "<value>",
 };
 ```
 

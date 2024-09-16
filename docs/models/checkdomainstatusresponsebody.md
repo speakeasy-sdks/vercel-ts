@@ -8,7 +8,7 @@ Successful response checking if a Domain's name is available.
 import { CheckDomainStatusResponseBody } from "@simplesagar/vercel/models/checkdomainstatusop.js";
 
 let value: CheckDomainStatusResponseBody = {
-    available: false,
+  available: false,
 };
 ```
 

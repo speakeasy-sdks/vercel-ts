@@ -6,9 +6,11 @@
 import { ListAliasesProtectionBypass } from "@simplesagar/vercel/models/listaliasesop.js";
 
 let value: ListAliasesProtectionBypass = {
-    createdAt: 9384.12,
-    createdBy: "<value>",
-    scope: "shareable-link",
+  createdAt: 9308.4,
+  lastUpdatedAt: 7087.71,
+  lastUpdatedBy: "<value>",
+  access: "granted",
+  scope: "user",
 };
 ```
 

@@ -5,7 +5,8 @@
 ```typescript
 import { CreateProjectProjectsResponse200ApplicationJSONResponseBodyEnvType } from "@simplesagar/vercel/models/createprojectop.js";
 
-let value: CreateProjectProjectsResponse200ApplicationJSONResponseBodyEnvType = "flags-secret";
+let value: CreateProjectProjectsResponse200ApplicationJSONResponseBodyEnvType =
+  "flags-secret";
 ```
 
 ## Values

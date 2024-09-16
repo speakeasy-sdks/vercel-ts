@@ -6,9 +6,9 @@
 import { FavoriteProjectsAndSpaces } from "@simplesagar/vercel/models/authuser.js";
 
 let value: FavoriteProjectsAndSpaces = {
-    spaceId: "<value>",
-    scopeSlug: "<value>",
-    scopeId: "<value>",
+  spaceId: "<value>",
+  scopeSlug: "<value>",
+  scopeId: "<value>",
 };
 ```
 

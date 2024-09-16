@@ -6,7 +6,7 @@
 import { GetDeploymentFlagsOptions } from "@simplesagar/vercel/models/getdeploymentop.js";
 
 let value: GetDeploymentFlagsOptions = {
-    value: 8225.6,
+  value: false,
 };
 ```
 

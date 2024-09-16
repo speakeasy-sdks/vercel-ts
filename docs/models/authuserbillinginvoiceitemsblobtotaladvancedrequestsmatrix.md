@@ -6,10 +6,10 @@
 import { AuthUserBillingInvoiceItemsBlobTotalAdvancedRequestsMatrix } from "@simplesagar/vercel/models/authuser.js";
 
 let value: AuthUserBillingInvoiceItemsBlobTotalAdvancedRequestsMatrix = {
-    defaultUnitPrice: "<value>",
-    dimensionPrices: {
-        key: "<value>",
-    },
+  defaultUnitPrice: "<value>",
+  dimensionPrices: {
+    "key": "<value>",
+  },
 };
 ```
 

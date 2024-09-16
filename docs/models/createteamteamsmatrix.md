@@ -6,10 +6,10 @@
 import { CreateTeamTeamsMatrix } from "@simplesagar/vercel/models/createteamop.js";
 
 let value: CreateTeamTeamsMatrix = {
-    defaultUnitPrice: "<value>",
-    dimensionPrices: {
-        key: "<value>",
-    },
+  defaultUnitPrice: "<value>",
+  dimensionPrices: {
+    "key": "<value>",
+  },
 };
 ```
 

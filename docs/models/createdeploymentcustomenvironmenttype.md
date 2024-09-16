@@ -5,7 +5,7 @@
 ```typescript
 import { CreateDeploymentCustomEnvironmentType } from "@simplesagar/vercel/models/createdeploymentop.js";
 
-let value: CreateDeploymentCustomEnvironmentType = "startsWith";
+let value: CreateDeploymentCustomEnvironmentType = "equals";
 ```
 
 ## Values

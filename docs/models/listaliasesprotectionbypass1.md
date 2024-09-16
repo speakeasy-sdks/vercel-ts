@@ -8,9 +8,9 @@ The protection bypass for the alias
 import { ListAliasesProtectionBypass1 } from "@simplesagar/vercel/models/listaliasesop.js";
 
 let value: ListAliasesProtectionBypass1 = {
-    createdAt: 5149.22,
-    createdBy: "<value>",
-    scope: "shareable-link",
+  createdAt: 3662.44,
+  createdBy: "<value>",
+  scope: "shareable-link",
 };
 ```
 

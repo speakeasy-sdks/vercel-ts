@@ -6,12 +6,12 @@
 import { CustomEnvironment } from "@simplesagar/vercel/models/createdeploymentop.js";
 
 let value: CustomEnvironment = {
-    id: "<id>",
-    name: "<value>",
-    slug: "<value>",
-    type: "production",
-    createdAt: 8859.63,
-    updatedAt: 8391.89,
+  id: "<id>",
+  name: "<value>",
+  slug: "<value>",
+  type: "preview",
+  createdAt: 4492.92,
+  updatedAt: 2962.42,
 };
 ```
 

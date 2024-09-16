@@ -6,7 +6,7 @@
 import { CancelDeploymentWebAnalytics } from "@simplesagar/vercel/models/canceldeploymentop.js";
 
 let value: CancelDeploymentWebAnalytics = {
-    id: "<id>",
+  id: "<id>",
 };
 ```
 

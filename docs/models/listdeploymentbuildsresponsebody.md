@@ -6,21 +6,21 @@
 import { ListDeploymentBuildsResponseBody } from "@simplesagar/vercel/models/listdeploymentbuildsop.js";
 
 let value: ListDeploymentBuildsResponseBody = {
-    builds: [
+  builds: [
+    {
+      id: "<id>",
+      deploymentId: "<value>",
+      entrypoint: "<value>",
+      readyState: "QUEUED",
+      output: [
         {
-            id: "<id>",
-            deploymentId: "<value>",
-            entrypoint: "<value>",
-            readyState: "QUEUED",
-            output: [
-                {
-                    path: "/opt/sbin",
-                    digest: "<value>",
-                    mode: 6235.64,
-                },
-            ],
+          path: "/opt/sbin",
+          digest: "<value>",
+          mode: 6235.64,
         },
-    ],
+      ],
+    },
+  ],
 };
 ```
 

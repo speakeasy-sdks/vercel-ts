@@ -6,8 +6,8 @@
 import { UpdateProjectContentHint3 } from "@simplesagar/vercel/models/updateprojectop.js";
 
 let value: UpdateProjectContentHint3 = {
-    type: "redis-rest-api-token",
-    storeId: "<value>",
+  type: "redis-rest-api-token",
+  storeId: "<value>",
 };
 ```
 

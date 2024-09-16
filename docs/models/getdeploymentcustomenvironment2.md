@@ -6,7 +6,7 @@
 import { GetDeploymentCustomEnvironment2 } from "@simplesagar/vercel/models/getdeploymentop.js";
 
 let value: GetDeploymentCustomEnvironment2 = {
-    id: "<id>",
+  id: "<id>",
 };
 ```
 

@@ -6,8 +6,8 @@
 import { GetDeploymentResponseBodyOutput } from "@simplesagar/vercel/models/getdeploymentop.js";
 
 let value: GetDeploymentResponseBodyOutput = {
-    path: "/etc",
-    functionName: "<value>",
+  path: "/var/spool",
+  functionName: "<value>",
 };
 ```
 

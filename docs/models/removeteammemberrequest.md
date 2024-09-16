@@ -6,8 +6,8 @@
 import { RemoveTeamMemberRequest } from "@simplesagar/vercel/models/removeteammemberop.js";
 
 let value: RemoveTeamMemberRequest = {
-    teamId: "<value>",
-    uid: "<value>",
+  teamId: "<value>",
+  uid: "<value>",
 };
 ```
 

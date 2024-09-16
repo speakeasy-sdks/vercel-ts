@@ -6,8 +6,8 @@
 import { CreateDeploymentOutput } from "@simplesagar/vercel/models/createdeploymentop.js";
 
 let value: CreateDeploymentOutput = {
-    path: "/etc/mail",
-    functionName: "<value>",
+  path: "/usr/share",
+  functionName: "<value>",
 };
 ```
 

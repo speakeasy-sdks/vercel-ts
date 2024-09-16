@@ -5,8 +5,8 @@
 import { VercelCore } from "../core.js";
 import { dlv } from "../lib/dlv.js";
 import {
-    encodeFormQuery as encodeFormQuery$,
-    encodeSimple as encodeSimple$,
+  encodeFormQuery as encodeFormQuery$,
+  encodeSimple as encodeSimple$,
 } from "../lib/encodings.js";
 import * as m$ from "../lib/matchers.js";
 import * as schemas$ from "../lib/schemas.js";
@@ -14,22 +14,27 @@ import { RequestOptions } from "../lib/sdks.js";
 import { extractSecurity, resolveGlobalSecurity } from "../lib/security.js";
 import { pathToFunc } from "../lib/url.js";
 import {
-    GetProjectDomainsRequest,
-    GetProjectDomainsRequest$outboundSchema,
-    GetProjectDomainsResponse,
-    GetProjectDomainsResponse$inboundSchema,
+  GetProjectDomainsRequest,
+  GetProjectDomainsRequest$outboundSchema,
+  GetProjectDomainsResponse,
+  GetProjectDomainsResponse$inboundSchema,
 } from "../models/getprojectdomainsop.js";
 import {
-    ConnectionError,
-    InvalidRequestError,
-    RequestAbortedError,
-    RequestTimeoutError,
-    UnexpectedClientError,
+  ConnectionError,
+  InvalidRequestError,
+  RequestAbortedError,
+  RequestTimeoutError,
+  UnexpectedClientError,
 } from "../models/httpclienterrors.js";
 import { SDKError } from "../models/sdkerror.js";
 import { SDKValidationError } from "../models/sdkvalidationerror.js";
 import { Result } from "../types/fp.js";
-import { createPageIterator, haltIterator, PageIterator, Paginator } from "../types/operations.js";
+import {
+  createPageIterator,
+  haltIterator,
+  PageIterator,
+  Paginator,
+} from "../types/operations.js";
 
 /**
  * Retrieve project domains by project by id or name
@@ -38,153 +43,150 @@ import { createPageIterator, haltIterator, PageIterator, Paginator } from "../ty
  * Retrieve the domains associated with a given project by passing either the project `id` or `name` in the URL.
  */
 export async function domainsListByProject(
-    client$: VercelCore,
-    request: GetProjectDomainsRequest,
-    options?: RequestOptions
+  client$: VercelCore,
+  request: GetProjectDomainsRequest,
+  options?: RequestOptions,
 ): Promise<
-    PageIterator<
-        Result<
-            GetProjectDomainsResponse,
-            | SDKError
-            | SDKValidationError
-            | UnexpectedClientError
-            | InvalidRequestError
-            | RequestAbortedError
-            | RequestTimeoutError
-            | ConnectionError
-        >
+  PageIterator<
+    Result<
+      GetProjectDomainsResponse,
+      | SDKError
+      | SDKValidationError
+      | UnexpectedClientError
+      | InvalidRequestError
+      | RequestAbortedError
+      | RequestTimeoutError
+      | ConnectionError
     >
+  >
 > {
-    const input$ = request;
+  const input$ = request;
 
-    const parsed$ = schemas$.safeParse(
-        input$,
-        (value$) => GetProjectDomainsRequest$outboundSchema.parse(value$),
-        "Input validation failed"
-    );
-    if (!parsed$.ok) {
-        return haltIterator(parsed$);
+  const parsed$ = schemas$.safeParse(
+    input$,
+    (value$) => GetProjectDomainsRequest$outboundSchema.parse(value$),
+    "Input validation failed",
+  );
+  if (!parsed$.ok) {
+    return haltIterator(parsed$);
+  }
+  const payload$ = parsed$.value;
+  const body$ = null;
+
+  const pathParams$ = {
+    idOrName: encodeSimple$("idOrName", payload$.idOrName, {
+      explode: false,
+      charEncoding: "percent",
+    }),
+  };
+
+  const path$ = pathToFunc("/v9/projects/{idOrName}/domains")(pathParams$);
+
+  const query$ = encodeFormQuery$({
+    "gitBranch": payload$.gitBranch,
+    "limit": payload$.limit,
+    "order": payload$.order,
+    "production": payload$.production,
+    "redirect": payload$.redirect,
+    "redirects": payload$.redirects,
+    "since": payload$.since,
+    "slug": payload$.slug,
+    "teamId": payload$.teamId,
+    "until": payload$.until,
+    "verified": payload$.verified,
+  });
+
+  const headers$ = new Headers({
+    Accept: "application/json",
+  });
+
+  const bearerToken$ = await extractSecurity(client$.options$.bearerToken);
+  const security$ = bearerToken$ == null ? {} : { bearerToken: bearerToken$ };
+  const context = {
+    operationID: "getProjectDomains",
+    oAuth2Scopes: [],
+    securitySource: client$.options$.bearerToken,
+  };
+  const securitySettings$ = resolveGlobalSecurity(security$);
+
+  const requestRes = client$.createRequest$(context, {
+    security: securitySettings$,
+    method: "GET",
+    path: path$,
+    headers: headers$,
+    query: query$,
+    body: body$,
+    timeoutMs: options?.timeoutMs || client$.options$.timeoutMs || -1,
+  }, options);
+  if (!requestRes.ok) {
+    return haltIterator(requestRes);
+  }
+  const request$ = requestRes.value;
+
+  const doResult = await client$.do$(request$, {
+    context,
+    errorCodes: ["400", "401", "403", "4XX", "5XX"],
+    retryConfig: options?.retries
+      || client$.options$.retryConfig,
+    retryCodes: options?.retryCodes || ["429", "500", "502", "503", "504"],
+  });
+  if (!doResult.ok) {
+    return haltIterator(doResult);
+  }
+  const response = doResult.value;
+
+  const responseFields$ = {
+    HttpMeta: { Response: response, Request: request$ },
+  };
+
+  const [result$, raw$] = await m$.match<
+    GetProjectDomainsResponse,
+    | SDKError
+    | SDKValidationError
+    | UnexpectedClientError
+    | InvalidRequestError
+    | RequestAbortedError
+    | RequestTimeoutError
+    | ConnectionError
+  >(
+    m$.json(200, GetProjectDomainsResponse$inboundSchema, { key: "Result" }),
+    m$.fail([400, 401, 403, "4XX", "5XX"]),
+  )(response, { extraFields: responseFields$ });
+  if (!result$.ok) {
+    return haltIterator(result$);
+  }
+
+  const nextFunc = (
+    responseData: unknown,
+  ): Paginator<
+    Result<
+      GetProjectDomainsResponse,
+      | SDKError
+      | SDKValidationError
+      | UnexpectedClientError
+      | InvalidRequestError
+      | RequestAbortedError
+      | RequestTimeoutError
+      | ConnectionError
+    >
+  > => {
+    const nextCursor = dlv(responseData, "pagination.since");
+
+    if (nextCursor == null) {
+      return () => null;
     }
-    const payload$ = parsed$.value;
-    const body$ = null;
 
-    const pathParams$ = {
-        idOrName: encodeSimple$("idOrName", payload$.idOrName, {
-            explode: false,
-            charEncoding: "percent",
-        }),
-    };
-
-    const path$ = pathToFunc("/v9/projects/{idOrName}/domains")(pathParams$);
-
-    const query$ = encodeFormQuery$({
-        gitBranch: payload$.gitBranch,
-        limit: payload$.limit,
-        order: payload$.order,
-        production: payload$.production,
-        redirect: payload$.redirect,
-        redirects: payload$.redirects,
-        since: payload$.since,
-        slug: payload$.slug,
-        teamId: payload$.teamId,
-        until: payload$.until,
-        verified: payload$.verified,
-    });
-
-    const headers$ = new Headers({
-        Accept: "application/json",
-    });
-
-    const bearerToken$ = await extractSecurity(client$.options$.bearerToken);
-    const security$ = bearerToken$ == null ? {} : { bearerToken: bearerToken$ };
-    const context = {
-        operationID: "getProjectDomains",
-        oAuth2Scopes: [],
-        securitySource: client$.options$.bearerToken,
-    };
-    const securitySettings$ = resolveGlobalSecurity(security$);
-
-    const requestRes = client$.createRequest$(
-        context,
+    return () =>
+      domainsListByProject(
+        client$,
         {
-            security: securitySettings$,
-            method: "GET",
-            path: path$,
-            headers: headers$,
-            query: query$,
-            body: body$,
-            timeoutMs: options?.timeoutMs || client$.options$.timeoutMs || -1,
+          ...input$,
+          since: nextCursor,
         },
-        options
-    );
-    if (!requestRes.ok) {
-        return haltIterator(requestRes);
-    }
-    const request$ = requestRes.value;
+        options,
+      );
+  };
 
-    const doResult = await client$.do$(request$, {
-        context,
-        errorCodes: ["400", "401", "403", "4XX", "5XX"],
-        retryConfig: options?.retries || client$.options$.retryConfig,
-        retryCodes: options?.retryCodes || ["429", "500", "502", "503", "504"],
-    });
-    if (!doResult.ok) {
-        return haltIterator(doResult);
-    }
-    const response = doResult.value;
-
-    const responseFields$ = {
-        HttpMeta: { Response: response, Request: request$ },
-    };
-
-    const [result$, raw$] = await m$.match<
-        GetProjectDomainsResponse,
-        | SDKError
-        | SDKValidationError
-        | UnexpectedClientError
-        | InvalidRequestError
-        | RequestAbortedError
-        | RequestTimeoutError
-        | ConnectionError
-    >(
-        m$.json(200, GetProjectDomainsResponse$inboundSchema, { key: "Result" }),
-        m$.fail([400, 401, 403, "4XX", "5XX"])
-    )(response, { extraFields: responseFields$ });
-    if (!result$.ok) {
-        return haltIterator(result$);
-    }
-
-    const nextFunc = (
-        responseData: unknown
-    ): Paginator<
-        Result<
-            GetProjectDomainsResponse,
-            | SDKError
-            | SDKValidationError
-            | UnexpectedClientError
-            | InvalidRequestError
-            | RequestAbortedError
-            | RequestTimeoutError
-            | ConnectionError
-        >
-    > => {
-        const nextCursor = dlv(responseData, "pagination.since");
-
-        if (nextCursor == null) {
-            return () => null;
-        }
-
-        return () =>
-            domainsListByProject(
-                client$,
-                {
-                    ...input$,
-                    since: nextCursor,
-                },
-                options
-            );
-    };
-
-    const page$ = { ...result$, next: nextFunc(raw$) };
-    return { ...page$, ...createPageIterator(page$, (v) => !v.ok) };
+  const page$ = { ...result$, next: nextFunc(raw$) };
+  return { ...page$, ...createPageIterator(page$, (v) => !v.ok) };
 }

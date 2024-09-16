@@ -6,9 +6,9 @@
 import { Env } from "@simplesagar/vercel/models/updateprojectdatacacheop.js";
 
 let value: Env = {
-    type: "plain",
-    key: "<key>",
-    value: "<value>",
+  type: "secret",
+  key: "<key>",
+  value: "<value>",
 };
 ```
 

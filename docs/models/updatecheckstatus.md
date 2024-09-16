@@ -7,7 +7,7 @@ The current status of the check
 ```typescript
 import { UpdateCheckStatus } from "@simplesagar/vercel/models/updatecheckop.js";
 
-let value: UpdateCheckStatus = "completed";
+let value: UpdateCheckStatus = "running";
 ```
 
 ## Values

@@ -6,8 +6,8 @@
 import { AddProjectMemberRequestBody3 } from "@simplesagar/vercel/models/addprojectmemberop.js";
 
 let value: AddProjectMemberRequestBody3 = {
-    email: "entity@example.com",
-    role: "ADMIN",
+  email: "entity@example.com",
+  role: "ADMIN",
 };
 ```
 

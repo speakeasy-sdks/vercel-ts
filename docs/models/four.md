@@ -6,9 +6,9 @@
 import { Four } from "@simplesagar/vercel/models/createdeploymentop.js";
 
 let value: Four = {
-    ref: "<value>",
-    repoUuid: "<value>",
-    type: "bitbucket",
+  ref: "<value>",
+  repoUuid: "<value>",
+  type: "bitbucket",
 };
 ```
 

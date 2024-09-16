@@ -9,10 +9,10 @@ Domain is already verified
 import { VerifyProjectDomainResponseBody } from "@simplesagar/vercel/models/verifyprojectdomainop.js";
 
 let value: VerifyProjectDomainResponseBody = {
-    name: "<value>",
-    apexName: "<value>",
-    projectId: "<value>",
-    verified: false,
+  name: "<value>",
+  apexName: "<value>",
+  projectId: "<value>",
+  verified: false,
 };
 ```
 

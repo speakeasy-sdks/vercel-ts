@@ -6,7 +6,7 @@
 import { InviteUserToTeamRequest } from "@simplesagar/vercel/models/inviteusertoteamop.js";
 
 let value: InviteUserToTeamRequest = {
-    teamId: "<value>",
+  teamId: "<value>",
 };
 ```
 

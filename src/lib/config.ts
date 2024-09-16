@@ -11,53 +11,53 @@ import { Params, pathToFunc } from "./url.js";
  * Contains the list of servers available to the SDK
  */
 export const ServerList = [
-    /**
-     * Production API
-     */
-    "https://api.vercel.com",
+  /**
+   * Production API
+   */
+  "https://api.vercel.com",
 ] as const;
 
 export type SDKOptions = {
-    bearerToken?: string | (() => Promise<string>);
+  bearerToken?: string | (() => Promise<string>);
 
-    httpClient?: HTTPClient;
-    /**
-     * Allows overriding the default server used by the SDK
-     */
-    serverIdx?: number;
-    /**
-     * Allows overriding the default server URL used by the SDK
-     */
-    serverURL?: string;
-    /**
-     * Allows overriding the default retry config used by the SDK
-     */
-    retryConfig?: RetryConfig;
-    timeoutMs?: number;
-    debugLogger?: Logger;
+  httpClient?: HTTPClient;
+  /**
+   * Allows overriding the default server used by the SDK
+   */
+  serverIdx?: number;
+  /**
+   * Allows overriding the default server URL used by the SDK
+   */
+  serverURL?: string;
+  /**
+   * Allows overriding the default retry config used by the SDK
+   */
+  retryConfig?: RetryConfig;
+  timeoutMs?: number;
+  debugLogger?: Logger;
 };
 
 export function serverURLFromOptions(options: SDKOptions): URL | null {
-    let serverURL = options.serverURL;
+  let serverURL = options.serverURL;
 
-    const params: Params = {};
+  const params: Params = {};
 
-    if (!serverURL) {
-        const serverIdx = options.serverIdx ?? 0;
-        if (serverIdx < 0 || serverIdx >= ServerList.length) {
-            throw new Error(`Invalid server index ${serverIdx}`);
-        }
-        serverURL = ServerList[serverIdx] || "";
+  if (!serverURL) {
+    const serverIdx = options.serverIdx ?? 0;
+    if (serverIdx < 0 || serverIdx >= ServerList.length) {
+      throw new Error(`Invalid server index ${serverIdx}`);
     }
+    serverURL = ServerList[serverIdx] || "";
+  }
 
-    const u = pathToFunc(serverURL)(params);
-    return new URL(u);
+  const u = pathToFunc(serverURL)(params);
+  return new URL(u);
 }
 
 export const SDK_METADATA = {
-    language: "typescript",
-    openapiDocVersion: "0.0.1",
-    sdkVersion: "0.7.0",
-    genVersion: "2.404.1",
-    userAgent: "speakeasy-sdk/typescript 0.7.0 2.404.1 0.0.1 @simplesagar/vercel",
+  language: "typescript",
+  openapiDocVersion: "0.0.1",
+  sdkVersion: "0.8.0",
+  genVersion: "2.415.8",
+  userAgent: "speakeasy-sdk/typescript 0.8.0 2.415.8 0.0.1 @simplesagar/vercel",
 } as const;

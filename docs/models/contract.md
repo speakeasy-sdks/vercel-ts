@@ -6,8 +6,8 @@
 import { Contract } from "@simplesagar/vercel/models/authuser.js";
 
 let value: Contract = {
-    start: 7607.44,
-    end: 8989.61,
+  start: 3165.42,
+  end: 2040.72,
 };
 ```
 

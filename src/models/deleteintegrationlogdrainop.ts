@@ -5,47 +5,47 @@
 import * as z from "zod";
 
 export type DeleteIntegrationLogDrainRequest = {
-    /**
-     * ID of the log drain to be deleted
-     */
-    id: string;
-    /**
-     * The Team identifier to perform the request on behalf of.
-     */
-    teamId?: string | undefined;
-    /**
-     * The Team slug to perform the request on behalf of.
-     */
-    slug?: string | undefined;
+  /**
+   * ID of the log drain to be deleted
+   */
+  id: string;
+  /**
+   * The Team identifier to perform the request on behalf of.
+   */
+  teamId?: string | undefined;
+  /**
+   * The Team slug to perform the request on behalf of.
+   */
+  slug?: string | undefined;
 };
 
 /** @internal */
 export const DeleteIntegrationLogDrainRequest$inboundSchema: z.ZodType<
-    DeleteIntegrationLogDrainRequest,
-    z.ZodTypeDef,
-    unknown
+  DeleteIntegrationLogDrainRequest,
+  z.ZodTypeDef,
+  unknown
 > = z.object({
-    id: z.string(),
-    teamId: z.string().optional(),
-    slug: z.string().optional(),
+  id: z.string(),
+  teamId: z.string().optional(),
+  slug: z.string().optional(),
 });
 
 /** @internal */
 export type DeleteIntegrationLogDrainRequest$Outbound = {
-    id: string;
-    teamId?: string | undefined;
-    slug?: string | undefined;
+  id: string;
+  teamId?: string | undefined;
+  slug?: string | undefined;
 };
 
 /** @internal */
 export const DeleteIntegrationLogDrainRequest$outboundSchema: z.ZodType<
-    DeleteIntegrationLogDrainRequest$Outbound,
-    z.ZodTypeDef,
-    DeleteIntegrationLogDrainRequest
+  DeleteIntegrationLogDrainRequest$Outbound,
+  z.ZodTypeDef,
+  DeleteIntegrationLogDrainRequest
 > = z.object({
-    id: z.string(),
-    teamId: z.string().optional(),
-    slug: z.string().optional(),
+  id: z.string(),
+  teamId: z.string().optional(),
+  slug: z.string().optional(),
 });
 
 /**
@@ -53,10 +53,10 @@ export const DeleteIntegrationLogDrainRequest$outboundSchema: z.ZodType<
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
 export namespace DeleteIntegrationLogDrainRequest$ {
-    /** @deprecated use `DeleteIntegrationLogDrainRequest$inboundSchema` instead. */
-    export const inboundSchema = DeleteIntegrationLogDrainRequest$inboundSchema;
-    /** @deprecated use `DeleteIntegrationLogDrainRequest$outboundSchema` instead. */
-    export const outboundSchema = DeleteIntegrationLogDrainRequest$outboundSchema;
-    /** @deprecated use `DeleteIntegrationLogDrainRequest$Outbound` instead. */
-    export type Outbound = DeleteIntegrationLogDrainRequest$Outbound;
+  /** @deprecated use `DeleteIntegrationLogDrainRequest$inboundSchema` instead. */
+  export const inboundSchema = DeleteIntegrationLogDrainRequest$inboundSchema;
+  /** @deprecated use `DeleteIntegrationLogDrainRequest$outboundSchema` instead. */
+  export const outboundSchema = DeleteIntegrationLogDrainRequest$outboundSchema;
+  /** @deprecated use `DeleteIntegrationLogDrainRequest$Outbound` instead. */
+  export type Outbound = DeleteIntegrationLogDrainRequest$Outbound;
 }

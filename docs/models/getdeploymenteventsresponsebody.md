@@ -9,16 +9,14 @@ Array of deployment logs for the provided query.
 import { GetDeploymentEventsResponseBody } from "@simplesagar/vercel/models/getdeploymenteventsop.js";
 
 let value: GetDeploymentEventsResponseBody = {
-    created: 9105.45,
-    date: 8820.42,
+  type: "edge-function-invocation",
+  created: 829.71,
+  payload: {
     deploymentId: "<value>",
     id: "<id>",
-    info: {
-        type: "<value>",
-        name: "<value>",
-    },
+    date: 4586.04,
     serial: "<value>",
-    type: "command",
+  },
 };
 ```
 

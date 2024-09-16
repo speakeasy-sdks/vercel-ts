@@ -5,7 +5,7 @@
 ```typescript
 import { UpdateProjectDataCacheTarget2 } from "@simplesagar/vercel/models/updateprojectdatacacheop.js";
 
-let value: UpdateProjectDataCacheTarget2 = "preview";
+let value: UpdateProjectDataCacheTarget2 = "production";
 ```
 
 ## Values

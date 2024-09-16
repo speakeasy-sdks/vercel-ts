@@ -6,22 +6,22 @@
 import { GetTeamMembersResponseBody } from "@simplesagar/vercel/models/getteammembersop.js";
 
 let value: GetTeamMembersResponseBody = {
-    members: [
-        {
-            confirmed: true,
-            email: "jane.doe@example.com",
-            role: "OWNER",
-            uid: "zTuNVUXEAvvnNN3IaqinkyMw",
-            username: "jane-doe",
-            createdAt: 1588720733602,
-        },
-    ],
-    pagination: {
-        hasNext: false,
-        count: 20,
-        next: 1540095775951,
-        prev: 1540095775951,
+  members: [
+    {
+      confirmed: true,
+      email: "jane.doe@example.com",
+      role: "OWNER",
+      uid: "zTuNVUXEAvvnNN3IaqinkyMw",
+      username: "jane-doe",
+      createdAt: 1588720733602,
     },
+  ],
+  pagination: {
+    hasNext: false,
+    count: 20,
+    next: 1540095775951,
+    prev: 1540095775951,
+  },
 };
 ```
 

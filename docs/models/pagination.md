@@ -8,9 +8,9 @@ This object contains information related to the pagination of the current reques
 import { Pagination } from "@simplesagar/vercel/models/pagination.js";
 
 let value: Pagination = {
-    count: 20,
-    next: 1540095775951,
-    prev: 1540095775951,
+  count: 20,
+  next: 1540095775951,
+  prev: 1540095775951,
 };
 ```
 

@@ -5,7 +5,7 @@
 ```typescript
 import { CreateDeploymentReadyState } from "@simplesagar/vercel/models/createdeploymentop.js";
 
-let value: CreateDeploymentReadyState = "READY";
+let value: CreateDeploymentReadyState = "BUILDING";
 ```
 
 ## Values

@@ -5,44 +5,44 @@
 import * as z from "zod";
 
 export type GetEdgeConfigTokensRequest = {
-    edgeConfigId: string;
-    /**
-     * The Team identifier to perform the request on behalf of.
-     */
-    teamId?: string | undefined;
-    /**
-     * The Team slug to perform the request on behalf of.
-     */
-    slug?: string | undefined;
+  edgeConfigId: string;
+  /**
+   * The Team identifier to perform the request on behalf of.
+   */
+  teamId?: string | undefined;
+  /**
+   * The Team slug to perform the request on behalf of.
+   */
+  slug?: string | undefined;
 };
 
 /** @internal */
 export const GetEdgeConfigTokensRequest$inboundSchema: z.ZodType<
-    GetEdgeConfigTokensRequest,
-    z.ZodTypeDef,
-    unknown
+  GetEdgeConfigTokensRequest,
+  z.ZodTypeDef,
+  unknown
 > = z.object({
-    edgeConfigId: z.string(),
-    teamId: z.string().optional(),
-    slug: z.string().optional(),
+  edgeConfigId: z.string(),
+  teamId: z.string().optional(),
+  slug: z.string().optional(),
 });
 
 /** @internal */
 export type GetEdgeConfigTokensRequest$Outbound = {
-    edgeConfigId: string;
-    teamId?: string | undefined;
-    slug?: string | undefined;
+  edgeConfigId: string;
+  teamId?: string | undefined;
+  slug?: string | undefined;
 };
 
 /** @internal */
 export const GetEdgeConfigTokensRequest$outboundSchema: z.ZodType<
-    GetEdgeConfigTokensRequest$Outbound,
-    z.ZodTypeDef,
-    GetEdgeConfigTokensRequest
+  GetEdgeConfigTokensRequest$Outbound,
+  z.ZodTypeDef,
+  GetEdgeConfigTokensRequest
 > = z.object({
-    edgeConfigId: z.string(),
-    teamId: z.string().optional(),
-    slug: z.string().optional(),
+  edgeConfigId: z.string(),
+  teamId: z.string().optional(),
+  slug: z.string().optional(),
 });
 
 /**
@@ -50,10 +50,10 @@ export const GetEdgeConfigTokensRequest$outboundSchema: z.ZodType<
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
 export namespace GetEdgeConfigTokensRequest$ {
-    /** @deprecated use `GetEdgeConfigTokensRequest$inboundSchema` instead. */
-    export const inboundSchema = GetEdgeConfigTokensRequest$inboundSchema;
-    /** @deprecated use `GetEdgeConfigTokensRequest$outboundSchema` instead. */
-    export const outboundSchema = GetEdgeConfigTokensRequest$outboundSchema;
-    /** @deprecated use `GetEdgeConfigTokensRequest$Outbound` instead. */
-    export type Outbound = GetEdgeConfigTokensRequest$Outbound;
+  /** @deprecated use `GetEdgeConfigTokensRequest$inboundSchema` instead. */
+  export const inboundSchema = GetEdgeConfigTokensRequest$inboundSchema;
+  /** @deprecated use `GetEdgeConfigTokensRequest$outboundSchema` instead. */
+  export const outboundSchema = GetEdgeConfigTokensRequest$outboundSchema;
+  /** @deprecated use `GetEdgeConfigTokensRequest$Outbound` instead. */
+  export type Outbound = GetEdgeConfigTokensRequest$Outbound;
 }

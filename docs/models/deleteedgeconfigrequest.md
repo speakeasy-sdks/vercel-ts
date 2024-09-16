@@ -6,7 +6,7 @@
 import { DeleteEdgeConfigRequest } from "@simplesagar/vercel/models/deleteedgeconfigop.js";
 
 let value: DeleteEdgeConfigRequest = {
-    edgeConfigId: "<value>",
+  edgeConfigId: "<value>",
 };
 ```
 

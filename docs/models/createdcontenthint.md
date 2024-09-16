@@ -6,8 +6,11 @@
 import { CreatedContentHint } from "@simplesagar/vercel/models/createprojectenvop.js";
 
 let value: CreatedContentHint = {
-    type: "postgres-url-no-ssl",
-    storeId: "<value>",
+  type: "integration-store-secret",
+  storeId: "<value>",
+  integrationId: "<value>",
+  integrationProductId: "<value>",
+  integrationConfigurationId: "<value>",
 };
 ```
 

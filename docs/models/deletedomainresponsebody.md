@@ -8,7 +8,7 @@ Successful response removing a domain.
 import { DeleteDomainResponseBody } from "@simplesagar/vercel/models/deletedomainop.js";
 
 let value: DeleteDomainResponseBody = {
-    uid: "rec_V0fra8eEgQwEpFhYG2vTzC3K",
+  uid: "rec_V0fra8eEgQwEpFhYG2vTzC3K",
 };
 ```
 

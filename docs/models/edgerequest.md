@@ -6,10 +6,10 @@
 import { EdgeRequest } from "@simplesagar/vercel/models/authuser.js";
 
 let value: EdgeRequest = {
-    price: 7573.64,
-    batch: 5740.32,
-    threshold: 3145.73,
-    hidden: false,
+  price: 511.7,
+  batch: 9011.63,
+  threshold: 1040.78,
+  hidden: false,
 };
 ```
 

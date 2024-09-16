@@ -6,9 +6,9 @@
 import { CancelDeploymentGitSource5 } from "@simplesagar/vercel/models/canceldeploymentop.js";
 
 let value: CancelDeploymentGitSource5 = {
-    type: "bitbucket",
-    owner: "<value>",
-    slug: "<value>",
+  type: "bitbucket",
+  owner: "<value>",
+  slug: "<value>",
 };
 ```
 

@@ -6,10 +6,10 @@
 import { BlobTotalSimpleRequests } from "@simplesagar/vercel/models/authuser.js";
 
 let value: BlobTotalSimpleRequests = {
-    price: 1949.01,
-    batch: 9185.47,
-    threshold: 7412.32,
-    hidden: false,
+  price: 1158.98,
+  batch: 1644.88,
+  threshold: 8998.67,
+  hidden: false,
 };
 ```
 

@@ -6,7 +6,7 @@
 import { PatchTeamRequest } from "@simplesagar/vercel/models/patchteamop.js";
 
 let value: PatchTeamRequest = {
-    teamId: "<value>",
+  teamId: "<value>",
 };
 ```
 

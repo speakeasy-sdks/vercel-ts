@@ -5,7 +5,7 @@
 ```typescript
 import { Added } from "@simplesagar/vercel/models/getconfigurationsop.js";
 
-let value: Added = "read-write:log-drain";
+let value: Added = "read:deployment";
 ```
 
 ## Values

@@ -6,8 +6,8 @@
 import { GetTeamAccessRequestRequest } from "@simplesagar/vercel/models/getteamaccessrequestop.js";
 
 let value: GetTeamAccessRequestRequest = {
-    teamId: "<value>",
-    userId: "<value>",
+  teamId: "<value>",
+  userId: "<value>",
 };
 ```
 

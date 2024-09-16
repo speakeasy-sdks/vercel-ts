@@ -5,7 +5,7 @@
 ```typescript
 import { GetDeploymentRoutesHandle } from "@simplesagar/vercel/models/getdeploymentop.js";
 
-let value: GetDeploymentRoutesHandle = "error";
+let value: GetDeploymentRoutesHandle = "hit";
 ```
 
 ## Values

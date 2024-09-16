@@ -8,9 +8,9 @@ Will be used to create an invoice item. The price must be in cents: 2000 for $20
 import { PasswordProtection } from "@simplesagar/vercel/models/authuser.js";
 
 let value: PasswordProtection = {
-    price: 7358.94,
-    quantity: 8786.01,
-    hidden: false,
+  price: 3252.97,
+  quantity: 4483.69,
+  hidden: false,
 };
 ```
 

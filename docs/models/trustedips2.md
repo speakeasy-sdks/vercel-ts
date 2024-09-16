@@ -6,7 +6,7 @@
 import { TrustedIps2 } from "@simplesagar/vercel/models/updateprojectdatacacheop.js";
 
 let value: TrustedIps2 = {
-    deploymentType: "preview",
+  deploymentType: "preview",
 };
 ```
 

@@ -6,7 +6,7 @@
 import { GetEdgeConfigTokensRequest } from "@simplesagar/vercel/models/getedgeconfigtokensop.js";
 
 let value: GetEdgeConfigTokensRequest = {
-    edgeConfigId: "<value>",
+  edgeConfigId: "<value>",
 };
 ```
 

@@ -5,7 +5,7 @@
 ```typescript
 import { GetTeamMembersOrigin } from "@simplesagar/vercel/models/getteammembersop.js";
 
-let value: GetTeamMembersOrigin = "saml";
+let value: GetTeamMembersOrigin = "dsync";
 ```
 
 ## Values

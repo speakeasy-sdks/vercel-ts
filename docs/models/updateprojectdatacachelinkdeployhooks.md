@@ -6,10 +6,10 @@
 import { UpdateProjectDataCacheLinkDeployHooks } from "@simplesagar/vercel/models/updateprojectdatacacheop.js";
 
 let value: UpdateProjectDataCacheLinkDeployHooks = {
-    id: "<id>",
-    name: "<value>",
-    ref: "<value>",
-    url: "http://utilized-bank.biz",
+  id: "<id>",
+  name: "<value>",
+  ref: "<value>",
+  url: "http://utilized-bank.biz",
 };
 ```
 

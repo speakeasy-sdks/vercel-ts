@@ -6,7 +6,7 @@
 import { AssignAliasRequest } from "@simplesagar/vercel/models/assignaliasop.js";
 
 let value: AssignAliasRequest = {
-    id: "<id>",
+  id: "<id>",
 };
 ```
 

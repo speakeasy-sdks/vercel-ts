@@ -7,59 +7,77 @@ import { projectMembersGet } from "../funcs/projectMembersGet.js";
 import { projectMembersRemove } from "../funcs/projectMembersRemove.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import {
-    AddProjectMemberRequestBody,
-    AddProjectMemberResponseBody,
+  AddProjectMemberRequestBody,
+  AddProjectMemberResponseBody,
 } from "../models/addprojectmemberop.js";
 import {
-    GetProjectMembersRequest,
-    GetProjectMembersResponseBody,
+  GetProjectMembersRequest,
+  GetProjectMembersResponseBody,
 } from "../models/getprojectmembersop.js";
 import { RemoveProjectMemberResponseBody } from "../models/removeprojectmemberop.js";
 import { unwrapAsync } from "../types/fp.js";
 
 export class ProjectMembers extends ClientSDK {
-    /**
-     * List project members
-     *
-     * @remarks
-     * Lists all members of a project.
-     */
-    async get(
-        request: GetProjectMembersRequest,
-        options?: RequestOptions
-    ): Promise<GetProjectMembersResponseBody> {
-        return unwrapAsync(projectMembersGet(this, request, options));
-    }
+  /**
+   * List project members
+   *
+   * @remarks
+   * Lists all members of a project.
+   */
+  async get(
+    request: GetProjectMembersRequest,
+    options?: RequestOptions,
+  ): Promise<GetProjectMembersResponseBody> {
+    return unwrapAsync(projectMembersGet(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Adds a new member to a project.
-     *
-     * @remarks
-     * Adds a new member to the project.
-     */
-    async add(
-        idOrName: string,
-        teamId?: string | undefined,
-        slug?: string | undefined,
-        requestBody?: AddProjectMemberRequestBody | undefined,
-        options?: RequestOptions
-    ): Promise<AddProjectMemberResponseBody> {
-        return unwrapAsync(projectMembersAdd(this, idOrName, teamId, slug, requestBody, options));
-    }
+  /**
+   * Adds a new member to a project.
+   *
+   * @remarks
+   * Adds a new member to the project.
+   */
+  async add(
+    idOrName: string,
+    teamId?: string | undefined,
+    slug?: string | undefined,
+    requestBody?: AddProjectMemberRequestBody | undefined,
+    options?: RequestOptions,
+  ): Promise<AddProjectMemberResponseBody> {
+    return unwrapAsync(projectMembersAdd(
+      this,
+      idOrName,
+      teamId,
+      slug,
+      requestBody,
+      options,
+    ));
+  }
 
-    /**
-     * Remove a Project Member
-     *
-     * @remarks
-     * Remove a member from a specific project
-     */
-    async remove(
-        idOrName: string,
-        uid: string,
-        teamId?: string | undefined,
-        slug?: string | undefined,
-        options?: RequestOptions
-    ): Promise<RemoveProjectMemberResponseBody> {
-        return unwrapAsync(projectMembersRemove(this, idOrName, uid, teamId, slug, options));
-    }
+  /**
+   * Remove a Project Member
+   *
+   * @remarks
+   * Remove a member from a specific project
+   */
+  async remove(
+    idOrName: string,
+    uid: string,
+    teamId?: string | undefined,
+    slug?: string | undefined,
+    options?: RequestOptions,
+  ): Promise<RemoveProjectMemberResponseBody> {
+    return unwrapAsync(projectMembersRemove(
+      this,
+      idOrName,
+      uid,
+      teamId,
+      slug,
+      options,
+    ));
+  }
 }

@@ -5,7 +5,7 @@
 ```typescript
 import { CreateCheckConclusion } from "@simplesagar/vercel/models/createcheckop.js";
 
-let value: CreateCheckConclusion = "succeeded";
+let value: CreateCheckConclusion = "skipped";
 ```
 
 ## Values

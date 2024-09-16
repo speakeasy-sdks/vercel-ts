@@ -6,11 +6,13 @@
 import { IssueCertResponseBody } from "@simplesagar/vercel/models/issuecertop.js";
 
 let value: IssueCertResponseBody = {
-    id: "<id>",
-    createdAt: 5740.92,
-    expiresAt: 8795.22,
-    autoRenew: false,
-    cns: ["<value>"],
+  id: "<id>",
+  createdAt: 5823.2,
+  expiresAt: 5398.13,
+  autoRenew: false,
+  cns: [
+    "<value>",
+  ],
 };
 ```
 

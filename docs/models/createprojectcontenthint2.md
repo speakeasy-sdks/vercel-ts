@@ -6,8 +6,8 @@
 import { CreateProjectContentHint2 } from "@simplesagar/vercel/models/createprojectop.js";
 
 let value: CreateProjectContentHint2 = {
-    type: "redis-rest-api-url",
-    storeId: "<value>",
+  type: "redis-rest-api-url",
+  storeId: "<value>",
 };
 ```
 

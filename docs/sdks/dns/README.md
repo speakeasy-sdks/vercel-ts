@@ -27,9 +27,10 @@ async function run() {
   const result = await vercel.dns.listRecords({
     domain: "example.com",
   });
-
+  
   for await (const page of result) {
-    // handle page
+    // Handle the page
+    console.log(page);
   }
 }
 
@@ -62,7 +63,8 @@ async function run() {
   const { value: result } = res;
 
   for await (const page of result) {
-    // handle page
+    // Handle the page
+    console.log(page);
   }
 }
 
@@ -104,7 +106,7 @@ const vercel = new Vercel({
 
 async function run() {
   const result = await vercel.dns.createRecord("example.com");
-
+  
   // Handle the result
   console.log(result)
 }
@@ -180,7 +182,7 @@ const vercel = new Vercel({
 
 async function run() {
   const result = await vercel.dns.updateRecord("rec_2qn7pzrx89yxy34vezpd31y9");
-
+  
   // Handle the result
   console.log(result)
 }
@@ -256,7 +258,7 @@ const vercel = new Vercel({
 
 async function run() {
   const result = await vercel.dns.removeRecord("example.com", "rec_V0fra8eEgQwEpFhYG2vTzC3K");
-
+  
   // Handle the result
   console.log(result)
 }

@@ -6,8 +6,8 @@
 import { UpdateProjectMitigate } from "@simplesagar/vercel/models/updateprojectop.js";
 
 let value: UpdateProjectMitigate = {
-    action: "bypass",
-    ruleId: "<value>",
+  action: "bypass",
+  ruleId: "<value>",
 };
 ```
 

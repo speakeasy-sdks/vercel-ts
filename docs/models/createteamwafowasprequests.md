@@ -6,10 +6,10 @@
 import { CreateTeamWafOwaspRequests } from "@simplesagar/vercel/models/createteamop.js";
 
 let value: CreateTeamWafOwaspRequests = {
-    price: 1072.1,
-    batch: 6686.06,
-    threshold: 8173.39,
-    hidden: false,
+  price: 5750.78,
+  batch: 4097.26,
+  threshold: 4218.19,
+  hidden: false,
 };
 ```
 

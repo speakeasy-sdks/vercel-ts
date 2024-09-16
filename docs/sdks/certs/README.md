@@ -24,8 +24,8 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.certs.getById("<value>");
-
+  const result = await vercel.certs.getById("<id>");
+  
   // Handle the result
   console.log(result)
 }
@@ -48,7 +48,7 @@ const vercel = new VercelCore({
 });
 
 async function run() {
-  const res = await certsGetById(vercel, "<value>");
+  const res = await certsGetById(vercel, "<id>");
 
   if (!res.ok) {
     throw res.error;
@@ -99,8 +99,8 @@ const vercel = new Vercel({
 });
 
 async function run() {
-  const result = await vercel.certs.remove("<value>");
-
+  const result = await vercel.certs.remove("<id>");
+  
   // Handle the result
   console.log(result)
 }
@@ -123,7 +123,7 @@ const vercel = new VercelCore({
 });
 
 async function run() {
-  const res = await certsRemove(vercel, "<value>");
+  const res = await certsRemove(vercel, "<id>");
 
   if (!res.ok) {
     throw res.error;
@@ -175,7 +175,7 @@ const vercel = new Vercel({
 
 async function run() {
   const result = await vercel.certs.issue();
-
+  
   // Handle the result
   console.log(result)
 }
@@ -250,7 +250,7 @@ const vercel = new Vercel({
 
 async function run() {
   const result = await vercel.certs.upload();
-
+  
   // Handle the result
   console.log(result)
 }

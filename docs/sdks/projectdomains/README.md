@@ -24,7 +24,7 @@ const vercel = new Vercel({
 
 async function run() {
   const result = await vercel.projectDomains.get("<value>", "www.example.com");
-
+  
   // Handle the result
   console.log(result)
 }
@@ -103,7 +103,7 @@ async function run() {
     idOrName: "<value>",
     domain: "www.example.com",
   });
-
+  
   // Handle the result
   console.log(result)
 }
@@ -179,7 +179,7 @@ const vercel = new Vercel({
 
 async function run() {
   const result = await vercel.projectDomains.delete("<value>", "www.example.com");
-
+  
   // Handle the result
   console.log(result)
 }

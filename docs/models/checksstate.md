@@ -5,7 +5,7 @@
 ```typescript
 import { ChecksState } from "@simplesagar/vercel/models/createdeploymentop.js";
 
-let value: ChecksState = "registered";
+let value: ChecksState = "running";
 ```
 
 ## Values

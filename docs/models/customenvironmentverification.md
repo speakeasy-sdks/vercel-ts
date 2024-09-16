@@ -8,10 +8,10 @@ A list of verification challenges, one of which must be completed to verify the 
 import { CustomEnvironmentVerification } from "@simplesagar/vercel/models/canceldeploymentop.js";
 
 let value: CustomEnvironmentVerification = {
-    type: "<value>",
-    domain: "torn-cleft.com",
-    value: "<value>",
-    reason: "<value>",
+  type: "<value>",
+  domain: "torn-cleft.com",
+  value: "<value>",
+  reason: "<value>",
 };
 ```
 

@@ -6,14 +6,14 @@
 import { Link3 } from "@simplesagar/vercel/models/updateprojectdatacacheop.js";
 
 let value: Link3 = {
-    deployHooks: [
-        {
-            id: "<id>",
-            name: "<value>",
-            ref: "<value>",
-            url: "https://neighboring-miscommunication.org",
-        },
-    ],
+  deployHooks: [
+    {
+      id: "<id>",
+      name: "<value>",
+      ref: "<value>",
+      url: "https://neighboring-miscommunication.org",
+    },
+  ],
 };
 ```
 

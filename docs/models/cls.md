@@ -6,8 +6,8 @@
 import { Cls } from "@simplesagar/vercel/models/updatecheckop.js";
 
 let value: Cls = {
-    value: 4,
-    source: "web-vitals",
+  value: 4,
+  source: "web-vitals",
 };
 ```
 

@@ -6,7 +6,7 @@
 import { GetEdgeConfigSchemaRequest } from "@simplesagar/vercel/models/getedgeconfigschemaop.js";
 
 let value: GetEdgeConfigSchemaRequest = {
-    edgeConfigId: "<value>",
+  edgeConfigId: "<value>",
 };
 ```
 
