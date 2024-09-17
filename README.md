@@ -6,7 +6,7 @@
 </div>
 
 > [!NOTE]
-> This SDK is an example and not yet ready for production usage.
+> This SDK is an example and not yet ready for production usage. Please see the Vercel OSS repository for the [official Vercel SDK](https://github.com/vercel/vercel/tree/main/packages/sdk). 
 
 <!-- Start Summary [summary] -->
 ## Summary
